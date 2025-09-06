@@ -10,10 +10,10 @@ const q = require('../lib/query-selector-all.js')
 // and deduplicates link/target from results
 const querySelectorAll = async (tree, query, options) => {
   const res = await q(tree, query, options)
-  return [...new Set(res.map(i => i.pkgid))]
+  return [...new Set(res.map((i) => i.pkgid))]
 }
 
-t.test('query-selector-all', async t => {
+t.test('query-selector-all', async (t) => {
   /*
    fixture tree:
 
@@ -43,8 +43,8 @@ t.test('query-selector-all', async t => {
 
   const now = Date.now()
   const today = new Date(now)
-  const yesterday = new Date(now - (1000 * 60 * 60 * 24))
-  const dayBeforeYesterday = new Date(now - (1000 * 60 * 60 * 24 * 2))
+  const yesterday = new Date(now - 1000 * 60 * 60 * 24)
+  const dayBeforeYesterday = new Date(now - 1000 * 60 * 60 * 24 * 2)
   // @npmcli/abbrev is deliberately left out of this list to cover the case when
   // fetching a packument fails
   const packumentStubs = {
@@ -103,8 +103,22 @@ t.test('query-selector-all', async t => {
     .persist()
     .post('/-/npm/v1/security/advisories/bulk')
     .reply(200, {
-      foo: [{ id: 'test-vuln', vulnerable_versions: '*', severity: 'high', cwe: [] }],
-      sive: [{ id: 'test-vuln', vulnerable_versions: '*', severity: 'low', cwe: ['CWE-123'] }],
+      foo: [
+        {
+          id: 'test-vuln',
+          vulnerable_versions: '*',
+          severity: 'high',
+          cwe: [],
+        },
+      ],
+      sive: [
+        {
+          id: 'test-vuln',
+          vulnerable_versions: '*',
+          severity: 'low',
+          cwe: ['CWE-123'],
+        },
+      ],
       moo: [{ id: 'test-vuln', vulnerable_versions: '<1.0.0' }],
     })
   for (const [pkg, versions] of Object.entries(packumentStubs)) {
@@ -241,9 +255,7 @@ t.test('query-selector-all', async t => {
           devDependencies: {
             moo: '^3.0.0',
           },
-          funding: [
-            { type: 'GitHub', url: 'https://github.com/sponsors' },
-          ],
+          funding: [{ type: 'GitHub', url: 'https://github.com/sponsors' }],
         }),
       },
       moo: {
@@ -271,24 +283,28 @@ t.test('query-selector-all', async t => {
         }),
       },
     },
-    a: { 'package.json': JSON.stringify({
-      name: 'a',
-      version: '1.0.0',
-      optionalDependencies: {
-        baz: '^1.0.0',
-      },
-    }) },
-    b: { 'package.json': JSON.stringify({
-      name: 'b',
-      version: '1.0.0',
-      private: true,
-      devDependencies: {
-        a: '^1.0.0',
-      },
-      dependencies: {
-        bar: '^2.0.0',
-      },
-    }) },
+    a: {
+      'package.json': JSON.stringify({
+        name: 'a',
+        version: '1.0.0',
+        optionalDependencies: {
+          baz: '^1.0.0',
+        },
+      }),
+    },
+    b: {
+      'package.json': JSON.stringify({
+        name: 'b',
+        version: '1.0.0',
+        private: true,
+        devDependencies: {
+          a: '^1.0.0',
+        },
+        dependencies: {
+          bar: '^2.0.0',
+        },
+      }),
+    },
     c: {
       'package.json': JSON.stringify({
         name: 'c',
@@ -377,87 +393,90 @@ t.test('query-selector-all', async t => {
   t.same(scopeRes, ['foo@2.2.2'], ':scope')
 
   const scopeChildren = await querySelectorAll(nodeFoo, ':scope > *')
-  t.same(scopeChildren, [
-    'dash-separated-pkg@1.0.0',
-    'bar@1.4.0',
-  ], ':scope > *')
+  t.same(scopeChildren, ['dash-separated-pkg@1.0.0', 'bar@1.4.0'], ':scope > *')
 
-  const runSpecParsing = async testCase => {
+  const runSpecParsing = async (testCase) => {
     for (const [selector, expected, options = {}] of testCase) {
       let title = selector
       if (options.before) {
-        const friendlyTime = options.before === today
-          ? 'today'
-          : options.before === yesterday
+        const friendlyTime =
+          options.before === today
+            ? 'today'
+            : options.before === yesterday
             ? 'yesterday'
             : options.before
         title += ` before ${friendlyTime}`
       }
-      t.test(title, async t => {
+      t.test(title, async (t) => {
         const res = await querySelectorAll(tree, selector, options)
-        t.same(
-          res,
-          expected,
-          title
-        )
+        t.same(res, expected, title)
       })
     }
   }
 
   await runSpecParsing([
     // universal selector
-    ['*', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
-    ['* > *', [
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    [
+      '*',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
+    [
+      '* > *',
+      [
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
     ['> #a', ['a@1.0.0']],
 
     // pseudo :root
     [':root', ['query-selector-all-tests@1.0.0']],
     [':scope', ['query-selector-all-tests@1.0.0']], // same as root in this context
-    [':root > *', [
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'foo@2.2.2',
-      'ipsum@npm:sit@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-    ]],
+    [
+      ':root > *',
+      [
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'foo@2.2.2',
+        'ipsum@npm:sit@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+      ],
+    ],
     [':root > .workspace', ['a@1.0.0', 'b@1.0.0', 'c@1.0.0']],
     [':root > *.workspace', ['a@1.0.0', 'b@1.0.0', 'c@1.0.0']],
     [':root > .workspace[name=a]', ['a@1.0.0']],
@@ -473,70 +492,68 @@ t.test('query-selector-all', async t => {
     ['#a ~ :root', []],
 
     // pseudo miscelaneous
-    [':empty', [
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'a@1.0.0',
-      'abbrev@1.1.1',
-      'b@1.0.0',
-      'c@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-    ]],
-    [':root > :empty', [
-      'a@1.0.0',
-      'abbrev@1.1.1',
-      'b@1.0.0',
-      'c@1.0.0',
-      'moo@3.0.0',
-    ]],
+    [
+      ':empty',
+      [
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'a@1.0.0',
+        'abbrev@1.1.1',
+        'b@1.0.0',
+        'c@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+      ],
+    ],
+    [
+      ':root > :empty',
+      ['a@1.0.0', 'abbrev@1.1.1', 'b@1.0.0', 'c@1.0.0', 'moo@3.0.0'],
+    ],
     [':extraneous', ['@npmcli/abbrev@2.0.0-beta.45']],
     [':invalid', ['lorem@1.0.0']],
     [':link', ['a@1.0.0', 'b@1.0.0', 'c@1.0.0']],
-    [':deduped', [
-      'bar@2.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-    ]],
+    [':deduped', ['bar@2.0.0', 'moo@3.0.0', 'recur@1.0.0']],
     [':missing', ['missing-dep@^1.0.0']],
     [':private', ['b@1.0.0']],
     [':overridden', ['dasher@2.0.0']],
 
     // :not pseudo
-    [':not(#foo)', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'bar@1.4.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    [
+      ':not(#foo)',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'bar@1.4.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
     [':root > .workspace:not(#b)', ['a@1.0.0', 'c@1.0.0']],
     [':root > .workspace > *:not(#bar)', ['a@1.0.0', 'b@1.0.0', 'baz@1.0.0']],
-    ['.bundled ~ :not(.workspace)', [
-      'bar@2.0.0',
-      'foo@2.2.2',
-      'ipsum@npm:sit@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-    ]],
+    [
+      '.bundled ~ :not(.workspace)',
+      [
+        'bar@2.0.0',
+        'foo@2.2.2',
+        'ipsum@npm:sit@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+      ],
+    ],
     ['*:root > *:empty:not(*[name^=a], #b, #c)', ['moo@3.0.0']],
-    [':not(:not(:link))', [
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-    ]],
+    [':not(:not(:link))', ['a@1.0.0', 'b@1.0.0', 'c@1.0.0']],
 
     // has pseudo
     [':root > *:has(* > #bar:semver(1.4.0))', ['foo@2.2.2']],
@@ -549,152 +566,163 @@ t.test('query-selector-all', async t => {
     [':is(#a, #b) > *', ['a@1.0.0', 'bar@2.0.0', 'baz@1.0.0']],
     // TODO: ipsum is not empty but its child is missing so it doesn't return a
     // result here
-    [':root > *:is(.prod:not(:empty), .dev > [name=bar]) > *', [
-      'a@1.0.0',
-      'b@1.0.0',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dasher@2.0.0',
-      'moo@3.0.0',
-    ]],
-    [':is(*:semver(2.0.0), :semver(=2.0.0-beta.45))', [
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'bar@2.0.0',
-      'dasher@2.0.0',
-    ]],
+    [
+      ':root > *:is(.prod:not(:empty), .dev > [name=bar]) > *',
+      [
+        'a@1.0.0',
+        'b@1.0.0',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dasher@2.0.0',
+        'moo@3.0.0',
+      ],
+    ],
+    [
+      ':is(*:semver(2.0.0), :semver(=2.0.0-beta.45))',
+      ['@npmcli/abbrev@2.0.0-beta.45', 'bar@2.0.0', 'dasher@2.0.0'],
+    ],
 
     // type pseudo
-    [':type()', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    [
+      ':type()',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
     [':type(tag)', ['lorem@1.0.0']],
     [':type(alias)', ['ipsum@npm:sit@1.0.0']],
-    [':type(range)', [
-      'a@1.0.0',
-      'abbrev@1.1.1',
-      'b@1.0.0',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'moo@3.0.0',
-    ]],
+    [
+      ':type(range)',
+      [
+        'a@1.0.0',
+        'abbrev@1.1.1',
+        'b@1.0.0',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'moo@3.0.0',
+      ],
+    ],
     [':type(git)', []],
 
     // path pseudo
-    [':path(node_modules/*)', [
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    [
+      ':path(node_modules/*)',
+      [
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
     [':path(node_modules/bar)', ['bar@2.0.0']],
     [':path(./node_modules/bar)', ['bar@2.0.0']],
     [':path(node_modules/foo/node_modules/bar)', ['bar@1.4.0']],
     [':path(**/bar)', ['bar@2.0.0', 'bar@1.4.0']],
     [':path(*)', ['a@1.0.0', 'b@1.0.0', 'c@1.0.0']],
-    [':path()', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    [
+      ':path()',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
+
+    // Windows path case-sensitivity tests for :path() pseudo
+    [':path(NODE_MODULES/bar)', ['bar@2.0.0']],
+    [':path(Node_Modules/Bar)', ['bar@2.0.0']],
+    [':path(./NODE_MODULES/BAR)', ['bar@2.0.0']],
+    [':path(Node_Modules/Foo/node_modules/bar)', ['bar@1.4.0']],
+    [':path(**/BAR)', ['bar@2.0.0', 'bar@1.4.0']],
 
     // semver pseudo
-    [':semver()', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
-    [':semver(*)', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
-    [':semver(2.0.0)', [
-      'bar@2.0.0',
-      'dasher@2.0.0',
-    ]],
-    [':semver(>=2)', [
-      'bar@2.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'moo@3.0.0',
-    ]],
-    [':semver(~2.0.x)', [
-      'bar@2.0.0',
-      'dasher@2.0.0',
-    ]],
-    [':semver(2 - 3)', [
-      'bar@2.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'moo@3.0.0',
-    ]],
+    [
+      ':semver()',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
+    [
+      ':semver(*)',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
+    [':semver(2.0.0)', ['bar@2.0.0', 'dasher@2.0.0']],
+    [':semver(>=2)', ['bar@2.0.0', 'dasher@2.0.0', 'foo@2.2.2', 'moo@3.0.0']],
+    [':semver(~2.0.x)', ['bar@2.0.0', 'dasher@2.0.0']],
+    [':semver(2 - 3)', ['bar@2.0.0', 'dasher@2.0.0', 'foo@2.2.2', 'moo@3.0.0']],
     [':semver(=1.4.0)', ['bar@1.4.0']],
     [':semver(1.4.0 || 2.2.2)', ['foo@2.2.2', 'bar@1.4.0']],
     [':semver(^16.0.0, :attr(engines, [node]))', ['abbrev@1.1.1', 'bar@2.0.0']],
@@ -702,152 +730,223 @@ t.test('query-selector-all', async t => {
     [':semver(^16.0.0, :attr(engines, [node^=">="]))', ['bar@2.0.0']],
     [':semver(3.0.0, [version], eq)', ['moo@3.0.0']],
     [':semver(^3.0.0, [version], eq)', []],
-    [':semver(1.0.0, [version], neq)', [
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'moo@3.0.0',
-    ]],
+    [
+      ':semver(1.0.0, [version], neq)',
+      [
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'moo@3.0.0',
+      ],
+    ],
     [':semver(^1.0.0, [version], neq)', []],
     [':semver(2.0.0, [version], gt)', ['foo@2.2.2', 'moo@3.0.0']],
     [':semver(^2.0.0, [version], gt)', []],
-    [':semver(2.0.0, [version], gte)', [
-      'bar@2.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'moo@3.0.0',
-    ]],
+    [
+      ':semver(2.0.0, [version], gte)',
+      ['bar@2.0.0', 'dasher@2.0.0', 'foo@2.2.2', 'moo@3.0.0'],
+    ],
     [':semver(^2.0.0, [version], gte)', []],
-    [':semver(1.1.1, [version], lt)', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    [
+      ':semver(1.1.1, [version], lt)',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
     [':semver(^1.1.1, [version], lt)', []],
-    [':semver(1.1.1, [version], lte)', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      'abbrev@1.1.1',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    [
+      ':semver(1.1.1, [version], lte)',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        'abbrev@1.1.1',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
     [':semver(^1.1.1, [version], lte)', []],
     [':semver(^14.0.0, :attr(engines, [node]), intersects)', ['bar@2.0.0']],
-    [':semver(>=14, :attr(engines, [node]), subset)', ['abbrev@1.1.1', 'bar@2.0.0']],
+    [
+      ':semver(>=14, :attr(engines, [node]), subset)',
+      ['abbrev@1.1.1', 'bar@2.0.0'],
+    ],
     [':semver(^2.0.0, [version], gtr)', ['moo@3.0.0']],
     [':semver(^2.0.0, :attr(engines, [node]), gtr)', []],
     [':semver(20.0.0, :attr(engines, [node]), gtr)', ['abbrev@1.1.1']],
-    [':semver(1.0.1, [version], gtr)', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
-    [':semver(^1.1.1, [version], ltr)', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    [
+      ':semver(1.0.1, [version], gtr)',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
+    [
+      ':semver(^1.1.1, [version], ltr)',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
     [':semver(^1.1.1, :attr(engines, [node]), ltr)', []],
-    [':semver(0.0.1, :attr(engines, [node]), ltr)', ['abbrev@1.1.1', 'bar@2.0.0']],
-    [':semver(1.1.1, [version], ltr)', [
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'bar@2.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'moo@3.0.0',
-    ]],
+    [
+      ':semver(0.0.1, :attr(engines, [node]), ltr)',
+      ['abbrev@1.1.1', 'bar@2.0.0'],
+    ],
+    [
+      ':semver(1.1.1, [version], ltr)',
+      [
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'bar@2.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'moo@3.0.0',
+      ],
+    ],
 
     // outdated pseudo
-    [':outdated', [
-      'abbrev@1.1.1', // 1.2.0 is available
-      'baz@1.0.0', // 1.0.1 is available
-      'dash-separated-pkg@1.0.0', // 2.0.0 is available
-      'bar@1.4.0', // 2.0.0 is available
-    ]],
-    [':outdated(any)', [
-      'abbrev@1.1.1', // 1.2.0 is available
-      'baz@1.0.0', // 1.0.1 is available
-      'dash-separated-pkg@1.0.0', // 2.0.0 is available
-      'bar@1.4.0', // 2.0.0 is available
-    ]],
-    [':outdated(major)', [
-      'dash-separated-pkg@1.0.0', // 2.0.0 is available
-      'bar@1.4.0', // 2.0.0 is available
-    ]],
-    [':outdated(minor)', [
-      'abbrev@1.1.1', // 1.2.0 is available
-    ]],
-    [':outdated(patch)', [
-      'baz@1.0.0', // 1.0.1 is available
-    ]],
-    [':outdated(in-range)', [
-      'abbrev@1.1.1', // 1.2.0 is available and in-range
-      'baz@1.0.0', // 1.0.1 is available and in-range
-    ]],
-    [':outdated(out-of-range)', [
-      'dash-separated-pkg@1.0.0', // 2.0.0 is available
-      'bar@1.4.0', // 2.0.0 is available and out-of-range
-    ]],
+    [
+      ':outdated',
+      [
+        'abbrev@1.1.1', // 1.2.0 is available
+        'baz@1.0.0', // 1.0.1 is available
+        'dash-separated-pkg@1.0.0', // 2.0.0 is available
+        'bar@1.4.0', // 2.0.0 is available
+      ],
+    ],
+    [
+      ':outdated(any)',
+      [
+        'abbrev@1.1.1', // 1.2.0 is available
+        'baz@1.0.0', // 1.0.1 is available
+        'dash-separated-pkg@1.0.0', // 2.0.0 is available
+        'bar@1.4.0', // 2.0.0 is available
+      ],
+    ],
+    [
+      ':outdated(major)',
+      [
+        'dash-separated-pkg@1.0.0', // 2.0.0 is available
+        'bar@1.4.0', // 2.0.0 is available
+      ],
+    ],
+    [
+      ':outdated(minor)',
+      [
+        'abbrev@1.1.1', // 1.2.0 is available
+      ],
+    ],
+    [
+      ':outdated(patch)',
+      [
+        'baz@1.0.0', // 1.0.1 is available
+      ],
+    ],
+    [
+      ':outdated(in-range)',
+      [
+        'abbrev@1.1.1', // 1.2.0 is available and in-range
+        'baz@1.0.0', // 1.0.1 is available and in-range
+      ],
+    ],
+    [
+      ':outdated(out-of-range)',
+      [
+        'dash-separated-pkg@1.0.0', // 2.0.0 is available
+        'bar@1.4.0', // 2.0.0 is available and out-of-range
+      ],
+    ],
     [':outdated(nonsense)', []], // invalid, no results ever
 
     // :outdated combined with --before
-    [':outdated', [
-      'abbrev@1.1.1', // 1.2.0 is available and published yesterday
-      'baz@1.0.0', // 1.0.1 is available and published yesterday
-      'dash-separated-pkg@1.0.0', // 2.0.0 is available and published yesterday
-    ], { before: yesterday }],
-    [':outdated(any)', [
-      'abbrev@1.1.1', // 1.2.0 is available and published yesterday
-      'baz@1.0.0', // 1.0.1 is available and published yesterday
-      'dash-separated-pkg@1.0.0', // 2.0.0 is available and published yesterday
-    ], { before: yesterday }],
-    [':outdated(major)', [
-      'dash-separated-pkg@1.0.0', // 2.0.0 is available and published yesterday
-    ], { before: yesterday }],
-    [':outdated(minor)', [
-      'abbrev@1.1.1', // 1.2.0 is available and published yesterday
-    ], { before: yesterday }],
-    [':outdated(patch)', [
-      'baz@1.0.0', // 1.0.1 is available and published yesterday
-    ], { before: yesterday }],
-    [':outdated(in-range)', [
-      'abbrev@1.1.1', // 1.2.0 is available, in-range and published yesterday
-      'baz@1.0.0', // 1.0.1 is available, in-range and published yesterday
-    ], { before: yesterday }],
-    [':outdated(out-of-range)', [
-      'dash-separated-pkg@1.0.0', // 2.0.0 is available, out-of-range and published yesterday
-    ], { before: yesterday }],
+    [
+      ':outdated',
+      [
+        'abbrev@1.1.1', // 1.2.0 is available and published yesterday
+        'baz@1.0.0', // 1.0.1 is available and published yesterday
+        'dash-separated-pkg@1.0.0', // 2.0.0 is available and published yesterday
+      ],
+      { before: yesterday },
+    ],
+    [
+      ':outdated(any)',
+      [
+        'abbrev@1.1.1', // 1.2.0 is available and published yesterday
+        'baz@1.0.0', // 1.0.1 is available and published yesterday
+        'dash-separated-pkg@1.0.0', // 2.0.0 is available and published yesterday
+      ],
+      { before: yesterday },
+    ],
+    [
+      ':outdated(major)',
+      [
+        'dash-separated-pkg@1.0.0', // 2.0.0 is available and published yesterday
+      ],
+      { before: yesterday },
+    ],
+    [
+      ':outdated(minor)',
+      [
+        'abbrev@1.1.1', // 1.2.0 is available and published yesterday
+      ],
+      { before: yesterday },
+    ],
+    [
+      ':outdated(patch)',
+      [
+        'baz@1.0.0', // 1.0.1 is available and published yesterday
+      ],
+      { before: yesterday },
+    ],
+    [
+      ':outdated(in-range)',
+      [
+        'abbrev@1.1.1', // 1.2.0 is available, in-range and published yesterday
+        'baz@1.0.0', // 1.0.1 is available, in-range and published yesterday
+      ],
+      { before: yesterday },
+    ],
+    [
+      ':outdated(out-of-range)',
+      [
+        'dash-separated-pkg@1.0.0', // 2.0.0 is available, out-of-range and published yesterday
+      ],
+      { before: yesterday },
+    ],
     [':outdated(nonsense)', [], { before: yesterday }], // again, no results here ever
 
     // vuln pseudo
@@ -873,28 +972,29 @@ t.test('query-selector-all', async t => {
     [':attr(arbitrary, :attr([foo=10000]))', ['bar@2.0.0']],
 
     // attribute matchers
-    ['[scripts]', [
-      'baz@1.0.0',
-    ]],
-    ['[name]', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    ['[scripts]', ['baz@1.0.0']],
+    [
+      '[name]',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
     ['[name=a]', ['a@1.0.0']],
     ['[name=@npmcli/abbrev]', ['@npmcli/abbrev@2.0.0-beta.45']],
     ['[name=a], [name=b]', ['a@1.0.0', 'b@1.0.0']],
@@ -902,88 +1002,100 @@ t.test('query-selector-all', async t => {
     ['[name^=a]', ['a@1.0.0', 'abbrev@1.1.1']],
     ['[name|=dash]', ['dash-separated-pkg@1.0.0']],
     ['[name$=oo]', ['foo@2.2.2', 'moo@3.0.0']],
-    ['[description]', [
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-    ]],
+    ['[description]', ['dash-separated-pkg@1.0.0', 'dasher@2.0.0']],
     ['[description~=ever]', ['dasher@2.0.0']],
-    ['[description~=best]', [
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-    ]],
-    ['[name*=a]', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'bar@1.4.0',
-    ]],
+    ['[description~=best]', ['dash-separated-pkg@1.0.0', 'dasher@2.0.0']],
+    [
+      '[name*=a]',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'bar@1.4.0',
+      ],
+    ],
     ['[arbitrary^=foo]', ['foo@2.2.2']],
     ['[license=ISC]', ['abbrev@1.1.1', 'baz@1.0.0']],
     ['[license=isc i]', ['abbrev@1.1.1', 'baz@1.0.0']],
 
     // types
-    ['.prod', [
-      'query-selector-all-tests@1.0.0',
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'baz@1.0.0',
-      'ipsum@npm:sit@1.0.0',
-      'lorem@1.0.0',
-      'moo@3.0.0',
-    ]],
+    [
+      '.prod',
+      [
+        'query-selector-all-tests@1.0.0',
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'baz@1.0.0',
+        'ipsum@npm:sit@1.0.0',
+        'lorem@1.0.0',
+        'moo@3.0.0',
+      ],
+    ],
     ['.workspace', ['a@1.0.0', 'b@1.0.0', 'c@1.0.0']],
     ['.workspace > *', ['a@1.0.0', 'b@1.0.0', 'bar@2.0.0', 'baz@1.0.0']],
     ['.workspace .workspace', ['a@1.0.0', 'b@1.0.0']],
     ['.workspace .workspace .workspace', ['a@1.0.0']],
-    ['.workspace ~ *', [
-      'abbrev@1.1.1',
-      'bar@2.0.0',
-      'foo@2.2.2',
-      'ipsum@npm:sit@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-    ]],
-    ['.dev', [
-      '@npmcli/abbrev@2.0.0-beta.45',
-      'a@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'foo@2.2.2',
-      'bar@1.4.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
-    ['.dev *', [
-      'baz@1.0.0',
-      'dash-separated-pkg@1.0.0',
-      'dasher@2.0.0',
-      'bar@1.4.0',
-      'lorem@1.0.0',
-      'recur@1.0.0',
-      'sive@1.0.0',
-    ]],
+    [
+      '.workspace ~ *',
+      [
+        'abbrev@1.1.1',
+        'bar@2.0.0',
+        'foo@2.2.2',
+        'ipsum@npm:sit@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+      ],
+    ],
+    [
+      '.dev',
+      [
+        '@npmcli/abbrev@2.0.0-beta.45',
+        'a@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'foo@2.2.2',
+        'bar@1.4.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
+    [
+      '.dev *',
+      [
+        'baz@1.0.0',
+        'dash-separated-pkg@1.0.0',
+        'dasher@2.0.0',
+        'bar@1.4.0',
+        'lorem@1.0.0',
+        'recur@1.0.0',
+        'sive@1.0.0',
+      ],
+    ],
     ['.peer', ['@npmcli/abbrev@2.0.0-beta.45', 'dasher@2.0.0']],
     ['.optional', ['@npmcli/abbrev@2.0.0-beta.45', 'baz@1.0.0', 'lorem@1.0.0']],
     ['.bundled', ['abbrev@1.1.1']],
-    ['.bundled ~ *', [
-      'a@1.0.0',
-      'b@1.0.0',
-      'c@1.0.0',
-      'bar@2.0.0',
-      'foo@2.2.2',
-      'ipsum@npm:sit@1.0.0',
-      'moo@3.0.0',
-      'recur@1.0.0',
-    ]],
+    [
+      '.bundled ~ *',
+      [
+        'a@1.0.0',
+        'b@1.0.0',
+        'c@1.0.0',
+        'bar@2.0.0',
+        'foo@2.2.2',
+        'ipsum@npm:sit@1.0.0',
+        'moo@3.0.0',
+        'recur@1.0.0',
+      ],
+    ],
 
     // id selector
     ['#bar', ['bar@2.0.0', 'bar@1.4.0']],
@@ -1015,7 +1127,110 @@ t.test('query-selector-all', async t => {
     [':root #bar:semver(1) > *', ['dasher@2.0.0']],
     [':root #bar:semver(1) ~ *', ['dash-separated-pkg@1.0.0']],
     ['#bar:semver(2), #foo', ['bar@2.0.0', 'foo@2.2.2']],
-    ['#a, #bar:semver(2), #foo:semver(2.2.2)', ['a@1.0.0', 'bar@2.0.0', 'foo@2.2.2']],
+    [
+      '#a, #bar:semver(2), #foo:semver(2.2.2)',
+      ['a@1.0.0', 'bar@2.0.0', 'foo@2.2.2'],
+    ],
     ['#b *', ['a@1.0.0', 'bar@2.0.0', 'baz@1.0.0', 'lorem@1.0.0', 'moo@3.0.0']],
   ])
+})
+
+t.test('Windows case-insensitive path selector', async (t) => {
+  const originalPlatform = process.platform
+  const mock = {}
+
+  t.beforeEach(() => {
+    Object.defineProperty(process, 'platform', {
+      value: 'win32',
+      configurable: true,
+    })
+  })
+
+  t.afterEach(() => {
+    Object.defineProperty(process, 'platform', {
+      value: originalPlatform,
+      configurable: true,
+    })
+  })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-package',
+      version: '1.0.0',
+      workspaces: ['packages/*'],
+    }),
+    packages: {
+      'lower-case': {
+        'package.json': JSON.stringify({
+          name: 'lower-case',
+          version: '1.0.0',
+        }),
+      },
+      'UPPER-CASE': {
+        'package.json': JSON.stringify({
+          name: 'upper-case',
+          version: '1.0.0',
+        }),
+      },
+    },
+    node_modules: {
+      foo: {
+        'package.json': JSON.stringify({
+          name: 'foo',
+          version: '1.0.0',
+        }),
+      },
+    },
+  })
+
+  const arb = new Arborist({ path })
+  const tree = await arb.loadActual()
+
+  // Test case-insensitive path matching on Windows
+  const results1 = await q(tree, '*:path(packages/lower-case)')
+  const results2 = await q(tree, '*:path(packages/LOWER-CASE)')
+  const results3 = await q(tree, '*:path(PACKAGES/Lower-Case)')
+
+  t.same(
+    results1.map((n) => n.name),
+    ['lower-case'],
+    'lowercase path matches'
+  )
+  t.same(
+    results2.map((n) => n.name),
+    ['lower-case'],
+    'uppercase path matches'
+  )
+  t.same(
+    results3.map((n) => n.name),
+    ['lower-case'],
+    'mixed case path matches'
+  )
+
+  // Test node_modules case sensitivity
+  const results4 = await q(tree, '*:path(NODE_MODULES/foo)')
+  const results5 = await q(tree, '*:path(Node_Modules/FOO)')
+  const results6 = await q(tree, '*:path(packages/UPPER-CASE)')
+  const results7 = await q(tree, '*:path(*/FOO)')
+
+  t.same(
+    results4.map((n) => n.name),
+    ['foo'],
+    'uppercase node_modules matches'
+  )
+  t.same(
+    results5.map((n) => n.name),
+    ['foo'],
+    'mixed case node_modules/package matches'
+  )
+  t.same(
+    results6.map((n) => n.name),
+    ['UPPER-CASE'],
+    'uppercase package path matches'
+  )
+  t.same(
+    results7.map((n) => n.name),
+    ['foo'],
+    'wildcard with uppercase matches'
+  )
 })

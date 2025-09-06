@@ -39,3 +39,14 @@ t.equal(
 Object.defineProperty(process, 'platform', {
   value: originalPlatform,
 })
+
+// Test non-Windows path to ensure 100% coverage
+Object.defineProperty(process, 'platform', {
+  value: 'linux',
+})
+t.equal(relpath('/a/b/c', '/a/b/c/d/e'), 'd/e', 'non-Windows path')
+
+// Restore original platform again
+Object.defineProperty(process, 'platform', {
+  value: originalPlatform,
+})

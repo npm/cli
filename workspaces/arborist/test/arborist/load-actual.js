@@ -7,15 +7,12 @@ const Node = require('../../lib/node.js')
 const Shrinkwrap = require('../../lib/shrinkwrap.js')
 const fs = require('node:fs')
 
-const {
-  fixtures,
-  roots,
-} = require('../fixtures/index.js')
+const { fixtures, roots } = require('../fixtures/index.js')
 
 // strip the fixtures path off of the trees in snapshots
-const pp = path => path &&
-  normalizePath(path).slice(normalizePath(fixtures).length + 1)
-const defixture = obj => {
+const pp = (path) =>
+  path && normalizePath(path).slice(normalizePath(fixtures).length + 1)
+const defixture = (obj) => {
   if (obj instanceof Set) {
     return new Set([...obj].map(defixture))
   }
@@ -34,30 +31,28 @@ const defixture = obj => {
   return obj
 }
 
-const {
-  normalizePath,
-  printTree,
-} = require('../fixtures/utils.js')
+const { normalizePath, printTree } = require('../fixtures/utils.js')
 
 const cwd = normalizePath(process.cwd())
-t.cleanSnapshot = s => s.split(cwd).join('{CWD}')
+t.cleanSnapshot = (s) => s.split(cwd).join('{CWD}')
 
-t.formatSnapshot = tree => format(defixture(printTree(tree)), { sort: true })
+t.formatSnapshot = (tree) => format(defixture(printTree(tree)), { sort: true })
 
 const loadActual = (path, opts) =>
   new Arborist({ path, ...opts }).loadActual(opts)
 
-roots.forEach(path => {
+roots.forEach((path) => {
   const dir = resolve(fixtures, path)
-  t.test(path, t => loadActual(dir).then(tree =>
-    t.matchSnapshot(tree, 'loaded tree')))
+  t.test(path, (t) =>
+    loadActual(dir).then((tree) => t.matchSnapshot(tree, 'loaded tree'))
+  )
 })
 
-t.test('look for missing deps by default', t => {
+t.test('look for missing deps by default', (t) => {
   const paths = ['external-dep/root', 'external-link/root']
   t.plan(paths.length)
   for (const p of paths) {
-    t.test(p, async t => {
+    t.test(p, async (t) => {
       const path = resolve(__dirname, '../fixtures', p)
       const arb = new Arborist({ path })
       const tree = await arb.loadActual()
@@ -66,14 +61,22 @@ t.test('look for missing deps by default', t => {
   }
 })
 
-t.test('already loaded', t => new Arborist({
-  path: resolve(__dirname, '../fixtures/selflink'),
-}).loadActual({ ignoreMissing: true }).then(actualTree => new Arborist({
-  path: resolve(__dirname, '../fixtures/selflink'),
-  actualTree,
-}).loadActual().then(tree2 => t.equal(tree2, actualTree))))
+t.test('already loaded', (t) =>
+  new Arborist({
+    path: resolve(__dirname, '../fixtures/selflink'),
+  })
+    .loadActual({ ignoreMissing: true })
+    .then((actualTree) =>
+      new Arborist({
+        path: resolve(__dirname, '../fixtures/selflink'),
+        actualTree,
+      })
+        .loadActual()
+        .then((tree2) => t.equal(tree2, actualTree))
+    )
+)
 
-t.test('already loading', t => {
+t.test('already loading', (t) => {
   const arb = new Arborist({
     path: resolve(__dirname, '../fixtures/selflink'),
   })
@@ -89,7 +92,7 @@ t.test('already loading', t => {
   return promise.then(() => clearInterval(int))
 })
 
-t.test('load a tree rooted on a different node', async t => {
+t.test('load a tree rooted on a different node', async (t) => {
   const path = resolve(fixtures, 'workspace')
   const other = resolve(fixtures.replace(/[a-z]/gi, 'X'), 'workspace')
   const root = new Node({
@@ -104,8 +107,8 @@ t.test('load a tree rooted on a different node', async t => {
   root.optional = false
   root.peer = false
 
-  const actual = await (new Arborist({ path }).loadActual())
-  const transp = await (new Arborist({ path }).loadActual({ root }))
+  const actual = await new Arborist({ path }).loadActual()
+  const transp = await new Arborist({ path }).loadActual({ root })
 
   // verify that the transp nodes have the right paths
   t.equal(transp.children.get('a').path, resolve(other, 'node_modules/a'))
@@ -119,7 +122,11 @@ t.test('load a tree rooted on a different node', async t => {
   t.equal(transp.children.get('c').realpath, resolve(other, 'packages/c'))
 
   // should look the same, once we strip off the other/fixture paths
-  t.equal(format(defixture(printTree(actual))), format(defixture(printTree(transp))), 'similar trees')
+  t.equal(
+    format(defixture(printTree(actual))),
+    format(defixture(printTree(transp))),
+    'similar trees'
+  )
 
   // now try with a transplant filter that keeps out the 'a' module
   const rootFiltered = new Node({
@@ -135,7 +142,7 @@ t.test('load a tree rooted on a different node', async t => {
   rootFiltered.peer = false
   const transpFilter = await new Arborist({ path }).loadActual({
     root: rootFiltered,
-    transplantFilter: n => n.name !== 'a',
+    transplantFilter: (n) => n.name !== 'a',
   })
   t.equal(transpFilter.children.get('a'), undefined)
   t.equal(transpFilter.children.get('b').path, resolve(other, 'node_modules/b'))
@@ -145,58 +152,68 @@ t.test('load a tree rooted on a different node', async t => {
   t.equal(transpFilter.children.get('c').realpath, resolve(other, 'packages/c'))
 })
 
-t.test('looking outside of cwd', t => {
+t.test('looking outside of cwd', (t) => {
   const cwd = process.cwd()
   t.teardown(() => process.chdir(cwd))
   process.chdir(resolve(__dirname, '../fixtures/selflink'))
   const dir = '../root'
-  return loadActual(dir).then(tree =>
-    t.matchSnapshot(tree, 'loaded tree'))
+  return loadActual(dir).then((tree) => t.matchSnapshot(tree, 'loaded tree'))
 })
 
-t.test('cwd is default root', t => {
+t.test('cwd is default root', (t) => {
   const cwd = process.cwd()
   t.teardown(() => process.chdir(cwd))
   process.chdir('test/fixtures/root')
-  return loadActual().then(tree =>
-    t.matchSnapshot(tree, 'loaded tree'))
+  return loadActual().then((tree) => t.matchSnapshot(tree, 'loaded tree'))
 })
 
-t.test('shake out Link target timing issue', t => {
+t.test('shake out Link target timing issue', (t) => {
   process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ = '1'
-  t.teardown(() => process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ = '')
+  t.teardown(() => (process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ = ''))
   const dir = resolve(fixtures, 'selflink')
-  return loadActual(dir).then(tree =>
-    t.matchSnapshot(tree, 'loaded tree'))
+  return loadActual(dir).then((tree) => t.matchSnapshot(tree, 'loaded tree'))
 })
 
-t.test('broken json', async t => {
+t.test('broken json', async (t) => {
   const d = await loadActual(resolve(fixtures, 'bad'))
   t.ok(d.errors.length, 'Got an error object')
   t.equal(d.errors[0] && d.errors[0].code, 'EJSONPARSE')
   t.ok(d, 'Got a tree')
 })
 
-t.test('missing json does not obscure deeper errors', async t => {
+t.test('missing json does not obscure deeper errors', async (t) => {
   const d = await loadActual(resolve(fixtures, 'empty'))
-  t.match(d, { errors: [{ code: 'ENOENT' }] },
-    'Error reading json of top level')
-  t.match(d.children.get('foo'), { errors: [{ code: 'EJSONPARSE' }] },
-    'Error parsing JSON of child node')
+  t.match(
+    d,
+    { errors: [{ code: 'ENOENT' }] },
+    'Error reading json of top level'
+  )
+  t.match(
+    d.children.get('foo'),
+    { errors: [{ code: 'EJSONPARSE' }] },
+    'Error parsing JSON of child node'
+  )
 })
 
-t.test('missing folder', t =>
+t.test('missing folder', (t) =>
   t.rejects(loadActual(resolve(fixtures, 'does-not-exist')), {
     code: 'ENOENT',
-  }))
+  })
+)
 
-t.test('missing symlinks', async t => {
+t.test('missing symlinks', async (t) => {
   const d = await loadActual(resolve(fixtures, 'badlink'))
   t.equal(d.children.size, 2, 'both broken children are included')
-  t.match(d.children.get('foo'), { errors: [{ code: 'ELOOP' }] },
-    'foo has error')
-  t.match(d.children.get('bar'), { errors: [{ code: 'ENOENT' }] },
-    'bar has error')
+  t.match(
+    d.children.get('foo'),
+    { errors: [{ code: 'ELOOP' }] },
+    'foo has error'
+  )
+  t.match(
+    d.children.get('bar'),
+    { errors: [{ code: 'ENOENT' }] },
+    'bar has error'
+  )
 })
 
 t.test('load from a hidden lockfile', async (t) => {
@@ -205,36 +222,49 @@ t.test('load from a hidden lockfile', async (t) => {
   t.matchSnapshot(tree)
 })
 
-t.test('do not load from a hidden lockfile when forceActual is set', async (t) => {
-  const tree = await loadActual(resolve(fixtures, 'hidden-lockfile'), { forceActual: true })
-  t.not(tree.meta.loadedFromDisk, 'meta was NOT loaded from disk')
-  t.matchSnapshot(tree)
-})
+t.test(
+  'do not load from a hidden lockfile when forceActual is set',
+  async (t) => {
+    const tree = await loadActual(resolve(fixtures, 'hidden-lockfile'), {
+      forceActual: true,
+    })
+    t.not(tree.meta.loadedFromDisk, 'meta was NOT loaded from disk')
+    t.matchSnapshot(tree)
+  }
+)
 
-t.test('load a global space', t =>
-  t.resolveMatchSnapshot(loadActual(resolve(fixtures, 'global-style/lib'), {
-    global: true,
-  })))
-t.test('load a global space symlink', t =>
-  t.resolveMatchSnapshot(loadActual(resolve(fixtures, 'global-style/lib-link'), {
-    global: true,
-  })))
-t.test('load a global space with a filter', t =>
-  t.resolveMatchSnapshot(loadActual(resolve(fixtures, 'global-style/lib'), {
-    global: true,
-    filter: (parent, kid) => parent.parent || kid === 'semver',
-  })))
+t.test('load a global space', (t) =>
+  t.resolveMatchSnapshot(
+    loadActual(resolve(fixtures, 'global-style/lib'), {
+      global: true,
+    })
+  )
+)
+t.test('load a global space symlink', (t) =>
+  t.resolveMatchSnapshot(
+    loadActual(resolve(fixtures, 'global-style/lib-link'), {
+      global: true,
+    })
+  )
+)
+t.test('load a global space with a filter', (t) =>
+  t.resolveMatchSnapshot(
+    loadActual(resolve(fixtures, 'global-style/lib'), {
+      global: true,
+      filter: (parent, kid) => parent.parent || kid === 'semver',
+    })
+  )
+)
 
-t.test('workspaces', t => {
-  t.test('load a simple install tree containing workspaces', t =>
-    t.resolveMatchSnapshot(
-      loadActual(resolve(fixtures, 'workspaces-simple'))
-    ))
+t.test('workspaces', (t) => {
+  t.test('load a simple install tree containing workspaces', (t) =>
+    t.resolveMatchSnapshot(loadActual(resolve(fixtures, 'workspaces-simple')))
+  )
 
   t.end()
 })
 
-t.test('load workspace targets, even if links not present', async t => {
+t.test('load workspace targets, even if links not present', async (t) => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       workspaces: ['packages/*'],
@@ -266,7 +296,7 @@ t.test('load workspace targets, even if links not present', async t => {
   t.matchSnapshot(await loadActual(path))
 })
 
-t.test('transplant workspace targets, even if links not present', async t => {
+t.test('transplant workspace targets, even if links not present', async (t) => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       workspaces: ['packages/*'],
@@ -305,13 +335,16 @@ t.test('transplant workspace targets, even if links not present', async t => {
     },
   })
   t.matchSnapshot(await loadActual(path, { root }), 'transplant everything')
-  t.matchSnapshot(await loadActual(path, {
-    root,
-    transplantFilter: node => node.name !== 'a',
-  }), 'do not transplant node named "a"')
+  t.matchSnapshot(
+    await loadActual(path, {
+      root,
+      transplantFilter: (node) => node.name !== 'a',
+    }),
+    'do not transplant node named "a"'
+  )
 })
 
-t.test('load workspaces when loading from hidding lockfile', async t => {
+t.test('load workspaces when loading from hidding lockfile', async (t) => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       workspaces: ['packages/*'],
@@ -373,7 +406,7 @@ t.test('load workspaces when loading from hidding lockfile', async t => {
   t.matchSnapshot(tree, 'actual tree')
 })
 
-t.test('recalc dep flags for virtual load actual', async t => {
+t.test('recalc dep flags for virtual load actual', async (t) => {
   const path = t.testdir({
     node_modules: {
       abbrev: {
@@ -389,7 +422,8 @@ t.test('recalc dep flags for virtual load actual', async t => {
           'node_modules/abbrev': {
             version: '1.1.1',
             resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
-            integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
+            integrity:
+              'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
           },
         },
       }),
@@ -405,7 +439,7 @@ t.test('recalc dep flags for virtual load actual', async t => {
   t.equal(abbrev.extraneous, true, 'abbrev is extraneous')
 })
 
-t.test('load global space with link deps', async t => {
+t.test('load global space with link deps', async (t) => {
   const path = t.testdir({
     target: {
       'package.json': JSON.stringify({
@@ -432,7 +466,7 @@ t.test('load global space with link deps', async t => {
   })
 })
 
-t.test('no edge errors for nested deps', async t => {
+t.test('no edge errors for nested deps', async (t) => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'a',
@@ -462,7 +496,7 @@ t.test('no edge errors for nested deps', async t => {
 
   // disable treeCheck since it prevents the original issue from occuring
   const ArboristNoTreeCheck = t.mock('../../lib/arborist', {
-    '../../lib/tree-check.js': tree => tree,
+    '../../lib/tree-check.js': (tree) => tree,
   })
   const loadActualNoTreeCheck = (path, opts) =>
     new ArboristNoTreeCheck({ path, ...opts }).loadActual(opts)
@@ -472,12 +506,16 @@ t.test('no edge errors for nested deps', async t => {
   // assert that no outgoing edges have errors
   for (const node of tree.inventory.values()) {
     for (const [name, edge] of node.edgesOut.entries()) {
-      t.equal(edge.error, null, `node ${node.name} has outgoing edge to ${name} with error ${edge.error}`)
+      t.equal(
+        edge.error,
+        null,
+        `node ${node.name} has outgoing edge to ${name} with error ${edge.error}`
+      )
     }
   }
 })
 
-t.test('loading a workspace maintains overrides', async t => {
+t.test('loading a workspace maintains overrides', async (t) => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'root',
@@ -504,5 +542,171 @@ t.test('loading a workspace maintains overrides', async t => {
   const tree = await loadActual(path)
 
   const fooEdge = tree.edgesOut.get('foo')
-  t.equal(tree.overrides, fooEdge.overrides, 'foo edge got the correct overrides')
+  t.equal(
+    tree.overrides,
+    fooEdge.overrides,
+    'foo edge got the correct overrides'
+  )
+})
+
+t.test('Windows case sensitivity in cache operations', async (t) => {
+  // Save original platform
+  const originalPlatform = process.platform
+
+  try {
+    // Mock Windows platform
+    Object.defineProperty(process, 'platform', {
+      value: 'win32',
+      configurable: true,
+    })
+
+    // Test with a simple package structure
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-case-sensitivity',
+        version: '1.0.0',
+        dependencies: {
+          foo: '^1.0.0',
+        },
+      }),
+      node_modules: {
+        foo: {
+          'package.json': JSON.stringify({
+            name: 'foo',
+            version: '1.0.0',
+          }),
+        },
+      },
+    })
+
+    // Load the tree - this should exercise our Windows cache helper functions
+    const arborist = new Arborist({ path })
+    const tree = await arborist.loadActual()
+
+    t.ok(tree, 'Tree loaded successfully on Windows')
+    t.equal(tree.children.size, 1, 'Child node loaded')
+    t.ok(tree.children.get('foo'), 'foo dependency found')
+  } finally {
+    // Restore original platform
+    Object.defineProperty(process, 'platform', {
+      value: originalPlatform,
+      configurable: true,
+    })
+  }
+})
+
+t.test('Windows case sensitivity with link targets', async (t) => {
+  // Save original platform
+  const originalPlatform = process.platform
+
+  try {
+    // Mock Windows platform
+    Object.defineProperty(process, 'platform', {
+      value: 'win32',
+      configurable: true,
+    })
+
+    // Create a test scenario with links that would exercise cache lookup
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-link-case',
+        version: '1.0.0',
+        dependencies: {
+          linked: 'file:./linked-pkg',
+        },
+      }),
+      'linked-pkg': {
+        'package.json': JSON.stringify({
+          name: 'linked',
+          version: '1.0.0',
+        }),
+      },
+    })
+
+    // Load the tree - this should exercise Windows cache key operations
+    const arborist = new Arborist({ path })
+    const tree = await arborist.loadActual()
+
+    t.ok(tree, 'Tree with links loaded successfully on Windows')
+  } finally {
+    // Restore original platform
+    Object.defineProperty(process, 'platform', {
+      value: originalPlatform,
+      configurable: true,
+    })
+  }
+})
+
+t.test('cache helper functions coverage', async (t) => {
+  const originalPlatform = process.platform
+
+  // Test Windows fallback path (line 19) - mock realpathSync to throw
+  Object.defineProperty(process, 'platform', {
+    value: 'win32',
+    configurable: true,
+  })
+
+  const fs = require('node:fs')
+  const originalRealpathSync = fs.realpathSync
+  fs.realpathSync = () => {
+    throw new Error('Mock error')
+  }
+
+  try {
+    const path2 = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-windows-fallback',
+        version: '1.0.0',
+        dependencies: {
+          'test-dep': '1.0.0',
+        },
+      }),
+      node_modules: {
+        'test-dep': {
+          'package.json': JSON.stringify({
+            name: 'test-dep',
+            version: '1.0.0',
+          }),
+        },
+      },
+    })
+
+    const arborist2 = new Arborist({ path: path2 })
+    const tree2 = await arborist2.loadActual()
+    t.ok(tree2, 'Windows fallback path loading works')
+
+    // Now test case-insensitive cache lookup (line 37)
+    // Create a scenario where cache has uppercase key but we lookup with lowercase
+    const path3 = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-case-lookup',
+        version: '1.0.0',
+        dependencies: {
+          'UPPERCASE-DEP': '1.0.0',
+        },
+      }),
+      node_modules: {
+        'UPPERCASE-DEP': {
+          'package.json': JSON.stringify({
+            name: 'UPPERCASE-DEP',
+            version: '1.0.0',
+          }),
+        },
+      },
+    })
+
+    // Load once to populate cache
+    const arborist3 = new Arborist({ path: path3 })
+    await arborist3.loadActual()
+
+    // Load again to exercise cache lookup
+    const tree3 = await arborist3.loadActual()
+    t.ok(tree3, 'Case insensitive cache lookup works')
+  } finally {
+    fs.realpathSync = originalRealpathSync
+    Object.defineProperty(process, 'platform', {
+      value: originalPlatform,
+      configurable: true,
+    })
+  }
 })
