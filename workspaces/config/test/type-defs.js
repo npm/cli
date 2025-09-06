@@ -1,12 +1,8 @@
 const typeDefs = require('../lib/type-defs.js')
 const t = require('tap')
 const {
-  semver: {
-    validate: validateSemver,
-  },
-  path: {
-    validate: validatePath,
-  },
+  semver: { validate: validateSemver },
+  path: { validate: validatePath },
 } = typeDefs
 const { resolve } = require('node:path')
 
@@ -27,8 +23,7 @@ if (process.platform === 'win32') {
   // This should hit the normalization code path and line 31
   t.equal(validatePath(winData, 'testPath', 'c:\\test'), true)
   t.equal(winData.testPath, 'C:\\test')
-  
-  // Test that already uppercase drive letter works normally  
+  // Test that already uppercase drive letter works normally
   const winData2 = {}
   t.equal(validatePath(winData2, 'testPath2', 'C:\\test'), true)
   t.equal(winData2.testPath2, 'C:\\test')

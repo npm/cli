@@ -8,7 +8,7 @@ const relpath = (from, to) => {
     const result = relative(normalizedFrom, normalizedTo)
     return result.replace(/\\/g, '/')
   }
-  
+
   return relative(from, to).replace(/\\/g, '/')
 }
 

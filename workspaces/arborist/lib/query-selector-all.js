@@ -24,7 +24,7 @@ class Results {
   #results = new Map()
   #targetNode
 
-  constructor (opts) {
+  constructor(opts) {
     this.#currentAstSelector = opts.rootAstNode.nodes[0]
     this.#inventory = opts.inventory
     this.#initialItems = opts.initialItems
@@ -40,11 +40,11 @@ class Results {
     this.currentAstNode = opts.rootAstNode
   }
 
-  get currentResults () {
+  get currentResults() {
     return this.#results.get(this.#currentAstSelector)
   }
 
-  set currentResults (value) {
+  set currentResults(value) {
     this.#results.set(this.#currentAstSelector, value)
   }
 
@@ -58,10 +58,10 @@ class Results {
   // combinators are a special case in which we always want to have the
   // complete inventory list in order to use the left-hand side ast node as a
   // filter combined with the element on its right-hand side
-  get initialItems () {
+  get initialItems() {
     const firstParsed =
-      (this.currentAstNode.parent.nodes[0] === this.currentAstNode) &&
-      (this.currentAstNode.parent.parent.type === 'root')
+      this.currentAstNode.parent.nodes[0] === this.currentAstNode &&
+      this.currentAstNode.parent.parent.type === 'root'
 
     if (firstParsed) {
       return this.#initialItems
@@ -77,7 +77,7 @@ class Results {
   // with info of the items parsed / retrieved from the selector right
   // past the combinator, for this reason combinators are stored and
   // only ran as the last part of each selector logic
-  processPendingCombinator (nextResults) {
+  processPendingCombinator(nextResults) {
     if (this.#pendingCombinator) {
       const res = this.#pendingCombinator(this.currentResults, nextResults)
       this.#pendingCombinator = null
@@ -90,15 +90,15 @@ class Results {
   // when collecting results to a root astNode, we traverse the list of child
   // selector nodes and collect all of their resulting arborist nodes into a
   // single/flat Set of items, this ensures we also deduplicate items
-  collect (rootAstNode) {
-    return new Set(rootAstNode.nodes.flatMap(n => this.#results.get(n)))
+  collect(rootAstNode) {
+    return new Set(rootAstNode.nodes.flatMap((n) => this.#results.get(n)))
   }
 
   // selector types map to the '.type' property of the ast nodes via `${astNode.type}Type`
   //
   // attribute selector [name=value], etc
-  attributeType () {
-    const nextResults = this.initialItems.filter(node =>
+  attributeType() {
+    const nextResults = this.initialItems.filter((node) =>
       attributeMatch(this.currentAstNode, node.package)
     )
     this.processPendingCombinator(nextResults)
@@ -106,11 +106,15 @@ class Results {
 
   // dependency type selector (i.e. .prod, .dev, etc)
   // css calls this class, we interpret is as dependency type
-  classType () {
+  classType() {
     const depTypeFn = depTypes[String(this.currentAstNode)]
     if (!depTypeFn) {
       throw Object.assign(
-        new Error(`\`${String(this.currentAstNode)}\` is not a supported dependency type.`),
+        new Error(
+          `\`${String(
+            this.currentAstNode
+          )}\` is not a supported dependency type.`
+        ),
         { code: 'EQUERYNODEPTYPE' }
       )
     }
@@ -119,27 +123,28 @@ class Results {
   }
 
   // combinators (i.e. '>', ' ', '~')
-  combinatorType () {
+  combinatorType() {
     this.#pendingCombinator = combinators[String(this.currentAstNode)]
   }
 
   // name selectors (i.e. #foo)
   // css calls this id, we interpret it as name
-  idType () {
+  idType() {
     const name = this.currentAstNode.value
-    const nextResults = this.initialItems.filter(node =>
-      (name === node.name) || (name === node.package.name)
+    const nextResults = this.initialItems.filter(
+      (node) => name === node.name || name === node.package.name
     )
     this.processPendingCombinator(nextResults)
   }
 
   // pseudo selectors (prefixed with :)
-  async pseudoType () {
+  async pseudoType() {
     const pseudoFn = `${this.currentAstNode.value.slice(1)}Pseudo`
     if (!this[pseudoFn]) {
       throw Object.assign(
-        new Error(`\`${this.currentAstNode.value
-        }\` is not a supported pseudo selector.`),
+        new Error(
+          `\`${this.currentAstNode.value}\` is not a supported pseudo selector.`
+        ),
         { code: 'EQUERYNOPSEUDO' }
       )
     }
@@ -147,7 +152,7 @@ class Results {
     this.processPendingCombinator(nextResults)
   }
 
-  selectorType () {
+  selectorType() {
     this.#currentAstSelector = this.currentAstNode
     // starts a new array in which resulting items
     // can be stored for each given ast selector
@@ -156,16 +161,16 @@ class Results {
     }
   }
 
-  universalType () {
+  universalType() {
     this.processPendingCombinator(this.initialItems)
   }
 
   // pseudo selectors map to the 'value' property of the pseudo selectors in the ast nodes
   // via selectors via `${value.slice(1)}Pseudo`
-  attrPseudo () {
+  attrPseudo() {
     const { lookupProperties, attributeMatcher } = this.currentAstNode
 
-    return this.initialItems.filter(node => {
+    return this.initialItems.filter((node) => {
       let objs = [node.package]
       for (const prop of lookupProperties) {
         // if an isArray symbol is found that means we'll need to iterate
@@ -180,11 +185,11 @@ class Results {
         // otherwise just maps all currently found objs
         // to the next prop from the lookup properties list,
         // filters out any empty key lookup
-        objs = objs.flatMap(obj => obj[prop] || [])
+        objs = objs.flatMap((obj) => obj[prop] || [])
 
         // in case there's no property found in the lookup
         // just filters that item out
-        const noAttr = objs.every(obj => !obj)
+        const noAttr = objs.every((obj) => !obj)
         if (noAttr) {
           return false
         }
@@ -192,19 +197,19 @@ class Results {
 
       // if any of the potential object matches
       // that item should be in the final result
-      return objs.some(obj => attributeMatch(attributeMatcher, obj))
+      return objs.some((obj) => attributeMatch(attributeMatcher, obj))
     })
   }
 
-  emptyPseudo () {
-    return this.initialItems.filter(node => node.edgesOut.size === 0)
+  emptyPseudo() {
+    return this.initialItems.filter((node) => node.edgesOut.size === 0)
   }
 
-  extraneousPseudo () {
-    return this.initialItems.filter(node => node.extraneous)
+  extraneousPseudo() {
+    return this.initialItems.filter((node) => node.extraneous)
   }
 
-  async hasPseudo () {
+  async hasPseudo() {
     const found = []
     for (const item of this.initialItems) {
       // This is the one time initialItems differs from inventory
@@ -223,7 +228,7 @@ class Results {
     return found
   }
 
-  invalidPseudo () {
+  invalidPseudo() {
     const found = []
     for (const node of this.initialItems) {
       for (const edge of node.edgesIn) {
@@ -236,7 +241,7 @@ class Results {
     return found
   }
 
-  async isPseudo () {
+  async isPseudo() {
     const res = await retrieveNodesFromParsedAst({
       flatOptions: this.flatOptions,
       initialItems: this.initialItems,
@@ -248,11 +253,13 @@ class Results {
     return [...res]
   }
 
-  linkPseudo () {
-    return this.initialItems.filter(node => node.isLink || (node.isTop && !node.isRoot))
+  linkPseudo() {
+    return this.initialItems.filter(
+      (node) => node.isLink || (node.isTop && !node.isRoot)
+    )
   }
 
-  missingPseudo () {
+  missingPseudo() {
     return this.#inventory.reduce((res, node) => {
       for (const edge of node.edgesOut.values()) {
         if (edge.missing) {
@@ -269,7 +276,7 @@ class Results {
     }, [])
   }
 
-  async notPseudo () {
+  async notPseudo() {
     const res = await retrieveNodesFromParsedAst({
       flatOptions: this.flatOptions,
       initialItems: this.initialItems,
@@ -279,46 +286,48 @@ class Results {
       vulnCache: this.#vulnCache,
     })
     const internalSelector = new Set(res)
-    return this.initialItems.filter(node =>
-      !internalSelector.has(node))
+    return this.initialItems.filter((node) => !internalSelector.has(node))
   }
 
-  overriddenPseudo () {
-    return this.initialItems.filter(node => node.overridden)
+  overriddenPseudo() {
+    return this.initialItems.filter((node) => node.overridden)
   }
 
-  pathPseudo () {
-    return this.initialItems.filter(node => {
+  pathPseudo() {
+    return this.initialItems.filter((node) => {
       if (!this.currentAstNode.pathValue) {
         return true
       }
-      
+
       let nodePath = node.realpath.replace(/\\+/g, '/')
-      let matchPath = resolve(node.root.realpath, this.currentAstNode.pathValue).replace(/\\+/g, '/')
-      
+      let matchPath = resolve(
+        node.root.realpath,
+        this.currentAstNode.pathValue
+      ).replace(/\\+/g, '/')
+
       // On Windows, make path comparison case-insensitive
       if (process.platform === 'win32') {
         nodePath = nodePath.toLowerCase()
         matchPath = matchPath.toLowerCase()
       }
-      
+
       return minimatch(nodePath, matchPath)
     })
   }
 
-  privatePseudo () {
-    return this.initialItems.filter(node => node.package.private)
+  privatePseudo() {
+    return this.initialItems.filter((node) => node.package.private)
   }
 
-  rootPseudo () {
-    return this.initialItems.filter(node => node === this.#targetNode.root)
+  rootPseudo() {
+    return this.initialItems.filter((node) => node === this.#targetNode.root)
   }
 
-  scopePseudo () {
-    return this.initialItems.filter(node => node === this.#targetNode)
+  scopePseudo() {
+    return this.initialItems.filter((node) => node === this.#targetNode)
   }
 
-  semverPseudo () {
+  semverPseudo() {
     const {
       attributeMatcher,
       lookupProperties,
@@ -336,7 +345,8 @@ class Results {
     if (!semver.valid(semverValue) && !semver.validRange(semverValue)) {
       throw Object.assign(
         new Error(`\`${semverValue}\` is not a valid semver version or range`),
-        { code: 'EQUERYINVALIDSEMVER' })
+        { code: 'EQUERYINVALIDSEMVER' }
+      )
     }
 
     const valueIsVersion = !!semver.valid(semverValue)
@@ -355,8 +365,10 @@ class Results {
       // both valid and validRange return null for undefined, so this will skip both nodes that
       // do not have the attribute defined as well as those where the attribute value is invalid
       // and those where the value from the package.json is not a string
-      if ((!semver.valid(attrValue) && !semver.validRange(attrValue)) ||
-          typeof attrValue !== 'string') {
+      if (
+        (!semver.valid(attrValue) && !semver.validRange(attrValue)) ||
+        typeof attrValue !== 'string'
+      ) {
         return false
       }
 
@@ -399,8 +411,10 @@ class Results {
         return semver[actualFunc](attrValue, semverValue)
       } else {
         // user provided a function we don't know about, throw an error
-        throw Object.assign(new Error(`\`semver.${actualFunc}\` is not a supported operator.`),
-          { code: 'EQUERYINVALIDOPERATOR' })
+        throw Object.assign(
+          new Error(`\`semver.${actualFunc}\` is not a supported operator.`),
+          { code: 'EQUERYINVALIDOPERATOR' }
+        )
       }
     }
 
@@ -419,38 +433,40 @@ class Results {
           continue
         }
 
-        objs = objs.flatMap(obj => obj[prop] || [])
-        const noAttr = objs.every(obj => !obj)
+        objs = objs.flatMap((obj) => obj[prop] || [])
+        const noAttr = objs.every((obj) => !obj)
         if (noAttr) {
           return false
         }
 
-        return objs.some(obj => nodeMatches(node, obj))
+        return objs.some((obj) => nodeMatches(node, obj))
       }
     })
   }
 
-  typePseudo () {
+  typePseudo() {
     if (!this.currentAstNode.typeValue) {
       return this.initialItems
     }
-    return this.initialItems
-      .flatMap(node => {
-        const found = []
-        for (const edge of node.edgesIn) {
-          if (npa(`${edge.name}@${edge.spec}`).type === this.currentAstNode.typeValue) {
-            found.push(edge.to)
-          }
+    return this.initialItems.flatMap((node) => {
+      const found = []
+      for (const edge of node.edgesIn) {
+        if (
+          npa(`${edge.name}@${edge.spec}`).type ===
+          this.currentAstNode.typeValue
+        ) {
+          found.push(edge.to)
         }
-        return found
-      })
+      }
+      return found
+    })
   }
 
-  dedupedPseudo () {
-    return this.initialItems.filter(node => node.target.edgesIn.size > 1)
+  dedupedPseudo() {
+    return this.initialItems.filter((node) => node.target.edgesIn.size > 1)
   }
 
-  async vulnPseudo () {
+  async vulnPseudo() {
     if (!this.initialItems.length) {
       return this.initialItems
     }
@@ -479,8 +495,8 @@ class Results {
     }
     const advisories = this.#vulnCache
     const { vulns } = this.currentAstNode
-    return this.initialItems.filter(item => {
-      const vulnerable = advisories[item.name]?.filter(advisory => {
+    return this.initialItems.filter((item) => {
+      const vulnerable = advisories[item.name]?.filter((advisory) => {
         // This could be for another version of this package elsewhere in the tree
         if (!semver.intersects(advisory.vulnerable_versions, item.version)) {
           return false
@@ -502,7 +518,9 @@ class Results {
               if (!advisory.cwe.length) {
                 continue
               }
-            } else if (!vuln.cwe.every(cwe => advisory.cwe.includes(`CWE-${cwe}`))) {
+            } else if (
+              !vuln.cwe.every((cwe) => advisory.cwe.includes(`CWE-${cwe}`))
+            ) {
               continue
             }
           }
@@ -519,135 +537,140 @@ class Results {
     })
   }
 
-  async outdatedPseudo () {
+  async outdatedPseudo() {
     const { outdatedKind = 'any' } = this.currentAstNode
 
     // filter the initialItems
     // NOTE: this uses a Promise.all around a map without in-line concurrency handling
     // since the only async action taken is retrieving the packument, which is limited
     // based on the max-sockets config in make-fetch-happen
-    const initialResults = await Promise.all(this.initialItems.map(async (node) => {
-      // the root can't be outdated, skip it
-      if (node.isProjectRoot) {
-        return false
-      }
+    const initialResults = await Promise.all(
+      this.initialItems.map(async (node) => {
+        // the root can't be outdated, skip it
+        if (node.isProjectRoot) {
+          return false
+        }
 
-      // private packages can't be published, skip them
-      if (node.package.private) {
-        return false
-      }
+        // private packages can't be published, skip them
+        if (node.package.private) {
+          return false
+        }
 
-      // we cache the promise representing the full versions list, this helps reduce the
-      // number of requests we send by keeping population of the cache in a single tick
-      // making it less likely that multiple requests for the same package will be inflight
-      if (!this.#outdatedCache.has(node.name)) {
-        this.#outdatedCache.set(node.name, getPackageVersions(node.name, this.flatOptions))
-      }
-      const availableVersions = await this.#outdatedCache.get(node.name)
+        // we cache the promise representing the full versions list, this helps reduce the
+        // number of requests we send by keeping population of the cache in a single tick
+        // making it less likely that multiple requests for the same package will be inflight
+        if (!this.#outdatedCache.has(node.name)) {
+          this.#outdatedCache.set(
+            node.name,
+            getPackageVersions(node.name, this.flatOptions)
+          )
+        }
+        const availableVersions = await this.#outdatedCache.get(node.name)
 
-      // we attach _all_ versions to the queryContext to allow consumers to do their own
-      // filtering and comparisons
-      node.queryContext.versions = availableVersions
+        // we attach _all_ versions to the queryContext to allow consumers to do their own
+        // filtering and comparisons
+        node.queryContext.versions = availableVersions
 
-      // next we further reduce the set to versions that are greater than the current one
-      const greaterVersions = availableVersions.filter((available) => {
-        return semver.gt(available, node.version)
-      })
-
-      // no newer versions than the current one, drop this node from the result set
-      if (!greaterVersions.length) {
-        return false
-      }
-
-      // if we got here, we know that newer versions exist, if the kind is 'any' we're done
-      if (outdatedKind === 'any') {
-        return node
-      }
-
-      // look for newer versions that differ from current by a specific part of the semver version
-      if (['major', 'minor', 'patch'].includes(outdatedKind)) {
-        // filter the versions greater than our current one based on semver.diff
-        const filteredVersions = greaterVersions.filter((version) => {
-          return semver.diff(node.version, version) === outdatedKind
+        // next we further reduce the set to versions that are greater than the current one
+        const greaterVersions = availableVersions.filter((available) => {
+          return semver.gt(available, node.version)
         })
 
-        // no available versions are of the correct diff type
-        if (!filteredVersions.length) {
+        // no newer versions than the current one, drop this node from the result set
+        if (!greaterVersions.length) {
           return false
         }
 
-        return node
-      }
+        // if we got here, we know that newer versions exist, if the kind is 'any' we're done
+        if (outdatedKind === 'any') {
+          return node
+        }
 
-      // look for newer versions that satisfy at least one edgeIn to this node
-      if (outdatedKind === 'in-range') {
-        const inRangeContext = []
-        for (const edge of node.edgesIn) {
-          const inRangeVersions = greaterVersions.filter((version) => {
-            return semver.satisfies(version, edge.spec)
+        // look for newer versions that differ from current by a specific part of the semver version
+        if (['major', 'minor', 'patch'].includes(outdatedKind)) {
+          // filter the versions greater than our current one based on semver.diff
+          const filteredVersions = greaterVersions.filter((version) => {
+            return semver.diff(node.version, version) === outdatedKind
           })
 
-          // this edge has no in-range candidates, just move on
-          if (!inRangeVersions.length) {
-            continue
+          // no available versions are of the correct diff type
+          if (!filteredVersions.length) {
+            return false
           }
 
-          inRangeContext.push({
-            from: edge.from.location,
-            versions: inRangeVersions,
-          })
+          return node
         }
 
-        // if we didn't find at least one match, drop this node
-        if (!inRangeContext.length) {
-          return false
-        }
+        // look for newer versions that satisfy at least one edgeIn to this node
+        if (outdatedKind === 'in-range') {
+          const inRangeContext = []
+          for (const edge of node.edgesIn) {
+            const inRangeVersions = greaterVersions.filter((version) => {
+              return semver.satisfies(version, edge.spec)
+            })
 
-        // now add to the context each version that is in-range for each edgeIn
-        node.queryContext.outdated = {
-          ...node.queryContext.outdated,
-          inRange: inRangeContext,
-        }
+            // this edge has no in-range candidates, just move on
+            if (!inRangeVersions.length) {
+              continue
+            }
 
-        return node
-      }
-
-      // look for newer versions that _do not_ satisfy at least one edgeIn
-      if (outdatedKind === 'out-of-range') {
-        const outOfRangeContext = []
-        for (const edge of node.edgesIn) {
-          const outOfRangeVersions = greaterVersions.filter((version) => {
-            return !semver.satisfies(version, edge.spec)
-          })
-
-          // this edge has no out-of-range candidates, skip it
-          if (!outOfRangeVersions.length) {
-            continue
+            inRangeContext.push({
+              from: edge.from.location,
+              versions: inRangeVersions,
+            })
           }
 
-          outOfRangeContext.push({
-            from: edge.from.location,
-            versions: outOfRangeVersions,
-          })
+          // if we didn't find at least one match, drop this node
+          if (!inRangeContext.length) {
+            return false
+          }
+
+          // now add to the context each version that is in-range for each edgeIn
+          node.queryContext.outdated = {
+            ...node.queryContext.outdated,
+            inRange: inRangeContext,
+          }
+
+          return node
         }
 
-        // if we didn't add at least one thing to the context, this node is not a match
-        if (!outOfRangeContext.length) {
-          return false
+        // look for newer versions that _do not_ satisfy at least one edgeIn
+        if (outdatedKind === 'out-of-range') {
+          const outOfRangeContext = []
+          for (const edge of node.edgesIn) {
+            const outOfRangeVersions = greaterVersions.filter((version) => {
+              return !semver.satisfies(version, edge.spec)
+            })
+
+            // this edge has no out-of-range candidates, skip it
+            if (!outOfRangeVersions.length) {
+              continue
+            }
+
+            outOfRangeContext.push({
+              from: edge.from.location,
+              versions: outOfRangeVersions,
+            })
+          }
+
+          // if we didn't add at least one thing to the context, this node is not a match
+          if (!outOfRangeContext.length) {
+            return false
+          }
+
+          // attach the out-of-range context to the node
+          node.queryContext.outdated = {
+            ...node.queryContext.outdated,
+            outOfRange: outOfRangeContext,
+          }
+
+          return node
         }
 
-        // attach the out-of-range context to the node
-        node.queryContext.outdated = {
-          ...node.queryContext.outdated,
-          outOfRange: outOfRangeContext,
-        }
-
-        return node
-      }
-
-      // any other outdatedKind is unknown and will never match
-      return false
-    }))
+        // any other outdatedKind is unknown and will never match
+        return false
+      })
+    )
 
     // return an array with the holes for non-matching nodes removed
     return initialResults.filter(Boolean)
@@ -657,27 +680,27 @@ class Results {
 // operators for attribute selectors
 const attributeOperators = {
   // attribute value is equivalent
-  '=' ({ attr, value }) {
+  '='({ attr, value }) {
     return attr === value
   },
   // attribute value contains word
-  '~=' ({ attr, value }) {
+  '~='({ attr, value }) {
     return (attr.match(/\w+/g) || []).includes(value)
   },
   // attribute value contains string
-  '*=' ({ attr, value }) {
+  '*='({ attr, value }) {
     return attr.includes(value)
   },
   // attribute value is equal or starts with
-  '|=' ({ attr, value }) {
+  '|='({ attr, value }) {
     return attr.startsWith(`${value}-`)
   },
   // attribute value starts with
-  '^=' ({ attr, value }) {
+  '^='({ attr, value }) {
     return attr.startsWith(value)
   },
   // attribute value ends with
-  '$=' ({ attr, value }) {
+  '$='({ attr, value }) {
     return attr.endsWith(value)
   },
 }
@@ -733,7 +756,11 @@ const edgeIsType = (node, type, seen = new Set()) => {
       continue
     }
     seen.add(edgeIn)
-    if (edgeIn.type === type || edgeIn.from[type] || edgeIsType(edgeIn.from, type, seen)) {
+    if (
+      edgeIn.type === type ||
+      edgeIn.from[type] ||
+      edgeIsType(edgeIn.from, type, seen)
+    ) {
       return true
     }
   }
@@ -752,7 +779,7 @@ const filterByType = (nodes, type) => {
 
 const depTypes = {
   // dependency
-  '.prod' (prevResults) {
+  '.prod'(prevResults) {
     const found = []
     for (const node of prevResults) {
       if (!node.dev) {
@@ -762,24 +789,24 @@ const depTypes = {
     return found
   },
   // devDependency
-  '.dev' (prevResults) {
+  '.dev'(prevResults) {
     return filterByType(prevResults, 'dev')
   },
   // optionalDependency
-  '.optional' (prevResults) {
+  '.optional'(prevResults) {
     return filterByType(prevResults, 'optional')
   },
   // peerDependency
-  '.peer' (prevResults) {
+  '.peer'(prevResults) {
     return filterByType(prevResults, 'peer')
   },
   // workspace
-  '.workspace' (prevResults) {
-    return prevResults.filter(node => node.isWorkspace)
+  '.workspace'(prevResults) {
+    return prevResults.filter((node) => node.isWorkspace)
   },
   // bundledDependency
-  '.bundled' (prevResults) {
-    return prevResults.filter(node => node.inBundle)
+  '.bundled'(prevResults) {
+    return prevResults.filter((node) => node.inBundle)
   },
 }
 
@@ -793,7 +820,7 @@ const hasParent = (node, compareNodes) => {
     }
 
     // follows logical parent for link anscestors
-    if (node.isTop && (node.resolveParent === compareNode)) {
+    if (node.isTop && node.resolveParent === compareNode) {
       return true
     }
     // follows edges-in to check if they match a possible parent
@@ -840,15 +867,15 @@ const hasAscendant = (node, compareNodes, seen = new Set()) => {
 
 const combinators = {
   // direct descendant
-  '>' (prevResults, nextResults) {
-    return nextResults.filter(node => hasParent(node, prevResults))
+  '>'(prevResults, nextResults) {
+    return nextResults.filter((node) => hasParent(node, prevResults))
   },
   // any descendant
-  ' ' (prevResults, nextResults) {
-    return nextResults.filter(node => hasAscendant(node, prevResults))
+  ' '(prevResults, nextResults) {
+    return nextResults.filter((node) => hasAscendant(node, prevResults))
   },
   // sibling
-  '~' (prevResults, nextResults) {
+  '~'(prevResults, nextResults) {
     // Return any node in nextResults that is a sibling of (aka shares a
     // parent with) a node in prevResults
     const parentNodes = new Set() // Parents of everything in prevResults
@@ -858,8 +885,8 @@ const combinators = {
         parentNodes.add(edge.from)
       }
     }
-    return nextResults.filter(node =>
-      !prevResults.includes(node) && hasParent(node, [...parentNodes])
+    return nextResults.filter(
+      (node) => !prevResults.includes(node) && hasParent(node, [...parentNodes])
     )
   },
 }
@@ -875,7 +902,10 @@ const getPackageVersions = async (name, opts) => {
     })
   } catch (err) {
     // if the fetch fails, log a warning and pretend there are no versions
-    log.warn('query', `could not retrieve packument for ${name}: ${err.message}`)
+    log.warn(
+      'query',
+      `could not retrieve packument for ${name}: ${err.message}`
+    )
     return []
   }
 
@@ -921,7 +951,9 @@ const retrieveNodesFromParsedAst = async (opts) => {
     const updateFn = `${results.currentAstNode.type}Type`
     if (typeof results[updateFn] !== 'function') {
       throw Object.assign(
-        new Error(`\`${results.currentAstNode.type}\` is not a supported selector.`),
+        new Error(
+          `\`${results.currentAstNode.type}\` is not a supported selector.`
+        ),
         { code: 'EQUERYNOSELECTOR' }
       )
     }
