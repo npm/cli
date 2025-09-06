@@ -19,23 +19,23 @@ t.equal(
   relpath('C:\\project\\path', 'C:\\project\\path\\workspace'),
   'workspace',
   'uppercase C: drive'
-),
-  t.equal(
-    relpath('c:\\project\\path', 'c:\\project\\path\\workspace'),
-    'workspace',
-    'lowercase c: drive'
-  ),
-  t.equal(
-    relpath('C:\\project\\path', 'c:\\project\\path\\workspace'),
-    'workspace',
-    'mixed case drives'
-  ),
-  t.equal(
-    relpath('c:\\project\\path', 'C:\\project\\path\\workspace'),
-    'workspace',
-    'mixed case drives reverse'
-  ),
-  // Restore original platform
-  Object.defineProperty(process, 'platform', {
-    value: originalPlatform,
-  })
+)
+t.equal(
+  relpath('c:\\project\\path', 'c:\\project\\path\\workspace'),
+  'workspace',
+  'lowercase c: drive'
+)
+t.equal(
+  relpath('C:\\project\\path', 'c:\\project\\path\\workspace'),
+  'workspace',
+  'mixed case drives'
+)
+t.equal(
+  relpath('c:\\project\\path', 'C:\\project\\path\\workspace'),
+  'workspace',
+  'mixed case drives reverse'
+)
+// Restore original platform
+Object.defineProperty(process, 'platform', {
+  value: originalPlatform,
+})

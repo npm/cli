@@ -24,7 +24,7 @@ class Results {
   #results = new Map()
   #targetNode
 
-  constructor(opts) {
+  constructor (opts) {
     this.#currentAstSelector = opts.rootAstNode.nodes[0]
     this.#inventory = opts.inventory
     this.#initialItems = opts.initialItems
@@ -40,11 +40,11 @@ class Results {
     this.currentAstNode = opts.rootAstNode
   }
 
-  get currentResults() {
+  get currentResults () {
     return this.#results.get(this.#currentAstSelector)
   }
 
-  set currentResults(value) {
+  set currentResults (value) {
     this.#results.set(this.#currentAstSelector, value)
   }
 
@@ -58,7 +58,7 @@ class Results {
   // combinators are a special case in which we always want to have the
   // complete inventory list in order to use the left-hand side ast node as a
   // filter combined with the element on its right-hand side
-  get initialItems() {
+  get initialItems () {
     const firstParsed =
       this.currentAstNode.parent.nodes[0] === this.currentAstNode &&
       this.currentAstNode.parent.parent.type === 'root'
@@ -77,7 +77,7 @@ class Results {
   // with info of the items parsed / retrieved from the selector right
   // past the combinator, for this reason combinators are stored and
   // only ran as the last part of each selector logic
-  processPendingCombinator(nextResults) {
+  processPendingCombinator (nextResults) {
     if (this.#pendingCombinator) {
       const res = this.#pendingCombinator(this.currentResults, nextResults)
       this.#pendingCombinator = null
@@ -90,14 +90,14 @@ class Results {
   // when collecting results to a root astNode, we traverse the list of child
   // selector nodes and collect all of their resulting arborist nodes into a
   // single/flat Set of items, this ensures we also deduplicate items
-  collect(rootAstNode) {
+  collect (rootAstNode) {
     return new Set(rootAstNode.nodes.flatMap((n) => this.#results.get(n)))
   }
 
   // selector types map to the '.type' property of the ast nodes via `${astNode.type}Type`
   //
   // attribute selector [name=value], etc
-  attributeType() {
+  attributeType () {
     const nextResults = this.initialItems.filter((node) =>
       attributeMatch(this.currentAstNode, node.package)
     )
@@ -106,7 +106,7 @@ class Results {
 
   // dependency type selector (i.e. .prod, .dev, etc)
   // css calls this class, we interpret is as dependency type
-  classType() {
+  classType () {
     const depTypeFn = depTypes[String(this.currentAstNode)]
     if (!depTypeFn) {
       throw Object.assign(
@@ -123,13 +123,13 @@ class Results {
   }
 
   // combinators (i.e. '>', ' ', '~')
-  combinatorType() {
+  combinatorType () {
     this.#pendingCombinator = combinators[String(this.currentAstNode)]
   }
 
   // name selectors (i.e. #foo)
   // css calls this id, we interpret it as name
-  idType() {
+  idType () {
     const name = this.currentAstNode.value
     const nextResults = this.initialItems.filter(
       (node) => name === node.name || name === node.package.name
@@ -138,7 +138,7 @@ class Results {
   }
 
   // pseudo selectors (prefixed with :)
-  async pseudoType() {
+  async pseudoType () {
     const pseudoFn = `${this.currentAstNode.value.slice(1)}Pseudo`
     if (!this[pseudoFn]) {
       throw Object.assign(
@@ -152,7 +152,7 @@ class Results {
     this.processPendingCombinator(nextResults)
   }
 
-  selectorType() {
+  selectorType () {
     this.#currentAstSelector = this.currentAstNode
     // starts a new array in which resulting items
     // can be stored for each given ast selector
@@ -161,13 +161,13 @@ class Results {
     }
   }
 
-  universalType() {
+  universalType () {
     this.processPendingCombinator(this.initialItems)
   }
 
   // pseudo selectors map to the 'value' property of the pseudo selectors in the ast nodes
   // via selectors via `${value.slice(1)}Pseudo`
-  attrPseudo() {
+  attrPseudo () {
     const { lookupProperties, attributeMatcher } = this.currentAstNode
 
     return this.initialItems.filter((node) => {
@@ -201,15 +201,15 @@ class Results {
     })
   }
 
-  emptyPseudo() {
+  emptyPseudo () {
     return this.initialItems.filter((node) => node.edgesOut.size === 0)
   }
 
-  extraneousPseudo() {
+  extraneousPseudo () {
     return this.initialItems.filter((node) => node.extraneous)
   }
 
-  async hasPseudo() {
+  async hasPseudo () {
     const found = []
     for (const item of this.initialItems) {
       // This is the one time initialItems differs from inventory
@@ -228,7 +228,7 @@ class Results {
     return found
   }
 
-  invalidPseudo() {
+  invalidPseudo () {
     const found = []
     for (const node of this.initialItems) {
       for (const edge of node.edgesIn) {
@@ -241,7 +241,7 @@ class Results {
     return found
   }
 
-  async isPseudo() {
+  async isPseudo () {
     const res = await retrieveNodesFromParsedAst({
       flatOptions: this.flatOptions,
       initialItems: this.initialItems,
@@ -253,13 +253,13 @@ class Results {
     return [...res]
   }
 
-  linkPseudo() {
+  linkPseudo () {
     return this.initialItems.filter(
       (node) => node.isLink || (node.isTop && !node.isRoot)
     )
   }
 
-  missingPseudo() {
+  missingPseudo () {
     return this.#inventory.reduce((res, node) => {
       for (const edge of node.edgesOut.values()) {
         if (edge.missing) {
@@ -276,7 +276,7 @@ class Results {
     }, [])
   }
 
-  async notPseudo() {
+  async notPseudo () {
     const res = await retrieveNodesFromParsedAst({
       flatOptions: this.flatOptions,
       initialItems: this.initialItems,
@@ -289,11 +289,11 @@ class Results {
     return this.initialItems.filter((node) => !internalSelector.has(node))
   }
 
-  overriddenPseudo() {
+  overriddenPseudo () {
     return this.initialItems.filter((node) => node.overridden)
   }
 
-  pathPseudo() {
+  pathPseudo () {
     return this.initialItems.filter((node) => {
       if (!this.currentAstNode.pathValue) {
         return true
@@ -315,19 +315,19 @@ class Results {
     })
   }
 
-  privatePseudo() {
+  privatePseudo () {
     return this.initialItems.filter((node) => node.package.private)
   }
 
-  rootPseudo() {
+  rootPseudo () {
     return this.initialItems.filter((node) => node === this.#targetNode.root)
   }
 
-  scopePseudo() {
+  scopePseudo () {
     return this.initialItems.filter((node) => node === this.#targetNode)
   }
 
-  semverPseudo() {
+  semverPseudo () {
     const {
       attributeMatcher,
       lookupProperties,
@@ -444,7 +444,7 @@ class Results {
     })
   }
 
-  typePseudo() {
+  typePseudo () {
     if (!this.currentAstNode.typeValue) {
       return this.initialItems
     }
@@ -462,11 +462,11 @@ class Results {
     })
   }
 
-  dedupedPseudo() {
+  dedupedPseudo () {
     return this.initialItems.filter((node) => node.target.edgesIn.size > 1)
   }
 
-  async vulnPseudo() {
+  async vulnPseudo () {
     if (!this.initialItems.length) {
       return this.initialItems
     }
@@ -537,7 +537,7 @@ class Results {
     })
   }
 
-  async outdatedPseudo() {
+  async outdatedPseudo () {
     const { outdatedKind = 'any' } = this.currentAstNode
 
     // filter the initialItems
@@ -680,27 +680,27 @@ class Results {
 // operators for attribute selectors
 const attributeOperators = {
   // attribute value is equivalent
-  '='({ attr, value }) {
+  '=' ({ attr, value }) {
     return attr === value
   },
   // attribute value contains word
-  '~='({ attr, value }) {
+  '~=' ({ attr, value }) {
     return (attr.match(/\w+/g) || []).includes(value)
   },
   // attribute value contains string
-  '*='({ attr, value }) {
+  '*=' ({ attr, value }) {
     return attr.includes(value)
   },
   // attribute value is equal or starts with
-  '|='({ attr, value }) {
+  '|=' ({ attr, value }) {
     return attr.startsWith(`${value}-`)
   },
   // attribute value starts with
-  '^='({ attr, value }) {
+  '^=' ({ attr, value }) {
     return attr.startsWith(value)
   },
   // attribute value ends with
-  '$='({ attr, value }) {
+  '$=' ({ attr, value }) {
     return attr.endsWith(value)
   },
 }
@@ -779,7 +779,7 @@ const filterByType = (nodes, type) => {
 
 const depTypes = {
   // dependency
-  '.prod'(prevResults) {
+  '.prod' (prevResults) {
     const found = []
     for (const node of prevResults) {
       if (!node.dev) {
@@ -789,23 +789,23 @@ const depTypes = {
     return found
   },
   // devDependency
-  '.dev'(prevResults) {
+  '.dev' (prevResults) {
     return filterByType(prevResults, 'dev')
   },
   // optionalDependency
-  '.optional'(prevResults) {
+  '.optional' (prevResults) {
     return filterByType(prevResults, 'optional')
   },
   // peerDependency
-  '.peer'(prevResults) {
+  '.peer' (prevResults) {
     return filterByType(prevResults, 'peer')
   },
   // workspace
-  '.workspace'(prevResults) {
+  '.workspace' (prevResults) {
     return prevResults.filter((node) => node.isWorkspace)
   },
   // bundledDependency
-  '.bundled'(prevResults) {
+  '.bundled' (prevResults) {
     return prevResults.filter((node) => node.inBundle)
   },
 }
@@ -867,15 +867,15 @@ const hasAscendant = (node, compareNodes, seen = new Set()) => {
 
 const combinators = {
   // direct descendant
-  '>'(prevResults, nextResults) {
+  '>' (prevResults, nextResults) {
     return nextResults.filter((node) => hasParent(node, prevResults))
   },
   // any descendant
-  ' '(prevResults, nextResults) {
+  ' ' (prevResults, nextResults) {
     return nextResults.filter((node) => hasAscendant(node, prevResults))
   },
   // sibling
-  '~'(prevResults, nextResults) {
+  '~' (prevResults, nextResults) {
     // Return any node in nextResults that is a sibling of (aka shares a
     // parent with) a node in prevResults
     const parentNodes = new Set() // Parents of everything in prevResults

@@ -86,7 +86,7 @@ module.exports = (cls) =>
     #topNodes = new Set()
     #transplantFilter
 
-    constructor(options) {
+    constructor (options) {
       super(options)
 
       // the tree of nodes on disk
@@ -101,7 +101,7 @@ module.exports = (cls) =>
 
     // public method
     // TODO remove options param in next semver major
-    async loadActual(options = {}) {
+    async loadActual (options = {}) {
       // In the past this.actualTree was set as a promise that eventually
       // resolved, and overwrite this.actualTree with the resolved value.  This
       // was a problem because virtually no other code expects this.actualTree to
@@ -139,7 +139,7 @@ module.exports = (cls) =>
     // if no shrinkwrap present, but reify() can still call buildIdealTree and
     // loadActual in parallel safely.
 
-    async #loadActual(options) {
+    async #loadActual (options) {
       // mostly realpath to throw if the root doesn't exist
       const {
         global,
@@ -274,7 +274,7 @@ module.exports = (cls) =>
       return this.#actualTree
     }
 
-    #transplant(root) {
+    #transplant (root) {
       if (!root || root === this.#actualTree) {
         return
       }
@@ -294,7 +294,7 @@ module.exports = (cls) =>
       this.#actualTree = root
     }
 
-    async #loadFSNode({
+    async #loadFSNode ({
       path,
       parent,
       real,
@@ -364,7 +364,7 @@ module.exports = (cls) =>
       return node
     }
 
-    #newNode(options) {
+    #newNode (options) {
       // check it for an fsParent if it's a tree top.  there's a decent chance
       // it'll get parented later, making the fsParent scan a no-op, but better
       // safe than sorry, since it's cheap.
@@ -375,7 +375,7 @@ module.exports = (cls) =>
       return new Node(options)
     }
 
-    async #newLink(options) {
+    async #newLink (options) {
       const { realpath } = options
       this.#topNodes.add(realpath)
       // Look up target using case-insensitive search if needed
@@ -395,7 +395,7 @@ module.exports = (cls) =>
       return link
     }
 
-    async #loadFSTree(node) {
+    async #loadFSTree (node) {
       const did = this.#actualTreeLoaded
       if (!node.isLink && !did.has(node.target.realpath)) {
         did.add(node.target.realpath)
@@ -410,7 +410,7 @@ module.exports = (cls) =>
 
     // create child nodes for all the entries in node_modules
     // and attach them to the node as a parent
-    async #loadFSChildren(node) {
+    async #loadFSChildren (node) {
       const nm = resolve(node.realpath, 'node_modules')
       try {
         const kids = await readdirScoped(nm).then((paths) =>
@@ -433,7 +433,7 @@ module.exports = (cls) =>
       }
     }
 
-    async #findMissingEdges() {
+    async #findMissingEdges () {
       // try to resolve any missing edges by walking up the directory tree,
       // checking for the package in each node_modules folder.  stop at the
       // root directory.
