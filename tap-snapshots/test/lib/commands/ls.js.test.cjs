@@ -526,7 +526,7 @@ workspaces-tree@1.0.0 {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP ls missing package.json > should output tree missing name/version of top-level package 1`] = `
 {CWD}/prefix
 +-- chai@1.0.0 extraneous
-+-- dog@1.0.0 extraneous
++-- dog@1.0.0 deduped extraneous
 \`-- foo@1.0.0 extraneous
   \`-- dog@1.0.0 deduped extraneous
 `
@@ -672,7 +672,11 @@ test-npm-ls@1.0.0 {CWD}/prefix
 |   \`-- cat@1.0.0 deduped invalid: "^2.0.0" from the root project
 +-- chai@1.0.0 extraneous
 | \`-- dog@1.0.0 deduped invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat, "2.x" from node_modules/chai
-|   \`-- cat@1.0.0 deduped invalid: "^2.0.0" from the root project
+|   \`-- cat@1.0.0 invalid: "^2.0.0" from the root project
+|     \`-- dog@1.0.0 invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat
+|       \`-- cat@1.0.0 deduped invalid: "^2.0.0" from the root project
 \`-- dog@1.0.0 deduped invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat, "2.x" from node_modules/chai
-  \`-- cat@1.0.0 deduped invalid: "^2.0.0" from the root project
+  \`-- cat@1.0.0 invalid: "^2.0.0" from the root project
+    \`-- dog@1.0.0 invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat
+      \`-- cat@1.0.0 deduped invalid: "^2.0.0" from the root project
 `
