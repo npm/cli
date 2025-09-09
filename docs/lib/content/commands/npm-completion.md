@@ -10,10 +10,15 @@ description: Tab Completion for npm
 
 ### Description
 
-Enables tab-completion in all npm commands.
+Generates a shell script to enable tab-completion for all npm commands.
 
-The synopsis above
-loads the completions into your current shell.  Adding it to
+To load the completions into your current shell:
+
+```bash
+source <(npm completion)
+```
+
+Adding its output to
 your ~/.bashrc or ~/.zshrc will make the completions available
 everywhere:
 
