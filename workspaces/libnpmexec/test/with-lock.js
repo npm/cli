@@ -1,12 +1,53 @@
-const fs = require('fs')
-const path = require('path')
-const os = require('os')
-const setTimeout = require('timers/promises').setTimeout
-const t = require('tap')
-
-const withLock = require('../lib/with-lock.js')
+const fs = require('node:fs')
+const path = require('node:path')
+const os = require('node:os')
+const setTimeout = require('node:timers/promises').setTimeout
 
 const getTempDir = () => fs.realpathSync(os.tmpdir())
+
+const t = require('tap')
+
+let mockMkdir
+let mockRmdir
+let mockStat
+let mockUtimes
+let mockRmdirSync
+let onExitHandler
+const withLock = t.mock('../lib/with-lock.js', {
+  // make various fs things mockable, but default to the real implementation
+  'node:fs/promises': {
+    mkdir: async (...args) => {
+      return await (mockMkdir?.(...args) ?? fs.promises.mkdir(...args))
+    },
+    rmdir: async (...args) => {
+      return await (mockRmdir?.(...args) ?? fs.promises.rmdir(...args))
+    },
+    stat: async (...args) => {
+      return await (mockStat?.(...args) ?? fs.promises.stat(...args))
+    },
+    utimes: async (...args) => {
+      return await (mockUtimes?.(...args) ?? fs.promises.utimes(...args))
+    },
+  },
+  'node:fs': {
+    rmdirSync: (...args) => {
+      return (mockRmdirSync?.(...args) ?? fs.rmdirSync(...args))
+    },
+  },
+  'signal-exit': {
+    onExit: (handler) => {
+      onExitHandler = handler
+    },
+  },
+})
+
+t.beforeEach(() => {
+  mockMkdir = undefined
+  mockRmdir = undefined
+  mockStat = undefined
+  mockUtimes = undefined
+  mockRmdirSync = undefined
+})
 
 t.test('concurrent locking', async (t) => {
   const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
@@ -16,7 +57,7 @@ t.test('concurrent locking', async (t) => {
     await setTimeout(100)
     events.push('lock1 released')
   })
-  await setTimeout(50)
+  await Promise.resolve() // ensure lock1 is acquired before lock2
   const lockPromise2 = withLock(dir, async () => {
     events.push('lock2 acquired')
     await setTimeout(100)
@@ -47,7 +88,7 @@ t.test('unrelated locks', async (t) => {
 t.test('resolved value', async (t) => {
   const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
   const result = await withLock(dir, async () => 'test value')
-  t.equal(result, 'test value', 'should return the resolved value from the callback')
+  t.equal(result, 'test value', 'should resolve to the same value as the callback')
 })
 
 t.test('rejection', async (t) => {
@@ -56,4 +97,143 @@ t.test('rejection', async (t) => {
     throw new Error('test error')
   }), new Error('test error'))
   t.equal(await withLock(dir, async () => 'test'), 'test', 'should allow subsequent locks after rejection')
+})
+
+t.test('stale lock takeover', async (t) => {
+  let mkdirCalls = 0
+  mockMkdir = async () => {
+    if (++mkdirCalls === 1) {
+      throw Object.assign(new Error(), { code: 'EEXIST' })
+    }
+  }
+  let statCalls = 0
+  const mtimeMs = Date.now()
+  mockStat = async () => {
+    if (++statCalls === 1) {
+      return { mtimeMs: mtimeMs - 10_000 }
+    } else {
+      return { mtimeMs, ino: 1 }
+    }
+  }
+  mockUtimes = async () => {}
+  mockRmdir = async () => {}
+
+  const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
+  const lockPromise = withLock(dir, async () => {
+    await setTimeout(100)
+    return 'test value'
+  })
+  t.equal(await lockPromise, 'test value', 'should take over the lock')
+  t.equal(mkdirCalls, 2, 'should make two mkdir calls')
+})
+
+t.test('concurrent stale lock takeover', async (t) => {
+  const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
+  // make a stale lock
+  await fs.promises.mkdir(path.join(dir, '.lock'))
+  await fs.promises.utimes(path.join(dir, '.lock'), new Date(Date.now() - 10_000), new Date(Date.now() - 10_000))
+
+  const results = await Promise.all([withLock(dir, () => 'lock1'), withLock(dir, () => 'lock2'), withLock(dir, () => 'lock3')])
+  t.same(results, ['lock1', 'lock2', 'lock3'], 'should acquire all locks eventually')
+})
+
+t.test('mkdir -> getLockStatus race', async (t) => {
+  // validate that we can acquire a lock when mkdir fails (due to the lock existing)
+  // but status indicates it's unlocked (i.e. lock was released after the mkdir call)
+  let mkdirCalls = 0
+  mockMkdir = async () => {
+    if (++mkdirCalls === 1) {
+      throw Object.assign(new Error(), { code: 'EEXIST' })
+    }
+  }
+  let statCalls = 0
+  const mtimeMs = Date.now()
+  mockStat = async () => {
+    if (++statCalls === 1) {
+      throw Object.assign(new Error(), { code: 'ENOENT' })
+    } else {
+      return { mtimeMs, ino: 1 }
+    }
+  }
+  mockUtimes = async () => {}
+  mockRmdir = async () => {}
+
+  const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
+  const lockPromise = withLock(dir, async () => {
+    await setTimeout(100)
+    return 'test value'
+  })
+  t.equal(await lockPromise, 'test value', 'should acquire the lock')
+  t.equal(mkdirCalls, 2, 'should make two mkdir calls')
+})
+
+t.test('unexpected errors', async (t) => {
+  t.test('can\'t create lock', async (t) => {
+    const dir = '/these/parent/directories/do/not/exist/so/it/should/fail'
+    await t.rejects(withLock(dir, async () => {}), { code: 'ENOENT' })
+  })
+
+  t.test('can\'t release lock', async (t) => {
+    mockRmdir = async () => {
+      throw Object.assign(new Error(), { code: 'ENOTDIR' })
+    }
+    const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
+    await t.rejects(withLock(dir, async () => {}), { code: 'ENOTDIR' })
+  })
+
+  t.test('existing lock becomes unreadable right before we check its status', async (t) => {
+    // someone else has the lock
+    mockMkdir = async () => {
+      throw Object.assign(new Error(), { code: 'EEXIST' })
+    }
+    // we can't stat the lock file
+    mockStat = async () => {
+      throw Object.assign(new Error(), { code: 'EACCES' })
+    }
+    const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
+    await t.rejects(withLock(dir, async () => {}), { code: 'EACCES' })
+  })
+
+  t.test('can\'t take over stale lock', async (t) => {
+    // someone else has the lock
+    mockMkdir = async () => {
+      throw Object.assign(new Error(), { code: 'EEXIST' })
+    }
+    // it's stale
+    mockStat = async () => {
+      return { mtimeMs: Date.now() - 10_000 }
+    }
+    // but we can't release it
+    mockRmdir = async () => {
+      throw Object.assign(new Error(), { code: 'ENOTDIR' })
+    }
+    const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
+    await t.rejects(withLock(dir, async () => {}), { code: 'ENOTDIR' })
+  })
+
+  t.test('lock compromised', async (t) => {
+    const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
+
+    mockStat = async () => {
+      return { mtimeMs: Date.now(), ino: Math.floor(Math.random() * 1000000) }
+    }
+    await t.rejects(withLock(dir, () => setTimeout(1000)), { code: 'ECOMPROMISED' })
+  })
+})
+
+t.test('onExit handler', async (t) => {
+  t.ok(onExitHandler, 'should be registered')
+  let rmdirSyncCalls = 0
+
+  mockRmdirSync = () => {
+    rmdirSyncCalls++
+  }
+
+  const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
+  // don't await it since the promise never resolves
+  withLock(dir, () => new Promise(() => {})).catch(() => {})
+  // ensure the lock is acquired
+  await setTimeout(0)
+  onExitHandler()
+  t.ok(rmdirSyncCalls > 0, 'should have removed outstanding locks')
 })
