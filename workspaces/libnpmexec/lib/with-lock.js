@@ -1,6 +1,6 @@
 const fs = require('node:fs/promises')
 const { rmdirSync } = require('node:fs')
-const retry = require('retry')
+const promiseRetry = require('promise-retry')
 const { onExit } = require('signal-exit')
 
 // a lockfile implementation inspired by the unmaintained proper-lockfile library
@@ -67,40 +67,33 @@ async function withLock (filePath, cb) {
 }
 
 function acquireLock (lockPath) {
-  const operation = retry.operation({
+  return promiseRetry({
     minTimeout: 100,
     maxTimeout: 5_000,
     // if another process legitimately holds the lock, wait for it to release; if it dies abnormally and the lock becomes stale, we'll acquire it automatically
     forever: true,
-  })
-  return new Promise((resolve, reject) => {
-    operation.attempt(async () => {
-      try {
-        await fs.mkdir(lockPath)
-      } catch (err) {
-        if (err.code !== 'EEXIST') {
-          return reject(err)
-        }
-
-        try {
-          const status = await getLockStatus(lockPath)
-
-          if (status === 'locked') {
-            // let's see if we can acquire it on the next attempt 🤞
-            return operation.retry(err)
-          }
-          if (status === 'stale') {
-            // there is a very tiny window where another process could also release the stale lock and acquire it before we release it here; the lock compromise checker should detect this and throw an error
-            await releaseLock(lockPath)
-          }
-          return resolve(await acquireLock(lockPath))
-        } catch (e) {
-          return reject(e)
-        }
+  }, async (retry) => {
+    try {
+      await fs.mkdir(lockPath)
+    } catch (err) {
+      if (err.code !== 'EEXIST') {
+        throw err
       }
-      const signal = await maintainLock(lockPath)
-      return resolve(signal)
-    })
+
+      const status = await getLockStatus(lockPath)
+
+      if (status === 'locked') {
+        // let's see if we can acquire it on the next attempt 🤞
+        return retry(err)
+      }
+      if (status === 'stale') {
+        // there is a very tiny window where another process could also release the stale lock and acquire it before we release it here; the lock compromise checker should detect this and throw an error
+        await releaseLock(lockPath)
+      }
+      return await acquireLock(lockPath)
+    }
+    const signal = await maintainLock(lockPath)
+    return signal
   })
 }
 
