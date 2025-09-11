@@ -57,7 +57,7 @@ t.test('concurrent locking', async (t) => {
     await setTimeout(100)
     events.push('lock1 released')
   })
-  await Promise.resolve() // ensure lock1 is acquired before lock2
+  await setTimeout(0) // ensure lock1 is acquired before lock2
   const lockPromise2 = withLock(lockPath, async () => {
     events.push('lock2 acquired')
     await setTimeout(100)
