@@ -22,10 +22,7 @@ const touchInterval = 100
 // mtime precision is platform dependent, so use a reasonably large threshold
 const staleThreshold = 5_000
 
-// keep track of current locks. this lets us:
-// - clean up any locks that were not released normally
-// - detect if a lock has been compromised (e.g. due to lock manipulation outside this library,
-//   or a small race condition during stale lock takeover)
+// track current locks and their cleanup functions
 const currentLocks = new Map()
 
 function cleanupLocks () {
@@ -54,8 +51,15 @@ async function withLock (filePath, cb) {
     return await new Promise((resolve, reject) => {
       signal.addEventListener('abort', () => {
         reject(Object.assign(new Error('Lock compromised'), { code: 'ECOMPROMISED' }))
-      })
-      Promise.resolve(cb(signal)).then(resolve).catch(reject)
+      });
+
+      (async () => {
+        try {
+          resolve(await cb(signal))
+        } catch (err) {
+          reject(err)
+        }
+      })()
     })
   } finally {
     await releaseLock(lockPath)
