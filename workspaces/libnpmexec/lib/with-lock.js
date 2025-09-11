@@ -134,8 +134,10 @@ async function maintainLock (lockPath) {
       }
       await fs.utimes(lockPath, new Date(), new Date(mtimeMs = Date.now()))
     } catch (err) {
-      // stats mismatch or other fs error means the lock was compromised
-      controller.abort()
+      // stats mismatch or other fs error means the lock was compromised, unless we just released the lock during this iteration
+      if (currentLocks.has(lockPath)) {
+        controller.abort()
+      }
     }
   }
 
