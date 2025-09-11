@@ -44,8 +44,7 @@ onExit(cleanupLocks)
  * The lock will be released automatically when the callback resolves or rejects.
  * Concurrent calls to withLock() for the same path will wait until the lock is released.
  */
-async function withLock (filePath, cb) {
-  const lockPath = `${filePath}.lock`
+async function withLock (lockPath, cb) {
   try {
     const signal = await acquireLock(lockPath)
     return await new Promise((resolve, reject) => {

@@ -1,6 +1,6 @@
 'use strict'
 
-const { dirname, resolve } = require('node:path')
+const { dirname, join, resolve } = require('node:path')
 const crypto = require('node:crypto')
 const { mkdir } = require('node:fs/promises')
 const Arborist = require('@npmcli/arborist')
@@ -248,7 +248,8 @@ const exec = async (opts) => {
       ...flatOptions,
       path: installDir,
     })
-    const npxTree = await withLock(installDir, () => npxArb.loadActual())
+    const lockPath = join(installDir, 'concurrency.lock')
+    const npxTree = await withLock(lockPath, () => npxArb.loadActual())
     await Promise.all(needInstall.map(async ({ spec }) => {
       const { manifest } = await missingFromTree({
         spec,
@@ -291,7 +292,7 @@ const exec = async (opts) => {
           }
         }
       }
-      await withLock(installDir, () => npxArb.reify({
+      await withLock(lockPath, () => npxArb.reify({
         ...flatOptions,
         save: true,
         add,
