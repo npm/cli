@@ -70,8 +70,7 @@ function acquireLock (lockPath) {
   const operation = retry.operation({
     minTimeout: 100,
     maxTimeout: 5_000,
-    // if another process legitimately holds the lock, wait for it to release;
-    // if it dies abnormally and the lock becomes stale, we'll acquire it automatically
+    // if another process legitimately holds the lock, wait for it to release; if it dies abnormally and the lock becomes stale, we'll acquire it automatically
     forever: true,
   })
   return new Promise((resolve, reject) => {
