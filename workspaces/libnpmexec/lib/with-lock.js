@@ -91,8 +91,7 @@ function acquireLock (lockPath) {
             return operation.retry(err)
           }
           if (status === 'stale') {
-            // there is a very tiny window where another process could also release the stale lock and acquire it
-            // before we release it here; the lock compromise checker should detect this and throw an error
+            // there is a very tiny window where another process could also release the stale lock and acquire it before we release it here; the lock compromise checker should detect this and throw an error
             await releaseLock(lockPath)
           }
           return resolve(await acquireLock(lockPath))
