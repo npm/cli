@@ -133,7 +133,8 @@ async function maintainLock (lockPath) {
         throw new Error('Lock compromised')
       }
       mtimeMs = Date.now()
-      await fs.utimes(lockPath, mtimeMs, mtimeMs)
+      const mtime = new Date(mtimeMs)
+      await fs.utimes(lockPath, mtime, mtime)
     } catch (err) {
       // stats mismatch or other fs error means the lock was compromised, unless we just released the lock during this iteration
       if (currentLocks.has(lockPath)) {
