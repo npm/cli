@@ -87,7 +87,7 @@ function acquireLock (lockPath) {
       }
       if (status === 'stale') {
         // there is a very tiny window where another process could also release the stale lock and acquire it before we release it here; the lock compromise checker should detect this and throw an error
-        deleteLock(lockPath)
+        deleteLock(lockPath, ['ENOENT', 'EBUSY']) // on windows, EBUSY can happen if another process is creating the lock; we'll just retry
       }
       return await acquireLock(lockPath)
     }
@@ -100,12 +100,12 @@ function acquireLock (lockPath) {
   })
 }
 
-function deleteLock (lockPath) {
+function deleteLock (lockPath, ignoreCodes = ['ENOENT']) {
   try {
     // synchronous, so we can call in an exit handler
     rmdirSync(lockPath)
   } catch (err) {
-    if (err.code !== 'ENOENT') {
+    if (!ignoreCodes.includes(err.code)) {
       throw err
     }
   }
