@@ -206,11 +206,20 @@ t.test('unexpected errors', async (t) => {
     await t.rejects(withLock(lockPath, async () => {}), { code: 'ENOTDIR' })
   })
 
-  t.test('lock compromised', async (t) => {
+  t.test('lock compromised (recreated)', async (t) => {
     const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
 
     mockStat = async () => {
       return { mtimeMs: Date.now(), ino: Math.floor(Math.random() * 1000000) }
+    }
+    await t.rejects(withLock(lockPath, () => setTimeout(1000)), { code: 'ECOMPROMISED' })
+  })
+
+  t.test('lock compromised (deleted)', async (t) => {
+    const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
+
+    mockStat = async () => {
+      throw Object.assign(new Error(), { code: 'ENOENT' })
     }
     await t.rejects(withLock(lockPath, () => setTimeout(1000)), { code: 'ECOMPROMISED' })
   })

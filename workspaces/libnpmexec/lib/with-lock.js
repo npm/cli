@@ -91,8 +91,12 @@ function acquireLock (lockPath) {
       }
       return await acquireLock(lockPath)
     }
-    const signal = await maintainLock(lockPath)
-    return signal
+    try {
+      const signal = await maintainLock(lockPath)
+      return signal
+    } catch (err) {
+      throw Object.assign(new Error('Lock compromised'), { code: 'ECOMPROMISED' })
+    }
   })
 }
 
