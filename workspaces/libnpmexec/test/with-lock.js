@@ -8,7 +8,6 @@ const getTempDir = () => fs.realpathSync(os.tmpdir())
 const t = require('tap')
 
 let mockMkdir
-let mockRmdir
 let mockStat
 let mockUtimes
 let mockRmdirSync
@@ -18,9 +17,6 @@ const withLock = t.mock('../lib/with-lock.js', {
   'node:fs/promises': {
     mkdir: async (...args) => {
       return await (mockMkdir?.(...args) ?? fs.promises.mkdir(...args))
-    },
-    rmdir: async (...args) => {
-      return await (mockRmdir?.(...args) ?? fs.promises.rmdir(...args))
     },
     stat: async (...args) => {
       return await (mockStat?.(...args) ?? fs.promises.stat(...args))
@@ -43,7 +39,6 @@ const withLock = t.mock('../lib/with-lock.js', {
 
 t.beforeEach(() => {
   mockMkdir = undefined
-  mockRmdir = undefined
   mockStat = undefined
   mockUtimes = undefined
   mockRmdirSync = undefined
@@ -116,7 +111,7 @@ t.test('stale lock takeover', async (t) => {
     }
   }
   mockUtimes = async () => {}
-  mockRmdir = async () => {}
+  mockRmdirSync = () => {}
 
   const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
   const lockPromise = withLock(lockPath, async () => {
@@ -156,7 +151,7 @@ t.test('mkdir -> getLockStatus race', async (t) => {
     }
   }
   mockUtimes = async () => {}
-  mockRmdir = async () => {}
+  mockRmdirSync = () => {}
 
   const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
   const lockPromise = withLock(lockPath, async () => {
@@ -174,7 +169,7 @@ t.test('unexpected errors', async (t) => {
   })
 
   t.test('can\'t release lock', async (t) => {
-    mockRmdir = async () => {
+    mockRmdirSync = () => {
       throw Object.assign(new Error(), { code: 'ENOTDIR' })
     }
     const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
@@ -204,7 +199,7 @@ t.test('unexpected errors', async (t) => {
       return { mtimeMs: Date.now() - 10_000 }
     }
     // but we can't release it
-    mockRmdir = async () => {
+    mockRmdirSync = () => {
       throw Object.assign(new Error(), { code: 'ENOTDIR' })
     }
     const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')

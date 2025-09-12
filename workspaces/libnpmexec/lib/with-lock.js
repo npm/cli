@@ -61,7 +61,7 @@ async function withLock (lockPath, cb) {
       })()
     })
   } finally {
-    await releaseLock(lockPath)
+    releaseLock(lockPath)
   }
 }
 
@@ -87,7 +87,7 @@ function acquireLock (lockPath) {
       }
       if (status === 'stale') {
         // there is a very tiny window where another process could also release the stale lock and acquire it before we release it here; the lock compromise checker should detect this and throw an error
-        await releaseLock(lockPath)
+        deleteLock(lockPath)
       }
       return await acquireLock(lockPath)
     }
@@ -96,16 +96,20 @@ function acquireLock (lockPath) {
   })
 }
 
-async function releaseLock (lockPath) {
+function deleteLock (lockPath) {
   try {
-    currentLocks.get(lockPath)?.()
-    currentLocks.delete(lockPath)
-    await fs.rmdir(lockPath)
+    // synchronous, so we can call in an exit handler
+    rmdirSync(lockPath)
   } catch (err) {
     if (err.code !== 'ENOENT') {
       throw err
     }
   }
+}
+
+function releaseLock (lockPath) {
+  currentLocks.get(lockPath)?.()
+  currentLocks.delete(lockPath)
 }
 
 async function getLockStatus (lockPath) {
@@ -146,7 +150,7 @@ async function maintainLock (lockPath) {
   const timeout = setInterval(touchLock, touchInterval)
   timeout.unref()
   function cleanup () {
-    rmdirSync(lockPath)
+    deleteLock(lockPath)
     clearInterval(timeout)
   }
   currentLocks.set(lockPath, cleanup)
