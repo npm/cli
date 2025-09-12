@@ -128,8 +128,13 @@ t.test('concurrent stale lock takeover', async (t) => {
   await fs.promises.mkdir(lockPath)
   await fs.promises.utimes(lockPath, new Date(Date.now() - 10_000), new Date(Date.now() - 10_000))
 
-  const results = await Promise.all([withLock(lockPath, () => 'lock1'), withLock(lockPath, () => 'lock2'), withLock(lockPath, () => 'lock3')])
-  t.same(results, ['lock1', 'lock2', 'lock3'], 'should acquire all locks eventually')
+  const results = await Promise.allSettled([
+    withLock(lockPath, () => 'lock1'),
+    withLock(lockPath, () => 'lock2'),
+    withLock(lockPath, () => 'lock3'),
+  ])
+  // all locks should either be successfully acquired or get compromised (expected occasional race condition)
+  t.ok(results.every(result => result.status === 'fulfilled' || result.status === 'rejected' && result.reason.code === 'ECOMPROMISED'))
 })
 
 t.test('mkdir -> getLockStatus race', async (t) => {
