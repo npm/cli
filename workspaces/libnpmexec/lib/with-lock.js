@@ -132,7 +132,7 @@ async function maintainLock (lockPath) {
       if (currentStats.ino !== stats.ino || currentStats.mtimeMs !== mtimeMs) {
         throw new Error('Lock compromised')
       }
-      mtimeMs = Date.now())
+      mtimeMs = Date.now()
       await fs.utimes(lockPath, mtimeMs, mtimeMs)
     } catch (err) {
       // stats mismatch or other fs error means the lock was compromised, unless we just released the lock during this iteration
