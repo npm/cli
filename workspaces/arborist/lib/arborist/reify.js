@@ -42,7 +42,6 @@ const { defaultLockfileVersion } = Shrinkwrap
 const _retireShallowNodes = Symbol.for('retireShallowNodes')
 const _loadBundlesAndUpdateTrees = Symbol.for('loadBundlesAndUpdateTrees')
 const _submitQuickAudit = Symbol('submitQuickAudit')
-const _addOmitsToTrashList = Symbol('addOmitsToTrashList')
 const _unpackNewModules = Symbol.for('unpackNewModules')
 const _build = Symbol.for('build')
 
@@ -85,6 +84,7 @@ module.exports = cls => class Reifier extends cls {
   #dryRun
   #nmValidated = new Set()
   #omit
+  #omitted
   #retiredPaths = {}
   #retiredUnchanged = {}
   #savePrefix
@@ -109,6 +109,7 @@ module.exports = cls => class Reifier extends cls {
     }
 
     this.#omit = new Set(options.omit)
+    this.#omitted = new Set()
 
     // start tracker block
     this.addTracker('reify')
@@ -141,6 +142,10 @@ module.exports = cls => class Reifier extends cls {
       this.idealTree = oldTree
     }
     await this[_saveIdealTree](options)
+    // clean omitted
+    for (const node of this.#omitted) {
+      node.parent = null
+    }
     // clean up any trash that is still in the tree
     for (const path of this[_trashList]) {
       const loc = relpath(this.idealTree.realpath, path)
@@ -315,7 +320,6 @@ module.exports = cls => class Reifier extends cls {
       ]],
       [_rollbackCreateSparseTree, [
         _createSparseTree,
-        _addOmitsToTrashList,
         _loadShrinkwrapsAndUpdateTrees,
         _loadBundlesAndUpdateTrees,
         _submitQuickAudit,
@@ -470,6 +474,8 @@ module.exports = cls => class Reifier extends cls {
     // find all the nodes that need to change between the actual
     // and ideal trees.
     this.diff = Diff.calculate({
+      omit: this.#omit,
+      omitted: this.#omitted,
       shrinkwrapInflated: this.#shrinkwrapInflated,
       filterNodes,
       actual: this.actualTree,
@@ -552,37 +558,6 @@ module.exports = cls => class Reifier extends cls {
       .then(() => {
         throw er
       })
-  }
-
-  // adding to the trash list will skip reifying, and delete them
-  // if they are currently in the tree and otherwise untouched.
-  [_addOmitsToTrashList] () {
-    if (!this.#omit.size) {
-      return
-    }
-
-    const timeEnd = time.start('reify:trashOmits')
-    for (const node of this.idealTree.inventory.values()) {
-      const { top } = node
-
-      // if the top is not the root or workspace then we do not want to omit it
-      if (!top.isProjectRoot && !top.isWorkspace) {
-        continue
-      }
-
-      // if a diff filter has been created, then we do not omit the node if the
-      // top node is not in that set
-      if (this.diff?.filterSet?.size && !this.diff.filterSet.has(top)) {
-        continue
-      }
-
-      // omit node if the dep type matches any omit flags that were set
-      if (node.shouldOmit(this.#omit)) {
-        this[_addNodeToTrashList](node)
-      }
-    }
-
-    timeEnd()
   }
 
   [_createSparseTree] () {
@@ -683,7 +658,6 @@ module.exports = cls => class Reifier extends cls {
       // reload the diff and sparse tree because the ideal tree changed
       .then(() => this[_diffTrees]())
       .then(() => this[_createSparseTree]())
-      .then(() => this[_addOmitsToTrashList]())
       .then(() => this[_loadShrinkwrapsAndUpdateTrees]())
       .then(timeEnd)
   }
@@ -691,15 +665,10 @@ module.exports = cls => class Reifier extends cls {
   // create a symlink for Links, extract for Nodes
   // return the node object, since we usually want that
   // handle optional dep failures here
-  // If node is in trash list, skip it
   // If reifying fails, and the node is optional, add it and its optionalSet
   // to the trash list
   // Always return the node.
   [_reifyNode] (node) {
-    if (this[_trashList].has(node.path)) {
-      return node
-    }
-
     const timeEnd = time.start(`reifyNode:${node.location}`)
     this.addTracker('reify', node.name, node.location)
 

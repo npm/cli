@@ -394,6 +394,21 @@ t.test('dev, optional, devOptional flags and omissions', t => {
   }))
 })
 
+t.test('omit reports no diff on second run', async t => {
+  const path = fixture(t, 'testing-dev-optional-flags')
+  createRegistry(t, true)
+  const arb = newArb({ path })
+  await arb.reify({ omit: ['dev'] })
+  t.equal(arb.actualTree.children.get('once'), undefined, 'no once in tree')
+  t.ok(arb.diff.children.length, 'first reify has changes')
+  await arb.reify({ omit: ['dev'] })
+  t.equal(arb.actualTree.children.get('once'), undefined, 'no once in tree')
+  t.notOk(arb.diff.children.length, 'second reify has no changes')
+  await arb.reify({})
+  t.ok(arb.actualTree.children.get('once'), 'once in tree')
+  t.ok(arb.diff.children.length, 'removing omit has changes')
+})
+
 t.test('omits when both dev and optional flags are set', t => {
   const path = 'testing-dev-optional-flags-2'
   const omits = [['dev'], ['optional']]
@@ -1329,7 +1344,7 @@ t.test('workspaces', async t => {
     await t.test('workspaces only', async t => {
       createRegistry(t, false)
       const { root, a, b } = await runCase(t, { workspaces: ['a'] })
-      t.equal(root.exists(), false, 'root')
+      t.equal(root.exists(), true, 'root')
       t.equal(a.exists(), false, 'a')
       t.equal(b.exists(), true, 'b')
     })

@@ -490,6 +490,18 @@ class Node {
   }
 
   shouldOmit (omitSet) {
+    if (!omitSet.size) {
+      return false
+    }
+
+    const { top } = this
+
+    // if the top is not the root or workspace then we do not want to omit it
+    if (!top.isProjectRoot && !top.isWorkspace) {
+      return false
+    }
+
+    // omit node if the dep type matches any omit flags that were set
     return (
       this.peer && omitSet.has('peer') ||
       this.dev && omitSet.has('dev') ||
