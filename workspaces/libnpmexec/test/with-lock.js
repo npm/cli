@@ -102,7 +102,7 @@ t.test('stale lock takeover', async (t) => {
     }
   }
   let statCalls = 0
-  const mtimeMs = Date.now()
+  const mtimeMs = Math.round(Date.now() / 1000) * 1000
   mockStat = async () => {
     if (++statCalls === 1) {
       return { mtimeMs: mtimeMs - 10_000 }
@@ -118,6 +118,48 @@ t.test('stale lock takeover', async (t) => {
     await setTimeout(100)
     return 'test value'
   })
+  t.equal(await lockPromise, 'test value', 'should take over the lock')
+  t.equal(mkdirCalls, 2, 'should make two mkdir calls')
+})
+
+t.test('EBUSY during lock acquisition', async (t) => {
+  let mkdirCalls = 0
+  mockMkdir = async (...args) => {
+    if (++mkdirCalls === 1) {
+      throw Object.assign(new Error(), { code: 'EBUSY' })
+    }
+    return fs.promises.mkdir(...args)
+  }
+  const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
+  t.ok(await withLock(lockPath, async () => true))
+  t.equal(mkdirCalls, 2, 'should make two mkdir calls')
+})
+
+t.test('EBUSY during stale lock takeover', async (t) => {
+  let mkdirCalls = 0
+  mockMkdir = async () => {
+    if (++mkdirCalls === 1) {
+      throw Object.assign(new Error(), { code: 'EEXIST' })
+    }
+  }
+  let statCalls = 0
+  const mtimeMs = Math.round(Date.now() / 1000) * 1000
+  mockStat = async () => {
+    if (++statCalls === 1) {
+      return { mtimeMs: mtimeMs - 10_000 }
+    } else {
+      return { mtimeMs, ino: 1 }
+    }
+  }
+  let rmdirSyncCalls = 0
+  mockRmdirSync = () => {
+    if (++rmdirSyncCalls === 1) {
+      throw Object.assign(new Error(), { code: 'EBUSY' })
+    }
+  }
+
+  const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
+  const lockPromise = withLock(lockPath, async () => 'test value')
   t.equal(await lockPromise, 'test value', 'should take over the lock')
   t.equal(mkdirCalls, 2, 'should make two mkdir calls')
 })
@@ -147,7 +189,7 @@ t.test('mkdir -> getLockStatus race', async (t) => {
     }
   }
   let statCalls = 0
-  const mtimeMs = Date.now()
+  const mtimeMs = Math.round(Date.now() / 1000) * 1000
   mockStat = async () => {
     if (++statCalls === 1) {
       throw Object.assign(new Error(), { code: 'ENOENT' })
@@ -165,6 +207,22 @@ t.test('mkdir -> getLockStatus race', async (t) => {
   })
   t.equal(await lockPromise, 'test value', 'should acquire the lock')
   t.equal(mkdirCalls, 2, 'should make two mkdir calls')
+})
+
+t.test('mtime floating point mismatch', async (t) => {
+  let mtimeMs = Math.round(Date.now() / 1000) * 1000
+  mockStat = async () => {
+    return { mtimeMs, ino: 1 }
+  }
+  mockUtimes = async (_, nextMtimeSeconds) => {
+    mtimeMs = nextMtimeSeconds * 1000 - 0.001
+  }
+
+  const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
+  t.ok(await withLock(lockPath, async () => {
+    await setTimeout(2000)
+    return true
+  }), 'should handle mtime floating point mismatches')
 })
 
 t.test('unexpected errors', async (t) => {
@@ -217,7 +275,7 @@ t.test('unexpected errors', async (t) => {
     mockStat = async () => {
       return { mtimeMs: Date.now(), ino: Math.floor(Math.random() * 1000000) }
     }
-    await t.rejects(withLock(lockPath, () => setTimeout(1000)), { code: 'ECOMPROMISED' })
+    await t.rejects(withLock(lockPath, () => setTimeout(2000)), { code: 'ECOMPROMISED' })
   })
 
   t.test('lock compromised (deleted)', async (t) => {
@@ -226,8 +284,40 @@ t.test('unexpected errors', async (t) => {
     mockStat = async () => {
       throw Object.assign(new Error(), { code: 'ENOENT' })
     }
-    await t.rejects(withLock(lockPath, () => setTimeout(1000)), { code: 'ECOMPROMISED' })
+    await t.rejects(withLock(lockPath, () => setTimeout(2000)), { code: 'ECOMPROMISED' })
   })
+})
+
+t.test('lock released during maintenance', async (t) => {
+  // this test validates that if we release the lock while touchLock is running, it doesn't interfere with subsequent locks
+  const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
+
+  let releaseLock
+  const releaseLockPromise = new Promise((resolve) => {
+    releaseLock = resolve
+  })
+
+  let statCalls = 0
+  mockStat = async (...args) => {
+    const value = await fs.promises.stat(...args)
+    if (++statCalls > 1) {
+      // this runs during the setInterval; release the lock so that we no longer hold it
+      await releaseLock('test value')
+      await setTimeout()
+    }
+    return value
+  }
+
+  let utimesCalls = 0
+  mockUtimes = async () => {
+    utimesCalls++
+  }
+
+  const lockPromise = withLock(lockPath, () => releaseLockPromise)
+  // since we unref the interval timeout, we need to wait to ensure it actually runs
+  await setTimeout(2000)
+  t.equal(await lockPromise, 'test value', 'should acquire the lock')
+  t.equal(utimesCalls, 0, 'should never call utimes')
 })
 
 t.test('onExit handler', async (t) => {
@@ -241,8 +331,8 @@ t.test('onExit handler', async (t) => {
   const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
   // don't await it since the promise never resolves
   withLock(lockPath, () => new Promise(() => {})).catch(() => {})
-  // ensure the lock is acquired
-  await setTimeout(0)
+  // since we unref the interval timeout, we need to wait to ensure it actually runs
+  await setTimeout(2000)
   onExitHandler()
   t.ok(rmdirSyncCalls > 0, 'should have removed outstanding locks')
 })

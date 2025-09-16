@@ -18,7 +18,7 @@ const { onExit } = require('signal-exit')
 // - more ergonomic compromised lock handling (i.e. withLock will reject, and callbacks have access to an AbortSignal)
 // - uses a more recent version of signal-exit
 
-const touchInterval = 100
+const touchInterval = 1_000
 // mtime precision is platform dependent, so use a reasonably large threshold
 const staleThreshold = 5_000
 
@@ -75,7 +75,7 @@ function acquireLock (lockPath) {
     try {
       await fs.mkdir(lockPath)
     } catch (err) {
-      if (err.code !== 'EEXIST') {
+      if (err.code !== 'EEXIST' && err.code !== 'EBUSY' && err.code !== 'EPERM') {
         throw err
       }
 
@@ -86,9 +86,18 @@ function acquireLock (lockPath) {
         return retry(err)
       }
       if (status === 'stale') {
-        // there is a very tiny window where another process could also release the stale lock and acquire it before we release it here; the lock compromise checker should detect this and throw an error
-        deleteLock(lockPath, ['ENOENT', 'EBUSY']) // on windows, EBUSY can happen if another process is creating the lock; we'll just retry
+        try {
+          // there is a very tiny window where another process could also release the stale lock and acquire it before we release it here; the lock compromise checker should detect this and throw an error
+          deleteLock(lockPath)
+        } catch (e) {
+          // on windows, EBUSY/EPERM can happen if another process is (re)creating the lock; maybe we can acquire it on a subsequent attempt 🤞
+          if (e.code === 'EBUSY' || e.code === 'EPERM') {
+            return retry(e)
+          }
+          throw e
+        }
       }
+      // immediately attempt to acquire the lock (no backoff)
       return await acquireLock(lockPath)
     }
     try {
@@ -100,12 +109,12 @@ function acquireLock (lockPath) {
   })
 }
 
-function deleteLock (lockPath, ignoreCodes = ['ENOENT']) {
+function deleteLock (lockPath) {
   try {
     // synchronous, so we can call in an exit handler
     rmdirSync(lockPath)
   } catch (err) {
-    if (!ignoreCodes.includes(err.code)) {
+    if (err.code !== 'ENOENT') {
       throw err
     }
   }
@@ -131,31 +140,33 @@ async function getLockStatus (lockPath) {
 async function maintainLock (lockPath) {
   const controller = new AbortController()
   const stats = await fs.stat(lockPath)
-  let mtimeMs = stats.mtimeMs
+  // fs.utimes operates on floating points seconds (directly, or via strings/Date objects), which may not match the underlying filesystem's mtime precision, meaning that we might read a slightly different mtime than we write. always round to the nearest second, since all filesystems support at least second precision
+  let mtime = Math.round(stats.mtimeMs / 1000)
   const signal = controller.signal
 
   async function touchLock () {
     try {
       const currentStats = (await fs.stat(lockPath))
-      if (currentStats.ino !== stats.ino || currentStats.mtimeMs !== mtimeMs) {
+      const currentMtime = Math.round(currentStats.mtimeMs / 1000)
+      if (currentStats.ino !== stats.ino || currentMtime !== mtime) {
         throw new Error('Lock compromised')
       }
-      mtimeMs = Date.now()
-      const mtime = new Date(mtimeMs)
-      await fs.utimes(lockPath, mtime, mtime)
-    } catch (err) {
-      // stats mismatch or other fs error means the lock was compromised, unless we just released the lock during this iteration
+      mtime = Math.round(Date.now() / 1000)
+      // touch the lock, unless we just released it during this iteration
       if (currentLocks.has(lockPath)) {
-        controller.abort()
+        await fs.utimes(lockPath, mtime, mtime)
       }
+    } catch (err) {
+      // stats mismatch or other fs error means the lock was compromised
+      controller.abort()
     }
   }
 
   const timeout = setInterval(touchLock, touchInterval)
   timeout.unref()
   function cleanup () {
-    deleteLock(lockPath)
     clearInterval(timeout)
+    deleteLock(lockPath)
   }
   currentLocks.set(lockPath, cleanup)
   return signal
