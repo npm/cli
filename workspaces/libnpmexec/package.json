@@ -65,7 +65,7 @@
     "@npmcli/run-script": "^9.0.1",
     "ci-info": "^4.0.0",
     "npm-package-arg": "^12.0.0",
-    "pacote": "^21.0.0",
+    "pacote": "^21.0.2",
     "proc-log": "^5.0.0",
     "promise-retry": "^2.0.1",
     "read": "^4.0.0",

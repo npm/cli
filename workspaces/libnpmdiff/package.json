@@ -53,7 +53,7 @@
     "diff": "^7.0.0",
     "minimatch": "^9.0.4",
     "npm-package-arg": "^12.0.0",
-    "pacote": "^21.0.0",
+    "pacote": "^21.0.2",
     "tar": "^6.2.1"
   },
   "templateOSS": {
