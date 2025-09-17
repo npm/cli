@@ -246,7 +246,6 @@ Object {
     "peerdep": "",
   },
   "integrity": "sha512-peerpeerpeer",
-  "peer": true,
   "resolved": "https://peer.com/peer.tgz",
   "version": "1.2.3",
 }
@@ -255,7 +254,6 @@ Object {
 exports[`test/shrinkwrap.js TAP construct metadata from node and package data > a peer meta-dep 1`] = `
 Object {
   "integrity": "sha512-peerdeppeerdep",
-  "peer": true,
   "resolved": "https://peer.com/peerdep.tgz",
   "version": "1.2.3",
 }
@@ -369,13 +367,11 @@ Object {
         "peerdep": "",
       },
       "integrity": "sha512-peerpeerpeer",
-      "peer": true,
       "resolved": "https://peer.com/peer.tgz",
       "version": "1.2.3",
     },
     "node_modules/peer/node_modules/peerdep": Object {
       "integrity": "sha512-peerdeppeerdep",
-      "peer": true,
       "resolved": "https://peer.com/peerdep.tgz",
       "version": "1.2.3",
     },
@@ -1362,6 +1358,7 @@ Object {
       "dependencies": Object {
         "foo": "99.x",
       },
+      "peer": true,
       "version": "1.2.3",
     },
     "../../root/node_modules/foo": Object {
@@ -2066,6 +2063,7 @@ Object {
       "dependencies": Object {
         "foo": "99.x",
       },
+      "peer": true,
       "version": "1.2.3",
     },
     "../root/node_modules/foo": Object {
@@ -2645,6 +2643,7 @@ Object {
       "dependencies": Object {
         "foo": "99.x",
       },
+      "peer": true,
       "version": "1.2.3",
     },
     "node_modules/foo": Object {
@@ -5911,6 +5910,7 @@ Object {
       "inBundle": true,
       "integrity": "sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==",
       "license": "MIT",
+      "peer": true,
       "resolved": "https://registry.npmjs.org/react/-/react-16.12.0.tgz",
       "version": "16.12.0",
     },
@@ -6739,6 +6739,7 @@ Object {
       },
       "integrity": "sha512-ml7V7JfiN2Xwvcer+XAf2csGO1bPBdRbFCkYBczNZggrBZ9c7G3riSUeJmqEU5uOtXNPMhE3n+R4FA/3YOAWOQ==",
       "license": "Apache-2.0",
+      "peer": true,
       "resolved": "https://registry.npmjs.org/typescript/-/typescript-3.7.2.tgz",
       "version": "3.7.2",
     },

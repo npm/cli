@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/calc-dep-flags.js TAP flag stuff > after 1`] = `
+exports[`workspaces/arborist/test/calc-dep-flags.js TAP flag stuff > after 1`] = `
 ArboristNode {
   "children": Map {
     "dev" => ArboristNode {
@@ -385,7 +385,7 @@ ArboristNode {
 }
 `
 
-exports[`test/calc-dep-flags.js TAP no reset > after 1`] = `
+exports[`workspaces/arborist/test/calc-dep-flags.js TAP no reset > after 1`] = `
 ArboristNode {
   "children": Map {
     "foo" => ArboristNode {
@@ -420,7 +420,7 @@ ArboristNode {
 }
 `
 
-exports[`test/calc-dep-flags.js TAP peer dependency with optional dependency > after calcDepFlags 1`] = `
+exports[`workspaces/arborist/test/calc-dep-flags.js TAP peer dependency with optional dependency > after calcDepFlags 1`] = `
 ArboristNode {
   "children": Map {
     "B" => ArboristNode {
@@ -501,7 +501,7 @@ ArboristNode {
 }
 `
 
-exports[`test/calc-dep-flags.js TAP peer dependency with optional dependency > before calcDepFlags 1`] = `
+exports[`workspaces/arborist/test/calc-dep-flags.js TAP peer dependency with optional dependency > before calcDepFlags 1`] = `
 ArboristNode {
   "children": Map {
     "B" => ArboristNode {
@@ -596,7 +596,7 @@ ArboristNode {
 }
 `
 
-exports[`test/calc-dep-flags.js TAP set parents to not extraneous when visiting > after 1`] = `
+exports[`workspaces/arborist/test/calc-dep-flags.js TAP set parents to not extraneous when visiting > after 1`] = `
 ArboristNode {
   "children": Map {
     "asdf" => ArboristNode {
@@ -688,7 +688,7 @@ ArboristNode {
 }
 `
 
-exports[`test/calc-dep-flags.js TAP set parents to not extraneous when visiting > before 1`] = `
+exports[`workspaces/arborist/test/calc-dep-flags.js TAP set parents to not extraneous when visiting > before 1`] = `
 ArboristNode {
   "children": Map {
     "asdf" => ArboristNode {

@@ -277,3 +277,135 @@ t.test('check null target in link', async t => {
   t.doesNotThrow(() => calcDepFlags(root, false))
   t.end()
 })
+
+t.test('peer dependency with optional dependency', t => {
+  // Package A depends on B, B peer-depends on C, C optionally depends on D
+  const root = new Node({
+    path: '/project',
+    realpath: '/project',
+    pkg: {
+      name: 'A',
+      version: '1.0.0',
+      dependencies: { B: '1.0.0' },
+    },
+  })
+
+  const nodeB = new Node({
+    parent: root,
+    pkg: {
+      name: 'B',
+      version: '1.0.0',
+      peerDependencies: { C: '1.0.0' },
+    },
+  })
+
+  const nodeC = new Node({
+    parent: root,
+    pkg: {
+      name: 'C',
+      version: '1.0.0',
+      optionalDependencies: { D: '1.0.0' },
+    },
+  })
+
+  const nodeD = new Node({
+    parent: root,
+    pkg: {
+      name: 'D',
+      version: '1.0.0',
+    },
+  })
+
+  t.matchSnapshot(printTree(root), 'before calcDepFlags')
+  calcDepFlags(root)
+  t.matchSnapshot(printTree(root), 'after calcDepFlags')
+
+  // Verify flags are set correctly
+  t.equal(root.dev, false, 'root not dev')
+  t.equal(root.optional, false, 'root not optional')
+  t.equal(root.peer, false, 'root not peer')
+  t.equal(root.extraneous, false, 'root not extraneous')
+
+  t.equal(nodeB.dev, false, 'B not dev')
+  t.equal(nodeB.optional, false, 'B not optional')
+  t.equal(nodeB.peer, false, 'B not peer')
+  t.equal(nodeB.extraneous, false, 'B not extraneous')
+
+  t.equal(nodeC.dev, false, 'C not dev')
+  t.equal(nodeC.optional, false, 'C not optional')
+  t.equal(nodeC.peer, true, 'C is peer')
+  t.equal(nodeC.extraneous, false, 'C not extraneous')
+
+  // D should be optional but NOT peer - it's an optional dep of a peer dep
+  t.equal(nodeD.dev, false, 'D not dev')
+  t.equal(nodeD.optional, true, 'D is optional')
+  t.equal(nodeD.peer, false, 'D not peer')
+  t.equal(nodeD.extraneous, false, 'D not extraneous')
+
+  t.end()
+})
+
+t.test('peer dependency with optional dependency - complex chain', t => {
+  // More complex: A depends on B, B peer-depends on C, C optionally depends on D, D depends on E
+  const root = new Node({
+    path: '/project',
+    realpath: '/project',
+    pkg: {
+      name: 'A',
+      version: '1.0.0',
+      dependencies: { B: '1.0.0' },
+    },
+  })
+
+  new Node({
+    parent: root,
+    pkg: {
+      name: 'B',
+      version: '1.0.0',
+      peerDependencies: { C: '1.0.0' },
+    },
+  })
+
+  const nodeC = new Node({
+    parent: root,
+    pkg: {
+      name: 'C',
+      version: '1.0.0',
+      optionalDependencies: { D: '1.0.0' },
+    },
+  })
+
+  const nodeD = new Node({
+    parent: root,
+    pkg: {
+      name: 'D',
+      version: '1.0.0',
+      dependencies: { E: '1.0.0' },
+    },
+  })
+
+  const nodeE = new Node({
+    parent: root,
+    pkg: {
+      name: 'E',
+      version: '1.0.0',
+    },
+  })
+
+  calcDepFlags(root)
+
+  // C is a peer dependency
+  t.equal(nodeC.peer, true, 'C is peer')
+  t.equal(nodeC.optional, false, 'C not optional')
+
+  // D is an optional dependency (of C), but not a peer
+  t.equal(nodeD.peer, false, 'D not peer')
+  t.equal(nodeD.optional, true, 'D is optional')
+
+  // E is a dependency of D (which is optional), so E should also be optional
+  t.equal(nodeE.peer, false, 'E not peer')
+  t.equal(nodeE.optional, true, 'E is optional')
+  t.equal(nodeE.extraneous, false, 'E not extraneous')
+
+  t.end()
+})

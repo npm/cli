@@ -303,7 +303,6 @@ ArboristNode {
       "location": "node_modules/wrappy",
       "name": "wrappy",
       "path": "{CWD}/test/fixtures/edit-package-json/changed/node_modules/wrappy",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
       "version": "1.0.2",
     },
