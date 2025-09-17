@@ -38,7 +38,6 @@ graph LR;
   libnpmexec-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmexec-->pacote;
   libnpmexec-->proc-log;
-  libnpmexec-->read-package-json-fast;
   libnpmexec-->read;
   libnpmexec-->semver;
   libnpmfund-->npmcli-arborist["@npmcli/arborist"];
@@ -178,7 +177,6 @@ graph LR;
   npmcli-arborist-->parse-conflict-json;
   npmcli-arborist-->proc-log;
   npmcli-arborist-->proggy;
-  npmcli-arborist-->read-package-json-fast;
   npmcli-arborist-->semver;
   npmcli-arborist-->ssri;
   npmcli-config-->ini;
@@ -248,8 +246,6 @@ graph LR;
   parse-conflict-json-->json-parse-even-better-errors;
   promzard-->read;
   read-->mute-stream;
-  read-package-json-fast-->json-parse-even-better-errors;
-  read-package-json-fast-->npm-normalize-package-bin;
   unique-filename-->unique-slug;
 ```
 
@@ -350,7 +346,6 @@ graph LR;
   libnpmexec-->pacote;
   libnpmexec-->proc-log;
   libnpmexec-->promise-retry;
-  libnpmexec-->read-package-json-fast;
   libnpmexec-->read;
   libnpmexec-->semver;
   libnpmexec-->signal-exit;
@@ -593,7 +588,6 @@ graph LR;
   npmcli-arborist-->proggy;
   npmcli-arborist-->promise-all-reject-late;
   npmcli-arborist-->promise-call-limit;
-  npmcli-arborist-->read-package-json-fast;
   npmcli-arborist-->semver;
   npmcli-arborist-->ssri;
   npmcli-arborist-->tap;
@@ -710,8 +704,6 @@ graph LR;
   promise-retry-->retry;
   promzard-->read;
   read-->mute-stream;
-  read-package-json-fast-->json-parse-even-better-errors;
-  read-package-json-fast-->npm-normalize-package-bin;
   shebang-command-->shebang-regex;
   sigstore-->sigstore-bundle["@sigstore/bundle"];
   sigstore-->sigstore-core["@sigstore/core"];
@@ -787,5 +779,5 @@ packages higher up the chain.
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
  - @npmcli/smoke-tests, @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
- - @npmcli/docs, @npmcli/fs, npm-bundled, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, read-package-json-fast, @npmcli/mock-globals, read, normalize-package-data
+ - @npmcli/docs, @npmcli/fs, npm-bundled, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, @npmcli/mock-globals, read, normalize-package-data
  - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, which, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, ssri, unique-slug, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate

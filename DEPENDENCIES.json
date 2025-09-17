@@ -58,7 +58,6 @@
     "bin-links",
     "nopt",
     "parse-conflict-json",
-    "read-package-json-fast",
     "@npmcli/mock-globals",
     "read",
     "normalize-package-data"
