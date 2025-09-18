@@ -28,7 +28,7 @@
     "ignore-walk": "^8.0.0",
     "jsdom": "^24.0.0",
     "rehype-stringify": "^9.0.3",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.1",
     "remark-man": "^8.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^10.1.0",
