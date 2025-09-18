@@ -30,7 +30,7 @@
     "rehype-stringify": "^9.0.3",
     "remark-gfm": "^3.0.1",
     "remark-man": "^8.0.1",
-    "remark-parse": "^10.0.1",
+    "remark-parse": "^11.0.0",
     "remark-rehype": "^10.1.0",
     "semver": "^7.3.8",
     "tap": "^16.3.8",
