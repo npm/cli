@@ -193,7 +193,7 @@
     "@npmcli/mock-globals": "^1.0.0",
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/template-oss": "4.24.4",
-    "@tufjs/repo-mock": "^3.0.1",
+    "@tufjs/repo-mock": "^4.0.0",
     "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",
     "ajv-formats-draft2019": "^1.6.1",
