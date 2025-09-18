@@ -302,8 +302,6 @@ graph LR;
   init-package-json-->semver;
   init-package-json-->validate-npm-package-license;
   init-package-json-->validate-npm-package-name;
-  ip-address-->jsbn;
-  ip-address-->sprintf-js;
   is-cidr-->cidr-regex;
   isaacs-brace-expansion-->isaacs-balanced-match["@isaacs/balanced-match"];
   isaacs-cliui-->string-width-cjs;
