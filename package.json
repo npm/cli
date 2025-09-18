@@ -195,7 +195,7 @@
     "@npmcli/template-oss": "4.25.1",
     "@tufjs/repo-mock": "^4.0.0",
     "ajv": "^8.12.0",
-    "ajv-formats": "^2.1.1",
+    "ajv-formats": "^3.0.1",
     "ajv-formats-draft2019": "^1.6.1",
     "cli-table3": "^0.6.4",
     "diff": "^8.0.2",
