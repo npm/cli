@@ -192,7 +192,7 @@
     "@npmcli/git": "^7.0.0",
     "@npmcli/mock-globals": "^1.0.0",
     "@npmcli/mock-registry": "^1.0.0",
-    "@npmcli/template-oss": "4.24.4",
+    "@npmcli/template-oss": "4.25.1",
     "@tufjs/repo-mock": "^4.0.0",
     "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",
@@ -250,7 +250,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.24.4",
+    "version": "4.25.1",
     "content": "./scripts/template-oss/root.js"
   },
   "license": "Artistic-2.0",
