@@ -26,7 +26,7 @@
     "@npmcli/template-oss": "4.25.1",
     "front-matter": "^4.0.2",
     "ignore-walk": "^8.0.0",
-    "jsdom": "^24.0.0",
+    "jsdom": "^27.0.0",
     "rehype-stringify": "^10.0.1",
     "remark-gfm": "^4.0.1",
     "remark-man": "^9.0.0",
