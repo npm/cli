@@ -20,7 +20,7 @@
     "hosted-git-info": "^9.0.0",
     "json-stringify-nice": "^1.1.4",
     "lru-cache": "^11.2.1",
-    "minimatch": "^9.0.4",
+    "minimatch": "^10.0.3",
     "nopt": "^8.0.0",
     "npm-install-checks": "^7.1.0",
     "npm-package-arg": "^13.0.0",
