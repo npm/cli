@@ -249,7 +249,9 @@ module.exports = cls => class Builder extends cls {
       // add to the set then remove while we're reading the pj, so we
       // don't accidentally hit it multiple times.
       set.add(node)
-      const { content: pkg } = await PackageJson.normalize(node.path).catch(() => { return { content: {} } })
+      const { content: pkg } = await PackageJson.normalize(node.path).catch(() => {
+        return { content: {} }
+      })
       set.delete(node)
 
       const { scripts = {} } = pkg

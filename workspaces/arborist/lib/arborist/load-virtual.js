@@ -56,7 +56,7 @@ module.exports = cls => class VirtualLoader extends cls {
     const pkg = await PackageJson.normalize(this.path).then(p => p.content).catch(() => s.data.packages[''] || {})
     // TODO clean this up
     const {
-      root = await this[setWorkspaces](this.#loadNode('', pkg, true))
+      root = await this[setWorkspaces](this.#loadNode('', pkg, true)),
     } = options
     this.#rootOptionProvided = options.root
 

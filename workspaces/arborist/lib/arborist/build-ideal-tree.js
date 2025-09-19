@@ -1290,7 +1290,9 @@ This is a one-time fix-up, please be patient...
   async #linkFromSpec (name, spec, parent) {
     const realpath = spec.fetchSpec
     const { installLinks, legacyPeerDeps } = this
-    const { content: pkg } = await PackageJson.normalize(realpath).catch(() => { return { content: {} } })
+    const { content: pkg } = await PackageJson.normalize(realpath).catch(() => {
+      return { content: {} }
+    })
     const link = new Link({ name, parent, realpath, pkg, installLinks, legacyPeerDeps })
     this.#linkNodes.add(link)
     return link

@@ -64,7 +64,6 @@ const _delistFromMeta = Symbol.for('_delistFromMeta')
 const _explain = Symbol('_explain')
 const _explanation = Symbol('_explanation')
 
-
 class Node {
   #global
   #meta
