@@ -285,6 +285,9 @@ module.exports = cls => class ActualLoader extends cls {
           params.overrides = root.overrides.getNodeRule({ name: pkg.name, version: pkg.version })
         }
       } catch (err) {
+        if (err.code === 'EJSONPARSE') {
+          err.path = join(real, 'package.json')
+        }
         params.error = err
       }
 
