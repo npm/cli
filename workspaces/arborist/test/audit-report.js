@@ -380,6 +380,8 @@ t.test('audit supports alias deps', async t => {
   const registry = createRegistry(t)
   registry.audit({ results: require(resolve(path, 'advisory-bulk.json')) })
   registry.mocks({ dir: join(__dirname, 'fixtures') })
+  const cache = t.testdir()
+  const arb = newArb(path, { cache })
   const tree = new Node({
     path,
     pkg: {
@@ -414,7 +416,7 @@ t.test('audit supports alias deps', async t => {
     ],
   })
 
-  const report = await AuditReport.load(tree, { path })
+  const report = await AuditReport.load(tree, arb.options)
   t.matchSnapshot(JSON.stringify(report, 0, 2), 'json version')
   t.equal(report.get('mkdirp').simpleRange, '0.4.1 - 0.5.1')
 })
