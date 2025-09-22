@@ -444,6 +444,7 @@ graph LR;
   npm-->ajv-formats;
   npm-->ajv;
   npm-->archy;
+  npm-->binary-extensions;
   npm-->cacache;
   npm-->chalk;
   npm-->ci-info;
