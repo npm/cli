@@ -1,6 +1,6 @@
 // mix-in implementing the loadActual method
 
-const { relative, dirname, resolve, normalize } = require('node:path')
+const { dirname, join, normalize, relative, resolve } = require('node:path')
 
 const PackageJson = require('@npmcli/package-json')
 const { readdirScoped } = require('@npmcli/fs')
@@ -285,6 +285,10 @@ module.exports = cls => class ActualLoader extends cls {
           params.overrides = root.overrides.getNodeRule({ name: pkg.name, version: pkg.version })
         }
       } catch (err) {
+        if (err.code === 'EJSONPARSE') {
+          // TODO @npmcli/package-json should be doing this
+          err.path = join(real, 'package.json')
+        }
         params.error = err
       }
 
