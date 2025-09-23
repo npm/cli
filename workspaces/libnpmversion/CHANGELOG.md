@@ -1,5 +1,14 @@
 # Changelog
 
+## [8.0.2](https://github.com/npm/cli/compare/libnpmversion-v8.0.1...libnpmversion-v8.0.2) (2025-09-23)
+### Dependencies
+* [`521823b`](https://github.com/npm/cli/commit/521823bc398de0eb85135a3ef09e217db93ed1ce) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/git@7.0.0`
+* [`6b4c5f9`](https://github.com/npm/cli/commit/6b4c5f92865230ed9a260cd3e8486bf3991120eb) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/run-script@10.0.0`
+### Chores
+* [`402a0ab`](https://github.com/npm/cli/commit/402a0ab1b4e5d1a8414dd063d0cbde0c0bc5a192) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/template-oss@4.25.1` (@wraithgar)
+* [`3f60b5f`](https://github.com/npm/cli/commit/3f60b5f9621b43ae0b8796d3a7160a603748f756) [#8383](https://github.com/npm/cli/pull/8383) `@npmcli/template-oss@4.24.4` (#8383) (@wraithgar)
+* [`01f8cc6`](https://github.com/npm/cli/commit/01f8cc6f001e3211135fa0563f7129aed09dc46c) [#8381](https://github.com/npm/cli/pull/8381) `@npmcli/template-oss@4.24.3` (#8381) (@wraithgar)
+
 ## [8.0.1](https://github.com/npm/cli/compare/libnpmversion-v8.0.0...libnpmversion-v8.0.1) (2025-05-15)
 ### Bug Fixes
 * [`71bb817`](https://github.com/npm/cli/commit/71bb817599bbaabe8e05a2bc7dd32ec16622bd93) [#8279](https://github.com/npm/cli/pull/8279) version: include prerelease when retriving tag (#8279) (@milaninfy)
