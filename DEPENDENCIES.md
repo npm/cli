@@ -81,8 +81,6 @@ graph LR;
   make-fetch-happen-->proc-log;
   make-fetch-happen-->ssri;
   nopt-->abbrev;
-  normalize-package-data-->hosted-git-info;
-  normalize-package-data-->semver;
   npm-->abbrev;
   npm-->cacache;
   npm-->hosted-git-info;
@@ -101,7 +99,6 @@ graph LR;
   npm-->libnpmversion;
   npm-->make-fetch-happen;
   npm-->nopt;
-  npm-->normalize-package-data;
   npm-->npm-audit-report;
   npm-->npm-install-checks;
   npm-->npm-package-arg;
@@ -436,9 +433,6 @@ graph LR;
   node-gyp-->tinyglobby;
   node-gyp-->which;
   nopt-->abbrev;
-  normalize-package-data-->hosted-git-info;
-  normalize-package-data-->semver;
-  normalize-package-data-->validate-npm-package-license;
   npm-->abbrev;
   npm-->ajv-formats-draft2019;
   npm-->ajv-formats;
@@ -478,7 +472,6 @@ graph LR;
   npm-->nock;
   npm-->node-gyp;
   npm-->nopt;
-  npm-->normalize-package-data;
   npm-->npm-audit-report;
   npm-->npm-install-checks;
   npm-->npm-package-arg;
@@ -776,5 +769,5 @@ packages higher up the chain.
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
  - @npmcli/smoke-tests, @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
- - @npmcli/docs, @npmcli/fs, npm-bundled, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, @npmcli/mock-globals, read, normalize-package-data
+ - @npmcli/docs, @npmcli/fs, npm-bundled, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, @npmcli/mock-globals, read
  - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, which, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, ssri, unique-slug, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate

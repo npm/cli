@@ -59,8 +59,7 @@
     "nopt",
     "parse-conflict-json",
     "@npmcli/mock-globals",
-    "read",
-    "normalize-package-data"
+    "read"
   ],
   [
     "@npmcli/eslint-config",
