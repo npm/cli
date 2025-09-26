@@ -414,7 +414,7 @@
 
 * [`f6bf2b8`](https://github.com/npm/libnpmpublish/commit/f6bf2b8) feat: unpublish code refactor ([@claudiahdz](https://github.com/claudiahdz))
 
-### Miscellaneuous
+### Miscellaneous
 
 * [`5cea10f`](https://github.com/npm/libnpmpublish/commit/5cea10f) chore: basic project updates ([@claudiahdz](https://github.com/claudiahdz))
 * [`3010b93`](https://github.com/npm/libnpmpublish/commit/3010b93) chore: cleanup badges + contributing ([@ruyadorno](https://github.com/ruyadorno))

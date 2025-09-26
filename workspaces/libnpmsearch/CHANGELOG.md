@@ -173,7 +173,7 @@
 
 * [`45f4db1`](https://github.com/npm/libnpmsearch/commit/45f4db1) fix: remove figgy-pudding ([@claudiahdz](https://github.com/claudiahdz))
 
-### Miscellaneuous
+### Miscellaneous
 
 * [`b413aae`](https://github.com/npm/libnpmsearch/commit/b413aae) chore: basic project updates ([@claudiahdz](https://github.com/claudiahdz))
 * [`534983c`](https://github.com/npm/libnpmsearch/commit/534983c) chore: remove pr temmsearch ([@ruyadorno](https://github.com/ruyadorno))
