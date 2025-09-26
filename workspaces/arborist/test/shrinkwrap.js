@@ -577,7 +577,7 @@ t.test('saving dependency-free shrinkwrap object', t => {
       resolve(`${dir}/node_modules/.package-lock.json`),
       'correct filepath on shrinkwrap instance'
     )
-    // save does not throw, but doens't write the file
+    // save does not throw, but doesn't write the file
     await sw.save()
     t.throws(() => fs.statSync(sw.filename))
   })

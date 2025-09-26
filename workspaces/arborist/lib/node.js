@@ -832,7 +832,7 @@ class Node {
         edge.reload()
       }
     }
-    // reload all edgesOut where root doens't match, or is missing, since
+    // reload all edgesOut where root doesn't match, or is missing, since
     // it might not be missing in the new tree
     for (const edge of this.edgesOut.values()) {
       if (!edge.to || edge.to.root !== root) {
