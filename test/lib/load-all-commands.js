@@ -1,4 +1,4 @@
-// Our coverage mapping means that stuff like this doen't count for coverage.
+// Our coverage mapping means that stuff like this doesn't count for coverage.
 // It does ensure that every command has a usage that renders, contains its
 // name, a description, and if it has completion it is a function.  That it
 // renders also ensures that any params we've defined in our commands work.
