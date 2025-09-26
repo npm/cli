@@ -968,7 +968,7 @@ t.test('disable-2fa', async t => {
 
     await profile.exec(['disable-2fa'])
     t.equal(result(), 'Two factor authentication not enabled.',
-      'should output already disalbed msg')
+      'should output already disabled msg')
   })
 
   t.test('requests otp', async t => {
@@ -1101,7 +1101,7 @@ t.test('disable-2fa', async t => {
 
     await profile.exec(['disable-2fa'])
 
-    t.equal(result(), 'Two factor authentication disabled.', 'should output already disalbed msg')
+    t.equal(result(), 'Two factor authentication disabled.', 'should output already disabled msg')
   })
 })
 
