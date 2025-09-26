@@ -221,8 +221,8 @@ While npm v6 had `uninstall` lifecycle scripts, npm v7 does not. Removal of a pa
 Reasons for a package removal include:
 
 * a user directly uninstalled this package
-* a user uninstalled a dependant package and so this dependency is being uninstalled
-* a user uninstalled a dependant package but another package also depends on this version
+* a user uninstalled a dependent package and so this dependency is being uninstalled
+* a user uninstalled a dependent package but another package also depends on this version
 * this version has been merged as a duplicate with another version
 * etc.
 
