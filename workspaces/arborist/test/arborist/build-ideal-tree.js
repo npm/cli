@@ -3324,7 +3324,7 @@ t.test('competing peerSets resolve in both root and workspace', async t => {
 
     const [rootWarnings = [], wsWarnings = []] = warnings
     // TODO: these warn for now but shouldnt
-    // https://github.com/npm/arborist/issues/347
+    // https://github.com/npm/cli/issues/4270
     t.comment('FIXME')
     t.match(rootWarnings, ['warn', 'ERESOLVE', 'overriding peer dependency', {
       code: 'ERESOLVE',
@@ -3385,7 +3385,7 @@ t.test('competing peerSets resolve in both root and workspace', async t => {
     t.equal(wsD.version, '1.0.0', 'workspace d version')
 
     // TODO: these should not be undefined
-    // https://github.com/npm/arborist/issues/348
+    // https://github.com/npm/cli/issues/4269
     t.comment('FIXME')
     t.equal((wsTargetC || {}).version, undefined, 'workspace target c version')
     t.equal((wsTargetD || {}).version, undefined, 'workspace target d version')
