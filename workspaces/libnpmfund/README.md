@@ -75,7 +75,7 @@ things such as printing a `6 packages are looking for funding` msg.
 - `workspaces`: `Array<String>` List of workspaces names to filter for,
 the result will only include a subset of the resulting tree that includes
 only the nodes that are children of the listed workspaces names.
-- `path`, `registry` and more [Arborist](https://github.com/npm/arborist/) options.
+- `path`, `registry` and more [Arborist options](https://github.com/npm/cli/blob/latest/workspaces/arborist/README.md#usage).
 
 ##### <a name="fund.readTree"></a> `> fund.readTree(tree, [opts]) -> Promise<Object>`
 
