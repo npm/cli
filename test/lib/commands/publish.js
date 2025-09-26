@@ -563,7 +563,7 @@ t.test('workspaces', t => {
     t.matchSnapshot(joinedOutput(), 'all workspaces in json')
   })
 
-  t.test('differet package spec', async t => {
+  t.test('different package spec', async t => {
     const testDir = {
       'package.json': JSON.stringify(
         {
