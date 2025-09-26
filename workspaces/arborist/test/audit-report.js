@@ -357,7 +357,7 @@ t.test('audit when tree is empty', async t => {
   t.strictSame(report, null)
 })
 
-t.test('audit when bulk report doenst have anything in it', async t => {
+t.test('audit when bulk report does not have anything in it', async t => {
   createRegistry(t)
   const tree = new Node({
     path: '/path/to/tree',
