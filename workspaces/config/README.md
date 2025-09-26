@@ -121,7 +121,7 @@ Options:
 - `cwd` Optional, defaults to `process.cwd()`, used for inferring the
   `localPrefix` and loading the `project` config.
 - `platform` Optional, defaults to `process.platform`.  Used when inferring
-  the `globalPrefix` from the `execPath`, since this is done diferently on
+  the `globalPrefix` from the `execPath`, since this is done differently on
   Windows.
 - `execPath` Optional, defaults to `process.execPath`.  Used to infer the
   `globalPrefix`.
