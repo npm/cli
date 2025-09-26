@@ -20,7 +20,7 @@ test('create', async t => {
 
 test('create - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
-  // will be defauled to real registry url in `npm-registry-fetch`
+  // will be defaulted to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .put('/-/org/foo/team', { name: 'cli' })
     .reply(201, { name: 'cli' })
@@ -61,7 +61,7 @@ test('destroy', async t => {
 
 test('destroy - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
-  // will be defauled to real registry url in `npm-registry-fetch`
+  // will be defaulted to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .delete('/-/team/foo/cli')
     .reply(204)
@@ -82,7 +82,7 @@ test('add', async t => {
 
 test('add - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
-  // will be defauled to real registry url in `npm-registry-fetch`
+  // will be defaulted to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .put('/-/team/foo/cli/user', { user: 'zkat' })
     .reply(201, {})
@@ -103,7 +103,7 @@ test('rm', async t => {
 
 test('rm - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
-  // will be defauled to real registry url in `npm-registry-fetch`
+  // will be defaulted to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .delete('/-/team/foo/cli/user', { user: 'zkat' })
     .reply(204)
@@ -124,7 +124,7 @@ test('lsTeams', async t => {
 
 test('lsTeams - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
-  // will be defauled to real registry url in `npm-registry-fetch`
+  // will be defaulted to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .get('/-/org/foo/team?format=cli')
     .reply(200, ['foo:bar', 'foo:cli'])
@@ -153,7 +153,7 @@ test('lsTeams.stream', async t => {
 
 test('lsTeams.stream - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
-  // will be defauled to real registry url in `npm-registry-fetch`
+  // will be defaulted to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .get('/-/org/foo/team?format=cli')
     .reply(200, ['foo:bar', 'foo:cli'])
@@ -174,7 +174,7 @@ test('lsUsers', async t => {
 
 test('lsUsers - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
-  // will be defauled to real registry url in `npm-registry-fetch`
+  // will be defaulted to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .get('/-/team/foo/cli/user?format=cli')
     .reply(500)
@@ -203,7 +203,7 @@ test('lsUsers.stream', async t => {
 
 test('lsUsers.stream - no options', async t => {
   // NOTE: mocking real url, because no opts variable means `registry` value
-  // will be defauled to real registry url in `npm-registry-fetch`
+  // will be defaulted to real registry url in `npm-registry-fetch`
   tnock(t, 'https://registry.npmjs.org')
     .get('/-/team/foo/cli/user?format=cli')
     .reply(200, ['iarna', 'zkat'])
