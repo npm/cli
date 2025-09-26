@@ -229,7 +229,7 @@
 - `2668386` deps: npm-registry-fetch@8.0.0 ([@mikemimik](https://github.com/mikemimik))
 - `ef093e2` deps: tap@14.10.6 ([@mikemimik](https://github.com/mikemimik))
 
-### Miscellanieous
+### Miscellaneous
 - `8e33902` chore: basic project updates ([@claudiahdz](https://github.com/claudiahdz))
 - `50e1433` fix: update return value; add tests ([@mikemimik](https://github.com/mikemimik))
 - `36d5c80` chore: updated gitignore; includes coverage folder ([@mikemimik](https://github.com/mikemimik))
