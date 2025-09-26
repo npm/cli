@@ -37,7 +37,7 @@ const packumentResponse = {
     [HAVE_BETA]: { version: HAVE_BETA, engines: { node: '>1' } },
     [NEXT_VERSION_ENGINE_COMPATIBLE]: {
       version: NEXT_VERSION_ENGINE_COMPATIBLE,
-      engiges: { node: '<=1' },
+      engines: { node: '<=1' },
     },
     [NEXT_VERSION_ENGINE_COMPATIBLE_MINOR]: {
       version: NEXT_VERSION_ENGINE_COMPATIBLE_MINOR,
