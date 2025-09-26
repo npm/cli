@@ -3906,7 +3906,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP load workspaces when loading from hidding lockfile > actual tree 1`] = `
+exports[`test/arborist/load-actual.js TAP load workspaces when loading from hidden lockfile > actual tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristLink {
@@ -3914,15 +3914,15 @@ ArboristNode {
         EdgeIn {
           "from": "",
           "name": "a",
-          "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/a",
+          "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/packages/a",
           "type": "workspace",
         },
       },
       "isWorkspace": true,
       "location": "node_modules/a",
       "name": "a",
-      "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/node_modules/a",
-      "realpath": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/a",
+      "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/node_modules/a",
+      "realpath": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/packages/a",
       "resolved": "file:../packages/a",
       "target": ArboristNode {
         "location": "packages/a",
@@ -3934,15 +3934,15 @@ ArboristNode {
         EdgeIn {
           "from": "",
           "name": "b",
-          "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/b",
+          "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/packages/b",
           "type": "workspace",
         },
       },
       "isWorkspace": true,
       "location": "node_modules/b",
       "name": "b",
-      "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/node_modules/b",
-      "realpath": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/b",
+      "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/node_modules/b",
+      "realpath": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/packages/b",
       "resolved": "file:../packages/b",
       "target": ArboristNode {
         "location": "packages/b",
@@ -3953,13 +3953,13 @@ ArboristNode {
   "edgesOut": Map {
     "a" => EdgeOut {
       "name": "a",
-      "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/a",
+      "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/packages/a",
       "to": "node_modules/a",
       "type": "workspace",
     },
     "b" => EdgeOut {
       "name": "b",
-      "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/b",
+      "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/packages/b",
       "to": "node_modules/b",
       "type": "workspace",
     },
@@ -3969,21 +3969,21 @@ ArboristNode {
       "isWorkspace": true,
       "location": "packages/a",
       "name": "a",
-      "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/a",
+      "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/packages/a",
       "version": "1.2.3",
     },
     ArboristNode {
       "isWorkspace": true,
       "location": "packages/b",
       "name": "b",
-      "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/b",
+      "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile/packages/b",
       "version": "1.2.3",
     },
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile",
-  "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile",
+  "name": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile",
+  "path": "tap-testdir-load-actual-load-workspaces-when-loading-from-hidden-lockfile",
   "workspaces": Map {
     "a" => "packages/a",
     "b" => "packages/b",
