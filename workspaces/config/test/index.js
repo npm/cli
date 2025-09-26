@@ -433,7 +433,7 @@ loglevel = yolo
       'should return false for a builtin-defined value')
 
     // make sure isDefault still works as intended after
-    // setting and deleting values in differente sources
+    // setting and deleting values in different sources
     config.set('methane', 'H2O', 'cli')
     t.notOk(config.isDefault('methane'),
       'should no longer return true now that a cli value was defined')
