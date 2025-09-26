@@ -26,7 +26,7 @@ Publish token npm_… with id e0cf92 created 2017-10-02
 
 ```
 
-* `npm token create [--read-only] [--cidr=<cidr-ranges>]`:
+* `npm token create [--read-only] [--cidr=<cidr-ranges>]` (deprecated):
   Create a new authentication token. It can be `--read-only`, or accept
   a list of
   [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
@@ -34,10 +34,8 @@ Publish token npm_… with id e0cf92 created 2017-10-02
   your password, and, if you have two-factor authentication enabled, an
   otp.
 
-  Currently, the cli can not generate automation tokens. Please refer to
-  the [docs
-  website](https://docs.npmjs.com/creating-and-viewing-access-tokens)
-  for more information on generating automation tokens.
+Creating tokens via the CLI is deprecated and will be removed from the npm registry in the future. 
+For more info please visit https://docs.npmjs.com/creating-and-viewing-access-tokens
 
 ```
 Created publish token a73c9572-f1b9-8983-983d-ba3ac3cc913d
