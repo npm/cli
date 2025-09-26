@@ -197,7 +197,7 @@
 ## 2.0.0 (2020-03-02)
 
 ### BREAKING CHANGE
-- Removed `figgy-pudding` as a dependecy
+- Removed `figgy-pudding` as a dependency
 - Using native promises
 - Require node >= v10
 
