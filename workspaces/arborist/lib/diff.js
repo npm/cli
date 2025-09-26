@@ -257,6 +257,17 @@ const diffNode = ({
     return
   }
 
+  // Treat inert nodes as undefined for the purposes of diffing.
+  if (actual?.ideallyInert) {
+    actual = undefined
+  }
+  if (ideal?.ideallyInert) {
+    ideal = undefined
+  }
+  if (!actual && !ideal) {
+    return
+  }
+
   const action = getAction({ actual, ideal, omit, omitted })
 
   // if it's a match, then get its children

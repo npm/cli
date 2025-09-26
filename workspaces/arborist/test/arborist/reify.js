@@ -496,6 +496,14 @@ t.test('do not install optional deps with mismatched platform specifications', a
   await t.resolveMatchSnapshot(printReified(fixture(t, 'optional-platform-specification')))
 })
 
+t.test('do not report failed optional deps as installed', async t => {
+  createRegistry(t, true)
+  const path = fixture(t, 'optional-platform-specification')
+  const arb = newArb({ path })
+  await arb.reify()
+  t.equal(arb.diff.children.length, 0, 'no changes, nothing installed')
+})
+
 t.test('still do not install optional deps with mismatched platform specifications even when forced', async t => {
   createRegistry(t, true)
   await t.resolveMatchSnapshot(printReified(fixture(t, 'optional-platform-specification'), { force: true }))

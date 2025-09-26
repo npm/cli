@@ -192,7 +192,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   }
 
   async #checkEngineAndPlatform () {
-    const { engineStrict, npmVersion, nodeVersion, omit = [] } = this.options
+    const { engineStrict, npmVersion, nodeVersion, omit = [], cpu, os, libc } = this.options
     const omitSet = new Set(omit)
 
     for (const node of this.idealTree.inventory.values()) {
@@ -213,6 +213,19 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           })
         }
         checkPlatform(node.package, this.options.force)
+      }
+      if (node.optional && !node.ideallyInert) {
+        // Mark any optional packages we can't install as ideally inert.
+        // We ignore the --force and --engine-strict flags.
+        try {
+          checkEngine(node.package, npmVersion, nodeVersion, false)
+          checkPlatform(node.package, false, { cpu, os, libc })
+        } catch (error) {
+          const set = optionalSet(node)
+          for (const node of set) {
+            node.ideallyInert = true
+          }
+        }
       }
     }
   }
