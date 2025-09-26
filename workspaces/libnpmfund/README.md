@@ -82,7 +82,7 @@ only the nodes that are children of the listed workspaces names.
 Reads **funding** info from a given install tree and returns a tree object
 that only contains packages in which funding info is defined.
 
-- `tree`: An [`arborist`](https://github.com/npm/arborist) tree to be used, e.g:
+- `tree`: An [`arborist`](https://github.com/npm/cli/blob/latest/workspaces/arborist/README.md) tree to be used, e.g:
 
 ```js
 const Arborist = require('@npmcli/arborist')
