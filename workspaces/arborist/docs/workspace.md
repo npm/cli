@@ -168,7 +168,7 @@ NOTE:
 
 ### Reify
 
-1. Correctly symlink workspaces to its dependants `node_modules`
+1. Correctly symlink workspaces to its dependents `node_modules`
 
 ## Open Ended Questions
 
