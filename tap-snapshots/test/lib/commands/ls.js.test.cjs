@@ -453,7 +453,7 @@ workspaces-tree@1.0.0 {CWD}/prefix
       \`-- bar@1.0.0
 `
 
-exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should inlude root and specified workspace > output 1`] = `
+exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should include root and specified workspace > output 1`] = `
 workspaces-tree@1.0.0 {CWD}/prefix
 +-- d@1.0.0 -> ./d
 | \`-- foo@1.1.1

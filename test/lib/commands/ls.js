@@ -1650,7 +1650,7 @@ t.test('ls', async t => {
     }))
 
     // filter out a single workspace and include root
-    t.test('should inlude root and specified workspace', t => mockWorkspaces(t, [], {
+    t.test('should include root and specified workspace', t => mockWorkspaces(t, [], {
       'include-workspace-root': true,
       workspace: 'd',
     }))
