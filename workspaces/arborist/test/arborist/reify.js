@@ -2474,7 +2474,7 @@ t.test('move aside symlink clutter', async t => {
   // check to see if we're on a case-insensitive fs
   try {
     const st = fs.lstatSync(path + '/node_modules/abbrev')
-    t.equal(st.isSymbolicLink(), true, 'fs is case insensitive')
+    t.equal(st.isSymbolicLink(), true, 'fs is case-insensitive')
   } catch (er) {
     t.plan(0, 'case sensitive file system, test not relevant')
     return
