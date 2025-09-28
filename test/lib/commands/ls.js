@@ -3838,7 +3838,7 @@ t.test('ls --json', async t => {
     await t.rejects(
       ls.exec([]),
       { code: 'EJSONPARSE', message: 'Failed to parse root package.json' },
-      'should have missin root package.json msg'
+      'should have missing root package.json msg'
     )
     t.same(
       jsonParse(result()),
