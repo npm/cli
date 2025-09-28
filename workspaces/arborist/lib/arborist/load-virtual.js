@@ -168,7 +168,7 @@ module.exports = cls => class VirtualLoader extends cls {
     }
   }
 
-  // separate out link metadatas, and create Node objects for nodes
+  // separate out link metadata, and create Node objects for nodes
   #resolveNodes (s, root) {
     const links = new Map()
     const nodes = new Map([['', root]])
