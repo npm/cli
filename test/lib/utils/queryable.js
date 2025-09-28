@@ -960,6 +960,6 @@ t.test('bracket lovers', async t => {
       '[iLoveBrackets]': 'seriously?',
       '[0]': '-.-',
     },
-    'any top-level item can not be parsed with square bracket notation'
+    'any top-level item cannot be parsed with square bracket notation'
   )
 })
