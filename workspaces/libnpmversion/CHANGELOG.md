@@ -11,7 +11,7 @@
 
 ## [8.0.1](https://github.com/npm/cli/compare/libnpmversion-v8.0.0...libnpmversion-v8.0.1) (2025-05-15)
 ### Bug Fixes
-* [`71bb817`](https://github.com/npm/cli/commit/71bb817599bbaabe8e05a2bc7dd32ec16622bd93) [#8279](https://github.com/npm/cli/pull/8279) version: include prerelease when retriving tag (#8279) (@milaninfy)
+* [`71bb817`](https://github.com/npm/cli/commit/71bb817599bbaabe8e05a2bc7dd32ec16622bd93) [#8279](https://github.com/npm/cli/pull/8279) version: include prerelease when retrieving tag (#8279) (@milaninfy)
 
 ## [8.0.0](https://github.com/npm/cli/compare/libnpmversion-v8.0.0-pre.0...libnpmversion-v8.0.0) (2024-12-16)
 ### Features
