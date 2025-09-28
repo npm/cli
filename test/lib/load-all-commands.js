@@ -37,7 +37,7 @@ t.test('load each command', async t => {
       t.ok(impl.exec.length <= 1, 'exec fn has 0 or 1 args')
 
       // workspaces
-      t.type(ctor.ignoreImplicitWorkspace, 'boolean', 'ctor has ignoreImplictWorkspace boolean')
+      t.type(ctor.ignoreImplicitWorkspace, 'boolean', 'ctor has ignoreImplicitWorkspace boolean')
       if (ctor.ignoreImplicitWorkspace !== BaseCommand.ignoreImplicitWorkspace) {
         counts.ignoreImplicitWorkspace++
       }
