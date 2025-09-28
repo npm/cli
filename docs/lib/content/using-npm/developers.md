@@ -170,7 +170,7 @@ More info at [`npm link`](/commands/npm-link).
 
 **This is important.**
 
-If you can not install it locally, you'll have
+If you cannot install it locally, you'll have
 problems trying to publish it.  Or, worse yet, you'll be able to
 publish it, but you'll be publishing a broken or pointless package.
 So don't do that.

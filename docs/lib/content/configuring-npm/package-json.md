@@ -337,7 +337,7 @@ the `files` globs.  Exceptions to this are:
 * `yarn.lock`
 * `bun.lockb`
 
-These can not be included.
+These cannot be included.
 
 ### exports
 

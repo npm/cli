@@ -34,7 +34,7 @@ Publish token npm_… with id e0cf92 created 2017-10-02
   your password, and, if you have two-factor authentication enabled, an
   otp.
 
-  Currently, the cli can not generate automation tokens. Please refer to
+  Currently, the cli cannot generate automation tokens. Please refer to
   the [docs
   website](https://docs.npmjs.com/creating-and-viewing-access-tokens)
   for more information on generating automation tokens.
