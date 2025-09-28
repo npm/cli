@@ -73,7 +73,6 @@ module.exports = cls => class Reifier extends cls {
   #dryRun
   #nmValidated = new Set()
   #omit
-  #omitted
   #retiredPaths = {}
   #retiredUnchanged = {}
   #savePrefix
@@ -98,7 +97,6 @@ module.exports = cls => class Reifier extends cls {
     }
 
     this.#omit = new Set(options.omit)
-    this.#omitted = new Set()
 
     // start tracker block
     this.addTracker('reify')
@@ -131,10 +129,6 @@ module.exports = cls => class Reifier extends cls {
       this.idealTree = oldTree
     }
     await this[_saveIdealTree](options)
-    // clean omitted
-    for (const node of this.#omitted) {
-      node.parent = null
-    }
     // clean inert
     for (const node of this.idealTree.inventory.values()) {
       if (node.inert) {
@@ -458,7 +452,6 @@ module.exports = cls => class Reifier extends cls {
     // and ideal trees.
     this.diff = Diff.calculate({
       omit: this.#omit,
-      omitted: this.#omitted,
       shrinkwrapInflated: this.#shrinkwrapInflated,
       filterNodes,
       actual: this.actualTree,
