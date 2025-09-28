@@ -317,7 +317,7 @@ t.test('config set nerf-darted option', async t => {
   )
 })
 
-t.test('config set scoped optoin', async t => {
+t.test('config set scoped option', async t => {
   const { npm } = await loadMockNpm(t)
   await npm.exec('config', ['set', '@npm:registry', 'https://registry.npmjs.org'])
   t.equal(
