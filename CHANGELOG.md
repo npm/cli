@@ -370,7 +370,7 @@
 ## [11.0.0-pre.1](https://github.com/npm/cli/compare/v11.0.0-pre.0...v11.0.0-pre.1) (2024-12-06)
 ### ⚠️ BREAKING CHANGES
 * Upon publishing, in order to apply a default "latest" dist tag, the command now retrieves all prior versions of the package. It will require that the version you're trying to publish is above the latest semver version in the registry, not including pre-release tags.
-* `npm init` now has a `type` prompt, and sorts the entries the created packages differently
+* `npm init` now has a `type` prompt, and sorts the entries in created packages differently
 * `bun.lockb` files are now included in the strict ignore list during packing
 ### Features
 * [`f3ac7b7`](https://github.com/npm/cli/commit/f3ac7b7460e1d9e1f9d3d8056317e36bb9813d5d) [#7939](https://github.com/npm/cli/pull/7939) no implicit latest tag on publish when latest > version (#7939) (@reggi, @ljharb)
