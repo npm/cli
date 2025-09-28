@@ -281,7 +281,7 @@ class Config {
     }
 
     try {
-      // This does not have an actual definition because this is not user defineable
+      // This does not have an actual definition because this is not user definable
       defaultsObject['npm-version'] = require(join(this.npmPath, 'package.json')).version
     } catch {
       // in some weird state where the passed in npmPath does not have a package.json
