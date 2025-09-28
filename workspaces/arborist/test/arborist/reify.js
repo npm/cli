@@ -199,7 +199,7 @@ t.test('packageLockOnly can add deps', async t => {
   t.throws(() => fs.statSync(path + '/node_modules'), { code: 'ENOENT' })
 })
 
-t.test('malformed package.json should not be overwitten', async t => {
+t.test('malformed package.json should not be overwritten', async t => {
   t.plan(2)
 
   const path = fixture(t, 'malformed-json')
