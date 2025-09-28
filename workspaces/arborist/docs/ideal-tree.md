@@ -52,7 +52,7 @@ Options:
             3. Attempt to PLACE the dep in the tree
         3. Add each placed node to the queue to be checked for updates
 6. If the shrinkwrap was loaded from disk, and the tree was mutated, reset
-   all dependency flags to true (dev, optional, devOptionl, extraneous)
+   all dependency flags to true (dev, optional, devOptional, extraneous)
 7. If the shrinkwrap was not loaded from disk, or the tree was mutated,
    calculate dependency flags appropriately (like for a `loadActual` walk)
 8. If options.prune is not false, and we started from a shrinkwrap and then
