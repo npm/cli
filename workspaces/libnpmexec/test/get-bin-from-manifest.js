@@ -15,7 +15,7 @@ t.test('extract scope from manifest name with multiple bins', t => {
   t.end()
 })
 
-t.test('can not figure out what executable to run', t => {
+t.test('cannot figure out what executable to run', t => {
   t.throws(
     () => getBinFromManifest({
       name: 'lorem',
