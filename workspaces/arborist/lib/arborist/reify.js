@@ -135,11 +135,17 @@ module.exports = cls => class Reifier extends cls {
     for (const node of this.#omitted) {
       node.parent = null
     }
+    // clean inert
+    for (const node of this.idealTree.inventory.values()) {
+      if (node.ideallyInert) {
+        node.parent = null
+      }
+    }
     // clean up any trash that is still in the tree
     for (const path of this[_trashList]) {
       const loc = relpath(this.idealTree.realpath, path)
       const node = this.idealTree.inventory.get(loc)
-      if (node && node.root === this.idealTree && !node.ideallyInert) {
+      if (node && node.root === this.idealTree) {
         node.parent = null
       }
     }

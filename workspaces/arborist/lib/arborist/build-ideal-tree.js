@@ -337,7 +337,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       })
 
       .then(tree => {
-        // search the virtual tree for invalid edges, if any are found add their source to
+        // search the virtual tree for missing/invalid edges, if any are found add their source to
         // the depsQueue so that we'll fix it later
         depth({
           tree,
@@ -351,7 +351,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           filter: node => node,
           visit: node => {
             for (const edge of node.edgesOut.values()) {
-              if (!edge.valid) {
+              if (!edge.to || !edge.valid) {
                 this.#depsQueue.push(node)
                 break // no need to continue the loop after the first hit
               }

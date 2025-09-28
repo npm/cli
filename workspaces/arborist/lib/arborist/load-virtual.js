@@ -269,7 +269,6 @@ To fix:
       integrity: sw.integrity,
       resolved: consistentResolve(sw.resolved, this.path, path),
       pkg: sw,
-      ideallyInert: sw.ideallyInert,
       hasShrinkwrap: sw.hasShrinkwrap,
       dev,
       optional,

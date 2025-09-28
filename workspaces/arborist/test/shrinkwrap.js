@@ -19,7 +19,6 @@ const emptyFixture = resolve(__dirname, 'fixtures/empty')
 const depTypesFixture = resolve(__dirname, 'fixtures/dev-deps')
 const badJsonFixture = resolve(__dirname, 'fixtures/testing-peer-deps-bad-sw')
 const hiddenLockfileFixture = resolve(__dirname, 'fixtures/hidden-lockfile')
-const hiddenIdeallyInertLockfileFixture = resolve(__dirname, 'fixtures/hidden-lockfile-inert')
 const hidden = 'node_modules/.package-lock.json'
 const saxFixture = resolve(__dirname, 'fixtures/sax')
 
@@ -863,15 +862,6 @@ t.test('load a hidden lockfile', async t => {
   const data = s.commit()
   t.equal(data.packages[''], undefined, 'no root entry')
   t.equal(data.dependencies, undefined, 'deleted legacy metadata')
-})
-
-t.test('load a hidden lockfile with ideallyInert', async t => {
-  fs.utimesSync(resolve(hiddenIdeallyInertLockfileFixture, hidden), new Date(), new Date())
-  const s = await Shrinkwrap.load({
-    path: hiddenIdeallyInertLockfileFixture,
-    hiddenLockfile: true,
-  })
-  t.matchSnapshot(s.data)
 })
 
 t.test('load a fresh hidden lockfile', async t => {

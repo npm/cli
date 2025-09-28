@@ -493,7 +493,9 @@ t.test('tracks changes of shrinkwrapped dep correctly', async t => {
 
 t.test('do not install optional deps with mismatched platform specifications', async t => {
   createRegistry(t, true)
-  await t.resolveMatchSnapshot(printReified(fixture(t, 'optional-platform-specification')))
+  const path = fixture(t, 'optional-platform-specification')
+  const tree = await reify(path)
+  t.equal(tree.children.size, 0, 'does not have deps')
 })
 
 t.test('do not report failed optional deps as installed', async t => {
@@ -506,36 +508,42 @@ t.test('do not report failed optional deps as installed', async t => {
 
 t.test('still do not install optional deps with mismatched platform specifications even when forced', async t => {
   createRegistry(t, true)
-  await t.resolveMatchSnapshot(printReified(fixture(t, 'optional-platform-specification'), { force: true }))
+  const path = fixture(t, 'optional-platform-specification')
+  const tree = await reify(path, { force: true })
+  t.equal(tree.children.size, 0, 'does not have deps')
 })
 
 t.test('fail to install deps with mismatched platform specifications', async t => {
   createRegistry(t, true)
-  await t.rejects(printReified(fixture(t, 'platform-specification')), { code: 'EBADPLATFORM' })
+  await t.rejects(reify(fixture(t, 'platform-specification')), { code: 'EBADPLATFORM' })
 })
 
 t.test('success to install optional deps with matched platform specifications with os and cpu and libc options', async t => {
   createRegistry(t, true)
-  await t.resolveMatchSnapshot(printReified(
-    fixture(t, 'optional-platform-specification'), { os: 'not-your-os', cpu: 'not-your-cpu', libc: 'not-your-libc' }))
+  const path = fixture(t, 'optional-platform-specification')
+  const tree = await reify(path, { os: 'not-your-os', cpu: 'not-your-cpu', libc: 'not-your-libc' })
+  t.equal(tree.children.size, 1, 'does have deps')
 })
 
 t.test('fail to install optional deps with matched os and mismatched cpu with os and cpu and libc options', async t => {
   createRegistry(t, true)
-  await t.resolveMatchSnapshot(printReified(
-    fixture(t, 'optional-platform-specification'), { os: 'not-your-os', cpu: 'another-cpu', libc: 'not-your-libc' }))
+  const path = fixture(t, 'optional-platform-specification')
+  const tree = await reify(path, { os: 'not-your-os', cpu: 'another-cpu', libc: 'not-your-libc' })
+  t.equal(tree.children.size, 0, 'does not have deps')
 })
 
 t.test('fail to install optional deps with mismatched os and matched cpu with os and cpu and libc options', async t => {
   createRegistry(t, true)
-  await t.resolveMatchSnapshot(printReified(
-    fixture(t, 'optional-platform-specification'), { os: 'another-os', cpu: 'not-your-cpu', libc: 'not-your-libc' }))
+  const path = fixture(t, 'optional-platform-specification')
+  const tree = await reify(path, { os: 'another-os', cpu: 'not-your-cpu', libc: 'not-your-libc' })
+  t.equal(tree.children.size, 0, 'does not have deps')
 })
 
 t.test('fail to install optional deps with matched os and matched cpu and mismatched libc with os and cpu and libc options', async t => {
   createRegistry(t, true)
-  await t.resolveMatchSnapshot(printReified(
-    fixture(t, 'optional-platform-specification'), { os: 'another-os', cpu: 'not-your-cpu', libc: 'not-your-libc' }))
+  const path = fixture(t, 'optional-platform-specification')
+  const tree = await reify(path, { os: 'another-os', cpu: 'not-your-cpu', libc: 'not-your-libc' })
+  t.equal(tree.children.size, 0, 'does not have deps')
 })
 
 t.test('dry run, do not get anything wet', async t => {
@@ -617,15 +625,6 @@ t.test('update a child of a node with bundled deps', async t => {
   await t.resolveMatchSnapshot(printReified(path, {
     update: ['@isaacs/testing-bundledeps-c'],
     installStrategy: 'nested',
-  }))
-})
-
-t.test('update a node without updating an inert child bundle deps', async t => {
-  const path = fixture(t, 'testing-bundledeps-4')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printReified(path, {
-    update: ['@isaacs/testing-bundledeps-parent'],
-    save: false,
   }))
 })
 
@@ -2617,32 +2616,7 @@ t.test('adding an unresolvable optional dep is OK', async t => {
   })
   createRegistry(t, true)
   const tree = await reify(path, { add: ['abbrev'] })
-  const children = [...tree.children.values()]
-  t.equal(children.length, 1, 'optional unresolved dep node added')
-  t.ok(children[0].ideallyInert, 'node is ideally inert')
-  t.throws(() => fs.statSync(path + '/node_modules/abbrev'), { code: 'ENOENT' }, 'optional dependency should not exist on disk')
-  t.matchSnapshot(printTree(tree))
-})
-
-t.test('adding an unresolvable optional dep is OK - maintains inertness', async t => {
-  const path = t.testdir({
-    'package.json': JSON.stringify({
-      dependencies: {
-        wrappy: '1.0.2',
-      },
-      optionalDependencies: {
-        abbrev: '999999',
-      },
-    }),
-  })
-  createRegistry(t, true)
-  let tree = await reify(path, { add: ['abbrev'] })
-  const children = [...tree.children.values()]
-  t.equal(children.length, 2, 'optional unresolved dep node added')
-  t.ok(children[0].ideallyInert, 'node is ideally inert')
-  t.throws(() => fs.statSync(path + '/node_modules/abbrev'), { code: 'ENOENT' }, 'optional dependency should not exist on disk')
-  tree = await reify(path, { add: ['abbrev'] })
-  t.matchSnapshot(printTree(tree))
+  t.equal(tree.children.size, 0, 'not added')
 })
 
 t.test('includeWorkspaceRoot in addition to workspace', async t => {
@@ -3835,58 +3809,6 @@ t.test('workspace installs retain existing versions with newer package specs', a
     'another-cool-package package.json should be updated to abbrev@1.0.4')
 })
 
-t.test('externalProxy returns early for ideally inert node with installStrategy linked', async t => {
-  const path = t.testdir({
-    'package.json': JSON.stringify({
-      dependencies: {
-        abbrev: '1.1.1',
-      },
-    }),
-    'package-lock.json': JSON.stringify({
-      lockfileVersion: 2,
-      requires: true,
-      packages: {
-        '': {
-          devDependencies: {
-            abbrev: '1.1.1',
-          },
-        },
-        'node_modules/abbrev': {
-          version: '1.1.1',
-          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
-          integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
-          dev: true,
-          ideallyInert: true,
-        },
-      },
-      dependencies: {
-        abbrev: {
-          version: '1.1.1',
-          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
-          integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
-          dev: true,
-        },
-      },
-    }),
-  })
-
-  const arb = new Arborist({
-    path,
-    registry: 'https://registry.npmjs.org',
-    cache: resolve(path, 'cache'),
-    installStrategy: 'linked',
-  })
-  await arb.reify({ installStrategy: 'linked' })
-
-  // Since the node is ideally inert, it should not be installed in node_modules
-  t.throws(
-    () => fs.lstatSync(resolve(path, 'node_modules', 'abbrev')),
-    { code: 'ENOENT' },
-    'ideally inert node should not be installed'
-  )
-  t.end()
-})
-
 t.test('externalOptionalDependencies excludes ideally inert optional node with installStrategy linked', async t => {
   const testDir = t.testdir({
     'package.json': JSON.stringify({
@@ -3908,7 +3830,7 @@ t.test('externalOptionalDependencies excludes ideally inert optional node with i
           resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
           integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
           dev: true,
-          ideallyInert: true,
+          cpu: ['not-your-cpu'],
         },
       },
       optionalDependencies: {
@@ -3917,7 +3839,7 @@ t.test('externalOptionalDependencies excludes ideally inert optional node with i
           resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
           integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
           dev: true,
-          ideallyInert: true,
+          cpu: ['not-your-cpu'],
         },
       },
     }),
@@ -3946,46 +3868,4 @@ t.test('externalOptionalDependencies excludes ideally inert optional node with i
   )
 
   t.end()
-})
-
-t.test('ideally inert due to platform mismatch using optional dependency', async t => {
-  const testDir = t.testdir({
-    'package.json': JSON.stringify({
-      name: 'platform-test',
-      version: '1.0.0',
-      optionalDependencies: {
-        'platform-specifying-test-package': 'file:platform-specifying-test-package',
-      },
-    }, null, 2),
-    'platform-specifying-test-package': {
-      'package.json': JSON.stringify({
-        name: 'platform-specifying-test-package',
-        version: '1.0.0',
-        // Declare an OS that doesn't match current platform
-        os: ['woo'],
-      }, null, 2),
-    },
-  })
-
-  const arb = new Arborist({
-    audit: false,
-    path: testDir,
-    os: process.platform,
-  })
-
-  // The platform check will fail for the optional dependency, and the optional failure handler should mark the node as ideally inert.
-  const tree = await arb.reify()
-  await arb.reify()
-
-  // In the ideal tree, the dependency should be present and marked as ideally inert.
-  const dep = tree.children.get('platform-specifying-test-package')
-  t.ok(dep, 'platform-specifying-test-package node exists in the ideal tree')
-  t.ok(dep.ideallyInert, 'node is marked as ideally inert due to platform mismatch')
-
-  // Verify that the dependency is not installed on disk.
-  t.throws(
-    () => fs.statSync(join(testDir, 'node_modules', 'platform-specifying-test-package')),
-    { code: 'ENOENT' },
-    'platform-specifying-test-package is not installed on disk'
-  )
 })
