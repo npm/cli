@@ -829,7 +829,7 @@ t.test('set arrays', async t => {
   t.throws(
     () => qqqqq.set('lorem[]', 4),
     { code: 'ENOAPPEND' },
-    'should throw error if using empty square bracket in an non-array item'
+    'should throw error if using empty square bracket in a non-array item'
   )
   qqqqq.set('lorem[0]', 3)
   t.strictSame(
