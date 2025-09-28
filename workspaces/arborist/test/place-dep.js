@@ -33,7 +33,7 @@ t.test('placement tests', t => {
       preferDedupe = false,
       // --force set?
       force = false,
-      // is this the thing the user is explicitly installing?
+      // is this the thing that the user is explicitly installing?
       explicitRequest,
       // the names passed to `npm update foo bar baz` for example.
       updateNames = [],

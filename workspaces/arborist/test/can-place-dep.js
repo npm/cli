@@ -33,7 +33,7 @@ t.test('basic placement check tests', t => {
     preferDedupe,
     // array of nodes representing the dep's peer group
     peerSet,
-    // is this dep the thing the user is explicitly installing?
+    // is this dep the thing that the user is explicitly installing?
     explicitRequest,
   }) => {
     const target = tree.inventory.get(targetLoc)
