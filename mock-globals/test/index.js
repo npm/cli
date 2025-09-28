@@ -268,7 +268,7 @@ t.test('multiple mocks and resets', async (t) => {
         t.equal(process.platform, nextPlatform, 'first reset')
         reset()
         reset()
-        t.equal(process.platform, nextPlatform, 'multiple resets are indempotent')
+        t.equal(process.platform, nextPlatform, 'multiple resets are idempotent')
       })
     })
 
@@ -294,10 +294,10 @@ t.test('multiple mocks and resets', async (t) => {
         const nextPlatform = index === platforms.length - 1 ? initial : lastPlatform
         t.equal(process.platform, lastPlatform)
         reset()
-        t.equal(process.platform, nextPlatform, 'multiple resets are indempotent')
+        t.equal(process.platform, nextPlatform, 'multiple resets are idempotent')
         reset()
         reset()
-        t.equal(process.platform, nextPlatform, 'multiple resets are indempotent')
+        t.equal(process.platform, nextPlatform, 'multiple resets are idempotent')
       })
     })
 
