@@ -460,7 +460,7 @@ t.test('no edge errors for nested deps', async t => {
     },
   })
 
-  // disable treeCheck since it prevents the original issue from occuring
+  // disable treeCheck since it prevents the original issue from occurring
   const ArboristNoTreeCheck = t.mock('../../lib/arborist', {
     '../../lib/tree-check.js': tree => tree,
   })
