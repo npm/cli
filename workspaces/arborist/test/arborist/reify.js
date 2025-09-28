@@ -1200,7 +1200,7 @@ t.test('scoped registries', async t => {
   const path = t.testdir()
 
   // TODO
-  // this is a very artifical test that is setting a lot of internal things
+  // this is a very artificial test that is setting a lot of internal things
   // up so that we assert that the intended behavior of sending right
   // resolved data for pacote.extract is working as intended, alternatively
   // we might prefer to replace this with a proper parallel alternative
