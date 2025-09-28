@@ -405,7 +405,7 @@ are same as \`cpu\` field of package.json, which comes from \`process.arch\`.
 
 #### \`depth\`
 
-* Default: \`Infinity\` if \`--all\` is set, otherwise \`0\`
+* Default: \`Infinity\` if \`--all\` is set; otherwise, \`0\`
 * Type: null or Number
 
 The depth to go when recursing packages for \`npm ls\`.
@@ -992,8 +992,8 @@ instead of the current working directory. See
 
 #### \`lockfile-version\`
 
-* Default: Version 3 if no lockfile, auto-converting v1 lockfiles to v3,
-  otherwise maintain current lockfile version.
+* Default: Version 3 if no lockfile, auto-converting v1 lockfiles to v3;
+  otherwise, maintain current lockfile version.
 * Type: null, 1, 2, 3, "1", "2", or "3"
 
 Set the lockfile format version to be used in package-lock.json and
@@ -1129,7 +1129,7 @@ allow the CLI to fill in missing cache data, see \`--prefer-offline\`.
 #### \`omit\`
 
 * Default: 'dev' if the \`NODE_ENV\` environment variable is set to
-  'production', otherwise empty.
+  'production'; otherwise, empty.
 * Type: "dev", "optional", or "peer" (can be set multiple times)
 
 Dependency types to omit from the installation tree on disk.

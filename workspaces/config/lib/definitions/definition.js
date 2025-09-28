@@ -34,7 +34,7 @@ const {
 class Definition {
   constructor (key, def) {
     this.key = key
-    // if it's set falsey, don't export it, otherwise we do by default
+    // if it's set falsey, don't export it; otherwise, we do by default
     this.envExport = true
     Object.assign(this, def)
     this.validate()
