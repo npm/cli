@@ -65,7 +65,7 @@ const conf = new Config({
   flatten,
   // optional, defaults to process.argv
   // argv: [] <- if you are using this package in your own cli
-  //             and dont want to have colliding argv
+  //             and don't want to have colliding argv
   argv: process.argv,
   // optional, defaults to process.env
   env: process.env,
