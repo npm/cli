@@ -727,7 +727,7 @@ t.test('enable-2fa', async t => {
                 mode: 'auth-only',
               },
             },
-            'should set tfa mode approprietly in follow-up call'
+            'should set tfa mode appropriately in follow-up call'
           )
         } else if (setCount === 3) {
           t.match(
