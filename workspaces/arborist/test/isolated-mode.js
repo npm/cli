@@ -20,7 +20,7 @@ const { getRepo } = require('./fixtures/isolated-nock')
 
 /**
  * The testing framework here is work in progress, in particular it does not have nice ergonomics.
- * The syntactic suggar for this framework will be introduced over time as we add more features.
+ * The syntactic sugar for this framework will be introduced over time as we add more features.
  *
  * The framework has two parts:
  * - Mocking: The tool generates a test repo based on a declarative list of packages.
