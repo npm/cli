@@ -422,7 +422,7 @@ loglevel = yolo
     t.notOk(config.isDefault('cli-config'),
       'should return false for a cli-defined value')
     t.notOk(config.isDefault('foo'),
-      'should return false for a env-defined value')
+      'should return false for an env-defined value')
     t.notOk(config.isDefault('project-config'),
       'should return false for a project-defined value')
     t.notOk(config.isDefault('default-user-config-in-home'),
