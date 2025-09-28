@@ -72,7 +72,7 @@ dependency can go without causing conflicts.
     2. If not CONFLICT, set result in CAN PLACE
     3. set TARGET to TARGET parent
 4. If no satisfying target found, throw Unresolvable Dep Tree error
-5. set TARGET to last non-conclict target checked
+5. set TARGET to last non-conflict target checked
 6. If CAN PLACE is KEEP, do not place
 7. add dep to placed list
 8. If an existing child by that name at TARGET,
