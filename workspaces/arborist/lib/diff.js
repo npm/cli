@@ -258,7 +258,7 @@ const diffNode = ({
   }
 
   // Treat inert nodes as undefined for the purposes of diffing.
-  if (ideal?.ideallyInert) {
+  if (ideal?.inert) {
     ideal = undefined
   }
   if (!actual && !ideal) {

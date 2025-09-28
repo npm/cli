@@ -214,8 +214,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         }
         checkPlatform(node.package, this.options.force)
       }
-      if (node.optional && !node.ideallyInert) {
-        // Mark any optional packages we can't install as ideally inert.
+      if (node.optional && !node.inert) {
+        // Mark any optional packages we can't install as inert.
         // We ignore the --force and --engine-strict flags.
         try {
           checkEngine(node.package, npmVersion, nodeVersion, false)
@@ -223,7 +223,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         } catch (error) {
           const set = optionalSet(node)
           for (const node of set) {
-            node.ideallyInert = true
+            node.inert = true
           }
         }
       }
@@ -824,7 +824,7 @@ This is a one-time fix-up, please be patient...
       node !== this.idealTree &&
       node.resolved &&
       (hasBundle || hasShrinkwrap) &&
-      !node.ideallyInert
+      !node.inert
     if (crackOpen) {
       const Arborist = this.constructor
       const opt = { ...this.options }
@@ -1574,7 +1574,7 @@ This is a one-time fix-up, please be patient...
 
       const set = optionalSet(node)
       for (const node of set) {
-        node.ideallyInert = true
+        node.inert = true
       }
     }
   }
@@ -1595,7 +1595,7 @@ This is a one-time fix-up, please be patient...
           node.parent !== null
           && !node.isProjectRoot
           && !excludeNodes.has(node)
-          && !node.ideallyInert
+          && !node.inert
         ) {
           this[_addNodeToTrashList](node)
         }

@@ -3809,7 +3809,7 @@ t.test('workspace installs retain existing versions with newer package specs', a
     'another-cool-package package.json should be updated to abbrev@1.0.4')
 })
 
-t.test('externalOptionalDependencies excludes ideally inert optional node with installStrategy linked', async t => {
+t.test('externalOptionalDependencies excludes inert optional node with installStrategy linked', async t => {
   const testDir = t.testdir({
     'package.json': JSON.stringify({
       optionalDependencies: {
@@ -3857,14 +3857,14 @@ t.test('externalOptionalDependencies excludes ideally inert optional node with i
   t.notOk(
     arb.idealGraph.externalOptionalDependencies &&
     arb.idealGraph.externalOptionalDependencies.some(n => n && n.name === 'abbrev'),
-    'ideally inert optional dependency should not appear in externalOptionalDependencies'
+    'inert optional dependency should not appear in externalOptionalDependencies'
   )
 
   // And verify that it is not installed on disk
   t.throws(
     () => fs.lstatSync(resolve(testDir, 'node_modules', 'abbrev')),
     { code: 'ENOENT' },
-    'ideally inert optional node should not be installed'
+    'inert optional node should not be installed'
   )
 
   t.end()

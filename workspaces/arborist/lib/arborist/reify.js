@@ -137,7 +137,7 @@ module.exports = cls => class Reifier extends cls {
     }
     // clean inert
     for (const node of this.idealTree.inventory.values()) {
-      if (node.ideallyInert) {
+      if (node.inert) {
         node.parent = null
       }
     }
@@ -768,7 +768,7 @@ module.exports = cls => class Reifier extends cls {
       const set = optionalSet(node)
       for (const node of set) {
         log.verbose('reify', 'failed optional dependency', node.path)
-        node.ideallyInert = true
+        node.inert = true
         this[_addNodeToTrashList](node)
       }
     }) : p).then(() => node)
@@ -1219,7 +1219,7 @@ module.exports = cls => class Reifier extends cls {
       // skip links that only live within node_modules as they are most
       // likely managed by packages we installed, we only want to rebuild
       // unchanged links we directly manage
-      const linkedFromRoot = (node.parent === tree && !node.ideallyInert) || node.target.fsTop === tree
+      const linkedFromRoot = (node.parent === tree && !node.inert) || node.target.fsTop === tree
       if (node.isLink && linkedFromRoot) {
         nodes.push(node)
       }
