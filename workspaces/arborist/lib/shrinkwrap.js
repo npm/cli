@@ -431,7 +431,7 @@ class Shrinkwrap {
       const [sw, lock, yarn] = await this.loadFiles
       data = sw || lock || '{}'
 
-      // use shrinkwrap only for deps, otherwise prefer package-lock
+      // use shrinkwrap only for deps; otherwise, prefer package-lock
       // and ignore npm-shrinkwrap if both are present.
       // TODO: emit a warning here or something if both are present.
       if (this.hiddenLockfile) {

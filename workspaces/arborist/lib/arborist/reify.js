@@ -1323,7 +1323,7 @@ module.exports = cls => class Reifier extends cls {
           const alias = name !== pname
           newSpec = alias ? `npm:${pname}@${range}` : range
         } else if (req.hosted) {
-          // save the git+https url if it has auth, otherwise shortcut
+          // save the git+https url if it has auth; otherwise, shortcut
           const h = req.hosted
           const opt = { noCommittish: false }
           if (h.https && h.auth) {

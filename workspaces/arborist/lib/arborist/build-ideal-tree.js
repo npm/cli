@@ -1080,7 +1080,7 @@ This is a one-time fix-up, please be patient...
       ? await this.#nodeFromSpec(edge.name, spec2, parent, secondEdge)
       : null
 
-    // pick the second one if they're both happy with that, otherwise first
+    // pick the second one if they're both happy with that; otherwise, first
     const node = second && edge.valid ? second : first
     // ensure the one we want is the one that's placed
     node.parent = parent
@@ -1287,7 +1287,7 @@ This is a one-time fix-up, please be patient...
 
         // failed to load the spec, either because of enotarget or
         // fetch failure of some other sort.  save it so we can verify
-        // later that it's optional, otherwise the error is fatal.
+        // later that it's optional; otherwise, the error is fatal.
         const n = new Node({
           name,
           parent,
@@ -1444,7 +1444,7 @@ This is a one-time fix-up, please be patient...
   // - if a path under an existing node, then assign that as the fsParent,
   //   and add it to the _depsQueue
   //
-  // call buildDepStep if anything was added to the queue, otherwise we're done
+  // call buildDepStep if anything was added to the queue; otherwise, we're done
   #resolveLinks () {
     for (const link of this.#linkNodes) {
       this.#linkNodes.delete(link)

@@ -248,7 +248,7 @@ class Node {
     this.fsParent = fsParent || null
 
     // see parent/root setters below.
-    // root is set to parent's root if we have a parent, otherwise if it's
+    // root is set to parent's root if we have a parent; otherwise, if it's
     // null, then it's set to the node itself.
     if (!parent && !fsParent) {
       this.root = root || null

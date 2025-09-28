@@ -66,7 +66,7 @@ dependency can go without causing conflicts.
 
 1. If edge is valid, and dep name is not on the update list, do not place
 2. If the node is not a top node, and the dep is a peer dep, then the
-   starting TARGET is node.parent, otherwise it's node
+   starting TARGET is node.parent; otherwise, it's node
 3. Do until CONFLICT:
     1. CHECK if dep can be placed at TARGET
     2. If not CONFLICT, set result in CAN PLACE
