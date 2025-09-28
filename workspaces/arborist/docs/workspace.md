@@ -141,9 +141,9 @@ workspaces will try to install deps from registry if no satisfying semver versio
 
 ### Build Ideal Tree
 
-1. Read list of "workpaces" from `package.json`
+1. Read list of "workspaces" from `package.json`
 2. Turn globs into actual locations, retrieve the final list of workspaces paths
-3. Arborist needs to be made aware of the list of worskpaces paths
+3. Arborist needs to be made aware of the list of workspaces paths
   1. Workspace info parsed (steps 1 and 2) needs to be attached before build ideal tree
   2. On building ideal tree, checks against existing workspaces to append them as child nodes
   3. Edge needs to support a `workspace` type
