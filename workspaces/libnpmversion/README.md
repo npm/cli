@@ -114,7 +114,7 @@ all is well, or rejects if any errors are encountered.
 
 #### `path` String
 
-The path to the package being versionified.  Defaults to process.cwd().
+The path to the package being versioned.  Defaults to process.cwd().
 
 #### `allowSameVersion` Boolean
 
