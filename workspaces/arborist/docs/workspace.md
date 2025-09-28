@@ -156,7 +156,7 @@ NOTE:
 
 ### Load Virtual
 
-1. How to figure out all the structure of workspaces form a pakcage-lock
+1. How to figure out all the structure of workspaces form a package-lock
   1. How it gets saved?
   2. How to build the virtual tree out of reading package-lock
 2. maybe support a subset of glob? we need to optimize mapWorkspace regardless
