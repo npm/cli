@@ -197,7 +197,7 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
   // get a list of all versions changelogs to add to the body of the PR
   // do this before we checkout our branch and make any changes
   const npmReleases = await Promise.all(newNpmVersions.map(async (v) => {
-    // don't include prereleases unless we are updating to a prerlease since we
+    // don't include prereleases unless we are updating to a prerelease since we
     // manually put all prerelease notes into the first stable major version
     if (v.prerelease.length && !npmVersion.prerelease.length) {
       return null
