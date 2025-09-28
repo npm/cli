@@ -81,7 +81,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         }
         queue.push(e.to)
       })
-      if (!next.isProjectRoot && !next.isWorkspace && !next.ideallyInert) {
+      if (!next.isProjectRoot && !next.isWorkspace) {
         root.external.push(await this.externalProxyMemo(next))
       }
     }
@@ -96,6 +96,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.localPath = node.path
     result.isWorkspace = true
     result.resolved = node.resolved
+    result.isLink = node.isLink || false
     await this.assignCommonProperties(node, result)
   }
 
@@ -136,6 +137,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.optional = node.optional
     result.resolved = node.resolved
     result.version = node.version
+    result.isLink = node.isLink || false
   }
 
   async assignCommonProperties (node, result) {
@@ -147,8 +149,8 @@ module.exports = cls => class IsolatedReifier extends cls {
     const nonOptionalDeps = edges.filter(e => !e.optional).map(e => e.to.target)
 
     result.localDependencies = await Promise.all(nonOptionalDeps.filter(n => n.isWorkspace).map(this.workspaceProxyMemo))
-    result.externalDependencies = await Promise.all(nonOptionalDeps.filter(n => !n.isWorkspace && !n.ideallyInert).map(this.externalProxyMemo))
-    result.externalOptionalDependencies = await Promise.all(optionalDeps.filter(n => !n.ideallyInert).map(this.externalProxyMemo))
+    result.externalDependencies = await Promise.all(nonOptionalDeps.filter(n => !n.isWorkspace).map(this.externalProxyMemo))
+    result.externalOptionalDependencies = await Promise.all(optionalDeps.map(this.externalProxyMemo))
     result.dependencies = [
       ...result.externalDependencies,
       ...result.localDependencies,
@@ -317,11 +319,15 @@ module.exports = cls => class IsolatedReifier extends cls {
         hasShrinkwrap: false,
         inDepBundle: false,
         integrity: null,
-        isLink: false,
+        isLink: node.isLink || false,
         isRoot: false,
         isInStore: inStore,
-        path: join(proxiedIdealTree.root.localPath, location),
-        realpath: join(proxiedIdealTree.root.localPath, location),
+        path: node.isLink ?
+          join(proxiedIdealTree.root.localPath, node.localPath || '', location) :
+          join(proxiedIdealTree.root.localPath, location),
+        realpath: node.isLink ?
+          join(proxiedIdealTree.root.localPath, node.localPath || '', location) :
+          join(proxiedIdealTree.root.localPath, location),
         resolved: node.resolved,
         version: pkg.version,
         package: pkg,
@@ -367,14 +373,18 @@ module.exports = cls => class IsolatedReifier extends cls {
         nmFolder = join('node_modules', '.store', key, 'node_modules')
       } else {
         from = node.isProjectRoot ? root : root.fsChildren.find(c => c.location === node.localLocation)
-        nmFolder = join(node.localLocation, 'node_modules')
+        nmFolder = node.isLink ?
+          join(proxiedIdealTree.root.localPath, node.localLocation || '', 'node_modules') :
+          join(node.localLocation, 'node_modules')
       }
 
       const processDeps = (dep, optional, external) => {
         optional = !!optional
         external = !!external
 
-        const location = join(nmFolder, dep.name)
+        const location = dep.isLink ?
+          join(proxiedIdealTree.root.localPath, dep.localLocation || '', 'node_modules', dep.name) :
+          join(nmFolder, dep.name)
         const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
         const toKey = getKey(dep)
 
@@ -388,7 +398,10 @@ module.exports = cls => class IsolatedReifier extends cls {
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
 
         binNames.forEach(bn => {
-          target.binPaths.push(join(from.realpath, 'node_modules', '.bin', bn))
+          const binPath = dep.isLink ?
+            join(proxiedIdealTree.root.localPath, from.realpath, 'node_modules', '.bin', bn) :
+            join(from.realpath, 'node_modules', '.bin', bn)
+          target.binPaths.push(binPath)
         })
 
         const link = {
