@@ -1020,7 +1020,7 @@ tap.test('nested bundled dependencies of workspaces with conflicting isolated de
   }
 
   // the isexe that is bundled is hoisted
-  // the 'which' that is bundled is not hoisted due to a conflaict
+  // the 'which' that is bundled is not hoisted due to a conflict
   const resolved = {
     'dog@1.2.3 (root)': {
       'bar@1.0.0 (workspace)': {
