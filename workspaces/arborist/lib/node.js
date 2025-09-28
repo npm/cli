@@ -1412,7 +1412,7 @@ class Node {
   }
 
   recalculateOutEdgesOverrides () {
-    // For each edge out propogate the new overrides through.
+    // For each edge out propagate the new overrides through.
     for (const edge of this.edgesOut.values()) {
       edge.reload(true)
       if (edge.to) {
