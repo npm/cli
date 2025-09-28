@@ -12,7 +12,7 @@ advisory.
 
 However, with `bundleDependencies`, any version of `x` whose dependency on
 `y` _intersects_ with the vulnerable range on the `y` advisory should be
-considered potentally vulnerable.
+considered potentially vulnerable.
 
 When considering the meta-vulnerability of any version of `x`, thus:
 
