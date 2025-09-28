@@ -78,7 +78,7 @@ t.test('load each command', async t => {
     })
   }
 
-  // make sure refactors dont move or rename these static properties since
+  // make sure refactors don't move or rename these static properties since
   // we guard against the tests for them above
   t.ok(counts.completion > 0, 'has some completion functions')
   t.ok(counts.ignoreImplicitWorkspace > 0, 'has some commands that change ignoreImplicitWorkspace')

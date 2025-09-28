@@ -174,7 +174,7 @@ class MockGlobals {
   #descriptors = {}
 
   register (globals, { replace = false } = {}) {
-    // Replace means dont merge in object values but replace them instead
+    // Replace means don't merge in object values but replace them instead
     // so we only get top level keys instead of walking the obj
     const keys = replace ? Object.keys(globals) : getKeys(globals)
 
