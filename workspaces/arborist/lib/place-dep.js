@@ -421,7 +421,7 @@ class PlaceDep {
   // prune all the nodes in a branch of the tree that can be safely removed
   // This is only the most basic duplication detection; it finds if there
   // is another satisfying node further up the tree, and if so, dedupes.
-  // Even in installStategy is nested, we do this amount of deduplication.
+  // Even if installStategy is nested, we do this amount of deduplication.
   pruneDedupable (node, descend = true) {
     if (node.canDedupe(this.preferDedupe, this.explicitRequest)) {
       // gather up all deps that have no valid edges in from outside
