@@ -672,7 +672,7 @@ class Config {
     // if we're in the ~ directory, and there happens to be a node_modules
     // folder (which is not TOO uncommon, it turns out), then we can end
     // up loading the "project" config where the "userconfig" will be,
-    // which causes some calamaties.  So, we only load project config if
+    // which causes some calamities.  So, we only load project config if
     // it doesn't match what the userconfig will be.
     if (projectFile !== this.#get('userconfig')) {
       return this.#loadFile(projectFile, 'project')
