@@ -592,7 +592,7 @@ class MockRegistry {
   }
 
   /**
-   * this is a simpler convience method for creating mockable registry with
+   * this is a simpler convenience method for creating mockable registry with
    * tarballs for specific versions
    */
   async setup (packages) {
