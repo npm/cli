@@ -1268,7 +1268,7 @@ class Node {
   // with another by the same name (eg, to update or dedupe).
   // This does a couple of walks out on the node_modules tree, recursing
   // into child nodes.  However, as setting the parent is typically done
-  // with nodes that don't have have many children, and (deduped) package
+  // with nodes that don't have many children, and (deduped) package
   // trees tend to be broad rather than deep, it's not that bad.
   // The only walk that starts from the parent rather than this node is
   // limited by edge name.
