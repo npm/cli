@@ -978,7 +978,7 @@ class Shrinkwrap {
 
     // npm v6 and before tracked 'from', meaning "the request that led
     // to this package being installed".  However, that's inherently
-    // racey and non-deterministic in a world where deps are deduped
+    // racy and non-deterministic in a world where deps are deduped
     // ahead of fetch time.  In order to maintain backwards compatibility
     // with v6 in the lockfile, we do this trick where we pick a valid
     // dep link out of the edgesIn set.  Choose the edge with the fewest
