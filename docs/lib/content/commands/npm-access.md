@@ -29,7 +29,7 @@ Unscoped packages are *always public*.
 
 Scoped packages *default to restricted*, but you can either publish them as
 public using `npm publish --access=public`, or set their access as public using
-`npm access public` after the initial publish.
+`npm access set status=public` after the initial publish.
 
 You must have privileges to set the access of a package:
 

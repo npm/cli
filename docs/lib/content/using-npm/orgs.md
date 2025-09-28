@@ -71,19 +71,19 @@ npm access revoke <org:team> [<package>]
 * See what org packages a team member can access:
 
 ```bash
-npm access ls-packages <org> <user>
+npm access list packages <org> <user>
 ```
 
 * See packages available to a specific team:
 
 ```bash
-npm access ls-packages <org:team>
+npm access list packages <org:team>
 ```
 
 * Check which teams are collaborating on a package:
 
 ```bash
-npm access ls-collaborators <pkg>
+npm access list collaborators <pkg>
 ```
 
 ### See also
