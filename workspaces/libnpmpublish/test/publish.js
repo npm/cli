@@ -406,7 +406,7 @@ t.test('publish existing package with provenance in gha', async t => {
   }
   const idToken = `.${Buffer.from(JSON.stringify(oidcClaims)).toString('base64')}.`
 
-  // Data for mocking Fulcio certifcate request
+  // Data for mocking Fulcio certificate request
   const fulcioURL = 'https://mock.fulcio'
   const leafCertificate = `-----BEGIN CERTIFICATE-----\nabc\n-----END CERTIFICATE-----\n`
   const rootCertificate = `-----BEGIN CERTIFICATE-----\nxyz\n-----END CERTIFICATE-----\n`
@@ -958,7 +958,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
   }
   const spec = npa(manifest.name)
 
-  // Data for mocking Fulcio certifcate request
+  // Data for mocking Fulcio certificate request
   const fulcioURL = 'https://mock.fulcio'
   const leafCertificate = `-----BEGIN CERTIFICATE-----\nabc\n-----END CERTIFICATE-----\n`
   const rootCertificate = `-----BEGIN CERTIFICATE-----\nxyz\n-----END CERTIFICATE-----\n`
