@@ -203,7 +203,7 @@ class PlaceDep {
         this.warnPeerConflict()
       }
 
-      // if we get a KEEP in a update scenario, then we MAY have something
+      // if we get a KEEP in an update scenario, then we MAY have something
       // already duplicating this unnecessarily!  For example:
       // ```
       // root (dep: y@1)
