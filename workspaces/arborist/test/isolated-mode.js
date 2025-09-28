@@ -334,7 +334,7 @@ tap.test('Lock file is same in hoisted and in isolated mode', async t => {
     fs.promises.readFile(path.join(isolatedModeDir, 'package-lock.json'), { encoding: 'utf8' }),
   ])
 
-  t.same(hoistedModeLockFile, isolatedModeLockFile, 'hoited mode and isolated mode produce the same lockfile')
+  t.same(hoistedModeLockFile, isolatedModeLockFile, 'hoisted mode and isolated mode produce the same lockfile')
 })
 
 tap.test('Basic workspaces setup', async t => {
