@@ -804,7 +804,7 @@ tap.test('shrinkwrap with peer dependencies', async t => {
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ installStrategy: 'linked' })
 
-  // TODO: greate the resolved object
+  // TODO: create the resolved object
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
