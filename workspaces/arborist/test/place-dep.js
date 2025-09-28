@@ -1516,7 +1516,7 @@ t.test('placement tests', t => {
     nodeLoc: '',
   })
 
-  // same as above, but now the existing one has 3, replacment has 5
+  // same as above, but now the existing one has 3, replacement has 5
   // v@4 -> PEER(a@1||2)
   // y@1 -> PEER(d@1)
   // a@1 -> PEER(b@1)
