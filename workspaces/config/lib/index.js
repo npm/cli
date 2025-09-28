@@ -589,7 +589,7 @@ class Config {
           if (this.definitions[key]?.exclusive) {
             for (const exclusive of this.definitions[key].exclusive) {
               if (!this.isDefault(exclusive)) {
-                throw new TypeError(`--${key} can not be provided when using --${exclusive}`)
+                throw new TypeError(`--${key} cannot be provided when using --${exclusive}`)
               }
             }
           }

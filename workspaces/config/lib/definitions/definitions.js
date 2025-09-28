@@ -158,7 +158,7 @@ const definitions = {
     If you do not want your scoped package to be publicly viewable (and
     installable) set \`--access=restricted\`.
 
-    Unscoped packages can not be set to \`restricted\`.
+    Unscoped packages cannot be set to \`restricted\`.
 
     Note: This defaults to not changing the current access level for existing
     packages.  Specifying a value of \`restricted\` or \`public\` during

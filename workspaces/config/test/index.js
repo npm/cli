@@ -1431,7 +1431,7 @@ t.test('exclusive options conflict', async t => {
   })
   await t.rejects(config.load(), {
     name: 'TypeError',
-    message: '--lie can not be provided when using --truth',
+    message: '--lie cannot be provided when using --truth',
   })
 })
 

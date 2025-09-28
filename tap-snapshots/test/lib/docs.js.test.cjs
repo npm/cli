@@ -195,7 +195,7 @@ safer to use a registry-provided authentication bearer token stored in the
 If you do not want your scoped package to be publicly viewable (and
 installable) set \`--access=restricted\`.
 
-Unscoped packages can not be set to \`restricted\`.
+Unscoped packages cannot be set to \`restricted\`.
 
 Note: This defaults to not changing the current access level for existing
 packages. Specifying a value of \`restricted\` or \`public\` during publish will
@@ -544,7 +544,7 @@ This can be overridden by setting the \`--force\` flag.
 
 Tells to expect a specific number of results from the command.
 
-This config can not be used with: \`expect-results\`
+This config cannot be used with: \`expect-results\`
 
 #### \`expect-results\`
 
@@ -554,7 +554,7 @@ This config can not be used with: \`expect-results\`
 Tells npm whether or not to expect results from the command. Can be either
 true (expect some results) or false (expect no results).
 
-This config can not be used with: \`expect-result-count\`
+This config cannot be used with: \`expect-result-count\`
 
 #### \`fetch-retries\`
 
@@ -1309,7 +1309,7 @@ Set to \`false\` to suppress the progress bar.
 When publishing from a supported cloud CI/CD system, the package will be
 publicly linked to where it was built and published from.
 
-This config can not be used with: \`provenance-file\`
+This config cannot be used with: \`provenance-file\`
 
 #### \`provenance-file\`
 
@@ -1318,7 +1318,7 @@ This config can not be used with: \`provenance-file\`
 
 When publishing, the provenance bundle at the given path will be used.
 
-This config can not be used with: \`provenance\`
+This config cannot be used with: \`provenance\`
 
 #### \`proxy\`
 
@@ -1410,7 +1410,7 @@ Ignored if \`--save-peer\` is set, since peerDependencies cannot be bundled.
 
 Save installed packages to a package.json file as \`devDependencies\`.
 
-This config can not be used with: \`save-optional\`, \`save-peer\`, \`save-prod\`
+This config cannot be used with: \`save-optional\`, \`save-peer\`, \`save-prod\`
 
 #### \`save-exact\`
 
@@ -1429,7 +1429,7 @@ rather than using npm's default semver range operator.
 
 Save installed packages to a package.json file as \`optionalDependencies\`.
 
-This config can not be used with: \`save-dev\`, \`save-peer\`, \`save-prod\`
+This config cannot be used with: \`save-dev\`, \`save-peer\`, \`save-prod\`
 
 #### \`save-peer\`
 
@@ -1438,7 +1438,7 @@ This config can not be used with: \`save-dev\`, \`save-peer\`, \`save-prod\`
 
 Save installed packages to a package.json file as \`peerDependencies\`
 
-This config can not be used with: \`save-dev\`, \`save-optional\`, \`save-prod\`
+This config cannot be used with: \`save-dev\`, \`save-optional\`, \`save-prod\`
 
 #### \`save-prefix\`
 
@@ -1467,7 +1467,7 @@ you want to move it to be a non-optional production dependency.
 This is the default behavior if \`--save\` is true, and neither \`--save-dev\`
 or \`--save-optional\` are true.
 
-This config can not be used with: \`save-dev\`, \`save-optional\`, \`save-peer\`
+This config cannot be used with: \`save-dev\`, \`save-optional\`, \`save-peer\`
 
 #### \`sbom-format\`
 

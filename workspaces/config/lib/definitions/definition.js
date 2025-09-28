@@ -83,7 +83,7 @@ This value is not exported to the environment for child processes.
 `
     const deprecated = !this.deprecated ? '' : `* DEPRECATED: ${unindent(this.deprecated)}\n`
     /* eslint-disable-next-line max-len */
-    const exclusive = !this.exclusive ? '' : `\nThis config can not be used with: \`${this.exclusive.join('`, `')}\``
+    const exclusive = !this.exclusive ? '' : `\nThis config cannot be used with: \`${this.exclusive.join('`, `')}\``
     return wrapAll(`#### \`${this.key}\`
 
 * Default: ${unindent(this.defaultDescription)}
