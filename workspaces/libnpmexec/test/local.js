@@ -58,7 +58,7 @@ t.test('bin in local pkg', async t => {
   await chmod('node_modules/pkg-with-conflicting-bin/index.js')
 
   // Note that we have to resetSeenLinks after each exec since otherwise
-  // our non-existent file will fail when it gets attempted to get chmod'ed
+  // our nonexistent file will fail when it gets attempted to get chmod'ed
   // in a real world situation these would happen during different
   // processes where these is no shared cache
   const exec = async (...args) => {
