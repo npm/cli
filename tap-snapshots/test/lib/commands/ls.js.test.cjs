@@ -248,7 +248,7 @@ exports[`test/lib/commands/ls.js TAP ls --parseable no args > should output pars
 {CWD}/prefix/node_modules/dog
 `
 
-exports[`test/lib/commands/ls.js TAP ls --parseable overridden dep > should contain overridden outout 1`] = `
+exports[`test/lib/commands/ls.js TAP ls --parseable overridden dep > should contain overridden output 1`] = `
 {CWD}/prefix:test-overridden@1.0.0
 {CWD}/prefix/node_modules/foo:foo@1.0.0
 {CWD}/prefix/node_modules/bar:bar@1.0.0:OVERRIDDEN
@@ -541,13 +541,13 @@ test-npm-ls@1.0.0 {CWD}/prefix
   \`-- dog@1.0.0
 `
 
-exports[`test/lib/commands/ls.js TAP ls overridden dep > should contain overridden outout 1`] = `
+exports[`test/lib/commands/ls.js TAP ls overridden dep > should contain overridden output 1`] = `
 test-overridden@1.0.0 {CWD}/prefix
 \`-- foo@1.0.0
   \`-- bar@1.0.0 overridden
 `
 
-exports[`test/lib/commands/ls.js TAP ls overridden dep w/ color > should contain overridden outout 1`] = `
+exports[`test/lib/commands/ls.js TAP ls overridden dep w/ color > should contain overridden output 1`] = `
 [0mtest-overridden@1.0.0 {CWD}/prefix[0m
 [0m\`-- foo@1.0.0[0m
 [0m  \`-- bar@1.0.0 [2moverridden[22m[0m

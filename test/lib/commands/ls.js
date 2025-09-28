@@ -263,7 +263,7 @@ t.test('ls', async t => {
     await
 
     ls.exec([])
-    t.matchSnapshot(cleanCwd(result()), 'should contain overridden outout')
+    t.matchSnapshot(cleanCwd(result()), 'should contain overridden output')
   })
 
   t.test('overridden dep w/ color', async t => {
@@ -305,7 +305,7 @@ t.test('ls', async t => {
     })
 
     await ls.exec([])
-    t.matchSnapshot(cleanCwd(result()), 'should contain overridden outout')
+    t.matchSnapshot(cleanCwd(result()), 'should contain overridden output')
   })
 
   t.test('with filter arg', async t => {
@@ -1823,7 +1823,7 @@ t.test('ls --parseable', async t => {
     })
 
     await ls.exec([])
-    t.matchSnapshot(cleanCwd(result()), 'should contain overridden outout')
+    t.matchSnapshot(cleanCwd(result()), 'should contain overridden output')
   })
 
   t.test('with filter arg', async t => {
