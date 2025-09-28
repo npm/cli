@@ -68,7 +68,7 @@ const runUpdateNotifier = async (t, {
     ...require('node:fs/promises'),
     stat: async (path) => {
       if (basename(path) !== '_update-notifier-last-checked') {
-        t.fail('no stat allowed for non upate notifier files')
+        t.fail('no stat allowed for non update notifier files')
       }
       if (STAT_ERROR) {
         throw STAT_ERROR
@@ -81,7 +81,7 @@ const runUpdateNotifier = async (t, {
         t.fail('no write file content allowed')
       }
       if (basename(path) !== '_update-notifier-last-checked') {
-        t.fail('no writefile allowed for non upate notifier files')
+        t.fail('no writefile allowed for non update notifier files')
       }
       if (WRITE_ERROR) {
         throw WRITE_ERROR
