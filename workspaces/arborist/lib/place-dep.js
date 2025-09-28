@@ -317,7 +317,7 @@ class PlaceDep {
         force: this.force,
         installLinks: this.installLinks,
         installStrategy: this.installStrategy,
-        legacyPeerDeps: this.legaycPeerDeps,
+        legacyPeerDeps: this.legacyPeerDeps,
         preferDedupe: this.preferDedupe,
         strictPeerDeps: this.strictPeerDeps,
         updateNames: this.updateName,
