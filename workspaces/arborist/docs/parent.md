@@ -18,7 +18,7 @@ consistent.
 ## parent
 
 If a package is located in a `node_modules` folder, then its `parent`
-represents the the package that contains that `node_modules` folder.
+represents the package that contains that `node_modules` folder.
 
 For example:
 
