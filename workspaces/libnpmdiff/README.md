@@ -86,7 +86,7 @@ Fetches the registry tarballs and compare files between a spec `a` and spec `b`.
 - `diffText <Boolean>`: Should treat all files as text and try to print diff for binary files. Defaults to `false`.
 - ...`cache`, `registry`, `where` and other common options accepted by [pacote](https://github.com/npm/pacote#options)
 
-Returns a `Promise` that fullfils with a `String` containing the resulting patch diffs.
+Returns a `Promise` that fulfills with a `String` containing the resulting patch diffs.
 
 Throws an error if either `a` or `b` are missing or if trying to diff more than two specs.
 
