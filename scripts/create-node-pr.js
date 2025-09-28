@@ -99,7 +99,7 @@ const getPrBody = async ({ releases, closePrs }) => {
     .use(remarkGfm)
     .use(remarkGithub, {
       repository: 'npm/cli',
-      // don't link mentions, but anything else make the link an explicit referance to npm/cli
+      // don't link mentions, but anything else make the link an explicit reference to npm/cli
       buildUrl: (values) => values.type === 'mention' ? false : defaultBuildUrl(values),
     })
     .process(prBody)
