@@ -1024,7 +1024,7 @@ This is a one-time fix-up, please be patient...
           }
 
           // pre-fetch any problem edges, since we'll need these soon
-          // if it fails at this point, though, dont' worry because it
+          // if it fails at this point, though, don't worry because it
           // may well be an optional dep that has gone missing.  it'll
           // fail later anyway.
           for (const e of this.#problemEdges(placed)) {

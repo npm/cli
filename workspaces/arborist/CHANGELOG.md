@@ -172,7 +172,7 @@
 * [`e290352`](https://github.com/npm/cli/commit/e290352c6b9fd3bc7fa4b8ea2cc2000fb20fdec7) [#7499](https://github.com/npm/cli/pull/7499) revert DepsQueue to re-sort on pop() (#7499) (@lukekarrys)
 * [`56a27fa`](https://github.com/npm/cli/commit/56a27fa400f157fb9a56182900278c41efc6aba1) [#7494](https://github.com/npm/cli/pull/7494) avoid caching manifests as promises (@wraithgar)
 * [`722c0fa`](https://github.com/npm/cli/commit/722c0faa387ae6e35886f08eefb238c03ae85db1) [#7463](https://github.com/npm/cli/pull/7463) limit packument cache size based on heap size (@wraithgar)
-* [`effe910`](https://github.com/npm/cli/commit/effe9109d6bc7828bf916c4dee49b2a53c72f39d) [#7475](https://github.com/npm/cli/pull/7475) dont omit license from stored manifests (#7475) (@lukekarrys)
+* [`effe910`](https://github.com/npm/cli/commit/effe9109d6bc7828bf916c4dee49b2a53c72f39d) [#7475](https://github.com/npm/cli/pull/7475) don't omit license from stored manifests (#7475) (@lukekarrys)
 
 ### Dependencies
 
@@ -801,7 +801,7 @@
 
 ### Bug Fixes
 
-* **arborist:** dont skip adding advisories to audit based on name/range ([aa4a4da](https://github.com/npm/cli/commit/aa4a4da336a6ec1963394fdbd06acb173c842d26)), closes [#4681](https://github.com/npm/cli/issues/4681)
+* **arborist:** don't skip adding advisories to audit based on name/range ([aa4a4da](https://github.com/npm/cli/commit/aa4a4da336a6ec1963394fdbd06acb173c842d26)), closes [#4681](https://github.com/npm/cli/issues/4681)
 * **arborist:** when reloading an edge, also refresh overrides ([4d676e3](https://github.com/npm/cli/commit/4d676e31a68f081b8553eff4e79db1f29acf47e1))
 
 ### [5.0.5](https://github.com/npm/cli/compare/arborist-v5.0.4...arborist-v5.0.5) (2022-04-06)

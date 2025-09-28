@@ -14562,7 +14562,7 @@ Object {
 }
 `
 
-exports[`test/arborist/build-ideal-tree.js TAP competing peerSets resolve in both root and workspace overlapping peerSets dont warn > root tree 1`] = `
+exports[`test/arborist/build-ideal-tree.js TAP competing peerSets resolve in both root and workspace overlapping peerSets do not warn > root tree 1`] = `
 ArboristNode {
   "children": Map {
     "@lukekarrys/workspace-peer-dep-infinite-loop-a" => ArboristNode {
@@ -14704,7 +14704,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/build-ideal-tree.js TAP competing peerSets resolve in both root and workspace overlapping peerSets dont warn > root warnings 1`] = `
+exports[`test/arborist/build-ideal-tree.js TAP competing peerSets resolve in both root and workspace overlapping peerSets do not warn > root warnings 1`] = `
 Object {
   "code": "ERESOLVE",
   "current": Object {
@@ -14878,7 +14878,7 @@ Object {
 }
 `
 
-exports[`test/arborist/build-ideal-tree.js TAP competing peerSets resolve in both root and workspace overlapping peerSets dont warn > workspace tree 1`] = `
+exports[`test/arborist/build-ideal-tree.js TAP competing peerSets resolve in both root and workspace overlapping peerSets do not warn > workspace tree 1`] = `
 ArboristNode {
   "children": Map {
     "@lukekarrys/workspace-peer-dep-infinite-loop-a" => ArboristNode {
@@ -15061,7 +15061,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/build-ideal-tree.js TAP competing peerSets resolve in both root and workspace overlapping peerSets dont warn > workspace warnings 1`] = `
+exports[`test/arborist/build-ideal-tree.js TAP competing peerSets resolve in both root and workspace overlapping peerSets do not warn > workspace warnings 1`] = `
 Object {
   "code": "ERESOLVE",
   "current": Object {
@@ -17883,7 +17883,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/build-ideal-tree.js TAP dont get confused if root matches duped metadep > must match snapshot 1`] = `
+exports[`test/arborist/build-ideal-tree.js TAP do not get confused if root matches duped metadep > must match snapshot 1`] = `
 ArboristNode {
   "children": Map {
     "test-root-matches-metadep" => ArboristNode {
