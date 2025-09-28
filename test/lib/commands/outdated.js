@@ -666,7 +666,7 @@ t.test('aliases with version range', async t => {
 t.test('dependent location', async t => {
   const testDir = {
     'package.json': JSON.stringify({
-      name: 'similer-name',
+      name: 'similar-name',
       version: '1.0.0',
       workspaces: ['a', 'nest/a'],
     }),
