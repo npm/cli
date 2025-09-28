@@ -1241,6 +1241,6 @@ t.test('override fallback to local when root missing dependency with from.overri
     },
   })
 
-  t.equal(edge.spec, '^1.2.3', 'should fallback to local package version from devDependencies')
+  t.equal(edge.spec, '^1.2.3', 'should fall back to local package version from devDependencies')
   t.end()
 })
