@@ -225,7 +225,7 @@ t.test('config delete single key', async t => {
 
   await npm.exec('config', ['delete', 'access'])
 
-  t.equal(npm.config.get('access'), null, 'acces should be defaulted')
+  t.equal(npm.config.get('access'), null, 'access should be defaulted')
 
   const contents = await fs.readFile(join(home, '.npmrc'), { encoding: 'utf8' })
   const rc = ini.parse(contents)
