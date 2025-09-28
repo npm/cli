@@ -294,7 +294,7 @@ t.test('config delete key --global', async t => {
 t.test('config set invalid option', async t => {
   const { npm } = await loadMockNpm(t)
   await t.rejects(
-    npm.exec('config', ['set', 'nonexistantconfigoption', 'something']),
+    npm.exec('config', ['set', 'nonexistentconfigoption', 'something']),
     /not a valid npm option/
   )
 })
