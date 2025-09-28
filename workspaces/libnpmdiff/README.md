@@ -70,7 +70,7 @@ Happy hacking!
 
 #### `> libnpmdif([ a, b ], [opts]) -> Promise<String>`
 
-Fetches the registry tarballs and compare files between a spec `a` and spec `b`. **npm** spec types are usually described in `<pkg-name>@<version>` form but multiple other types are alsos supported, for more info on valid specs take a look at [`npm-package-arg`](https://github.com/npm/npm-package-arg).
+Fetches the registry tarballs and compare files between a spec `a` and spec `b`. **npm** spec types are usually described in `<pkg-name>@<version>` form but multiple other types are also supported, for more info on valid specs take a look at [`npm-package-arg`](https://github.com/npm/npm-package-arg).
 
 **Options**:
 
