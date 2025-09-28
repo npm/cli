@@ -499,7 +499,7 @@ t.test('search options', t => {
     description: 'test description',
     exclude: 'test search exclude',
     limit: 99,
-    staleneess: 99,
+    staleness: 99,
 
   }
   const obj = {}
