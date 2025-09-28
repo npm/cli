@@ -172,7 +172,7 @@ linked packages)
 
 #### [`npm restart`](/commands/npm-restart)
 
-If there is a `restart` script defined, these events are run, otherwise
+If there is a `restart` script defined, these events are run; otherwise,
 `stop` and `start` are both run if present, including their `pre` and
 `post` iterations)
 
