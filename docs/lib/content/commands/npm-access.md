@@ -16,7 +16,7 @@ For all of the subcommands, `npm access` will perform actions on the packages
 in the current working directory if no package name is passed to the
 subcommand.
 
-* grant / revoke (deprecated):
+* grant / revoke:
   Add or remove the ability of users and teams to have read-only or read-write
   access to a package.
 
