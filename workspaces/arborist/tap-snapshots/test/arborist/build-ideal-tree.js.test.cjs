@@ -97791,7 +97791,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/build-ideal-tree.js TAP push conflicted peer deps deeper in to the tree to solve > must match snapshot 1`] = `
+exports[`test/arborist/build-ideal-tree.js TAP push conflicted peer deps deeper into the tree to solve > must match snapshot 1`] = `
 ArboristNode {
   "children": Map {
     "@isaacs/testing-peer-dep-conflict-chain-a" => ArboristNode {

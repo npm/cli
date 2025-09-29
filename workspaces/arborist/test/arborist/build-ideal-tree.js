@@ -1320,7 +1320,7 @@ t.test('override a conflict with the root peer dep (with force)', async t => {
   t.matchSnapshot(await printIdeal(path, { strictPeerDeps: false, force: true }), 'non-strict and force override')
 })
 
-t.test('push conflicted peer deps deeper in to the tree to solve', async t => {
+t.test('push conflicted peer deps deeper into the tree to solve', async t => {
   const path = resolve(fixtures, 'testing-peer-dep-conflict-chain/override-dep')
   createRegistry(t, true)
   t.matchSnapshot(await printIdeal(path))
