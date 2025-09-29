@@ -36,7 +36,6 @@ npm <command>
 * [**RFCs**](https://github.com/npm/rfcs) - Contribute ideas & specifications for the API/design of the npm CLI
 * [**Service Status**](https://status.npmjs.org/) - Monitor the current status & see incident reports for the website & registry
 * [**Project Status**](https://npm.github.io/statusboard/) - See the health of all our maintained OSS projects in one view
-* [**Events Calendar**](https://calendar.google.com/calendar/u/0/embed?src=npmjs.com_oonluqt8oftrt0vmgrfbg6q6go@group.calendar.google.com) - Keep track of our Open RFC calls, releases, meetups, conferences & more
 * [**Support**](https://www.npmjs.com/support) - Experiencing problems with the **npm** [website](https://npmjs.com) or [registry](https://registry.npmjs.org)? [File a ticket](https://www.npmjs.com/support)
 
 ### Acknowledgments
