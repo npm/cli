@@ -145,7 +145,7 @@ The generic `:attr()` pseudo selector standardizes a pattern which can be used f
 Nested objects are expressed as sequential arguments to `:attr()`.
 
 ```css
-/* return dependencies that have a testling config for opera browsers */
+/* return dependencies that have a [testling config](https://ci.testling.com/guide/advanced_configuration) for opera browsers */
 *:attr(testling, browsers, [~=opera])
 ```
 
