@@ -284,7 +284,7 @@ class MockRegistry {
 
   weblogin ({ token = 'npm_default-test-token' }) {
     const doneUrl = new URL('/npm-cli-test/done', this.origin).href
-    const loginUrl = new URL('/npm-cli-test/login', this.origin).href
+    const loginUrl = new URL('/npm-cli-test/login/cli/00000000-0000-0000-0000-000000000000', this.origin).href
     this.nock = this.nock
       .post(this.fullPath('/-/v1/login'), () => {
         return true
