@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.9.4](https://github.com/npm/cli/compare/v10.9.3...v10.9.4) (2025-09-30)
+### Bug Fixes
+* [`f7ff89c`](https://github.com/npm/cli/commit/f7ff89ca89e1cf69d70786b2bc26ff5c04ac31eb) [#8551](https://github.com/npm/cli/pull/8551) powershell: fix StrictMode and improve argument parsing  (#8551) (@alexsch01, @splatteredbits)
+
 ## [10.9.3](https://github.com/npm/cli/compare/v10.9.2...v10.9.3) (2025-06-25)
 ### Bug Fixes
 * [`7cff878`](https://github.com/npm/cli/commit/7cff878a3dd95b6a9d0bae118914626f5480ecb5) [#8343](https://github.com/npm/cli/pull/8343) powershell: use Invoke-Expression to pass args (#8343) (@alexsch01)
