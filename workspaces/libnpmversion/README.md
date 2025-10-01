@@ -15,8 +15,8 @@ const npmVersion = require('libnpmversion')
 // - any semver version string (set to that exact version)
 // - 'major', 'minor', 'patch', 'pre{major,minor,patch}' (increment at
 //   that value)
-// - 'from-git' (set to the latest semver-lookin git tag - this skips
-//   gitTagVersion, but will still sign if asked)
+// - 'from-git' (set to the latest tag in git that looks like semver -
+//   this skips gitTagVersion, but will still sign if asked)
 npmVersion(arg, {
   path: '/path/to/my/pkg', // defaults to cwd
 
