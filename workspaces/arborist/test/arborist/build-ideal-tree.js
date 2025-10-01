@@ -4459,4 +4459,116 @@ t.test('installLinks behavior with project-internal file dependencies', async t 
     t.ok(edgeToA.valid, 'the edge from b to a should be valid')
     t.equal(edgeToA.to, packageA, 'the edge from b should point to package a')
   })
+
+  // Regression test for https://github.com/npm/cli/issues/8059
+  // When upgrading packages by editing package.json, npm should not fail with
+  // ERESOLVE errors due to peer dependencies when the old versions are still
+  // in node_modules but will be replaced.
+  t.test('upgrade packages with peer dependencies (issue #8059)', async t => {
+    // Regression test for https://github.com/npm/cli/issues/8059
+    // When upgrading packages by editing package.json, npm should not throw
+    // ERESOLVE errors for peer dependencies that will be upgraded.
+    const registry = createRegistry(t)
+
+    // Create three packages with peer dependencies between them
+    // Simulates the Storybook scenario: react-vite, test, and storybook
+    const mainPackuments = registry.packuments([
+      {
+        version: '1.0.0',
+        peerDependencies: {
+          'pkg-peer': '^1.0.0',
+          'pkg-base': '^1.0.0',
+        },
+      },
+      {
+        version: '2.0.0',
+        peerDependencies: {
+          'pkg-peer': '^2.0.0',
+          'pkg-base': '^2.0.0',
+        },
+      },
+    ], 'pkg-main')
+    const mainManifest = registry.manifest({ name: 'pkg-main', packuments: mainPackuments })
+    await registry.package({ manifest: mainManifest })
+
+    const peerPackuments = registry.packuments([
+      {
+        version: '1.0.0',
+        peerDependencies: {
+          'pkg-base': '^1.0.0',
+        },
+      },
+      {
+        version: '2.0.0',
+        peerDependencies: {
+          'pkg-base': '^2.0.0',
+        },
+      },
+    ], 'pkg-peer')
+    const peerManifest = registry.manifest({ name: 'pkg-peer', packuments: peerPackuments })
+    await registry.package({ manifest: peerManifest })
+
+    const basePackuments = registry.packuments(['1.0.0', '2.0.0'], 'pkg-base')
+    const baseManifest = registry.manifest({ name: 'pkg-base', packuments: basePackuments })
+    await registry.package({ manifest: baseManifest })
+
+    // Simulate a scenario where old versions are already in node_modules
+    // and package.json has been updated to new versions (like editing package.json manually)
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-project',
+        version: '1.0.0',
+        dependencies: {
+          'pkg-main': '2.0.0',
+          'pkg-peer': '2.0.0',
+          'pkg-base': '2.0.0',
+        },
+      }),
+      node_modules: {
+        'pkg-main': {
+          'package.json': JSON.stringify({
+            name: 'pkg-main',
+            version: '1.0.0',
+            peerDependencies: {
+              'pkg-peer': '^1.0.0',
+              'pkg-base': '^1.0.0',
+            },
+          }),
+        },
+        'pkg-peer': {
+          'package.json': JSON.stringify({
+            name: 'pkg-peer',
+            version: '1.0.0',
+            peerDependencies: {
+              'pkg-base': '^1.0.0',
+            },
+          }),
+        },
+        'pkg-base': {
+          'package.json': JSON.stringify({
+            name: 'pkg-base',
+            version: '1.0.0',
+          }),
+        },
+      },
+    })
+
+    // Build ideal tree - this should NOT fail with ERESOLVE
+    // Before the fix, this would fail because the old versions in node_modules
+    // would be seen as conflicts even though they're being replaced
+    const tree = await buildIdeal(path)
+
+    // Verify all packages were upgraded to 2.0.0
+    t.equal(tree.children.get('pkg-main').version, '2.0.0', 'pkg-main upgraded to 2.0.0')
+    t.equal(tree.children.get('pkg-peer').version, '2.0.0', 'pkg-peer upgraded to 2.0.0')
+    t.equal(tree.children.get('pkg-base').version, '2.0.0', 'pkg-base upgraded to 2.0.0')
+
+    // Verify peer dependencies are satisfied
+    const mainEdgeToPeer = tree.children.get('pkg-main').edgesOut.get('pkg-peer')
+    t.ok(mainEdgeToPeer.valid, 'pkg-main peer dependency on pkg-peer is valid')
+    const mainEdgeToBase = tree.children.get('pkg-main').edgesOut.get('pkg-base')
+    t.ok(mainEdgeToBase.valid, 'pkg-main peer dependency on pkg-base is valid')
+    const peerEdgeToBase = tree.children.get('pkg-peer').edgesOut.get('pkg-base')
+    t.ok(peerEdgeToBase.valid, 'pkg-peer peer dependency on pkg-base is valid')
+  })
 })

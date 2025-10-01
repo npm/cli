@@ -62,6 +62,7 @@ class CanPlaceDep {
       parent = null,
       peerPath = [],
       explicitRequest = false,
+      updateNames = [],
     } = options
 
     debug(() => {
@@ -92,6 +93,7 @@ class CanPlaceDep {
     this.target = target
     this.edge = edge
     this.explicitRequest = explicitRequest
+    this.updateNames = updateNames
 
     // preventing cycles when we check peer sets
     this.peerPath = peerPath
@@ -162,16 +164,43 @@ class CanPlaceDep {
   checkCanPlaceCurrent () {
     const { preferDedupe, explicitRequest, current, target, edge, dep } = this
 
+    // If this package is being explicitly updated (in updateNames),
+    // we should replace it even if it currently satisfies the edge.
+    // This fixes issue #8059 where peer dependencies fail to resolve
+    // during an upgrade because the old version is found in node_modules.
+    const isBeingUpdated = this.updateNames.includes(this.name)
+
+    // Check if there's a root edge to this package that the current doesn't satisfy.
+    // If so, the current will be replaced, so we shouldn't treat it as a blocking conflict.
+    // This fixes issue #8059 where upgrading packages by editing package.json causes
+    // ERESOLVE errors because old versions are found in node_modules.
+    const root = target.root
+    const rootEdge = root && root.edgesOut.get(this.name)
+    const currentInvalidForRoot = rootEdge && !current.satisfies(rootEdge)
+
     if (dep.matches(current)) {
       if (current.satisfies(edge) || this.edgeOverride) {
-        return explicitRequest ? REPLACE : KEEP
+        return explicitRequest || isBeingUpdated ? REPLACE : KEEP
       }
     }
 
     const { version: curVer } = current
     const { version: newVer } = dep
     const tryReplace = curVer && newVer && semver.gte(newVer, curVer)
-    if (tryReplace && dep.canReplace(current)) {
+    // Also try to replace if the current doesn't satisfy root's edge
+    const shouldReplace = tryReplace || currentInvalidForRoot
+
+    // If the current node doesn't satisfy the root package's requirements,
+    // it MUST be replaced. For peer dependencies, we bypass the canReplace check
+    // because the current node may have edges from other packages being replaced.
+    if (currentInvalidForRoot && edge.peer) {
+      const cpp = this.canPlacePeers(REPLACE)
+      if (cpp !== CONFLICT) {
+        return cpp
+      }
+    }
+
+    if (shouldReplace && dep.canReplace(current)) {
       // It's extremely rare that a replaceable node would be a conflict, if
       // the current one wasn't a conflict, but it is theoretically possible
       // if peer deps are pinned.  In that case we treat it like any other
@@ -183,7 +212,8 @@ class CanPlaceDep {
     }
 
     // ok, can't replace the current with new one, but maybe current is ok?
-    if (current.satisfies(edge) && (!explicitRequest || preferDedupe)) {
+    // However, if the package is being explicitly updated, we should replace it
+    if (current.satisfies(edge) && (!explicitRequest || preferDedupe) && !isBeingUpdated) {
       return KEEP
     }
 
@@ -383,6 +413,7 @@ class CanPlaceDep {
         peerPath,
         // always place peers in preferDedupe mode
         preferDedupe: true,
+        updateNames: this.updateNames,
       })
       /* istanbul ignore next */
       debug(() => {

@@ -96,6 +96,7 @@ class PlaceDep {
         target,
         preferDedupe: this.preferDedupe,
         explicitRequest: this.explicitRequest,
+        updateNames: this.updateNames,
       })
       this.checks.set(target, cpd)
 
