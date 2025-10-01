@@ -158,6 +158,43 @@ t.test('exec commands', async t => {
     )
   })
 
+  await t.test('global install runs git prepare scripts in project location', async t => {
+    const { npm } = await loadMockNpm(t, {
+      config: {
+        audit: false,
+        global: true,
+      },
+      mocks: {
+        '{LIB}/utils/reify-finish.js': async () => {},
+        '@npmcli/arborist': function () {
+          this.reify = async () => {
+            t.equal(
+              process.env.npm_config_global,
+              'false',
+              'npm_config_global is forced to false during reify'
+            )
+            t.equal(
+              process.env.npm_config_location,
+              'project',
+              'npm_config_location points to the project during reify'
+            )
+          }
+        },
+      },
+    })
+
+    const originalGlobal = process.env.npm_config_global
+    const originalLocation = process.env.npm_config_location
+
+    t.equal(process.env.npm_config_global, originalGlobal, 'npm_config_global untouched before install')
+    t.equal(process.env.npm_config_location, originalLocation, 'npm_config_location untouched before install')
+
+    await npm.exec('install', ['abbrev'])
+
+    t.equal(process.env.npm_config_global, originalGlobal, 'npm_config_global restored after install')
+    t.equal(process.env.npm_config_location, originalLocation, 'npm_config_location restored after install')
+  })
+
   await t.test('npm i -g npm engines check success', async t => {
     const { npm, registry } = await loadMockNpm(t, {
       prefixDir: {
