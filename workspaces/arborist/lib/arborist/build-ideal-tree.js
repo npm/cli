@@ -1306,7 +1306,15 @@ This is a one-time fix-up, please be patient...
     const { content: pkg } = await PackageJson.normalize(realpath).catch(() => {
       return { content: {} }
     })
-    const link = new Link({ name, parent, realpath, pkg, installLinks, legacyPeerDeps })
+    const linkOptions = { name, parent, realpath, pkg, installLinks, legacyPeerDeps }
+
+    // If this is a workspace link, apply root overrides
+    const isWorkspace = this.idealTree.workspaces && this.idealTree.workspaces.has(spec.name)
+    if (isWorkspace && this.idealTree.overrides) {
+      linkOptions.overrides = this.idealTree.overrides.getNodeRule({ name: pkg.name, version: pkg.version })
+    }
+
+    const link = new Link(linkOptions)
     this.#linkNodes.add(link)
     return link
   }

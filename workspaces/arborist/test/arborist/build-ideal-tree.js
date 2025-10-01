@@ -4070,6 +4070,177 @@ t.test('overrides', async t => {
       'workspace node should not unnecessarily retain overrides after subsequent install'
     )
   })
+
+  t.test('root overrides should be respected by workspaces during update', async t => {
+    // Test that workspace links get root overrides applied during npm update
+    const rootPkg = {
+      name: 'root',
+      version: '1.0.0',
+      workspaces: ['ws-package'],
+      overrides: {
+        abbrev: '^1.1.1',
+      },
+    }
+    const workspacePkg = {
+      name: 'ws-package',
+      version: '1.0.0',
+      dependencies: {
+        abbrev: '1.0.3',
+      },
+    }
+
+    createRegistry(t, true)
+
+    const dir = t.testdir({
+      'package.json': JSON.stringify(rootPkg, null, 2),
+      'ws-package': {
+        'package.json': JSON.stringify(workspacePkg, null, 2),
+      },
+    })
+
+    // Initial install
+    const tree1 = await buildIdeal(dir)
+    t.equal(
+      tree1.children.get('abbrev').package.version,
+      '1.1.1',
+      'initial install: root "abbrev" is forced to version 1.1.1 by override'
+    )
+
+    // Save lockfile
+    await tree1.meta.save()
+
+    // Run update (this is where the bug was - overrides weren't applied)
+    const tree2 = await buildIdeal(dir, { update: { all: true } })
+
+    t.equal(
+      tree2.children.get('abbrev').package.version,
+      '1.1.1',
+      'after update: root "abbrev" is still forced to version 1.1.1 by override'
+    )
+
+    const wsNode = tree2.children.get('ws-package').target
+    t.notOk(
+      wsNode.children.has('abbrev'),
+      'workspace should not have nested "abbrev" after update'
+    )
+  })
+
+  t.test('root overrides with peer dependencies should work during update', async t => {
+    // Reproduce issue #8258: npm update with workspace overrides and peer dependencies
+    const registry = createRegistry(t, false)
+
+    // Create mock packages simulating a peer dependency scenario
+    const basePkg = registry.packuments(['2.0.0', '3.0.0'], 'base-lib')
+    const baseManifest = registry.manifest({ name: 'base-lib', packuments: basePkg })
+    await registry.package({ manifest: baseManifest })
+
+    // Create a package with a peer dependency
+    const peerDepPkg = registry.manifest({
+      name: 'peer-dep-pkg',
+      versions: ['1.0.0'],
+      peerDependencies: { 'base-lib': '^2.0.0' },
+    })
+    await registry.package({ manifest: peerDepPkg['1.0.0'] })
+
+    const rootPkg = {
+      name: 'root',
+      version: '1.0.0',
+      workspaces: ['workspace-a'],
+      overrides: {
+        'peer-dep-pkg': {
+          'base-lib': '^3.0.0',
+        },
+      },
+    }
+
+    const workspacePkg = {
+      name: 'workspace-a',
+      version: '1.0.0',
+      dependencies: {
+        'peer-dep-pkg': '1.0.0',
+        'base-lib': '^3.0.0',
+      },
+    }
+
+    const dir = t.testdir({
+      'package.json': JSON.stringify(rootPkg, null, 2),
+      'workspace-a': {
+        'package.json': JSON.stringify(workspacePkg, null, 2),
+      },
+    })
+
+    // Initial install should work with override
+    const tree1 = await buildIdeal(dir)
+    t.equal(
+      tree1.children.get('base-lib').package.version,
+      '3.0.0',
+      'initial install: base-lib resolved to 3.0.0 via override'
+    )
+
+    // Save lockfile
+    await tree1.meta.save()
+
+    // Update should also work with override (this was failing before the fix)
+    const tree2 = await buildIdeal(dir, { update: { all: true } })
+    t.equal(
+      tree2.children.get('base-lib').package.version,
+      '3.0.0',
+      'after update: base-lib still resolved to 3.0.0 via override'
+    )
+
+    // Workspace should not have nested dependencies
+    const wsNode = tree2.children.get('workspace-a').target
+    t.notOk(
+      wsNode.children.has('base-lib'),
+      'workspace should not have nested base-lib after update'
+    )
+  })
+
+  t.test('workspace link nodes should have root overrides applied', async t => {
+    // Direct test that workspace Link nodes get overrides
+    const rootPkg = {
+      name: 'root',
+      version: '1.0.0',
+      workspaces: ['my-workspace'],
+      overrides: {
+        'lodash': '4.17.20',
+      },
+    }
+
+    const workspacePkg = {
+      name: 'my-workspace',
+      version: '1.0.0',
+      dependencies: {
+        lodash: '^4.17.0',
+      },
+    }
+
+    createRegistry(t, true)
+
+    const dir = t.testdir({
+      'package.json': JSON.stringify(rootPkg, null, 2),
+      'my-workspace': {
+        'package.json': JSON.stringify(workspacePkg, null, 2),
+      },
+    })
+
+    const tree = await buildIdeal(dir)
+
+    // Get the workspace link node
+    const wsLink = tree.children.get('my-workspace')
+    t.ok(wsLink.isLink, 'workspace node is a Link')
+
+    // Verify the workspace target has overrides
+    const wsTarget = wsLink.target
+    t.ok(wsTarget.overrides, 'workspace target should have overrides')
+
+    // Verify lodash is resolved according to override
+    t.equal(
+      tree.children.get('lodash').package.version,
+      '4.17.20',
+      'lodash resolved to exact version specified in override'
+    )
+  })
 })
 
 t.test('store files with a custom indenting', async t => {
