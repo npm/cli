@@ -29,6 +29,7 @@ const mockDisplay = async (t, { mocks, load } = {}) => {
     ...procLog,
     display,
     displayLoad,
+    streams: logs.streams,
     ...logs.logs,
   }
 }
@@ -99,6 +100,50 @@ t.test('can do progress', async (t) => {
   t.strictSame([...new Set(outputErrors)].sort(), ['-', '/', '\\', '|'])
   t.strictSame(logs, ['error before input', 'error during input', 'error after input'])
   t.strictSame(outputs, ['before input', 'during input', 'after input'])
+})
+
+t.test('progress resume does not clear output when spinner inactive', async (t) => {
+  const { input, output, outputs, streams } = await mockDisplay(t, {
+    load: {
+      progress: true,
+    },
+  })
+
+  const origClearLine = streams.stderr.clearLine
+  const origCursorTo = streams.stderr.cursorTo
+  let clearCalls = 0
+  let cursorCalls = 0
+  streams.stderr.clearLine = (...args) => {
+    clearCalls++
+    return origClearLine.call(streams.stderr, ...args)
+  }
+  streams.stderr.cursorTo = (...args) => {
+    cursorCalls++
+    return origCursorTo.call(streams.stderr, ...args)
+  }
+
+  t.teardown(() => {
+    streams.stderr.clearLine = origClearLine
+    streams.stderr.cursorTo = origCursorTo
+  })
+
+  // ensure the spinner has rendered at least once so progress.off clears it
+  await timers.setTimeout(300)
+
+  const endInput = input.start()
+  await timers.setTimeout(0)
+
+  clearCalls = 0
+  cursorCalls = 0
+
+  output.standard('no trailing newline')
+
+  endInput()
+  await timers.setTimeout(0)
+
+  t.equal(clearCalls, 0, 'resume does not clear the line when spinner inactive')
+  t.equal(cursorCalls, 0, 'resume does not reposition cursor when spinner inactive')
+  t.equal(outputs.at(-1), 'no trailing newline', 'output remains visible')
 })
 
 t.test('handles log throwing', async (t) => {
