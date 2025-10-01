@@ -1129,7 +1129,7 @@ t.test('resolve links in global mode', async t => {
   t.equal(tree.children.get('linked-dep').resolved, resolved)
 })
 
-t.test('dont get confused if root matches duped metadep', async t => {
+t.test('do not get confused if root matches duped metadep', async t => {
   createRegistry(t, true)
   const path = resolve(fixtures, 'test-root-matches-metadep')
   const arb = newArb(path, { installStrategy: 'hoisted' })
@@ -3284,7 +3284,7 @@ t.test('competing peerSets resolve in both root and workspace', async t => {
     ]
   }
 
-  await t.test('overlapping peerSets dont warn', async t => {
+  await t.test('overlapping peerSets do not warn', async t => {
     // This should not cause a warning because replacing `c@2` and `d@2`
     // with `c@1` and `d@1` is still valid.
     //

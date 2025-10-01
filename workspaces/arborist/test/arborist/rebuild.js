@@ -149,7 +149,7 @@ t.test('do not run scripts for nodes on trash list', async t => {
   t.throws(() => fs.statSync(file), 'bundle build script not run')
 })
 
-t.test('dont blow up if package.json is borked', async t => {
+t.test('do not blow up if package.json is borked', async t => {
   const path = fixture(t, 'testing-rebuild-bundle-reified')
   const loc = 'node_modules/@isaacs/testing-rebuild-bundle-a/node_modules/@isaacs/testing-rebuild-bundle-b'
   const file = resolve(path, loc, 'cwd')
@@ -243,7 +243,7 @@ t.test('run scripts in foreground if foregroundScripts set', async t => {
   ])
 })
 
-t.test('log failed exit codes as well, even if we dont crash', async t => {
+t.test('log failed exit codes as well, even if we do not crash', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       optionalDependencies: { optdep: '1' },
