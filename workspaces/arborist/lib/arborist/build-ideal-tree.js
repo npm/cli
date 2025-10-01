@@ -1405,7 +1405,7 @@ This is a one-time fix-up, please be patient...
       // isn't also required, then there's a good chance we won't need it,
       // so allow it for now and let it conflict if it turns out to actually
       // be necessary for the installation.
-      if (conflictOK || !required.has(edge.from)) {
+      if (conflictOK || !required.has(edge.from) || edge.type === 'peerOptional') {
         continue
       }
 

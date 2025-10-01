@@ -1,0 +1,7 @@
+{
+  "name": "test-issue-8416",
+  "version": "1.0.0",
+  "dependencies": {
+    "@isaacs/test-issue-8416-package": "1"
+  }
+}

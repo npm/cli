@@ -1,0 +1,27 @@
+{
+  "_id": "@isaacs/test-issue-8416-react",
+  "name": "@isaacs/test-issue-8416-react",
+  "dist-tags": {
+    "latest": "19.0.0"
+  },
+  "versions": {
+    "18.0.0": {
+      "name": "@isaacs/test-issue-8416-react",
+      "version": "18.0.0",
+      "_id": "@isaacs/test-issue-8416-react@18.0.0",
+      "dist": {
+        "shasum": "0000000000000000000000000000000000000001",
+        "tarball": "https://registry.npmjs.org/@isaacs/test-issue-8416-react/-/test-issue-8416-react-18.0.0.tgz"
+      }
+    },
+    "19.0.0": {
+      "name": "@isaacs/test-issue-8416-react",
+      "version": "19.0.0",
+      "_id": "@isaacs/test-issue-8416-react@19.0.0",
+      "dist": {
+        "shasum": "0000000000000000000000000000000000000002",
+        "tarball": "https://registry.npmjs.org/@isaacs/test-issue-8416-react/-/test-issue-8416-react-19.0.0.tgz"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "test-issue-8416-complex",
+  "version": "1.0.0",
+  "dependencies": {
+    "@isaacs/test-issue-8416-pkg-a": "1",
+    "@isaacs/test-issue-8416-pkg-b": "1"
+  }
+}

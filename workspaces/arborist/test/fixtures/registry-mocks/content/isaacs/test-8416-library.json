@@ -1,0 +1,21 @@
+{
+  "_id": "@isaacs/test-8416-library",
+  "name": "@isaacs/test-8416-library",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/test-8416-library",
+      "version": "1.0.0",
+      "peerDependencies": {
+        "@isaacs/test-8416-react": "^19.0.0"
+      },
+      "_id": "@isaacs/test-8416-library@1.0.0",
+      "dist": {
+        "shasum": "0000000000000000000000000000000000000021",
+        "tarball": "https://registry.npmjs.org/@isaacs/test-8416-library/-/library-pkg-1.0.0.tgz"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@isaacs/test-8416-main-package",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@isaacs/test-8416-react": "^18.0.0",
+    "@isaacs/test-8416-library": "^1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@isaacs/test-8416-react": {
+      "optional": true
+    },
+    "@isaacs/test-8416-library": {
+      "optional": true
+    }
+  },
+  "_id": "@isaacs/test-8416-main-package@1.0.0",
+  "dist": {
+    "shasum": "0000000000000000000000000000000000000020",
+    "tarball": "https://registry.npmjs.org/@isaacs/test-8416-main-package/-/main-pkg-1.0.0.tgz"
+  }
+}

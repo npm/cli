@@ -1,0 +1,7 @@
+{
+  "name": "test-issue-8416-transitive",
+  "version": "1.0.0",
+  "dependencies": {
+    "@isaacs/test-8416-main-package": "1"
+  }
+}

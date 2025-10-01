@@ -1,0 +1,17 @@
+{
+  "name": "@isaacs/test-issue-8416-package",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@isaacs/test-issue-8416-react": "^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@isaacs/test-issue-8416-react": {
+      "optional": true
+    }
+  },
+  "_id": "@isaacs/test-issue-8416-package@1.0.0",
+  "dist": {
+    "shasum": "0000000000000000000000000000000000000000",
+    "tarball": "https://registry.npmjs.org/@isaacs/test-issue-8416-package/-/test-issue-8416-package-1.0.0.tgz"
+  }
+}

@@ -4460,3 +4460,65 @@ t.test('installLinks behavior with project-internal file dependencies', async t 
     t.equal(edgeToA.to, packageA, 'the edge from b should point to package a')
   })
 })
+
+t.test('should not fail with ERESOLVE for peerOptional when latest version conflicts', async t => {
+  // Reproduces issue #8416
+  // When installing a package with a peerOptional dependency, npm should not
+  // fail with ERESOLVE even if the latest version of the peer would conflict
+  const path = resolve(fixtures, 'issue-8416-peeroptional-eresolve')
+  createRegistry(t, true)
+
+  // This should succeed without throwing an ERESOLVE error
+  const tree = await buildIdeal(path)
+
+  // The package should be installed
+  const pkg = tree.children.get('@isaacs/test-issue-8416-package')
+  t.ok(pkg, 'package with peerOptional should be installed')
+
+  // The peerOptional dependency should NOT be installed (it's optional and conflicts)
+  const peer = tree.children.get('@isaacs/test-issue-8416-react')
+  t.notOk(peer, 'conflicting peerOptional should not be installed')
+})
+
+t.test('should not fail with ERESOLVE for conflicting peerOptional deps', async t => {
+  // Tests a scenario where two packages have conflicting peerOptional dependencies
+  // Both should be allowed since the peer deps are optional
+  const path = resolve(fixtures, 'issue-8416-complex')
+  createRegistry(t, true)
+
+  // This should succeed without throwing an ERESOLVE error
+  const tree = await buildIdeal(path)
+
+  // Both packages should be installed
+  const pkgA = tree.children.get('@isaacs/test-issue-8416-pkg-a')
+  const pkgB = tree.children.get('@isaacs/test-issue-8416-pkg-b')
+  t.ok(pkgA, 'package A with peerOptional should be installed')
+  t.ok(pkgB, 'package B with peerOptional should be installed')
+
+  // The peerOptional dependency should NOT be installed since it conflicts
+  const peer = tree.children.get('@isaacs/test-issue-8416-react')
+  t.notOk(peer, 'conflicting peerOptional should not be installed')
+})
+
+t.test('should not fail with ERESOLVE for transitive peer conflict through peerOptional', async t => {
+  // Reproduces issue #8416 - the REAL scenario
+  // Main package has peerOptional on library
+  // Library has non-optional peer on react@19
+  // Main package also has peerOptional on react@18
+  // This should NOT cause ERESOLVE because library is peerOptional
+  const path = resolve(fixtures, 'issue-8416-transitive')
+  createRegistry(t, true)
+
+  // This should succeed without throwing an ERESOLVE error
+  const tree = await buildIdeal(path)
+
+  // The main package should be installed
+  const mainPkg = tree.children.get('@isaacs/test-8416-main-package')
+  t.ok(mainPkg, 'main package should be installed')
+
+  // The peerOptional library and react should NOT be installed due to conflict
+  const library = tree.children.get('@isaacs/test-8416-library')
+  const react = tree.children.get('@isaacs/test-8416-react')
+  t.notOk(library, 'conflicting peerOptional library should not be installed')
+  t.notOk(react, 'conflicting peerOptional react should not be installed')
+})
