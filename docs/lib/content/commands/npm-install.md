@@ -11,10 +11,8 @@ description: Install a package
 ### Description
 
 This command installs a package and any packages that it depends on.
-If the
-package has a package-lock, or an npm shrinkwrap file, or a yarn lock file,
-the installation of dependencies will be driven by that, respecting the
-following order of precedence:
+If the package has a package-lock, or an npm shrinkwrap file, or a yarn lock file,
+the installation of dependencies will be driven by that, respecting the following order of precedence:
 
 * `npm-shrinkwrap.json`
 * `package-lock.json`
@@ -36,10 +34,7 @@ A `package` is:
 * f) a `<name>` that has a "latest" tag satisfying (e)
 * g) a `<git remote url>` that resolves to (a)
 
-Even if you never publish your package, you can still get a lot of benefits
-of using npm if you just want to write a node program (a), and perhaps if
-you also want to be able to easily install it elsewhere after packing it up
-into a tarball (b).
+Even if you never publish your package, you can still get a lot of benefits of using npm if you just want to write a node program (a), and perhaps if you also want to be able to easily install it elsewhere after packing it up into a tarball (b).
 
 
 * `npm install` (in a package directory, no arguments):
@@ -405,18 +400,13 @@ npm install sax@">=0.1.0 <0.2.0" bench supervisor
 
 The `--tag` argument will apply to all of the specified install targets.
 If
-a tag with the given name exists, the tagged version is preferred over
-newer versions.
+a tag with the given name exists, the tagged version is preferred over newer versions.
 
-The `--dry-run` argument will report in the usual way what the install
-would have done without actually installing anything.
+The `--dry-run` argument will report in the usual way what the install would have done without actually installing anything.
 
-The `--package-lock-only` argument will only update the
-`package-lock.json`, instead of checking `node_modules` and downloading
-dependencies.
+The `--package-lock-only` argument will only update the `package-lock.json`, instead of checking `node_modules` and downloading dependencies.
 
-The `-f` or `--force` argument will force npm to fetch remote resources
-even if a local copy exists on disk.
+The `-f` or `--force` argument will force npm to fetch remote resources even if a local copy exists on disk.
 
 ```bash
 npm install sax --force
@@ -425,9 +415,7 @@ npm install sax --force
 ### Configuration
 
 See the [`config`](/using-npm/config) help doc.
- Many of the configuration
-params have some effect on installation, since that's most of what npm
-does.
+ Many of the configuration params have some effect on installation, since that's most of what npm does.
 
 These are some of the most common options related to installation.
 
@@ -445,10 +433,8 @@ A
 +-- D
 ```
 
-That is, the dependency from B to C is satisfied by the fact that A already
-caused C to be installed at a higher level.
-D is still installed at the top
-level because nothing conflicts with it.
+That is, the dependency from B to C is satisfied by the fact that A already caused C to be installed at a higher level.
+D is still installed at the top level because nothing conflicts with it.
 
 For `A{B,C}, B{C,D@1}, C{D@2}`, this algorithm produces:
 
@@ -462,12 +448,10 @@ A
 
 Because B's D@1 will be installed in the top-level, C now has to install
 D@2 privately for itself.
-This algorithm is deterministic, but different
-trees may be produced if two dependencies are requested for installation in
+This algorithm is deterministic, but different trees may be produced if two dependencies are requested for installation in
 a different order.
 
-See [folders](/configuring-npm/folders) for a more detailed description of
-the specific folder structures that npm creates.
+See [folders](/configuring-npm/folders) for a more detailed description of the specific folder structures that npm creates.
 
 ### See Also
 

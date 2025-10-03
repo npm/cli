@@ -9,8 +9,7 @@ description: The npm config files
 npm gets its config settings from the command line, environment variables,
 and `npmrc` files.
 
-The `npm config` command can be used to update and edit the contents of the
-user and global npmrc files.
+The `npm config` command can be used to update and edit the contents of the user and global npmrc files.
 
 For a list of available configuration options, see
 [config](/using-npm/config).
@@ -26,22 +25,17 @@ The four relevant files are:
 
 All npm config files are an ini-formatted list of `key = value` parameters.
 Environment variables can be replaced using `${VARIABLE_NAME}`.
-By default
-if the variable is not defined, it is left unreplaced.
-By adding `?` after
-variable name they can be forced to evaluate to an empty string instead.
-For
-example:
+By default if the variable is not defined, it is left unreplaced.
+By adding `?` after variable name they can be forced to evaluate to an empty string instead.
+For example:
 
 ```bash
 cache = ${HOME}/.npm-packages
 node-options = "${NODE_OPTIONS?} --use-system-ca"
 ```
 
-Each of these files is loaded, and config options are resolved in priority
-order.
- For example, a setting in the userconfig file would override the
-setting in the globalconfig file.
+Each of these files is loaded, and config options are resolved in priority order.
+ For example, a setting in the userconfig file would override the setting in the globalconfig file.
 
 Array values are specified by adding "[]" after the key name.
 For example:
@@ -68,49 +62,37 @@ For example:
 
 #### Per-project config file
 
-When working locally in a project, a `.npmrc` file in the root of the
-project (ie, a sibling of `node_modules` and `package.json`) will set
-config values specific to this project.
+When working locally in a project, a `.npmrc` file in the root of the project (ie, a sibling of `node_modules` and `package.json`) will set config values specific to this project.
 
-Note that this only applies to the root of the project that you're running
-npm in.
+Note that this only applies to the root of the project that you're running npm in.
  It has no effect when your module is published.
- For example, you
-can't publish a module that forces itself to install globally, or in a
-different location.
+ For example, you can't publish a module that forces itself to install globally, or in a different location.
 
-Additionally, this file is not read in global mode, such as when running
-`npm install -g`.
+Additionally, this file is not read in global mode, such as when running `npm install -g`.
 
 #### Per-user config file
 
-`$HOME/.npmrc` (or the `userconfig` param, if set in the environment or on
-the command line)
+`$HOME/.npmrc` (or the `userconfig` param, if set in the environment or on the command line)
 
 #### Global config file
 
-`$PREFIX/etc/npmrc` (or the `globalconfig` param, if set above): This file
-is an ini-file formatted list of `key = value` parameters.
- Environment
-variables can be replaced as above.
+`$PREFIX/etc/npmrc` (or the `globalconfig` param, if set above): This file is an ini-file formatted list of `key = value` parameters.
+ Environment variables can be replaced as above.
 
 #### Built-in config file
 
 `path/to/npm/itself/npmrc`
 
-This is an unchangeable "builtin" configuration file that npm keeps
-consistent across updates.
+This is an unchangeable "builtin" configuration file that npm keeps consistent across updates.
  Set fields in here using the `./configure`
 script that comes with npm.
- This is primarily for distribution maintainers
-to override default configs in a standard and consistent manner.
+ This is primarily for distribution maintainers to override default configs in a standard and consistent manner.
 
 ### Auth related configuration
 
 The settings `_auth`, `_authToken`, `username`, `_password`, `certfile`,
 and `keyfile` must all be scoped to a specific registry.
-This ensures that
-`npm` will never send credentials to the wrong host.
+This ensures that `npm` will never send credentials to the wrong host.
 
 The full list is:
  - `_auth` (base64 authentication string)
@@ -125,8 +107,7 @@ The full list is:
 In order to scope these values, they must be prefixed by a URI fragment.
 If the credential is meant for any request to a registry on a single host,
 the scope may look like `//registry.npmjs.org/:`.
-If it must be scoped to a
-specific path on the host that path may also be provided, such as
+If it must be scoped to a specific path on the host that path may also be provided, such as
 `//my-custom-registry.org/unique/path:`.
 
 ```

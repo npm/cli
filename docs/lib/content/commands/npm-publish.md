@@ -13,15 +13,12 @@ description: Publish a package
 Publishes a package to the registry so that it can be installed by name.
 
 By default npm will publish to the public registry.
-This can be
-overridden by specifying a different default registry or using a
-[`scope`](/using-npm/scope) in the name, combined with a
-scope-configured registry (see
+This can be overridden by specifying a different default registry or using a
+[`scope`](/using-npm/scope) in the name, combined with a scope-configured registry (see
 [`package.json`](/configuring-npm/package-json)).
 
 
-A `package` is interpreted the same way as other commands (like
-`npm install`) and can be:
+A `package` is interpreted the same way as other commands (like `npm install`) and can be:
 
 * a) a folder containing a program described by a
   [`package.json`](/configuring-npm/package-json) file
@@ -34,27 +31,19 @@ A `package` is interpreted the same way as other commands (like
 * f) a `<name>` that has a "latest" tag satisfying (e)
 * g) a `<git remote url>` that resolves to (a)
 
-The publish will fail if the package name and version combination already
-exists in the specified registry.
+The publish will fail if the package name and version combination already exists in the specified registry.
 
-Once a package is published with a given name and version, that specific
-name and version combination can never be used again, even if it is removed
-with [`npm unpublish`](/commands/npm-unpublish).
+Once a package is published with a given name and version, that specific name and version combination can never be used again, even if it is removed with [`npm unpublish`](/commands/npm-unpublish).
 
-As of `npm@5`, both a sha1sum and an integrity field with a sha512sum of the
-tarball will be submitted to the registry during publication.
-Subsequent
-installs will use the strongest supported algorithm to verify downloads.
+As of `npm@5`, both a sha1sum and an integrity field with a sha512sum of the tarball will be submitted to the registry during publication.
+Subsequent installs will use the strongest supported algorithm to verify downloads.
 
-Similar to `--dry-run` see [`npm pack`](/commands/npm-pack), which figures
-out the files to be included and packs them into a tarball to be uploaded
-to the registry.
+Similar to `--dry-run` see [`npm pack`](/commands/npm-pack), which figures out the files to be included and packs them into a tarball to be uploaded to the registry.
 
 ### Files included in package
 
 To see what will be included in your package, run `npm pack --dry-run`.
-All
-files are included by default, with the following exceptions:
+All files are included by default, with the following exceptions:
 
 - Certain files that are relevant to package installation and distribution
   are always included.
@@ -85,12 +74,9 @@ files are included by default, with the following exceptions:
 - Symbolic links are never included in npm packages.
 
 
-See [`developers`](/using-npm/developers) for full details on what's
-included in the published package, as well as details on how the package is
-built.
+See [`developers`](/using-npm/developers) for full details on what's included in the published package, as well as details on how the package is built.
 
-See [`package.json`](/configuring-npm/package-json) for more info on
-what can and can't be ignored.
+See [`package.json`](/configuring-npm/package-json) for more info on what can and can't be ignored.
 
 ### Configuration
 

@@ -10,10 +10,8 @@ description: Clean install a project
 
 ### Description
 
-This command is similar to [`npm install`](/commands/npm-install), except
-it's meant to be used in automated environments such as test platforms,
-continuous integration, and deployment -- or any situation where you want
-to make sure you're doing a clean install of your dependencies.
+This command is similar to [`npm install`](/commands/npm-install), except it's meant to be used in automated environments such as test platforms,
+continuous integration, and deployment -- or any situation where you want to make sure you're doing a clean install of your dependencies.
 
 The main differences between using `npm install` and `npm ci` are:
 
@@ -30,10 +28,8 @@ The main differences between using `npm install` and `npm ci` are:
 
 NOTE: If you create your `package-lock.json` file by running `npm install`
 with flags that can affect the shape of your dependency tree, such as
-`--legacy-peer-deps` or `--install-links`, you _must_ provide the same
-flags to `npm ci` or you are likely to encounter errors.
-An easy way to do
-this is to run, for example,
+`--legacy-peer-deps` or `--install-links`, you _must_ provide the same flags to `npm ci` or you are likely to encounter errors.
+An easy way to do this is to run, for example,
 `npm config set legacy-peer-deps=true --location=project` and commit the
 `.npmrc` file to your repo.
 

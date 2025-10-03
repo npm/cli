@@ -11,9 +11,7 @@ description: Change settings on your registry profile
 ### Description
 
 Change your profile information on the registry.
- Note that this command
-depends on the registry implementation, so third-party registries may not
-support this interface.
+ Note that this command depends on the registry implementation, so third-party registries may not support this interface.
 
 * `npm profile get [<property>]`: Display all of the properties of your
   profile, or one or more specific properties.

@@ -10,8 +10,7 @@ description: The registry diff command
 
 ### Description
 
-Similar to its `git diff` counterpart, this command will print diff patches
-of files for packages published to the npm registry.
+Similar to its `git diff` counterpart, this command will print diff patches of files for packages published to the npm registry.
 
 * `npm diff --diff=<spec-a> --diff=<spec-b>`
 
@@ -130,21 +129,17 @@ Once that specific
     npm diff --diff=1.0.0 --diff=1.1.0
     ```
 
-Note that tag names are not valid `--diff` argument values, if you wish to
-compare to a published tag, you must use the `pkg@tagname` syntax.
+Note that tag names are not valid `--diff` argument values, if you wish to compare to a published tag, you must use the `pkg@tagname` syntax.
 
 #### Filtering files
 
-It's possible to also specify positional arguments using file names or globs
-pattern matching in order to limit the result of diff patches to only a subset
-of files for a given package, e.g:
+It's possible to also specify positional arguments using file names or globs pattern matching in order to limit the result of diff patches to only a subset of files for a given package, e.g:
 
   ```bash
   npm diff --diff=pkg@2 ./lib/ CHANGELOG.md
   ```
 
-In the example above the diff output is only going to print contents of files
-located within the folder `./lib/` and changed lines of code within the
+In the example above the diff output is only going to print contents of files located within the folder `./lib/` and changed lines of code within the
 `CHANGELOG.md` file.
 
 ### Configuration

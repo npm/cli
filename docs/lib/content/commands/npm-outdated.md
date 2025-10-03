@@ -10,11 +10,9 @@ description: Check for outdated packages
 
 ### Description
 
-This command will check the registry to see if any (or, specific) installed
-packages are currently outdated.
+This command will check the registry to see if any (or, specific) installed packages are currently outdated.
 
-By default, only the direct dependencies of the root project and direct
-dependencies of your configured *workspaces* are shown.
+By default, only the direct dependencies of the root project and direct dependencies of your configured *workspaces* are shown.
 Use `--all` to find all outdated meta-dependencies as well.
 
 In the output:

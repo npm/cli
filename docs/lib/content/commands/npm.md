@@ -15,66 +15,49 @@ description: javascript package manager
 ### Description
 
 npm is the package manager for the Node JavaScript platform.
- It puts
-modules in place so that node can find them, and manages dependency
-conflicts intelligently.
+ It puts modules in place so that node can find them, and manages dependency conflicts intelligently.
 
 It is extremely configurable to support a variety of use cases.
- Most
-commonly, you use it to publish, discover, install, and develop node
-programs.
+ Most commonly, you use it to publish, discover, install, and develop node programs.
 
 Run `npm help` to get a list of available commands.
 
 ### Important
 
-npm comes preconfigured to use npm's public registry at
-https://registry.npmjs.org by default.
-Use of the npm public registry is
-subject to terms of use available at
-https://docs.npmjs.com/policies/terms.
+npm comes preconfigured to use npm's public registry at https://registry.npmjs.org by default.
+Use of the npm public registry is subject to terms of use available at https://docs.npmjs.com/policies/terms.
 
-You can configure npm to use any compatible registry you like, and even
-run your own registry.
-Use of someone else's registry is governed by
-their terms of use.
+You can configure npm to use any compatible registry you like, and even run your own registry.
+Use of someone else's registry is governed by their terms of use.
 
 ### Introduction
 
 You probably got npm because you want to install stuff.
 
-The very first thing you will most likely want to run in any node
-program is `npm install` to install its dependencies.
+The very first thing you will most likely want to run in any node program is `npm install` to install its dependencies.
 
 You can also run `npm install blerg` to install the latest version of
-"blerg".  Check out [`npm install`](/commands/npm-install) for more
-info.
+"blerg".  Check out [`npm install`](/commands/npm-install) for more info.
  It can do a lot of stuff.
 
-Use the `npm search` command to show everything that's available in the
-public registry.
+Use the `npm search` command to show everything that's available in the public registry.
  Use `npm ls` to show everything you've installed.
 
 ### Dependencies
 
-If a package lists a dependency using a git URL, npm will install that
-dependency using the [`git`](https://github.com/git-guides/install-git)
+If a package lists a dependency using a git URL, npm will install that dependency using the [`git`](https://github.com/git-guides/install-git)
 command and will generate an error if it is not installed.
 
-If one of the packages npm tries to install is a native node module and
-requires compiling of C++ Code, npm will use
+If one of the packages npm tries to install is a native node module and requires compiling of C++ Code, npm will use
 [node-gyp](https://github.com/nodejs/node-gyp) for that task.
 For a Unix system, [node-gyp](https://github.com/nodejs/node-gyp)
 needs Python, make and a buildchain like GCC. On Windows,
 Python and Microsoft Visual Studio C++ are needed.
-For more information
-visit [the node-gyp repository](https://github.com/nodejs/node-gyp) and
-the [node-gyp Wiki](https://github.com/nodejs/node-gyp/wiki).
+For more information visit [the node-gyp repository](https://github.com/nodejs/node-gyp) and the [node-gyp Wiki](https://github.com/nodejs/node-gyp/wiki).
 
 ### Directories
 
-See [`folders`](/configuring-npm/folders) to learn about where npm puts
-stuff.
+See [`folders`](/configuring-npm/folders) to learn about where npm puts stuff.
 
 In particular, npm has two modes of operation:
 
@@ -89,13 +72,11 @@ In particular, npm has two modes of operation:
   `$npm_config_prefix/bin`.
 
 Local mode is the default.
- Use `-g` or `--global` on any command to
-run in global mode instead.
+ Use `-g` or `--global` on any command to run in global mode instead.
 
 ### Developer Usage
 
-If you're using npm to develop and publish your code, check out the
-following help topics:
+If you're using npm to develop and publish your code, check out the following help topics:
 
 * json:
   Make a package.json file.
@@ -161,9 +142,7 @@ See [`config`](/using-npm/config) for much, much, more information.
 Patches welcome!
 
 If you would like to help, but don't know what to work on, read the
-[contributing
-guidelines](https://github.com/npm/cli/blob/latest/CONTRIBUTING.md) and
-check the issues list.
+[contributing guidelines](https://github.com/npm/cli/blob/latest/CONTRIBUTING.md) and check the issues list.
 
 ### Bugs
 

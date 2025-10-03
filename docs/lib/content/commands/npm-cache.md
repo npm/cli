@@ -61,8 +61,7 @@ The npm cache is strictly a cache: it should not be relied upon as a persistent 
 npm makes no guarantee that a previously-cached piece of data will be available later, and will automatically delete corrupted contents.
 The primary guarantee that the cache makes is that, if it does return data, that data will be exactly the data that was inserted.
 
-To run an offline verification of existing cache contents, use `npm cache
-verify`.
+To run an offline verification of existing cache contents, use `npm cache verify`.
 
 ### Configuration
 

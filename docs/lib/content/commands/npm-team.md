@@ -11,19 +11,13 @@ description: Manage organization teams and team memberships
 ### Description
 
 Used to manage teams in organizations, and change team memberships.
-Does not
-handle permissions for packages.
+Does not handle permissions for packages.
 
-Teams must always be fully qualified with the organization/scope they belong to
-when operating on them, separated by a colon (`:`).
-That is, if you have a
-`newteam` team in an `org` organization, you must always refer to that team
-as `@org:newteam` in these commands.
+Teams must always be fully qualified with the organization/scope they belong to when operating on them, separated by a colon (`:`).
+That is, if you have a `newteam` team in an `org` organization, you must always refer to that team as `@org:newteam` in these commands.
 
-If you have two-factor authentication enabled in `auth-and-writes` mode, then
-you can provide a code from your authenticator with `[--otp <otpcode>]`.
-If you don't include this then you will be taken through a second factor flow based
-on your `authtype`.
+If you have two-factor authentication enabled in `auth-and-writes` mode, then you can provide a code from your authenticator with `[--otp <otpcode>]`.
+If you don't include this then you will be taken through a second factor flow based on your `authtype`.
 
 * create / destroy:
   Create a new team, or destroy an existing one.
@@ -83,16 +77,12 @@ If performed on a team, it will instead return a list
 
 ### Details
 
-`npm team` always operates directly on the current registry, configurable from
-the command line using `--registry=<registry url>`.
+`npm team` always operates directly on the current registry, configurable from the command line using `--registry=<registry url>`.
 
-You must be a *team admin* to create teams and manage team membership, under
-the given organization.
-Listing teams and team memberships may be done by
-any member of the organization.
+You must be a *team admin* to create teams and manage team membership, under the given organization.
+Listing teams and team memberships may be done by any member of the organization.
 
-Organization creation and management of team admins and *organization* members
-is done through the website, not the npm CLI.
+Organization creation and management of team admins and *organization* members is done through the website, not the npm CLI.
 
 To use teams to manage permissions on packages belonging to your organization,
 use the `npm access` command to grant or revoke the appropriate permissions.

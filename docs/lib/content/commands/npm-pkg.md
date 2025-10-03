@@ -11,13 +11,9 @@ description: Manages your package.json
 ### Description
 
 A command that automates the management of `package.json` files.
-`npm pkg` provide 3 different sub commands that allow you to modify or retrieve
-values for given object keys in your `package.json`.
+`npm pkg` provide 3 different sub commands that allow you to modify or retrieve values for given object keys in your `package.json`.
 
-The syntax to retrieve and set fields is a dot separated representation of
-the nested object properties to be found within your `package.json`, it's the
-same notation used in [`npm view`](/commands/npm-view) to retrieve information
-from the registry manifest, below you can find more examples on how to use it.
+The syntax to retrieve and set fields is a dot separated representation of the nested object properties to be found within your `package.json`, it's the same notation used in [`npm view`](/commands/npm-view) to retrieve information from the registry manifest, below you can find more examples on how to use it.
 
 Returned values are always in **json** format.
 
@@ -155,17 +151,13 @@ You can set/get/delete items across your configured workspaces by using the
 [`workspace`](/using-npm/config#workspace) or
 [`workspaces`](/using-npm/config#workspaces) config options.
 
-For example, setting a `funding` value across all configured workspaces
-of a project:
+For example, setting a `funding` value across all configured workspaces of a project:
 
 ```bash
 npm pkg set funding=https://example.com --ws
 ```
 
-When using `npm pkg get` to retrieve info from your configured workspaces, the
-returned result will be in a json format in which top level keys are the
-names of each workspace, the values of these keys will be the result values
-returned from each of the configured workspaces, e.g:
+When using `npm pkg get` to retrieve info from your configured workspaces, the returned result will be in a json format in which top level keys are the names of each workspace, the values of these keys will be the result values returned from each of the configured workspaces, e.g:
 
 ```
 npm pkg get name version --ws

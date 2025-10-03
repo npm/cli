@@ -21,28 +21,18 @@ and followed by a slash, e.g.
 Scopes are a way of grouping related packages together, and also affect a few
 things about the way npm treats the package.
 
-Each npm user/organization has their own scope, and only you can add packages
-in your scope.
-This means you don't have to worry about someone taking your
-package name ahead of you.
-Thus it is also a good way to signal official packages
-for organizations.
+Each npm user/organization has their own scope, and only you can add packages in your scope.
+This means you don't have to worry about someone taking your package name ahead of you.
+Thus it is also a good way to signal official packages for organizations.
 
-Scoped packages can be published and installed as of `npm@2` and are supported
-by the primary npm registry.
-Unscoped packages can depend on scoped packages and
-vice versa.
-The npm client is backwards-compatible with unscoped registries,
-so it can be used to work with scoped and unscoped registries at the same time.
+Scoped packages can be published and installed as of `npm@2` and are supported by the primary npm registry.
+Unscoped packages can depend on scoped packages and vice versa.
+The npm client is backwards-compatible with unscoped registries, so it can be used to work with scoped and unscoped registries at the same time.
 
 ### Installing scoped packages
 
-Scoped packages are installed to a sub-folder of the regular installation
-folder, e.g.
-if your other packages are installed in `node_modules/packagename`,
-scoped modules will be installed in `node_modules/@myorg/packagename`. The scope
-folder (`@myorg`) is simply the name of the scope preceded by an `@` symbol, and can
-contain any number of scoped packages.
+Scoped packages are installed to a sub-folder of the regular installation folder, e.g. if your other packages are installed in `node_modules/packagename`, scoped modules will be installed in `node_modules/@myorg/packagename`.
+The scope folder (`@myorg`) is simply the name of the scope preceded by an `@` symbol, and can contain any number of scoped packages.
 
 A scoped package is installed by referencing it by name, preceded by an
 `@` symbol, in `npm install`:
