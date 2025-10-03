@@ -6,14 +6,10 @@ description: A manifestation of the manifest
 
 ### Description
 
-`package-lock.json` is automatically generated for any operations where npm
-modifies either the `node_modules` tree, or `package.json`.
-It describes the
-exact tree that was generated, such that subsequent installs are able to
-generate identical trees, regardless of intermediate dependency updates.
+`package-lock.json` is automatically generated for any operations where npm modifies either the `node_modules` tree, or `package.json`.
+It describes the exact tree that was generated, such that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates.
 
-This file is intended to be committed into source repositories, and serves
-various purposes:
+This file is intended to be committed into source repositories, and serves various purposes:
 
 * Describe a single representation of a dependency tree such that
   teammates, deployments, and continuous integration are guaranteed to
@@ -36,29 +32,19 @@ When `npm` creates or updates `package-lock.json`, it will infer line endings an
 
 ### `package-lock.json` vs `npm-shrinkwrap.json`
 
-Both of these files have the same format, and perform similar functions in
-the root of a project.
+Both of these files have the same format, and perform similar functions in the root of a project.
 
-The difference is that `package-lock.json` cannot be published, and it will
-be ignored if found in any place other than the root project.
+The difference is that `package-lock.json` cannot be published, and it will be ignored if found in any place other than the root project.
 
-In contrast, [npm-shrinkwrap.json](/configuring-npm/npm-shrinkwrap-json) allows
-publication, and defines the dependency tree from the point encountered.
-This is not recommended unless deploying a CLI tool or otherwise using the
-publication process for producing production packages.
+In contrast, [npm-shrinkwrap.json](/configuring-npm/npm-shrinkwrap-json) allows publication, and defines the dependency tree from the point encountered.
+This is not recommended unless deploying a CLI tool or otherwise using the publication process for producing production packages.
 
-If both `package-lock.json` and `npm-shrinkwrap.json` are present in the
-root of a project, `npm-shrinkwrap.json` will take precedence and
-`package-lock.json` will be ignored.
+If both `package-lock.json` and `npm-shrinkwrap.json` are present in the root of a project, `npm-shrinkwrap.json` will take precedence and `package-lock.json` will be ignored.
 
 ### Hidden Lockfiles
 
-In order to avoid processing the `node_modules` folder repeatedly, npm as
-of v7 uses a "hidden" lockfile present in
-`node_modules/.package-lock.json`.
-This contains information about the
-tree, and is used in lieu of reading the entire `node_modules` hierarchy
-provided that the following conditions are met:
+In order to avoid processing the `node_modules` folder repeatedly, npm as of v7 uses a "hidden" lockfile present in `node_modules/.package-lock.json`.
+This contains information about the tree, and is used in lieu of reading the entire `node_modules` hierarchy provided that the following conditions are met:
 
 - All package folders it references exist in the `node_modules` hierarchy.
 - No package folders exist in the `node_modules` hierarchy that are not
@@ -66,58 +52,39 @@ provided that the following conditions are met:
 - The modified time of the file is at least as recent as all of the package
   folders it references.
 
-That is, the hidden lockfile will only be relevant if it was created as
-part of the most recent update to the package tree.
- If another CLI mutates
-the tree in any way, this will be detected, and the hidden lockfile will be
-ignored.
+That is, the hidden lockfile will only be relevant if it was created as part of the most recent update to the package tree.
+ If another CLI mutates the tree in any way, this will be detected, and the hidden lockfile will be ignored.
 
-Note that it _is_ possible to manually change the _contents_ of a package
-in such a way that the modified time of the package folder is unaffected.
-For example, if you add a file to `node_modules/foo/lib/bar.js`, then the
-modified time on `node_modules/foo` will not reflect this change.
- If you
-are manually editing files in `node_modules`, it is generally best to
-delete the file at `node_modules/.package-lock.json`.
+Note that it _is_ possible to manually change the _contents_ of a package in such a way that the modified time of the package folder is unaffected.
+For example, if you add a file to `node_modules/foo/lib/bar.js`, then the modified time on `node_modules/foo` will not reflect this change.
+ If you are manually editing files in `node_modules`, it is generally best to delete the file at `node_modules/.package-lock.json`.
 
-As the hidden lockfile is ignored by older npm versions, it does not
-contain the backwards compatibility affordances present in "normal"
+As the hidden lockfile is ignored by older npm versions, it does not contain the backwards compatibility affordances present in "normal"
 lockfiles.
- That is, it is `lockfileVersion: 3`, rather than
-`lockfileVersion: 2`.
+ That is, it is `lockfileVersion: 3`, rather than `lockfileVersion: 2`.
 
 ### Handling Old Lockfiles
 
-When npm detects a lockfile from npm v6 or before during the package
-installation process, it is automatically updated to fetch missing
-information from either the `node_modules` tree or (in the case of empty
-`node_modules` trees or very old lockfile formats) the npm registry.
+When npm detects a lockfile from npm v6 or before during the package installation process, it is automatically updated to fetch missing information from either the `node_modules` tree or (in the case of empty `node_modules` trees or very old lockfile formats) the npm registry.
 
 ### File Format
 
 #### `name`
 
 The name of the package this is a package-lock for.
-This will match what's
-in `package.json`.
+This will match what's in `package.json`.
 
 #### `version`
 
 The version of the package this is a package-lock for.
-This will match
-what's in `package.json`.
+This will match what's in `package.json`.
 
 #### `lockfileVersion`
 
-An integer version, starting at `1` with the version number of this
-document whose semantics were used when generating this
-`package-lock.json`.
+An integer version, starting at `1` with the version number of this document whose semantics were used when generating this `package-lock.json`.
 
-Note that the file format changed significantly in npm v7 to track
-information that would have otherwise required looking in `node_modules` or
-the npm registry.
- Lockfiles generated by npm v7 will contain
-`lockfileVersion: 2`.
+Note that the file format changed significantly in npm v7 to track information that would have otherwise required looking in `node_modules` or the npm registry.
+ Lockfiles generated by npm v7 will contain `lockfileVersion: 2`.
 
 * No version provided: an "ancient" shrinkwrap file from a version of npm
   prior to npm v5.
@@ -127,16 +94,13 @@ the npm registry.
 * `3`: The lockfile version used by npm v9 and above.
 Backwards compatible to npm v7.
 
-npm will always attempt to get whatever data it can out of a lockfile, even
-if it is not a version that it was designed to support.
+npm will always attempt to get whatever data it can out of a lockfile, even if it is not a version that it was designed to support.
 
 #### `packages`
 
-This is an object that maps package locations to an object containing the
-information about that package.
+This is an object that maps package locations to an object containing the information about that package.
 
-The root project is typically listed with a key of `""`, and all other
-packages are listed with their relative paths from the root project folder.
+The root project is typically listed with a key of `""`, and all other packages are listed with their relative paths from the root project folder.
 
 Package descriptors have the following fields:
 
@@ -187,9 +151,7 @@ Package descriptors have the following fields:
 
 Legacy data for supporting versions of npm that use `lockfileVersion: 1`.
 This is a mapping of package names to dependency objects.
- Because the
-object structure is strictly hierarchical, symbolic link dependencies are
-somewhat challenging to represent in some cases.
+ Because the object structure is strictly hierarchical, symbolic link dependencies are somewhat challenging to represent in some cases.
 
 npm v7 ignores this section entirely if a `packages` section is present,
 but does keep it up to date in order to support switching between npm v6

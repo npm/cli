@@ -63,22 +63,18 @@ If you'd like to change this behavior & log this output you can set `foreground-
 
 ### Timing Information
 
-The [`--timing` config](/using-npm/config#timing) can be set which does a few
-things:
+The [`--timing` config](/using-npm/config#timing) can be set which does a few things:
 
 1. Always shows the full path to the debug log regardless of command exit status
 1. Write timing information to a process specific timing file in the cache or `logs-dir`
 1. Output timing information to the terminal
 
-This file contains a `timers` object where the keys are an identifier for the
-portion of the process being timed and the value is the number of milliseconds it took to complete.
+This file contains a `timers` object where the keys are an identifier for the portion of the process being timed and the value is the number of milliseconds it took to complete.
 
 Sometimes it is helpful to get timing information without outputting anything to the terminal.
-For
-example, the performance might be affected by writing to the terminal.
+For example, the performance might be affected by writing to the terminal.
 In this case you can use
-`--timing --silent` which will still write the timing file, but not output anything to the terminal
-while running.
+`--timing --silent` which will still write the timing file, but not output anything to the terminal while running.
 
 ### Registry Response Headers
 

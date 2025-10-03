@@ -6,17 +6,13 @@ description: How npm handles the "scripts" field
 
 ### Description
 
-The `"scripts"` property of your `package.json` file supports a number
-of built-in scripts and their preset life cycle events as well as
-arbitrary scripts.
-These all can be executed by running
-`npm run <stage>`.
+The `"scripts"` property of your `package.json` file supports a number of built-in scripts and their preset life cycle events as well as arbitrary scripts.
+These all can be executed by running `npm run <stage>`.
 *Pre* and *post*
 commands with matching names will be run for those as well (e.g.
 `premyscript`,
 `myscript`, `postmyscript`).
-Scripts from dependencies can be run with
-`npm explore <pkg> -- npm run <stage>`.
+Scripts from dependencies can be run with `npm explore <pkg> -- npm run <stage>`.
 
 ### Pre & Post Scripts
 
@@ -34,13 +30,11 @@ To create "pre" or "post" scripts for any scripts defined in the
 }
 ```
 
-In this example `npm run compress` would execute these scripts as
-described.
+In this example `npm run compress` would execute these scripts as described.
 
 ### Life Cycle Scripts
 
-There are some special life cycle scripts that happen only in certain
-situations.
+There are some special life cycle scripts that happen only in certain situations.
 These scripts happen in addition to the `pre<event>`, `post<event>`, and
 `<event>` scripts.
 
@@ -151,10 +145,7 @@ These also run when you run `npm install -g <pkg-name>`
 * `prepare`
 * `postprepare`
 
-If there is a `binding.gyp` file in the root of your package and you
-haven't defined your own `install` or `preinstall` scripts, npm will
-default the `install` command to compile using node-gyp via `node-gyp
-rebuild`
+If there is a `binding.gyp` file in the root of your package and you haven't defined your own `install` or `preinstall` scripts, npm will default the `install` command to compile using node-gyp via `node-gyp rebuild`
 
 These are run from the scripts of `<pkg-name>`
 
@@ -181,14 +172,12 @@ These are run from the scripts of `<pkg-name>`
 * `prepare`
 
 `prepare` is only run if the current directory is a symlink (e.g.
-with
-linked packages)
+with linked packages)
 
 #### [`npm restart`](/commands/npm-restart)
 
 If there is a `restart` script defined, these events are run; otherwise,
-`stop` and `start` are both run if present, including their `pre` and
-`post` iterations)
+`stop` and `start` are both run if present, including their `pre` and `post` iterations)
 
 * `prerestart`
 * `restart`
@@ -206,10 +195,8 @@ If there is a `restart` script defined, these events are run; otherwise,
 * `start`
 * `poststart`
 
-If there is a `server.js` file in the root of your package, then npm
-will default the `start` command to `node server.js`.
-`prestart` and
-`poststart` will still run in this case.
+If there is a `server.js` file in the root of your package, then npm will default the `start` command to `node server.js`.
+`prestart` and `poststart` will still run in this case.
 
 #### [`npm stop`](/commands/npm-stop)
 
@@ -263,20 +250,15 @@ For more details, see:
 
 ### User
 
-When npm is run as root, scripts are always run with the effective uid
-and gid of the working directory owner.
+When npm is run as root, scripts are always run with the effective uid and gid of the working directory owner.
 
 ### Environment
 
-Package scripts run in an environment where many pieces of information
-are made available regarding the setup of npm and the current state of
-the process.
+Package scripts run in an environment where many pieces of information are made available regarding the setup of npm and the current state of the process.
 
 #### path
 
-If you depend on modules that define executable scripts, like test
-suites, then those executables will be added to the `PATH` for
-executing the scripts.
+If you depend on modules that define executable scripts, like test suites, then those executables will be added to the `PATH` for executing the scripts.
  So, if your package.json has this:
 
 ```json
@@ -291,33 +273,23 @@ executing the scripts.
 }
 ```
 
-then you could run `npm start` to execute the `bar` script, which is
-exported into the `node_modules/.bin` directory on `npm install`.
+then you could run `npm start` to execute the `bar` script, which is exported into the `node_modules/.bin` directory on `npm install`.
 
 #### package.json vars
 
 The package.json fields are tacked onto the `npm_package_` prefix.
 So,
-for instance, if you had `{"name":"foo", "version":"1.2.5"}` in your
-package.json file, then your package scripts would have the
-`npm_package_name` environment variable set to "foo", and the
-`npm_package_version` set to "1.2.5".  You can access these variables
-in your code with `process.env.npm_package_name` and
-`process.env.npm_package_version`, and so on for other fields.
+for instance, if you had `{"name":"foo", "version":"1.2.5"}` in your package.json file, then your package scripts would have the `npm_package_name` environment variable set to "foo", and the `npm_package_version` set to "1.2.5".  You can access these variables in your code with `process.env.npm_package_name` and `process.env.npm_package_version`, and so on for other fields.
 
 See [`package.json`](/configuring-npm/package-json) for more on package configs.
 
 #### current lifecycle event
 
-Lastly, the `npm_lifecycle_event` environment variable is set to
-whichever stage of the cycle is being executed.
-So, you could have a
-single script used for different parts of the process which switches
-based on what's currently happening.
+Lastly, the `npm_lifecycle_event` environment variable is set to whichever stage of the cycle is being executed.
+So, you could have a single script used for different parts of the process which switches based on what's currently happening.
 
 Objects are flattened following this format, so if you had
-`{"scripts":{"install":"foo.js"}}` in your package.json, then you'd
-see this in the script:
+`{"scripts":{"install":"foo.js"}}` in your package.json, then you'd see this in the script:
 
 ```bash
 process.env.npm_package_scripts_install === "foo.js"
@@ -343,8 +315,7 @@ different phases, it would be wise in this case to look at the
 `npm_lifecycle_event` environment variable.
 
 If you want to run a make command, you can do so.
- This works just
-fine:
+ This works just fine:
 
 ```json
 {
@@ -361,13 +332,11 @@ fine:
 Scripts are run by passing the line as a script argument to `/bin/sh` on POSIX systems or `cmd.exe` on Windows.
 You can control which shell is used by setting the [`script-shell`](/using-npm/config#script-shell) configuration option.
 
-If the script exits with a code other than 0, then this will abort the
-process.
+If the script exits with a code other than 0, then this will abort the process.
 
 Note that these script files don't have to be Node.js or even
 JavaScript programs.
-They just have to be some kind of executable
-file.
+They just have to be some kind of executable file.
 
 ### Best Practices
 
