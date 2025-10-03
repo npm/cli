@@ -207,10 +207,8 @@ Consider also setting `"private": true` to prevent accidental publication.
 ### people fields: author, contributors
 
 The "author" is one person.
- "contributors" is an array of people.
-A
-"person" is an object with a "name" field and optionally "url" and "email",
-like this:
+"contributors" is an array of people.
+A "person" is an object with a "name" field and optionally "url" and "email", like this:
 
 ```json
 

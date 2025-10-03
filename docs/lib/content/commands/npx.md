@@ -17,9 +17,7 @@ Whatever packages are specified by the `--package` option will be provided in th
 The `--package` option may be specified multiple times, to execute the supplied command in an environment where all specified packages are available.
 
 If any requested packages are not present in the local project dependencies, then they are installed to a folder in the npm cache, which is added to the `PATH` environment variable in the executed process.
-A
-prompt is printed (which can be suppressed by providing either `--yes` or
-`--no`).
+A prompt is printed (which can be suppressed by providing either `--yes` or `--no`).
 
 Package names provided without a specifier will be matched with whatever version exists in the local project.
 Package names with a specifier will only be considered a match if they have the exact same name and version as the local dependency.
