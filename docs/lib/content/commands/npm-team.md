@@ -10,11 +10,13 @@ description: Manage organization teams and team memberships
 
 ### Description
 
-Used to manage teams in organizations, and change team memberships. Does not
+Used to manage teams in organizations, and change team memberships.
+Does not
 handle permissions for packages.
 
 Teams must always be fully qualified with the organization/scope they belong to
-when operating on them, separated by a colon (`:`). That is, if you have a
+when operating on them, separated by a colon (`:`).
+That is, if you have a
 `newteam` team in an `org` organization, you must always refer to that team
 as `@org:newteam` in these commands.
 
@@ -24,7 +26,8 @@ If you don't include this then you will be taken through a second factor flow ba
 on your `authtype`.
 
 * create / destroy:
-  Create a new team, or destroy an existing one. Note: You cannot remove the
+  Create a new team, or destroy an existing one.
+Note: You cannot remove the
   `developers` team, [learn more.](https://docs.npmjs.com/about-developers-team)
 
   Here's how to create a new team `newteam` under the `org` org:
@@ -62,7 +65,8 @@ on your `authtype`.
 
 * ls:
   If performed on an organization name, will return a list of existing teams
-  under that organization. If performed on a team, it will instead return a list
+  under that organization.
+If performed on a team, it will instead return a list
   of all users belonging to that particular team.
 
   Here's an example of how to list all teams from an org named `org`:
@@ -83,7 +87,8 @@ on your `authtype`.
 the command line using `--registry=<registry url>`.
 
 You must be a *team admin* to create teams and manage team membership, under
-the given organization. Listing teams and team memberships may be done by
+the given organization.
+Listing teams and team memberships may be done by
 any member of the organization.
 
 Organization creation and management of team admins and *organization* members

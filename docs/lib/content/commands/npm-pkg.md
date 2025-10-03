@@ -38,7 +38,8 @@ Returned values are always in **json** format.
     npm pkg get name version
     ```
 
-    You can view child fields by separating them with a period. To retrieve
+    You can view child fields by separating them with a period.
+To retrieve
     the value of a test `script` value, you would run the following command:
 
     ```bash
@@ -46,7 +47,8 @@ Returned values are always in **json** format.
     ```
 
     For fields that are arrays, requesting a non-numeric field will return
-    all of the values from the objects in the list. For example, to get all
+    all of the values from the objects in the list.
+For example, to get all
     the contributor emails for a package, you would run:
 
     ```bash
@@ -54,7 +56,8 @@ Returned values are always in **json** format.
     ```
 
     You may also use numeric indices in square braces to specifically select
-    an item in an array field. To just get the email address of the first
+    an item in an array field.
+To just get the email address of the first
     contributor in the list, you can run:
 
     ```bash
@@ -62,7 +65,8 @@ Returned values are always in **json** format.
     ```
 
     For complex fields you can also name a property in square brackets
-    to specifically select a child field. This is especially helpful
+    to specifically select a child field.
+This is especially helpful
     with the exports object:
 
     ```bash
@@ -71,7 +75,8 @@ Returned values are always in **json** format.
 
 * `npm pkg set <field>=<value>`
 
-    Sets a `value` in your `package.json` based on the `field` value. When
+    Sets a `value` in your `package.json` based on the `field` value.
+When
     saving to your `package.json` file the same set of rules used during
     `npm install` and other cli commands that touches the `package.json` file
     are used, making sure to respect the existing indentation and possibly
@@ -128,7 +133,8 @@ Returned values are always in **json** format.
     Deletes a `key` from your `package.json`
 
     The same syntax used to set values from your package can also be used
-    to remove existing ones. For example, in order to remove a script named
+    to remove existing ones.
+For example, in order to remove a script named
     build:
 
     ```bash
@@ -137,7 +143,8 @@ Returned values are always in **json** format.
 
 * `npm pkg fix`
 
-    Auto corrects common errors in your `package.json`.  npm already
+    Auto corrects common errors in your `package.json`.
+npm already
     does this during `publish`, which leads to subtle (mostly harmless)
     differences between the contents of your `package.json` file and the
     manifest that npm uses during installation.

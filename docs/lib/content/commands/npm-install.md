@@ -10,7 +10,8 @@ description: Install a package
 
 ### Description
 
-This command installs a package and any packages that it depends on. If the
+This command installs a package and any packages that it depends on.
+If the
 package has a package-lock, or an npm shrinkwrap file, or a yarn lock file,
 the installation of dependencies will be driven by that, respecting the
 following order of precedence:
@@ -54,7 +55,8 @@ into a tarball (b).
 
     With the `--production` flag (or when the `NODE_ENV` environment
     variable is set to `production`), npm will not install modules listed
-    in `devDependencies`. To install all modules listed in both
+    in `devDependencies`.
+To install all modules listed in both
     `dependencies` and `devDependencies` when `NODE_ENV` environment
     variable is set to `production`, you can use `--production=false`.
 
@@ -65,7 +67,8 @@ into a tarball (b).
 
     If `<folder>` sits inside the root of your project, its dependencies will be installed and may
     be hoisted to the top-level `node_modules` as they would for other
-    types of dependencies. If `<folder>` sits outside the root of your project,
+    types of dependencies.
+If `<folder>` sits outside the root of your project,
     *npm will not install the package dependencies* in the directory `<folder>`, 
     but it will create a symlink to `<folder>`.
 
@@ -80,7 +83,8 @@ into a tarball (b).
 
 * `npm install <tarball file>`:
 
-    Install a package that is sitting on the filesystem.  Note: if you just
+    Install a package that is sitting on the filesystem.
+ Note: if you just
     want to link a dev directory into your npm root, you can do this more
     easily by using [`npm link`](/commands/npm-link).
 
@@ -88,7 +92,8 @@ into a tarball (b).
     * The filename *must* use `.tar`, `.tar.gz`, or `.tgz` as the
       extension.
     * The package contents should reside in a subfolder inside the tarball
-      (usually it is called `package/`). npm strips one directory layer
+      (usually it is called `package/`).
+npm strips one directory layer
       when installing the package (an equivalent of `tar x
       --strip-components=1` is run).
     * The package must contain a `package.json` file with `name` and
@@ -102,7 +107,8 @@ into a tarball (b).
 
 * `npm install <tarball url>`:
 
-    Fetch the tarball url, and then install it.  In order to distinguish between
+    Fetch the tarball url, and then install it.
+ In order to distinguish between
     this and other options, the argument must start with "http://" or "https://"
 
     Example:
@@ -113,8 +119,10 @@ into a tarball (b).
 
 * `npm install [<@scope>/]<name>`:
 
-    Do a `<name>@<tag>` install, where `<tag>` is the "tag" config. (See
-    [`config`](/using-npm/config#tag). The config's default value is `latest`.)
+    Do a `<name>@<tag>` install, where `<tag>` is the "tag" config.
+(See
+    [`config`](/using-npm/config#tag).
+The config's default value is `latest`.)
 
     In most cases, this will install the version of the modules tagged as
     `latest` on the npm registry.
@@ -129,7 +137,8 @@ into a tarball (b).
     Additionally, you can control where and how they get saved with some
     additional flags:
 
-    * `-P, --save-prod`: Package will appear in your `dependencies`. This
+    * `-P, --save-prod`: Package will appear in your `dependencies`.
+This
       is the default unless `-D` or `-O` are present.
 
     * `-D, --save-dev`: Package will appear in your `devDependencies`.
@@ -153,13 +162,17 @@ into a tarball (b).
     Further, if you have an `npm-shrinkwrap.json` or `package-lock.json`
     then it will be updated as well.
 
-    `<scope>` is optional. The package will be downloaded from the registry
-    associated with the specified scope. If no registry is associated with
-    the given scope the default registry is assumed. See
+    `<scope>` is optional.
+The package will be downloaded from the registry
+    associated with the specified scope.
+If no registry is associated with
+    the given scope the default registry is assumed.
+See
     [`scope`](/using-npm/scope).
 
     Note: if you do not include the @-symbol on your scope name, npm will
-    interpret this as a GitHub repository instead, see below. Scopes names
+    interpret this as a GitHub repository instead, see below.
+Scopes names
     must also be followed by a slash.
 
     Examples:
@@ -176,10 +189,12 @@ into a tarball (b).
 
 * `npm install <alias>@npm:<name>`:
 
-    Install a package under a custom alias. Allows multiple versions of
+    Install a package under a custom alias.
+Allows multiple versions of
     a same-name package side-by-side, more convenient import names for
     packages with otherwise long ones, and using git forks replacements
-    or forked npm packages as replacements. Aliasing works only on your
+    or forked npm packages as replacements.
+Aliasing works only on your
     project and does not rename packages in transitive dependencies.
     Aliases should follow the naming conventions stated in
     [`validate-npm-package-name`](https://www.npmjs.com/package/validate-npm-package-name#naming-rules).
@@ -208,7 +223,8 @@ into a tarball (b).
 
 * `npm install [<@scope>/]<name>@<version>`:
 
-    Install the specified version of the package.  This will fail if the
+    Install the specified version of the package.
+ This will fail if the
     version has not been published to the registry.
 
     Example:
@@ -237,7 +253,8 @@ into a tarball (b).
 * `npm install <git remote url>`:
 
     Installs the package from the hosted git provider, cloning it with
-    `git`.  For a full git remote url, only that URL will be attempted.
+    `git`.
+For a full git remote url, only that URL will be attempted.
 
     ```bash
     <protocol>://[<user>[:<password>]@]<hostname>[:<port>][:][/]<path>[#<commit-ish> | #semver:<semver>]
@@ -247,10 +264,12 @@ into a tarball (b).
     `git+file`.
 
     If `#<commit-ish>` is provided, it will be used to clone exactly that
-    commit. If the commit-ish has the format `#semver:<semver>`, `<semver>`
+    commit.
+If the commit-ish has the format `#semver:<semver>`, `<semver>`
     can be any valid semver range or exact version, and npm will look for
     any tags or refs matching that range in the remote repository, much as
-    it would for a registry dependency. If neither `#<commit-ish>` or
+    it would for a registry dependency.
+If neither `#<commit-ish>` or
     `#semver:<semver>` is specified, then the default branch of the
     repository is used.
 
@@ -292,10 +311,12 @@ into a tarball (b).
     attempting to clone it using `git`.
 
     If `#<commit-ish>` is provided, it will be used to clone exactly that
-    commit. If the commit-ish has the format `#semver:<semver>`, `<semver>`
+    commit.
+If the commit-ish has the format `#semver:<semver>`, `<semver>`
     can be any valid semver range or exact version, and npm will look for
     any tags or refs matching that range in the remote repository, much as
-    it would for a registry dependency. If neither `#<commit-ish>` or
+    it would for a registry dependency.
+If neither `#<commit-ish>` or
     `#semver:<semver>` is specified, then the default branch is used.
 
     As with regular git dependencies, `dependencies` and `devDependencies`
@@ -312,7 +333,8 @@ into a tarball (b).
 * `npm install gist:[<githubname>/]<gistID>[#<commit-ish>|#semver:<semver>]`:
 
     Install the package at `https://gist.github.com/gistID` by attempting to
-    clone it using `git`. The GitHub username associated with the gist is
+    clone it using `git`.
+The GitHub username associated with the gist is
     optional and will not be saved in `package.json`.
 
     As with regular git dependencies, `dependencies` and `devDependencies` will
@@ -331,10 +353,12 @@ into a tarball (b).
     by attempting to clone it using `git`.
 
     If `#<commit-ish>` is provided, it will be used to clone exactly that
-    commit. If the commit-ish has the format `#semver:<semver>`, `<semver>` can
+    commit.
+If the commit-ish has the format `#semver:<semver>`, `<semver>` can
     be any valid semver range or exact version, and npm will look for any tags
     or refs matching that range in the remote repository, much as it would for a
-    registry dependency. If neither `#<commit-ish>` or `#semver:<semver>` is
+    registry dependency.
+If neither `#<commit-ish>` or `#semver:<semver>` is
     specified, then `master` is used.
 
     As with regular git dependencies, `dependencies` and `devDependencies` will
@@ -353,10 +377,12 @@ into a tarball (b).
     by attempting to clone it using `git`.
 
     If `#<commit-ish>` is provided, it will be used to clone exactly that
-    commit. If the commit-ish has the format `#semver:<semver>`, `<semver>` can
+    commit.
+If the commit-ish has the format `#semver:<semver>`, `<semver>` can
     be any valid semver range or exact version, and npm will look for any tags
     or refs matching that range in the remote repository, much as it would for a
-    registry dependency. If neither `#<commit-ish>` or `#semver:<semver>` is
+    registry dependency.
+If neither `#<commit-ish>` or `#semver:<semver>` is
     specified, then `master` is used.
 
     As with regular git dependencies, `dependencies` and `devDependencies` will
@@ -377,7 +403,8 @@ For example:
 npm install sax@">=0.1.0 <0.2.0" bench supervisor
 ```
 
-The `--tag` argument will apply to all of the specified install targets. If
+The `--tag` argument will apply to all of the specified install targets.
+If
 a tag with the given name exists, the tagged version is preferred over
 newer versions.
 
@@ -397,7 +424,8 @@ npm install sax --force
 
 ### Configuration
 
-See the [`config`](/using-npm/config) help doc.  Many of the configuration
+See the [`config`](/using-npm/config) help doc.
+ Many of the configuration
 params have some effect on installation, since that's most of what npm
 does.
 
@@ -418,7 +446,8 @@ A
 ```
 
 That is, the dependency from B to C is satisfied by the fact that A already
-caused C to be installed at a higher level. D is still installed at the top
+caused C to be installed at a higher level.
+D is still installed at the top
 level because nothing conflicts with it.
 
 For `A{B,C}, B{C,D@1}, C{D@2}`, this algorithm produces:
@@ -432,7 +461,8 @@ A
 ```
 
 Because B's D@1 will be installed in the top-level, C now has to install
-D@2 privately for itself. This algorithm is deterministic, but different
+D@2 privately for itself.
+This algorithm is deterministic, but different
 trees may be produced if two dependencies are requested for installation in
 a different order.
 

@@ -21,7 +21,8 @@ npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
 ```
 
 SemVer ranges passed to this command are interpreted such that they *do*
-include prerelease versions.  For example:
+include prerelease versions.
+ For example:
 
 ```bash
 npm deprecate my-thing@1.x "1.x is no longer supported"
@@ -29,11 +30,13 @@ npm deprecate my-thing@1.x "1.x is no longer supported"
 
 In this case, a version `my-thing@1.0.0-beta.0` will also be deprecated.
 
-You must be the package owner to deprecate something.  See the `owner` and
+You must be the package owner to deprecate something.
+ See the `owner` and
 `adduser` help topics.
 
 To un-deprecate a package, specify an empty string (`""`) for the `message`
-argument. Note that you must use double quotes with no space between them to
+argument.
+Note that you must use double quotes with no space between them to
 format an empty string.
 
 ### Configuration

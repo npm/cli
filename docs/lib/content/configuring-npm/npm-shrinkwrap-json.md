@@ -7,13 +7,15 @@ description: A publishable lockfile
 ### Description
 
 `npm-shrinkwrap.json` is a file created by [`npm
-shrinkwrap`](/commands/npm-shrinkwrap). It is identical to
+shrinkwrap`](/commands/npm-shrinkwrap).
+It is identical to
 `package-lock.json`, with one major caveat: Unlike `package-lock.json`,
 `npm-shrinkwrap.json` may be included when publishing a package.
 
 The recommended use-case for `npm-shrinkwrap.json` is applications deployed
 through the publishing process on the registry: for example, daemons and
-command-line tools intended as global installs or `devDependencies`. It's
+command-line tools intended as global installs or `devDependencies`.
+It's
 strongly discouraged for library authors to publish this file, since that
 would prevent end users from having control over transitive dependency
 updates.

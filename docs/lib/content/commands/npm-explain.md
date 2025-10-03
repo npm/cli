@@ -35,7 +35,8 @@ node_modules/tacks/node_modules/glob
 ```
 
 To explain just the package residing at a specific folder, pass that as the
-argument to the command.  This can be useful when trying to figure out
+argument to the command.
+ This can be useful when trying to figure out
 exactly why a given dependency is being duplicated to satisfy conflicting
 version requirements within the project.
 

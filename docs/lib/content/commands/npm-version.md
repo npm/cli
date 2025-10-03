@@ -21,28 +21,35 @@ back to `package.json`, `package-lock.json`, and, if present,
 The `newversion` argument should be a valid semver string, a valid second
 argument to [semver.inc](https://github.com/npm/node-semver#functions) (one
 of `patch`, `minor`, `major`, `prepatch`, `preminor`, `premajor`,
-`prerelease`), or `from-git`. In the second case, the existing version will
-be incremented by 1 in the specified field.  `from-git` will try to read
+`prerelease`), or `from-git`.
+In the second case, the existing version will
+be incremented by 1 in the specified field.
+ `from-git` will try to read
 the latest git tag, and use that as the new npm version.
 
-If run in a git repo, it will also create a version commit and tag.  This
+If run in a git repo, it will also create a version commit and tag.
+ This
 behavior is controlled by `git-tag-version` (see below), and can be
 disabled on the command line by running `npm --no-git-tag-version version`.
 It will fail if the working directory is not clean, unless the `-f` or
 `--force` flag is set.
 
 If supplied with `-m` or [`--message` config](/using-npm/config#message) option,
-npm will use it as a commit message when creating a version commit.  If the
+npm will use it as a commit message when creating a version commit.
+ If the
 `message` config contains `%s` then that will be replaced with the resulting
-version number. For example:
+version number.
+For example:
 
 ```bash
 npm version patch -m "Upgrade to %s for reasons"
 ```
 
 If the [`sign-git-tag` config](/using-npm/config#sign-git-tag) is set, then the
-tag will be signed using the `-s` flag to git. Note that you must have a default
-GPG key set up in your git config for this to work properly. For example:
+tag will be signed using the `-s` flag to git.
+Note that you must have a default
+GPG key set up in your git config for this to work properly.
+For example:
 
 ```bash
 $ npm config set sign-git-tag true
@@ -62,20 +69,27 @@ version`.
 The exact order of execution is as follows:
 
 1. Check to make sure the git working directory is clean before we get
-   started.  Your scripts may add files to the commit in future steps.
+   started.
+ Your scripts may add files to the commit in future steps.
    This step is skipped if the `--force` flag is set.
-2. Run the `preversion` script. These scripts have access to the old
-   `version` in package.json.  A typical use would be running your full
-   test suite before deploying.  Any files you want added to the commit
+2. Run the `preversion` script.
+These scripts have access to the old
+   `version` in package.json.
+ A typical use would be running your full
+   test suite before deploying.
+ Any files you want added to the commit
    should be explicitly added using `git add`.
 3. Bump `version` in `package.json` as requested (`patch`, `minor`,
    `major`, etc).
-4. Run the `version` script. These scripts have access to the new `version`
+4. Run the `version` script.
+These scripts have access to the new `version`
    in package.json (so they can incorporate it into file headers in
-   generated files for example).  Again, scripts should explicitly add
+   generated files for example).
+Again, scripts should explicitly add
    generated files to the commit using `git add`.
 5. Commit and tag.
-6. Run the `postversion` script. Use it to clean up the file system or
+6. Run the `postversion` script.
+Use it to clean up the file system or
    automatically push the commit and/or tag.
 
 Take the following example:
@@ -90,7 +104,8 @@ Take the following example:
 }
 ```
 
-This runs all your tests and proceeds only if they pass. Then runs your
+This runs all your tests and proceeds only if they pass.
+Then runs your
 `build` script, and adds everything in the `dist` directory to the commit.
 After the commit, it pushes the new commit and tag up to the server, and
 deletes the `build/temp` directory.

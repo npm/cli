@@ -48,7 +48,8 @@ a
 ```
 
 During the installation process, the `c@1.0.3` dependency for `b` was
-placed in the root of the tree.  Though `d`'s dependency on `c@1.x` could
+placed in the root of the tree.
+ Though `d`'s dependency on `c@1.x` could
 have been satisfied by `c@1.0.3`, the newer `c@1.9.0` dependency was used,
 because npm favors updates by default, even when doing so causes
 duplication.
@@ -60,7 +61,8 @@ sufficient.
 To prefer deduplication over novelty during the installation process, run
 `npm install --prefer-dedupe` or `npm config set prefer-dedupe true`.
 
-Arguments are ignored. Dedupe always acts on the entire tree.
+Arguments are ignored.
+Dedupe always acts on the entire tree.
 
 Note that this operation transforms the dependency tree, but will never
 result in new modules being installed.

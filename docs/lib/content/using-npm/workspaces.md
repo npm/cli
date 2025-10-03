@@ -11,7 +11,8 @@ npm cli that provides support for managing multiple packages from your local
 file system from within a singular top-level, root package.
 
 This set of features makes up for a much more streamlined workflow handling
-linked packages from the local file system. It automates the linking process
+linked packages from the local file system.
+It automates the linking process
 as part of `npm install` and removes the need to manually use `npm link` in
 order to add references to packages that should be symlinked into the current
 `node_modules` folder.
@@ -68,7 +69,8 @@ structure of files and folders:
 ### Getting started with workspaces
 
 You may automate the required steps to define a new workspace using
-[npm init](/commands/npm-init). For example in a project that already has a
+[npm init](/commands/npm-init).
+For example in a project that already has a
 `package.json` defined you can run:
 
 ```
@@ -111,7 +113,8 @@ respect the provided `workspace` configuration.
 ### Using workspaces
 
 Given the [specifics of how Node.js handles module resolution](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html#modules_all_together) it's possible to consume any defined workspace
-by its declared `package.json` `name`. Continuing from the example defined
+by its declared `package.json` `name`.
+Continuing from the example defined
 above, let's also create a Node.js script that will require the workspace `a`
 example module, e.g:
 
@@ -141,7 +144,8 @@ Additionally, if your current directory is in a workspace, the `workspace`
 configuration is implicitly set, and `prefix` is set to the root workspace.
 
 Following is a quick example on how to use the `npm run` command in the context
-of nested workspaces. For a project containing multiple workspaces, e.g:
+of nested workspaces.
+For a project containing multiple workspaces, e.g:
 
 ```
 .
@@ -154,7 +158,8 @@ of nested workspaces. For a project containing multiple workspaces, e.g:
 ```
 
 By running a command using the `workspace` option, it's possible to run the
-given command in the context of that specific workspace. e.g:
+given command in the context of that specific workspace.
+e.g:
 
 ```
 npm run test --workspace=a
@@ -183,7 +188,8 @@ npm run test --workspace=packages
 
 It's also possible to use the `workspaces` (plural) configuration option to
 enable the same behavior but running that command in the context of **all**
-configured workspaces. e.g:
+configured workspaces.
+e.g:
 
 ```
 npm run test --workspaces

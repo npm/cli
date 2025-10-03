@@ -10,15 +10,18 @@ description: Run arbitrary package scripts
 
 ### Description
 
-This runs an arbitrary command from a package's `"scripts"` object.  If no
+This runs an arbitrary command from a package's `"scripts"` object.
+ If no
 `"command"` is provided, it will list the available scripts.
 
 `run[-script]` is used by the test, start, restart, and stop commands, but
-can be called directly, as well. When the scripts in the package are
+can be called directly, as well.
+When the scripts in the package are
 printed out, they're separated into lifecycle (test, start, restart) and
 directly-run scripts.
 
-Any positional arguments are passed to the specified script.  Use `--` to
+Any positional arguments are passed to the specified script.
+ Use `--` to
 pass `-`-prefixed flags and options which would otherwise be parsed by npm.
 
 For example:
@@ -31,14 +34,17 @@ The arguments will only be passed to the script specified after `npm run`
 and not to any `pre` or `post` script.
 
 The `env` script is a special built-in command that can be used to list
-environment variables that will be available to the script at runtime. If an
+environment variables that will be available to the script at runtime.
+If an
 "env" command is defined in your package, it will take precedence over the
 built-in.
 
 In addition to the shell's pre-existing `PATH`, `npm run` adds
-`node_modules/.bin` to the `PATH` provided to scripts. Any binaries
+`node_modules/.bin` to the `PATH` provided to scripts.
+Any binaries
 provided by locally-installed dependencies can be used without the
-`node_modules/.bin` prefix. For example, if there is a `devDependency` on
+`node_modules/.bin` prefix.
+For example, if there is a `devDependency` on
 `tap` in your package, you should write:
 
 ```bash
@@ -51,7 +57,8 @@ instead of
 "scripts": {"test": "node_modules/.bin/tap test/*.js"}
 ```
 
-The actual shell your script is run within is platform dependent. By default,
+The actual shell your script is run within is platform dependent.
+By default,
 on Unix-like systems it is the `/bin/sh` command, on Windows it is
 `cmd.exe`.
 The actual shell referred to by `/bin/sh` also depends on the system.
@@ -59,7 +66,8 @@ You can customize the shell with the
 [`script-shell` config](/using-npm/config#script-shell).
 
 Scripts are run from the root of the package folder, regardless of what the
-current working directory is when `npm run` is called. If you want your
+current working directory is when `npm run` is called.
+If you want your
 script to use different behavior based on what subdirectory you're in, you
 can use the `INIT_CWD` environment variable, which holds the full path you
 were in when you ran `npm run`.
@@ -76,7 +84,8 @@ forgotten.
 You may use the [`workspace`](/using-npm/config#workspace) or
 [`workspaces`](/using-npm/config#workspaces) configs in order to run an
 arbitrary command from a package's `"scripts"` object in the context of the
-specified workspaces. If no `"command"` is provided, it will list the available
+specified workspaces.
+If no `"command"` is provided, it will list the available
 scripts for each of these configured workspaces.
 
 Given a project with configured workspaces, e.g:
@@ -94,7 +103,8 @@ Given a project with configured workspaces, e.g:
 ```
 
 Assuming the workspace configuration is properly set up at the root level
-`package.json` file. e.g:
+`package.json` file.
+e.g:
 
 ```
 {
@@ -120,7 +130,8 @@ npm test --workspace=a
 ```
 
 The `workspace` config can also be specified multiple times in order to run a
-specific script in the context of multiple workspaces. When defining values for
+specific script in the context of multiple workspaces.
+When defining values for
 the `workspace` config in the command line, it also possible to use `-w` as a
 shorthand, e.g:
 

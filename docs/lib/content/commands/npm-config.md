@@ -33,7 +33,8 @@ npm config set key=value [key=value...]
 npm set key=value [key=value...]
 ```
 
-Sets each of the config keys to the value provided. Modifies the user configuration
+Sets each of the config keys to the value provided.
+Modifies the user configuration
 file unless [`location`](/commands/npm-config#location) is passed.
 
 If value is omitted, the key will be removed from your config file entirely.
@@ -62,7 +63,9 @@ list`.
 npm config list
 ```
 
-Show all the config settings. Use `-l` to also show defaults. Use `--json`
+Show all the config settings.
+Use `-l` to also show defaults.
+Use `--json`
 to show the settings in json format.
 
 #### delete
@@ -79,7 +82,8 @@ Deletes the specified keys from all configuration files.
 npm config edit
 ```
 
-Opens the config file in an editor.  Use the `--global` flag to edit the
+Opens the config file in an editor.
+ Use the `--global` flag to edit the
 global config.
 
 #### fix
@@ -88,8 +92,10 @@ global config.
 npm config fix
 ```
 
-Attempts to repair invalid configuration items.  Usually this means
-attaching authentication config (i.e. `_auth`, `_authToken`) to the
+Attempts to repair invalid configuration items.
+ Usually this means
+attaching authentication config (i.e.
+`_auth`, `_authToken`) to the
 configured `registry`.
 
 ### Configuration

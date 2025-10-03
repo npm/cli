@@ -25,9 +25,12 @@ The four relevant files are:
 * npm builtin config file (`/path/to/npm/npmrc`)
 
 All npm config files are an ini-formatted list of `key = value` parameters.
-Environment variables can be replaced using `${VARIABLE_NAME}`. By default
-if the variable is not defined, it is left unreplaced. By adding `?` after
-variable name they can be forced to evaluate to an empty string instead. For
+Environment variables can be replaced using `${VARIABLE_NAME}`.
+By default
+if the variable is not defined, it is left unreplaced.
+By adding `?` after
+variable name they can be forced to evaluate to an empty string instead.
+For
 example:
 
 ```bash
@@ -36,10 +39,12 @@ node-options = "${NODE_OPTIONS?} --use-system-ca"
 ```
 
 Each of these files is loaded, and config options are resolved in priority
-order.  For example, a setting in the userconfig file would override the
+order.
+ For example, a setting in the userconfig file would override the
 setting in the globalconfig file.
 
-Array values are specified by adding "[]" after the key name. For example:
+Array values are specified by adding "[]" after the key name.
+For example:
 
 ```bash
 key[] = "first value"
@@ -49,7 +54,8 @@ key[] = "second value"
 #### Comments
 
 Lines in `.npmrc` files are interpreted as comments when they begin with a
-`;` or `#` character. `.npmrc` files are parsed by
+`;` or `#` character.
+`.npmrc` files are parsed by
 [npm/ini](https://github.com/npm/ini), which specifies this comment syntax.
 
 For example:
@@ -67,7 +73,9 @@ project (ie, a sibling of `node_modules` and `package.json`) will set
 config values specific to this project.
 
 Note that this only applies to the root of the project that you're running
-npm in.  It has no effect when your module is published.  For example, you
+npm in.
+ It has no effect when your module is published.
+ For example, you
 can't publish a module that forces itself to install globally, or in a
 different location.
 
@@ -82,7 +90,8 @@ the command line)
 #### Global config file
 
 `$PREFIX/etc/npmrc` (or the `globalconfig` param, if set above): This file
-is an ini-file formatted list of `key = value` parameters.  Environment
+is an ini-file formatted list of `key = value` parameters.
+ Environment
 variables can be replaced as above.
 
 #### Built-in config file
@@ -90,14 +99,17 @@ variables can be replaced as above.
 `path/to/npm/itself/npmrc`
 
 This is an unchangeable "builtin" configuration file that npm keeps
-consistent across updates.  Set fields in here using the `./configure`
-script that comes with npm.  This is primarily for distribution maintainers
+consistent across updates.
+ Set fields in here using the `./configure`
+script that comes with npm.
+ This is primarily for distribution maintainers
 to override default configs in a standard and consistent manner.
 
 ### Auth related configuration
 
 The settings `_auth`, `_authToken`, `username`, `_password`, `certfile`,
-and `keyfile` must all be scoped to a specific registry. This ensures that
+and `keyfile` must all be scoped to a specific registry.
+This ensures that
 `npm` will never send credentials to the wrong host.
 
 The full list is:
@@ -112,7 +124,8 @@ The full list is:
 
 In order to scope these values, they must be prefixed by a URI fragment.
 If the credential is meant for any request to a registry on a single host,
-the scope may look like `//registry.npmjs.org/:`. If it must be scoped to a
+the scope may look like `//registry.npmjs.org/:`.
+If it must be scoped to a
 specific path on the host that path may also be provided, such as
 `//my-custom-registry.org/unique/path:`.
 

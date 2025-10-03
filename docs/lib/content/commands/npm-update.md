@@ -24,7 +24,8 @@ If no package name is specified, all packages in the specified location (global
 or local) will be updated.
 
 Note that by default `npm update` will not update the semver values of direct
-dependencies in your project `package.json`. If you want to also update
+dependencies in your project `package.json`.
+If you want to also update
 values in `package.json` you can run: `npm update --save` (or add the
 `save=true` option to a [configuration file](/configuring-npm/npmrc)
 to make that the default behavior).
@@ -32,7 +33,8 @@ to make that the default behavior).
 ### Example
 
 For the examples below, assume that the current package is `app` and it depends
-on dependencies, `dep1` (`dep2`, .. etc.).  The published versions of `dep1`
+on dependencies, `dep1` (`dep2`, .. etc.).
+The published versions of `dep1`
 are:
 
 ```json
@@ -75,9 +77,11 @@ However, if `app`'s `package.json` contains:
 }
 ```
 
-In this case, running `npm update` will install `dep1@1.1.2`.  Even though the
+In this case, running `npm update` will install `dep1@1.1.2`.
+Even though the
 `latest` tag points to `1.2.2`, this version does not satisfy `~1.1.1`, which is
-equivalent to `>=1.1.1 <1.2.0`.  So the highest-sorting version that satisfies
+equivalent to `>=1.1.1 <1.2.0`.
+So the highest-sorting version that satisfies
 `~1.1.1` is used, which is `1.1.2`.
 
 #### Caret Dependencies below 1.0.0
@@ -130,7 +134,8 @@ and `dep2` itself depends on this limited range of `dep1`
 ```
 
 Then `npm update` will install `dep1@1.1.2` because that is the highest
-version that `dep2` allows.  npm will prioritize having a single version
+version that `dep2` allows.
+ npm will prioritize having a single version
 of `dep1` in your tree rather than two when that single version can
 satisfy the semver requirements of multiple dependencies in your tree.
 In this case if you really did need your package to use a newer version
@@ -144,7 +149,8 @@ package that is `outdated` -- that is, has a version that is different from
 `wanted`.
 
 Note: Globally installed packages are treated as if they are installed with a
-caret semver range specified. So if you require to update to `latest` you may
+caret semver range specified.
+So if you require to update to `latest` you may
 need to run `npm install -g [<pkg>...]`
 
 NOTE: If a package has been upgraded to a version newer than `latest`, it will

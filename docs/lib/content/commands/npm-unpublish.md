@@ -33,8 +33,10 @@ remove all of a package's versions then the registry will remove the
 root package entry entirely.
 
 Even if you unpublish a package version, that specific name and version
-combination can never be reused. In order to publish the package again,
-you must use a new version number. If you unpublish the entire package,
+combination can never be reused.
+In order to publish the package again,
+you must use a new version number.
+If you unpublish the entire package,
 you may not publish any new versions of that package until 24 hours have
 passed.
 

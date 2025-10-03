@@ -17,8 +17,10 @@ Package linking is a two-step process.
 
 First, `npm link` in a package folder with no arguments will create a
 symlink in the global folder `{prefix}/lib/node_modules/<package>` that
-links to the package where the `npm link` command was executed. It will
-also link any bins in the package to `{prefix}/bin/{name}`.  Note that
+links to the package where the `npm link` command was executed.
+It will
+also link any bins in the package to `{prefix}/bin/{name}`.
+Note that
 `npm link` uses the global prefix (see `npm prefix -g` for its value).
 
 Next, in some other location, `npm link package-name` will create a
@@ -28,8 +30,10 @@ the current folder.
 Note that `package-name` is taken from `package.json`, _not_ from the
 directory name.
 
-The package name can be optionally prefixed with a scope. See
-[`scope`](/using-npm/scope).  The scope must be preceded by an @-symbol and
+The package name can be optionally prefixed with a scope.
+See
+[`scope`](/using-npm/scope).
+The scope must be preceded by an @-symbol and
 followed by a slash.
 
 When creating tarballs for `npm publish`, the linked packages are
@@ -46,10 +50,12 @@ npm link redis              # link-install the package
 ```
 
 Now, any changes to `~/projects/node-redis` will be reflected in
-`~/projects/node-bloggy/node_modules/node-redis/`. Note that the link
+`~/projects/node-bloggy/node_modules/node-redis/`.
+Note that the link
 should be to the package name, not the directory name for that package.
 
-You may also shortcut the two steps in one.  For example, to do the
+You may also shortcut the two steps in one.
+ For example, to do the
 above use-case in a shorter way:
 
 ```bash
@@ -81,7 +87,8 @@ npm link @myorg/privatepackage
 
 Note that package dependencies linked in this way are _not_ saved to
 `package.json` by default, on the assumption that the intention is to have
-a link stand in for a regular non-link dependency.  Otherwise, for example,
+a link stand in for a regular non-link dependency.
+ Otherwise, for example,
 if you depend on `redis@^3.0.1`, and ran `npm link redis`, it would replace
 the `^3.0.1` dependency with `file:../path/to/node-redis`, which you
 probably don't want!  Additionally, other users or developers on your
@@ -97,7 +104,8 @@ If you _want_ to save the `file:` reference in your `package.json` and
 ### Workspace Usage
 
 `npm link <pkg> --workspace <name>` will link the relevant package as a
-dependency of the specified workspace(s).  Note that It may actually be
+dependency of the specified workspace(s).
+Note that It may actually be
 linked into the parent project's `node_modules` folder, if there are no
 conflicting dependencies.
 

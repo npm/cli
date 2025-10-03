@@ -6,7 +6,8 @@ description: More than you probably want to know about npm configuration
 
 ### Description
 
-This article details npm configuration in general. To learn about the `config` command, 
+This article details npm configuration in general.
+To learn about the `config` command, 
 see [`npm config`](/commands/npm-config).
 
 npm gets its configuration values from the following sources, sorted by priority:
@@ -14,25 +15,32 @@ npm gets its configuration values from the following sources, sorted by priority
 #### Command Line Flags
 
 Putting `--foo bar` on the command line sets the `foo` configuration
-parameter to `"bar"`.  A `--` argument tells the cli parser to stop
-reading flags.  Using `--flag` without specifying any value will set
+parameter to `"bar"`.
+A `--` argument tells the cli parser to stop
+reading flags.
+ Using `--flag` without specifying any value will set
 the value to `true`.
 
 Example: `--flag1 --flag2` will set both configuration parameters
 to `true`, while `--flag1 --flag2 bar` will set `flag1` to `true`,
-and `flag2` to `bar`.  Finally, `--flag1 --flag2 -- bar` will set
+and `flag2` to `bar`.
+Finally, `--flag1 --flag2 -- bar` will set
 both configuration parameters to `true`, and the `bar` is taken
 as a command argument.
 
 #### Environment Variables
 
 Any environment variables that start with `npm_config_` will be
-interpreted as a configuration parameter.  For example, putting
+interpreted as a configuration parameter.
+ For example, putting
 `npm_config_foo=bar` in your environment will set the `foo`
-configuration parameter to `bar`.  Any environment configurations that
-are not given a value will be given the value of `true`.  Config
+configuration parameter to `bar`.
+Any environment configurations that
+are not given a value will be given the value of `true`.
+Config
 values are case-insensitive, so `NPM_CONFIG_FOO=bar` will work the
-same. However, please note that inside [`scripts`](/using-npm/scripts)
+same.
+However, please note that inside [`scripts`](/using-npm/scripts)
 npm will set its own environment variables and Node will prefer
 those lowercase versions over any uppercase ones that you might set.
 For details see [this issue](https://github.com/npm/npm/issues/14528).
@@ -66,7 +74,8 @@ The following shorthands are parsed on the command-line:
 
 If the specified configuration param resolves unambiguously to a known
 configuration parameter, then it is expanded to that configuration
-parameter.  For example:
+parameter.
+ For example:
 
 ```bash
 npm ls --par
@@ -76,7 +85,8 @@ npm ls --parseable
 
 If multiple single-character shorthands are strung together, and the
 resulting combination is unambiguously not some other configuration
-param, then it is expanded to its various component pieces.  For
+param, then it is expanded to its various component pieces.
+ For
 example:
 
 ```bash

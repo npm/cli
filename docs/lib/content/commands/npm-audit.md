@@ -12,28 +12,34 @@ description: Run a security audit
 
 The audit command submits a description of the dependencies configured in
 your project to your default registry and asks for a report of known
-vulnerabilities.  If any vulnerabilities are found, then the impact and
-appropriate remediation will be calculated.  If the `fix` argument is
+vulnerabilities.
+ If any vulnerabilities are found, then the impact and
+appropriate remediation will be calculated.
+ If the `fix` argument is
 provided, then remediations will be applied to the package tree.
 
 The command will exit with a 0 exit code if no vulnerabilities were found.
 
 Note that some vulnerabilities cannot be fixed automatically and will
-require manual intervention or review.  Also note that since `npm audit
+require manual intervention or review.
+ Also note that since `npm audit
 fix` runs a full-fledged `npm install` under the hood, all configs that
 apply to the installer will also apply to `npm install` -- so things like
 `npm audit fix --package-lock-only` will work as expected.
 
 By default, the audit command will exit with a non-zero code if any
-vulnerability is found. It may be useful in CI environments to include the
+vulnerability is found.
+It may be useful in CI environments to include the
 `--audit-level` parameter to specify the minimum vulnerability level that
-will cause the command to fail. This option does not filter the report
+will cause the command to fail.
+This option does not filter the report
 output, it simply changes the command's failure threshold.
 
 ### Package lock
 
 By default npm requires a package-lock or shrinkwrap in order to run the
-audit.  You can bypass the package lock with `--no-package-lock` but be
+audit.
+ You can bypass the package lock with `--no-package-lock` but be
 aware the results may be different with every run, since npm will
 re-build the dependency tree each time.
 
@@ -48,9 +54,11 @@ $ npm audit signatures
 ```
 
 The `audit signatures` command will also verify the provenance attestations of
-downloaded packages. Because provenance attestations are such a new feature,
+downloaded packages.
+Because provenance attestations are such a new feature,
 security features may be added to (or changed in) the attestation format over
-time. To ensure that you're always able to verify attestation signatures check
+time.
+To ensure that you're always able to verify attestation signatures check
 that you're running the latest version of the npm CLI. Please note this often
 means updating npm beyond the version that ships with Node.js.
 
@@ -111,7 +119,8 @@ package in the tree, and POST it to the default configured registry at
 the path `/-/npm/v1/security/advisories/bulk`.
 
 Any packages in the tree that do not have a `version` field in their
-package.json file will be ignored.  If any `--omit` options are specified
+package.json file will be ignored.
+ If any `--omit` options are specified
 (either via the [`--omit` config](/using-npm/config#omit), or one of the
 shorthands such as `--production`, `--only=dev`, and so on), then packages will
 be omitted from the submitted payload as appropriate.
@@ -120,7 +129,8 @@ If the registry responds with an error, or with an invalid response, then
 npm will attempt to load advisory data from the `Quick Audit` endpoint.
 
 The expected result will contain a set of advisory objects for each
-dependency that matches the advisory range.  Each advisory object contains
+dependency that matches the advisory range.
+ Each advisory object contains
 a `name`, `url`, `id`, `severity`, `vulnerable_versions`, and `title`.
 
 npm then uses these advisory objects to calculate vulnerabilities and
@@ -163,7 +173,8 @@ This scrubbing has been removed from npm as of version 7.
 npm uses the
 [`@npmcli/metavuln-calculator`](http://npm.im/@npmcli/metavuln-calculator)
 module to turn a set of security advisories into a set of "vulnerability"
-objects.  A "meta-vulnerability" is a dependency that is vulnerable by
+objects.
+ A "meta-vulnerability" is a dependency that is vulnerable by
 virtue of dependence on vulnerable versions of a vulnerable package.
 
 For example, if the package `foo` is vulnerable in the range `>=1.0.2
@@ -179,14 +190,16 @@ new version is checked for metavulnerable status as well).
 If the chain of metavulnerabilities extends all the way to the root
 project, and it cannot be updated without changing its dependency ranges,
 then `npm audit fix` will require the `--force` option to apply the
-remediation.  If remediations do not require changes to the dependency
+remediation.
+ If remediations do not require changes to the dependency
 ranges, then all vulnerable packages will be updated to a version that does
 not have an advisory or metavulnerability posted against it.
 
 ### Exit Code
 
 The `npm audit` command will exit with a 0 exit code if no vulnerabilities
-were found.  The `npm audit fix` command will exit with 0 exit code if no
+were found.
+ The `npm audit fix` command will exit with 0 exit code if no
 vulnerabilities are found _or_ if the remediation is able to successfully
 fix all vulnerabilities.
 

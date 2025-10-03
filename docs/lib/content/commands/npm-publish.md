@@ -12,7 +12,8 @@ description: Publish a package
 
 Publishes a package to the registry so that it can be installed by name.
 
-By default npm will publish to the public registry. This can be
+By default npm will publish to the public registry.
+This can be
 overridden by specifying a different default registry or using a
 [`scope`](/using-npm/scope) in the name, combined with a
 scope-configured registry (see
@@ -41,7 +42,8 @@ name and version combination can never be used again, even if it is removed
 with [`npm unpublish`](/commands/npm-unpublish).
 
 As of `npm@5`, both a sha1sum and an integrity field with a sha512sum of the
-tarball will be submitted to the registry during publication. Subsequent
+tarball will be submitted to the registry during publication.
+Subsequent
 installs will use the strongest supported algorithm to verify downloads.
 
 Similar to `--dry-run` see [`npm pack`](/commands/npm-pack), which figures
@@ -50,21 +52,25 @@ to the registry.
 
 ### Files included in package
 
-To see what will be included in your package, run `npm pack --dry-run`.  All
+To see what will be included in your package, run `npm pack --dry-run`.
+All
 files are included by default, with the following exceptions:
 
 - Certain files that are relevant to package installation and distribution
-  are always included.  For example, `package.json`, `README.md`,
+  are always included.
+ For example, `package.json`, `README.md`,
   `LICENSE`, and so on.
 
 - If there is a "files" list in
   [`package.json`](/configuring-npm/package-json), then only the files
-  specified will be included.  (If directories are specified, then they
+  specified will be included.
+ (If directories are specified, then they
   will be walked recursively and their contents included, subject to the
   same ignore rules.)
 
 - If there is a `.gitignore` or `.npmignore` file, then ignored files in
-  that and all child directories will be excluded from the package.  If
+  that and all child directories will be excluded from the package.
+ If
   _both_ files exist, then the `.gitignore` is ignored, and only the
   `.npmignore` is used.
 

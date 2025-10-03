@@ -28,15 +28,21 @@ follows:
 * `npm init @usr/foo@2.0.0` -> `npm exec @usr/create-foo@2.0.0`
 
 If the initializer is omitted (by just calling `npm init`), init will fall
-back to legacy init behavior. It will ask you a bunch of questions, and
-then write a package.json for you. It will attempt to make reasonable
-guesses based on existing fields, dependencies, and options selected. It is
+back to legacy init behavior.
+It will ask you a bunch of questions, and
+then write a package.json for you.
+It will attempt to make reasonable
+guesses based on existing fields, dependencies, and options selected.
+It is
 strictly additive, so it will keep any fields and values that were already
-set. You can also use `-y`/`--yes` to skip the questionnaire altogether. If
+set.
+You can also use `-y`/`--yes` to skip the questionnaire altogether.
+If
 you pass `--scope`, it will create a scoped package.
 
 *Note:* if a user already has the `create-<initializer>` package
-globally installed, that will be what `npm init` uses.  If you want npm
+globally installed, that will be what `npm init` uses.
+ If you want npm
 to use the latest version, or another specific version you must specify
 it:
 
@@ -95,7 +101,8 @@ $ npm init --init-private -y
 ### Workspaces support
 
 It's possible to create a new workspace within your project by using the
-`workspace` config option. When using `npm init -w <dir>` the cli will
+`workspace` config option.
+When using `npm init -w <dir>` the cli will
 create the folders and boilerplate expected while also adding a reference
 to your project `package.json` `"workspaces": []` property in order to make
 sure that new generated **workspace** is properly set up as such.
@@ -126,7 +133,8 @@ your top-level `package.json` to add the reference to this new workspace:
 
 The workspaces init also supports the `npm init <initializer> -w <dir>`
 syntax, following the same set of rules explained earlier in the initial
-**Description** section of this page. Similar to the previous example of
+**Description** section of this page.
+Similar to the previous example of
 creating a new React-based project using
 [`create-react-app`](https://npm.im/create-react-app), the following syntax
 will make sure to create the new react app as a nested **workspace** within your

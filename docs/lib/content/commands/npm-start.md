@@ -21,7 +21,8 @@ the file specified in a package's `"main"` attribute when evoking with
 `node .`
 
 As of [`npm@2.0.0`](https://blog.npmjs.org/post/98131109725/npm-2-0-0), you can
-use custom arguments when executing scripts. Refer to [`npm run`](/commands/npm-run) for more details.
+use custom arguments when executing scripts.
+Refer to [`npm run`](/commands/npm-run) for more details.
 
 ### Example
 

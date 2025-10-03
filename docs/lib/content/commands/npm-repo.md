@@ -12,7 +12,8 @@ description: Open package repository page in the browser
 
 This command tries to guess at the likely location of a package's
 repository URL, and then tries to open it using the
-[`--browser` config](/using-npm/config#browser) param. If no package name is
+[`--browser` config](/using-npm/config#browser) param.
+If no package name is
 provided, it will search for a `package.json` in the current folder and use the
 `repository` property.
 

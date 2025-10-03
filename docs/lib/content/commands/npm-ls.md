@@ -18,8 +18,10 @@ Note: to get a "bottoms up" view of why a given package is included in the
 tree at all, use [`npm explain`](/commands/npm-explain).
 
 Positional arguments are `name@version-range` identifiers, which will limit
-the results to only the paths to the packages named.  Note that nested
-packages will *also* show the paths to the specified packages.  For
+the results to only the paths to the packages named.
+ Note that nested
+packages will *also* show the paths to the specified packages.
+ For
 example, running `npm ls promzard` in npm's source tree will show:
 
 ```bash

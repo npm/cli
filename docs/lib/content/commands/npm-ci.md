@@ -31,7 +31,8 @@ The main differences between using `npm install` and `npm ci` are:
 NOTE: If you create your `package-lock.json` file by running `npm install`
 with flags that can affect the shape of your dependency tree, such as
 `--legacy-peer-deps` or `--install-links`, you _must_ provide the same
-flags to `npm ci` or you are likely to encounter errors. An easy way to do
+flags to `npm ci` or you are likely to encounter errors.
+An easy way to do
 this is to run, for example,
 `npm config set legacy-peer-deps=true --location=project` and commit the
 `.npmrc` file to your repo.

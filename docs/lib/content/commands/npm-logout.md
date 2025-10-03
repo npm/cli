@@ -11,7 +11,8 @@ description: Log out of the registry
 ### Description
 
 When logged into a registry that supports token-based authentication, tell
-the server to end this token's session. This will invalidate the token
+the server to end this token's session.
+This will invalidate the token
 everywhere you're using it, not just for the current environment.
 
 When logged into a legacy registry that uses username and password

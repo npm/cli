@@ -16,7 +16,8 @@ of files for packages published to the npm registry.
 * `npm diff --diff=<spec-a> --diff=<spec-b>`
 
     Compares two package versions using their registry specifiers, e.g:
-    `npm diff --diff=pkg@1.0.0 --diff=pkg@^2.0.0`. It's also possible to
+    `npm diff --diff=pkg@1.0.0 --diff=pkg@^2.0.0`.
+It's also possible to
     compare across forks of any package,
     e.g: `npm diff --diff=pkg@1.0.0 --diff=pkg-fork@1.0.0`.
 
@@ -77,7 +78,8 @@ of files for packages published to the npm registry.
     argument, `npm diff` will work in a similar way to
     [`npm-outdated`](npm-outdated) and reach for the registry to figure out
     what current published version of the package named `<pkg-name>`
-    will satisfy its dependent declared semver-range. Once that specific
+    will satisfy its dependent declared semver-range.
+Once that specific
     version is known `npm diff` will print diff patches comparing the
     current version of `<pkg-name>` found in the local file system with
     that specific version returned by the registry.

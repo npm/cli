@@ -13,18 +13,21 @@ description: Modify package distribution tags
 Add, remove, and enumerate distribution tags on a package:
 
 * add: Tags the specified version of the package with the specified tag,
-  or the [`--tag` config](/using-npm/config#tag) if not specified. If you have
+  or the [`--tag` config](/using-npm/config#tag) if not specified.
+If you have
   two-factor authentication on auth-and-writes then you’ll need to include a
   one-time password on the command line with
   `--otp <one-time password>`, or go through a second factor flow based on your `authtype`.
 
-* rm: Clear a tag that is no longer in use from the package. If you have
+* rm: Clear a tag that is no longer in use from the package.
+If you have
   two-factor authentication on auth-and-writes then you’ll need to include
   a one-time password on the command line with `--otp <one-time password>`,
   or go through a second factor flow based on your `authtype`
 
 * ls: Show all of the dist-tags for a package, defaulting to the package in
-  the current prefix. This is the default action if none is specified.
+  the current prefix.
+This is the default action if none is specified.
 
 A tag can be used when installing packages as a reference to a version instead
 of using a specific version number:
@@ -43,7 +46,8 @@ npm install --tag <tag>
 dependencies, such as `npm dedupe`, `npm update`, and `npm audit fix`.)
 
 Publishing a package sets the `latest` tag to the published version unless the
-`--tag` option is used. For example, `npm publish --tag=beta`.
+`--tag` option is used.
+For example, `npm publish --tag=beta`.
 
 By default, `npm install <pkg>` (without any `@<version>` or `@<tag>`
 specifier) installs the `latest` tag.
@@ -58,7 +62,8 @@ and use a different tag for each stream, e.g., `stable`, `beta`, `dev`,
 
 By default, the `latest` tag is used by npm to identify the current version
 of a package, and `npm install <pkg>` (without any `@<version>` or `@<tag>`
-specifier) installs the `latest` tag. Typically, projects only use the
+specifier) installs the `latest` tag.
+Typically, projects only use the
 `latest` tag for stable release versions, and use other tags for unstable
 versions such as prereleases.
 
@@ -75,9 +80,11 @@ Tags must share a namespace with version numbers, because they are
 specified in the same slot: `npm install <pkg>@<version>` vs
 `npm install <pkg>@<tag>`.
 
-Tags that can be interpreted as valid semver ranges will be rejected. For
+Tags that can be interpreted as valid semver ranges will be rejected.
+For
 example, `v1.4` cannot be used as a tag, because it is interpreted by
-semver as `>=1.4.0 <1.5.0`.  See <https://github.com/npm/npm/issues/6082>.
+semver as `>=1.4.0 <1.5.0`.
+See <https://github.com/npm/npm/issues/6082>.
 
 The simplest way to avoid semver problems with tags is to use tags that do
 not begin with a number or the letter `v`.
