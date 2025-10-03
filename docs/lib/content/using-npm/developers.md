@@ -62,8 +62,7 @@ At the very least, you need:
 
 * version: A semver-compatible version.
 
-* engines: Specify the versions of node (or whatever else) that your
-  program runs on.
+* engines: Specify the versions of node (or whatever else) that your program runs on.
   The node API changes a lot, and there may be bugs or new functionality that you depend on.
   Be explicit.
 

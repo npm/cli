@@ -10,21 +10,17 @@ description: Run a command from a local or remote npm package
 
 ### Description
 
-This command allows you to run an arbitrary command from an npm package
-(either one installed locally, or fetched remotely), in a similar context as running it via `npm run`.
+This command allows you to run an arbitrary command from an npm package (either one installed locally, or fetched remotely), in a similar context as running it via `npm run`.
 
 Run without positional arguments or `--call`, this allows you to interactively run commands in the same sort of shell environment that `package.json` scripts are run.
-Interactive mode is not supported in CI
-environments when standard input is a TTY, to prevent hangs.
+Interactive mode is not supported in CI environments when standard input is a TTY, to prevent hangs.
 
 Whatever packages are specified by the `--package` option will be provided in the `PATH` of the executed command, along with any locally installed package executables.
 The `--package` option may be specified multiple times, to execute the supplied command in an environment where all specified packages are available.
 
 If any requested packages are not present in the local project dependencies, then a prompt is printed, which can be suppressed by providing either `--yes` or `--no`.
-When standard input is not a TTY or a
-CI environment is detected, `--yes` is assumed.
-The requested packages are installed to a folder in the npm cache, which is added to the `PATH`
-environment variable in the executed process.
+When standard input is not a TTY or a CI environment is detected, `--yes` is assumed.
+The requested packages are installed to a folder in the npm cache, which is added to the `PATH` environment variable in the executed process.
 
 Package names provided without a specifier will be matched with whatever version exists in the local project.
 Package names with a specifier will only be considered a match if they have the exact same name and version as the local dependency.
@@ -32,23 +28,16 @@ Package names with a specifier will only be considered a match if they have the 
 If no `-c` or `--call` option is provided, then the positional arguments are used to generate the command string.
 If no `--package` options are provided, then npm will attempt to determine the executable name from the package specifier provided as the first positional argument according to the following heuristic:
 
-- If the package has a single entry in its `bin` field in `package.json`,
-  or if all entries are aliases of the same command, then that command
-  will be used.
-- If the package has multiple `bin` entries, and one of them matches the
-  unscoped portion of the `name` field, then that command will be used.
-- If this does not result in exactly one option (either because there are
-  no bin entries, or none of them match the `name` of the package), then
-  `npm exec` exits with an error.
+- If the package has a single entry in its `bin` field in `package.json`, or if all entries are aliases of the same command, then that command will be used.
+- If the package has multiple `bin` entries, and one of them matches the unscoped portion of the `name` field, then that command will be used.
+- If this does not result in exactly one option (either because there are no bin entries, or none of them match the `name` of the package), then `npm exec` exits with an error.
 
-To run a binary _other than_ the named binary, specify one or more
-`--package` options, which will prevent npm from inferring the package from the first command argument.
+To run a binary _other than_ the named binary, specify one or more `--package` options, which will prevent npm from inferring the package from the first command argument.
 
 ### `npx` vs `npm exec`
 
 When run via the `npx` binary, all flags and options *must* be set prior to any positional arguments.
-When run via `npm exec`, a double-hyphen `--`
-flag can be used to suppress npm's parsing of switches and options that should be sent to the executed command.
+When run via `npm exec`, a double-hyphen `--` flag can be used to suppress npm's parsing of switches and options that should be sent to the executed command.
 
 For example:
 
@@ -70,8 +59,7 @@ In contrast, due to npm's argument parsing logic, running this command is differ
 $ npm exec foo@latest bar --package=@npmcli/foo
 ```
 
-In this case, npm will parse the `--package` option first, resolving the
-`@npmcli/foo` package.
+In this case, npm will parse the `--package` option first, resolving the `@npmcli/foo` package.
 Then, it will execute the following command in that context:
 
 ```
@@ -115,8 +103,7 @@ $ npx -c 'eslint && say "hooray, lint passed"'
 
 ### Workspaces support
 
-You may use the [`workspace`](/using-npm/config#workspace) or
-[`workspaces`](/using-npm/config#workspaces) configs in order to run an arbitrary command from an npm package (either one installed locally, or fetched remotely) in the context of the specified workspaces.
+You may use the [`workspace`](/using-npm/config#workspace) or [`workspaces`](/using-npm/config#workspaces) configs in order to run an arbitrary command from an npm package (either one installed locally, or fetched remotely) in the context of the specified workspaces.
 If no positional argument or `--call` option is provided, it will open an interactive subshell in the context of each of these configured workspaces one at a time.
 
 Given a project with configured workspaces, e.g:
@@ -142,8 +129,7 @@ e.g:
 }
 ```
 
-You can execute an arbitrary command from a package in the context of each of the configured workspaces when using the
-[`workspaces` config options](/using-npm/config#workspace), in this example we're using **eslint** to lint any js file found within each workspace folder:
+You can execute an arbitrary command from a package in the context of each of the configured workspaces when using the [`workspaces` config options](/using-npm/config#workspace), in this example we're using **eslint** to lint any js file found within each workspace folder:
 
 ```
 npm exec --ws -- eslint ./*.js
@@ -169,34 +155,26 @@ This last command will run the `eslint` command in both `./packages/a` and
 
 ### Compatibility with Older npx Versions
 
-The `npx` binary was rewritten in npm v7.0.0, and the standalone `npx`
-package deprecated at that time.
- `npx` uses the `npm exec`
-command instead of a separate argument parser and install process, with some affordances to maintain backwards compatibility with the arguments it accepted in previous versions.
+The `npx` binary was rewritten in npm v7.0.0, and the standalone `npx` package deprecated at that time.
+`npx` uses the `npm exec` command instead of a separate argument parser and install process, with some affordances to maintain backwards compatibility with the arguments it accepted in previous versions.
 
 This resulted in some shifts in its functionality:
 
 - Any `npm` config value may be provided.
 - To prevent security and user-experience problems from mistyping package
   names, `npx` prompts before installing anything.
-Suppress this
-  prompt with the `-y` or `--yes` option.
+  Suppress this prompt with the `-y` or `--yes` option.
 - The `--no-install` option is deprecated, and will be converted to `--no`.
 - Shell fallback functionality is removed, as it is not advisable.
-- The `-p` argument is a shorthand for `--parseable` in npm, but shorthand
-  for `--package` in npx.
-This is maintained, but only for the `npx`
-  executable.
+- The `-p` argument is a shorthand for `--parseable` in npm, but shorthand for `--package` in npx.
+  This is maintained, but only for the `npx` executable.
 - The `--ignore-existing` option is removed.
-Locally installed bins are
-  always present in the executed process `PATH`.
+  Locally installed bins are always present in the executed process `PATH`.
 - The `--npm` option is removed.
- `npx` will always use the `npm` it ships
-  with.
+  `npx` will always use the `npm` it ships with.
 - The `--node-arg` and `-n` options are removed.
 - The `--always-spawn` option is redundant, and thus removed.
-- The `--shell` option is replaced with `--script-shell`, but maintained
-  in the `npx` executable for backwards compatibility.
+- The `--shell` option is replaced with `--script-shell`, but maintained in the `npx` executable for backwards compatibility.
 
 ### A note on caching
 
@@ -230,8 +208,7 @@ Valid values for the `workspace` config are either:
 
 * Workspace names
 * Path to a workspace directory
-* Path to a parent workspace directory (will result to selecting all of the
-  nested workspaces)
+* Path to a parent workspace directory (will result to selecting all of the nested workspaces)
 
 This value is not exported to the environment for child processes.
 

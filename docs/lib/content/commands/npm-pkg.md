@@ -21,8 +21,7 @@ Returned values are always in **json** format.
 
     Retrieves a value `key`, defined in your `package.json` file.
 
-    For example, in order to retrieve the name of the current package, you
-    can run:
+    For example, in order to retrieve the name of the current package, you can run:
 
     ```bash
     npm pkg get name
@@ -35,35 +34,28 @@ Returned values are always in **json** format.
     ```
 
     You can view child fields by separating them with a period.
-To retrieve
-    the value of a test `script` value, you would run the following command:
+    To retrieve the value of a test `script` value, you would run the following command:
 
     ```bash
     npm pkg get scripts.test
     ```
 
-    For fields that are arrays, requesting a non-numeric field will return
-    all of the values from the objects in the list.
-For example, to get all
-    the contributor emails for a package, you would run:
+    For fields that are arrays, requesting a non-numeric field will return all of the values from the objects in the list.
+    For example, to get all the contributor emails for a package, you would run:
 
     ```bash
     npm pkg get contributors.email
     ```
 
-    You may also use numeric indices in square braces to specifically select
-    an item in an array field.
-To just get the email address of the first
-    contributor in the list, you can run:
+    You may also use numeric indices in square braces to specifically select an item in an array field.
+    To just get the email address of the first contributor in the list, you can run:
 
     ```bash
     npm pkg get contributors[0].email
     ```
 
-    For complex fields you can also name a property in square brackets
-    to specifically select a child field.
-This is especially helpful
-    with the exports object:
+    For complex fields you can also name a property in square brackets to specifically select a child field.
+    This is especially helpful with the exports object:
 
     ```bash
     npm pkg get "exports[.].require"
@@ -72,19 +64,11 @@ This is especially helpful
 * `npm pkg set <field>=<value>`
 
     Sets a `value` in your `package.json` based on the `field` value.
-When
-    saving to your `package.json` file the same set of rules used during
-    `npm install` and other cli commands that touches the `package.json` file
-    are used, making sure to respect the existing indentation and possibly
-    applying some validation prior to saving values to the file.
+    When saving to your `package.json` file the same set of rules used during `npm install` and other cli commands that touches the `package.json` file are used, making sure to respect the existing indentation and possibly applying some validation prior to saving values to the file.
 
-    The same syntax used to retrieve values from your package can also be used
-    to define new properties or overriding existing ones, below are some
-    examples of how the dot separated syntax can be used to edit your
-    `package.json` file.
+    The same syntax used to retrieve values from your package can also be used to define new properties or overriding existing ones, below are some examples of how the dot separated syntax can be used to edit your `package.json` file.
 
-    Defining a new bin named `mynewcommand` in your `package.json` that points
-    to a file `cli.js`:
+    Defining a new bin named `mynewcommand` in your `package.json` that points to a file `cli.js`:
 
     ```bash
     npm pkg set bin.mynewcommand=cli.js
@@ -96,23 +80,19 @@ When
     npm pkg set description='Awesome package' engines.node='>=10'
     ```
 
-    It's also possible to add to array values, for example to add a new
-    contributor entry:
+    It's also possible to add to array values, for example to add a new contributor entry:
 
     ```bash
     npm pkg set contributors[0].name='Foo' contributors[0].email='foo@bar.ca'
     ```
 
-    You may also append items to the end of an array using the special
-    empty bracket notation:
+    You may also append items to the end of an array using the special empty bracket notation:
 
     ```bash
     npm pkg set contributors[].name='Foo' contributors[].name='Bar'
     ```
 
-    It's also possible to parse values as json prior to saving them to your
-    `package.json` file, for example in order to set a `"private": true`
-    property:
+    It's also possible to parse values as json prior to saving them to your `package.json` file, for example in order to set a `"private": true` property:
 
     ```bash
     npm pkg set private=true --json
@@ -128,10 +108,8 @@ When
 
     Deletes a `key` from your `package.json`
 
-    The same syntax used to set values from your package can also be used
-    to remove existing ones.
-For example, in order to remove a script named
-    build:
+    The same syntax used to set values from your package can also be used to remove existing ones.
+    For example, in order to remove a script named build:
 
     ```bash
     npm pkg delete scripts.build
@@ -140,10 +118,7 @@ For example, in order to remove a script named
 * `npm pkg fix`
 
     Auto corrects common errors in your `package.json`.
-npm already
-    does this during `publish`, which leads to subtle (mostly harmless)
-    differences between the contents of your `package.json` file and the
-    manifest that npm uses during installation.
+    npm already does this during `publish`, which leads to subtle (mostly harmless) differences between the contents of your `package.json` file and the manifest that npm uses during installation.
 
 ### Workspaces support
 

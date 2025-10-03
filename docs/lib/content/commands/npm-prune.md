@@ -11,8 +11,7 @@ description: Remove extraneous packages
 ### Description
 
 This command removes "extraneous" packages.
-If a package name is provided,
-then only packages matching one of the supplied names are removed.
+If a package name is provided, then only packages matching one of the supplied names are removed.
 
 Extraneous packages are those present in the `node_modules` folder that are not listed as any package's dependency list.
 
@@ -23,8 +22,7 @@ If the `--dry-run` flag is used then no changes will actually be made.
 If the `--json` flag is used, then the changes `npm prune` made (or would have made with `--dry-run`) are printed as a JSON object.
 
 In normal operation, extraneous modules are pruned automatically, so you'll only need this command with the `--production` flag.
-However, in the real world, operation is not always "normal".  When crashes or mistakes happen,
-this command can help clean up any resulting garbage.
+However, in the real world, operation is not always "normal".  When crashes or mistakes happen, this command can help clean up any resulting garbage.
 
 ### Configuration
 

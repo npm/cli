@@ -135,8 +135,7 @@ npm query ":type(git)" | jq 'map(.name)' | xargs -I {} npm why {}
 
 ### Expecting a certain number of results
 
-One common use of `npm query` is to make sure there is only one version of
-a certain dependency in your tree.
+One common use of `npm query` is to make sure there is only one version of a certain dependency in your tree.
 This is especially common for ecosystems like that rely on `typescript` where having state split across two different but identically-named packages causes bugs.
 You can use the `--expect-results` or `--expect-result-count` in your setup to ensure that npm will exit with an exit code if your tree doesn't look like you want it to.
 
@@ -154,8 +153,7 @@ $ npm query ':root>:outdated(in-range).prod' --no-expect-results
 ### Package lock only mode
 
 If package-lock-only is enabled, only the information in the package lock (or shrinkwrap) is loaded.
-This means that information from the package.json files of your dependencies will not be included in the result set (e.g.
-description, homepage, engines).
+This means that information from the package.json files of your dependencies will not be included in the result set (e.g. description, homepage, engines).
 
 ### Configuration
 

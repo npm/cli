@@ -12,22 +12,14 @@ description: Modify package distribution tags
 
 Add, remove, and enumerate distribution tags on a package:
 
-* add: Tags the specified version of the package with the specified tag,
-  or the [`--tag` config](/using-npm/config#tag) if not specified.
-If you have
-  two-factor authentication on auth-and-writes then you’ll need to include a
-  one-time password on the command line with
-  `--otp <one-time password>`, or go through a second factor flow based on your `authtype`.
+* add: Tags the specified version of the package with the specified tag, or the [`--tag` config](/using-npm/config#tag) if not specified.
+  If you have two-factor authentication on auth-and-writes then you’ll need to include a one-time password on the command line with `--otp <one-time password>`, or go through a second factor flow based on your `authtype`.
 
 * rm: Clear a tag that is no longer in use from the package.
-If you have
-  two-factor authentication on auth-and-writes then you’ll need to include
-  a one-time password on the command line with `--otp <one-time password>`,
-  or go through a second factor flow based on your `authtype`
+  If you have two-factor authentication on auth-and-writes then you’ll need to include a one-time password on the command line with `--otp <one-time password>`, or go through a second factor flow based on your `authtype`
 
-* ls: Show all of the dist-tags for a package, defaulting to the package in
-  the current prefix.
-This is the default action if none is specified.
+* ls: Show all of the dist-tags for a package, defaulting to the package in the current prefix.
+  This is the default action if none is specified.
 
 A tag can be used when installing packages as a reference to a version instead of using a specific version number:
 
@@ -43,12 +35,10 @@ npm install --tag <tag>
 
 (This also applies to any other commands that resolve and install dependencies, such as `npm dedupe`, `npm update`, and `npm audit fix`.)
 
-Publishing a package sets the `latest` tag to the published version unless the
-`--tag` option is used.
+Publishing a package sets the `latest` tag to the published version unless the `--tag` option is used.
 For example, `npm publish --tag=beta`.
 
-By default, `npm install <pkg>` (without any `@<version>` or `@<tag>`
-specifier) installs the `latest` tag.
+By default, `npm install <pkg>` (without any `@<version>` or `@<tag>` specifier) installs the `latest` tag.
 
 ### Purpose
 
@@ -57,8 +47,7 @@ Tags can be used to provide an alias instead of version numbers.
 For example, a project might choose to have multiple streams of development and use a different tag for each stream, e.g., `stable`, `beta`, `dev`,
 `canary`.
 
-By default, the `latest` tag is used by npm to identify the current version of a package, and `npm install <pkg>` (without any `@<version>` or `@<tag>`
-specifier) installs the `latest` tag.
+By default, the `latest` tag is used by npm to identify the current version of a package, and `npm install <pkg>` (without any `@<version>` or `@<tag>` specifier) installs the `latest` tag.
 Typically, projects only use the `latest` tag for stable release versions, and use other tags for unstable versions such as prereleases.
 
 The `next` tag is used by some projects to identify the upcoming version.
@@ -67,8 +56,7 @@ Other than `latest`, no tag has any special significance to npm itself.
 
 ### Caveats
 
-This command used to be known as `npm tag`, which only created new tags,
-and so had a different syntax.
+This command used to be known as `npm tag`, which only created new tags, and so had a different syntax.
 
 Tags must share a namespace with version numbers, because they are specified in the same slot: `npm install <pkg>@<version>` vs `npm install <pkg>@<tag>`.
 

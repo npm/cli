@@ -23,35 +23,25 @@ The name is what your thing is called.
 Some rules:
 
 * The name must be less than or equal to 214 characters.
-This includes the
-  scope for scoped packages.
+  This includes the scope for scoped packages.
 * The names of scoped packages can begin with a dot or an underscore.
-This
-  is not permitted without a scope.
+  This is not permitted without a scope.
 * New packages must not have uppercase letters in the name.
-* The name ends up being part of a URL, an argument on the command line,
-  and a folder name.
-Therefore, the name can't contain any non-URL-safe
-  characters.
+* The name ends up being part of a URL, an argument on the command line, and a folder name.
+  Therefore, the name can't contain any non-URL-safe characters.
 
 Some tips:
 
 * Don't use the same name as a core Node module.
 * Don't put "js" or "node" in the name.
-It's assumed that it's js, since
-  you're writing a package.json file, and you can specify the engine using
-  the "[engines](#engines)" field.
- (See below.)
-* The name will probably be passed as an argument to require(), so it
-  should be something short, but also reasonably descriptive.
-* You may want to check the npm registry to see if there's something by
-  that name already, before you get too attached to it.
+  It's assumed that it's js, since you're writing a package.json file, and you can specify the engine using the "[engines](#engines)" field.
+  (See below.)
+* The name will probably be passed as an argument to require(), so it should be something short, but also reasonably descriptive.
+* You may want to check the npm registry to see if there's something by that name already, before you get too attached to it.
   <https://www.npmjs.com/>
 
-A name can be optionally prefixed by a scope, e.g.
-`@npm/example`.
-See
-[`scope`](/using-npm/scope) for more detail.
+A name can be optionally prefixed by a scope, e.g. `@npm/example`.
+See [`scope`](/using-npm/scope) for more detail.
 
 ### version
 
@@ -60,9 +50,8 @@ The name and version together form an identifier that is assumed to be completel
 Changes to the package should come along with changes to the version.
 If you don't plan to publish your package, the name and version fields are optional.
 
-Version must be parseable by
-[node-semver](https://github.com/npm/node-semver), which is bundled with npm as a dependency.
- (`npm install semver` to use it yourself.)
+Version must be parseable by [node-semver](https://github.com/npm/node-semver), which is bundled with npm as a dependency.
+(`npm install semver` to use it yourself.)
 
 ### description
 
@@ -121,14 +110,10 @@ SPDX license identifier for the license you're using, like this:
 }
 ```
 
-You can check [the full list of SPDX license
-IDs](https://spdx.org/licenses/).
-Ideally, you should pick one that is
-[OSI](https://opensource.org/licenses/) approved.
+You can check [the full list of SPDX license IDs](https://spdx.org/licenses/).
+Ideally, you should pick one that is [OSI](https://opensource.org/licenses/) approved.
 
-If your package is licensed under multiple common licenses, use an [SPDX
-license expression syntax version 2.0
-string](https://spdx.dev/specifications/), like this:
+If your package is licensed under multiple common licenses, use an [SPDX license expression syntax version 2.0 string](https://spdx.dev/specifications/), like this:
 
 ```json
 {
@@ -280,8 +265,7 @@ Some special files and directories are also included or excluded regardless of w
 You can also provide a `.npmignore` file in the root of your package or in subdirectories, which will keep files from being included.
 At the root of your package it will not override the "files" field, but in subdirectories it will.
 The `.npmignore` file works just like a `.gitignore`.
-If there is
-a `.gitignore` file, and `.npmignore` is missing, `.gitignore`'s contents will be used instead.
+If there is a `.gitignore` file, and `.npmignore` is missing, `.gitignore`'s contents will be used instead.
 
 Certain files are always included, regardless of settings:
 
@@ -309,9 +293,7 @@ Some files are always ignored by default:
 * `config.gypi`
 * `node_modules`
 * `npm-debug.log`
-* `package-lock.json` (use
-  [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json)
-  if you wish it to be published)
+* `package-lock.json` (use [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) if you wish it to be published)
 * `pnpm-lock.yaml`
 * `yarn.lock`
 * `bun.lockb`
@@ -337,8 +319,7 @@ For more details see the [node.js documentation on package entry points](https:/
 ### main
 
 The main field is a module ID that is the primary entry point to your program.
-That is, if your package is named `foo`, and a user installs it,
-and then does `require("foo")`, then your main module's exports object will be returned.
+That is, if your package is named `foo`, and a user installs it, and then does `require("foo")`, then your main module's exports object will be returned.
 
 This should be a module relative to the root of your package folder.
 
@@ -350,17 +331,14 @@ If `main` is not set, it defaults to `index.js` in the package's root folder.
 
 If your module is meant to be used client-side the browser field should be used instead of the main field.
 This is helpful to hint users that it might rely on primitives that aren't available in Node.js modules.
-(e.g.
-`window`)
+(e.g. `window`)
 
 ### bin
 
 A lot of packages have one or more executable files that they'd like to install into the PATH. npm makes this pretty easy (in fact, it uses this feature to install the "npm" executable.)
 
 To use this, supply a `bin` field in your package.json which is a map of command name to local file name.
-When this package is installed globally,
-that file will be either linked inside the global bins directory or
-a cmd (Windows Command File) will be created which executes the specified file in the `bin` field, so it is available to run by `name` or `name.cmd` (on
+When this package is installed globally, that file will be either linked inside the global bins directory or a cmd (Windows Command File) will be created which executes the specified file in the `bin` field, so it is available to run by `name` or `name.cmd` (on
 Windows PowerShell).
 When this package is installed as a dependency in another package, the file will be linked where it will be available to that package either directly by `npm exec` or by name in other scripts when invoking them via `npm run`.
 
@@ -375,8 +353,7 @@ For example, myapp could have this:
 }
 ```
 
-So, when you install myapp, in case of unix-like OS it'll create a symlink from the `cli.js` script to `/usr/local/bin/myapp` and in case of windows it will create a cmd file usually at `C:\Users\{Username}\AppData\Roaming\npm\myapp.cmd`
-which runs the `cli.js` script.
+So, when you install myapp, in case of unix-like OS it'll create a symlink from the `cli.js` script to `/usr/local/bin/myapp` and in case of windows it will create a cmd file usually at `C:\Users\{Username}\AppData\Roaming\npm\myapp.cmd` which runs the `cli.js` script.
 
 If you have a single executable, and its name should be the name of the package, then you can just supply it as a string.
 For example:
@@ -401,8 +378,7 @@ would be the same as this:
 }
 ```
 
-Please make sure that your file(s) referenced in `bin` starts with
-`#!/usr/bin/env node`; otherwise, the scripts are started without the node executable!
+Please make sure that your file(s) referenced in `bin` starts with `#!/usr/bin/env node`; otherwise, the scripts are started without the node executable!
 
 Note that you can also set the executable files using [directories.bin](#directoriesbin).
 
@@ -475,8 +451,7 @@ In the future, this information may be used in other creative ways.
 If you specify a `bin` directory in `directories.bin`, all the files in that folder will be added.
 
 Because of the way the `bin` directive works, specifying both a `bin` path and setting `directories.bin` is an error.
-If you want to specify individual files, use `bin`, and for all the files in an existing `bin`
-directory, use `directories.bin`.
+If you want to specify individual files, use `bin`, and for all the files in an existing `bin` directory, use `directories.bin`.
 
 #### directories.man
 
@@ -487,8 +462,7 @@ Sugar to generate a "man" array by walking the folder.
 
 Specify the place where your code lives.
 This is helpful for people who want to contribute.
-If the git repo is on GitHub, then the `npm repo`
-command will be able to find you.
+If the git repo is on GitHub, then the `npm repo` command will be able to find you.
 
 Do it like this:
 
@@ -562,8 +536,8 @@ Dependencies are specified in a simple object that maps a package name to a vers
 The version range is a string which has one or more space-separated descriptors.
 Dependencies can also be identified with a tarball or git URL.
 
-**Please do not put test harnesses or transpilers or other "development"
-time tools in your `dependencies` object.**  See `devDependencies`, below.
+**Please do not put test harnesses or transpilers or other "development" time tools in your `dependencies` object.**
+See `devDependencies`, below.
 
 See [semver](https://github.com/npm/node-semver#versions) for more details about specifying version ranges.
 
@@ -572,8 +546,7 @@ See [semver](https://github.com/npm/node-semver#versions) for more details about
 * `>=version` etc
 * `<version`
 * `<=version`
-* `~version` "Approximately equivalent to version"  See
-  [semver](https://github.com/npm/node-semver#versions)
+* `~version` "Approximately equivalent to version"  See [semver](https://github.com/npm/node-semver#versions)
 * `^version` "Compatible with version"  See [semver](https://github.com/npm/node-semver#versions)
 * `1.2.x` 1.2.0, 1.2.1, etc., but not 1.3.0
 * `http://...` See 'URLs as Dependencies' below
@@ -583,8 +556,7 @@ See [semver](https://github.com/npm/node-semver#versions) for more details about
 * `range1 || range2` Passes if either range1 or range2 are satisfied.
 * `git...` See 'Git URLs as Dependencies' below
 * `user/repo` See 'GitHub URLs' below
-* `tag` A specific version tagged and published as `tag`  See [`npm
-  dist-tag`](/commands/npm-dist-tag)
+* `tag` A specific version tagged and published as `tag`  See [`npm dist-tag`](/commands/npm-dist-tag)
 * `path/path/path` See [Local Paths](#local-paths) below
 * `npm:@scope/pkg@version` Custom alias for a package See [`package-spec`](/using-npm/package-spec#aliases) 
 
@@ -627,8 +599,7 @@ Git URLs are of the form:
 `<protocol>` is one of `git`, `git+ssh`, `git+http`, `git+https`, or `git+file`.
 
 If `#<commit-ish>` is provided, it will be used to clone exactly that commit.
-If the commit-ish has the format `#semver:<semver>`, `<semver>` can be any valid semver range or exact version, and npm will look for any tags or refs matching that range in the remote repository, much as it would for
-a registry dependency.
+If the commit-ish has the format `#semver:<semver>`, `<semver>` can be any valid semver range or exact version, and npm will look for any tags or refs matching that range in the remote repository, much as it would for a registry dependency.
 If neither `#<commit-ish>` or `#semver:<semver>` is specified, then the default branch is used.
 
 Examples:
@@ -696,8 +667,7 @@ For example:
 }
 ```
 
-This feature is helpful for local offline development and creating tests that require npm installing where you don't want to hit an external server,
-but should not be used when publishing your package to the public registry.
+This feature is helpful for local offline development and creating tests that require npm installing where you don't want to hit an external server, but should not be used when publishing your package to the public registry.
 
 *note*: Packages linked by local path will not have their own dependencies installed when `npm install` is run.
 You must run `npm install` from inside the local path itself.
@@ -760,17 +730,14 @@ This ensures your package `@npm/tea-latte` can be installed *along* with the sec
 ```
 
 In npm versions 3 through 6, `peerDependencies` were not automatically installed, and would raise a warning if an invalid version of the peer dependency was found in the tree.
-As of npm v7, peerDependencies _are_
-installed by default.
+As of npm v7, peerDependencies _are_ installed by default.
 
 Trying to install another plugin with a conflicting requirement may cause an error if the tree cannot be resolved correctly.
 For this reason, make sure your plugin requirement is as broad as possible, and not to lock it down to specific patch versions.
 
 Assuming the host complies with [semver](https://semver.org/), only changes in the host package's major version will break your plugin.
-Thus, if you've worked with every 1.x version of the host package, use `"^1.0"` or `"1.x"`
-to express this.
-If you depend on features introduced in 1.5.2, use
-`"^1.5.2"`.
+Thus, if you've worked with every 1.x version of the host package, use `"^1.0"` or `"1.x"` to express this.
+If you depend on features introduced in 1.5.2, use `"^1.5.2"`.
 
 ### peerDependenciesMeta
 
@@ -801,8 +768,7 @@ For example:
 
 This defines an array of package names that will be bundled when publishing the package.
 
-In cases where you need to preserve npm packages locally or have them available through a single file download, you can bundle the packages in a tarball file by specifying the package names in the `bundleDependencies`
-array and executing `npm pack`.
+In cases where you need to preserve npm packages locally or have them available through a single file download, you can bundle the packages in a tarball file by specifying the package names in the `bundleDependencies` array and executing `npm pack`.
 
 For example:
 
@@ -834,8 +800,7 @@ If a dependency can be used, but you would like npm to proceed if it cannot be f
 This is a map of package name to version or
 URL, just like the `dependencies` object.
 The difference is that build failures do not cause installation to fail.
-Running `npm install
---omit=optional` will prevent these dependencies from being installed.
+Running `npm install --omit=optional` will prevent these dependencies from being installed.
 
 It is still your program's responsibility to handle the lack of the dependency.
 For example, something like this:
@@ -862,17 +827,14 @@ Entries in `optionalDependencies` will override entries of the same name in `dep
 
 ### overrides
 
-If you need to make specific changes to dependencies of your dependencies, for example replacing the version of a dependency with a known security issue,
-replacing an existing dependency with a fork, or making sure that the same version of a package is used everywhere, then you may add an override.
+If you need to make specific changes to dependencies of your dependencies, for example replacing the version of a dependency with a known security issue, replacing an existing dependency with a fork, or making sure that the same version of a package is used everywhere, then you may add an override.
 
 Overrides provide a way to replace a package in your dependency tree with another version, or another package entirely.
 These changes can be scoped as specific or as vague as desired.
 
 Overrides are only considered in the root `package.json` file for a project.
-Overrides in installed dependencies (including
-[workspaces](/using-npm/workspaces)) are not considered in dependency tree resolution.
-Published packages may dictate their resolutions by pinning dependencies or using an
-[`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) file.
+Overrides in installed dependencies (including [workspaces](/using-npm/workspaces)) are not considered in dependency tree resolution.
+Published packages may dictate their resolutions by pinning dependencies or using an [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) file.
 
 To make sure the package `@npm/foo` is always installed as version `1.0.0` no matter what version your dependencies rely on:
 
@@ -885,9 +847,7 @@ To make sure the package `@npm/foo` is always installed as version `1.0.0` no ma
 ```
 
 The above is a short hand notation, the full object form can be used to allow overriding a package itself as well as a child of the package.
-This will cause
-`@npm/foo` to always be `1.0.0` while also making `@npm/bar` at any depth beyond `@npm/foo`
-also `1.0.0`:
+This will cause `@npm/foo` to always be `1.0.0` while also making `@npm/bar` at any depth beyond `@npm/foo` also `1.0.0`:
 
 ```json
 {
@@ -986,8 +946,7 @@ For example:
 }
 ```
 
-Unless the user has set the
-[`engine-strict` config](/using-npm/config#engine-strict) flag, this field is advisory only and will only produce warnings when your package is installed as a dependency.
+Unless the user has set the [`engine-strict` config](/using-npm/config#engine-strict) flag, this field is advisory only and will only produce warnings when your package is installed as a dependency.
 
 ### os
 
@@ -1018,8 +977,7 @@ It is allowed to both block and allow an item, although there isn't any good rea
 
 ### cpu
 
-If your code only runs on certain cpu architectures,
-you can specify which ones.
+If your code only runs on certain cpu architectures, you can specify which ones.
 
 ```json
 {
@@ -1094,9 +1052,7 @@ If you set `runtime.name` or `packageManager.name` to any other string, it will 
 If you set `"private": true` in your package.json, then npm will refuse to publish it.
 
 This is a way to prevent accidental publication of private repositories.
-If you would like to ensure that a given package is only ever published to
-a specific registry (for example, an internal registry), then use the `publishConfig` dictionary described below to override the `registry`
-config param at publish-time.
+If you would like to ensure that a given package is only ever published to a specific registry (for example, an internal registry), then use the `publishConfig` dictionary described below to override the `registry` config param at publish-time.
 
 ### publishConfig
 
@@ -1111,8 +1067,7 @@ The optional `workspaces` field is an array of file patterns that describes loca
 
 It can describe either the direct paths of the folders to be used as workspaces or it can define globs that will resolve to these same folders.
 
-In the following example, all folders located inside the folder
-`./packages` will be treated as workspaces as long as they have valid `package.json` files inside them:
+In the following example, all folders located inside the folder `./packages` will be treated as workspaces as long as they have valid `package.json` files inside them:
 
 ```json
 {
@@ -1131,21 +1086,16 @@ npm will default some values based on package contents.
 
 * `"scripts": {"start": "node server.js"}`
 
-  If there is a `server.js` file in the root of your package, then npm will
-  default the `start` command to `node server.js`.
+  If there is a `server.js` file in the root of your package, then npm will default the `start` command to `node server.js`.
 
 * `"scripts":{"install": "node-gyp rebuild"}`
 
-  If there is a `binding.gyp` file in the root of your package and you have
-  not defined an `install` or `preinstall` script, npm will default the
-  `install` command to compile using node-gyp.
+  If there is a `binding.gyp` file in the root of your package and you have not defined an `install` or `preinstall` script, npm will default the `install` command to compile using node-gyp.
 
 * `"contributors": [...]`
 
-  If there is an `AUTHORS` file in the root of your package, npm will treat
-  each line as a `Name <email> (url)` format, where email and url are
-  optional.
-Lines which start with a `#` or are blank, will be ignored.
+  If there is an `AUTHORS` file in the root of your package, npm will treat each line as a `Name <email> (url)` format, where email and url are optional.
+  Lines which start with a `#` or are blank, will be ignored.
 
 ### SEE ALSO
 

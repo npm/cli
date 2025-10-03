@@ -21,8 +21,7 @@ If you don't include this then you will be taken through a second factor flow ba
 
 * create / destroy:
   Create a new team, or destroy an existing one.
-Note: You cannot remove the
-  `developers` team, [learn more.](https://docs.npmjs.com/about-developers-team)
+  Note: You cannot remove the `developers` team, [learn more.](https://docs.npmjs.com/about-developers-team)
 
   Here's how to create a new team `newteam` under the `org` org:
 
@@ -30,8 +29,7 @@ Note: You cannot remove the
   npm team create @org:newteam
   ```
 
-  You should see a confirming message such as: `+@org:newteam` once the new
-  team has been created.
+  You should see a confirming message such as: `+@org:newteam` once the new team has been created.
 
 * add:
   Add a user to an existing team.
@@ -47,8 +45,7 @@ Note: You cannot remove the
 * rm:
   Using `npm team rm` you can also remove users from a team they belong to.
 
-  Here's an example removing user `username` from `newteam` team
-  in `org` organization:
+  Here's an example removing user `username` from `newteam` team in `org` organization:
 
   ```bash
   npm team rm @org:newteam username
@@ -58,10 +55,8 @@ Note: You cannot remove the
   `username removed from @org:newteam`
 
 * ls:
-  If performed on an organization name, will return a list of existing teams
-  under that organization.
-If performed on a team, it will instead return a list
-  of all users belonging to that particular team.
+  If performed on an organization name, will return a list of existing teams under that organization.
+  If performed on a team, it will instead return a list of all users belonging to that particular team.
 
   Here's an example of how to list all teams from an org named `org`:
 
@@ -84,8 +79,7 @@ Listing teams and team memberships may be done by any member of the organization
 
 Organization creation and management of team admins and *organization* members is done through the website, not the npm CLI.
 
-To use teams to manage permissions on packages belonging to your organization,
-use the `npm access` command to grant or revoke the appropriate permissions.
+To use teams to manage permissions on packages belonging to your organization, use the `npm access` command to grant or revoke the appropriate permissions.
 
 ### Configuration
 
