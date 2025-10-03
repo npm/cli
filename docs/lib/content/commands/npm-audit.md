@@ -35,7 +35,6 @@ To ensure the integrity of packages you download from the public npm registry, o
 Registry signatures can be verified using the following `audit` command:
 
 ```bash
-
 $ npm audit signatures
 ```
 
@@ -48,7 +47,6 @@ The npm CLI supports registry signatures and signing keys provided by any regist
 1. Signatures are provided in the package's `packument` in each published version within the `dist` object:
 
 ```json
-
 "dist":{
   "..omitted..": "..omitted..",
   "signatures": [{
@@ -155,56 +153,48 @@ If vulnerabilities were found the exit code will depend on the
 Scan your project for vulnerabilities and automatically install any compatible updates to vulnerable dependencies:
 
 ```bash
-
 $ npm audit fix
 ```
 
 Run `audit fix` without modifying `node_modules`, but still updating the pkglock:
 
 ```bash
-
 $ npm audit fix --package-lock-only
 ```
 
 Skip updating `devDependencies`:
 
 ```bash
-
 $ npm audit fix --only=prod
 ```
 
 Have `audit fix` install SemVer-major updates to toplevel dependencies, not just SemVer-compatible ones:
 
 ```bash
-
 $ npm audit fix --force
 ```
 
 Do a dry run to get an idea of what `audit fix` will do, and _also_ output install information in JSON format:
 
 ```bash
-
 $ npm audit fix --dry-run --json
 ```
 
 Scan your project for vulnerabilities and just show the details, without fixing anything:
 
 ```bash
-
 $ npm audit
 ```
 
 Get the detailed audit report in JSON format:
 
 ```bash
-
 $ npm audit --json
 ```
 
 Fail an audit only if the results include a vulnerability with a level of moderate or higher:
 
 ```bash
-
 $ npm audit --audit-level=moderate
 ```
 

@@ -23,7 +23,6 @@ Refer to [`npm run`](/commands/npm-run) for more details.
 ### Example
 
 ```json
-
 {
   "scripts": {
     "start": "node foo.js"
@@ -32,7 +31,6 @@ Refer to [`npm run`](/commands/npm-run) for more details.
 ```
 
 ```bash
-
 npm start
 
 > npm@x.x.x start

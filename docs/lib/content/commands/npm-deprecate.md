@@ -15,7 +15,6 @@ This command will update the npm registry entry for a package, providing a depre
 It works on [version ranges](https://semver.npmjs.com/) as well as specific versions, so you can do something like this:
 
 ```bash
-
 npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
 ```
 
@@ -24,7 +23,6 @@ include prerelease versions.
 For example:
 
 ```bash
-
 npm deprecate my-thing@1.x "1.x is no longer supported"
 ```
 

@@ -16,7 +16,6 @@ a package's `"scripts"` object.
 ### Example
 
 ```json
-
 {
   "scripts": {
     "test": "node test.js"
@@ -25,7 +24,6 @@ a package's `"scripts"` object.
 ```
 
 ```bash
-
 npm test
 > npm@x.x.x test
 > node test.js

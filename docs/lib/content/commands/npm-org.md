@@ -13,42 +13,36 @@ description: Manage orgs
 Add a new developer to an org:
 
 ```bash
-
 $ npm org set my-org @mx-smith
 ```
 
 Add a new admin to an org (or change a developer to an admin):
 
 ```bash
-
 $ npm org set my-org @mx-santos admin
 ```
 
 Remove a user from an org:
 
 ```bash
-
 $ npm org rm my-org mx-santos
 ```
 
 List all users in an org:
 
 ```bash
-
 $ npm org ls my-org
 ```
 
 List all users in JSON format:
 
 ```bash
-
 $ npm org ls my-org --json
 ```
 
 See what role a user has in an org:
 
 ```bash
-
 $ npm org ls my-org @mx-santos
 ```
 

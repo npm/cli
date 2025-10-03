@@ -17,7 +17,6 @@ SBOMs can be generated in either
 ### Example CycloneDX SBOM
 
 ```json
-
 {
   "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",
@@ -130,7 +129,6 @@ SBOMs can be generated in either
 ### Example SPDX SBOM
 
 ```json
-
 {
   "spdxVersion": "SPDX-2.3",
   "dataLicense": "CC0-1.0",

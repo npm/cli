@@ -23,7 +23,6 @@ Use `--` to pass `-`-prefixed flags and options which would otherwise be parsed 
 For example:
 
 ```bash
-
 npm run test -- --grep="pattern"
 ```
 
@@ -39,14 +38,12 @@ Any binaries provided by locally-installed dependencies can be used without the 
 For example, if there is a `devDependency` on `tap` in your package, you should write:
 
 ```bash
-
 "scripts": {"test": "tap test/*.js"}
 ```
 
 instead of
 
 ```bash
-
 "scripts": {"test": "node_modules/.bin/tap test/*.js"}
 ```
 

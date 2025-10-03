@@ -32,14 +32,12 @@ This is the default action if none is specified.
 A tag can be used when installing packages as a reference to a version instead of using a specific version number:
 
 ```bash
-
 npm install <name>@<tag>
 ```
 
 When installing dependencies, a preferred tagged version may be specified:
 
 ```bash
-
 npm install --tag <tag>
 ```
 

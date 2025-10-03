@@ -395,7 +395,6 @@ You may combine multiple arguments and even multiple types of arguments.
 For example:
 
 ```bash
-
 npm install sax@">=0.1.0 <0.2.0" bench supervisor
 ```
 
@@ -410,7 +409,6 @@ The `--package-lock-only` argument will only update the `package-lock.json`, ins
 The `-f` or `--force` argument will force npm to fetch remote resources even if a local copy exists on disk.
 
 ```bash
-
 npm install sax --force
 ```
 
@@ -429,7 +427,6 @@ Given a `package{dep}` structure: `A{B,C}, B{C}, C{D}`,
 the npm install algorithm produces:
 
 ```bash
-
 A
 +-- B
 +-- C
@@ -442,7 +439,6 @@ D is still installed at the top level because nothing conflicts with it.
 For `A{B,C}, B{C,D@1}, C{D@2}`, this algorithm produces:
 
 ```bash
-
 A
 +-- B
 +-- C

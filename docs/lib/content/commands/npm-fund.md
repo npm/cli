@@ -31,7 +31,6 @@ It's possible to filter the results to only include a single workspace and its d
 Here's an example running `npm fund` in a project with a configured workspace `a`:
 
 ```bash
-
 $ npm fund
 test-workspaces-fund@1.0.0
 +-- https://example.com/a
@@ -47,7 +46,6 @@ test-workspaces-fund@1.0.0
 And here is an example of the expected result when filtering only by a specific workspace `a` in the same project:
 
 ```bash
-
 $ npm fund -w a
 test-workspaces-fund@1.0.0
 `-- https://example.com/a

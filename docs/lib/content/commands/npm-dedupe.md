@@ -25,7 +25,6 @@ a
 In this case, `npm dedupe` will transform the tree to:
 
 ```bash
-
 a
 +-- b
 +-- d

@@ -34,7 +34,6 @@ Even if you never publish your package, you can still get a lot of benefits of u
 Git urls can be of the form:
 
 ```bash
-
 git://github.com/user/project.git#commit-ish
 git+ssh://user@hostname:project.git#commit-ish
 git+http://user@hostname/project/blah.git#commit-ish
@@ -150,7 +149,6 @@ So don't do that.
 In the root of your package, do this:
 
 ```bash
-
 npm install . -g
 ```
 
@@ -158,7 +156,6 @@ That'll show you that it's working.
 If you'd rather just create a symlink package that points to your working directory, then do this:
 
 ```bash
-
 npm link
 ```
 
@@ -167,7 +164,6 @@ Use `npm ls -g` to see if it's there.
 To test a local install, go into some other folder, and then do:
 
 ```bash
-
 cd ../some-other-folder
 npm install ../my-package
 ```
@@ -182,7 +178,6 @@ Create a user with the adduser command.
 It works like this:
 
 ```bash
-
 npm adduser
 ```
 
@@ -196,7 +191,6 @@ This part's easy.
 In the root of your folder, do this:
 
 ```bash
-
 npm publish
 ```
 

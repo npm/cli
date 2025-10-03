@@ -33,7 +33,6 @@ When creating tarballs for `npm publish`, the linked packages are
 For example:
 
 ```bash
-
 cd ~/projects/node-redis    # go into the package directory
 npm link                    # creates global link
 cd ~/projects/node-bloggy   # go into some other package directory.
@@ -48,7 +47,6 @@ You may also shortcut the two steps in one.
 For example, to do the above use-case in a shorter way:
 
 ```bash
-
 cd ~/projects/node-bloggy  # go into the dir of your main project
 npm link ../node-redis     # link the dir of your dependency
 ```
@@ -56,7 +54,6 @@ npm link ../node-redis     # link the dir of your dependency
 The second line is the equivalent of doing:
 
 ```bash
-
 (cd ../node-redis; npm link)
 npm link redis
 ```
@@ -69,7 +66,6 @@ Note that in this case, you are referring to the directory name,
 If your linked package is scoped (see [`scope`](/using-npm/scope)) your link command must include that scope, e.g.
 
 ```bash
-
 npm link @myorg/privatepackage
 ```
 

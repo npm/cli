@@ -20,13 +20,11 @@ See
 ### Example
 
 ```bash
-
 npm prefix
 /usr/local/projects/foo
 ```
 
 ```bash
-
 npm prefix -g
 /usr/local
 ```

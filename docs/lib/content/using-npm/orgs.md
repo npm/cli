@@ -32,7 +32,6 @@ There are two main commands:
 * Check who you’ve added to your org:
 
 ```bash
-
 npm team ls <org>:developers
 ```
 
@@ -42,14 +41,12 @@ This team automatically gets read-write access to all packages, but you can chan
 * Create a new team:
 
 ```bash
-
 npm team create <org:team>
 ```
 
 * Add members to that team:
 
 ```bash
-
 npm team add <org:team> <user>
 ```
 
@@ -58,7 +55,6 @@ npm team add <org:team> <user>
 * In package directory, run
 
 ```bash
-
 npm init --scope=<org>
 ```
 to scope it for your org & publish as usual
@@ -66,14 +62,12 @@ to scope it for your org & publish as usual
 * Grant access:  
 
 ```bash
-
 npm access grant <read-only|read-write> <org:team> [<package>]
 ```
 
 * Revoke access:
 
 ```bash
-
 npm access revoke <org:team> [<package>]
 ```
 
@@ -82,21 +76,18 @@ npm access revoke <org:team> [<package>]
 * See what org packages a team member can access:
 
 ```bash
-
 npm access list packages <org> <user>
 ```
 
 * See packages available to a specific team:
 
 ```bash
-
 npm access list packages <org:team>
 ```
 
 * Check which teams are collaborating on a package:
 
 ```bash
-
 npm access list collaborators <pkg>
 ```
 

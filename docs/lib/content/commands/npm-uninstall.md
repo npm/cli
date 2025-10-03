@@ -31,14 +31,12 @@ Scope is optional and follows the usual rules for [`scope`](/using-npm/scope).
 ### Examples
 
 ```bash
-
 npm uninstall sax
 ```
 
 `sax` will no longer be in your `package.json`, `npm-shrinkwrap.json`, or `package-lock.json` files.
 
 ```bash
-
 npm uninstall lodash --no-save
 ```
 
