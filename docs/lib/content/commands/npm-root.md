@@ -16,6 +16,7 @@ Useful for using npm in shell scripts that do things with the `node_modules` fol
  For example:
 
 ```bash
+
 #!/bin/bash
 global_node_modules="$(npm root --global)"
 echo "Global packages installed in: ${global_node_modules}"

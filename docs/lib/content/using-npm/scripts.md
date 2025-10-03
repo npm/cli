@@ -21,6 +21,7 @@ To create "pre" or "post" scripts for any scripts defined in the
 *with a matching name* and add "pre" or "post" to the beginning of them.
 
 ```json
+
 {
   "scripts": {
     "precompress": "{{ executes BEFORE the `compress` script }}",
@@ -262,6 +263,7 @@ If you depend on modules that define executable scripts, like test suites, then 
  So, if your package.json has this:
 
 ```json
+
 {
   "name" : "foo",
   "dependencies" : {
@@ -292,6 +294,7 @@ Objects are flattened following this format, so if you had
 `{"scripts":{"install":"foo.js"}}` in your package.json, then you'd see this in the script:
 
 ```bash
+
 process.env.npm_package_scripts_install === "foo.js"
 ```
 
@@ -300,6 +303,7 @@ process.env.npm_package_scripts_install === "foo.js"
 For example, if your package.json contains this:
 
 ```json
+
 {
   "scripts" : {
     "install" : "scripts/install.js",
@@ -318,6 +322,7 @@ If you want to run a make command, you can do so.
  This works just fine:
 
 ```json
+
 {
   "scripts" : {
     "preinstall" : "./configure",

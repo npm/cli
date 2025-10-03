@@ -15,6 +15,7 @@ The `npm query` command allows for usage of css selectors in order to retrieve a
 ### Piping npm query to other commands
 
 ```bash
+
 # find all dependencies with postinstall scripts & uninstall them
 npm query ":attr(scripts, [postinstall])" | jq 'map(.name)|join("\n")' -r | xargs -I {} npm uninstall {}
 
@@ -25,6 +26,7 @@ npm query ":type(git)" | jq 'map(.name)' | xargs -I {} npm why {}
 ### Extended Use Cases & Queries
 
 ```stylus
+
 // all deps
 *
 
@@ -98,6 +100,7 @@ npm query ":type(git)" | jq 'map(.name)' | xargs -I {} npm why {}
 - an array of dependency objects is returned which can contain multiple copies of the same package which may or may not have been linked or deduped
 
 ```json
+
 [
   {
     "name": "",
@@ -142,12 +145,14 @@ a certain dependency in your tree.
 
 
 ```sh
+
 $ npm query '#react' --expect-result-count=1
 ```
 
 Perhaps you want to quickly check if there are any production dependencies that could be updated:
 
 ```sh
+
 $ npm query ':root>:outdated(in-range).prod' --no-expect-results
 ```
 

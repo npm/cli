@@ -154,6 +154,7 @@ You can set/get/delete items across your configured workspaces by using the
 For example, setting a `funding` value across all configured workspaces of a project:
 
 ```bash
+
 npm pkg set funding=https://example.com --ws
 ```
 

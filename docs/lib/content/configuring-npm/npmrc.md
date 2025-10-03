@@ -30,6 +30,7 @@ By adding `?` after variable name they can be forced to evaluate to an empty str
 For example:
 
 ```bash
+
 cache = ${HOME}/.npm-packages
 node-options = "${NODE_OPTIONS?} --use-system-ca"
 ```
@@ -41,6 +42,7 @@ Array values are specified by adding "[]" after the key name.
 For example:
 
 ```bash
+
 key[] = "first value"
 key[] = "second value"
 ```
@@ -55,6 +57,7 @@ Lines in `.npmrc` files are interpreted as comments when they begin with a
 For example:
 
 ```bash
+
 # last modified: 01 Jan 2016
 ; Set a new registry for a scoped package
 @myscope:registry=https://mycustomregistry.example.org

@@ -49,6 +49,7 @@ Packages not
 ### An example
 
 ```bash
+
 $ npm outdated
 Package      Current   Wanted   Latest  Location                  Depended by
 glob          5.0.15   5.0.15    6.0.1  node_modules/glob         dependent-package-name
@@ -60,6 +61,7 @@ once           1.3.2    1.3.3    1.3.3  node_modules/once         dependent-pack
 
 With these `dependencies`:
 ```json
+
 {
   "glob": "^5.0.15",
   "nothingness": "github:othiym23/nothingness#master",

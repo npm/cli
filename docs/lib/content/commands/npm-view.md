@@ -15,6 +15,7 @@ This command shows data about a package and prints it to stdout.
 As an example, to view information about the `connect` package from the registry, you would run:
 
 ```bash
+
 npm view connect
 ```
 
@@ -25,6 +26,7 @@ For example, to show the dependencies of the `ronn` package at version
 `0.3.5`, you could do the following:
 
 ```bash
+
 npm view ronn@0.3.5 dependencies
 ```
 
@@ -33,6 +35,7 @@ To show field data for the current project use a file path (i.e.
 `.`):
 
 ```bash
+
 npm view . dependencies
 ```
 
@@ -40,6 +43,7 @@ You can view child fields by separating them with a period.
 To view the git repository URL for the latest version of `npm`, you would run the following command:
 
 ```bash
+
 npm view npm repository.url
 ```
 
@@ -47,6 +51,7 @@ This makes it easy to view information about a dependency with a bit of shell sc
 For example, to view all the data about the version of `opts` that `ronn` depends on, you could write the following:
 
 ```bash
+
 npm view opts@$(npm view ronn dependencies.opts)
 ```
 
@@ -54,6 +59,7 @@ For fields that are arrays, requesting a non-numeric field will return all of th
 For example, to get all the contributor email addresses for the `express` package, you would run:
 
 ```bash
+
 npm view express contributors.email
 ```
 
@@ -61,12 +67,14 @@ You may also use numeric indices in square braces to specifically select an item
 To just get the email address of the first contributor in the list, you can run:
 
 ```bash
+
 npm view express contributors[0].email
 ```
 
 If the field value you are querying for is a property of an object, you should run:
 
 ```bash
+
 npm view express time'[4.8.0]'
 ```
 
@@ -74,6 +82,7 @@ Multiple fields may be specified, and will be printed one after another.
 For example, to get all the contributor names and email addresses, you can do this:
 
 ```bash
+
 npm view express contributors.name contributors.email
 ```
 
@@ -82,6 +91,7 @@ npm view express contributors.name contributors.email
  (See [`package.json`](/configuring-npm/package-json) for more on this.)
 
 ```bash
+
 npm view npm contributors
 ```
 
@@ -90,12 +100,14 @@ If a version range is provided, then data will be printed for every matching ver
 was required by each matching version of `yui3`:
 
 ```bash
+
 npm view yui3@'>0.5.4' dependencies.jsdom
 ```
 
 To show the `connect` package version history, you can do this:
 
 ```bash
+
 npm view connect versions
 ```
 

@@ -25,6 +25,7 @@ Config supports the following sub-commands:
 #### set
 
 ```bash
+
 npm config set key=value [key=value...]
 npm set key=value [key=value...]
 ```
@@ -39,6 +40,7 @@ Note: for backwards compatibility, `npm config set key value` is supported as an
 #### get
 
 ```bash
+
 npm config get [key ...]
 npm get [key ...]
 ```
@@ -52,6 +54,7 @@ If no keys are provided, then this command behaves the same as `npm config list`
 #### list
 
 ```bash
+
 npm config list
 ```
 
@@ -63,6 +66,7 @@ to show the settings in json format.
 #### delete
 
 ```bash
+
 npm config delete key [key ...]
 ```
 
@@ -71,6 +75,7 @@ Deletes the specified keys from all configuration files.
 #### edit
 
 ```bash
+
 npm config edit
 ```
 
@@ -80,6 +85,7 @@ Opens the config file in an editor.
 #### fix
 
 ```bash
+
 npm config fix
 ```
 

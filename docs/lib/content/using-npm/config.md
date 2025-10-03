@@ -63,6 +63,7 @@ If the specified configuration param resolves unambiguously to a known configura
  For example:
 
 ```bash
+
 npm ls --par
 # same as:
 npm ls --parseable
@@ -72,6 +73,7 @@ If multiple single-character shorthands are strung together, and the resulting c
  For example:
 
 ```bash
+
 npm ls -gpld
 # same as:
 npm ls --global --parseable --long --loglevel info

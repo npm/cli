@@ -30,6 +30,7 @@ The published versions of `dep1`
 are:
 
 ```json
+
 {
   "dist-tags": { "latest": "1.2.2" },
   "versions": [
@@ -51,6 +52,7 @@ are:
 If `app`'s `package.json` contains:
 
 ```json
+
 "dependencies": {
   "dep1": "^1.1.1"
 }
@@ -64,6 +66,7 @@ Then `npm update` will install `dep1@1.2.2`, because `1.2.2` is `latest` and
 However, if `app`'s `package.json` contains:
 
 ```json
+
 "dependencies": {
   "dep1": "~1.1.1"
 }
@@ -79,6 +82,7 @@ So the highest-sorting version that satisfies
 Suppose `app` has a caret dependency on a version below `1.0.0`, for example:
 
 ```json
+
 "dependencies": {
   "dep1": "^0.2.0"
 }
@@ -89,6 +93,7 @@ Suppose `app` has a caret dependency on a version below `1.0.0`, for example:
 If the dependence were on `^0.4.0`:
 
 ```json
+
 "dependencies": {
   "dep1": "^0.4.0"
 }
@@ -102,6 +107,7 @@ Then `npm update` will install `dep1@0.4.1`, because that is the highest-sorting
 Suppose your app now also has a dependency on `dep2`
 
 ```json
+
 {
   "name": "my-app",
   "dependencies": {
@@ -114,6 +120,7 @@ Suppose your app now also has a dependency on `dep2`
 and `dep2` itself depends on this limited range of `dep1`
 
 ```json
+
 {
 "name": "dep2",
   "dependencies": {

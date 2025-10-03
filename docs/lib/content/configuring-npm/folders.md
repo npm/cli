@@ -123,6 +123,7 @@ Since version 3, npm hoists dependencies by default.
 Consider this dependency graph:
 
 ```bash
+
 foo
 +-- blerg@1.2.5
 +-- bar@1.2.3
@@ -140,6 +141,7 @@ In this case, we might expect a folder structure like this
 (with all dependencies hoisted to the highest level possible):
 
 ```bash
+
 foo
 +-- node_modules
     +-- blerg (1.2.5) <---[A]

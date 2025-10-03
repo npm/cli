@@ -19,6 +19,7 @@ Positional arguments are `name@version-range` identifiers, which will limit the 
  For example, running `npm ls promzard` in npm's source tree will show:
 
 ```bash
+
 npm@@VERSION@ /path/to/npm
 └─┬ init-package-json@0.0.4
   └── promzard@0.1.5

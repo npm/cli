@@ -17,6 +17,7 @@ Unlike with [npm start](/commands/npm-start), there is no default script that wi
 ### Example
 
 ```json
+
 {
   "scripts": {
     "stop": "node bar.js"
@@ -25,6 +26,7 @@ Unlike with [npm start](/commands/npm-start), there is no default script that wi
 ```
 
 ```bash
+
 npm stop
 
 > npm@x.x.x stop

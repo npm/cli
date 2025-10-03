@@ -38,6 +38,7 @@ An easy way to do this is to run, for example,
 Make sure you have a package-lock and an up-to-date install:
 
 ```bash
+
 $ cd ./my/npm/project
 $ npm install
 added 154 packages in 10s
@@ -47,6 +48,7 @@ $ ls | grep package-lock
 Run `npm ci` in that project
 
 ```bash
+
 $ npm ci
 added 154 packages in 5s
 ```
@@ -54,6 +56,7 @@ added 154 packages in 5s
 Configure Travis CI to build using `npm ci` instead of `npm install`:
 
 ```bash
+
 # .travis.yml
 install:
 - npm ci

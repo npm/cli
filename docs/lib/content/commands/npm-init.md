@@ -53,6 +53,7 @@ Create a new React-based project using
 [`create-react-app`](https://npm.im/create-react-app):
 
 ```bash
+
 $ npm init react-app ./my-react-app
 ```
 
@@ -60,6 +61,7 @@ Create a new `esm`-compatible package using
 [`create-esm`](https://npm.im/create-esm):
 
 ```bash
+
 $ mkdir my-esm-lib && cd my-esm-lib
 $ npm init esm --yes
 ```
@@ -67,6 +69,7 @@ $ npm init esm --yes
 Generate a plain old package.json using legacy init:
 
 ```bash
+
 $ mkdir my-npm-pkg && cd my-npm-pkg
 $ git init
 $ npm init
@@ -75,11 +78,13 @@ $ npm init
 Generate it without having it ask any questions:
 
 ```bash
+
 $ npm init -y
 ```
 
 Set the private flag to `true` in package.json:
 ```bash
+
 $ npm init --init-private -y
 ```
 
@@ -98,6 +103,7 @@ Given a project with no workspaces, e.g:
 You may generate a new workspace using the legacy init:
 
 ```bash
+
 $ npm init -w packages/a
 ```
 
@@ -118,6 +124,7 @@ Similar to the previous example of creating a new React-based project using
 [`create-react-app`](https://npm.im/create-react-app), the following syntax will make sure to create the new react app as a nested **workspace** within your project and configure your `package.json` to recognize it as such:
 
 ```bash
+
 npm init -w packages/my-react-app react-app .
 ```
 

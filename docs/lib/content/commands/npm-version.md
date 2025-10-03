@@ -33,6 +33,7 @@ npm will use it as a commit message when creating a version commit.
 For example:
 
 ```bash
+
 npm version patch -m "Upgrade to %s for reasons"
 ```
 
@@ -42,6 +43,7 @@ GPG key set up in your git config for this to work properly.
 For example:
 
 ```bash
+
 $ npm config set sign-git-tag true
 $ npm version patch
 
@@ -82,6 +84,7 @@ Use it to clean up the file system or
 Take the following example:
 
 ```json
+
 {
   "scripts": {
     "preversion": "npm test",

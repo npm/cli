@@ -16,6 +16,7 @@ The synopsis above loads the completions into your current shell.
  Adding it to your ~/.bashrc or ~/.zshrc will make the completions available everywhere:
 
 ```bash
+
 npm completion >> ~/.bashrc
 npm completion >> ~/.zshrc
 ```

@@ -20,6 +20,7 @@ Workspaces are usually defined via the `workspaces` property of the
 [`package.json`](/configuring-npm/package-json#workspaces) file, e.g:
 
 ```json
+
 {
   "name": "my-workspaces-powered-project",
   "workspaces": [

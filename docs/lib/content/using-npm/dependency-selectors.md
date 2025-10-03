@@ -154,6 +154,7 @@ See examples below:
 #### `Objects`
 
 ```css
+
 /* return dependencies that have a `scripts.test` containing `"tap"` */
 *:attr(scripts, [test~=tap])
 ```
@@ -163,6 +164,7 @@ See examples below:
 Nested objects are expressed as sequential arguments to `:attr()`.
 
 ```css
+
 /* return dependencies that have a [testling config](https://ci.testling.com/guide/advanced_configuration) for opera browsers */
 *:attr(testling, browsers, [~=opera])
 ```
@@ -174,6 +176,7 @@ Nested objects are expressed as sequential arguments to `:attr()`.
 
 ##### Example of an `Array` Attribute Selection:
 ```css
+
 /* removes the distinction between properties & arrays */
 /* ie. we'd have to check the property & iterate to match selection */
 *:attr([keywords^=react])
@@ -182,6 +185,7 @@ Nested objects are expressed as sequential arguments to `:attr()`.
 
 ##### Example of an `Array` matching directly to a value:
 ```css
+
 /* return dependencies that have the exact keyword "react" */
 /* this is equivalent to `*:keywords([value="react"])` */
 *:attr([keywords=react])
@@ -189,6 +193,7 @@ Nested objects are expressed as sequential arguments to `:attr()`.
 
 ##### Example of an `Array` of `Object`s:
 ```css
+
 /* returns */
 *:attr(contributors, [email=ruyadorno@github.com])
 ```
@@ -217,11 +222,13 @@ Please note that currently `workspace` deps are always `prod` dependencies.
   - this method will return a filtered, flattened dependency Arborist `Node` list based on a valid query selector
 
 ```js
+
 const Arborist = require('@npmcli/arborist')
 const arb = new Arborist({})
 ```
 
 ```js
+
 // root-level
 arb.loadActual().then(async (tree) => {
   // query all production dependencies
@@ -231,6 +238,7 @@ arb.loadActual().then(async (tree) => {
 ```
 
 ```js
+
 // iterative
 arb.loadActual().then(async (tree) => {
   // query for the deduped version of react

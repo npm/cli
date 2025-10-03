@@ -15,6 +15,7 @@ When used in package names, scopes are preceded by an `@` symbol
 and followed by a slash, e.g.
 
 ```bash
+
 @somescope/somepackagename
 ```
 
@@ -38,12 +39,14 @@ A scoped package is installed by referencing it by name, preceded by an
 `@` symbol, in `npm install`:
 
 ```bash
+
 npm install @myorg/mypackage
 ```
 
 Or in `package.json`:
 
 ```json
+
 "dependencies": {
   "@myorg/mypackage": "^1.3.0"
 }
@@ -58,6 +61,7 @@ Because scoped packages are installed into a scope folder, you have to
 include the name of the scope when requiring them in your code, e.g.
 
 ```javascript
+
 require('@myorg/mypackage')
 ```
 
@@ -123,6 +127,7 @@ project.
 You can associate a scope with a registry at login, e.g.
 
 ```bash
+
 npm login --registry=http://reg.example.com --scope=@myco
 ```
 
@@ -132,6 +137,7 @@ host multiple scopes, but a scope only ever points to one registry.
 You can also associate a scope with a registry using `npm config`:
 
 ```bash
+
 npm config set @myco:registry=http://reg.example.com
 ```
 

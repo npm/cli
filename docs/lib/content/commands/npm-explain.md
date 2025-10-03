@@ -19,6 +19,7 @@ The package spec can also refer to a folder within `./node_modules`
 For example, running `npm explain glob` within npm's source tree will show:
 
 ```bash
+
 glob@7.1.6
 node_modules/glob
   glob@"^7.1.4" from the root project
@@ -36,6 +37,7 @@ To explain just the package residing at a specific folder, pass that as the argu
  This can be useful when trying to figure out exactly why a given dependency is being duplicated to satisfy conflicting version requirements within the project.
 
 ```bash
+
 $ npm explain node_modules/nyc/node_modules/find-up
 find-up@3.0.0 dev
 node_modules/nyc/node_modules/find-up

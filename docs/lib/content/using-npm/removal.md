@@ -9,6 +9,7 @@ description: Cleaning the Slate
 So sad to see you go.
 
 ```bash
+
 sudo npm uninstall npm -g
 ```
 
@@ -34,6 +35,7 @@ This assumes that you installed node and npm in the default place.
 To remove everything npm-related manually:
 
 ```bash
+
 rm -rf /usr/local/{lib/node{,/.npm,_modules},bin,share/man}/npm*
 ```
 
@@ -41,6 +43,7 @@ If you installed things *with* npm, then your best bet is to uninstall them with
  This can help find any symlinks that are lying around:
 
 ```bash
+
 ls -laF /usr/local/{lib/node{,/.npm},bin,share/man} | grep npm
 ```
 
@@ -48,6 +51,7 @@ Prior to version 0.3, npm used shim files for executables and node modules.
  To track those down, you can do the following:
 
 ```bash
+
 find /usr/local/{lib/node,bin} -exec grep -l npm \{\} \; ;
 ```
 

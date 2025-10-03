@@ -83,6 +83,7 @@ The URL to the project homepage.
 Example:
 
 ```json
+
 "homepage": "https://github.com/npm/example#readme"
 ```
 
@@ -94,6 +95,7 @@ These are helpful for people who encounter issues with your package.
 It should look like this:
 
 ```json
+
 {
   "bugs": {
     "url": "https://github.com/npm/example/issues",
@@ -116,6 +118,7 @@ If you're using a common license such as BSD-2-Clause or MIT, add a current
 SPDX license identifier for the license you're using, like this:
 
 ```json
+
 {
   "license" : "BSD-3-Clause"
 }
@@ -131,6 +134,7 @@ license expression syntax version 2.0
 string](https://spdx.dev/specifications/), like this:
 
 ```json
+
 {
   "license" : "(ISC OR GPL-3.0)"
 }
@@ -138,6 +142,7 @@ string](https://spdx.dev/specifications/), like this:
 If you are using a license that hasn't been assigned an SPDX identifier, or if you are using a custom license, use a string value like this one:
 
 ```json
+
 {
   "license" : "SEE LICENSE IN <filename>"
 }
@@ -147,6 +152,7 @@ Then include a file named `<filename>` at the top level of the package.
 Some old packages used license objects or a "licenses" property containing an array of license objects:
 
 ```json
+
 // Not valid metadata
 {
   "license" : {
@@ -174,12 +180,14 @@ Those styles are now deprecated.
 Instead, use SPDX expressions, like this:
 
 ```json
+
 {
   "license": "ISC"
 }
 ```
 
 ```json
+
 {
   "license": "(MIT OR Apache-2.0)"
 }
@@ -188,6 +196,7 @@ Instead, use SPDX expressions, like this:
 Finally, if you do not wish to grant others the right to use a private or unpublished package under any terms:
 
 ```json
+
 {
   "license": "UNLICENSED"
 }
@@ -204,6 +213,7 @@ The "author" is one person.
 like this:
 
 ```json
+
 {
   "name" : "Barney Rubble",
   "email" : "barney@npmjs.com",
@@ -214,6 +224,7 @@ like this:
 Or you can shorten that all into a single string, and npm will parse it for you:
 
 ```json
+
 {
   "author": "Barney Rubble <barney@npmjs.com> (http://barnyrubble.npmjs.com/)"
 }
@@ -228,6 +239,7 @@ npm also sets a top-level "maintainers" field with your npm user info.
 You can specify an object containing a URL that provides up-to-date information about ways to help fund development of your package, a string URL, or an array of objects and string URLs:
 
 ```json
+
 {
   "funding": {
     "type" : "individual",
@@ -237,6 +249,7 @@ You can specify an object containing a URL that provides up-to-date information 
 ```
 
 ```json
+
 {
   "funding": {
     "type" : "patreon",
@@ -246,12 +259,14 @@ You can specify an object containing a URL that provides up-to-date information 
 ```
 
 ```json
+
 {
   "funding": "http://npmjs.com/donate"
 }
 ```
 
 ```json
+
 {
   "funding": [
     {
@@ -370,6 +385,7 @@ When this package is installed as a dependency in another package, the file will
 For example, myapp could have this:
 
 ```json
+
 {
   "bin": {
     "myapp": "bin/cli.js"
@@ -384,6 +400,7 @@ If you have a single executable, and its name should be the name of the package,
  For example:
 
 ```json
+
 {
   "name": "my-program",
   "version": "1.2.5",
@@ -394,6 +411,7 @@ If you have a single executable, and its name should be the name of the package,
 would be the same as this:
 
 ```json
+
 {
   "name": "my-program",
   "version": "1.2.5",
@@ -418,6 +436,7 @@ If only a single file is provided, then it's installed such that it is the resul
  For example:
 
 ```json
+
 {
   "name": "foo",
   "version": "1.2.3",
@@ -433,6 +452,7 @@ If the filename doesn't start with the package name, then it's prefixed.
 So, this:
 
 ```json
+
 {
   "name": "foo",
   "version": "1.2.3",
@@ -451,6 +471,7 @@ Man files must end with a number, and optionally a `.gz` suffix if they are comp
  The number dictates which man section the file is installed into.
 
 ```json
+
 {
   "name": "foo",
   "version": "1.2.3",
@@ -495,6 +516,7 @@ command will be able to find you.
 Do it like this:
 
 ```json
+
 {
   "repository": {
     "type": "git",
@@ -510,6 +532,7 @@ The URL should be a publicly available (perhaps read-only) URL that can be hande
 For GitHub, GitHub gist, Bitbucket, or GitLab repositories you can use the same shortcut syntax you use for `npm install`:
 
 ```json
+
 {
   "repository": "npm/example",
 
@@ -526,6 +549,7 @@ For GitHub, GitHub gist, Bitbucket, or GitLab repositories you can use the same 
 If the `package.json` for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives:
 
 ```json
+
 {
   "repository": {
     "type": "git",
@@ -548,6 +572,7 @@ A "config" object can be used to set configuration parameters used in package sc
  For instance, if a package had the following:
 
 ```json
+
 {
   "name": "foo",
   "config": {
@@ -593,6 +618,7 @@ See [semver](https://github.com/npm/node-semver#versions) for more details about
 For example, these are all valid:
 
 ```json
+
 {
   "dependencies": {
     "foo": "1.0.0 - 2.9999.9999",
@@ -623,6 +649,7 @@ This tarball will be downloaded and installed locally to your package at install
 Git URLs are of the form:
 
 ```bash
+
 <protocol>://[<user>[:<password>]@]<hostname>[:<port>][:][/]<path>[#<commit-ish> | #semver:<semver>]
 ```
 
@@ -636,6 +663,7 @@ If neither `#<commit-ish>` or `#semver:<semver>` is specified, then the default 
 Examples:
 
 ```bash
+
 git+ssh://git@github.com:npm/cli.git#v1.0.27
 git+ssh://git@github.com:npm/cli#semver:^5.0
 git+https://isaacs@github.com/npm/cli.git
@@ -663,6 +691,7 @@ As of version 1.1.65, you can refer to GitHub URLs as just "foo":
  For example:
 
 ```json
+
 {
   "name": "foo",
   "version": "0.0.0",
@@ -680,6 +709,7 @@ As of version 2.0.0 you can provide a path to a local directory that contains a 
 Local paths can be saved using `npm install -S` or `npm install --save`, using any of these forms:
 
 ```bash
+
 ../foo/bar
 ~/foo/bar
 ./foo/bar
@@ -690,6 +720,7 @@ in which case they will be normalized to a relative path and added to your `pack
 For example:
 
 ```json
+
 {
   "name": "baz",
   "dependencies": {
@@ -719,6 +750,7 @@ CoffeeScript or other languages to JavaScript, use the `prepare` script to do th
 For example:
 
 ```json
+
 {
   "name": "@npm/ethopia-waza",
   "description": "a delightfully fruity coffee varietal",
@@ -744,6 +776,7 @@ This is usually referred to as a *plugin*. Notably, your module may be exposing 
 For example:
 
 ```json
+
 {
   "name": "@npm/tea-latte",
   "version": "1.3.5",
@@ -757,6 +790,7 @@ This ensures your package `@npm/tea-latte` can be installed *along* with the sec
 `npm install tea-latte` could possibly yield the following dependency graph:
 
 ```bash
+
 ├── @npm/tea-latte@1.3.5
 └── @npm/tea@2.2.0
 ```
@@ -784,6 +818,7 @@ This allows you to integrate and interact with a variety of host packages withou
 For example:
 
 ```json
+
 {
   "name": "@npm/tea-latte",
   "version": "1.3.5",
@@ -811,6 +846,7 @@ For example:
 If we define a package.json like this:
 
 ```json
+
 {
   "name": "@npm/awesome-web-framework",
   "version": "1.0.0",
@@ -843,6 +879,7 @@ It is still your program's responsibility to handle the lack of the dependency.
  For example, something like this:
 
 ```js
+
 try {
   var foo = require('@npm/foo')
   var fooVersion = require('@npm/foo/package.json').version
@@ -879,6 +916,7 @@ Published packages may dictate their resolutions by pinning dependencies or usin
 To make sure the package `@npm/foo` is always installed as version `1.0.0` no matter what version your dependencies rely on:
 
 ```json
+
 {
   "overrides": {
     "@npm/foo": "1.0.0"
@@ -892,6 +930,7 @@ This will cause
 also `1.0.0`:
 
 ```json
+
 {
   "overrides": {
     "@npm/foo": {
@@ -905,6 +944,7 @@ also `1.0.0`:
 To only override `@npm/foo` to be `1.0.0` when it's a child (or grandchild, or great grandchild, etc) of the package `@npm/bar`:
 
 ```json
+
 {
   "overrides": {
     "@npm/bar": {
@@ -918,6 +958,7 @@ Keys can be nested to any arbitrary length.
 To override `@npm/foo` only when it's a child of `@npm/bar` and only when `@npm/bar` is a child of `@npm/baz`:
 
 ```json
+
 {
   "overrides": {
     "@npm/baz": {
@@ -933,6 +974,7 @@ The key of an override can also include a version, or range of versions.
 To override `@npm/foo` to `1.0.0`, but only when it's a child of `@npm/bar@2.0.0`:
 
 ```json
+
 {
   "overrides": {
     "@npm/bar@2.0.0": {
@@ -946,6 +988,7 @@ You may not set an override for a package that you directly depend on unless bot
 To make this limitation easier to deal with, overrides may also be defined as a reference to a spec for a direct dependency by prefixing the name of the package you wish the version to match with a `$`.
 
 ```json
+
 {
   "dependencies": {
     "@npm/foo": "^1.0.0"
@@ -968,6 +1011,7 @@ To make this limitation easier to deal with, overrides may also be defined as a 
 You can specify the version of node that your stuff works on:
 
 ```json
+
 {
   "engines": {
     "node": ">=0.10.3 <15"
@@ -981,6 +1025,7 @@ You can also use the "engines" field to specify which versions of npm are capabl
  For example:
 
 ```json
+
 {
   "engines": {
     "npm": "~1.0.20"
@@ -996,6 +1041,7 @@ Unless the user has set the
 You can specify which operating systems your module will run on:
 
 ```json
+
 {
   "os": [
     "darwin",
@@ -1007,6 +1053,7 @@ You can specify which operating systems your module will run on:
 You can also block instead of allowing operating systems, just prepend the blocked os with a '!':
 
 ```json
+
 {
   "os": [
     "!win32"
@@ -1024,6 +1071,7 @@ If your code only runs on certain cpu architectures,
 you can specify which ones.
 
 ```json
+
 {
   "cpu": [
     "x64",
@@ -1035,6 +1083,7 @@ you can specify which ones.
 Like the `os` option, you can also block architectures:
 
 ```json
+
 {
   "cpu": [
     "!arm",
@@ -1051,6 +1100,7 @@ If your code only runs or builds in certain versions of libc, you can specify wh
  This field only applies if `os` is `linux`.
 
 ```json
+
 {
   "os": "linux",
   "libc": "glibc"
@@ -1077,6 +1127,7 @@ Here's an example of a project that will fail if the environment is not `node` a
 If you set `runtime.name` or `packageManager.name` to any other string, it will fail within the npm CLI.
 
 ```json
+
 {
   "devEngines": {
     "runtime": {
@@ -1117,6 +1168,7 @@ In the following example, all folders located inside the folder
 `./packages` will be treated as workspaces as long as they have valid `package.json` files inside them:
 
 ```json
+
 {
   "name": "workspace-example",
   "workspaces": [
