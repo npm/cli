@@ -7,7 +7,7 @@ description: Specifics of npm's package.json handling
 ### Description
 
 This document is all you need to know about what's required in your package.json file.
- It must be actual JSON, not just a JavaScript object literal.
+It must be actual JSON, not just a JavaScript object literal.
 
 A lot of the behavior described in this document is affected by the config settings described in [`config`](/using-npm/config).
 
@@ -15,7 +15,7 @@ A lot of the behavior described in this document is affected by the config setti
 
 If you plan to publish your package, the *most* important things in your package.json are the name and version fields as they will be required.
 The name and version together form an identifier that is assumed to be completely unique.
- Changes to the package should come along with changes to the version.
+Changes to the package should come along with changes to the version.
 If you don't plan to publish your package, the name and version fields are optional.
 
 The name is what your thing is called.
@@ -38,7 +38,7 @@ Some tips:
 
 * Don't use the same name as a core Node module.
 * Don't put "js" or "node" in the name.
- It's assumed that it's js, since
+It's assumed that it's js, since
   you're writing a package.json file, and you can specify the engine using
   the "[engines](#engines)" field.
  (See below.)
@@ -57,7 +57,7 @@ See
 
 If you plan to publish your package, the *most* important things in your package.json are the name and version fields as they will be required.
 The name and version together form an identifier that is assumed to be completely unique.
- Changes to the package should come along with changes to the version.
+Changes to the package should come along with changes to the version.
 If you don't plan to publish your package, the name and version fields are optional.
 
 Version must be parseable by
@@ -67,14 +67,14 @@ Version must be parseable by
 ### description
 
 Put a description in it.
- It's a string.
- This helps people discover your package, as it's listed in `npm search`.
+It's a string.
+This helps people discover your package, as it's listed in `npm search`.
 
 ### keywords
 
 Put keywords in it.
- It's an array of strings.
- This helps people discover your package as it's listed in `npm search`.
+It's an array of strings.
+This helps people discover your package as it's listed in `npm search`.
 
 ### homepage
 
@@ -208,7 +208,7 @@ Consider also setting `"private": true` to prevent accidental publication.
 
 The "author" is one person.
  "contributors" is an array of people.
- A
+A
 "person" is an object with a "name" field and optionally "url" and "email",
 like this:
 
@@ -334,7 +334,7 @@ Some files are always ignored by default:
 * `bun.lockb`
 
 Most of these ignored files can be included specifically if included in the `files` globs.
- Exceptions to this are:
+Exceptions to this are:
 
 * `.git`
 * `.npmrc`
@@ -354,7 +354,7 @@ For more details see the [node.js documentation on package entry points](https:/
 ### main
 
 The main field is a module ID that is the primary entry point to your program.
- That is, if your package is named `foo`, and a user installs it,
+That is, if your package is named `foo`, and a user installs it,
 and then does `require("foo")`, then your main module's exports object will be returned.
 
 This should be a module relative to the root of your package folder.
@@ -397,7 +397,7 @@ So, when you install myapp, in case of unix-like OS it'll create a symlink from 
 which runs the `cli.js` script.
 
 If you have a single executable, and its name should be the name of the package, then you can just supply it as a string.
- For example:
+For example:
 
 ```json
 
@@ -433,7 +433,7 @@ See [folders](/configuring-npm/folders#executables) for more info on executables
 Specify either a single file or an array of filenames to put in place for the `man` program to find.
 
 If only a single file is provided, then it's installed such that it is the result from `man <pkgname>`, regardless of its actual filename.
- For example:
+For example:
 
 ```json
 
@@ -468,7 +468,7 @@ So, this:
 will create files to do `man foo` and `man foo-bar`.
 
 Man files must end with a number, and optionally a `.gz` suffix if they are compressed.
- The number dictates which man section the file is installed into.
+The number dictates which man section the file is installed into.
 
 ```json
 
@@ -504,13 +504,13 @@ directory, use `directories.bin`.
 #### directories.man
 
 A folder that is full of man pages.
- Sugar to generate a "man" array by walking the folder.
+Sugar to generate a "man" array by walking the folder.
 
 ### repository
 
 Specify the place where your code lives.
 This is helpful for people who want to contribute.
- If the git repo is on GitHub, then the `npm repo`
+If the git repo is on GitHub, then the `npm repo`
 command will be able to find you.
 
 Do it like this:
@@ -526,8 +526,8 @@ Do it like this:
 ```
 
 The URL should be a publicly available (perhaps read-only) URL that can be handed directly to a VCS program without any modification.
- It should not be a URL to an html project page that you put in your browser.
- It's for computers.
+It should not be a URL to an html project page that you put in your browser.
+It's for computers.
 
 For GitHub, GitHub gist, Bitbucket, or GitLab repositories you can use the same shortcut syntax you use for `npm install`:
 
@@ -562,14 +562,14 @@ If the `package.json` for your package is not in the root directory (for example
 ### scripts
 
 The "scripts" property is a dictionary containing script commands that are run at various times in the lifecycle of your package.
- The key is the lifecycle event, and the value is the command to run at that point.
+The key is the lifecycle event, and the value is the command to run at that point.
 
 See [`scripts`](/using-npm/scripts) to find out more about writing package scripts.
 
 ### config
 
 A "config" object can be used to set configuration parameters used in package scripts that persist across upgrades.
- For instance, if a package had the following:
+For instance, if a package had the following:
 
 ```json
 
@@ -587,7 +587,7 @@ It could also have a "start" script that referenced the `npm_package_config_port
 
 Dependencies are specified in a simple object that maps a package name to a version range.
 The version range is a string which has one or more space-separated descriptors.
- Dependencies can also be identified with a tarball or git URL.
+Dependencies can also be identified with a tarball or git URL.
 
 **Please do not put test harnesses or transpilers or other "development"
 time tools in your `dependencies` object.**  See `devDependencies`, below.
@@ -688,7 +688,7 @@ If your git repository includes pre-built artifacts, you will likely want to mak
 
 As of version 1.1.65, you can refer to GitHub URLs as just "foo":
 "user/foo-project".  Just as with git URLs, a `commit-ish` suffix can be included.
- For example:
+For example:
 
 ```json
 
@@ -733,7 +733,7 @@ This feature is helpful for local offline development and creating tests that re
 but should not be used when publishing your package to the public registry.
 
 *note*: Packages linked by local path will not have their own dependencies installed when `npm install` is run.
- You must run `npm install` from inside the local path itself.
+You must run `npm install` from inside the local path itself.
 
 ### devDependencies
 
@@ -742,7 +742,7 @@ If someone is planning on downloading and using your module in their program, th
 In this case, it's best to map these additional items in a `devDependencies` object.
 
 These things will be installed when doing `npm link` or `npm install` from the root of a package, and can be managed like any other npm configuration param.
- See [`config`](/using-npm/config) for more on the topic.
+See [`config`](/using-npm/config) for more on the topic.
 
 For build steps that are not platform-specific, such as compiling
 CoffeeScript or other languages to JavaScript, use the `prepare` script to do this, and make the required package a devDependency.
@@ -796,7 +796,7 @@ This ensures your package `@npm/tea-latte` can be installed *along* with the sec
 ```
 
 In npm versions 3 through 6, `peerDependencies` were not automatically installed, and would raise a warning if an invalid version of the peer dependency was found in the tree.
- As of npm v7, peerDependencies _are_
+As of npm v7, peerDependencies _are_
 installed by default.
 
 Trying to install another plugin with a conflicting requirement may cause an error if the tree cannot be resolved correctly.
@@ -869,14 +869,14 @@ A value of `true` will bundle all dependencies, a value of `false` will bundle n
 ### optionalDependencies
 
 If a dependency can be used, but you would like npm to proceed if it cannot be found or fails to install, then you may put it in the `optionalDependencies` object.
- This is a map of package name to version or
+This is a map of package name to version or
 URL, just like the `dependencies` object.
- The difference is that build failures do not cause installation to fail.
- Running `npm install
+The difference is that build failures do not cause installation to fail.
+Running `npm install
 --omit=optional` will prevent these dependencies from being installed.
 
 It is still your program's responsibility to handle the lack of the dependency.
- For example, something like this:
+For example, something like this:
 
 ```js
 
@@ -1022,7 +1022,7 @@ You can specify the version of node that your stuff works on:
 And, like with dependencies, if you don't specify the version (or if you specify "\*" as the version), then any version of node will do.
 
 You can also use the "engines" field to specify which versions of npm are capable of properly installing your program.
- For example:
+For example:
 
 ```json
 
@@ -1097,7 +1097,7 @@ The host architecture is determined by `process.arch`
 ### libc
 
 If your code only runs or builds in certain versions of libc, you can specify which ones.
- This field only applies if `os` is `linux`.
+This field only applies if `os` is `linux`.
 
 ```json
 
@@ -1199,7 +1199,7 @@ npm will default some values based on package contents.
   If there is an `AUTHORS` file in the root of your package, npm will treat
   each line as a `Name <email> (url)` format, where email and url are
   optional.
- Lines which start with a `#` or are blank, will be ignored.
+Lines which start with a `#` or are blank, will be ignored.
 
 ### SEE ALSO
 

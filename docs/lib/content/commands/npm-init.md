@@ -31,7 +31,7 @@ You can also use `-y`/`--yes` to skip the questionnaire altogether.
 If you pass `--scope`, it will create a scoped package.
 
 *Note:* if a user already has the `create-<initializer>` package globally installed, that will be what `npm init` uses.
- If you want npm to use the latest version, or another specific version you must specify it:
+If you want npm to use the latest version, or another specific version you must specify it:
 
 * `npm init foo@latest` # fetches and runs the latest `create-foo` from
     the registry

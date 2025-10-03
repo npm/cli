@@ -11,14 +11,14 @@ description: Run arbitrary package scripts
 ### Description
 
 This runs an arbitrary command from a package's `"scripts"` object.
- If no
+If no
 `"command"` is provided, it will list the available scripts.
 
 `run[-script]` is used by the test, start, restart, and stop commands, but can be called directly, as well.
 When the scripts in the package are printed out, they're separated into lifecycle (test, start, restart) and directly-run scripts.
 
 Any positional arguments are passed to the specified script.
- Use `--` to pass `-`-prefixed flags and options which would otherwise be parsed by npm.
+Use `--` to pass `-`-prefixed flags and options which would otherwise be parsed by npm.
 
 For example:
 

@@ -21,14 +21,14 @@ npm is mostly a standalone tool, but it does have some basic requirements that m
 + The npm cache exists, and the package tarballs within it aren't corrupt.
 
 Without all of these working properly, npm may not work properly.
- Many issues are often attributable to things that are outside npm's code base,
+Many issues are often attributable to things that are outside npm's code base,
 so `npm doctor` confirms that the npm installation is in a good state.
 
 Also, in addition to this, there are also very many issue reports due to using old versions of npm.
 Since npm is constantly improving, running `npm@latest` is better than an old version.
 
 `npm doctor` verifies the following items in your environment, and if there are any recommended changes, it will display them.
- By default npm runs all of these checks.
+By default npm runs all of these checks.
 You can limit what checks are ran by specifying them as extra arguments.
 
 #### `Connecting to the registry`
@@ -62,7 +62,7 @@ But in general, the npm team recommends that most users run Node.js LTS.
 You may be installing from private package registries for your project or company.
 That's great! Others may be following tutorials or StackOverflow questions in an effort to troubleshoot problems you may be having.
 Sometimes, this may entail changing the registry you're pointing at.
- This part of `npm doctor` just lets you, and maybe whoever's helping you with support, know that you're not using the default registry.
+This part of `npm doctor` just lets you, and maybe whoever's helping you with support, know that you're not using the default registry.
 
 #### `Checking for git executable in PATH`
 

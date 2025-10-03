@@ -13,7 +13,7 @@ description: Display npm root
 Print the effective `node_modules` folder to standard out.
 
 Useful for using npm in shell scripts that do things with the `node_modules` folder.
- For example:
+For example:
 
 ```bash
 

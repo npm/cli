@@ -11,7 +11,7 @@ description: Restart a package
 ### Description
 
 This restarts a project.
- It is equivalent to running `npm run restart`.
+It is equivalent to running `npm run restart`.
 
 If the current project has a `"restart"` script specified in `package.json`, then the following scripts will be run:
 

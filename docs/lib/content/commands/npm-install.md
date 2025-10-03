@@ -79,7 +79,7 @@ If `<folder>` sits outside the root of your project,
 * `npm install <tarball file>`:
 
     Install a package that is sitting on the filesystem.
- Note: if you just
+Note: if you just
     want to link a dev directory into your npm root, you can do this more
     easily by using [`npm link`](/commands/npm-link).
 
@@ -103,7 +103,7 @@ npm strips one directory layer
 * `npm install <tarball url>`:
 
     Fetch the tarball url, and then install it.
- In order to distinguish between
+In order to distinguish between
     this and other options, the argument must start with "http://" or "https://"
 
     Example:
@@ -219,7 +219,7 @@ Aliasing works only on your
 * `npm install [<@scope>/]<name>@<version>`:
 
     Install the specified version of the package.
- This will fail if the
+This will fail if the
     version has not been published to the registry.
 
     Example:
@@ -417,7 +417,7 @@ npm install sax --force
 ### Configuration
 
 See the [`config`](/using-npm/config) help doc.
- Many of the configuration params have some effect on installation, since that's most of what npm does.
+Many of the configuration params have some effect on installation, since that's most of what npm does.
 
 These are some of the most common options related to installation.
 

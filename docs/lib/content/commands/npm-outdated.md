@@ -76,7 +76,7 @@ A few things to note:
   is outside the semver range.
 * Git dependencies will always be reinstalled, because of how they're
   specified.
- The installed committish might satisfy the dependency
+The installed committish might satisfy the dependency
   specifier (if it's something immutable, like a commit SHA), or it might
   not, so `npm outdated` and `npm update` have to fetch Git repos to check.
   This is why currently doing a reinstall of a Git dependency always forces

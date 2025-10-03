@@ -17,11 +17,11 @@ Also used to view info about entries in the `npm exec` (aka `npx`) cache folder.
 
 * add:
   Add the specified packages to the local cache.
- This command is primarily intended to be used internally by npm, but it can provide a way to add data to the local installation cache explicitly.
+This command is primarily intended to be used internally by npm, but it can provide a way to add data to the local installation cache explicitly.
 
 * clean:
   Delete a single entry or all entries out of the cache folder.
- Note that this is typically unnecessary, as npm's cache is self-healing and resistant to data corruption issues.
+Note that this is typically unnecessary, as npm's cache is self-healing and resistant to data corruption issues.
 
 * ls:
   List given entries or all entries in the local cache.

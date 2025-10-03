@@ -80,7 +80,7 @@ npm config edit
 ```
 
 Opens the config file in an editor.
- Use the `--global` flag to edit the global config.
+Use the `--global` flag to edit the global config.
 
 #### fix
 
@@ -90,7 +90,7 @@ npm config fix
 ```
 
 Attempts to repair invalid configuration items.
- Usually this means attaching authentication config (i.e.
+Usually this means attaching authentication config (i.e.
 `_auth`, `_authToken`) to the configured `registry`.
 
 ### Configuration

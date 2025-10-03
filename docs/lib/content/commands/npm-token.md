@@ -49,9 +49,9 @@ Created publish token a73c9572-f1b9-8983-983d-ba3ac3cc913d
 
 * `npm token revoke <token|id>`:
   Immediately removes an authentication token from the registry.
- You
+You
   will no longer be able to use it.
- This can accept both complete
+This can accept both complete
   tokens (such as those you get back from `npm token create`, and those
   found in your `.npmrc`), and ids as seen in the parseable or json
   output of `npm token list`.

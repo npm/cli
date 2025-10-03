@@ -115,11 +115,11 @@ Some examples:
 ##### `:vuln`
 
 The `:vuln` pseudo selector retrieves data from the registry and returns information about which if your dependencies has a known vulnerability.
- Only dependencies whose current version matches a vulnerability will be returned.
- For example if you have `semver@7.6.0` in your tree, a vulnerability for `semver` which affects versions `<=6.3.1` will not match.
+Only dependencies whose current version matches a vulnerability will be returned.
+For example if you have `semver@7.6.0` in your tree, a vulnerability for `semver` which affects versions `<=6.3.1` will not match.
 
 You can also filter results by certain attributes in advisories.
- Currently that includes `severity` and `cwe`.
+Currently that includes `severity` and `cwe`.
 Note that severity filtering is done per severity, it does not include severities "higher" or "lower" than the one specified.
 
 In addition to the filtering performed by the pseudo selector, info about each relevant advisory will be added to the `queryContext` attribute of each node under the `advisories` attribute.
@@ -214,7 +214,7 @@ a `prod` dependency may also be a `dev` dependency (in that it's also required b
 - `.workspace`
 
 Please note that currently `workspace` deps are always `prod` dependencies.
- Additionally the `.root` dependency is also considered a `prod` dependency.
+Additionally the `.root` dependency is also considered a `prod` dependency.
 
 ### Programmatic Usage
 

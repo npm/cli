@@ -47,7 +47,7 @@ All files are included by default, with the following exceptions:
 
 - Certain files that are relevant to package installation and distribution
   are always included.
- For example, `package.json`, `README.md`,
+For example, `package.json`, `README.md`,
   `LICENSE`, and so on.
 
 - If there is a "files" list in
@@ -59,7 +59,7 @@ All files are included by default, with the following exceptions:
 
 - If there is a `.gitignore` or `.npmignore` file, then ignored files in
   that and all child directories will be excluded from the package.
- If
+If
   _both_ files exist, then the `.gitignore` is ignored, and only the
   `.npmignore` is used.
 

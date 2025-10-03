@@ -127,7 +127,7 @@ It is run AFTER the changes have been applied and the `package.json` and `packag
 * `prepare`
 * `postprepare`
 
- These all run after the actual installation of modules into
+These all run after the actual installation of modules into
  `node_modules`, in order, with no internal actions happening in between
 
 #### [`npm diff`](/commands/npm-diff)
@@ -260,7 +260,7 @@ Package scripts run in an environment where many pieces of information are made 
 #### path
 
 If you depend on modules that define executable scripts, like test suites, then those executables will be added to the `PATH` for executing the scripts.
- So, if your package.json has this:
+So, if your package.json has this:
 
 ```json
 
@@ -314,12 +314,12 @@ For example, if your package.json contains this:
 
 then `scripts/install.js` will be called for the install and post-install 
 stages of the lifecycle.
- Since `scripts/install.js` is running for two 
+Since `scripts/install.js` is running for two 
 different phases, it would be wise in this case to look at the 
 `npm_lifecycle_event` environment variable.
 
 If you want to run a make command, you can do so.
- This works just fine:
+This works just fine:
 
 ```json
 
@@ -349,13 +349,13 @@ They just have to be some kind of executable file.
   If the failure is minor or only will prevent some optional features, then
   it's better to just print a warning and exit successfully.
 * Try not to use scripts to do what npm can do for you.
- Read through
+Read through
   [`package.json`](/configuring-npm/package-json) to see all the things that you can specify and enable
   by simply describing your package appropriately.
- In general, this
+In general, this
   will lead to a more robust and consistent state.
 * Inspect the env to determine where to put things.
- For instance, if
+For instance, if
   the `npm_config_binroot` environment variable is set to `/home/user/bin`, then
   don't try to install executables into `/usr/local/bin`.
 The user

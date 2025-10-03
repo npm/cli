@@ -7,7 +7,7 @@ description: Folder Structures Used by npm
 ### Description
 
 npm puts various things on your computer.
- That's its job.
+That's its job.
 
 This document will tell you what it puts where.
 
@@ -51,7 +51,7 @@ If you wish to `require()` a package, then install it locally.
 
 When in global mode, executables are linked into `{prefix}/bin` on Unix,
 or directly into `{prefix}` on Windows.
- Ensure that path is in your terminal's `PATH` environment to run them.
+Ensure that path is in your terminal's `PATH` environment to run them.
 
 When in local mode, executables are linked into
 `./node_modules/.bin` so that they can be made available to scripts run through npm.
@@ -76,11 +76,11 @@ This is controlled by the [`cache` config](/using-npm/config#cache) param.
 ### More Information
 
 When installing locally, npm first tries to find an appropriate `prefix` folder.
- This is so that `npm install foo@1.2.3` will install to the sensible root of your package, even if you happen to have `cd`ed into some other folder.
+This is so that `npm install foo@1.2.3` will install to the sensible root of your package, even if you happen to have `cd`ed into some other folder.
 
 Starting at the $PWD, npm will walk up the folder tree checking for a folder that contains either a `package.json` file, or a `node_modules`
 folder.
- If such a thing is found, then that is treated as the effective
+If such a thing is found, then that is treated as the effective
 "current directory" for the purpose of running npm commands.
  (This behavior is inspired by and similar to git's .git-folder seeking logic when running git commands in a working dir.)
 
@@ -102,7 +102,7 @@ but using the folders described above.
 #### Cycles, Conflicts, and Folder Parsimony
 
 Cycles are handled using the property of node's module system that it walks up the directories looking for `node_modules` folders.
- So, at every stage, if a package is already installed in an ancestor `node_modules`
+So, at every stage, if a package is already installed in an ancestor `node_modules`
 folder, then it is not installed at the current location.
 
 Consider the case above, where `foo -> bar -> baz`.
@@ -111,9 +111,9 @@ Imagine if, in addition to that, baz depended on bar, so you'd have:
 However, since the folder structure is: `foo/node_modules/bar/node_modules/baz`, there's no need to put another copy of bar into `.../baz/node_modules`, since when baz calls `require("bar")`, it will get the copy that is installed in `foo/node_modules/bar`.
 
 This shortcut is only used if the exact same version would be installed in multiple nested `node_modules` folders.
- It is still possible to have `a/node_modules/b/node_modules/a` if the two
+It is still possible to have `a/node_modules/b/node_modules/a` if the two
 "a" packages are different versions.
- However, without repeating the exact same package multiple times, an infinite regress will always be prevented.
+However, without repeating the exact same package multiple times, an infinite regress will always be prevented.
 
 Another optimization can be made by installing dependencies at the highest level possible, below the localized "target" folder (hoisting).
 Since version 3, npm hoists dependencies by default.
@@ -159,7 +159,7 @@ Even though the latest copy of blerg is 1.3.7, foo has a specific dependency on 
 it does not install another copy under [B].
 
 Bar [B] also has dependencies on baz and asdf.
- Because it depends on `baz@2.x`, it cannot re-use the `baz@1.2.3` installed in the parent `node_modules` folder [D],
+Because it depends on `baz@2.x`, it cannot re-use the `baz@1.2.3` installed in the parent `node_modules` folder [D],
 and must install its own copy [C]. In order to minimize duplication, npm hoists 
 dependencies to the top level by default, so asdf is installed under [A].
 
@@ -173,11 +173,11 @@ For a graphical breakdown of what is installed where, use `npm ls`.
 #### Publishing
 
 Upon publishing, npm will look in the `node_modules` folder.
- If any of the items there are not in the `bundleDependencies` array, then they will not be included in the package tarball.
+If any of the items there are not in the `bundleDependencies` array, then they will not be included in the package tarball.
 
 This allows a package maintainer to install all of their dependencies
 (and dev dependencies) locally, but only re-publish those items that cannot be found elsewhere.
- See [`package.json`](/configuring-npm/package-json) for more information.
+See [`package.json`](/configuring-npm/package-json) for more information.
 
 ### See also
 

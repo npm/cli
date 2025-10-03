@@ -14,7 +14,7 @@ Search the registry for packages matching the search terms.
 `npm search`
 performs a linear, incremental, lexically-ordered search through package metadata for all files in the registry.
 If your terminal has color support, it will further highlight the matches in the results.
- This can be disabled with the config item `color`
+This can be disabled with the config item `color`
 
 Additionally, using the `--searchopts` and `--searchexclude` options paired with more search terms will include and exclude further patterns.
 The main difference between `--searchopts` and the standard search terms is that the former does not highlight results in the output and you can use them more fine-grained filtering.

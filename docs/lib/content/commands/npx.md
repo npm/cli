@@ -14,18 +14,18 @@ This command allows you to run an arbitrary command from an npm package
 (either one installed locally, or fetched remotely), in a similar context as running it via `npm run`.
 
 Whatever packages are specified by the `--package` option will be provided in the `PATH` of the executed command, along with any locally installed package executables.
- The `--package` option may be specified multiple times, to execute the supplied command in an environment where all specified packages are available.
+The `--package` option may be specified multiple times, to execute the supplied command in an environment where all specified packages are available.
 
 If any requested packages are not present in the local project dependencies, then they are installed to a folder in the npm cache, which is added to the `PATH` environment variable in the executed process.
- A
+A
 prompt is printed (which can be suppressed by providing either `--yes` or
 `--no`).
 
 Package names provided without a specifier will be matched with whatever version exists in the local project.
- Package names with a specifier will only be considered a match if they have the exact same name and version as the local dependency.
+Package names with a specifier will only be considered a match if they have the exact same name and version as the local dependency.
 
 If no `-c` or `--call` option is provided, then the positional arguments are used to generate the command string.
- If no `--package` options are provided, then npm will attempt to determine the executable name from the package specifier provided as the first positional argument according to the following heuristic:
+If no `--package` options are provided, then npm will attempt to determine the executable name from the package specifier provided as the first positional argument according to the following heuristic:
 
 - If the package has a single entry in its `bin` field in `package.json`,
   or if all entries are aliases of the same command, then that command
@@ -42,7 +42,7 @@ To run a binary _other than_ the named binary, specify one or more
 ### `npx` vs `npm exec`
 
 When run via the `npx` binary, all flags and options *must* be set prior to any positional arguments.
- When run via `npm exec`, a double-hyphen `--`
+When run via `npm exec`, a double-hyphen `--`
 flag can be used to suppress npm's parsing of switches and options that should be sent to the executed command.
 
 For example:
@@ -67,14 +67,14 @@ $ npm exec foo@latest bar --package=@npmcli/foo
 
 In this case, npm will parse the `--package` option first, resolving the
 `@npmcli/foo` package.
- Then, it will execute the following command in that context:
+Then, it will execute the following command in that context:
 
 ```
 $ foo@latest bar
 ```
 
 The double-hyphen character is recommended to explicitly tell npm to stop parsing command line options and switches.
- The following command would thus be equivalent to the `npx` command above:
+The following command would thus be equivalent to the `npx` command above:
 
 ```
 $ npm exec -- foo@latest bar --package=@npmcli/foo
@@ -116,16 +116,16 @@ This resulted in some shifts in its functionality:
 - Any `npm` config value may be provided.
 - To prevent security and user-experience problems from mistyping package
   names, `npx` prompts before installing anything.
- Suppress this
+Suppress this
   prompt with the `-y` or `--yes` option.
 - The `--no-install` option is deprecated, and will be converted to `--no`.
 - Shell fallback functionality is removed, as it is not advisable.
 - The `-p` argument is a shorthand for `--parseable` in npm, but shorthand
   for `--package` in npx.
- This is maintained, but only for the `npx`
+This is maintained, but only for the `npx`
   executable.
 - The `--ignore-existing` option is removed.
- Locally installed bins are
+Locally installed bins are
   always present in the executed process `PATH`.
 - The `--npm` option is removed.
  `npx` will always use the `npm` it ships
