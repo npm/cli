@@ -29,25 +29,35 @@ The only exceptions:
 
 The resulting hierarchy of configs:
 
-- CLI switches.  eg `--some-key=some-value` on the command line.  These are
+- CLI switches.
+eg `--some-key=some-value` on the command line.
+These are
   parsed by [`nopt`](http://npm.im/nopt), which is not a great choice, but
   it's the one that npm has used forever, and changing it will be
   difficult.
-- Environment variables.  eg `npm_config_some_key=some_value` in the
-  environment.  There is no way at this time to modify this prefix.
-- INI-formatted project configs.  eg `some-key = some-value` in the
+- Environment variables.
+eg `npm_config_some_key=some_value` in the
+  environment.
+There is no way at this time to modify this prefix.
+- INI-formatted project configs.
+eg `some-key = some-value` in the
   `localPrefix` folder (ie, the `cwd`, or its nearest parent that contains
   either a `node_modules` folder or `package.json` file.)
-- INI-formatted userconfig file.  eg `some-key = some-value` in `~/.npmrc`.
+- INI-formatted userconfig file.
+eg `some-key = some-value` in `~/.npmrc`.
   The `userconfig` config value can be overridden by the `cli`, `env`, or
   `project` configs to change this value.
-- INI-formatted globalconfig file.  eg `some-key = some-value` in
+- INI-formatted globalconfig file.
+eg `some-key = some-value` in
   the `globalPrefix` folder, which is inferred by looking at the location
   of the node executable, or the `prefix` setting in the `cli`, `env`,
-  `project`, or `userconfig`.  The `globalconfig` value at any of those
+  `project`, or `userconfig`.
+The `globalconfig` value at any of those
   levels can override this.
-- INI-formatted builtin config file.  eg `some-key = some-value` in
-  `/usr/local/lib/node_modules/npm/npmrc`.  This is not configurable, and
+- INI-formatted builtin config file.
+eg `some-key = some-value` in
+  `/usr/local/lib/node_modules/npm/npmrc`.
+This is not configurable, and
   is determined by looking in the `npmPath` folder.
 - Default values (passed in by npm when it loads this module).
 
@@ -110,7 +120,8 @@ configuration validation.
 
 Options:
 
-- `types` Types of all known config values.  Note that some are effectively
+- `types` Types of all known config values.
+Note that some are effectively
   given semantic value in the config loading process itself.
 - `shorthands` An object mapping a shorthand value to an array of CLI
   arguments that replace it.
@@ -120,30 +131,37 @@ Options:
   file.
 - `cwd` Optional, defaults to `process.cwd()`, used for inferring the
   `localPrefix` and loading the `project` config.
-- `platform` Optional, defaults to `process.platform`.  Used when inferring
+- `platform` Optional, defaults to `process.platform`.
+Used when inferring
   the `globalPrefix` from the `execPath`, since this is done differently on
   Windows.
-- `execPath` Optional, defaults to `process.execPath`.  Used to infer the
+- `execPath` Optional, defaults to `process.execPath`.
+Used to infer the
   `globalPrefix`.
-- `env` Optional, defaults to `process.env`.  Source of the environment
+- `env` Optional, defaults to `process.env`.
+Source of the environment
   variables for configuration.
-- `argv` Optional, defaults to `process.argv`.  Source of the CLI options
+- `argv` Optional, defaults to `process.argv`.
+Source of the CLI options
   used for configuration.
 
 Returns a `config` object, which is not yet loaded.
 
 Fields:
 
-- `config.globalPrefix` The prefix for `global` operations.  Set by the
+- `config.globalPrefix` The prefix for `global` operations.
+Set by the
   `prefix` config value, or defaults based on the location of the
   `execPath` option.
-- `config.localPrefix` The prefix for `local` operations.  Set by the
+- `config.localPrefix` The prefix for `local` operations.
+Set by the
   `prefix` config value on the CLI only, or defaults to either the `cwd` or
   its nearest ancestor containing a `node_modules` folder or `package.json`
   file.
 - `config.sources` A read-only `Map` of the file (or a comment, if no file
   found, or relevant) to the config level loaded from that source.
-- `config.data` A `Map` of config level to `ConfigData` objects.  These
+- `config.data` A `Map` of config level to `ConfigData` objects.
+These
   objects should not be modified directly under any circumstances.
   - `source` The source where this data was loaded from.
   - `raw` The raw data used to generate this config data, as it was parsed
@@ -153,7 +171,8 @@ Fields:
   - `loadError` Any errors encountered that prevented the loading of this
     config data.
 - `config.list` A list sorted in priority of all the config data objects in
-  the prototype chain.  `config.list[0]` is the `cli` level,
+  the prototype chain.
+`config.list[0]` is the `cli` level,
   `config.list[1]` is the `env` level, and so on.
 - `cwd` The `cwd` param
 - `env` The `env` param
@@ -223,7 +242,8 @@ Note that it's usually enough (and more efficient) to just check
 ### `config.repair(problems)`
 
 Accept an optional array of problems (as thrown by `config.validate()`) and
-perform the necessary steps to resolve them. If no problems are provided,
+perform the necessary steps to resolve them.
+If no problems are provided,
 this method will call `config.validate()` internally to retrieve them.
 
 Note that you must `await config.save('user')` in order to persist the changes.
@@ -253,5 +273,6 @@ This method can be used for avoiding or tweaking default values, e.g:
 
 ### `config.save(where)`
 
-Save the config file specified by the `where` param.  Must be one of
+Save the config file specified by the `where` param.
+Must be one of
 `project`, `user`, `global`, `builtin`.

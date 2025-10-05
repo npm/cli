@@ -373,7 +373,10 @@
 
 ### ⚠️ BREAKING CHANGES
 
-* unscoped auth configuration is no longer automatically scoped to a registry. the `validate` method is no longer called automatically. the `_auth` configuration key is no longer split into `username` and `_password`. errors will be thrown by `validate()` if problems are found.
+* unscoped auth configuration is no longer automatically scoped to a registry.
+the `validate` method is no longer called automatically.
+the `_auth` configuration key is no longer split into `username` and `_password`.
+errors will be thrown by `validate()` if problems are found.
 * `@npmcli/config` is now compatible with the following semver range for node: `^14.17.0 || ^16.13.0 || >=18.0.0`
 
 ### Features
