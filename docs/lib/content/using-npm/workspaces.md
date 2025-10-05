@@ -16,8 +16,7 @@ We also refer to these packages being auto-symlinked during `npm install` as a s
 
 ### Defining workspaces
 
-Workspaces are usually defined via the `workspaces` property of the
-[`package.json`](/configuring-npm/package-json#workspaces) file, e.g:
+Workspaces are usually defined via the `workspaces` property of the [`package.json`](/configuring-npm/package-json#workspaces) file, e.g:
 
 ```json
 {
@@ -55,16 +54,14 @@ Below is a post `npm install` example, given that same previous example structur
 
 ### Getting started with workspaces
 
-You may automate the required steps to define a new workspace using
-[npm init](/commands/npm-init).
+You may automate the required steps to define a new workspace using [npm init](/commands/npm-init).
 For example in a project that already has a `package.json` defined you can run:
 
 ```
 npm init -w ./packages/a
 ```
 
-This command will create the missing folders and a new `package.json`
-file (if needed) while also making sure to properly configure the
+This command will create the missing folders and a new `package.json` file (if needed) while also making sure to properly configure the
 `"workspaces"` property of your root project `package.json`.
 
 ### Adding dependencies to a workspace
@@ -94,8 +91,7 @@ Note: other installing commands such as `uninstall`, `ci`, etc will also respect
 ### Using workspaces
 
 Given the [specifics of how Node.js handles module resolution](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html#modules_all_together) it's possible to consume any defined workspace by its declared `package.json` `name`.
-Continuing from the example defined above, let's also create a Node.js script that will require the workspace `a`
-example module, e.g:
+Continuing from the example defined above, let's also create a Node.js script that will require the workspace `a` example module, e.g:
 
 ```
 // ./packages/a/index.js
@@ -111,14 +107,12 @@ When running it with:
 `node lib/index.js`
 
 This demonstrates how the nature of `node_modules` resolution allows for
-**workspaces** to enable a portable workflow for requiring each **workspace**
-in such a way that is also easy to [publish](/commands/npm-publish) these nested workspaces to be consumed elsewhere.
+**workspaces** to enable a portable workflow for requiring each **workspace** in such a way that is also easy to [publish](/commands/npm-publish) these nested workspaces to be consumed elsewhere.
 
 ### Running commands in the context of workspaces
 
 You can use the `workspace` configuration option to run commands in the context of a configured workspace.
-Additionally, if your current directory is in a workspace, the `workspace`
-configuration is implicitly set, and `prefix` is set to the root workspace.
+Additionally, if your current directory is in a workspace, the `workspace` configuration is implicitly set, and `prefix` is set to the root workspace.
 
 Following is a quick example on how to use the `npm run` command in the context of nested workspaces.
 For a project containing multiple workspaces, e.g:
@@ -160,8 +154,7 @@ Or run the command for each workspace within the 'packages' folder:
 npm run test --workspace=packages
 ```
 
-It's also possible to use the `workspaces` (plural) configuration option to enable the same behavior but running that command in the context of **all**
-configured workspaces.
+It's also possible to use the `workspaces` (plural) configuration option to enable the same behavior but running that command in the context of **all** configured workspaces.
 e.g:
 
 ```

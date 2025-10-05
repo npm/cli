@@ -18,8 +18,7 @@ It works on [version ranges](https://semver.npmjs.com/) as well as specific vers
 npm deprecate my-thing@"< 0.2.3" "critical bug fixed in v0.2.3"
 ```
 
-SemVer ranges passed to this command are interpreted such that they *do*
-include prerelease versions.
+SemVer ranges passed to this command are interpreted such that they *do* include prerelease versions.
 For example:
 
 ```bash
@@ -31,8 +30,7 @@ In this case, a version `my-thing@1.0.0-beta.0` will also be deprecated.
 You must be the package owner to deprecate something.
 See the `owner` and `adduser` help topics.
 
-To un-deprecate a package, specify an empty string (`""`) for the `message`
-argument.
+To un-deprecate a package, specify an empty string (`""`) for the `message` argument.
 Note that you must use double quotes with no space between them to format an empty string.
 
 ### Configuration

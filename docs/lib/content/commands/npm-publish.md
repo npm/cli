@@ -13,21 +13,16 @@ description: Publish a package
 Publishes a package to the registry so that it can be installed by name.
 
 By default npm will publish to the public registry.
-This can be overridden by specifying a different default registry or using a
-[`scope`](/using-npm/scope) in the name, combined with a scope-configured registry (see
-[`package.json`](/configuring-npm/package-json)).
+This can be overridden by specifying a different default registry or using a [`scope`](/using-npm/scope) in the name, combined with a scope-configured registry (see [`package.json`](/configuring-npm/package-json)).
 
 
 A `package` is interpreted the same way as other commands (like `npm install`) and can be:
 
-* a) a folder containing a program described by a
-  [`package.json`](/configuring-npm/package-json) file
+* a) a folder containing a program described by a [`package.json`](/configuring-npm/package-json) file
 * b) a gzipped tarball containing (a)
 * c) a url that resolves to (b)
-* d) a `<name>@<version>` that is published on the registry (see
-  [`registry`](/using-npm/registry)) with (c)
-* e) a `<name>@<tag>` (see [`npm dist-tag`](/commands/npm-dist-tag)) that
-  points to (d)
+* d) a `<name>@<version>` that is published on the registry (see [`registry`](/using-npm/registry)) with (c)
+* e) a `<name>@<tag>` (see [`npm dist-tag`](/commands/npm-dist-tag)) that points to (d)
 * f) a `<name>` that has a "latest" tag satisfying (e)
 * g) a `<git remote url>` that resolves to (a)
 
@@ -45,31 +40,20 @@ Similar to `--dry-run` see [`npm pack`](/commands/npm-pack), which figures out t
 To see what will be included in your package, run `npm pack --dry-run`.
 All files are included by default, with the following exceptions:
 
-- Certain files that are relevant to package installation and distribution
-  are always included.
+- Certain files that are relevant to package installation and distribution are always included.
 For example, `package.json`, `README.md`,
   `LICENSE`, and so on.
 
-- If there is a "files" list in
-  [`package.json`](/configuring-npm/package-json), then only the files
-  specified will be included.
- (If directories are specified, then they
-  will be walked recursively and their contents included, subject to the
-  same ignore rules.)
+- If there is a "files" list in [`package.json`](/configuring-npm/package-json), then only the files specified will be included.
+ (If directories are specified, then they will be walked recursively and their contents included, subject to the same ignore rules.)
 
-- If there is a `.gitignore` or `.npmignore` file, then ignored files in
-  that and all child directories will be excluded from the package.
-If
-  _both_ files exist, then the `.gitignore` is ignored, and only the
+- If there is a `.gitignore` or `.npmignore` file, then ignored files in that and all child directories will be excluded from the package.
+  If _both_ files exist, then the `.gitignore` is ignored, and only the
   `.npmignore` is used.
 
-  `.npmignore` files follow the [same pattern
-  rules](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring)
-  as `.gitignore` files
+  `.npmignore` files follow the [same pattern rules](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring) as `.gitignore` files
 
-- If the file matches certain patterns, then it will _never_ be included,
-  unless explicitly added to the `"files"` list in `package.json`, or
-  un-ignored with a `!` rule in a `.npmignore` or `.gitignore` file.
+- If the file matches certain patterns, then it will _never_ be included, unless explicitly added to the `"files"` list in `package.json`, or un-ignored with a `!` rule in a `.npmignore` or `.gitignore` file.
 
 - Symbolic links are never included in npm packages.
 

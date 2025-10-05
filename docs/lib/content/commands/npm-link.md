@@ -23,12 +23,10 @@ Next, in some other location, `npm link package-name` will create a symbolic lin
 Note that `package-name` is taken from `package.json`, _not_ from the directory name.
 
 The package name can be optionally prefixed with a scope.
-See
-[`scope`](/using-npm/scope).
+See [`scope`](/using-npm/scope).
 The scope must be preceded by an @-symbol and followed by a slash.
 
-When creating tarballs for `npm publish`, the linked packages are
-"snapshotted" to their current state by resolving the symbolic links, if they are included in `bundleDependencies`.
+When creating tarballs for `npm publish`, the linked packages are "snapshotted" to their current state by resolving the symbolic links, if they are included in `bundleDependencies`.
 
 For example:
 
@@ -71,10 +69,8 @@ npm link @myorg/privatepackage
 
 ### Caveat
 
-Note that package dependencies linked in this way are _not_ saved to `package.json` by default, on the assumption that the intention is to have
-a link stand in for a regular non-link dependency.
-Otherwise, for example,
-if you depend on `redis@^3.0.1`, and ran `npm link redis`, it would replace the `^3.0.1` dependency with `file:../path/to/node-redis`, which you probably don't want!  Additionally, other users or developers on your project would run into issues if they do not have their folders set up exactly the same as yours.
+Note that package dependencies linked in this way are _not_ saved to `package.json` by default, on the assumption that the intention is to have a link stand in for a regular non-link dependency.
+Otherwise, for example, if you depend on `redis@^3.0.1`, and ran `npm link redis`, it would replace the `^3.0.1` dependency with `file:../path/to/node-redis`, which you probably don't want!  Additionally, other users or developers on your project would run into issues if they do not have their folders set up exactly the same as yours.
 
 If you are adding a _new_ dependency as a link, you should add it to the relevant metadata by running `npm install <dep> --package-lock-only`.
 

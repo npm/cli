@@ -15,9 +15,7 @@ It's strongly discouraged for library authors to publish this file, since that w
 
 If both `package-lock.json` and `npm-shrinkwrap.json` are present in a package root, `npm-shrinkwrap.json` will be preferred over the `package-lock.json` file.
 
-For full details and description of the `npm-shrinkwrap.json` file format,
-refer to the manual page for
-[package-lock.json](/configuring-npm/package-lock-json).
+For full details and description of the `npm-shrinkwrap.json` file format, refer to the manual page for [package-lock.json](/configuring-npm/package-lock-json).
 
 ### See also
 

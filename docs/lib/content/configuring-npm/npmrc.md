@@ -6,13 +6,11 @@ description: The npm config files
 
 ### Description
 
-npm gets its config settings from the command line, environment variables,
-and `npmrc` files.
+npm gets its config settings from the command line, environment variables, and `npmrc` files.
 
 The `npm config` command can be used to update and edit the contents of the user and global npmrc files.
 
-For a list of available configuration options, see
-[config](/using-npm/config).
+For a list of available configuration options, see [config](/using-npm/config).
 
 ### Files
 
@@ -84,14 +82,12 @@ Environment variables can be replaced as above.
 `path/to/npm/itself/npmrc`
 
 This is an unchangeable "builtin" configuration file that npm keeps consistent across updates.
-Set fields in here using the `./configure`
-script that comes with npm.
+Set fields in here using the `./configure` script that comes with npm.
 This is primarily for distribution maintainers to override default configs in a standard and consistent manner.
 
 ### Auth related configuration
 
-The settings `_auth`, `_authToken`, `username`, `_password`, `certfile`,
-and `keyfile` must all be scoped to a specific registry.
+The settings `_auth`, `_authToken`, `username`, `_password`, `certfile`, and `keyfile` must all be scoped to a specific registry.
 This ensures that `npm` will never send credentials to the wrong host.
 
 The full list is:
@@ -105,8 +101,7 @@ The full list is:
  - `keyfile` (path to key file)
 
 In order to scope these values, they must be prefixed by a URI fragment.
-If the credential is meant for any request to a registry on a single host,
-the scope may look like `//registry.npmjs.org/:`.
+If the credential is meant for any request to a registry on a single host, the scope may look like `//registry.npmjs.org/:`.
 If it must be scoped to a specific path on the host that path may also be provided, such as
 `//my-custom-registry.org/unique/path:`.
 

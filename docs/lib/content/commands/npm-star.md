@@ -11,8 +11,7 @@ description: Mark your favorite packages
 ### Description
 
 "Starring" a package means that you have some interest in it.
-It's
-a vaguely positive way to show that you care.
+It's a vaguely positive way to show that you care.
 
 It's a boolean thing.
 Starring repeatedly has no additional effect.

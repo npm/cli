@@ -22,8 +22,7 @@ Further, if you have an `npm-shrinkwrap.json` or `package-lock.json`, npm will u
 `--save` or `-S` will tell npm to remove the package from your `package.json`, `npm-shrinkwrap.json`, and `package-lock.json` files.
 This is the default, but you may need to use this if you have for instance `save=false` in your `npmrc` file
 
-In global mode (ie, with `-g` or `--global` appended to the command),
-it uninstalls the current package context as a global package.
+In global mode (ie, with `-g` or `--global` appended to the command), it uninstalls the current package context as a global package.
 `--no-save` is ignored in this case.
 
 Scope is optional and follows the usual rules for [`scope`](/using-npm/scope).

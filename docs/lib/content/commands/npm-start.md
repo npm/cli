@@ -10,8 +10,7 @@ description: Start a package
 
 ### Description
 
-This runs a predefined command specified in the `"start"` property of
-a package's `"scripts"` object.
+This runs a predefined command specified in the `"start"` property of a package's `"scripts"` object.
 
 If the `"scripts"` object does not define a  `"start"` property, npm will run `node server.js`.
 

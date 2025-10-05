@@ -11,8 +11,7 @@ description: Generate a Software Bill of Materials (SBOM)
 ### Description
 
 The `npm sbom` command generates a Software Bill of Materials (SBOM) listing the dependencies for the current project.
-SBOMs can be generated in either
-[SPDX](https://spdx.dev/) or [CycloneDX](https://cyclonedx.org/) format.
+SBOMs can be generated in either [SPDX](https://spdx.dev/) or [CycloneDX](https://cyclonedx.org/) format.
 
 ### Example CycloneDX SBOM
 

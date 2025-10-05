@@ -92,8 +92,7 @@ It should look like this:
 ```
 
 You can specify either one or both values.
-If you want to provide only a
-URL, you can specify the value for "bugs" as a simple string instead of an object.
+If you want to provide only a URL, you can specify the value for "bugs" as a simple string instead of an object.
 
 If a URL is provided, it will be used by the `npm bugs` command.
 
@@ -101,8 +100,7 @@ If a URL is provided, it will be used by the `npm bugs` command.
 
 You should specify a license for your package so that people know how they are permitted to use it, and any restrictions you're placing on it.
 
-If you're using a common license such as BSD-2-Clause or MIT, add a current
-SPDX license identifier for the license you're using, like this:
+If you're using a common license such as BSD-2-Clause or MIT, add a current SPDX license identifier for the license you're using, like this:
 
 ```json
 {
@@ -338,8 +336,7 @@ This is helpful to hint users that it might rely on primitives that aren't avail
 A lot of packages have one or more executable files that they'd like to install into the PATH. npm makes this pretty easy (in fact, it uses this feature to install the "npm" executable.)
 
 To use this, supply a `bin` field in your package.json which is a map of command name to local file name.
-When this package is installed globally, that file will be either linked inside the global bins directory or a cmd (Windows Command File) will be created which executes the specified file in the `bin` field, so it is available to run by `name` or `name.cmd` (on
-Windows PowerShell).
+When this package is installed globally, that file will be either linked inside the global bins directory or a cmd (Windows Command File) will be created which executes the specified file in the `bin` field, so it is available to run by `name` or `name.cmd` (on Windows PowerShell).
 When this package is installed as a dependency in another package, the file will be linked where it will be available to that package either directly by `npm exec` or by name in other scripts when invoking them via `npm run`.
 
 
@@ -681,8 +678,7 @@ In this case, it's best to map these additional items in a `devDependencies` obj
 These things will be installed when doing `npm link` or `npm install` from the root of a package, and can be managed like any other npm configuration param.
 See [`config`](/using-npm/config) for more on the topic.
 
-For build steps that are not platform-specific, such as compiling
-CoffeeScript or other languages to JavaScript, use the `prepare` script to do this, and make the required package a devDependency.
+For build steps that are not platform-specific, such as compiling CoffeeScript or other languages to JavaScript, use the `prepare` script to do this, and make the required package a devDependency.
 
 For example:
 
@@ -797,8 +793,7 @@ A value of `true` will bundle all dependencies, a value of `false` will bundle n
 ### optionalDependencies
 
 If a dependency can be used, but you would like npm to proceed if it cannot be found or fails to install, then you may put it in the `optionalDependencies` object.
-This is a map of package name to version or
-URL, just like the `dependencies` object.
+This is a map of package name to version or URL, just like the `dependencies` object.
 The difference is that build failures do not cause installation to fail.
 Running `npm install --omit=optional` will prevent these dependencies from being installed.
 

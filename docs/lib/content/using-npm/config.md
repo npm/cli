@@ -7,8 +7,7 @@ description: More than you probably want to know about npm configuration
 ### Description
 
 This article details npm configuration in general.
-To learn about the `config` command, 
-see [`npm config`](/commands/npm-config).
+To learn about the `config` command, see [`npm config`](/commands/npm-config).
 
 npm gets its configuration values from the following sources, sorted by priority:
 
@@ -18,33 +17,27 @@ Putting `--foo bar` on the command line sets the `foo` configuration parameter t
 A `--` argument tells the cli parser to stop reading flags.
 Using `--flag` without specifying any value will set the value to `true`.
 
-Example: `--flag1 --flag2` will set both configuration parameters to `true`, while `--flag1 --flag2 bar` will set `flag1` to `true`,
-and `flag2` to `bar`.
+Example: `--flag1 --flag2` will set both configuration parameters to `true`, while `--flag1 --flag2 bar` will set `flag1` to `true`, and `flag2` to `bar`.
 Finally, `--flag1 --flag2 -- bar` will set both configuration parameters to `true`, and the `bar` is taken as a command argument.
 
 #### Environment Variables
 
 Any environment variables that start with `npm_config_` will be interpreted as a configuration parameter.
-For example, putting `npm_config_foo=bar` in your environment will set the `foo`
-configuration parameter to `bar`.
+For example, putting `npm_config_foo=bar` in your environment will set the `foo` configuration parameter to `bar`.
 Any environment configurations that are not given a value will be given the value of `true`.
 Config values are case-insensitive, so `NPM_CONFIG_FOO=bar` will work the same.
-However, please note that inside [`scripts`](/using-npm/scripts)
-npm will set its own environment variables and Node will prefer those lowercase versions over any uppercase ones that you might set.
+However, please note that inside [`scripts`](/using-npm/scripts) npm will set its own environment variables and Node will prefer those lowercase versions over any uppercase ones that you might set.
 For details see [this issue](https://github.com/npm/npm/issues/14528).
 
-Notice that you need to use underscores instead of dashes, so `--allow-same-version`
-would become `npm_config_allow_same_version=true`.
+Notice that you need to use underscores instead of dashes, so `--allow-same-version` would become `npm_config_allow_same_version=true`.
 
 #### npmrc Files
 
 The four relevant files are:
 
 * per-project configuration file (`/path/to/my/project/.npmrc`)
-* per-user configuration file (defaults to `$HOME/.npmrc`; configurable via CLI
-  option `--userconfig` or environment variable `$NPM_CONFIG_USERCONFIG`)
-* global configuration file (defaults to `$PREFIX/etc/npmrc`; configurable via
-  CLI option `--globalconfig` or environment variable `$NPM_CONFIG_GLOBALCONFIG`)
+* per-user configuration file (defaults to `$HOME/.npmrc`; configurable via CLI option `--userconfig` or environment variable `$NPM_CONFIG_USERCONFIG`)
+* global configuration file (defaults to `$PREFIX/etc/npmrc`; configurable via CLI option `--globalconfig` or environment variable `$NPM_CONFIG_GLOBALCONFIG`)
 * npm's built-in configuration file (`/path/to/npm/npmrc`)
 
 See [npmrc](/configuring-npm/npmrc) for more details.

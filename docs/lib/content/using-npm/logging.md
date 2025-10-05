@@ -16,8 +16,7 @@ The default location of the logs directory is a directory named `_logs` inside t
 This can be changed with the `logs-dir` config option.
 
 For example, if you wanted to write all your logs to the current working directory, you could run: `npm install --logs-dir=.`.
-This is especially helpful in debugging a specific `npm` issue as you can run
-a command multiple times with different config values and then diff all the log files.
+This is especially helpful in debugging a specific `npm` issue as you can run a command multiple times with different config values and then diff all the log files.
 
 Log files will be removed from the `logs-dir` when the number of log files exceeds `logs-max`, with the oldest logs being deleted first.
 

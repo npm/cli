@@ -145,8 +145,7 @@ If remediations do not require changes to the dependency ranges, then all vulner
 The `npm audit` command will exit with a 0 exit code if no vulnerabilities were found.
 The `npm audit fix` command will exit with 0 exit code if no vulnerabilities are found _or_ if the remediation is able to successfully fix all vulnerabilities.
 
-If vulnerabilities were found the exit code will depend on the
-[`audit-level` config](/using-npm/config#audit-level).
+If vulnerabilities were found the exit code will depend on the [`audit-level` config](/using-npm/config#audit-level).
 
 ### Examples
 

@@ -10,8 +10,7 @@ description: Update packages
 
 ### Description
 
-This command will update all the packages listed to the latest version
-(specified by the [`tag` config](/using-npm/config#tag)), respecting the semver constraints of both your package and its dependencies (if they also require the same package).
+This command will update all the packages listed to the latest version (specified by the [`tag` config](/using-npm/config#tag)), respecting the semver constraints of both your package and its dependencies (if they also require the same package).
 
 It will also install missing packages.
 
@@ -20,14 +19,12 @@ If the `-g` flag is specified, this command will update globally installed packa
 If no package name is specified, all packages in the specified location (global or local) will be updated.
 
 Note that by default `npm update` will not update the semver values of direct dependencies in your project `package.json`.
-If you want to also update values in `package.json` you can run: `npm update --save` (or add the `save=true` option to a [configuration file](/configuring-npm/npmrc)
-to make that the default behavior).
+If you want to also update values in `package.json` you can run: `npm update --save` (or add the `save=true` option to a [configuration file](/configuring-npm/npmrc) to make that the default behavior).
 
 ### Example
 
 For the examples below, assume that the current package is `app` and it depends on dependencies, `dep1` (`dep2`, .. etc.).
-The published versions of `dep1`
-are:
+The published versions of `dep1` are:
 
 ```json
 {

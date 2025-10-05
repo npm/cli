@@ -86,8 +86,7 @@ npm view npm contributors
 ```
 
 If a version range is provided, then data will be printed for every matching version of the package.
-This will show which version of `jsdom`
-was required by each matching version of `yui3`:
+This will show which version of `jsdom` was required by each matching version of `yui3`:
 
 ```bash
 npm view yui3@'>0.5.4' dependencies.jsdom

@@ -19,12 +19,10 @@ Or, if that fails, please proceed to more severe uninstalling methods.
 Usually, the above instructions are sufficient.
 That will remove npm, but leave behind anything you've installed.
 
-If that doesn't work, or if you require more drastic measures,
-continue reading.
+If that doesn't work, or if you require more drastic measures, continue reading.
 
 Note that this is only necessary for globally-installed packages.
-Local installs are completely contained within a project's `node_modules`
-folder.
+Local installs are completely contained within a project's `node_modules` folder.
 Delete that folder, and everything is gone unless a package's install script is particularly ill-behaved.
 
 This assumes that you installed node and npm in the default place.

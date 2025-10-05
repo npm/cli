@@ -33,31 +33,27 @@ If you pass `--scope`, it will create a scoped package.
 *Note:* if a user already has the `create-<initializer>` package globally installed, that will be what `npm init` uses.
 If you want npm to use the latest version, or another specific version you must specify it:
 
-* `npm init foo@latest` # fetches and runs the latest `create-foo` from
-    the registry
+* `npm init foo@latest` # fetches and runs the latest `create-foo` from the registry
 * `npm init foo@1.2.3` #  runs `create-foo@1.2.3` specifically
 
 #### Forwarding additional options
 
 Any additional options will be passed directly to the command, so `npm init foo -- --hello` will map to `npm exec -- create-foo --hello`.
 
-To better illustrate how options are forwarded, here's a more evolved example showing options passed to both the **npm cli** and a create package,
-both following commands are equivalent:
+To better illustrate how options are forwarded, here's a more evolved example showing options passed to both the **npm cli** and a create package, both following commands are equivalent:
 
 - `npm init foo -y --registry=<url> -- --hello -a`
 - `npm exec -y --registry=<url> -- create-foo --hello -a`
 
 ### Examples
 
-Create a new React-based project using
-[`create-react-app`](https://npm.im/create-react-app):
+Create a new React-based project using [`create-react-app`](https://npm.im/create-react-app):
 
 ```bash
 $ npm init react-app ./my-react-app
 ```
 
-Create a new `esm`-compatible package using
-[`create-esm`](https://npm.im/create-esm):
+Create a new `esm`-compatible package using [`create-esm`](https://npm.im/create-esm):
 
 ```bash
 $ mkdir my-esm-lib && cd my-esm-lib
@@ -111,11 +107,9 @@ That will generate a new folder and `package.json` file, while also updating you
        `-- package.json
 ```
 
-The workspaces init also supports the `npm init <initializer> -w <dir>`
-syntax, following the same set of rules explained earlier in the initial
+The workspaces init also supports the `npm init <initializer> -w <dir>` syntax, following the same set of rules explained earlier in the initial
 **Description** section of this page.
-Similar to the previous example of creating a new React-based project using
-[`create-react-app`](https://npm.im/create-react-app), the following syntax will make sure to create the new react app as a nested **workspace** within your project and configure your `package.json` to recognize it as such:
+Similar to the previous example of creating a new React-based project using [`create-react-app`](https://npm.im/create-react-app), the following syntax will make sure to create the new react app as a nested **workspace** within your project and configure your `package.json` to recognize it as such:
 
 ```bash
 npm init -w packages/my-react-app react-app .

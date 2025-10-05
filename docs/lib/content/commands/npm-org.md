@@ -49,8 +49,7 @@ $ npm org ls my-org @mx-santos
 ### Description
 
 You can use the `npm org` commands to manage and view users of an organization.
-It supports adding and removing users, changing their roles,
-listing them, and finding specific ones and their roles.
+It supports adding and removing users, changing their roles, listing them, and finding specific ones and their roles.
 
 ### Configuration
 

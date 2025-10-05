@@ -10,8 +10,7 @@ description: Clean install a project
 
 ### Description
 
-This command is similar to [`npm install`](/commands/npm-install), except it's meant to be used in automated environments such as test platforms,
-continuous integration, and deployment -- or any situation where you want to make sure you're doing a clean install of your dependencies.
+This command is similar to [`npm install`](/commands/npm-install), except it's meant to be used in automated environments such as test platforms, continuous integration, and deployment -- or any situation where you want to make sure you're doing a clean install of your dependencies.
 
 The main differences between using `npm install` and `npm ci` are:
 
@@ -19,15 +18,12 @@ The main differences between using `npm install` and `npm ci` are:
   `npm-shrinkwrap.json`.
 * If dependencies in the package lock do not match those in `package.json`,
   `npm ci` will exit with an error, instead of updating the package lock.
-* `npm ci` can only install entire projects at a time: individual
-  dependencies cannot be added with this command.
-* If a `node_modules` is already present, it will be automatically removed
-  before `npm ci` begins its install.
+* `npm ci` can only install entire projects at a time: individual dependencies cannot be added with this command.
+* If a `node_modules` is already present, it will be automatically removed before `npm ci` begins its install.
 * It will never write to `package.json` or any of the package-locks:
   installs are essentially frozen.
 
-NOTE: If you create your `package-lock.json` file by running `npm install`
-with flags that can affect the shape of your dependency tree, such as
+NOTE: If you create your `package-lock.json` file by running `npm install` with flags that can affect the shape of your dependency tree, such as
 `--legacy-peer-deps` or `--install-links`, you _must_ provide the same flags to `npm ci` or you are likely to encounter errors.
 An easy way to do this is to run, for example,
 `npm config set legacy-peer-deps=true --location=project` and commit the

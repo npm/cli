@@ -47,8 +47,7 @@ Use `npm ls` to show everything you've installed.
 If a package lists a dependency using a git URL, npm will install that dependency using the [`git`](https://github.com/git-guides/install-git) command and will generate an error if it is not installed.
 
 If one of the packages npm tries to install is a native node module and requires compiling of C++ Code, npm will use [node-gyp](https://github.com/nodejs/node-gyp) for that task.
-For a Unix system, [node-gyp](https://github.com/nodejs/node-gyp) needs Python, make and a buildchain like GCC. On Windows,
-Python and Microsoft Visual Studio C++ are needed.
+For a Unix system, [node-gyp](https://github.com/nodejs/node-gyp) needs Python, make and a buildchain like GCC. On Windows, Python and Microsoft Visual Studio C++ are needed.
 For more information visit [the node-gyp repository](https://github.com/nodejs/node-gyp) and the [node-gyp Wiki](https://github.com/nodejs/node-gyp/wiki).
 
 ### Directories

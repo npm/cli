@@ -24,8 +24,7 @@ To reset your password, go to <https://www.npmjs.com/forgot>
 To change your email address, go to <https://www.npmjs.com/email-edit>
 
 You may use this command multiple times with the same user account to authorize on a new machine.
-When authenticating on a new machine,
-the username, password and email address must all match with your existing record.
+When authenticating on a new machine, the username, password and email address must all match with your existing record.
 
 ### Configuration
 

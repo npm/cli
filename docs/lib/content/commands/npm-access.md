@@ -15,8 +15,7 @@ Used to set access controls on private packages.
 For all of the subcommands, `npm access` will perform actions on the packages in the current working directory if no package name is passed to the subcommand.
 
 * grant / revoke:
-  Add or remove the ability of users and teams to have read-only or read-write
-  access to a package.
+  Add or remove the ability of users and teams to have read-only or read-write access to a package.
 
 ### Details
 
@@ -30,8 +29,7 @@ You must have privileges to set the access of a package:
 
 * You are an owner of an unscoped or scoped package.
 * You are a member of the team that owns a scope.
-* You have been given read-write privileges for a package, either as a member
-  of a team or directly as an owner.
+* You have been given read-write privileges for a package, either as a member of a team or directly as an owner.
 
 If you have two-factor authentication enabled then you'll be prompted to provide a second factor, or may use the `--otp=...` option to specify it on the command line.
 

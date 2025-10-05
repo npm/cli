@@ -8,8 +8,7 @@ description: How npm handles the "scripts" field
 
 The `"scripts"` property of your `package.json` file supports a number of built-in scripts and their preset life cycle events as well as arbitrary scripts.
 These all can be executed by running `npm run <stage>`.
-*Pre* and *post*
-commands with matching names will be run for those as well (e.g.
+*Pre* and *post* commands with matching names will be run for those as well (e.g.
 `premyscript`,
 `myscript`, `postmyscript`).
 Scripts from dependencies can be run with `npm explore <pkg> -- npm run <stage>`.
@@ -42,23 +41,18 @@ These scripts happen in addition to the `pre<event>`, `post<event>`, and
 
 **prepare** (since `npm@4.0.0`)
 * Runs BEFORE the package is packed, i.e.
-during `npm publish`
-    and `npm pack`
+during `npm publish` and `npm pack`
 * Runs on local `npm install` without any arguments
 * Runs AFTER `prepublish`, but BEFORE `prepublishOnly`
 * Runs for a package if it's being installed as a link through `npm install <folder>`
 
-* NOTE: If a package being installed through git contains a `prepare`
- script, its `dependencies` and `devDependencies` will be installed, and
- the prepare script will be run, before the package is packaged and
- installed.
+* NOTE: If a package being installed through git contains a `prepare` script, its `dependencies` and `devDependencies` will be installed, and the prepare script will be run, before the package is packaged and installed.
 
 * As of `npm@7` these scripts run in the background.
   To see the output, run with: `--foreground-scripts`.
 
 **prepublish** (DEPRECATED)
-* Does not run during `npm publish`, but does run during `npm ci`
-  and `npm install`.
+* Does not run during `npm publish`, but does run during `npm ci` and `npm install`.
 See below for more info.
 
 **prepublishOnly**
@@ -98,12 +92,9 @@ This includes tasks such as:
 The advantage of doing these things at `prepublish` time is that they can be done once, in a single place, thus reducing complexity and variability.
 Additionally, this means that:
 
-* You can depend on `coffee-script` as a `devDependency`, and thus
-  your users don't need to have it installed.
-* You don't need to include minifiers in your package, reducing
-  the size for your users.
-* You don't need to rely on your users having `curl` or `wget` or
-  other system tools on the target machines.
+* You can depend on `coffee-script` as a `devDependency`, and thus your users don't need to have it installed.
+* You don't need to include minifiers in your package, reducing the size for your users.
+* You don't need to rely on your users having `curl` or `wget` or other system tools on the target machines.
 
 #### Dependencies
 
@@ -278,8 +269,7 @@ then you could run `npm start` to execute the `bar` script, which is exported in
 #### package.json vars
 
 The package.json fields are tacked onto the `npm_package_` prefix.
-So,
-for instance, if you had `{"name":"foo", "version":"1.2.5"}` in your package.json file, then your package scripts would have the `npm_package_name` environment variable set to "foo", and the `npm_package_version` set to "1.2.5".  You can access these variables in your code with `process.env.npm_package_name` and `process.env.npm_package_version`, and so on for other fields.
+So, for instance, if you had `{"name":"foo", "version":"1.2.5"}` in your package.json file, then your package scripts would have the `npm_package_name` environment variable set to "foo", and the `npm_package_version` set to "1.2.5".  You can access these variables in your code with `process.env.npm_package_name` and `process.env.npm_package_version`, and so on for other fields.
 
 See [`package.json`](/configuring-npm/package-json) for more on package configs.
 
@@ -308,10 +298,8 @@ For example, if your package.json contains this:
 }
 ```
 
-then `scripts/install.js` will be called for the install and post-install 
-stages of the lifecycle.
-Since `scripts/install.js` is running for two 
-different phases, it would be wise in this case to look at the 
+then `scripts/install.js` will be called for the install and post-install stages of the lifecycle.
+Since `scripts/install.js` is running for two different phases, it would be wise in this case to look at the 
 `npm_lifecycle_event` environment variable.
 
 If you want to run a make command, you can do so.
@@ -334,39 +322,25 @@ You can control which shell is used by setting the [`script-shell`](/using-npm/c
 
 If the script exits with a code other than 0, then this will abort the process.
 
-Note that these script files don't have to be Node.js or even
-JavaScript programs.
+Note that these script files don't have to be Node.js or even JavaScript programs.
 They just have to be some kind of executable file.
 
 ### Best Practices
 
 * Don't exit with a non-zero error code unless you *really* mean it.
-  If the failure is minor or only will prevent some optional features, then
-  it's better to just print a warning and exit successfully.
+  If the failure is minor or only will prevent some optional features, then it's better to just print a warning and exit successfully.
 * Try not to use scripts to do what npm can do for you.
-Read through
-  [`package.json`](/configuring-npm/package-json) to see all the things that you can specify and enable
-  by simply describing your package appropriately.
-In general, this
-  will lead to a more robust and consistent state.
+Read through [`package.json`](/configuring-npm/package-json) to see all the things that you can specify and enable by simply describing your package appropriately.
+In general, this will lead to a more robust and consistent state.
 * Inspect the env to determine where to put things.
-For instance, if
-  the `npm_config_binroot` environment variable is set to `/home/user/bin`, then
-  don't try to install executables into `/usr/local/bin`.
-The user
-  probably set it up that way for a reason.
-* Don't prefix your script commands with "sudo".  If root permissions
-  are required for some reason, then it'll fail with that error, and
-  the user will sudo the npm command in question.
+For instance, if the `npm_config_binroot` environment variable is set to `/home/user/bin`, then don't try to install executables into `/usr/local/bin`.
+The user probably set it up that way for a reason.
+* Don't prefix your script commands with "sudo".  If root permissions are required for some reason, then it'll fail with that error, and the user will sudo the npm command in question.
 * Don't use `install`.
-Use a `.gyp` file for compilation, and `prepare`
-  for anything else.
-You should almost never have to explicitly set a
-  preinstall or install script.
-If you are doing this, please consider if
-  there is another option.
-The only valid use of `install` or `preinstall`
-  scripts is for compilation which must be done on the target architecture.
+Use a `.gyp` file for compilation, and `prepare` for anything else.
+You should almost never have to explicitly set a preinstall or install script.
+If you are doing this, please consider if there is another option.
+The only valid use of `install` or `preinstall` scripts is for compilation which must be done on the target architecture.
 
 ### See Also
 

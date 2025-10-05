@@ -57,8 +57,7 @@ npm config list
 
 Show all the config settings.
 Use `-l` to also show defaults.
-Use `--json`
-to show the settings in json format.
+Use `--json` to show the settings in json format.
 
 #### delete
 
