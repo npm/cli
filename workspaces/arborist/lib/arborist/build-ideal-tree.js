@@ -504,6 +504,49 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       tree.package = tree.package
     }
 
+    // Fix for https://github.com/npm/cli/issues/8492
+    // When packages are explicitly added, check if any have peer dependencies
+    // on other packages being added. If so, update the specs to satisfy those
+    // peer dependencies to avoid order-dependent resolution.
+    if (add && add.length > 1) {
+      // Build a map of package name -> spec for packages being added to this tree
+      const addedSpecs = new Map()
+      for (const spec of this[_resolvedAdd]) {
+        if (spec.tree === tree) {
+          addedSpecs.set(spec.name, spec)
+        }
+      }
+
+      // Find peer dependency constraints between packages being added
+      let hasConstraints = false
+      for (const edge of tree.edgesOut.values()) {
+        // Check if this is a peer dep from one added package to another
+        if (edge.peer && addedSpecs.has(edge.from.name) && addedSpecs.has(edge.name)) {
+          const spec = addedSpecs.get(edge.name)
+          // Apply constraint if package was added without a specific version
+          if (spec.type === 'tag' && spec.fetchSpec === 'latest' &&
+              edge.spec && edge.spec !== '*') {
+            // Find the dependency in package.json and update it
+            for (const depType of ['dependencies', 'devDependencies', 'optionalDependencies']) {
+              if (tree.package[depType]?.[edge.name]) {
+                tree.package[depType][edge.name] = edge.spec
+                hasConstraints = true
+                debug(() => {
+                  log.silly('idealTree', `Applying peer constraint ${edge.spec} to ${edge.name} from ${edge.from.name}`)
+                })
+                break
+              }
+            }
+          }
+        }
+      }
+
+      // Refresh edges if we updated any constraints
+      if (hasConstraints) {
+        tree.package = tree.package
+      }
+    }
+
     for (const spec of this[_resolvedAdd]) {
       if (spec.tree === tree) {
         this.#explicitRequests.add(tree.edgesOut.get(spec.name))

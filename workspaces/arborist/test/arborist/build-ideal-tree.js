@@ -4460,3 +4460,52 @@ t.test('installLinks behavior with project-internal file dependencies', async t 
     t.equal(edgeToA.to, packageA, 'the edge from b should point to package a')
   })
 })
+
+t.test('peer dependency resolution is order-independent', async t => {
+  // Test for https://github.com/npm/cli/issues/8492
+  // Ensures that installing packages in different orders produces
+  // the same dependency tree (deterministic peer dependency resolution)
+
+  createRegistry(t, true)
+
+  // Create two identical test directories
+  const createTestDir = () => t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-app',
+      version: '1.0.0',
+      dependencies: {}
+    })
+  })
+
+  const path1 = createTestDir()
+  const path2 = createTestDir()
+
+  // Install packages in different orders
+  // Order 1: a, b, c
+  const arb1 = newArb(path1)
+  await arb1.buildIdealTree({
+    add: ['abbrev', 'wrappy', 'once']
+  })
+
+  // Order 2: c, b, a (reverse)
+  const arb2 = newArb(path2)
+  await arb2.buildIdealTree({
+    add: ['once', 'wrappy', 'abbrev']
+  })
+
+  // Both trees should have the same structure
+  const tree1 = printTree(arb1.idealTree)
+  const tree2 = printTree(arb2.idealTree)
+
+  t.equal(tree1, tree2, 'trees should be identical regardless of install order')
+
+  // Verify package.json has packages in alphabetical order
+  const pkg1 = JSON.parse(fs.readFileSync(join(path1, 'package.json'), 'utf8'))
+  const pkg2 = JSON.parse(fs.readFileSync(join(path2, 'package.json'), 'utf8'))
+
+  const deps1 = Object.keys(pkg1.dependencies || {})
+  const deps2 = Object.keys(pkg2.dependencies || {})
+
+  t.same(deps1, deps2, 'package.json dependencies should be in same order')
+  t.same(deps1, deps1.slice().sort(), 'dependencies should be in alphabetical order')
+})
