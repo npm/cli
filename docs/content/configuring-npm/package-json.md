@@ -328,7 +328,7 @@ If `main` is not set it defaults to `index.js` in the packages root folder.
 ### browser
 
 If your module is meant to be used client-side the browser field should be
-used instead of the main field. This is helpful to hint users that it might
+used instead of the `main` field. This is helpful to hint users that it might
 rely on primitives that aren't available in Node.js modules. (e.g.
 `window`)
 
