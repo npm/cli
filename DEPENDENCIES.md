@@ -1,3 +1,5 @@
+<!-- This file is automatically added by `scripts/dependency-graph.js`. Do not edit. -->
+
 # npm dependencies
 
 ## `github.com/npm/` only
