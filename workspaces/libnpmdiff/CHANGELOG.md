@@ -409,7 +409,8 @@
 
 ### ⚠️ BREAKING CHANGES
 
-* `npm pack` now follows a strict order of operations when applying ignore rules. If a files array is present in the package.json, then rules in .gitignore and .npmignore files from the root will be ignored.
+* `npm pack` now follows a strict order of operations when applying ignore rules.
+If a files array is present in the package.json, then rules in .gitignore and .npmignore files from the root will be ignored.
 
 ### Features
 
