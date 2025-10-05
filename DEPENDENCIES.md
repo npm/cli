@@ -757,8 +757,7 @@ graph LR;
 ## npm dependency hierarchy
 
 These are the groups of dependencies in npm that depend on each other.
-Each group depends on packages lower down the chain, nothing depends on
-packages higher up the chain.
+Each group depends on packages lower down the chain, nothing depends on packages higher up the chain.
 
  - npm
  - @npmcli/mock-registry, libnpmdiff, libnpmexec, libnpmfund, libnpmpack
