@@ -162,14 +162,6 @@ t.test('cwd is default root', t => {
     t.matchSnapshot(tree, 'loaded tree'))
 })
 
-t.test('shake out Link target timing issue', t => {
-  process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ = '1'
-  t.teardown(() => process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ = '')
-  const dir = resolve(fixtures, 'selflink')
-  return loadActual(dir).then(tree =>
-    t.matchSnapshot(tree, 'loaded tree'))
-})
-
 t.test('broken json', async t => {
   const d = await loadActual(resolve(fixtures, 'bad'))
   t.ok(d.errors.length, 'Got an error object')

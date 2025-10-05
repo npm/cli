@@ -246,6 +246,7 @@ Object {
     "peerdep": "",
   },
   "integrity": "sha512-peerpeerpeer",
+  "peer": true,
   "resolved": "https://peer.com/peer.tgz",
   "version": "1.2.3",
 }
@@ -254,6 +255,7 @@ Object {
 exports[`test/shrinkwrap.js TAP construct metadata from node and package data > a peer meta-dep 1`] = `
 Object {
   "integrity": "sha512-peerdeppeerdep",
+  "peer": true,
   "resolved": "https://peer.com/peerdep.tgz",
   "version": "1.2.3",
 }
@@ -367,11 +369,13 @@ Object {
         "peerdep": "",
       },
       "integrity": "sha512-peerpeerpeer",
+      "peer": true,
       "resolved": "https://peer.com/peer.tgz",
       "version": "1.2.3",
     },
     "node_modules/peer/node_modules/peerdep": Object {
       "integrity": "sha512-peerdeppeerdep",
+      "peer": true,
       "resolved": "https://peer.com/peerdep.tgz",
       "version": "1.2.3",
     },
@@ -1335,7 +1339,6 @@ Object {
       "dependencies": Object {
         "foo": "99.x",
       },
-      "peer": true,
       "version": "1.2.3",
     },
     "../../root/node_modules/foo": Object {
@@ -2040,7 +2043,6 @@ Object {
       "dependencies": Object {
         "foo": "99.x",
       },
-      "peer": true,
       "version": "1.2.3",
     },
     "../root/node_modules/foo": Object {
@@ -2620,7 +2622,6 @@ Object {
       "dependencies": Object {
         "foo": "99.x",
       },
-      "peer": true,
       "version": "1.2.3",
     },
     "node_modules/foo": Object {
@@ -2644,81 +2645,6 @@ Object {
 `
 
 exports[`test/shrinkwrap.js TAP loadActual tests selflink > shrinkwrap data 1`] = `
-Object {
-  "lockfileVersion": 3,
-  "name": "selflink",
-  "packages": Object {
-    "": Object {
-      "dependencies": Object {
-        "@scope/x": "",
-        "@scope/y": "",
-        "foo": "",
-      },
-      "name": "selflink",
-      "version": "1.2.3",
-    },
-    "node_modules/@scope/y": Object {
-      "dependencies": Object {
-        "foo": "*",
-      },
-      "version": "1.2.3",
-    },
-    "node_modules/@scope/z": Object {
-      "dependencies": Object {
-        "glob": "4",
-      },
-      "extraneous": true,
-      "version": "1.2.3",
-    },
-    "node_modules/@scope/z/node_modules/glob": Object {
-      "link": true,
-      "resolved": "node_modules/foo/node_modules/glob",
-    },
-    "node_modules/foo": Object {
-      "dependencies": Object {
-        "glob": "4",
-        "selflink": "*",
-      },
-      "version": "1.2.3",
-    },
-    "node_modules/foo/node_modules/glob": Object {
-      "version": "4.0.5",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/graceful-fs": Object {
-      "extraneous": true,
-      "version": "3.0.2",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/inherits": Object {
-      "extraneous": true,
-      "version": "2.0.1",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/minimatch": Object {
-      "extraneous": true,
-      "version": "1.0.0",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/lru-cache": Object {
-      "extraneous": true,
-      "version": "2.5.0",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/sigmund": Object {
-      "extraneous": true,
-      "version": "1.0.0",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/once": Object {
-      "extraneous": true,
-      "version": "1.3.0",
-    },
-    "node_modules/foo/node_modules/selflink": Object {
-      "link": true,
-      "resolved": "",
-    },
-  },
-  "requires": true,
-  "version": "1.2.3",
-}
-`
-
-exports[`test/shrinkwrap.js TAP loadActual tests selflink > shrinkwrap data 2`] = `
 Object {
   "lockfileVersion": 3,
   "name": "selflink",
@@ -5887,7 +5813,6 @@ Object {
       "inBundle": true,
       "integrity": "sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==",
       "license": "MIT",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/react/-/react-16.12.0.tgz",
       "version": "16.12.0",
     },
@@ -6716,7 +6641,6 @@ Object {
       },
       "integrity": "sha512-ml7V7JfiN2Xwvcer+XAf2csGO1bPBdRbFCkYBczNZggrBZ9c7G3riSUeJmqEU5uOtXNPMhE3n+R4FA/3YOAWOQ==",
       "license": "Apache-2.0",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/typescript/-/typescript-3.7.2.tgz",
       "version": "3.7.2",
     },

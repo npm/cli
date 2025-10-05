@@ -22,7 +22,7 @@ const roots = [
   'root',
   // This test flakes out on Apple Silicon
   // https://github.com/npm/cli/pull/7411
-  process.platform === 'darwin' && process.arch === 'arm64'
+  process.platform === 'darwin' && process.arch === 'arm64' && process.env.TAP_SNAPSHOT !== '1'
     ? null
     : 'selflink',
   'symlinked-node-modules/example',

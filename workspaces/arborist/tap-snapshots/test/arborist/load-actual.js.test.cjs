@@ -280,7 +280,6 @@ ArboristNode {
       "location": "node_modules/@scope/y",
       "name": "@scope/y",
       "path": "root/node_modules/@scope/y",
-      "peer": true,
       "version": "1.2.3",
     },
     "foo" => ArboristNode {
@@ -870,7 +869,6 @@ ArboristLink {
         "location": "node_modules/@scope/y",
         "name": "@scope/y",
         "path": "root/node_modules/@scope/y",
-        "peer": true,
         "version": "1.2.3",
       },
       "foo" => ArboristNode {
@@ -2701,7 +2699,6 @@ ArboristLink {
         "location": "node_modules/@scope/y",
         "name": "@scope/y",
         "path": "root/node_modules/@scope/y",
-        "peer": true,
         "version": "1.2.3",
       },
       "foo" => ArboristNode {
@@ -4431,7 +4428,6 @@ ArboristNode {
       "location": "node_modules/@scope/y",
       "name": "@scope/y",
       "path": "root/node_modules/@scope/y",
-      "peer": true,
       "version": "1.2.3",
     },
     "foo" => ArboristNode {
@@ -6076,7 +6072,6 @@ ArboristNode {
       "location": "node_modules/@scope/y",
       "name": "@scope/y",
       "path": "root/node_modules/@scope/y",
-      "peer": true,
       "version": "1.2.3",
     },
     "foo" => ArboristNode {
@@ -6397,237 +6392,6 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP shake out Link target timing issue > loaded tree 1`] = `
-ArboristNode {
-  "children": Map {
-    "@scope/y" => ArboristNode {
-      "edgesIn": Set {
-        EdgeIn {
-          "from": "",
-          "name": "@scope/y",
-          "spec": "*",
-          "type": "prod",
-        },
-      },
-      "edgesOut": Map {
-        "foo" => EdgeOut {
-          "name": "foo",
-          "spec": "*",
-          "to": "node_modules/foo",
-          "type": "prod",
-        },
-      },
-      "location": "node_modules/@scope/y",
-      "name": "@scope/y",
-      "path": "selflink/node_modules/@scope/y",
-      "version": "1.2.3",
-    },
-    "@scope/z" => ArboristNode {
-      "children": Map {
-        "glob" => ArboristLink {
-          "dev": true,
-          "edgesIn": Set {
-            EdgeIn {
-              "from": "node_modules/@scope/z",
-              "name": "glob",
-              "spec": "4",
-              "type": "prod",
-            },
-          },
-          "extraneous": true,
-          "location": "node_modules/@scope/z/node_modules/glob",
-          "name": "glob",
-          "optional": true,
-          "path": "selflink/node_modules/@scope/z/node_modules/glob",
-          "peer": true,
-          "realpath": "selflink/node_modules/foo/node_modules/glob",
-          "resolved": "file:../../../foo/node_modules/glob",
-          "target": ArboristNode {
-            "children": Map {
-              "graceful-fs" => ArboristNode {
-                "dev": true,
-                "extraneous": true,
-                "location": "node_modules/foo/node_modules/glob/node_modules/graceful-fs",
-                "name": "graceful-fs",
-                "optional": true,
-                "path": "selflink/node_modules/foo/node_modules/glob/node_modules/graceful-fs",
-                "peer": true,
-                "version": "3.0.2",
-              },
-              "inherits" => ArboristNode {
-                "dev": true,
-                "extraneous": true,
-                "location": "node_modules/foo/node_modules/glob/node_modules/inherits",
-                "name": "inherits",
-                "optional": true,
-                "path": "selflink/node_modules/foo/node_modules/glob/node_modules/inherits",
-                "peer": true,
-                "version": "2.0.1",
-              },
-              "minimatch" => ArboristNode {
-                "children": Map {
-                  "lru-cache" => ArboristNode {
-                    "dev": true,
-                    "extraneous": true,
-                    "location": "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/lru-cache",
-                    "name": "lru-cache",
-                    "optional": true,
-                    "path": "selflink/node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/lru-cache",
-                    "peer": true,
-                    "version": "2.5.0",
-                  },
-                  "sigmund" => ArboristNode {
-                    "dev": true,
-                    "extraneous": true,
-                    "location": "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/sigmund",
-                    "name": "sigmund",
-                    "optional": true,
-                    "path": "selflink/node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/sigmund",
-                    "peer": true,
-                    "version": "1.0.0",
-                  },
-                },
-                "dev": true,
-                "extraneous": true,
-                "location": "node_modules/foo/node_modules/glob/node_modules/minimatch",
-                "name": "minimatch",
-                "optional": true,
-                "path": "selflink/node_modules/foo/node_modules/glob/node_modules/minimatch",
-                "peer": true,
-                "version": "1.0.0",
-              },
-              "once" => ArboristNode {
-                "dev": true,
-                "extraneous": true,
-                "location": "node_modules/foo/node_modules/glob/node_modules/once",
-                "name": "once",
-                "optional": true,
-                "path": "selflink/node_modules/foo/node_modules/glob/node_modules/once",
-                "peer": true,
-                "version": "1.3.0",
-              },
-            },
-            "edgesIn": Set {
-              EdgeIn {
-                "from": "node_modules/foo",
-                "name": "glob",
-                "spec": "4",
-                "type": "prod",
-              },
-            },
-            "location": "node_modules/foo/node_modules/glob",
-            "name": "glob",
-            "path": "selflink/node_modules/foo/node_modules/glob",
-            "version": "4.0.5",
-          },
-          "version": "4.0.5",
-        },
-      },
-      "dev": true,
-      "edgesOut": Map {
-        "glob" => EdgeOut {
-          "name": "glob",
-          "spec": "4",
-          "to": "node_modules/@scope/z/node_modules/glob",
-          "type": "prod",
-        },
-      },
-      "extraneous": true,
-      "location": "node_modules/@scope/z",
-      "name": "@scope/z",
-      "optional": true,
-      "path": "selflink/node_modules/@scope/z",
-      "peer": true,
-      "version": "1.2.3",
-    },
-    "foo" => ArboristNode {
-      "children": Map {
-        "glob" => ArboristNode {
-          "location": "node_modules/foo/node_modules/glob",
-        },
-        "selflink" => ArboristLink {
-          "edgesIn": Set {
-            EdgeIn {
-              "from": "node_modules/foo",
-              "name": "selflink",
-              "spec": "*",
-              "type": "prod",
-            },
-          },
-          "location": "node_modules/foo/node_modules/selflink",
-          "name": "selflink",
-          "path": "selflink/node_modules/foo/node_modules/selflink",
-          "realpath": "selflink",
-          "resolved": "file:../../..",
-          "target": ArboristNode {
-            "location": "",
-          },
-          "version": "1.2.3",
-        },
-      },
-      "edgesIn": Set {
-        EdgeIn {
-          "from": "",
-          "name": "foo",
-          "spec": "*",
-          "type": "prod",
-        },
-        EdgeIn {
-          "from": "node_modules/@scope/y",
-          "name": "foo",
-          "spec": "*",
-          "type": "prod",
-        },
-      },
-      "edgesOut": Map {
-        "glob" => EdgeOut {
-          "name": "glob",
-          "spec": "4",
-          "to": "node_modules/foo/node_modules/glob",
-          "type": "prod",
-        },
-        "selflink" => EdgeOut {
-          "name": "selflink",
-          "spec": "*",
-          "to": "node_modules/foo/node_modules/selflink",
-          "type": "prod",
-        },
-      },
-      "location": "node_modules/foo",
-      "name": "foo",
-      "path": "selflink/node_modules/foo",
-      "version": "1.2.3",
-    },
-  },
-  "edgesOut": Map {
-    "@scope/x" => EdgeOut {
-      "error": "MISSING",
-      "name": "@scope/x",
-      "spec": "*",
-      "to": null,
-      "type": "prod",
-    },
-    "@scope/y" => EdgeOut {
-      "name": "@scope/y",
-      "spec": "*",
-      "to": "node_modules/@scope/y",
-      "type": "prod",
-    },
-    "foo" => EdgeOut {
-      "name": "foo",
-      "spec": "*",
-      "to": "node_modules/foo",
-      "type": "prod",
-    },
-  },
-  "isProjectRoot": true,
-  "location": "",
-  "name": "selflink",
-  "path": "selflink",
-  "version": "1.2.3",
-}
-`
-
 exports[`test/arborist/load-actual.js TAP symlinked-node-modules/example > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
@@ -6696,6 +6460,7 @@ ArboristNode {
       "type": "prod",
     },
   },
+  "extraneous": true,
   "fsChildren": Set {
     ArboristNode {
       "dev": true,
@@ -6749,6 +6514,7 @@ ArboristNode {
       "type": "prod",
     },
   },
+  "extraneous": true,
   "fsChildren": Set {
     ArboristNode {
       "dev": true,

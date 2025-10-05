@@ -2117,7 +2117,6 @@ ArboristNode {
           },
         },
       },
-      "dev": true,
       "edgesOut": Map {
         "abbrev" => EdgeOut {
           "error": "MISSING",
@@ -10234,7 +10233,6 @@ ArboristNode {
       "location": "node_modules/react",
       "name": "react",
       "path": "{CWD}/test/arborist/tap-testdir-reify-multiple-bundles-at-the-same-level/node_modules/react",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/react/-/react-16.12.0.tgz",
       "version": "16.12.0",
     },
@@ -11628,7 +11626,6 @@ ArboristNode {
           "location": "node_modules/tap/node_modules/@babel/core",
           "name": "@babel/core",
           "path": "{CWD}/test/arborist/tap-testdir-reify-multiple-bundles-at-the-same-level/node_modules/tap/node_modules/@babel/core",
-          "peer": true,
           "version": "7.7.5",
         },
         "@babel/generator" => ArboristNode {
@@ -12523,7 +12520,6 @@ ArboristNode {
           "location": "node_modules/tap/node_modules/@types/react",
           "name": "@types/react",
           "path": "{CWD}/test/arborist/tap-testdir-reify-multiple-bundles-at-the-same-level/node_modules/tap/node_modules/@types/react",
-          "peer": true,
           "version": "16.9.16",
         },
         "ansi-escapes" => ArboristNode {
@@ -17913,7 +17909,6 @@ ArboristNode {
       "location": "node_modules/ajv",
       "name": "ajv",
       "path": "{CWD}/test/arborist/tap-testdir-reify-reify-properly-with-all-deps-when-lockfile-is-ancient/node_modules/ajv",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/ajv/-/ajv-4.11.2.tgz",
       "version": "4.11.2",
     },
@@ -20780,7 +20775,6 @@ ArboristNode {
       "location": "node_modules/eslint",
       "name": "eslint",
       "path": "{CWD}/test/arborist/tap-testdir-reify-reify-properly-with-all-deps-when-lockfile-is-ancient/node_modules/eslint",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/eslint/-/eslint-3.10.2.tgz",
       "version": "3.10.2",
     },
@@ -20869,7 +20863,6 @@ ArboristNode {
       "location": "node_modules/eslint-plugin-promise",
       "name": "eslint-plugin-promise",
       "path": "{CWD}/test/arborist/tap-testdir-reify-reify-properly-with-all-deps-when-lockfile-is-ancient/node_modules/eslint-plugin-promise",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.4.1.tgz",
       "version": "3.4.1",
     },
@@ -20912,7 +20905,6 @@ ArboristNode {
       "location": "node_modules/eslint-plugin-react",
       "name": "eslint-plugin-react",
       "path": "{CWD}/test/arborist/tap-testdir-reify-reify-properly-with-all-deps-when-lockfile-is-ancient/node_modules/eslint-plugin-react",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-6.7.1.tgz",
       "version": "6.7.1",
     },
@@ -20943,7 +20935,6 @@ ArboristNode {
       "location": "node_modules/eslint-plugin-standard",
       "name": "eslint-plugin-standard",
       "path": "{CWD}/test/arborist/tap-testdir-reify-reify-properly-with-all-deps-when-lockfile-is-ancient/node_modules/eslint-plugin-standard",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-2.0.1.tgz",
       "version": "2.0.1",
     },
@@ -33462,7 +33453,6 @@ ArboristNode {
       "location": "node_modules/@isaacs/testing-peer-deps-b",
       "name": "@isaacs/testing-peer-deps-b",
       "path": "{CWD}/test/arborist/tap-testdir-reify-testing-peer-deps-nested-with-update/node_modules/@isaacs/testing-peer-deps-b",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/@isaacs/testing-peer-deps-b/-/testing-peer-deps-b-2.0.1.tgz",
       "version": "2.0.1",
     },
@@ -39739,7 +39729,6 @@ ArboristNode {
       "location": "node_modules/react",
       "name": "react",
       "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-bundling-node-without-updating-all-of-its-deps/node_modules/react",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/react/-/react-15.6.2.tgz",
       "version": "15.6.2",
     },
@@ -40940,7 +40929,6 @@ ArboristNode {
           "location": "node_modules/tap/node_modules/@babel/core",
           "name": "@babel/core",
           "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-bundling-node-without-updating-all-of-its-deps/node_modules/tap/node_modules/@babel/core",
-          "peer": true,
           "version": "7.7.5",
         },
         "@babel/generator" => ArboristNode {
@@ -41835,7 +41823,6 @@ ArboristNode {
           "location": "node_modules/tap/node_modules/@types/react",
           "name": "@types/react",
           "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-bundling-node-without-updating-all-of-its-deps/node_modules/tap/node_modules/@types/react",
-          "peer": true,
           "version": "16.9.16",
         },
         "ansi-escapes" => ArboristNode {
@@ -43562,7 +43549,6 @@ ArboristNode {
           "location": "node_modules/tap/node_modules/react",
           "name": "react",
           "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-bundling-node-without-updating-all-of-its-deps/node_modules/tap/node_modules/react",
-          "peer": true,
           "resolved": "https://registry.npmjs.org/react/-/react-16.12.0.tgz",
           "version": "16.12.0",
         },
@@ -45402,7 +45388,6 @@ ArboristNode {
       "location": "node_modules/typescript",
       "name": "typescript",
       "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-bundling-node-without-updating-all-of-its-deps/node_modules/typescript",
-      "peer": true,
       "resolved": "https://registry.npmjs.org/typescript/-/typescript-3.7.4.tgz",
       "version": "3.7.4",
     },
@@ -46483,157 +46468,6 @@ ArboristNode {
   "name": "tap-testdir-reify-update-a-node-without-updating-a-child-that-has-bundle-deps",
   "packageName": "testing-bundledeps-3",
   "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-a-child-that-has-bundle-deps",
-  "version": "1.0.0",
-}
-`
-
-exports[`test/arborist/reify.js TAP update a node without updating an inert child bundle deps > expect resolving Promise 1`] = `
-ArboristNode {
-  "children": Map {
-    "@isaacs/testing-bundledeps-parent" => ArboristNode {
-      "children": Map {
-        "@isaacs/testing-bundledeps" => ArboristNode {
-          "bundleDependencies": Array [
-            "@isaacs/testing-bundledeps-a",
-          ],
-          "children": Map {
-            "@isaacs/testing-bundledeps-a" => ArboristNode {
-              "bundled": true,
-              "bundler": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
-              "edgesIn": Set {
-                EdgeIn {
-                  "from": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
-                  "name": "@isaacs/testing-bundledeps-a",
-                  "spec": "*",
-                  "type": "prod",
-                },
-              },
-              "edgesOut": Map {
-                "@isaacs/testing-bundledeps-b" => EdgeOut {
-                  "name": "@isaacs/testing-bundledeps-b",
-                  "spec": "*",
-                  "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
-                  "type": "prod",
-                },
-              },
-              "location": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
-              "name": "@isaacs/testing-bundledeps-a",
-              "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
-              "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps-a/-/testing-bundledeps-a-1.0.0.tgz",
-              "version": "1.0.0",
-            },
-            "@isaacs/testing-bundledeps-b" => ArboristNode {
-              "bundled": true,
-              "bundler": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
-              "edgesIn": Set {
-                EdgeIn {
-                  "from": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
-                  "name": "@isaacs/testing-bundledeps-b",
-                  "spec": "*",
-                  "type": "prod",
-                },
-                EdgeIn {
-                  "from": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-c",
-                  "name": "@isaacs/testing-bundledeps-b",
-                  "spec": "*",
-                  "type": "prod",
-                },
-              },
-              "location": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
-              "name": "@isaacs/testing-bundledeps-b",
-              "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
-              "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps-b/-/testing-bundledeps-b-1.0.0.tgz",
-              "version": "1.0.0",
-            },
-            "@isaacs/testing-bundledeps-c" => ArboristNode {
-              "edgesIn": Set {
-                EdgeIn {
-                  "from": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
-                  "name": "@isaacs/testing-bundledeps-c",
-                  "spec": "*",
-                  "type": "prod",
-                },
-              },
-              "edgesOut": Map {
-                "@isaacs/testing-bundledeps-b" => EdgeOut {
-                  "name": "@isaacs/testing-bundledeps-b",
-                  "spec": "*",
-                  "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
-                  "type": "prod",
-                },
-              },
-              "location": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-c",
-              "name": "@isaacs/testing-bundledeps-c",
-              "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-c",
-              "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps-c/-/testing-bundledeps-c-2.0.0.tgz",
-              "version": "2.0.0",
-            },
-          },
-          "edgesIn": Set {
-            EdgeIn {
-              "from": "node_modules/@isaacs/testing-bundledeps-parent",
-              "name": "@isaacs/testing-bundledeps",
-              "spec": "^1.0.0",
-              "type": "prod",
-            },
-          },
-          "edgesOut": Map {
-            "@isaacs/testing-bundledeps-a" => EdgeOut {
-              "name": "@isaacs/testing-bundledeps-a",
-              "spec": "*",
-              "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
-              "type": "prod",
-            },
-            "@isaacs/testing-bundledeps-c" => EdgeOut {
-              "name": "@isaacs/testing-bundledeps-c",
-              "spec": "*",
-              "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-c",
-              "type": "prod",
-            },
-          },
-          "location": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
-          "name": "@isaacs/testing-bundledeps",
-          "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
-          "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps/-/testing-bundledeps-1.0.0.tgz",
-          "version": "1.0.0",
-        },
-      },
-      "edgesIn": Set {
-        EdgeIn {
-          "from": "",
-          "name": "@isaacs/testing-bundledeps-parent",
-          "spec": "*",
-          "type": "prod",
-        },
-      },
-      "edgesOut": Map {
-        "@isaacs/testing-bundledeps" => EdgeOut {
-          "name": "@isaacs/testing-bundledeps",
-          "spec": "^1.0.0",
-          "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
-          "type": "prod",
-        },
-      },
-      "location": "node_modules/@isaacs/testing-bundledeps-parent",
-      "name": "@isaacs/testing-bundledeps-parent",
-      "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent",
-      "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps-parent/-/testing-bundledeps-parent-2.0.0.tgz",
-      "version": "2.0.0",
-    },
-  },
-  "edgesOut": Map {
-    "@isaacs/testing-bundledeps-parent" => EdgeOut {
-      "name": "@isaacs/testing-bundledeps-parent",
-      "spec": "*",
-      "to": "node_modules/@isaacs/testing-bundledeps-parent",
-      "type": "prod",
-    },
-  },
-  "isProjectRoot": true,
-  "location": "",
-  "name": "tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps",
-  "packageName": "testing-bundledeps-3",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps",
   "version": "1.0.0",
 }
 `

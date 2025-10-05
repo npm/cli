@@ -351,7 +351,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           filter: node => node,
           visit: node => {
             for (const edge of node.edgesOut.values()) {
-              if (!edge.to || !edge.valid) {
+              if ((!edge.to && edge.type !== 'peerOptional') || !edge.valid) {
                 this.#depsQueue.push(node)
                 break // no need to continue the loop after the first hit
               }
@@ -754,6 +754,7 @@ This is a one-time fix-up, please be patient...
 
     // have to re-calc dep flags, because the nodes don't have edges
     // until their packages get assigned, so everything looks extraneous
+    resetDepFlags(this.idealTree)
     calcDepFlags(this.idealTree)
 
     // yes, yes, this isn't the "original" version, but now that it's been
@@ -1508,11 +1509,7 @@ This is a one-time fix-up, please be patient...
     } else {
       // otherwise just unset all the flags on the root node
       // since they will sometimes have the default value
-      this.idealTree.extraneous = false
-      this.idealTree.dev = false
-      this.idealTree.optional = false
-      this.idealTree.devOptional = false
-      this.idealTree.peer = false
+      this.idealTree.unsetDepFlags()
     }
 
     // at this point, any node marked as extraneous should be pruned.
@@ -1555,12 +1552,7 @@ This is a one-time fix-up, please be patient...
 
   #idealTreePrune () {
     for (const node of this.idealTree.inventory.values()) {
-      // optional peer dependencies are meant to be added to the tree
-      // through an explicit required dependency (most commonly in the
-      // root package.json), at which point they won't be optional so
-      // any dependencies still marked as both optional and peer at
-      // this point can be pruned as a special kind of extraneous
-      if (node.extraneous || (node.peer && node.optional)) {
+      if (node.extraneous) {
         node.parent = null
       }
     }

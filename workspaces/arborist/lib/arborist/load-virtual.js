@@ -69,11 +69,7 @@ module.exports = cls => class VirtualLoader extends cls {
     if (!this.#rootOptionProvided) {
       // root is never any of these things, but might be a brand new
       // baby Node object that never had its dep flags calculated.
-      root.extraneous = false
-      root.dev = false
-      root.optional = false
-      root.devOptional = false
-      root.peer = false
+      root.unsetDepFlags()
     } else {
       this[flagsSuspect] = true
     }
@@ -93,11 +89,7 @@ module.exports = cls => class VirtualLoader extends cls {
         if (node.isRoot || node === this.#rootOptionProvided) {
           continue
         }
-        node.extraneous = true
-        node.dev = true
-        node.optional = true
-        node.devOptional = true
-        node.peer = true
+        node.resetDepFlags()
       }
       calcDepFlags(this.virtualTree, !this.#rootOptionProvided)
     }
@@ -255,11 +247,6 @@ To fix:
       sw.name = nameFromFolder(path)
     }
 
-    const dev = sw.dev
-    const optional = sw.optional
-    const devOptional = dev || optional || sw.devOptional
-    const peer = sw.peer
-
     const node = new Node({
       installLinks: this.installLinks,
       legacyPeerDeps: this.legacyPeerDeps,
@@ -270,18 +257,15 @@ To fix:
       resolved: consistentResolve(sw.resolved, this.path, path),
       pkg: sw,
       hasShrinkwrap: sw.hasShrinkwrap,
-      dev,
-      optional,
-      devOptional,
-      peer,
       loadOverrides,
+      // cast to boolean because they're undefined in the lock file when false
+      extraneous: !!sw.extraneous,
+      devOptional: !!(sw.devOptional || sw.dev || sw.optional),
+      peer: !!sw.peer,
+      optional: !!sw.optional,
+      dev: !!sw.dev,
     })
-    // cast to boolean because they're undefined in the lock file when false
-    node.extraneous = !!sw.extraneous
-    node.devOptional = !!(sw.devOptional || sw.dev || sw.optional)
-    node.peer = !!sw.peer
-    node.optional = !!sw.optional
-    node.dev = !!sw.dev
+
     return node
   }
 
