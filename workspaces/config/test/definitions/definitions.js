@@ -1,6 +1,7 @@
 const t = require('tap')
 const { resolve } = require('node:path')
 const mockGlobals = require('@npmcli/mock-globals')
+const Module = require('node:module')
 
 // have to fake the node version, or else it'll only pass on this one
 mockGlobals(t, { 'process.version': 'v14.8.0', 'process.env.NODE_ENV': undefined })
@@ -1018,5 +1019,40 @@ t.test('otp changes auth-type', t => {
   mockDefs().otp.flatten('otp', obj, flat)
   t.strictSame(flat, { authType: 'legacy', otp: 123456 })
   t.strictSame(obj, { 'auth-type': 'legacy', otp: 123456 })
+  t.end()
+})
+
+t.test('node-gyp', t => {
+  t.test('when node-gyp is available', t => {
+    const defs = mockDefs()
+    t.type(defs['node-gyp'].default, 'string')
+    t.ok(defs['node-gyp'].default.length > 0, 'has a default path')
+    t.ok(defs['node-gyp'].default.includes('node-gyp'), 'path contains node-gyp')
+    t.end()
+  })
+
+  t.test('when node-gyp is not available', t => {
+    const origResolve = Module._resolveFilename
+
+    Module._resolveFilename = function (request, parent, isMain, options) {
+      if (request === 'node-gyp/bin/node-gyp.js') {
+        const err = new Error(`Cannot find module '${request}'`)
+        err.code = 'MODULE_NOT_FOUND'
+        throw err
+      }
+      return origResolve.call(this, request, parent, isMain, options)
+    }
+
+    try {
+      const defs = require('../../lib/definitions/definitions.js')
+      t.equal(defs['node-gyp'].default, '', 'returns empty string when node-gyp not found')
+    } finally {
+      // Restore the original resolve
+      Module._resolveFilename = origResolve
+    }
+
+    t.end()
+  })
+
   t.end()
 })

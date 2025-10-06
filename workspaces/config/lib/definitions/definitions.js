@@ -1304,7 +1304,13 @@ const definitions = {
     flatten,
   }),
   'node-gyp': new Definition('node-gyp', {
-    default: require.resolve('node-gyp/bin/node-gyp.js'),
+    default: (() => {
+      try {
+        return require.resolve('node-gyp/bin/node-gyp.js')
+      } catch {
+        return ''
+      }
+    })(),
     defaultDescription: `
       The path to the node-gyp bin that ships with npm
     `,
