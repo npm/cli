@@ -1,0 +1,16 @@
+name: Check PR Target Branch
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  check-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR targets latest branch
+        run: |
+          if [ "${{ github.base_ref }}" != "latest" ]; then
+            echo "::warning::This PR is targeting '${{ github.base_ref }}' branch instead of 'latest'"
+            echo "Consider changing the base branch to 'latest' unless this is intentional"
+          fi
