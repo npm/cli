@@ -131,7 +131,7 @@ By running a command using the `workspace` option, it's possible to run the give
 e.g:
 
 ```
-npm run test --workspace=a
+npm run test --workspace=packages/a
 ```
 
 You could also run the command within the workspace.
@@ -146,7 +146,7 @@ Either will run the `test` script defined within the
 Please note that you can also specify this argument multiple times in the command-line in order to target multiple workspaces, e.g:
 
 ```
-npm run test --workspace=a --workspace=b
+npm run test --workspace=packages/a --workspace=packages/b
 ```
 
 Or run the command for each workspace within the 'packages' folder:
