@@ -5,6 +5,7 @@ const sigstoreIdToken = () => {
   return `.${Buffer.from(JSON.stringify({
     iss: 'https://oauth2.sigstore.dev/auth',
     email: 'foo@bar.com',
+    email_verified: true,
   }))
   .toString('base64')}.`
 }
