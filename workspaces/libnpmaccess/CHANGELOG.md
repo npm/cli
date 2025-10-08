@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.0.3](https://github.com/npm/cli/compare/libnpmaccess-v10.0.2...libnpmaccess-v10.0.3) (2025-10-08)
+### Bug Fixes
+* [`f367507`](https://github.com/npm/cli/commit/f367507b2a8156c00687426034d0a76188e90b4c) [#8624](https://github.com/npm/cli/pull/8624) spelling (#8624) (@jsoref)
+### Chores
+* [`7f1c3a3`](https://github.com/npm/cli/commit/7f1c3a37316b42e652b61ea4919e40305c8de06f) [#8606](https://github.com/npm/cli/pull/8606) fix spelling - permissions (#8606) (@jsoref)
+
 ## [10.0.2](https://github.com/npm/cli/compare/libnpmaccess-v10.0.1...libnpmaccess-v10.0.2) (2025-09-23)
 ### Dependencies
 * [`bf6b686`](https://github.com/npm/cli/commit/bf6b6862731e03002cc6fa3b86b6f090df46b009) [#8576](https://github.com/npm/cli/pull/8576) `npm-package-arg@13.0.0`

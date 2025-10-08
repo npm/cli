@@ -1,5 +1,15 @@
 # Changelog
 
+## [10.4.2](https://github.com/npm/cli/compare/config-v10.4.1...config-v10.4.2) (2025-10-08)
+### Bug Fixes
+* [`5b4a7fc`](https://github.com/npm/cli/commit/5b4a7fc594e23dbdd5acab8df7bd195992383d5f) [#8650](https://github.com/npm/cli/pull/8650) handle missing node-gyp gracefully in @npmcli/config definitions (@owlstronaut)
+* [`9197995`](https://github.com/npm/cli/commit/9197995ef0b760738454f2d255c0683d0731b24c) [#8619](https://github.com/npm/cli/pull/8619) spelling (#8619) (@jsoref)
+### Documentation
+* [`1fde042`](https://github.com/npm/cli/commit/1fde04261c899fd03753e2a90698774e41943887) [#8640](https://github.com/npm/cli/pull/8640) rewrap markdown (#8640) (@jsoref)
+### Chores
+* [`8e5d204`](https://github.com/npm/cli/commit/8e5d2042b041d637db14670f22cb7e866dd00479) [#8626](https://github.com/npm/cli/pull/8626) fix spelling: different (#8626) (@jsoref)
+* [`7455fc0`](https://github.com/npm/cli/commit/7455fc01fffa8419dda0f01e2480ab860b81b56f) [#8608](https://github.com/npm/cli/pull/8608) Fix spelling in workspaces/config (#8608) (@jsoref)
+
 ## [10.4.1](https://github.com/npm/cli/compare/config-v10.4.0...config-v10.4.1) (2025-09-23)
 ### Documentation
 * [`7a09902`](https://github.com/npm/cli/commit/7a099029dbeeeab821498b9b462abce1269461f4) [#8582](https://github.com/npm/cli/pull/8582) bring back certfile (#8582) (@jenseng)

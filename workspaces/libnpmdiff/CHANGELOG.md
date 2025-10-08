@@ -32,6 +32,17 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.4): `@npmcli/arborist@9.1.4`
 
+## [8.0.9](https://github.com/npm/cli/compare/libnpmdiff-v8.0.8...libnpmdiff-v8.0.9) (2025-10-08)
+### Documentation
+* [`268e4f8`](https://github.com/npm/cli/commit/268e4f8ae9845991e15cccd7bcaf2545af766898) [#8642](https://github.com/npm/cli/pull/8642) rewrap markdown (#8642) (@jsoref)
+### Chores
+* [`6c4c387`](https://github.com/npm/cli/commit/6c4c387ea9f8900a1e1e70e661be1ec54b073aea) [#8609](https://github.com/npm/cli/pull/8609) Fix spelling in workspaces/libnpmdiff (#8609) (@jsoref)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.6): `@npmcli/arborist@9.1.6`
+
 ## [8.0.8](https://github.com/npm/cli/compare/libnpmdiff-v8.0.7...libnpmdiff-v8.0.8) (2025-09-23)
 ### Dependencies
 * [`849dcb6`](https://github.com/npm/cli/commit/849dcb6dc22a16f01869ba9c6bf9146143000b25) [#8589](https://github.com/npm/cli/pull/8589) `tar@7.5.1` (#8589)

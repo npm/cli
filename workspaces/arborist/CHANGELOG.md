@@ -1,5 +1,14 @@
 # Changelog
 
+## [9.1.6](https://github.com/npm/cli/compare/arborist-v9.1.5...arborist-v9.1.6) (2025-10-08)
+### Bug Fixes
+* [`0a8b8c2`](https://github.com/npm/cli/commit/0a8b8c2ba37872b08a24bcf067f6da34d718f6d8) [#8621](https://github.com/npm/cli/pull/8621) typo bugs and other spelling fixes (#8621) (@jsoref)
+* [`54fd27f`](https://github.com/npm/cli/commit/54fd27f9f6af54ca9fd11165aafbc8a13a38f39e) [#8602](https://github.com/npm/cli/pull/8602) refactor node.ideallyInert to node.inert (#8602) (@liamcmitchell)
+* [`13d8df6`](https://github.com/npm/cli/commit/13d8df64e78dc13c49ab0607b252de1d54f0122a) [#8537](https://github.com/npm/cli/pull/8537) optional set calculation (#8537) (@liamcmitchell)
+### Chores
+* [`180e9f7`](https://github.com/npm/cli/commit/180e9f709d10c959556c19205bb3636220bed9c7) [#8610](https://github.com/npm/cli/pull/8610) fix spelling in workspaces/arborist (#8610) (@jsoref)
+* [`91393de`](https://github.com/npm/cli/commit/91393deaf71bad084bb1d2aa868d5f895cc5f103) [#8599](https://github.com/npm/cli/pull/8599) Update references for arborist to cli (#8599) (@jsoref)
+
 ## [9.1.5](https://github.com/npm/cli/compare/arborist-v9.1.4...arborist-v9.1.5) (2025-09-23)
 ### Bug Fixes
 * [`60aa94b`](https://github.com/npm/cli/commit/60aa94b0379b2f4491c5d6857c1cff3036d9a3a9) [#8576](https://github.com/npm/cli/pull/8576) attach path to json parse error (@wraithgar)

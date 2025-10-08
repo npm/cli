@@ -1,5 +1,12 @@
 # Changelog
 
+## [11.1.2](https://github.com/npm/cli/compare/libnpmpublish-v11.1.1...libnpmpublish-v11.1.2) (2025-10-08)
+### Dependencies
+* [`fa7cc6f`](https://github.com/npm/cli/commit/fa7cc6f9338e6d9c0be1dbe7002d683fd389794a) [#8662](https://github.com/npm/cli/pull/8662) `ci-info@4.3.1` (#8662)
+* [`b05461b`](https://github.com/npm/cli/commit/b05461b6b16f262179efdea45fccf388f88ddc51) [#8663](https://github.com/npm/cli/pull/8663) `@sigstore/sign@4.0.1` (#8663)
+### Chores
+* [`5e0909b`](https://github.com/npm/cli/commit/5e0909b74ea1510eaae348d66548c75030911ed8) [#8620](https://github.com/npm/cli/pull/8620) fix spelling in workspaces (#8620) (@jsoref)
+
 ## [11.1.1](https://github.com/npm/cli/compare/libnpmpublish-v11.1.0...libnpmpublish-v11.1.1) (2025-09-23)
 ### Dependencies
 * [`bf6b686`](https://github.com/npm/cli/commit/bf6b6862731e03002cc6fa3b86b6f090df46b009) [#8576](https://github.com/npm/cli/pull/8576) `npm-package-arg@13.0.0`
