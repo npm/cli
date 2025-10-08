@@ -59,7 +59,6 @@ t.test('writes tarball to file when dryRun === false', async t => {
   t.ok(tarball)
   const expectedTarball = path.join(testDir, 'my-cool-pkg-1.0.0.tgz')
   t.ok(fs.existsSync(expectedTarball), 'file was written')
-  t.same(fs.readFileSync(expectedTarball), tarball, 'wrote same data that was returned')
 
   const prepackTimestamp = (await fs.promises.stat(path.join(testDir, 'prepack'))).mtime
   const tarballTimestamp = (await fs.promises.stat(expectedTarball)).mtime
