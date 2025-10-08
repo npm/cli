@@ -403,6 +403,7 @@ t.test('publish existing package with provenance in gha', async t => {
   const oidcClaims = {
     iss: 'https://oauth2.sigstore.dev/auth',
     email: 'foo@bar.com',
+    email_verified: true,
   }
   const idToken = `.${Buffer.from(JSON.stringify(oidcClaims)).toString('base64')}.`
 
@@ -911,6 +912,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
   const oidcClaims = {
     iss: 'https://oauth2.sigstore.dev/auth',
     email: 'foo@bar.com',
+    email_verified: true,
   }
   const idToken = `.${Buffer.from(JSON.stringify(oidcClaims)).toString('base64')}.`
 
