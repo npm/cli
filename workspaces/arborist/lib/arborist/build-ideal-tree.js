@@ -46,9 +46,7 @@ const treeCheck = require('../tree-check.js')
 // TODO we should not do this
 const _changePath = Symbol.for('_changePath')
 const _resolvedAdd = Symbol.for('resolvedAdd')
-const _rpcache = Symbol.for('realpathCache')
 const _setWorkspaces = Symbol.for('setWorkspaces')
-const _stcache = Symbol.for('statCache')
 const _updateAll = Symbol.for('updateAll')
 const _updateNames = Symbol.for('updateNames')
 const _usePackageLock = Symbol.for('usePackageLock')
@@ -110,7 +108,9 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   #peerSetSource = new WeakMap()
   #preferDedupe = false
   #prune
+  #realpathCache
   #rootOptionProvided
+  #statCache = new Map()
   #strictPeerDeps
   // cache of link targets for setting fsParent links
   // We don't do fsParent as a magic getter/setter, because it'd be too costly to keep up to date along the walk.
@@ -162,8 +162,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     // caches for cached realpath calls
     const cwd = process.cwd()
     // assume that the cwd is real enough for our purposes
-    this[_rpcache] = new Map([[cwd, cwd]])
-    this[_stcache] = new Map()
+    this.#realpathCache = new Map([[cwd, cwd]])
   }
 
   get explicitRequests () {
@@ -418,7 +417,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     // before ever loading trees.
     // TODO: make buildIdealTree() and loadActual handle a missing root path,
     // or a symlink to a missing target, and let reify() create it as needed.
-    const real = await realpath(this.path, this[_rpcache], this[_stcache])
+    const real = await realpath(this.path, this.#realpathCache, this.#statCache)
     const Cls = real === this.path ? Node : Link
     const root = new Cls({
       path: this.path,
@@ -580,7 +579,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         spec.name = name
       } else if (spec.type === 'directory') {
         try {
-          const real = await realpath(spec.fetchSpec, this[_rpcache], this[_stcache])
+          const real = await realpath(spec.fetchSpec, this.#realpathCache, this.#statCache)
           spec = npa(`file:${relpath(path, real)}`, path)
           spec.name = name
         } catch {
@@ -1937,7 +1936,7 @@ To fix:
     this.#transplantFilter = transplantFilter
 
     if (global) {
-      const real = await realpath(this.path, this[_rpcache], this[_stcache])
+      const real = await realpath(this.path, this.#realpathCache, this.#statCache)
       const params = {
         path: this.path,
         realpath: real,
@@ -1954,7 +1953,7 @@ To fix:
       // not in global mode, hidden lockfile is allowed, load root pkg too
       this.#actualTree = await this.#loadFSNode({
         path: this.path,
-        real: await realpath(this.path, this[_rpcache], this[_stcache]),
+        real: await realpath(this.path, this.#realpathCache, this.#statCache),
         loadOverrides: true,
       })
 
@@ -2075,7 +2074,7 @@ To fix:
   async #loadFSNode ({ path, parent, real, root, loadOverrides, useRootOverrides }) {
     if (!real) {
       try {
-        real = await realpath(path, this[_rpcache], this[_stcache])
+        real = await realpath(path, this.#realpathCache, this.#statCache)
       } catch (error) {
         // if realpath fails, just provide a dummy error node
         return new Node({
