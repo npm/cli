@@ -2164,31 +2164,26 @@ To fix:
     const did = this.#actualTreeLoaded
     if (!node.isLink && !did.has(node.target.realpath)) {
       did.add(node.target.realpath)
-      await this.#loadFSChildren(node.target)
+      // create child nodes for all the entries in node_modules and attach them to the node as a parent
+      const nm = resolve(node.target.realpath, 'node_modules')
+      try {
+        const kids = await readdirScoped(nm).then(paths => paths.map(p => p.replace(/\\/g, '/')))
+        await Promise.all(
+          // ignore . dirs and retired scoped package folders
+          kids.filter(kid => !/^(@[^/]+\/)?\./.test(kid))
+          .filter(kid => this.#filter(node.target, kid))
+          .map(kid => this.#loadFSNode({
+            parent: node.target,
+            path: resolve(nm, kid),
+          })))
+      } catch {
+        // error in the readdir is not fatal, just means no kids
+      }
       return Promise.all(
         [...node.target.children.entries()]
           .filter(([, kid]) => !did.has(kid.realpath))
           .map(([, kid]) => this.#loadFSTree(kid))
       )
-    }
-  }
-
-  // create child nodes for all the entries in node_modules
-  // and attach them to the node as a parent
-  async #loadFSChildren (node) {
-    const nm = resolve(node.realpath, 'node_modules')
-    try {
-      const kids = await readdirScoped(nm).then(paths => paths.map(p => p.replace(/\\/g, '/')))
-      return Promise.all(
-        // ignore . dirs and retired scoped package folders
-        kids.filter(kid => !/^(@[^/]+\/)?\./.test(kid))
-          .filter(kid => this.#filter(node, kid))
-          .map(kid => this.#loadFSNode({
-            parent: node,
-            path: resolve(nm, kid),
-          })))
-    } catch {
-      // error in the readdir is not fatal, just means no kids
     }
   }
 
