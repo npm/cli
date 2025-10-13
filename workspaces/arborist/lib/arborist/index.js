@@ -40,7 +40,6 @@ const mixins = [
   require('../tracker.js'),
   require('./build-ideal-tree.js'),
   require('./load-actual.js'),
-  require('./load-virtual.js'),
   require('./rebuild.js'),
   require('./reify.js'),
   require('./isolated-reifier.js'),
