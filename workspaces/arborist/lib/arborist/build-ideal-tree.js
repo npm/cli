@@ -41,7 +41,6 @@ const treeCheck = require('../tree-check.js')
 // note: some of these symbols are shared so we can hit
 // them with unit tests and reuse them across mixins
 const _updateAll = Symbol.for('updateAll')
-const _flagsSuspect = Symbol.for('flagsSuspect')
 const _setWorkspaces = Symbol.for('setWorkspaces')
 const _updateNames = Symbol.for('updateNames')
 const _resolvedAdd = Symbol.for('resolvedAdd')
@@ -86,6 +85,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   #depsQueue = new DepsQueue()
   #depsSeen = new Set()
   #explicitRequests = new Set()
+  #flagsSuspect
   #follow
   #installStrategy
   #linkNodes = new Set()
@@ -1486,7 +1486,6 @@ This is a one-time fix-up, please be patient...
   #fixDepFlags () {
     const timeEnd = time.start('idealTree:fixDepFlags')
     const metaFromDisk = this.idealTree.meta.loadedFromDisk
-    const flagsSuspect = this[_flagsSuspect]
     const mutateTree = this.#mutateTree
     // if the options set prune:false, then we don't prune, but we still
     // mark the extraneous items in the tree if we modified it at all.
@@ -1517,7 +1516,7 @@ This is a one-time fix-up, please be patient...
     // if we started from a shrinkwrap, and then added/removed something,
     // then the tree is suspect.  Prune what is marked as extraneous.
     // otherwise, don't bother.
-    const needPrune = metaFromDisk && (mutateTree || flagsSuspect)
+    const needPrune = metaFromDisk && (mutateTree || this.#flagsSuspect)
     if (this.#prune && needPrune) {
       this.#idealTreePrune()
     }
@@ -1641,7 +1640,7 @@ This is a one-time fix-up, please be patient...
       // root is never any of these things, but might be a brand new baby Node object that never had its dep flags calculated.
       root.unsetDepFlags()
     } else {
-      this[_flagsSuspect] = true
+      this.#flagsSuspect = true
     }
 
     this.#checkRootEdges(s, root)
@@ -1652,7 +1651,7 @@ This is a one-time fix-up, please be patient...
     if (!(s.originalLockfileVersion >= 2)) {
       this.#assignBundles(nodes)
     }
-    if (this[_flagsSuspect]) {
+    if (this.#flagsSuspect) {
       // reset all dep flags
       // can't use inventory here, because virtualTree might not be root
       for (const node of nodes.values()) {
@@ -1719,14 +1718,14 @@ This is a one-time fix-up, please be patient...
       for (const name in deps) {
         const edge = root.edgesOut.get(name)
         if (!edge || edge.type !== type || edge.spec !== deps[name]) {
-          return this[_flagsSuspect] = true
+          return this.#flagsSuspect = true
         }
         rootNames.delete(name)
       }
     }
     // Something was in root that's not accounted for in shrinkwrap
     if (rootNames.size) {
-      return this[_flagsSuspect] = true
+      return this.#flagsSuspect = true
     }
   }
 
