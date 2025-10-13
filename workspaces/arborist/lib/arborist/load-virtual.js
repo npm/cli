@@ -18,14 +18,6 @@ const setWorkspaces = Symbol.for('setWorkspaces')
 module.exports = cls => class VirtualLoader extends cls {
   #rootOptionProvided
 
-  constructor (options) {
-    super(options)
-
-    // the virtual tree we load from a shrinkwrap
-    this.virtualTree = options.virtualTree
-    this[flagsSuspect] = false
-  }
-
   // public method
   async loadVirtual (options = {}) {
     if (this.virtualTree) {
