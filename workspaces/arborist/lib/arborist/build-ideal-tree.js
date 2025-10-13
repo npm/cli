@@ -792,7 +792,48 @@ This is a one-time fix-up, please be patient...
     }
 
     if (!this.#depsQueue.length) {
-      return this.#resolveLinks()
+      // go through all the links in the this.#linkNodes set
+      // for each one:
+      // - if outside the root, ignore it, assume it's fine, it's not our problem
+      // - if a node in the tree already, assign the target to that node.
+      // - if a path under an existing node, then assign that as the fsParent,
+      //   and add it to the _depsQueue
+      //
+      // call buildDepStep if anything was added to the queue; otherwise, we're done
+      for (const link of this.#linkNodes) {
+        this.#linkNodes.delete(link)
+
+        // link we never ended up placing, skip it
+        if (link.root !== this.idealTree) {
+          continue
+        }
+
+        const tree = this.idealTree.target
+        const external = !link.target.isDescendantOf(tree)
+
+        // outside the root, somebody else's problem, ignore it
+        if (external && !this.#follow) {
+          continue
+        }
+
+        // didn't find a parent for it or it has not been seen yet
+        // so go ahead and process it.
+        const unseenLink = (link.target.parent || link.target.fsParent) &&
+          !this.#depsSeen.has(link.target)
+
+        if (this.#follow &&
+          !link.target.parent &&
+          !link.target.fsParent ||
+          unseenLink) {
+          this.addTracker('idealTree', link.target.name, link.target.location)
+          this.#depsQueue.push(link.target)
+        }
+      }
+
+      if (this.#depsQueue.length) {
+        return this.#buildDepStep()
+      }
+      return
     }
 
     const node = this.#depsQueue.pop()
@@ -1435,50 +1476,6 @@ This is a one-time fix-up, please be patient...
       edge: edge.explain(),
       strictPeerDeps: this.#strictPeerDeps,
       force: this.options.force,
-    }
-  }
-
-  // go through all the links in the this.#linkNodes set
-  // for each one:
-  // - if outside the root, ignore it, assume it's fine, it's not our problem
-  // - if a node in the tree already, assign the target to that node.
-  // - if a path under an existing node, then assign that as the fsParent,
-  //   and add it to the _depsQueue
-  //
-  // call buildDepStep if anything was added to the queue; otherwise, we're done
-  #resolveLinks () {
-    for (const link of this.#linkNodes) {
-      this.#linkNodes.delete(link)
-
-      // link we never ended up placing, skip it
-      if (link.root !== this.idealTree) {
-        continue
-      }
-
-      const tree = this.idealTree.target
-      const external = !link.target.isDescendantOf(tree)
-
-      // outside the root, somebody else's problem, ignore it
-      if (external && !this.#follow) {
-        continue
-      }
-
-      // didn't find a parent for it or it has not been seen yet
-      // so go ahead and process it.
-      const unseenLink = (link.target.parent || link.target.fsParent) &&
-        !this.#depsSeen.has(link.target)
-
-      if (this.#follow &&
-          !link.target.parent &&
-          !link.target.fsParent ||
-          unseenLink) {
-        this.addTracker('idealTree', link.target.name, link.target.location)
-        this.#depsQueue.push(link.target)
-      }
-    }
-
-    if (this.#depsQueue.length) {
-      return this.#buildDepStep()
     }
   }
 
