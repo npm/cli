@@ -110,6 +110,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     options.registry = this.registry = registry.replace(/\/+$/, '') + '/'
 
     const {
+      actualTree,
       follow = false,
       installStrategy = 'hoisted',
       idealTree = null,
@@ -123,6 +124,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     this.#strictPeerDeps = !!strictPeerDeps
 
+    // the tree of nodes on disk
+    this.actualTree = actualTree
     this.idealTree = idealTree
     this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
@@ -138,6 +141,12 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this[_updateAll] = false
     this[_updateNames] = []
     this[_resolvedAdd] = []
+
+    // caches for cached realpath calls
+    const cwd = process.cwd()
+    // assume that the cwd is real enough for our purposes
+    this[_rpcache] = new Map([[cwd, cwd]])
+    this[_stcache] = new Map()
   }
 
   get explicitRequests () {
