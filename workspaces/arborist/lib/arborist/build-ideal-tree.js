@@ -820,7 +820,6 @@ This is a one-time fix-up, please be patient...
       this.#currentDep = null
     }
 
-    // TODO this was #resolveLinks in build-ideal tree. There is also now a #resolveLinks in here from loadVirtual.  Is there overlap? Is it just a coincidence the names match?
     if (!this.#depsQueue.length) {
       // go through all the links in the this.#linkNodes set
       // for each one:
@@ -1668,7 +1667,46 @@ This is a one-time fix-up, please be patient...
     root.meta = s
     this.virtualTree = root
     const { links, nodes } = this.#resolveNodes(s, root)
-    await this.#resolveLinks(links, nodes)
+    // links is the set of metadata, and nodes is the map of non-Link nodes
+    // Set the targets to nodes in the set, if we have them (we might not)
+    for (const [location, meta] of links.entries()) {
+      const targetPath = resolve(this.path, meta.resolved)
+      const targetLoc = relpath(this.path, targetPath)
+      const target = nodes.get(targetLoc)
+
+      if (!target) {
+        const err = new Error(
+`Missing target in lock file: "${targetLoc}" is referenced by "${location}" but does not exist.
+To fix:
+1. rm package-lock.json
+2. npm install`
+        )
+        err.code = 'EMISSINGTARGET'
+        throw err
+      }
+
+      const link = new Link({
+        installLinks: this.installLinks,
+        legacyPeerDeps: this.legacyPeerDeps,
+        path: resolve(this.path, location),
+        realpath: resolve(this.path, targetLoc),
+        target,
+        pkg: target && target.package,
+      })
+      link.extraneous = target.extraneous
+      link.devOptional = target.devOptional
+      link.peer = target.peer
+      link.optional = target.optional
+      link.dev = target.dev
+      nodes.set(location, link)
+      nodes.set(targetLoc, link.target)
+
+      // we always need to read the package.json for link targets
+      // outside node_modules because they can be changed by the local user
+      if (!link.target.parent) {
+        await PackageJson.normalize(link.realpath).then(p => link.target.package = p.content).catch(() => null)
+      }
+    }
     if (!(s.originalLockfileVersion >= 2)) {
       this.#assignBundles(nodes)
     }
@@ -1769,37 +1807,6 @@ This is a one-time fix-up, please be patient...
     return { links, nodes }
   }
 
-  // links is the set of metadata, and nodes is the map of non-Link nodes
-  // Set the targets to nodes in the set, if we have them (we might not)
-  async #resolveLinks (links, nodes) {
-    for (const [location, meta] of links.entries()) {
-      const targetPath = resolve(this.path, meta.resolved)
-      const targetLoc = relpath(this.path, targetPath)
-      const target = nodes.get(targetLoc)
-
-      if (!target) {
-        const err = new Error(
-`Missing target in lock file: "${targetLoc}" is referenced by "${location}" but does not exist.
-To fix:
-1. rm package-lock.json
-2. npm install`
-        )
-        err.code = 'EMISSINGTARGET'
-        throw err
-      }
-
-      const link = this.#loadLink(location, targetLoc, target, meta)
-      nodes.set(location, link)
-      nodes.set(targetLoc, link.target)
-
-      // we always need to read the package.json for link targets
-      // outside node_modules because they can be changed by the local user
-      if (!link.target.parent) {
-        await PackageJson.normalize(link.realpath).then(p => link.target.package = p.content).catch(() => null)
-      }
-    }
-  }
-
   #assignBundles (nodes) {
     for (const [location, node] of nodes) {
       // Skip assignment of parentage for the root package
@@ -1857,24 +1864,6 @@ To fix:
     })
 
     return node
-  }
-
-  #loadLink (location, targetLoc, target) {
-    const path = resolve(this.path, location)
-    const link = new Link({
-      installLinks: this.installLinks,
-      legacyPeerDeps: this.legacyPeerDeps,
-      path,
-      realpath: resolve(this.path, targetLoc),
-      target,
-      pkg: target && target.package,
-    })
-    link.extraneous = target.extraneous
-    link.devOptional = target.devOptional
-    link.peer = target.peer
-    link.optional = target.optional
-    link.dev = target.dev
-    return link
   }
 
   // public method
