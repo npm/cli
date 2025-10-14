@@ -820,7 +820,7 @@ This is a one-time fix-up, please be patient...
       this.#currentDep = null
     }
 
-    //TODO this was #resolveLinks in build-ideal tree. There is also now a #resolveLinks in here from loadVirtual.  Is there overlap? Is it just a coincidence the names match?
+    // TODO this was #resolveLinks in build-ideal tree. There is also now a #resolveLinks in here from loadVirtual.  Is there overlap? Is it just a coincidence the names match?
     if (!this.#depsQueue.length) {
       // go through all the links in the this.#linkNodes set
       // for each one:
@@ -2172,11 +2172,11 @@ To fix:
         await Promise.all(
           // ignore . dirs and retired scoped package folders
           kids.filter(kid => !/^(@[^/]+\/)?\./.test(kid))
-          .filter(kid => this.#filter(node.target, kid))
-          .map(kid => this.#loadFSNode({
-            parent: node.target,
-            path: resolve(nm, kid),
-          })))
+            .filter(kid => this.#filter(node.target, kid))
+            .map(kid => this.#loadFSNode({
+              parent: node.target,
+              path: resolve(nm, kid),
+            })))
       } catch {
         // error in the readdir is not fatal, just means no kids
       }
