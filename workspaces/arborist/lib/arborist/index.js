@@ -116,11 +116,9 @@ class Arborist extends Base {
     timeEnd()
   }
 
-  // TODO: We should change these to static functions instead
-  //   of methods for the next major version
+  // TODO: We should change these to static functions instead of methods for the next major version
 
-  // Get the actual nodes corresponding to a root node's child workspaces,
-  // given a list of workspace names.
+  // Get the actual nodes corresponding to a root node's child workspaces, given a list of workspace names.
   workspaceNodes (tree, workspaces) {
     const wsMap = tree.workspaces
     if (!wsMap) {
