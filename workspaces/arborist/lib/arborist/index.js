@@ -39,7 +39,6 @@ const PackumentCache = require('../packument-cache.js')
 const mixins = [
   require('../tracker.js'),
   require('./build-ideal-tree.js'),
-  require('./rebuild.js'),
   require('./reify.js'),
   require('./isolated-reifier.js'),
 ]
