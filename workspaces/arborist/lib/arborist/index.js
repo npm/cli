@@ -3,28 +3,22 @@
 // - virtual
 // - ideal
 //
-// The actual tree is what's present on disk in the node_modules tree
-// and elsewhere that links may extend.
+// The actual tree is what's present on disk in the node_modules tree and elsewhere that links may extend.
 //
 // The virtual tree is loaded from metadata (package.json and lock files).
 //
-// The ideal tree is what we WANT that actual tree to become.  This starts
-// with the virtual tree, and then applies the options requesting
-// add/remove/update actions.
+// The ideal tree is what we WANT that actual tree to become.  This starts with the virtual tree, and then applies the options requesting add/remove/update actions.
 //
-// To reify a tree, we calculate a diff between the ideal and actual trees,
-// and then turn the actual tree into the ideal tree by taking the actions
-// required.  At the end of the reification process, the actualTree is
-// updated to reflect the changes.
+// To reify a tree, we calculate a diff between the ideal and actual trees, and then turn the actual tree into the ideal tree by taking the actions required.
+// At the end of the reification process, the actualTree is updated to reflect the changes.
 //
-// Each tree has an Inventory at the root.  Shrinkwrap is tracked by Arborist
-// instance.  It always refers to the actual tree, but is updated (and written
-// to disk) on reification.
+// Each tree has an Inventory at the root.
+// Shrinkwrap is tracked by Arborist instance.
+// It always refers to the actual tree, but is updated (and written to disk) on reification.
 
-// Each of the mixin "classes" adds functionality, but are not dependent on
-// constructor call order.  So, we just load them in an array, and build up
-// the base class, so that the overall voltron class is easier to test and
-// cover, and separation of concerns can be maintained.
+// Each of the mixin "classes" adds functionality, but are not dependent on constructor call order.
+// So, we just load them in an array, and build up the base class, so that the overall voltron class is easier to test and cover, and separation of concerns can be maintained.
+// Eventually, each mixin shared enough `Symbol.for` declarations that separation of concerns was not actually happening very well.  This is now moving towards a single large class so that it's easier to weed out duplication in logic and efforts. Tests are still separated by main instance method.
 
 const { resolve } = require('node:path')
 const { homedir } = require('node:os')
@@ -90,6 +84,7 @@ class Arborist extends Base {
       replaceRegistryHost: options.replaceRegistryHost,
       savePrefix: 'savePrefix' in options ? options.savePrefix : '^',
       scriptShell: options.scriptShell,
+      usePackageLock: 'packageLock' in options ? options.packageLock : true,
       workspaces: options.workspaces || [],
       workspacesEnabled: options.workspacesEnabled !== false,
     }

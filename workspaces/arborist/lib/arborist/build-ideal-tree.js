@@ -49,7 +49,6 @@ const _resolvedAdd = Symbol.for('resolvedAdd')
 const _setWorkspaces = Symbol.for('setWorkspaces')
 const _updateAll = Symbol.for('updateAll')
 const _updateNames = Symbol.for('updateNames')
-const _usePackageLock = Symbol.for('usePackageLock')
 
 // used by Reify mixin
 const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
@@ -129,7 +128,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       idealTree = null,
       installLinks = false,
       legacyPeerDeps = false,
-      packageLock = true,
       strictPeerDeps = false,
       workspaces,
       global,
@@ -143,7 +141,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
 
-    this[_usePackageLock] = packageLock
     this.#installStrategy = global ? 'shallow' : installStrategy
     this.#follow = !!follow
 
@@ -321,7 +318,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       .then(root => {
         if (this.options.global) {
           return root
-        } else if (!this[_usePackageLock] || this[_updateAll]) {
+        } else if (!this.options.usePackageLock || this[_updateAll]) {
           return Shrinkwrap.reset({
             path: this.path,
             lockfileVersion: this.options.lockfileVersion,
