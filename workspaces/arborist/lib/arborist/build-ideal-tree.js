@@ -122,10 +122,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   constructor (options) {
     super(options)
 
-    // normalize trailing slash
-    const registry = options.registry || 'https://registry.npmjs.org'
-    options.registry = this.registry = registry.replace(/\/+$/, '') + '/'
-
     const {
       actualTree,
       follow = false,
