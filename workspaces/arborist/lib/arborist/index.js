@@ -100,9 +100,8 @@ class Arborist extends Base {
       workspaces: options.workspaces || [],
       workspacesEnabled: options.workspacesEnabled !== false,
     }
-    // TODO we only ever look at this.options.replaceRegistryHost, not
-    // this.replaceRegistryHost.  Defaulting needs to be written back to
-    // this.options to work properly
+    // TODO we only ever look at this.options.replaceRegistryHost, not this.replaceRegistryHost.
+    // Defaulting needs to be written back to this.options to work properly
     this.replaceRegistryHost = this.options.replaceRegistryHost =
       (!this.options.replaceRegistryHost || this.options.replaceRegistryHost === 'npmjs') ?
         'registry.npmjs.org' : this.options.replaceRegistryHost
