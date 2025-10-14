@@ -26,7 +26,7 @@ const {
 } = require('../can-place-dep.js')
 const PlaceDep = require('../place-dep.js')
 
-const realpath = require('../../lib/realpath.js')
+const realpath = require('../realpath.js')
 const debug = require('../debug.js')
 const fromPath = require('../from-path.js')
 const calcDepFlags = require('../calc-dep-flags.js')
@@ -193,11 +193,9 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       throw new Error('global requires add, rm, or update option')
     }
 
-    // first get the virtual tree, if possible.  If there's a lockfile, then
-    // that defines the ideal tree, unless the root package.json is not
-    // satisfied by what the ideal tree provides.
-    // from there, we start adding nodes to it to satisfy the deps requested
-    // by the package.json in the root.
+    // First get the virtual tree, if possible.
+    // If there's a lockfile, then that defines the ideal tree, unless the root package.json is not satisfied by what the ideal tree provides.
+    // From there, we start adding nodes to it to satisfy the deps requested by the package.json in the root.
 
     this.#parseSettings(options)
 
@@ -1738,14 +1736,10 @@ To fix:
     return root
   }
 
-  // check the lockfile deps, and see if they match.  if they do not
-  // then we have to reset dep flags at the end.  for example, if the
-  // user manually edits their package.json file, then we need to know
-  // that the idealTree is no longer entirely trustworthy.
+  // check the lockfile deps, and see if they match.  if they do not then we have to reset dep flags at the end.
+  // for example, if the user manually edits their package.json file, then we need to know that the idealTree is no longer entirely trustworthy.
   #checkRootEdges (s, root) {
-    // loaded virtually from tree, no chance of being out of sync
-    // ancient lockfiles are critically damaged by this process,
-    // so we need to just hope for the best in those cases.
+    // loaded virtually from tree, no chance of being out of sync ancient lockfiles are critically damaged by this process, so we need to just hope for the best in those cases.
     if (!s.loadedFromDisk || s.ancientLockfile) {
       return
     }
@@ -1864,12 +1858,9 @@ To fix:
   // public method
   // TODO remove options param in next semver major
   async loadActual (options = {}) {
-    // In the past this.actualTree was set as a promise that eventually
-    // resolved, and overwrite this.actualTree with the resolved value.  This
-    // was a problem because virtually no other code expects this.actualTree to
-    // be a promise.  Instead we only set it once resolved, and also return it
-    // from the promise so that it is what's returned from this function when
-    // awaited.
+    // In the past this.actualTree was set as a promise that eventually resolved, and overwrote this.actualTree with the resolved value.
+    // This was a problem because virtually no other code expects this.actualTree to be a promise.
+    // Instead we only set it once resolved, and also return it from the promise so that it is what's returned from this function when awaited.
     if (this.actualTree) {
       return this.actualTree
     }
@@ -1894,13 +1885,12 @@ To fix:
           return this.actualTree
         })
     }
+    // return the promise so that we don't ever have more than one going at the same time.
+    // This is so that buildIdealTree can default to the actualTree if no shrinkwrap present, but reify() can still call buildIdealTree and loadActual in parallel safely.
+    // "buildIdealTree can default to the actualTree" where is this?
+    // XXX this.#actualTree vs this.actualTree?
     return this.#actualTreePromise
   }
-
-  // return the promise so that we don't ever have more than one going at the
-  // same time.  This is so that buildIdealTree can default to the actualTree
-  // if no shrinkwrap present, but reify() can still call buildIdealTree and
-  // loadActual in parallel safely.
 
   async #loadActual (options) {
     // mostly realpath to throw if the root doesn't exist
