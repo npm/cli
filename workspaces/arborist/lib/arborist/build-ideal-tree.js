@@ -122,40 +122,23 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     super(options)
 
     const {
-      actualTree,
       follow = false,
       installStrategy = 'hoisted',
-      idealTree = null,
-      installLinks = false,
-      legacyPeerDeps = false,
       strictPeerDeps = false,
-      workspaces,
       global,
     } = options
 
     this.#strictPeerDeps = !!strictPeerDeps
-
-    // the tree of nodes on disk
-    this.actualTree = actualTree
-    this.idealTree = idealTree
-    this.installLinks = installLinks
-    this.legacyPeerDeps = legacyPeerDeps
-
     this.#installStrategy = global ? 'shallow' : installStrategy
     this.#follow = !!follow
-
-    if (workspaces?.length && global) {
-      throw new Error('Cannot operate on workspaces in global mode')
-    }
-
-    this[_updateAll] = false
-    this[_updateNames] = []
-    this[_resolvedAdd] = []
-
     // caches for cached realpath calls
     const cwd = process.cwd()
     // assume that the cwd is real enough for our purposes
     this.#realpathCache = new Map([[cwd, cwd]])
+
+    this[_updateAll] = false
+    this[_updateNames] = []
+    this[_resolvedAdd] = []
   }
 
   get explicitRequests () {

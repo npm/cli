@@ -18,7 +18,10 @@
 
 // Each of the mixin "classes" adds functionality, but are not dependent on constructor call order.
 // So, we just load them in an array, and build up the base class, so that the overall voltron class is easier to test and cover, and separation of concerns can be maintained.
-// Eventually, each mixin shared enough `Symbol.for` declarations that separation of concerns was not actually happening very well.  This is now moving towards a single large class so that it's easier to weed out duplication in logic and efforts. Tests are still separated by main instance method.
+// Eventually, each mixin shared enough `Symbol.for` declarations that separation of concerns was not actually happening very well.
+// Unit testing was also masking bugs that surfaced when the code was used as a whole, so tests all require Arborist in full now.
+// So, this is now moving towards a single large class so that it's easier to weed out duplication in logic and efforts.
+// Tests are still separated by main instance method.
 
 const { resolve } = require('node:path')
 const { homedir } = require('node:os')
@@ -60,9 +63,18 @@ class Arborist extends Base {
     const timeEnd = time.start('arborist:ctor')
     super(options)
 
+    if (options.workspaces?.length && options.global) {
+      throw new Error('Cannot operate on workspaces in global mode')
+    }
     // normalize trailing slash
     const registry = options.registry || 'https://registry.npmjs.org'
     options.registry = this.registry = registry.replace(/\/+$/, '') + '/'
+
+    // the tree of nodes on disk
+    this.actualTree = options.actualTree
+    this.idealTree = 'idealTree' in options ? options.idealTree : null
+    this.installLinks = 'installLinks' in options ? options.installLinks : false
+    this.legacyPeerDeps = 'legacyPeerDeps' in options ? options.legacyPeerDeps : false
 
     this.options = {
       nodeVersion: process.version,
