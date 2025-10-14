@@ -754,8 +754,7 @@ module.exports = cls => class Reifier extends cls {
     return symlink(rel, node.path, 'junction')
   }
 
-  // if the node is optional, then the failure of the promise is nonfatal
-  // just add it and its optional set to the trash list.
+  // if the node is optional, then the failure of the promise is nonfatal just add it and its optional set to the trash list.
   [_handleOptionalFailure] (node, p) {
     return (node.optional ? p.catch(() => {
       const set = optionalSet(node)
