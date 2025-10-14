@@ -820,6 +820,7 @@ This is a one-time fix-up, please be patient...
       this.#currentDep = null
     }
 
+    //TODO this was #resolveLinks in build-ideal tree. There is also now a #resolveLinks in here from loadVirtual.  Is there overlap? Is it just a coincidence the names match?
     if (!this.#depsQueue.length) {
       // go through all the links in the this.#linkNodes set
       // for each one:
@@ -1330,7 +1331,7 @@ This is a one-time fix-up, please be patient...
     // Decide whether to link or copy the dependency
     const shouldLink = (isWorkspace || isProjectInternalFileSpec || !installLinks) && !isTransitiveFileDep
     if (spec.type === 'directory' && shouldLink) {
-      return this.#linkFromSpec(name, spec, parent, edge)
+      return this.#linkFromSpec(name, spec, parent)
     }
 
     // if the spec matches a workspace name, then see if the workspace node will satisfy the edge. if it does, we return the workspace node to make sure it takes priority.
