@@ -1666,9 +1666,23 @@ This is a one-time fix-up, please be patient...
     this.#checkRootEdges(s, root)
     root.meta = s
     this.virtualTree = root
-    const { links, nodes } = this.#resolveNodes(s, root)
+    // separate out link metadata, and create Node objects for nodes
     // links is the set of metadata, and nodes is the map of non-Link nodes
-    // Set the targets to nodes in the set, if we have them (we might not)
+    const links = new Map()
+    const nodes = new Map([['', root]])
+    for (const [location, meta] of Object.entries(s.data.packages)) {
+      // skip the root because we already got it
+      if (!location) {
+        continue
+      }
+
+      if (meta.link) {
+        links.set(location, meta)
+      } else {
+        nodes.set(location, this.#loadNode(location, meta))
+      }
+    }
+    // set the targets to nodes in the set, if we have them (we might not)
     for (const [location, meta] of links.entries()) {
       const targetPath = resolve(this.path, meta.resolved)
       const targetLoc = relpath(this.path, targetPath)
@@ -1786,25 +1800,6 @@ To fix:
     if (rootNames.size) {
       return this.#flagsSuspect = true
     }
-  }
-
-  // separate out link metadata, and create Node objects for nodes
-  #resolveNodes (s, root) {
-    const links = new Map()
-    const nodes = new Map([['', root]])
-    for (const [location, meta] of Object.entries(s.data.packages)) {
-      // skip the root because we already got it
-      if (!location) {
-        continue
-      }
-
-      if (meta.link) {
-        links.set(location, meta)
-      } else {
-        nodes.set(location, this.#loadNode(location, meta))
-      }
-    }
-    return { links, nodes }
   }
 
   #assignBundles (nodes) {
