@@ -101,6 +101,7 @@ class Arborist extends Base {
     this.cache = resolve(this.options.cache)
     this.diff = null
     this.path = resolve(this.options.path)
+    this.scriptsRun = new Set()
     timeEnd()
   }
 

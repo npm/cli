@@ -37,7 +37,6 @@ const _submitQuickAudit = Symbol('submitQuickAudit')
 const _unpackNewModules = Symbol.for('unpackNewModules')
 const _build = Symbol.for('build')
 
-const _trashList = Symbol.for('trashList')
 const _handleOptionalFailure = Symbol.for('handleOptionalFailure')
 const _loadTrees = Symbol.for('loadTrees')
 const _checkBins = Symbol.for('checkBins')
@@ -86,12 +85,10 @@ module.exports = cls => class Reifier extends cls {
   #shrinkwrapInflated = new Set()
   #sparseTreeDirs = new Set()
   #sparseTreeRoots = new Set()
+  #trashList = new Set()
 
   constructor (options) {
     super(options)
-
-    this[_trashList] = new Set()
-    this.scriptsRun = new Set()
     this.#resetQueues()
   }
 
@@ -145,7 +142,7 @@ module.exports = cls => class Reifier extends cls {
       }
     }
     // clean up any trash that is still in the tree
-    for (const path of this[_trashList]) {
+    for (const path of this.#trashList) {
       const loc = relpath(this.idealTree.realpath, path)
       const node = this.idealTree.inventory.get(loc)
       if (node && node.root === this.idealTree) {
@@ -489,9 +486,9 @@ module.exports = cls => class Reifier extends cls {
       if (retire) {
         const retired = retirePath(path)
         moves[path] = retired
-        this[_trashList].add(retired)
+        this.#trashList.add(retired)
       } else {
-        this[_trashList].add(path)
+        this.#trashList.add(path)
       }
     }
   }
@@ -577,7 +574,7 @@ module.exports = cls => class Reifier extends cls {
         if (st && !st.isDirectory()) {
           const retired = retirePath(d)
           this.#retiredPaths[d] = retired
-          this[_trashList].add(retired)
+          this.#trashList.add(retired)
           await this[_renamePath](d, retired)
         }
       }
@@ -619,7 +616,7 @@ module.exports = cls => class Reifier extends cls {
     const shrinkwraps = this.diff.leaves
       .filter(d => (d.action === 'CHANGE' || d.action === 'ADD' || !d.action) &&
         d.ideal.hasShrinkwrap && !seen.has(d.ideal) &&
-        !this[_trashList].has(d.ideal.path))
+        !this.#trashList.has(d.ideal.path))
 
     if (!shrinkwraps.length) {
       return
@@ -897,7 +894,7 @@ module.exports = cls => class Reifier extends cls {
     const set = (bundlesByDepth.get(depth) || [])
       .filter(node => node.root === this.idealTree &&
         node.target !== node.root &&
-        !this[_trashList].has(node.path))
+        !this.#trashList.has(node.path))
 
     if (!set.length) {
       return this[_loadBundlesAndUpdateTrees](depth + 1, bundlesByDepth)
@@ -1239,7 +1236,7 @@ module.exports = cls => class Reifier extends cls {
     const failures = []
     const _rm = path => rm(path, { recursive: true, force: true }).catch(er => failures.push([path, er]))
 
-    for (const path of this[_trashList]) {
+    for (const path of this.#trashList) {
       promises.push(_rm(path))
     }
 
@@ -1795,7 +1792,7 @@ module.exports = cls => class Reifier extends cls {
 
       // skip any that we know we'll be deleting
       // or storeLinks
-      if (this[_trashList].has(path) || isStoreLink) {
+      if (this.#trashList.has(path) || isStoreLink) {
         return
       }
 
@@ -1870,7 +1867,7 @@ module.exports = cls => class Reifier extends cls {
   }
 
   async #createBinLinks (node) {
-    if (this[_trashList].has(node.path)) {
+    if (this.#trashList.has(node.path)) {
       return
     }
 
