@@ -60,7 +60,6 @@ const _saveIdealTree = Symbol.for('saveIdealTree')
 
 // defined by build-ideal-tree mixin
 const _resolvedAdd = Symbol.for('resolvedAdd')
-const _usePackageLock = Symbol.for('usePackageLock')
 // used by build-ideal-tree mixin
 const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
 
@@ -1493,7 +1492,7 @@ module.exports = cls => class Reifier extends cls {
 
     // before now edge specs could be changing, affecting the `requires` field
     // in the package lock, so we hold off saving to the very last action
-    if (this[_usePackageLock]) {
+    if (this.options.usePackageLock) {
       // preserve indentation, if possible
       let format = this.idealTree.package[Symbol.for('indent')]
       if (format === undefined) {

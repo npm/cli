@@ -116,6 +116,7 @@ class Arborist extends Base {
       replaceRegistryHost: options.replaceRegistryHost,
       savePrefix: 'savePrefix' in options ? options.savePrefix : '^',
       scriptShell: options.scriptShell,
+      usePackageLock: 'packageLock' in options ? options.packageLock : true,
       workspaces: options.workspaces || [],
       workspacesEnabled: options.workspacesEnabled !== false,
     }

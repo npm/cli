@@ -42,7 +42,6 @@ const _flagsSuspect = Symbol.for('flagsSuspect')
 const _setWorkspaces = Symbol.for('setWorkspaces')
 const _updateNames = Symbol.for('updateNames')
 const _resolvedAdd = Symbol.for('resolvedAdd')
-const _usePackageLock = Symbol.for('usePackageLock')
 const _rpcache = Symbol.for('realpathCache')
 const _stcache = Symbol.for('statCache')
 
@@ -104,14 +103,12 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     const {
       follow = false,
       installStrategy = 'hoisted',
-      packageLock = true,
       strictPeerDeps = false,
       global,
     } = options
 
     this.#strictPeerDeps = !!strictPeerDeps
 
-    this[_usePackageLock] = packageLock
     this.#installStrategy = global ? 'shallow' : installStrategy
     this.#follow = !!follow
 
@@ -289,7 +286,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       .then(root => {
         if (this.options.global) {
           return root
-        } else if (!this[_usePackageLock] || this[_updateAll]) {
+        } else if (!this.options.usePackageLock || this[_updateAll]) {
           return Shrinkwrap.reset({
             path: this.path,
             lockfileVersion: this.options.lockfileVersion,
