@@ -118,6 +118,13 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this[_updateAll] = false
     this[_updateNames] = []
     this[_resolvedAdd] = []
+
+    // caches for cached realpath calls
+    const cwd = process.cwd()
+    // assume that the cwd is real enough for our purposes
+    this[_rpcache] = new Map([[cwd, cwd]])
+    this[_stcache] = new Map()
+    this[_flagsSuspect] = false
   }
 
   get explicitRequests () {

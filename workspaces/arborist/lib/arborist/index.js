@@ -80,6 +80,7 @@ class Arborist extends Base {
       idealTree = null,
       installLinks = false,
       legacyPeerDeps = false,
+      virtualTree,
       workspaces,
     } = options
 
@@ -87,9 +88,13 @@ class Arborist extends Base {
       throw new Error('Cannot operate on workspaces in global mode')
     }
 
+    // the tree of nodes on disk
+    this.actualTree = actualTree
     this.idealTree = idealTree
     this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
+    // the virtual tree we load from a shrinkwrap
+    this.virtualTree = virtualTree
 
     this.options = {
       nodeVersion: process.version,
@@ -127,6 +132,7 @@ class Arborist extends Base {
     this.cache = resolve(this.options.cache)
     this.diff = null
     this.path = resolve(this.options.path)
+    this.scriptsRun = new Set()
     timeEnd()
   }
 
