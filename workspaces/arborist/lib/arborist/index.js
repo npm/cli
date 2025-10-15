@@ -68,6 +68,11 @@ class Arborist extends Base {
   constructor (options = {}) {
     const timeEnd = time.start('arborist:ctor')
     super(options)
+
+    // normalize trailing slash
+    const registry = options.registry || 'https://registry.npmjs.org'
+    options.registry = this.registry = registry.replace(/(?<!\/)\/+$/, '') + '/'
+
     this.options = {
       nodeVersion: process.version,
       ...options,
