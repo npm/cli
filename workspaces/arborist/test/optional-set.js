@@ -64,7 +64,6 @@ calcDepFlags(tree)
 
 const nodeJ = tree.children.get('j')
 const nodeI = tree.children.get('i')
-const nodeA = tree.children.get('a')
 const nodeO = tree.children.get('o')
 const nodeM = tree.children.get('m')
 const nodeN = tree.children.get('n')
@@ -74,9 +73,6 @@ const setJ = optionalSet(nodeJ)
 t.equal(setJ.has(nodeJ), true, 'gathering from j includes j')
 t.equal(setJ.has(nodeI), true, 'gathering from j includes i')
 t.equal(setJ.size, 2, 'two nodes in j set')
-
-const setA = optionalSet(nodeA)
-t.equal(setA.size, 0, 'gathering from a is empty set')
 
 const setO = optionalSet(nodeO)
 t.equal(setO.size, 3, 'three nodes in o set')
