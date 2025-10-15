@@ -104,28 +104,16 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     const {
       follow = false,
       installStrategy = 'hoisted',
-      idealTree = null,
-      installLinks = false,
-      legacyPeerDeps = false,
       packageLock = true,
       strictPeerDeps = false,
-      workspaces,
       global,
     } = options
 
     this.#strictPeerDeps = !!strictPeerDeps
 
-    this.idealTree = idealTree
-    this.installLinks = installLinks
-    this.legacyPeerDeps = legacyPeerDeps
-
     this[_usePackageLock] = packageLock
     this.#installStrategy = global ? 'shallow' : installStrategy
     this.#follow = !!follow
-
-    if (workspaces?.length && global) {
-      throw new Error('Cannot operate on workspaces in global mode')
-    }
 
     this[_updateAll] = false
     this[_updateNames] = []

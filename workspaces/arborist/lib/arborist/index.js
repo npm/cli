@@ -73,6 +73,24 @@ class Arborist extends Base {
     const registry = options.registry || 'https://registry.npmjs.org'
     options.registry = this.registry = registry.replace(/(?<!\/)\/+$/, '') + '/'
 
+    // TODO as we consolidate constructors it's more apparent that we are not parsing options and using this.options consistently
+    const {
+      actualTree,
+      global,
+      idealTree = null,
+      installLinks = false,
+      legacyPeerDeps = false,
+      workspaces,
+    } = options
+
+    if (workspaces?.length && global) {
+      throw new Error('Cannot operate on workspaces in global mode')
+    }
+
+    this.idealTree = idealTree
+    this.installLinks = installLinks
+    this.legacyPeerDeps = legacyPeerDeps
+
     this.options = {
       nodeVersion: process.version,
       ...options,
