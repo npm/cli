@@ -69,7 +69,21 @@ module.exports = cls => class VirtualLoader extends cls {
     this.#checkRootEdges(s, root)
     root.meta = s
     this.virtualTree = root
-    const { links, nodes } = this.#resolveNodes(s, root)
+    // separate out link metadata, and create Node objects for nodes
+    const links = new Map()
+    const nodes = new Map([['', root]])
+    for (const [location, meta] of Object.entries(s.data.packages)) {
+      // skip the root because we already got it
+      if (!location) {
+        continue
+      }
+
+      if (meta.link) {
+        links.set(location, meta)
+      } else {
+        nodes.set(location, this.#loadNode(location, meta))
+      }
+    }
     await this.#resolveLinks(links, nodes)
     if (!(s.originalLockfileVersion >= 2)) {
       this.#assignBundles(nodes)
@@ -150,25 +164,6 @@ module.exports = cls => class VirtualLoader extends cls {
     if (rootNames.size) {
       return this[flagsSuspect] = true
     }
-  }
-
-  // separate out link metadata, and create Node objects for nodes
-  #resolveNodes (s, root) {
-    const links = new Map()
-    const nodes = new Map([['', root]])
-    for (const [location, meta] of Object.entries(s.data.packages)) {
-      // skip the root because we already got it
-      if (!location) {
-        continue
-      }
-
-      if (meta.link) {
-        links.set(location, meta)
-      } else {
-        nodes.set(location, this.#loadNode(location, meta))
-      }
-    }
-    return { links, nodes }
   }
 
   // links is the set of metadata, and nodes is the map of non-Link nodes
