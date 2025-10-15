@@ -57,7 +57,6 @@ const _rollbackRetireShallowNodes = Symbol.for('rollbackRetireShallowNodes')
 const _rollbackCreateSparseTree = Symbol.for('rollbackCreateSparseTree')
 const _rollbackMoveBackRetiredUnchanged = Symbol.for('rollbackMoveBackRetiredUnchanged')
 const _saveIdealTree = Symbol.for('saveIdealTree')
-const _reifyPackages = Symbol.for('reifyPackages')
 
 // defined by build-ideal-tree mixin
 const _resolvedAdd = Symbol.for('resolvedAdd')
@@ -127,7 +126,7 @@ module.exports = cls => class Reifier extends cls {
       this.idealTree = await this[_createIsolatedTree]()
     }
     await this[_diffTrees]()
-    await this[_reifyPackages]()
+    await this.#reifyPackages()
     if (linked) {
       // swap back in the idealTree
       // so that the lockfile is preserved
@@ -266,7 +265,7 @@ module.exports = cls => class Reifier extends cls {
     return treeCheck(this.actualTree)
   }
 
-  async [_reifyPackages] () {
+  async #reifyPackages () {
     // we don't submit the audit report or write to disk on dry runs
     if (this.options.dryRun) {
       return
