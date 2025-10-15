@@ -1219,7 +1219,7 @@ This is a one-time fix-up, please be patient...
     }
   }
 
-  #nodeFromSpec (name, spec, parent, edge) {
+  async #nodeFromSpec (name, spec, parent, edge) {
     // pacote will slap integrity on its options, so we have to clone
     // the object so it doesn't get mutated.
     // Don't bother to load the manifest for link deps, because the target
@@ -1248,7 +1248,13 @@ This is a one-time fix-up, please be patient...
     // Decide whether to link or copy the dependency
     const shouldLink = (isWorkspace || isProjectInternalFileSpec || !installLinks) && !isTransitiveFileDep
     if (spec.type === 'directory' && shouldLink) {
-      return this.#linkFromSpec(name, spec, parent)
+      const realpath = spec.fetchSpec
+      const { content: pkg } = await PackageJson.normalize(realpath).catch(() => {
+        return { content: {} }
+      })
+      const link = new Link({ name, parent, realpath, pkg, installLinks, legacyPeerDeps })
+      this.#linkNodes.add(link)
+      return link
     }
 
     // if the spec matches a workspace name, then see if the workspace node will satisfy the edge. if it does, we return the workspace node to make sure it takes priority.
@@ -1287,17 +1293,6 @@ This is a one-time fix-up, please be patient...
         this.#loadFailures.add(n)
         return n
       })
-  }
-
-  async #linkFromSpec (name, spec, parent) {
-    const realpath = spec.fetchSpec
-    const { installLinks, legacyPeerDeps } = this
-    const { content: pkg } = await PackageJson.normalize(realpath).catch(() => {
-      return { content: {} }
-    })
-    const link = new Link({ name, parent, realpath, pkg, installLinks, legacyPeerDeps })
-    this.#linkNodes.add(link)
-    return link
   }
 
   // load all peer deps and meta-peer deps into the node's parent
