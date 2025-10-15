@@ -70,12 +70,10 @@ const _createIsolatedTree = Symbol.for('createIsolatedTree')
 module.exports = cls => class Reifier extends cls {
   #bundleMissing = new Set() // child nodes we'd EXPECT to be included in a bundle, but aren't
   #bundleUnpacked = new Set() // the nodes we unpack to read their bundles
-  #dryRun
   #nmValidated = new Set()
   #omit
   #retiredPaths = {}
   #retiredUnchanged = {}
-  #savePrefix
   #shrinkwrapInflated = new Set()
   #sparseTreeDirs = new Set()
   #sparseTreeRoots = new Set()
