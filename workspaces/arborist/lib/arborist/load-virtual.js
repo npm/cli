@@ -168,6 +168,7 @@ module.exports = cls => class VirtualLoader extends cls {
 
   // links is the set of metadata, and nodes is the map of non-Link nodes
   // Set the targets to nodes in the set, if we have them (we might not)
+  // XXX build-ideal-tree also has a #resolveLinks, is there overlap?
   async #resolveLinks (links, nodes) {
     for (const [location, meta] of links.entries()) {
       const targetPath = resolve(this.path, meta.resolved)

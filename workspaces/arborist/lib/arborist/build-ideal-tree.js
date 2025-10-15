@@ -1429,6 +1429,7 @@ This is a one-time fix-up, please be patient...
   //   and add it to the _depsQueue
   //
   // call buildDepStep if anything was added to the queue; otherwise, we're done
+  // XXX load-virtual also has a #resolveLinks, is there overlap?
   #resolveLinks () {
     for (const link of this.#linkNodes) {
       this.#linkNodes.delete(link)
