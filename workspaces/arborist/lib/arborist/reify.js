@@ -71,7 +71,6 @@ const sortNodes = (a, b) => (a.depth - b.depth) || localeCompare(a.path, b.path)
 module.exports = cls => class Reifier extends cls {
   #bundleMissing = new Set() // child nodes we'd EXPECT to be included in a bundle, but aren't
   #bundleUnpacked = new Set() // the nodes we unpack to read their bundles
-  #dryRun
   #doHandleOptionalFailure
   #nmValidated = new Set()
   #oldMeta = null
@@ -79,7 +78,6 @@ module.exports = cls => class Reifier extends cls {
   #queues
   #retiredPaths = {}
   #retiredUnchanged = {}
-  #savePrefix
   #shrinkwrapInflated = new Set()
   #sparseTreeDirs = new Set()
   #sparseTreeRoots = new Set()
