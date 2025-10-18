@@ -4488,6 +4488,7 @@ Options:
 [--preid prerelease-id] [--sign-git-tag]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--no-workspaces-update] [--include-workspace-root]
+[--ignore-scripts]
 
 alias: verison
 
@@ -4509,6 +4510,7 @@ alias: verison
 #### \`workspaces\`
 #### \`workspaces-update\`
 #### \`include-workspace-root\`
+#### \`ignore-scripts\`
 `
 
 exports[`test/lib/docs.js TAP usage view > must match snapshot 1`] = `
