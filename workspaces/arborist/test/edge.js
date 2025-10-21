@@ -1244,3 +1244,121 @@ t.test('override fallback to local when root missing dependency with from.overri
   t.equal(edge.spec, '^1.2.3', 'should fall back to local package version from devDependencies')
   t.end()
 })
+
+t.test('multiple edges with different override contexts to same node should be valid', t => {
+  // Regression test for https://github.com/npm/cli/issues/8688
+  // Multiple packages with different override contexts can legitimately depend on the same
+  // shared package. This happens with reference overrides ($syntax) where different override
+  // sets (e.g., $@vaadin/react-components vs $@vaadin/react-components-pro) resolve to the
+  // same effective versions despite being structurally different.
+
+  // Create two different override sets (simulating Vaadin's structure)
+  const overridesComponents = new OverrideSet({
+    overrides: {
+      '@vaadin/react-components': '24.9.2',
+    },
+  })
+
+  const overridesComponentsPro = new OverrideSet({
+    overrides: {
+      '@vaadin/react-components-pro': '24.9.2',
+    },
+  })
+
+  const root = {
+    name: 'root',
+    edgesOut: new Map(),
+    edgesIn: new Set(),
+    explain: () => 'root',
+    package: { name: 'root', version: '1.0.0' },
+    get version () { return this.package.version },
+    isTop: true,
+    parent: null,
+    overrides: overridesComponents,
+    resolve (n) {
+      return n === 'lit' ? lit : null
+    },
+    addEdgeOut (edge) { this.edgesOut.set(edge.name, edge) },
+    addEdgeIn (edge) { this.edgesIn.add(edge) },
+    deleteEdgeIn (edge) { this.edgesIn.delete(edge) },
+  }
+
+  // Shared dependency with non-peer dependencies
+  const lit = {
+    name: 'lit',
+    edgesOut: new Map([
+      ['@lit/reactive-element', { name: '@lit/reactive-element', peer: false }],
+      ['lit-html', { name: 'lit-html', peer: false }],
+    ]),
+    edgesIn: new Set(),
+    explain: () => 'lit',
+    package: { name: 'lit', version: '3.3.1' },
+    get version () { return this.package.version },
+    parent: root,
+    root,
+    overrides: overridesComponents,
+    resolve (n) { return this.parent.resolve(n) },
+    addEdgeOut (edge) { this.edgesOut.set(edge.name, edge) },
+    addEdgeIn (edge) { this.edgesIn.add(edge) },
+    deleteEdgeIn (edge) { this.edgesIn.delete(edge) },
+  }
+
+  const componentA = {
+    name: 'component-a',
+    edgesOut: new Map(),
+    edgesIn: new Set(),
+    explain: () => 'component-a',
+    package: { name: 'component-a', version: '1.0.0' },
+    get version () { return this.package.version },
+    parent: root,
+    root,
+    overrides: overridesComponents,
+    resolve (n) { return this.parent.resolve(n) },
+    addEdgeOut (edge) { this.edgesOut.set(edge.name, edge) },
+    addEdgeIn (edge) { this.edgesIn.add(edge) },
+    deleteEdgeIn (edge) { this.edgesIn.delete(edge) },
+  }
+
+  const componentB = {
+    name: 'component-b',
+    edgesOut: new Map(),
+    edgesIn: new Set(),
+    explain: () => 'component-b',
+    package: { name: 'component-b', version: '1.0.0' },
+    get version () { return this.package.version },
+    parent: root,
+    root,
+    overrides: overridesComponentsPro, // Different override context
+    resolve (n) { return this.parent.resolve(n) },
+    addEdgeOut (edge) { this.edgesOut.set(edge.name, edge) },
+    addEdgeIn (edge) { this.edgesIn.add(edge) },
+    deleteEdgeIn (edge) { this.edgesIn.delete(edge) },
+  }
+
+  // Create two edges with different override contexts pointing to the same node
+  const edge1 = new Edge({
+    from: componentA,
+    type: 'prod',
+    spec: '^3.0.0',
+    name: 'lit',
+    overrides: overridesComponents.getEdgeRule({ name: 'lit', spec: '^3.0.0' }),
+  })
+
+  const edge2 = new Edge({
+    from: componentB,
+    type: 'prod',
+    spec: '^3.0.0',
+    name: 'lit',
+    overrides: overridesComponentsPro.getEdgeRule({ name: 'lit', spec: '^3.0.0' }),
+  })
+
+  // Before the fix (b9225e524), edge2 would be marked as INVALID because it has a different
+  // override context than edge1, and the override conflict check would fail.
+  // After the fix, both edges should be valid because they both satisfy the version requirement.
+  // Any actual conflicts in lit's dependencies will be caught during normal dependency resolution.
+  t.ok(edge1.valid, 'first edge with override context should be valid')
+  t.ok(edge2.valid, 'second edge with different override context should also be valid')
+  t.notOk(edge1.error, 'first edge should not have an error')
+  t.notOk(edge2.error, 'second edge should not have an error')
+  t.end()
+})

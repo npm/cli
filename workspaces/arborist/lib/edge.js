@@ -275,12 +275,15 @@ class Edge {
         this.#error = 'PEER LOCAL'
       } else if (!this.satisfiedBy(this.#to)) {
         this.#error = 'INVALID'
-      } else if (this.overrides && this.#to.edgesOut.size && OverrideSet.doOverrideSetsConflict(this.overrides, this.#to.overrides)) {
-        // Any inconsistency between the edge's override set and the target's override set is potentially problematic.
-        // But we only say the edge is in error if the override sets are plainly conflicting.
-        // Note that if the target doesn't have any dependencies of their own, then this inconsistency is irrelevant.
-        this.#error = 'INVALID'
       } else {
+        // Note: We intentionally do NOT check for override conflicts here.
+        // Different override sets pointing to the same node are allowed as long as:
+        // 1. The node satisfies the version requirement (checked by satisfiedBy above)
+        // 2. Any actual version conflicts in the node's dependencies will be caught
+        //    during normal dependency resolution in the build/reify phase
+        // The previous check (from b9225e524) was overly conservative and produced
+        // false positives, especially with reference overrides ($syntax) that resolve
+        // to the same effective versions despite being structurally different.
         this.#error = 'OK'
       }
     }
