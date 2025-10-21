@@ -1271,16 +1271,24 @@ t.test('multiple edges with different override contexts to same node should be v
     edgesIn: new Set(),
     explain: () => 'root',
     package: { name: 'root', version: '1.0.0' },
-    get version () { return this.package.version },
+    get version () {
+      return this.package.version
+    },
     isTop: true,
     parent: null,
     overrides: overridesComponents,
     resolve (n) {
       return n === 'lit' ? lit : null
     },
-    addEdgeOut (edge) { this.edgesOut.set(edge.name, edge) },
-    addEdgeIn (edge) { this.edgesIn.add(edge) },
-    deleteEdgeIn (edge) { this.edgesIn.delete(edge) },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+    deleteEdgeIn (edge) {
+      this.edgesIn.delete(edge)
+    },
   }
 
   // Shared dependency with non-peer dependencies
@@ -1293,14 +1301,24 @@ t.test('multiple edges with different override contexts to same node should be v
     edgesIn: new Set(),
     explain: () => 'lit',
     package: { name: 'lit', version: '3.3.1' },
-    get version () { return this.package.version },
+    get version () {
+      return this.package.version
+    },
     parent: root,
     root,
     overrides: overridesComponents,
-    resolve (n) { return this.parent.resolve(n) },
-    addEdgeOut (edge) { this.edgesOut.set(edge.name, edge) },
-    addEdgeIn (edge) { this.edgesIn.add(edge) },
-    deleteEdgeIn (edge) { this.edgesIn.delete(edge) },
+    resolve (n) {
+      return this.parent.resolve(n)
+    },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+    deleteEdgeIn (edge) {
+      this.edgesIn.delete(edge)
+    },
   }
 
   const componentA = {
@@ -1309,14 +1327,24 @@ t.test('multiple edges with different override contexts to same node should be v
     edgesIn: new Set(),
     explain: () => 'component-a',
     package: { name: 'component-a', version: '1.0.0' },
-    get version () { return this.package.version },
+    get version () {
+      return this.package.version
+    },
     parent: root,
     root,
     overrides: overridesComponents,
-    resolve (n) { return this.parent.resolve(n) },
-    addEdgeOut (edge) { this.edgesOut.set(edge.name, edge) },
-    addEdgeIn (edge) { this.edgesIn.add(edge) },
-    deleteEdgeIn (edge) { this.edgesIn.delete(edge) },
+    resolve (n) {
+      return this.parent.resolve(n)
+    },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+    deleteEdgeIn (edge) {
+      this.edgesIn.delete(edge)
+    },
   }
 
   const componentB = {
@@ -1325,14 +1353,24 @@ t.test('multiple edges with different override contexts to same node should be v
     edgesIn: new Set(),
     explain: () => 'component-b',
     package: { name: 'component-b', version: '1.0.0' },
-    get version () { return this.package.version },
+    get version () {
+      return this.package.version
+    },
     parent: root,
     root,
     overrides: overridesComponentsPro, // Different override context
-    resolve (n) { return this.parent.resolve(n) },
-    addEdgeOut (edge) { this.edgesOut.set(edge.name, edge) },
-    addEdgeIn (edge) { this.edgesIn.add(edge) },
-    deleteEdgeIn (edge) { this.edgesIn.delete(edge) },
+    resolve (n) {
+      return this.parent.resolve(n)
+    },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+    deleteEdgeIn (edge) {
+      this.edgesIn.delete(edge)
+    },
   }
 
   // Create two edges with different override contexts pointing to the same node

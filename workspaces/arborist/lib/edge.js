@@ -4,7 +4,6 @@
 const util = require('node:util')
 const npa = require('npm-package-arg')
 const depValid = require('./dep-valid.js')
-const OverrideSet = require('./override-set.js')
 
 class ArboristEdge {
   constructor (edge) {
