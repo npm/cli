@@ -3277,6 +3277,80 @@ t.test('should propagate the new override set to the target node', t => {
   t.end()
 })
 
+t.test('edges with different override contexts to same node should be valid', t => {
+  // Regression test for issue #8688
+  // Replaces the removed test 'should find inconsistency between the edge's override set
+  // and the target's override set' which was testing override conflict detection that
+  // was intentionally removed because it caused false positives.
+
+  // Create two different override sets (simulating Vaadin's structure)
+  const overridesComponents = new OverrideSet({
+    overrides: {
+      '@vaadin/react-components': '24.9.2',
+    },
+  })
+
+  const overridesComponentsPro = new OverrideSet({
+    overrides: {
+      '@vaadin/react-components-pro': '24.9.2',
+    },
+  })
+
+  const tree = new Node({
+    loadOverrides: true,
+    path: '/root',
+    pkg: {
+      name: 'root',
+      version: '1.0.0',
+      dependencies: {
+        mockDep: '1.x',
+      },
+      overrides: {
+        mockDep: '2.x',
+      },
+    },
+    children: [{
+      name: 'mockDep',
+      version: '2.0.0',
+      pkg: {
+        dependencies: {
+          subDep: '1.0.0',
+        },
+      },
+      children: [{
+        name: 'subDep',
+        version: '1.0.0',
+        pkg: {},
+      }],
+    }],
+  })
+
+  const edge = tree.edgesOut.get('mockDep')
+
+  // Manually set an override to the edge
+  edge.overrides = overridesComponents
+
+  // Override satisfiedBy so it returns true, simulating that the node satisfies the version
+  edge.satisfiedBy = () => true
+
+  // Before the fix (b9225e524), if we then changed the target node's override to a different
+  // set, the edge would be marked INVALID due to override conflict detection.
+  // After the fix, the edge should remain valid because:
+  // 1. satisfiedBy returns true (version is satisfied)
+  // 2. We no longer check for override conflicts at the edge level
+  const mockDep = tree.children.get('mockDep')
+  mockDep.overrides = overridesComponentsPro
+
+  // Force edge to recalculate
+  edge.reload(true)
+
+  // The edge should be valid despite different override contexts
+  t.equal(edge.error, null, 'Edge should be valid despite different override contexts')
+  t.ok(edge.valid, 'Edge.valid should be true')
+
+  t.end()
+})
+
 t.test('shouldOmit method', t => {
   t.test('dev dependency with dev omit', t => {
     const node = new Node({
