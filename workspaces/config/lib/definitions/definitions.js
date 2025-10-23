@@ -2009,6 +2009,20 @@ const definitions = {
     `,
     flatten,
   }),
+  'skip-lock-validation': new Definition('skip-lock-validation', {
+    default: false,
+    type: Boolean,
+    description: `
+      When set to \`true\`, \`npm ci\` will install packages directly from the
+      lockfile without validating that the lockfile satisfies the dependency
+      ranges specified in package.json. This allows the lockfile to be trusted completely,
+      ensuring true reproducibility.
+
+      By default, \`npm ci\` validates that the packages in the
+      lockfile are an exact match for dependencies in package.json.
+    `,
+    flatten,
+  }),
   'strict-peer-deps': new Definition('strict-peer-deps', {
     default: false,
     type: Boolean,
