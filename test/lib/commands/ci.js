@@ -308,3 +308,33 @@ t.test('should use --workspace flag', async t => {
   assert.packageMissing('node_modules/abbrev@1.1.0')
   assert.packageInstalled('node_modules/lodash@1.1.1')
 })
+
+t.test('should skip validation with --skip-lock-validation', async t => {
+  const { npm, joinedOutput, registry } = await loadMockNpm(t, {
+    config: {
+      'skip-lock-validation': true,
+    },
+    prefixDir: {
+      abbrev: abbrev,
+      // package.json has different dependency than lockfile, but should not error
+      'package.json': JSON.stringify({
+        ...packageJson,
+        dependencies: { notabbrev: '^1.0.0' },
+      }),
+      'package-lock.json': JSON.stringify(packageLock),
+      node_modules: { test: 'test file that will be removed' },
+    },
+  })
+  const manifest = registry.manifest({ name: 'abbrev' })
+  await registry.tarball({
+    manifest: manifest.versions['1.0.0'],
+    tarball: path.join(npm.prefix, 'abbrev'),
+  })
+  registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  await npm.exec('ci', [])
+  t.match(joinedOutput(), 'added 1 package, and audited 2 packages in')
+  const nmTest = path.join(npm.prefix, 'node_modules', 'test')
+  t.equal(fs.existsSync(nmTest), false, 'existing node_modules is removed')
+  const nmAbbrev = path.join(npm.prefix, 'node_modules', 'abbrev')
+  t.equal(fs.existsSync(nmAbbrev), true, 'installs abbrev from lockfile')
+})

@@ -150,6 +150,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "shrinkwrap": true,
   "sign-git-commit": false,
   "sign-git-tag": false,
+  "skip-lock-validation": false,
   "strict-peer-deps": false,
   "strict-ssl": true,
   "tag": "latest",
@@ -316,6 +317,7 @@ shell = "{SHELL}"
 shrinkwrap = true
 sign-git-commit = false
 sign-git-tag = false
+skip-lock-validation = false
 strict-peer-deps = false
 strict-ssl = true
 tag = "latest"

@@ -1604,6 +1604,21 @@ this to work properly.
 
 
 
+#### \`skip-lock-validation\`
+
+* Default: false
+* Type: Boolean
+
+When set to \`true\`, \`npm ci\` will install packages directly from the
+lockfile without validating that the lockfile satisfies the dependency
+ranges specified in package.json. This allows the lockfile to be trusted
+completely, ensuring true reproducibility.
+
+By default, \`npm ci\` validates that the packages in the lockfile are an
+exact match for dependencies in package.json.
+
+
+
 #### \`strict-peer-deps\`
 
 * Default: false
@@ -2231,6 +2246,7 @@ Array [
   "shrinkwrap",
   "sign-git-commit",
   "sign-git-tag",
+  "skip-lock-validation",
   "strict-peer-deps",
   "strict-ssl",
   "tag",
@@ -2373,6 +2389,7 @@ Array [
   "shrinkwrap",
   "sign-git-commit",
   "sign-git-tag",
+  "skip-lock-validation",
   "strict-peer-deps",
   "strict-ssl",
   "tag",
@@ -2536,6 +2553,7 @@ Object {
   "signGitCommit": false,
   "signGitTag": false,
   "silent": false,
+  "skipLockValidation": false,
   "strictPeerDeps": false,
   "strictSSL": true,
   "tagVersionPrefix": "v",
@@ -2760,7 +2778,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
-[--no-bin-links] [--no-fund] [--dry-run]
+[--no-bin-links] [--no-fund] [--dry-run] [--skip-lock-validation]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -2786,6 +2804,7 @@ aliases: clean-install, ic, install-clean, isntall-clean
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
+#### \`skip-lock-validation\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
@@ -3357,7 +3376,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
-[--no-bin-links] [--no-fund] [--dry-run]
+[--no-bin-links] [--no-fund] [--dry-run] [--skip-lock-validation]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3383,6 +3402,7 @@ aliases: cit, clean-install-test, sit
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
+#### \`skip-lock-validation\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
