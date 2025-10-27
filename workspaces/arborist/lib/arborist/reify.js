@@ -1673,7 +1673,7 @@ module.exports = cls => class Reifier extends cls {
           // save the git+https url if it has auth; otherwise, shortcut
           const h = req.hosted
           const opt = { noCommittish: false }
-          if (h.https && h.auth) {
+          if (h.https && (h.auth || h.default === 'https')) {
             newSpec = `git+${h.https(opt)}`
           } else {
             newSpec = h.shortcut(opt)

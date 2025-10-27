@@ -4268,7 +4268,7 @@ t.test('ls --json', async t => {
           abbrev: {
             version: '1.1.1',
             overridden: false,
-            resolved: 'git+ssh://git@github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c',
+            resolved: 'git+https://github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c',
           },
         },
       },
