@@ -190,12 +190,15 @@ safer to use a registry-provided authentication bearer token stored in the
 
 * Default: 'public' for new packages, existing packages it will not change the
   current level
-* Type: null, "restricted", or "public"
+* Type: null, "restricted", "public", "read-only", or "read-write"
 
-If you do not want your scoped package to be publicly viewable (and
-installable) set \`--access=restricted\`.
+When used with \`npm publish\`: If you do not want your scoped package to be
+publicly viewable (and installable) set \`--access=restricted\`. Unscoped
+packages cannot be set to \`restricted\`.
 
-Unscoped packages cannot be set to \`restricted\`.
+When used with \`npm token create\`: Set the access level for the token. Use
+\`read-only\` for tokens that can only download packages, or \`read-write\` for
+tokens that can publish packages.
 
 Note: This defaults to not changing the current access level for existing
 packages. Specifying a value of \`restricted\` or \`public\` during publish will
@@ -299,6 +302,17 @@ Set to \`false\` to suppress browser behavior and instead print urls to
 terminal.
 
 Set to \`true\` to use default system URL opener.
+
+
+
+#### \`bypass-2fa\`
+
+* Default: false
+* Type: Boolean
+
+When creating a Granular Access Token with \`npm token create\`, setting this
+to true will allow the token to bypass two-factor authentication. This is
+useful for automation and CI/CD workflows.
 
 
 
@@ -555,6 +569,17 @@ Tells npm whether or not to expect results from the command. Can be either
 true (expect some results) or false (expect no results).
 
 This config cannot be used with: \`expect-result-count\`
+
+#### \`expires\`
+
+* Default: null
+* Type: null, String, or Date
+
+When creating a Granular Access Token with \`npm token create\`, this sets the
+expiration date for the token. Format: YYYY-MM-DD or ISO 8601 date string.
+If not specified, defaults to 7 days from creation.
+
+
 
 #### \`fetch-retries\`
 
@@ -1081,6 +1106,16 @@ Any "%s" in the message will be replaced with the version number.
 
 
 
+#### \`name\`
+
+* Default: null
+* Type: null or String
+
+When creating a Granular Access Token with \`npm token create\`, this sets the
+name/description for the token.
+
+
+
 #### \`node-gyp\`
 
 * Default: The path to the node-gyp bin that ships with npm
@@ -1158,6 +1193,17 @@ time.
 
 
 
+#### \`orgs\`
+
+* Default: null
+* Type: null or String (can be set multiple times)
+
+When creating a Granular Access Token with \`npm token create\`, this limits
+the token access to specific organizations. Provide a comma-separated list
+of organization names.
+
+
+
 #### \`os\`
 
 * Default: null
@@ -1222,6 +1268,17 @@ instead of checking \`node_modules\` and downloading dependencies.
 
 For \`list\` this means the output will be based on the tree described by the
 \`package-lock.json\`, rather than the contents of \`node_modules\`.
+
+
+
+#### \`packages\`
+
+* Default:
+* Type: null or String (can be set multiple times)
+
+When creating a Granular Access Token with \`npm token create\`, this limits
+the token access to specific packages. Provide a comma-separated list of
+package names.
 
 
 
@@ -1517,6 +1574,17 @@ This will also cause \`npm init\` to create a scoped package.
 # instead of just named "whatever"
 npm init --scope=@foo --yes
 \`\`\`
+
+
+
+#### \`scopes\`
+
+* Default: null
+* Type: null or String (can be set multiple times)
+
+When creating a Granular Access Token with \`npm token create\`, this limits
+the token access to specific scopes. Provide a comma-separated list of scope
+names (with or without @ prefix).
 
 
 
@@ -2103,6 +2171,7 @@ Array [
   "before",
   "bin-links",
   "browser",
+  "bypass-2fa",
   "ca",
   "cache",
   "cache-max",
@@ -2130,6 +2199,7 @@ Array [
   "engine-strict",
   "expect-result-count",
   "expect-results",
+  "expires",
   "fetch-retries",
   "fetch-retry-factor",
   "fetch-retry-maxtimeout",
@@ -2180,6 +2250,7 @@ Array [
   "logs-dir",
   "logs-max",
   "long",
+  "name",
   "maxsockets",
   "message",
   "node-gyp",
@@ -2189,6 +2260,7 @@ Array [
   "omit",
   "omit-lockfile-registry-resolved",
   "only",
+  "orgs",
   "optional",
   "os",
   "otp",
@@ -2196,6 +2268,7 @@ Array [
   "package-lock",
   "package-lock-only",
   "pack-destination",
+  "packages",
   "parseable",
   "prefer-dedupe",
   "prefer-offline",
@@ -2222,6 +2295,7 @@ Array [
   "sbom-format",
   "sbom-type",
   "scope",
+  "scopes",
   "script-shell",
   "searchexclude",
   "searchlimit",
@@ -2266,6 +2340,7 @@ Array [
   "before",
   "bin-links",
   "browser",
+  "bypass-2fa",
   "ca",
   "cache",
   "cache-max",
@@ -2291,6 +2366,7 @@ Array [
   "dry-run",
   "editor",
   "engine-strict",
+  "expires",
   "fetch-retries",
   "fetch-retry-factor",
   "fetch-retry-maxtimeout",
@@ -2324,6 +2400,7 @@ Array [
   "location",
   "lockfile-version",
   "loglevel",
+  "name",
   "maxsockets",
   "message",
   "node-gyp",
@@ -2332,6 +2409,7 @@ Array [
   "omit",
   "omit-lockfile-registry-resolved",
   "only",
+  "orgs",
   "optional",
   "os",
   "otp",
@@ -2339,6 +2417,7 @@ Array [
   "package-lock",
   "package-lock-only",
   "pack-destination",
+  "packages",
   "parseable",
   "prefer-dedupe",
   "prefer-offline",
@@ -2364,6 +2443,7 @@ Array [
   "sbom-format",
   "sbom-type",
   "scope",
+  "scopes",
   "script-shell",
   "searchexclude",
   "searchlimit",
@@ -2433,6 +2513,7 @@ Object {
   "before": null,
   "binLinks": true,
   "browser": null,
+  "bypass-2fa": false,
   "ca": null,
   "cache": "{CWD}/cache/_cacache",
   "call": "",
@@ -2454,6 +2535,7 @@ Object {
   "dryRun": false,
   "editor": "{EDITOR}",
   "engineStrict": false,
+  "expires": null,
   "force": false,
   "foregroundScripts": false,
   "formatPackageLock": true,
@@ -2481,6 +2563,7 @@ Object {
   "logColor": false,
   "maxSockets": 15,
   "message": "%s",
+  "name": null,
   "nodeBin": "{NODE}",
   "nodeGyp": "{CWD}/node_modules/node-gyp/bin/node-gyp.js",
   "nodeVersion": "2.2.2",
@@ -2492,11 +2575,13 @@ Object {
   "offline": false,
   "omit": Array [],
   "omitLockfileRegistryResolved": false,
+  "orgs": null,
   "os": null,
   "otp": null,
   "package": Array [],
   "packageLock": true,
   "packageLockOnly": false,
+  "packages": Array [],
   "packDestination": ".",
   "parseable": false,
   "preferDedupe": false,
@@ -2524,6 +2609,7 @@ Object {
   "sbomFormat": null,
   "sbomType": "library",
   "scope": "",
+  "scopes": null,
   "scriptShell": undefined,
   "search": Object {
     "description": true,
@@ -3894,7 +3980,8 @@ Usage:
 npm publish <package-spec>
 
 Options:
-[--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
+[--tag <tag>] [--access <restricted|public|read-only|read-write>] [--dry-run]
+[--otp <otp>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--provenance|--provenance-file <file>]
 
@@ -4308,26 +4395,37 @@ Manage your authentication tokens
 Usage:
 npm token list
 npm token revoke <id|token>
-npm token create [--read-only] [--cidr=list]
+npm token create --name=<name> --access=<read-only|read-write> [--expires=<YYYY-MM-DD>] [--packages=<pkg1,pkg2>] [--scopes=<scope1,scope2>] [--orgs=<org1,org2>] [--cidr=<ip-range>] [--bypass-2fa]
 
 Options:
-[--read-only] [--cidr <cidr> [--cidr <cidr> ...]] [--registry <registry>]
-[--otp <otp>]
+[--name <name>] [--expires <date>]
+[--access <restricted|public|read-only|read-write>]
+[--packages <pkg1,pkg2> [--packages <pkg1,pkg2> ...]]
+[--scopes <@scope1,@scope2> [--scopes <@scope1,@scope2> ...]]
+[--orgs <org1,org2> [--orgs <org1,org2> ...]] [--cidr <cidr> [--cidr <cidr> ...]]
+[--bypass-2fa] [--registry <registry>] [--otp <otp>] [--read-only]
 
 Run "npm help token" for more info
 
 \`\`\`bash
 npm token list
 npm token revoke <id|token>
-npm token create [--read-only] [--cidr=list]
+npm token create --name=<name> --access=<read-only|read-write> [--expires=<YYYY-MM-DD>] [--packages=<pkg1,pkg2>] [--scopes=<scope1,scope2>] [--orgs=<org1,org2>] [--cidr=<ip-range>] [--bypass-2fa]
 \`\`\`
 
 Note: This command is unaware of workspaces.
 
-#### \`read-only\`
+#### \`name\`
+#### \`expires\`
+#### \`access\`
+#### \`packages\`
+#### \`scopes\`
+#### \`orgs\`
 #### \`cidr\`
+#### \`bypass-2fa\`
 #### \`registry\`
 #### \`otp\`
+#### \`read-only\`
 `
 
 exports[`test/lib/docs.js TAP usage undeprecate > must match snapshot 1`] = `

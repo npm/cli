@@ -153,12 +153,15 @@ const definitions = {
     defaultDescription: `
     'public' for new packages, existing packages it will not change the current level
   `,
-    type: [null, 'restricted', 'public'],
+    type: [null, 'restricted', 'public', 'read-only', 'read-write'],
     description: `
-    If you do not want your scoped package to be publicly viewable (and
-    installable) set \`--access=restricted\`.
-
+    When used with \`npm publish\`: If you do not want your scoped package to
+    be publicly viewable (and installable) set \`--access=restricted\`.
     Unscoped packages cannot be set to \`restricted\`.
+
+    When used with \`npm token create\`: Set the access level for the token.
+    Use \`read-only\` for tokens that can only download packages, or
+    \`read-write\` for tokens that can publish packages.
 
     Note: This defaults to not changing the current access level for existing
     packages.  Specifying a value of \`restricted\` or \`public\` during
@@ -271,6 +274,16 @@ const definitions = {
     terminal.
 
     Set to \`true\` to use default system URL opener.
+    `,
+    flatten,
+  }),
+  'bypass-2fa': new Definition('bypass-2fa', {
+    default: false,
+    type: Boolean,
+    description: `
+      When creating a Granular Access Token with \`npm token create\`,
+      setting this to true will allow the token to bypass two-factor
+      authentication. This is useful for automation and CI/CD workflows.
     `,
     flatten,
   }),
@@ -623,6 +636,17 @@ const definitions = {
       Tells npm whether or not to expect results from the command.
       Can be either true (expect some results) or false (expect no results).
     `,
+  }),
+  expires: new Definition('expires', {
+    default: null,
+    type: [null, String, Date],
+    hint: '<date>',
+    description: `
+      When creating a Granular Access Token with \`npm token create\`,
+      this sets the expiration date for the token. Format: YYYY-MM-DD or
+      ISO 8601 date string. If not specified, defaults to 7 days from creation.
+    `,
+    flatten,
   }),
   'fetch-retries': new Definition('fetch-retries', {
     default: 2,
@@ -1281,6 +1305,16 @@ const definitions = {
       Show extended information in \`ls\`, \`search\`, and \`help-search\`.
     `,
   }),
+  name: new Definition('name', {
+    default: null,
+    type: [null, String],
+    hint: '<name>',
+    description: `
+      When creating a Granular Access Token with \`npm token create\`,
+      this sets the name/description for the token.
+    `,
+    flatten,
+  }),
   maxsockets: new Definition('maxsockets', {
     default: 15,
     type: Number,
@@ -1409,6 +1443,17 @@ const definitions = {
       definitions.omit.flatten('omit', obj, flatOptions)
     },
   }),
+  orgs: new Definition('orgs', {
+    default: null,
+    type: [null, String, Array],
+    hint: '<org1,org2>',
+    description: `
+      When creating a Granular Access Token with \`npm token create\`,
+      this limits the token access to specific organizations. Provide
+      a comma-separated list of organization names.
+    `,
+    flatten,
+  }),
   optional: new Definition('optional', {
     default: null,
     type: [null, Boolean],
@@ -1502,6 +1547,17 @@ const definitions = {
     type: String,
     description: `
       Directory in which \`npm pack\` will save tarballs.
+    `,
+    flatten,
+  }),
+  packages: new Definition('packages', {
+    default: [],
+    type: [null, String, Array],
+    hint: '<pkg1,pkg2>',
+    description: `
+      When creating a Granular Access Token with \`npm token create\`,
+      this limits the token access to specific packages. Provide
+      a comma-separated list of package names.
     `,
     flatten,
   }),
@@ -1899,6 +1955,17 @@ const definitions = {
       // projectScope is kept for compatibility with npm-registry-fetch
       flatOptions.projectScope = scope
     },
+  }),
+  scopes: new Definition('scopes', {
+    default: null,
+    type: [null, String, Array],
+    hint: '<@scope1,@scope2>',
+    description: `
+      When creating a Granular Access Token with \`npm token create\`,
+      this limits the token access to specific scopes. Provide
+      a comma-separated list of scope names (with or without @ prefix).
+    `,
+    flatten,
   }),
   'script-shell': new Definition('script-shell', {
     default: null,
