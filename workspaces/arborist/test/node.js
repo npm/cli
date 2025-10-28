@@ -3277,76 +3277,212 @@ t.test('should propagate the new override set to the target node', t => {
   t.end()
 })
 
-t.test('edges with different override contexts to same node should be valid', t => {
-  // Regression test for issue #8688
-  // Replaces the removed test 'should find inconsistency between the edge's override set
-  // and the target's override set' which was testing override conflict detection that
-  // was intentionally removed because it caused false positives.
+t.test('override conflict detection with semantic comparison', t => {
+  t.test('non-conflicting different override sets should be valid', t => {
+    // Regression test for issue #8688
+    // This validates that the improved semantic conflict detection allows
+    // structurally different override sets that don't actually conflict.
 
-  // Create two different override sets (simulating Vaadin's structure)
-  const overridesComponents = new OverrideSet({
-    overrides: {
-      '@vaadin/react-components': '24.9.2',
-    },
-  })
-
-  const overridesComponentsPro = new OverrideSet({
-    overrides: {
-      '@vaadin/react-components-pro': '24.9.2',
-    },
-  })
-
-  const tree = new Node({
-    loadOverrides: true,
-    path: '/root',
-    pkg: {
-      name: 'root',
-      version: '1.0.0',
-      dependencies: {
-        mockDep: '1.x',
-      },
+    // Create two different override sets (simulating Vaadin's structure)
+    // These override different packages, so they don't conflict
+    const overridesComponents = new OverrideSet({
       overrides: {
-        mockDep: '2.x',
+        '@vaadin/react-components': '24.9.2',
       },
-    },
-    children: [{
-      name: 'mockDep',
-      version: '2.0.0',
+    })
+
+    const overridesComponentsPro = new OverrideSet({
+      overrides: {
+        '@vaadin/react-components-pro': '24.9.2',
+      },
+    })
+
+    const tree = new Node({
+      loadOverrides: true,
+      path: '/root',
       pkg: {
+        name: 'root',
+        version: '1.0.0',
         dependencies: {
-          subDep: '1.0.0',
+          mockDep: '1.x',
+        },
+        overrides: {
+          mockDep: '2.x',
         },
       },
       children: [{
-        name: 'subDep',
-        version: '1.0.0',
-        pkg: {},
+        name: 'mockDep',
+        version: '2.0.0',
+        pkg: {
+          dependencies: {
+            subDep: '1.0.0',
+          },
+        },
+        children: [{
+          name: 'subDep',
+          version: '1.0.0',
+          pkg: {},
+        }],
       }],
-    }],
+    })
+
+    const edge = tree.edgesOut.get('mockDep')
+
+    // Manually set an override to the edge
+    edge.overrides = overridesComponents
+
+    // Override satisfiedBy so it returns true, ensuring the conflict branch is reached
+    edge.satisfiedBy = () => true
+
+    // Set different but non-conflicting override on the target node
+    const mockDep = tree.children.get('mockDep')
+    mockDep.overrides = overridesComponentsPro
+
+    // Force edge to recalculate
+    edge.reload(true)
+
+    // The edge should be valid despite different override contexts
+    // because they don't have conflicting version requirements
+    t.equal(edge.error, null, 'Edge should be valid with non-conflicting override contexts')
+    t.ok(edge.valid, 'Edge.valid should be true')
+
+    t.end()
   })
 
-  const edge = tree.edgesOut.get('mockDep')
+  t.test('conflicting override sets should be detected as invalid', t => {
+    // This validates that actual conflicts ARE still caught by the semantic detection
 
-  // Manually set an override to the edge
-  edge.overrides = overridesComponents
+    // Create two override sets with conflicting version requirements for the same package
+    const overridesV1 = new OverrideSet({
+      overrides: {
+        lodash: '1.x',
+      },
+    })
 
-  // Override satisfiedBy so it returns true, simulating that the node satisfies the version
-  edge.satisfiedBy = () => true
+    const overridesV4 = new OverrideSet({
+      overrides: {
+        lodash: '4.x',
+      },
+    })
 
-  // Before the fix (b9225e524), if we then changed the target node's override to a different
-  // set, the edge would be marked INVALID due to override conflict detection.
-  // After the fix, the edge should remain valid because:
-  // 1. satisfiedBy returns true (version is satisfied)
-  // 2. We no longer check for override conflicts at the edge level
-  const mockDep = tree.children.get('mockDep')
-  mockDep.overrides = overridesComponentsPro
+    const tree = new Node({
+      loadOverrides: true,
+      path: '/root',
+      pkg: {
+        name: 'root',
+        version: '1.0.0',
+        dependencies: {
+          mockDep: '1.x',
+        },
+        overrides: {
+          mockDep: '2.x',
+        },
+      },
+      children: [{
+        name: 'mockDep',
+        version: '2.0.0',
+        pkg: {
+          dependencies: {
+            lodash: '1.0.0',
+          },
+        },
+        children: [{
+          name: 'lodash',
+          version: '1.0.0',
+          pkg: {},
+        }],
+      }],
+    })
 
-  // Force edge to recalculate
-  edge.reload(true)
+    const edge = tree.edgesOut.get('mockDep')
+    const mockDep = tree.children.get('mockDep')
 
-  // The edge should be valid despite different override contexts
-  t.equal(edge.error, null, 'Edge should be valid despite different override contexts')
-  t.ok(edge.valid, 'Edge.valid should be true')
+    // Manually set conflicting overrides
+    edge.overrides = overridesV1
+    mockDep.overrides = overridesV4
+
+    // Override satisfiedBy so it returns true, ensuring the conflict branch is reached
+    edge.satisfiedBy = () => true
+
+    // Clear the cached error by calling reload(true)
+    edge.reload(true)
+
+    // Re-set the overrides after reload (since reload may have changed them)
+    edge.overrides = overridesV1
+    mockDep.overrides = overridesV4
+
+    // The edge should be INVALID due to conflicting override requirements
+    t.equal(edge.error, 'INVALID', 'Edge should be invalid with conflicting override versions')
+    t.notOk(edge.valid, 'Edge.valid should be false')
+
+    t.end()
+  })
+
+  t.test('reference overrides should not cause false positives', t => {
+    // This validates that reference overrides ($syntax) don't trigger false positives
+
+    const overridesRef1 = new OverrideSet({
+      overrides: {
+        lodash: '$some-reference',
+      },
+    })
+
+    const overridesRef2 = new OverrideSet({
+      overrides: {
+        lodash: '$another-reference',
+      },
+    })
+
+    const tree = new Node({
+      loadOverrides: true,
+      path: '/root',
+      pkg: {
+        name: 'root',
+        version: '1.0.0',
+        dependencies: {
+          mockDep: '1.x',
+        },
+        overrides: {
+          mockDep: '2.x',
+        },
+      },
+      children: [{
+        name: 'mockDep',
+        version: '2.0.0',
+        pkg: {
+          dependencies: {
+            lodash: '4.0.0',
+          },
+        },
+        children: [{
+          name: 'lodash',
+          version: '4.0.0',
+          pkg: {},
+        }],
+      }],
+    })
+
+    const edge = tree.edgesOut.get('mockDep')
+
+    // Set reference overrides
+    edge.overrides = overridesRef1
+
+    // Override satisfiedBy so it returns true, ensuring the conflict branch is reached
+    edge.satisfiedBy = () => true
+
+    const mockDep = tree.children.get('mockDep')
+    mockDep.overrides = overridesRef2
+
+    // Force edge to recalculate
+    edge.reload(true)
+
+    // Reference overrides should not cause conflicts because we can't determine
+    // their compatibility at this stage - they might resolve to the same version
+    t.equal(edge.error, null, 'Edge should be valid with reference overrides')
+    t.ok(edge.valid, 'Edge.valid should be true with reference overrides')
+
+    t.end()
+  })
 
   t.end()
 })

@@ -4,6 +4,7 @@
 const util = require('node:util')
 const npa = require('npm-package-arg')
 const depValid = require('./dep-valid.js')
+const OverrideSet = require('./override-set.js')
 
 class ArboristEdge {
   constructor (edge) {
@@ -274,15 +275,18 @@ class Edge {
         this.#error = 'PEER LOCAL'
       } else if (!this.satisfiedBy(this.#to)) {
         this.#error = 'INVALID'
+      } else if (this.overrides && this.#to.edgesOut.size && OverrideSet.doOverrideSetsConflict(this.overrides, this.#to.overrides)) {
+        // Check for conflicts between the edge's override set and the target node's override set.
+        // This catches cases where different parts of the tree have genuinely incompatible
+        // version requirements for the same package.
+        // The improved conflict detection uses semantic comparison (checking for incompatible
+        // version ranges) rather than pure structural equality, avoiding false positives from:
+        // - Reference overrides ($syntax) that resolve to compatible versions
+        // - Peer dependencies with different but compatible override contexts
+        // Note: We only check if the target has dependencies (edgesOut.size > 0), since
+        // override conflicts are only relevant if the target has its own dependencies.
+        this.#error = 'INVALID'
       } else {
-        // Note: We intentionally do NOT check for override conflicts here.
-        // Different override sets pointing to the same node are allowed as long as:
-        // 1. The node satisfies the version requirement (checked by satisfiedBy above)
-        // 2. Any actual version conflicts in the node's dependencies will be caught
-        //    during normal dependency resolution in the build/reify phase
-        // The previous check (from b9225e524) was overly conservative and produced
-        // false positives, especially with reference overrides ($syntax) that resolve
-        // to the same effective versions despite being structurally different.
         this.#error = 'OK'
       }
     }
