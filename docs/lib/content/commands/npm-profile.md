@@ -36,8 +36,11 @@ You can set the following properties this way: email, fullname, homepage, freeno
 This is interactive, you'll be prompted for your current password and a new password.
 You'll also be prompted for an OTP if you have two-factor authentication enabled.
 
-* `npm profile enable-2fa [auth-and-writes|auth-only]`: Enables two-factor authentication.
+* `npm profile enable-2fa [auth-and-writes|auth-only] (DEPRECATED)`: Enables two-factor authentication.
 Defaults to `auth-and-writes` mode.
+
+> **⚠️ Warning:** Enabling two-factor authentication via the cli is deprecated as of **November 2025**. 
+
 Modes are:
   * `auth-only`: Require an OTP when logging in or making changes to your account's authentication.
 The OTP will be required on both the website and the command line.
