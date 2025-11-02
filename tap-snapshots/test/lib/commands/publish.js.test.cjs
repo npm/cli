@@ -258,10 +258,6 @@ Array [
 ]
 `
 
-exports[`test/lib/commands/publish.js TAP prioritize CLI flags over publishConfig > new package version 1`] = `
-+ @npmcli/test-package@1.0.0
-`
-
 exports[`test/lib/commands/publish.js TAP public access > must match snapshot 1`] = `
 Array [
   "package: @npm/test-package@1.0.0",
@@ -282,23 +278,6 @@ Array [
 
 exports[`test/lib/commands/publish.js TAP public access > new package version 1`] = `
 + @npm/test-package@1.0.0
-`
-
-exports[`test/lib/commands/publish.js TAP re-loads publishConfig.registry if added during script process > new package version 1`] = `
-+ @npmcli/test-package@1.0.0
-`
-
-exports[`test/lib/commands/publish.js TAP respects publishConfig.registry, runs appropriate scripts > new package version 1`] = `
-
-> @npmcli/test-package@1.0.0 prepublishOnly
-> touch scripts-prepublishonly
-
-> @npmcli/test-package@1.0.0 publish
-> touch scripts-publish
-
-> @npmcli/test-package@1.0.0 postpublish
-> touch scripts-postpublish
-+ @npmcli/test-package@1.0.0
 `
 
 exports[`test/lib/commands/publish.js TAP restricted access > must match snapshot 1`] = `

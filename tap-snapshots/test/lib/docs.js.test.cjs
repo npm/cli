@@ -524,6 +524,16 @@ The command to run for \`npm edit\` and \`npm config edit\`.
 
 
 
+#### \`email\`
+
+* Default: ""
+* Type: String
+
+Legacy user email address setting from older npm versions. This is retained
+for backward compatibility to avoid warnings for existing npmrc files.
+
+
+
 #### \`engine-strict\`
 
 * Default: false
@@ -1772,6 +1782,16 @@ settings in the \`globalconfig\` file.
 
 
 
+#### \`username\`
+
+* Default: ""
+* Type: String
+
+Legacy username setting from older npm versions. This is retained for
+backward compatibility to avoid warnings for existing npmrc files.
+
+
+
 #### \`version\`
 
 * Default: false
@@ -2160,6 +2180,8 @@ Array [
   "init-version",
   "init-private",
   "init.author.email",
+  "email",
+  "username",
   "init.author.name",
   "init.author.url",
   "init.license",
@@ -2398,6 +2420,8 @@ Array [
   "init-type",
   "init-version",
   "init.author.email",
+  "email",
+  "username",
   "init.author.name",
   "init.author.url",
   "init.license",

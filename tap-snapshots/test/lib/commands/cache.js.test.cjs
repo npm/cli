@@ -68,14 +68,6 @@ packages:
 - valid-package@1.0.0 (valid-package@1.0.0)
 `
 
-exports[`test/lib/commands/cache.js TAP cache npx info: valid entry with a link dependency > shows link dependency realpath (child.isLink branch) 1`] = `
-valid npx cache entry with key link123
-location: {CWD}/cache/_npx/link123
-packages: (unknown)
-dependencies:
-- {CWD}/cache/_npx/some-other-loc
-`
-
 exports[`test/lib/commands/cache.js TAP cache npx info: valid entry with dependencies > shows valid package info with dependencies 1`] = `
 valid npx cache entry with key valid456
 location: {CWD}/cache/_npx/valid456

@@ -991,6 +991,24 @@ const definitions = {
       Alias for \`--init-author-email\`
     `,
   }),
+  "email": new Definition("email", {
+    default: "",
+    hint: "<email>",
+    type: String,
+    description: `
+    Legacy user email address setting from older npm versions.
+    This is retained for backward compatibility to avoid warnings for existing npmrc files.
+  `,
+  }),
+  "username": new Definition("username", {
+    default: "",
+    hint: "<username>",
+    type: String,
+    description: `
+    Legacy username setting from older npm versions.
+    This is retained for backward compatibility to avoid warnings for existing npmrc files.
+  `,
+  }),
   'init.author.name': new Definition('init.author.name', {
     default: '',
     type: String,
