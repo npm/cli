@@ -95,7 +95,7 @@
     "node-gyp": "^11.5.0",
     "nopt": "^8.1.0",
     "npm-audit-report": "^6.0.0",
-    "npm-install-checks": "^7.1.2",
+    "npm-install-checks": "^8.0.0",
     "npm-package-arg": "^13.0.1",
     "npm-pick-manifest": "^11.0.3",
     "npm-profile": "^12.0.1",
