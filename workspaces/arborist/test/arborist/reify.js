@@ -818,6 +818,72 @@ t.test('rollbacks', { buffered: false }, t => {
     return printTree(tree)
   })
 
+  t.test('fail retiring nodes because rm fails after enotempty', t => {
+    const path = fixture(t, 'testing-bundledeps-3')
+    createRegistry(t, true)
+    const a = newArb({ path, installStrategy: 'nested' })
+    const enotempty = new Error('rename fail')
+    enotempty.code = 'ENOTEMPTY'
+    const kRenamePath = Symbol.for('renamePath')
+    const renamePath = a[kRenamePath]
+    a[kRenamePath] = (from, to) => {
+      a[kRenamePath] = renamePath
+      failRename = enotempty
+      failRm = true
+      return a[kRenamePath](from, to)
+    }
+    const kRollback = Symbol.for('rollbackRetireShallowNodes')
+    const rollbackRetireShallowNodes = a[kRollback]
+    let rolledBack = false
+    a[kRollback] = er => {
+      rolledBack = true
+      failRename = new Error('some other error')
+      failRm = false
+      t.match(er, new Error('rm fail'))
+      a[kRollback] = rollbackRetireShallowNodes
+      return a[kRollback](er).then(er => {
+        failRename = null
+        return er
+      }, er => {
+        failRename = null
+        throw er
+      })
+    }
+
+    return t.rejects(a.reify({
+      update: ['@isaacs/testing-bundledeps-parent'],
+    }), new Error('rm fail'))
+      .then(() => t.equal(rolledBack, true, 'rolled back'))
+  })
+
+  t.test('fail retiring node with enotempty, but then rm fixes it', async t => {
+    const path = fixture(t, 'testing-bundledeps-3')
+    createRegistry(t, true)
+    const a = newArb({ path, installStrategy: 'nested' })
+    const enotempty = new Error('rename fail')
+    enotempty.code = 'ENOTEMPTY'
+    const kRenamePath = Symbol.for('renamePath')
+    const renamePath = a[kRenamePath]
+    a[kRenamePath] = (from, to) => {
+      a[kRenamePath] = renamePath
+      failRenameOnce = enotempty
+      return a[kRenamePath](from, to)
+    }
+    const kRollback = Symbol.for('rollbackRetireShallowNodes')
+    const rollbackRetireShallowNodes = a[kRollback]
+    a[kRollback] = er => {
+      t.fail('should not roll back!')
+      a[kRollback] = rollbackRetireShallowNodes
+      return a[kRollback](er)
+    }
+
+    const tree = await a.reify({
+      update: ['@isaacs/testing-bundledeps-parent'],
+      save: false,
+    })
+    return printTree(tree)
+  })
+
   t.test('fail creating sparse tree', t => {
     t.teardown(() => failMkdir = null)
     const path = fixture(t, 'testing-bundledeps-3')
