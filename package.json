@@ -99,7 +99,7 @@
     "npm-package-arg": "^13.0.1",
     "npm-pick-manifest": "^11.0.3",
     "npm-profile": "^12.0.1",
-    "npm-registry-fetch": "^19.0.0",
+    "npm-registry-fetch": "^19.1.0",
     "npm-user-validate": "^3.0.0",
     "p-map": "^7.0.3",
     "pacote": "^21.0.3",
