@@ -111,7 +111,7 @@
     "spdx-expression-parse": "^4.0.0",
     "ssri": "^12.0.0",
     "supports-color": "^10.2.2",
-    "tar": "^7.5.1",
+    "tar": "^7.5.2",
     "text-table": "~0.2.0",
     "tiny-relative-date": "^2.0.2",
     "treeverse": "^3.0.0",
