@@ -93,7 +93,7 @@
     "minipass-pipeline": "^1.2.4",
     "ms": "^2.1.2",
     "node-gyp": "^11.5.0",
-    "nopt": "^8.1.0",
+    "nopt": "^9.0.0",
     "npm-audit-report": "^6.0.0",
     "npm-install-checks": "^8.0.0",
     "npm-package-arg": "^13.0.1",
