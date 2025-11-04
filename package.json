@@ -62,7 +62,7 @@
     "@npmcli/redact": "^3.2.2",
     "@npmcli/run-script": "^10.0.2",
     "@sigstore/tuf": "^4.0.0",
-    "abbrev": "^3.0.1",
+    "abbrev": "^4.0.0",
     "archy": "~1.0.0",
     "cacache": "^20.0.1",
     "chalk": "^5.6.2",
