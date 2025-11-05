@@ -28,7 +28,7 @@
     "npm-registry-fetch": "^19.0.0",
     "pacote": "^21.0.2",
     "parse-conflict-json": "^5.0.1",
-    "proc-log": "^5.0.0",
+    "proc-log": "^6.0.0",
     "proggy": "^3.0.0",
     "promise-all-reject-late": "^1.0.0",
     "promise-call-limit": "^3.0.1",

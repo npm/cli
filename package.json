@@ -104,7 +104,7 @@
     "p-map": "^7.0.3",
     "pacote": "^21.0.3",
     "parse-conflict-json": "^5.0.1",
-    "proc-log": "^5.0.0",
+    "proc-log": "^6.0.0",
     "qrcode-terminal": "^0.12.0",
     "read": "^4.1.0",
     "semver": "^7.7.3",
