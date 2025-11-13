@@ -269,7 +269,6 @@ graph LR;
   cacache-->npmcli-fs["@npmcli/fs"];
   cacache-->p-map;
   cacache-->ssri;
-  cacache-->tar;
   cacache-->unique-filename;
   cidr-regex-->ip-regex;
   cli-columns-->string-width;
