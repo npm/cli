@@ -110,7 +110,7 @@ t.test('token list parseable output', async t => {
   ])
 })
 
-t.test('token revoke', async t => {
+t.test('token revoke single', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: { ...auth },
   })
@@ -121,13 +121,13 @@ t.test('token revoke', async t => {
   })
 
   registry.getTokens(tokens)
-  registry.nock.delete(`/-/npm/v1/tokens/token/${tokens[0].key}`).reply(200)
+  registry.revokeToken(tokens[0].key)
   await npm.exec('token', ['rm', tokens[0].key.slice(0, 8)])
 
   t.equal(joinedOutput(), 'Removed 1 token')
 })
 
-t.test('token revoke multiple tokens', async t => {
+t.test('token revoke multiple', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: { ...auth },
   })
@@ -138,8 +138,8 @@ t.test('token revoke multiple tokens', async t => {
   })
 
   registry.getTokens(tokens)
-  registry.nock.delete(`/-/npm/v1/tokens/token/${tokens[0].key}`).reply(200)
-  registry.nock.delete(`/-/npm/v1/tokens/token/${tokens[1].key}`).reply(200)
+  registry.revokeToken(tokens[0].key)
+  registry.revokeToken(tokens[1].key)
   await npm.exec('token', ['rm', tokens[0].key.slice(0, 8), tokens[1].key.slice(0, 8)])
 
   t.equal(joinedOutput(), 'Removed 2 tokens')
@@ -159,7 +159,7 @@ t.test('token revoke json output', async t => {
   })
 
   registry.getTokens(tokens)
-  registry.nock.delete(`/-/npm/v1/tokens/token/${tokens[0].key}`).reply(200)
+  registry.revokeToken(tokens[0].key)
   await npm.exec('token', ['rm', tokens[0].key.slice(0, 8)])
 
   const parsed = JSON.parse(joinedOutput())
@@ -180,7 +180,7 @@ t.test('token revoke parseable output', async t => {
   })
 
   registry.getTokens(tokens)
-  registry.nock.delete(`/-/npm/v1/tokens/token/${tokens[0].key}`).reply(200)
+  registry.revokeToken(tokens[0].key)
   await npm.exec('token', ['rm', tokens[0].key.slice(0, 8)])
   t.equal(joinedOutput(), tokens[0].key, 'logs the token as a string')
 })
@@ -195,7 +195,7 @@ t.test('token revoke by token', async t => {
     authorization: authToken,
   })
   registry.getTokens(tokens)
-  registry.nock.delete(`/-/npm/v1/tokens/token/${tokens[0].token}`).reply(200)
+  registry.revokeToken(tokens[0].token)
   await npm.exec('token', ['rm', tokens[0].token])
   t.equal(joinedOutput(), 'Removed 1 token')
 })
@@ -240,268 +240,48 @@ t.test('token revoke unknown token', async t => {
   )
 })
 
-t.test('token create', async t => {
-  const cidr = ['10.0.0.0/8', '192.168.1.0/24']
+t.test('token create defaults', async t => {
   const { npm, outputs } = await loadMockNpm(t, {
     config: {
       ...auth,
-      cidr,
       name: 'test-token',
       password: 'test-password',
     },
   })
+
   const registry = new MockRegistry({
     tap: t,
     registry: npm.config.get('registry'),
     authorization: authToken,
   })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'test-token' &&
-      body.password === 'test-password' &&
-      body.cidr_whitelist.length === 2 &&
-      body.token_description === undefined
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-write',
-    cidr_whitelist: cidr,
-    created: new Date().toISOString(),
+
+  registry.createToken({
+    name: 'test-token',
+    password: 'test-password',
+  }, {
+    access: 'publish',
   })
+
   await npm.exec('token', ['create'])
-  t.match(outputs, [
-    'Created publish token n3wt0k3n',
-    'with IP whitelist: 10.0.0.0/8,192.168.1.0/24',
-  ])
+  t.match(outputs, ['Created publish token n3wt0k3n'])
 })
 
-t.test('token create read only', async t => {
+t.test('token create extra token attributes', async t => {
   const { npm, outputs } = await loadMockNpm(t, {
     config: {
       ...auth,
-      name: 'readonly-token',
-      password: 'test-password',
-    },
-  })
-  const registry = new MockRegistry({
-    tap: t,
-    registry: npm.config.get('registry'),
-    authorization: authToken,
-  })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'readonly-token' &&
-      body.password === 'test-password' &&
-      body.token_description === undefined
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-only',
-    created: new Date().toISOString(),
-  })
-  await npm.exec('token', ['create'])
-  t.match(outputs, [
-    'Created read only token n3wt0k3n',
-  ])
-})
-
-t.test('token create with expiry', async t => {
-  const expires = 30
-  const { npm, outputs } = await loadMockNpm(t, {
-    config: {
-      ...auth,
-      name: 'expiry-token',
-      password: 'test-password',
-      expires,
-    },
-  })
-  const registry = new MockRegistry({
-    tap: t,
-    registry: npm.config.get('registry'),
-    authorization: authToken,
-  })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'expiry-token' &&
-      body.password === 'test-password' &&
-      body.expires === 30
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-only',
-    created: new Date().toISOString(),
-    expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
-  })
-  await npm.exec('token', ['create'])
-  t.match(outputs, [
-    'Created read only token n3wt0k3n',
-  ])
-  t.match(outputs.join('\n'), /expires:/)
-})
-
-t.test('token create with description', async t => {
-  const { npm, outputs } = await loadMockNpm(t, {
-    config: {
-      ...auth,
-      name: 'description-token',
-      password: 'test-password',
-      'token-description': 'My custom token for CI/CD',
-    },
-  })
-  const registry = new MockRegistry({
-    tap: t,
-    registry: npm.config.get('registry'),
-    authorization: authToken,
-  })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'description-token' &&
-      body.password === 'test-password' &&
-      body.token_description === 'My custom token for CI/CD'
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-write',
-    created: new Date().toISOString(),
-  })
-  await npm.exec('token', ['create'])
-  t.match(outputs, [
-    'Created publish token n3wt0k3n',
-  ])
-})
-
-t.test('token create with packages', async t => {
-  const packages = ['@scope/pkg1', 'pkg2']
-  const { npm, outputs } = await loadMockNpm(t, {
-    config: {
-      ...auth,
-      name: 'packages-token',
-      password: 'test-password',
-      packages,
-      'packages-and-scopes-permission': 'read-write',
-    },
-  })
-  const registry = new MockRegistry({
-    tap: t,
-    registry: npm.config.get('registry'),
-    authorization: authToken,
-  })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'packages-token' &&
-      body.password === 'test-password' &&
-      body.packages.length === 2 &&
-      body.packages[0] === '@scope/pkg1' &&
-      body.packages[1] === 'pkg2' &&
-      body.packages_and_scopes_permission === 'read-write'
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-write',
-    created: new Date().toISOString(),
-  })
-  await npm.exec('token', ['create'])
-  t.match(outputs, [
-    'Created publish token n3wt0k3n',
-  ])
-})
-
-t.test('token create with packages-all', async t => {
-  const { npm, outputs } = await loadMockNpm(t, {
-    config: {
-      ...auth,
-      name: 'all-packages-token',
-      password: 'test-password',
-      'packages-all': true,
-      'packages-and-scopes-permission': 'read-write',
-    },
-  })
-  const registry = new MockRegistry({
-    tap: t,
-    registry: npm.config.get('registry'),
-    authorization: authToken,
-  })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'all-packages-token' &&
-      body.password === 'test-password' &&
-      body.packages_all === true &&
-      body.packages_and_scopes_permission === 'read-write'
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-write',
-    created: new Date().toISOString(),
-  })
-  await npm.exec('token', ['create'])
-  t.match(outputs, [
-    'Created publish token n3wt0k3n',
-  ])
-})
-
-t.test('token create with scopes', async t => {
-  const scopes = ['@scope1', '@scope2']
-  const { npm, outputs } = await loadMockNpm(t, {
-    config: {
-      ...auth,
-      name: 'scopes-token',
-      password: 'test-password',
-      scopes,
-      'packages-and-scopes-permission': 'read-write',
-    },
-  })
-  const registry = new MockRegistry({
-    tap: t,
-    registry: npm.config.get('registry'),
-    authorization: authToken,
-  })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'scopes-token' &&
-      body.password === 'test-password' &&
-      body.scopes.length === 2 &&
-      body.scopes[0] === '@scope1' &&
-      body.scopes[1] === '@scope2' &&
-      body.packages_and_scopes_permission === 'read-write'
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-write',
-    created: new Date().toISOString(),
-  })
-  await npm.exec('token', ['create'])
-  t.match(outputs, [
-    'Created publish token n3wt0k3n',
-  ])
-})
-
-t.test('token create with orgs', async t => {
-  const orgs = ['org1', 'org2']
-  const { npm, outputs } = await loadMockNpm(t, {
-    config: {
-      ...auth,
-      name: 'orgs-token',
-      password: 'test-password',
-      orgs,
-      'orgs-permission': 'read-write',
-    },
-  })
-  const registry = new MockRegistry({
-    tap: t,
-    registry: npm.config.get('registry'),
-    authorization: authToken,
-  })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'orgs-token' &&
-      body.password === 'test-password' &&
-      body.orgs.length === 2 &&
-      body.orgs[0] === 'org1' &&
-      body.orgs[1] === 'org2' &&
-      body.orgs_permission === 'read-write'
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-write',
-    created: new Date().toISOString(),
-  })
-  await npm.exec('token', ['create'])
-  t.match(outputs, [
-    'Created publish token n3wt0k3n',
-  ])
-})
-
-t.test('token create with bypass-2fa', async t => {
-  const { npm, outputs } = await loadMockNpm(t, {
-    config: {
-      ...auth,
-      name: 'bypass2fa-token',
-      password: 'test-password',
       'bypass-2fa': true,
+      cidr: ['10.0.0.0/8', '192.168.1.0/24'],
+      expires: 1000,
+      name: 'extras-token',
+      orgs: ['@npmcli'],
+      'orgs-permission': 'read-write',
+      packages: ['@npmcli/test-package'],
+      'packages-and-scopes-permission': 'read-only',
+      'packages-all': true,
+      password: 'test-password',
+      scopes: ['@npmcli'],
+      'token-description': 'test token',
     },
   })
   const registry = new MockRegistry({
@@ -509,85 +289,159 @@ t.test('token create with bypass-2fa', async t => {
     registry: npm.config.get('registry'),
     authorization: authToken,
   })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'bypass2fa-token' &&
-      body.password === 'test-password' &&
-      body.bypass_2fa === true
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-write',
-    created: new Date().toISOString(),
+
+  const expires = new Date()
+  registry.createToken({
+    bypass_2fa: true,
+    cidr_whitelist: ['10.0.0.0/8', '192.168.1.0/24'],
+    description: 'test token',
+    expires: 1000,
+    name: 'extras-token',
+    orgs_permission: 'read-write',
+    orgs: ['@npmcli'],
+    packages_all: true,
+    packages_and_scopes_permission: 'read-only',
+    packages: ['@npmcli/test-package'],
+    password: 'test-password',
+    scopes: ['@npmcli'],
+  }, {
+    cidr_whitelist: ['10.0.0.0/8', '192.168.1.0/24'],
+    expires,
   })
+
   await npm.exec('token', ['create'])
   t.match(outputs, [
-    'Created publish token n3wt0k3n',
+    'Created read only token n3wt0k3n',
+    'with IP whitelist: 10.0.0.0/8,192.168.1.0/24',
+    `expires: ${expires.toISOString()}`,
   ])
+})
+
+t.test('token create access.read-only', async t => {
+  const { npm, outputs } = await loadMockNpm(t, {
+    config: {
+      ...auth,
+      name: 'test-token',
+      password: 'test-password',
+    },
+  })
+
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: authToken,
+  })
+
+  registry.createToken({
+    name: 'test-token',
+    password: 'test-password',
+  }, {
+    access: 'read-only',
+  })
+
+  await npm.exec('token', ['create'])
+  t.match(outputs, ['Created read only token n3wt0k3n'])
+})
+
+t.test('token create readonly', async t => {
+  const { npm, outputs } = await loadMockNpm(t, {
+    config: {
+      ...auth,
+      name: 'test-token',
+      password: 'test-password',
+    },
+  }, {
+    readonly: true,
+  })
+
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: authToken,
+  })
+
+  registry.createToken({
+    name: 'test-token',
+    password: 'test-password',
+  }, {
+    access: 'read-only',
+  })
+
+  await npm.exec('token', ['create'])
+  t.match(outputs, ['Created read only token n3wt0k3n'])
 })
 
 t.test('token create json output', async t => {
-  const cidr = ['10.0.0.0/8', '192.168.1.0/24']
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: {
       ...auth,
       json: true,
-      cidr,
-      name: 'json-token',
+      name: 'test-token',
       password: 'test-password',
     },
   })
+
   const registry = new MockRegistry({
     tap: t,
     registry: npm.config.get('registry'),
     authorization: authToken,
   })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'json-token' &&
-      body.password === 'test-password'
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-write',
-    cidr_whitelist: cidr,
-    created: new Date().toISOString(),
+
+  const created = new Date()
+  registry.createToken({
+    name: 'test-token',
+    password: 'test-password',
+  }, {
+    created,
+    other: 'attr',
   })
+
   await npm.exec('token', ['create'])
-  const parsed = JSON.parse(joinedOutput())
-  t.match(
-    parsed,
-    { token: 'n3wt0k3n', access: 'read-write', cidr_whitelist: cidr }
-  )
-  t.ok(parsed.created, 'also returns created')
+  t.match(JSON.parse(joinedOutput()), {
+    access: 'read-only',
+    created: created.toISOString(),
+    id: '0xdeadbeef',
+    name: 'test-token',
+    other: 'attr',
+    password: 'test-password',
+    token: 'n3wt0k3n',
+  })
 })
 
 t.test('token create parseable output', async t => {
-  const cidr = ['10.0.0.0/8', '192.168.1.0/24']
   const { npm, outputs } = await loadMockNpm(t, {
     config: {
       ...auth,
       parseable: true,
-      cidr,
-      name: 'parseable-token',
+      name: 'test-token',
       password: 'test-password',
     },
   })
+
   const registry = new MockRegistry({
     tap: t,
     registry: npm.config.get('registry'),
     authorization: authToken,
   })
-  registry.nock.post('/-/npm/v1/tokens', body => {
-    return body.name === 'parseable-token' &&
-      body.password === 'test-password'
-  }).reply(201, {
-    token: 'n3wt0k3n',
-    access: 'read-write',
-    cidr_whitelist: cidr,
-    created: new Date().toISOString(),
+
+  const created = new Date()
+  registry.createToken({
+    name: 'test-token',
+    password: 'test-password',
+  }, {
+    access: 'publish',
+    created,
   })
+
   await npm.exec('token', ['create'])
-  // In parseable mode, all fields are output as key\tvalue pairs
-  t.match(outputs.join('\n'), /token\tn3wt0k3n/)
-  t.match(outputs.join('\n'), /created\t/)
-  t.match(outputs.join('\n'), /cidr_whitelist\t10.0.0.0\/8,192.168.1.0\/24/)
+  t.match(outputs, [
+    'id\t0xdeadbeef',
+    'token\tn3wt0k3n',
+    `created\t${created.toISOString()}`,
+    'access\tpublish',
+    'name\ttest-token',
+    'password\ttest-password',
+  ])
 })
 
 t.test('token create ipv6 cidr', async t => {

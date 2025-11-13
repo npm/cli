@@ -442,7 +442,7 @@ class MockRegistry {
   }
 
   getTokens (tokens) {
-    return this.nock.get('/-/npm/v1/tokens')
+    return this.nock.get(this.fullPath('/-/npm/v1/tokens'))
       .reply(200, {
         objects: tokens,
         urls: {},
@@ -451,19 +451,26 @@ class MockRegistry {
       })
   }
 
-  createToken ({ password, readonly = false, cidr = [] }) {
-    return this.nock.post('/-/npm/v1/tokens', {
-      password,
-      readonly,
-      cidr_whitelist: cidr,
-    }).reply(200, {
-      key: 'n3wk3y',
-      token: 'n3wt0k3n',
-      created: new Date(),
-      updated: new Date(),
-      readonly,
-      cidr_whitelist: cidr,
-    })
+  // The server has rules for what resultData correlates with what tokenData but we don't need to be 100% in sync with that, we just need to be able to pass all of the possible tokenData attributes, and be able to accept all of the possible resultData attributes
+  createToken (tokenData, resultData = {}) {
+    return this.nock.post(this.fullPath('/-/npm/v1/tokens'), tokenData)
+      .reply(201, {
+        id: `0xdeadbeef`,
+        key: 'n3wk3y',
+        token: 'n3wt0k3n',
+        created: new Date(),
+        updated: new Date(),
+        access: 'read-only',
+        name: tokenData.name,
+        password: tokenData.password,
+        ...resultData,
+      })
+  }
+
+  revokeToken (token) {
+    return this.nock.delete(
+      this.fullPath(`/-/npm/v1/tokens/token/${token}`)
+    ).reply(200)
   }
 
   async package ({ manifest, times = 1, query, tarballs }) {
