@@ -105,7 +105,7 @@ t.test('stale lock takeover', async (t) => {
   const mtimeMs = Math.round(Date.now() / 1000) * 1000
   mockStat = async () => {
     if (++statCalls === 1) {
-      return { mtimeMs: mtimeMs - 10_000 }
+      return { mtimeMs: mtimeMs - 120_000 }
     } else {
       return { mtimeMs, ino: 1 }
     }
@@ -146,7 +146,7 @@ t.test('EBUSY during stale lock takeover', async (t) => {
   const mtimeMs = Math.round(Date.now() / 1000) * 1000
   mockStat = async () => {
     if (++statCalls === 1) {
-      return { mtimeMs: mtimeMs - 10_000 }
+      return { mtimeMs: mtimeMs - 120_000 }
     } else {
       return { mtimeMs, ino: 1 }
     }
@@ -168,7 +168,7 @@ t.test('concurrent stale lock takeover', async (t) => {
   const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
   // make a stale lock
   await fs.promises.mkdir(lockPath)
-  await fs.promises.utimes(lockPath, new Date(Date.now() - 10_000), new Date(Date.now() - 10_000))
+  await fs.promises.utimes(lockPath, new Date(Date.now() - 120_000), new Date(Date.now() - 120_000))
 
   const results = await Promise.allSettled([
     withLock(lockPath, () => 'lock1'),
@@ -225,6 +225,26 @@ t.test('mtime floating point mismatch', async (t) => {
   }), 'should handle mtime floating point mismatches')
 })
 
+t.test('slow fs.stat calls shouldn\'t cause a lock compromise false positive', async (t) => {
+  let mtimeMs = Math.round(Date.now() / 1000) * 1000
+  let statCalls = 0
+  mockStat = async () => {
+    const result = mtimeMs
+    if (++statCalls === 2) { // make it slow in the first touchLock callback
+      await setTimeout(2000)
+    }
+    return { mtimeMs: result, ino: 1 }
+  }
+  mockUtimes = async (_, nextMtimeSeconds) => {
+    mtimeMs = nextMtimeSeconds * 1000
+  }
+  const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
+  t.ok(await withLock(lockPath, async () => {
+    await setTimeout(4000)
+    return true
+  }), 'should handle slow fs.stat calls')
+})
+
 t.test('unexpected errors', async (t) => {
   t.test('can\'t create lock', async (t) => {
     const lockPath = '/these/parent/directories/do/not/exist/so/it/should/fail.lock'
@@ -259,7 +279,7 @@ t.test('unexpected errors', async (t) => {
     }
     // it's stale
     mockStat = async () => {
-      return { mtimeMs: Date.now() - 10_000 }
+      return { mtimeMs: Date.now() - 120_000 }
     }
     // but we can't release it
     mockRmdirSync = () => {
@@ -301,7 +321,7 @@ t.test('lock released during maintenance', async (t) => {
   mockStat = async (...args) => {
     const value = await fs.promises.stat(...args)
     if (++statCalls > 1) {
-      // this runs during the setInterval; release the lock so that we no longer hold it
+      // this runs during the setTimeout callback; release the lock so that we no longer hold it
       await releaseLock('test value')
       await setTimeout()
     }
@@ -314,7 +334,7 @@ t.test('lock released during maintenance', async (t) => {
   }
 
   const lockPromise = withLock(lockPath, () => releaseLockPromise)
-  // since we unref the interval timeout, we need to wait to ensure it actually runs
+  // since we unref the timeout, we need to wait to ensure it actually runs
   await setTimeout(2000)
   t.equal(await lockPromise, 'test value', 'should acquire the lock')
   t.equal(utimesCalls, 0, 'should never call utimes')
