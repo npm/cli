@@ -18,7 +18,7 @@ Run this in a package directory to bump the version and write the new data back 
 `npm-shrinkwrap.json`.
 
 The `newversion` argument should be a valid semver string, a valid second argument to [semver.inc](https://github.com/npm/node-semver#functions) (one of `patch`, `minor`, `major`, `prepatch`, `preminor`, `premajor`, `prerelease`), or `from-git`.
-In the second case, the existing version will be incremented by 1 in the specified field.
+In the second case, the existing version will be incremented by 1 in the specified field. **Note:** If the current version is a prerelease version, `patch` will simply remove the prerelease suffix without incrementing the patch version number. For example, `1.2.0-5` becomes `1.2.0` with `npm version patch`, not `1.2.1`.
 `from-git` will try to read the latest git tag, and use that as the new npm version.
 
 If run in a git repo, it will also create a version commit and tag.
