@@ -813,9 +813,17 @@ module.exports = cls => class Reifier extends cls {
         // Make sure we don't double-include the path if it's already there
         const registryPath = registryURL.pathname.replace(/\/$/, '')
 
-        if (registryPath && registryPath !== '/' && !resolvedURL.pathname.startsWith(registryPath)) {
-          // Since hostname is changed, we need to ensure the registry path is included
-          resolvedURL.pathname = registryPath + resolvedURL.pathname
+        if (registryPath && registryPath !== '/') {
+          // Check if the resolved pathname already starts with the registry path
+          // We need to ensure it's a proper path prefix, not just a string prefix
+          // e.g., registry path '/npm' should not match '/npm-run-path'
+          const hasRegistryPath = resolvedURL.pathname === registryPath ||
+                                  resolvedURL.pathname.startsWith(registryPath + '/')
+
+          if (!hasRegistryPath) {
+            // Since hostname is changed, we need to ensure the registry path is included
+            resolvedURL.pathname = registryPath + resolvedURL.pathname
+          }
         }
 
         return resolvedURL.toString()
