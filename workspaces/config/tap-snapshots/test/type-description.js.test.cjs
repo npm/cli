@@ -55,6 +55,9 @@ Object {
     "boolean value (true or false)",
     Function String(),
   ],
+  "bypass-2fa": Array [
+    "boolean value (true or false)",
+  ],
   "ca": Array [
     null,
     Function String(),
@@ -146,6 +149,10 @@ Object {
   "expect-results": Array [
     null,
     "boolean value (true or false)",
+  ],
+  "expires": Array [
+    null,
+    "numeric value",
   ],
   "fetch-retries": Array [
     "numeric value",
@@ -328,6 +335,10 @@ Object {
   "message": Array [
     Function String(),
   ],
+  "name": Array [
+    null,
+    Function String(),
+  ],
   "node-gyp": Array [
     "valid filesystem path",
   ],
@@ -360,6 +371,17 @@ Object {
     null,
     "boolean value (true or false)",
   ],
+  "orgs": Array [
+    null,
+    Function String(),
+    Function Array(),
+  ],
+  "orgs-permission": Array [
+    null,
+    "read-only",
+    "read-write",
+    "no-access",
+  ],
   "os": Array [
     null,
     Function String(),
@@ -381,8 +403,26 @@ Object {
   "package-lock-only": Array [
     "boolean value (true or false)",
   ],
+  "packages": Array [
+    null,
+    Function String(),
+    Function Array(),
+  ],
+  "packages-all": Array [
+    "boolean value (true or false)",
+  ],
+  "packages-and-scopes-permission": Array [
+    null,
+    "read-only",
+    "read-write",
+    "no-access",
+  ],
   "parseable": Array [
     "boolean value (true or false)",
+  ],
+  "password": Array [
+    null,
+    Function String(),
   ],
   "prefer-dedupe": Array [
     "boolean value (true or false)",
@@ -468,6 +508,11 @@ Object {
   "scope": Array [
     Function String(),
   ],
+  "scopes": Array [
+    null,
+    Function String(),
+    Function Array(),
+  ],
   "script-shell": Array [
     null,
     Function String(),
@@ -510,6 +555,10 @@ Object {
   ],
   "timing": Array [
     "boolean value (true or false)",
+  ],
+  "token-description": Array [
+    null,
+    Function String(),
   ],
   "umask": Array [
     "octal number in range 0o000..0o777 (0..511)",
