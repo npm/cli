@@ -12,6 +12,32 @@ description: Publish a package
 
 Publishes a package to the registry so that it can be installed by name.
 
+### Examples
+
+Publish the package in the current directory:
+
+```bash
+npm publish
+```
+
+Publish a specific workspace:
+
+```bash
+npm publish --workspace=<workspace-name>
+```
+
+Publish multiple workspaces:
+
+```bash
+npm publish --workspace=workspace-a --workspace=workspace-b
+```
+
+Publish all workspaces:
+
+```bash
+npm publish --workspaces
+```
+
 By default npm will publish to the public registry.
 This can be overridden by specifying a different default registry or using a [`scope`](/using-npm/scope) in the name, combined with a scope-configured registry (see [`package.json`](/configuring-npm/package-json)).
 
