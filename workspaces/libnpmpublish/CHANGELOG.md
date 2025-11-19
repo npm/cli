@@ -1,5 +1,10 @@
 # Changelog
 
+## [11.1.3](https://github.com/npm/cli/compare/libnpmpublish-v11.1.2...libnpmpublish-v11.1.3) (2025-11-19)
+### Dependencies
+* [`8cc9f70`](https://github.com/npm/cli/commit/8cc9f70c2769f068ea0ef77a602162cdd949998e) [#8723](https://github.com/npm/cli/pull/8723) `ssri@13.0.0`
+* [`05ac7a7`](https://github.com/npm/cli/commit/05ac7a7ea2a4d258658537a19ba350e07df34fda) [#8723](https://github.com/npm/cli/pull/8723) `proc-log@6.0.0`
+
 ## [11.1.2](https://github.com/npm/cli/compare/libnpmpublish-v11.1.1...libnpmpublish-v11.1.2) (2025-10-08)
 ### Dependencies
 * [`fa7cc6f`](https://github.com/npm/cli/commit/fa7cc6f9338e6d9c0be1dbe7002d683fd389794a) [#8662](https://github.com/npm/cli/pull/8662) `ci-info@4.3.1` (#8662)

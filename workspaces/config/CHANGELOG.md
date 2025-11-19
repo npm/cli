@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.4.3](https://github.com/npm/cli/compare/config-v10.4.2...config-v10.4.3) (2025-11-19)
+### Bug Fixes
+* [`c6242d9`](https://github.com/npm/cli/commit/c6242d92e5227e0a772d9cfe474ea57776af79e0) [#8706](https://github.com/npm/cli/pull/8706) change npm profile to create tokens with GAT support (#8706) (@owlstronaut, @wraithgar)
+### Dependencies
+* [`e49286e`](https://github.com/npm/cli/commit/e49286e2189dfe1604d957ccc415038957a64d19) [#8723](https://github.com/npm/cli/pull/8723) `ini@5.0.0`
+* [`05ac7a7`](https://github.com/npm/cli/commit/05ac7a7ea2a4d258658537a19ba350e07df34fda) [#8723](https://github.com/npm/cli/pull/8723) `proc-log@6.0.0`
+
 ## [10.4.2](https://github.com/npm/cli/compare/config-v10.4.1...config-v10.4.2) (2025-10-08)
 ### Bug Fixes
 * [`5b4a7fc`](https://github.com/npm/cli/commit/5b4a7fc594e23dbdd5acab8df7bd195992383d5f) [#8650](https://github.com/npm/cli/pull/8650) handle missing node-gyp gracefully in @npmcli/config definitions (@owlstronaut)

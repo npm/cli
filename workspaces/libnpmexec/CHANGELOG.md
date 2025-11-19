@@ -16,6 +16,14 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.4): `@npmcli/arborist@9.1.4`
 
+## [10.1.9](https://github.com/npm/cli/compare/libnpmexec-v10.1.8...libnpmexec-v10.1.9) (2025-11-19)
+### Bug Fixes
+* [`3439a89`](https://github.com/npm/cli/commit/3439a89d58a25deac08650da53157595e8b8edfb) [#8733](https://github.com/npm/cli/pull/8733) libnpmexec: fix lock compromise logic (#8733) (@jenseng)
+### Dependencies
+* [`05ac7a7`](https://github.com/npm/cli/commit/05ac7a7ea2a4d258658537a19ba350e07df34fda) [#8723](https://github.com/npm/cli/pull/8723) `proc-log@6.0.0`
+* [`0a74f6d`](https://github.com/npm/cli/commit/0a74f6d1d8643f3a089f6e63502df77e6e3038ff) [#8723](https://github.com/npm/cli/pull/8723) `bin-links@6.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.7): `@npmcli/arborist@9.1.7`
+
 ## [10.1.8](https://github.com/npm/cli/compare/libnpmexec-v10.1.7...libnpmexec-v10.1.8) (2025-10-08)
 ### Bug Fixes
 * [`d62c5fe`](https://github.com/npm/cli/commit/d62c5fe9a7c6b180019cd4d62e7963f232038ebb) [#8625](https://github.com/npm/cli/pull/8625) spelling in workspaces/libnpmexec (#8625) (@jsoref)

@@ -32,6 +32,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.4): `@npmcli/arborist@9.1.4`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.7): `@npmcli/arborist@9.1.7`
+
 ## [8.0.9](https://github.com/npm/cli/compare/libnpmdiff-v8.0.8...libnpmdiff-v8.0.9) (2025-10-08)
 ### Documentation
 * [`268e4f8`](https://github.com/npm/cli/commit/268e4f8ae9845991e15cccd7bcaf2545af766898) [#8642](https://github.com/npm/cli/pull/8642) rewrap markdown (#8642) (@jsoref)

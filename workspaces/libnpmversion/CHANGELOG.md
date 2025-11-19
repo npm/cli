@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.3](https://github.com/npm/cli/compare/libnpmversion-v8.0.2...libnpmversion-v8.0.3) (2025-11-19)
+### Dependencies
+* [`05ac7a7`](https://github.com/npm/cli/commit/05ac7a7ea2a4d258658537a19ba350e07df34fda) [#8723](https://github.com/npm/cli/pull/8723) `proc-log@6.0.0`
+* [`9c0cefa`](https://github.com/npm/cli/commit/9c0cefa8417d9e14ee19dd5e833019f0f99ce837) [#8723](https://github.com/npm/cli/pull/8723) `json-parse-even-better-errors@5.0.0`
+### Chores
+* [`5e0909b`](https://github.com/npm/cli/commit/5e0909b74ea1510eaae348d66548c75030911ed8) [#8620](https://github.com/npm/cli/pull/8620) fix spelling in workspaces (#8620) (@jsoref)
+
 ## [8.0.2](https://github.com/npm/cli/compare/libnpmversion-v8.0.1...libnpmversion-v8.0.2) (2025-09-23)
 ### Dependencies
 * [`521823b`](https://github.com/npm/cli/commit/521823bc398de0eb85135a3ef09e217db93ed1ce) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/git@7.0.0`
