@@ -43,7 +43,7 @@ These scripts happen in addition to the `pre<event>`, `post<event>`, and
 * Runs BEFORE the package is packed, i.e.
 during `npm publish` and `npm pack`
 * Runs on local `npm install` without any arguments
-* Runs AFTER `prepublish`, but BEFORE `prepublishOnly`
+* Runs AFTER `prepublishOnly` and `prepack`, but BEFORE `postpack`
 * Runs for a package if it's being installed as a link through `npm install <folder>`
 
 * NOTE: If a package being installed through git contains a `prepare` script, its `dependencies` and `devDependencies` will be installed, and the prepare script will be run, before the package is packaged and installed.
