@@ -4652,6 +4652,7 @@ npm version [<newversion> | major | minor | patch | premajor | preminor | prepat
 Options:
 [--allow-same-version] [--no-commit-hooks] [--no-git-tag-version] [--json]
 [--preid prerelease-id] [--sign-git-tag]
+[-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--no-workspaces-update] [--include-workspace-root]
 [--ignore-scripts]
@@ -4672,6 +4673,7 @@ alias: verison
 #### \`json\`
 #### \`preid\`
 #### \`sign-git-tag\`
+#### \`save\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`workspaces-update\`
