@@ -94,7 +94,7 @@
     "ms": "^2.1.2",
     "node-gyp": "^12.1.0",
     "nopt": "^9.0.0",
-    "npm-audit-report": "^6.0.0",
+    "npm-audit-report": "^7.0.0",
     "npm-install-checks": "^8.0.0",
     "npm-package-arg": "^13.0.2",
     "npm-pick-manifest": "^11.0.3",
