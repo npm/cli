@@ -604,6 +604,30 @@ const definitions = {
     `,
     flatten,
   }),
+  'electron_mirror': new Definition('electron_mirror', {
+    default: null,
+    type: [null, String],
+    description: `
+      URL used by electron-builder and other tools as a mirror for Electron downloads.
+    `,
+    flatten,
+  }),
+  'electron_custom_dir': new Definition('electron_custom_dir', {
+    default: null,
+    type: [null, String],
+    description: `
+      Custom directory template for Electron downloads (e.g., '{{ version }}').
+    `,
+    flatten,
+  }),
+  'electron_builder_binaries_mirror': new Definition('electron_builder_binaries_mirror', {
+    default: null,
+    type: [null, String],
+    description: `
+      Mirror URL for electron-builder binary dependencies.
+    `,
+    flatten,
+  }),
   'engine-strict': new Definition('engine-strict', {
     default: false,
     type: Boolean,
