@@ -243,6 +243,25 @@ class Config {
     }
   }
 
+  loadSync () {
+    if (this.loaded) {
+      throw new Error('attempting to load npm config multiple times')
+    }
+
+    // first load the defaults, which sets the global prefix
+    this.loadDefaults()
+    this.loadCLI()
+    this.loadEnv()
+    // set this before calling setEnvs, so that we don't have to share
+    // private attributes, as that module also does a bunch of get operations
+    this.#loaded = true
+
+    // set proper globalPrefix now that everything is loaded
+    this.globalPrefix = this.get('prefix')
+
+    this.setEnvs()
+  }
+
   async load () {
     if (this.loaded) {
       throw new Error('attempting to load npm config multiple times')
@@ -563,6 +582,37 @@ class Config {
     return keyword
   }
 
+  // Parse and set config entries from an object of raw config values
+  // Used by both #loadObject (initial load) and loadDefinitions (re-parse with new definitions)
+  #parseConfigEntries (obj, where, configData, filter = null) {
+    for (const [key, value] of Object.entries(obj)) {
+      // If filter is provided, only process keys that pass the filter
+      if (filter && !filter(key)) {
+        continue
+      }
+
+      const k = envReplace(key, this.env)
+      const v = this.parseField(value, k)
+
+      if (where !== 'default') {
+        this.#checkDeprecated(k)
+        if (this.definitions[key]?.exclusive) {
+          for (const exclusive of this.definitions[key].exclusive) {
+            if (!this.isDefault(exclusive)) {
+              throw new TypeError(`--${key} cannot be provided when using --${exclusive}`)
+            }
+          }
+        }
+      }
+
+      if (where !== 'default' || key === 'npm-version') {
+        this.checkUnknown(where, key, false)
+      }
+
+      configData.data[k] = v
+    }
+  }
+
   #loadObject (obj, where, source, er = null) {
     // obj is the raw data read from the file
     const conf = this.data.get(where)
@@ -587,28 +637,14 @@ class Config {
       }
     } else {
       conf.raw = obj
-      for (const [key, value] of Object.entries(obj)) {
-        const k = envReplace(key, this.env)
-        const v = this.parseField(value, k)
-        if (where !== 'default') {
-          this.#checkDeprecated(k)
-          if (this.definitions[key]?.exclusive) {
-            for (const exclusive of this.definitions[key].exclusive) {
-              if (!this.isDefault(exclusive)) {
-                throw new TypeError(`--${key} cannot be provided when using --${exclusive}`)
-              }
-            }
-          }
-        }
-        if (where !== 'default' || key === 'npm-version') {
-          this.checkUnknown(where, key)
-        }
-        conf.data[k] = v
-      }
+      this.#parseConfigEntries(obj, where, conf)
     }
   }
 
-  checkUnknown (where, key) {
+  checkUnknown (where, key, emitWarnings = false) {
+    if (!emitWarnings) {
+      return
+    }
     if (!this.definitions[key]) {
       if (internalEnv.includes(key)) {
         return
@@ -915,6 +951,139 @@ class Config {
 
     // at this point, nothing else is usable so just return what we do have
     return creds
+  }
+
+  // Validate unknown configs with additional definitions
+  // This allows command-specific definitions to be checked against already-loaded config
+  warn (additionalDefinitions = {}) {
+    const originalDefs = this.definitions
+
+    // Temporarily merge additional definitions for validation
+    this.definitions = { ...this.definitions, ...additionalDefinitions }
+
+    try {
+      // Re-validate all loaded configs with merged definitions
+      for (const where of ['env', 'cli', 'builtin', 'user', 'project', 'global']) {
+        const { raw } = this.data.get(where)
+        if (!raw || !Object.keys(raw).length) {
+          continue
+        }
+
+        for (const key of Object.keys(raw)) {
+          const k = envReplace(key, this.env)
+          this.checkUnknown(where, k, true)
+        }
+      }
+    } finally {
+      // Restore original definitions (don't mutate permanently)
+      this.definitions = originalDefs
+    }
+  }
+
+  // Clone this Config instance with all its state
+  clone () {
+    const cloned = new Config({
+      definitions: { ...this.definitions },
+      shorthands: { ...this.shorthands },
+      flatten: this.#flatten,
+      nerfDarts: [...this.nerfDarts],
+      npmPath: this.npmPath,
+      env: this.env,
+      argv: this.argv,
+      platform: this.platform,
+      execPath: this.execPath,
+      cwd: this.cwd,
+      excludeNpmCwd: this.excludeNpmCwd,
+    })
+
+    // Copy loaded state
+    cloned.#loaded = this.#loaded
+    cloned.globalPrefix = this.globalPrefix
+    cloned.localPrefix = this.localPrefix
+    cloned.localPackage = this.localPackage
+    cloned.home = this.home
+    cloned.parsedArgv = this.parsedArgv
+
+    // Deep copy types, defaults, and deprecated to prevent mutation
+    cloned.types = { ...this.types }
+    cloned.defaults = { ...this.defaults }
+    cloned.deprecated = { ...this.deprecated }
+
+    // Copy sources map
+    cloned.sources = new Map(this.sources)
+
+    // Clone the data map by copying each ConfigData layer
+    for (const where of confTypes) {
+      const sourceData = this.data.get(where)
+      const clonedData = cloned.data.get(where)
+
+      // Copy only own properties from data (not inherited from prototype chain)
+      for (const key of Object.keys(sourceData.data)) {
+        clonedData.data[key] = sourceData.data[key]
+      }
+
+      // Copy raw config
+      Object.assign(clonedData.raw, sourceData.raw)
+
+      // Copy source (use internal setter to bypass the check)
+      if (sourceData.source) {
+        clonedData.source = sourceData.source
+      }
+
+      // Copy validation state
+      clonedData[_valid] = sourceData[_valid]
+
+      // Copy load error if any
+      if (sourceData.loadError) {
+        clonedData[_loadError] = sourceData.loadError
+      }
+    }
+
+    return cloned
+  }
+
+  // Load additional definitions after config has been loaded
+  // This re-processes already-loaded config data with the new definitions
+  loadDefinitions (additionalDefinitions) {
+    if (!additionalDefinitions) {
+      return this
+    }
+    if (!this.loaded) {
+      throw new Error('call config.load() or config.loadSync() before loading additional definitions')
+    }
+    // Merge new definitions
+    this.definitions = { ...this.definitions, ...additionalDefinitions }
+    // Update types, defaults, deprecated maps
+    for (const [key, def] of Object.entries(additionalDefinitions)) {
+      this.defaults[key] = def.default
+      this.types[key] = def.type
+      if (def.deprecated) {
+        this.deprecated[key] = def.deprecated.trim().replace(/\n +/, '\n')
+      }
+    }
+
+    // Re-process already loaded data with new definitions
+    for (const where of ['default', 'builtin', 'env', 'cli', 'user', 'project', 'global']) {
+      const configData = this.data.get(where)
+      const { raw, source } = configData
+
+      // Skip if this layer wasn't loaded
+      if (!source || !raw || !Object.keys(raw).length) {
+        continue
+      }
+
+      // Re-parse only keys that are in the new definitions
+      const filter = (key) => {
+        const k = envReplace(key, this.env)
+        return additionalDefinitions[k] || additionalDefinitions[key]
+      }
+
+      this.#parseConfigEntries(raw, where, configData, filter)
+    }
+
+    // Invalidate flat options since new definitions may affect flattening
+    this.#flatOptions = null
+    return this
   }
 
   // set up the environment object we have with npm_config_* environs
