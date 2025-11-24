@@ -1,5 +1,45 @@
 # Changelog
 
+## [10.4.3](https://github.com/npm/cli/compare/config-v10.4.2...config-v10.4.3) (2025-11-19)
+### Bug Fixes
+* [`c6242d9`](https://github.com/npm/cli/commit/c6242d92e5227e0a772d9cfe474ea57776af79e0) [#8706](https://github.com/npm/cli/pull/8706) change npm profile to create tokens with GAT support (#8706) (@owlstronaut, @wraithgar)
+### Dependencies
+* [`e49286e`](https://github.com/npm/cli/commit/e49286e2189dfe1604d957ccc415038957a64d19) [#8723](https://github.com/npm/cli/pull/8723) `ini@5.0.0`
+* [`05ac7a7`](https://github.com/npm/cli/commit/05ac7a7ea2a4d258658537a19ba350e07df34fda) [#8723](https://github.com/npm/cli/pull/8723) `proc-log@6.0.0`
+
+## [10.4.2](https://github.com/npm/cli/compare/config-v10.4.1...config-v10.4.2) (2025-10-08)
+### Bug Fixes
+* [`5b4a7fc`](https://github.com/npm/cli/commit/5b4a7fc594e23dbdd5acab8df7bd195992383d5f) [#8650](https://github.com/npm/cli/pull/8650) handle missing node-gyp gracefully in @npmcli/config definitions (@owlstronaut)
+* [`9197995`](https://github.com/npm/cli/commit/9197995ef0b760738454f2d255c0683d0731b24c) [#8619](https://github.com/npm/cli/pull/8619) spelling (#8619) (@jsoref)
+### Documentation
+* [`1fde042`](https://github.com/npm/cli/commit/1fde04261c899fd03753e2a90698774e41943887) [#8640](https://github.com/npm/cli/pull/8640) rewrap markdown (#8640) (@jsoref)
+### Chores
+* [`8e5d204`](https://github.com/npm/cli/commit/8e5d2042b041d637db14670f22cb7e866dd00479) [#8626](https://github.com/npm/cli/pull/8626) fix spelling: different (#8626) (@jsoref)
+* [`7455fc0`](https://github.com/npm/cli/commit/7455fc01fffa8419dda0f01e2480ab860b81b56f) [#8608](https://github.com/npm/cli/pull/8608) Fix spelling in workspaces/config (#8608) (@jsoref)
+
+## [10.4.1](https://github.com/npm/cli/compare/config-v10.4.0...config-v10.4.1) (2025-09-23)
+### Documentation
+* [`7a09902`](https://github.com/npm/cli/commit/7a099029dbeeeab821498b9b462abce1269461f4) [#8582](https://github.com/npm/cli/pull/8582) bring back certfile (#8582) (@jenseng)
+### Dependencies
+* [`1b4433f`](https://github.com/npm/cli/commit/1b4433fdb85623e019a6194cb01ff85c7f64ccad) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/map-workspaces@5.0.0`
+* [`ceae674`](https://github.com/npm/cli/commit/ceae674c32a080b81e62d79003c2d537d7ca93d2) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/package-json@7.0.1`
+### Chores
+* [`402a0ab`](https://github.com/npm/cli/commit/402a0ab1b4e5d1a8414dd063d0cbde0c0bc5a192) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/template-oss@4.25.1` (@wraithgar)
+
+## [10.4.0](https://github.com/npm/cli/compare/config-v10.3.1...config-v10.4.0) (2025-09-03)
+### Features
+* [`bdcc10d`](https://github.com/npm/cli/commit/bdcc10d9f848940987b3d326ccd4673fab2bcfef) [#8359](https://github.com/npm/cli/pull/8359) add support for optional env var replacements in .npmrc (#8359) (@aczekajski, @owlstronaut)
+
+## [10.3.1](https://github.com/npm/cli/compare/config-v10.3.0...config-v10.3.1) (2025-07-24)
+### Bug Fixes
+* [`7f66f0a`](https://github.com/npm/cli/commit/7f66f0ae8fb84f567fe83a9a5738d06c7fe8fb54) [#8447](https://github.com/npm/cli/pull/8447) add better hint for `before` and clean up description (@wraithgar)
+* [`5b858c6`](https://github.com/npm/cli/commit/5b858c6b2c275f0e670e09c52de5b931936d6e07) [#8411](https://github.com/npm/cli/pull/8411) ensure progress bars display consistently across all environments (#8411) (@owlstronaut)
+### Documentation
+* [`4673e9c`](https://github.com/npm/cli/commit/4673e9c165b39563e16409f3b1ca06fdc32e7d44) [#8371](https://github.com/npm/cli/pull/8371) rebrand OS X references to macOS (@MikeMcC399)
+### Chores
+* [`3f60b5f`](https://github.com/npm/cli/commit/3f60b5f9621b43ae0b8796d3a7160a603748f756) [#8383](https://github.com/npm/cli/pull/8383) `@npmcli/template-oss@4.24.4` (#8383) (@wraithgar)
+* [`01f8cc6`](https://github.com/npm/cli/commit/01f8cc6f001e3211135fa0563f7129aed09dc46c) [#8381](https://github.com/npm/cli/pull/8381) `@npmcli/template-oss@4.24.3` (#8381) (@wraithgar)
+
 ## [10.3.0](https://github.com/npm/cli/compare/config-v10.2.0...config-v10.3.0) (2025-05-15)
 ### Features
 * [`a0e60fb`](https://github.com/npm/cli/commit/a0e60fb1893ac77a78380d9a9faaaaa54da1fe85) [#8246](https://github.com/npm/cli/pull/8246) added init-private option (@owlstronaut)
@@ -116,7 +156,7 @@
 
 ### Features
 
-* [`9123de4`](https://github.com/npm/cli/commit/9123de4d282bfd19ea17ad613f5a2acab0e0e162) [#7373](https://github.com/npm/cli/pull/7373) do all ouput over proc-log events (@lukekarrys)
+* [`9123de4`](https://github.com/npm/cli/commit/9123de4d282bfd19ea17ad613f5a2acab0e0e162) [#7373](https://github.com/npm/cli/pull/7373) do all output over proc-log events (@lukekarrys)
 
 ### Bug Fixes
 
@@ -350,7 +390,10 @@
 
 ### ⚠️ BREAKING CHANGES
 
-* unscoped auth configuration is no longer automatically scoped to a registry. the `validate` method is no longer called automatically. the `_auth` configuration key is no longer split into `username` and `_password`. errors will be thrown by `validate()` if problems are found.
+* unscoped auth configuration is no longer automatically scoped to a registry.
+the `validate` method is no longer called automatically.
+the `_auth` configuration key is no longer split into `username` and `_password`.
+errors will be thrown by `validate()` if problems are found.
 * `@npmcli/config` is now compatible with the following semver range for node: `^14.17.0 || ^16.13.0 || >=18.0.0`
 
 ### Features

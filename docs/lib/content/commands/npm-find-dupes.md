@@ -10,8 +10,7 @@ description: Find duplication in the package tree
 
 ### Description
 
-Runs `npm dedupe` in `--dry-run` mode, making npm only output the
-duplications, without actually changing the package tree.
+Runs `npm dedupe` in `--dry-run` mode, making npm only output the duplications, without actually changing the package tree.
 
 ### Configuration
 

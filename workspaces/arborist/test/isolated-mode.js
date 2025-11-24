@@ -20,7 +20,7 @@ const { getRepo } = require('./fixtures/isolated-nock')
 
 /**
  * The testing framework here is work in progress, in particular it does not have nice ergonomics.
- * The syntactic suggar for this framework will be introduced over time as we add more features.
+ * The syntactic sugar for this framework will be introduced over time as we add more features.
  *
  * The framework has two parts:
  * - Mocking: The tool generates a test repo based on a declarative list of packages.
@@ -334,7 +334,7 @@ tap.test('Lock file is same in hoisted and in isolated mode', async t => {
     fs.promises.readFile(path.join(isolatedModeDir, 'package-lock.json'), { encoding: 'utf8' }),
   ])
 
-  t.same(hoistedModeLockFile, isolatedModeLockFile, 'hoited mode and isolated mode produce the same lockfile')
+  t.same(hoistedModeLockFile, isolatedModeLockFile, 'hoisted mode and isolated mode produce the same lockfile')
 })
 
 tap.test('Basic workspaces setup', async t => {
@@ -804,7 +804,7 @@ tap.test('shrinkwrap with peer dependencies', async t => {
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ installStrategy: 'linked' })
 
-  // TODO: greate the resolved object
+  // TODO: create the resolved object
   const asserted = new Set()
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
@@ -1020,7 +1020,7 @@ tap.test('nested bundled dependencies of workspaces with conflicting isolated de
   }
 
   // the isexe that is bundled is hoisted
-  // the 'which' that is bundled is not hoisted due to a conflaict
+  // the 'which' that is bundled is not hoisted due to a conflict
   const resolved = {
     'dog@1.2.3 (root)': {
       'bar@1.0.0 (workspace)': {

@@ -118,6 +118,8 @@ const main = async function () {
   const [annotationsAll] = walk(tree, false)
 
   const out = [
+    '<!-- This file is automatically added by `scripts/dependency-graph.js`. Do not edit. -->',
+    '',
     '# npm dependencies',
     '',
     '## `github.com/npm/` only',

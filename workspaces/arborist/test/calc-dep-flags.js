@@ -20,11 +20,12 @@ t.test('flag stuff', t => {
       dependencies: { prod: '' },
       devDependencies: { dev: '' },
       optionalDependencies: { optional: '' },
-      peerDependencies: { peer: '' },
+      peerDependencies: { peer: '', peeroptional: '' },
+      peerDependenciesMeta: { peeroptional: { optional: true } },
     },
   })
 
-  new Node({
+  const optional = new Node({
     pkg: {
       name: 'optional',
       version: '1.2.3',
@@ -33,7 +34,7 @@ t.test('flag stuff', t => {
     parent: root,
   })
 
-  new Node({
+  const devoptional = new Node({
     pkg: {
       name: 'devoptional',
       version: '1.2.3',
@@ -41,14 +42,14 @@ t.test('flag stuff', t => {
     parent: root,
   })
 
-  new Node({
+  const extraneous = new Node({
     pkg: {
       name: 'extraneous',
     },
     parent: root,
   })
 
-  new Node({
+  const peer = new Node({
     pkg: {
       name: 'peer',
       version: '1.2.3',
@@ -57,7 +58,7 @@ t.test('flag stuff', t => {
     parent: root,
   })
 
-  new Node({
+  const peerdep = new Node({
     pkg: {
       name: 'peerdep',
       version: '1.2.3',
@@ -65,7 +66,7 @@ t.test('flag stuff', t => {
     parent: root,
   })
 
-  new Node({
+  const prod = new Node({
     pkg: {
       name: 'prod',
       version: '1.2.3',
@@ -75,7 +76,7 @@ t.test('flag stuff', t => {
     parent: root,
   })
 
-  new Node({
+  const metapeer = new Node({
     pkg: {
       name: 'metapeer',
       version: '1.2.3',
@@ -84,7 +85,7 @@ t.test('flag stuff', t => {
     parent: root,
   })
 
-  new Node({
+  const metapeerdep = new Node({
     pkg: {
       name: 'metapeerdep',
       version: '1.2.3',
@@ -92,7 +93,7 @@ t.test('flag stuff', t => {
     parent: root,
   })
 
-  new Node({
+  const proddep = new Node({
     pkg: {
       name: 'proddep',
       version: '1.2.3',
@@ -101,7 +102,7 @@ t.test('flag stuff', t => {
     parent: root,
   })
 
-  new Node({
+  const dev = new Node({
     pkg: {
       name: 'dev',
       version: '1.2.3',
@@ -120,7 +121,7 @@ t.test('flag stuff', t => {
     parent: root,
   })
 
-  new Node({
+  const devandoptional = new Node({
     pkg: {
       name: 'devandoptional',
       version: '1.2.3',
@@ -139,7 +140,7 @@ t.test('flag stuff', t => {
   })
 
   // a link dep depended upon by the target of a linked dep
-  new Link({
+  const linkylinky = new Link({
     pkg: {
       name: 'linklink',
       version: '1.2.3',
@@ -148,7 +149,118 @@ t.test('flag stuff', t => {
     parent: linky.target,
   })
 
+  const peeroptional = new Node({
+    pkg: {
+      name: 'peeroptional',
+      version: '1.2.3',
+      dependencies: { optional: '' },
+    },
+    parent: root,
+  })
+
   calcDepFlags(root)
+
+  t.match(optional, {
+    extraneous: false,
+    dev: false,
+    optional: true,
+    devOptional: false,
+    peer: false,
+  })
+  t.match(devoptional, {
+    extraneous: false,
+    dev: false,
+    optional: false,
+    devOptional: true,
+    peer: false,
+  })
+  t.match(extraneous, {
+    extraneous: true,
+  })
+  t.match(peer, {
+    extraneous: false,
+    dev: false,
+    optional: false,
+    devOptional: false,
+    peer: true,
+  })
+  t.match(peerdep, {
+    extraneous: false,
+    dev: false,
+    optional: false,
+    devOptional: false,
+    peer: true,
+  })
+  t.match(prod, {
+    extraneous: false,
+    dev: false,
+    optional: false,
+    devOptional: false,
+    peer: false,
+  })
+  t.match(metapeer, {
+    extraneous: false,
+    dev: false,
+    optional: false,
+    devOptional: false,
+    peer: true,
+  })
+  t.match(metapeerdep, {
+    extraneous: false,
+    dev: false,
+    optional: false,
+    devOptional: false,
+    peer: true,
+  })
+  t.match(proddep, {
+    extraneous: false,
+    dev: false,
+    optional: false,
+    devOptional: false,
+    peer: false,
+  })
+  t.match(dev, {
+    extraneous: false,
+    dev: true,
+    optional: false,
+    devOptional: false,
+    peer: false,
+  })
+  t.match(devdep, {
+    extraneous: false,
+    dev: true,
+    optional: false,
+    devOptional: false,
+    peer: false,
+  })
+  t.match(devandoptional, {
+    extraneous: false,
+    dev: true,
+    optional: true,
+    devOptional: false,
+    peer: false,
+  })
+  t.match(linky, {
+    extraneous: false,
+    dev: true,
+    optional: false,
+    devOptional: false,
+    peer: false,
+  })
+  t.match(linkylinky, {
+    extraneous: false,
+    dev: true,
+    optional: false,
+    devOptional: false,
+    peer: false,
+  })
+  t.match(peeroptional, {
+    extraneous: true,
+    dev: false,
+    optional: true,
+    devOptional: false,
+    peer: true,
+  })
 
   t.matchSnapshot(printTree(root), 'after')
   t.end()
@@ -219,49 +331,15 @@ t.test('set parents to not extraneous when visiting', t => {
     realpath: baz.path,
   })
 
-  t.matchSnapshot(printTree(root), 'before')
   calcDepFlags(root, true)
-  t.matchSnapshot(printTree(root), 'after')
 
-  t.equal(root.extraneous, false, 'root')
-  t.equal(asdf.extraneous, false, 'asdf')
-  t.equal(bar.extraneous, false, 'bar')
-  t.equal(baz.extraneous, false, 'baz')
-  t.equal(foo.extraneous, false, 'foo')
-  t.equal(fooLink.extraneous, false, 'fooLink')
-  t.equal(bazLink.extraneous, false, 'bazLink')
-
-  t.equal(root.dev, false, 'root not dev')
-  t.equal(asdf.dev, false, 'asdf not dev')
-  t.equal(bar.dev, false, 'bar not dev')
-  t.equal(baz.dev, false, 'baz not dev')
-  t.equal(foo.dev, false, 'foo not dev')
-  t.equal(fooLink.dev, false, 'fooLink not dev')
-  t.equal(bazLink.dev, false, 'bazLink not dev')
-
-  t.equal(root.optional, false, 'root not optional')
-  t.equal(asdf.optional, false, 'asdf not optional')
-  t.equal(bar.optional, false, 'bar not optional')
-  t.equal(baz.optional, false, 'baz not optional')
-  t.equal(foo.optional, false, 'foo not optional')
-  t.equal(fooLink.optional, false, 'foolink not optional')
-  t.equal(bazLink.optional, false, 'bazlink not optional')
-
-  t.equal(root.peer, false, 'root not peer')
-  t.equal(asdf.peer, false, 'asdf not peer')
-  t.equal(bar.peer, false, 'bar not peer')
-  t.equal(baz.peer, false, 'baz not peer')
-  t.equal(foo.peer, false, 'foo not peer')
-  t.equal(fooLink.peer, false, 'foolink not peer')
-  t.equal(bazLink.peer, false, 'bazlink not peer')
-
-  t.equal(root.devOptional, false, 'root not devOptional')
-  t.equal(asdf.devOptional, false, 'asdf not devOptional')
-  t.equal(bar.devOptional, false, 'bar not devOptional')
-  t.equal(baz.devOptional, false, 'baz not devOptional')
-  t.equal(foo.devOptional, false, 'foo not devOptional')
-  t.equal(fooLink.devOptional, false, 'foolink not devOptional')
-  t.equal(bazLink.devOptional, false, 'bazlink not devOptional')
+  t.equal(root.extraneous, false, 'root is not extraneous')
+  t.equal(asdf.extraneous, false, 'asdf is not extraneous')
+  t.equal(bar.extraneous, false, 'bar is not extraneous')
+  t.equal(baz.extraneous, false, 'baz is not extraneous')
+  t.equal(foo.extraneous, false, 'foo is not extraneous')
+  t.equal(fooLink.extraneous, false, 'fooLink is not extraneous')
+  t.equal(bazLink.extraneous, false, 'bazLink is not extraneous')
   t.end()
 })
 

@@ -33,7 +33,7 @@ const suite = async (suite, { registry, cache }) => {
 
   // do it one time so that we have it in the shared cache
   // and benchmark the case where we don't have anything to do
-  // this doens't get pushed into promises, because we need it
+  // this doesn't get pushed into promises, because we need it
   // before we do the other ones, so we can write the lockfile.
   {
     const path = resolve(dir, 'full')

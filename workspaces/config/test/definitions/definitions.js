@@ -1,6 +1,7 @@
 const t = require('tap')
 const { resolve } = require('node:path')
 const mockGlobals = require('@npmcli/mock-globals')
+const Module = require('node:module')
 
 // have to fake the node version, or else it'll only pass on this one
 mockGlobals(t, { 'process.version': 'v14.8.0', 'process.env.NODE_ENV': undefined })
@@ -402,6 +403,7 @@ t.test('progress', t => {
 
   const flat = {}
 
+  // Test flatten function behavior
   mockDefs().progress.flatten('progress', {}, flat)
   t.strictSame(flat, { progress: false })
 
@@ -416,6 +418,59 @@ t.test('progress', t => {
   setEnv({ tty: true, term: 'dumb' })
   mockDefs().progress.flatten('progress', { progress: true }, flat)
   t.strictSame(flat, { progress: false })
+
+  // Ensures consistency between default and flatOptions behavior
+  t.test('default value consistency', t => {
+    // Test case 1: Both TTYs, normal terminal, not CI
+    setEnv({ tty: true, term: 'xterm' })
+    const def1 = mockDefs({ 'ci-info': { isCI: false, name: null } }).progress
+    t.equal(def1.default, true, 'default should be true when both TTYs, normal terminal, and not CI')
+
+    // Test case 2: No TTYs, not CI
+    setEnv({ tty: false, term: 'xterm' })
+    const def2 = mockDefs({ 'ci-info': { isCI: false, name: null } }).progress
+    t.equal(def2.default, false, 'default should be false when no TTYs')
+
+    // Test case 3: Both TTYs but dumb terminal, not CI
+    setEnv({ tty: true, term: 'dumb' })
+    const def3 = mockDefs({ 'ci-info': { isCI: false, name: null } }).progress
+    t.equal(def3.default, false, 'default should be false in dumb terminal')
+
+    // Test case 4: Mixed TTY states, not CI
+    mockGlobals(t, {
+      'process.stderr.isTTY': true,
+      'process.stdout.isTTY': false,
+      'process.env.TERM': 'xterm',
+    })
+    const def4 = mockDefs({ 'ci-info': { isCI: false, name: null } }).progress
+    t.equal(def4.default, false, 'default should be false when only one TTY')
+
+    // Test case 5: Good TTY environment but in CI
+    setEnv({ tty: true, term: 'xterm' })
+    const def5 = mockDefs({ 'ci-info': { isCI: true, name: 'github-actions' } }).progress
+    t.equal(def5.default, false, 'default should be false in CI even with good TTY environment')
+
+    t.end()
+  })
+
+  // Test that flatten behavior is independent of CI detection
+  t.test('flatten function ignores CI detection', t => {
+    const flatObj = {}
+
+    // Test that CI doesn't affect flatten behavior when user explicitly enables
+    setEnv({ tty: true, term: 'xterm' })
+    const defsCI = mockDefs({ 'ci-info': { isCI: true, name: 'github-actions' } })
+    defsCI.progress.flatten('progress', { progress: true }, flatObj)
+    t.equal(flatObj.progress, true, 'flatten should enable progress in CI if user explicitly sets true and TTY is available')
+
+    // Test that non-CI doesn't guarantee flatten success if TTY is bad
+    setEnv({ tty: false, term: 'xterm' })
+    const defsNoCI = mockDefs({ 'ci-info': { isCI: false, name: null } })
+    defsNoCI.progress.flatten('progress', { progress: true }, flatObj)
+    t.equal(flatObj.progress, false, 'flatten should disable progress outside CI if TTY is not available')
+
+    t.end()
+  })
 
   t.end()
 })
@@ -445,7 +500,7 @@ t.test('search options', t => {
     description: 'test description',
     exclude: 'test search exclude',
     limit: 99,
-    staleneess: 99,
+    staleness: 99,
 
   }
   const obj = {}
@@ -964,5 +1019,40 @@ t.test('otp changes auth-type', t => {
   mockDefs().otp.flatten('otp', obj, flat)
   t.strictSame(flat, { authType: 'legacy', otp: 123456 })
   t.strictSame(obj, { 'auth-type': 'legacy', otp: 123456 })
+  t.end()
+})
+
+t.test('node-gyp', t => {
+  t.test('when node-gyp is available', t => {
+    const defs = mockDefs()
+    t.type(defs['node-gyp'].default, 'string')
+    t.ok(defs['node-gyp'].default.length > 0, 'has a default path')
+    t.ok(defs['node-gyp'].default.includes('node-gyp'), 'path contains node-gyp')
+    t.end()
+  })
+
+  t.test('when node-gyp is not available', t => {
+    const origResolve = Module._resolveFilename
+
+    Module._resolveFilename = function (request, parent, isMain, options) {
+      if (request === 'node-gyp/bin/node-gyp.js') {
+        const err = new Error(`Cannot find module '${request}'`)
+        err.code = 'MODULE_NOT_FOUND'
+        throw err
+      }
+      return origResolve.call(this, request, parent, isMain, options)
+    }
+
+    try {
+      const defs = require('../../lib/definitions/definitions.js')
+      t.equal(defs['node-gyp'].default, '', 'returns empty string when node-gyp not found')
+    } finally {
+      // Restore the original resolve
+      Module._resolveFilename = origResolve
+    }
+
+    t.end()
+  })
+
   t.end()
 })

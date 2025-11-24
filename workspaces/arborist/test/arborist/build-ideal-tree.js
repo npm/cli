@@ -1129,7 +1129,7 @@ t.test('resolve links in global mode', async t => {
   t.equal(tree.children.get('linked-dep').resolved, resolved)
 })
 
-t.test('dont get confused if root matches duped metadep', async t => {
+t.test('do not get confused if root matches duped metadep', async t => {
   createRegistry(t, true)
   const path = resolve(fixtures, 'test-root-matches-metadep')
   const arb = newArb(path, { installStrategy: 'hoisted' })
@@ -1320,7 +1320,7 @@ t.test('override a conflict with the root peer dep (with force)', async t => {
   t.matchSnapshot(await printIdeal(path, { strictPeerDeps: false, force: true }), 'non-strict and force override')
 })
 
-t.test('push conflicted peer deps deeper in to the tree to solve', async t => {
+t.test('push conflicted peer deps deeper into the tree to solve', async t => {
   const path = resolve(fixtures, 'testing-peer-dep-conflict-chain/override-dep')
   createRegistry(t, true)
   t.matchSnapshot(await printIdeal(path))
@@ -1655,6 +1655,16 @@ t.test('more peer dep conflicts', async t => {
       error: false,
       resolvable: true,
     },
+    'peerDep replacement of top level dep with different version resulting detached top level dep': {
+      pkg: {
+        description: 'a@ -> (PeerOptional(b, c, dep, dep))  b -> ( Peer(a) ) c -> ( Peer(a) )',
+        devDependencies: {
+          '@test/a': '^1.1.0',
+          '@test/b': '1.1.0',
+        },
+      },
+      error: false,
+      resolvable: true },
   })
 
   createRegistry(t, true)
@@ -3274,7 +3284,7 @@ t.test('competing peerSets resolve in both root and workspace', async t => {
     ]
   }
 
-  await t.test('overlapping peerSets dont warn', async t => {
+  await t.test('overlapping peerSets do not warn', async t => {
     // This should not cause a warning because replacing `c@2` and `d@2`
     // with `c@1` and `d@1` is still valid.
     //
@@ -3314,7 +3324,7 @@ t.test('competing peerSets resolve in both root and workspace', async t => {
 
     const [rootWarnings = [], wsWarnings = []] = warnings
     // TODO: these warn for now but shouldnt
-    // https://github.com/npm/arborist/issues/347
+    // https://github.com/npm/cli/issues/4270
     t.comment('FIXME')
     t.match(rootWarnings, ['warn', 'ERESOLVE', 'overriding peer dependency', {
       code: 'ERESOLVE',
@@ -3375,7 +3385,7 @@ t.test('competing peerSets resolve in both root and workspace', async t => {
     t.equal(wsD.version, '1.0.0', 'workspace d version')
 
     // TODO: these should not be undefined
-    // https://github.com/npm/arborist/issues/348
+    // https://github.com/npm/cli/issues/4269
     t.comment('FIXME')
     t.equal((wsTargetC || {}).version, undefined, 'workspace target c version')
     t.equal((wsTargetD || {}).version, undefined, 'workspace target d version')
@@ -4133,5 +4143,320 @@ t.test('engine checking respects omit flags', async t => {
       omit: ['peer'],
     })
     t.pass('should succeed when omitting peer dependencies with engine mismatches')
+  })
+})
+
+t.test('installLinks behavior with project-internal file dependencies', async t => {
+  t.test('project-internal file dependencies are always symlinked regardless of installLinks', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'test-root',
+        version: '1.0.0',
+        dependencies: {
+          'local-pkg': 'file:./packages/local-pkg',
+        },
+      }),
+      packages: {
+        'local-pkg': {
+          'package.json': JSON.stringify({
+            name: 'local-pkg',
+            version: '1.0.0',
+            dependencies: {
+              'local-shared': 'file:../local-shared', // Project-internal dependency
+            },
+          }),
+          'index.js': 'module.exports = "local-pkg"',
+        },
+        'local-shared': {
+          'package.json': JSON.stringify({
+            name: 'local-shared',
+            version: '1.0.0',
+          }),
+          'index.js': 'module.exports = "local-shared"',
+        },
+      },
+    })
+
+    createRegistry(t, false)
+
+    // Test with installLinks=true (this used to fail before our fix)
+    const arb = newArb(path, { installLinks: true })
+    const tree = await arb.buildIdealTree()
+
+    // Both packages should be present in the tree
+    t.ok(tree.children.has('local-pkg'), 'local-pkg should be in the tree')
+    t.ok(tree.children.has('local-shared'), 'local-shared should be in the tree')
+
+    // Both should be Links (symlinked) because they are project-internal
+    const localPkg = tree.children.get('local-pkg')
+    const localShared = tree.children.get('local-shared')
+
+    t.ok(localPkg.isLink, 'local-pkg should be a link')
+    t.ok(localShared.isLink, 'local-shared should be a link (hoisted from local-pkg)')
+
+    // Verify the paths are correct
+    t.ok(localPkg.realpath.endsWith(join('packages', 'local-pkg')), 'local-pkg should link to correct path')
+    t.ok(localShared.realpath.endsWith(join('packages', 'local-shared')), 'local-shared should link to correct path')
+  })
+
+  t.test('external file dependencies respect installLinks setting', async t => {
+    // Create test structure with both project and external dependency in same testdir
+    const testRoot = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'test-project',
+          version: '1.0.0',
+          dependencies: {
+            'external-lib': 'file:../external-lib', // External dependency (outside project)
+          },
+        }),
+      },
+      'external-lib': {
+        'package.json': JSON.stringify({
+          name: 'external-lib',
+          version: '1.0.0',
+        }),
+        'index.js': 'module.exports = "external-lib"',
+      },
+    })
+
+    const projectPath = join(testRoot, 'project')
+    createRegistry(t, false)
+
+    // Test with installLinks=true - external dependency should be copied (not linked)
+    const arbWithLinks = newArb(projectPath, { installLinks: true })
+    const treeWithLinks = await arbWithLinks.buildIdealTree()
+
+    t.ok(treeWithLinks.children.has('external-lib'), 'external-lib should be in the tree')
+    const externalWithLinks = treeWithLinks.children.get('external-lib')
+    t.notOk(externalWithLinks.isLink, 'external-lib should not be a link when installLinks=true')
+
+    // Test with installLinks=false - external dependency should be linked
+    const arbNoLinks = newArb(projectPath, { installLinks: false })
+    const treeNoLinks = await arbNoLinks.buildIdealTree()
+
+    t.ok(treeNoLinks.children.has('external-lib'), 'external-lib should be in the tree')
+    const externalNoLinks = treeNoLinks.children.get('external-lib')
+    t.ok(externalNoLinks.isLink, 'external-lib should be a link when installLinks=false')
+  })
+
+  t.test('mixed internal and external file dependencies', async t => {
+    const testRoot = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'mixed-test',
+          version: '1.0.0',
+          dependencies: {
+            'internal-pkg': 'file:./lib/internal-pkg',
+            'external-dep': 'file:../external-dep', // External dependency
+          },
+        }),
+        lib: {
+          'internal-pkg': {
+            'package.json': JSON.stringify({
+              name: 'internal-pkg',
+              version: '1.0.0',
+              dependencies: {
+                'internal-shared': 'file:../internal-shared', // Project-internal
+              },
+            }),
+            'index.js': 'module.exports = "internal-pkg"',
+          },
+          'internal-shared': {
+            'package.json': JSON.stringify({
+              name: 'internal-shared',
+              version: '1.0.0',
+            }),
+            'index.js': 'module.exports = "internal-shared"',
+          },
+        },
+      },
+      'external-dep': {
+        'package.json': JSON.stringify({
+          name: 'external-dep',
+          version: '1.0.0',
+        }),
+        'index.js': 'module.exports = "external-dep"',
+      },
+    })
+
+    const projectPath = join(testRoot, 'project')
+    createRegistry(t, false)
+
+    const arb = newArb(projectPath, { installLinks: true })
+    const tree = await arb.buildIdealTree()
+
+    // All dependencies should be present
+    t.ok(tree.children.has('internal-pkg'), 'internal-pkg should be in tree')
+    t.ok(tree.children.has('internal-shared'), 'internal-shared should be in tree')
+    t.ok(tree.children.has('external-dep'), 'external-dep should be in tree')
+
+    // Internal dependencies should be links (project-internal rule)
+    const internalPkg = tree.children.get('internal-pkg')
+    const internalShared = tree.children.get('internal-shared')
+    t.ok(internalPkg.isLink, 'internal-pkg should be a link (project-internal)')
+    t.ok(internalShared.isLink, 'internal-shared should be a link (project-internal)')
+
+    // External dependency should not be a link (respects installLinks=true)
+    const externalDep = tree.children.get('external-dep')
+    t.notOk(externalDep.isLink, 'external-dep should not be a link (respects installLinks=true)')
+  })
+
+  t.test('code coverage for project-internal file dependency edge cases', async t => {
+    const testRoot = t.testdir({
+      'parent-dir-external': {
+        'package.json': JSON.stringify({
+          name: 'parent-dir-external',
+          version: '1.0.0',
+        }),
+        'index.js': 'module.exports = "parent-dir-external"',
+      },
+      project: {
+        'package.json': JSON.stringify({
+          name: 'coverage-test',
+          version: '1.0.0',
+          dependencies: {
+            'current-dir-dep': 'file:./current-dir-dep', // file:./ case
+            'parent-dir-external': 'file:../parent-dir-external', // file:../ case outside project
+          },
+        }),
+        'current-dir-dep': {
+          'package.json': JSON.stringify({
+            name: 'current-dir-dep',
+            version: '1.0.0',
+          }),
+          'index.js': 'module.exports = "current-dir-dep"',
+        },
+      },
+    })
+
+    const projectPath = join(testRoot, 'project')
+    createRegistry(t, false)
+
+    // Test with installLinks=false to verify external dependencies respect setting
+    const arb = newArb(projectPath, { installLinks: false })
+    const tree = await arb.buildIdealTree()
+
+    t.ok(tree.children.has('current-dir-dep'), 'current-dir-dep should be in tree')
+    t.ok(tree.children.has('parent-dir-external'), 'parent-dir-external should be in tree')
+
+    const currentDirDep = tree.children.get('current-dir-dep')
+    const parentDirExternal = tree.children.get('parent-dir-external')
+
+    // current-dir-dep should be a link (project-internal always links)
+    t.ok(currentDirDep.isLink, 'current-dir-dep should be a link (file:./ within project)')
+
+    // parent-dir-external should ALSO be a link (external, but installLinks=false means link everything)
+    t.ok(parentDirExternal.isLink, 'parent-dir-external should be a link (file:../ outside project, installLinks=false means link)')
+
+    // Verify the logic branches - current-dir should resolve within project, parent-dir should not
+    t.match(currentDirDep.realpath, new RegExp(join(testRoot, 'project').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+      'current-dir-dep realpath should be within project root')
+  })
+
+  t.test('installLinks=true with nested project-internal file dependencies', async t => {
+    // Test a more complex scenario with nested dependencies to ensure comprehensive coverage
+    const testRoot = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'nested-test',
+          version: '1.0.0',
+          dependencies: {
+            'wrapper-pkg': 'file:./packages/wrapper-pkg',
+          },
+        }),
+        packages: {
+          'wrapper-pkg': {
+            'package.json': JSON.stringify({
+              name: 'wrapper-pkg',
+              version: '1.0.0',
+              dependencies: {
+                'nested-dep': 'file:../nested-dep',
+              },
+            }),
+          },
+          'nested-dep': {
+            'package.json': JSON.stringify({
+              name: 'nested-dep',
+              version: '1.0.0',
+            }),
+          },
+        },
+      },
+    })
+
+    const projectPath = join(testRoot, 'project')
+    createRegistry(t, false)
+
+    const arb = newArb(projectPath, { installLinks: true })
+    const tree = await arb.buildIdealTree()
+
+    const wrapperPkg = tree.children.get('wrapper-pkg')
+    const nestedDep = tree.children.get('nested-dep')
+
+    t.ok(wrapperPkg, 'wrapper-pkg should be found')
+    t.ok(wrapperPkg.isLink, 'wrapper-pkg should be a link (project-internal)')
+    t.ok(nestedDep, 'nested-dep should be found')
+    t.ok(nestedDep.isLink, 'nested-dep should be a link (project-internal)')
+  })
+
+  t.test('installLinks=true with transitive external file dependencies', async t => {
+    // mainpkg installs b (external file dep) with --install-links
+    // b depends on a (another external file dep via file:../a)
+    // Both should be installed (not linked) and dependencies should resolve correctly
+    const testRoot = t.testdir({
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          main: 'index.js',
+        }),
+        'index.js': 'export const A = "A";',
+      },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          main: 'index.js',
+          dependencies: {
+            a: 'file:../a',
+          },
+        }),
+        'index.js': 'import {A} from "a";export const fn = () => console.log(A);',
+      },
+      mainpkg: {
+        'package.json': JSON.stringify({}),
+      },
+    })
+
+    const mainpkgPath = join(testRoot, 'mainpkg')
+    const bPath = join(testRoot, 'b')
+    createRegistry(t, false)
+
+    const arb = newArb(mainpkgPath, { installLinks: true })
+
+    // Add the external file dependency using the full path
+    await arb.buildIdealTree({ add: [`file:${bPath}`] })
+
+    const tree = arb.idealTree
+
+    // Both packages should be present in the tree
+    const packageB = tree.children.get('b')
+    const packageA = tree.children.get('a')
+
+    t.ok(packageB, 'package b should be found in tree')
+    t.ok(packageA, 'package a should be found in tree (transitive dependency)')
+
+    // Both should be installed (not linked) due to installLinks=true
+    t.notOk(packageB.isLink, 'package b should not be a link (installLinks=true)')
+    t.notOk(packageA.isLink, 'package a should not be a link (transitive with installLinks=true)')
+
+    // Verify that the resolved paths are correct
+    t.match(packageB.resolved, /file:.*[/\\]b$/, 'package b should have correct resolved path')
+    t.match(packageA.resolved, /file:.*[/\\]a$/, 'package a should have correct resolved path')
+
+    // Verify the dependency relationship
+    const edgeToA = packageB.edgesOut.get('a')
+    t.ok(edgeToA, 'package b should have an edge to a')
+    t.ok(edgeToA.valid, 'the edge from b to a should be valid')
+    t.equal(edgeToA.to, packageA, 'the edge from b should point to package a')
   })
 })

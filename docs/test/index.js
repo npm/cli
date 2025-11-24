@@ -83,7 +83,7 @@ t.test('html', async t => {
   // but we test for coverage
   t.test('files can link to root pages', async t => {
     await testBuildDocs(t, {
-      content: { 'test.md': '[link](/test)' },
+      content: { 'test.md': '[Test](/test)' },
       nav: '- url: /test',
     })
   })

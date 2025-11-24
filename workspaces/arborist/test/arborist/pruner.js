@@ -38,6 +38,23 @@ t.test('prune with lockfile', async t => {
   t.matchSnapshot(printTree(tree))
 })
 
+t.test('prune with lockfile with implicit optional peer dependencies', async t => {
+  const path = fixture(t, 'prune-lockfile-optional-peer')
+  const tree = await pruneTree(path, { audit: false })
+
+  const dep = tree.children.get('dedent')
+  t.ok(dep, 'required prod dep was not pruned from tree')
+
+  const optionalPeerDep = tree.children.get('babel-plugin-macros')
+  t.notOk(optionalPeerDep, 'optional peer dep was pruned from tree')
+
+  t.notMatch(
+    fs.readFileSync(path + '/package-lock.json'),
+    'node_modules/babel-plugin-macros',
+    'should remove optional peer dep from package-lock.json'
+  )
+})
+
 t.test('prune with actual tree omit dev', async t => {
   const path = fixture(t, 'prune-actual-omit-dev')
   const tree = await pruneTree(path, { omit: ['dev'] })

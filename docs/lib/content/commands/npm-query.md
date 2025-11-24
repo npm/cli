@@ -10,8 +10,7 @@ description: Dependency selector query
 
 ### Description
 
-The `npm query` command allows for usage of css selectors in order to retrieve
-an array of dependency objects.
+The `npm query` command allows for usage of css selectors in order to retrieve an array of dependency objects.
 
 ### Piping npm query to other commands
 
@@ -136,21 +135,16 @@ npm query ":type(git)" | jq 'map(.name)' | xargs -I {} npm why {}
 
 ### Expecting a certain number of results
 
-One common use of `npm query` is to make sure there is only one version of
-a certain dependency in your tree.  This is especially common for
-ecosystems like that rely on `typescript` where having state split
-across two different but identically-named packages causes bugs.  You
-can use the `--expect-results` or `--expect-result-count` in your setup
-to ensure that npm will exit with an exit code if your tree doesn't look
-like you want it to.
+One common use of `npm query` is to make sure there is only one version of a certain dependency in your tree.
+This is especially common for ecosystems like that rely on `typescript` where having state split across two different but identically-named packages causes bugs.
+You can use the `--expect-results` or `--expect-result-count` in your setup to ensure that npm will exit with an exit code if your tree doesn't look like you want it to.
 
 
 ```sh
 $ npm query '#react' --expect-result-count=1
 ```
 
-Perhaps you want to quickly check if there are any production
-dependencies that could be updated:
+Perhaps you want to quickly check if there are any production dependencies that could be updated:
 
 ```sh
 $ npm query ':root>:outdated(in-range).prod' --no-expect-results
@@ -158,7 +152,8 @@ $ npm query ':root>:outdated(in-range).prod' --no-expect-results
 
 ### Package lock only mode
 
-If package-lock-only is enabled, only the information in the package lock (or shrinkwrap) is loaded.  This means that information from the package.json files of your dependencies will not be included in the result set (e.g. description, homepage, engines).
+If package-lock-only is enabled, only the information in the package lock (or shrinkwrap) is loaded.
+This means that information from the package.json files of your dependencies will not be included in the result set (e.g. description, homepage, engines).
 
 ### Configuration
 

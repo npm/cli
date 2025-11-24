@@ -118,7 +118,7 @@ t.test('yarn lock with dedupes yarn wouldnt do', async t => {
   t.matchSnapshot(y.toString(), 'yarn.lock from deduped tree')
 })
 
-t.test('deduped prior entries that dont match one another', async t => {
+t.test('deduped prior entries that do not match one another', async t => {
   const tree = new Node({
     path: '/my/project',
     pkg: { dependencies: { a: '', b: '' } },

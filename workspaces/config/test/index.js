@@ -422,7 +422,7 @@ loglevel = yolo
     t.notOk(config.isDefault('cli-config'),
       'should return false for a cli-defined value')
     t.notOk(config.isDefault('foo'),
-      'should return false for a env-defined value')
+      'should return false for an env-defined value')
     t.notOk(config.isDefault('project-config'),
       'should return false for a project-defined value')
     t.notOk(config.isDefault('default-user-config-in-home'),
@@ -433,7 +433,7 @@ loglevel = yolo
       'should return false for a builtin-defined value')
 
     // make sure isDefault still works as intended after
-    // setting and deleting values in differente sources
+    // setting and deleting values in different sources
     config.set('methane', 'H2O', 'cli')
     t.notOk(config.isDefault('methane'),
       'should no longer return true now that a cli value was defined')
@@ -1431,7 +1431,7 @@ t.test('exclusive options conflict', async t => {
   })
   await t.rejects(config.load(), {
     name: 'TypeError',
-    message: '--lie can not be provided when using --truth',
+    message: '--lie cannot be provided when using --truth',
   })
 })
 

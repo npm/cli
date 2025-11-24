@@ -229,7 +229,7 @@ t.test('virtual roots are shown with their sourceReference', t => {
   t.end()
 })
 
-t.test('broken links dont break the printing', t => {
+t.test('broken links do not break the printing', t => {
   const tree = new Node({
     path: '/home/user/projects/root',
   })

@@ -113,7 +113,7 @@ t.test('basic operations', t => {
   t.end()
 })
 
-t.test('dont allow external nodes to be added to inventory', t => {
+t.test('do not allow external nodes to be added to inventory', t => {
   const i = new Inventory()
   const root = { location: '', path: 'rootpath' }
   i.add(root)

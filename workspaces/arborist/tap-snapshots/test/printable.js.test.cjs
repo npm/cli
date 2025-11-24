@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/printable.js TAP broken links dont break the printing > must match snapshot 1`] = `
+exports[`test/printable.js TAP broken links do not break the printing > must match snapshot 1`] = `
 {
 "children":Map{
 "devnull" => ArboristLink{

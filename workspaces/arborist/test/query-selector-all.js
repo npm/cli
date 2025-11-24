@@ -472,7 +472,7 @@ t.test('query-selector-all', async t => {
     ['#a > :root', []],
     ['#a ~ :root', []],
 
-    // pseudo miscelaneous
+    // pseudo miscellaneous
     [':empty', [
       '@npmcli/abbrev@2.0.0-beta.45',
       'a@1.0.0',

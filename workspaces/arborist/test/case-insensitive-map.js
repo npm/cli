@@ -30,7 +30,7 @@ t.test('set values after ctor', t => {
   t.end()
 })
 
-t.test('dont get confused with undefined or weird values', t => {
+t.test('do not get confused with undefined or weird values', t => {
   const cmap = new CMap()
   cmap.set(undefined, 'this is not defined')
   cmap.set(NaN, 'this is not a number')

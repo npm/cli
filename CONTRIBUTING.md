@@ -13,13 +13,13 @@ When submitting a new bug report, please first [search](https://github.com/npm/c
 **1. Clone this repository...**
 
 ```bash
-$ git clone git@github.com:npm/cli.git npm
+git clone git@github.com:npm/cli.git npm
 ```
 
 **2. Navigate into project & install development-specific dependencies...**
 
 ```bash
-$ cd ./npm && node ./scripts/resetdeps.js
+cd ./npm && node ./scripts/resetdeps.js
 ```
 
 **3. Write some code &/or add some tests...**
@@ -30,7 +30,7 @@ $ cd ./npm && node ./scripts/resetdeps.js
 
 **4. Run tests & ensure they pass...**
 ```
-$ node . run test
+node . run test
 ```
 
 **5. Open a [Pull Request](https://github.com/npm/cli/pulls) for your work & become the newest contributor to `npm`! 🎉**
@@ -61,24 +61,17 @@ node . exec
 ```
 
 For example instead of:
-```bash 
+```bash
 npm exec -- <package>
-```  
+```
 Use:
 ```bash
 node . exec -- <package>
 ```
-
-
-## Performance & Benchmarks
-
-We've set up an automated [benchmark](https://github.com/npm/benchmarks) integration that will run against all Pull Requests; Posting back a comment with the results of the run.
-
-**Example:**
-
-![image](https://user-images.githubusercontent.com/2818462/72312698-e2e57f80-3656-11ea-9fcf-4a8f6b97b0d1.png)
-
-You can learn more about this tool, including how to run & configure it manually, [here](https://github.com/npm/benchmarks)
+To update the snapshots run:
+```bash
+TAP_SNAPSHOT=1 node . run test
+```
 
 ## What _not_ to contribute?
 

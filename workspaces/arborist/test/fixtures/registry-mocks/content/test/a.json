@@ -1,0 +1,146 @@
+{
+  "name": "@test/a",
+  "versions": {
+    "1.2.0": {
+      "name": "@test/a",
+      "version": "1.2.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "type": "commonjs",
+      "peerDependencies": {
+        "lodash": "^4.17.21",
+        "underscore": "^1.13.1",
+        "@test/b": "1.2.0",
+        "@test/c": "1.2.0"
+      },
+      "peerDependenciesMeta": {
+        "@test/b": {
+          "optional": true
+        },
+        "@test/c": {
+          "optional": true
+        },
+        "lodash": {
+          "optional": true
+        },
+        "underscore": {
+          "optional": true
+        }
+      },
+      "_id": "@test/a@1.2.0",
+      "_nodeVersion": "22.14.0",
+      "_npmVersion": "11.4.2",
+      "dist": {
+        "integrity": "sha512-k7WYu8tdQY1aq8QV+7YEGcoSYXrdCACqnabuvNC8Tpwvpk/MF25CeX4nei6eliVaHqHxzNzAr60ne2TgsEoz2Q==",
+        "shasum": "b609076c847a018b144ab68c953817847195535a",
+        "tarball": "http://localhost:4873/@test/a/-/a-1.2.0.tgz"
+      },
+      "contributors": []
+    },
+    "1.1.0": {
+      "name": "@test/a",
+      "version": "1.1.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "type": "commonjs",
+      "peerDependencies": {
+        "lodash": "^4.17.0",
+        "uniq": "^1.0.0",
+        "@test/b": "1.1.0",
+        "@test/c": "1.1.0"
+      },
+      "peerDependenciesMeta": {
+        "@test/b": {
+          "optional": true
+        },
+        "@test/c": {
+          "optional": true
+        },
+        "lodash": {
+          "optional": true
+        },
+        "uniq": {
+          "optional": true
+        }
+      },
+      "_id": "@test/a@1.1.0",
+      "_nodeVersion": "22.14.0",
+      "_npmVersion": "11.4.2",
+      "dist": {
+        "integrity": "sha512-qlfAcmAKeohHKBVVAnwsiDs+URz5jCPYlXe+srdxX6Nzhl9W6FX9kV5Lm6XahBhB+H/c+eRi+ghAE8YcdzmFIA==",
+        "shasum": "0d9b53f67e05d388195ad096f61fe2c1c6f0ff8d",
+        "tarball": "http://localhost:4873/@test/a/-/a-1.1.0.tgz"
+      },
+      "contributors": []
+    },
+    "1.0.0": {
+      "name": "@test/a",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "type": "commonjs",
+      "peerDependencies": {
+        "lodash": "^4.17.0",
+        "uniq": "^1.0.0",
+        "@test/b": "1.0.0",
+        "@test/c": "1.0.0"
+      },
+      "peerDependenciesMeta": {
+        "@test/b": {
+          "optional": true
+        },
+        "@test/c": {
+          "optional": true
+        },
+        "lodash": {
+          "optional": true
+        },
+        "uniq": {
+          "optional": true
+        }
+      },
+      "_id": "@test/a@1.0.0",
+      "_nodeVersion": "22.14.0",
+      "_npmVersion": "11.4.2",
+      "dist": {
+        "integrity": "sha512-BRD01XQTy4WW2PrMdV0ZvHdqlY6v0FY3kyvEIv4v0n7apOHQwuQqjdL4iWnApfEwD0o0mVSbQs5s6DibNmDnMg==",
+        "shasum": "a1ec39760cf04261fff44b23582f1bafba0b14ff",
+        "tarball": "http://localhost:4873/@test/a/-/a-1.0.0.tgz"
+      },
+      "contributors": []
+    }
+  },
+  "time": {
+    "modified": "2025-07-31T16:24:31.780Z",
+    "created": "2025-07-29T12:59:32.758Z",
+    "1.2.0": "2025-07-29T13:15:20.477Z",
+    "1.1.0": "2025-07-31T16:24:09.634Z",
+    "1.0.0": "2025-07-31T16:24:31.780Z"
+  },
+  "users": {},
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "_rev": "44-1c1667b80cb416cc",
+  "_id": "@test/a",
+  "readme": "ERROR: No README data found!",
+  "_attachments": {}
+}

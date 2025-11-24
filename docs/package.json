@@ -23,18 +23,18 @@
   "devDependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/eslint-config": "^5.0.1",
-    "@npmcli/template-oss": "4.24.4",
+    "@npmcli/template-oss": "4.25.1",
     "front-matter": "^4.0.2",
-    "ignore-walk": "^7.0.0",
-    "jsdom": "^24.0.0",
-    "rehype-stringify": "^9.0.3",
-    "remark-gfm": "^3.0.1",
-    "remark-man": "^8.0.1",
-    "remark-parse": "^10.0.1",
-    "remark-rehype": "^10.1.0",
+    "ignore-walk": "^8.0.0",
+    "jsdom": "^27.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-man": "^9.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
     "semver": "^7.3.8",
     "tap": "^16.3.8",
-    "unified": "^10.1.2",
+    "unified": "^11.0.5",
     "yaml": "^2.2.1"
   },
   "author": "GitHub Inc.",
@@ -56,7 +56,7 @@
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
     "ciVersions": "latest",
-    "version": "4.24.4",
+    "version": "4.25.1",
     "content": "../scripts/template-oss/index.js",
     "workspaceRepo": {
       "add": {

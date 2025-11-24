@@ -52,7 +52,7 @@ Options:
             3. Attempt to PLACE the dep in the tree
         3. Add each placed node to the queue to be checked for updates
 6. If the shrinkwrap was loaded from disk, and the tree was mutated, reset
-   all dependency flags to true (dev, optional, devOptionl, extraneous)
+   all dependency flags to true (dev, optional, devOptional, extraneous)
 7. If the shrinkwrap was not loaded from disk, or the tree was mutated,
    calculate dependency flags appropriately (like for a `loadActual` walk)
 8. If options.prune is not false, and we started from a shrinkwrap and then
@@ -66,13 +66,13 @@ dependency can go without causing conflicts.
 
 1. If edge is valid, and dep name is not on the update list, do not place
 2. If the node is not a top node, and the dep is a peer dep, then the
-   starting TARGET is node.parent, otherwise it's node
+   starting TARGET is node.parent; otherwise, it's node
 3. Do until CONFLICT:
     1. CHECK if dep can be placed at TARGET
     2. If not CONFLICT, set result in CAN PLACE
     3. set TARGET to TARGET parent
 4. If no satisfying target found, throw Unresolvable Dep Tree error
-5. set TARGET to last non-conclict target checked
+5. set TARGET to last non-conflict target checked
 6. If CAN PLACE is KEEP, do not place
 7. add dep to placed list
 8. If an existing child by that name at TARGET,

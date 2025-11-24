@@ -1,12 +1,12 @@
 // mixin implementing the buildIdealTree method
 const localeCompare = require('@isaacs/string-locale-compare')('en')
-const rpj = require('read-package-json-fast')
+const PackageJson = require('@npmcli/package-json')
 const npa = require('npm-package-arg')
 const pacote = require('pacote')
 const cacache = require('cacache')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const realpath = require('../../lib/realpath.js')
-const { resolve, dirname } = require('node:path')
+const { resolve, dirname, sep } = require('node:path')
 const treeCheck = require('../tree-check.js')
 const { readdirScoped } = require('@npmcli/fs')
 const { lstat, readlink } = require('node:fs/promises')
@@ -42,7 +42,6 @@ const _flagsSuspect = Symbol.for('flagsSuspect')
 const _setWorkspaces = Symbol.for('setWorkspaces')
 const _updateNames = Symbol.for('updateNames')
 const _resolvedAdd = Symbol.for('resolvedAdd')
-const _usePackageLock = Symbol.for('usePackageLock')
 const _rpcache = Symbol.for('realpathCache')
 const _stcache = Symbol.for('statCache')
 
@@ -101,39 +100,28 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   constructor (options) {
     super(options)
 
-    // normalize trailing slash
-    const registry = options.registry || 'https://registry.npmjs.org'
-    options.registry = this.registry = registry.replace(/\/+$/, '') + '/'
-
     const {
       follow = false,
       installStrategy = 'hoisted',
-      idealTree = null,
-      installLinks = false,
-      legacyPeerDeps = false,
-      packageLock = true,
       strictPeerDeps = false,
-      workspaces,
       global,
     } = options
 
     this.#strictPeerDeps = !!strictPeerDeps
 
-    this.idealTree = idealTree
-    this.installLinks = installLinks
-    this.legacyPeerDeps = legacyPeerDeps
-
-    this[_usePackageLock] = packageLock
     this.#installStrategy = global ? 'shallow' : installStrategy
     this.#follow = !!follow
-
-    if (workspaces?.length && global) {
-      throw new Error('Cannot operate on workspaces in global mode')
-    }
 
     this[_updateAll] = false
     this[_updateNames] = []
     this[_resolvedAdd] = []
+
+    // caches for cached realpath calls
+    const cwd = process.cwd()
+    // assume that the cwd is real enough for our purposes
+    this[_rpcache] = new Map([[cwd, cwd]])
+    this[_stcache] = new Map()
+    this[_flagsSuspect] = false
   }
 
   get explicitRequests () {
@@ -192,7 +180,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   }
 
   async #checkEngineAndPlatform () {
-    const { engineStrict, npmVersion, nodeVersion, omit = [] } = this.options
+    const { engineStrict, npmVersion, nodeVersion, omit = [], cpu, os, libc } = this.options
     const omitSet = new Set(omit)
 
     for (const node of this.idealTree.inventory.values()) {
@@ -213,6 +201,19 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           })
         }
         checkPlatform(node.package, this.options.force)
+      }
+      if (node.optional && !node.inert) {
+        // Mark any optional packages we can't install as inert.
+        // We ignore the --force and --engine-strict flags.
+        try {
+          checkEngine(node.package, npmVersion, nodeVersion, false)
+          checkPlatform(node.package, false, { cpu, os, libc })
+        } catch (error) {
+          const set = optionalSet(node)
+          for (const node of set) {
+            node.inert = true
+          }
+        }
       }
     }
   }
@@ -268,7 +269,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       root = await this.#globalRootNode()
     } else {
       try {
-        const pkg = await rpj(this.path + '/package.json')
+        const { content: pkg } = await PackageJson.normalize(this.path)
         root = await this.#rootNodeFromPackage(pkg)
       } catch (err) {
         if (err.code === 'EJSONPARSE') {
@@ -285,7 +286,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       .then(root => {
         if (this.options.global) {
           return root
-        } else if (!this[_usePackageLock] || this[_updateAll]) {
+        } else if (!this.options.usePackageLock || this[_updateAll]) {
           return Shrinkwrap.reset({
             path: this.path,
             lockfileVersion: this.options.lockfileVersion,
@@ -324,7 +325,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       })
 
       .then(tree => {
-        // search the virtual tree for invalid edges, if any are found add their source to
+        // search the virtual tree for missing/invalid edges, if any are found add their source to
         // the depsQueue so that we'll fix it later
         depth({
           tree,
@@ -338,7 +339,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           filter: node => node,
           visit: node => {
             for (const edge of node.edgesOut.values()) {
-              if (!edge.valid) {
+              if ((!edge.to && edge.type !== 'peerOptional') || !edge.valid) {
                 this.#depsQueue.push(node)
                 break // no need to continue the loop after the first hit
               }
@@ -448,7 +449,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       const paths = await readdirScoped(nm).catch(() => [])
       for (const p of paths) {
         const name = p.replace(/\\/g, '/')
-        tree.package.dependencies = tree.package.dependencies || {}
         const updateName = this[_updateNames].includes(name)
         if (this[_updateAll] || updateName) {
           if (updateName) {
@@ -742,6 +742,7 @@ This is a one-time fix-up, please be patient...
 
     // have to re-calc dep flags, because the nodes don't have edges
     // until their packages get assigned, so everything looks extraneous
+    resetDepFlags(this.idealTree)
     calcDepFlags(this.idealTree)
 
     // yes, yes, this isn't the "original" version, but now that it's been
@@ -812,7 +813,7 @@ This is a one-time fix-up, please be patient...
       node !== this.idealTree &&
       node.resolved &&
       (hasBundle || hasShrinkwrap) &&
-      !node.ideallyInert
+      !node.inert
     if (crackOpen) {
       const Arborist = this.constructor
       const opt = { ...this.options }
@@ -1012,7 +1013,7 @@ This is a one-time fix-up, please be patient...
           }
 
           // pre-fetch any problem edges, since we'll need these soon
-          // if it fails at this point, though, dont' worry because it
+          // if it fails at this point, though, don't worry because it
           // may well be an optional dep that has gone missing.  it'll
           // fail later anyway.
           for (const e of this.#problemEdges(placed)) {
@@ -1068,7 +1069,7 @@ This is a one-time fix-up, please be patient...
       ? await this.#nodeFromSpec(edge.name, spec2, parent, secondEdge)
       : null
 
-    // pick the second one if they're both happy with that, otherwise first
+    // pick the second one if they're both happy with that; otherwise, first
     const node = second && edge.valid ? second : first
     // ensure the one we want is the one that's placed
     node.parent = parent
@@ -1218,7 +1219,7 @@ This is a one-time fix-up, please be patient...
     }
   }
 
-  #nodeFromSpec (name, spec, parent, edge) {
+  async #nodeFromSpec (name, spec, parent, edge) {
     // pacote will slap integrity on its options, so we have to clone
     // the object so it doesn't get mutated.
     // Don't bother to load the manifest for link deps, because the target
@@ -1226,20 +1227,51 @@ This is a one-time fix-up, please be patient...
     const { installLinks, legacyPeerDeps } = this
     const isWorkspace = this.idealTree.workspaces && this.idealTree.workspaces.has(spec.name)
 
-    // spec is a directory, link it unless installLinks is set or it's a workspace
+    // spec is a directory, link it if:
+    // - it's a workspace, OR
+    // - it's a project-internal file: dependency (always linked), OR
+    // - it's external and installLinks is false
     // TODO post arborist refactor, will need to check for installStrategy=linked
-    if (spec.type === 'directory' && (isWorkspace || !installLinks)) {
-      return this.#linkFromSpec(name, spec, parent, edge)
+    let isProjectInternalFileSpec = false
+    if (edge?.rawSpec.startsWith('file:../') || edge?.rawSpec.startsWith('file:./')) {
+      const targetPath = resolve(parent.realpath, edge.rawSpec.slice(5))
+      const resolvedProjectRoot = resolve(this.idealTree.realpath)
+      // Check if the target is within the project root
+      isProjectInternalFileSpec = targetPath.startsWith(resolvedProjectRoot + sep) || targetPath === resolvedProjectRoot
     }
 
-    // if the spec matches a workspace name, then see if the workspace node will
-    // satisfy the edge. if it does, we return the workspace node to make sure it
-    // takes priority.
+    // When using --install-links, we need to handle transitive file dependencies specially
+    // If the parent was installed (not linked) due to --install-links, and this is a file: dep, we should also install it rather than link it
+    const parentWasInstalled = parent && !parent.isLink && parent.resolved?.startsWith('file:')
+    const isTransitiveFileDep = spec.type === 'directory' && parentWasInstalled && installLinks
+
+    // Decide whether to link or copy the dependency
+    const shouldLink = (isWorkspace || isProjectInternalFileSpec || !installLinks) && !isTransitiveFileDep
+    if (spec.type === 'directory' && shouldLink) {
+      const realpath = spec.fetchSpec
+      const { content: pkg } = await PackageJson.normalize(realpath).catch(() => {
+        return { content: {} }
+      })
+      const link = new Link({ name, parent, realpath, pkg, installLinks, legacyPeerDeps })
+      this.#linkNodes.add(link)
+      return link
+    }
+
+    // if the spec matches a workspace name, then see if the workspace node will satisfy the edge. if it does, we return the workspace node to make sure it takes priority.
     if (isWorkspace) {
       const existingNode = this.idealTree.edgesOut.get(spec.name).to
       if (existingNode && existingNode.isWorkspace && existingNode.satisfies(edge)) {
         return existingNode
       }
+    }
+
+    // For file: dependencies that we're installing (not linking), ensure proper resolution
+    if (isTransitiveFileDep && edge) {
+      // For transitive file deps, resolve relative to the parent's original source location
+      const parentOriginalPath = parent.resolved.slice(5) // Remove 'file:' prefix
+      const relativePath = edge.rawSpec.slice(5) // Remove 'file:' prefix
+      const absolutePath = resolve(parentOriginalPath, relativePath)
+      spec = npa.resolve(name, `file:${absolutePath}`)
     }
 
     // spec isn't a directory, and either isn't a workspace or the workspace we have
@@ -1250,7 +1282,7 @@ This is a one-time fix-up, please be patient...
 
         // failed to load the spec, either because of enotarget or
         // fetch failure of some other sort.  save it so we can verify
-        // later that it's optional, otherwise the error is fatal.
+        // later that it's optional; otherwise, the error is fatal.
         const n = new Node({
           name,
           parent,
@@ -1261,16 +1293,6 @@ This is a one-time fix-up, please be patient...
         this.#loadFailures.add(n)
         return n
       })
-  }
-
-  #linkFromSpec (name, spec, parent) {
-    const realpath = spec.fetchSpec
-    const { installLinks, legacyPeerDeps } = this
-    return rpj(realpath + '/package.json').catch(() => ({})).then(pkg => {
-      const link = new Link({ name, parent, realpath, pkg, installLinks, legacyPeerDeps })
-      this.#linkNodes.add(link)
-      return link
-    })
   }
 
   // load all peer deps and meta-peer deps into the node's parent
@@ -1294,6 +1316,12 @@ This is a one-time fix-up, please be patient...
       .sort(({ name: a }, { name: b }) => localeCompare(a, b))
 
     for (const edge of peerEdges) {
+      // node.parent gets mutated during loop execution due to recursive #nodeFromEdge calls.
+      // When a compatible peer is found (e.g. a@1.1.0 replaces a@1.2.0), the original node loses its parent.
+      // if node is detached/removed from the tree, or has no parent, so no need to check remaining edgesOut for that node.
+      if (!node.parent) {
+        break
+      }
       // already placed this one, and we're happy with it.
       if (edge.valid && edge.to) {
         continue
@@ -1400,7 +1428,8 @@ This is a one-time fix-up, please be patient...
   // - if a path under an existing node, then assign that as the fsParent,
   //   and add it to the _depsQueue
   //
-  // call buildDepStep if anything was added to the queue, otherwise we're done
+  // call buildDepStep if anything was added to the queue; otherwise, we're done
+  // XXX load-virtual also has a #resolveLinks, is there overlap?
   #resolveLinks () {
     for (const link of this.#linkNodes) {
       this.#linkNodes.delete(link)
@@ -1464,11 +1493,7 @@ This is a one-time fix-up, please be patient...
     } else {
       // otherwise just unset all the flags on the root node
       // since they will sometimes have the default value
-      this.idealTree.extraneous = false
-      this.idealTree.dev = false
-      this.idealTree.optional = false
-      this.idealTree.devOptional = false
-      this.idealTree.peer = false
+      this.idealTree.unsetDepFlags()
     }
 
     // at this point, any node marked as extraneous should be pruned.
@@ -1478,11 +1503,6 @@ This is a one-time fix-up, please be patient...
     const needPrune = metaFromDisk && (mutateTree || flagsSuspect)
     if (this.#prune && needPrune) {
       this.#idealTreePrune()
-      for (const node of this.idealTree.inventory.values()) {
-        if (node.extraneous) {
-          node.parent = null
-        }
-      }
     }
 
     timeEnd()
@@ -1530,7 +1550,7 @@ This is a one-time fix-up, please be patient...
 
       const set = optionalSet(node)
       for (const node of set) {
-        node.ideallyInert = true
+        node.inert = true
       }
     }
   }
@@ -1551,7 +1571,7 @@ This is a one-time fix-up, please be patient...
           node.parent !== null
           && !node.isProjectRoot
           && !excludeNodes.has(node)
-          && !node.ideallyInert
+          && !node.inert
         ) {
           this[_addNodeToTrashList](node)
         }

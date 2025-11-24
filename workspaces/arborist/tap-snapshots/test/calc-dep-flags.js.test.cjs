@@ -186,6 +186,12 @@ ArboristNode {
           "spec": "*",
           "type": "optional",
         },
+        EdgeIn {
+          "from": "node_modules/peeroptional",
+          "name": "optional",
+          "spec": "*",
+          "type": "prod",
+        },
       },
       "edgesOut": Map {
         "devoptional" => EdgeOut {
@@ -243,6 +249,31 @@ ArboristNode {
       "location": "node_modules/peerdep",
       "name": "peerdep",
       "path": "/x/node_modules/peerdep",
+      "peer": true,
+      "version": "1.2.3",
+    },
+    "peeroptional" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "peeroptional",
+          "spec": "*",
+          "type": "peerOptional",
+        },
+      },
+      "edgesOut": Map {
+        "optional" => EdgeOut {
+          "name": "optional",
+          "spec": "*",
+          "to": "node_modules/optional",
+          "type": "prod",
+        },
+      },
+      "extraneous": true,
+      "location": "node_modules/peeroptional",
+      "name": "peeroptional",
+      "optional": true,
+      "path": "/x/node_modules/peeroptional",
       "peer": true,
       "version": "1.2.3",
     },
@@ -327,6 +358,12 @@ ArboristNode {
       "spec": "*",
       "to": "node_modules/peer",
       "type": "peer",
+    },
+    "peeroptional" => EdgeOut {
+      "name": "peeroptional",
+      "spec": "*",
+      "to": "node_modules/peeroptional",
+      "type": "peerOptional",
     },
     "prod" => EdgeOut {
       "name": "prod",
@@ -419,218 +456,6 @@ ArboristNode {
   "isProjectRoot": true,
   "location": "",
   "name": "path",
-  "path": "/some/path",
-  "peer": true,
-}
-`
-
-exports[`test/calc-dep-flags.js TAP set parents to not extraneous when visiting > after 1`] = `
-ArboristNode {
-  "children": Map {
-    "asdf" => ArboristNode {
-      "children": Map {
-        "baz" => ArboristNode {
-          "location": "node_modules/asdf/node_modules/baz",
-          "name": "baz",
-          "path": "/some/path/node_modules/asdf/node_modules/baz",
-          "version": "1.2.3",
-        },
-      },
-      "location": "node_modules/asdf",
-      "name": "asdf",
-      "path": "/some/path/node_modules/asdf",
-      "version": "1.2.3",
-    },
-    "baz" => ArboristLink {
-      "edgesIn": Set {
-        EdgeIn {
-          "from": "",
-          "name": "baz",
-          "spec": "file:node_modules/asdf/node_modules/baz",
-          "type": "prod",
-        },
-      },
-      "location": "node_modules/baz",
-      "name": "baz",
-      "path": "/some/path/node_modules/baz",
-      "realpath": "/some/path/node_modules/asdf/node_modules/baz",
-      "resolved": "file:asdf/node_modules/baz",
-      "target": ArboristNode {
-        "location": "node_modules/asdf/node_modules/baz",
-      },
-      "version": "1.2.3",
-    },
-    "foo" => ArboristLink {
-      "edgesIn": Set {
-        EdgeIn {
-          "from": "",
-          "name": "foo",
-          "spec": "file:bar/foo",
-          "type": "prod",
-        },
-      },
-      "location": "node_modules/foo",
-      "name": "foo",
-      "path": "/some/path/node_modules/foo",
-      "realpath": "/some/path/bar/foo",
-      "resolved": "file:../bar/foo",
-      "target": ArboristNode {
-        "location": "bar/foo",
-      },
-      "version": "1.2.3",
-    },
-  },
-  "edgesOut": Map {
-    "baz" => EdgeOut {
-      "name": "baz",
-      "spec": "file:node_modules/asdf/node_modules/baz",
-      "to": "node_modules/baz",
-      "type": "prod",
-    },
-    "foo" => EdgeOut {
-      "name": "foo",
-      "spec": "file:bar/foo",
-      "to": "node_modules/foo",
-      "type": "prod",
-    },
-  },
-  "fsChildren": Set {
-    ArboristNode {
-      "fsChildren": Set {
-        ArboristNode {
-          "location": "bar/foo",
-          "name": "foo",
-          "path": "/some/path/bar/foo",
-          "version": "1.2.3",
-        },
-      },
-      "location": "bar",
-      "name": "bar",
-      "path": "/some/path/bar",
-    },
-  },
-  "isProjectRoot": true,
-  "location": "",
-  "name": "path",
-  "path": "/some/path",
-}
-`
-
-exports[`test/calc-dep-flags.js TAP set parents to not extraneous when visiting > before 1`] = `
-ArboristNode {
-  "children": Map {
-    "asdf" => ArboristNode {
-      "children": Map {
-        "baz" => ArboristNode {
-          "dev": true,
-          "extraneous": true,
-          "location": "node_modules/asdf/node_modules/baz",
-          "name": "baz",
-          "optional": true,
-          "path": "/some/path/node_modules/asdf/node_modules/baz",
-          "peer": true,
-          "version": "1.2.3",
-        },
-      },
-      "dev": true,
-      "extraneous": true,
-      "location": "node_modules/asdf",
-      "name": "asdf",
-      "optional": true,
-      "path": "/some/path/node_modules/asdf",
-      "peer": true,
-      "version": "1.2.3",
-    },
-    "baz" => ArboristLink {
-      "dev": true,
-      "edgesIn": Set {
-        EdgeIn {
-          "from": "",
-          "name": "baz",
-          "spec": "file:node_modules/asdf/node_modules/baz",
-          "type": "prod",
-        },
-      },
-      "extraneous": true,
-      "location": "node_modules/baz",
-      "name": "baz",
-      "optional": true,
-      "path": "/some/path/node_modules/baz",
-      "peer": true,
-      "realpath": "/some/path/node_modules/asdf/node_modules/baz",
-      "resolved": "file:asdf/node_modules/baz",
-      "target": ArboristNode {
-        "location": "node_modules/asdf/node_modules/baz",
-      },
-      "version": "1.2.3",
-    },
-    "foo" => ArboristLink {
-      "dev": true,
-      "edgesIn": Set {
-        EdgeIn {
-          "from": "",
-          "name": "foo",
-          "spec": "file:bar/foo",
-          "type": "prod",
-        },
-      },
-      "extraneous": true,
-      "location": "node_modules/foo",
-      "name": "foo",
-      "optional": true,
-      "path": "/some/path/node_modules/foo",
-      "peer": true,
-      "realpath": "/some/path/bar/foo",
-      "resolved": "file:../bar/foo",
-      "target": ArboristNode {
-        "location": "bar/foo",
-      },
-      "version": "1.2.3",
-    },
-  },
-  "dev": true,
-  "edgesOut": Map {
-    "baz" => EdgeOut {
-      "name": "baz",
-      "spec": "file:node_modules/asdf/node_modules/baz",
-      "to": "node_modules/baz",
-      "type": "prod",
-    },
-    "foo" => EdgeOut {
-      "name": "foo",
-      "spec": "file:bar/foo",
-      "to": "node_modules/foo",
-      "type": "prod",
-    },
-  },
-  "extraneous": true,
-  "fsChildren": Set {
-    ArboristNode {
-      "dev": true,
-      "extraneous": true,
-      "fsChildren": Set {
-        ArboristNode {
-          "dev": true,
-          "extraneous": true,
-          "location": "bar/foo",
-          "name": "foo",
-          "optional": true,
-          "path": "/some/path/bar/foo",
-          "peer": true,
-          "version": "1.2.3",
-        },
-      },
-      "location": "bar",
-      "name": "bar",
-      "optional": true,
-      "path": "/some/path/bar",
-      "peer": true,
-    },
-  },
-  "isProjectRoot": true,
-  "location": "",
-  "name": "path",
-  "optional": true,
   "path": "/some/path",
   "peer": true,
 }
