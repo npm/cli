@@ -649,27 +649,37 @@ class Config {
           }
         }
         if (where !== 'default' || key === 'npm-version') {
-          this.checkUnknown(where, key)
+          this.#checkUnknown(where, key)
         }
         conf.data[k] = v
       }
     }
   }
 
-  checkUnknown (where, key) {
-    if (!this.definitions[key]) {
-      if (internalEnv.includes(key)) {
-        return
-      }
-      if (!key.includes(':')) {
-        this.#warnings.push([`Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.`])
-        return
-      }
-      const baseKey = key.split(':').pop()
-      if (!this.definitions[baseKey] && !this.nerfDarts.includes(baseKey)) {
-        this.#warnings.push([`Unknown ${where} config "${baseKey}" (${key}). This will stop working in the next major version of npm.`])
+  #checkUnknownFactory (warnFn) {
+    return (where, key) => {
+      if (!this.definitions[key]) {
+        if (internalEnv.includes(key)) {
+          return
+        }
+        if (!key.includes(':')) {
+          warnFn([`Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.`])
+          return
+        }
+        const baseKey = key.split(':').pop()
+        if (!this.definitions[baseKey] && !this.nerfDarts.includes(baseKey)) {
+          warnFn([`Unknown ${where} config "${baseKey}" (${key}). This will stop working in the next major version of npm.`])
+        }
       }
     }
+  }
+
+  #checkUnknown (where, key) {
+    return this.#checkUnknownFactory((warning) => this.#warnings.push(warning))(where, key)
+  }
+
+  checkUnknown (where, key) {
+    return this.#checkUnknownFactory((warning) => log.warn(...warning))(where, key)
   }
 
   #checkDeprecated (key) {
