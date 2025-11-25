@@ -1244,3 +1244,91 @@ t.test('override fallback to local when root missing dependency with from.overri
   t.equal(edge.spec, '^1.2.3', 'should fall back to local package version from devDependencies')
   t.end()
 })
+
+t.test('edge with overrides should not crash when target has no overrides', t => {
+  const root = {
+    name: 'root',
+    edgesOut: new Map(),
+    edgesIn: new Set(),
+    explain: () => 'root',
+    package: {
+      name: 'root',
+      version: '1.0.0',
+      overrides: {
+        react: '^18.3.1',
+        'react-dom': '^18.3.1',
+      },
+    },
+    get version () {
+      return this.package.version
+    },
+    isTop: true,
+    parent: null,
+    overrides: new OverrideSet({
+      overrides: {
+        react: '^18.3.1',
+        'react-dom': '^18.3.1',
+      },
+    }),
+    resolve (n) {
+      return n === 'dep' ? dep : null
+    },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+    deleteEdgeIn (edge) {
+      this.edgesIn.delete(edge)
+    },
+  }
+
+  // Target node with dependencies but NO overrides
+  const dep = {
+    name: 'dep',
+    edgesOut: new Map([
+      // Has dependencies so edgesOut.size > 0
+      ['some-lib', { name: 'some-lib', peer: false }],
+    ]),
+    edgesIn: new Set(),
+    explain: () => 'dep',
+    package: { name: 'dep', version: '1.0.0' },
+    get version () {
+      return this.package.version
+    },
+    parent: root,
+    root,
+    // NO overrides property - this causes this.#to.overrides to be undefined
+    resolve () {
+      return null
+    },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+    deleteEdgeIn (edge) {
+      this.edgesIn.delete(edge)
+    },
+  }
+
+  // Create an edge from root to dep
+  // Root has overrides, dep has dependencies but no overrides
+  const edge = new Edge({
+    from: root,
+    type: 'prod',
+    spec: '^1.0.0',
+    name: 'dep',
+    overrides: root.overrides,
+  })
+
+  t.doesNotThrow(() => {
+    const err = edge.error
+    t.equal(err, null, 'edge should be valid (no error)')
+  }, 'should not crash when target node has no overrides')
+
+  t.ok(edge.valid, 'edge should be valid')
+  t.end()
+})
