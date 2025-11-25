@@ -16,6 +16,11 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.4): `@npmcli/arborist@9.1.4`
 
+## [10.1.10](https://github.com/npm/cli/compare/libnpmexec-v10.1.9...libnpmexec-v10.1.10) (2025-11-25)
+### Dependencies
+* [`e2ac092`](https://github.com/npm/cli/commit/e2ac092fdab0ccbf3b20abbac7ff1ebb7cda9a88) [#8770](https://github.com/npm/cli/pull/8770) `read@5.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.8): `@npmcli/arborist@9.1.8`
+
 ## [10.1.9](https://github.com/npm/cli/compare/libnpmexec-v10.1.8...libnpmexec-v10.1.9) (2025-11-19)
 ### Bug Fixes
 * [`3439a89`](https://github.com/npm/cli/commit/3439a89d58a25deac08650da53157595e8b8edfb) [#8733](https://github.com/npm/cli/pull/8733) libnpmexec: fix lock compromise logic (#8733) (@jenseng)

@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.4.4](https://github.com/npm/cli/compare/config-v10.4.3...config-v10.4.4) (2025-11-25)
+### Bug Fixes
+* [`958b10e`](https://github.com/npm/cli/commit/958b10e52f442f73796a92c7bbb7d2808bb5bbe5) [#8761](https://github.com/npm/cli/pull/8761) move config.list to a getter (#8761) (@wraithgar)
+### Dependencies
+* [`f51e4aa`](https://github.com/npm/cli/commit/f51e4aaf06ac6703abe053a95fe25b8efca3c527) [#8770](https://github.com/npm/cli/pull/8770) `nopt@9.0.0`
+
 ## [10.4.3](https://github.com/npm/cli/compare/config-v10.4.2...config-v10.4.3) (2025-11-19)
 ### Bug Fixes
 * [`c6242d9`](https://github.com/npm/cli/commit/c6242d92e5227e0a772d9cfe474ea57776af79e0) [#8706](https://github.com/npm/cli/pull/8706) change npm profile to create tokens with GAT support (#8706) (@owlstronaut, @wraithgar)

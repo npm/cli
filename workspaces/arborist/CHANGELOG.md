@@ -1,5 +1,14 @@
 # Changelog
 
+## [9.1.8](https://github.com/npm/cli/compare/arborist-v9.1.7...arborist-v9.1.8) (2025-11-25)
+### Bug Fixes
+* [`b118364`](https://github.com/npm/cli/commit/b1183644faea618ee36af513c5bfc3387ada0f7e) [#8760](https://github.com/npm/cli/pull/8760) undefined override set conflicts shouldn't error (@owlstronaut)
+### Dependencies
+* [`f963223`](https://github.com/npm/cli/commit/f96322350e497f90a54c8a1cfd952b3329f00492) [#8770](https://github.com/npm/cli/pull/8770) `proggy@4.0.0`
+* [`f51e4aa`](https://github.com/npm/cli/commit/f51e4aaf06ac6703abe053a95fe25b8efca3c527) [#8770](https://github.com/npm/cli/pull/8770) `nopt@9.0.0`
+* [`2d15040`](https://github.com/npm/cli/commit/2d15040390697cd78c9a9db3f0dbafab51a6e3e9) [#8770](https://github.com/npm/cli/pull/8770) `@npmcli/query@5.0.0`
+* [`58650dc`](https://github.com/npm/cli/commit/58650dc089c74d090c51d1cb2f269f2d605dcca0) [#8770](https://github.com/npm/cli/pull/8770) `@npmcli/fs@5.0.0`
+
 ## [9.1.7](https://github.com/npm/cli/compare/arborist-v9.1.6...arborist-v9.1.7) (2025-11-19)
 ### Bug Fixes
 * [`3225fa3`](https://github.com/npm/cli/commit/3225fa3200cb0217bdd0735bba390268f8362532) [#8737](https://github.com/npm/cli/pull/8737) fix usage of path of custom registry (#8737) (@flj2mu2)
