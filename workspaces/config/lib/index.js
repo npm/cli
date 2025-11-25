@@ -59,12 +59,43 @@ class Config {
   #flatten
   // populated the first time we flatten the object
   #flatOptions = null
+  // cache for filesystem operations to allow efficient reloading
+  #fileCache = new Map()
+  #fileExistsCache = new Map()
+  #dirExistsCache = new Map()
+  #pkgJsonCache = new Map()
+  #warnings = []
 
   static get typeDefs () {
     return typeDefs
   }
 
+  clone (args) {
+    return new Config({
+      cache: {
+        fileCache: this.#fileCache,
+        fileExistsCache: this.#fileExistsCache,
+        dirExistsCache: this.#dirExistsCache,
+        pkgJsonCache: this.#pkgJsonCache,
+      },
+      definitions: this.definitions,
+      shorthands: this.shorthands,
+      flatten: this.#flatten,
+      nerfDarts: this.nerfDarts,
+      npmPath: this.npmPath,
+      env: this.env,
+      argv: this.argv,
+      platform: this.platform,
+      execPath: this.execPath,
+      cwd: this.cwd,
+      excludeNpmCwd: this.excludeNpmCwd,
+      shouldSetEnvs: this.shouldSetEnvs,
+      ...args,
+    })
+  }
+
   constructor ({
+    cache,
     definitions,
     shorthands,
     flatten,
@@ -78,7 +109,16 @@ class Config {
     execPath = process.execPath,
     cwd = process.cwd(),
     excludeNpmCwd = false,
+    shouldSetEnvs = false,
   }) {
+    if (cache) {
+      this.#fileCache = cache.fileCache
+      this.#fileExistsCache = cache.fileExistsCache
+      this.#dirExistsCache = cache.dirExistsCache
+      this.#pkgJsonCache = cache.pkgJsonCache
+    }
+    this.#warnings = []
+    this.shouldSetEnvs = shouldSetEnvs
     this.nerfDarts = nerfDarts
     this.definitions = definitions
     // turn the definitions into nopt's weirdo syntax
@@ -149,6 +189,12 @@ class Config {
 
   get loaded () {
     return this.#loaded
+  }
+
+  warn () {
+    for (const warning of this.#warnings) {
+      log.warn(...warning)
+    }
   }
 
   get prefix () {
@@ -243,25 +289,6 @@ class Config {
     }
   }
 
-  loadSync () {
-    if (this.loaded) {
-      throw new Error('attempting to load npm config multiple times')
-    }
-
-    // first load the defaults, which sets the global prefix
-    this.loadDefaults()
-    this.loadCLI()
-    this.loadEnv()
-    // set this before calling setEnvs, so that we don't have to share
-    // private attributes, as that module also does a bunch of get operations
-    this.#loaded = true
-
-    // set proper globalPrefix now that everything is loaded
-    this.globalPrefix = this.get('prefix')
-
-    this.setEnvs()
-  }
-
   async load () {
     if (this.loaded) {
       throw new Error('attempting to load npm config multiple times')
@@ -293,7 +320,9 @@ class Config {
     // set proper globalPrefix now that everything is loaded
     this.globalPrefix = this.get('prefix')
 
-    this.setEnvs()
+    if (this.shouldSetEnvs) {
+      setEnvs(this)
+    }
   }
 
   loadDefaults () {
@@ -383,13 +412,13 @@ class Config {
   loadCLI () {
     for (const s of Object.keys(this.shorthands)) {
       if (s.length > 1 && this.argv.includes(`-${s}`)) {
-        log.warn(`-${s} is not a valid single-hyphen cli flag and will be removed in the future`)
+        this.#warnings.push([`-${s} is not a valid single-hyphen cli flag and will be removed in the future`])
       }
     }
     nopt.invalidHandler = (k, val, type) =>
       this.invalidHandler(k, val, type, 'command line options', 'cli')
-    nopt.unknownHandler = this.unknownHandler
-    nopt.abbrevHandler = this.abbrevHandler
+    nopt.unknownHandler = (key, next) => this.unknownHandler(key, next)
+    nopt.abbrevHandler = (short, long) => this.abbrevHandler(short, long)
     const conf = nopt(this.types, this.shorthands, this.argv)
     nopt.invalidHandler = null
     nopt.unknownHandler = null
@@ -529,11 +558,11 @@ class Config {
 
   invalidHandler (k, val, type, source, where) {
     const typeDescription = require('./type-description.js')
-    log.warn(
+    this.#warnings.push([
       'invalid config',
       k + '=' + JSON.stringify(val),
-      `set in ${source}`
-    )
+      `set in ${source}`,
+    ])
     this.data.get(where)[_valid] = false
 
     if (Array.isArray(type)) {
@@ -555,16 +584,16 @@ class Config {
     const msg = 'Must be' + this.#getOneOfKeywords(mustBe, typeDesc)
     const desc = mustBe.length === 1 ? mustBe[0]
       : [...new Set(mustBe.map(n => typeof n === 'string' ? n : JSON.stringify(n)))].join(', ')
-    log.warn('invalid config', msg, desc)
+    this.#warnings.push(['invalid config', msg, desc])
   }
 
   abbrevHandler (short, long) {
-    log.warn(`Expanding --${short} to --${long}. This will stop working in the next major version of npm.`)
+    this.#warnings.push([`Expanding --${short} to --${long}. This will stop working in the next major version of npm.`])
   }
 
   unknownHandler (key, next) {
     if (next) {
-      log.warn(`"${next}" is being parsed as a normal command line argument.`)
+      this.#warnings.push([`"${next}" is being parsed as a normal command line argument.`])
     }
   }
 
@@ -580,37 +609,6 @@ class Config {
       keyword = ''
     }
     return keyword
-  }
-
-  // Parse and set config entries from an object of raw config values
-  // Used by both #loadObject (initial load) and loadDefinitions (re-parse with new definitions)
-  #parseConfigEntries (obj, where, configData, filter = null) {
-    for (const [key, value] of Object.entries(obj)) {
-      // If filter is provided, only process keys that pass the filter
-      if (filter && !filter(key)) {
-        continue
-      }
-
-      const k = envReplace(key, this.env)
-      const v = this.parseField(value, k)
-
-      if (where !== 'default') {
-        this.#checkDeprecated(k)
-        if (this.definitions[key]?.exclusive) {
-          for (const exclusive of this.definitions[key].exclusive) {
-            if (!this.isDefault(exclusive)) {
-              throw new TypeError(`--${key} cannot be provided when using --${exclusive}`)
-            }
-          }
-        }
-      }
-
-      if (where !== 'default' || key === 'npm-version') {
-        this.checkUnknown(where, key, false)
-      }
-
-      configData.data[k] = v
-    }
   }
 
   #loadObject (obj, where, source, er = null) {
@@ -637,32 +635,46 @@ class Config {
       }
     } else {
       conf.raw = obj
-      this.#parseConfigEntries(obj, where, conf)
+      for (const [key, value] of Object.entries(obj)) {
+        const k = envReplace(key, this.env)
+        const v = this.parseField(value, k)
+        if (where !== 'default') {
+          this.#checkDeprecated(k)
+          if (this.definitions[key]?.exclusive) {
+            for (const exclusive of this.definitions[key].exclusive) {
+              if (!this.isDefault(exclusive)) {
+                throw new TypeError(`--${key} cannot be provided when using --${exclusive}`)
+              }
+            }
+          }
+        }
+        if (where !== 'default' || key === 'npm-version') {
+          this.checkUnknown(where, key)
+        }
+        conf.data[k] = v
+      }
     }
   }
 
-  checkUnknown (where, key, emitWarnings = false) {
-    if (!emitWarnings) {
-      return
-    }
+  checkUnknown (where, key) {
     if (!this.definitions[key]) {
       if (internalEnv.includes(key)) {
         return
       }
       if (!key.includes(':')) {
-        log.warn(`Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.`)
+        this.#warnings.push([`Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.`])
         return
       }
       const baseKey = key.split(':').pop()
       if (!this.definitions[baseKey] && !this.nerfDarts.includes(baseKey)) {
-        log.warn(`Unknown ${where} config "${baseKey}" (${key}). This will stop working in the next major version of npm.`)
+        this.#warnings.push([`Unknown ${where} config "${baseKey}" (${key}). This will stop working in the next major version of npm.`])
       }
     }
   }
 
   #checkDeprecated (key) {
     if (this.deprecated[key]) {
-      log.warn('config', key, this.deprecated[key])
+      this.#warnings.push(['config', key, this.deprecated[key]])
     }
   }
 
@@ -672,11 +684,27 @@ class Config {
   }
 
   async #loadFile (file, type) {
+    // Check cache first
+    if (this.#fileCache.has(file)) {
+      const cached = this.#fileCache.get(file)
+      if (cached.error) {
+        return this.#loadObject(null, type, file, cached.error)
+      } else {
+        return this.#loadObject(cached.data, type, file)
+      }
+    }
+
+    if (!file) {
+      return
+    }
+
     // only catch the error from readFile, not from the loadObject call
     log.silly('config', `load:file:${file}`)
     await readFile(file, 'utf8').then(
       data => {
         const parsedConfig = ini.parse(data)
+        // Cache the parsed config
+        this.#fileCache.set(file, { data: parsedConfig })
         if (type === 'project' && parsedConfig.prefix) {
           // Log error if prefix is mentioned in project .npmrc
           /* eslint-disable-next-line max-len */
@@ -684,7 +712,11 @@ class Config {
         }
         return this.#loadObject(parsedConfig, type, file)
       },
-      er => this.#loadObject(null, type, file, er)
+      er => {
+        // Cache the error
+        this.#fileCache.set(file, { error: er })
+        return this.#loadObject(null, type, file, er)
+      }
     )
   }
 
@@ -701,7 +733,7 @@ class Config {
     // if we have not detected a local package json yet, try now that we
     // have a local prefix
     if (this.localPackage == null) {
-      this.localPackage = await fileExists(this.localPrefix, 'package.json')
+      this.localPackage = await this.#cachedFileExists(this.localPrefix, 'package.json')
     }
 
     if (this.#get('global') === true || this.#get('location') === 'global') {
@@ -724,6 +756,36 @@ class Config {
     }
   }
 
+  async #cachedFileExists (...p) {
+    const key = resolve(...p)
+    if (this.#fileExistsCache.has(key)) {
+      return this.#fileExistsCache.get(key)
+    }
+    const result = await fileExists(...p)
+    this.#fileExistsCache.set(key, result)
+    return result
+  }
+
+  async #cachedDirExists (...p) {
+    const key = resolve(...p)
+    if (this.#dirExistsCache.has(key)) {
+      return this.#dirExistsCache.get(key)
+    }
+    const result = await dirExists(...p)
+    this.#dirExistsCache.set(key, result)
+    return result
+  }
+
+  async #cachedPkgJsonNormalize (p) {
+    if (this.#pkgJsonCache.has(p)) {
+      return this.#pkgJsonCache.get(p)
+    }
+    const pkgJson = require('@npmcli/package-json')
+    const result = await pkgJson.normalize(p).catch(() => ({ content: {} }))
+    this.#pkgJsonCache.set(p, result)
+    return result
+  }
+
   async loadLocalPrefix () {
     const cliPrefix = this.#get('prefix', 'cli')
     if (cliPrefix) {
@@ -741,9 +803,9 @@ class Config {
         break
       }
 
-      const hasPackageJson = await fileExists(p, 'package.json')
+      const hasPackageJson = await this.#cachedFileExists(p, 'package.json')
 
-      if (!this.localPrefix && (hasPackageJson || await dirExists(p, 'node_modules'))) {
+      if (!this.localPrefix && (hasPackageJson || await this.#cachedDirExists(p, 'node_modules'))) {
         this.localPrefix = p
         this.localPackage = hasPackageJson
 
@@ -757,11 +819,10 @@ class Config {
       }
 
       if (this.localPrefix && hasPackageJson) {
-        const pkgJson = require('@npmcli/package-json')
         // if we already set localPrefix but this dir has a package.json
         // then we need to see if `p` is a workspace root by reading its package.json
         // however, if reading it fails then we should just move on
-        const { content: pkg } = await pkgJson.normalize(p).catch(() => ({ content: {} }))
+        const { content: pkg } = await this.#cachedPkgJsonNormalize(p)
         if (!pkg?.workspaces) {
           continue
         }
@@ -771,8 +832,8 @@ class Config {
         for (const w of workspaces.values()) {
           if (w === this.localPrefix) {
             // see if there's a .npmrc file in the workspace, if so log a warning
-            if (await fileExists(this.localPrefix, '.npmrc')) {
-              log.warn('config', `ignoring workspace config at ${this.localPrefix}/.npmrc`)
+            if (await this.#cachedFileExists(this.localPrefix, '.npmrc')) {
+              this.#warnings.push(['config', `ignoring workspace config at ${this.localPrefix}/.npmrc`])
             }
 
             // set the workspace in the default layer, which allows it to be overridden easily
@@ -951,139 +1012,6 @@ class Config {
 
     // at this point, nothing else is usable so just return what we do have
     return creds
-  }
-
-  // Validate unknown configs with additional definitions
-  // This allows command-specific definitions to be checked against already-loaded config
-  warn (additionalDefinitions = {}) {
-    const originalDefs = this.definitions
-
-    // Temporarily merge additional definitions for validation
-    this.definitions = { ...this.definitions, ...additionalDefinitions }
-
-    try {
-      // Re-validate all loaded configs with merged definitions
-      for (const where of ['env', 'cli', 'builtin', 'user', 'project', 'global']) {
-        const { raw } = this.data.get(where)
-        if (!raw || !Object.keys(raw).length) {
-          continue
-        }
-
-        for (const key of Object.keys(raw)) {
-          const k = envReplace(key, this.env)
-          this.checkUnknown(where, k, true)
-        }
-      }
-    } finally {
-      // Restore original definitions (don't mutate permanently)
-      this.definitions = originalDefs
-    }
-  }
-
-  // Clone this Config instance with all its state
-  clone () {
-    const cloned = new Config({
-      definitions: { ...this.definitions },
-      shorthands: { ...this.shorthands },
-      flatten: this.#flatten,
-      nerfDarts: [...this.nerfDarts],
-      npmPath: this.npmPath,
-      env: this.env,
-      argv: this.argv,
-      platform: this.platform,
-      execPath: this.execPath,
-      cwd: this.cwd,
-      excludeNpmCwd: this.excludeNpmCwd,
-    })
-
-    // Copy loaded state
-    cloned.#loaded = this.#loaded
-    cloned.globalPrefix = this.globalPrefix
-    cloned.localPrefix = this.localPrefix
-    cloned.localPackage = this.localPackage
-    cloned.home = this.home
-    cloned.parsedArgv = this.parsedArgv
-
-    // Deep copy types, defaults, and deprecated to prevent mutation
-    cloned.types = { ...this.types }
-    cloned.defaults = { ...this.defaults }
-    cloned.deprecated = { ...this.deprecated }
-
-    // Copy sources map
-    cloned.sources = new Map(this.sources)
-
-    // Clone the data map by copying each ConfigData layer
-    for (const where of confTypes) {
-      const sourceData = this.data.get(where)
-      const clonedData = cloned.data.get(where)
-
-      // Copy only own properties from data (not inherited from prototype chain)
-      for (const key of Object.keys(sourceData.data)) {
-        clonedData.data[key] = sourceData.data[key]
-      }
-
-      // Copy raw config
-      Object.assign(clonedData.raw, sourceData.raw)
-
-      // Copy source (use internal setter to bypass the check)
-      if (sourceData.source) {
-        clonedData.source = sourceData.source
-      }
-
-      // Copy validation state
-      clonedData[_valid] = sourceData[_valid]
-
-      // Copy load error if any
-      if (sourceData.loadError) {
-        clonedData[_loadError] = sourceData.loadError
-      }
-    }
-
-    return cloned
-  }
-
-  // Load additional definitions after config has been loaded
-  // This re-processes already-loaded config data with the new definitions
-  loadDefinitions (additionalDefinitions) {
-    if (!additionalDefinitions) {
-      return this
-    }
-    if (!this.loaded) {
-      throw new Error('call config.load() or config.loadSync() before loading additional definitions')
-    }
-    // Merge new definitions
-    this.definitions = { ...this.definitions, ...additionalDefinitions }
-    // Update types, defaults, deprecated maps
-    for (const [key, def] of Object.entries(additionalDefinitions)) {
-      this.defaults[key] = def.default
-      this.types[key] = def.type
-      if (def.deprecated) {
-        this.deprecated[key] = def.deprecated.trim().replace(/\n +/, '\n')
-      }
-    }
-
-    // Re-process already loaded data with new definitions
-    for (const where of ['default', 'builtin', 'env', 'cli', 'user', 'project', 'global']) {
-      const configData = this.data.get(where)
-      const { raw, source } = configData
-
-      // Skip if this layer wasn't loaded
-      if (!source || !raw || !Object.keys(raw).length) {
-        continue
-      }
-
-      // Re-parse only keys that are in the new definitions
-      const filter = (key) => {
-        const k = envReplace(key, this.env)
-        return additionalDefinitions[k] || additionalDefinitions[key]
-      }
-
-      this.#parseConfigEntries(raw, where, configData, filter)
-    }
-
-    // Invalidate flat options since new definitions may affect flattening
-    this.#flatOptions = null
-    return this
   }
 
   // set up the environment object we have with npm_config_* environs
