@@ -12,47 +12,22 @@ description: Manage your authentication tokens
 
 This lets you list, create and revoke authentication tokens.
 
-* `npm token list`:
-  Shows a table of all active authentication tokens.
-  You can request this as JSON with `--json` or tab-separated values with `--parseable`.
+#### Listing tokens
 
-```
-Read only token npm_1f… with id 7f3134 created 2017-10-21
+When listing tokens, an abbreviated token will be displayed.  For security purposes the full token is not displayed.
 
-Publish token npm_af…  with id c03241 created 2017-10-02
-with IP Whitelist: 192.168.0.1/24
+#### Generating tokens
 
-Publish token npm_… with id e0cf92 created 2017-10-02
+When generating tokens, you will be prompted you for your password and, if you have two-factor authentication enabled, an otp.
 
-```
+Currently, the npm registry doesn't allow the cli to generate automation tokens.  This feature should be re-enabled soon.
+For the time being, please refer to the [docs website](https://docs.npmjs.com/creating-and-viewing-access-tokens) for more information on generating automation tokens.
 
-* `npm token create --name=<name> [--token-description=<desc>] [--packages=<pkg1,pkg2>] [--packages-all] [--scopes=<scope1,scope2>] [--orgs=<org1,org2>] [--packages-and-scopes-permission=<read-only|read-write|no-access>] [--orgs-permission=<read-only|read-write|no-access>] [--expires=<days>] [--cidr=<ip-range>] [--bypass-2fa] [--password=<pass>]`:
-  Create a new token.
-  You can customize the token with various options:
-  - `--name=<name>`: Set the token name/description (required)
-  - `--token-description=<desc>`: Additional description text
-  - `--packages=<pkg1,pkg2>`: Limit token access to specific packages
-  - `--packages-all`: Grant access to all packages
-  - `--scopes=<scope1,scope2>`: Limit token access to specific scopes
-  - `--orgs=<org1,org2>`: Limit token access to specific organizations
-  - `--packages-and-scopes-permission=<read-only|read-write|no-access>`: Set permission level for packages and scopes
-  - `--orgs-permission=<read-only|read-write|no-access>`: Set permission level for organizations
-  - `--expires=<days>`: Set token expiration in days (default: 7, maximum: 90)
-  - `--cidr=<ip-range>`: Limit token use to specific [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) IP ranges
-  - `--bypass-2fa`: Allow token to bypass two-factor authentication (useful for automation)
-  - `--password=<pass>`: Provide password via command line (safer to be prompted)
-  
-  This will prompt you for your password, and, if you have two-factor authentication enabled, an otp.
+#### Revoking tokens
 
-```
-Created publish token a73c9572-f1b9-8983-983d-ba3ac3cc913d
-```
+When revoking a token, you can use the full token (such as those you get back from `npm token create`, and those found in your `.npmrc`), or the truncated id.  If the truncated id given is not distinct enough to differentiate between multiple existing tokens, you will need to use enough of the id to allow npm to distinguish between them.  Full token ids can be found on the [npm website](https://www.npmjs.com), or in the `--parseable` or `--json` output of `npm token list`.  This command will NOT accept the truncated token found in the normal `npm token list` output.
 
-* `npm token revoke <token|id>`:
-  Immediately removes an authentication token from the registry.
-  You will no longer be able to use it.
-  This can accept both complete tokens (such as those you get back from `npm token create`, and those found in your `.npmrc`), and ids as seen in the parseable or json output of `npm token list`.
-  This will NOT accept the truncated token found in the normal `npm token list` output.
+A revoked token will immediately be removed from the registry and you will no longer be able to use it.
 
 ### Configuration
 
