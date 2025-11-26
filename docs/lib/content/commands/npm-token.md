@@ -25,7 +25,7 @@ For the time being, please refer to the [docs website](https://docs.npmjs.com/cr
 
 #### Revoking tokens
 
-When revoking a token, you can use the full token (such as those you get back from `npm token create`, and those found in your `.npmrc`), or the truncated id.  If the truncated id given is not distinct enough to differentiate between multiple existing tokens, you will need to use enough of the id to allow npm to distinguish between them.  Full token ids can be found on the [npm website](https://www.npmjs.com), or in the `--parseable` or `--json` output of `npm token list`.  This command will NOT accept the truncated token found in the normal `npm token list` output.
+When revoking a token, you can use the full token (e.g. what you get back from `npm token create`, or as can be found in an `.npmrc` file), or a truncated id.  If the given truncated id is not distinct enough to differentiate between multiple existing tokens, you will need to use enough of the id to allow npm to distinguish between them.  Full token ids can be found on the [npm website](https://www.npmjs.com), or in the `--parseable` or `--json` output of `npm token list`.  This command will NOT accept the truncated token found in the normal `npm token list` output.
 
 A revoked token will immediately be removed from the registry and you will no longer be able to use it.
 
