@@ -26,13 +26,23 @@ Publish token npm_… with id e0cf92 created 2017-10-02
 
 ```
 
-* `npm token create [--read-only] [--cidr=<cidr-ranges>]`:
-  Create a new authentication token.
-  It can be `--read-only`, or accept a list of [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) ranges with which to limit use of this token.
+* `npm token create --name=<name> [--token-description=<desc>] [--packages=<pkg1,pkg2>] [--packages-all] [--scopes=<scope1,scope2>] [--orgs=<org1,org2>] [--packages-and-scopes-permission=<read-only|read-write|no-access>] [--orgs-permission=<read-only|read-write|no-access>] [--expires=<days>] [--cidr=<ip-range>] [--bypass-2fa] [--password=<pass>]`:
+  Create a new token.
+  You can customize the token with various options:
+  - `--name=<name>`: Set the token name/description (required)
+  - `--token-description=<desc>`: Additional description text
+  - `--packages=<pkg1,pkg2>`: Limit token access to specific packages
+  - `--packages-all`: Grant access to all packages
+  - `--scopes=<scope1,scope2>`: Limit token access to specific scopes
+  - `--orgs=<org1,org2>`: Limit token access to specific organizations
+  - `--packages-and-scopes-permission=<read-only|read-write|no-access>`: Set permission level for packages and scopes
+  - `--orgs-permission=<read-only|read-write|no-access>`: Set permission level for organizations
+  - `--expires=<days>`: Set token expiration in days (default: 7, maximum: 90)
+  - `--cidr=<ip-range>`: Limit token use to specific [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) IP ranges
+  - `--bypass-2fa`: Allow token to bypass two-factor authentication (useful for automation)
+  - `--password=<pass>`: Provide password via command line (safer to be prompted)
+  
   This will prompt you for your password, and, if you have two-factor authentication enabled, an otp.
-
-  Currently, the cli cannot generate automation tokens.
-  Please refer to the [docs website](https://docs.npmjs.com/creating-and-viewing-access-tokens) for more information on generating automation tokens.
 
 ```
 Created publish token a73c9572-f1b9-8983-983d-ba3ac3cc913d
