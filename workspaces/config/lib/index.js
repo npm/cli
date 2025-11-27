@@ -145,15 +145,6 @@ class Config {
     }
   }
 
-  // Private methods - must be declared before use
-  #get (key, where = null) {
-    if (where !== null && !confTypes.has(where)) {
-      throw new Error('invalid config location param: ' + where)
-    }
-    const { data } = this.data.get(where || 'cli')
-    return where === null || hasOwnProperty(data, key) ? data[key] : undefined
-  }
-
   #checkDeprecated (key) {
     if (this.deprecated[key]) {
       this.log.warn(`deprecated:${key}`, 'config', key, this.deprecated[key])
@@ -325,6 +316,16 @@ class Config {
       }
     }
     return null
+  }
+
+  // we need to get values sometimes, so use this internal one to do so
+  // while in the process of loading.
+  #get (key, where = null) {
+    if (where !== null && !confTypes.has(where)) {
+      throw new Error('invalid config location param: ' + where)
+    }
+    const { data } = this.data.get(where || 'cli')
+    return where === null || hasOwnProperty(data, key) ? data[key] : undefined
   }
 
   get (key, where) {
@@ -527,8 +528,6 @@ class Config {
       `deprecated:${key}`,
     ])
     this.removeWarnings(keysToRemove)
-
-    console.log({ defaults, conf })
 
     // Load into new command source - only command-specific defaults + parsed flags
     this.#loadObject({ ...defaults, ...conf }, 'flags', 'command-specific flag options')

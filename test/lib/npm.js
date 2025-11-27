@@ -609,6 +609,7 @@ module.exports = class TestCommand extends BaseCommand {
 
   const mockCmdList = require('../../lib/utils/cmd-list.js')
   const { npm, joinedOutput } = await loadMockNpm(t, {
+    argv: ['tset', ...(flags || [])],
     mocks: {
       '{LIB}/utils/cmd-list.js': {
         ...mockCmdList,
@@ -619,7 +620,7 @@ module.exports = class TestCommand extends BaseCommand {
   })
 
   // Now you can execute the mocked command
-  await npm.exec('tset', flags || [])
+  await npm.exec('tset', [])
 
   t.match(joinedOutput(), outputValue)
 }
