@@ -5,6 +5,7 @@ const { time } = require('proc-log')
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 const mockGlobals = require('@npmcli/mock-globals')
 const { commands } = require('../../lib/utils/cmd-list.js')
+const BaseCommand = require('../../lib/base-cmd.js')
 
 t.test('not yet loaded', async t => {
   const { npm, logs } = await loadMockNpm(t, { load: false })
@@ -566,4 +567,70 @@ t.test('print usage if non-command param provided', async t => {
   await t.rejects(npm.exec('tset'), { command: 'tset', exitCode: 1 })
   t.match(joinedOutput(), 'Unknown command: "tset"')
   t.match(joinedOutput(), 'Did you mean this?')
+})
+
+async function testCommandDefinitions (t, { defaultValue, outputValue, type, flags }) {
+  const path = require('node:path')
+
+  // Create a temporary command file
+  const tsetPath = path.join(__dirname, '../../lib/commands/tset.js')
+  const tsetContent = `
+const Definition = require('@npmcli/config/lib/definitions/definition.js')
+const BaseCommand = require('../base-cmd.js')
+const { output } = require('proc-log')
+const { flatten } = require('@npmcli/config/lib/definitions/index.js')
+
+module.exports = class TestCommand extends BaseCommand {
+  static description = 'A test command'
+  static name = 'tset'
+  static definitions = {
+    say: new Definition('say', {
+      default: ${defaultValue},
+      type: ${type},
+      description: 'say',
+      flatten,
+    }),
+  }
+
+  async exec () {
+    const say = this.npm.config.get('say')
+    output.standard(say)
+  }
+}
+`
+  fs.writeFileSync(tsetPath, tsetContent)
+  t.teardown(() => {
+    try {
+      fs.unlinkSync(tsetPath)
+      delete require.cache[tsetPath]
+    } catch (e) {
+      // ignore
+    }
+  })
+
+  const mockCmdList = require('../../lib/utils/cmd-list.js')
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    mocks: {
+      '{LIB}/utils/cmd-list.js': {
+        ...mockCmdList,
+        commands: [...mockCmdList.commands, 'tset'],
+        deref: (c) => c === 'tset' ? 'tset' : mockCmdList.deref(c),
+      },
+    },
+  })
+
+  // Now you can execute the mocked command
+  await npm.exec('tset', flags || [])
+
+  t.match(joinedOutput(), outputValue)
+}
+
+const stack = {
+  boolean_default: (t) => testCommandDefinitions(t, { type: 'Boolean', defaultValue: 'false', outputValue: 'false' }),
+  string_default: (t) => testCommandDefinitions(t, { type: 'String', defaultValue: `'meow'`, outputValue: 'meow' }),
+  string_flag: (t) => testCommandDefinitions(t, { type: 'String', defaultValue: `'meow'`, outputValue: 'woof', flags: ['--say=woof'] }),
+}
+
+Object.entries(stack).forEach(([name, fn]) => {
+  t.test(name, fn)
 })
