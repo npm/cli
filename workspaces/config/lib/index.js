@@ -1,5 +1,4 @@
 // TODO: set the scope config from package.json or explicit cli config
-const { definitions: globalDefinitions } = require('./definitions')
 const { walkUp } = require('walk-up-path')
 const ini = require('ini')
 const nopt = require('nopt')
