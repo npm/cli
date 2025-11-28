@@ -1144,7 +1144,7 @@ t.test('nerfdart auths set at the top level into the registry', async t => {
       // now we go ahead and do the repair, and save
       c.repair()
       await c.save('user')
-      t.same(c.list[3], expect)
+      t.same(c.data.get('user').data, expect)
     })
   }
 })
