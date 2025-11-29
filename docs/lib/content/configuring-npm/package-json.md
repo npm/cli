@@ -511,6 +511,20 @@ The key is the lifecycle event, and the value is the command to run at that poin
 
 See [`scripts`](/using-npm/scripts) to find out more about writing package scripts.
 
+### gypfile
+
+If you have a binding.gyp file in the root of your package and you have not defined your own `install` or `preinstall` scripts, npm will default to building your module using node-gyp.
+
+To prevent npm from automatically building your module with node-gyp, set `gypfile` to `false`:
+
+```json
+{
+  "gypfile": false
+}
+```
+
+This is useful for packages that include native addons but want to handle the build process differently, or packages that have a binding.gyp file but should not be built as a native addon.
+
 ### config
 
 A "config" object can be used to set configuration parameters used in package scripts that persist across upgrades.
