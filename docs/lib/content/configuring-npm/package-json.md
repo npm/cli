@@ -335,6 +335,12 @@ For most modules, it makes the most sense to have a main script and often not mu
 
 If `main` is not set, it defaults to `index.js` in the package's root folder.
 
+### type
+
+The `type` field defines how Node.js should interpret `.js` files in your package. This field is not used by npm.
+
+See the [Node.js documentation on the type field](https://nodejs.org/api/packages.html#type) for more information.
+
 ### browser
 
 If your module is meant to be used client-side the browser field should be used instead of the main field.
