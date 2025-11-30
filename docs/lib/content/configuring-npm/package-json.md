@@ -926,6 +926,53 @@ To make this limitation easier to deal with, overrides may also be defined as a 
 }
 ```
 
+#### Replacing a dependency with a fork
+
+You can replace a package with a different package or fork using several methods:
+
+**Using the `npm:` prefix to replace with a different package name:**
+
+```json
+{
+  "overrides": {
+    "package-name": "npm:@scope/forked-package@1.0.0"
+  }
+}
+```
+
+**Using a GitHub repository (supports branches, tags, or commit hashes):**
+
+```json
+{
+  "overrides": {
+    "package-name": "github:username/repo#branch-name"
+  }
+}
+```
+
+**Using a local file path:**
+
+```json
+{
+  "overrides": {
+    "package-name": "file:../local-fork"
+  }
+}
+```
+
+These replacement methods work for both top-level overrides and nested overrides.
+For example, to replace a transitive dependency with a fork:
+
+```json
+{
+  "overrides": {
+    "parent-package": {
+      "vulnerable-dep": "github:username/patched-fork#v2.0.1"
+    }
+  }
+}
+```
+
 ### engines
 
 You can specify the version of node that your stuff works on:
