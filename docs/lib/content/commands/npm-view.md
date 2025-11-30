@@ -70,6 +70,22 @@ If the field value you are querying for is a property of an object, you should r
 npm view express time'[4.8.0]'
 ```
 
+Note: When accessing object properties that contain special characters or numeric keys, you need to use quotes around the key name.
+For example, to get the publish time of a specific version:
+
+```bash
+npm view express "time[4.17.1]"
+```
+
+Without quotes, the shell may interpret the square brackets as glob patterns, causing the command to fail.
+You can also access the time field for a specific version by specifying the version in the package descriptor:
+
+```bash
+npm view express@4.17.1 time
+```
+
+This will return all version-time pairs, but the context will be for that specific version.
+
 Multiple fields may be specified, and will be printed one after another.
 For example, to get all the contributor names and email addresses, you can do this:
 
