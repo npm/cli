@@ -198,6 +198,15 @@ Even if you never publish your package, you can still get a lot of benefits of u
     npm install @myorg/privatepackage@"16 - 17"
     ```
 
+    **Prerelease versions:** By default, version ranges only match stable versions. To include prerelease versions, they must be explicitly specified in the range. Prerelease versions are tied to a specific version triple (major.minor.patch). For example, `^1.2.3-beta.1` will only match prereleases for `1.2.x`, not `1.3.x`. To match all prereleases for a major version, use a range like `^1.0.0-0`, which will include all `1.x.x` prereleases.
+
+    Example:
+
+    ```bash
+    npm install package@^1.2.3-beta.1  # Matches 1.2.3-beta.1, 1.2.3-beta.2, 1.2.4-beta.1, etc.
+    npm install package@^1.0.0-0       # Matches all 1.x.x prereleases and stable versions
+    ```
+
 * `npm install <git remote url>`:
 
     Installs the package from the hosted git provider, cloning it with `git`.
