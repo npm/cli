@@ -95,6 +95,8 @@ Even if you never publish your package, you can still get a lot of benefits of u
 
     In most cases, this will install the version of the modules tagged as `latest` on the npm registry.
 
+    **Note:** When installing by name without specifying a version or tag, npm prioritizes versions that match the current Node.js version based on the package's `engines` field. If the `latest` tag points to a version incompatible with your current Node.js version, npm will install the newest compatible version instead. To install a specific version regardless of `engines` compatibility, explicitly specify the version or tag: `npm install <name>@latest`.
+
     Example:
 
     ```bash
