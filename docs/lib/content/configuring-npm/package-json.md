@@ -502,6 +502,19 @@ For GitHub, GitHub gist, Bitbucket, or GitLab repositories you can use the same 
 }
 ```
 
+**Note on normalization:** When you publish a package, npm normalizes the `repository` field to the full object format with a `url` property. If you use a shorthand format (like `"npm/example"`), you'll see a warning during `npm publish` indicating that the field was auto-corrected. While the shorthand format currently works, it's recommended to use the full object format in your `package.json` to avoid warnings and ensure future compatibility:
+
+```json
+{
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/example.git"
+  }
+}
+```
+
+You can run `npm pkg fix` to automatically convert shorthand formats to the normalized object format.
+
 If the `package.json` for your package is not in the root directory (for example if it is part of a monorepo), you can specify the directory in which it lives:
 
 ```json
