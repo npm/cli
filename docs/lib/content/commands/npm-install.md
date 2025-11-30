@@ -315,6 +315,8 @@ npm install sax@">=0.1.0 <0.2.0" bench supervisor
 The `--tag` argument will apply to all of the specified install targets.
 If a tag with the given name exists, the tagged version is preferred over newer versions.
 
+**Note:** The `--tag` option only affects packages specified on the command line. It does not override version ranges specified in `package.json`. For example, if `package.json` specifies `"foo": "^1.0.0"` and you run `npm install --tag beta`, npm will still install a version matching `^1.0.0` even if the `beta` tag points to a different version. To install a tagged version, specify the package explicitly: `npm install foo@beta`.
+
 The `--dry-run` argument will report in the usual way what the install would have done without actually installing anything.
 
 The `--package-lock-only` argument will only update the `package-lock.json`, instead of checking `node_modules` and downloading dependencies.
