@@ -149,6 +149,8 @@ Dependency objects have the following fields:
     * local link sources: This is the file URL of the link.
       (eg `file:libs/our-module`)
 
+    **Note:** The `version` field may be omitted for certain types of dependencies, such as optional peer dependencies that are not installed. In these cases, only metadata fields like `dev`, `optional`, and `peer` will be present.
+
 * integrity: A `sha512` or `sha1` [Standard Subresource Integrity](https://w3c.github.io/webappsec/specs/subresourceintegrity/) string for the artifact that was unpacked in this location.
   For git dependencies, this is the commit sha.
 
