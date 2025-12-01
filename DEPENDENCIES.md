@@ -579,6 +579,7 @@ graph LR;
   npmcli-arborist-->walk-up-path;
   npmcli-config-->ci-info;
   npmcli-config-->ini;
+  npmcli-config-->ms;
   npmcli-config-->nopt;
   npmcli-config-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-config-->npmcli-map-workspaces["@npmcli/map-workspaces"];
