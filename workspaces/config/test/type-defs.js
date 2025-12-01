@@ -7,6 +7,9 @@ const {
   path: {
     validate: validatePath,
   },
+  relativeDate: {
+    validate: validateRelativeDate,
+  },
 } = typeDefs
 const { resolve } = require('node:path')
 
@@ -20,3 +23,5 @@ t.equal(validatePath(d, 'somePath', null), false)
 t.equal(validatePath(d, 'somePath', 1234), false)
 t.equal(validatePath(d, 'somePath', 'false'), true)
 t.equal(d.somePath, resolve('false'))
+t.equal(validateRelativeDate(d, 'someDate', 'foobar'), false)
+t.equal(validateRelativeDate(d, 'someDate', '1d'), undefined)

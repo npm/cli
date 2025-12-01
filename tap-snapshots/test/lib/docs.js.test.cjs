@@ -260,12 +260,14 @@ config is given, this value will always be set to \`legacy\`.
 #### \`before\`
 
 * Default: null
-* Type: null or Date
+* Type: null, Date, or class RelativeDate {}
 
 If passed to \`npm install\`, will rebuild the npm tree such that only
 versions that were available **on or before** the given date are installed.
 If there are no versions available for the current set of dependencies, the
 command will error.
+
+Accepts either a Date string or a relative date, e.g. "24h", "7d".
 
 If the requested version is a \`dist-tag\` and the given tag does not pass the
 \`--before\` filter, the most recent version less than or equal to that tag

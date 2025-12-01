@@ -1,9 +1,11 @@
 const nopt = require('nopt')
+const ms = require('ms')
 
 const { validate: validateUmask } = require('./umask.js')
 
 class Umask {}
 class Semver {}
+class RelativeDate {}
 const semverValid = require('semver/functions/valid')
 const validateSemver = (data, k, val) => {
   const valid = semverValid(val)
@@ -21,6 +23,14 @@ const validatePath = (data, k, val) => {
   return noptValidatePath(data, k, val)
 }
 
+const validateRelativeDate = (data, k, val) => {
+  const valid = ms(val)
+  if (valid === undefined) {
+    return false
+  }
+  data[k] = new Date(Date.now() - valid)
+}
+
 // add descriptions so we can validate more usefully
 module.exports = {
   ...nopt.typeDefs,
@@ -33,6 +43,11 @@ module.exports = {
     type: Umask,
     validate: validateUmask,
     description: 'octal number in range 0o000..0o777 (0..511)',
+  },
+  relativeDate: {
+    type: RelativeDate,
+    validate: validateRelativeDate,
+    description: 'valid relative date string e.g. "24h", "7d"',
   },
   url: {
     ...nopt.typeDefs.url,

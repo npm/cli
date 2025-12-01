@@ -46,6 +46,7 @@ Object {
   "before": Array [
     null,
     "valid Date string",
+    "valid relative date string e.g. \\"24h\\", \\"7d\\"",
   ],
   "bin-links": Array [
     "boolean value (true or false)",
