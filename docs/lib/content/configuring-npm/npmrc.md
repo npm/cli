@@ -87,7 +87,7 @@ This is primarily for distribution maintainers to override default configs in a 
 
 ### Auth related configuration
 
-The settings `_auth`, `_authToken`, `username`, `_password`, `certfile`, and `keyfile` must all be scoped to a specific registry.
+The settings `_auth`, `_authToken`, `username`, `_password`, `email`, `certfile`, and `keyfile` must all be scoped to a specific registry.
 This ensures that `npm` will never send credentials to the wrong host.
 
 The full list is:
@@ -95,7 +95,7 @@ The full list is:
  - `_authToken` (authentication token)
  - `username`
  - `_password`
- - `email`
+ - `email` (cannot be used for authentication)
  - `cafile` (path to certificate authority file)
  - `certfile` (path to certificate file)
  - `keyfile` (path to key file)
