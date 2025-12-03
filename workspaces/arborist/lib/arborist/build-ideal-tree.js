@@ -1200,11 +1200,62 @@ This is a one-time fix-up, please be patient...
   }
 
   async #fetchManifest (spec) {
+    const {
+      minimumReleaseAge = 0,
+      minimumReleaseAgeExclude = [],
+    } = this.options
+
+    let avoidRange = this.#avoidRange(spec.name)
+
+    const shouldApplyPolicy =
+      minimumReleaseAge > 0 &&
+      !minimumReleaseAgeExclude.includes(spec.name)
+
+    if (shouldApplyPolicy) {
+      try {
+        // get the full packument
+        const packument = await pacote.packument(spec, {
+          ...this.options,
+          fullMetadata: true,
+        })
+
+        const now = new Date()
+        const cutoff = new Date(now.getTime() - (minimumReleaseAge * 60 * 1000))
+        const avoidVersions = []
+
+        for (const [version, time] of Object.entries(packument.time || {})) {
+          // filter 'created' and 'modifed' and validate that is semver
+          if (!semver.valid(version)) {
+            continue
+          }
+
+          const releaseDate = new Date(time)
+          if (releaseDate > cutoff) {
+            avoidVersions.push(version)
+          }
+        }
+
+        // convert each recent version into a range that avoids it
+        if (avoidVersions.length > 0) {
+          const avoidPolicyRange = avoidVersions.join(' || ')
+
+          if (avoidRange) {
+            avoidRange = `${avoidRange} || ${avoidPolicyRange}`
+          } else {
+            avoidRange = avoidPolicyRange
+          }
+        }
+      } catch (err) {
+        // Ignore error getting packument (e.g: if doesn't exist or network failure)
+        // for not breaking the installation, we dont apply the policy
+      }
+    }
     const options = {
       ...this.options,
-      avoid: this.#avoidRange(spec.name),
+      avoid: avoidRange,
       fullMetadata: true,
     }
+
     // get the intended spec and stored metadata from yarn.lock file,
     // if available and valid.
     spec = this.idealTree.meta.checkYarnLock(spec, options)

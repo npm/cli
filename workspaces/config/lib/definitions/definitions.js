@@ -1333,6 +1333,22 @@ const definitions = {
     `,
     flatten,
   }),
+  'minimum-release-age': new Definition('minimum-release-age', {
+    default: 0,
+    type: Number,
+    description: `
+      The minimum release age of the packages that are going to be installed
+      when using \`npm install\`.
+    `,
+  }),
+  'minimum-release-age-exclude': new Definition('minimum-release-age-exclude', {
+    default: [],
+    type: [String],
+    description: `
+      Excluded packages when using \`minimum-release-age\` (bypasses the
+      policy for the specified packages).
+    `,
+  }),
   'node-gyp': new Definition('node-gyp', {
     default: (() => {
       try {
