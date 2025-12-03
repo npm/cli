@@ -82,17 +82,17 @@ See <https://github.com/npm/npm/issues/10074> for a much lengthier justification
 
 **Use Cases**
 
-If you need to perform operations on your package before it is used, in a way that is not dependent on the operating system or architecture of the target system, use a `prepublish` script.
+Use a `prepare` script to perform build tasks that are platform-independent and need to run before your package is used.
 This includes tasks such as:
 
-* Compiling CoffeeScript source code into JavaScript.
+* Compiling TypeScript or other source code into JavaScript.
 * Creating minified versions of JavaScript source code.
 * Fetching remote resources that your package will use.
 
-The advantage of doing these things at `prepublish` time is that they can be done once, in a single place, thus reducing complexity and variability.
+Running these build tasks in the `prepare` script ensures they happen once, in a single place, reducing complexity and variability.
 Additionally, this means that:
 
-* You can depend on `coffee-script` as a `devDependency`, and thus your users don't need to have it installed.
+* You can depend on build tools as `devDependencies`, and thus your users don't need to have them installed.
 * You don't need to include minifiers in your package, reducing the size for your users.
 * You don't need to rely on your users having `curl` or `wget` or other system tools on the target machines.
 
@@ -292,25 +292,24 @@ For example, if your package.json contains this:
 ```json
 {
   "scripts" : {
-    "install" : "scripts/install.js",
-    "postinstall" : "scripts/install.js"
+    "prepare" : "scripts/build.js",
+    "test" : "scripts/test.js"
   }
 }
 ```
 
-then `scripts/install.js` will be called for the install and post-install stages of the lifecycle.
-Since `scripts/install.js` is running for two different phases, it would be wise in this case to look at the 
-`npm_lifecycle_event` environment variable.
+then `scripts/build.js` will be called for the prepare stage of the lifecycle, and you can check the 
+`npm_lifecycle_event` environment variable if your script needs to behave differently in different contexts.
 
-If you want to run a make command, you can do so.
+If you want to run build commands, you can do so.
 This works just fine:
 
 ```json
 {
   "scripts" : {
-    "preinstall" : "./configure",
-    "install" : "make && make install",
-    "test" : "make test"
+    "prepare" : "npm run build",
+    "build" : "tsc",
+    "test" : "jest"
   }
 }
 ```
