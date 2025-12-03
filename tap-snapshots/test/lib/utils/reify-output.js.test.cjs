@@ -3828,7 +3828,7 @@ change bar 1.0.0 => 2.1.0
 remove bar 1.0.0
 add foo 1.0.0
 
-removed 1 package, and changed 1 package in {TIME}
+would have removed 1 package, and would have changed 1 package in {TIME}
 `
 
 exports[`test/lib/utils/reify-output.js TAP prints dedupe difference on long > diff table 1`] = `
@@ -3837,4 +3837,12 @@ remove bar 1.0.0
 add foo 1.0.0
 
 removed 1 package, and changed 1 package in {TIME}
+`
+
+exports[`test/lib/utils/reify-output.js TAP prints package changes with audit on dry-run > dry-run with audit 1`] = `
+add foo 1.0.0
+
+would have added 1 package, and would have audited 10 packages in {TIME}
+
+found 0 vulnerabilities
 `

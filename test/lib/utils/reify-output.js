@@ -421,6 +421,39 @@ t.test('prints dedupe difference on dry-run', async t => {
   t.matchSnapshot(out, 'diff table')
 })
 
+t.test('prints package changes with audit on dry-run', async t => {
+  const mock = {
+    actualTree: {
+      name: 'foo',
+      inventory: {
+        size: 10,
+        has: () => true,
+      },
+      children: [],
+    },
+    auditReport: {
+      toJSON: () => mock.auditReport,
+      vulnerabilities: {},
+      metadata: {
+        vulnerabilities: {
+          total: 0,
+        },
+      },
+    },
+    diff: {
+      children: [
+        { action: 'ADD', ideal: { path: 'test/foo', name: 'foo', location: 'loc', package: { version: '1.0.0' } } },
+      ],
+    },
+  }
+
+  const out = await mockReify(t, mock, {
+    'dry-run': true,
+  })
+
+  t.matchSnapshot(out, 'dry-run with audit')
+})
+
 t.test('prints dedupe difference on long', async t => {
   const mock = {
     actualTree: {
