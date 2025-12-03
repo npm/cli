@@ -224,3 +224,42 @@ This method can be used for avoiding or tweaking default values, e.g:
 Save the config file specified by the `where` param.
 Must be one of
 `project`, `user`, `global`, `builtin`.
+
+## Configuration Options
+
+This package defines configuration options for npm. Below are some notable security-related options:
+
+### `minimum-release-age`
+
+* Default: `0` (disabled)
+* Type: Number
+
+The minimum age (in minutes) that a package version must have before it can be installed. This helps protect against supply chain attacks where malicious versions are published and then quickly removed.
+
+When set to a value greater than 0, npm will avoid installing package versions that were published within the specified time window.
+
+Example:
+```ini
+minimum-release-age=10
+```
+
+This will only install package versions that were published at least 10 minutes ago.
+
+### `minimum-release-age-exclude`
+
+* Default: `[]`
+* Type: Array
+
+A list of package names that should be excluded from the `minimum-release-age` policy. This is useful for packages where you need immediate access to new versions.
+
+Example:
+```ini
+minimum-release-age-exclude[]=critical-package
+minimum-release-age-exclude[]=@scope/another-package
+```
+
+Or via command line:
+```bash
+npm install --minimum-release-age=10 --minimum-release-age-exclude=trusted-package
+```
+
