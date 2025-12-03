@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased]
+
+### Features
+* **security**: Add minimum package age policy to prevent supply chain attacks
+  - New `minimum-release-age` config option to enforce waiting period before installing newly published versions
+  - New `minimum-release-age-exclude` config option to exempt specific packages from the policy
+  - Helps mitigate attacks where malicious versions are published and quickly removed
+  - Inspired by pnpm's minimumReleaseAge feature
+
 ## [9.1.8](https://github.com/npm/cli/compare/arborist-v9.1.7...arborist-v9.1.8) (2025-11-25)
 ### Bug Fixes
 * [`b118364`](https://github.com/npm/cli/commit/b1183644faea618ee36af513c5bfc3387ada0f7e) [#8760](https://github.com/npm/cli/pull/8760) undefined override set conflicts shouldn't error (@owlstronaut)
