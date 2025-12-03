@@ -25,6 +25,8 @@ If run in a git repo, it will also create a version commit and tag.
 This behavior is controlled by `git-tag-version` (see below), and can be disabled on the command line by running `npm --no-git-tag-version version`.
 It will fail if the working directory is not clean, unless the `-f` or `--force` flag is set.
 
+**Note:** Git integration requires a reasonably recent version of git (2.0.0 or later is recommended). If you encounter issues with git commands, ensure your git installation is up to date.
+
 If supplied with `-m` or [`--message` config](/using-npm/config#message) option, npm will use it as a commit message when creating a version commit.
 If the `message` config contains `%s` then that will be replaced with the resulting version number.
 For example:
