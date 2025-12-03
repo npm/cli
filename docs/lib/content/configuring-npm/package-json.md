@@ -337,32 +337,9 @@ If `main` is not set, it defaults to `index.js` in the package's root folder.
 
 ### type
 
-The `type` field defines the module format that Node.js should use for `.js` files in your package. It can have two values:
+The `type` field is used by Node.js to determine whether `.js` files should be treated as ES modules or CommonJS modules. This field is not used by npm directly.
 
-* `"module"` - Tells Node.js to treat `.js` files as ES modules (ESM), allowing you to use `import` and `export` statements.
-* `"commonjs"` - Tells Node.js to treat `.js` files as CommonJS modules (the default), using `require()` and `module.exports`.
-
-If the `type` field is not set, Node.js defaults to `"commonjs"`.
-
-Example for an ES module package:
-
-```json
-{
-  "type": "module"
-}
-```
-
-Example for a CommonJS package (explicit, though this is the default):
-
-```json
-{
-  "type": "commonjs"
-}
-```
-
-**Note:** Regardless of the `type` field value, `.mjs` files are always treated as ES modules, and `.cjs` files are always treated as CommonJS modules.
-
-For more information, see the [Node.js documentation on package.json type field](https://nodejs.org/api/packages.html#type).
+For detailed information about the `type` field, its possible values (`"module"` or `"commonjs"`), and how it affects module resolution, see the [Node.js documentation on the type field](https://nodejs.org/api/packages.html#type).
 
 ### browser
 
