@@ -337,9 +337,9 @@ If `main` is not set, it defaults to `index.js` in the package's root folder.
 
 ### type
 
-The `type` field is used by Node.js to determine whether `.js` files should be treated as ES modules or CommonJS modules. This field is not used by npm directly.
+The `type` field defines how Node.js should interpret `.js` files in your package. This field is not used by npm.
 
-For detailed information about the `type` field, its possible values (`"module"` or `"commonjs"`), and how it affects module resolution, see the [Node.js documentation on the type field](https://nodejs.org/api/packages.html#type).
+See the [Node.js documentation on the type field](https://nodejs.org/api/packages.html#type) for more information.
 
 ### browser
 
