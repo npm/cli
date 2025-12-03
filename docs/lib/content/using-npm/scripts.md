@@ -51,6 +51,8 @@ during `npm publish` and `npm pack`
 * As of `npm@7` these scripts run in the background.
   To see the output, run with: `--foreground-scripts`.
 
+* **In workspaces, prepare scripts run concurrently** across all packages. If you have interdependent packages where one must build before another, consider using `--foreground-scripts` (which can be set in `.npmrc` with `foreground-scripts=true`) to run scripts sequentially, or structure your build differently.
+
 **prepublish** (DEPRECATED)
 * Does not run during `npm publish`, but does run during `npm ci` and `npm install`.
 See below for more info.
