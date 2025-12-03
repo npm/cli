@@ -268,8 +268,19 @@ then you could run `npm start` to execute the `bar` script, which is exported in
 
 #### package.json vars
 
-The package.json fields are tacked onto the `npm_package_` prefix.
-So, for instance, if you had `{"name":"foo", "version":"1.2.5"}` in your package.json file, then your package scripts would have the `npm_package_name` environment variable set to "foo", and the `npm_package_version` set to "1.2.5".  You can access these variables in your code with `process.env.npm_package_name` and `process.env.npm_package_version`, and so on for other fields.
+npm sets the following environment variables from the package.json:
+
+* `npm_package_name` - The package name
+* `npm_package_version` - The package version  
+* `npm_package_main` - The package main field
+* `npm_package_bin_*` - Each executable defined in the bin field
+* `npm_package_engines_*` - Each engine defined in the engines field
+* `npm_package_config_*` - Each config value defined in the config field
+* `npm_package_json` - The full path to the package.json file
+
+For example, if you had `{"name":"foo", "version":"1.2.5"}` in your package.json file, then your package scripts would have the `npm_package_name` environment variable set to "foo", and the `npm_package_version` set to "1.2.5". You can access these variables in your code with `process.env.npm_package_name` and `process.env.npm_package_version`.
+
+**Note:** In npm 7 and later, most package.json fields are no longer provided as environment variables. Scripts that need access to other package.json fields should read the package.json file directly. The `npm_package_json` environment variable provides the path to the file for this purpose.
 
 See [`package.json`](/configuring-npm/package-json) for more on package configs.
 
