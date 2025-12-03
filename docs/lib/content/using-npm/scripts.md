@@ -42,7 +42,7 @@ These scripts happen in addition to the `pre<event>`, `post<event>`, and
 **prepare** (since `npm@4.0.0`)
 * Runs BEFORE the package is packed, i.e.
 during `npm publish` and `npm pack`
-* Runs on local `npm install` without any arguments
+* Runs on local `npm install` without package arguments (runs with flags like `--production` or `--omit=dev`, but does not run when installing specific packages like `npm install express`)
 * Runs AFTER `prepublishOnly` and `prepack`, but BEFORE `postpack`
 * Runs for a package if it's being installed as a link through `npm install <folder>`
 
