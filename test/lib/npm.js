@@ -634,3 +634,65 @@ const stack = {
 Object.entries(stack).forEach(([name, fn]) => {
   t.test(name, fn)
 })
+
+t.test('help includes both global and command definitions', async t => {
+  const path = require('node:path')
+
+  // Create a temporary command file
+  const tsetPath = path.join(__dirname, '../../lib/commands/tset.js')
+  const tsetContent = `
+const Definition = require('@npmcli/config/lib/definitions/definition.js')
+const BaseCommand = require('../base-cmd.js')
+const { output } = require('proc-log')
+const { flatten } = require('@npmcli/config/lib/definitions/index.js')
+
+module.exports = class TestCommand extends BaseCommand {
+  static description = 'A test command'
+  static name = 'tset'
+  static params = ['yes', 'say']
+  static definitions = {
+    say: new Definition('say', {
+      default: 'meow',
+      type: String,
+      description: 'what to say',
+      flatten,
+    }),
+  }
+
+  async exec () {
+    const say = this.npm.config.get('say')
+    output.standard(say)
+  }
+}
+`
+  fs.writeFileSync(tsetPath, tsetContent)
+  t.teardown(() => {
+    try {
+      fs.unlinkSync(tsetPath)
+      delete require.cache[tsetPath]
+    } catch (e) {
+      // ignore
+    }
+  })
+
+  const mockCmdList = require('../../lib/utils/cmd-list.js')
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    argv: ['tset', '--help'],
+    mocks: {
+      '{LIB}/utils/cmd-list.js': {
+        ...mockCmdList,
+        commands: [...mockCmdList.commands, 'tset'],
+        deref: (c) => c === 'tset' ? 'tset' : mockCmdList.deref(c),
+      },
+    },
+  })
+
+  await npm.exec('tset', [])
+
+  const output = joinedOutput()
+  // Check that both global definition (yes) and command definition (say) appear in help
+  t.match(output, /--yes/, 'help includes global definition --yes')
+  t.match(output, /-y\|--yes/, 'help includes short flag -y for yes')
+  t.match(output, /--say/, 'help includes command definition --say')
+  t.match(output, /--say <say>/, 'help includes --say with hint')
+})
