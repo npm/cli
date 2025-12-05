@@ -40,12 +40,17 @@ const getCommandByDoc = (docFile, docExt) => {
   // `npx` is not technically a command in and of itself,
   // so it just needs the usage of npm exec
   const srcName = name === 'npx' ? 'exec' : name
-  const { params, usage = [''], workspaces } = require(`../../lib/commands/${srcName}`)
+  const command = require(`../../lib/commands/${srcName}`)
+  const { params, usage = [''], workspaces } = command
+  const commandDefinitions = command.definitions || {}
+  const definitionPool = { ...definitions, ...commandDefinitions }
   const usagePrefix = name === 'npx' ? 'npx' : `npm ${name}`
   if (params) {
     for (const param of params) {
-      if (definitions[param].exclusive) {
-        for (const e of definitions[param].exclusive) {
+      // Check command-specific definitions first, fall back to global definitions
+      const paramDef = definitionPool[param]
+      if (paramDef && paramDef.exclusive) {
+        for (const e of paramDef.exclusive) {
           if (!params.includes(e)) {
             params.splice(params.indexOf(param) + 1, 0, e)
           }
@@ -93,14 +98,30 @@ const replaceUsage = (src, { path }) => {
 }
 
 const replaceParams = (src, { path }) => {
-  const { params } = getCommandByDoc(path, DOC_EXT)
+  const { params, name } = getCommandByDoc(path, DOC_EXT)
   const replacer = params && assertPlaceholder(src, path, TAGS.CONFIG)
 
   if (!params) {
     return src
   }
 
-  const paramsConfig = params.map((n) => definitions[n].describe())
+  // Load command to get command-specific definitions if they exist
+  let commandDefinitions = {}
+  if (name && name !== 'npm' && name !== 'npx') {
+    try {
+      const srcName = name === 'npx' ? 'exec' : name
+      const command = require(`../../lib/commands/${srcName}`)
+      commandDefinitions = command.definitions || {}
+    } catch {
+      // If command doesn't exist or has no definitions, continue with global definitions only
+    }
+  }
+
+  const paramsConfig = params.map((n) => {
+    // Check command-specific definitions first, fall back to global definitions
+    const def = commandDefinitions[n] || definitions[n]
+    return def.describe()
+  })
 
   return src.replace(replacer, paramsConfig.join('\n\n'))
 }
