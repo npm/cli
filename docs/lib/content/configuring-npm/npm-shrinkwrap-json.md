@@ -1,3 +1,4 @@
+@somescope/somepackagename
 ---
 title: npm-shrinkwrap.json
 section: 5
