@@ -41,8 +41,118 @@ const loadMockNpm = async (t, { errorMocks, ...opts } = {}) => {
   return {
     ...res,
     errorMessage: (er) => mockError.errorMessage(er, res.npm),
+    getError: (er, args) => mockError.getError(er, { npm: res.npm, ...args }),
   }
 }
+
+t.test('getError', async t => {
+  const { getError } = await loadMockNpm(t)
+
+  t.test('shellout command error', t => {
+    const err = Object.assign(new Error('foo'), { code: 127 })
+    const command = { constructor: { isShellout: true } }
+    const res = getError(err, { command })
+    t.match(res, {
+      exitCode: 127,
+      suppressError: true,
+    })
+    t.end()
+  })
+
+  t.test('string error', t => {
+    const res = getError('string error')
+    t.match(res, {
+      exitCode: 1,
+      suppressError: true,
+      summary: [['', 'string error']],
+    })
+    t.end()
+  })
+
+  t.test('non-error object', t => {
+    const res = getError({ foo: 'bar' })
+    t.match(res, {
+      exitCode: 1,
+      suppressError: true,
+      summary: [['weird error', { foo: 'bar' }]],
+    })
+    t.end()
+  })
+
+  t.test('unknown command', t => {
+    const err = Object.assign(new Error('unknown'), {
+      code: 'EUNKNOWNCOMMAND',
+      command: 'florb',
+    })
+    const res = getError(err, { pkg: { bin: { npm: 'npm' } } })
+    t.match(res, {
+      exitCode: 1,
+      suppressError: true,
+      standard: [
+        'Unknown command: "florb"',
+        String,
+        'To see a list of supported npm commands, run:',
+        '  npm help',
+      ],
+    })
+    t.end()
+  })
+
+  t.test('standard error', t => {
+    const err = new Error('standard')
+    const res = getError(err)
+    t.match(res, {
+      exitCode: 1,
+      suppressError: false,
+      summary: [['', 'standard']],
+    })
+    t.end()
+  })
+
+  t.test('error with details', t => {
+    const err = Object.assign(new Error('detailed'), {
+      code: 'EFOO',
+      syscall: 'open',
+      file: 'file.txt',
+      path: '/path',
+      dest: '/dest',
+      errno: -1,
+      type: 'foo',
+      stack: 'stack',
+      statusCode: 500,
+      pkgid: 'pkg',
+    })
+    const res = getError(err)
+    t.match(res, {
+      code: 'EFOO',
+      error: [
+        ['code', 'EFOO'],
+        ['syscall', 'open'],
+        ['file', 'file.txt'],
+        ['path', '/path'],
+        ['dest', '/dest'],
+        ['errno', -1],
+      ],
+      verbose: [
+        ['type', 'foo'],
+        ['stack', 'stack'],
+        ['statusCode', 500],
+        ['pkgid', 'pkg'],
+      ],
+    })
+    t.end()
+  })
+})
+
+t.test('EEXIST with dest', async t => {
+  const { errorMessage } = await loadMockNpm(t)
+  const er = Object.assign(new Error('exists'), {
+    code: 'EEXIST',
+    path: '/path',
+    dest: '/dest',
+  })
+  t.matchSnapshot(errorMessage(er))
+})
 
 t.test('just simple messages', async t => {
   const { errorMessage } = await loadMockNpm(t, {

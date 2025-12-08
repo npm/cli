@@ -180,6 +180,31 @@ Object {
 }
 `
 
+exports[`test/lib/utils/error-message.js TAP EEXIST with dest > must match snapshot 1`] = `
+Object {
+  "detail": Array [
+    Array [
+      "",
+      "Remove the existing file and try again, or run npm",
+    ],
+    Array [
+      "",
+      "with --force to overwrite files recklessly.",
+    ],
+  ],
+  "summary": Array [
+    Array [
+      "",
+      "exists",
+    ],
+    Array [
+      "",
+      "File exists: /dest",
+    ],
+  ],
+}
+`
+
 exports[`test/lib/utils/error-message.js TAP args are cleaned > must match snapshot 1`] = `
 Object {
   "detail": Array [
