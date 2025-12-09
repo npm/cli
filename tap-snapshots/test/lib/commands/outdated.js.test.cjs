@@ -177,13 +177,21 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated global > must match snapshot 1`] = `
-Package  Current  Wanted  Latest  Location          Depended by
-cat        1.0.0   1.0.1   1.0.1  node_modules/cat  global
+
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated specific dep > must match snapshot 1`] = `
 Package  Current  Wanted  Latest  Location          Depended by
 cat        1.0.0   1.0.1   1.0.1  node_modules/cat  prefix
+`
+
+exports[`test/lib/commands/outdated.js TAP should truncate long columns to fit terminal width > should truncate long paths 1`] = `
+Package  Current  Wanted  Latest  Location          Depended by
+cat        1.0.0   1.0.1   1.0.1  node_modules/cat  a@1.0.0
+dog        1.0.1   1.0.1   2.0.0  node_modules/dog  prefix
+theta    MISSING   1.0.1   1.0.1  -                 c@1.0.0
+theta    MISSING   1.0.1   1.0.1  -                 d@1.0.0
+theta    MISSING   1.0.1   1.0.1  -                 e@1.0.0
 `
 
 exports[`test/lib/commands/outdated.js TAP workspaces should display all dependencies > output 1`] = `
