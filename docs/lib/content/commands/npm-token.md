@@ -18,8 +18,6 @@ When listing tokens, an abbreviated token will be displayed.  For security purpo
 
 #### Generating tokens
 
-NOTE: Currently, the npm registry doesn't allow the cli to generate tokens.  This feature should be re-enabled soon.
-
 When generating tokens, you will be prompted you for your password and, if you have two-factor authentication enabled, an otp.
 
 Please refer to the [docs website](https://docs.npmjs.com/creating-and-viewing-access-tokens) for more information on generating tokens for CI/CD.
