@@ -1,5 +1,9 @@
 # Changelog
 
+## [9.1.9](https://github.com/npm/cli/compare/arborist-v9.1.8...arborist-v9.1.9) (2025-12-09)
+### Bug Fixes
+* [`0765289`](https://github.com/npm/cli/commit/07652896c44bd21a585255151f90f171eefbb00e) [#8721](https://github.com/npm/cli/pull/8721) handle ENOTEMPTY errors in moveFile (@keegancsmith)
+
 ## [9.1.8](https://github.com/npm/cli/compare/arborist-v9.1.7...arborist-v9.1.8) (2025-11-25)
 ### Bug Fixes
 * [`b118364`](https://github.com/npm/cli/commit/b1183644faea618ee36af513c5bfc3387ada0f7e) [#8760](https://github.com/npm/cli/pull/8760) undefined override set conflicts shouldn't error (@owlstronaut)

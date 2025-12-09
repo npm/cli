@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.4.5](https://github.com/npm/cli/compare/config-v10.4.4...config-v10.4.5) (2025-12-09)
+### Bug Fixes
+* [`4ebb831`](https://github.com/npm/cli/commit/4ebb831d93f13cc0b980754bf36abb2982b131f7) [#8839](https://github.com/npm/cli/pull/8839) updates hints to use cli paradigm (@owlstronaut)
+
 ## [10.4.4](https://github.com/npm/cli/compare/config-v10.4.3...config-v10.4.4) (2025-11-25)
 ### Bug Fixes
 * [`958b10e`](https://github.com/npm/cli/commit/958b10e52f442f73796a92c7bbb7d2808bb5bbe5) [#8761](https://github.com/npm/cli/pull/8761) move config.list to a getter (#8761) (@wraithgar)
