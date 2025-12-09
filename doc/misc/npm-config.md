@@ -63,6 +63,7 @@ The following shorthands are parsed on the command-line:
 * `-d`: `--loglevel info`
 * `-dd`, `--verbose`: `--loglevel verbose`
 * `-ddd`: `--loglevel silly`
+* `-e`: `--env`
 * `-g`: `--global`
 * `-C`: `--prefix`
 * `-l`: `--long`
@@ -365,6 +366,31 @@ commands, eg `dist-tags`, `owner`, etc.
 * Type: path
 
 The command to run for `npm edit` or `npm config edit`.
+
+### env
+
+* Default: null
+* Type: String
+
+Specifies the target environment for npm commands. When set, npm will load
+environment-specific configuration from `.npmrc.{env}` files.
+
+See npm-environments(7) for more details.
+
+Common values: `development`, `staging`, `production`, `test`
+
+Aliases: `dev` -> `development`, `prod` -> `production`, `stg` -> `staging`
+
+### env-config-dir
+
+* Default: null
+* Type: path
+
+Specifies a custom directory to look for environment-specific configuration
+files. When set, npm will look for `.npmrc.{env}` files in this directory
+before checking the project and user directories.
+
+See npm-environments(7) for more details.
 
 ### engine-strict
 
