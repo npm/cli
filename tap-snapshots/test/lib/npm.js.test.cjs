@@ -15,6 +15,30 @@ Lifecycle scripts included in b@1.0.0:
     echo test b
 `
 
+exports[`test/lib/npm.js TAP same flag name different types test-flag-a output > test-flag-a help output 1`] = `
+Test command with flag name as boolean
+
+Usage:
+npm test-flag-a
+
+Options:
+[--name]
+
+Run "npm help test-flag-a" for more info
+`
+
+exports[`test/lib/npm.js TAP same flag name different types test-flag-b output > test-flag-b help output 1`] = `
+Test command with flag name as string
+
+Usage:
+npm test-flag-b
+
+Options:
+[--name <name>]
+
+Run "npm help test-flag-b" for more info
+`
+
 exports[`test/lib/npm.js TAP usage set process.stdout.columns column width 0 > must match snapshot 1`] = `
 npm <command>
 

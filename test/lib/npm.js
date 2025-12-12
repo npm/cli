@@ -1,6 +1,6 @@
 const t = require('tap')
 const { resolve, dirname, join } = require('node:path')
-const fs = require('node:fs')
+const fs = require('node:fs/promises')
 const { time } = require('proc-log')
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 const mockGlobals = require('@npmcli/mock-globals')
@@ -327,11 +327,11 @@ t.test('debug log', async t => {
     const logsDir = join(testdir, 'my_logs_dir')
 
     // make logs dir a file before load so it files
-    fs.writeFileSync(logsDir, 'A_TEXT_FILE')
+    await fs.writeFile(logsDir, 'A_TEXT_FILE')
     await t.resolves(npm.load(), 'loads with invalid logs dir')
 
     t.equal(npm.logFiles.length, 0, 'no log files array')
-    t.strictSame(fs.readFileSync(logsDir, 'utf-8'), 'A_TEXT_FILE')
+    t.strictSame(await fs.readFile(logsDir, 'utf-8'), 'A_TEXT_FILE')
   })
 })
 
@@ -339,7 +339,7 @@ t.test('cache dir', async t => {
   t.test('creates a cache dir', async t => {
     const { npm } = await loadMockNpm(t)
 
-    t.ok(fs.existsSync(npm.cache), 'cache dir exists')
+    await t.resolves(fs.access(npm.cache), 'cache dir exists')
   })
 
   t.test('can load with a bad cache dir', async t => {
@@ -352,7 +352,7 @@ t.test('cache dir', async t => {
 
     await t.resolves(npm.load(), 'loads with cache dir as a file')
 
-    t.equal(fs.readFileSync(cache, 'utf-8'), 'A_TEXT_FILE')
+    t.equal(await fs.readFile(cache, 'utf-8'), 'A_TEXT_FILE')
   })
 })
 
@@ -597,10 +597,10 @@ module.exports = class TestCommand extends BaseCommand {
   }
 }
 `
-  fs.writeFileSync(tsetPath, tsetContent)
-  t.teardown(() => {
+  await fs.writeFile(tsetPath, tsetContent)
+  t.teardown(async () => {
     try {
-      fs.unlinkSync(tsetPath)
+      await fs.unlink(tsetPath)
       delete require.cache[tsetPath]
     } catch (e) {
       // ignore
@@ -665,10 +665,10 @@ module.exports = class TestCommand extends BaseCommand {
   }
 }
 `
-  fs.writeFileSync(tsetPath, tsetContent)
-  t.teardown(() => {
+  await fs.writeFile(tsetPath, tsetContent)
+  t.teardown(async () => {
     try {
-      fs.unlinkSync(tsetPath)
+      await fs.unlink(tsetPath)
       delete require.cache[tsetPath]
     } catch (e) {
       // ignore
@@ -695,4 +695,130 @@ module.exports = class TestCommand extends BaseCommand {
   t.match(output, /-y\|--yes/, 'help includes short flag -y for yes')
   t.match(output, /--say/, 'help includes command definition --say')
   t.match(output, /--say <say>/, 'help includes --say with hint')
+})
+
+t.test('same flag name different types', async t => {
+  const path = require('node:path')
+
+  // Create test-flag-a with name as Boolean
+  const testFlagAPath = path.join(__dirname, '../../lib/commands/test-flag-a.js')
+  const testFlagAContent = `/* istanbul ignore file */
+const Definition = require('@npmcli/config/lib/definitions/definition.js')
+const BaseCommand = require('../base-cmd.js')
+const { output } = require('proc-log')
+const { flatten } = require('@npmcli/config/lib/definitions/index.js')
+
+module.exports = class TestFlagA extends BaseCommand {
+  static description = 'Test command with flag name as boolean'
+  static name = 'test-flag-a'
+  static params = ['name']
+  static definitions = {
+    name: new Definition('name', {
+      default: false,
+      type: Boolean,
+      description: 'description a',
+      flatten,
+    }),
+  }
+
+  async exec () {
+    const name = this.npm.config.get('name')
+    output.standard(String(name))
+  }
+}
+`
+
+  // Create test-flag-b with name as String
+  const testFlagBPath = path.join(__dirname, '../../lib/commands/test-flag-b.js')
+  const testFlagBContent = `/* istanbul ignore file */
+const Definition = require('@npmcli/config/lib/definitions/definition.js')
+const BaseCommand = require('../base-cmd.js')
+const { output } = require('proc-log')
+const { flatten } = require('@npmcli/config/lib/definitions/index.js')
+
+module.exports = class TestFlagB extends BaseCommand {
+  static description = 'Test command with flag name as string'
+  static name = 'test-flag-b'
+  static params = ['name']
+  static definitions = {
+    name: new Definition('name', {
+      default: '',
+      type: String,
+      description: 'description b',
+      flatten,
+    }),
+  }
+
+  async exec () {
+    const name = this.npm.config.get('name')
+    output.standard(name)
+  }
+}
+`
+
+  await fs.writeFile(testFlagAPath, testFlagAContent)
+  await fs.writeFile(testFlagBPath, testFlagBContent)
+
+  t.teardown(async () => {
+    try {
+      await fs.unlink(testFlagAPath)
+      await fs.unlink(testFlagBPath)
+      delete require.cache[testFlagAPath]
+      delete require.cache[testFlagBPath]
+    } catch (e) {
+      // ignore
+    }
+  })
+
+  const mockCmdList = require('../../lib/utils/cmd-list.js')
+
+  t.test('test-flag-a output', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      argv: ['test-flag-a', '--help'],
+      mocks: {
+        '{LIB}/utils/cmd-list.js': {
+          ...mockCmdList,
+          commands: [...mockCmdList.commands, 'test-flag-a', 'test-flag-b'],
+          deref: (c) => {
+            if (c === 'test-flag-a') {
+              return 'test-flag-a'
+            }
+            if (c === 'test-flag-b') {
+              return 'test-flag-b'
+            }
+            return mockCmdList.deref(c)
+          },
+        },
+      },
+    })
+
+    await npm.exec('test-flag-a', [])
+    const output = joinedOutput()
+    t.matchSnapshot(output, 'test-flag-a help output')
+  })
+
+  t.test('test-flag-b output', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      argv: ['test-flag-b', '--help'],
+      mocks: {
+        '{LIB}/utils/cmd-list.js': {
+          ...mockCmdList,
+          commands: [...mockCmdList.commands, 'test-flag-a', 'test-flag-b'],
+          deref: (c) => {
+            if (c === 'test-flag-a') {
+              return 'test-flag-a'
+            }
+            if (c === 'test-flag-b') {
+              return 'test-flag-b'
+            }
+            return mockCmdList.deref(c)
+          },
+        },
+      },
+    })
+
+    await npm.exec('test-flag-b', [])
+    const output = joinedOutput()
+    t.matchSnapshot(output, 'test-flag-b help output')
+  })
 })
