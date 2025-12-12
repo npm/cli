@@ -107,14 +107,11 @@ const replaceParams = (src, { path }) => {
 
   // Load command to get command-specific definitions if they exist
   let commandDefinitions = {}
-  if (name && name !== 'npm' && name !== 'npx') {
-    try {
-      const srcName = name === 'npx' ? 'exec' : name
-      const command = require(`../../lib/commands/${srcName}`)
-      commandDefinitions = command.definitions || {}
-    } catch {
-      // If command doesn't exist or has no definitions, continue with global definitions only
-    }
+  try {
+    const command = require(`../../lib/commands/${name}`)
+    commandDefinitions = command.definitions || {}
+  } catch {
+    // If command doesn't exist or has no definitions, continue with global definitions only
   }
 
   const paramsConfig = params.map((n) => {

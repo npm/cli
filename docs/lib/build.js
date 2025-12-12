@@ -8,8 +8,8 @@ const checkNav = require('./check-nav.js')
 const { DOC_EXT, ...transform } = require('./index.js')
 
 // Auto-generate doc templates for commands without docs
-const autoGenerateMissingDocs = async (contentPath, navPath) => {
-  const commandsPath = join(__dirname, '../../lib/commands')
+const autoGenerateMissingDocs = async (contentPath, navPath, commandsPath = null) => {
+  commandsPath = commandsPath || join(__dirname, '../../lib/commands')
   const docsCommandsPath = join(contentPath, 'commands')
 
   // Get all command files
@@ -131,9 +131,11 @@ const pAll = async (obj) => {
   }, {})
 }
 
-const run = async ({ content, template, nav, man, html, md }) => {
+const run = async ({ content, template, nav, man, html, md, skipAutoGenerate }) => {
   // Auto-generate docs for commands without documentation
-  await autoGenerateMissingDocs(content, nav)
+  if (!skipAutoGenerate) {
+    await autoGenerateMissingDocs(content, nav)
+  }
 
   await rmAll(man, html, md)
   const [contentPaths, navFile, options] = await Promise.all([
@@ -251,3 +253,4 @@ const run = async ({ content, template, nav, man, html, md }) => {
 }
 
 module.exports = run
+module.exports.autoGenerateMissingDocs = autoGenerateMissingDocs
