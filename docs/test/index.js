@@ -71,19 +71,19 @@ const testCommandDoc = async (t, commandName, description, assertions = {}) => {
     },
     nav: `- url: /commands/${commandName}`,
   })
-  
+
   const htmlContent = await readHtmlDoc(html, commandName)
-  
+
   // Default assertions
   t.ok(htmlContent.length > 0, `generates HTML for ${commandName} command`)
-  
+
   // Custom assertions
   if (assertions.match) {
     for (const pattern of assertions.match) {
       t.match(htmlContent, pattern, `contains expected pattern: ${pattern}`)
     }
   }
-  
+
   return { html, htmlContent }
 }
 
@@ -113,7 +113,7 @@ const verifyNavStructure = async (navPath) => {
   const navContent = await fs.readFile(navPath, 'utf-8')
   const navData = yaml.parse(navContent)
   const commandsSection = navData.find(s => s.title === 'CLI Commands')
-  
+
   return { navContent, navData, commandsSection }
 }
 
@@ -206,7 +206,7 @@ t.test('command-specific definitions and exclusive parameters', async t => {
     const { htmlContent } = await testCommandDoc(t, 'npm-install', 'Install a package', {
       match: [/save/],
     })
-    
+
     // The install command should have save-related params due to exclusive expansion
     t.match(htmlContent, /save/, 'includes save-related configuration')
   })
@@ -214,7 +214,7 @@ t.test('command-specific definitions and exclusive parameters', async t => {
 
 t.test('autoGenerateMissingDocs', async t => {
   const { autoGenerateMissingDocs } = require('../lib/build.js')
-  
+
   t.test('generates docs for missing commands', async t => {
     const testDir = createAutoGenTestDir(t, {
       existingDocs: {
@@ -242,14 +242,14 @@ module.exports = TestCommand
     const contentPath = join(testDir, 'content')
     const navPath = join(testDir, 'nav.yml')
     const commandsPath = join(testDir, 'lib', 'commands')
-    
+
     await autoGenerateMissingDocs(contentPath, navPath, commandsPath)
-    
+
     // Verify the doc was created
     const testcmdDocPath = join(contentPath, 'commands', 'npm-testcmd.md')
     const docExists = await fs.access(testcmdDocPath).then(() => true).catch(() => false)
     t.ok(docExists, 'creates documentation file for missing command')
-    
+
     // Verify the doc has correct content
     const docContent = await fs.readFile(testcmdDocPath, 'utf-8')
     t.match(docContent, /title: npm-testcmd/, 'doc has correct title')
@@ -290,12 +290,12 @@ module.exports = NewCommand
     const contentPath = join(testDir, 'content')
     const navPath = join(testDir, 'nav.yml')
     const commandsPath = join(testDir, 'lib', 'commands')
-    
+
     await autoGenerateMissingDocs(contentPath, navPath, commandsPath)
-    
+
     // Read and verify nav.yml was updated
     const { commandsSection } = await verifyNavStructure(navPath)
-    
+
     t.ok(commandsSection, 'nav has CLI Commands section')
     const newCmdEntry = commandsSection.children.find(c => c.url === '/commands/npm-newcmd')
     t.ok(newCmdEntry, 'nav has entry for new command')
@@ -320,17 +320,17 @@ module.exports = NewCommand
     const contentPath = join(testDir, 'content')
     const navPath = join(testDir, 'nav.yml')
     const commandsPath = join(testDir, 'lib', 'commands')
-    
+
     await autoGenerateMissingDocs(contentPath, navPath, commandsPath)
-    
+
     // Verify sorting
     const { commandsSection } = await verifyNavStructure(navPath)
-    
+
     const titles = commandsSection.children.map(c => c.title)
-    
+
     // npm should be first
     t.equal(titles[0], 'npm', 'npm command is first')
-    
+
     // Rest should be alphabetically sorted
     const rest = titles.slice(1)
     const sorted = [...rest].sort()
@@ -352,9 +352,9 @@ module.exports = NewCommand
     const contentPath = join(testDir, 'content')
     const navPath = join(testDir, 'nav.yml')
     const commandsPath = join(testDir, 'lib', 'commands')
-    
+
     await autoGenerateMissingDocs(contentPath, navPath, commandsPath)
-    
+
     // Verify fallback description
     const docPath = join(contentPath, 'commands', 'npm-nodesc.md')
     const docContent = await fs.readFile(docPath, 'utf-8')
@@ -376,12 +376,12 @@ module.exports = NewCommand
     const contentPath = join(testDir, 'content')
     const navPath = join(testDir, 'nav.yml')
     const commandsPath = join(testDir, 'lib', 'commands')
-    
+
     await autoGenerateMissingDocs(contentPath, navPath, commandsPath)
-    
+
     // Verify no duplicate
     const { commandsSection } = await verifyNavStructure(navPath)
-    
+
     const duplicateEntries = commandsSection.children.filter(c => c.url === '/commands/npm-duplicate')
     t.equal(duplicateEntries.length, 1, 'does not create duplicate nav entries')
   })
@@ -406,11 +406,11 @@ description: Complete command
     const contentPath = join(testDir, 'content')
     const navPath = join(testDir, 'nav.yml')
     const commandsPath = join(testDir, 'lib', 'commands')
-    
+
     const navBefore = await fs.readFile(navPath, 'utf-8')
     await autoGenerateMissingDocs(contentPath, navPath, commandsPath)
     const navAfter = await fs.readFile(navPath, 'utf-8')
-    
+
     t.equal(navBefore, navAfter, 'does not modify nav when no missing docs')
   })
 
@@ -433,10 +433,10 @@ description: Complete command
     const contentPath = join(testDir, 'content')
     const navPath = join(testDir, 'nav.yml')
     const commandsPath = join(testDir, 'lib', 'commands')
-    
+
     // Should not throw, just skip nav update
     await autoGenerateMissingDocs(contentPath, navPath, commandsPath)
-    
+
     // Doc should still be created
     const docPath = join(contentPath, 'commands', 'npm-test.md')
     const docExists = await fs.access(docPath).then(() => true).catch(() => false)
@@ -461,10 +461,10 @@ description: Complete command
     const contentPath = join(testDir, 'content')
     const navPath = join(testDir, 'nav.yml')
     const commandsPath = join(testDir, 'lib', 'commands')
-    
+
     // Should not throw, just skip nav children update
     await autoGenerateMissingDocs(contentPath, navPath, commandsPath)
-    
+
     // Doc should still be created
     const docPath = join(contentPath, 'commands', 'npm-test.md')
     const docExists = await fs.access(docPath).then(() => true).catch(() => false)
@@ -496,12 +496,12 @@ description: Complete command
 
     const contentPath = join(testDir, 'content')
     const commandsPath = join(testDir, 'lib', 'commands')
-    
+
     await autoGenerateMissingDocs(contentPath, navPath, commandsPath)
-    
+
     // Verify npm moved to first position
     const { commandsSection } = await verifyNavStructure(navPath)
-    
+
     const titles = commandsSection.children.map(c => c.title)
     t.equal(titles[0], 'npm', 'npm command moved to first position')
   })
@@ -528,14 +528,14 @@ description: Complete command
 
     const template = '<html>{{ content }}</html>'
     await fs.writeFile(join(testDir, 'template.html'), template)
-    
+
     const contentPath = join(testDir, 'content')
     const navPath = join(testDir, 'nav.yml')
     const templatePath = join(testDir, 'template.html')
     const manPath = join(testDir, 'man')
     const htmlPath = join(testDir, 'html')
     const mdPath = join(testDir, 'md')
-    
+
     // Call run with skipAutoGenerate set to true to avoid hitting real commands
     const results = await build({
       content: contentPath,
@@ -546,7 +546,7 @@ description: Complete command
       md: mdPath,
       skipAutoGenerate: true,
     })
-    
+
     t.ok(results.length > 0, 'build runs successfully')
   })
 })
