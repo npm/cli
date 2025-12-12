@@ -573,7 +573,7 @@ async function testCommandDefinitions (t, { defaultValue, outputValue, type, fla
 
   // Create a temporary command file
   const tsetPath = path.join(__dirname, '../../lib/commands/tset.js')
-  const tsetContent = `
+  const tsetContent = `/* istanbul ignore file */
 const Definition = require('@npmcli/config/lib/definitions/definition.js')
 const BaseCommand = require('../base-cmd.js')
 const { output } = require('proc-log')
@@ -640,7 +640,7 @@ t.test('help includes both global and command definitions', async t => {
 
   // Create a temporary command file
   const tsetPath = path.join(__dirname, '../../lib/commands/tset.js')
-  const tsetContent = `
+  const tsetContent = `/* istanbul ignore file */
 const Definition = require('@npmcli/config/lib/definitions/definition.js')
 const BaseCommand = require('../base-cmd.js')
 const { output } = require('proc-log')
