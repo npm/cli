@@ -15,7 +15,7 @@
     "@npmcli/redact": "^4.0.0",
     "@npmcli/run-script": "^10.0.0",
     "bin-links": "^6.0.0",
-    "cacache": "^20.0.1",
+    "cacache": "^20.0.3",
     "common-ancestor-path": "^1.0.1",
     "hosted-git-info": "^9.0.0",
     "json-stringify-nice": "^1.1.4",
