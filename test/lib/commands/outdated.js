@@ -790,7 +790,7 @@ t.test('should truncate very long paths', async t => {
 
   await outdated.exec([])
   const output = joinedOutput()
-  
+
   t.match(output, /\.\.\./, 'should contain truncation ellipsis')
   t.matchSnapshot(output)
 })
