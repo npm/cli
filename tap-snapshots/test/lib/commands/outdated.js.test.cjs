@@ -46,6 +46,14 @@ dog        1.0.0   1.0.1   2.0.0  node_modules/dog  a@1.0.0             dependen
 dog        1.0.0   1.0.1   2.0.0  node_modules/dog  a@npm:nest-a@1.0.0  dependencies            nest/a
 `
 
+exports[`test/lib/commands/outdated.js TAP outdated with color disabled > must match snapshot 1`] = `
+Package  Current  Wanted  Latest  Location           Depended by
+cat        1.0.0   1.0.1   1.0.1  node_modules/cat   prefix
+chai       1.0.0   1.0.1   1.0.1  node_modules/chai  prefix
+dog        1.0.1   1.0.1   2.0.0  node_modules/dog   prefix
+theta    MISSING   1.0.1   1.0.1  -                  prefix
+`
+
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated --all > must match snapshot 1`] = `
 Package  Current  Wanted  Latest  Location           Depended by
 cat        1.0.0   1.0.1   1.0.1  node_modules/cat   prefix
@@ -185,8 +193,7 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated global > must match snapshot 1`] = `
-Package  Current  Wanted  Latest  Location          Depended by
-cat        1.0.0   1.0.1   1.0.1  node_modules/cat  global
+
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated specific dep > must match snapshot 1`] = `
