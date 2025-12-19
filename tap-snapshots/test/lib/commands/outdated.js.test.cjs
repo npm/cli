@@ -210,6 +210,13 @@ theta    MISSING   1.0.1   1.0.1  -                 d@1.0.0
 theta    MISSING   1.0.1   1.0.1  -                 e@1.0.0
 `
 
+exports[`test/lib/commands/outdated.js TAP should truncate very long paths > must match snapshot 1`] = `
+[1m[4mPackage[24m[22m  [1m[4mCurrent[24m[22m  [1m[4mWanted[24m[22m  [1m[4mLatest[24m[22m  [1m[4mLocation[24m[22m          [1m[4mDepended by[24m[22m
+[31mcat[39m        1.0.0   [36m1.0.1[39m   [34m1.0.1[39m  node_modules/cat  [34mthis-is-a-very-long-package...[39m
+[31mRed[39m = Updateable within your version range
+[33mYellow[39m = Update available but requires semver-major bump
+`
+
 exports[`test/lib/commands/outdated.js TAP workspaces should display all dependencies > output 1`] = `
 Package  Current  Wanted  Latest  Location           Depended by
 cat        1.0.0   1.0.1   1.0.1  node_modules/cat   a@1.0.0

@@ -751,6 +751,50 @@ t.test('should truncate long columns to fit terminal width', async t => {
   t.matchSnapshot(output, 'should truncate long paths')
 })
 
+t.test('should truncate very long paths', async t => {
+  const longName = 'this-is-a-very-long-package-name-that-exceeds-the-thirty-character-limit'
+  const testDir = {
+    'package.json': JSON.stringify({
+      name: 'workspace-root',
+      version: '1.0.0',
+      workspaces: ['packages/*'],
+    }),
+    node_modules: {
+      [longName]: t.fixture('symlink', `../packages/${longName}`),
+      cat: {
+        'package.json': JSON.stringify({
+          name: 'cat',
+          version: '1.0.0',
+        }),
+      },
+    },
+    packages: {
+      [longName]: {
+        'package.json': JSON.stringify({
+          name: longName,
+          version: '1.0.0',
+          dependencies: {
+            cat: '^1.0.0',
+          },
+        }),
+      },
+    },
+  }
+
+  const { outdated, joinedOutput } = await mockNpm(t, {
+    prefixDir: testDir,
+    config: {
+      color: 'always',
+    },
+  })
+
+  await outdated.exec([])
+  const output = joinedOutput()
+  
+  t.match(output, /\.\.\./, 'should contain truncation ellipsis')
+  t.matchSnapshot(output)
+})
+
 t.test('outdated with color disabled', async t => {
   const { outdated, joinedOutput } = await mockNpm(t, {
     prefixDir: fixtures.local,
