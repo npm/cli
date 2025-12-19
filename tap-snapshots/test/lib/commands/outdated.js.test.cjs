@@ -137,6 +137,8 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
 [31mcat[39m        1.0.0   [36m1.0.1[39m   [34m1.0.1[39m  node_modules/cat  prefix
 [33mdog[39m        1.0.1   [36m1.0.1[39m   [34m2.0.0[39m  node_modules/dog  prefix
 [31mtheta[39m    MISSING   [36m1.0.1[39m   [34m1.0.1[39m  -                 prefix
+[31mRed[39m = Updateable within your version range
+[33mYellow[39m = Update available but requires semver-major bump
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated --omit=dev > must match snapshot 1`] = `
@@ -145,6 +147,8 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
 [31mchai[39m       1.0.0   [36m1.0.1[39m   [34m1.0.1[39m  node_modules/chai  prefix
 [33mdog[39m        1.0.1   [36m1.0.1[39m   [34m2.0.0[39m  node_modules/dog   prefix
 [31mtheta[39m    MISSING   [36m1.0.1[39m   [34m1.0.1[39m  -                  prefix
+[31mRed[39m = Updateable within your version range
+[33mYellow[39m = Update available but requires semver-major bump
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated --omit=prod > must match snapshot 1`] = `
@@ -152,6 +156,8 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
 [31mcat[39m        1.0.0   [36m1.0.1[39m   [34m1.0.1[39m  node_modules/cat   prefix
 [31mchai[39m       1.0.0   [36m1.0.1[39m   [34m1.0.1[39m  node_modules/chai  prefix
 [33mdog[39m        1.0.1   [36m1.0.1[39m   [34m2.0.0[39m  node_modules/dog   prefix
+[31mRed[39m = Updateable within your version range
+[33mYellow[39m = Update available but requires semver-major bump
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated --parseable --long > must match snapshot 1`] = `
@@ -174,10 +180,13 @@ exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated
 [31mchai[39m       1.0.0   [36m1.0.1[39m   [34m1.0.1[39m  node_modules/chai  prefix
 [33mdog[39m        1.0.1   [36m1.0.1[39m   [34m2.0.0[39m  node_modules/dog   prefix
 [31mtheta[39m    MISSING   [36m1.0.1[39m   [34m1.0.1[39m  -                  prefix
+[31mRed[39m = Updateable within your version range
+[33mYellow[39m = Update available but requires semver-major bump
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated global > must match snapshot 1`] = `
-
+Package  Current  Wanted  Latest  Location          Depended by
+cat        1.0.0   1.0.1   1.0.1  node_modules/cat  global
 `
 
 exports[`test/lib/commands/outdated.js TAP should display outdated deps outdated specific dep > must match snapshot 1`] = `
@@ -304,4 +313,6 @@ exports[`test/lib/commands/outdated.js TAP workspaces should highlight ws in dep
 [31mtheta[39m    MISSING   [36m1.0.1[39m   [34m1.0.1[39m  -                 [34mc@1.0.0[39m
 [31mtheta[39m    MISSING   [36m1.0.1[39m   [34m1.0.1[39m  -                 [34md@1.0.0[39m
 [31mtheta[39m    MISSING   [36m1.0.1[39m   [34m1.0.1[39m  -                 [34me@1.0.0[39m
+[31mRed[39m = Updateable within your version range
+[33mYellow[39m = Update available but requires semver-major bump
 `
