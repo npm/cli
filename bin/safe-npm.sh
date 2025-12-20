@@ -5,7 +5,8 @@
 # It retries with reduced days (from N going down to 0), if ETARGET/no matching version error detected.
 # Usage: ./safe-npm.sh install [args] [--min-age-days=N]  (or alias to npm)
 # Handles: Cross-platform date (Linux/macOS), skips if --before manual, error propagation, real-time output.
-# A sample package.json provided in smoke-tests to allow testing for packages published for the first time after the min-age condition: package.josn-safe-npm-min-age
+# A sample package.json provided in smoke-tests to allow testing for packages published for the first time after the min-age condition: min-age/package.json
+# Test: ./safe-npm.sh install --dry-run --min-age-days=360 ../smoke-tests/min-age/package.json
 
 set -euo pipefail
 
@@ -38,16 +39,16 @@ has_before_flag() {
 # Parse custom --min-age-days from args and remove it.
 min_age_days=7  # Default.
 new_args=()
-i=0
-while [ $i -lt $# ]; do
-  arg="${!((i+1))}"
+i=1
+while [ $i -le $# ]; do
+  arg="${!i}"
   if [[ "$arg" =~ ^--min-age-days=([0-9]+)$ ]]; then
     min_age_days="${BASH_REMATCH[1]}"
     ((i++))  # Skip this arg.
   else
     new_args+=("$arg")
+    ((i++))
   fi
-  ((i++))
 done
 set -- "${new_args[@]}"  # Update args without --min-age-days.
 
@@ -96,7 +97,7 @@ for days in "${days_array[@]}"; do
     success=true
     break
   else
-    if grep -q -e "ETARGET" -e "No matching version found" "$stderr_file"; then
+    if grep -q -e "ETARGET" -e "No matching version found" -e "ENOVERSIONS" "$stderr_file"; then
       echo "No version available; retrying with reduced age." >&2
       rm "$stderr_file"
       continue
