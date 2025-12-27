@@ -82,10 +82,11 @@ Integrate into `lib/commands/publish.js`:
 
 ### Performance Impact
 
-- Validation adds ~10-30 seconds to publish time
+- Validation time will depend on which checks are enabled and package complexity
 - Only runs on `npm publish`, not install
-- Can be disabled for performance-critical cases
+- Can be disabled entirely with `enabled: false`
 - Runs locally, no registry impact
+- Performance benchmarks will be established once checks are fully implemented
 
 ## Rationale and Alternatives
 
@@ -145,7 +146,7 @@ Could validate on the registry, but:
 - **Python pip**: Can run setup.py tests
 - **Ruby gems**: RubyGems runs gem build validations
 
-npm is unique in having NO quality gates at publish time.
+While npm performs basic checks such as package and manifest validation, access control, and tarball integrity verification, it currently lacks built-in pre-publish quality validation for issues like memory leaks, input validation testing, test requirements, and performance checks.
 
 ## Unresolved Questions
 
