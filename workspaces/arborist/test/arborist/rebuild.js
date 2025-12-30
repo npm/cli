@@ -847,3 +847,34 @@ t.test('do not run lifecycle scripts of linked deps twice', async t => {
   const arb = new Arborist({ path, ignoreScripts: true })
   await arb.rebuild()
 })
+
+t.test('only run install hooks for whitelisted packages', async t => {
+  function makePackage (name, dependencies) {
+    return {
+      name,
+      version: '1.0.0',
+      scripts: {
+        preinstall: `echo "Pre-install ${name}"`,
+      },
+      dependencies,
+    }
+  }
+  const a = makePackage('@foo/a', {})
+  const b = makePackage('@foo/b', {})
+  const path = t.testdir({
+    'package.json': JSON.stringify(makePackage('my-project', {
+      '@foo/a': 'file:./node_modules/@foo/a',
+      '@foo/b': 'file:./node_modules/@foo/b',
+    })),
+    node_modules: {
+      '@foo': {
+        a: { 'package.json': JSON.stringify(a) },
+        b: { 'package.json': JSON.stringify(b) },
+      },
+    },
+  })
+  const arb = new Arborist({ path, installHooksWhitelist: ['@foo/b'] })
+  await arb.rebuild()
+  t.equal(arb.scriptsRun.size, 1)
+  t.equal(arb.scriptsRun.values().next().value.cmd, b.scripts.preinstall)
+})

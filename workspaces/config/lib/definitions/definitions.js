@@ -1061,6 +1061,23 @@ const definitions = {
       Alias for \`--init-version\`
     `,
   }),
+  'install-hooks-whitelist': new Definition('install-hooks-whitelist', {
+    default: null,
+    type: [null, String],
+    description: `
+      A comma-separated list of npm package names whose NPM install hooks are allowed to run.
+      Only hooks from packages listed here will be executed. Package names should
+      match exactly as published in the registry (including scope if applicable, like @my-org/component).
+    `,
+    flatten (key, obj, flatOptions) {
+      if (obj[key]) {
+        flatOptions.installHooksWhitelist = obj[key]
+          .split(',')
+          .map(v => v.trim().toLowerCase())
+          .filter(Boolean)
+      }
+    },
+  }),
   'install-links': new Definition('install-links', {
     default: false,
     type: Boolean,

@@ -905,6 +905,18 @@ number, if not already set in package.json.
 
 
 
+#### \`install-hooks-whitelist\`
+
+* Default: null
+* Type: null or String
+
+A comma-separated list of npm package names whose NPM install hooks are
+allowed to run. Only hooks from packages listed here will be executed.
+Package names should match exactly as published in the registry (including
+scope if applicable, like @my-org/component).
+
+
+
 #### \`install-links\`
 
 * Default: false
@@ -2281,6 +2293,7 @@ Array [
   "init.license",
   "init.module",
   "init.version",
+  "install-hooks-whitelist",
   "install-links",
   "install-strategy",
   "json",
@@ -2440,6 +2453,7 @@ Array [
   "include-staged",
   "include-workspace-root",
   "init-private",
+  "install-hooks-whitelist",
   "install-links",
   "install-strategy",
   "json",

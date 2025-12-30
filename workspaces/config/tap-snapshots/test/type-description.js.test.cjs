@@ -266,6 +266,10 @@ Object {
   "init.version": Array [
     "full valid SemVer string",
   ],
+  "install-hooks-whitelist": Array [
+    null,
+    Function String(),
+  ],
   "install-links": Array [
     "boolean value (true or false)",
   ],

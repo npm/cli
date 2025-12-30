@@ -274,6 +274,19 @@ module.exports = cls => class Builder extends cls {
     }
   }
 
+  // Determine whether install hooks may run.
+  // Install hooks are allowed only for packages listed in the
+  // install-hook-whitelist setting
+  #isWhitelistedInstallHook (node, event) {
+    if (this.options.installHooksWhitelist?.length && event !== 'prepare') {
+      // check whether the package name is included in the defined whitelist
+      return this.options.installHooksWhitelist.includes(node.name?.toLowerCase())
+    }
+    // either no whitelist exists, or the event is 'prepare'
+    // 'prepare' runs only on linked packages
+    return true
+  }
+
   async #runScripts (event) {
     const queue = this.#queues[event]
 
@@ -301,6 +314,11 @@ module.exports = cls => class Builder extends cls {
       // skip any that we know we'll be deleting
       // or storeLinks
       if (this[_trashList].has(path) || isStoreLink) {
+        return
+      }
+
+      if (!this.#isWhitelistedInstallHook(node, event)) {
+        log.warn('hook execution', `skipping npm hook "${event}" for package "${node.name}". To enable hooks for this package, add "${node.name}" to your install-hooks-whitelist options`)
         return
       }
 

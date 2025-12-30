@@ -85,6 +85,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "init.license": "ISC",
   "init.module": "{CWD}/home/.npm-init.js",
   "init.version": "1.0.0",
+  "install-hooks-whitelist": null,
   "install-links": false,
   "install-strategy": "hoisted",
   "key": null,
@@ -261,6 +262,7 @@ init.author.url = ""
 init.license = "ISC"
 init.module = "{CWD}/home/.npm-init.js"
 init.version = "1.0.0"
+install-hooks-whitelist = null
 install-links = false
 install-strategy = "hoisted"
 json = false

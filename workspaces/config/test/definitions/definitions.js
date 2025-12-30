@@ -1013,6 +1013,14 @@ t.test('remap global-style', t => {
   t.end()
 })
 
+t.test('make array from install-hooks-whitelist', t => {
+  const obj = { 'install-hooks-whitelist': 'foo, bar, @foo/bar' }
+  const flat = {}
+  mockDefs()['install-hooks-whitelist'].flatten('install-hooks-whitelist', obj, flat)
+  t.strictSame(flat, { installHooksWhitelist: ['foo', 'bar', '@foo/bar'] })
+  t.end()
+})
+
 t.test('otp changes auth-type', t => {
   const obj = { 'auth-type': 'web', otp: 123456 }
   const flat = {}
