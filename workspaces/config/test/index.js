@@ -1697,6 +1697,49 @@ t.test('removeWarnings with array', async t => {
   t.notOk(hasUnknown2, 'unknown2 warnings removed')
 })
 
+t.test('warn false with invalid flag and warning removal', async t => {
+  const path = t.testdir()
+  const logs = []
+  const logHandler = (...args) => logs.push(args)
+  process.on('log', logHandler)
+  t.teardown(() => process.off('log', logHandler))
+
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--invalid-flag', 'value'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  config.warn = false
+  await config.load()
+
+  // First logWarnings call - should log the queued warning
+  const logsBeforeFirst = logs.filter(l => l[0] === 'warn').length
+  config.logWarnings()
+  const logsAfterFirst = logs.filter(l => l[0] === 'warn')
+  
+  // Check we have warnings and the invalid-flag warning is there
+  t.ok(logsAfterFirst.length > logsBeforeFirst, 'warnings were logged')
+  const invalidFlagWarnings = logsAfterFirst.filter(w => w[1] && w[1].includes('invalid-flag'))
+  t.ok(invalidFlagWarnings.length > 0, 'invalid-flag warning present')
+
+  // Trigger the same warning again
+  config.checkUnknown('cli', 'invalid-flag')
+
+  // Remove the warning
+  config.removeWarning('invalid-flag')
+
+  // Call logWarnings again - should not add the invalid-flag warning since we removed it
+  const beforeSecondLog = logs.filter(l => l[0] === 'warn').length
+  config.logWarnings()
+  const afterSecondLog = logs.filter(l => l[0] === 'warn')
+  t.equal(afterSecondLog.length, beforeSecondLog, 'no new warnings after removal and logWarnings')
+})
+
 t.test('loadCommand method', async t => {
   const path = t.testdir()
   const logs = []

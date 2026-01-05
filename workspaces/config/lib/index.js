@@ -505,8 +505,7 @@ class Config {
 
   invalidHandler (k, val, type, source, where) {
     const typeDescription = require('./type-description.js')
-    this.queueWarning(
-      'invalid',
+    log.warn(
       'invalid config',
       k + '=' + JSON.stringify(val),
       `set in ${source}`
