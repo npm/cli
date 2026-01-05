@@ -592,7 +592,7 @@ module.exports = class TestCommand extends BaseCommand {
   }
 
   async exec () {
-    const say = this.npm.config.get('say')
+    const { say } = this.flags()
     output.standard(say)
   }
 }
@@ -660,7 +660,7 @@ module.exports = class TestCommand extends BaseCommand {
   }
 
   async exec () {
-    const say = this.npm.config.get('say')
+    const { say } = this.flags()
     output.standard(say)
   }
 }
