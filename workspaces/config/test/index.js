@@ -1721,7 +1721,7 @@ t.test('warn false with invalid flag and warning removal', async t => {
   const logsBeforeFirst = logs.filter(l => l[0] === 'warn').length
   config.logWarnings()
   const logsAfterFirst = logs.filter(l => l[0] === 'warn')
-  
+
   // Check we have warnings and the invalid-flag warning is there
   t.ok(logsAfterFirst.length > logsBeforeFirst, 'warnings were logged')
   const invalidFlagWarnings = logsAfterFirst.filter(w => w[1] && w[1].includes('invalid-flag'))
