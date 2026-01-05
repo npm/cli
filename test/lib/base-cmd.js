@@ -1,7 +1,6 @@
 const t = require('tap')
 const { load: loadMockNpm } = require('../fixtures/mock-npm')
 const BaseCommand = require('../../lib/base-cmd.js')
-const { definitions } = require('@npmcli/config/lib/definitions')
 const Definition = require('@npmcli/config/lib/definitions/definition.js')
 
 t.test('flags() method with command definitions', async t => {
