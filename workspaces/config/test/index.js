@@ -1610,8 +1610,8 @@ t.test('warning suppression and logging', async t => {
 
   // Now disable warnings and trigger more
   config.warn = false
-  config.log.warn('test-type', 'test warning 1')
-  config.log.warn('test-type2', 'test warning 2')
+  config.queueWarning('test-type', 'test warning 1')
+  config.queueWarning('test-type2', 'test warning 2')
 
   // Should have warnings collected but not logged
   const initialWarnings = logs.filter(l => l[0] === 'warn')
@@ -1628,73 +1628,6 @@ t.test('warning suppression and logging', async t => {
   config.logWarnings()
   const finalWarnings = logs.filter(l => l[0] === 'warn')
   t.equal(finalWarnings.length, warningCount, 'no duplicate warnings after second logWarnings()')
-})
-
-t.test('removeWarnings', async t => {
-  const path = t.testdir()
-  const logs = []
-  const logHandler = (...args) => logs.push(args)
-  process.on('log', logHandler)
-  t.teardown(() => process.off('log', logHandler))
-
-  const config = new Config({
-    npmPath: `${path}/npm`,
-    env: {},
-    argv: [process.execPath, __filename, '--unknown1', 'value', '--unknown2', 'value'],
-    cwd: path,
-    shorthands,
-    definitions,
-    nerfDarts,
-  })
-
-  config.warn = false
-  await config.load()
-
-  // Remove specific warning types
-  config.removeWarnings('unknown:unknown1')
-  config.logWarnings()
-
-  const warnings = logs.filter(l => l[0] === 'warn')
-  const hasUnknown1 = warnings.some(w => w[1].includes('unknown1'))
-  const hasUnknown2 = warnings.some(w => w[1].includes('unknown2'))
-
-  t.notOk(hasUnknown1, 'unknown1 warning removed')
-  t.ok(hasUnknown2, 'unknown2 warning still present')
-})
-
-t.test('removeWarnings with array', async t => {
-  const path = t.testdir()
-  const logs = []
-  const logHandler = (...args) => logs.push(args)
-  process.on('log', logHandler)
-  t.teardown(() => process.off('log', logHandler))
-
-  const config = new Config({
-    npmPath: `${path}/npm`,
-    env: {},
-    argv: [process.execPath, __filename, '--unknown1', 'value', '--unknown2', 'value'],
-    cwd: path,
-    shorthands,
-    definitions,
-    nerfDarts,
-  })
-
-  config.warn = false
-  await config.load()
-
-  // Count warnings before removal
-  const beforeRemoval = logs.filter(l => l[0] === 'warn').length
-
-  // Remove multiple warning types
-  config.removeWarnings(['unknown:unknown1', 'unknown:unknown2'])
-  config.logWarnings()
-
-  const warnings = logs.filter(l => l[0] === 'warn')
-  // Check that no new unknown1 or unknown2 warnings were added
-  const hasUnknown1 = warnings.slice(beforeRemoval).some(w => w[1].includes('unknown1'))
-  const hasUnknown2 = warnings.slice(beforeRemoval).some(w => w[1].includes('unknown2'))
-  t.notOk(hasUnknown1, 'unknown1 warnings removed')
-  t.notOk(hasUnknown2, 'unknown2 warnings removed')
 })
 
 t.test('warn false with invalid flag and warning removal', async t => {
@@ -1738,100 +1671,6 @@ t.test('warn false with invalid flag and warning removal', async t => {
   config.logWarnings()
   const afterSecondLog = logs.filter(l => l[0] === 'warn')
   t.equal(afterSecondLog.length, beforeSecondLog, 'no new warnings after removal and logWarnings')
-})
-
-t.test('loadCommand method', async t => {
-  const path = t.testdir()
-  const logs = []
-  const logHandler = (...args) => logs.push(args)
-  process.on('log', logHandler)
-  t.teardown(() => process.off('log', logHandler))
-
-  const commandDefs = createDef('cmd-option', {
-    default: false,
-    type: Boolean,
-    description: 'A command-specific option',
-  })
-
-  const config = new Config({
-    npmPath: `${path}/npm`,
-    env: {},
-    argv: [process.execPath, __filename, '--cmd-option', '--unknown-cmd'],
-    cwd: path,
-    shorthands,
-    definitions,
-    nerfDarts,
-  })
-
-  config.warn = false
-  await config.load()
-
-  // Load command-specific definitions
-  config.loadCommand(commandDefs)
-
-  // Check that cmd-option is now recognized and set to true
-  t.equal(config.get('cmd-option'), true, 'command option loaded from CLI')
-
-  // Check that warnings were removed for the now-defined key
-  config.logWarnings()
-  const warnings = logs.filter(l => l[0] === 'warn' && l[1].includes('cmd-option'))
-  t.equal(warnings.length, 0, 'no warnings for now-defined cmd-option')
-
-  // Check that unknown-cmd still generates a warning
-  const unknownWarnings = logs.filter(l => l[0] === 'warn' && l[1].includes('unknown-cmd'))
-  t.ok(unknownWarnings.length > 0, 'unknown-cmd still generates warning')
-})
-
-t.test('loadCommand with deprecated definitions', async t => {
-  const path = t.testdir()
-  const logs = []
-  const logHandler = (...args) => logs.push(args)
-  process.on('log', logHandler)
-  t.teardown(() => process.off('log', logHandler))
-
-  const commandDefs = createDef('deprecated-opt', {
-    default: 'default',
-    type: String,
-    description: 'A deprecated option',
-    deprecated: 'This option is deprecated',
-  })
-
-  const config = new Config({
-    npmPath: `${path}/npm`,
-    env: {},
-    argv: [process.execPath, __filename, '--deprecated-opt', 'value'],
-    cwd: path,
-    shorthands,
-    definitions,
-    nerfDarts,
-  })
-
-  await config.load()
-  config.loadCommand(commandDefs)
-
-  // Should have deprecation warning
-  const deprecatedWarnings = logs.filter(l =>
-    l[0] === 'warn' && l[1] === 'config' && l[2] === 'deprecated-opt'
-  )
-  t.ok(deprecatedWarnings.length > 0, 'deprecated option warning logged')
-})
-
-t.test('getTypesFromDefinitions with no definitions', async t => {
-  const config = new Config({
-    npmPath: t.testdir(),
-    env: {},
-    argv: [process.execPath, __filename],
-    cwd: process.cwd(),
-    shorthands,
-    definitions,
-    nerfDarts,
-  })
-
-  const result = config.getTypesFromDefinitions(undefined)
-  t.ok(result.types, 'returns types object')
-  t.ok(result.defaults, 'returns defaults object')
-  t.ok(result.deprecated, 'returns deprecated object')
-  t.same(Object.keys(result.types), [], 'empty types for undefined definitions')
 })
 
 t.test('prefix getter when global is true', async t => {
