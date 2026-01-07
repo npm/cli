@@ -1,7 +1,7 @@
 {
   "workspaces": ["packages/*"],
   "dependencies": {
-    "wrappy": "1.0.0",
+    "wrappy": "1.0.2",
     "abbrev": ""
   }
 }
