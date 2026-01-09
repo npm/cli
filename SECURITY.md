@@ -1,13 +1,31 @@
-<!-- This file is automatically added by @npmcli/template-oss. Do not edit. -->
+# Security Policy
 
-GitHub takes the security of our software products and services seriously, including the open source code repositories managed through our GitHub organizations, such as [GitHub](https://github.com/GitHub).
+## Supported Versions
 
-If you believe you have found a security vulnerability in this GitHub-owned open source repository, you can report it to us in one of two ways.
+We actively support and provide security updates for the following versions of `npm`:
 
-If the vulnerability you have found is *not* [in scope for the GitHub Bug Bounty Program](https://bounty.github.com/#scope) or if you do not wish to be considered for a bounty reward, please report the issue to us directly through [opensource-security@github.com](mailto:opensource-security@github.com).
+| Version | Supported          |
+| ------- | ------------------ |
+| v11.x   | :white_check_mark: |
+| v10.x   | :white_check_mark: |
+| < v10   | :x:                |
 
-If the vulnerability you have found is [in scope for the GitHub Bug Bounty Program](https://bounty.github.com/#scope) and you would like for your finding to be considered for a bounty reward, please submit the vulnerability to us through [HackerOne](https://hackerone.com/github) in order to be eligible to receive a bounty award.
+## Reporting a Vulnerability
 
-**Please do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.**
+The `npm` team and the community take security seriously. If you discover a security vulnerability within this project, please **do not** open a public issue. Instead, follow one of these methods:
 
-Thanks for helping make GitHub safe for everyone.
+1. **Private Reporting on GitHub:** Use the [GitHub Security Advisory](https://github.com/npm/cli/security/advisories/new) feature to report privately.
+2. **HackerOne:** You can report vulnerabilities via the [OpenJS Foundation HackerOne program](https://hackerone.com/openjs).
+
+Please include the following in your report:
+- A detailed description of the vulnerability.
+- Steps to reproduce the issue (a Proof of Concept).
+- Potential impact of the vulnerability.
+
+We will acknowledge your report within 48-72 hours and provide a timeline for resolution.
+
+## Disclaimer
+
+Please do not use this policy to request support or report general bugs. Use the [Issues](https://github.com/npm/cli/issues) tab for non-security related matters.
+
+Thank you for helping keep the npm ecosystem safe!
