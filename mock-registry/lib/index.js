@@ -648,6 +648,26 @@ class MockRegistry {
       .matchHeader('authorization', `Bearer ${idToken}`)
       .reply(statusCode, body || {})
   }
+
+  // Trust API methods
+  trustList ({ packageName, responseCode = 200, body = [] }) {
+    const spec = npa(packageName)
+    this.nock = this.nock.get(this.fullPath(`/-/package/${spec.escapedName}/trust`))
+      .reply(responseCode, body)
+  }
+
+  trustCreate ({ packageName, responseCode = 200, body = { ok: true } }) {
+    const spec = npa(packageName)
+    this.nock = this.nock.post(this.fullPath(`/-/package/${spec.escapedName}/trust`))
+      .reply(responseCode, body)
+  }
+
+  trustRevoke ({ packageName, id, responseCode = 200, body = { ok: true } }) {
+    const spec = npa(packageName)
+    const encodedId = encodeURIComponent(id)
+    this.nock = this.nock.delete(this.fullPath(`/-/package/${spec.escapedName}/trust/${encodedId}`))
+      .reply(responseCode, body)
+  }
 }
 
 module.exports = MockRegistry

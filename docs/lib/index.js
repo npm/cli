@@ -40,12 +40,17 @@ const getCommandByDoc = (docFile, docExt) => {
   // `npx` is not technically a command in and of itself,
   // so it just needs the usage of npm exec
   const srcName = name === 'npx' ? 'exec' : name
-  const { params, usage = [''], workspaces } = require(`../../lib/commands/${srcName}`)
+  const command = require(`../../lib/commands/${srcName}`)
+  const { params, usage = [''], workspaces } = command
+  const commandDefinitions = command.definitions || {}
+  const definitionPool = { ...definitions, ...commandDefinitions }
   const usagePrefix = name === 'npx' ? 'npx' : `npm ${name}`
   if (params) {
     for (const param of params) {
-      if (definitions[param].exclusive) {
-        for (const e of definitions[param].exclusive) {
+      // Check command-specific definitions first, fall back to global definitions
+      const paramDef = definitionPool[param]
+      if (paramDef && paramDef.exclusive) {
+        for (const e of paramDef.exclusive) {
           if (!params.includes(e)) {
             params.splice(params.indexOf(param) + 1, 0, e)
           }
@@ -93,16 +98,168 @@ const replaceUsage = (src, { path }) => {
 }
 
 const replaceParams = (src, { path }) => {
-  const { params } = getCommandByDoc(path, DOC_EXT)
-  const replacer = params && assertPlaceholder(src, path, TAGS.CONFIG)
+  const { params, name } = getCommandByDoc(path, DOC_EXT)
 
+  // Load command to get command-specific definitions and subcommands if they exist
+  let commandDefinitions = {}
+  let subcommands = {}
+  try {
+    const command = require(`../../lib/commands/${name}`)
+    commandDefinitions = command.definitions || {}
+    subcommands = command.subcommands || {}
+  } catch {
+    // If command doesn't exist or has no definitions, continue with global definitions only
+  }
+
+  // Check if there's a config placeholder in the source
+  const hasPlaceholder = src.includes(TAGS.CONFIG)
+
+  // If no params and no subcommands, nothing to replace
+  if (!params && Object.keys(subcommands).length === 0) {
+    return src
+  }
+
+  // Only assert placeholder if we have content to replace
+  const replacer = hasPlaceholder ? assertPlaceholder(src, path, TAGS.CONFIG) : null
+
+  if (!replacer) {
+    return src
+  }
+
+  // If command has subcommands, generate sections for each subcommand
+  if (Object.keys(subcommands).length > 0) {
+    const subcommandSections = Object.entries(subcommands).map(([subName, SubCommand]) => {
+      const subUsage = SubCommand.usage || []
+      const subDefinitions = SubCommand.definitions || {}
+      // If params not defined, extract from definitions
+      const subParams = SubCommand.params || Object.keys(subDefinitions)
+
+      const parts = [`### \`npm ${name} ${subName}\``, '']
+
+      if (SubCommand.description) {
+        parts.push(SubCommand.description, '')
+      }
+
+      // Add usage/synopsis
+      if (subUsage.length > 0) {
+        parts.push('#### Synopsis', '', '```bash')
+        subUsage.forEach(u => {
+          parts.push(`npm ${name} ${subName} ${u}`.trim())
+        })
+        parts.push('```', '')
+      }
+
+      // Separate command-specific and global config params for this subcommand
+      const commandSpecificParams = []
+      const globalConfigParams = []
+
+      for (const paramName of subParams) {
+        const isCommandSpecific = subDefinitions[paramName] && !definitions[paramName]
+        if (isCommandSpecific) {
+          commandSpecificParams.push(paramName)
+        } else {
+          globalConfigParams.push(paramName)
+        }
+      }
+
+      // Add command-specific flags section if any exist
+      if (commandSpecificParams.length > 0) {
+        parts.push('#### Flags', '')
+        parts.push('These flags are specific to this subcommand and are not part of npm\'s global configuration or `.npmrc` files.', '')
+
+        commandSpecificParams.forEach((n) => {
+          const def = subDefinitions[n]
+          const shortcuts = def.short ? `\n* Shortcut: \`-${def.short}\`` : ''
+          const defAliases = def.alias || []
+          const aliasText = defAliases.length > 0
+            ? `\n* Aliases: ${defAliases.map(a => `\`--${a}\``).join(', ')}`
+            : ''
+          parts.push(`${def.describe()}${shortcuts}${aliasText}`, '')
+        })
+      }
+
+      // Add global config section if any exist
+      if (globalConfigParams.length > 0) {
+        if (commandSpecificParams.length === 0) {
+          parts.push('#### Configuration', '')
+        }
+        globalConfigParams.forEach((n) => {
+          const def = subDefinitions[n] || definitions[n]
+          const shortcuts = def.short ? `\n* Shortcut: \`-${def.short}\`` : ''
+          const defAliases = def.alias || []
+          const aliasText = defAliases.length > 0
+            ? `\n* Aliases: ${defAliases.map(a => `\`--${a}\``).join(', ')}`
+            : ''
+          parts.push(`${def.describe()}${shortcuts}${aliasText}`, '')
+        })
+      }
+
+      return parts.join('\n')
+    })
+
+    return src.replace(replacer, subcommandSections.join('\n'))
+  }
+
+  // Original behavior for commands without subcommands but with params
   if (!params) {
     return src
   }
 
-  const paramsConfig = params.map((n) => definitions[n].describe())
+  // Separate command-specific and global config params
+  const commandSpecificParams = []
+  const globalConfigParams = []
 
-  return src.replace(replacer, paramsConfig.join('\n\n'))
+  for (const paramName of params) {
+    const isCommandSpecific = commandDefinitions[paramName] && !definitions[paramName]
+    if (isCommandSpecific) {
+      commandSpecificParams.push(paramName)
+    } else {
+      globalConfigParams.push(paramName)
+    }
+  }
+
+  const sections = []
+
+  // Add command-specific flags section if any exist
+  if (commandSpecificParams.length > 0) {
+    const commandSpecificConfig = commandSpecificParams.map((n) => {
+      const def = commandDefinitions[n]
+      const shortcuts = def.short ? `\n* Shortcut: \`-${def.short}\`` : ''
+      const defAliases = def.alias || []
+      const aliasText = defAliases.length > 0
+        ? `\n* Aliases: ${defAliases.map(a => `\`--${a}\``).join(', ')}`
+        : ''
+      return `${def.describe()}${shortcuts}${aliasText}`
+    })
+
+    sections.push(
+      '#### Command-Specific Flags',
+      '',
+      'These flags are specific to this command and are not part of npm\'s global configuration or `.npmrc` files.',
+      '',
+      commandSpecificConfig.join('\n\n')
+    )
+  }
+
+  // Add global config section if any exist
+  if (globalConfigParams.length > 0) {
+    const globalConfig = globalConfigParams.map((n) => {
+      const def = commandDefinitions[n] || definitions[n]
+      const shortcuts = def.short ? `\n* Shortcut: \`-${def.short}\`` : ''
+      const defAliases = def.alias || []
+      const aliasText = defAliases.length > 0
+        ? `\n* Aliases: ${defAliases.map(a => `\`--${a}\``).join(', ')}`
+        : ''
+      return `${def.describe()}${shortcuts}${aliasText}`
+    })
+
+    if (commandSpecificParams.length > 0) {
+      sections.push('', '#### Configuration', '')
+    }
+    sections.push(globalConfig.join('\n\n'))
+  }
+
+  return src.replace(replacer, sections.join('\n'))
 }
 
 const replaceConfig = (src, { path }) => {
