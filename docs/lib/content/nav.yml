@@ -222,18 +222,18 @@
   shortName: Configuring
   url: /configuring-npm
   children:
-    - title: Install
+    - title: folders
+      url: /configuring-npm/folders
+      description: Folder Structures Used by npm
+    - title: install
       url: /configuring-npm/install
       description: Download and install node and npm
-    - title: Folders
-      url: /configuring-npm/folders
-      description: Folder structures used by npm
-    - title: .npmrc
-      url: /configuring-npm/npmrc
-      description: The npm config files
     - title: npm-shrinkwrap.json
       url: /configuring-npm/npm-shrinkwrap-json
       description: A publishable lockfile
+    - title: npmrc
+      url: /configuring-npm/npmrc
+      description: The npm config files
     - title: package.json
       url: /configuring-npm/package-json
       description: Specifics of npm's package.json handling
@@ -244,36 +244,36 @@
   shortName: Using
   url: /using-npm
   children:
-    - title: Registry
-      url: /using-npm/registry
-      description: The JavaScript Package Registry
-    - title: Package spec
-      url: /using-npm/package-spec
-      description: Package name specifier
-    - title: Config
+    - title: config
       url: /using-npm/config
-      description: About npm configuration
-    - title: Logging
-      url: /using-npm/logging
-      description: Why, What & How we Log
-    - title: Scope
-      url: /using-npm/scope
-      description: Scoped packages
-    - title: Scripts
-      url: /using-npm/scripts
-      description: How npm handles the "scripts" field
-    - title: Workspaces
-      url: /using-npm/workspaces
-      description: Working with workspaces
-    - title: Organizations
-      url: /using-npm/orgs
-      description: Working with teams & organizations
-    - title: Dependency Selectors
+      description: More than you probably want to know about npm configuration
+    - title: Dependency Selector Syntax & Querying
       url: /using-npm/dependency-selectors
       description: Dependency Selector Syntax & Querying
-    - title: Developers
+    - title: developers
       url: /using-npm/developers
-      description: Developer guide
-    - title: Removal
+      description: Developer Guide
+    - title: Logging
+      url: /using-npm/logging
+      description: Why, What & How We Log
+    - title: orgs
+      url: /using-npm/orgs
+      description: Working with Teams & Orgs
+    - title: package-spec
+      url: /using-npm/package-spec
+      description: Package name specifier
+    - title: registry
+      url: /using-npm/registry
+      description: The JavaScript Package Registry
+    - title: removal
       url: /using-npm/removal
-      description: Cleaning the slate
+      description: Cleaning the Slate
+    - title: scope
+      url: /using-npm/scope
+      description: Scoped packages
+    - title: scripts
+      url: /using-npm/scripts
+      description: How npm handles the "scripts" field
+    - title: workspaces
+      url: /using-npm/workspaces
+      description: Working with workspaces
