@@ -18,7 +18,7 @@ const dirExists = async (path) => {
 }
 
 // Helper to read docs from a section directory
-const readSectionDocs = async (contentPath, section, defaultChildren) => {
+const readSectionDocs = async (contentPath, section, orderedUrls) => {
   const sectionPath = join(contentPath, section)
   if (!await dirExists(sectionPath)) {
     return []
@@ -33,26 +33,36 @@ const readSectionDocs = async (contentPath, section, defaultChildren) => {
     return []
   }
 
-  // Parse each doc file to get title and description
+  // Parse each doc file to get title and description from frontmatter
   const docs = await Promise.all(
     docFiles.map(async (file) => {
       const content = await fs.readFile(join(sectionPath, file), 'utf-8')
       const { attributes } = parseFrontMatter(content)
       const name = basename(file, DOC_EXT)
 
-      // Try to find default metadata for this file
-      const defaultEntry = defaultChildren.find(c => c.url === `/${section}/${name}`)
-
       return {
-        title: attributes.title || defaultEntry?.title || name,
+        title: attributes.title,
         url: `/${section}/${name}`,
-        description: attributes.description || defaultEntry?.description || '',
+        description: attributes.description,
         name,
       }
     })
   )
 
-  return docs.sort((a, b) => a.name.localeCompare(b.name)).map(({ name, ...rest }) => rest)
+  // Preserve order from orderedUrls, append any new files at the end sorted alphabetically
+  const orderedDocs = []
+  const docsByUrl = new Map(docs.map(d => [d.url, d]))
+
+  // First, add docs in the order they appear in orderedUrls
+  for (const url of orderedUrls) {
+    const doc = docsByUrl.get(url)
+    if (doc) {
+      orderedDocs.push(doc)
+      docsByUrl.delete(url)
+    }
+  }
+
+  return orderedDocs.map(({ name, ...rest }) => rest)
 }
 
 // Generate nav.yml from the filesystem
@@ -80,44 +90,44 @@ const generateNav = async (contentPath, navPath) => {
     })
   )
 
-  // Separate npm, npx, and other commands
-  const npm = allCommands.find(cmd => cmd.name === 'npm')
-  const npx = allCommands.find(cmd => cmd.name === 'npx')
-  const otherCommands = allCommands
-    .filter(cmd => cmd.name !== 'npm' && cmd.name !== 'npx')
+  // Sort commands: npm first, then alphabetically, npx last
+  const npm = allCommands.find(c => c.name === 'npm')
+  const npx = allCommands.find(c => c.name === 'npx')
+  const others = allCommands
+    .filter(c => c.name !== 'npm' && c.name !== 'npx')
     .sort((a, b) => a.name.localeCompare(b.name))
 
-  // Remove the name field and arrange: npm, ...commands, npx
-  const commands = [npm, ...otherCommands, npx].filter(Boolean).map(({ name, ...rest }) => rest)
+  // Remove the name field
+  const commands = [npm, ...others, npx].filter(Boolean).map(({ name, ...rest }) => rest)
 
-  // Default metadata for configuring-npm section
-  const configuringNpmDefaults = [
-    { title: 'Install', url: '/configuring-npm/install', description: 'Download and install node and npm' },
-    { title: 'Folders', url: '/configuring-npm/folders', description: 'Folder structures used by npm' },
-    { title: '.npmrc', url: '/configuring-npm/npmrc', description: 'The npm config files' },
-    { title: 'npm-shrinkwrap.json', url: '/configuring-npm/npm-shrinkwrap-json', description: 'A publishable lockfile' },
-    { title: 'package.json', url: '/configuring-npm/package-json', description: "Specifics of npm's package.json handling" },
-    { title: 'package-lock.json', url: '/configuring-npm/package-lock-json', description: 'A manifestation of the manifest' },
+  // Hardcoded order for configuring-npm section (only urls - title/description come from frontmatter)
+  const configuringNpmOrder = [
+    '/configuring-npm/install',
+    '/configuring-npm/folders',
+    '/configuring-npm/npmrc',
+    '/configuring-npm/npm-shrinkwrap-json',
+    '/configuring-npm/package-json',
+    '/configuring-npm/package-lock-json',
   ]
 
-  // Default metadata for using-npm section
-  const usingNpmDefaults = [
-    { title: 'Registry', url: '/using-npm/registry', description: 'The JavaScript Package Registry' },
-    { title: 'Package spec', url: '/using-npm/package-spec', description: 'Package name specifier' },
-    { title: 'Config', url: '/using-npm/config', description: 'About npm configuration' },
-    { title: 'Logging', url: '/using-npm/logging', description: 'Why, What & How we Log' },
-    { title: 'Scope', url: '/using-npm/scope', description: 'Scoped packages' },
-    { title: 'Scripts', url: '/using-npm/scripts', description: 'How npm handles the "scripts" field' },
-    { title: 'Workspaces', url: '/using-npm/workspaces', description: 'Working with workspaces' },
-    { title: 'Organizations', url: '/using-npm/orgs', description: 'Working with teams & organizations' },
-    { title: 'Dependency Selectors', url: '/using-npm/dependency-selectors', description: 'Dependency Selector Syntax & Querying' },
-    { title: 'Developers', url: '/using-npm/developers', description: 'Developer guide' },
-    { title: 'Removal', url: '/using-npm/removal', description: 'Cleaning the slate' },
+  // Hardcoded order for using-npm section (only urls - title/description come from frontmatter)
+  const usingNpmOrder = [
+    '/using-npm/registry',
+    '/using-npm/package-spec',
+    '/using-npm/config',
+    '/using-npm/logging',
+    '/using-npm/scope',
+    '/using-npm/scripts',
+    '/using-npm/workspaces',
+    '/using-npm/orgs',
+    '/using-npm/dependency-selectors',
+    '/using-npm/developers',
+    '/using-npm/removal',
   ]
 
   // Read actual docs from configuring-npm and using-npm directories
-  const configuringNpmDocs = await readSectionDocs(contentPath, 'configuring-npm', configuringNpmDefaults)
-  const usingNpmDocs = await readSectionDocs(contentPath, 'using-npm', usingNpmDefaults)
+  const configuringNpmDocs = await readSectionDocs(contentPath, 'configuring-npm', configuringNpmOrder)
+  const usingNpmDocs = await readSectionDocs(contentPath, 'using-npm', usingNpmOrder)
 
   // Build the navigation structure - only include sections with content
   const navData = []
@@ -149,12 +159,11 @@ const generateNav = async (contentPath, navPath) => {
     })
   }
 
-  const prefix = `
-# This is the navigation for the documentation pages; it is not used
+  const prefix = `# This is the navigation for the documentation pages; it is not used
 # directly within the CLI documentation.  Instead, it will be used
 # for the https://docs.npmjs.com/ site.
 `
-  await fs.writeFile(navPath, `${prefix}\n\n${yaml.stringify(navData)}`, 'utf-8')
+  await fs.writeFile(navPath, `${prefix}\n${yaml.stringify(navData, { indent: 2, indentSeq: false })}`, 'utf-8')
 }
 
 // Auto-generate doc templates for commands without docs
@@ -265,12 +274,11 @@ ${description}
     commandsSection.children = [npm, ...others, npx].filter(Boolean)
 
     // Write updated nav
-    const prefix = `
-# This is the navigation for the documentation pages; it is not used
+    const prefix = `# This is the navigation for the documentation pages; it is not used
 # directly within the CLI documentation.  Instead, it will be used
 # for the https://docs.npmjs.com/ site.
 `
-    await fs.writeFile(navPath, `${prefix}\n\n${yaml.stringify(navData)}`, 'utf-8')
+    await fs.writeFile(navPath, `${prefix}\n${yaml.stringify(navData, { indent: 2, indentSeq: false })}`, 'utf-8')
   }
 }
 
