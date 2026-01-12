@@ -1739,3 +1739,40 @@ t.test('valid getter with invalid config', async t => {
   const isValid = config.valid
   t.notOk(isValid, 'config is invalid when it has invalid values')
 })
+
+t.test('getUnknownPositionals and removeUnknownPositional', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    // Pass unknown flags with values - the values become "unknown positionals"
+    argv: [process.execPath, __filename, '--unknown-flag1', 'positional1', '--unknown-flag2', 'positional2'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+    warn: false, // Queue warnings instead of logging them
+  })
+
+  await config.load()
+
+  // Get the unknown positionals (values after unknown flags)
+  const unknownPositionals = config.getUnknownPositionals()
+  t.ok(unknownPositionals.includes('positional1'), 'positional1 is in unknown positionals')
+  t.ok(unknownPositionals.includes('positional2'), 'positional2 is in unknown positionals')
+
+  // Remove one positional
+  config.removeUnknownPositional('positional1')
+
+  // Verify it was removed
+  const afterRemoval = config.getUnknownPositionals()
+  t.notOk(afterRemoval.includes('positional1'), 'positional1 was removed')
+  t.ok(afterRemoval.includes('positional2'), 'positional2 still exists')
+
+  // Remove the second positional
+  config.removeUnknownPositional('positional2')
+
+  // Verify all are removed
+  const afterSecondRemoval = config.getUnknownPositionals()
+  t.equal(afterSecondRemoval.length, 0, 'no unknown positionals remain')
+})
