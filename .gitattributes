@@ -18,6 +18,7 @@
 /DEPENDENCIES.md text eol=lf
 /DEPENDENCIES.json text eol=lf
 /AUTHORS text eol=lf
+/docs/lib/content/nav.yml text eol=lf
 
 # fixture tarballs should be treated as binary
 /workspaces/*/test/fixtures/**/*.tgz binary
