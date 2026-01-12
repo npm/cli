@@ -22,6 +22,7 @@ const allowed = [
   'typeDescription',
   'usage',
   'envExport',
+  'alias',
 ]
 
 const {

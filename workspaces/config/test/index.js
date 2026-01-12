@@ -1144,7 +1144,7 @@ t.test('nerfdart auths set at the top level into the registry', async t => {
       // now we go ahead and do the repair, and save
       c.repair()
       await c.save('user')
-      t.same(c.list[3], expect)
+      t.same(c.data.get('user').data, expect)
     })
   }
 })
@@ -1586,4 +1586,156 @@ t.test('abbreviation expansion warnings', async t => {
   t.match(filtered, [
     ['warn', 'Expanding --bef to --before. This will stop working in the next major version of npm'],
   ], 'Warns about expanded abbreviations')
+})
+
+t.test('warning suppression and logging', async t => {
+  const path = t.testdir()
+  const logs = []
+  const logHandler = (...args) => logs.push(args)
+  process.on('log', logHandler)
+  t.teardown(() => process.off('log', logHandler))
+
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--unknown-key', 'value'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  // Load first to collect warnings
+  await config.load()
+
+  // Now disable warnings and trigger more
+  config.warn = false
+  config.queueWarning('test-type', 'test warning 1')
+  config.queueWarning('test-type2', 'test warning 2')
+
+  // Should have warnings collected but not logged
+  const initialWarnings = logs.filter(l => l[0] === 'warn')
+  const beforeCount = initialWarnings.length
+
+  // Now log the warnings
+  config.warn = true
+  config.logWarnings()
+  const afterLogging = logs.filter(l => l[0] === 'warn')
+  t.ok(afterLogging.length > beforeCount, 'warnings logged after logWarnings()')
+
+  // Calling logWarnings again should not add more warnings
+  const warningCount = afterLogging.length
+  config.logWarnings()
+  const finalWarnings = logs.filter(l => l[0] === 'warn')
+  t.equal(finalWarnings.length, warningCount, 'no duplicate warnings after second logWarnings()')
+})
+
+t.test('warn false with invalid flag and warning removal', async t => {
+  const path = t.testdir()
+  const logs = []
+  const logHandler = (...args) => logs.push(args)
+  process.on('log', logHandler)
+  t.teardown(() => process.off('log', logHandler))
+
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--invalid-flag', 'value'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  config.warn = false
+  await config.load()
+
+  // First logWarnings call - should log the queued warning
+  const logsBeforeFirst = logs.filter(l => l[0] === 'warn').length
+  config.logWarnings()
+  const logsAfterFirst = logs.filter(l => l[0] === 'warn')
+
+  // Check we have warnings and the invalid-flag warning is there
+  t.ok(logsAfterFirst.length > logsBeforeFirst, 'warnings were logged')
+  const invalidFlagWarnings = logsAfterFirst.filter(w => w[1] && w[1].includes('invalid-flag'))
+  t.ok(invalidFlagWarnings.length > 0, 'invalid-flag warning present')
+
+  // Trigger the same warning again
+  config.checkUnknown('cli', 'invalid-flag')
+
+  // Remove the warning
+  config.removeWarning('invalid-flag')
+
+  // Call logWarnings again - should not add the invalid-flag warning since we removed it
+  const beforeSecondLog = logs.filter(l => l[0] === 'warn').length
+  config.logWarnings()
+  const afterSecondLog = logs.filter(l => l[0] === 'warn')
+  t.equal(afterSecondLog.length, beforeSecondLog, 'no new warnings after removal and logWarnings')
+})
+
+t.test('prefix getter when global is true', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--global'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  await config.load()
+  t.equal(config.prefix, config.globalPrefix, 'prefix returns globalPrefix when global=true')
+})
+
+t.test('prefix getter when global is false', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  await config.load()
+  t.equal(config.prefix, config.localPrefix, 'prefix returns localPrefix when global=false')
+})
+
+t.test('find throws when config not loaded', async t => {
+  const config = new Config({
+    npmPath: t.testdir(),
+    env: {},
+    argv: [process.execPath, __filename],
+    cwd: process.cwd(),
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  t.throws(
+    () => config.find('registry'),
+    /call config\.load\(\) before reading values/,
+    'find throws before load'
+  )
+})
+
+t.test('valid getter with invalid config', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--maxsockets', 'not-a-number'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  await config.load()
+  const isValid = config.valid
+  t.notOk(isValid, 'config is invalid when it has invalid values')
 })
