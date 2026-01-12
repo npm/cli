@@ -3,7 +3,28 @@ const { join } = require('path')
 const walk = require('ignore-walk')
 const fs = require('fs/promises')
 const yaml = require('yaml')
-const { paths: { content: CONTENT_DIR, nav: NAV, template: TEMPLATE } } = require('../lib/index.js')
+const {
+  paths: { content: CONTENT_DIR, nav: NAV, template: TEMPLATE },
+  testing: { registerCommand, clearCommandRegistry },
+} = require('../lib/index.js')
+
+// Helper to generate nav entries from content structure
+const generateNavFromContent = (content, prefix = '') => {
+  const entries = []
+  for (const [key, value] of Object.entries(content)) {
+    if (key.endsWith('.md')) {
+      const name = key.replace('.md', '')
+      const url = prefix ? `${prefix}/${name}` : `/${name}`
+      entries.push({ url })
+    } else if (typeof value === 'object') {
+      const children = generateNavFromContent(value, `/${key}`)
+      if (children.length > 0) {
+        entries.push(...children)
+      }
+    }
+  }
+  return entries
+}
 
 const testBuildDocs = async (t, { verify, ...opts } = {}) => {
   const mockedBuild = require('../lib/build.js')
@@ -20,6 +41,12 @@ const testBuildDocs = async (t, { verify, ...opts } = {}) => {
     fixtures.content.commands = {}
   }
 
+  // If custom content is provided but not custom nav, auto-generate nav from content
+  if (fixtures.content && !fixtures.nav) {
+    const navEntries = generateNavFromContent(fixtures.content)
+    fixtures.nav = yaml.stringify(navEntries)
+  }
+
   const root = t.testdir(fixtures)
 
   const paths = {
@@ -31,6 +58,8 @@ const testBuildDocs = async (t, { verify, ...opts } = {}) => {
     md: join(root, 'md'),
     // Skip auto-generation of missing docs when using test fixtures
     skipAutoGenerate: !!fixtures.content,
+    // Skip nav generation when using test fixtures with custom content
+    skipGenerateNav: !!fixtures.content,
   }
 
   return {
@@ -560,6 +589,355 @@ t.test('command-specific definitions with missing command file', async t => {
   })
 })
 
+t.test('generateNav', async t => {
+  const { generateNav } = require('../lib/build.js')
+
+  t.test('commands directory does not exist', async t => {
+    // Tests line 63: await dirExists(docsCommandsPath) ? await fs.readdir(docsCommandsPath) : []
+    // When commands directory doesn't exist, should return empty array
+    const testDir = t.testdir({
+      content: {
+        // No commands directory
+        'configuring-npm': {
+          'install.md': `---
+title: Install
+section: 5
+description: Download and install node and npm
+---`,
+        },
+      },
+      'nav.yml': '',
+    })
+
+    const contentPath = join(testDir, 'content')
+    const navPath = join(testDir, 'nav.yml')
+
+    await generateNav(contentPath, navPath)
+
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    // Should NOT have CLI Commands section since commands dir doesn't exist
+    const commandsSection = navData.find(s => s.title === 'CLI Commands')
+    t.notOk(commandsSection, 'no CLI Commands section when commands directory is missing')
+
+    // Should still have configuring-npm section
+    const configuringSection = navData.find(s => s.title === 'Configuring npm')
+    t.ok(configuringSection, 'has configuring-npm section')
+  })
+
+  t.test('command title fallback to name', async t => {
+    // Tests line 72: (attributes.title || name).replace(/^npm-/, 'npm ')
+    // When command doc has no title, should use filename as title
+    const testDir = t.testdir({
+      content: {
+        commands: {
+          // Command doc WITHOUT title in frontmatter - should use name
+          'npm-test-cmd.md': `---
+section: 1
+description: A test command
+---
+
+Content here`,
+        },
+      },
+      'nav.yml': '',
+    })
+
+    const contentPath = join(testDir, 'content')
+    const navPath = join(testDir, 'nav.yml')
+
+    await generateNav(contentPath, navPath)
+
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    const commandsSection = navData.find(s => s.title === 'CLI Commands')
+    t.ok(commandsSection, 'has CLI Commands section')
+
+    const testCmdEntry = commandsSection.children.find(c => c.url === '/commands/npm-test-cmd')
+    t.ok(testCmdEntry, 'has test-cmd entry')
+    // Should use name ('npm-test-cmd') and replace 'npm-' with 'npm '
+    t.equal(testCmdEntry.title, 'npm test-cmd', 'uses name with npm- replaced to npm space')
+  })
+
+  t.test('command description fallback to empty string', async t => {
+    // Tests line 77: description: attributes.description || ''
+    // When command doc has no description, should use empty string
+    const testDir = t.testdir({
+      content: {
+        commands: {
+          // Command doc WITHOUT description in frontmatter - should use ''
+          'npm-no-desc.md': `---
+title: npm-no-desc
+section: 1
+---
+
+Content here`,
+        },
+      },
+      'nav.yml': '',
+    })
+
+    const contentPath = join(testDir, 'content')
+    const navPath = join(testDir, 'nav.yml')
+
+    await generateNav(contentPath, navPath)
+
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    const commandsSection = navData.find(s => s.title === 'CLI Commands')
+    t.ok(commandsSection, 'has CLI Commands section')
+
+    const noDescEntry = commandsSection.children.find(c => c.url === '/commands/npm-no-desc')
+    t.ok(noDescEntry, 'has no-desc entry')
+    // Should use empty string since no description in frontmatter
+    t.equal(noDescEntry.description, '', 'uses empty string when no description')
+  })
+
+  t.test('readSectionDocs title fallback to defaultEntry.title', async t => {
+    // This tests line 47: attributes.title || defaultEntry?.title || name
+    // Specifically the defaultEntry?.title branch when attributes.title is missing
+    const testDir = t.testdir({
+      content: {
+        commands: {
+          'npm.md': `---
+title: npm
+section: 1
+description: javascript package manager
+---`,
+        },
+        'configuring-npm': {
+          // Doc without title in frontmatter - should use defaultEntry.title
+          'install.md': `---
+section: 5
+description: Download and install node and npm
+---
+
+Content here`,
+        },
+      },
+      'nav.yml': '',
+    })
+
+    const contentPath = join(testDir, 'content')
+    const navPath = join(testDir, 'nav.yml')
+
+    await generateNav(contentPath, navPath)
+
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    // Find the configuring-npm section
+    const configuringSection = navData.find(s => s.title === 'Configuring npm')
+    t.ok(configuringSection, 'has configuring-npm section')
+
+    const installEntry = configuringSection.children.find(c => c.url === '/configuring-npm/install')
+    t.ok(installEntry, 'has install entry')
+    // Should use defaultEntry.title ('Install') since attributes.title is missing
+    t.equal(installEntry.title, 'Install', 'uses defaultEntry.title when attributes.title is missing')
+  })
+
+  t.test('readSectionDocs title fallback to name', async t => {
+    // This tests line 47: attributes.title || defaultEntry?.title || name
+    // Specifically the name fallback when both attributes.title and defaultEntry are missing
+    const testDir = t.testdir({
+      content: {
+        commands: {
+          'npm.md': `---
+title: npm
+section: 1
+description: javascript package manager
+---`,
+        },
+        'configuring-npm': {
+          // Doc without title AND no matching defaultEntry (custom-doc is not in defaults)
+          'custom-doc.md': `---
+section: 5
+description: A custom document
+---
+
+Content here`,
+        },
+      },
+      'nav.yml': '',
+    })
+
+    const contentPath = join(testDir, 'content')
+    const navPath = join(testDir, 'nav.yml')
+
+    await generateNav(contentPath, navPath)
+
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    // Find the configuring-npm section
+    const configuringSection = navData.find(s => s.title === 'Configuring npm')
+    t.ok(configuringSection, 'has configuring-npm section')
+
+    const customEntry = configuringSection.children.find(c => c.url === '/configuring-npm/custom-doc')
+    t.ok(customEntry, 'has custom-doc entry')
+    // Should use name ('custom-doc') since both attributes.title and defaultEntry are missing
+    t.equal(customEntry.title, 'custom-doc', 'uses name when both attributes.title and defaultEntry are missing')
+  })
+
+  t.test('readSectionDocs title uses attributes.title when present', async t => {
+    // This tests line 47: attributes.title || defaultEntry?.title || name
+    // Specifically when attributes.title IS present (first branch)
+    const testDir = t.testdir({
+      content: {
+        commands: {
+          'npm.md': `---
+title: npm
+section: 1
+description: javascript package manager
+---`,
+        },
+        'configuring-npm': {
+          // Doc WITH title in frontmatter - should use attributes.title
+          'install.md': `---
+title: Custom Install Title
+section: 5
+description: Download and install node and npm
+---
+
+Content here`,
+        },
+      },
+      'nav.yml': '',
+    })
+
+    const contentPath = join(testDir, 'content')
+    const navPath = join(testDir, 'nav.yml')
+
+    await generateNav(contentPath, navPath)
+
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    // Find the configuring-npm section
+    const configuringSection = navData.find(s => s.title === 'Configuring npm')
+    t.ok(configuringSection, 'has configuring-npm section')
+
+    const installEntry = configuringSection.children.find(c => c.url === '/configuring-npm/install')
+    t.ok(installEntry, 'has install entry')
+    // Should use attributes.title since it's present
+    t.equal(installEntry.title, 'Custom Install Title', 'uses attributes.title when present')
+  })
+
+  t.test('using-npm section title fallbacks', async t => {
+    // Test using-npm section with the same three branches
+    const testDir = t.testdir({
+      content: {
+        commands: {
+          'npm.md': `---
+title: npm
+section: 1
+description: javascript package manager
+---`,
+        },
+        'using-npm': {
+          // Doc with title in frontmatter
+          'registry.md': `---
+title: Custom Registry Title
+section: 7
+description: The JavaScript Package Registry
+---`,
+          // Doc without title, should use defaultEntry.title
+          'scope.md': `---
+section: 7
+description: Scoped packages
+---`,
+          // Doc without title and not in defaults, should use name
+          'unknown-topic.md': `---
+section: 7
+description: An unknown topic
+---`,
+        },
+      },
+      'nav.yml': '',
+    })
+
+    const contentPath = join(testDir, 'content')
+    const navPath = join(testDir, 'nav.yml')
+
+    await generateNav(contentPath, navPath)
+
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    const usingSection = navData.find(s => s.title === 'Using npm')
+    t.ok(usingSection, 'has using-npm section')
+
+    const registryEntry = usingSection.children.find(c => c.url === '/using-npm/registry')
+    t.equal(registryEntry.title, 'Custom Registry Title', 'uses attributes.title for registry')
+
+    const scopeEntry = usingSection.children.find(c => c.url === '/using-npm/scope')
+    t.equal(scopeEntry.title, 'Scope', 'uses defaultEntry.title for scope')
+
+    const unknownEntry = usingSection.children.find(c => c.url === '/using-npm/unknown-topic')
+    t.equal(unknownEntry.title, 'unknown-topic', 'uses name for unknown-topic')
+  })
+
+  t.test('description fallback branches', async t => {
+    // Tests line 49: description: attributes.description || defaultEntry?.description || ''
+    const testDir = t.testdir({
+      content: {
+        commands: {
+          'npm.md': `---
+title: npm
+section: 1
+description: javascript package manager
+---`,
+        },
+        'configuring-npm': {
+          // Doc WITH description in frontmatter - uses attributes.description
+          'install.md': `---
+title: Install
+section: 5
+description: Custom install description from frontmatter
+---`,
+          // Doc WITHOUT description, but matches defaultEntry - uses defaultEntry.description
+          'folders.md': `---
+title: Folders
+section: 5
+---`,
+          // Doc WITHOUT description AND no matching defaultEntry - uses empty string
+          'custom-no-desc.md': `---
+title: Custom Doc
+section: 5
+---`,
+        },
+      },
+      'nav.yml': '',
+    })
+
+    const contentPath = join(testDir, 'content')
+    const navPath = join(testDir, 'nav.yml')
+
+    await generateNav(contentPath, navPath)
+
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    const configuringSection = navData.find(s => s.title === 'Configuring npm')
+    t.ok(configuringSection, 'has configuring-npm section')
+
+    // Branch 1: attributes.description is present
+    const installEntry = configuringSection.children.find(c => c.url === '/configuring-npm/install')
+    t.equal(installEntry.description, 'Custom install description from frontmatter', 'uses attributes.description when present')
+
+    // Branch 2: defaultEntry?.description (folders is in defaults)
+    const foldersEntry = configuringSection.children.find(c => c.url === '/configuring-npm/folders')
+    t.equal(foldersEntry.description, 'Folder structures used by npm', 'uses defaultEntry.description when attributes.description is missing')
+
+    // Branch 3: empty string fallback (custom-no-desc is not in defaults)
+    const customEntry = configuringSection.children.find(c => c.url === '/configuring-npm/custom-no-desc')
+    t.equal(customEntry.description, '', 'uses empty string when both attributes.description and defaultEntry are missing')
+  })
+})
+
 t.test('replaceParams with name edge cases', async t => {
   // Test the conditions around the catch block more explicitly
   t.test('npm command (no params)', async t => {
@@ -577,5 +955,464 @@ t.test('replaceParams with name edge cases', async t => {
     await testCommandDoc(t, 'npm-access', 'Set access level on published packages', {
       match: [/registry/],
     })
+  })
+
+  t.test('command with subcommands and aliases (trust)', async t => {
+    // Tests subcommand code path including line 184 (aliases in subcommand definitions)
+    // npm trust has subcommands with definitions that include aliases (repo, env)
+    await testCommandDoc(t, 'npm-trust', 'Create a trusted relationship between a package and a OIDC provider', {
+      match: [/Aliases/, /--repo/, /--env/],
+    })
+  })
+})
+// Test harness for injecting custom commands to test edge cases
+t.test('command injection test harness', async t => {
+  // Clear the registry after each test
+  t.afterEach(() => {
+    clearCommandRegistry()
+  })
+
+  t.test('command without description', async t => {
+    // Register a command without a description
+    registerCommand('testcmd-nodesc', {
+      usage: ['<pkg>'],
+      params: ['registry'],
+    })
+
+    const doc = createCommandDoc('npm-testcmd-nodesc', 'Test command without description')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-nodesc.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-nodesc')
+    t.ok(htmlContent.length > 0, 'generates HTML for command without description')
+    t.match(htmlContent, /registry/, 'includes registry param')
+  })
+
+  t.test('command without usage', async t => {
+    // Register a command without usage - should default to ['']
+    registerCommand('testcmd-nousage', {
+      params: ['registry'],
+    })
+
+    const doc = createCommandDoc('npm-testcmd-nousage', 'Test command without usage')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-nousage.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-nousage')
+    t.ok(htmlContent.length > 0, 'generates HTML for command without usage')
+    t.match(htmlContent, /npm testcmd-nousage/, 'includes command name in usage')
+  })
+
+  t.test('command without params (no definitions)', async t => {
+    // Register a command without params - should not have config section content
+    registerCommand('testcmd-noparams', {
+      usage: ['<pkg>'],
+      // No params specified
+    })
+
+    // Use a doc without the config placeholder since this command has no params
+    const doc = `---
+title: npm-testcmd-noparams
+section: 1
+description: Test command without params
+---
+
+### Synopsis
+
+<!-- AUTOGENERATED USAGE DESCRIPTIONS -->
+`
+
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-noparams.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-noparams')
+    t.ok(htmlContent.length > 0, 'generates HTML for command without params')
+    t.match(htmlContent, /npm testcmd-noparams/, 'includes command name')
+  })
+
+  t.test('command with one definition with short flag', async t => {
+    // Register a command with a custom definition that has a short flag
+    registerCommand('testcmd-short', {
+      usage: ['<pkg>'],
+      params: ['custom-flag'],
+      definitions: {
+        'custom-flag': {
+          key: 'custom-flag',
+          default: false,
+          type: Boolean,
+          short: 'c',
+          description: 'A custom flag with a short version',
+          describe: () => '#### `custom-flag`\n\n* Default: false\n* Type: Boolean\n\nA custom flag with a short version',
+        },
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-short', 'Test command with short flag')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-short.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-short')
+    t.ok(htmlContent.length > 0, 'generates HTML for command with short flag')
+    t.match(htmlContent, /custom-flag/, 'includes custom flag')
+    t.match(htmlContent, /-c/, 'includes short flag')
+  })
+
+  t.test('command with definition with aliases', async t => {
+    // Register a command with a definition that has aliases
+    registerCommand('testcmd-alias', {
+      usage: ['<pkg>'],
+      params: ['aliased-flag'],
+      definitions: {
+        'aliased-flag': {
+          key: 'aliased-flag',
+          default: '',
+          type: String,
+          alias: ['af', 'alias-flag'],
+          description: 'A flag with aliases',
+          describe: () => '#### `aliased-flag`\n\n* Default: ""\n* Type: String\n\nA flag with aliases',
+        },
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-alias', 'Test command with aliased flag')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-alias.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-alias')
+    t.ok(htmlContent.length > 0, 'generates HTML for command with aliases')
+    t.match(htmlContent, /aliased-flag/, 'includes aliased flag')
+    t.match(htmlContent, /Aliases/, 'includes aliases section')
+    t.match(htmlContent, /--af/, 'includes first alias')
+    t.match(htmlContent, /--alias-flag/, 'includes second alias')
+  })
+
+  t.test('command with subcommands', async t => {
+    // Register a command with subcommands
+    class SubA {
+      static description = 'Subcommand A description'
+      static usage = ['<arg>']
+      static definitions = {
+        'sub-a-flag': {
+          key: 'sub-a-flag',
+          default: false,
+          type: Boolean,
+          describe: () => '#### `sub-a-flag`\n\n* Default: false\n* Type: Boolean\n\nFlag for subcommand A',
+        },
+      }
+    }
+
+    class SubB {
+      static description = 'Subcommand B description'
+      static usage = ['[options]']
+      static params = ['registry']
+    }
+
+    registerCommand('testcmd-subs', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        'sub-a': SubA,
+        'sub-b': SubB,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-subs', 'Test command with subcommands')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-subs.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-subs')
+    t.ok(htmlContent.length > 0, 'generates HTML for command with subcommands')
+    t.match(htmlContent, /npm testcmd-subs sub-a/, 'includes sub-a subcommand')
+    t.match(htmlContent, /npm testcmd-subs sub-b/, 'includes sub-b subcommand')
+    t.match(htmlContent, /Subcommand A description/, 'includes sub-a description')
+    t.match(htmlContent, /sub-a-flag/, 'includes sub-a specific flag')
+  })
+
+  t.test('command with exclusive params', async t => {
+    // Register a command with exclusive params that expand
+    registerCommand('testcmd-exclusive', {
+      usage: ['<pkg>'],
+      // save has exclusive params (save-dev, save-optional, etc)
+      params: ['save'],
+    })
+
+    const doc = createCommandDoc('npm-testcmd-exclusive', 'Test command with exclusive params')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-exclusive.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-exclusive')
+    t.ok(htmlContent.length > 0, 'generates HTML for command with exclusive params')
+    // The exclusive params should be expanded from 'save'
+    t.match(htmlContent, /save/, 'includes save param')
+  })
+
+  t.test('command without workspaces', async t => {
+    // Register a command that is not workspace-aware
+    registerCommand('testcmd-noworkspaces', {
+      usage: ['<pkg>'],
+      params: ['registry'],
+      workspaces: false,
+    })
+
+    const doc = createCommandDoc('npm-testcmd-noworkspaces', 'Test command without workspaces')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-noworkspaces.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-noworkspaces')
+    t.ok(htmlContent.length > 0, 'generates HTML for command without workspaces')
+    t.match(htmlContent, /unaware of workspaces/, 'includes workspaces note')
+  })
+
+  t.test('command with workspaces enabled', async t => {
+    // Register a command that IS workspace-aware
+    registerCommand('testcmd-workspaces', {
+      usage: ['<pkg>'],
+      params: ['registry'],
+      workspaces: true,
+    })
+
+    const doc = createCommandDoc('npm-testcmd-workspaces', 'Test command with workspaces')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-workspaces.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-workspaces')
+    t.ok(htmlContent.length > 0, 'generates HTML for command with workspaces')
+    t.notMatch(htmlContent, /unaware of workspaces/, 'does NOT include workspaces note')
+  })
+
+  t.test('subcommand without description', async t => {
+    // Register a command with a subcommand that has no description
+    class SubNoDesc {
+      static usage = ['<arg>']
+      static definitions = {
+        flag: {
+          key: 'flag',
+          default: false,
+          type: Boolean,
+          describe: () => '#### `flag`\n\n* Default: false\n* Type: Boolean\n\nA flag',
+        },
+      }
+    }
+
+    registerCommand('testcmd-sub-nodesc', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        mysub: SubNoDesc,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-sub-nodesc', 'Test command with subcommand without description')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-sub-nodesc.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-nodesc')
+    t.ok(htmlContent.length > 0, 'generates HTML for subcommand without description')
+    t.match(htmlContent, /npm testcmd-sub-nodesc mysub/, 'includes subcommand')
+  })
+
+  t.test('subcommand without usage', async t => {
+    // Register a command with a subcommand that has no usage
+    class SubNoUsage {
+      static description = 'Subcommand without usage'
+      static definitions = {
+        flag: {
+          key: 'flag',
+          default: false,
+          type: Boolean,
+          describe: () => '#### `flag`\n\n* Default: false\n* Type: Boolean\n\nA flag',
+        },
+      }
+    }
+
+    registerCommand('testcmd-sub-nousage', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        mysub: SubNoUsage,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-sub-nousage', 'Test command with subcommand without usage')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-sub-nousage.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-nousage')
+    t.ok(htmlContent.length > 0, 'generates HTML for subcommand without usage')
+    t.match(htmlContent, /Subcommand without usage/, 'includes subcommand description')
+  })
+
+  t.test('subcommand with short flag and alias', async t => {
+    // Register a command with a subcommand that has definitions with short and alias
+    class SubWithShortAlias {
+      static description = 'Subcommand with short and alias'
+      static usage = ['<arg>']
+      static definitions = {
+        'complex-flag': {
+          key: 'complex-flag',
+          default: '',
+          type: String,
+          short: 'x',
+          alias: ['cf', 'cflag'],
+          describe: () => '#### `complex-flag`\n\n* Default: ""\n* Type: String\n\nA complex flag',
+        },
+      }
+    }
+
+    registerCommand('testcmd-sub-complex', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        mysub: SubWithShortAlias,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-sub-complex', 'Test command with complex subcommand')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-sub-complex.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-complex')
+    t.ok(htmlContent.length > 0, 'generates HTML for subcommand with short and alias')
+    t.match(htmlContent, /complex-flag/, 'includes complex flag')
+    t.match(htmlContent, /-x/, 'includes short flag')
+    t.match(htmlContent, /Aliases/, 'includes aliases')
+    t.match(htmlContent, /--cf/, 'includes first alias')
+    t.match(htmlContent, /--cflag/, 'includes second alias')
+  })
+
+  t.test('subcommand with explicit params (not derived from definitions)', async t => {
+    // Register a command with a subcommand that has explicit params array
+    class SubWithParams {
+      static description = 'Subcommand with explicit params'
+      static usage = ['<arg>']
+      static params = ['registry', 'tag']
+    }
+
+    registerCommand('testcmd-sub-params', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        mysub: SubWithParams,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-sub-params', 'Test command with subcommand with explicit params')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-sub-params.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-params')
+    t.ok(htmlContent.length > 0, 'generates HTML for subcommand with explicit params')
+    t.match(htmlContent, /registry/, 'includes registry param')
+    t.match(htmlContent, /tag/, 'includes tag param')
+  })
+
+  t.test('command with mixed command-specific and global params', async t => {
+    // Register a command that has both command-specific definitions AND global params
+    registerCommand('testcmd-mixed', {
+      usage: ['<pkg>'],
+      params: ['custom-only', 'registry'],
+      definitions: {
+        'custom-only': {
+          key: 'custom-only',
+          default: false,
+          type: Boolean,
+          description: 'A command-specific flag',
+          describe: () => '#### `custom-only`\n\n* Default: false\n* Type: Boolean\n\nA command-specific flag',
+        },
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-mixed', 'Test command with mixed params')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-mixed.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-mixed')
+    t.ok(htmlContent.length > 0, 'generates HTML for command with mixed params')
+    t.match(htmlContent, /custom-only/, 'includes command-specific flag')
+    t.match(htmlContent, /registry/, 'includes global registry param')
+  })
+
+  t.test('subcommand with global config param that has alias in subDefinitions', async t => {
+    // This specifically tests the aliasText branch in globalConfigParams (line ~214)
+    // We need a subcommand that uses a global param but overrides it with an alias in subDefinitions
+    const { definitions: globalDefs } = require('@npmcli/config/lib/definitions')
+
+    class SubWithGlobalAlias {
+      static description = 'Subcommand using global param with alias override'
+      static usage = ['<pkg>']
+      static params = ['registry']
+      // Define registry in subDefinitions with an alias - this shadows the global definition
+      static definitions = {
+        registry: {
+          ...globalDefs.registry,
+          alias: ['reg', 'r'],
+          describe: () => globalDefs.registry.describe(),
+        },
+      }
+    }
+
+    registerCommand('testcmd-sub-global-alias', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        mysub: SubWithGlobalAlias,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-sub-global-alias', 'Test subcommand with global aliased param')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-sub-global-alias.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-global-alias')
+    t.ok(htmlContent.length > 0, 'generates HTML for subcommand with global aliased param')
+    t.match(htmlContent, /registry/, 'includes registry param')
+    t.match(htmlContent, /Aliases/, 'includes aliases in global config section')
+    t.match(htmlContent, /--reg/, 'includes first alias')
+    t.match(htmlContent, /--r/, 'includes second alias')
   })
 })

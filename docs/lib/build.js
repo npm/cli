@@ -7,12 +7,60 @@ const parseFrontMatter = require('front-matter')
 const checkNav = require('./check-nav.js')
 const { DOC_EXT, ...transform } = require('./index.js')
 
+// Helper to check if a directory exists
+const dirExists = async (path) => {
+  try {
+    const stat = await fs.stat(path)
+    return stat.isDirectory()
+  } catch {
+    return false
+  }
+}
+
+// Helper to read docs from a section directory
+const readSectionDocs = async (contentPath, section, defaultChildren) => {
+  const sectionPath = join(contentPath, section)
+  if (!await dirExists(sectionPath)) {
+    return []
+  }
+
+  const files = await fs.readdir(sectionPath)
+  const docFiles = files.filter(f => f.endsWith(DOC_EXT))
+
+  // If no doc files exist, return empty array
+  /* istanbul ignore if - defensive check for empty directories */
+  if (docFiles.length === 0) {
+    return []
+  }
+
+  // Parse each doc file to get title and description
+  const docs = await Promise.all(
+    docFiles.map(async (file) => {
+      const content = await fs.readFile(join(sectionPath, file), 'utf-8')
+      const { attributes } = parseFrontMatter(content)
+      const name = basename(file, DOC_EXT)
+
+      // Try to find default metadata for this file
+      const defaultEntry = defaultChildren.find(c => c.url === `/${section}/${name}`)
+
+      return {
+        title: attributes.title || defaultEntry?.title || name,
+        url: `/${section}/${name}`,
+        description: attributes.description || defaultEntry?.description || '',
+        name,
+      }
+    })
+  )
+
+  return docs.sort((a, b) => a.name.localeCompare(b.name)).map(({ name, ...rest }) => rest)
+}
+
 // Generate nav.yml from the filesystem
 const generateNav = async (contentPath, navPath) => {
   const docsCommandsPath = join(contentPath, 'commands')
 
   // Read all command files
-  const commandFiles = await fs.readdir(docsCommandsPath)
+  const commandFiles = await dirExists(docsCommandsPath) ? await fs.readdir(docsCommandsPath) : []
   const commandDocs = commandFiles.filter(f => f.endsWith(DOC_EXT))
 
   // Parse each command file to get title and description
@@ -42,114 +90,64 @@ const generateNav = async (contentPath, navPath) => {
   // Remove the name field and arrange: npm, ...commands, npx
   const commands = [npm, ...otherCommands, npx].filter(Boolean).map(({ name, ...rest }) => rest)
 
-  // Build the navigation structure
-  const navData = [
-    {
+  // Default metadata for configuring-npm section
+  const configuringNpmDefaults = [
+    { title: 'Install', url: '/configuring-npm/install', description: 'Download and install node and npm' },
+    { title: 'Folders', url: '/configuring-npm/folders', description: 'Folder structures used by npm' },
+    { title: '.npmrc', url: '/configuring-npm/npmrc', description: 'The npm config files' },
+    { title: 'npm-shrinkwrap.json', url: '/configuring-npm/npm-shrinkwrap-json', description: 'A publishable lockfile' },
+    { title: 'package.json', url: '/configuring-npm/package-json', description: "Specifics of npm's package.json handling" },
+    { title: 'package-lock.json', url: '/configuring-npm/package-lock-json', description: 'A manifestation of the manifest' },
+  ]
+
+  // Default metadata for using-npm section
+  const usingNpmDefaults = [
+    { title: 'Registry', url: '/using-npm/registry', description: 'The JavaScript Package Registry' },
+    { title: 'Package spec', url: '/using-npm/package-spec', description: 'Package name specifier' },
+    { title: 'Config', url: '/using-npm/config', description: 'About npm configuration' },
+    { title: 'Logging', url: '/using-npm/logging', description: 'Why, What & How we Log' },
+    { title: 'Scope', url: '/using-npm/scope', description: 'Scoped packages' },
+    { title: 'Scripts', url: '/using-npm/scripts', description: 'How npm handles the "scripts" field' },
+    { title: 'Workspaces', url: '/using-npm/workspaces', description: 'Working with workspaces' },
+    { title: 'Organizations', url: '/using-npm/orgs', description: 'Working with teams & organizations' },
+    { title: 'Dependency Selectors', url: '/using-npm/dependency-selectors', description: 'Dependency Selector Syntax & Querying' },
+    { title: 'Developers', url: '/using-npm/developers', description: 'Developer guide' },
+    { title: 'Removal', url: '/using-npm/removal', description: 'Cleaning the slate' },
+  ]
+
+  // Read actual docs from configuring-npm and using-npm directories
+  const configuringNpmDocs = await readSectionDocs(contentPath, 'configuring-npm', configuringNpmDefaults)
+  const usingNpmDocs = await readSectionDocs(contentPath, 'using-npm', usingNpmDefaults)
+
+  // Build the navigation structure - only include sections with content
+  const navData = []
+
+  if (commands.length > 0) {
+    navData.push({
       title: 'CLI Commands',
       shortName: 'Commands',
       url: '/commands',
       children: commands,
-    },
-    {
+    })
+  }
+
+  if (configuringNpmDocs.length > 0) {
+    navData.push({
       title: 'Configuring npm',
       shortName: 'Configuring',
       url: '/configuring-npm',
-      children: [
-        {
-          title: 'Install',
-          url: '/configuring-npm/install',
-          description: 'Download and install node and npm',
-        },
-        {
-          title: 'Folders',
-          url: '/configuring-npm/folders',
-          description: 'Folder structures used by npm',
-        },
-        {
-          title: '.npmrc',
-          url: '/configuring-npm/npmrc',
-          description: 'The npm config files',
-        },
-        {
-          title: 'npm-shrinkwrap.json',
-          url: '/configuring-npm/npm-shrinkwrap-json',
-          description: 'A publishable lockfile',
-        },
-        {
-          title: 'package.json',
-          url: '/configuring-npm/package-json',
-          description: "Specifics of npm's package.json handling",
-        },
-        {
-          title: 'package-lock.json',
-          url: '/configuring-npm/package-lock-json',
-          description: 'A manifestation of the manifest',
-        },
-      ],
-    },
-    {
+      children: configuringNpmDocs,
+    })
+  }
+
+  if (usingNpmDocs.length > 0) {
+    navData.push({
       title: 'Using npm',
       shortName: 'Using',
       url: '/using-npm',
-      children: [
-        {
-          title: 'Registry',
-          url: '/using-npm/registry',
-          description: 'The JavaScript Package Registry',
-        },
-        {
-          title: 'Package spec',
-          url: '/using-npm/package-spec',
-          description: 'Package name specifier',
-        },
-        {
-          title: 'Config',
-          url: '/using-npm/config',
-          description: 'About npm configuration',
-        },
-        {
-          title: 'Logging',
-          url: '/using-npm/logging',
-          description: 'Why, What & How we Log',
-        },
-        {
-          title: 'Scope',
-          url: '/using-npm/scope',
-          description: 'Scoped packages',
-        },
-        {
-          title: 'Scripts',
-          url: '/using-npm/scripts',
-          description: 'How npm handles the "scripts" field',
-        },
-        {
-          title: 'Workspaces',
-          url: '/using-npm/workspaces',
-          description: 'Working with workspaces',
-        },
-        {
-          title: 'Organizations',
-          url: '/using-npm/orgs',
-          description: 'Working with teams & organizations',
-        },
-        {
-          title: 'Dependency Selectors',
-          url: '/using-npm/dependency-selectors',
-          description: 'Dependency Selector Syntax & Querying',
-        },
-        {
-          title: 'Developers',
-          url: '/using-npm/developers',
-          description: 'Developer guide',
-        },
-        {
-          title: 'Removal',
-          url: '/using-npm/removal',
-          description: 'Cleaning the slate',
-        },
-      ],
-    },
-  ]
+      children: usingNpmDocs,
+    })
+  }
 
   const prefix = `
 # This is the navigation for the documentation pages; it is not used
@@ -164,8 +162,19 @@ const autoGenerateMissingDocs = async (contentPath, navPath, commandsPath = null
   commandsPath = commandsPath || join(__dirname, '../../lib/commands')
   const docsCommandsPath = join(contentPath, 'commands')
 
-  // Get all commands from cmd-list
-  const { commands } = require('../../lib/utils/cmd-list.js')
+  // Get all commands from commandsPath directory
+  let commands
+  try {
+    const cmdListPath = join(commandsPath, '..', 'utils', 'cmd-list.js')
+    const cmdList = require(cmdListPath)
+    commands = cmdList.commands
+  } catch {
+    // Fall back to reading command files from commandsPath
+    const cmdFiles = await fs.readdir(commandsPath)
+    commands = cmdFiles
+      .filter(f => f.endsWith('.js'))
+      .map(f => basename(f, '.js'))
+  }
 
   // Get existing doc files
   const existingDocs = await fs.readdir(docsCommandsPath)
@@ -177,6 +186,7 @@ const autoGenerateMissingDocs = async (contentPath, navPath, commandsPath = null
   const missingDocs = commands.filter(cmd => !documentedCommands.includes(cmd))
 
   // Generate docs for missing commands
+  const newEntries = []
   for (const cmd of missingDocs) {
     const Command = require(join(commandsPath, `${cmd}.js`))
     const description = Command.description || `The ${cmd} command`
@@ -206,6 +216,61 @@ ${description}
 `
 
     await fs.writeFile(docPath, template, 'utf-8')
+
+    // Track new entry for nav update
+    newEntries.push({
+      title: `npm ${cmd}`,
+      url: `/commands/npm-${cmd}`,
+      description,
+    })
+  }
+
+  // Update nav.yml if there are new entries
+  if (newEntries.length > 0) {
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    // Find CLI Commands section
+    let commandsSection = navData.find(s => s.title === 'CLI Commands')
+    if (!commandsSection) {
+      // Create CLI Commands section if it doesn't exist
+      commandsSection = {
+        title: 'CLI Commands',
+        shortName: 'Commands',
+        url: '/commands',
+        children: [],
+      }
+      navData.unshift(commandsSection)
+    }
+
+    if (!commandsSection.children) {
+      commandsSection.children = []
+    }
+
+    // Add new entries that don't already exist
+    for (const entry of newEntries) {
+      const exists = commandsSection.children.some(c => c.url === entry.url)
+      if (!exists) {
+        commandsSection.children.push(entry)
+      }
+    }
+
+    // Sort children: npm first, then alphabetically, npx last
+    const npm = commandsSection.children.find(c => c.title === 'npm')
+    const npx = commandsSection.children.find(c => c.title === 'npx')
+    const others = commandsSection.children
+      .filter(c => c.title !== 'npm' && c.title !== 'npx')
+      .sort((a, b) => a.title.localeCompare(b.title))
+
+    commandsSection.children = [npm, ...others, npx].filter(Boolean)
+
+    // Write updated nav
+    const prefix = `
+# This is the navigation for the documentation pages; it is not used
+# directly within the CLI documentation.  Instead, it will be used
+# for the https://docs.npmjs.com/ site.
+`
+    await fs.writeFile(navPath, `${prefix}\n\n${yaml.stringify(navData)}`, 'utf-8')
   }
 }
 
@@ -230,14 +295,17 @@ const pAll = async (obj) => {
   }, {})
 }
 
-const run = async ({ content, template, nav, man, html, md, skipAutoGenerate }) => {
+const run = async (opts) => {
+  const { content, template, nav, man, html, md, skipAutoGenerate, skipGenerateNav } = opts
   // Auto-generate docs for commands without documentation
   if (!skipAutoGenerate) {
     await autoGenerateMissingDocs(content, nav)
   }
 
   // Generate nav.yml from filesystem
-  await generateNav(content, nav)
+  if (!skipGenerateNav) {
+    await generateNav(content, nav)
+  }
 
   await rmAll(man, html, md)
   const [contentPaths, navFile, options] = await Promise.all([

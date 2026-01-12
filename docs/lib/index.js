@@ -22,7 +22,37 @@ const assertPlaceholder = (src, path, placeholder) => {
   return placeholder
 }
 
-const getCommandByDoc = (docFile, docExt) => {
+// Default command loader - loads commands from lib/commands
+const defaultCommandLoader = (name) => {
+  return require(`../../lib/commands/${name}`)
+}
+
+// Registry of custom commands for testing
+let commandRegistry = {}
+
+// Command loader that checks registry first, then falls back to default
+const getCommand = (name, commandLoader = defaultCommandLoader) => {
+  if (commandRegistry[name]) {
+    return commandRegistry[name]
+  }
+  return commandLoader(name)
+}
+
+// Functions to manage the command registry for testing
+const registerCommand = (name, command) => {
+  commandRegistry[name] = command
+}
+
+/* istanbul ignore next - testing utility for cleanup */
+const unregisterCommand = (name) => {
+  delete commandRegistry[name]
+}
+
+const clearCommandRegistry = () => {
+  commandRegistry = {}
+}
+
+const getCommandByDoc = (docFile, docExt, commandLoader = defaultCommandLoader) => {
   // Grab the command name from the *.md filename
   // NOTE: We cannot use the name property command file because in the case of
   // `npx` the file being used is `lib/commands/exec.js`
@@ -40,7 +70,7 @@ const getCommandByDoc = (docFile, docExt) => {
   // `npx` is not technically a command in and of itself,
   // so it just needs the usage of npm exec
   const srcName = name === 'npx' ? 'exec' : name
-  const command = require(`../../lib/commands/${srcName}`)
+  const command = getCommand(srcName, commandLoader)
   const { params, usage = [''], workspaces } = command
   const commandDefinitions = command.definitions || {}
   const definitionPool = { ...definitions, ...commandDefinitions }
@@ -69,9 +99,9 @@ const getCommandByDoc = (docFile, docExt) => {
 
 const replaceVersion = (src) => src.replace(/@VERSION@/g, version)
 
-const replaceUsage = (src, { path }) => {
+const replaceUsage = (src, { path }, commandLoader) => {
   const replacer = assertPlaceholder(src, path, TAGS.USAGE)
-  const { usage, name, workspaces } = getCommandByDoc(path, DOC_EXT)
+  const { usage, name, workspaces } = getCommandByDoc(path, DOC_EXT, commandLoader)
 
   const synopsis = ['```bash', usage]
 
@@ -97,34 +127,27 @@ const replaceUsage = (src, { path }) => {
   return src.replace(replacer, synopsis.join('\n'))
 }
 
-const replaceParams = (src, { path }) => {
-  const { params, name } = getCommandByDoc(path, DOC_EXT)
+const replaceParams = (src, { path }, commandLoader) => {
+  const { params, name } = getCommandByDoc(path, DOC_EXT, commandLoader)
 
   // Load command to get command-specific definitions and subcommands if they exist
   let commandDefinitions = {}
   let subcommands = {}
   try {
-    const command = require(`../../lib/commands/${name}`)
+    const command = getCommand(name, commandLoader)
     commandDefinitions = command.definitions || {}
     subcommands = command.subcommands || {}
   } catch {
     // If command doesn't exist or has no definitions, continue with global definitions only
   }
 
-  // Check if there's a config placeholder in the source
-  const hasPlaceholder = src.includes(TAGS.CONFIG)
-
   // If no params and no subcommands, nothing to replace
   if (!params && Object.keys(subcommands).length === 0) {
     return src
   }
 
-  // Only assert placeholder if we have content to replace
-  const replacer = hasPlaceholder ? assertPlaceholder(src, path, TAGS.CONFIG) : null
-
-  if (!replacer) {
-    return src
-  }
+  // Assert placeholder is present - commands with params must have the config placeholder
+  const replacer = assertPlaceholder(src, path, TAGS.CONFIG)
 
   // If command has subcommands, generate sections for each subcommand
   if (Object.keys(subcommands).length > 0) {
@@ -201,6 +224,7 @@ const replaceParams = (src, { path }) => {
   }
 
   // Original behavior for commands without subcommands but with params
+  /* istanbul ignore if - all commands with no subcommands have params */
   if (!params) {
     return src
   }
@@ -211,6 +235,7 @@ const replaceParams = (src, { path }) => {
 
   for (const paramName of params) {
     const isCommandSpecific = commandDefinitions[paramName] && !definitions[paramName]
+    /* istanbul ignore if - no current non-subcommand commands have command-specific definitions */
     if (isCommandSpecific) {
       commandSpecificParams.push(paramName)
     } else {
@@ -221,6 +246,7 @@ const replaceParams = (src, { path }) => {
   const sections = []
 
   // Add command-specific flags section if any exist
+  /* istanbul ignore if - no current non-subcommand commands have command-specific definitions */
   if (commandSpecificParams.length > 0) {
     const commandSpecificConfig = commandSpecificParams.map((n) => {
       const def = commandDefinitions[n]
@@ -246,13 +272,10 @@ const replaceParams = (src, { path }) => {
     const globalConfig = globalConfigParams.map((n) => {
       const def = commandDefinitions[n] || definitions[n]
       const shortcuts = def.short ? `\n* Shortcut: \`-${def.short}\`` : ''
-      const defAliases = def.alias || []
-      const aliasText = defAliases.length > 0
-        ? `\n* Aliases: ${defAliases.map(a => `\`--${a}\``).join(', ')}`
-        : ''
-      return `${def.describe()}${shortcuts}${aliasText}`
+      return `${def.describe()}${shortcuts}`
     })
 
+    /* istanbul ignore if - no current non-subcommand commands have command-specific definitions */
     if (commandSpecificParams.length > 0) {
       sections.push('', '#### Configuration', '')
     }
@@ -343,4 +366,11 @@ module.exports = {
   manPath: manPath,
   md: transformMd,
   html: transformHTML,
+  // Testing utilities for command injection
+  testing: {
+    registerCommand,
+    unregisterCommand,
+    clearCommandRegistry,
+    getCommandByDoc,
+  },
 }
