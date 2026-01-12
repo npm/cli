@@ -32,7 +32,7 @@ t.test('trust-cmd via trust github with read function called', async t => {
 
   registry.trustCreate({ packageName })
 
-  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo'])
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli'])
 })
 
 t.test('trust-cmd via trust github with all options', async t => {
@@ -57,7 +57,7 @@ t.test('trust-cmd via trust github with all options', async t => {
 
   registry.trustCreate({ packageName })
 
-  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo', '--environment', 'production'])
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli', '--environment', 'production'])
 })
 
 t.test('trust-cmd via trust github infers from package.json', async t => {
@@ -66,7 +66,7 @@ t.test('trust-cmd via trust github infers from package.json', async t => {
       'package.json': JSON.stringify({
         name: packageName,
         version: '1.0.0',
-        repository: 'https://github.com/owner/repo',
+        repository: 'https://github.com/npm/cli',
       }),
     },
     config: {
@@ -108,7 +108,7 @@ t.test('trust-cmd via trust github with dry-run', async t => {
     },
   })
 
-  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo'])
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli'])
 
   t.ok(logs.notice.some(l => l.includes('Establishing trust')), 'shows notice about establishing trust')
 })
@@ -122,7 +122,7 @@ t.test('trust-cmd via trust github missing package name', async t => {
   })
 
   await t.rejects(
-    npm.exec('trust', ['github', '--file', 'workflow.yml', '--repository', 'owner/repo']),
+    npm.exec('trust', ['github', '--file', 'workflow.yml', '--repository', 'npm/cli']),
     { message: /Package name must be specified/ },
     'throws when no package name'
   )
@@ -141,7 +141,7 @@ t.test('trust-cmd via trust github missing file', async t => {
   })
 
   await t.rejects(
-    npm.exec('trust', ['github', packageName, '--repository', 'owner/repo']),
+    npm.exec('trust', ['github', packageName, '--repository', 'npm/cli']),
     { message: /must be specified with the file option/ },
     'throws when no file'
   )
@@ -160,7 +160,7 @@ t.test('trust-cmd via trust github invalid file extension', async t => {
   })
 
   await t.rejects(
-    npm.exec('trust', ['github', packageName, '--file', 'workflow.txt', '--repository', 'owner/repo']),
+    npm.exec('trust', ['github', packageName, '--file', 'workflow.txt', '--repository', 'npm/cli']),
     { message: /must end in \.yml or \.yaml/ },
     'throws when file has wrong extension'
   )
@@ -200,7 +200,7 @@ t.test('trust-cmd via trust github with custom registry warning', async t => {
     },
   })
 
-  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo'])
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli'])
 
   t.ok(logs.warn.some(l => l.includes('may not support trusted publishing')), 'warns about custom registry')
 })
@@ -220,7 +220,7 @@ t.test('trust-cmd via trust github with --json', async t => {
     },
   })
 
-  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo'])
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli'])
 
   const output = joinedOutput()
   t.ok(output.includes(packageName), 'JSON output includes package name')
@@ -250,7 +250,7 @@ t.test('trust-cmd via trust github with user confirmation no', async t => {
   })
 
   await t.rejects(
-    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo']),
+    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli']),
     { message: 'User cancelled operation' },
     'throws when user declines'
   )
@@ -271,7 +271,7 @@ t.test('trust-cmd via trust github with --no-yes', async t => {
   })
 
   await t.rejects(
-    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo']),
+    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli']),
     { message: 'User cancelled operation' },
     'throws when --no-yes flag is set'
   )
@@ -300,7 +300,7 @@ t.test('trust-cmd via trust github with invalid answer', async t => {
   })
 
   await t.rejects(
-    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo']),
+    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli']),
     { message: 'User cancelled operation' },
     'throws when user gives invalid answer'
   )
@@ -336,7 +336,7 @@ t.test('trust-cmd via trust github with user confirmation Y uppercase', async t 
 
   registry.trustCreate({ packageName })
 
-  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo'])
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli'])
 })
 
 t.test('trust-cmd via trust github with user enters empty string', async t => {
@@ -362,7 +362,7 @@ t.test('trust-cmd via trust github with user enters empty string', async t => {
   })
 
   await t.rejects(
-    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo']),
+    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli']),
     { message: 'User cancelled operation' },
     'throws when user enters empty string'
   )
@@ -374,7 +374,7 @@ t.test('trust-cmd via trust github with mismatched repo type', async t => {
       'package.json': JSON.stringify({
         name: packageName,
         version: '1.0.0',
-        repository: 'https://gitlab.com/owner/repo',
+        repository: 'https://gitlab.com/npm/cli',
       }),
     },
     config: {
@@ -459,7 +459,7 @@ t.test('trust-cmd via trust github with user confirmation yes spelled out', asyn
 
   registry.trustCreate({ packageName })
 
-  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo'])
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli'])
 })
 
 t.test('trust-cmd via trust github showing response with id and type', async t => {
@@ -492,7 +492,7 @@ t.test('trust-cmd via trust github showing response with id and type', async t =
       id: 'config-id-123',
       type: 'github',
       claims: {
-        repository: 'owner/repo',
+        repository: 'npm/cli',
         workflow_ref: {
           file: 'workflow.yml',
         },
@@ -500,7 +500,7 @@ t.test('trust-cmd via trust github showing response with id and type', async t =
     },
   })
 
-  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo'])
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli'])
 
   const output = joinedOutput()
   t.ok(output.includes('type:'), 'output shows type field')
@@ -586,7 +586,7 @@ t.test('trust-cmd via trust github showing fromPackageJson indicator', async t =
       'package.json': JSON.stringify({
         name: packageName,
         version: '1.0.0',
-        repository: 'https://github.com/owner/repo',
+        repository: 'https://github.com/npm/cli',
       }),
     },
     config: {
@@ -611,7 +611,7 @@ t.test('trust-cmd via trust github showing fromPackageJson indicator', async t =
       id: 'config-id-123',
       type: 'github',
       claims: {
-        repository: 'owner/repo',
+        repository: 'npm/cli',
         workflow_ref: {
           file: 'workflow.yml',
         },
@@ -655,7 +655,7 @@ t.test('trust-cmd via trust github showing URLs for fields', async t => {
       id: 'config-id-123',
       type: 'github',
       claims: {
-        repository: 'owner/repo',
+        repository: 'npm/cli',
         workflow_ref: {
           file: 'workflow.yml',
         },
@@ -663,10 +663,10 @@ t.test('trust-cmd via trust github showing URLs for fields', async t => {
     },
   })
 
-  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo'])
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli'])
 
   const output = joinedOutput()
-  t.ok(output.includes('https://github.com/owner/repo'), 'output shows repository URL')
+  t.match(output, /https:\/\/github\.com\/npm\/cli\b/, 'output shows repository URL')
 })
 
 t.test('trust-cmd via trust github with yes=false flag', async t => {
@@ -684,7 +684,7 @@ t.test('trust-cmd via trust github with yes=false flag', async t => {
   })
 
   await t.rejects(
-    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'owner/repo']),
+    npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli']),
     { message: /User cancelled operation/ },
     'throws when yes is explicitly false'
   )
@@ -769,18 +769,18 @@ t.test('TrustCommand - logOptions with fromPackageJson and urls', async t => {
     values: {
       type: 'github',
       id: 'test-id',
-      repository: 'owner/repo',
+      repository: 'npm/cli',
       file: 'workflow.yml',
     },
     fromPackageJson: {
       repository: true,
     },
     urls: {
-      repository: 'https://github.com/owner/repo',
-      file: 'https://github.com/owner/repo/-/blob/HEAD/workflow.yml',
+      repository: 'https://github.com/npm/cli',
+      file: 'https://github.com/npm/cli/-/blob/HEAD/workflow.yml',
     },
   })
   const output = joinedOutput()
   t.ok(output.includes('from package.json'), 'shows fromPackageJson indicator')
-  t.ok(output.includes('https://github.com/owner/repo'), 'shows URL')
+  t.match(output, /https:\/\/github\.com\/npm\/cli\b/, 'shows URL')
 })
