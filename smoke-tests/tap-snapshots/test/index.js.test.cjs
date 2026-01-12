@@ -28,8 +28,9 @@ All commands:
     link, ll, login, logout, ls, org, outdated, owner, pack,
     ping, pkg, prefix, profile, prune, publish, query, rebuild,
     repo, restart, root, run, sbom, search, set, shrinkwrap,
-    star, stars, start, stop, team, test, token, undeprecate,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    star, stars, start, stop, team, test, token, trust,
+    undeprecate, uninstall, unpublish, unstar, update, version,
+    view, whoami
 
 Specify configs in the ini-formatted file:
     {NPM}/{TESTDIR}/home/.npmrc
@@ -61,6 +62,55 @@ npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-a
 npm error [--no-bin-links] [--no-fund] [--dry-run]
 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 npm error [--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error   --install-strategy
+npm error     Sets the strategy for installing packages in node_modules.
+npm error
+npm error   --legacy-bundling
+npm error     Instead of hoisting package installs in \`node_modules\`, install packages
+npm error
+npm error   --global-style
+npm error     Only install direct dependencies in the top level \`node_modules\`,
+npm error
+npm error   --omit
+npm error     Dependency types to omit from the installation tree on disk.
+npm error
+npm error   --include
+npm error     Option that allows for defining which types of dependencies to install.
+npm error
+npm error   --strict-peer-deps
+npm error     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+npm error
+npm error   --foreground-scripts
+npm error     Run all build scripts (ie, \`preinstall\`, \`install\`, and
+npm error
+npm error   --ignore-scripts
+npm error     If true, npm does not run scripts specified in package.json files.
+npm error
+npm error   --audit
+npm error     When "true" submit audit reports alongside the current npm command to the
+npm error
+npm error   --bin-links
+npm error     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+npm error
+npm error   --fund
+npm error     When "true" displays the message at the end of each \`npm install\`
+npm error
+npm error   --dry-run
+npm error     Indicates that you don't want npm to make any changes and that it should
+npm error
+npm error   -w||--workspace
+npm error     Enable running a command in the context of the configured workspaces of the
+npm error
+npm error   --workspaces
+npm error     Set to true to run the command in the context of **all** configured
+npm error
+npm error   --include-workspace-root
+npm error     Include the workspace root when workspaces are enabled for a command.
+npm error
+npm error   --install-links
+npm error     When set file: protocol dependencies will be packed and installed as
+npm error
 npm error
 npm error aliases: clean-install, ic, install-clean, isntall-clean
 npm error
