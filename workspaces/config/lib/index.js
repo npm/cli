@@ -540,7 +540,7 @@ class Config {
 
   unknownHandler (key, next) {
     if (next) {
-      this.queueWarning('unknown', `"${next}" is being parsed as a normal command line argument.`)
+      this.queueWarning(`unknown:${next}`, `"${next}" is being parsed as a normal command line argument.`)
     }
   }
 
@@ -921,6 +921,16 @@ class Config {
 
   removeWarning (key) {
     this.#warnings = this.#warnings.filter(w => w.type !== key)
+  }
+
+  getUnknownPositionals () {
+    return this.#warnings
+      .filter(w => w.type.startsWith('unknown:'))
+      .map(w => w.type.slice('unknown:'.length))
+  }
+
+  removeUnknownPositional (value) {
+    this.removeWarning(`unknown:${value}`)
   }
 
   queueWarning (type, ...args) {
