@@ -98,8 +98,7 @@ t.test('usage', async t => {
   const docsCommands = await readdir(join(docs.paths.content, 'commands'), docs.DOC_EXT)
   const bareCommands = ['npm', 'npx']
 
-  // XXX: These extra commands exist as js files but not as docs pages
-  const allDocs = docsCommands.concat(['get', 'set', 'll']).map(n => n.replace('npm-', ''))
+  const allDocs = docsCommands.map(n => n.replace('npm-', ''))
 
   // ensure that the list of js files in commands, docs files, and the command list
   // are all in sync. eg, this will error if a command is removed but not its docs file
