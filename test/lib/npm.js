@@ -558,7 +558,7 @@ t.test('exec edge cases', async t => {
   })
 
   t.test('color true sets COLOR env to 1', async t => {
-    const { npm } = await loadMockNpm(t, {
+    await loadMockNpm(t, {
       config: { color: 'always' },
     })
     t.equal(process.env.COLOR, '1', 'COLOR env is set to 1 when color is truthy')
@@ -602,10 +602,10 @@ t.test('exec edge cases', async t => {
     // Create a simple command instance
     const Command = npm.constructor.cmd('version')
     const commandInstance = new Command(npm)
-    
+
     // Call execCommandClass without providing commandPath (using default [])
     await npm.execCommandClass(commandInstance, [])
-    
+
     t.pass('execCommandClass works with default commandPath parameter')
   })
 
@@ -644,7 +644,7 @@ t.test('exec edge cases', async t => {
         execFlags = flags
       }
 
-      async execWorkspaces (args, flags) {
+      async execWorkspaces () {
         throw new Error('execWorkspaces should not be called')
       }
     }
@@ -701,7 +701,7 @@ t.test('exec edge cases', async t => {
         }),
       }
 
-      async exec (args, flags) {
+      async exec () {
         throw new Error('exec should not be called')
       }
 
