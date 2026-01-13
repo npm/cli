@@ -128,7 +128,7 @@ t.test('github without environment', async t => {
 })
 
 t.test('bodyToOptions with all fields', t => {
-  const TrustGitHub = require('../../../../lib/commands/trust/trust-github.js')
+  const TrustGitHub = require('../../../../lib/commands/trust/github.js')
 
   const body = {
     id: 'test-id',
