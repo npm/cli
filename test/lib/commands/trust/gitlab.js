@@ -128,7 +128,7 @@ t.test('gitlab without environment', async t => {
 })
 
 t.test('bodyToOptions with all fields', t => {
-  const TrustGitLab = require('../../../../lib/commands/trust/trust-gitlab.js')
+  const TrustGitLab = require('../../../../lib/commands/trust/gitlab.js')
 
   const body = {
     id: 'test-id',
