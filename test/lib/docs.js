@@ -90,8 +90,20 @@ t.test('basic usage', async t => {
 
 t.test('usage', async t => {
   const readdir = async (dir, ext) => {
-    const files = await fs.readdir(dir)
-    return files.filter(f => extname(f) === ext).map(f => basename(f, ext))
+    const files = await fs.readdir(dir, { withFileTypes: true })
+    return files
+      .filter(f => {
+        // Include .js files
+        if (f.isFile() && extname(f.name) === ext) {
+          return true
+        }
+        // Include directories (which should have an index.js)
+        if (f.isDirectory()) {
+          return true
+        }
+        return false
+      })
+      .map(f => f.isDirectory() ? f.name : basename(f.name, ext))
   }
 
   const fsCommands = await readdir(resolve(__dirname, '../../lib/commands'), '.js')
