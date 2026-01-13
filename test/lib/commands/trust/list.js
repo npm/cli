@@ -1,10 +1,10 @@
 const t = require('tap')
-const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
+const { load: loadMockNpm } = require('../../../fixtures/mock-npm.js')
 const MockRegistry = require('@npmcli/mock-registry')
 
 const packageName = '@npmcli/test-package'
 
-t.test('trust-list with package name argument', async t => {
+t.test('list with package name argument', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -51,7 +51,7 @@ t.test('trust-list with package name argument', async t => {
   await npm.exec('trust', ['list', packageName])
 })
 
-t.test('trust-list without package name (uses package.json)', async t => {
+t.test('list without package name (uses package.json)', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -88,7 +88,7 @@ t.test('trust-list without package name (uses package.json)', async t => {
   await npm.exec('trust', ['list'])
 })
 
-t.test('trust-list with no trust configurations', async t => {
+t.test('list with no trust configurations', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -112,7 +112,7 @@ t.test('trust-list with no trust configurations', async t => {
   await npm.exec('trust', ['list', packageName])
 })
 
-t.test('trust-list without package name and no package.json', async t => {
+t.test('list without package name and no package.json', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {},
     config: {
@@ -126,7 +126,7 @@ t.test('trust-list without package name and no package.json', async t => {
   )
 })
 
-t.test('trust-list without package name and no name in package.json', async t => {
+t.test('list without package name and no name in package.json', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -144,7 +144,7 @@ t.test('trust-list without package name and no name in package.json', async t =>
   )
 })
 
-t.test('trust-list with --json flag', async t => {
+t.test('list with --json flag', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -183,7 +183,7 @@ t.test('trust-list with --json flag', async t => {
   await npm.exec('trust', ['list', packageName])
 })
 
-t.test('trust-list with scoped package', async t => {
+t.test('list with scoped package', async t => {
   const scopedPackage = '@scope/package'
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
@@ -221,7 +221,7 @@ t.test('trust-list with scoped package', async t => {
   await npm.exec('trust', ['list', scopedPackage])
 })
 
-t.test('trust-list with unknown trust type', async t => {
+t.test('list with unknown trust type', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({

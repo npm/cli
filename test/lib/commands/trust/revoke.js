@@ -1,10 +1,10 @@
 const t = require('tap')
-const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
+const { load: loadMockNpm } = require('../../../fixtures/mock-npm.js')
 const MockRegistry = require('@npmcli/mock-registry')
 
 const packageName = '@npmcli/test-package'
 
-t.test('trust-revoke with package name argument and id', async t => {
+t.test('revoke with package name argument and id', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -29,7 +29,7 @@ t.test('trust-revoke with package name argument and id', async t => {
   await npm.exec('trust', ['revoke', packageName, '--id', trustId])
 })
 
-t.test('trust-revoke without package name (uses package.json)', async t => {
+t.test('revoke without package name (uses package.json)', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -54,7 +54,7 @@ t.test('trust-revoke without package name (uses package.json)', async t => {
   await npm.exec('trust', ['revoke', '--id', trustId])
 })
 
-t.test('trust-revoke with dry-run flag', async t => {
+t.test('revoke with dry-run flag', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -74,7 +74,7 @@ t.test('trust-revoke with dry-run flag', async t => {
   await npm.exec('trust', ['revoke', packageName, '--id', trustId])
 })
 
-t.test('trust-revoke without package name and no package.json', async t => {
+t.test('revoke without package name and no package.json', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {},
     config: {
@@ -88,7 +88,7 @@ t.test('trust-revoke without package name and no package.json', async t => {
   )
 })
 
-t.test('trust-revoke without package name and no name in package.json', async t => {
+t.test('revoke without package name and no name in package.json', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -106,7 +106,7 @@ t.test('trust-revoke without package name and no name in package.json', async t 
   )
 })
 
-t.test('trust-revoke without id flag', async t => {
+t.test('revoke without id flag', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -125,7 +125,7 @@ t.test('trust-revoke without id flag', async t => {
   )
 })
 
-t.test('trust-revoke with scoped package', async t => {
+t.test('revoke with scoped package', async t => {
   const scopedPackage = '@scope/package'
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
@@ -151,7 +151,7 @@ t.test('trust-revoke with scoped package', async t => {
   await npm.exec('trust', ['revoke', scopedPackage, '--id', trustId])
 })
 
-t.test('trust-revoke with special characters in id', async t => {
+t.test('revoke with special characters in id', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -176,7 +176,7 @@ t.test('trust-revoke with special characters in id', async t => {
   await npm.exec('trust', ['revoke', packageName, '--id', trustId])
 })
 
-t.test('trust-revoke with 404 response', async t => {
+t.test('revoke with 404 response', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -209,7 +209,7 @@ t.test('trust-revoke with 404 response', async t => {
   )
 })
 
-t.test('trust-revoke with 500 response', async t => {
+t.test('revoke with 500 response', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -242,7 +242,7 @@ t.test('trust-revoke with 500 response', async t => {
   )
 })
 
-t.test('trust-revoke with unscoped package name', async t => {
+t.test('revoke with unscoped package name', async t => {
   const unscopedPackage = 'test-package'
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
@@ -268,7 +268,7 @@ t.test('trust-revoke with unscoped package name', async t => {
   await npm.exec('trust', ['revoke', unscopedPackage, '--id', trustId])
 })
 
-t.test('trust-revoke with very long id', async t => {
+t.test('revoke with very long id', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -293,7 +293,7 @@ t.test('trust-revoke with very long id', async t => {
   await npm.exec('trust', ['revoke', packageName, '--id', trustId])
 })
 
-t.test('trust-revoke with UUID id format', async t => {
+t.test('revoke with UUID id format', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
