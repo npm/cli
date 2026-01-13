@@ -988,6 +988,7 @@ t.test('setting basic auth creds and email', async t => {
   const opts = {
     shorthands: {},
     argv: ['node', __filename, `--userconfig=${path}/.npmrc`],
+    env: {},
     definitions: {
       registry: { default: registry },
     },
@@ -1024,6 +1025,7 @@ t.test('setting username/password/email individually', async t => {
   const opts = {
     shorthands: {},
     argv: ['node', __filename, `--userconfig=${path}/.npmrc`],
+    env: {},
     definitions: {
       registry: { default: registry },
     },
