@@ -1,4 +1,53 @@
----
+import { useState } from "react"; import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button";
+
+export default function NumeroWeb() { const [numero, setNumero] = useState(null); const [form, setForm] = useState({ nombre: "", celular: "" });
+
+const numeros = Array.from({ length: 100 }, (_, i) => i.toString().padStart(2, "0") );
+
+return ( <div className="min-h-screen bg-gray-100 p-6"> <h1 className="text-3xl font-bold text-center mb-6"> Elige tu número (00–99) </h1>
+
+{!numero && (
+    <div className="grid grid-cols-5 md:grid-cols-10 gap-2 max-w-3xl mx-auto">
+      {numeros.map((n) => (
+        <Button key={n} onClick={() => setNumero(n)}>
+          {n}
+        </Button>
+      ))}
+    </div>
+  )}
+
+  {numero && (
+    <Card className="max-w-md mx-auto mt-6">
+      <CardContent className="p-6 space-y-4">
+        <h2 className="text-xl font-semibold">
+          Número seleccionado: {numero}
+        </h2>
+
+        <input
+          className="w-full p-2 border rounded"
+          placeholder="Nombre completo"
+          value={form.nombre}
+          onChange={(e) => setForm({ ...form, nombre: e.target.value })}
+        />
+
+        <input
+          className="w-full p-2 border rounded"
+          placeholder="Número de celular"
+          value={form.celular}
+          onChange={(e) => setForm({ ...form, celular: e.target.value })}
+        />
+
+        <Button className="w-full">Pagar con tarjeta</Button>
+
+        <p className="text-sm text-gray-500">
+          * El pago se realiza de forma segura con tarjeta débito o crédito
+        </p>
+      </CardContent>
+    </Card>
+  )}
+</div>
+
+); }---
 title: npm-start
 section: 1
 description: Start a package
