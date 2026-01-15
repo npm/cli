@@ -5710,6 +5710,9 @@ Subcommands:
   gitlab
     Create a trusted relationship between a package and GitLab CI/CD
 
+  circleci
+    Create a trusted relationship between a package and CircleCI
+
   list
     List trusted relationships for a package
 
@@ -5743,6 +5746,16 @@ Note: This command is unaware of workspaces.
 #### \`yes\`
 #### \`json\`
 #### \`registry\`
+#### \`dry-run\`
+#### Synopsis
+#### Flags
+#### \`org-id\`
+#### \`project-id\`
+#### \`pipeline-definition-id\`
+#### \`vcs-origin\`
+#### \`context-id\`
+#### \`yes\`
+#### \`json\`
 #### \`dry-run\`
 #### Synopsis
 #### Configuration
