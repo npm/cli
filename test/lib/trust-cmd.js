@@ -95,7 +95,7 @@ t.test('trust-cmd via trust github infers from package.json', async t => {
 })
 
 t.test('trust-cmd via trust github with dry-run', async t => {
-  const { npm, logs } = await loadMockNpm(t, {
+  const { npm, joinedOutput } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
         name: packageName,
@@ -110,7 +110,7 @@ t.test('trust-cmd via trust github with dry-run', async t => {
 
   await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli'])
 
-  t.ok(logs.notice.some(l => l.includes('Establishing trust')), 'shows notice about establishing trust')
+  t.ok(joinedOutput().includes('Establishing trust'), 'shows notice about establishing trust')
 })
 
 t.test('trust-cmd via trust github missing package name', async t => {
