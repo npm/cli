@@ -2,6 +2,6 @@
   "name": "a",
   "version": "1.0.0",
   "dependencies": {
-    "abbrev": "=1.0.4"
+    "abbrev": "1.1.1"
   }
 }
