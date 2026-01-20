@@ -115,7 +115,7 @@
     "text-table": "~0.2.0",
     "tiny-relative-date": "^2.0.2",
     "treeverse": "^3.0.0",
-    "validate-npm-package-name": "^7.0.0",
+    "validate-npm-package-name": "^7.0.2",
     "which": "^6.0.0"
   },
   "bundleDependencies": [
