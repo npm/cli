@@ -61,7 +61,7 @@
     "@npmcli/promise-spawn": "^9.0.1",
     "@npmcli/redact": "^4.0.0",
     "@npmcli/run-script": "^10.0.3",
-    "@sigstore/tuf": "^4.0.0",
+    "@sigstore/tuf": "^4.0.1",
     "abbrev": "^4.0.0",
     "archy": "~1.0.0",
     "cacache": "^20.0.3",
