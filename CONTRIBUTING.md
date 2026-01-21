@@ -1,52 +1,125 @@
-# Contributing
+# Contributing to Rauch Tech CLI
+
+Thank you for your interest in contributing to Rauch Tech! We welcome contributions from the community and are committed to making the process as smooth as possible.
 
 ## Code of Conduct
 
-All interactions in the **npm** organization on GitHub are considered to be covered by our standard [Code of Conduct](https://docs.npmjs.com/policies/conduct).
+All interactions in the Rauch Tech organization on GitHub are covered by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you agree to uphold this code. Please report unacceptable behavior to [conduct@rauchtech.example](mailto:conduct@rauchtech.example).
 
 ## Reporting Bugs
 
-When submitting a new bug report, please first [search](https://github.com/npm/cli/issues) for an existing or similar report & then use one of our existing [issue templates](https://github.com/npm/cli/issues/new/choose) if you believe you've come across a unique problem. Duplicate issues, or issues that don't use one of our templates may get closed without a response.
+When submitting a new bug report, please:
+
+1. First [search](https://github.com/Rauch-Tech/cli/issues) for an existing or similar report.
+2. Use one of our existing [issue templates](https://github.com/Rauch-Tech/cli/issues/new/choose) if you believe you've come across a unique problem.
+3. Include as much detail as possible:
+   - Steps to reproduce
+   - Expected behavior
+   - Actual behavior
+   - Environment details (OS, Node version, etc.)
+
+Duplicate issues or issues that don't use our templates may be closed without a response.
 
 ## Development
 
-**1. Clone this repository...**
+### Getting Started
+
+**1. Fork and clone this repository**
 
 ```bash
-git clone git@github.com:npm/cli.git npm
+git clone git@github.com:YOUR-USERNAME/cli.git rauch-cli
+cd rauch-cli
 ```
 
-**2. Navigate into project & install development-specific dependencies...**
+**2. Install dependencies**
 
 ```bash
-cd ./npm && node ./scripts/resetdeps.js
+npm ci
+node ./scripts/resetdeps.js
 ```
 
-**3. Write some code &/or add some tests...**
+**3. Create a feature branch**
 
 ```bash
-...
+git checkout -b feat/short-description
 ```
 
-**4. Run tests & ensure they pass...**
-```
-node . run test
+**4. Write code and add tests**
+
+- Write tests for new functionality
+- Ensure existing tests still pass
+- Follow the existing code style
+
+**5. Run tests and ensure they pass**
+
+```bash
+npm test
 ```
 
-**5. Open a [Pull Request](https://github.com/npm/cli/pulls) for your work & become the newest contributor to `npm`! 🎉**
+**6. Lint your code**
+
+```bash
+npm run lint
+npm run lintfix  # to automatically fix issues
+```
+
+**7. Commit your changes**
+
+Follow our commit message conventions (see below).
+
+**8. Push and open a Pull Request**
+
+```bash
+git push origin feat/short-description
+```
+
+Open a [Pull Request](https://github.com/Rauch-Tech/cli/pulls) against the `main` branch.
 
 ## Pull Request Conventions
 
-We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).  When opening a pull request, please be sure that either the pull request title, or each commit in the pull request, has one of the following prefixes:
+We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). When opening a pull request, please ensure that either the pull request title or each commit in the pull request has one of the following prefixes:
 
- - `feat`: For when introducing a new feature.  The result will be a new semver minor version of the package when it is next published.
- - `fix`: For bug fixes. The result will be a new semver patch version of the package when it is next published.
- - `docs`: For documentation updates.  The result will be a new semver patch version of the package when it is next published.
- - `chore`: For changes that do not affect the published module.  Often these are changes to tests.  The result will be *no* change to the version of the package when it is next published (as the commit does not affect the published version).
+- `feat`: Introduces a new feature (semver MINOR)
+- `fix`: Fixes a bug (semver PATCH)
+- `docs`: Documentation updates only (semver PATCH)
+- `chore`: Changes that don't affect the published module (no version change)
+- `refactor`: Code refactoring without changing functionality
+- `test`: Adding or updating tests
+- `perf`: Performance improvements
+- `ci`: Changes to CI/CD configuration
+
+### Pull Request Guidelines
+
+- Keep PRs focused and small where possible
+- Describe the rationale for your changes
+- Document any upgrade or migration impacts
+- Link related issues
+- Ensure all tests pass
+- Update documentation as needed
 
 ## Test Coverage
 
-We use [`tap`](https://node-tap.org/) for testing & expect that every new feature or bug fix comes with corresponding tests that validate the solutions. Tap also reports on code coverage and it will fail if that drops below 100%.
+We use [`tap`](https://node-tap.org/) for testing and expect that every new feature or bug fix comes with corresponding tests. We maintain 100% code coverage, and the build will fail if coverage drops below this threshold.
+
+## Code Style
+
+- Follow the existing code style in the project
+- Use ESLint to check your code: `npm run lint`
+- Fix linting issues automatically when possible: `npm run lintfix`
+
+## Documentation
+
+- Update relevant documentation when making changes
+- Keep comments clear and concise
+- Document public APIs and complex logic
+
+## Questions?
+
+If you have questions about contributing, feel free to:
+- Open a discussion in the repository
+- Contact the engineering team at [engineering@rauchtech.example](mailto:engineering@rauchtech.example)
+
+Thank you for contributing to Rauch Tech! 🎉
 
 To run your repository's version of the npm cli on your local machine use the following commands:
 

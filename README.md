@@ -1,53 +1,155 @@
-# npm - a JavaScript package manager
+# Rauch Tech
+
+> Building dependable, human-centered technology for a safer digital world.
+
+Rauch Tech is a technology company focused on secure, reliable, and user-first software solutions. We design and build products and services that help organizations modernize infrastructure, protect critical assets, and deliver delightful user experiences.
+
+---
+
+## Contents
+
+- [About](#about)
+- [Mission & Values](#mission--values)
+- [What we do](#what-we-do)
+- [Products & Services](#products--services)
+- [Core Technologies](#core-technologies)
+- [Getting Started (Developers)](#getting-started-developers)
+- [Deployment & Operations](#deployment--operations)
+- [Contributing](#contributing)
+- [Code of Conduct](#code-of-conduct)
+- [Security](#security)
+- [Support & Contact](#support--contact)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+---
+
+## About
+
+Rauch Tech partners with enterprises and startups to create secure, scalable, and maintainable software. Our team combines domain expertise in cloud-native architecture, security engineering, and UX design to deliver systems that perform in production and are easy to operate.
+
+## Mission & Values
+
+- **Mission**: Enable organizations to harness technology securely and responsibly.
+- **Values**:
+  - Security by design
+  - Reliability and observability
+  - Empathy for users and operators
+  - Simplicity over complexity
+  - Continuous learning and improvement
+
+## What we do
+
+We deliver end-to-end solutions for:
+- Secure cloud migrations and platform engineering
+- Application development (web, mobile, backend APIs)
+- Security assessments, threat modeling, and remediation
+- Observability, SRE practices, and incident response
+- Custom integrations and automation
+
+## Products & Services
+
+Examples of offerings:
+- **Rauch Platform** — opinionated Kubernetes + GitOps platform for teams
+- **Rauch Shield** — managed security assessments and remediation plans
+- **Rauch Insights** — observability and monitoring dashboards tailored to application SLIs
+- **Professional services**: architecture reviews, implementation sprints, staff augmentation
+
+## Core Technologies
+
+Typical stacks we use:
+- **Cloud**: AWS, GCP, Azure
+- **Orchestration**: Kubernetes, Helm, Kustomize
+- **CI/CD & GitOps**: GitHub Actions, Argo CD, Flux
+- **Backend**: Go, Node.js, Python
+- **Frontend**: React, TypeScript
+- **Datastores**: PostgreSQL, Redis, S3
+- **Observability**: Prometheus, Grafana, OpenTelemetry, Loki
+- **Security**: OAuth2/OpenID Connect, Vault, static analysis tools
+
+## Getting Started (Developers)
 
 ### Requirements
 
-You should be running a currently supported version of [Node.js](https://nodejs.org/en/download/) to run **`npm`**.  For a list of which versions of Node.js are currently supported, please see the [Node.js releases](https://nodejs.org/en/about/previous-releases) page.
+You should be running a currently supported version of [Node.js](https://nodejs.org/en/download/) to run this CLI. For a list of which versions of Node.js are currently supported, please see the [Node.js releases](https://nodejs.org/en/about/previous-releases) page.
 
 ### Installation
 
-**`npm`** comes bundled with [**`node`**](https://nodejs.org/), & most third-party distributions, by default. Officially supported downloads/distributions can be found at: [nodejs.org/en/download](https://nodejs.org/en/download)
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Rauch-Tech/cli.git
+   cd cli
+   ```
 
-#### Direct Download
+2. Install dependencies
+   ```bash
+   npm ci
+   ```
 
-You can download & install **`npm`** directly from [**npmjs**.com](https://npmjs.com/) using our custom `install.sh` script:
+3. Local dev environment
+   - Create a `.env` from `.env.example` and provide required secrets/config (if applicable).
+   - Start any required services via Docker Compose:
+     ```bash
+     docker compose up -d
+     ```
 
-```bash
-curl -qL https://www.npmjs.com/install.sh | sh
-```
+4. Run tests
+   ```bash
+   npm test
+   ```
 
-#### Node Version Managers
+5. Lint & format
+   ```bash
+   npm run lint
+   npm run lintfix
+   ```
 
-If you're looking to manage multiple versions of **`Node.js`** &/or **`npm`**, consider using a [node version manager](https://github.com/search?q=node+version+manager+archived%3Afalse&type=repositories&ref=advsearch)
+## Deployment & Operations
 
-### Usage
+- We use GitOps for production deployments. Changes merged to `main`/`production` branch are promoted automatically via Argo CD/Flux.
+- Use CI pipelines (GitHub Actions) for build, test, and image publishing.
+- For infrastructure, Terraform (or similar IaC) is used with a remote state backend.
+- Monitoring and alerts are configured in Grafana/Alertmanager; on-call rotations use PagerDuty/Slack.
 
-```bash
-npm <command>
-```
+## Contributing
 
-### Links & Resources
+We welcome contributions. Please follow these steps:
 
-* [**Documentation**](https://docs.npmjs.com/) - Official docs & how-tos for all things **npm**
-    * Note: you can also search docs locally with `npm help-search <query>`
-* [**Bug Tracker**](https://github.com/npm/cli/issues) - Search or submit bugs against the CLI
-* [**Community Feedback and Discussions**](https://github.com/orgs/community/discussions/categories/npm) - Contribute ideas & discussion around the npm registry, website & CLI
-* [**RFCs**](https://github.com/npm/rfcs) - Contribute ideas & specifications for the API/design of the npm CLI
-* [**Service Status**](https://status.npmjs.org/) - Monitor the current status & see incident reports for the website & registry
-* [**Project Status**](https://npm.github.io/statusboard/) - See the health of all our maintained OSS projects in one view
-* [**Support**](https://www.npmjs.com/support) - Experiencing problems with the **npm** [website](https://npmjs.com) or [registry](https://registry.npmjs.org)? [File a ticket](https://www.npmjs.com/support)
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feat/short-description`.
+3. Commit changes with clear messages.
+4. Push to your fork and open a Pull Request against `main`.
+5. Ensure tests pass and add changelog/notes where relevant.
 
-### Acknowledgments
+Guidelines:
+- Write tests for new functionality.
+- Keep PRs focused and small where possible.
+- Describe rationale and any upgrade/migration impacts.
 
-* `npm` is configured to use the **npm Public Registry** at [https://registry.npmjs.org](https://registry.npmjs.org) by default; Usage of this registry is subject to **Terms of Use** available at [https://npmjs.com/policies/terms](https://npmjs.com/policies/terms)
-* You can configure `npm` to use any other compatible registry you prefer. You can read more about [configuring third-party registries](https://docs.npmjs.com/cli/v7/using-npm/registry)
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
-### FAQ on Branding
+## Code of Conduct
 
-#### Is it "npm" or "NPM" or "Npm"?
+We are committed to an inclusive, harassment-free community. By participating, you agree to follow our Code of Conduct. See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details.
 
-**`npm`** should never be capitalized unless it is being displayed in a location that is customarily all-capitals (ex. titles on `man` pages).
+## Security
 
-#### Is "npm" an acronym for "Node Package Manager"?
+If you discover a security issue, please report it privately to [security@rauchtech.example](mailto:security@rauchtech.example). Do not disclose publicly until a fix or coordinated disclosure is agreed.
 
-Contrary to popular belief, **`npm`** **is not** in fact an acronym for "Node Package Manager"; It is a recursive bacronymic abbreviation for **"npm is not an acronym"** (if the project was named "ninaa", then it would be an acronym). The precursor to **`npm`** was actually a bash utility named **"pm"**, which was the shortform name of **"pkgmakeinst"** - a bash function that installed various things on various platforms. If **`npm`** were to ever have been considered an acronym, it would be as "node pm" or, potentially "new pm".
+See [SECURITY.md](SECURITY.md) for more information on our security reporting process.
+
+## Support & Contact
+
+For general inquiries or sales:
+- Email: [hello@rauchtech.example](mailto:hello@rauchtech.example)
+- Website: https://rauchtech.example
+
+For developer support, open issues in the relevant repository or contact the engineering lead.
+
+## License
+
+This repository is licensed under the Artistic-2.0 License. See [LICENSE](LICENSE) for details.
+
+## Acknowledgements
+
+Thanks to our contributors, community partners, and open source projects that make our work possible.
