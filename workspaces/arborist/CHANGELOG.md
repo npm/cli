@@ -1,5 +1,9 @@
 # Changelog
 
+## [9.1.10](https://github.com/npm/cli/compare/arborist-v9.1.9...arborist-v9.1.10) (2026-01-21)
+### Dependencies
+* [`f951820`](https://github.com/npm/cli/commit/f95182001771ad5d52dfc57934d7ce1b97055b70) [#8919](https://github.com/npm/cli/pull/8919) `common-ancestor-path@2.0.0`
+
 ## [9.1.9](https://github.com/npm/cli/compare/arborist-v9.1.8...arborist-v9.1.9) (2025-12-09)
 ### Bug Fixes
 * [`0765289`](https://github.com/npm/cli/commit/07652896c44bd21a585255151f90f171eefbb00e) [#8721](https://github.com/npm/cli/pull/8721) handle ENOTEMPTY errors in moveFile (@keegancsmith)

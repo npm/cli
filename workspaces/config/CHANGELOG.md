@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.5.0](https://github.com/npm/cli/compare/config-v10.4.5...config-v10.5.0) (2026-01-21)
+### Features
+* [`5a444d5`](https://github.com/npm/cli/commit/5a444d57f1068efddc71ddfd131a949632524e00) [#8828](https://github.com/npm/cli/pull/8828) export environment config variable names (Max Black)
+
 ## [10.4.5](https://github.com/npm/cli/compare/config-v10.4.4...config-v10.4.5) (2025-12-09)
 ### Bug Fixes
 * [`4ebb831`](https://github.com/npm/cli/commit/4ebb831d93f13cc0b980754bf36abb2982b131f7) [#8839](https://github.com/npm/cli/pull/8839) updates hints to use cli paradigm (@owlstronaut)
