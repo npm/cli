@@ -57,8 +57,9 @@ npm error Options:
 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
-npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
+npm error [--allow-git <all|none|root>] [--no-audit] [--no-bin-links] [--no-fund]
+npm error [--dry-run]
 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 npm error [--workspaces] [--include-workspace-root] [--install-links]
 npm error

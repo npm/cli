@@ -19,6 +19,11 @@ Object {
   "all": Array [
     "boolean value (true or false)",
   ],
+  "allow-git": Array [
+    "all",
+    "none",
+    "root",
+  ],
   "allow-same-version": Array [
     "boolean value (true or false)",
   ],
