@@ -321,11 +321,11 @@ t.test('bodyToOptions with all fields', t => {
     id: 'test-id',
     type: 'circleci',
     claims: {
-      org_id: '550e8400-e29b-41d4-a716-446655440000',
-      project_id: '7c9e6679-7425-40de-944b-e07fc1f90ae7',
-      pipeline_definition_id: '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
-      vcs_origin: 'github.com/owner/repo',
-      context_ids: ['123e4567-e89b-12d3-a456-426614174000'],
+      'oidc.circleci.com/org-id': '550e8400-e29b-41d4-a716-446655440000',
+      'oidc.circleci.com/project-id': '7c9e6679-7425-40de-944b-e07fc1f90ae7',
+      'oidc.circleci.com/pipeline-definition-id': '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
+      'oidc.circleci.com/vcs-origin': 'github.com/owner/repo',
+      'oidc.circleci.com/context-ids': ['123e4567-e89b-12d3-a456-426614174000'],
     },
   }
 
@@ -348,10 +348,10 @@ t.test('bodyToOptions without optional context_ids', t => {
     id: 'test-id',
     type: 'circleci',
     claims: {
-      org_id: '550e8400-e29b-41d4-a716-446655440000',
-      project_id: '7c9e6679-7425-40de-944b-e07fc1f90ae7',
-      pipeline_definition_id: '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
-      vcs_origin: 'github.com/owner/repo',
+      'oidc.circleci.com/org-id': '550e8400-e29b-41d4-a716-446655440000',
+      'oidc.circleci.com/project-id': '7c9e6679-7425-40de-944b-e07fc1f90ae7',
+      'oidc.circleci.com/pipeline-definition-id': '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
+      'oidc.circleci.com/vcs-origin': 'github.com/owner/repo',
     },
   }
 
@@ -375,11 +375,11 @@ t.test('optionsToBody with all fields', t => {
   const body = TrustCircleCI.optionsToBody(options)
 
   t.equal(body.type, 'circleci', 'type should be circleci')
-  t.equal(body.claims.org_id, '550e8400-e29b-41d4-a716-446655440000', 'org_id should be set')
-  t.equal(body.claims.project_id, '7c9e6679-7425-40de-944b-e07fc1f90ae7', 'project_id should be set')
-  t.equal(body.claims.pipeline_definition_id, '6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'pipeline_definition_id should be set')
-  t.equal(body.claims.vcs_origin, 'github.com/owner/repo', 'vcs_origin should be set')
-  t.same(body.claims.context_ids, ['123e4567-e89b-12d3-a456-426614174000'], 'context_ids should be set')
+  t.equal(body.claims['oidc.circleci.com/org-id'], '550e8400-e29b-41d4-a716-446655440000', 'org-id should be set')
+  t.equal(body.claims['oidc.circleci.com/project-id'], '7c9e6679-7425-40de-944b-e07fc1f90ae7', 'project-id should be set')
+  t.equal(body.claims['oidc.circleci.com/pipeline-definition-id'], '6ba7b810-9dad-11d1-80b4-00c04fd430c8', 'pipeline-definition-id should be set')
+  t.equal(body.claims['oidc.circleci.com/vcs-origin'], 'github.com/owner/repo', 'vcs-origin should be set')
+  t.same(body.claims['oidc.circleci.com/context-ids'], ['123e4567-e89b-12d3-a456-426614174000'], 'context-ids should be set')
   t.end()
 })
 
@@ -395,7 +395,7 @@ t.test('optionsToBody without optional contextIds', t => {
 
   const body = TrustCircleCI.optionsToBody(options)
 
-  t.equal(body.claims.context_ids, undefined, 'context_ids should be undefined')
+  t.equal(body.claims['oidc.circleci.com/context-ids'], undefined, 'context-ids should be undefined')
   t.end()
 })
 
@@ -415,10 +415,10 @@ t.test('optionsToBody with multiple contextIds', t => {
 
   const body = TrustCircleCI.optionsToBody(options)
 
-  t.same(body.claims.context_ids, [
+  t.same(body.claims['oidc.circleci.com/context-ids'], [
     '123e4567-e89b-12d3-a456-426614174000',
     'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
-  ], 'context_ids should contain both UUIDs')
+  ], 'context-ids should contain both UUIDs')
   t.end()
 })
 
