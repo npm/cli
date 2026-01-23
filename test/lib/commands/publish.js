@@ -1248,7 +1248,11 @@ t.test('oidc token exchange - no provenance', t => {
     },
     publishOptions: {
       token: 'exchange-token',
+      provenance: false,
     },
+    logsContain: [
+      'verbose oidc Disabling provenance for CircleCI (not supported)',
+    ],
   }))
 
   // custom registry success
