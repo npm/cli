@@ -5733,6 +5733,7 @@ Note: This command is unaware of workspaces.
 #### \`environment\`
 #### \`yes\`
 #### \`json\`
+#### \`registry\`
 #### \`dry-run\`
 #### Synopsis
 #### Flags
@@ -5741,14 +5742,17 @@ Note: This command is unaware of workspaces.
 #### \`environment\`
 #### \`yes\`
 #### \`json\`
+#### \`registry\`
 #### \`dry-run\`
 #### Synopsis
 #### Configuration
 #### \`json\`
+#### \`registry\`
 #### Synopsis
 #### Flags
 #### \`id\`
 #### \`dry-run\`
+#### \`registry\`
 `
 
 exports[`test/lib/docs.js TAP usage undeprecate > must match snapshot 1`] = `
