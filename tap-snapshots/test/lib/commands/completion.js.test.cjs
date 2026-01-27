@@ -102,6 +102,7 @@ Array [
   String(
     --yes
     --json
+    --registry
     --dry-run
     --file
     --repository
@@ -120,6 +121,7 @@ Array [
   String(
     --yes
     --json
+    --registry
     --dry-run
     --file
     --project

@@ -138,8 +138,8 @@ t.test('bodyToOptions with all fields', t => {
       ci_config_ref_uri: {
         file: '.gitlab-ci.yml',
       },
+      environment: 'prod',
     },
-    environment: 'prod',
   }
 
   const options = TrustGitLab.bodyToOptions(body)
