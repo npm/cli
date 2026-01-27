@@ -138,8 +138,8 @@ t.test('bodyToOptions with all fields', t => {
       workflow_ref: {
         file: 'test.yml',
       },
+      environment: 'prod',
     },
-    environment: 'prod',
   }
 
   const options = TrustGitHub.bodyToOptions(body)
