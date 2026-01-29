@@ -784,3 +784,65 @@ t.test('TrustCommand - logOptions with fromPackageJson and urls', async t => {
   t.ok(output.includes('from package.json'), 'shows fromPackageJson indicator')
   t.match(output, /https:\/\/github\.com\/npm\/cli\b/, 'shows URL')
 })
+
+t.test('TrustCommand - logOptions with no urls', async t => {
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: {
+      '//registry.npmjs.org/:_authToken': 'test-auth-token',
+    },
+  })
+
+  class TestTrustCmd extends TrustCommand {
+    static name = 'test'
+    static description = 'Test command'
+  }
+
+  const cmd = new TestTrustCmd(npm)
+
+  // Call logOptions without urls object
+  cmd.logOptions({
+    values: {
+      type: 'github',
+      id: 'test-id',
+      repository: 'npm/cli',
+      file: 'workflow.yml',
+    },
+  })
+  const output = joinedOutput()
+  t.ok(output.includes('repository'), 'shows repository field')
+  t.ok(output.includes('file'), 'shows file field')
+  t.notOk(output.includes('Links to verify manually'), 'does not show links header when no urls')
+})
+
+t.test('TrustCommand - logOptions with urls but all values are null', async t => {
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: {
+      '//registry.npmjs.org/:_authToken': 'test-auth-token',
+    },
+  })
+
+  class TestTrustCmd extends TrustCommand {
+    static name = 'test'
+    static description = 'Test command'
+  }
+
+  const cmd = new TestTrustCmd(npm)
+
+  // Call logOptions with urls object but all values are null/undefined
+  cmd.logOptions({
+    values: {
+      type: 'github',
+      id: 'test-id',
+      repository: 'npm/cli',
+      file: 'workflow.yml',
+    },
+    urls: {
+      repository: null,
+      file: undefined,
+    },
+  })
+  const output = joinedOutput()
+  t.ok(output.includes('repository'), 'shows repository field')
+  t.ok(output.includes('file'), 'shows file field')
+  t.notOk(output.includes('Links to verify manually'), 'does not show links header when all urls are null')
+})
