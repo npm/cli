@@ -122,7 +122,7 @@ t.test('list without package name and no package.json', async t => {
 
   await t.rejects(
     npm.exec('trust', ['list']),
-    { message: /Could not read package\.json/ }
+    { message: /Package name must be specified either as an argument or in the package\.json file/ }
   )
 })
 
