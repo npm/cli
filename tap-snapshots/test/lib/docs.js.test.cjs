@@ -3041,6 +3041,9 @@ Options:
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
 
+  --allow-git
+    Limits the ability for npm to fetch dependencies from git references.
+
   --audit
     When "true" submit audit reports alongside the current npm command to the
 
@@ -3209,6 +3212,9 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
+
+  --allow-git
+    Limits the ability for npm to fetch dependencies from git references.
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -3951,6 +3957,9 @@ Options:
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
 
+  --allow-git
+    Limits the ability for npm to fetch dependencies from git references.
+
   --audit
     When "true" submit audit reports alongside the current npm command to the
 
@@ -4067,6 +4076,9 @@ Options:
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
 
+  --allow-git
+    Limits the ability for npm to fetch dependencies from git references.
+
   --audit
     When "true" submit audit reports alongside the current npm command to the
 
@@ -4181,6 +4193,9 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
+
+  --allow-git
+    Limits the ability for npm to fetch dependencies from git references.
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4308,6 +4323,9 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
+
+  --allow-git
+    Limits the ability for npm to fetch dependencies from git references.
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
