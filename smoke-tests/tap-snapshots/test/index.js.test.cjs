@@ -87,6 +87,9 @@ npm error
 npm error   --ignore-scripts
 npm error     If true, npm does not run scripts specified in package.json files.
 npm error
+npm error   --allow-git
+npm error     Limits the ability for npm to fetch dependencies from git references.
+npm error
 npm error   --audit
 npm error     When "true" submit audit reports alongside the current npm command to the
 npm error
