@@ -1341,4 +1341,3 @@ description: Test command without params
     t.match(htmlContent, /mysub/, 'includes subcommand')
   })
 })
-

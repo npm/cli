@@ -5777,31 +5777,12 @@ Note: This command is unaware of workspaces.
 
 #### Synopsis
 #### Flags
-#### \`file\`
-#### \`repository\`
-#### \`environment\`
-#### \`yes\`
-#### \`json\`
-#### \`registry\`
-#### \`dry-run\`
 #### Synopsis
 #### Flags
-#### \`file\`
-#### \`project\`
-#### \`environment\`
-#### \`yes\`
-#### \`json\`
-#### \`registry\`
-#### \`dry-run\`
-#### Synopsis
-#### Configuration
-#### \`json\`
-#### \`registry\`
 #### Synopsis
 #### Flags
-#### \`id\`
-#### \`dry-run\`
-#### \`registry\`
+#### Synopsis
+#### Flags
 `
 
 exports[`test/lib/docs.js TAP usage undeprecate > must match snapshot 1`] = `
