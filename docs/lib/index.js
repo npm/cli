@@ -127,6 +127,34 @@ const replaceUsage = (src, { path }, commandLoader) => {
   return src.replace(replacer, synopsis.join('\n'))
 }
 
+// Helper to generate a markdown table from definition parameters
+const generateFlagsTable = (paramNames, definitionPool) => {
+  const rows = paramNames.map((n) => {
+    const def = definitionPool[n]
+    const flags = [`\`--${def.key}\``]
+    if (def.alias) {
+      flags.push(...def.alias.map(a => `\`--${a}\``))
+    }
+    if (def.short) {
+      flags.push(`\`-${def.short}\``)
+    }
+    const flagsStr = flags.join(', ')
+    let defaultVal = def.defaultDescription
+    if (!defaultVal) {
+      defaultVal = String(def.default)
+    }
+    const typeVal = def.typeDescription || String(def.type)
+    const desc = (def.description || '').replace(/\n/g, ' ').trim()
+    return `| ${flagsStr} | ${defaultVal} | ${typeVal} | ${desc} |`
+  })
+
+  return [
+    '| Flag | Default | Type | Description |',
+    '| --- | --- | --- | --- |',
+    ...rows,
+  ].join('\n')
+}
+
 const replaceParams = (src, { path }, commandLoader) => {
   const { params, name } = getCommandByDoc(path, DOC_EXT, commandLoader)
 
@@ -185,36 +213,14 @@ const replaceParams = (src, { path }, commandLoader) => {
         }
       }
 
-      // Add command-specific flags section if any exist
-      if (commandSpecificParams.length > 0) {
+      // Merge all definitions for table generation
+      const allDefinitions = { ...definitions, ...subDefinitions }
+      const allParams = [...commandSpecificParams, ...globalConfigParams]
+
+      // Add flags section with all parameters combined
+      if (allParams.length > 0) {
         parts.push('#### Flags', '')
-        parts.push('These flags are specific to this subcommand and are not part of npm\'s global configuration or `.npmrc` files.', '')
-
-        commandSpecificParams.forEach((n) => {
-          const def = subDefinitions[n]
-          const shortcuts = def.short ? `\n* Shortcut: \`-${def.short}\`` : ''
-          const defAliases = def.alias || []
-          const aliasText = defAliases.length > 0
-            ? `\n* Aliases: ${defAliases.map(a => `\`--${a}\``).join(', ')}`
-            : ''
-          parts.push(`${def.describe()}${shortcuts}${aliasText}`, '')
-        })
-      }
-
-      // Add global config section if any exist
-      if (globalConfigParams.length > 0) {
-        if (commandSpecificParams.length === 0) {
-          parts.push('#### Configuration', '')
-        }
-        globalConfigParams.forEach((n) => {
-          const def = subDefinitions[n] || definitions[n]
-          const shortcuts = def.short ? `\n* Shortcut: \`-${def.short}\`` : ''
-          const defAliases = def.alias || []
-          const aliasText = defAliases.length > 0
-            ? `\n* Aliases: ${defAliases.map(a => `\`--${a}\``).join(', ')}`
-            : ''
-          parts.push(`${def.describe()}${shortcuts}${aliasText}`, '')
-        })
+        parts.push(generateFlagsTable(allParams, allDefinitions), '')
       }
 
       return parts.join('\n')

@@ -1,7 +1,7 @@
 ---
 title: npm-trust
 section: 1
-description: Create a trusted relationship between a package and a OIDC provider
+description: Manage trusted publishing relationships between packages and CI/CD providers
 ---
 
 ### Synopsis
@@ -10,7 +10,25 @@ description: Create a trusted relationship between a package and a OIDC provider
 
 ### Description
 
-Create a trusted relationship between a package and a OIDC provider
+Configure trust relationships between npm packages and CI/CD providers using OpenID Connect (OIDC). This is the command-line equivalent of managing trusted publisher configurations on the npm website.
+
+For a comprehensive overview of trusted publishing, see the [npm trusted publishers documentation](https://docs.npmjs.com/trusted-publishers).
+
+Two-factor authentication is required for all trust commands. Even if it's not currently enabled on your account, you must enable two-factor authentication in order to use these commands. Additionally, Granular Access Tokens (GAT) with the bypass 2FA option and legacy basic auth tokens will not work for trust commands.
+
+The `[package]` argument specifies the package name. If omitted, npm will use the name from the `package.json` in the current directory.
+
+Each trust relationship has its own set of configuration options and flags based on the OIDC claims provided by that provider. OIDC claims come from the CI/CD provider and include information such as repository name, workflow file, or environment. Since each provider's claims differ, the available flags and configuration keys are not universal—npm matches the claims supported by each provider's OIDC configuration. For specific details on which claims and flags are supported for a given provider, use `npm trust <provider> --help`.
+
+The required options depend on the CI/CD provider you're configuring. Detailed information about each option is available in the [managing trusted publisher configurations](https://docs.npmjs.com/trusted-publishers#managing-trusted-publisher-configurations) section of the npm documentation. If a provider is repository-based and the option is not provided, npm will use the `repository.url` field from your `package.json`, if available.
+
+### Bulk Usage
+
+For maintainers managing a large number of packages, you can configure trusted publishing in bulk using bash scripting. Create a loop that iterates through package names and their corresponding configuration details, executing the `npm trust <provider>` command with the `--yes` flag for each package.
+
+The first request will require two-factor authentication. During two-factor authentication, you'll see an option on the npm website to skip two-factor authentication for the next 5 minutes. Enabling this option will allow subsequent `npm trust <provider>` commands to proceed without two-factor authentication, streamlining the bulk configuration process.
+
+We recommend adding a 2-second sleep between each call to avoid rate limiting. With this approach, you can configure approximately 80 packages within the 5-minute two-factor authentication skip window.
 
 ### Configuration
 
@@ -18,4 +36,8 @@ Create a trusted relationship between a package and a OIDC provider
 
 ### See Also
 
-* [npm help config](/commands/npm-config)
+* [npm publish](/commands/npm-publish)
+* [npm token](/commands/npm-token)
+* [npm access](/commands/npm-access)
+* [npm config](/commands/npm-config)
+* [npm registry](/using-npm/registry)

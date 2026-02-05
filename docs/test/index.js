@@ -720,7 +720,7 @@ t.test('replaceParams with name edge cases', async t => {
     // Tests subcommand code path including line 184 (aliases in subcommand definitions)
     // npm trust has subcommands with definitions that include aliases (repo, env)
     await testCommandDoc(t, 'npm-trust', 'Create a trusted relationship between a package and a OIDC provider', {
-      match: [/Aliases/, /--repo/, /--env/],
+      match: [/--repo/, /--env/],
     })
   })
 })
@@ -855,7 +855,6 @@ description: Test command without params
     const htmlContent = await readHtmlDoc(html, 'npm-testcmd-alias')
     t.ok(htmlContent.length > 0, 'generates HTML for command with aliases')
     t.match(htmlContent, /aliased-flag/, 'includes aliased flag')
-    t.match(htmlContent, /Aliases/, 'includes aliases section')
     t.match(htmlContent, /--af/, 'includes first alias')
     t.match(htmlContent, /--alias-flag/, 'includes second alias')
   })
@@ -1070,7 +1069,6 @@ description: Test command without params
     t.ok(htmlContent.length > 0, 'generates HTML for subcommand with short and alias')
     t.match(htmlContent, /complex-flag/, 'includes complex flag')
     t.match(htmlContent, /-x/, 'includes short flag')
-    t.match(htmlContent, /Aliases/, 'includes aliases')
     t.match(htmlContent, /--cf/, 'includes first alias')
     t.match(htmlContent, /--cflag/, 'includes second alias')
   })
@@ -1133,6 +1131,44 @@ description: Test command without params
     t.match(htmlContent, /registry/, 'includes global registry param')
   })
 
+  t.test('subcommand with command-specific and global params', async t => {
+    // Register a subcommand that has both command-specific definitions AND global params
+    class SubMixed {
+      static description = 'Subcommand with mixed params'
+      static usage = ['<arg>']
+      static params = ['sub-flag', 'registry']
+      static definitions = {
+        'sub-flag': {
+          key: 'sub-flag',
+          default: false,
+          type: Boolean,
+          description: 'A subcommand-specific flag',
+          describe: () => '#### `sub-flag`\n\n* Default: false\n* Type: Boolean\n\nA subcommand-specific flag',
+        },
+      }
+    }
+
+    registerCommand('testcmd-sub-mixed', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        mysub: SubMixed,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-sub-mixed', 'Test command with subcommand with mixed params')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-sub-mixed.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-mixed')
+    t.ok(htmlContent.length > 0, 'generates HTML for subcommand with mixed params')
+    t.match(htmlContent, /sub-flag/, 'includes subcommand-specific flag')
+    t.match(htmlContent, /registry/, 'includes global registry param')
+  })
+
   t.test('subcommand with global config param that has alias in subDefinitions', async t => {
     // This specifically tests the aliasText branch in globalConfigParams (line ~214)
     // We need a subcommand that uses a global param but overrides it with an alias in subDefinitions
@@ -1170,8 +1206,139 @@ description: Test command without params
     const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-global-alias')
     t.ok(htmlContent.length > 0, 'generates HTML for subcommand with global aliased param')
     t.match(htmlContent, /registry/, 'includes registry param')
-    t.match(htmlContent, /Aliases/, 'includes aliases in global config section')
     t.match(htmlContent, /--reg/, 'includes first alias')
     t.match(htmlContent, /--r/, 'includes second alias')
   })
+
+  t.test('subcommand with flags without describe method (fallback table format)', async t => {
+    // Register a subcommand that has definitions without describe() method
+    // This tests the fallback table format path
+    class SubWithoutDescribe {
+      static description = 'Subcommand with simple flags'
+      static usage = ['<arg>']
+      static definitions = {
+        'simple-flag': {
+          key: 'simple-flag',
+          default: false,
+          type: Boolean,
+          description: 'A simple flag without describe method',
+        },
+        'aliased-flag': {
+          key: 'aliased-flag',
+          default: 'default-val',
+          type: String,
+          description: 'A flag with aliases and short form',
+          alias: ['af', 'alias-f'],
+          short: 'a',
+        },
+        'custom-default': {
+          key: 'custom-default',
+          default: 'value',
+          type: String,
+          defaultDescription: 'custom description of default',
+          typeDescription: 'Custom Type',
+          description: 'A flag with custom descriptions',
+        },
+        'falsy-default-desc': {
+          key: 'falsy-default-desc',
+          default: 'another-value',
+          type: String,
+          defaultDescription: '', // Explicitly falsy
+          description: 'A flag with empty defaultDescription',
+        },
+      }
+    }
+
+    registerCommand('testcmd-sub-nodescribe', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        mysub: SubWithoutDescribe,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-sub-nodescribe', 'Test command with subcommand without describe')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-sub-nodescribe.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-nodescribe')
+    t.ok(htmlContent.length > 0, 'generates HTML for subcommand with simple flags')
+    t.match(htmlContent, /simple-flag/, 'includes simple flag')
+    t.match(htmlContent, /aliased-flag/, 'includes aliased flag')
+    t.match(htmlContent, /-a/, 'includes short form')
+    t.match(htmlContent, /af/, 'includes alias')
+    t.match(htmlContent, /custom description of default/, 'includes custom default description')
+    t.match(htmlContent, /Custom Type/, 'includes custom type description')
+    t.match(htmlContent, /falsy-default-desc/, 'includes flag with falsy defaultDescription')
+  })
+
+  t.test('subcommand with command-specific params and table format (no describe)', async t => {
+    // Register a subcommand with command-specific params but no describe method
+    // This tests the table format path for command-specific params
+    class SubMixedNoDescribe {
+      static description = 'Subcommand with command-specific params but no describe'
+      static usage = ['<arg>']
+      static params = ['sub-custom', 'registry']
+      static definitions = {
+        'sub-custom': {
+          key: 'sub-custom',
+          default: 'default-val',
+          type: String,
+          description: 'A command-specific flag without describe',
+        },
+      }
+    }
+
+    registerCommand('testcmd-sub-mixed-nodesc', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        mysub: SubMixedNoDescribe,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-sub-mixed-nodesc', 'Test command with subcommand with mixed params no describe')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-sub-mixed-nodesc.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-mixed-nodesc')
+    t.ok(htmlContent.length > 0, 'generates HTML for subcommand with command-specific params no describe')
+    t.match(htmlContent, /sub-custom/, 'includes command-specific flag')
+    t.match(htmlContent, /registry/, 'includes global registry param')
+  })
+
+  t.test('subcommand with no params', async t => {
+    // Register a subcommand with no params or definitions
+    // This tests the edge case where allParams.length === 0
+    class SubNoParams {
+      static description = 'Subcommand with no params'
+      static usage = ['<arg>']
+    }
+
+    registerCommand('testcmd-sub-noparams', {
+      usage: ['<subcommand>'],
+      params: null,
+      subcommands: {
+        mysub: SubNoParams,
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-sub-noparams', 'Test command with subcommand with no params')
+    const { html } = await testBuildDocs(t, {
+      content: {
+        commands: { 'npm-testcmd-sub-noparams.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-sub-noparams')
+    t.ok(htmlContent.length > 0, 'generates HTML for subcommand with no params')
+    t.match(htmlContent, /mysub/, 'includes subcommand')
+  })
 })
+
