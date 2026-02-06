@@ -1587,3 +1587,19 @@ t.test('abbreviation expansion warnings', async t => {
     ['warn', 'Expanding --bef to --before. This will stop working in the next major version of npm'],
   ], 'Warns about expanded abbreviations')
 })
+
+t.test('before and min-release-age', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--min-release-age', '30'],
+    cwd: path,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  // Simple gut check to make sure we didn't do + instead of -
+  t.ok(config.flat.before < Date.now(), 'before date is in the past not the future')
+})
