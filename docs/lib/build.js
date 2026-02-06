@@ -304,7 +304,10 @@ const pAll = async (obj) => {
 }
 
 const run = async (opts) => {
-  const { content, template, nav, man, html, md, skipAutoGenerate, skipGenerateNav } = opts
+  const {
+    content, template, nav, man, html, md,
+    skipAutoGenerate, skipGenerateNav, commandLoader,
+  } = opts
   // Auto-generate docs for commands without documentation
   if (!skipAutoGenerate) {
     await autoGenerateMissingDocs(content, nav)
@@ -359,6 +362,7 @@ const run = async (opts) => {
   }) => {
     const applyTransforms = makeTransforms({
       path: childPath,
+      commandLoader,
       data: {
         ...data,
         github_repo: 'npm/cli',

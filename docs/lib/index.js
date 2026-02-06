@@ -27,29 +27,9 @@ const defaultCommandLoader = (name) => {
   return require(`../../lib/commands/${name}`)
 }
 
-// Registry of custom commands for testing
-let commandRegistry = {}
-
-// Command loader that checks registry first, then falls back to default
+// Load a command using the provided loader or default
 const getCommand = (name, commandLoader = defaultCommandLoader) => {
-  if (commandRegistry[name]) {
-    return commandRegistry[name]
-  }
   return commandLoader(name)
-}
-
-// Functions to manage the command registry for testing
-const registerCommand = (name, command) => {
-  commandRegistry[name] = command
-}
-
-/* istanbul ignore next - testing utility for cleanup */
-const unregisterCommand = (name) => {
-  delete commandRegistry[name]
-}
-
-const clearCommandRegistry = () => {
-  commandRegistry = {}
 }
 
 const getCommandByDoc = (docFile, docExt, commandLoader = defaultCommandLoader) => {
@@ -99,7 +79,7 @@ const getCommandByDoc = (docFile, docExt, commandLoader = defaultCommandLoader) 
 
 const replaceVersion = (src) => src.replace(/@VERSION@/g, version)
 
-const replaceUsage = (src, { path }, commandLoader) => {
+const replaceUsage = (src, { path, commandLoader }) => {
   const replacer = assertPlaceholder(src, path, TAGS.USAGE)
   const { usage, name, workspaces } = getCommandByDoc(path, DOC_EXT, commandLoader)
 
@@ -155,7 +135,7 @@ const generateFlagsTable = (paramNames, definitionPool) => {
   ].join('\n')
 }
 
-const replaceParams = (src, { path }, commandLoader) => {
+const replaceParams = (src, { path, commandLoader }) => {
   const { params, name } = getCommandByDoc(path, DOC_EXT, commandLoader)
 
   // Load command to get command-specific definitions and subcommands if they exist
@@ -372,11 +352,4 @@ module.exports = {
   manPath: manPath,
   md: transformMd,
   html: transformHTML,
-  // Testing utilities for command injection
-  testing: {
-    registerCommand,
-    unregisterCommand,
-    clearCommandRegistry,
-    getCommandByDoc,
-  },
 }

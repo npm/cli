@@ -5,7 +5,6 @@ const fs = require('fs/promises')
 const yaml = require('yaml')
 const {
   paths: { content: CONTENT_DIR, nav: NAV, template: TEMPLATE },
-  testing: { registerCommand, clearCommandRegistry },
 } = require('../lib/index.js')
 
 // Helper to generate nav entries from content structure
@@ -26,7 +25,7 @@ const generateNavFromContent = (content, prefix = '') => {
   return entries
 }
 
-const testBuildDocs = async (t, { verify, ...opts } = {}) => {
+const testBuildDocs = async (t, { verify, commandLoader, ...opts } = {}) => {
   const mockedBuild = require('../lib/build.js')
 
   const fixtures = {
@@ -60,6 +59,8 @@ const testBuildDocs = async (t, { verify, ...opts } = {}) => {
     skipAutoGenerate: !!fixtures.content,
     // Skip nav generation when using test fixtures with custom content
     skipGenerateNav: !!fixtures.content,
+    // Custom command loader for testing
+    commandLoader,
   }
 
   return {
@@ -724,22 +725,29 @@ t.test('replaceParams with name edge cases', async t => {
     })
   })
 })
-// Test harness for injecting custom commands to test edge cases
-t.test('command injection test harness', async t => {
-  // Clear the registry after each test
-  t.afterEach(() => {
-    clearCommandRegistry()
-  })
 
+// Helper to create a command loader from a map of command names to command objects
+const createCommandLoader = (commands) => (name) => {
+  if (commands[name]) {
+    return commands[name]
+  }
+  // Fall back to real commands
+  return require(`../../lib/commands/${name}`)
+}
+
+// Test harness for custom commands to test edge cases
+t.test('custom command loader tests', async t => {
   t.test('command without description', async t => {
-    // Register a command without a description
-    registerCommand('testcmd-nodesc', {
-      usage: ['<pkg>'],
-      params: ['registry'],
+    const commandLoader = createCommandLoader({
+      'testcmd-nodesc': {
+        usage: ['<pkg>'],
+        params: ['registry'],
+      },
     })
 
     const doc = createCommandDoc('npm-testcmd-nodesc', 'Test command without description')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-nodesc.md': doc },
       },
@@ -751,13 +759,15 @@ t.test('command injection test harness', async t => {
   })
 
   t.test('command without usage', async t => {
-    // Register a command without usage - should default to ['']
-    registerCommand('testcmd-nousage', {
-      params: ['registry'],
+    const commandLoader = createCommandLoader({
+      'testcmd-nousage': {
+        params: ['registry'],
+      },
     })
 
     const doc = createCommandDoc('npm-testcmd-nousage', 'Test command without usage')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-nousage.md': doc },
       },
@@ -769,13 +779,12 @@ t.test('command injection test harness', async t => {
   })
 
   t.test('command without params (no definitions)', async t => {
-    // Register a command without params - should not have config section content
-    registerCommand('testcmd-noparams', {
-      usage: ['<pkg>'],
-      // No params specified
+    const commandLoader = createCommandLoader({
+      'testcmd-noparams': {
+        usage: ['<pkg>'],
+      },
     })
 
-    // Use a doc without the config placeholder since this command has no params
     const doc = `---
 title: npm-testcmd-noparams
 section: 1
@@ -788,6 +797,7 @@ description: Test command without params
 `
 
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-noparams.md': doc },
       },
@@ -799,24 +809,26 @@ description: Test command without params
   })
 
   t.test('command with one definition with short flag', async t => {
-    // Register a command with a custom definition that has a short flag
-    registerCommand('testcmd-short', {
-      usage: ['<pkg>'],
-      params: ['custom-flag'],
-      definitions: {
-        'custom-flag': {
-          key: 'custom-flag',
-          default: false,
-          type: Boolean,
-          short: 'c',
-          description: 'A custom flag with a short version',
-          describe: () => '#### `custom-flag`\n\n* Default: false\n* Type: Boolean\n\nA custom flag with a short version',
+    const commandLoader = createCommandLoader({
+      'testcmd-short': {
+        usage: ['<pkg>'],
+        params: ['custom-flag'],
+        definitions: {
+          'custom-flag': {
+            key: 'custom-flag',
+            default: false,
+            type: Boolean,
+            short: 'c',
+            description: 'A custom flag with a short version',
+            describe: () => '#### `custom-flag`\n\n* Default: false\n* Type: Boolean\n\nA custom flag with a short version',
+          },
         },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-short', 'Test command with short flag')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-short.md': doc },
       },
@@ -829,24 +841,26 @@ description: Test command without params
   })
 
   t.test('command with definition with aliases', async t => {
-    // Register a command with a definition that has aliases
-    registerCommand('testcmd-alias', {
-      usage: ['<pkg>'],
-      params: ['aliased-flag'],
-      definitions: {
-        'aliased-flag': {
-          key: 'aliased-flag',
-          default: '',
-          type: String,
-          alias: ['af', 'alias-flag'],
-          description: 'A flag with aliases',
-          describe: () => '#### `aliased-flag`\n\n* Default: ""\n* Type: String\n\nA flag with aliases',
+    const commandLoader = createCommandLoader({
+      'testcmd-alias': {
+        usage: ['<pkg>'],
+        params: ['aliased-flag'],
+        definitions: {
+          'aliased-flag': {
+            key: 'aliased-flag',
+            default: '',
+            type: String,
+            alias: ['af', 'alias-flag'],
+            description: 'A flag with aliases',
+            describe: () => '#### `aliased-flag`\n\n* Default: ""\n* Type: String\n\nA flag with aliases',
+          },
         },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-alias', 'Test command with aliased flag')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-alias.md': doc },
       },
@@ -860,7 +874,6 @@ description: Test command without params
   })
 
   t.test('command with subcommands', async t => {
-    // Register a command with subcommands
     class SubA {
       static description = 'Subcommand A description'
       static usage = ['<arg>']
@@ -880,17 +893,20 @@ description: Test command without params
       static params = ['registry']
     }
 
-    registerCommand('testcmd-subs', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        'sub-a': SubA,
-        'sub-b': SubB,
+    const commandLoader = createCommandLoader({
+      'testcmd-subs': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          'sub-a': SubA,
+          'sub-b': SubB,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-subs', 'Test command with subcommands')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-subs.md': doc },
       },
@@ -905,15 +921,16 @@ description: Test command without params
   })
 
   t.test('command with exclusive params', async t => {
-    // Register a command with exclusive params that expand
-    registerCommand('testcmd-exclusive', {
-      usage: ['<pkg>'],
-      // save has exclusive params (save-dev, save-optional, etc)
-      params: ['save'],
+    const commandLoader = createCommandLoader({
+      'testcmd-exclusive': {
+        usage: ['<pkg>'],
+        params: ['save'],
+      },
     })
 
     const doc = createCommandDoc('npm-testcmd-exclusive', 'Test command with exclusive params')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-exclusive.md': doc },
       },
@@ -921,20 +938,21 @@ description: Test command without params
 
     const htmlContent = await readHtmlDoc(html, 'npm-testcmd-exclusive')
     t.ok(htmlContent.length > 0, 'generates HTML for command with exclusive params')
-    // The exclusive params should be expanded from 'save'
     t.match(htmlContent, /save/, 'includes save param')
   })
 
   t.test('command without workspaces', async t => {
-    // Register a command that is not workspace-aware
-    registerCommand('testcmd-noworkspaces', {
-      usage: ['<pkg>'],
-      params: ['registry'],
-      workspaces: false,
+    const commandLoader = createCommandLoader({
+      'testcmd-noworkspaces': {
+        usage: ['<pkg>'],
+        params: ['registry'],
+        workspaces: false,
+      },
     })
 
     const doc = createCommandDoc('npm-testcmd-noworkspaces', 'Test command without workspaces')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-noworkspaces.md': doc },
       },
@@ -946,15 +964,17 @@ description: Test command without params
   })
 
   t.test('command with workspaces enabled', async t => {
-    // Register a command that IS workspace-aware
-    registerCommand('testcmd-workspaces', {
-      usage: ['<pkg>'],
-      params: ['registry'],
-      workspaces: true,
+    const commandLoader = createCommandLoader({
+      'testcmd-workspaces': {
+        usage: ['<pkg>'],
+        params: ['registry'],
+        workspaces: true,
+      },
     })
 
     const doc = createCommandDoc('npm-testcmd-workspaces', 'Test command with workspaces')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-workspaces.md': doc },
       },
@@ -966,7 +986,6 @@ description: Test command without params
   })
 
   t.test('subcommand without description', async t => {
-    // Register a command with a subcommand that has no description
     class SubNoDesc {
       static usage = ['<arg>']
       static definitions = {
@@ -979,16 +998,19 @@ description: Test command without params
       }
     }
 
-    registerCommand('testcmd-sub-nodesc', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        mysub: SubNoDesc,
+    const commandLoader = createCommandLoader({
+      'testcmd-sub-nodesc': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          mysub: SubNoDesc,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-sub-nodesc', 'Test command with subcommand without description')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-sub-nodesc.md': doc },
       },
@@ -1000,7 +1022,6 @@ description: Test command without params
   })
 
   t.test('subcommand without usage', async t => {
-    // Register a command with a subcommand that has no usage
     class SubNoUsage {
       static description = 'Subcommand without usage'
       static definitions = {
@@ -1013,16 +1034,19 @@ description: Test command without params
       }
     }
 
-    registerCommand('testcmd-sub-nousage', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        mysub: SubNoUsage,
+    const commandLoader = createCommandLoader({
+      'testcmd-sub-nousage': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          mysub: SubNoUsage,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-sub-nousage', 'Test command with subcommand without usage')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-sub-nousage.md': doc },
       },
@@ -1034,7 +1058,6 @@ description: Test command without params
   })
 
   t.test('subcommand with short flag and alias', async t => {
-    // Register a command with a subcommand that has definitions with short and alias
     class SubWithShortAlias {
       static description = 'Subcommand with short and alias'
       static usage = ['<arg>']
@@ -1050,16 +1073,19 @@ description: Test command without params
       }
     }
 
-    registerCommand('testcmd-sub-complex', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        mysub: SubWithShortAlias,
+    const commandLoader = createCommandLoader({
+      'testcmd-sub-complex': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          mysub: SubWithShortAlias,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-sub-complex', 'Test command with complex subcommand')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-sub-complex.md': doc },
       },
@@ -1074,23 +1100,25 @@ description: Test command without params
   })
 
   t.test('subcommand with explicit params (not derived from definitions)', async t => {
-    // Register a command with a subcommand that has explicit params array
     class SubWithParams {
       static description = 'Subcommand with explicit params'
       static usage = ['<arg>']
       static params = ['registry', 'tag']
     }
 
-    registerCommand('testcmd-sub-params', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        mysub: SubWithParams,
+    const commandLoader = createCommandLoader({
+      'testcmd-sub-params': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          mysub: SubWithParams,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-sub-params', 'Test command with subcommand with explicit params')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-sub-params.md': doc },
       },
@@ -1103,23 +1131,25 @@ description: Test command without params
   })
 
   t.test('command with mixed command-specific and global params', async t => {
-    // Register a command that has both command-specific definitions AND global params
-    registerCommand('testcmd-mixed', {
-      usage: ['<pkg>'],
-      params: ['custom-only', 'registry'],
-      definitions: {
-        'custom-only': {
-          key: 'custom-only',
-          default: false,
-          type: Boolean,
-          description: 'A command-specific flag',
-          describe: () => '#### `custom-only`\n\n* Default: false\n* Type: Boolean\n\nA command-specific flag',
+    const commandLoader = createCommandLoader({
+      'testcmd-mixed': {
+        usage: ['<pkg>'],
+        params: ['custom-only', 'registry'],
+        definitions: {
+          'custom-only': {
+            key: 'custom-only',
+            default: false,
+            type: Boolean,
+            description: 'A command-specific flag',
+            describe: () => '#### `custom-only`\n\n* Default: false\n* Type: Boolean\n\nA command-specific flag',
+          },
         },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-mixed', 'Test command with mixed params')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-mixed.md': doc },
       },
@@ -1132,7 +1162,6 @@ description: Test command without params
   })
 
   t.test('subcommand with command-specific and global params', async t => {
-    // Register a subcommand that has both command-specific definitions AND global params
     class SubMixed {
       static description = 'Subcommand with mixed params'
       static usage = ['<arg>']
@@ -1148,16 +1177,19 @@ description: Test command without params
       }
     }
 
-    registerCommand('testcmd-sub-mixed', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        mysub: SubMixed,
+    const commandLoader = createCommandLoader({
+      'testcmd-sub-mixed': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          mysub: SubMixed,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-sub-mixed', 'Test command with subcommand with mixed params')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-sub-mixed.md': doc },
       },
@@ -1170,15 +1202,12 @@ description: Test command without params
   })
 
   t.test('subcommand with global config param that has alias in subDefinitions', async t => {
-    // This specifically tests the aliasText branch in globalConfigParams (line ~214)
-    // We need a subcommand that uses a global param but overrides it with an alias in subDefinitions
     const { definitions: globalDefs } = require('@npmcli/config/lib/definitions')
 
     class SubWithGlobalAlias {
       static description = 'Subcommand using global param with alias override'
       static usage = ['<pkg>']
       static params = ['registry']
-      // Define registry in subDefinitions with an alias - this shadows the global definition
       static definitions = {
         registry: {
           ...globalDefs.registry,
@@ -1188,16 +1217,19 @@ description: Test command without params
       }
     }
 
-    registerCommand('testcmd-sub-global-alias', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        mysub: SubWithGlobalAlias,
+    const commandLoader = createCommandLoader({
+      'testcmd-sub-global-alias': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          mysub: SubWithGlobalAlias,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-sub-global-alias', 'Test subcommand with global aliased param')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-sub-global-alias.md': doc },
       },
@@ -1211,8 +1243,6 @@ description: Test command without params
   })
 
   t.test('subcommand with flags without describe method (fallback table format)', async t => {
-    // Register a subcommand that has definitions without describe() method
-    // This tests the fallback table format path
     class SubWithoutDescribe {
       static description = 'Subcommand with simple flags'
       static usage = ['<arg>']
@@ -1243,22 +1273,25 @@ description: Test command without params
           key: 'falsy-default-desc',
           default: 'another-value',
           type: String,
-          defaultDescription: '', // Explicitly falsy
+          defaultDescription: '',
           description: 'A flag with empty defaultDescription',
         },
       }
     }
 
-    registerCommand('testcmd-sub-nodescribe', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        mysub: SubWithoutDescribe,
+    const commandLoader = createCommandLoader({
+      'testcmd-sub-nodescribe': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          mysub: SubWithoutDescribe,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-sub-nodescribe', 'Test command with subcommand without describe')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-sub-nodescribe.md': doc },
       },
@@ -1276,8 +1309,6 @@ description: Test command without params
   })
 
   t.test('subcommand with command-specific params and table format (no describe)', async t => {
-    // Register a subcommand with command-specific params but no describe method
-    // This tests the table format path for command-specific params
     class SubMixedNoDescribe {
       static description = 'Subcommand with command-specific params but no describe'
       static usage = ['<arg>']
@@ -1292,16 +1323,19 @@ description: Test command without params
       }
     }
 
-    registerCommand('testcmd-sub-mixed-nodesc', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        mysub: SubMixedNoDescribe,
+    const commandLoader = createCommandLoader({
+      'testcmd-sub-mixed-nodesc': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          mysub: SubMixedNoDescribe,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-sub-mixed-nodesc', 'Test command with subcommand with mixed params no describe')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-sub-mixed-nodesc.md': doc },
       },
@@ -1314,23 +1348,24 @@ description: Test command without params
   })
 
   t.test('subcommand with no params', async t => {
-    // Register a subcommand with no params or definitions
-    // This tests the edge case where allParams.length === 0
     class SubNoParams {
       static description = 'Subcommand with no params'
       static usage = ['<arg>']
     }
 
-    registerCommand('testcmd-sub-noparams', {
-      usage: ['<subcommand>'],
-      params: null,
-      subcommands: {
-        mysub: SubNoParams,
+    const commandLoader = createCommandLoader({
+      'testcmd-sub-noparams': {
+        usage: ['<subcommand>'],
+        params: null,
+        subcommands: {
+          mysub: SubNoParams,
+        },
       },
     })
 
     const doc = createCommandDoc('npm-testcmd-sub-noparams', 'Test command with subcommand with no params')
     const { html } = await testBuildDocs(t, {
+      commandLoader,
       content: {
         commands: { 'npm-testcmd-sub-noparams.md': doc },
       },
