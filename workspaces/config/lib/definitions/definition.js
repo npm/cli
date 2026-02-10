@@ -23,6 +23,7 @@ const allowed = [
   'usage',
   'envExport',
   'alias',
+  'required',
 ]
 
 const {

@@ -100,18 +100,18 @@ Array [
 exports[`test/lib/commands/completion.js TAP completion trust github flags > trust github flags with custom definitions 1`] = `
 Array [
   String(
-    --yes
-    --json
-    --registry
-    --dry-run
     --file
     --repository
     --repo
     --environment
     --env
-    --no-yes
-    --no-json
+    --dry-run
+    --json
+    --registry
+    --yes
     --no-dry-run
+    --no-json
+    --no-yes
   ),
 ]
 `
@@ -119,17 +119,17 @@ Array [
 exports[`test/lib/commands/completion.js TAP completion trust gitlab flags > trust gitlab flags with custom definitions 1`] = `
 Array [
   String(
-    --yes
-    --json
-    --registry
-    --dry-run
     --file
     --project
     --environment
     --env
-    --no-yes
-    --no-json
+    --dry-run
+    --json
+    --registry
+    --yes
     --no-dry-run
+    --no-json
+    --no-yes
   ),
 ]
 `
