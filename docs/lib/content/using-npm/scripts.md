@@ -39,6 +39,12 @@ These scripts happen in addition to the `pre<event>`, `post<event>`, and
 
 * `prepare`, `prepublish`, `prepublishOnly`, `prepack`, `postpack`, `dependencies`
 
+**preunpack**
+* Runs BEFORE dependencies are installed, ONLY on local `npm install` (without arguments) and `npm ci`.
+* Provides a hook for setup tasks that must happen before any packages are fetched, such as authenticating to private registries or validating environment prerequisites.
+* Does NOT run when installing specific packages (e.g., `npm install express`), during global installs, or when `--ignore-scripts` is set.
+* If the script exits with a non-zero code, the installation is aborted.
+
 **prepare** (since `npm@4.0.0`)
 * Runs BEFORE the package is packed, i.e.
 during `npm publish` and `npm pack`
@@ -111,6 +117,7 @@ It is run AFTER the changes have been applied and the `package.json` and `packag
 
 #### [`npm ci`](/commands/npm-ci)
 
+* `preunpack`
 * `preinstall`
 * `install`
 * `postinstall`
@@ -119,7 +126,8 @@ It is run AFTER the changes have been applied and the `package.json` and `packag
 * `prepare`
 * `postprepare`
 
-These all run after the actual installation of modules into
+`preunpack` runs before the actual installation of modules.
+All other scripts run after the actual installation of modules into
  `node_modules`, in order, with no internal actions happening in between
 
 #### [`npm diff`](/commands/npm-diff)
@@ -130,6 +138,7 @@ These all run after the actual installation of modules into
 
 These also run when you run `npm install -g <pkg-name>`
 
+* `preunpack`
 * `preinstall`
 * `install`
 * `postinstall`

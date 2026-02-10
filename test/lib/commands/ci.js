@@ -172,6 +172,7 @@ t.test('lifecycle scripts', async t => {
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('ci', [])
   t.same(scripts, [
+    'preunpack',
     'preinstall',
     'install',
     'postinstall',
@@ -307,4 +308,84 @@ t.test('should use --workspace flag', async t => {
   await npm.exec('ci', [])
   assert.packageMissing('node_modules/abbrev@1.1.0')
   assert.packageInstalled('node_modules/lodash@1.1.1')
+})
+
+t.test('preunpack lifecycle script tests for ci', async t => {
+  await t.test('preunpack runs before arborist reify', async t => {
+    const events = []
+    let reifyCalled = false
+
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: {
+        'package.json': JSON.stringify({
+          ...packageJson,
+          scripts: {
+            preunpack: 'echo preunpack',
+          },
+        }),
+        'package-lock.json': JSON.stringify(packageLock),
+      },
+      mocks: {
+        '{LIB}/utils/reify-finish.js': async () => {},
+        '@npmcli/run-script': (opts) => {
+          if (opts.event === 'preunpack') {
+            events.push('preunpack')
+            t.notOk(reifyCalled, 'preunpack should run before arborist.reify is called')
+          }
+        },
+        '@npmcli/arborist': function () {
+          this.virtualTree = { inventory: new Map() }
+          this.actualTree = { inventory: new Map() }
+          this.idealTree = { inventory: new Map() }
+
+          this.loadActual = async () => this.actualTree
+          this.loadVirtual = async () => this.virtualTree
+          this.buildIdealTree = async () => this.idealTree
+          this.reify = async () => {
+            reifyCalled = true
+            events.push('reify')
+            t.ok(events.includes('preunpack'), 'preunpack should have run before reify')
+            return {}
+          }
+        },
+      },
+    })
+
+    await npm.exec('ci', [])
+    t.same(events, ['preunpack', 'reify'], 'preunpack runs before reify in ci')
+    t.ok(reifyCalled, 'arborist reify should have been called')
+  })
+
+  await t.test('preunpack does not run with --ignore-scripts', async t => {
+    const scripts = []
+    const { npm, registry } = await loadMockNpm(t, {
+      config: {
+        'ignore-scripts': true,
+      },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          ...packageJson,
+          scripts: {
+            preunpack: 'echo preunpack',
+            preinstall: 'echo preinstall',
+          },
+        }),
+        'package-lock.json': JSON.stringify(packageLock),
+        abbrev,
+      },
+      mocks: {
+        '@npmcli/run-script': (opts) => {
+          scripts.push(opts.event)
+        },
+      },
+    })
+    const manifest = registry.manifest({ name: 'abbrev' })
+    await registry.tarball({
+      manifest: manifest.versions['1.0.0'],
+      tarball: path.join(npm.prefix, 'abbrev'),
+    })
+    registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+    await npm.exec('ci', [])
+    t.same(scripts, [], 'no scripts should run with --ignore-scripts')
+  })
 })
