@@ -376,7 +376,7 @@ const run = async (opts) => {
     const transformedSrc = applyTransforms(body, [
       transform.version,
       ...(fullName.startsWith('commands/')
-        ? [transform.usage, transform.params]
+        ? [transform.usage, transform.definitions]
         : []),
       ...(fullName === 'using-npm/config'
         ? [transform.shorthands, transform.config]

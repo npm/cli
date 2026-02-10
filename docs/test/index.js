@@ -808,6 +808,116 @@ description: Test command without params
     t.match(htmlContent, /npm testcmd-noparams/, 'includes command name')
   })
 
+  t.test('command with empty definitions (has config placeholder)', async t => {
+    const commandLoader = createCommandLoader({
+      'testcmd-empty-defs': {
+        usage: ['<pkg>'],
+        definitions: {},
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-empty-defs', 'Test command with empty definitions')
+    const { html } = await testBuildDocs(t, {
+      commandLoader,
+      content: {
+        commands: { 'npm-testcmd-empty-defs.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-empty-defs')
+    t.ok(htmlContent.length > 0, 'generates HTML for command with empty definitions')
+    t.match(htmlContent, /npm testcmd-empty-defs/, 'includes command name')
+  })
+
+  t.test('command with params referencing non-existent global definition', async t => {
+    const commandLoader = createCommandLoader({
+      'testcmd-missing-param': {
+        usage: ['<pkg>'],
+        params: ['non-existent-param', 'registry'],
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-missing-param', 'Test command with missing param')
+    const { html } = await testBuildDocs(t, {
+      commandLoader,
+      content: {
+        commands: { 'npm-testcmd-missing-param.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-missing-param')
+    t.ok(htmlContent.length > 0, 'generates HTML even with missing param definition')
+    t.match(htmlContent, /registry/, 'includes valid param')
+  })
+
+  t.test('command with exclusive param already resolved', async t => {
+    const commandLoader = createCommandLoader({
+      'testcmd-exclusive-resolved': {
+        usage: ['<pkg>'],
+        definitions: {
+          'save-dev': {
+            key: 'save-dev',
+            default: false,
+            type: Boolean,
+            description: 'Save as devDependency',
+            exclusive: ['save-optional'],
+            describe: () => '#### `save-dev`\n\n* Default: false\n* Type: Boolean\n\nSave as devDependency',
+          },
+          'save-optional': {
+            key: 'save-optional',
+            default: false,
+            type: Boolean,
+            description: 'Save as optionalDependency',
+            describe: () => '#### `save-optional`\n\n* Default: false\n* Type: Boolean\n\nSave as optionalDependency',
+          },
+        },
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-exclusive-resolved', 'Test command with exclusive already resolved')
+    const { html } = await testBuildDocs(t, {
+      commandLoader,
+      content: {
+        commands: { 'npm-testcmd-exclusive-resolved.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-exclusive-resolved')
+    t.ok(htmlContent.length > 0, 'generates HTML with exclusive params')
+    t.match(htmlContent, /save-dev/, 'includes save-dev')
+    t.match(htmlContent, /save-optional/, 'includes save-optional')
+  })
+
+  t.test('command with exclusive param that does not exist in global definitions', async t => {
+    const commandLoader = createCommandLoader({
+      'testcmd-exclusive-missing': {
+        usage: ['<pkg>'],
+        definitions: {
+          'my-flag': {
+            key: 'my-flag',
+            default: false,
+            type: Boolean,
+            description: 'A flag with non-existent exclusive',
+            exclusive: ['non-existent-global-param'],
+            describe: () => '#### `my-flag`\n\n* Default: false\n* Type: Boolean\n\nA flag with non-existent exclusive',
+          },
+        },
+      },
+    })
+
+    const doc = createCommandDoc('npm-testcmd-exclusive-missing', 'Test command with missing exclusive')
+    const { html } = await testBuildDocs(t, {
+      commandLoader,
+      content: {
+        commands: { 'npm-testcmd-exclusive-missing.md': doc },
+      },
+    })
+
+    const htmlContent = await readHtmlDoc(html, 'npm-testcmd-exclusive-missing')
+    t.ok(htmlContent.length > 0, 'generates HTML even with missing exclusive param')
+    t.match(htmlContent, /my-flag/, 'includes the defined flag')
+  })
+
   t.test('command with one definition with short flag', async t => {
     const commandLoader = createCommandLoader({
       'testcmd-short': {
@@ -844,7 +954,6 @@ description: Test command without params
     const commandLoader = createCommandLoader({
       'testcmd-alias': {
         usage: ['<pkg>'],
-        params: ['aliased-flag'],
         definitions: {
           'aliased-flag': {
             key: 'aliased-flag',
@@ -852,7 +961,7 @@ description: Test command without params
             type: String,
             alias: ['af', 'alias-flag'],
             description: 'A flag with aliases',
-            describe: () => '#### `aliased-flag`\n\n* Default: ""\n* Type: String\n\nA flag with aliases',
+            describe: () => '#### `aliased-flag`\n\n* Default: ""\n* Type: String\n* Alias: --af, --alias-flag\n\nA flag with aliases',
           },
         },
       },
@@ -1131,10 +1240,11 @@ description: Test command without params
   })
 
   t.test('command with mixed command-specific and global params', async t => {
+    const { definitions: globalDefs } = require('@npmcli/config/lib/definitions')
+
     const commandLoader = createCommandLoader({
       'testcmd-mixed': {
         usage: ['<pkg>'],
-        params: ['custom-only', 'registry'],
         definitions: {
           'custom-only': {
             key: 'custom-only',
@@ -1143,6 +1253,7 @@ description: Test command without params
             description: 'A command-specific flag',
             describe: () => '#### `custom-only`\n\n* Default: false\n* Type: Boolean\n\nA command-specific flag',
           },
+          registry: globalDefs.registry,
         },
       },
     })
@@ -1162,10 +1273,11 @@ description: Test command without params
   })
 
   t.test('subcommand with command-specific and global params', async t => {
+    const { definitions: globalDefs } = require('@npmcli/config/lib/definitions')
+
     class SubMixed {
       static description = 'Subcommand with mixed params'
       static usage = ['<arg>']
-      static params = ['sub-flag', 'registry']
       static definitions = {
         'sub-flag': {
           key: 'sub-flag',
@@ -1174,6 +1286,7 @@ description: Test command without params
           description: 'A subcommand-specific flag',
           describe: () => '#### `sub-flag`\n\n* Default: false\n* Type: Boolean\n\nA subcommand-specific flag',
         },
+        registry: globalDefs.registry,
       }
     }
 
@@ -1312,13 +1425,18 @@ description: Test command without params
     class SubMixedNoDescribe {
       static description = 'Subcommand with command-specific params but no describe'
       static usage = ['<arg>']
-      static params = ['sub-custom', 'registry']
       static definitions = {
         'sub-custom': {
           key: 'sub-custom',
           default: 'default-val',
           type: String,
           description: 'A command-specific flag without describe',
+        },
+        registry: {
+          key: 'registry',
+          default: 'https://registry.npmjs.org/',
+          type: String,
+          description: 'The base URL of the npm registry',
         },
       }
     }

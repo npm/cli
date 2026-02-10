@@ -32,6 +32,27 @@ const getCommand = (name, commandLoader = defaultCommandLoader) => {
   return commandLoader(name)
 }
 
+// Resolve definitions for a command - use definitions if present, otherwise build from params
+const resolveDefinitions = (command) => {
+  // If command has definitions, use them directly (ignore params)
+  if (command.definitions && Object.keys(command.definitions).length > 0) {
+    return command.definitions
+  }
+
+  // Otherwise build from params using global definitions
+  if (command.params) {
+    const resolved = {}
+    for (const param of command.params) {
+      if (definitions[param]) {
+        resolved[param] = definitions[param]
+      }
+    }
+    return resolved
+  }
+
+  return {}
+}
+
 const getCommandByDoc = (docFile, docExt, commandLoader = defaultCommandLoader) => {
   // Grab the command name from the *.md filename
   // NOTE: We cannot use the name property command file because in the case of
@@ -41,7 +62,7 @@ const getCommandByDoc = (docFile, docExt, commandLoader = defaultCommandLoader) 
   if (name === 'npm') {
     return {
       name,
-      params: null,
+      definitions: {},
       usage: 'npm',
     }
   }
@@ -51,19 +72,19 @@ const getCommandByDoc = (docFile, docExt, commandLoader = defaultCommandLoader) 
   // so it just needs the usage of npm exec
   const srcName = name === 'npx' ? 'exec' : name
   const command = getCommand(srcName, commandLoader)
-  const { params, usage = [''], workspaces } = command
-  const commandDefinitions = command.definitions || {}
-  const definitionPool = { ...definitions, ...commandDefinitions }
+  const { usage = [''], workspaces } = command
   const usagePrefix = name === 'npx' ? 'npx' : `npm ${name}`
-  if (params) {
-    for (const param of params) {
-      // Check command-specific definitions first, fall back to global definitions
-      const paramDef = definitionPool[param]
-      if (paramDef && paramDef.exclusive) {
-        for (const e of paramDef.exclusive) {
-          if (!params.includes(e)) {
-            params.splice(params.indexOf(param) + 1, 0, e)
-          }
+
+  // Resolve definitions - handles exclusive params expansion
+  const commandDefs = resolveDefinitions(command)
+  const resolvedDefs = {}
+  for (const [key, def] of Object.entries(commandDefs)) {
+    resolvedDefs[key] = def
+    // Handle exclusive params
+    if (def.exclusive) {
+      for (const e of def.exclusive) {
+        if (!resolvedDefs[e] && definitions[e]) {
+          resolvedDefs[e] = definitions[e]
         }
       }
     }
@@ -72,7 +93,7 @@ const getCommandByDoc = (docFile, docExt, commandLoader = defaultCommandLoader) 
   return {
     name,
     workspaces,
-    params: name === 'npx' ? null : params,
+    definitions: name === 'npx' ? {} : resolvedDefs,
     usage: usage.map(u => `${usagePrefix} ${u}`.trim()).join('\n'),
   }
 }
@@ -138,33 +159,30 @@ const generateFlagsTable = (definitionPool) => {
   ].join('\n')
 }
 
-const replaceParams = (src, { path, commandLoader }) => {
-  const { params, name } = getCommandByDoc(path, DOC_EXT, commandLoader)
+const replaceDefinitions = (src, { path, commandLoader }) => {
+  const { definitions: commandDefs, name } = getCommandByDoc(path, DOC_EXT, commandLoader)
 
-  // Load command to get command-specific definitions and subcommands if they exist
-  let commandDefinitions = {}
   let subcommands = {}
   try {
     const command = getCommand(name, commandLoader)
-    commandDefinitions = command.definitions || {}
     subcommands = command.subcommands || {}
   } catch {
-    // If command doesn't exist or has no definitions, continue with global definitions only
+    // Command doesn't exist
   }
 
-  // If no params and no subcommands, nothing to replace
-  if (!params && Object.keys(subcommands).length === 0) {
+  // If no definitions and no subcommands, nothing to replace
+  if (Object.keys(commandDefs).length === 0 && Object.keys(subcommands).length === 0) {
     return src
   }
 
-  // Assert placeholder is present - commands with params must have the config placeholder
+  // Assert placeholder is present
   const replacer = assertPlaceholder(src, path, TAGS.CONFIG)
 
   // If command has subcommands, generate sections for each subcommand
   if (Object.keys(subcommands).length > 0) {
     const subcommandSections = Object.entries(subcommands).map(([subName, SubCommand]) => {
       const subUsage = SubCommand.usage || []
-      const subDefinitions = SubCommand.definitions || {}
+      const subDefs = resolveDefinitions(SubCommand)
 
       const parts = [`### \`npm ${name} ${subName}\``, '']
 
@@ -181,10 +199,10 @@ const replaceParams = (src, { path, commandLoader }) => {
         parts.push('```', '')
       }
 
-      // Add flags section with all parameters combined
-      if (Object.keys(subDefinitions).length > 0) {
+      // Add flags section if definitions exist
+      if (Object.keys(subDefs).length > 0) {
         parts.push('#### Flags', '')
-        parts.push(generateFlagsTable(subDefinitions), '')
+        parts.push(generateFlagsTable(subDefs), '')
       }
 
       return parts.join('\n')
@@ -193,21 +211,10 @@ const replaceParams = (src, { path, commandLoader }) => {
     return src.replace(replacer, subcommandSections.join('\n'))
   }
 
-  // Original behavior for commands without subcommands but with params
-  /* istanbul ignore if - all commands with no subcommands have params */
-  if (!params) {
-    return src
-  }
-
-  // Build definitions object from params using global definitions pool
-  const allDefinitions = { ...definitions, ...commandDefinitions }
-  const paramDescriptions = []
-  for (const param of params) {
-    if (allDefinitions[param]) {
-      const def = allDefinitions[param]
-      paramDescriptions.push(def.describe())
-    }
-  }
+  // For commands without subcommands - commandDefs must be non-empty here
+  // (we would have returned early at line 175 if both were empty)
+  const paramDescriptions = Object.values(commandDefs)
+    .map(def => def.describe())
 
   return src.replace(replacer, paramDescriptions.join('\n\n'))
 }
@@ -284,7 +291,7 @@ module.exports = {
     md: resolve(__dirname, '..', 'content'),
   },
   usage: replaceUsage,
-  params: replaceParams,
+  definitions: replaceDefinitions,
   config: replaceConfig,
   shorthands: replaceShorthands,
   version: replaceVersion,
