@@ -103,7 +103,7 @@ npm error
 npm error   --dry-run
 npm error     Indicates that you don't want npm to make any changes and that it should
 npm error
-npm error   -w||--workspace
+npm error   -w|--workspace
 npm error     Enable running a command in the context of the configured workspaces of the
 npm error
 npm error   --workspaces
