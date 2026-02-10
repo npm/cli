@@ -102,7 +102,7 @@
     "npm-registry-fetch": "^19.1.1",
     "npm-user-validate": "^4.0.0",
     "p-map": "^7.0.4",
-    "pacote": "^21.1.0",
+    "pacote": "^21.3.1",
     "parse-conflict-json": "^5.0.1",
     "proc-log": "^6.1.0",
     "qrcode-terminal": "^0.12.0",
