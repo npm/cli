@@ -62,7 +62,7 @@ const getCommandByDoc = (docFile, docExt, commandLoader = defaultCommandLoader) 
   if (name === 'npm') {
     return {
       name,
-      definitions: {},
+      definitions: [],
       usage: 'npm',
     }
   }

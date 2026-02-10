@@ -812,7 +812,7 @@ description: Test command without params
     const commandLoader = createCommandLoader({
       'testcmd-empty-defs': {
         usage: ['<pkg>'],
-        definitions: {},
+        definitions: [],
       },
     })
 
