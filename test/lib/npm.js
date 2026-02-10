@@ -630,13 +630,13 @@ t.test('exec edge cases', async t => {
       static name = 'test-cmd'
       static description = 'Test command with definitions'
       static workspaces = true
-      static definitions = {
-        testflag: new Definition('testflag', {
+      static definitions = [
+        new Definition('testflag', {
           type: String,
           default: 'default-value',
           description: 'A test flag',
         }),
-      }
+      ]
 
       async exec (args, flags) {
         execCalled = true
@@ -693,13 +693,13 @@ t.test('exec edge cases', async t => {
       static name = 'test-cmd'
       static description = 'Test command with definitions'
       static workspaces = true
-      static definitions = {
-        testflag: new Definition('testflag', {
+      static definitions = [
+        new Definition('testflag', {
           type: String,
           default: 'ws-default',
           description: 'A test flag',
         }),
-      }
+      ]
 
       async exec () {
         throw new Error('exec should not be called')

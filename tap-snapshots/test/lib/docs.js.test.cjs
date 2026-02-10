@@ -3980,6 +3980,12 @@ Options:
   --audit
     When "true" submit audit reports alongside the current npm command to the
 
+  --before
+    If passed to \`npm install\`, will rebuild the npm tree such that only
+
+  --min-release-age
+    If set, npm will build the npm tree such that only versions that were
+
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
 
@@ -4214,6 +4220,12 @@ Options:
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
+
+  --before
+    If passed to \`npm install\`, will rebuild the npm tree such that only
+
+  --min-release-age
+    If set, npm will build the npm tree such that only versions that were
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
@@ -4725,6 +4737,9 @@ Options:
   -w||--workspace
     Enable running a command in the context of the configured workspaces of the
 
+  --before
+    If passed to \`npm install\`, will rebuild the npm tree such that only
+
 
 Run "npm help outdated" for more info
 
@@ -5064,6 +5079,9 @@ Options:
   --include-workspace-root
     Include the workspace root when workspaces are enabled for a command.
 
+  --provenance
+    When publishing from a supported cloud CI/CD system, the package will be
+
 
 Run "npm help publish" for more info
 
@@ -5108,6 +5126,9 @@ Options:
 
   --package-lock-only
     If set to true, the current operation will only use the \`package-lock.json\`,
+
+  --expect-results
+    Tells npm whether or not to expect results from the command.
 
 
 Run "npm help query" for more info
@@ -5998,6 +6019,9 @@ Options:
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
+
+  --before
+    If passed to \`npm install\`, will rebuild the npm tree such that only
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package

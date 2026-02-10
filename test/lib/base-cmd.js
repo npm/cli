@@ -15,14 +15,14 @@ t.test('flags() method with command definitions', async t => {
     static description = 'Test command'
     static params = ['mountain']
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -44,14 +44,14 @@ t.test('flags() method with default values', async t => {
     static description = 'Test command'
     static params = ['mountain']
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -77,14 +77,14 @@ t.test('flags() method filters unknown options', async t => {
     static description = 'Test command'
     static params = ['mountain']
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -125,14 +125,14 @@ t.test('flags() throws error for unknown flags', async t => {
     static description = 'Test command'
     static params = ['mountain']
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -158,15 +158,15 @@ t.test('flags() maps alias to main key', async t => {
     static description = 'Test command'
     static params = ['mountain']
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
         alias: ['peak'],
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -191,15 +191,15 @@ t.test('flags() throws error when both main key and alias are provided', async t
     static description = 'Test command'
     static params = ['mountain']
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
         alias: ['peak'],
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -236,20 +236,20 @@ t.test('getUsage() with both params and definitions', async t => {
     static description = 'Test command description'
     static params = ['mountain', 'river']
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
       }),
-      river: new Definition('river', {
+      new Definition('river', {
         type: String,
         default: 'nile',
         description: 'Your favorite river',
         usage: '--river=<river>',
       }),
-    }
+    ]
   }
 
   const usage = TestCommand.describeUsage
@@ -294,20 +294,20 @@ t.test('getUsage() with definition without description', async t => {
     static description = 'Test command description'
     static params = ['mountain', 'river']
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
       }),
-      river: new Definition('river', {
+      new Definition('river', {
         type: String,
         default: 'nile',
         description: '', // Empty description
         usage: '--river=<river>',
       }),
-    }
+    ]
   }
 
   const usage = TestCommand.describeUsage
@@ -326,15 +326,15 @@ t.test('flags() handles definition with multiple aliases', async t => {
     static name = 'test-command'
     static description = 'Test command'
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
         alias: ['peak', 'summit'], // Multiple aliases
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -359,15 +359,15 @@ t.test('flags() handles definition with short as array', async t => {
     static name = 'test-command'
     static description = 'Test command'
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
         short: ['m', 'M'], // Short as array
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -390,14 +390,14 @@ t.test('flags() returns defaults when argv is empty', async t => {
     static name = 'test-command'
     static description = 'Test command'
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -421,14 +421,14 @@ t.test('flags() throws error for multiple unknown flags with pluralization', asy
     static name = 'test-command'
     static description = 'Test command'
 
-    static definitions = {
-      mountain: new Definition('mountain', {
+    static definitions = [
+      new Definition('mountain', {
         type: String,
         default: 'everest',
         description: 'Your favorite mountain',
         usage: '--mountain=<mountain>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -474,14 +474,14 @@ t.test('flags() removes unknown positional warning when value is consumed by com
     static description = 'Test command'
     static params = ['id']
 
-    static definitions = {
-      id: new Definition('id', {
+    static definitions = [
+      new Definition('id', {
         type: String,
         default: null,
         description: 'An identifier',
         usage: '--id=<id>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -520,14 +520,14 @@ t.test('flags() keeps unknown positional warning when multiple values follow unk
     static description = 'Test command'
     static params = ['id']
 
-    static definitions = {
-      id: new Definition('id', {
+    static definitions = [
+      new Definition('id', {
         type: String,
         default: null,
         description: 'An identifier',
         usage: '--id=<id>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -565,14 +565,14 @@ t.test('flags() does not remove unknown positional warning when value is in rema
     static description = 'Test command'
     static params = ['id']
 
-    static definitions = {
-      id: new Definition('id', {
+    static definitions = [
+      new Definition('id', {
         type: String,
         default: null,
         description: 'An identifier',
         usage: '--id=<id>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -613,14 +613,14 @@ t.test('flags() throws error for extra positional arguments beyond expected coun
     static positionals = 1 // expects only 1 positional
     static params = ['id']
 
-    static definitions = {
-      id: new Definition('id', {
+    static definitions = [
+      new Definition('id', {
         type: String,
         default: null,
         description: 'An identifier',
         usage: '--id=<id>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
@@ -652,14 +652,14 @@ t.test('flags() does not throw when positionals is null (unlimited)', async t =>
     static positionals = null // unlimited/unchecked
     static params = ['id']
 
-    static definitions = {
-      id: new Definition('id', {
+    static definitions = [
+      new Definition('id', {
         type: String,
         default: null,
         description: 'An identifier',
         usage: '--id=<id>',
       }),
-    }
+    ]
 
     async exec () {
       return this.flags()
