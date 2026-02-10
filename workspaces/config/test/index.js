@@ -57,7 +57,7 @@ t.equal(typeDefs, RealConfig.typeDefs, 'exposes type definitions')
 t.test('construct with no settings, get default values for stuff', t => {
   const npmPath = t.testdir()
   const c = new Config({
-    definitions: [],
+    definitions: {},
     npmPath,
   })
 
