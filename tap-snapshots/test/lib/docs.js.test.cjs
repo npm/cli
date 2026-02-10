@@ -3980,9 +3980,6 @@ Options:
   --audit
     When "true" submit audit reports alongside the current npm command to the
 
-  --before
-    If passed to \`npm install\`, will rebuild the npm tree such that only
-
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
 
@@ -4217,9 +4214,6 @@ Options:
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
-
-  --before
-    If passed to \`npm install\`, will rebuild the npm tree such that only
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
@@ -4730,9 +4724,6 @@ Options:
 
   -w||--workspace
     Enable running a command in the context of the configured workspaces of the
-
-  --before
-    If passed to \`npm install\`, will rebuild the npm tree such that only
 
 
 Run "npm help outdated" for more info
@@ -6007,9 +5998,6 @@ Options:
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
-
-  --before
-    If passed to \`npm install\`, will rebuild the npm tree such that only
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package

@@ -136,7 +136,7 @@ t.test('usage', async t => {
       }
 
       const usage = docs.usage(docs.TAGS.USAGE, { path: cmd })
-      const params = docs.params(docs.TAGS.CONFIG, { path: cmd })
+      const params = docs.definitions(docs.TAGS.CONFIG, { path: cmd })
         .split('\n')
         .filter(l => l.startsWith('#### '))
         .join('\n') || 'NO PARAMS'
