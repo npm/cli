@@ -2879,7 +2879,7 @@ Options:
   --dry-run
     Indicates that you don't want npm to make any changes and that it should
 
-  -f||--force
+  -f|--force
     Removes various protections against unfortunate side effects, common
 
   --json
@@ -2903,7 +2903,7 @@ Options:
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -2955,7 +2955,7 @@ Options:
   --registry
     The base URL of the npm registry.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -3073,7 +3073,7 @@ Options:
   --dry-run
     Indicates that you don't want npm to make any changes and that it should
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -3153,16 +3153,16 @@ Options:
   --json
     Whether or not to output JSON data, rather than the normal output.
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
   --editor
     The command to run for \`npm edit\` and \`npm config edit\`.
 
-  -L||--location
+  -L|--location
     When passed to \`npm config\` this refers to which config file to use.
 
-  -l||--long
+  -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 
 
@@ -3245,7 +3245,7 @@ Options:
   --dry-run
     Indicates that you don't want npm to make any changes and that it should
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -3357,13 +3357,13 @@ Options:
   --diff-text
     Treat all files as text in \`npm diff\`.
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
   --tag
     If you ask npm to install a package and don't tell it a specific version,
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -3406,7 +3406,7 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root]
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -3450,7 +3450,7 @@ Options:
   --registry
     The base URL of the npm registry.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -3542,10 +3542,10 @@ Options:
   --package
     The package or packages to install for [\`npm exec\`](/commands/npm-exec)
 
-  -c||--call
+  -c|--call
     Optional companion option for \`npm exec\`, \`npx\` that allows for
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -3587,7 +3587,7 @@ Options:
   --json
     Whether or not to output JSON data, rather than the normal output.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
 
@@ -3677,7 +3677,7 @@ Options:
   --fund
     When "true" displays the message at the end of each \`npm install\`
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -3733,7 +3733,7 @@ Options:
   --unicode
     When set to true, npm uses unicode characters in the tree output.  When
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --which
@@ -3762,7 +3762,7 @@ npm get [<key> ...] (See \`npm config\`)
 Options:
 [-l|--long]
 
-  -l||--long
+  -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 
 
@@ -3814,7 +3814,7 @@ npm help-search <text>
 Options:
 [-l|--long]
 
-  -l||--long
+  -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 
 
@@ -3864,16 +3864,16 @@ Options:
   --init-private
     The value \`npm init\` should use by default for the package's private flag.
 
-  -y||--yes
+  -y|--yes
     Automatically answer "yes" to any prompts that npm might print on
 
-  -f||--force
+  -f|--force
     Removes various protections against unfortunate side effects, common
 
   --scope
     Associate an operation with a scope for a scoped registry.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -3932,13 +3932,13 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
-  -S||--save
+  -S|--save
     Save installed packages to a \`package.json\` file as dependencies.
 
-  -E||--save-exact
+  -E|--save-exact
     Dependencies saved to package.json will be configured with an exact
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
   --install-strategy
@@ -4004,7 +4004,7 @@ Options:
   --libc
     Override libc of native modules to install.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -4112,7 +4112,7 @@ Options:
   --dry-run
     Indicates that you don't want npm to make any changes and that it should
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -4173,13 +4173,13 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
-  -S||--save
+  -S|--save
     Save installed packages to a \`package.json\` file as dependencies.
 
-  -E||--save-exact
+  -E|--save-exact
     Dependencies saved to package.json will be configured with an exact
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
   --install-strategy
@@ -4245,7 +4245,7 @@ Options:
   --libc
     Override libc of native modules to install.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -4316,13 +4316,13 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
-  -S||--save
+  -S|--save
     Save installed packages to a \`package.json\` file as dependencies.
 
-  -E||--save-exact
+  -E|--save-exact
     Dependencies saved to package.json will be configured with an exact
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
   --install-strategy
@@ -4364,7 +4364,7 @@ Options:
   --dry-run
     Indicates that you don't want npm to make any changes and that it should
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -4423,19 +4423,19 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
-  -a||--all
+  -a|--all
     When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
 
   --json
     Whether or not to output JSON data, rather than the normal output.
 
-  -l||--long
+  -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 
-  -p||--parseable
+  -p|--parseable
     Output parseable results from commands that write to standard output. For
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
   --depth
@@ -4456,7 +4456,7 @@ Options:
   --unicode
     When set to true, npm uses unicode characters in the tree output.  When
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -4570,19 +4570,19 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
-  -a||--all
+  -a|--all
     When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
 
   --json
     Whether or not to output JSON data, rather than the normal output.
 
-  -l||--long
+  -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 
-  -p||--parseable
+  -p|--parseable
     Output parseable results from commands that write to standard output. For
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
   --depth
@@ -4603,7 +4603,7 @@ Options:
   --unicode
     When set to true, npm uses unicode characters in the tree output.  When
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -4684,7 +4684,7 @@ Options:
   --json
     Whether or not to output JSON data, rather than the normal output.
 
-  -p||--parseable
+  -p|--parseable
     Output parseable results from commands that write to standard output. For
 
 
@@ -4719,22 +4719,22 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--before <date>|--min-release-age <days>]
 
-  -a||--all
+  -a|--all
     When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
 
   --json
     Whether or not to output JSON data, rather than the normal output.
 
-  -l||--long
+  -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 
-  -p||--parseable
+  -p|--parseable
     Output parseable results from commands that write to standard output. For
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --before
@@ -4776,7 +4776,7 @@ Options:
   --otp
     This is a one-time password from a two-factor authenticator.  It's needed
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -4821,7 +4821,7 @@ Options:
   --pack-destination
     Directory in which \`npm pack\` will save tarballs.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -4889,13 +4889,13 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces]
 
-  -f||--force
+  -f|--force
     Removes various protections against unfortunate side effects, common
 
   --json
     Whether or not to output JSON data, rather than the normal output.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -4928,7 +4928,7 @@ npm prefix
 Options:
 [-g|--global]
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
 
@@ -4961,7 +4961,7 @@ Options:
   --json
     Whether or not to output JSON data, rather than the normal output.
 
-  -p||--parseable
+  -p|--parseable
     Output parseable results from commands that write to standard output. For
 
   --otp
@@ -5016,7 +5016,7 @@ Options:
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -5070,7 +5070,7 @@ Options:
   --otp
     This is a one-time password from a two-factor authenticator.  It's needed
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -5112,10 +5112,10 @@ Options:
 [--workspaces] [--include-workspace-root] [--package-lock-only]
 [--expect-results|--expect-result-count <count>]
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -5157,7 +5157,7 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
   --bin-links
@@ -5169,7 +5169,7 @@ Options:
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -5219,7 +5219,7 @@ Options:
   --registry
     The base URL of the npm registry.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -5277,7 +5277,7 @@ npm root
 Options:
 [-g|--global]
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
 
@@ -5303,7 +5303,7 @@ Options:
 [--workspaces] [--include-workspace-root] [--if-present] [--ignore-scripts]
 [--foreground-scripts] [--script-shell <script-shell>]
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -5369,7 +5369,7 @@ Options:
   --sbom-type
     The type of package described by the generated SBOM. For SPDX, this is the
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -5408,7 +5408,7 @@ Options:
   --color
     If false, never shows colors.  If \`"always"\` then always shows colors.
 
-  -p||--parseable
+  -p|--parseable
     Output parseable results from commands that write to standard output. For
 
   --description
@@ -5470,10 +5470,10 @@ npm set <key>=<value> [<key>=<value> ...] (See \`npm config\`)
 Options:
 [-g|--global] [-L|--location <global|user|project>]
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
-  -L||--location
+  -L|--location
     When passed to \`npm config\` this refers to which config file to use.
 
 
@@ -5633,7 +5633,7 @@ Options:
   --otp
     This is a one-time password from a two-factor authenticator.  It's needed
 
-  -p||--parseable
+  -p|--parseable
     Output parseable results from commands that write to standard output. For
 
   --json
@@ -5861,13 +5861,13 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
-  -S||--save
+  -S|--save
     Save installed packages to a \`package.json\` file as dependencies.
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -5912,10 +5912,10 @@ Options:
   --dry-run
     Indicates that you don't want npm to make any changes and that it should
 
-  -f||--force
+  -f|--force
     Removes various protections against unfortunate side effects, common
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -5984,10 +5984,10 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
-  -S||--save
+  -S|--save
     Save installed packages to a \`package.json\` file as dependencies.
 
-  -g||--global
+  -g|--global
     Operates in "global" mode, so that packages are installed into the
 
   --install-strategy
@@ -6032,7 +6032,7 @@ Options:
   --dry-run
     Indicates that you don't want npm to make any changes and that it should
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -6110,10 +6110,10 @@ Options:
   --sign-git-tag
     If set to true, then the \`npm version\` command will tag the version
 
-  -S||--save
+  -S|--save
     Save installed packages to a \`package.json\` file as dependencies.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
@@ -6166,7 +6166,7 @@ Options:
   --json
     Whether or not to output JSON data, rather than the normal output.
 
-  -w||--workspace
+  -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
   --workspaces
