@@ -340,6 +340,10 @@ Object {
   "message": Array [
     Function String(),
   ],
+  "min-release-age": Array [
+    null,
+    "numeric value",
+  ],
   "name": Array [
     null,
     Function String(),

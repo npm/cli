@@ -1778,3 +1778,19 @@ t.test('getUnknownPositionals and removeUnknownPositional', async t => {
   const afterSecondRemoval = config.getUnknownPositionals()
   t.equal(afterSecondRemoval.length, 0, 'no unknown positionals remain')
 })
+
+t.test('before and min-release-age', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--min-release-age', '30'],
+    cwd: path,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  // Simple gut check to make sure we didn't do + instead of -
+  t.ok(config.flat.before < Date.now(), 'before date is in the past not the future')
+})

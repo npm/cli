@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.6.0](https://github.com/npm/cli/compare/config-v10.5.0...config-v10.6.0) (2026-02-04)
+### Features
+* [`f5f6cf7`](https://github.com/npm/cli/commit/f5f6cf7c9fc9315b96eb29c5c7d5ab63ad3a9122) [#8943](https://github.com/npm/cli/pull/8943) config: add --allow-git (@wraithgar)
+
 ## [10.5.0](https://github.com/npm/cli/compare/config-v10.4.5...config-v10.5.0) (2026-01-21)
 ### Features
 * [`5a444d5`](https://github.com/npm/cli/commit/5a444d57f1068efddc71ddfd131a949632524e00) [#8828](https://github.com/npm/cli/pull/8828) export environment config variable names (Max Black)

@@ -44,6 +44,15 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.10): `@npmcli/arborist@9.1.10`
 
+## [8.1.0](https://github.com/npm/cli/compare/libnpmdiff-v8.0.13...libnpmdiff-v8.1.0) (2026-02-04)
+### Features
+* [`f5f6cf7`](https://github.com/npm/cli/commit/f5f6cf7c9fc9315b96eb29c5c7d5ab63ad3a9122) [#8943](https://github.com/npm/cli/pull/8943) config: add --allow-git (@wraithgar)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.2.0): `@npmcli/arborist@9.2.0`
+
 ## [8.0.11](https://github.com/npm/cli/compare/libnpmdiff-v8.0.10...libnpmdiff-v8.0.11) (2025-11-25)
 ### Dependencies
 * [`9d77b84`](https://github.com/npm/cli/commit/9d77b84ce961a28941af8b1a597a03e308828cd4) [#8770](https://github.com/npm/cli/pull/8770) `@npmcli/installed-package-contents@4.0.0`

@@ -291,7 +291,7 @@ If the requested version is a \`dist-tag\` and the given tag does not pass the
 will be used. For example, \`foo@latest\` might install \`foo@1.2\` even though
 \`latest\` is \`2.0\`.
 
-
+This config cannot be used with: \`min-release-age\`
 
 #### \`bin-links\`
 
@@ -1121,6 +1121,21 @@ Commit message which is used by \`npm version\` when creating version commit.
 Any "%s" in the message will be replaced with the version number.
 
 
+
+#### \`min-release-age\`
+
+* Default: null
+* Type: null or Number
+
+If set, npm will build the npm tree such that only versions that were
+available more than the given number of days ago will be installed. If there
+are no versions available for the current set of dependencies, the command
+will error.
+
+This flag is a complement to \`before\`, which accepts an exact date instead
+of a relative number of days.
+
+This config cannot be used with: \`before\`
 
 #### \`name\`
 
@@ -2319,6 +2334,7 @@ Array [
   "name",
   "maxsockets",
   "message",
+  "min-release-age",
   "node-gyp",
   "node-options",
   "noproxy",
@@ -2475,6 +2491,7 @@ Array [
   "name",
   "maxsockets",
   "message",
+  "min-release-age",
   "node-gyp",
   "noproxy",
   "offline",
@@ -3910,8 +3927,8 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--allow-git <all|none|root>]
-[--no-audit] [--before <date>] [--no-bin-links] [--no-fund] [--dry-run]
-[--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--no-audit] [--before <date>|--min-release-age <days>] [--no-bin-links]
+[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4024,6 +4041,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`allow-git\`
 #### \`audit\`
 #### \`before\`
+#### \`min-release-age\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
@@ -4147,8 +4165,8 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--allow-git <all|none|root>]
-[--no-audit] [--before <date>] [--no-bin-links] [--no-fund] [--dry-run]
-[--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--no-audit] [--before <date>|--min-release-age <days>] [--no-bin-links]
+[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4261,6 +4279,7 @@ alias: it
 #### \`allow-git\`
 #### \`audit\`
 #### \`before\`
+#### \`min-release-age\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
@@ -4692,7 +4711,7 @@ npm outdated [<package-spec> ...]
 Options:
 [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[--before <date>]
+[--before <date>|--min-release-age <days>]
 
   -a||--all
     When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
@@ -4729,6 +4748,7 @@ npm outdated [<package-spec> ...]
 #### \`global\`
 #### \`workspace\`
 #### \`before\`
+#### \`min-release-age\`
 `
 
 exports[`test/lib/docs.js TAP usage owner > must match snapshot 1`] = `
@@ -5947,8 +5967,8 @@ Options:
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
-[--ignore-scripts] [--no-audit] [--before <date>] [--no-bin-links] [--no-fund]
-[--dry-run]
+[--ignore-scripts] [--no-audit] [--before <date>|--min-release-age <days>]
+[--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -6036,6 +6056,7 @@ aliases: up, upgrade, udpate
 #### \`ignore-scripts\`
 #### \`audit\`
 #### \`before\`
+#### \`min-release-age\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`

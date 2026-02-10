@@ -1,5 +1,9 @@
 # Changelog
 
+## [9.2.0](https://github.com/npm/cli/compare/arborist-v9.1.10...arborist-v9.2.0) (2026-02-04)
+### Features
+* [`f5f6cf7`](https://github.com/npm/cli/commit/f5f6cf7c9fc9315b96eb29c5c7d5ab63ad3a9122) [#8943](https://github.com/npm/cli/pull/8943) config: add --allow-git (@wraithgar)
+
 ## [9.1.10](https://github.com/npm/cli/compare/arborist-v9.1.9...arborist-v9.1.10) (2026-01-21)
 ### Dependencies
 * [`f951820`](https://github.com/npm/cli/commit/f95182001771ad5d52dfc57934d7ce1b97055b70) [#8919](https://github.com/npm/cli/pull/8919) `common-ancestor-path@2.0.0`
