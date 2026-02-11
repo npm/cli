@@ -247,7 +247,7 @@ t.test('exec commands', async t => {
       npm.exec('install', ['npm/npm']),
       {
         code: 'EALLOWGIT',
-        message: 'Fetching packages from git has been disabled',
+        message: 'Fetching packages of type "git" have been disabled',
         package: 'github:npm/npm',
       }
     )
@@ -267,7 +267,7 @@ t.test('exec commands', async t => {
     })
     await t.rejects(
       npm.exec('install', ['./abbrev']),
-      /Fetching packages from git has been disabled/
+      /Fetching packages of type "git" have been disabled/
     )
   })
 })
