@@ -1,5 +1,9 @@
 # Changelog
 
+## [9.3.0](https://github.com/npm/cli/compare/arborist-v9.2.0...arborist-v9.3.0) (2026-02-11)
+### Features
+* [`7c038b7`](https://github.com/npm/cli/commit/7c038b75d4738635a3dd7140b63ead711de3d8d5) [#8968](https://github.com/npm/cli/pull/8968) add support for git-256 sha lengths (#8968) (@wraithgar)
+
 ## [9.2.0](https://github.com/npm/cli/compare/arborist-v9.1.10...arborist-v9.2.0) (2026-02-04)
 ### Features
 * [`f5f6cf7`](https://github.com/npm/cli/commit/f5f6cf7c9fc9315b96eb29c5c7d5ab63ad3a9122) [#8943](https://github.com/npm/cli/pull/8943) config: add --allow-git (@wraithgar)
