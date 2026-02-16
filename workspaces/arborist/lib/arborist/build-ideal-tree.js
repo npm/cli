@@ -339,7 +339,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           filter: node => node,
           visit: node => {
             for (const edge of node.edgesOut.values()) {
-              if ((!edge.to && edge.type !== 'peerOptional') || !edge.valid) {
+              if (edge.type !== 'peerOptional' && (!edge.to || !edge.valid)) {
                 this.#depsQueue.push(node)
                 break // no need to continue the loop after the first hit
               }
@@ -1165,9 +1165,13 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
-      // If the edge has an error, there's a problem.
+      // If the edge has an error, there's a problem, unless
+      // it's peerOptional and not explicitly requested.
       if (!edge.valid) {
-        problems.push(edge)
+        if (edge.type !== 'peerOptional' ||
+          this.#explicitRequests.has(edge)) {
+          problems.push(edge)
+        }
         continue
       }
 
