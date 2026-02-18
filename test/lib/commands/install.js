@@ -775,9 +775,7 @@ t.test('devEngines', async t => {
 // Issue #8726 - npm install should re-resolve to satisfy peerOptional constraints
 // https://github.com/npm/cli/issues/8726
 //
-// When a lockfile has fetcher@1.1.0 but a peerOptional wants fetcher@1.0.0 (exact),
-// npm install (save: true) should re-resolve fetcher to 1.0.0 to satisfy both
-// the regular dep range (^1.0.0) and the exact peerOptional constraint.
+// When a lockfile has fetcher@1.1.0 but a peerOptional wants fetcher@1.0.0 (exact), npm install (save: true) should re-resolve fetcher to 1.0.0 to satisfy both the regular dep range (^1.0.0) and the exact peerOptional constraint.
 t.test('issue-8726: npm install re-resolves to satisfy peerOptional constraint', async t => {
   const { npm, registry } = await loadMockNpm(t, {
     config: { audit: false, 'ignore-scripts': true },
@@ -858,9 +856,7 @@ t.test('issue-8726: npm install re-resolves to satisfy peerOptional constraint',
     },
   })
 
-  // Only set up mocks that npm install actually needs:
-  // - Tarballs for all installed packages (linter, scanner, hint, fetcher@1.0.0)
-  // - Fetcher packument (needed for re-resolution via #problemEdges)
+  // Only set up mocks that npm install actually needs: tarballs for all installed packages (linter, scanner, hint, fetcher@1.0.0) and the fetcher packument (needed for re-resolution via #problemEdges).
   // Packuments for linter/scanner/hint are NOT needed (already in lockfile).
   // Fetcher@1.1.0 tarball is NOT needed (gets replaced by 1.0.0).
   const linterManifest = registry.manifest({ name: 'linter' })
@@ -916,27 +912,19 @@ t.test('issue-8726: npm install re-resolves to satisfy peerOptional constraint',
   )
 })
 
-// Issue #8726 - fresh npm install (no lockfile) should pick a version that
-// satisfies both the regular dep range AND the exact peerOptional constraint,
-// even when the peerOptional holder is processed BEFORE the dep is placed.
+// Issue #8726 - fresh npm install (no lockfile) should pick a version that satisfies both the regular dep range AND the exact peerOptional constraint, even when the peerOptional holder is processed BEFORE the dep is placed.
 // https://github.com/npm/cli/issues/8726
 //
-// This test uses package names that reproduce the real-world alphabetical
-// ordering from the original issue (addons-linter < htmlhint), which causes
-// addons-scanner to be processed from the queue BEFORE htmlhint places
-// node-fetcher. At that point the peerOptional edge has no destination
-// (MISSING, valid for peerOptional). Later, htmlhint places node-fetcher@1.1.0
-// and the edge becomes INVALID. The fix re-queues addons-scanner so
-// #problemEdges can trigger re-resolution of node-fetcher to 1.0.0.
+// This test uses package names that reproduce the real-world alphabetical ordering from the original issue (addons-linter < htmlhint), which causes addons-scanner to be processed from the queue BEFORE htmlhint places node-fetcher.
+// At that point the peerOptional edge has no destination (MISSING, valid for peerOptional).
+// Later, htmlhint places node-fetcher@1.1.0 and the edge becomes INVALID.
+// The fix re-queues addons-scanner so #problemEdges can trigger re-resolution of node-fetcher to 1.0.0.
 //
 // Dependency graph:
-//   root -> addons-linter@1.0.0 -> addons-scanner@1.0.0
-//                                      -> PEER_OPTIONAL node-fetcher@1.0.0
+//   root -> addons-linter@1.0.0 -> addons-scanner@1.0.0 -> PEER_OPTIONAL node-fetcher@1.0.0
 //   root -> htmlhint@1.0.0      -> node-fetcher@^1.0.0
 //
-// Processing order (alphabetical):
-//   addons-linter, then addons-scanner (dep of addons-linter),
-//   THEN htmlhint (which places node-fetcher@1.1.0)
+// Processing order (alphabetical): addons-linter, then addons-scanner (dep of addons-linter), THEN htmlhint (which places node-fetcher@1.1.0)
 t.test('issue-8726: fresh install re-queues scanner when dep placed later', async t => {
   const { npm, registry } = await loadMockNpm(t, {
     config: { audit: false, 'ignore-scripts': true },
@@ -1020,16 +1008,13 @@ t.test('issue-8726: fresh install re-queues scanner when dep placed later', asyn
     name: 'node-fetcher',
     packuments: [{ version: '1.0.0' }, { version: '1.1.0' }],
   })
-  // Packument is fetched twice: once when htmlhint resolves node-fetcher@^1.0.0
-  // (picking 1.1.0), and again when addons-scanner is re-queued and re-resolves
-  // node-fetcher (picking 1.0.0 to satisfy the exact peerOptional spec).
+  // Packument is fetched twice: once when htmlhint resolves node-fetcher@^1.0.0 (picking 1.1.0), and again when addons-scanner is re-queued and re-resolves node-fetcher (picking 1.0.0 to satisfy the exact peerOptional spec).
   await registry.package({ manifest: fetcherManifest, times: 2 })
   await registry.tarball({
     manifest: fetcherManifest.versions['1.0.0'],
     tarball: path.join(npm.prefix, 'node-fetcher-1.0.0-tarball'),
   })
-  // node-fetcher@1.1.0 tarball is NOT needed: it's replaced by 1.0.0 during
-  // tree building (before reification), so it's never downloaded.
+  // node-fetcher@1.1.0 tarball is NOT needed: it's replaced by 1.0.0 during tree building (before reification), so it's never downloaded.
 
   await npm.exec('install', [])
 

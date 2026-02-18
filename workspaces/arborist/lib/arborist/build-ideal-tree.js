@@ -969,13 +969,9 @@ This is a one-time fix-up, please be patient...
               const { from, valid, peerConflicted } = edgeIn
               if (!peerConflicted && !valid) {
                 if (this.#depsSeen.has(from) && this.options.save) {
-                  // Re-queue already-processed nodes when a newly placed
-                  // dep creates an invalid edge during npm install
-                  // (save=true). This handles the case where a peerOptional
-                  // dep was valid (missing) when the node was first
-                  // processed, but becomes invalid when the dep is later
-                  // placed by another path with a version that doesn't
-                  // satisfy the peer spec. See npm/cli#8726.
+                  // Re-queue already-processed nodes when a newly placed dep creates an invalid edge during npm install (save=true).
+                  // This handles the case where a peerOptional dep was valid (missing) when the node was first processed, but becomes invalid when the dep is later placed by another path with a version that doesn't satisfy the peer spec.
+                  // See npm/cli#8726.
                   this.#depsSeen.delete(from)
                   this.#depsQueue.push(from)
                 } else if (!this.#depsSeen.has(from)) {
@@ -1178,11 +1174,8 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
-      // If the edge has an error, there's a problem, unless
-      // it's peerOptional and we're not saving (e.g. npm ci),
-      // in which case we trust the lockfile and skip re-resolution.
-      // When saving (npm install), peerOptional invalid edges ARE
-      // treated as problems so the lockfile gets fixed.
+      // If the edge has an error, there's a problem, unless it's peerOptional and we're not saving (e.g. npm ci), in which case we trust the lockfile and skip re-resolution.
+      // When saving (npm install), peerOptional invalid edges ARE treated as problems so the lockfile gets fixed.
       if (!edge.valid) {
         if ((edge.type !== 'peerOptional' || this.options.save !== false) ||
           this.#explicitRequests.has(edge)) {
