@@ -270,7 +270,6 @@ graph LR;
   cacache-->p-map;
   cacache-->ssri;
   cacache-->unique-filename;
-  cidr-regex-->ip-regex;
   cli-columns-->string-width;
   cli-columns-->strip-ansi;
   debug-->ms;
