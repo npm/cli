@@ -312,22 +312,19 @@ t.test('should use --workspace flag', async t => {
 // Issue #8726 - npm ci fails because npm install produces an out-of-sync lockfile
 // https://github.com/npm/cli/issues/8726
 //
-// Root cause: an optional peerDependency at an exact version causes
-// buildIdealTree() to resolve a different version than what's in the lockfile.
+// Root cause: an optional peerDependency at an exact version causes buildIdealTree() to resolve a different version than what's in the lockfile.
 //
 // Pattern (mirrors real-world addons-linter / htmlhint / node-fetch scenario):
 //   - scanner@1.0.0 has optional peerDep: fetcher@1.0.0 (exact version)
 //   - hint@1.0.0 has regular dep: fetcher@^1.0.0 (semver range)
 //   - npm install resolves fetcher to 1.1.0 (latest matching ^1.0.0)
-//   - npm ci's buildIdealTree sees fetcher@1.1.0 doesn't satisfy the exact
-//     peerDep "1.0.0", treats it as a problem edge, resolves fetcher to 1.0.0
+//   - npm ci's buildIdealTree sees fetcher@1.1.0 doesn't satisfy the exact peerDep "1.0.0", treats it as a problem edge, resolves fetcher to 1.0.0
 //   - validateLockfile: lockfile has 1.1.0, ideal tree has 1.0.0 → MISMATCH
 
 t.test('issue-8726: npm ci with optional peerDep causing lockfile version mismatch', async t => {
   // Pre-built lockfile locks fetcher@1.1.0 (what npm install would pick).
   // scanner has optional peerDep fetcher@1.0.0 (exact version).
-  // buildIdealTree should respect the lockfile version, but the bug causes
-  // it to resolve fetcher to 1.0.0, failing validateLockfile.
+  // buildIdealTree should respect the lockfile version, but the bug causes it to resolve fetcher to 1.0.0, failing validateLockfile.
   const { npm, registry } = await loadMockNpm(t, {
     config: { audit: false, 'ignore-scripts': true },
     strictRegistryNock: false,
@@ -408,8 +405,7 @@ t.test('issue-8726: npm ci with optional peerDep causing lockfile version mismat
     },
   })
 
-  // With the fix, buildIdealTree no longer treats the invalid peerOptional
-  // edge as a problem, so npm ci proceeds to reification and needs tarballs.
+  // With the fix, buildIdealTree no longer treats the invalid peerOptional edge as a problem, so npm ci proceeds to reification and needs tarballs.
   const linterManifest = registry.manifest({ name: 'linter' })
   await registry.tarball({
     manifest: linterManifest.versions['1.0.0'],
@@ -437,8 +433,7 @@ t.test('issue-8726: npm ci with optional peerDep causing lockfile version mismat
     tarball: path.join(npm.prefix, 'fetcher-1.1.0-tarball'),
   })
 
-  // npm ci should succeed - the lockfile is valid and the fix ensures
-  // the peerOptional edge doesn't cause a version mismatch.
+  // npm ci should succeed - the lockfile is valid and the fix ensures the peerOptional edge doesn't cause a version mismatch.
   await npm.exec('ci', [])
 
   const installedFetcher = JSON.parse(
