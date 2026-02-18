@@ -4460,3 +4460,51 @@ t.test('installLinks behavior with project-internal file dependencies', async t 
     t.equal(edgeToA.to, packageA, 'the edge from b should point to package a')
   })
 })
+
+t.test('re-queue already-seen nodes when placed dep invalidates peerOptional (save=true, #8726)', async t => {
+  // Scenario: alpha has peerOptional on shared@1.0.0, beta has dep on shared@^1.0.0.
+  // With save=true, alpha is processed first (alphabetical order in DepsQueue),
+  // its peerOptional is not a problem (missing is OK for peerOptional).
+  // Beta is processed next, placing shared@1.1.0 (latest ^1.0.0).
+  // This invalidates alpha's peerOptional edge, triggering re-queue of alpha.
+  const registry = createRegistry(t, false)
+
+  const alphaPack = registry.packument({
+    name: 'alpha',
+    version: '1.0.0',
+    peerDependencies: { shared: '1.0.0' },
+    peerDependenciesMeta: { shared: { optional: true } },
+  })
+  const alphaManifest = registry.manifest({ name: 'alpha', packuments: [alphaPack] })
+  await registry.package({ manifest: alphaManifest })
+
+  const betaPack = registry.packument({
+    name: 'beta',
+    version: '1.0.0',
+    dependencies: { shared: '^1.0.0' },
+  })
+  const betaManifest = registry.manifest({ name: 'beta', packuments: [betaPack] })
+  await registry.package({ manifest: betaManifest })
+
+  const sharedPacks = registry.packuments(['1.0.0', '1.1.0'], 'shared')
+  const sharedManifest = registry.manifest({ name: 'shared', packuments: sharedPacks })
+  await registry.package({ manifest: sharedManifest, times: 2 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-8726-install',
+      version: '1.0.0',
+      dependencies: {
+        alpha: '1.0.0',
+        beta: '1.0.0',
+      },
+    }),
+  })
+
+  const arb = newArb(path, { save: true })
+  const tree = await arb.buildIdealTree()
+
+  t.ok(tree.children.get('alpha'), 'alpha is in the tree')
+  t.ok(tree.children.get('beta'), 'beta is in the tree')
+  t.ok(tree.children.get('shared'), 'shared is in the tree')
+})
