@@ -1176,9 +1176,9 @@ This is a one-time fix-up, please be patient...
 
       // If the edge has an error, there's a problem, unless it's peerOptional and we're not saving (e.g. npm ci), in which case we trust the lockfile and skip re-resolution.
       // When saving (npm install), peerOptional invalid edges ARE treated as problems so the lockfile gets fixed.
+      // See npm/cli#8726.
       if (!edge.valid) {
-        if ((edge.type !== 'peerOptional' || this.options.save !== false) ||
-          this.#explicitRequests.has(edge)) {
+        if (edge.type !== 'peerOptional' || this.options.save !== false) {
           problems.push(edge)
         }
         continue
