@@ -4510,10 +4510,8 @@ t.test('re-queue already-seen nodes when placed dep invalidates peerOptional (sa
 })
 
 t.test('skip invalid peerOptional edges in problemEdges when save=false (#8726)', async t => {
-  // With save=false (npm ci behavior), invalid peerOptional edges should NOT
-  // be treated as problems.  We use update.names to force alpha into
-  // #problemEdges while shared@1.1.0 (invalid for alpha's peerOptional
-  // spec of 1.0.0) is already in the tree from the lockfile.
+  // With save=false (npm ci behavior), invalid peerOptional edges should NOT be treated as problems.
+  // We use update.names to force alpha into #problemEdges while shared@1.1.0 (invalid for alpha's peerOptional spec of 1.0.0) is already in the tree from the lockfile.
   const registry = createRegistry(t, false)
 
   const utilPacks = registry.packuments(['1.0.0', '1.0.1'], 'util')
