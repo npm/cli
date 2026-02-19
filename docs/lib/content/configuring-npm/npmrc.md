@@ -139,28 +139,9 @@ This will stop working in the next major version of npm.
 These keys were historically tolerated but are not officially supported.
 A future major version of npm will treat unknown top-level keys as errors.
 
-#### Using scoped sections in `.npmrc`
-
 Some tools (such as `@electron/get` or `node-sass`) read their own
 configuration from environment variables or from `.npmrc` by convention.
-To keep those values in your `.npmrc` without triggering npm warnings,
-place them under an ini-style **section header**:
-
-```ini
-; Before (triggers warning in npm >= 11.2.0)
-electron_mirror=https://npmmirror.com/mirrors/electron/
-electron_custom_dir={{ version }}
-
-; After (no warning)
-[electron]
-mirror=https://npmmirror.com/mirrors/electron/
-custom_dir={{ version }}
-```
-
-Section headers are ignored by npm's config loader, so they will not
-cause warnings. Whether the consuming tool reads from sections depends
-on that tool — check its documentation. You can also set the values as
-environment variables instead:
+You can set these values as environment variables instead:
 
 ```bash
 export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
