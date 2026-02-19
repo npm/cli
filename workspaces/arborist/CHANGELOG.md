@@ -1,5 +1,11 @@
 # Changelog
 
+## [9.3.1](https://github.com/npm/cli/compare/arborist-v9.3.0...arborist-v9.3.1) (2026-02-19)
+### Bug Fixes
+* [`bb135cc`](https://github.com/npm/cli/commit/bb135cc8998b8b936f2cb412ec3303ae02d6920c) [#8981](https://github.com/npm/cli/pull/8981) arborist: fix `peerOptional` dependency resolution in `buildIdealTree` (#8981) (@Saibamen, @cursoragent)
+### Chores
+* [`40fcab4`](https://github.com/npm/cli/commit/40fcab45d356545f8db7f34df3e5630116d0dd40) [#8991](https://github.com/npm/cli/pull/8991) `@npmcli/template-oss@4.29.0` (@wraithgar)
+
 ## [9.3.0](https://github.com/npm/cli/compare/arborist-v9.2.0...arborist-v9.3.0) (2026-02-11)
 ### Features
 * [`7c038b7`](https://github.com/npm/cli/commit/7c038b75d4738635a3dd7140b63ead711de3d8d5) [#8968](https://github.com/npm/cli/pull/8968) add support for git-256 sha lengths (#8968) (@wraithgar)
