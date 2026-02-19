@@ -608,13 +608,16 @@ class Config {
       if (internalEnv.includes(key)) {
         return
       }
+      const hint = where !== 'cli'
+        ? ' To pass package-specific config, use a scoped [sectionName] in .npmrc. See `npm help npmrc`.'
+        : ''
       if (!key.includes(':')) {
-        this.queueWarning(key, `Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.`)
+        this.queueWarning(key, `Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.${hint}`)
         return
       }
       const baseKey = key.split(':').pop()
       if (!this.definitions[baseKey] && !this.nerfDarts.includes(baseKey)) {
-        this.queueWarning(baseKey, `Unknown ${where} config "${baseKey}" (${key}). This will stop working in the next major version of npm.`)
+        this.queueWarning(baseKey, `Unknown ${where} config "${baseKey}" (${key}). This will stop working in the next major version of npm.${hint}`)
       }
     }
   }
