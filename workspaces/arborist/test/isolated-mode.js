@@ -1349,6 +1349,63 @@ tap.test('scoped workspace packages', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
+tap.test('aliased packages in workspace', async t => {
+  /*
+   * Dependency graph:
+   *
+   * root -> prettier (alias for npm:custom-prettier@3.0.3)
+   *         custom-prettier -> isexe
+   * root -> my-pkg (workspace)
+   *         my-pkg -> prettier (alias for npm:custom-prettier@3.0.3)
+   */
+
+  const graph = {
+    registry: [
+      { name: 'custom-prettier', version: '3.0.3', dependencies: { isexe: '1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject', version: '1.0.0',
+      dependencies: { prettier: 'npm:custom-prettier@3.0.3' },
+    },
+    workspaces: [
+      { name: 'my-pkg', version: '1.0.0', dependencies: { prettier: 'npm:custom-prettier@3.0.3' } },
+    ],
+  }
+
+  const resolved = {
+    'myproject@1.0.0 (root)': {
+      'prettier@3.0.3': {
+        'isexe@1.0.0': {},
+      },
+      'my-pkg@1.0.0 (workspace)': {
+        'prettier@3.0.3': {
+          'isexe@1.0.0': {},
+        },
+      },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // Verify symlink uses alias name, not real package name
+  t.ok(setupRequire(dir)('prettier'), 'root can require via alias "prettier"')
+  t.notOk(
+    pathExists(path.join(dir, 'node_modules', 'custom-prettier')),
+    'no custom-prettier symlink at root node_modules'
+  )
+
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
+})
+
 tap.test('failing optional peer deps are not installed', async t => {
   // Input of arborist
   const graph = {

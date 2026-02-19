@@ -105,7 +105,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         node.root.path,
         'node_modules',
         '.store',
-        `${node.name}@${node.version}`
+        `${node.packageName || node.name}@${node.version}`
       )
       mkdirSync(dir, { recursive: true })
       // TODO this approach feels wrong
@@ -155,7 +155,8 @@ module.exports = cls => class IsolatedReifier extends cls {
     ]
     result.root = this.rootNode
     result.id = this.counter++
-    result.name = node.packageName || node.name
+    result.name = result.isWorkspace ? (node.packageName || node.name) : node.name
+    result.packageName = node.packageName || node.name
     result.package = { ...node.package }
     result.package.bundleDependencies = undefined
     result.hasInstallScript = node.hasInstallScript
@@ -228,7 +229,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         getChildren: node => node.dependencies,
         filter: node => node,
         visit: node => {
-          branch.push(`${node.name}@${node.version}`)
+          branch.push(`${node.packageName}@${node.version}`)
           deps.push(`${branch.join('->')}::${node.resolved}`)
         },
         leave: () => {
@@ -246,7 +247,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     }
 
     const getKey = (idealTreeNode) => {
-      return `${idealTreeNode.name}@${idealTreeNode.version}-${treeHash(idealTreeNode)}`
+      return `${idealTreeNode.packageName}@${idealTreeNode.version}-${treeHash(idealTreeNode)}`
     }
 
     const root = {
@@ -301,7 +302,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         isProjectRoot: false,
         isTop: false,
         location,
-        name: node.name,
+        name: node.packageName || node.name,
         optional: node.optional,
         top: { path: proxiedIdealTree.root.localPath },
         children: [],
@@ -335,7 +336,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         return
       }
       processed.add(key)
-      const location = join('node_modules', '.store', key, 'node_modules', c.name)
+      const location = join('node_modules', '.store', key, 'node_modules', c.packageName)
       generateChild(c, location, c.package, true)
     })
     bundledTree.nodes.forEach(node => {
@@ -361,7 +362,7 @@ module.exports = cls => class IsolatedReifier extends cls {
 
       let from, nmFolder
       if (externalEdge) {
-        const fromLocation = join('node_modules', '.store', key, 'node_modules', node.name)
+        const fromLocation = join('node_modules', '.store', key, 'node_modules', node.packageName)
         from = root.children.find(c => c.location === fromLocation)
         nmFolder = join('node_modules', '.store', key, 'node_modules')
       } else {
@@ -379,7 +380,7 @@ module.exports = cls => class IsolatedReifier extends cls {
 
         let target
         if (external) {
-          const toLocation = join('node_modules', '.store', toKey, 'node_modules', dep.name)
+          const toLocation = join('node_modules', '.store', toKey, 'node_modules', dep.packageName)
           target = root.children.find(c => c.location === toLocation)
         } else {
           target = root.fsChildren.find(c => c.location === dep.localLocation)
