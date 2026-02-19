@@ -69,7 +69,7 @@
     "ci-info": "^4.4.0",
     "fastest-levenshtein": "^1.0.16",
     "fs-minipass": "^3.0.3",
-    "glob": "^13.0.5",
+    "glob": "^13.0.6",
     "graceful-fs": "^4.2.11",
     "hosted-git-info": "^9.0.2",
     "ini": "^6.0.0",
