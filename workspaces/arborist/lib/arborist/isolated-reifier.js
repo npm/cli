@@ -145,6 +145,21 @@ module.exports = cls => class IsolatedReifier extends cls {
     const optionalDeps = edges.filter(e => e.optional).map(e => e.to.target)
     const nonOptionalDeps = edges.filter(e => !e.optional).map(e => e.to.target)
 
+    // When legacyPeerDeps is enabled, peer dep edges are not created on the
+    // node. Resolve them from the tree so they get symlinked in the store.
+    const peerDeps = node.package.peerDependencies
+    if (peerDeps && node.legacyPeerDeps) {
+      const edgeNames = new Set(edges.map(e => e.name))
+      for (const peerName of Object.keys(peerDeps)) {
+        if (!edgeNames.has(peerName)) {
+          const resolved = node.resolve(peerName)
+          if (resolved && resolved !== node && !resolved.inert) {
+            nonOptionalDeps.push(resolved)
+          }
+        }
+      }
+    }
+
     result.localDependencies = await Promise.all(nonOptionalDeps.filter(n => n.isWorkspace).map(this.workspaceProxyMemo))
     result.externalDependencies = await Promise.all(nonOptionalDeps.filter(n => !n.isWorkspace && !n.inert).map(this.externalProxyMemo))
     result.externalOptionalDependencies = await Promise.all(optionalDeps.filter(n => !n.inert).map(this.externalProxyMemo))
@@ -369,6 +384,9 @@ module.exports = cls => class IsolatedReifier extends cls {
         from = node.isProjectRoot ? root : root.fsChildren.find(c => c.location === node.localLocation)
         nmFolder = join(node.localLocation, 'node_modules')
       }
+      if (!from) {
+        return
+      }
 
       const processDeps = (dep, optional, external) => {
         optional = !!optional
@@ -386,6 +404,9 @@ module.exports = cls => class IsolatedReifier extends cls {
           target = root.fsChildren.find(c => c.location === dep.localLocation)
         }
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
+        if (!target) {
+          return
+        }
 
         binNames.forEach(bn => {
           target.binPaths.push(join(from.realpath, 'node_modules', '.bin', bn))
