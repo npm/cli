@@ -1300,6 +1300,55 @@ tap.test('scoped package', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
+tap.test('scoped workspace packages', async t => {
+  /*
+   * Dependency graph:
+   *
+   * root -> @scope/package-b (workspace)
+   *         @scope/package-b -> @scope/package-a (workspace)
+   * root -> @scope/package-a (workspace)
+   */
+
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject', version: '1.0.0', dependencies: { '@scope/package-a': '*', '@scope/package-b': '*' },
+    },
+    workspaces: [
+      { name: '@scope/package-a', version: '1.0.0', dependencies: { which: '1.0.0' } },
+      { name: '@scope/package-b', version: '1.0.0', dependencies: { '@scope/package-a': '*' } },
+    ],
+  }
+
+  const resolved = {
+    'myproject@1.0.0 (root)': {
+      '@scope/package-a@1.0.0 (workspace)': {
+        'which@1.0.0': {},
+      },
+      '@scope/package-b@1.0.0 (workspace)': {
+        '@scope/package-a@1.0.0 (workspace)': {
+          'which@1.0.0': {},
+        },
+      },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule4.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
+})
+
 tap.test('failing optional peer deps are not installed', async t => {
   // Input of arborist
   const graph = {
