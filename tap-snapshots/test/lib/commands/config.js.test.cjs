@@ -451,6 +451,6 @@ registry = "https://some.registry"
 
 exports[`test/lib/commands/config.js TAP config list with publishConfig local > warns about unknown config 1`] = `
 Array [
-  "Unknown publishConfig config /"other/". This will stop working in the next major version of npm. To pass package-specific config, use a scoped [sectionName] in .npmrc. See \`npm help npmrc\`.",
+  "Unknown publishConfig config /"other/". This will stop working in the next major version of npm. See \`npm help npmrc\` for supported config options.",
 ]
 `

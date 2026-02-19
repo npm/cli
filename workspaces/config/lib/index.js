@@ -609,7 +609,7 @@ class Config {
         return
       }
       const hint = where !== 'cli'
-        ? ' To pass package-specific config, use a scoped [sectionName] in .npmrc. See `npm help npmrc`.'
+        ? ' See `npm help npmrc` for supported config options.'
         : ''
       if (!key.includes(':')) {
         this.queueWarning(key, `Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.${hint}`)
