@@ -105,6 +105,39 @@ If the credential is meant for any request to a registry on a single host, the s
 If it must be scoped to a specific path on the host that path may also be provided, such as
 `//my-custom-registry.org/unique/path:`.
 
+### Unsupported Custom Configuration Keys
+
+Starting in npm v11.2.0, npm warns when unknown configuration keys are defined in `.npmrc`. In a future major version of npm, these unknown keys may no longer be accepted.
+
+Only configuration keys that npm officially supports are recognized. Custom keys intended for third-party tools (for example, `electron-builder`) should not be placed in `.npmrc`.
+
+If you need package-level configuration for use in scripts, use the `config` field in your `package.json` instead:
+
+```json
+{
+  "name": "my-package",
+  "config": {
+    "mirror": "https://example.com/"
+  }
+}
+
+```
+
+Values defined in `package.json#config` are exposed to scripts as environment variables prefixed with `npm_package_config_`. For example:
+
+```
+npm_package_config_mirror
+```
+
+If you need to pass arguments to a script command, use `--` to separate npm arguments from script arguments:
+
+```
+npm run build -- --customFlag
+```
+
+Using environment variables is also recommended for cross-platform configuration instead of defining unsupported keys in `.npmrc`.
+
+
 ```
 ; bad config
 _authToken=MYTOKEN
