@@ -144,7 +144,7 @@ configuration from environment variables or from `.npmrc` by convention.
 You can set these values as environment variables instead:
 
 ```bash
-export ELECTRON_MIRROR="https://npmmirror.com/mirrors/electron/"
+export ELECTRON_MIRROR="https://mirrorexample.npmjs.org/mirrors/electron/"
 export ELECTRON_CUSTOM_DIR="{{ version }}"
 ```
 
