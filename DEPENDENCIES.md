@@ -635,7 +635,7 @@ graph LR;
   npmcli-package-json-->npmcli-git["@npmcli/git"];
   npmcli-package-json-->proc-log;
   npmcli-package-json-->semver;
-  npmcli-package-json-->validate-npm-package-license;
+  npmcli-package-json-->spdx-expression-parse;
   npmcli-promise-spawn-->which;
   npmcli-query-->postcss-selector-parser;
   npmcli-run-script-->node-gyp;
