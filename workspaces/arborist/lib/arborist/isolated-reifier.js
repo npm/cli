@@ -105,7 +105,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         node.root.path,
         'node_modules',
         '.store',
-        `${node.packageName || node.name}@${node.version}`
+        `${node.packageName}@${node.version}`
       )
       mkdirSync(dir, { recursive: true })
       // TODO this approach feels wrong
