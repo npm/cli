@@ -325,7 +325,6 @@ graph LR;
   libnpmexec-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmexec-->pacote;
   libnpmexec-->proc-log;
-  libnpmexec-->promise-retry;
   libnpmexec-->read;
   libnpmexec-->semver;
   libnpmexec-->signal-exit;
