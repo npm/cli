@@ -322,11 +322,19 @@ tap.test('peer dependencies with legacyPeerDeps', async t => {
 
   const graph = {
     registry: [
-      { name: 'phpegjs', version: '1.0.0', peerDependencies: { pegjs: '*' } },
+      { name: 'phpegjs', version: '1.0.0', peerDependencies: { pegjs: '*', missing: '*' } },
       { name: 'pegjs', version: '2.0.0' },
+      {
+        name: 'adapter',
+        version: '1.0.0',
+        dependencies: { pegjs: '*' },
+        peerDependencies: { pegjs: '*' },
+      },
     ],
     root: {
-      name: 'foo', version: '1.2.3', dependencies: { phpegjs: '1.0.0', pegjs: '2.0.0' },
+      name: 'foo',
+      version: '1.2.3',
+      dependencies: { phpegjs: '1.0.0', pegjs: '2.0.0', adapter: '1.0.0' },
     },
   }
 
@@ -336,6 +344,9 @@ tap.test('peer dependencies with legacyPeerDeps', async t => {
         'pegjs@2.0.0 (peer)': {},
       },
       'pegjs@2.0.0': {},
+      'adapter@1.0.0': {
+        'pegjs@2.0.0': {},
+      },
     },
   }
 

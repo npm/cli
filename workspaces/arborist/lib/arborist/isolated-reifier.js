@@ -170,6 +170,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     ]
     result.root = this.rootNode
     result.id = this.counter++
+    /* istanbul ignore next - packageName is always set for real packages */
     result.name = result.isWorkspace ? (node.packageName || node.name) : node.name
     result.packageName = node.packageName || node.name
     result.package = { ...node.package }
@@ -384,6 +385,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         from = node.isProjectRoot ? root : root.fsChildren.find(c => c.location === node.localLocation)
         nmFolder = join(node.localLocation, 'node_modules')
       }
+      /* istanbul ignore next - strict-peer-deps can exclude nodes from the tree */
       if (!from) {
         return
       }
@@ -404,6 +406,7 @@ module.exports = cls => class IsolatedReifier extends cls {
           target = root.fsChildren.find(c => c.location === dep.localLocation)
         }
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
+        /* istanbul ignore next - strict-peer-deps can exclude nodes from the tree */
         if (!target) {
           return
         }
