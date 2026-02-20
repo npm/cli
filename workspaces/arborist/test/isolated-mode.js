@@ -1413,7 +1413,8 @@ tap.test('aliased packages in workspace', async t => {
       { name: 'isexe', version: '1.0.0' },
     ],
     root: {
-      name: 'myproject', version: '1.0.0',
+      name: 'myproject',
+      version: '1.0.0',
       dependencies: { prettier: 'npm:custom-prettier@3.0.3' },
     },
     workspaces: [
