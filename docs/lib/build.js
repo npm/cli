@@ -163,7 +163,7 @@ const generateNav = async (contentPath, navPath) => {
 # directly within the CLI documentation.  Instead, it will be used
 # for the https://docs.npmjs.com/ site.
 `
-  await fs.writeFile(navPath, `${prefix}\n${yaml.stringify(navData, { indent: 2, indentSeq: false })}`, 'utf-8')
+  await fs.writeFile(navPath, `${prefix}\n${yaml.stringify(navData, { indent: 2, indentSeq: false, lineWidth: 0 })}`, 'utf-8')
 }
 
 // Auto-generate doc templates for commands without docs
@@ -278,7 +278,7 @@ ${description}
 # directly within the CLI documentation.  Instead, it will be used
 # for the https://docs.npmjs.com/ site.
 `
-    await fs.writeFile(navPath, `${prefix}\n${yaml.stringify(navData, { indent: 2, indentSeq: false })}`, 'utf-8')
+    await fs.writeFile(navPath, `${prefix}\n${yaml.stringify(navData, { indent: 2, indentSeq: false, lineWidth: 0 })}`, 'utf-8')
   }
 }
 

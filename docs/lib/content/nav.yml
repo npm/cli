@@ -188,8 +188,7 @@
     description: Manage your authentication tokens
   - title: npm trust
     url: /commands/npm-trust
-    description: Manage trusted publishing relationships between packages and CI/CD
-      providers
+    description: Manage trusted publishing relationships between packages and CI/CD providers
   - title: npm undeprecate
     url: /commands/npm-undeprecate
     description: Undeprecate a version of a package
