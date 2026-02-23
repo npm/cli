@@ -1571,6 +1571,36 @@ tap.test('postinstall scripts are run', async t => {
   t.ok(postInstallRanBar)
 })
 
+tap.test('postinstall scripts run once for store packages', async t => {
+  // Regression test: store links should not cause scripts to run twice.
+  // The store entry and its symlink both end up in the build queue, but
+  // only the store entry should run scripts.
+  const graph = {
+    registry: [
+      {
+        name: 'which',
+        version: '1.0.0',
+        scripts: {
+          postinstall: 'node -e "var c=0;try{c=+fs.readFileSync(\'postinstall-count\',\'utf8\')}catch(e){};fs.writeFileSync(\'postinstall-count\',String(c+1))"',
+        },
+      },
+    ],
+    root: {
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const whichDir = setupRequire(dir)('which')
+  const count = Number(fs.readFileSync(`${whichDir}/postinstall-count`, 'utf8'))
+  t.equal(count, 1, 'postinstall ran exactly once')
+})
+
 tap.test('bins are installed', async t => {
   // Input of arborist
   const graph = {
