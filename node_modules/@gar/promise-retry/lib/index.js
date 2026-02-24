@@ -10,7 +10,7 @@ async function promiseRetry (fn, options = {}) {
       try {
         const result = await fn(err => {
           throw Object.assign(new Error('Retrying'), { code: 'EPROMISERETRY', retried: err })
-        }, number)
+        }, number, operation)
         return resolve(result)
       } catch (err) {
         if (isRetryError(err)) {
