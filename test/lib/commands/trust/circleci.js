@@ -289,6 +289,33 @@ t.test('circleci with invalid vcs-origin format', async t => {
   )
 })
 
+t.test('circleci with vcs-origin containing scheme prefix', async t => {
+  const { npm } = await loadMockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: packageName,
+        version: '1.0.0',
+      }),
+    },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'test-auth-token',
+    },
+  })
+
+  await t.rejects(
+    npm.exec('trust', [
+      'circleci',
+      packageName,
+      '--yes',
+      '--org-id', '550e8400-e29b-41d4-a716-446655440000',
+      '--project-id', '7c9e6679-7425-40de-944b-e07fc1f90ae7',
+      '--pipeline-definition-id', '6ba7b810-9dad-11d1-80b4-00c04fd430c8',
+      '--vcs-origin', 'https://github.com/owner/repo',
+    ]),
+    { message: /vcs-origin must not include a scheme/ }
+  )
+})
+
 t.test('circleci missing package name', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
