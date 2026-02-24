@@ -390,6 +390,9 @@ Object {
       "funding": Object {
         "url": "https://example.com/",
       },
+      "libc": Array [
+        "glibc",
+      ],
       "os": Array [
         "any",
         "!win32",
@@ -547,6 +550,9 @@ Object {
   "funding": Object {
     "url": "https://example.com/",
   },
+  "libc": Array [
+    "glibc",
+  ],
   "os": Array [
     "any",
     "!win32",
