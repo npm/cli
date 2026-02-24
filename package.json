@@ -198,7 +198,7 @@
     "cli-table3": "^0.6.4",
     "diff": "^8.0.3",
     "nock": "^13.4.0",
-    "npm-packlist": "^10.0.3",
+    "npm-packlist": "^10.0.4",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-github": "^12.0.0",
