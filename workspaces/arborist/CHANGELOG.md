@@ -1,5 +1,13 @@
 # Changelog
 
+## [9.4.0](https://github.com/npm/cli/compare/arborist-v9.3.1...arborist-v9.4.0) (2026-02-25)
+### Features
+* [`4fcd352`](https://github.com/npm/cli/commit/4fcd352c553fdc0f13a87ad71ef66d7515c11886) [#9017](https://github.com/npm/cli/pull/9017) add :type(registry) to query selector syntax (#9017) (@wraithgar)
+### Bug Fixes
+* [`880ecb7`](https://github.com/npm/cli/commit/880ecb786d83e7bc95b1ed75660769e2af253579) [#9013](https://github.com/npm/cli/pull/9013) arborist: skip postinstall on store links in linked strategy (#9013) (@manzoorwanijk)
+* [`07e6edd`](https://github.com/npm/cli/commit/07e6edd9d0f21ab65bd98e444598ddcb50b66551) [#9025](https://github.com/npm/cli/pull/9025) save libc field to package-lock.json (@owlstronaut)
+* [`a2154cd`](https://github.com/npm/cli/commit/a2154cd91370c9c611cc19c943d00c3d0bbfa4ef) [#8996](https://github.com/npm/cli/pull/8996) linked strategy fixes for scoped packages, aliases, and peer deps (#8996) (@manzoorwanijk)
+
 ## [9.3.1](https://github.com/npm/cli/compare/arborist-v9.3.0...arborist-v9.3.1) (2026-02-19)
 ### Bug Fixes
 * [`bb135cc`](https://github.com/npm/cli/commit/bb135cc8998b8b936f2cb412ec3303ae02d6920c) [#8981](https://github.com/npm/cli/pull/8981) arborist: fix `peerOptional` dependency resolution in `buildIdealTree` (#8981) (@Saibamen, @cursoragent)
