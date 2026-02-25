@@ -15,6 +15,30 @@ const { resolve } = require('node:path')
 const boolEnv = b => b ? '1' : ''
 const sortNodes = (a, b) => (a.depth - b.depth) || localeCompare(a.path, b.path)
 
+// On Windows, antivirus/indexer can transiently lock files, causing
+// EPERM/EACCES/EBUSY on the rename inside write-file-atomic (used by
+// bin-links/fix-bin.js).  Retry with backoff for up to ~7.5 seconds.
+/* istanbul ignore next */
+const retryBinLinks = async (binLinks, node, opts, retries = 4) => {
+  const delay = (5 - retries) * 500
+  await new Promise(r => setTimeout(r, delay))
+  try {
+    return await binLinks({
+      pkg: node.package,
+      path: node.path,
+      top: !!(node.isTop || node.globalTop),
+      force: opts.force,
+      global: !!node.globalTop,
+    })
+  } catch (err) {
+    if (retries > 0 &&
+        (err.code === 'EPERM' || err.code === 'EACCES' || err.code === 'EBUSY')) {
+      return retryBinLinks(binLinks, node, opts, retries - 1)
+    }
+    throw err
+  }
+}
+
 const _checkBins = Symbol.for('checkBins')
 
 // defined by reify mixin
@@ -387,6 +411,12 @@ module.exports = cls => class Builder extends cls {
       top: !!(node.isTop || node.globalTop),
       force: this.options.force,
       global: !!node.globalTop,
+    }).catch(/* istanbul ignore next - Windows retry for antivirus locks */ err => {
+      if (process.platform === 'win32' &&
+          (err.code === 'EPERM' || err.code === 'EACCES' || err.code === 'EBUSY')) {
+        return retryBinLinks(binLinks, node, this.options)
+      }
+      throw err
     })
 
     await (this.#doHandleOptionalFailure
