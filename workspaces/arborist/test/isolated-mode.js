@@ -1779,6 +1779,80 @@ tap.test('file: dependency with linked strategy', async t => {
   t.ok(setupRequire(dir)('project2'), 'project2 can be required from root')
 })
 
+tap.test('subsequent linked install is a no-op', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', bin: './bin.js', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { which: '1.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  // First install
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Verify packages are installed
+  t.ok(fs.lstatSync(path.join(dir, 'node_modules', 'which')).isSymbolicLink(),
+    'which is a symlink after first install')
+
+  // Second install — should detect everything is up-to-date
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  // Verify the diff has zero actionable leaves
+  const leaves = arb2.diff?.leaves || []
+  const actions = leaves.filter(l => l.action)
+  t.equal(actions.length, 0, 'second install should have no diff actions')
+
+  // Verify unchanged nodes were detected
+  t.ok(arb2.diff.unchanged.length > 0, 'second install should have unchanged nodes')
+
+  // Verify packages are still correctly installed
+  t.ok(fs.lstatSync(path.join(dir, 'node_modules', 'which')).isSymbolicLink(),
+    'which is still a symlink after second install')
+  t.ok(setupRequire(dir)('which'), 'which is requireable after second install')
+})
+
+tap.test('workspace links are not affected by store resolved fix', async t => {
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { abbrev: '1.0.0' },
+    },
+    workspaces: [
+      { name: 'mypkg', version: '1.0.0', dependencies: { abbrev: '1.0.0' } },
+    ],
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  // First install
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Second install
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  // Verify workspace is still correctly linked
+  t.ok(setupRequire(dir)('mypkg'), 'workspace is requireable after second install')
+  t.ok(setupRequire(dir)('abbrev'), 'registry dep is requireable after second install')
+
+  // Verify the diff has unchanged nodes (store entries are correctly matched)
+  t.ok(arb2.diff.unchanged.length > 0, 'second install should have unchanged nodes')
+})
+
 function setupRequire (cwd) {
   return function requireChain (...chain) {
     return chain.reduce((path, name) => {

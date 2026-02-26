@@ -10,6 +10,7 @@ const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { depth: dfwalk } = require('treeverse')
 const { dirname, resolve, relative, join } = require('node:path')
 const { log, time } = require('proc-log')
+const { existsSync } = require('node:fs')
 const { lstat, mkdir, rm, symlink } = require('node:fs/promises')
 const { moveFile } = require('@npmcli/fs')
 const { subset, intersects } = require('semver')
@@ -73,6 +74,7 @@ module.exports = cls => class Reifier extends cls {
   #shrinkwrapInflated = new Set()
   #sparseTreeDirs = new Set()
   #sparseTreeRoots = new Set()
+  #linkedActualForDiff = null
 
   constructor (options) {
     super(options)
@@ -114,6 +116,9 @@ module.exports = cls => class Reifier extends cls {
       // of Node/Link trees
       log.warn('reify', 'The "linked" install strategy is EXPERIMENTAL and may contain bugs.')
       this.idealTree = await this.createIsolatedTree()
+      this.#linkedActualForDiff = this.#buildLinkedActualForDiff(
+        this.idealTree, this.actualTree
+      )
     }
     await this[_diffTrees]()
     await this.#reifyPackages()
@@ -123,6 +128,7 @@ module.exports = cls => class Reifier extends cls {
       this.idealTree = oldTree
     }
     await this[_saveIdealTree](options)
+    this.#linkedActualForDiff = null
     // clean inert
     for (const node of this.idealTree.inventory.values()) {
       if (node.inert) {
@@ -424,9 +430,15 @@ module.exports = cls => class Reifier extends cls {
           if (ideal) {
             filterNodes.push(ideal)
           }
-          const actual = this.actualTree.children.get(ws)
-          if (actual) {
-            filterNodes.push(actual)
+          // Skip actual-side filterNodes when using the linked diff wrapper —
+          // those nodes have root===actualTree, not root===linkedActualForDiff,
+          // and Diff.calculate requires filterNode.root to match actual.
+          // The ideal filterNode alone is sufficient to scope the workspace diff.
+          if (!this.#linkedActualForDiff) {
+            const actual = this.actualTree.children.get(ws)
+            if (actual) {
+              filterNodes.push(actual)
+            }
           }
         }
       }
@@ -448,7 +460,7 @@ module.exports = cls => class Reifier extends cls {
       omit: this.#omit,
       shrinkwrapInflated: this.#shrinkwrapInflated,
       filterNodes,
-      actual: this.actualTree,
+      actual: this.#linkedActualForDiff || this.actualTree,
       ideal: this.idealTree,
     })
 
@@ -571,6 +583,7 @@ module.exports = cls => class Reifier extends cls {
       // if the directory already exists, made will be undefined. if that's the case
       // we don't want to remove it because we aren't the ones who created it so we
       // omit it from the #sparseTreeRoots
+      /* istanbul ignore next -- mkdir returns path only when dir is new */
       if (made) {
         this.#sparseTreeRoots.add(made)
       }
@@ -785,6 +798,104 @@ module.exports = cls => class Reifier extends cls {
     // Fallback: derive the file path from node.resolved in a platform-agnostic way
     const filePath = node.resolved.replace(/^file:/, '')
     return join(filePath)
+  }
+
+  // Build a flat actual tree wrapper for linked installs so the diff can
+  // correctly match store entries that already exist on disk. The proxy
+  // tree from _createIsolatedTree() is flat (all children on root), but
+  // loadActual() produces a nested tree where store entries are deep link
+  // targets. This wrapper surfaces them at the root level for comparison.
+  #buildLinkedActualForDiff (idealTree, actualTree) {
+    // Combined Map keyed by path (how allChildren() in diff.js keys)
+    const combined = new Map()
+
+    // Add actual tree's children (the top-level symlinks)
+    for (const child of actualTree.children.values()) {
+      combined.set(child.path, child)
+    }
+
+    // Add synthetic entries for store nodes and store links that exist on disk.
+    // The proxy tree is flat — all store entries (isInStore) and store links
+    // (isStoreLink) are direct children of root. The actual tree only has
+    // top-level links as root children, so store entries and store links
+    // need synthetic actual entries for the diff to match them.
+    for (const child of idealTree.children.values()) {
+      if (!combined.has(child.path) && (child.isInStore || child.isStoreLink) &&
+          existsSync(child.path)) {
+        const entry = {
+          global: false,
+          globalTop: false,
+          isProjectRoot: false,
+          isTop: false,
+          location: child.location,
+          name: child.name,
+          optional: child.optional,
+          top: child.top,
+          children: [],
+          edgesIn: new Set(),
+          edgesOut: new Map(),
+          binPaths: [],
+          fsChildren: [],
+          /* istanbul ignore next -- emulate Node */
+          getBundler () {
+            return null
+          },
+          hasShrinkwrap: false,
+          inDepBundle: false,
+          integrity: null,
+          isLink: Boolean(child.isLink),
+          isRoot: false,
+          isInStore: Boolean(child.isInStore),
+          path: child.path,
+          realpath: child.realpath,
+          resolved: child.resolved,
+          version: child.version,
+          package: child.package,
+        }
+        entry.target = entry
+        if (child.isLink && combined.has(child.realpath)) {
+          entry.target = combined.get(child.realpath)
+        }
+        combined.set(child.path, entry)
+      }
+    }
+
+    // Proxy .get(name) to original actual tree for filterNodes compatibility
+    // (scoped workspace installs use .get(name), allChildren uses .values())
+    const origGet = actualTree.children.get.bind(actualTree.children)
+    const combinedGet = combined.get.bind(combined)
+    /* istanbul ignore next -- only reached during scoped workspace installs */
+    combined.get = (key) => combinedGet(key) || origGet(key)
+
+    const wrapper = {
+      isRoot: true,
+      isLink: actualTree.isLink,
+      target: actualTree.target,
+      fsChildren: actualTree.fsChildren,
+      path: actualTree.path,
+      realpath: actualTree.realpath,
+      edgesOut: actualTree.edgesOut,
+      inventory: actualTree.inventory,
+      package: actualTree.package,
+      resolved: actualTree.resolved,
+      version: actualTree.version,
+      integrity: actualTree.integrity,
+      binPaths: actualTree.binPaths,
+      hasShrinkwrap: false,
+      inDepBundle: false,
+      parent: null,
+      children: combined,
+    }
+
+    // Set parent/root on synthetic entries for consistency
+    for (const child of combined.values()) {
+      if (!child.parent) {
+        child.parent = wrapper
+        child.root = wrapper
+      }
+    }
+
+    return wrapper
   }
 
   #registryResolved (resolved) {

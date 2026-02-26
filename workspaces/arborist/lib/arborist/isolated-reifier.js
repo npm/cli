@@ -461,7 +461,7 @@ module.exports = cls => class IsolatedReifier extends cls {
 
     if (dep.package.bin) {
       for (const bn in dep.package.bin) {
-        target.binPaths.push(join(from.realpath, 'node_modules', '.bin', bn))
+        target.binPaths.push(join(dep.root.localPath, nmFolder, '.bin', bn))
       }
     }
 
@@ -486,9 +486,12 @@ module.exports = cls => class IsolatedReifier extends cls {
       parent: root,
       path: join(dep.root.localPath, nmFolder, dep.name),
       realpath: target.path,
-      resolved: dep.resolved,
+      resolved: external
+        ? `file:.store/${toKey}/node_modules/${dep.packageName}`
+        : dep.resolved,
       root,
       target,
+      version: dep.version,
       top: { path: dep.root.localPath },
     }
     const newEdge1 = { optional, from, to: link }
