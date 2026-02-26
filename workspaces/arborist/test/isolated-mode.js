@@ -1736,6 +1736,49 @@ tap.test('bins are installed', async t => {
   t.ok(binFromBarToWhich)
 })
 
+tap.test('file: dependency with linked strategy', async t => {
+  /*
+   * Regression test for https://github.com/npm/cli/issues/7549
+   *
+   * A relative file: dependency (file:./project2) was incorrectly resolved as file:../project2, causing ENOENT errors because the path was resolved one level above the project root.
+   */
+  const graph = {
+    registry: [],
+    root: {
+      name: 'project1',
+      version: '1.0.0',
+      dependencies: { project2: 'file:./project2' },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Create the local file: dependency on disk
+  const depDir = path.join(dir, 'project2')
+  fs.mkdirSync(depDir, { recursive: true })
+  fs.writeFileSync(path.join(depDir, 'package.json'), JSON.stringify({
+    name: 'project2',
+    version: '1.0.0',
+  }))
+  fs.writeFileSync(path.join(depDir, 'index.js'), "module.exports = 'project2'")
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // The file dep should be symlinked in node_modules
+  const linkPath = path.join(dir, 'node_modules', 'project2')
+  const stat = fs.lstatSync(linkPath)
+  t.ok(stat.isSymbolicLink(), 'project2 is a symlink in node_modules')
+
+  // The symlink should resolve to the actual local directory
+  const realpath = fs.realpathSync(linkPath)
+  t.equal(realpath, depDir, 'symlink points to the correct local directory')
+
+  // The package should be requireable
+  t.ok(setupRequire(dir)('project2'), 'project2 can be required from root')
+})
+
 function setupRequire (cwd) {
   return function requireChain (...chain) {
     return chain.reduce((path, name) => {

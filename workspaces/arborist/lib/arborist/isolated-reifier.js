@@ -113,7 +113,9 @@ module.exports = cls => class IsolatedReifier extends cls {
           queue.push(edge.to)
         }
       })
-      if (!next.isProjectRoot && !next.isWorkspace && !next.inert) {
+      // local `file:` deps are in fsChildren but are not workspaces.
+      // they are already handled as workspace-like proxies above and should not go through the external/store extraction path.
+      if (!next.isProjectRoot && !next.isWorkspace && !next.inert && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
         this.idealGraph.external.push(await this.externalProxy(next))
       }
     }
@@ -220,9 +222,11 @@ module.exports = cls => class IsolatedReifier extends cls {
       }
     }
 
+    // local `file:` deps (non-workspace fsChildren) should be treated as local dependencies, not external, so they get symlinked directly instead of being extracted into the store.
+    const isLocal = (n) => n.isWorkspace || node.fsChildren?.has(n)
     const optionalDeps = edges.filter(edge => edge.optional).map(edge => edge.to.target)
-    result.localDependencies = await Promise.all(nonOptionalDeps.filter(n => n.isWorkspace).map(n => this.workspaceProxy(n)))
-    result.externalDependencies = await Promise.all(nonOptionalDeps.filter(n => !n.isWorkspace && !n.inert).map(n => this.externalProxy(n)))
+    result.localDependencies = await Promise.all(nonOptionalDeps.filter(isLocal).map(n => this.workspaceProxy(n)))
+    result.externalDependencies = await Promise.all(nonOptionalDeps.filter(n => !isLocal(n) && !n.inert).map(n => this.externalProxy(n)))
     result.externalOptionalDependencies = await Promise.all(optionalDeps.filter(n => !n.inert).map(n => this.externalProxy(n)))
     result.dependencies = [
       ...result.externalDependencies,
