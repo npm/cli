@@ -61,11 +61,9 @@ exports[`test/lib/commands/completion.js TAP completion multiple command names >
 Array [
   String(
     access
-    adduser
     audit
     author
     add
-    add-user
   ),
 ]
 `

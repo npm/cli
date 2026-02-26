@@ -24,4 +24,4 @@ You may also want to see your friend's favorite packages, in this case you will 
 * [npm unstar](/commands/npm-unstar)
 * [npm view](/commands/npm-view)
 * [npm whoami](/commands/npm-whoami)
-* [npm adduser](/commands/npm-adduser)
+* [npm login](/commands/npm-login)

@@ -228,27 +228,6 @@ class MockRegistry {
     }
   }
 
-  couchadduser ({ username, email, password, token = 'npm_default-test-token' }) {
-    this.nock = this.nock.put(this.fullPath(`/-/user/org.couchdb.user:${username}`), body => {
-      this.#tap.match(body, {
-        _id: `org.couchdb.user:${username}`,
-        name: username,
-        email, // Sole difference from couchlogin
-        password,
-        type: 'user',
-        roles: [],
-      })
-      if (!body.date) {
-        return false
-      }
-      return true
-    }).reply(201, {
-      id: 'org.couchdb.user:undefined',
-      rev: '_we_dont_use_revs_any_more',
-      token,
-    })
-  }
-
   couchlogin ({ username, password, token = 'npm_default-test-token' }) {
     this.nock = this.nock.put(this.fullPath(`/-/user/org.couchdb.user:${username}`), body => {
       this.#tap.match(body, {

@@ -153,7 +153,6 @@ Object {
   "main": "./index.js",
   "man": Array [
     "man/man1/npm-access.1",
-    "man/man1/npm-adduser.1",
     "man/man1/npm-audit.1",
     "man/man1/npm-bugs.1",
     "man/man1/npm-cache.1",

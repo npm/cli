@@ -12,9 +12,6 @@
   - title: npm access
     url: /commands/npm-access
     description: Set access level on published packages
-  - title: npm adduser
-    url: /commands/npm-adduser
-    description: Add a registry user account
   - title: npm audit
     url: /commands/npm-audit
     description: Run a security audit

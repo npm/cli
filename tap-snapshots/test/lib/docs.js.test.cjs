@@ -36,7 +36,6 @@ npm@{VERSION} {BASEDIR}
 exports[`test/lib/docs.js TAP command list > aliases 1`] = `
 Object {
   "add": "install",
-  "add-user": "adduser",
   "author": "owner",
   "c": "config",
   "cit": "install-ci-test",
@@ -97,7 +96,6 @@ Object {
 exports[`test/lib/docs.js TAP command list > commands 1`] = `
 Array [
   "access",
-  "adduser",
   "audit",
   "bugs",
   "cache",
@@ -2837,42 +2835,6 @@ Note: This command is unaware of workspaces.
 #### \`json\`
 #### \`otp\`
 #### \`registry\`
-`
-
-exports[`test/lib/docs.js TAP usage adduser > must match snapshot 1`] = `
-Add a registry user account
-
-Usage:
-npm adduser
-
-Options:
-[--registry <registry>] [--scope <@scope>] [--auth-type <legacy|web>]
-
-  --registry
-    The base URL of the npm registry.
-
-  --scope
-    Associate an operation with a scope for a scoped registry.
-
-  --auth-type
-    What authentication strategy to use with \`login\`.
-
-
-alias: add-user
-
-Run "npm help adduser" for more info
-
-\`\`\`bash
-npm adduser
-
-alias: add-user
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-#### \`registry\`
-#### \`scope\`
-#### \`auth-type\`
 `
 
 exports[`test/lib/docs.js TAP usage audit > must match snapshot 1`] = `

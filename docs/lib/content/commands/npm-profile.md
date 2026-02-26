@@ -55,7 +55,7 @@ Some of these commands may not be available on non npmjs.com registries.
 
 ### See Also
 
-* [npm adduser](/commands/npm-adduser)
+* [npm login](/commands/npm-login)
 * [npm registry](/using-npm/registry)
 * [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)

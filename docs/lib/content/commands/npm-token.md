@@ -34,7 +34,7 @@ A revoked token will immediately be removed from the registry and you will no lo
 
 ### See Also
 
-* [npm adduser](/commands/npm-adduser)
+* [npm login](/commands/npm-login)
 * [npm registry](/using-npm/registry)
 * [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
