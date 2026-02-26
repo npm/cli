@@ -8,7 +8,7 @@ const promiseAllRejectLate = require('promise-all-reject-late')
 const runScript = require('@npmcli/run-script')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { depth: dfwalk } = require('treeverse')
-const { dirname, resolve, relative, join } = require('node:path')
+const { dirname, resolve, relative, join, sep } = require('node:path')
 const { log, time } = require('proc-log')
 const { lstat, mkdir, readdir, rm, symlink } = require('node:fs/promises')
 const { moveFile } = require('@npmcli/fs')
@@ -1266,7 +1266,7 @@ module.exports = cls => class Reifier extends cls {
     const validKeys = new Set()
     for (const child of this.idealTree.children) {
       if (child.isInStore) {
-        const key = child.location.split('/')[2]
+        const key = child.location.split(sep)[2]
         validKeys.add(key)
       }
     }
