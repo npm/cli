@@ -32,10 +32,6 @@
   "bugs": {
     "url": "https://github.com/npm/cli/issues"
   },
-  "directories": {
-    "doc": "./doc",
-    "man": "./man"
-  },
   "main": "./index.js",
   "bin": {
     "npm": "bin/npm-cli.js",
