@@ -593,7 +593,12 @@ class Node {
       return false
     }
     for (const edge of this.edgesIn) {
-      if (!npa(edge.spec).registry) {
+      try {
+        if (!npa(edge.spec).registry) {
+          return false
+        }
+      } catch {
+        // unsupported spec types (e.g. link:) are not registry deps
         return false
       }
     }
