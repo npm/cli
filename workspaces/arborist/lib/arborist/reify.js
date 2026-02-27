@@ -110,16 +110,23 @@ module.exports = cls => class Reifier extends cls {
     await this[_loadTrees](options)
 
     const oldTree = this.idealTree
+    let swappedToIsolated = false
     if (linked) {
       // swap out the tree with the isolated tree
       // this is currently technical debt which will be resolved in a refactor
       // of Node/Link trees
       log.warn('reify', 'The "linked" install strategy is EXPERIMENTAL and may contain bugs.')
-      this.idealTree = await this[_createIsolatedTree]()
+      // Workspace-filtered installs are incompatible with the isolated tree
+      // which uses plain objects with Array children and a stub inventory.
+      // Use the normal reify path for workspace installs.
+      if (!this.options.workspaces.length) {
+        this.idealTree = await this[_createIsolatedTree]()
+        swappedToIsolated = true
+      }
     }
     await this[_diffTrees]()
     await this.#reifyPackages()
-    if (linked) {
+    if (swappedToIsolated) {
       // swap back in the idealTree
       // so that the lockfile is preserved
       this.idealTree = oldTree

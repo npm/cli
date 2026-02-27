@@ -1637,6 +1637,47 @@ tap.test('bins are installed', async t => {
   t.ok(binFromBarToWhich)
 })
 
+tap.test('workspace-filtered install with linked strategy does not crash', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0' },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'dog', version: '1.2.3',
+    },
+    workspaces: [
+      { name: 'bar', version: '1.0.0', dependencies: { which: '1.0.0' } },
+      { name: 'baz', version: '1.0.0', dependencies: { isexe: '1.0.0' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  // First, do a full linked install
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Now do a workspace-filtered install - this used to crash with
+  // "Cannot read properties of null (reading 'package')" because the
+  // isolated tree's plain objects are incompatible with workspace filtering.
+  const arb2 = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    installStrategy: 'linked',
+    workspaces: ['bar'],
+  })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  // The workspace's dependency should still be resolvable
+  const whichPath = resolvePackage('which', path.join(dir, 'packages', 'bar'))
+  t.ok(whichPath, 'bar workspace can still resolve which')
+})
+
 function setupRequire (cwd) {
   return function requireChain (...chain) {
     return chain.reduce((path, name) => {
