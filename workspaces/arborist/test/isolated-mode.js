@@ -1601,6 +1601,62 @@ tap.test('postinstall scripts run once for store packages', async t => {
   t.equal(count, 1, 'postinstall ran exactly once')
 })
 
+tap.test('workspace-filtered install with linked strategy', async t => {
+  // Two workspaces sharing the same dependency must not crash when installing with --workspace + --install-strategy=linked.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '2.0.0' },
+    ],
+    root: {
+      name: 'myroot', version: '1.0.0',
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { abbrev: '2.0.0' } },
+      { name: 'ws-b', version: '1.0.0', dependencies: { abbrev: '2.0.0' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+
+  // Full install first
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // Verify store entry exists
+  const storeDir = path.join(dir, 'node_modules', '.store')
+  const storeEntries = fs.readdirSync(storeDir)
+  t.ok(storeEntries.some(e => e.startsWith('abbrev@')), 'store has abbrev entry after full install')
+
+  // Workspace-filtered install must not crash
+  const arborist2 = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    workspaces: ['ws-a'],
+  })
+  await arborist2.reify({
+    installStrategy: 'linked',
+    workspaces: ['ws-a'],
+  })
+
+  // Verify workspace filtering was actually applied (not silently skipped)
+  t.ok(arborist2.diff.filterSet.size > 0, 'workspace filter was applied to diff')
+
+  // Store entries still intact
+  const storeEntries2 = fs.readdirSync(storeDir)
+  t.ok(storeEntries2.some(e => e.startsWith('abbrev@')), 'store entries preserved after ws install')
+
+  // Workspace symlinks preserved
+  const wsALink = fs.readlinkSync(path.join(dir, 'packages', 'ws-a', 'node_modules', 'abbrev'))
+  t.ok(wsALink.includes('.store'), 'workspace a abbrev symlink points to store')
+
+  const wsBLink = fs.readlinkSync(path.join(dir, 'packages', 'ws-b', 'node_modules', 'abbrev'))
+  t.ok(wsBLink.includes('.store'), 'workspace b abbrev symlink preserved')
+})
+
 tap.test('bins are installed', async t => {
   // Input of arborist
   const graph = {

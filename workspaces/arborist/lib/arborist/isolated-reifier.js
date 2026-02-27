@@ -267,7 +267,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     }
 
     const root = {
-      fsChildren: [],
+      fsChildren: new Set(),
       integrity: null,
       inventory: new Map(),
       isLink: false,
@@ -286,20 +286,24 @@ module.exports = cls => class IsolatedReifier extends cls {
       meta: { loadedFromDisk: false },
       global: false,
       isProjectRoot: true,
-      children: [],
+      children: new Map(),
+      workspaces: new Map(),
+      tops: new Set(),
+      linksIn: new Set(),
     }
-    // root.inventory.set('', t)
-    // root.meta = this.idealTree.meta
-    // TODO We should mock better the inventory object because it is used by audit-report.js ... maybe
+    root.inventory.set('', root)
+    // TODO inventory.query is a stub; audit-report needs 'packageName' support
     root.inventory.query = () => {
       return []
     }
     const processed = new Set()
     proxiedIdealTree.workspaces.forEach(c => {
+      const wsName = c.packageName
       const workspace = {
         edgesIn: new Set(),
         edgesOut: new Map(),
-        children: [],
+        children: new Map(),
+        fsChildren: new Set(),
         hasInstallScript: c.hasInstallScript,
         binPaths: [],
         package: c.package,
@@ -307,9 +311,42 @@ module.exports = cls => class IsolatedReifier extends cls {
         path: c.localPath,
         realpath: c.localPath,
         resolved: c.resolved,
+        isLink: false,
+        isRoot: false,
+        name: wsName,
+        linksIn: new Set(),
       }
-      root.fsChildren.push(workspace)
+      workspace.target = workspace
+      root.fsChildren.add(workspace)
       root.inventory.set(workspace.location, workspace)
+
+      // Create workspace Link entry in children for _diffTrees lookup
+      const wsLink = {
+        name: wsName,
+        location: join('node_modules', wsName),
+        path: join(root.path, 'node_modules', wsName),
+        realpath: workspace.path,
+        isLink: true,
+        target: workspace,
+        children: new Map(),
+        fsChildren: new Set(),
+        edgesIn: new Set(),
+        edgesOut: new Map(),
+        binPaths: [],
+        root,
+        parent: root,
+        isRoot: false,
+        isProjectRoot: false,
+        isTop: false,
+        global: false,
+        globalTop: false,
+        package: workspace.package,
+        linksIn: new Set(),
+      }
+      root.children.set(wsLink.name, wsLink)
+      root.inventory.set(wsLink.location, wsLink)
+      root.workspaces.set(wsName, workspace.path)
+      workspace.linksIn.add(wsLink)
     })
     const generateChild = (node, location, pkg, inStore) => {
       const newChild = {
@@ -321,11 +358,11 @@ module.exports = cls => class IsolatedReifier extends cls {
         name: node.packageName || node.name,
         optional: node.optional,
         top: { path: proxiedIdealTree.root.localPath },
-        children: [],
+        children: new Map(),
         edgesIn: new Set(),
         edgesOut: new Map(),
         binPaths: [],
-        fsChildren: [],
+        fsChildren: new Set(),
         /* istanbul ignore next -- emulate Node */
         getBundler () {
           return null
@@ -343,7 +380,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         package: pkg,
       }
       newChild.target = newChild
-      root.children.push(newChild)
+      root.children.set(newChild.location, newChild)
       root.inventory.set(newChild.location, newChild)
     }
     proxiedIdealTree.external.forEach(c => {
@@ -379,10 +416,10 @@ module.exports = cls => class IsolatedReifier extends cls {
       let from, nmFolder
       if (externalEdge) {
         const fromLocation = join('node_modules', '.store', key, 'node_modules', node.packageName)
-        from = root.children.find(c => c.location === fromLocation)
+        from = root.children.get(fromLocation)
         nmFolder = join('node_modules', '.store', key, 'node_modules')
       } else {
-        from = node.isProjectRoot ? root : root.fsChildren.find(c => c.location === node.localLocation)
+        from = node.isProjectRoot ? root : root.inventory.get(node.localLocation)
         nmFolder = join(node.localLocation, 'node_modules')
       }
       /* istanbul ignore next - strict-peer-deps can exclude nodes from the tree */
@@ -401,9 +438,9 @@ module.exports = cls => class IsolatedReifier extends cls {
         let target
         if (external) {
           const toLocation = join('node_modules', '.store', toKey, 'node_modules', dep.packageName)
-          target = root.children.find(c => c.location === toLocation)
+          target = root.children.get(toLocation)
         } else {
-          target = root.fsChildren.find(c => c.location === dep.localLocation)
+          target = root.inventory.get(dep.localLocation)
         }
         // TODO: we should no-op is an edge has already been created with the same fromKey and toKey
         /* istanbul ignore next - strict-peer-deps can exclude nodes from the tree */
@@ -430,8 +467,8 @@ module.exports = cls => class IsolatedReifier extends cls {
           name: toKey,
           resolved: dep.resolved,
           top: { path: dep.root.localPath },
-          children: [],
-          fsChildren: [],
+          children: new Map(),
+          fsChildren: new Set(),
           isLink: true,
           isStoreLink: true,
           isRoot: false,
@@ -444,7 +481,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         const newEdge2 = { optional: false, from: link, to: target }
         link.edgesOut.set(dep.name, newEdge2)
         target.edgesIn.add(newEdge2)
-        root.children.push(link)
+        root.children.set(link.location, link)
       }
 
       for (const dep of node.localDependencies) {

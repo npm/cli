@@ -146,7 +146,7 @@ module.exports = cls => class Reifier extends cls {
     // was not changed, delete anything in the ideal and not actual.
     // Then we move the entire idealTree over to this.actualTree, and
     // save the hidden lockfile.
-    if (this.diff && this.diff.filterSet.size) {
+    if (this.diff && this.diff.filterSet.size && !linked) {
       const reroot = new Set()
 
       const { filterSet } = this.diff
@@ -422,7 +422,7 @@ module.exports = cls => class Reifier extends cls {
       if (includeWorkspaces) {
         // add all ws nodes to filterNodes
         for (const ws of this.options.workspaces) {
-          const ideal = this.idealTree.children.get && this.idealTree.children.get(ws)
+          const ideal = this.idealTree.children.get(ws)
           if (ideal) {
             filterNodes.push(ideal)
           }
