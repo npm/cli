@@ -1437,6 +1437,41 @@ t.test('exclusive options conflict', async t => {
   })
 })
 
+t.test('exclusive options from env do not conflict with cli', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    env: {
+      npm_config_lie: 'true',
+    },
+    npmPath: __dirname,
+    argv: [
+      process.execPath,
+      __filename,
+      '--truth=true',
+    ],
+    cwd: join(`${path}/project`),
+    shorthands,
+    definitions: {
+      ...definitions,
+      ...createDef('truth', {
+        default: false,
+        type: Boolean,
+        description: 'The Truth',
+        exclusive: ['lie'],
+      }),
+      ...createDef('lie', {
+        default: false,
+        type: Boolean,
+        description: 'A Lie',
+        exclusive: ['truth'],
+      }),
+    },
+    flatten,
+  })
+  await config.load()
+  t.equal(config.get('truth'), true, 'cli value wins')
+})
+
 t.test('env-replaced config from files is not clobbered when saving', async (t) => {
   const path = t.testdir()
   const opts = {

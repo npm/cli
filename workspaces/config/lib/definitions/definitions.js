@@ -1353,6 +1353,7 @@ const definitions = {
     hint: '<days>',
     type: [null, Number],
     exclusive: ['before'],
+    envExport: false,
     description: `
        If set, npm will build the npm tree such that only versions that were
        available more than the given number of days ago will be installed.  If
