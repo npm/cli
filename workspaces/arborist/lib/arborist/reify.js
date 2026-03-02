@@ -63,8 +63,6 @@ const _resolvedAdd = Symbol.for('resolvedAdd')
 // used by build-ideal-tree mixin
 const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
 
-const _createIsolatedTree = Symbol.for('createIsolatedTree')
-
 module.exports = cls => class Reifier extends cls {
   #bundleMissing = new Set() // child nodes we'd EXPECT to be included in a bundle, but aren't
   #bundleUnpacked = new Set() // the nodes we unpack to read their bundles
@@ -115,7 +113,7 @@ module.exports = cls => class Reifier extends cls {
       // this is currently technical debt which will be resolved in a refactor
       // of Node/Link trees
       log.warn('reify', 'The "linked" install strategy is EXPERIMENTAL and may contain bugs.')
-      this.idealTree = await this[_createIsolatedTree]()
+      this.idealTree = await this.createIsolatedTree()
     }
     await this[_diffTrees]()
     await this.#reifyPackages()
