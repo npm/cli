@@ -7,7 +7,7 @@ const cleanNewlines = (s) => s.replace(/\r\n/g, '\n')
 // ideally this could be avoided but its easier to just
 // run this command inside cleanSnapshot
 const normalizePath = (str) => cleanNewlines(str)
-  .replace(/[A-z]:\\/g, '\\') // turn windows roots to posix ones
+  .replace(/[A-Za-z]:\\/g, '\\') // turn windows roots to posix ones
   .replace(/\\+/g, '/') // replace \ with /
 
 const pathRegex = (p) => new RegExp(normalizePath(p), 'gi')
