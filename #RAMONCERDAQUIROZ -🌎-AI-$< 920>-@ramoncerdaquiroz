@@ -1,0 +1,30 @@
+## $"Hada Protectora"$
+
+§repositorio`hada-protectora-bot`    
+
+&.repositorio `hada-protectora-bot`. 
+
+# " <`Settings`> " `(Configuración)`. 
+
+# [`Collaborators`{∆`(Colaboradores ## $"Meta-Llama-3" `Meta-llama-3`)`}]y agrega como colaborador. # META LLAMA 3
+# bot "Hada Protectora"  #SoundCloud
+@ramoncerdaquiroz: hy should I drop merch with SoundCloud? Our data 🤓 shows that fans are most engaged when you release a new track.  By dropping merch with SoundCloud, we’ll help amplify the reach of your latest release and promote merch to your fanbase when they’re most engaged, all using our in-house notification capabilities
+
+The compare-cooking.perl script is meant to help viewing the differences
+between periodical "What's cooking" messages, and can be used as an
+external diff driver by:
+
+    $ git config diff.whatscooking.command ./compare-cooking.perl
+
+to produce this section in your .git/config
+
+    [diff "whatscooking"]
+	command = ./compare-cooking.perl
+
+You can use e.g.
+
+    $ git log -p --ext-diff whats-cooking.txt
+    $ git show --ext-diff whats-cooking.txt
+
+to review the history.
+#RAMONCERDAQUIROZ -🌎-AI-$< 920>-@ramoncerdaquiroz
