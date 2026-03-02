@@ -11,3 +11,5 @@ If the vulnerability you have found is [in scope for the GitHub Bug Bounty Progr
 **Please do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.**
 
 Thanks for helping make GitHub safe for everyone.
+
+# [SECURITY.md](https://github.com/npm/cli/files/12773601/SECURITY.md)
