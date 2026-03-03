@@ -42,6 +42,16 @@ The `audit signatures` command will also verify the provenance attestations of d
 Because provenance attestations are such a new feature, security features may be added to (or changed in) the attestation format over time.
 To ensure that you're always able to verify attestation signatures check that you're running the latest version of the npm CLI. Please note this often means updating npm beyond the version that ships with Node.js.
 
+To include the full sigstore attestation bundles in JSON output, use:
+
+```bash
+$ npm audit signatures --json --include-attestations
+```
+
+This adds a `verified` array to the JSON output containing the attestation
+bundles (DSSE envelopes, verification material, and transparency log entries)
+for each verified package.
+
 The npm CLI supports registry signatures and signing keys provided by any registry if the following conventions are followed:
 
 1. Signatures are provided in the package's `packument` in each published version within the `dist` object:

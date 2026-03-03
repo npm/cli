@@ -946,6 +946,17 @@ const definitions = {
     `,
     flatten,
   }),
+  'include-attestations': new Definition('include-attestations', {
+    default: false,
+    type: Boolean,
+    description: `
+      When used with \`npm audit signatures --json\`, includes the full
+      sigstore attestation bundles in the JSON output for each verified
+      package. The bundles contain DSSE envelopes, verification material,
+      and transparency log entries.
+    `,
+    flatten,
+  }),
   'init-author-email': new Definition('init-author-email', {
     default: '',
     hint: '<email>',
