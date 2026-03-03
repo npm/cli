@@ -154,7 +154,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         if (!edgeNames.has(peerName)) {
           const resolved = node.resolve(peerName)
           if (resolved && resolved !== node && !resolved.inert) {
-            nonOptionalDeps.push(resolved)
+            nonOptionalDeps.push(resolved.target)
           }
         }
       }

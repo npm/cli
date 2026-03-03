@@ -368,6 +368,56 @@ tap.test('peer dependencies with legacyPeerDeps', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
+tap.test('idempotent install with legacyPeerDeps and workspace peer deps', async t => {
+  // Regression: when legacyPeerDeps is enabled and a workspace has a peer
+  // dependency on another workspace, node.resolve() returns the Link node
+  // (not its target). This caused workspaceProxy to be called with the Link,
+  // producing store links under node_modules/<ws>/node_modules/ that race
+  // with the workspace symlink at node_modules/<ws>, hitting EEXIST on the
+  // second install.
+  //
+  // Use many workspaces with cross-peer-deps to increase concurrency and
+  // make the race window large enough to trigger reliably.
+  const workspaces = []
+  for (let i = 0; i < 20; i++) {
+    workspaces.push({
+      name: `ws-${i}`,
+      version: '1.0.0',
+      dependencies: { abbrev: '1.0.0' },
+      peerDependencies: { [`ws-${(i + 1) % 20}`]: '*' },
+    })
+  }
+
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myroot', version: '1.0.0',
+    },
+    workspaces,
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const opts = { path: dir, registry, packumentCache: new Map(), cache, legacyPeerDeps: true }
+
+  // First install
+  const arb1 = new Arborist(opts)
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Second install must not throw EEXIST
+  const arb2 = new Arborist({ ...opts, packumentCache: new Map() })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  // Workspace symlinks should still be symlinks (not directories)
+  for (let i = 0; i < 20; i++) {
+    t.ok(fs.lstatSync(path.join(dir, 'node_modules', `ws-${i}`)).isSymbolicLink(),
+      `ws-${i} is still a symlink after second install`)
+  }
+})
+
 tap.test('Lock file is same in hoisted and in isolated mode', async t => {
   const graph = {
     registry: [
