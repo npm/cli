@@ -1853,6 +1853,85 @@ tap.test('workspace links are not affected by store resolved fix', async t => {
   t.ok(arb2.diff.unchanged.length > 0, 'second install should have unchanged nodes')
 })
 
+tap.test('orphaned store entries are cleaned up on dependency update', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { which: '1.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const storeDir = path.join(dir, 'node_modules', '.store')
+
+  // First install — which@1.0.0
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  const entriesAfterV1 = fs.readdirSync(storeDir)
+  t.ok(entriesAfterV1.some(e => e.startsWith('which@1.0.0-')),
+    'store has which@1.0.0 entry after first install')
+
+  // Update package.json to depend on which@2.0.0
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  pkg.dependencies.which = '2.0.0'
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  // Second install — which@2.0.0
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  const entriesAfterV2 = fs.readdirSync(storeDir)
+  t.ok(entriesAfterV2.some(e => e.startsWith('which@2.0.0-')),
+    'store has which@2.0.0 entry after update')
+  t.notOk(entriesAfterV2.some(e => e.startsWith('which@1.0.0-')),
+    'old which@1.0.0 store entry is removed after update')
+})
+
+tap.test('orphaned store entries are cleaned up on dependency removal', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { which: '1.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const storeDir = path.join(dir, 'node_modules', '.store')
+
+  // First install
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  t.ok(fs.readdirSync(storeDir).length > 0, 'store has entries after install')
+
+  // Remove the dependency
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  delete pkg.dependencies
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  // Reinstall
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  const entriesAfterRemoval = fs.readdirSync(storeDir)
+  t.equal(entriesAfterRemoval.length, 0,
+    'all store entries are removed when dependencies are removed')
+})
+
 function setupRequire (cwd) {
   return function requireChain (...chain) {
     return chain.reduce((path, name) => {

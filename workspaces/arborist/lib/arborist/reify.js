@@ -8,10 +8,10 @@ const promiseAllRejectLate = require('promise-all-reject-late')
 const runScript = require('@npmcli/run-script')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { depth: dfwalk } = require('treeverse')
-const { dirname, resolve, relative, join } = require('node:path')
+const { dirname, resolve, relative, join, sep } = require('node:path')
 const { log, time } = require('proc-log')
 const { existsSync } = require('node:fs')
-const { lstat, mkdir, rm, symlink } = require('node:fs/promises')
+const { lstat, mkdir, readdir, rm, symlink } = require('node:fs/promises')
 const { moveFile } = require('@npmcli/fs')
 const { subset, intersects } = require('semver')
 const { walkUp } = require('walk-up-path')
@@ -123,6 +123,7 @@ module.exports = cls => class Reifier extends cls {
     await this[_diffTrees]()
     await this.#reifyPackages()
     if (linked) {
+      await this.#cleanOrphanedStoreEntries()
       // swap back in the idealTree
       // so that the lockfile is preserved
       this.idealTree = oldTree
@@ -1354,6 +1355,44 @@ module.exports = cls => class Reifier extends cls {
     }
 
     timeEnd()
+  }
+
+  // After a linked install, scan node_modules/.store/ and remove any
+  // directories that are not referenced by the current ideal tree.
+  // Store entries become orphaned when dependencies are updated or
+  // removed, because the diff never sees the old store keys.
+  async #cleanOrphanedStoreEntries () {
+    const storeDir = resolve(this.path, 'node_modules', '.store')
+    let entries
+    try {
+      entries = await readdir(storeDir)
+    } catch {
+      return
+    }
+
+    // Collect valid store keys from the isolated ideal tree.
+    // Store entries have location: node_modules/.store/{key}/node_modules/{pkg}
+    const validKeys = new Set()
+    for (const child of this.idealTree.children.values()) {
+      if (child.isInStore) {
+        const key = child.location.split(sep)[2]
+        validKeys.add(key)
+      }
+    }
+
+    const orphaned = entries.filter(e => !validKeys.has(e))
+    if (!orphaned.length) {
+      return
+    }
+
+    log.silly('reify', 'cleaning orphaned store entries', orphaned)
+    await promiseAllRejectLate(
+      orphaned.map(e =>
+        rm(resolve(storeDir, e), { recursive: true, force: true })
+          .catch(/* istanbul ignore next -- rm with force rarely fails */
+            er => log.warn('cleanup', `Failed to remove orphaned store entry ${e}`, er))
+      )
+    )
   }
 
   // last but not least, we save the ideal tree metadata to the package-lock
