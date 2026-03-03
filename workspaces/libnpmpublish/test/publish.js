@@ -700,7 +700,7 @@ t.test('automatic provenance in unsupported environment', async t => {
 t.test('automatic provenance with incorrect permissions', async t => {
   mockGlobals(t, {
     'process.env': {
-      CI: false,
+      CI: true,
       GITHUB_ACTIONS: true,
       ACTIONS_ID_TOKEN_REQUEST_URL: undefined,
     },
