@@ -369,15 +369,8 @@ tap.test('peer dependencies with legacyPeerDeps', async t => {
 })
 
 tap.test('idempotent install with legacyPeerDeps and workspace peer deps', async t => {
-  // Regression: when legacyPeerDeps is enabled and a workspace has a peer
-  // dependency on another workspace, node.resolve() returns the Link node
-  // (not its target). This caused workspaceProxy to be called with the Link,
-  // producing store links under node_modules/<ws>/node_modules/ that race
-  // with the workspace symlink at node_modules/<ws>, hitting EEXIST on the
-  // second install.
-  //
-  // Use many workspaces with cross-peer-deps to increase concurrency and
-  // make the race window large enough to trigger reliably.
+  // Regression: when legacyPeerDeps is enabled and a workspace has a peer dependency on another workspace, node.resolve() returns the Link node (not its target). This caused workspaceProxy to be called with the Link, producing store links under node_modules/<ws>/node_modules/ that race with the workspace symlink at node_modules/<ws>, hitting EEXIST on the second install.
+  // Use many workspaces with cross-peer-deps to increase concurrency and make the race window large enough to trigger reliably.
   const workspaces = []
   for (let i = 0; i < 20; i++) {
     workspaces.push({
