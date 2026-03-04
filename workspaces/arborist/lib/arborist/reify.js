@@ -583,7 +583,7 @@ module.exports = cls => class Reifier extends cls {
       // if the directory already exists, made will be undefined. if that's the case
       // we don't want to remove it because we aren't the ones who created it so we
       // omit it from the #sparseTreeRoots
-      /* istanbul ignore next -- mkdir returns path only when dir is new */
+      /* istanbul ignore next -- pre-existing: mkdir returns undefined when dir exists, covered in reify tests but lost in aggregate coverage merge */
       if (made) {
         this.#sparseTreeRoots.add(made)
       }
