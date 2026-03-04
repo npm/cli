@@ -431,9 +431,8 @@ module.exports = cls => class Reifier extends cls {
           if (ideal) {
             filterNodes.push(ideal)
           }
-          // Skip actual-side filterNodes when using the linked diff wrapper —
-          // those nodes have root===actualTree, not root===linkedActualForDiff,
-          // and Diff.calculate requires filterNode.root to match actual.
+          // Skip actual-side filterNodes when using the linked diff wrapper.
+          // Those nodes have root===actualTree, not root===linkedActualForDiff, and Diff.calculate requires filterNode.root to match actual.
           // The ideal filterNode alone is sufficient to scope the workspace diff.
           if (!this.#linkedActualForDiff) {
             const actual = this.actualTree.children.get(ws)
@@ -801,11 +800,9 @@ module.exports = cls => class Reifier extends cls {
     return join(filePath)
   }
 
-  // Build a flat actual tree wrapper for linked installs so the diff can
-  // correctly match store entries that already exist on disk. The proxy
-  // tree from _createIsolatedTree() is flat (all children on root), but
-  // loadActual() produces a nested tree where store entries are deep link
-  // targets. This wrapper surfaces them at the root level for comparison.
+  // Build a flat actual tree wrapper for linked installs so the diff can correctly match store entries that already exist on disk.
+  // The proxy tree from createIsolatedTree() is flat (all children on root), but loadActual() produces a nested tree where store entries are deep link targets.
+  // This wrapper surfaces them at the root level for comparison.
   #buildLinkedActualForDiff (idealTree, actualTree) {
     // Combined Map keyed by path (how allChildren() in diff.js keys)
     const combined = new Map()
@@ -816,10 +813,8 @@ module.exports = cls => class Reifier extends cls {
     }
 
     // Add synthetic entries for store nodes and store links that exist on disk.
-    // The proxy tree is flat — all store entries (isInStore) and store links
-    // (isStoreLink) are direct children of root. The actual tree only has
-    // top-level links as root children, so store entries and store links
-    // need synthetic actual entries for the diff to match them.
+    // The proxy tree is flat: all store entries (isInStore) and store links (isStoreLink) are direct children of root.
+    // The actual tree only has top-level links as root children, so store entries need synthetic actual entries for the diff to match them.
     for (const child of idealTree.children.values()) {
       if (!combined.has(child.path) && (child.isInStore || child.isStoreLink) &&
           existsSync(child.path)) {
@@ -1357,10 +1352,8 @@ module.exports = cls => class Reifier extends cls {
     timeEnd()
   }
 
-  // After a linked install, scan node_modules/.store/ and remove any
-  // directories that are not referenced by the current ideal tree.
-  // Store entries become orphaned when dependencies are updated or
-  // removed, because the diff never sees the old store keys.
+  // After a linked install, scan node_modules/.store/ and remove any directories that are not referenced by the current ideal tree.
+  // Store entries become orphaned when dependencies are updated or removed, because the diff never sees the old store keys.
   async #cleanOrphanedStoreEntries () {
     const storeDir = resolve(this.path, 'node_modules', '.store')
     let entries
@@ -1370,8 +1363,7 @@ module.exports = cls => class Reifier extends cls {
       return
     }
 
-    // Collect valid store keys from the isolated ideal tree.
-    // Store entries have location: node_modules/.store/{key}/node_modules/{pkg}
+    // Collect valid store keys from the isolated ideal tree (location: node_modules/.store/{key}/node_modules/{pkg})
     const validKeys = new Set()
     for (const child of this.idealTree.children.values()) {
       if (child.isInStore) {
