@@ -164,9 +164,13 @@ async function getRepo (graph) {
   // Generate the root of the graph on disk
   const root = graph.root
   const workspaces = graph.workspaces || []
+  const hasScoped = workspaces.some(w => w.name.startsWith('@'))
+  const workspaceGlobs = hasScoped
+    ? ['packages/*', 'packages/@*/*']
+    : ['packages/*']
   const repo = {
     'package.json': JSON.stringify({
-      workspaces: workspaces.length !== 0 ? ['packages/*'] : undefined,
+      workspaces: workspaces.length !== 0 ? workspaceGlobs : undefined,
       ...root,
     }),
     packages: {},
@@ -192,7 +196,7 @@ function createDir (dir, structure) {
   Object.entries(structure).forEach(([key, value]) => {
     if (typeof value === 'object') {
       const newDir = path.join(dir, key)
-      fs.mkdirSync(newDir)
+      fs.mkdirSync(newDir, { recursive: true })
       createDir(newDir, value)
     } else {
       fs.writeFileSync(path.join(dir, key), value)

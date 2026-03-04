@@ -601,6 +601,7 @@ graph LR;
   npmcli-arborist-->proggy;
   npmcli-arborist-->promise-all-reject-late;
   npmcli-arborist-->promise-call-limit;
+  npmcli-arborist-->promise-retry;
   npmcli-arborist-->read-package-json-fast;
   npmcli-arborist-->semver;
   npmcli-arborist-->ssri;
