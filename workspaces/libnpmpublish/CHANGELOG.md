@@ -1,5 +1,13 @@
 # Changelog
 
+## [10.0.2](https://github.com/npm/cli/compare/libnpmpublish-v10.0.1...libnpmpublish-v10.0.2) (2026-03-04)
+### Dependencies
+* [`bdeabff`](https://github.com/npm/cli/commit/bdeabff42ef46c12f33d602b7edada53700a04df) [#9056](https://github.com/npm/cli/pull/9056) `ci-info@4.4.0`
+### Chores
+* [`72cc7de`](https://github.com/npm/cli/commit/72cc7de03deeea4ce081dfc1ef36863e8b98fec9) [#9056](https://github.com/npm/cli/pull/9056) `template-oss@4.29.0` (@wraithgar)
+* [`15e545b`](https://github.com/npm/cli/commit/15e545b7a0301798b28056382325cd83e02621e7) [#8384](https://github.com/npm/cli/pull/8384) `@npmcli/template-oss@4.24.4` (#8384) (@wraithgar)
+* [`fb5a9f2`](https://github.com/npm/cli/commit/fb5a9f2ac7047655b79988c972ed99ef3b8fa8fe) [#8378](https://github.com/npm/cli/pull/8378) `@npmcli/template-oss@4.24.3` (@wraithgar)
+
 ## [10.0.1](https://github.com/npm/cli/compare/libnpmpublish-v10.0.0...libnpmpublish-v10.0.1) (2024-11-21)
 ### Dependencies
 * [`be45963`](https://github.com/npm/cli/commit/be45963ecf9f7c3dac85dc19696b82646c28a18e) [#7922](https://github.com/npm/cli/pull/7922) `sigstore@3.0.0`

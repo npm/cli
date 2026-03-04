@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.0.2](https://github.com/npm/cli/compare/arborist-v8.0.1...arborist-v8.0.2) (2026-03-04)
+### Bug Fixes
+* [`794f6c8`](https://github.com/npm/cli/commit/794f6c8f0d56698430d05430777d22dbfa92b353) [#9011](https://github.com/npm/cli/pull/9011) backport linked strategy fixes from multiple PRs to v10 (#9011) (@manzoorwanijk)
+### Chores
+* [`72cc7de`](https://github.com/npm/cli/commit/72cc7de03deeea4ce081dfc1ef36863e8b98fec9) [#9056](https://github.com/npm/cli/pull/9056) `template-oss@4.29.0` (@wraithgar)
+
 ## [8.0.1](https://github.com/npm/cli/compare/arborist-v8.0.0...arborist-v8.0.1) (2025-06-25)
 ### Bug Fixes
 * [`78dc057`](https://github.com/npm/cli/commit/78dc0574cad0295fb49a96032871e17ea6c2cffc) [#8378](https://github.com/npm/cli/pull/8378) stop working around bug fixed in `npm-package-arg@12.0.2` (@TrevorBurnham)
