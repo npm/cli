@@ -721,7 +721,6 @@ graph LR;
   unique-filename-->unique-slug;
   unique-slug-->imurmurhash;
   which-->isexe;
-  write-file-atomic-->imurmurhash;
   write-file-atomic-->signal-exit;
 ```
 
