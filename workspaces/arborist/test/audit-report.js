@@ -421,6 +421,29 @@ t.test('audit supports alias deps', async t => {
   t.equal(report.get('mkdirp').simpleRange, '0.4.1 - 0.5.1')
 })
 
+t.test('linked local package should not be audited against the registry', async t => {
+  const path = resolve(fixtures, 'audit-linked-package')
+  // No registry.audit() mock needed — no request should be made
+  // because linked packages must be excluded from the bulk payload
+  createRegistry(t)
+  const cache = t.testdir()
+  const arb = newArb(path, { cache })
+
+  const tree = await arb.loadVirtual()
+  const report = await AuditReport.load(tree, arb.options)
+
+  t.equal(
+    report.has('electron-test-app'),
+    false,
+    'linked local package should not appear in audit report'
+  )
+  t.equal(
+    report.size,
+    0,
+    'audit report should be empty when all dependencies are local links'
+  )
+})
+
 t.test('audit with filterSet limiting to only mkdirp and minimist', async t => {
   const path = resolve(fixtures, 'audit-nyc-mkdirp')
   const registry = createRegistry(t)

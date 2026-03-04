@@ -309,6 +309,108 @@ tap.test('simple peer dependencies scenarios', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
+tap.test('peer dependencies with legacyPeerDeps', async t => {
+  /*
+   * With legacyPeerDeps, peer dep edges are not created on the node.
+   * The linked strategy should still place peer deps alongside the
+   * package in the store so require() works from the real path.
+   *
+   * root -> phpegjs
+   *         phpegjs -> pegjs (peer dep, no edge with legacyPeerDeps)
+   * root -> pegjs
+   */
+
+  const graph = {
+    registry: [
+      { name: 'phpegjs', version: '1.0.0', peerDependencies: { pegjs: '*', missing: '*' } },
+      { name: 'pegjs', version: '2.0.0' },
+      {
+        name: 'adapter',
+        version: '1.0.0',
+        dependencies: { pegjs: '*' },
+        peerDependencies: { pegjs: '*' },
+      },
+    ],
+    root: {
+      name: 'foo',
+      version: '1.2.3',
+      dependencies: { phpegjs: '1.0.0', pegjs: '2.0.0', adapter: '1.0.0' },
+    },
+  }
+
+  const resolved = {
+    'foo@1.2.3 (root)': {
+      'phpegjs@1.0.0': {
+        'pegjs@2.0.0 (peer)': {},
+      },
+      'pegjs@2.0.0': {},
+      'adapter@1.0.0': {
+        'pegjs@2.0.0': {},
+      },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache, legacyPeerDeps: true })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // phpegjs should be able to require its peer dep pegjs
+  t.ok(setupRequire(dir)('phpegjs', 'pegjs'),
+    'phpegjs can require peer dep pegjs with legacyPeerDeps')
+
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule5.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
+})
+
+tap.test('idempotent install with legacyPeerDeps and workspace peer deps', async t => {
+  // Regression: when legacyPeerDeps is enabled and a workspace has a peer dependency on another workspace, node.resolve() returns the Link node (not its target). This caused workspaceProxy to be called with the Link, producing store links under node_modules/<ws>/node_modules/ that race with the workspace symlink at node_modules/<ws>, hitting EEXIST on the second install.
+  // Use many workspaces with cross-peer-deps to increase concurrency and make the race window large enough to trigger reliably.
+  const workspaces = []
+  for (let i = 0; i < 20; i++) {
+    workspaces.push({
+      name: `ws-${i}`,
+      version: '1.0.0',
+      dependencies: { abbrev: '1.0.0' },
+      peerDependencies: { [`ws-${(i + 1) % 20}`]: '*' },
+    })
+  }
+
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myroot', version: '1.0.0',
+    },
+    workspaces,
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const opts = { path: dir, registry, packumentCache: new Map(), cache, legacyPeerDeps: true }
+
+  // First install
+  const arb1 = new Arborist(opts)
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Second install must not throw EEXIST
+  const arb2 = new Arborist({ ...opts, packumentCache: new Map() })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  // Workspace symlinks should still be symlinks (not directories)
+  for (let i = 0; i < 20; i++) {
+    t.ok(fs.lstatSync(path.join(dir, 'node_modules', `ws-${i}`)).isSymbolicLink(),
+      `ws-${i} is still a symlink after second install`)
+  }
+})
+
 tap.test('Lock file is same in hoisted and in isolated mode', async t => {
   const graph = {
     registry: [
@@ -1300,6 +1402,113 @@ tap.test('scoped package', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
+tap.test('scoped workspace packages', async t => {
+  /*
+   * Dependency graph:
+   *
+   * root -> @scope/package-b (workspace)
+   *         @scope/package-b -> @scope/package-a (workspace)
+   * root -> @scope/package-a (workspace)
+   */
+
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject', version: '1.0.0', dependencies: { '@scope/package-a': '*', '@scope/package-b': '*' },
+    },
+    workspaces: [
+      { name: '@scope/package-a', version: '1.0.0', dependencies: { which: '1.0.0' } },
+      { name: '@scope/package-b', version: '1.0.0', dependencies: { '@scope/package-a': '*' } },
+    ],
+  }
+
+  const resolved = {
+    'myproject@1.0.0 (root)': {
+      '@scope/package-a@1.0.0 (workspace)': {
+        'which@1.0.0': {},
+      },
+      '@scope/package-b@1.0.0 (workspace)': {
+        '@scope/package-a@1.0.0 (workspace)': {
+          'which@1.0.0': {},
+        },
+      },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule4.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
+})
+
+tap.test('aliased packages in workspace', async t => {
+  /*
+   * Dependency graph:
+   *
+   * root -> prettier (alias for npm:custom-prettier@3.0.3)
+   *         custom-prettier -> isexe
+   * root -> my-pkg (workspace)
+   *         my-pkg -> prettier (alias for npm:custom-prettier@3.0.3)
+   */
+
+  const graph = {
+    registry: [
+      { name: 'custom-prettier', version: '3.0.3', dependencies: { isexe: '1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { prettier: 'npm:custom-prettier@3.0.3' },
+    },
+    workspaces: [
+      { name: 'my-pkg', version: '1.0.0', dependencies: { prettier: 'npm:custom-prettier@3.0.3' } },
+    ],
+  }
+
+  const resolved = {
+    'myproject@1.0.0 (root)': {
+      'prettier@3.0.3': {
+        'isexe@1.0.0': {},
+      },
+      'my-pkg@1.0.0 (workspace)': {
+        'prettier@3.0.3': {
+          'isexe@1.0.0': {},
+        },
+      },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // Verify symlink uses alias name, not real package name
+  t.ok(setupRequire(dir)('prettier'), 'root can require via alias "prettier"')
+  t.notOk(
+    pathExists(path.join(dir, 'node_modules', 'custom-prettier')),
+    'no custom-prettier symlink at root node_modules'
+  )
+
+  const asserted = new Set()
+  rule1.apply(t, dir, resolved, asserted)
+  rule2.apply(t, dir, resolved, asserted)
+  rule3.apply(t, dir, resolved, asserted)
+  rule7.apply(t, dir, resolved, asserted)
+})
+
 tap.test('failing optional peer deps are not installed', async t => {
   // Input of arborist
   const graph = {
@@ -1403,6 +1612,92 @@ tap.test('postinstall scripts are run', async t => {
 
   const postInstallRanBar = pathExists(`${setupRequire(dir)('bar')}/postInstallRanBar`)
   t.ok(postInstallRanBar)
+})
+
+tap.test('postinstall scripts run once for store packages', async t => {
+  // Regression test: store links should not cause scripts to run twice.
+  // The store entry and its symlink both end up in the build queue, but
+  // only the store entry should run scripts.
+  const graph = {
+    registry: [
+      {
+        name: 'which',
+        version: '1.0.0',
+        scripts: {
+          postinstall: 'node -e "var c=0;try{c=+fs.readFileSync(\'postinstall-count\',\'utf8\')}catch(e){};fs.writeFileSync(\'postinstall-count\',String(c+1))"',
+        },
+      },
+    ],
+    root: {
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const whichDir = setupRequire(dir)('which')
+  const count = Number(fs.readFileSync(`${whichDir}/postinstall-count`, 'utf8'))
+  t.equal(count, 1, 'postinstall ran exactly once')
+})
+
+tap.test('workspace-filtered install with linked strategy', async t => {
+  // Two workspaces sharing the same dependency must not crash when installing with --workspace + --install-strategy=linked.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '2.0.0' },
+    ],
+    root: {
+      name: 'myroot', version: '1.0.0',
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { abbrev: '2.0.0' } },
+      { name: 'ws-b', version: '1.0.0', dependencies: { abbrev: '2.0.0' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+
+  // Full install first
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // Verify store entry exists
+  const storeDir = path.join(dir, 'node_modules', '.store')
+  const storeEntries = fs.readdirSync(storeDir)
+  t.ok(storeEntries.some(e => e.startsWith('abbrev@')), 'store has abbrev entry after full install')
+
+  // Workspace-filtered install must not crash
+  const arborist2 = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    workspaces: ['ws-a'],
+  })
+  await arborist2.reify({
+    installStrategy: 'linked',
+    workspaces: ['ws-a'],
+  })
+
+  // Verify workspace filtering was actually applied (not silently skipped)
+  t.ok(arborist2.diff.filterSet.size > 0, 'workspace filter was applied to diff')
+
+  // Store entries still intact
+  const storeEntries2 = fs.readdirSync(storeDir)
+  t.ok(storeEntries2.some(e => e.startsWith('abbrev@')), 'store entries preserved after ws install')
+
+  // Workspace symlinks preserved
+  const wsALink = fs.readlinkSync(path.join(dir, 'packages', 'ws-a', 'node_modules', 'abbrev'))
+  t.ok(wsALink.includes('.store'), 'workspace a abbrev symlink points to store')
+
+  const wsBLink = fs.readlinkSync(path.join(dir, 'packages', 'ws-b', 'node_modules', 'abbrev'))
+  t.ok(wsBLink.includes('.store'), 'workspace b abbrev symlink preserved')
 })
 
 tap.test('bins are installed', async t => {

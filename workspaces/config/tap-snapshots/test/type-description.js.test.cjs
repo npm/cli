@@ -19,6 +19,11 @@ Object {
   "all": Array [
     "boolean value (true or false)",
   ],
+  "allow-git": Array [
+    "all",
+    "none",
+    "root",
+  ],
   "allow-same-version": Array [
     "boolean value (true or false)",
   ],
@@ -334,6 +339,10 @@ Object {
   ],
   "message": Array [
     Function String(),
+  ],
+  "min-release-age": Array [
+    null,
+    "numeric value",
   ],
   "name": Array [
     null,

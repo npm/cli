@@ -4460,3 +4460,114 @@ t.test('installLinks behavior with project-internal file dependencies', async t 
     t.equal(edgeToA.to, packageA, 'the edge from b should point to package a')
   })
 })
+
+t.test('re-queue already-seen nodes when placed dep invalidates peerOptional (save=true, #8726)', async t => {
+  // Scenario: alpha has peerOptional on shared@1.0.0, beta has dep on shared@^1.0.0.
+  // With save=true, alpha is processed first (alphabetical order in DepsQueue),
+  // its peerOptional is not a problem (missing is OK for peerOptional).
+  // Beta is processed next, placing shared@1.1.0 (latest ^1.0.0).
+  // This invalidates alpha's peerOptional edge, triggering re-queue of alpha.
+  const registry = createRegistry(t, false)
+
+  const alphaPack = registry.packument({
+    name: 'alpha',
+    version: '1.0.0',
+    peerDependencies: { shared: '1.0.0' },
+    peerDependenciesMeta: { shared: { optional: true } },
+  })
+  const alphaManifest = registry.manifest({ name: 'alpha', packuments: [alphaPack] })
+  await registry.package({ manifest: alphaManifest })
+
+  const betaPack = registry.packument({
+    name: 'beta',
+    version: '1.0.0',
+    dependencies: { shared: '^1.0.0' },
+  })
+  const betaManifest = registry.manifest({ name: 'beta', packuments: [betaPack] })
+  await registry.package({ manifest: betaManifest })
+
+  const sharedPacks = registry.packuments(['1.0.0', '1.1.0'], 'shared')
+  const sharedManifest = registry.manifest({ name: 'shared', packuments: sharedPacks })
+  await registry.package({ manifest: sharedManifest, times: 2 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-8726-install',
+      version: '1.0.0',
+      dependencies: {
+        alpha: '1.0.0',
+        beta: '1.0.0',
+      },
+    }),
+  })
+
+  const arb = newArb(path, { save: true })
+  const tree = await arb.buildIdealTree()
+
+  t.ok(tree.children.get('alpha'), 'alpha is in the tree')
+  t.ok(tree.children.get('beta'), 'beta is in the tree')
+  t.ok(tree.children.get('shared'), 'shared is in the tree')
+})
+
+t.test('skip invalid peerOptional edges in problemEdges when save=false (#8726)', async t => {
+  // With save=false (npm ci behavior), invalid peerOptional edges should NOT be treated as problems.
+  // We use update.names to force alpha into #problemEdges while shared@1.1.0 (invalid for alpha's peerOptional spec of 1.0.0) is already in the tree from the lockfile.
+  const registry = createRegistry(t, false)
+
+  const utilPacks = registry.packuments(['1.0.0', '1.0.1'], 'util')
+  const utilManifest = registry.manifest({ name: 'util', packuments: utilPacks })
+  await registry.package({ manifest: utilManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-8726-ci',
+      version: '1.0.0',
+      dependencies: {
+        alpha: '1.0.0',
+        beta: '1.0.0',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'test-8726-ci',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'test-8726-ci',
+          version: '1.0.0',
+          dependencies: { alpha: '1.0.0', beta: '1.0.0' },
+        },
+        'node_modules/alpha': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/alpha/-/alpha-1.0.0.tgz',
+          dependencies: { util: '^1.0.0' },
+          peerDependencies: { shared: '1.0.0' },
+          peerDependenciesMeta: { shared: { optional: true } },
+        },
+        'node_modules/beta': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/beta/-/beta-1.0.0.tgz',
+          dependencies: { shared: '^1.0.0' },
+        },
+        'node_modules/shared': {
+          version: '1.1.0',
+          resolved: 'https://registry.npmjs.org/shared/-/shared-1.1.0.tgz',
+        },
+        'node_modules/util': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/util/-/util-1.0.0.tgz',
+        },
+      },
+    }),
+  })
+
+  const arb = newArb(path, { save: false })
+  const tree = await arb.buildIdealTree({ update: { names: ['util'] } })
+
+  t.ok(tree.children.get('alpha'), 'alpha is in the tree')
+  t.ok(tree.children.get('beta'), 'beta is in the tree')
+  t.equal(tree.children.get('shared').version, '1.1.0',
+    'shared stays at 1.1.0 - peerOptional mismatch is not treated as a problem')
+  t.ok(tree.children.get('util'), 'util is in the tree')
+})

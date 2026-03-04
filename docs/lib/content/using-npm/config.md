@@ -1,7 +1,7 @@
 ---
-title: config
+title: Config
 section: 7
-description: More than you probably want to know about npm configuration
+description: About npm configuration
 ---
 
 ### Description
@@ -20,6 +20,14 @@ Using `--flag` without specifying any value will set the value to `true`.
 Example: `--flag1 --flag2` will set both configuration parameters to `true`, while `--flag1 --flag2 bar` will set `flag1` to `true`, and `flag2` to `bar`.
 Finally, `--flag1 --flag2 -- bar` will set both configuration parameters to `true`, and the `bar` is taken as a command argument.
 
+**Common examples:**
+
+* `npm install --prefix /path/to/dir` - Runs npm commands in a different directory without changing the current working directory
+* `npm install --global` - Installs packages globally (shorthand: `-g`)
+* `npm install --save-dev` - Saves to devDependencies (shorthand: `-D`)
+
+Any configuration option documented in the [Config Settings](#config-settings) section below can be set via command line flags using `--option-name value` syntax.
+
 #### Environment Variables
 
 Any environment variables that start with `npm_config_` will be interpreted as a configuration parameter.
@@ -30,6 +38,8 @@ However, please note that inside [`scripts`](/using-npm/scripts) npm will set it
 For details see [this issue](https://github.com/npm/npm/issues/14528).
 
 Notice that you need to use underscores instead of dashes, so `--allow-same-version` would become `npm_config_allow_same_version=true`.
+
+**Important:** When defining custom configuration keys in `.npmrc` files, use hyphens instead of underscores (e.g., `custom-key=value`). This ensures they can be overridden by environment variables, since npm automatically converts underscores to hyphens when reading environment variables. Keys with underscores in `.npmrc` files cannot be overridden via environment variables.
 
 #### npmrc Files
 

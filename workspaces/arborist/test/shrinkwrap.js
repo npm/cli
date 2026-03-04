@@ -393,6 +393,7 @@ t.test('construct metadata from node and package data', t => {
       },
       os: ['any', '!win32'],
       cpu: ['x64'],
+      libc: ['glibc'],
     },
     resolved: '/home/user/projects/root/archives/tarball.tgz',
     parent: root,

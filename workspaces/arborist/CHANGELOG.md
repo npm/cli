@@ -1,5 +1,44 @@
 # Changelog
 
+## [9.4.0](https://github.com/npm/cli/compare/arborist-v9.3.1...arborist-v9.4.0) (2026-02-25)
+### Features
+* [`4fcd352`](https://github.com/npm/cli/commit/4fcd352c553fdc0f13a87ad71ef66d7515c11886) [#9017](https://github.com/npm/cli/pull/9017) add :type(registry) to query selector syntax (#9017) (@wraithgar)
+### Bug Fixes
+* [`880ecb7`](https://github.com/npm/cli/commit/880ecb786d83e7bc95b1ed75660769e2af253579) [#9013](https://github.com/npm/cli/pull/9013) arborist: skip postinstall on store links in linked strategy (#9013) (@manzoorwanijk)
+* [`07e6edd`](https://github.com/npm/cli/commit/07e6edd9d0f21ab65bd98e444598ddcb50b66551) [#9025](https://github.com/npm/cli/pull/9025) save libc field to package-lock.json (@owlstronaut)
+* [`a2154cd`](https://github.com/npm/cli/commit/a2154cd91370c9c611cc19c943d00c3d0bbfa4ef) [#8996](https://github.com/npm/cli/pull/8996) linked strategy fixes for scoped packages, aliases, and peer deps (#8996) (@manzoorwanijk)
+
+## [9.3.1](https://github.com/npm/cli/compare/arborist-v9.3.0...arborist-v9.3.1) (2026-02-19)
+### Bug Fixes
+* [`bb135cc`](https://github.com/npm/cli/commit/bb135cc8998b8b936f2cb412ec3303ae02d6920c) [#8981](https://github.com/npm/cli/pull/8981) arborist: fix `peerOptional` dependency resolution in `buildIdealTree` (#8981) (@Saibamen, @cursoragent)
+### Chores
+* [`40fcab4`](https://github.com/npm/cli/commit/40fcab45d356545f8db7f34df3e5630116d0dd40) [#8991](https://github.com/npm/cli/pull/8991) `@npmcli/template-oss@4.29.0` (@wraithgar)
+
+## [9.3.0](https://github.com/npm/cli/compare/arborist-v9.2.0...arborist-v9.3.0) (2026-02-11)
+### Features
+* [`7c038b7`](https://github.com/npm/cli/commit/7c038b75d4738635a3dd7140b63ead711de3d8d5) [#8968](https://github.com/npm/cli/pull/8968) add support for git-256 sha lengths (#8968) (@wraithgar)
+
+## [9.2.0](https://github.com/npm/cli/compare/arborist-v9.1.10...arborist-v9.2.0) (2026-02-04)
+### Features
+* [`f5f6cf7`](https://github.com/npm/cli/commit/f5f6cf7c9fc9315b96eb29c5c7d5ab63ad3a9122) [#8943](https://github.com/npm/cli/pull/8943) config: add --allow-git (@wraithgar)
+
+## [9.1.10](https://github.com/npm/cli/compare/arborist-v9.1.9...arborist-v9.1.10) (2026-01-21)
+### Dependencies
+* [`f951820`](https://github.com/npm/cli/commit/f95182001771ad5d52dfc57934d7ce1b97055b70) [#8919](https://github.com/npm/cli/pull/8919) `common-ancestor-path@2.0.0`
+
+## [9.1.9](https://github.com/npm/cli/compare/arborist-v9.1.8...arborist-v9.1.9) (2025-12-09)
+### Bug Fixes
+* [`0765289`](https://github.com/npm/cli/commit/07652896c44bd21a585255151f90f171eefbb00e) [#8721](https://github.com/npm/cli/pull/8721) handle ENOTEMPTY errors in moveFile (@keegancsmith)
+
+## [9.1.8](https://github.com/npm/cli/compare/arborist-v9.1.7...arborist-v9.1.8) (2025-11-25)
+### Bug Fixes
+* [`b118364`](https://github.com/npm/cli/commit/b1183644faea618ee36af513c5bfc3387ada0f7e) [#8760](https://github.com/npm/cli/pull/8760) undefined override set conflicts shouldn't error (@owlstronaut)
+### Dependencies
+* [`f963223`](https://github.com/npm/cli/commit/f96322350e497f90a54c8a1cfd952b3329f00492) [#8770](https://github.com/npm/cli/pull/8770) `proggy@4.0.0`
+* [`f51e4aa`](https://github.com/npm/cli/commit/f51e4aaf06ac6703abe053a95fe25b8efca3c527) [#8770](https://github.com/npm/cli/pull/8770) `nopt@9.0.0`
+* [`2d15040`](https://github.com/npm/cli/commit/2d15040390697cd78c9a9db3f0dbafab51a6e3e9) [#8770](https://github.com/npm/cli/pull/8770) `@npmcli/query@5.0.0`
+* [`58650dc`](https://github.com/npm/cli/commit/58650dc089c74d090c51d1cb2f269f2d605dcca0) [#8770](https://github.com/npm/cli/pull/8770) `@npmcli/fs@5.0.0`
+
 ## [9.1.7](https://github.com/npm/cli/compare/arborist-v9.1.6...arborist-v9.1.7) (2025-11-19)
 ### Bug Fixes
 * [`3225fa3`](https://github.com/npm/cli/commit/3225fa3200cb0217bdd0735bba390268f8362532) [#8737](https://github.com/npm/cli/pull/8737) fix usage of path of custom registry (#8737) (@flj2mu2)

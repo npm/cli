@@ -7,6 +7,281 @@ const parseFrontMatter = require('front-matter')
 const checkNav = require('./check-nav.js')
 const { DOC_EXT, ...transform } = require('./index.js')
 
+// Helper to check if a directory exists
+const dirExists = async (path) => {
+  try {
+    const stat = await fs.stat(path)
+    return stat.isDirectory()
+  } catch {
+    return false
+  }
+}
+
+// Helper to read docs from a section directory
+const readSectionDocs = async (contentPath, section, orderedUrls) => {
+  const sectionPath = join(contentPath, section)
+  if (!await dirExists(sectionPath)) {
+    return []
+  }
+
+  const files = await fs.readdir(sectionPath)
+  const docFiles = files.filter(f => f.endsWith(DOC_EXT))
+
+  // If no doc files exist, return empty array
+  /* istanbul ignore if - defensive check for empty directories */
+  if (docFiles.length === 0) {
+    return []
+  }
+
+  // Parse each doc file to get title and description from frontmatter
+  const docs = await Promise.all(
+    docFiles.map(async (file) => {
+      const content = await fs.readFile(join(sectionPath, file), 'utf-8')
+      const { attributes } = parseFrontMatter(content)
+      const name = basename(file, DOC_EXT)
+
+      return {
+        title: attributes.title,
+        url: `/${section}/${name}`,
+        description: attributes.description,
+        name,
+      }
+    })
+  )
+
+  // Preserve order from orderedUrls, append any new files at the end sorted alphabetically
+  const orderedDocs = []
+  const docsByUrl = new Map(docs.map(d => [d.url, d]))
+
+  // First, add docs in the order they appear in orderedUrls
+  for (const url of orderedUrls) {
+    const doc = docsByUrl.get(url)
+    if (doc) {
+      orderedDocs.push(doc)
+      docsByUrl.delete(url)
+    }
+  }
+
+  return orderedDocs.map(({ name, ...rest }) => rest)
+}
+
+// Generate nav.yml from the filesystem
+const generateNav = async (contentPath, navPath) => {
+  const docsCommandsPath = join(contentPath, 'commands')
+
+  // Read all command files
+  const commandFiles = await dirExists(docsCommandsPath) ? await fs.readdir(docsCommandsPath) : []
+  const commandDocs = commandFiles.filter(f => f.endsWith(DOC_EXT))
+
+  // Parse each command file to get title and description
+  const allCommands = await Promise.all(
+    commandDocs.map(async (file) => {
+      const content = await fs.readFile(join(docsCommandsPath, file), 'utf-8')
+      const { attributes } = parseFrontMatter(content)
+      const name = basename(file, DOC_EXT)
+      const title = (attributes.title || name).replace(/^npm-/, 'npm ')
+
+      return {
+        title,
+        url: `/commands/${name}`,
+        description: attributes.description || '',
+        name,
+      }
+    })
+  )
+
+  // Sort commands: npm first, then alphabetically, npx last
+  const npm = allCommands.find(c => c.name === 'npm')
+  const npx = allCommands.find(c => c.name === 'npx')
+  const others = allCommands
+    .filter(c => c.name !== 'npm' && c.name !== 'npx')
+    .sort((a, b) => a.name.localeCompare(b.name))
+
+  // Remove the name field
+  const commands = [npm, ...others, npx].filter(Boolean).map(({ name, ...rest }) => rest)
+
+  // Hardcoded order for configuring-npm section (only urls - title/description come from frontmatter)
+  const configuringNpmOrder = [
+    '/configuring-npm/install',
+    '/configuring-npm/folders',
+    '/configuring-npm/npmrc',
+    '/configuring-npm/npm-shrinkwrap-json',
+    '/configuring-npm/package-json',
+    '/configuring-npm/package-lock-json',
+  ]
+
+  // Hardcoded order for using-npm section (only urls - title/description come from frontmatter)
+  const usingNpmOrder = [
+    '/using-npm/registry',
+    '/using-npm/package-spec',
+    '/using-npm/config',
+    '/using-npm/logging',
+    '/using-npm/scope',
+    '/using-npm/scripts',
+    '/using-npm/workspaces',
+    '/using-npm/orgs',
+    '/using-npm/dependency-selectors',
+    '/using-npm/developers',
+    '/using-npm/removal',
+  ]
+
+  // Read actual docs from configuring-npm and using-npm directories
+  const configuringNpmDocs = await readSectionDocs(contentPath, 'configuring-npm', configuringNpmOrder)
+  const usingNpmDocs = await readSectionDocs(contentPath, 'using-npm', usingNpmOrder)
+
+  // Build the navigation structure - only include sections with content
+  const navData = []
+
+  if (commands.length > 0) {
+    navData.push({
+      title: 'CLI Commands',
+      shortName: 'Commands',
+      url: '/commands',
+      children: commands,
+    })
+  }
+
+  if (configuringNpmDocs.length > 0) {
+    navData.push({
+      title: 'Configuring npm',
+      shortName: 'Configuring',
+      url: '/configuring-npm',
+      children: configuringNpmDocs,
+    })
+  }
+
+  if (usingNpmDocs.length > 0) {
+    navData.push({
+      title: 'Using npm',
+      shortName: 'Using',
+      url: '/using-npm',
+      children: usingNpmDocs,
+    })
+  }
+
+  const prefix = `# This is the navigation for the documentation pages; it is not used
+# directly within the CLI documentation.  Instead, it will be used
+# for the https://docs.npmjs.com/ site.
+`
+  await fs.writeFile(navPath, `${prefix}\n${yaml.stringify(navData, { indent: 2, indentSeq: false, lineWidth: 0 })}`, 'utf-8')
+}
+
+// Auto-generate doc templates for commands without docs
+const autoGenerateMissingDocs = async (contentPath, navPath, commandsPath = null) => {
+  commandsPath = commandsPath || join(__dirname, '../../lib/commands')
+  const docsCommandsPath = join(contentPath, 'commands')
+
+  // Get all commands from commandsPath directory
+  let commands
+  try {
+    const cmdListPath = join(commandsPath, '..', 'utils', 'cmd-list.js')
+    const cmdList = require(cmdListPath)
+    commands = cmdList.commands
+  } catch {
+    // Fall back to reading command files from commandsPath
+    const cmdFiles = await fs.readdir(commandsPath)
+    commands = cmdFiles
+      .filter(f => f.endsWith('.js'))
+      .map(f => basename(f, '.js'))
+  }
+
+  // Get existing doc files
+  const existingDocs = await fs.readdir(docsCommandsPath)
+  const documentedCommands = existingDocs
+    .filter(f => f.startsWith('npm-') && f.endsWith(DOC_EXT))
+    .map(f => f.replace('npm-', '').replace(DOC_EXT, ''))
+
+  // Find commands without docs
+  const missingDocs = commands.filter(cmd => !documentedCommands.includes(cmd))
+
+  // Generate docs for missing commands
+  const newEntries = []
+  for (const cmd of missingDocs) {
+    const Command = require(join(commandsPath, `${cmd}.js`))
+    const description = Command.description || `The ${cmd} command`
+    const docPath = join(docsCommandsPath, `npm-${cmd}${DOC_EXT}`)
+
+    const template = `---
+title: npm-${cmd}
+section: 1
+description: ${description}
+---
+
+### Synopsis
+
+<!-- AUTOGENERATED USAGE DESCRIPTIONS -->
+
+### Description
+
+${description}
+
+### Configuration
+
+<!-- AUTOGENERATED CONFIG DESCRIPTIONS -->
+
+### See Also
+
+* [npm help config](/commands/npm-config)
+`
+
+    await fs.writeFile(docPath, template, 'utf-8')
+
+    // Track new entry for nav update
+    newEntries.push({
+      title: `npm ${cmd}`,
+      url: `/commands/npm-${cmd}`,
+      description,
+    })
+  }
+
+  // Update nav.yml if there are new entries
+  if (newEntries.length > 0) {
+    const navContent = await fs.readFile(navPath, 'utf-8')
+    const navData = yaml.parse(navContent)
+
+    // Find CLI Commands section
+    let commandsSection = navData.find(s => s.title === 'CLI Commands')
+    if (!commandsSection) {
+      // Create CLI Commands section if it doesn't exist
+      commandsSection = {
+        title: 'CLI Commands',
+        shortName: 'Commands',
+        url: '/commands',
+        children: [],
+      }
+      navData.unshift(commandsSection)
+    }
+
+    if (!commandsSection.children) {
+      commandsSection.children = []
+    }
+
+    // Add new entries that don't already exist
+    for (const entry of newEntries) {
+      const exists = commandsSection.children.some(c => c.url === entry.url)
+      if (!exists) {
+        commandsSection.children.push(entry)
+      }
+    }
+
+    // Sort children: npm first, then alphabetically, npx last
+    const npm = commandsSection.children.find(c => c.title === 'npm')
+    const npx = commandsSection.children.find(c => c.title === 'npx')
+    const others = commandsSection.children
+      .filter(c => c.title !== 'npm' && c.title !== 'npx')
+      .sort((a, b) => a.title.localeCompare(b.title))
+
+    commandsSection.children = [npm, ...others, npx].filter(Boolean)
+
+    // Write updated nav
+    const prefix = `# This is the navigation for the documentation pages; it is not used
+# directly within the CLI documentation.  Instead, it will be used
+# for the https://docs.npmjs.com/ site.
+`
+    await fs.writeFile(navPath, `${prefix}\n${yaml.stringify(navData, { indent: 2, indentSeq: false, lineWidth: 0 })}`, 'utf-8')
+  }
+}
+
 const mkDirs = async (paths) => {
   const uniqDirs = [...new Set(paths.map((p) => dirname(p)))]
   return Promise.all(uniqDirs.map((d) => fs.mkdir(d, { recursive: true })))
@@ -28,7 +303,21 @@ const pAll = async (obj) => {
   }, {})
 }
 
-const run = async ({ content, template, nav, man, html, md }) => {
+const run = async (opts) => {
+  const {
+    content, template, nav, man, html, md,
+    skipAutoGenerate, skipGenerateNav, commandLoader,
+  } = opts
+  // Auto-generate docs for commands without documentation
+  if (!skipAutoGenerate) {
+    await autoGenerateMissingDocs(content, nav)
+  }
+
+  // Generate nav.yml from filesystem
+  if (!skipGenerateNav) {
+    await generateNav(content, nav)
+  }
+
   await rmAll(man, html, md)
   const [contentPaths, navFile, options] = await Promise.all([
     readDocs(content),
@@ -73,6 +362,7 @@ const run = async ({ content, template, nav, man, html, md }) => {
   }) => {
     const applyTransforms = makeTransforms({
       path: childPath,
+      commandLoader,
       data: {
         ...data,
         github_repo: 'npm/cli',
@@ -86,7 +376,7 @@ const run = async ({ content, template, nav, man, html, md }) => {
     const transformedSrc = applyTransforms(body, [
       transform.version,
       ...(fullName.startsWith('commands/')
-        ? [transform.usage, transform.params]
+        ? [transform.usage, transform.definitions]
         : []),
       ...(fullName === 'using-npm/config'
         ? [transform.shorthands, transform.config]
@@ -145,3 +435,5 @@ const run = async ({ content, template, nav, man, html, md }) => {
 }
 
 module.exports = run
+module.exports.generateNav = generateNav
+module.exports.autoGenerateMissingDocs = autoGenerateMissingDocs

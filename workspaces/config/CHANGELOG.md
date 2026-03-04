@@ -1,5 +1,35 @@
 # Changelog
 
+## [10.7.1](https://github.com/npm/cli/compare/config-v10.7.0...config-v10.7.1) (2026-02-19)
+### Bug Fixes
+* [`9fac412`](https://github.com/npm/cli/commit/9fac412105c4bbd116cffb6e27dda54a2adecf33) [#8995](https://github.com/npm/cli/pull/8995) improve unknown config warning with .npmrc section hint (#8995) (@umeshmore45)
+### Chores
+* [`40fcab4`](https://github.com/npm/cli/commit/40fcab45d356545f8db7f34df3e5630116d0dd40) [#8991](https://github.com/npm/cli/pull/8991) `@npmcli/template-oss@4.29.0` (@wraithgar)
+
+## [10.7.0](https://github.com/npm/cli/compare/config-v10.6.0...config-v10.7.0) (2026-02-11)
+### Features
+* [`cf56a1e`](https://github.com/npm/cli/commit/cf56a1e4df9c8ae7b7e9752437d827a183e4040e) [#8899](https://github.com/npm/cli/pull/8899) npm trust, per-command config (@reggi)
+* [`cf56a1e`](https://github.com/npm/cli/commit/cf56a1e4df9c8ae7b7e9752437d827a183e4040e) [#8899](https://github.com/npm/cli/pull/8899) npm trust (@reggi)
+* [`66d6e11`](https://github.com/npm/cli/commit/66d6e11f3ecdbc823ede24ef83257f3bb6e69d46) [#8965](https://github.com/npm/cli/pull/8965) add min-release-age (#8965) (@wraithgar)
+
+## [10.6.0](https://github.com/npm/cli/compare/config-v10.5.0...config-v10.6.0) (2026-02-04)
+### Features
+* [`f5f6cf7`](https://github.com/npm/cli/commit/f5f6cf7c9fc9315b96eb29c5c7d5ab63ad3a9122) [#8943](https://github.com/npm/cli/pull/8943) config: add --allow-git (@wraithgar)
+
+## [10.5.0](https://github.com/npm/cli/compare/config-v10.4.5...config-v10.5.0) (2026-01-21)
+### Features
+* [`5a444d5`](https://github.com/npm/cli/commit/5a444d57f1068efddc71ddfd131a949632524e00) [#8828](https://github.com/npm/cli/pull/8828) export environment config variable names (Max Black)
+
+## [10.4.5](https://github.com/npm/cli/compare/config-v10.4.4...config-v10.4.5) (2025-12-09)
+### Bug Fixes
+* [`4ebb831`](https://github.com/npm/cli/commit/4ebb831d93f13cc0b980754bf36abb2982b131f7) [#8839](https://github.com/npm/cli/pull/8839) updates hints to use cli paradigm (@owlstronaut)
+
+## [10.4.4](https://github.com/npm/cli/compare/config-v10.4.3...config-v10.4.4) (2025-11-25)
+### Bug Fixes
+* [`958b10e`](https://github.com/npm/cli/commit/958b10e52f442f73796a92c7bbb7d2808bb5bbe5) [#8761](https://github.com/npm/cli/pull/8761) move config.list to a getter (#8761) (@wraithgar)
+### Dependencies
+* [`f51e4aa`](https://github.com/npm/cli/commit/f51e4aaf06ac6703abe053a95fe25b8efca3c527) [#8770](https://github.com/npm/cli/pull/8770) `nopt@9.0.0`
+
 ## [10.4.3](https://github.com/npm/cli/compare/config-v10.4.2...config-v10.4.3) (2025-11-19)
 ### Bug Fixes
 * [`c6242d9`](https://github.com/npm/cli/commit/c6242d92e5227e0a772d9cfe474ea57776af79e0) [#8706](https://github.com/npm/cli/pull/8706) change npm profile to create tokens with GAT support (#8706) (@owlstronaut, @wraithgar)
