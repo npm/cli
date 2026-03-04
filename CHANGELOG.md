@@ -1,5 +1,47 @@
 # Changelog
 
+## [10.9.5](https://github.com/npm/cli/compare/v10.9.4...v10.9.5) (2026-03-04)
+### Bug Fixes
+* [`794f6c8`](https://github.com/npm/cli/commit/794f6c8f0d56698430d05430777d22dbfa92b353) [#9011](https://github.com/npm/cli/pull/9011) backport linked strategy fixes from multiple PRs to v10 (#9011) (@manzoorwanijk)
+### Dependencies
+* [`6717032`](https://github.com/npm/cli/commit/67170328a0c7110dc0e099ba409db0a478333939) [#9056](https://github.com/npm/cli/pull/9056) `tuf-js@3.1.0`
+* [`e4e25ea`](https://github.com/npm/cli/commit/e4e25ea2c1bf50b2938e653c192cc025484e78e3) [#9056](https://github.com/npm/cli/pull/9056) `tinyglobby@0.2.15`
+* [`9464329`](https://github.com/npm/cli/commit/946432913e06c5ee846fcd299b409e4b99f1e42c) [#9056](https://github.com/npm/cli/pull/9056) `socks@2.8.7`
+* [`23c3e17`](https://github.com/npm/cli/commit/23c3e17bdb1964387718aa55f0061bd424dfd3e1) [#9056](https://github.com/npm/cli/pull/9056) `postcss-selector-parser@7.1.1`
+* [`77f9c29`](https://github.com/npm/cli/commit/77f9c2900fa19303a7fc10177006ba7b7f13281e) [#9056](https://github.com/npm/cli/pull/9056) `p-map@7.0.4`
+* [`f1a0315`](https://github.com/npm/cli/commit/f1a03155de2fe18da4a3e45d775e32e19a74a3ef) [#9056](https://github.com/npm/cli/pull/9056) `npm-install-checks@7.1.2`
+* [`ad7d3ac`](https://github.com/npm/cli/commit/ad7d3ac98d49ce2ee9cf8080ec52c5d8261c0911) [#9056](https://github.com/npm/cli/pull/9056) `normalize-package-data@7.0.1`
+* [`63a7c82`](https://github.com/npm/cli/commit/63a7c823c822a35d802c06476ba53acef10aa7ca) [#9056](https://github.com/npm/cli/pull/9056) `node-gyp@11.5.0`
+* [`569d807`](https://github.com/npm/cli/commit/569d80764e75c608d50fbbcb87c14b184e3c13ab) [#9056](https://github.com/npm/cli/pull/9056) `isexe@3.1.5`
+* [`7dbe993`](https://github.com/npm/cli/commit/7dbe993583f6d5516848bc831e5aa5d87f82529b) [#9056](https://github.com/npm/cli/pull/9056) `fdir@6.5.0`
+* [`f241a38`](https://github.com/npm/cli/commit/f241a381693dde11b401f62bc95a2add798e2794) [#9056](https://github.com/npm/cli/pull/9056) `exponential-backoff@3.1.3`
+* [`bdeabff`](https://github.com/npm/cli/commit/bdeabff42ef46c12f33d602b7edada53700a04df) [#9056](https://github.com/npm/cli/pull/9056) `ci-info@4.4.0`
+* [`d8ebcd5`](https://github.com/npm/cli/commit/d8ebcd5fa1b954f0120f3f613560c3208097e9f0) [#9056](https://github.com/npm/cli/pull/9056) `aproba@2.1.0`
+* [`be1b008`](https://github.com/npm/cli/commit/be1b008a4b3dfbfd841551376b9083b55d0aca8f) [#9056](https://github.com/npm/cli/pull/9056) `spdx-license-ids@3.0.23`
+* [`1005efd`](https://github.com/npm/cli/commit/1005efd909062eeb0e287f3098c5ff2ea2a820eb) [#9056](https://github.com/npm/cli/pull/9056) `strip-ansi@7.2.0`
+* [`d00bf96`](https://github.com/npm/cli/commit/d00bf965cbd8c82e5788115c7d66ef2a0bbe8336) [#9056](https://github.com/npm/cli/pull/9056) `diff@5.2.2`
+* [`7a74819`](https://github.com/npm/cli/commit/7a7481977c0e7defde15583efca098e8bad13751) [#9056](https://github.com/npm/cli/pull/9056) `debug@4.4.3`
+* [`938db00`](https://github.com/npm/cli/commit/938db00b6174a35801063a73bfe06ac77e61c40a) [#9056](https://github.com/npm/cli/pull/9056) `minipass@7.1.3`
+* [`70e90e5`](https://github.com/npm/cli/commit/70e90e5a13d4bf55ca1abde49309d35a1fb6cea4) [#9056](https://github.com/npm/cli/pull/9056) `minimatch@9.0.9`
+* [`733ff41`](https://github.com/npm/cli/commit/733ff4152e628701c39400a9adc085d245454058) [#9056](https://github.com/npm/cli/pull/9056) `glob@10.5.0`
+* [`ea8227a`](https://github.com/npm/cli/commit/ea8227a254adfbc75df2123be31e76ab87352d74) [#9056](https://github.com/npm/cli/pull/9056) `ansi-styles@6.2.3`
+* [`edd20ef`](https://github.com/npm/cli/commit/edd20ef12f5fd14fa8763416ef9f52c3040d48db) [#9056](https://github.com/npm/cli/pull/9056) `ansi-regex@6.2.2`
+* [`2592b45`](https://github.com/npm/cli/commit/2592b458dc1cb49e843304f7253c28ae14866c13) [#9056](https://github.com/npm/cli/pull/9056) `agent-base@7.7.4`
+* [`3174366`](https://github.com/npm/cli/commit/3174366370d713eb27d3acbe83b7892c33e0d198) [#9056](https://github.com/npm/cli/pull/9056) `semver@7.7.4`
+* [`380df0e`](https://github.com/npm/cli/commit/380df0e1a091f607692f770db2ebe566518b9955) [#9056](https://github.com/npm/cli/pull/9056) `tar@7.5.9`
+* [`49025ae`](https://github.com/npm/cli/commit/49025ae5ffc4385b4518a025f03ef47948ec4cda) [#9056](https://github.com/npm/cli/pull/9056) `chalk@5.6.2`
+* [`64601cd`](https://github.com/npm/cli/commit/64601cdb25424ed45fb706f49059caf8cfcdf5e7) [#9056](https://github.com/npm/cli/pull/9056) `@npmcli/promise-spawn@8.0.3`
+* [`0e23c00`](https://github.com/npm/cli/commit/0e23c00a30dc13f9485b2dea842ea03f43367c72) [#9056](https://github.com/npm/cli/pull/9056) `validate-npm-package-name@6.0.2`
+### Chores
+* [`72cc7de`](https://github.com/npm/cli/commit/72cc7de03deeea4ce081dfc1ef36863e8b98fec9) [#9056](https://github.com/npm/cli/pull/9056) `template-oss@4.29.0` (@wraithgar)
+* [`51711b8`](https://github.com/npm/cli/commit/51711b851e61c9d701400268b38d2e82564815a6) [#9056](https://github.com/npm/cli/pull/9056) dev dependency updates (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.2): `@npmcli/arborist@8.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v7.0.2): `libnpmdiff@7.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v9.0.2): `libnpmexec@9.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v6.0.2): `libnpmfund@6.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v8.0.2): `libnpmpack@8.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v10.0.2): `libnpmpublish@10.0.2`
+
 ## [10.9.4](https://github.com/npm/cli/compare/v10.9.3...v10.9.4) (2025-09-30)
 ### Bug Fixes
 * [`f7ff89c`](https://github.com/npm/cli/commit/f7ff89ca89e1cf69d70786b2bc26ff5c04ac31eb) [#8551](https://github.com/npm/cli/pull/8551) powershell: fix StrictMode and improve argument parsing  (#8551) (@alexsch01, @splatteredbits)
