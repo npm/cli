@@ -2055,6 +2055,48 @@ function parseGraphRecursive (key, deps) {
   return { name, version, workspace, peer, dependencies }
 }
 
+tap.test('omit dev dependencies with linked strategy', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+      { name: 'eslint', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myapp',
+      version: '1.0.0',
+      dependencies: { which: '1.0.0' },
+      devDependencies: { eslint: '1.0.0' },
+    },
+    workspaces: [
+      {
+        name: 'mylib',
+        version: '1.0.0',
+        dependencies: { isexe: '1.0.0' },
+        devDependencies: { eslint: '1.0.0' },
+      },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    omit: ['dev'],
+  })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const storeDir = path.join(dir, 'node_modules', '.store')
+  const storeEntries = fs.readdirSync(storeDir)
+
+  t.ok(storeEntries.some(e => e.startsWith('which@')), 'prod dep which is in store')
+  t.ok(storeEntries.some(e => e.startsWith('isexe@')), 'prod dep isexe is in store')
+  t.notOk(storeEntries.some(e => e.startsWith('eslint@')), 'dev dep eslint is not in store')
+})
+
 /*
  * TO TEST:
  *   --------------------------------------

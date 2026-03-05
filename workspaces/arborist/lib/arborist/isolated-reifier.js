@@ -90,6 +90,7 @@ module.exports = cls => class IsolatedReifier extends cls {
    **/
   async makeIdealGraph () {
     const idealTree = this.idealTree
+    const omit = new Set(this.options.omit)
 
     this.idealGraph = {
       external: [],
@@ -110,7 +111,9 @@ module.exports = cls => class IsolatedReifier extends cls {
       processed.add(next.location)
       next.edgesOut.forEach(edge => {
         if (edge.to && !(next.package.bundleDependencies || next.package.bundledDependencies || []).includes(edge.to.name)) {
-          queue.push(edge.to)
+          if (!edge.to.shouldOmit?.(omit)) {
+            queue.push(edge.to)
+          }
         }
       })
       // local `file:` deps are in fsChildren but are not workspaces.
