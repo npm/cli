@@ -318,6 +318,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     }
     root.inventory.set('', root)
     root.root = root
+    root.top = root
     root.target = root
     // TODO inventory.query is a stub; audit-report needs 'packageName' support
     root.inventory.query = () => {
@@ -335,6 +336,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         hasInstallScript: c.hasInstallScript,
         isLink: false,
         isRoot: false,
+        isWorkspace: true,
         linksIn: new Set(),
         location: c.localLocation,
         name: wsName,
@@ -344,6 +346,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         resolved: c.resolved,
       }
       workspace.target = workspace
+      workspace.top = workspace
       root.fsChildren.add(workspace)
       root.inventory.set(workspace.location, workspace)
 
@@ -369,6 +372,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         realpath: workspace.path,
         root,
         target: workspace,
+        top: root,
       }
       root.children.set(wsLink.name, wsLink)
       root.inventory.set(wsLink.location, wsLink)

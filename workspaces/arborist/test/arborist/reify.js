@@ -3250,4 +3250,51 @@ t.test('install stategy linked', async (t) => {
     t.ok(store.isDirectory(), 'abbrev got installed')
     t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
   })
+
+  t.test('should not crash with --omit=dev in workspaces', async (t) => {
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'my-monorepo',
+          version: '1.0.0',
+          workspaces: ['packages/*'],
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+          devDependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+        packages: {
+          'my-lib': {
+            'package.json': JSON.stringify({
+              name: 'my-lib',
+              version: '1.0.0',
+              dependencies: {
+                abbrev: '1.1.1',
+              },
+            }),
+          },
+        },
+      },
+    })
+
+    tnock(t, 'https://registry.npmjs.org')
+      .get('/abbrev')
+      .reply(200, abbrevPackument)
+
+    tnock(t, 'https://registry.npmjs.org')
+      .get('/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const path = resolve(testdir, 'project')
+    const arb = new Arborist({
+      path,
+      registry: 'https://registry.npmjs.org',
+      cache: resolve(testdir, 'cache'),
+      installStrategy: 'linked',
+    })
+    await arb.reify({ installStrategy: 'linked', omit: ['dev'] })
+    t.pass('reify with --omit=dev did not crash')
+  })
 })
