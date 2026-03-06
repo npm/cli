@@ -47,7 +47,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       parent: root,
       path: join(this.idealGraph.localPath, location),
       resolved: node.resolved,
-      root: location,
+      root,
     })
     // XXX top is from place-dep not lib/node.js
     newChild.top = { path: this.idealGraph.localPath }
@@ -404,11 +404,11 @@ module.exports = cls => class IsolatedReifier extends cls {
       deprecated: undefined,
       scripts: dep.package.scripts,
       version: dep.package.version,
-      optional,
     }
     const link = new IsolatedLink({
       location: join(nmFolder, dep.name),
       name: toKey,
+      optional,
       parent: root,
       package: pkg,
       path: join(dep.root.localPath, nmFolder, dep.name),
