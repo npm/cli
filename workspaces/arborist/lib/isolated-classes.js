@@ -111,15 +111,15 @@ class IsolatedNode {
 
 // fake lib/link.js
 class IsolatedLink extends IsolatedNode {
-  #target = this
+  #target
+  isStoreLink = false
 
   constructor (options) {
     super(options)
     this.#target = options.target
-  }
-
-  get isStoreLink () {
-    return true
+    if (options.isStoreLink) {
+      this.isStoreLink = true
+    }
   }
 
   get isLink () {

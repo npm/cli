@@ -406,6 +406,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       version: dep.package.version,
     }
     const link = new IsolatedLink({
+      isStoreLink: true,
       location: join(nmFolder, dep.name),
       name: toKey,
       optional,
