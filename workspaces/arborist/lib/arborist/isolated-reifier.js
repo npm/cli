@@ -3,6 +3,7 @@ const pacote = require('pacote')
 const { join } = require('node:path')
 const { depth } = require('treeverse')
 const crypto = require('node:crypto')
+const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
 
 // generate short hash key based on the dependency tree starting at this node
 const getKey = (startNode) => {
@@ -36,40 +37,20 @@ module.exports = cls => class IsolatedReifier extends cls {
   #processedEdges = new Set()
   #workspaceProxies = new Map()
 
-  #generateChild (node, location, pkg, inStore, root) {
-    const newChild = {
-      binPaths: [],
-      children: new Map(),
-      edgesIn: new Set(),
-      edgesOut: new Map(),
-      fsChildren: new Set(),
-      /* istanbul ignore next -- emulate Node */
-      getBundler () {
-        return null
-      },
-      global: false,
-      globalTop: false,
-      hasShrinkwrap: false,
-      inDepBundle: false,
-      integrity: null,
-      isInStore: inStore,
-      isLink: false,
-      isProjectRoot: false,
-      isRoot: false,
-      isTop: false,
+  #generateChild (node, location, pkg, isInStore, root) {
+    const newChild = new IsolatedNode({
+      isInStore,
       location,
       name: node.packageName || node.name,
       optional: node.optional,
       package: pkg,
       parent: root,
-      path: join(this.idealGraph.root.localPath, location),
-      realpath: join(this.idealGraph.root.localPath, location),
+      path: join(this.idealGraph.localPath, location),
       resolved: node.resolved,
       root,
-      top: { path: this.idealGraph.root.localPath },
-      version: pkg.version,
-    }
-    newChild.target = newChild
+    })
+    // XXX top is from place-dep not lib/node.js
+    newChild.top = { path: this.idealGraph.localPath }
     root.children.set(newChild.location, newChild)
     root.inventory.set(newChild.location, newChild)
   }
@@ -90,16 +71,19 @@ module.exports = cls => class IsolatedReifier extends cls {
    **/
   async makeIdealGraph () {
     const idealTree = this.idealTree
+    const omit = new Set(this.options.omit)
 
+    // XXX this sometimes acts like a node too
     this.idealGraph = {
       external: [],
       isProjectRoot: true,
       localLocation: idealTree.location,
       localPath: idealTree.path,
+      path: idealTree.path,
     }
     this.counter = 0
 
-    this.idealGraph.workspaces = await Promise.all(Array.from(idealTree.fsChildren.values(), w => this.workspaceProxy(w)))
+    this.idealGraph.workspaces = await Promise.all(Array.from(idealTree.fsChildren.values(), w => this.#workspaceProxy(w)))
     const processed = new Set()
     const queue = [idealTree, ...idealTree.fsChildren]
     while (queue.length !== 0) {
@@ -109,43 +93,43 @@ module.exports = cls => class IsolatedReifier extends cls {
       }
       processed.add(next.location)
       next.edgesOut.forEach(edge => {
-        if (edge.to && !(next.package.bundleDependencies || next.package.bundledDependencies || []).includes(edge.to.name)) {
+        if (edge.to && !(next.package.bundleDependencies || next.package.bundledDependencies || []).includes(edge.to.name) && !edge.to.shouldOmit?.(omit)) {
           queue.push(edge.to)
         }
       })
       // local `file:` deps are in fsChildren but are not workspaces.
       // they are already handled as workspace-like proxies above and should not go through the external/store extraction path.
       if (!next.isProjectRoot && !next.isWorkspace && !next.inert && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
-        this.idealGraph.external.push(await this.externalProxy(next))
+        this.idealGraph.external.push(await this.#externalProxy(next))
       }
     }
 
-    await this.assignCommonProperties(idealTree, this.idealGraph)
+    await this.#assignCommonProperties(idealTree, this.idealGraph)
   }
 
-  async workspaceProxy (node) {
+  async #workspaceProxy (node) {
     if (this.#workspaceProxies.has(node)) {
       return this.#workspaceProxies.get(node)
     }
     const result = {}
-    // XXX this goes recursive if we don't set here because assignCommonProperties also calls this.workspaceProxy
+    // XXX this goes recursive if we don't set here because assignCommonProperties also calls this.#workspaceProxy
     this.#workspaceProxies.set(node, result)
     result.localLocation = node.location
     result.localPath = node.path
     result.isWorkspace = true
     result.resolved = node.resolved
-    await this.assignCommonProperties(node, result)
+    await this.#assignCommonProperties(node, result)
     return result
   }
 
-  async externalProxy (node) {
+  async #externalProxy (node) {
     if (this.#externalProxies.has(node)) {
       return this.#externalProxies.get(node)
     }
     const result = {}
-    // XXX this goes recursive if we don't set here because assignCommonProperties also calls this.externalProxy
+    // XXX this goes recursive if we don't set here because assignCommonProperties also calls this.#externalProxy
     this.#externalProxies.set(node, result)
-    await this.assignCommonProperties(node, result, !node.hasShrinkwrap)
+    await this.#assignCommonProperties(node, result, !node.hasShrinkwrap)
     if (node.hasShrinkwrap) {
       const dir = join(
         node.root.path,
@@ -187,8 +171,9 @@ module.exports = cls => class IsolatedReifier extends cls {
     return result
   }
 
-  async assignCommonProperties (node, result, populateDeps = true) {
+  async #assignCommonProperties (node, result, populateDeps = true) {
     result.root = this.idealGraph
+    // XXX does anything need this?
     result.id = this.counter++
     /* istanbul ignore next - packageName is always set for real packages */
     result.name = result.isWorkspace ? (node.packageName || node.name) : node.name
@@ -196,7 +181,6 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.packageName = node.packageName || node.name
     result.package = { ...node.package }
     result.package.bundleDependencies = undefined
-    result.hasInstallScript = node.hasInstallScript
 
     if (!populateDeps) {
       return
@@ -226,9 +210,9 @@ module.exports = cls => class IsolatedReifier extends cls {
     // local `file:` deps (non-workspace fsChildren) should be treated as local dependencies, not external, so they get symlinked directly instead of being extracted into the store.
     const isLocal = (n) => n.isWorkspace || node.fsChildren?.has(n)
     const optionalDeps = edges.filter(edge => edge.optional).map(edge => edge.to.target)
-    result.localDependencies = await Promise.all(nonOptionalDeps.filter(isLocal).map(n => this.workspaceProxy(n)))
-    result.externalDependencies = await Promise.all(nonOptionalDeps.filter(n => !isLocal(n) && !n.inert).map(n => this.externalProxy(n)))
-    result.externalOptionalDependencies = await Promise.all(optionalDeps.filter(n => !n.inert).map(n => this.externalProxy(n)))
+    result.localDependencies = await Promise.all(nonOptionalDeps.filter(isLocal).map(n => this.#workspaceProxy(n)))
+    result.externalDependencies = await Promise.all(nonOptionalDeps.filter(n => !isLocal(n) && !n.inert).map(n => this.#externalProxy(n)))
+    result.externalOptionalDependencies = await Promise.all(optionalDeps.filter(n => !n.inert).map(n => this.#externalProxy(n)))
     result.dependencies = [
       ...result.externalDependencies,
       ...result.localDependencies,
@@ -288,82 +272,30 @@ module.exports = cls => class IsolatedReifier extends cls {
 
   async createIsolatedTree () {
     await this.makeIdealGraph()
-
     const bundledTree = await this.#createBundledTree()
 
-    const root = {
-      binPaths: [],
-      children: new Map(),
-      edgesIn: new Set(),
-      edgesOut: new Map(),
-      fsChildren: new Set(),
-      global: false,
-      hasShrinkwrap: false,
-      integrity: null,
-      inventory: new Map(),
-      isLink: false,
-      isProjectRoot: true,
-      isRoot: true,
-      isTop: true,
-      linksIn: new Set(),
-      meta: { loadedFromDisk: false },
-      package: this.idealGraph.root.package,
-      parent: null,
-      path: this.idealGraph.root.localPath,
-      realpath: this.idealGraph.root.localPath,
-      // TODO: we should probably not reference this.idealTree
-      resolved: this.idealTree.resolved,
-      tops: new Set(),
-      workspaces: new Map(),
-    }
-    root.inventory.set('', root)
+    const root = new IsolatedNode(this.idealGraph)
     root.root = root
     root.top = root
-    root.target = root
-    // TODO inventory.query is a stub; audit-report needs 'packageName' support
-    root.inventory.query = () => {
-      return []
-    }
+    root.inventory.set('', root)
     const processed = new Set()
     for (const c of this.idealGraph.workspaces) {
       const wsName = c.packageName
-      const workspace = {
-        binPaths: [],
-        children: new Map(),
-        edgesIn: new Set(),
-        edgesOut: new Map(),
-        fsChildren: new Set(),
-        hasInstallScript: c.hasInstallScript,
-        isLink: false,
-        isRoot: false,
-        isWorkspace: true,
-        linksIn: new Set(),
+      // XXX parent? root?
+      const workspace = new IsolatedNode({
         location: c.localLocation,
         name: wsName,
         package: c.package,
         path: c.localPath,
-        realpath: c.localPath,
         resolved: c.resolved,
-      }
-      workspace.target = workspace
+      })
       workspace.top = workspace
+      workspace.isWorkspace = true
       root.fsChildren.add(workspace)
       root.inventory.set(workspace.location, workspace)
 
       // Create workspace Link entry in children for _diffTrees lookup
-      const wsLink = {
-        binPaths: [],
-        children: new Map(),
-        edgesIn: new Set(),
-        edgesOut: new Map(),
-        fsChildren: new Set(),
-        global: false,
-        globalTop: false,
-        isLink: true,
-        isProjectRoot: false,
-        isRoot: false,
-        isTop: false,
-        linksIn: new Set(),
+      const wsLink = new IsolatedLink({
         location: join('node_modules', wsName),
         name: wsName,
         package: workspace.package,
@@ -372,8 +304,8 @@ module.exports = cls => class IsolatedReifier extends cls {
         realpath: workspace.path,
         root,
         target: workspace,
-        top: root,
-      }
+      })
+      wsLink.top = root
       root.children.set(wsLink.name, wsLink)
       root.inventory.set(wsLink.location, wsLink)
       root.workspaces.set(wsName, workspace.path)
@@ -470,35 +402,29 @@ module.exports = cls => class IsolatedReifier extends cls {
       }
     }
 
-    const link = {
-      binPaths: [],
-      children: new Map(),
-      edgesIn: new Set(),
-      edgesOut: new Map(),
-      fsChildren: new Set(),
-      global: false,
-      globalTop: false,
-      isLink: true,
-      isProjectRoot: false,
-      isRoot: false,
+    const pkg = {
+      _id: dep.package._id,
+      bin: target.package.bin,
+      bundleDependencies: undefined,
+      deprecated: undefined,
+      scripts: dep.package.scripts,
+      version: dep.package.version,
+    }
+    const link = new IsolatedLink({
       isStoreLink: true,
-      isTop: false,
       location: join(nmFolder, dep.name),
       name: toKey,
       optional,
-      // TODO _id: 'abc' ?
-      package: { _id: 'abc', bundleDependencies: undefined, deprecated: undefined, bin: target.package.bin, scripts: dep.package.scripts },
       parent: root,
+      package: pkg,
       path: join(dep.root.localPath, nmFolder, dep.name),
       realpath: target.path,
-      resolved: external
-        ? `file:.store/${toKey}/node_modules/${dep.packageName}`
-        : dep.resolved,
+      resolved: external ? `file:.store/${toKey}/node_modules/${dep.packageName}` : dep.resolved,
       root,
       target,
-      version: dep.version,
-      top: { path: dep.root.localPath },
-    }
+    })
+    // XXX top is from place-dep not lib/link.js
+    link.top = { path: dep.root.localPath }
     const newEdge1 = { optional, from, to: link }
     from.edgesOut.set(dep.name, newEdge1)
     link.edgesIn.add(newEdge1)

@@ -36,6 +36,7 @@ const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const optionalSet = require('../optional-set.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const { saveTypeMap, hasSubKey } = require('../add-rm-pkg-deps.js')
+const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
 
 const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
@@ -848,37 +849,12 @@ module.exports = cls => class Reifier extends cls {
     for (const child of idealTree.children.values()) {
       if (!combined.has(child.path) && (child.isInStore || child.isStoreLink) &&
           existsSync(child.path)) {
-        const entry = {
-          global: false,
-          globalTop: false,
-          isProjectRoot: false,
-          isTop: false,
-          location: child.location,
-          name: child.name,
-          optional: child.optional,
-          top: child.top,
-          children: [],
-          edgesIn: new Set(),
-          edgesOut: new Map(),
-          binPaths: [],
-          fsChildren: [],
-          /* istanbul ignore next -- emulate Node */
-          getBundler () {
-            return null
-          },
-          hasShrinkwrap: false,
-          inDepBundle: false,
-          integrity: null,
-          isLink: Boolean(child.isLink),
-          isRoot: false,
-          isInStore: Boolean(child.isInStore),
-          path: child.path,
-          realpath: child.realpath,
-          resolved: child.resolved,
-          version: child.version,
-          package: child.package,
+        let entry
+        if (child.isLink) {
+          entry = new IsolatedLink(child)
+        } else {
+          entry = new IsolatedNode(child)
         }
-        entry.target = entry
         if (child.isLink && combined.has(child.realpath)) {
           entry.target = combined.get(child.realpath)
         }
@@ -891,32 +867,20 @@ module.exports = cls => class Reifier extends cls {
     /* istanbul ignore next -- only reached during scoped workspace installs */
     combined.get = (key) => combinedGet(key) || origGet(key)
 
-    const wrapper = {
-      isRoot: true,
-      isLink: actualTree.isLink,
-      target: actualTree.target,
-      fsChildren: actualTree.fsChildren,
-      path: actualTree.path,
-      realpath: actualTree.realpath,
-      edgesOut: actualTree.edgesOut,
-      inventory: actualTree.inventory,
-      package: actualTree.package,
-      resolved: actualTree.resolved,
-      version: actualTree.version,
-      integrity: actualTree.integrity,
-      binPaths: actualTree.binPaths,
-      hasShrinkwrap: false,
-      inDepBundle: false,
-      parent: null,
-      children: combined,
+    let wrapper
+    /* istanbul ignore next - untested! */
+    if (actualTree.isLink) {
+      wrapper = new IsolatedLink(actualTree)
+    } else {
+      wrapper = new IsolatedNode(actualTree)
     }
-
-    for (const child of combined.values()) {
-      if (!child.parent) {
-        child.parent = wrapper
-        child.root = wrapper
-      }
-    }
+    wrapper.root = wrapper
+    wrapper.binPaths = actualTree.binPaths
+    wrapper.children = combined
+    wrapper.edgesOut = actualTree.edgesOut
+    wrapper.fsChildren = actualTree.fsChildren
+    wrapper.integrity = actualTree.integrity
+    wrapper.inventory = actualTree.inventory
 
     return wrapper
   }
