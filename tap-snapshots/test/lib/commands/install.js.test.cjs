@@ -134,7 +134,7 @@ silly logfile done cleaning log files
 verbose stack Error: The developer of this package has specified the following through devEngines
 verbose stack Invalid devEngines.runtime
 verbose stack Invalid name "nondescript" does not match "node" for "runtime"
-verbose stack     at Install.checkDevEngines ({CWD}/lib/base-cmd.js:242:27)
+verbose stack     at Install.checkDevEngines ({CWD}/lib/base-cmd.js:247:27)
 verbose stack     at MockNpm.execCommandClass ({CWD}/lib/npm.js:292:7)
 verbose stack     at MockNpm.exec ({CWD}/lib/npm.js:193:9)
 error code EBADDEVENGINES
@@ -199,7 +199,7 @@ warn EBADDEVENGINES }
 verbose stack Error: The developer of this package has specified the following through devEngines
 verbose stack Invalid devEngines.runtime
 verbose stack Invalid name "nondescript" does not match "node" for "runtime"
-verbose stack     at Install.checkDevEngines ({CWD}/lib/base-cmd.js:242:27)
+verbose stack     at Install.checkDevEngines ({CWD}/lib/base-cmd.js:247:27)
 verbose stack     at MockNpm.execCommandClass ({CWD}/lib/npm.js:292:7)
 verbose stack     at MockNpm.exec ({CWD}/lib/npm.js:193:9)
 error code EBADDEVENGINES
@@ -225,7 +225,7 @@ silly logfile done cleaning log files
 verbose stack Error: The developer of this package has specified the following through devEngines
 verbose stack Invalid devEngines.runtime
 verbose stack Invalid name "nondescript" does not match "node" for "runtime"
-verbose stack     at Install.checkDevEngines ({CWD}/lib/base-cmd.js:242:27)
+verbose stack     at Install.checkDevEngines ({CWD}/lib/base-cmd.js:247:27)
 verbose stack     at MockNpm.execCommandClass ({CWD}/lib/npm.js:292:7)
 verbose stack     at MockNpm.exec ({CWD}/lib/npm.js:193:9)
 error code EBADDEVENGINES
