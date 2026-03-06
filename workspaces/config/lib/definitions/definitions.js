@@ -1726,6 +1726,17 @@ const definitions = {
     `,
     flatten,
   }),
+  'publish-registry': new Definition('publish-registry', {
+    default: null,
+    type: [null, url],
+    description: `
+      The base URL of the npm registry to use for \`npm publish\` and
+      \`npm unpublish\`. When set, overrides \`registry\` for these
+      commands while leaving \`registry\` in effect for all other
+      operations like install and view.
+    `,
+    flatten,
+  }),
   registry: new Definition('registry', {
     default: 'https://registry.npmjs.org/',
     type: url,
