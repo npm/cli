@@ -2748,6 +2748,11 @@ t.test('ls --json', async t => {
             dependencies: {
               dog: {
                 version: '1.0.0',
+                extraneous: true,
+                overridden: false,
+                problems: [
+                  'extraneous: dog@1.0.0 {CWD}/prefix/node_modules/dog',
+                ],
               },
             },
           },
@@ -4103,6 +4108,7 @@ t.test('ls --json', async t => {
                 dependencies: {
                   a: {
                     version: '1.0.0',
+                    overridden: false,
                   },
                 },
               },

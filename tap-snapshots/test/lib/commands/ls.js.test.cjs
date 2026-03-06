@@ -147,12 +147,12 @@ exports[`test/lib/commands/ls.js TAP ls --parseable --long > should output tree 
 {CWD}/prefix:test-npm-ls@1.0.0
 {CWD}/prefix/node_modules/chai:chai@1.0.0
 {CWD}/prefix/node_modules/dev-dep:dev-dep@1.0.0
+{CWD}/prefix/node_modules/foo:foo@1.0.0
+{CWD}/prefix/node_modules/dog:dog@1.0.0
 {CWD}/prefix/node_modules/optional-dep:optional-dep@1.0.0
 {CWD}/prefix/node_modules/peer-dep:peer-dep@1.0.0
 {CWD}/prefix/node_modules/prod-dep:prod-dep@1.0.0
-{CWD}/prefix/node_modules/foo:foo@1.0.0
 {CWD}/prefix/node_modules/prod-dep/node_modules/dog:dog@2.0.0
-{CWD}/prefix/node_modules/dog:dog@1.0.0
 `
 
 exports[`test/lib/commands/ls.js TAP ls --parseable --long missing/invalid/extraneous > should output parseable result containing EXTRANEOUS/INVALID labels 1`] = `
@@ -166,13 +166,13 @@ exports[`test/lib/commands/ls.js TAP ls --parseable --long print symlink target 
 {CWD}/prefix:test-npm-ls@1.0.0
 {CWD}/prefix/node_modules/chai:chai@1.0.0
 {CWD}/prefix/node_modules/dev-dep:dev-dep@1.0.0
+{CWD}/prefix/node_modules/foo:foo@1.0.0
+{CWD}/prefix/node_modules/dog:dog@1.0.0
 {CWD}/prefix/node_modules/linked-dep:linked-dep@1.0.0:{CWD}/prefix/linked-dep
 {CWD}/prefix/node_modules/optional-dep:optional-dep@1.0.0
 {CWD}/prefix/node_modules/peer-dep:peer-dep@1.0.0
 {CWD}/prefix/node_modules/prod-dep:prod-dep@1.0.0
-{CWD}/prefix/node_modules/foo:foo@1.0.0
 {CWD}/prefix/node_modules/prod-dep/node_modules/dog:dog@2.0.0
-{CWD}/prefix/node_modules/dog:dog@1.0.0
 `
 
 exports[`test/lib/commands/ls.js TAP ls --parseable --long with extraneous deps > should output long parseable output with extraneous info 1`] = `
@@ -265,24 +265,24 @@ exports[`test/lib/commands/ls.js TAP ls --parseable unmet optional dep > should 
 {CWD}/prefix
 {CWD}/prefix/node_modules/chai
 {CWD}/prefix/node_modules/dev-dep
+{CWD}/prefix/node_modules/foo
+{CWD}/prefix/node_modules/dog
 {CWD}/prefix/node_modules/optional-dep
 {CWD}/prefix/node_modules/peer-dep
 {CWD}/prefix/node_modules/prod-dep
-{CWD}/prefix/node_modules/foo
 {CWD}/prefix/node_modules/prod-dep/node_modules/dog
-{CWD}/prefix/node_modules/dog
 `
 
 exports[`test/lib/commands/ls.js TAP ls --parseable unmet peer dep > should output parseable signaling missing peer dep in problems 1`] = `
 {CWD}/prefix
 {CWD}/prefix/node_modules/chai
 {CWD}/prefix/node_modules/dev-dep
+{CWD}/prefix/node_modules/foo
+{CWD}/prefix/node_modules/dog
 {CWD}/prefix/node_modules/optional-dep
 {CWD}/prefix/node_modules/peer-dep
 {CWD}/prefix/node_modules/prod-dep
-{CWD}/prefix/node_modules/foo
 {CWD}/prefix/node_modules/prod-dep/node_modules/dog
-{CWD}/prefix/node_modules/dog
 `
 
 exports[`test/lib/commands/ls.js TAP ls --parseable using aliases > should output tree containing aliases 1`] = `
@@ -389,8 +389,8 @@ test-pkg-arg-filter-with-depth-opt@1.0.0 {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP ls filtering by child of missing dep > should print tree and not duplicate child of missing items 1`] = `
 filter-by-child-of-missing-dep@1.0.0 {CWD}/prefix
 +-- b@1.0.0 extraneous
-| \`-- c@1.0.0 deduped
-+-- c@1.0.0 extraneous
+| \`-- c@1.0.0 extraneous
++-- c@1.0.0 deduped extraneous
 \`-- d@1.0.0 extraneous
   \`-- c@2.0.0 extraneous
 `
@@ -410,8 +410,8 @@ exports[`test/lib/commands/ls.js TAP ls global > should print tree and not mark 
 exports[`test/lib/commands/ls.js TAP ls invalid deduped dep > should output tree signaling mismatching peer dep in problems 1`] = `
 [0minvalid-deduped-dep@1.0.0 {CWD}/prefix[0m
 [0m+-- a@1.0.0[0m
-[0m| \`-- b@1.0.0 [2mdeduped[22m [31minvalid: "^2.0.0" from the root project, "^2.0.0" from node_modules/a[39m[0m
-[0m\`-- b@1.0.0 [31minvalid: "^2.0.0" from the root project, "^2.0.0" from node_modules/a[39m[0m
+[0m| \`-- b@1.0.0 [31minvalid: "^2.0.0" from the root project, "^2.0.0" from node_modules/a[39m[0m
+[0m\`-- b@1.0.0 [2mdeduped[22m [31minvalid: "^2.0.0" from the root project, "^2.0.0" from node_modules/a[39m[0m
 [0m[0m
 `
 
@@ -441,8 +441,8 @@ workspaces-tree@1.0.0 {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should filter single workspace > output 1`] = `
 workspaces-tree@1.0.0 {CWD}/prefix
 +-- a@1.0.0 -> ./a
-| \`-- d@1.0.0 deduped -> ./d
-\`-- d@1.0.0 -> ./d
+| \`-- d@1.0.0 -> ./d
+\`-- d@1.0.0 deduped -> ./d
 `
 
 exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should filter using workspace config > output 1`] = `
@@ -468,11 +468,13 @@ workspaces-tree@1.0.0 {CWD}/prefix
 +-- a@1.0.0 -> ./a
 | +-- baz@1.0.0
 | +-- c@1.0.0
-| \`-- d@1.0.0 deduped -> ./d
+| \`-- d@1.0.0 -> ./d
+|   \`-- foo@1.1.1
+|     \`-- bar@1.0.0
 +-- b@1.0.0 -> ./b
-+-- d@1.0.0 -> ./d
-| \`-- foo@1.1.1
-|   \`-- bar@1.0.0
++-- d@1.0.0 deduped -> ./d
+| \`-- foo@1.1.1 deduped
+|   \`-- bar@1.0.0 deduped
 +-- e@1.0.0 -> ./group/e
 +-- f@1.0.0 -> ./group/f
 \`-- pacote@1.0.0
@@ -482,11 +484,13 @@ exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces sho
 workspaces-tree@1.0.0 {CWD}/prefix
 +-- a@1.0.0 -> ./a
 | +-- c@1.0.0
-| \`-- d@1.0.0 deduped -> ./d
+| \`-- d@1.0.0 -> ./d
+|   \`-- foo@1.1.1
+|     \`-- bar@1.0.0
 +-- b@1.0.0 -> ./b
-+-- d@1.0.0 -> ./d
-| \`-- foo@1.1.1
-|   \`-- bar@1.0.0
++-- d@1.0.0 deduped -> ./d
+| \`-- foo@1.1.1 deduped
+|   \`-- bar@1.0.0 deduped
 +-- e@1.0.0 -> ./group/e
 +-- f@1.0.0 -> ./group/f
 \`-- pacote@1.0.0
@@ -497,10 +501,11 @@ exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces sho
 [0m+-- [94ma@1.0.0[39m -> ./a[0m
 [0m| +-- baz@1.0.0[0m
 [0m| +-- c@1.0.0[0m
-[0m| \`-- d@1.0.0 [2mdeduped[22m -> ./d[0m
+[0m| \`-- [94md@1.0.0[39m -> ./d[0m
+[0m|   \`-- foo@1.1.1[0m
 [0m+-- [94mb@1.0.0[39m -> ./b[0m
-[0m+-- [94md@1.0.0[39m -> ./d[0m
-[0m| \`-- foo@1.1.1[0m
+[0m+-- [94md@1.0.0[39m [2mdeduped[22m -> ./d[0m
+[0m| \`-- foo@1.1.1 [2mdeduped[22m[0m
 [0m+-- [94me@1.0.0[39m -> ./group/e[0m
 [0m+-- [94mf@1.0.0[39m -> ./group/f[0m
 [0m\`-- pacote@1.0.0[0m
@@ -523,9 +528,9 @@ workspaces-tree@1.0.0 {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP ls missing package.json > should output tree missing name/version of top-level package 1`] = `
 {CWD}/prefix
 +-- chai@1.0.0 extraneous
-+-- dog@1.0.0 extraneous
++-- dog@1.0.0 deduped extraneous
 \`-- foo@1.0.0 extraneous
-  \`-- dog@1.0.0 deduped
+  \`-- dog@1.0.0 deduped extraneous
 `
 
 exports[`test/lib/commands/ls.js TAP ls missing/invalid/extraneous > should output tree containing missing, invalid, extraneous labels 1`] = `
@@ -559,8 +564,8 @@ exports[`test/lib/commands/ls.js TAP ls overridden dep w/ color > should contain
 exports[`test/lib/commands/ls.js TAP ls print deduped symlinks > should output tree containing linked deps 1`] = `
 print-deduped-symlinks@1.0.0 {CWD}/prefix
 +-- a@1.0.0
-| \`-- b@1.0.0 deduped -> ./b
-\`-- b@1.0.0 -> ./b
+| \`-- b@1.0.0 -> ./b
+\`-- b@1.0.0 deduped -> ./b
 `
 
 exports[`test/lib/commands/ls.js TAP ls resolved points to git ref > should output tree containing git refs 1`] = `
@@ -595,8 +600,8 @@ test-npm-ls@1.0.0 {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP ls with args and dedupe entries > should print tree output containing deduped ref 1`] = `
 [0mdedupe-entries@1.0.0 {CWD}/prefix[0m
 [0m+-- @npmcli/a@1.0.0[0m
-[0m| \`-- [33m@npmcli/b@1.1.2[39m [2mdeduped[22m[0m
-[0m+-- [33m@npmcli/b@1.1.2[39m[0m
+[0m| \`-- [33m@npmcli/b@1.1.2[39m[0m
+[0m+-- [33m@npmcli/b@1.1.2[39m [2mdeduped[22m[0m
 [0m\`-- @npmcli/c@1.0.0[0m
 [0m  \`-- [33m@npmcli/b@1.1.2[39m [2mdeduped[22m[0m
 [0m[0m
@@ -605,10 +610,10 @@ exports[`test/lib/commands/ls.js TAP ls with args and dedupe entries > should pr
 exports[`test/lib/commands/ls.js TAP ls with args and different order of items > should print tree output containing deduped ref 1`] = `
 dedupe-entries@1.0.0 {CWD}/prefix
 +-- @npmcli/a@1.0.0
-| \`-- @npmcli/c@1.0.0 deduped
+| \`-- @npmcli/c@1.0.0
 +-- @npmcli/b@1.1.2
 | \`-- @npmcli/c@1.0.0 deduped
-\`-- @npmcli/c@1.0.0
+\`-- @npmcli/c@1.0.0 deduped
 `
 
 exports[`test/lib/commands/ls.js TAP ls with dot filter arg > should output tree containing only occurrences of filtered by package and colored output 1`] = `
@@ -643,8 +648,8 @@ test-npm-ls@1.0.0 {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP ls with no args dedupe entries > should print tree output containing deduped ref 1`] = `
 dedupe-entries@1.0.0 {CWD}/prefix
 +-- @npmcli/a@1.0.0
-| \`-- @npmcli/b@1.1.2 deduped
-+-- @npmcli/b@1.1.2
+| \`-- @npmcli/b@1.1.2
++-- @npmcli/b@1.1.2 deduped
 \`-- @npmcli/c@1.0.0
   \`-- @npmcli/b@1.1.2 deduped
 `
@@ -665,9 +670,15 @@ root@ {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP show multiple invalid reasons > ls result 1`] = `
 test-npm-ls@1.0.0 {CWD}/prefix
 +-- cat@1.0.0 invalid: "^2.0.0" from the root project
-| \`-- dog@1.0.0 deduped invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat
+| \`-- dog@1.0.0 invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat
+|   \`-- cat@1.0.0 deduped invalid: "^2.0.0" from the root project
 +-- chai@1.0.0 extraneous
 | \`-- dog@1.0.0 deduped invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat, "2.x" from node_modules/chai
-\`-- dog@1.0.0 invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat, "2.x" from node_modules/chai
-  \`-- cat@1.0.0 deduped invalid: "^2.0.0" from the root project
+|   \`-- cat@1.0.0 invalid: "^2.0.0" from the root project
+|     \`-- dog@1.0.0 invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat
+|       \`-- cat@1.0.0 deduped invalid: "^2.0.0" from the root project
+\`-- dog@1.0.0 deduped invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat, "2.x" from node_modules/chai
+  \`-- cat@1.0.0 invalid: "^2.0.0" from the root project
+    \`-- dog@1.0.0 invalid: "^1.2.3" from the root project, "^2.0.0" from node_modules/cat
+      \`-- cat@1.0.0 deduped invalid: "^2.0.0" from the root project
 `
