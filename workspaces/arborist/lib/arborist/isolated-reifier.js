@@ -189,7 +189,18 @@ module.exports = cls => class IsolatedReifier extends cls {
       edge.to?.target &&
       !(node.package.bundledDependencies || node.package.bundleDependencies)?.includes(edge.to.name)
     )
-    const nonOptionalDeps = edges.filter(edge => !edge.optional).map(edge => edge.to.target)
+    let nonOptionalDeps = edges.filter(edge => !edge.optional).map(edge => edge.to.target)
+
+    // npm auto-creates 'workspace' edges from root to all workspaces.
+    // For isolated/linked mode, only include workspaces that root explicitly declares as dependencies.
+    if (node.isProjectRoot) {
+      const declared = new Set([
+        ...Object.keys(node.package.dependencies || {}),
+        ...Object.keys(node.package.devDependencies || {}),
+        ...Object.keys(node.package.optionalDependencies || {}),
+      ])
+      nonOptionalDeps = nonOptionalDeps.filter(n => !n.isWorkspace || declared.has(n.packageName))
+    }
 
     // When legacyPeerDeps is enabled, peer dep edges are not created on the node.
     // Resolve them from the tree so they get symlinked in the store.
@@ -276,6 +287,12 @@ module.exports = cls => class IsolatedReifier extends cls {
     const root = new IsolatedNode(this.idealGraph)
     root.root = root
     root.inventory.set('', root)
+    const rootPkg = this.idealGraph.package
+    const rootDeclaredDeps = new Set([
+      ...Object.keys(rootPkg.dependencies || {}),
+      ...Object.keys(rootPkg.devDependencies || {}),
+      ...Object.keys(rootPkg.optionalDependencies || {}),
+    ])
     const processed = new Set()
     for (const c of this.idealGraph.workspaces) {
       const wsName = c.packageName
@@ -289,22 +306,41 @@ module.exports = cls => class IsolatedReifier extends cls {
       })
       root.fsChildren.add(workspace)
       root.inventory.set(workspace.location, workspace)
+      root.workspaces.set(wsName, workspace.path)
 
-      // Create workspace Link entry in children for _diffTrees lookup
+      // Create a workspace Link entry for the reifier's diff machinery (createSparseTree, script execution) and for workspace-filtered installs which look up idealTree.children.get(wsName) (reify.js:430).
+      // This link points to the workspace's own location, NOT root node_modules/, so undeclared workspaces are not hoisted.
       const wsLink = new IsolatedLink({
-        location: join('node_modules', wsName),
+        location: join(c.localLocation, 'node_modules', wsName),
         name: wsName,
         package: workspace.package,
         parent: root,
-        path: join(root.path, 'node_modules', wsName),
+        path: join(root.path, c.localLocation, 'node_modules', wsName),
         realpath: workspace.path,
         root,
         target: workspace,
       })
-      root.children.set(wsLink.name, wsLink)
+      workspace.children.set(wsName, wsLink)
+      root.children.set(wsName, wsLink)
       root.inventory.set(wsLink.location, wsLink)
-      root.workspaces.set(wsName, workspace.path)
       workspace.linksIn.add(wsLink)
+
+      // Create workspace Link at root node_modules only if root depends on it.
+      if (rootDeclaredDeps.has(wsName)) {
+        const rootWsLink = new IsolatedLink({
+          location: join('node_modules', wsName),
+          name: wsName,
+          package: workspace.package,
+          parent: root,
+          path: join(root.path, 'node_modules', wsName),
+          realpath: workspace.path,
+          root,
+          target: workspace,
+        })
+        root.children.set(wsName, rootWsLink)
+        root.inventory.set(rootWsLink.location, rootWsLink)
+        workspace.linksIn.add(rootWsLink)
+      }
     }
 
     this.idealGraph.external.forEach(c => {

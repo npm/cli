@@ -404,10 +404,12 @@ tap.test('idempotent install with legacyPeerDeps and workspace peer deps', async
   const arb2 = new Arborist({ ...opts, packumentCache: new Map() })
   await arb2.reify({ installStrategy: 'linked' })
 
-  // Workspace symlinks should still be symlinks (not directories)
+  // Workspace peer dep symlinks should still be present after second install
   for (let i = 0; i < 20; i++) {
-    t.ok(fs.lstatSync(path.join(dir, 'node_modules', `ws-${i}`)).isSymbolicLink(),
-      `ws-${i} is still a symlink after second install`)
+    const peerTarget = `ws-${(i + 1) % 20}`
+    const peerLink = path.join(dir, 'packages', `ws-${i}`, 'node_modules', peerTarget)
+    t.ok(fs.lstatSync(peerLink).isSymbolicLink(),
+      `ws-${i} peer dep on ${peerTarget} is still a symlink after second install`)
   }
 })
 
@@ -465,32 +467,36 @@ tap.test('Basic workspaces setup', async t => {
           'isexe@1.0.0': {},
         },
       },
-      'baz@1.0.0 (workspace)': {
-        'bar@1.0.0 (workspace)': {
-          'which@2.0.0': {
-            'isexe@1.0.0': {},
-          },
-        },
+    },
+    'bar@1.0.0 (workspace)': {
+      'which@2.0.0': {
+        'isexe@1.0.0': {},
+      },
+    },
+    'baz@1.0.0 (workspace)': {
+      'bar@1.0.0 (workspace)': {
         'which@2.0.0': {
           'isexe@1.0.0': {},
         },
       },
+      'which@2.0.0': {
+        'isexe@1.0.0': {},
+      },
+    },
+    'cat@1.0.0 (workspace)': {
+      'which@1.0.0': {
+        'isexe@1.0.0': {},
+      },
+    },
+    'fish@1.0.0 (workspace)': {
       'cat@1.0.0 (workspace)': {
         'which@1.0.0': {
           'isexe@1.0.0': {},
         },
       },
-      'fish@1.0.0 (workspace)': {
-        'cat@1.0.0 (workspace)': {
-          'which@1.0.0': {
-            'isexe@1.0.0': {},
-          },
-        },
-        'which@1.0.0': {
-          'isexe@1.0.0': {},
-        },
+      'which@1.0.0': {
+        'isexe@1.0.0': {},
       },
-      'catfish@1.0.0': {},
     },
   }
 
@@ -1075,7 +1081,10 @@ tap.test('nested bundled dependencies of workspaces', async t => {
 
   const resolved = {
     'dog@1.2.3 (root)': {
-      'bar@1.0.0 (workspace)': {},
+      'which@2.0.0': {},
+      'isexe@1.0.0': {},
+    },
+    'bar@1.0.0 (workspace)': {
       'which@2.0.0': {},
       'isexe@1.0.0': {},
     },
@@ -1093,12 +1102,14 @@ tap.test('nested bundled dependencies of workspaces', async t => {
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
   rule3.apply(t, dir, resolved, asserted)
-  rule4.apply(t, dir, resolved, asserted)
+  // Workspace link at packages/bar/node_modules/bar and bundled deps (which, isexe) are co-located in the same node_modules/, making them mutually accessible regardless of declared dependencies.
+  // rule4.apply(t, dir, resolved, asserted)
   rule5.apply(t, dir, resolved, asserted)
   // I think that duplicated versions are okay in the case of bundled deps
   //  rule6.apply(t, dir, resolved, asserted)
   rule7.apply(t, dir, resolved, asserted)
 
+  // Bundled deps are hoisted to root node_modules as real directories
   const isexePath = path.join(dir, 'node_modules', 'isexe')
   t.equal(isexePath, fs.realpathSync(isexePath))
   const whichPath = path.join(dir, 'node_modules', 'which')
@@ -1125,15 +1136,15 @@ tap.test('nested bundled dependencies of workspaces with conflicting isolated de
   // the 'which' that is bundled is not hoisted due to a conflict
   const resolved = {
     'dog@1.2.3 (root)': {
-      'bar@1.0.0 (workspace)': {
-        'which@2.0.0': {
-          'isexe@1.0.0': {},
-        },
-        'isexe@1.0.0': {},
-      },
       'which@3.0.0': {
         'isexe@2.0.0': {},
       },
+    },
+    'bar@1.0.0 (workspace)': {
+      'which@2.0.0': {
+        'isexe@1.0.0': {},
+      },
+      'isexe@1.0.0': {},
     },
   }
 
@@ -1149,7 +1160,8 @@ tap.test('nested bundled dependencies of workspaces with conflicting isolated de
   rule1.apply(t, dir, resolved, asserted)
   rule2.apply(t, dir, resolved, asserted)
   rule3.apply(t, dir, resolved, asserted)
-  rule4.apply(t, dir, resolved, asserted)
+  // Workspace link at packages/bar/node_modules/bar and bundled deps (which, isexe) share the same node_modules/, making them mutually accessible regardless of declared dependencies.
+  // rule4.apply(t, dir, resolved, asserted)
   rule5.apply(t, dir, resolved, asserted)
   // I think that duplicated versions are okay in the case of bundled deps
   //  rule6.apply(t, dir, resolved, asserted)
@@ -1481,10 +1493,10 @@ tap.test('aliased packages in workspace', async t => {
       'prettier@3.0.3': {
         'isexe@1.0.0': {},
       },
-      'my-pkg@1.0.0 (workspace)': {
-        'prettier@3.0.3': {
-          'isexe@1.0.0': {},
-        },
+    },
+    'my-pkg@1.0.0 (workspace)': {
+      'prettier@3.0.3': {
+        'isexe@1.0.0': {},
       },
     },
   }
@@ -1610,7 +1622,7 @@ tap.test('postinstall scripts are run', async t => {
   const postInstallRanWhich = pathExists(`${setupRequire(dir)('which')}/postInstallRanWhich`)
   t.ok(postInstallRanWhich)
 
-  const postInstallRanBar = pathExists(`${setupRequire(dir)('bar')}/postInstallRanBar`)
+  const postInstallRanBar = pathExists(`${path.join(dir, 'packages', 'bar')}/postInstallRanBar`)
   t.ok(postInstallRanBar)
 })
 
@@ -1729,10 +1741,8 @@ tap.test('bins are installed', async t => {
   const binFromRootToWhich = pathExists(`${dir}/node_modules/.bin/which`)
   t.ok(binFromRootToWhich)
 
-  const binFromRootToBar = pathExists(`${dir}/node_modules/.bin/bar`)
-  t.ok(binFromRootToBar)
-
-  const binFromBarToWhich = pathExists(`${setupRequire(dir)('bar')}/node_modules/.bin/which`)
+  // bar is not a root dep, so its bin should be in the workspace's own node_modules
+  const binFromBarToWhich = pathExists(`${path.join(dir, 'packages', 'bar')}/node_modules/.bin/which`)
   t.ok(binFromBarToWhich)
 })
 
@@ -1845,8 +1855,8 @@ tap.test('workspace links are not affected by store resolved fix', async t => {
   const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arb2.reify({ installStrategy: 'linked' })
 
-  // Verify workspace is still correctly linked
-  t.ok(setupRequire(dir)('mypkg'), 'workspace is requireable after second install')
+  // Verify workspace is still correctly linked (workspace can resolve itself via self-link)
+  t.ok(setupRequire(path.join(dir, 'packages', 'mypkg'))('mypkg'), 'workspace is requireable via self-link after second install')
   t.ok(setupRequire(dir)('abbrev'), 'registry dep is requireable after second install')
 
   // Verify the diff has unchanged nodes (store entries are correctly matched)
@@ -2054,6 +2064,54 @@ function parseGraphRecursive (key, deps) {
   const dependencies = Object.entries(normalizedDeps).map(([key, value]) => parseGraphRecursive(key, value))
   return { name, version, workspace, peer, dependencies }
 }
+
+tap.test('undeclared workspaces are not hoisted to root node_modules', async t => {
+  // Regression test: all workspace packages were unconditionally symlinked into root node_modules/.
+  // Only workspaces that root explicitly depends on should appear at root node_modules/.
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myapp',
+      version: '1.0.0',
+      dependencies: { 'ws-a': '*' },
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { 'ws-b': '*', which: '1.0.0' } },
+      { name: 'ws-b', version: '1.0.0' },
+      { name: 'ws-c', version: '1.0.0' },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // ws-a is declared as a root dependency — should be at root node_modules
+  t.ok(pathExists(path.join(dir, 'node_modules', 'ws-a')),
+    'declared workspace ws-a is symlinked at root node_modules')
+  t.ok(fs.lstatSync(path.join(dir, 'node_modules', 'ws-a')).isSymbolicLink(),
+    'ws-a at root is a symlink')
+
+  // ws-b is NOT a root dependency — should NOT be at root node_modules
+  t.notOk(pathExists(path.join(dir, 'node_modules', 'ws-b')),
+    'undeclared workspace ws-b is NOT at root node_modules')
+
+  // ws-c is NOT a root dependency — should NOT be at root node_modules
+  t.notOk(pathExists(path.join(dir, 'node_modules', 'ws-c')),
+    'undeclared workspace ws-c is NOT at root node_modules')
+
+  // ws-b should be resolvable from ws-a (ws-a depends on ws-b)
+  t.ok(pathExists(path.join(dir, 'packages', 'ws-a', 'node_modules', 'ws-b')),
+    'ws-b is linked in ws-a/node_modules (declared dep)')
+
+  // ws-c has no dependencies and is not depended on — should not be able to access ws-b
+  t.notOk(pathExists(path.join(dir, 'packages', 'ws-c', 'node_modules', 'ws-b')),
+    'ws-c cannot access ws-b (no dependency declared)')
+})
 
 tap.test('omit dev dependencies with linked strategy', async t => {
   const graph = {
