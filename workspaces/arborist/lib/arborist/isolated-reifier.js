@@ -307,39 +307,24 @@ module.exports = cls => class IsolatedReifier extends cls {
       root.inventory.set(workspace.location, workspace)
       root.workspaces.set(wsName, workspace.path)
 
-      // Create a workspace Link entry for the reifier's diff machinery (createSparseTree, script execution) and for workspace-filtered installs which look up idealTree.children.get(wsName) (reify.js:430).
-      // This link points to the workspace's own location, NOT root node_modules/, so undeclared workspaces are not hoisted.
+      // Create workspace Link. For root declared deps, link at root node_modules/. For undeclared deps, link at the workspace's own node_modules/ (self-link).
+      const isDeclared = this.#rootDeclaredDeps.has(wsName)
       const wsLink = new IsolatedLink({
-        location: join(c.localLocation, 'node_modules', wsName),
+        location: isDeclared ? join('node_modules', wsName) : join(c.localLocation, 'node_modules', wsName),
         name: wsName,
         package: workspace.package,
         parent: root,
-        path: join(root.path, c.localLocation, 'node_modules', wsName),
+        path: isDeclared ? join(root.path, 'node_modules', wsName) : join(root.path, c.localLocation, 'node_modules', wsName),
         realpath: workspace.path,
         root,
         target: workspace,
       })
-      workspace.children.set(wsName, wsLink)
+      if (!isDeclared) {
+        workspace.children.set(wsName, wsLink)
+      }
       root.children.set(wsName, wsLink)
       root.inventory.set(wsLink.location, wsLink)
       workspace.linksIn.add(wsLink)
-
-      // Create workspace Link at root node_modules only if root depends on it.
-      if (this.#rootDeclaredDeps.has(wsName)) {
-        const rootWsLink = new IsolatedLink({
-          location: join('node_modules', wsName),
-          name: wsName,
-          package: workspace.package,
-          parent: root,
-          path: join(root.path, 'node_modules', wsName),
-          realpath: workspace.path,
-          root,
-          target: workspace,
-        })
-        root.children.set(wsName, rootWsLink)
-        root.inventory.set(rootWsLink.location, rootWsLink)
-        workspace.linksIn.add(rootWsLink)
-      }
     }
 
     this.idealGraph.external.forEach(c => {
