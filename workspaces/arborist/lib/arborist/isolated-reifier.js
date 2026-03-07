@@ -34,6 +34,7 @@ const getKey = (startNode) => {
 
 module.exports = cls => class IsolatedReifier extends cls {
   #externalProxies = new Map()
+  #rootDeclaredDeps = new Set()
   #processedEdges = new Set()
   #workspaceProxies = new Map()
 
@@ -72,6 +73,15 @@ module.exports = cls => class IsolatedReifier extends cls {
   async makeIdealGraph () {
     const idealTree = this.idealTree
     const omit = new Set(this.options.omit)
+
+    // npm auto-creates 'workspace' edges from root to all workspaces.
+    // For isolated/linked mode, only include workspaces that root explicitly declares as dependencies.
+    const rootPkg = idealTree.package
+    this.#rootDeclaredDeps = new Set([
+      ...Object.keys(rootPkg.dependencies || {}),
+      ...Object.keys(rootPkg.devDependencies || {}),
+      ...Object.keys(rootPkg.optionalDependencies || {}),
+    ])
 
     // XXX this sometimes acts like a node too
     this.idealGraph = {
@@ -194,12 +204,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     // npm auto-creates 'workspace' edges from root to all workspaces.
     // For isolated/linked mode, only include workspaces that root explicitly declares as dependencies.
     if (node.isProjectRoot) {
-      const declared = new Set([
-        ...Object.keys(node.package.dependencies || {}),
-        ...Object.keys(node.package.devDependencies || {}),
-        ...Object.keys(node.package.optionalDependencies || {}),
-      ])
-      nonOptionalDeps = nonOptionalDeps.filter(n => !n.isWorkspace || declared.has(n.packageName))
+      nonOptionalDeps = nonOptionalDeps.filter(n => !n.isWorkspace || this.#rootDeclaredDeps.has(n.packageName))
     }
 
     // When legacyPeerDeps is enabled, peer dep edges are not created on the node.
@@ -287,12 +292,6 @@ module.exports = cls => class IsolatedReifier extends cls {
     const root = new IsolatedNode(this.idealGraph)
     root.root = root
     root.inventory.set('', root)
-    const rootPkg = this.idealGraph.package
-    const rootDeclaredDeps = new Set([
-      ...Object.keys(rootPkg.dependencies || {}),
-      ...Object.keys(rootPkg.devDependencies || {}),
-      ...Object.keys(rootPkg.optionalDependencies || {}),
-    ])
     const processed = new Set()
     for (const c of this.idealGraph.workspaces) {
       const wsName = c.packageName
@@ -326,7 +325,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       workspace.linksIn.add(wsLink)
 
       // Create workspace Link at root node_modules only if root depends on it.
-      if (rootDeclaredDeps.has(wsName)) {
+      if (this.#rootDeclaredDeps.has(wsName)) {
         const rootWsLink = new IsolatedLink({
           location: join('node_modules', wsName),
           name: wsName,
