@@ -34,6 +34,7 @@ const getKey = (startNode) => {
 
 module.exports = cls => class IsolatedReifier extends cls {
   #externalProxies = new Map()
+  #rootDeclaredDeps = new Set()
   #processedEdges = new Set()
   #workspaceProxies = new Map()
 
@@ -72,6 +73,15 @@ module.exports = cls => class IsolatedReifier extends cls {
   async makeIdealGraph () {
     const idealTree = this.idealTree
     const omit = new Set(this.options.omit)
+
+    // npm auto-creates 'workspace' edges from root to all workspaces.
+    // For isolated/linked mode, only include workspaces that root explicitly declares as dependencies.
+    const rootPkg = idealTree.package
+    this.#rootDeclaredDeps = new Set([
+      ...Object.keys(rootPkg.dependencies || {}),
+      ...Object.keys(rootPkg.devDependencies || {}),
+      ...Object.keys(rootPkg.optionalDependencies || {}),
+    ])
 
     // XXX this sometimes acts like a node too
     this.idealGraph = {
@@ -190,7 +200,13 @@ module.exports = cls => class IsolatedReifier extends cls {
       edge.to?.target &&
       !(node.package.bundledDependencies || node.package.bundleDependencies)?.includes(edge.to.name)
     )
-    const nonOptionalDeps = edges.filter(edge => !edge.optional).map(edge => edge.to.target)
+    let nonOptionalDeps = edges.filter(edge => !edge.optional).map(edge => edge.to.target)
+
+    // npm auto-creates 'workspace' edges from root to all workspaces.
+    // For isolated/linked mode, only include workspaces that root explicitly declares as dependencies.
+    if (node.isProjectRoot) {
+      nonOptionalDeps = nonOptionalDeps.filter(n => !n.isWorkspace || this.#rootDeclaredDeps.has(n.packageName))
+    }
 
     // When legacyPeerDeps is enabled, peer dep edges are not created on the node.
     // Resolve them from the tree so they get symlinked in the store.
@@ -293,22 +309,26 @@ module.exports = cls => class IsolatedReifier extends cls {
       workspace.isWorkspace = true
       root.fsChildren.add(workspace)
       root.inventory.set(workspace.location, workspace)
+      root.workspaces.set(wsName, workspace.path)
 
-      // Create workspace Link entry in children for _diffTrees lookup
+      // Create workspace Link. For root declared deps, link at root node_modules/. For undeclared deps, link at the workspace's own node_modules/ (self-link).
+      const isDeclared = this.#rootDeclaredDeps.has(wsName)
       const wsLink = new IsolatedLink({
-        location: join('node_modules', wsName),
+        location: isDeclared ? join('node_modules', wsName) : join(c.localLocation, 'node_modules', wsName),
         name: wsName,
         package: workspace.package,
         parent: root,
-        path: join(root.path, 'node_modules', wsName),
+        path: isDeclared ? join(root.path, 'node_modules', wsName) : join(root.path, c.localLocation, 'node_modules', wsName),
         realpath: workspace.path,
         root,
         target: workspace,
       })
       wsLink.top = root
-      root.children.set(wsLink.name, wsLink)
+      if (!isDeclared) {
+        workspace.children.set(wsName, wsLink)
+      }
+      root.children.set(wsName, wsLink)
       root.inventory.set(wsLink.location, wsLink)
-      root.workspaces.set(wsName, workspace.path)
       workspace.linksIn.add(wsLink)
     }
 
