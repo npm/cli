@@ -39,23 +39,6 @@ module.exports = cls => class IsolatedReifier extends cls {
   #processedEdges = new Set()
   #workspaceProxies = new Map()
 
-  // Inline version of Node.shouldOmit which doesn't exist on v10's Node class.
-  // The non-root/non-workspace top guard is omitted because the isolated reifier only traverses nodes under the idealTree root where top is always root or workspace.
-  #shouldOmit (node) {
-    const omit = this.#omit
-    if (!omit.size) {
-      return false
-    }
-    return (
-      /* istanbul ignore next - peer-only nodes are rare as they're usually also prod deps of another package */
-      node.peer && omit.has('peer') ||
-      node.dev && omit.has('dev') ||
-      node.optional && omit.has('optional') ||
-      /* istanbul ignore next - devOptional requires both flags to omit */
-      node.devOptional && omit.has('optional') && omit.has('dev')
-    )
-  }
-
   #generateChild (node, location, pkg, isInStore, root) {
     const newChild = new IsolatedNode({
       isInStore,
@@ -124,7 +107,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       }
       processed.add(next.location)
       next.edgesOut.forEach(edge => {
-        if (edge.to && !(next.package.bundleDependencies || next.package.bundledDependencies || []).includes(edge.to.name) && !this.#shouldOmit(edge.to)) {
+        if (edge.to && !(next.package.bundleDependencies || next.package.bundledDependencies || []).includes(edge.to.name) && !edge.to.shouldOmit?.(omit)) {
           queue.push(edge.to)
         }
       })

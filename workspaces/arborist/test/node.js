@@ -2981,3 +2981,30 @@ t.test('node with only registry edges in a registry dep', async t => {
 
   t.equal(node.isRegistryDependency, true)
 })
+
+t.test('shouldOmit', t => {
+  const root = new Node({ path: '/some/path', pkg: { devDependencies: { foo: '' }, peerDependencies: { baz: '' }, optionalDependencies: { qux: '' } } })
+  const foo = new Node({ pkg: { name: 'foo', version: '1.0.0' }, parent: root })
+  const baz = new Node({ pkg: { name: 'baz', version: '1.0.0' }, parent: root })
+  const qux = new Node({ pkg: { name: 'qux', version: '1.0.0' }, parent: root })
+
+  t.equal(foo.shouldOmit(new Set()), false, 'empty omit set returns false')
+  t.equal(foo.shouldOmit(new Set(['dev'])), true, 'dev dep with omit dev returns true')
+  t.equal(baz.shouldOmit(new Set(['peer'])), true, 'peer dep with omit peer returns true')
+  t.equal(qux.shouldOmit(new Set(['optional'])), true, 'optional dep with omit optional returns true')
+
+  const devOpt = new Node({ pkg: { name: 'devopt', version: '1.0.0' }, parent: root })
+  devOpt.dev = false
+  devOpt.optional = false
+  devOpt.devOptional = true
+  t.equal(devOpt.shouldOmit(new Set(['dev', 'optional'])), true, 'devOptional with both omitted returns true')
+  t.equal(devOpt.shouldOmit(new Set(['dev'])), false, 'devOptional with only dev omitted returns false')
+
+  // node whose top is neither root nor workspace should not be omitted
+  const bar = new Node({ pkg: { name: 'bar', version: '1.0.0' }, parent: root })
+  bar.dev = true
+  Object.defineProperty(bar, 'top', { get: () => bar })
+  t.equal(bar.shouldOmit(new Set(['dev'])), false, 'non-root/workspace top returns false')
+
+  t.end()
+})
