@@ -47,9 +47,11 @@ module.exports = cls => class IsolatedReifier extends cls {
       return false
     }
     return (
+      /* istanbul ignore next - peer-only nodes are rare as they're usually also prod deps of another package */
       node.peer && omit.has('peer') ||
       node.dev && omit.has('dev') ||
       node.optional && omit.has('optional') ||
+      /* istanbul ignore next - devOptional requires both flags to omit */
       node.devOptional && omit.has('optional') && omit.has('dev')
     )
   }
