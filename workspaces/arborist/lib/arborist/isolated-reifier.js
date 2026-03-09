@@ -84,6 +84,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       ...Object.keys(rootPkg.dependencies || {}),
       ...(!omit.has('dev') ? Object.keys(rootPkg.devDependencies || {}) : []),
       ...(!omit.has('optional') ? Object.keys(rootPkg.optionalDependencies || {}) : []),
+      ...(!omit.has('peer') ? Object.keys(rootPkg.peerDependencies || {}) : []),
     ])
 
     // XXX this sometimes acts like a node too
