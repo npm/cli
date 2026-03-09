@@ -34,6 +34,7 @@ const getKey = (startNode) => {
 
 module.exports = cls => class IsolatedReifier extends cls {
   #externalProxies = new Map()
+  #omit = new Set()
   #rootDeclaredDeps = new Set()
   #processedEdges = new Set()
   #workspaceProxies = new Map()
@@ -72,15 +73,18 @@ module.exports = cls => class IsolatedReifier extends cls {
    **/
   async makeIdealGraph () {
     const idealTree = this.idealTree
-    const omit = new Set(this.options.omit)
+    this.#omit = new Set(this.options.omit)
+    const omit = this.#omit
 
     // npm auto-creates 'workspace' edges from root to all workspaces.
     // For isolated/linked mode, only include workspaces that root explicitly declares as dependencies.
+    // When omitting dep types, exclude those from the declared set so their workspaces aren't hoisted.
     const rootPkg = idealTree.package
     this.#rootDeclaredDeps = new Set([
       ...Object.keys(rootPkg.dependencies || {}),
-      ...Object.keys(rootPkg.devDependencies || {}),
-      ...Object.keys(rootPkg.optionalDependencies || {}),
+      ...(!omit.has('dev') ? Object.keys(rootPkg.devDependencies || {}) : []),
+      ...(!omit.has('optional') ? Object.keys(rootPkg.optionalDependencies || {}) : []),
+      ...(!omit.has('peer') ? Object.keys(rootPkg.peerDependencies || {}) : []),
     ])
 
     // XXX this sometimes acts like a node too
@@ -196,10 +200,27 @@ module.exports = cls => class IsolatedReifier extends cls {
       return
     }
 
-    const edges = [...node.edgesOut.values()].filter(edge =>
+    let edges = [...node.edgesOut.values()].filter(edge =>
       edge.to?.target &&
       !(node.package.bundledDependencies || node.package.bundleDependencies)?.includes(edge.to.name)
     )
+
+    // Only omit edge types for root and workspace nodes (matching shouldOmit scope)
+    if ((node.isProjectRoot || node.isWorkspace) && this.#omit.size) {
+      edges = edges.filter(edge => {
+        if (edge.dev && this.#omit.has('dev')) {
+          return false
+        }
+        if (edge.optional && this.#omit.has('optional')) {
+          return false
+        }
+        if (edge.peer && this.#omit.has('peer')) {
+          return false
+        }
+        return true
+      })
+    }
+
     let nonOptionalDeps = edges.filter(edge => !edge.optional).map(edge => edge.to.target)
 
     // npm auto-creates 'workspace' edges from root to all workspaces.

@@ -2155,6 +2155,139 @@ tap.test('omit dev dependencies with linked strategy', async t => {
   t.notOk(storeEntries.some(e => e.startsWith('eslint@')), 'dev dep eslint is not in store')
 })
 
+tap.test('omit dev deps from root even when shared with workspace prod deps', async t => {
+  // In a monorepo, a root devDependency may also be a workspace prod dependency.
+  // With --omit=dev, root should NOT link to it, but the workspace still should.
+  // Also covers the case where a workspace itself is a root devDependency.
+  const graph = {
+    registry: [
+      { name: 'typescript', version: '5.0.0' },
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myapp',
+      version: '1.0.0',
+      dependencies: { which: '1.0.0', mylib: '1.0.0' },
+      devDependencies: { typescript: '5.0.0', devtool: '1.0.0' },
+    },
+    workspaces: [
+      {
+        name: 'mylib',
+        version: '1.0.0',
+        dependencies: { typescript: '5.0.0' },
+      },
+      {
+        name: 'devtool',
+        version: '1.0.0',
+      },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    omit: ['dev'],
+  })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const storeDir = path.join(dir, 'node_modules', '.store')
+  const storeEntries = fs.readdirSync(storeDir)
+
+  // typescript should still be in the store because mylib needs it as a prod dep
+  t.ok(storeEntries.some(e => e.startsWith('typescript@')), 'typescript is in store (workspace prod dep)')
+  t.ok(storeEntries.some(e => e.startsWith('which@')), 'which is in store')
+
+  // root should NOT have a symlink to typescript (it's a dev dep of root)
+  const rootNmEntries = fs.readdirSync(path.join(dir, 'node_modules'))
+  t.ok(rootNmEntries.includes('which'), 'root has symlink to prod dep which')
+  t.ok(rootNmEntries.includes('mylib'), 'root has symlink to prod workspace mylib')
+  t.notOk(rootNmEntries.includes('typescript'), 'root does not have symlink to dev dep typescript')
+  t.notOk(rootNmEntries.includes('devtool'), 'root does not have symlink to dev workspace devtool')
+
+  // workspace should have a symlink to typescript (it's a prod dep of mylib)
+  const wsNmEntries = fs.readdirSync(path.join(dir, 'packages', 'mylib', 'node_modules'))
+  t.ok(wsNmEntries.includes('typescript'), 'workspace has symlink to prod dep typescript')
+})
+
+tap.test('omit optional dependencies with linked strategy', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0' },
+      { name: 'fsevents', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myapp',
+      version: '1.0.0',
+      dependencies: { which: '1.0.0' },
+      optionalDependencies: { fsevents: '1.0.0' },
+    },
+    workspaces: [
+      {
+        name: 'mylib',
+        version: '1.0.0',
+        dependencies: { fsevents: '1.0.0' },
+      },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    omit: ['optional'],
+  })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const rootNmEntries = fs.readdirSync(path.join(dir, 'node_modules'))
+  t.ok(rootNmEntries.includes('which'), 'root has prod dep which')
+  t.notOk(rootNmEntries.includes('fsevents'), 'root does not have optional dep fsevents')
+})
+
+tap.test('omit peer dependencies with linked strategy', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0' },
+      { name: 'react', version: '18.0.0' },
+    ],
+    root: {
+      name: 'myapp',
+      version: '1.0.0',
+      dependencies: { which: '1.0.0' },
+      peerDependencies: { react: '18.0.0' },
+    },
+    workspaces: [
+      {
+        name: 'mylib',
+        version: '1.0.0',
+        dependencies: { react: '18.0.0' },
+      },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    omit: ['peer'],
+  })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const rootNmEntries = fs.readdirSync(path.join(dir, 'node_modules'))
+  t.ok(rootNmEntries.includes('which'), 'root has prod dep which')
+  t.notOk(rootNmEntries.includes('react'), 'root does not have peer dep react')
+})
+
 /*
  * TO TEST:
  *   --------------------------------------
