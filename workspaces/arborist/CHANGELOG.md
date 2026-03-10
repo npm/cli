@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.3](https://github.com/npm/cli/compare/arborist-v8.0.2...arborist-v8.0.3) (2026-03-10)
+### Bug Fixes
+* [`d6fe671`](https://github.com/npm/cli/commit/d6fe671dfb6137bf6dcbaaa23abfce95ff1d4270) [#9098](https://github.com/npm/cli/pull/9098) arborist: v10 - backport multiple fixes for linked install (#9098) (@manzoorwanijk)
+* [`ebd09c3`](https://github.com/npm/cli/commit/ebd09c32eea3a1438fa754b281f5238679de6645) [#9084](https://github.com/npm/cli/pull/9084) arborist: backport linked strategy hoisting fixes to v10 (#9084) (@manzoorwanijk)
+* [`f95f368`](https://github.com/npm/cli/commit/f95f36817abba3ad4c5a983324d2eb1722ced35e) [#9075](https://github.com/npm/cli/pull/9075) consolidate isolated node/link attributes (#9075) (@wraithgar)
+* [`2d83231`](https://github.com/npm/cli/commit/2d832315d67683af65b02610446f469f0e49a5ee) [#9064](https://github.com/npm/cli/pull/9064) arborist: add missing top property to isolated reifier proxy nodes (#9064) (@manzoorwanijk)
+
 ## [8.0.2](https://github.com/npm/cli/compare/arborist-v8.0.1...arborist-v8.0.2) (2026-03-04)
 ### Bug Fixes
 * [`794f6c8`](https://github.com/npm/cli/commit/794f6c8f0d56698430d05430777d22dbfa92b353) [#9011](https://github.com/npm/cli/pull/9011) backport linked strategy fixes from multiple PRs to v10 (#9011) (@manzoorwanijk)
