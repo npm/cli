@@ -5376,8 +5376,8 @@ t.test('ls --install-strategy=linked', async t => {
     t.match(output, /nopt/, 'should list the dependency')
   })
 
-  t.test('should still report declared workspace as UNMET DEPENDENCY when missing', async t => {
-    const { ls } = await mockLs(t, {
+  t.test('should resolve declared workspace even without symlink', async t => {
+    const { result, ls } = await mockLs(t, {
       config: {
         'install-strategy': 'linked',
       },
@@ -5397,11 +5397,12 @@ t.test('ls --install-strategy=linked', async t => {
           },
         },
         node_modules: {
-          // workspace-a is declared but its symlink is missing
+          // workspace-a symlink is missing but loadActual creates an in-memory Link
         },
       },
     })
-    await t.rejects(ls.exec([]), { code: 'ELSPROBLEMS' },
-      'should report declared workspace as UNMET DEPENDENCY')
+    await ls.exec([])
+    const output = cleanCwd(result())
+    t.match(output, /workspace-a/, 'should resolve workspace without symlink')
   })
 })

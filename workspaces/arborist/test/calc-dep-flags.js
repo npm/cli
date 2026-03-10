@@ -343,6 +343,105 @@ t.test('set parents to not extraneous when visiting', t => {
   t.end()
 })
 
+// Simulates the linked install strategy where the same target has multiple
+// Links: one through a prod path (root -> workspace link) and one through a
+// dev path (another workspace's devDependencies -> workspace link). The target
+// should be dev=false because it IS reachable through a prod path.
+t.test('multiple links to same target keep strongest flag', t => {
+  // root depends on both workspaces (prod)
+  const root = new Node({
+    path: '/project',
+    realpath: '/project',
+    pkg: {
+      dependencies: { app: '', tools: '' },
+    },
+  })
+
+  // workspace target for "tools" (lives outside node_modules)
+  const toolsTarget = new Node({
+    path: '/project/packages/tools',
+    realpath: '/project/packages/tools',
+    root,
+    pkg: {
+      name: 'tools',
+      version: '1.0.0',
+      dependencies: { dep: '' },
+    },
+  })
+
+  // "dep" is a prod dependency of tools
+  const dep = new Node({
+    pkg: { name: 'dep', version: '1.0.0' },
+    parent: root,
+  })
+
+  // Link1: root-level link (prod path from root)
+  const toolsLink1 = new Link({
+    name: 'tools',
+    target: toolsTarget,
+    parent: root,
+    realpath: toolsTarget.path,
+  })
+
+  // workspace target for "app"
+  const appTarget = new Node({
+    path: '/project/packages/app',
+    realpath: '/project/packages/app',
+    root,
+    pkg: {
+      name: 'app',
+      version: '1.0.0',
+      devDependencies: { tools: '' },
+    },
+  })
+
+  // Link for app at root level (prod path from root).
+  // Construction wires appTarget into root's children via parent.
+  new Link({
+    name: 'app',
+    target: appTarget,
+    parent: root,
+    realpath: appTarget.path,
+  })
+
+  // Link2: workspace-level link (dev path from app -> tools)
+  const toolsLink2 = new Link({
+    name: 'tools',
+    target: toolsTarget,
+    parent: appTarget,
+    realpath: toolsTarget.path,
+  })
+
+  calcDepFlags(root)
+
+  t.match(toolsTarget, {
+    dev: false,
+    extraneous: false,
+  }, 'tools target should be dev=false (reachable via prod from root)')
+
+  t.match(toolsLink1, {
+    dev: false,
+    extraneous: false,
+  }, 'tools root-level link should be dev=false')
+
+  t.match(dep, {
+    dev: false,
+    extraneous: false,
+  }, 'dep (prod dep of tools) should be dev=false')
+
+  t.match(appTarget, {
+    dev: false,
+    extraneous: false,
+  }, 'app target should be dev=false')
+
+  t.match(toolsLink2, {
+    dev: true,
+    extraneous: false,
+  }, 'tools workspace-level link should be dev=true (reached via dev edge)')
+
+  t.end()
+})
+
 t.test('check null target in link', async t => {
   const root = new Link({
     path: '/some/path',

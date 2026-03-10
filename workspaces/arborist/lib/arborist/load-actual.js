@@ -171,6 +171,30 @@ module.exports = cls => class ActualLoader extends cls {
         }
       }
       await Promise.all(promises)
+
+      // In linked strategy, workspaces not explicitly declared in root's dependencies don't get symlinks in root's node_modules.
+      // Create Links so that root's workspace edges can resolve, allowing calcDepFlags to reach workspace packages.
+      if (this.options.installStrategy === 'linked') {
+        for (const [name, wsPath] of this.#actualTree.workspaces.entries()) {
+          if (!this.#actualTree.children.has(name)) {
+            const target = this.#cache.get(wsPath)
+            // target is always present since workspace paths are loaded above via #loadFSNode
+            /* istanbul ignore next - defensive check for unexpected cache miss */
+            if (!target) {
+              continue
+            }
+            const linkPath = resolve(this.#actualTree.path, 'node_modules', name)
+            const link = new Link({
+              name,
+              path: linkPath,
+              realpath: wsPath,
+              target,
+              parent: this.#actualTree,
+            })
+            this.#cache.set(linkPath, link)
+          }
+        }
+      }
     }
 
     if (!ignoreMissing) {

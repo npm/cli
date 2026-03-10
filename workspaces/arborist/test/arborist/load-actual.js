@@ -365,6 +365,47 @@ t.test('load workspaces when loading from hidden lockfile', async t => {
   t.matchSnapshot(tree, 'actual tree')
 })
 
+t.test('linked strategy creates in-memory links for workspaces without root symlinks', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-project',
+      version: '1.0.0',
+      workspaces: ['packages/*'],
+    }),
+    packages: {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+        }),
+      },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          dependencies: { a: '^1.0.0' },
+        }),
+      },
+    },
+    node_modules: {
+      // Workspace 'a' already has a symlink in root's node_modules (covers the children.has branch).
+      a: t.fixture('symlink', '../packages/a'),
+      '.store': {},
+    },
+  })
+
+  const tree = await loadActual(path, { installStrategy: 'linked' })
+
+  // Both workspaces should be resolvable as children of root
+  t.ok(tree.children.has('a'), 'workspace a is a child of root')
+  t.ok(tree.children.has('b'), 'workspace b is a child of root')
+
+  const childA = tree.children.get('a')
+  const childB = tree.children.get('b')
+  t.ok(childA.isLink, 'workspace a child is a Link')
+  t.ok(childB.isLink, 'workspace b child is a Link')
+})
+
 t.test('recalc dep flags for virtual load actual', async t => {
   const path = t.testdir({
     node_modules: {

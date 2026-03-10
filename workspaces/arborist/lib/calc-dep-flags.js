@@ -29,18 +29,35 @@ const calcDepFlags = (tree, resetRoot = true) => {
       }
     }
 
-    // for links, map their hierarchy appropriately
+    // For links, map their hierarchy appropriately.
+    // Only unset flags (true→false), never set them back.
+    // A target may be reached through multiple Links (e.g. root-level + workspace-level in the linked install strategy).
+    // Each Link may have different flags based on the path that reached it.
+    // We must keep the "strongest" (false) classification from any Link, so we only propagate when unsetting.
     if (node.isLink) {
       // node.target can be null, we check to ensure it's not null before proceeding
       if (node.target == null) {
         continue
       }
-      node.target.dev = node.dev
-      node.target.optional = node.optional
-      node.target.devOptional = node.devOptional
-      node.target.peer = node.peer
-      node.target.extraneous = node.extraneous
-      queue.push(node.target)
+      if (node.target.extraneous && !node.extraneous) {
+        node.target.extraneous = false
+      }
+      if (node.target.dev && !node.dev) {
+        node.target.dev = false
+      }
+      if (node.target.optional && !node.optional) {
+        node.target.optional = false
+      }
+      if (node.target.devOptional && !node.devOptional) {
+        node.target.devOptional = false
+      }
+      if (node.target.peer && !node.peer) {
+        node.target.peer = false
+      }
+      // Always queue the target if not yet seen, so its edges get processed.
+      if (!seen.has(node.target)) {
+        queue.push(node.target)
+      }
       continue
     }
 
