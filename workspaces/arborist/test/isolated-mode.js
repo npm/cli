@@ -1863,6 +1863,43 @@ tap.test('workspace links are not affected by store resolved fix', async t => {
   t.ok(arb2.diff.unchanged.length > 0, 'second install should have unchanged nodes')
 })
 
+tap.test('idempotent install with cross-workspace deps (diamond pattern)', async t => {
+  // Regression: when workspace-x depends on workspace-y (and both share a registry dep), the second install would report "changed N packages" because (1) workspace link resolved values didn't match between ideal and actual trees, and (2) actual fsChildren overwrote synthetic store entries in the diff proxy.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '2.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { 'workspace-x': '*', 'workspace-y': '*' },
+    },
+    workspaces: [
+      { name: 'workspace-x', version: '1.0.0', dependencies: { abbrev: '2.0.0', 'workspace-y': '*' } },
+      { name: 'workspace-y', version: '1.0.0', dependencies: { abbrev: '2.0.0' } },
+    ],
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  // First install
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Second install — should detect everything is up-to-date
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  const leaves = arb2.diff?.leaves || []
+  const actions = leaves.filter(l => l.action)
+  t.equal(actions.length, 0, 'second install should have no diff actions')
+  t.ok(arb2.diff.unchanged.length > 0, 'second install should have unchanged nodes')
+
+  // Verify packages are still correctly installed (abbrev is a workspace dep, not root)
+  t.ok(setupRequire(path.join(dir, 'packages', 'workspace-y'))('abbrev'),
+    'abbrev is requireable from workspace after second install')
+})
+
 tap.test('orphaned store entries are cleaned up on dependency update', async t => {
   const graph = {
     registry: [

@@ -808,28 +808,23 @@ module.exports = cls => class Reifier extends cls {
     // Combined Map keyed by path (how allChildren() in diff.js keys)
     const combined = new Map()
 
-    // Add actual tree's children (the top-level symlinks)
-    for (const child of actualTree.children.values()) {
-      combined.set(child.path, child)
-    }
-
-    // Add synthetic entries for store nodes and store links that exist on disk.
-    // The proxy tree is flat: all store entries (isInStore) and store links (isStoreLink) are direct children of root.
-    // The actual tree only has top-level links as root children, so store entries need synthetic actual entries for the diff to match them.
+    // Create synthetic actual entries for ALL ideal children that exist on disk.
+    // The isolated ideal tree is flat (all entries as root children), but loadActual() produces a nested tree where workspace deps are under fsChildren and store entries are deep link targets.
+    // Synthetic entries ensure the diff compares matching resolved/integrity values (e.g. workspace links have resolved=undefined in the ideal tree but resolved="file:../packages/..." in the actual tree).
     for (const child of idealTree.children.values()) {
-      if (!combined.has(child.path) && (child.isInStore || child.isStoreLink) &&
-          existsSync(child.path)) {
-        let entry
-        if (child.isLink) {
-          entry = new IsolatedLink(child)
-        } else {
-          entry = new IsolatedNode(child)
-        }
-        if (child.isLink && combined.has(child.realpath)) {
-          entry.target = combined.get(child.realpath)
-        }
-        combined.set(child.path, entry)
+      if (combined.has(child.path) || !existsSync(child.path)) {
+        continue
       }
+      let entry
+      if (child.isLink) {
+        entry = new IsolatedLink(child)
+      } else {
+        entry = new IsolatedNode(child)
+      }
+      if (child.isLink && combined.has(child.realpath)) {
+        entry.target = combined.get(child.realpath)
+      }
+      combined.set(child.path, entry)
     }
 
     // Proxy .get(name) to original actual tree for filterNodes compatibility
@@ -850,7 +845,9 @@ module.exports = cls => class Reifier extends cls {
     wrapper.binPaths = actualTree.binPaths
     wrapper.children = combined
     wrapper.edgesOut = actualTree.edgesOut
-    wrapper.fsChildren = actualTree.fsChildren
+    // Use empty fsChildren so that allChildren() only picks up entries from the combined map.
+    // The actual fsChildren have real children with different resolved values (e.g. file:../../../node_modules/.store/... vs file:.store/...) that would overwrite our synthetic entries in allChildren().
+    wrapper.fsChildren = new Set()
     wrapper.integrity = actualTree.integrity
     wrapper.inventory = actualTree.inventory
 
