@@ -1,5 +1,22 @@
 # Changelog
 
+## [9.4.1](https://github.com/npm/cli/compare/arborist-v9.4.0...arborist-v9.4.1) (2026-03-10)
+### Bug Fixes
+* [`5b7c0cc`](https://github.com/npm/cli/commit/5b7c0cc83b6957a2478aff90b64343555919da84) [#9096](https://github.com/npm/cli/pull/9096) arborist: exclude store nodes from :root > * in linked strategy (#9096) (@manzoorwanijk)
+* [`3b70a9d`](https://github.com/npm/cli/commit/3b70a9d1ade5aa5e7edebd0dbc84f0c5f6f202a9) [#9097](https://github.com/npm/cli/pull/9097) arborist: simplify rootDeclaredDeps initialization (#9097) (@manzoorwanijk)
+* [`c7702d0`](https://github.com/npm/cli/commit/c7702d044907e56e06c769fa7a42ed1ed308f29a) [#9094](https://github.com/npm/cli/pull/9094) arborist: fix non-idempotent linked install with workspace projects (#9094) (@manzoorwanijk)
+* [`1a744b5`](https://github.com/npm/cli/commit/1a744b5e030c82ec205ef2be1995ec8d36fba49b) [#9081](https://github.com/npm/cli/pull/9081) arborist: omit root dev deps in linked strategy when shared with workspaces (#9081) (@manzoorwanijk)
+* [`ff51827`](https://github.com/npm/cli/commit/ff51827ba603b069afababf0292016ffb8841bd2) [#9076](https://github.com/npm/cli/pull/9076) arborist: do not hoist undeclared workspaces in linked strategy (#9076) (@manzoorwanijk)
+* [`1206f8b`](https://github.com/npm/cli/commit/1206f8b97b5a57df00518eecb7b9aa7ab24ef73c) [#9069](https://github.com/npm/cli/pull/9069) consolidate isolated node/link attributes (#9069) (@wraithgar)
+* [`a774fb7`](https://github.com/npm/cli/commit/a774fb77aadf01b46c13fe3d48bc2393fc6ef0ff) [#9066](https://github.com/npm/cli/pull/9066) arborist: respect --omit flag in linked install strategy (#9066) (@manzoorwanijk)
+* [`8614b2a`](https://github.com/npm/cli/commit/8614b2af5c912e1ab293bdc41f9b8ae189cfa901) [#9031](https://github.com/npm/cli/pull/9031) arborist: avoid full reinstall on subsequent linked strategy runs (#9031) (@manzoorwanijk)
+* [`16fbe13`](https://github.com/npm/cli/commit/16fbe135b86908426ffb8d4caa73e66cd7a679b1) [#9030](https://github.com/npm/cli/pull/9030) resolve relative file: dependencies correctly with install-strategy=linked (#9030) (@manzoorwanijk)
+* [`983742b`](https://github.com/npm/cli/commit/983742b7ed70673b31f4607836fd156bf2d22f1d) [#9055](https://github.com/npm/cli/pull/9055) isolated mode code cleanup (#9055) (@wraithgar)
+* [`a29aeee`](https://github.com/npm/cli/commit/a29aeee18f3ddc2348a8e00787d237c874642789) [#9028](https://github.com/npm/cli/pull/9028) arborist: retry bin-links on Windows EPERM (#9028) (@manzoorwanijk)
+* [`10d5302`](https://github.com/npm/cli/commit/10d530242c7d893c562456013bb1c5104ca3e3b8) [#9051](https://github.com/npm/cli/pull/9051) arborist: unwrap Link nodes in legacyPeerDeps for linked strategy (#9051) (@manzoorwanijk)
+* [`94bfef5`](https://github.com/npm/cli/commit/94bfef5a9f1a841840deee77cd961c90fbed5f3c) [#9044](https://github.com/npm/cli/pull/9044) audit: exclude locally linked packages from vulnerability audit  (#9044) (@lucas-gomes-santana)
+* [`26fa40e`](https://github.com/npm/cli/commit/26fa40eeafdbbb616d48fe254c92544cb13fba60) [#9041](https://github.com/npm/cli/pull/9041) fix workspace-filtered install with linked strategy (@owlstronaut)
+
 ## [9.4.0](https://github.com/npm/cli/compare/arborist-v9.3.1...arborist-v9.4.0) (2026-02-25)
 ### Features
 * [`4fcd352`](https://github.com/npm/cli/commit/4fcd352c553fdc0f13a87ad71ef66d7515c11886) [#9017](https://github.com/npm/cli/pull/9017) add :type(registry) to query selector syntax (#9017) (@wraithgar)
