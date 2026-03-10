@@ -1,5 +1,18 @@
 # Changelog
 
+## [10.9.6](https://github.com/npm/cli/compare/v10.9.5...v10.9.6) (2026-03-10)
+### Bug Fixes
+* [`d6fe671`](https://github.com/npm/cli/commit/d6fe671dfb6137bf6dcbaaa23abfce95ff1d4270) [#9098](https://github.com/npm/cli/pull/9098) arborist: v10 - backport multiple fixes for linked install (#9098) (@manzoorwanijk)
+### Dependencies
+* [`a5dadad`](https://github.com/npm/cli/commit/a5dadad48ecbea9783d12d355e4031f9f22d845f) [#9067](https://github.com/npm/cli/pull/9067) `tar@7.5.11`
+* [`87abb92`](https://github.com/npm/cli/commit/87abb92b6e426104718341462b544496ba31d226) [#9067](https://github.com/npm/cli/pull/9067) `pacote@20.0.1`
+* [`c2f0fd2`](https://github.com/npm/cli/commit/c2f0fd273075ed4d0ac33d17ede62f3915ccb5ef) [#9067](https://github.com/npm/cli/pull/9067) `pacote@19.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.3): `@npmcli/arborist@8.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v7.0.3): `libnpmdiff@7.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v9.0.3): `libnpmexec@9.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v6.0.3): `libnpmfund@6.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v8.0.3): `libnpmpack@8.0.3`
+
 ## [10.9.5](https://github.com/npm/cli/compare/v10.9.4...v10.9.5) (2026-03-04)
 ### Bug Fixes
 * [`794f6c8`](https://github.com/npm/cli/commit/794f6c8f0d56698430d05430777d22dbfa92b353) [#9011](https://github.com/npm/cli/pull/9011) backport linked strategy fixes from multiple PRs to v10 (#9011) (@manzoorwanijk)
