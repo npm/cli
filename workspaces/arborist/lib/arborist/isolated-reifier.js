@@ -80,12 +80,12 @@ module.exports = cls => class IsolatedReifier extends cls {
     // For isolated/linked mode, only include workspaces that root explicitly declares as dependencies.
     // When omitting dep types, exclude those from the declared set so their workspaces aren't hoisted.
     const rootPkg = idealTree.package
-    this.#rootDeclaredDeps = new Set([
-      ...Object.keys(rootPkg.dependencies || {}),
-      ...(!omit.has('dev') ? Object.keys(rootPkg.devDependencies || {}) : []),
-      ...(!omit.has('optional') ? Object.keys(rootPkg.optionalDependencies || {}) : []),
-      ...(!omit.has('peer') ? Object.keys(rootPkg.peerDependencies || {}) : []),
-    ])
+    this.#rootDeclaredDeps = new Set(Object.keys(Object.assign({},
+      rootPkg.dependencies,
+      (!omit.has('dev') && rootPkg.devDependencies),
+      (!omit.has('optional') && rootPkg.optionalDependencies),
+      (!omit.has('peer') && rootPkg.peerDependencies)
+    )))
 
     // XXX this sometimes acts like a node too
     this.idealGraph = {
