@@ -842,24 +842,23 @@ module.exports = cls => class Reifier extends cls {
   #buildLinkedActualForDiff (idealTree, actualTree) {
     const combined = new Map()
 
-    for (const child of actualTree.children.values()) {
-      combined.set(child.path, child)
-    }
-
+    // Create synthetic actual entries for ALL ideal children that exist on disk.
+    // The isolated ideal tree is flat (all entries as root children), but loadActual() produces a nested tree where workspace deps are under fsChildren and store entries are deep link targets.
+    // Synthetic entries ensure the diff compares matching resolved/integrity values (e.g. workspace links have resolved=undefined in the ideal tree but resolved="file:../packages/..." in the actual tree).
     for (const child of idealTree.children.values()) {
-      if (!combined.has(child.path) && (child.isInStore || child.isStoreLink) &&
-          existsSync(child.path)) {
-        let entry
-        if (child.isLink) {
-          entry = new IsolatedLink(child)
-        } else {
-          entry = new IsolatedNode(child)
-        }
-        if (child.isLink && combined.has(child.realpath)) {
-          entry.target = combined.get(child.realpath)
-        }
-        combined.set(child.path, entry)
+      if (combined.has(child.path) || !existsSync(child.path)) {
+        continue
       }
+      let entry
+      if (child.isLink) {
+        entry = new IsolatedLink(child)
+      } else {
+        entry = new IsolatedNode(child)
+      }
+      if (child.isLink && combined.has(child.realpath)) {
+        entry.target = combined.get(child.realpath)
+      }
+      combined.set(child.path, entry)
     }
 
     const origGet = actualTree.children.get.bind(actualTree.children)
@@ -878,7 +877,9 @@ module.exports = cls => class Reifier extends cls {
     wrapper.binPaths = actualTree.binPaths
     wrapper.children = combined
     wrapper.edgesOut = actualTree.edgesOut
-    wrapper.fsChildren = actualTree.fsChildren
+    // Use empty fsChildren so that allChildren() only picks up entries from the combined map.
+    // The actual fsChildren have real children with different resolved values (e.g. file:../../../node_modules/.store/... vs file:.store/...) that would overwrite our synthetic entries in allChildren().
+    wrapper.fsChildren = new Set()
     wrapper.integrity = actualTree.integrity
     wrapper.inventory = actualTree.inventory
 
