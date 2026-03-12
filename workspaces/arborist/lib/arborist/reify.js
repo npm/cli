@@ -818,17 +818,16 @@ module.exports = cls => class Reifier extends cls {
       let entry
       if (child.isLink) {
         entry = new IsolatedLink(child)
-        // Read the on-disk symlink target so the diff detects store hash changes.
-        if (child.resolved?.startsWith('file:.store/')) {
+        // Read the on-disk symlink target so the diff detects store hash changes. Only for root-level store links (path does not contain .store); store-internal links are recreated with their parent directory.
+        if (child.resolved?.startsWith('file:.store/') && !child.path.includes(`${sep}.store${sep}`)) {
           try {
             const onDiskTarget = readlinkSync(child.path)
-            // On POSIX, readlink returns a relative path like ".store/pkg@ver-HASH/node_modules/pkg". On Windows, junctions store absolute paths like "D:\...\node_modules\.store\pkg@ver-HASH\...". Extract the ".store/..." portion in both cases.
+            // On POSIX, readlink returns ".store/pkg@ver-HASH/node_modules/pkg". On Windows, junctions return absolute paths like "D:\...\node_modules\.store\pkg@ver-HASH\...".
             const storeMarker = `${sep}.store${sep}`
             const storeIdx = onDiskTarget.indexOf(storeMarker)
-            if (onDiskTarget.startsWith('.store/') || onDiskTarget.startsWith(`.store${sep}`)) {
+            if (onDiskTarget.startsWith(`.store${sep}`) || onDiskTarget.startsWith('.store/')) {
               entry.resolved = `file:${onDiskTarget.split(sep).join('/')}`
-            /* istanbul ignore next -- Windows junctions return absolute paths */
-            } else if (storeIdx !== -1) {
+            } else /* istanbul ignore next -- Windows junctions return absolute paths */ if (storeIdx !== -1) {
               const rel = onDiskTarget.substring(storeIdx + 1).split(sep).join('/')
               entry.resolved = `file:${rel}`
             }
