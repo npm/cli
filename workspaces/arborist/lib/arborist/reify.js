@@ -822,8 +822,15 @@ module.exports = cls => class Reifier extends cls {
         if (child.resolved?.startsWith('file:.store/')) {
           try {
             const onDiskTarget = readlinkSync(child.path)
-            if (onDiskTarget.startsWith('.store/')) {
-              entry.resolved = `file:${onDiskTarget}`
+            // On POSIX, readlink returns a relative path like ".store/pkg@ver-HASH/node_modules/pkg". On Windows, junctions store absolute paths like "D:\...\node_modules\.store\pkg@ver-HASH\...". Extract the ".store/..." portion in both cases.
+            const storeMarker = `${sep}.store${sep}`
+            const storeIdx = onDiskTarget.indexOf(storeMarker)
+            if (onDiskTarget.startsWith('.store/') || onDiskTarget.startsWith(`.store${sep}`)) {
+              entry.resolved = `file:${onDiskTarget.split(sep).join('/')}`
+            /* istanbul ignore next -- Windows junctions return absolute paths */
+            } else if (storeIdx !== -1) {
+              const rel = onDiskTarget.substring(storeIdx + 1).split(sep).join('/')
+              entry.resolved = `file:${rel}`
             }
           } catch {
             // If we can't read the symlink, fall through to the ideal value
