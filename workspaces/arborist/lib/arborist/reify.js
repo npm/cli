@@ -10,7 +10,7 @@ const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { depth: dfwalk } = require('treeverse')
 const { dirname, resolve, relative, join, sep } = require('node:path')
 const { log, time } = require('proc-log')
-const { existsSync } = require('node:fs')
+const { existsSync, readlinkSync } = require('node:fs')
 const { lstat, mkdir, readdir, rm, symlink } = require('node:fs/promises')
 const { moveFile } = require('@npmcli/fs')
 const { subset, intersects } = require('semver')
@@ -818,6 +818,17 @@ module.exports = cls => class Reifier extends cls {
       let entry
       if (child.isLink) {
         entry = new IsolatedLink(child)
+        // Read the on-disk symlink target so the diff detects store hash changes.
+        if (child.resolved?.startsWith('file:.store/')) {
+          try {
+            const onDiskTarget = readlinkSync(child.path)
+            if (onDiskTarget.startsWith('.store/')) {
+              entry.resolved = `file:${onDiskTarget}`
+            }
+          } catch {
+            // If we can't read the symlink, fall through to the ideal value
+          }
+        }
       } else {
         entry = new IsolatedNode(child)
       }
