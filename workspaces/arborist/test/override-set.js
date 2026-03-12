@@ -511,6 +511,78 @@ t.test('constructor', async (t) => {
   })
 })
 
+t.test('findSpecificOverrideSet returns common ancestor for compatible siblings', async (t) => {
+  // Regression test for https://github.com/npm/cli/issues/9109
+  // When two top-level overrides (e.g. react + react-dom) share a transitive dep (e.g. loose-envify), the dep's node gets override sets from both siblings. findSpecificOverrideSet must return their common ancestor instead of undefined.
+  const root = new OverrideSet({
+    overrides: {
+      react: '18.3.1',
+      'react-dom': '18.3.1',
+    },
+  })
+
+  const reactChild = root.children.get('react')
+  const reactDomChild = root.children.get('react-dom')
+
+  t.ok(reactChild, 'react child exists')
+  t.ok(reactDomChild, 'react-dom child exists')
+
+  // These are siblings - neither is an ancestor of the other
+  const result = OverrideSet.findSpecificOverrideSet(reactChild, reactDomChild)
+  t.ok(result, 'findSpecificOverrideSet should not return undefined for compatible siblings')
+  t.ok(result.isEqual(root), 'should return the common ancestor (root)')
+
+  const reverse = OverrideSet.findSpecificOverrideSet(reactDomChild, reactChild)
+  t.ok(reverse, 'reverse order should also return a result')
+  t.ok(reverse.isEqual(root), 'reverse order should also return the root')
+})
+
+t.test('findCommonAncestor', async (t) => {
+  const root = new OverrideSet({
+    overrides: {
+      foo: '1.0.0',
+      bar: '2.0.0',
+    },
+  })
+
+  const fooChild = root.children.get('foo')
+  const barChild = root.children.get('bar')
+
+  const ancestor = OverrideSet.findCommonAncestor(fooChild, barChild)
+  t.ok(ancestor, 'should find a common ancestor')
+  t.ok(ancestor.isEqual(root), 'common ancestor should be the root')
+
+  // Two unrelated roots have no common ancestor
+  const other = new OverrideSet({ overrides: { baz: '3.0.0' } })
+  const noAncestor = OverrideSet.findCommonAncestor(fooChild, other)
+  t.equal(noAncestor, null, 'unrelated sets have no common ancestor')
+})
+
+t.test('findSpecificOverrideSet returns undefined for truly conflicting siblings', async (t) => {
+  // Siblings with conflicting rules should still return undefined
+  const root = new OverrideSet({
+    overrides: {
+      foo: {
+        '.': '1.0.0',
+        shared: '1.0.0',
+      },
+      bar: {
+        '.': '2.0.0',
+        shared: '99.0.0',
+      },
+    },
+  })
+
+  const fooChild = root.children.get('foo')
+  const barChild = root.children.get('bar')
+
+  t.ok(fooChild, 'foo child exists')
+  t.ok(barChild, 'bar child exists')
+
+  const result = OverrideSet.findSpecificOverrideSet(fooChild, barChild)
+  t.equal(result, undefined, 'truly conflicting siblings should return undefined')
+})
+
 t.test('coverage for isEqual edge cases', async t => {
   t.test('isEqual with null/undefined other', async t => {
     const overrides = new OverrideSet({ overrides: { foo: '1.0.0' } })
