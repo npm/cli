@@ -117,9 +117,11 @@ module.exports = cls => class Reifier extends cls {
       // of Node/Link trees
       log.warn('reify', 'The "linked" install strategy is EXPERIMENTAL and may contain bugs.')
       this.idealTree = await this.createIsolatedTree()
-      this.#linkedActualForDiff = this.#buildLinkedActualForDiff(
-        this.idealTree, this.actualTree
-      )
+      if (this.actualTree) {
+        this.#linkedActualForDiff = this.#buildLinkedActualForDiff(
+          this.idealTree, this.actualTree
+        )
+      }
     }
     await this[_diffTrees]()
     await this.#reifyPackages()

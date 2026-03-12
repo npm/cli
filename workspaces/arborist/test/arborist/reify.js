@@ -199,6 +199,28 @@ t.test('packageLockOnly can add deps', async t => {
   t.throws(() => fs.statSync(path + '/node_modules'), { code: 'ENOENT' })
 })
 
+t.test('packageLockOnly with linked strategy in workspaces', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'repro',
+      private: true,
+      workspaces: ['packages/*'],
+    }),
+    packages: {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+        }),
+      },
+    },
+  })
+  createRegistry(t, false)
+  await reify(path, { packageLockOnly: true, installStrategy: 'linked' })
+  t.ok(fs.existsSync(path + '/package-lock.json'), 'lock file created')
+  t.throws(() => fs.statSync(path + '/node_modules'), { code: 'ENOENT' })
+})
+
 t.test('malformed package.json should not be overwritten', async t => {
   t.plan(2)
 
