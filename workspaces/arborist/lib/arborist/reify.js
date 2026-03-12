@@ -10,7 +10,7 @@ const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { depth: dfwalk } = require('treeverse')
 const { dirname, resolve, relative, join, sep } = require('node:path')
 const { log, time } = require('proc-log')
-const { existsSync, readlinkSync } = require('node:fs')
+const { existsSync } = require('node:fs')
 const { lstat, mkdir, readdir, rm, symlink } = require('node:fs/promises')
 const { moveFile } = require('@npmcli/fs')
 const { subset, intersects } = require('semver')
@@ -815,26 +815,13 @@ module.exports = cls => class Reifier extends cls {
       if (combined.has(child.path) || !existsSync(child.path)) {
         continue
       }
+      // Skip store links whose ideal realpath doesn't exist on disk yet — the store hash changed and the symlink needs recreating via ADD.
+      if (child.isLink && child.resolved?.startsWith('file:.store/') && !existsSync(child.realpath)) {
+        continue
+      }
       let entry
       if (child.isLink) {
         entry = new IsolatedLink(child)
-        // Read the on-disk symlink target so the diff detects store hash changes. Only for root-level store links (path does not contain .store); store-internal links are recreated with their parent directory.
-        if (child.resolved?.startsWith('file:.store/') && !child.path.includes(`${sep}.store${sep}`)) {
-          try {
-            const onDiskTarget = readlinkSync(child.path)
-            // On POSIX, readlink returns ".store/pkg@ver-HASH/node_modules/pkg". On Windows, junctions return absolute paths like "D:\...\node_modules\.store\pkg@ver-HASH\...".
-            const storeMarker = `${sep}.store${sep}`
-            const storeIdx = onDiskTarget.indexOf(storeMarker)
-            if (onDiskTarget.startsWith(`.store${sep}`) || onDiskTarget.startsWith('.store/')) {
-              entry.resolved = `file:${onDiskTarget.split(sep).join('/')}`
-            } else /* istanbul ignore next -- Windows junctions return absolute paths */ if (storeIdx !== -1) {
-              const rel = onDiskTarget.substring(storeIdx + 1).split(sep).join('/')
-              entry.resolved = `file:${rel}`
-            }
-          } catch {
-            // If we can't read the symlink, fall through to the ideal value
-          }
-        }
       } else {
         entry = new IsolatedNode(child)
       }
