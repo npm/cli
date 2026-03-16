@@ -851,6 +851,10 @@ module.exports = cls => class Reifier extends cls {
       if (combined.has(child.path) || !existsSync(child.path)) {
         continue
       }
+      // Skip store links whose ideal realpath doesn't exist on disk yet — the store hash changed and the symlink needs recreating via ADD.
+      if (child.isLink && child.resolved?.startsWith('file:.store/') && !existsSync(child.realpath)) {
+        continue
+      }
       let entry
       if (child.isLink) {
         entry = new IsolatedLink(child)
