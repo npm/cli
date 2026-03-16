@@ -221,6 +221,9 @@ Object {
     "optional",
     "peer",
   ],
+  "include-attestations": Array [
+    "boolean value (true or false)",
+  ],
   "include-staged": Array [
     "boolean value (true or false)",
   ],

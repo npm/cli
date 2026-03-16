@@ -1854,6 +1854,34 @@ t.test('audit signatures', async t => {
     t.matchSnapshot(joinedOutput())
   })
 
+  t.test('with valid attestations and --include-attestations (human-readable)', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: installWithValidAttestations,
+      config: {
+        'include-attestations': true,
+      },
+      mocks: {
+        pacote: t.mock('pacote', {
+          sigstore: { verify: async () => true },
+        }),
+      },
+    })
+    const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
+    await manifestWithValidAttestations({ registry })
+    const fixture = fs.readFileSync(
+      path.resolve(__dirname, '../../fixtures/sigstore/valid-sigstore-attestations.json'),
+      'utf8'
+    )
+    registry.nock.get('/-/npm/v1/attestations/sigstore@1.0.0').reply(200, fixture)
+    mockTUF({ npm, target: TUF_VALID_KEYS_TARGET })
+
+    await npm.exec('audit', ['signatures'])
+
+    t.notOk(process.exitCode, 'should exit successfully')
+    t.match(joinedOutput(), /1 package has a verified attestation/)
+    t.notMatch(joinedOutput(), /use --json --include-attestations to view attestation details/)
+  })
+
   t.test('with valid attestations --json --include-attestations', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: installWithValidAttestations,
