@@ -1979,6 +1979,53 @@ tap.test('orphaned store entries are cleaned up on dependency removal', async t 
     'all store entries are removed when dependencies are removed')
 })
 
+tap.test('store symlinks are updated when hash changes after adding a dep', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+      { name: 'abbrev', version: '2.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { which: '1.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  // First install — only which
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  const whichLink = path.join(dir, 'node_modules', 'which')
+  t.ok(fs.lstatSync(whichLink).isSymbolicLink(), 'which is a symlink after first install')
+  const hashBefore = fs.readlinkSync(whichLink)
+
+  // Add abbrev — changes the dep graph, causing store hash recalculation
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  pkg.dependencies.abbrev = '2.0.0'
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  // The symlink target should still be valid (not dangling)
+  t.ok(fs.existsSync(whichLink), 'which symlink target exists after adding abbrev')
+  t.ok(setupRequire(dir)('which'), 'which is requireable after adding abbrev')
+
+  // Verify the symlink was updated if the hash changed
+  const hashAfter = fs.readlinkSync(whichLink)
+  if (hashBefore !== hashAfter) {
+    const storeDir = path.join(dir, 'node_modules', '.store')
+    const storeEntries = fs.readdirSync(storeDir)
+    const oldKey = hashBefore.split('/')[0].replace('.store/', '')
+    t.notOk(storeEntries.includes(oldKey), 'old store entry was cleaned up')
+  }
+})
+
 function setupRequire (cwd) {
   return function requireChain (...chain) {
     return chain.reduce((path, name) => {
