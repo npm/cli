@@ -5808,10 +5808,6 @@ Run "npm trust <subcommand> --help" for more info on a subcommand.
 
 Run "npm help trust" for more info
 
-\`\`\`bash
-
-\`\`\`
-
 Note: This command is unaware of workspaces.
 
 #### Synopsis
