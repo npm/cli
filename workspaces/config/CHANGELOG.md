@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.8.0](https://github.com/npm/cli/compare/config-v10.7.1...config-v10.8.0) (2026-03-18)
+### Features
+* [`8eff5fb`](https://github.com/npm/cli/commit/8eff5fb31afc996c71c8f159defa324cb86dfc5a) [#9049](https://github.com/npm/cli/pull/9049) audit: add --include-attestations flag to output sigstore bundles (#9049) (@mitchdenny)
+### Bug Fixes
+* [`d273380`](https://github.com/npm/cli/commit/d2733809b820a9a9dc3a5453b55f2690afee6066) [#9129](https://github.com/npm/cli/pull/9129) config: make prefer-offline and prefer-online exclusive (#9129) (@mvanhorn)
+* [`e839b07`](https://github.com/npm/cli/commit/e839b07b1a512a98e2266ff85ff79774d9385d9d) [#9023](https://github.com/npm/cli/pull/9023) clear exclusive param siblings when setting from CLI (#9023) (@umeshmore45)
+
 ## [10.7.1](https://github.com/npm/cli/compare/config-v10.7.0...config-v10.7.1) (2026-02-19)
 ### Bug Fixes
 * [`9fac412`](https://github.com/npm/cli/commit/9fac412105c4bbd116cffb6e27dda54a2adecf33) [#8995](https://github.com/npm/cli/pull/8995) improve unknown config warning with .npmrc section hint (#8995) (@umeshmore45)

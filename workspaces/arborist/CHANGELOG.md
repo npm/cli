@@ -1,5 +1,11 @@
 # Changelog
 
+## [9.4.2](https://github.com/npm/cli/compare/arborist-v9.4.1...arborist-v9.4.2) (2026-03-18)
+### Bug Fixes
+* [`21ea382`](https://github.com/npm/cli/commit/21ea382a60b3693ff6c44c81447caa5d0294169c) [#9110](https://github.com/npm/cli/pull/9110) arborist: resolve sibling override sets via common ancestor (#9110) (@manzoorwanijk)
+* [`51365b1`](https://github.com/npm/cli/commit/51365b1b8a7924d082f00c27a4aedcb1f81110ec) [#9107](https://github.com/npm/cli/pull/9107) arborist: update store symlinks when hash changes in linked strategy (#9107) (@manzoorwanijk)
+* [`8e0a731`](https://github.com/npm/cli/commit/8e0a7315d0719227c83ce9921c2bd56d201ad3ca) [#9108](https://github.com/npm/cli/pull/9108) arborist: skip linked actual tree diff in package-lock-only mode (#9108) (@manzoorwanijk)
+
 ## [9.4.1](https://github.com/npm/cli/compare/arborist-v9.4.0...arborist-v9.4.1) (2026-03-10)
 ### Bug Fixes
 * [`5b7c0cc`](https://github.com/npm/cli/commit/5b7c0cc83b6957a2478aff90b64343555919da84) [#9096](https://github.com/npm/cli/pull/9096) arborist: exclude store nodes from :root > * in linked strategy (#9096) (@manzoorwanijk)

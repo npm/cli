@@ -36,6 +36,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.1): `@npmcli/arborist@9.4.1`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.2): `@npmcli/arborist@9.4.2`
+
 ## [10.2.3](https://github.com/npm/cli/compare/libnpmexec-v10.2.2...libnpmexec-v10.2.3) (2026-02-25)
 ### Bug Fixes
 * [`cf88236`](https://github.com/npm/cli/commit/cf8823608afe4229cb05f8b6c29890a6bda64502) [#9008](https://github.com/npm/cli/pull/9008) use @gar/promise-retry instead of promise-retry (@wraithgar)
