@@ -821,6 +821,18 @@ the order in which omit/include are specified on the command-line.
 
 
 
+#### \`include-attestations\`
+
+* Default: false
+* Type: Boolean
+
+When used with \`npm audit signatures --json\`, includes the full sigstore
+attestation bundles in the JSON output for each verified package. The
+bundles contain DSSE envelopes, verification material, and transparency log
+entries.
+
+
+
 #### \`include-staged\`
 
 * Default: false
@@ -2302,6 +2314,7 @@ Array [
   "include",
   "include-staged",
   "include-workspace-root",
+  "include-attestations",
   "init-author-email",
   "init-author-name",
   "init-author-url",
@@ -2476,6 +2489,7 @@ Array [
   "include",
   "include-staged",
   "include-workspace-root",
+  "include-attestations",
   "init-private",
   "install-links",
   "install-strategy",
@@ -2643,6 +2657,7 @@ Object {
   "httpsProxy": null,
   "ifPresent": false,
   "ignoreScripts": false,
+  "includeAttestations": false,
   "includeStaged": false,
   "includeWorkspaceRoot": false,
   "initPrivate": false,
@@ -2869,7 +2884,7 @@ Options:
 [--json] [--package-lock-only] [--no-package-lock]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--foreground-scripts] [--ignore-scripts]
+[--foreground-scripts] [--ignore-scripts] [--include-attestations]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -2903,6 +2918,9 @@ Options:
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
 
+  --include-attestations
+    When used with \`npm audit signatures --json\`, includes the full
+
   -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
@@ -2932,6 +2950,7 @@ npm audit [fix|signatures]
 #### \`include\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
+#### \`include-attestations\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
