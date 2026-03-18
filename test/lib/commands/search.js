@@ -289,6 +289,36 @@ t.test('search', t => {
     t.matchSnapshot(joinedOutput(), 'results should not have libnpmversion')
   })
 
+  t.test('json output is not corrupted by redaction', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
+    const registry = new MockRegistry({
+      tap: t,
+      registry: npm.config.get('registry'),
+    })
+
+    const results = [{
+      name: '@scope/pkg-name',
+      scope: 'scope',
+      version: '1.0.0',
+      description: 'a]package with id 12345678-1234-1234-1234-123456789abc',
+      keywords: [],
+      date: '2020-01-01T00:00:00.000Z',
+      author: { name: 'Foo', email: 'foo@npmjs.com' },
+      publisher: { username: 'foo', email: 'foo@npmjs.com' },
+      maintainers: [
+        { username: 'foo', email: 'foo@npmjs.com' },
+      ],
+      sanitized_name: 'scope/pkg-name',
+    }]
+    registry.search({ results })
+
+    await npm.exec('search', ['pkg-name'])
+    const output = joinedOutput()
+    const parsed = JSON.parse(output)
+    t.equal(parsed[0].name, '@scope/pkg-name', 'name should not be redacted')
+    t.match(parsed[0].description, /12345678/, 'uuid-like strings in values should not be redacted')
+  })
+
   t.test('exclude forward slash', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, { config: { searchexclude: '/version' } })
     const registry = new MockRegistry({
