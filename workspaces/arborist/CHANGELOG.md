@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.0.4](https://github.com/npm/cli/compare/arborist-v8.0.3...arborist-v8.0.4) (2026-03-18)
+### Bug Fixes
+* [`bbcd455`](https://github.com/npm/cli/commit/bbcd45502315365286ce8b35a9585c5e4c516e6b) [#9120](https://github.com/npm/cli/pull/9120) arborist: v10 - backport store, lock-only, and override sibling fixes (#9120) (@manzoorwanijk)
+
 ## [8.0.3](https://github.com/npm/cli/compare/arborist-v8.0.2...arborist-v8.0.3) (2026-03-10)
 ### Bug Fixes
 * [`d6fe671`](https://github.com/npm/cli/commit/d6fe671dfb6137bf6dcbaaa23abfce95ff1d4270) [#9098](https://github.com/npm/cli/pull/9098) arborist: v10 - backport multiple fixes for linked install (#9098) (@manzoorwanijk)

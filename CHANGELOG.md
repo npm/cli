@@ -1,5 +1,18 @@
 # Changelog
 
+## [10.9.7](https://github.com/npm/cli/compare/v10.9.6...v10.9.7) (2026-03-18)
+### Bug Fixes
+* [`bbcd455`](https://github.com/npm/cli/commit/bbcd45502315365286ce8b35a9585c5e4c516e6b) [#9120](https://github.com/npm/cli/pull/9120) arborist: v10 - backport store, lock-only, and override sibling fixes (#9120) (@manzoorwanijk)
+### Dependencies
+* [`cc9a4de`](https://github.com/npm/cli/commit/cc9a4de0a9552f7942dcaa3d72e7a2c7163e3b31) [#9130](https://github.com/npm/cli/pull/9130) hoist production @sigstore dependencies
+### Chores
+* [`e5c1309`](https://github.com/npm/cli/commit/e5c1309693f9a94044be87d7642b0327a8f27569) [#9130](https://github.com/npm/cli/pull/9130) dev dependency updates (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.4): `@npmcli/arborist@8.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v7.0.4): `libnpmdiff@7.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v9.0.4): `libnpmexec@9.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v6.0.4): `libnpmfund@6.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v8.0.4): `libnpmpack@8.0.4`
+
 ## [10.9.6](https://github.com/npm/cli/compare/v10.9.5...v10.9.6) (2026-03-10)
 ### Bug Fixes
 * [`d6fe671`](https://github.com/npm/cli/commit/d6fe671dfb6137bf6dcbaaa23abfce95ff1d4270) [#9098](https://github.com/npm/cli/pull/9098) arborist: v10 - backport multiple fixes for linked install (#9098) (@manzoorwanijk)
