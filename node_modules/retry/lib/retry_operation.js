@@ -15,6 +15,7 @@ function RetryOperation(timeouts, options) {
   this._operationTimeoutCb = null;
   this._timeout = null;
   this._operationStart = null;
+  this._timer = null;
 
   if (this._options.forever) {
     this._cachedTimeouts = this._timeouts.slice(0);
@@ -24,12 +25,15 @@ module.exports = RetryOperation;
 
 RetryOperation.prototype.reset = function() {
   this._attempts = 1;
-  this._timeouts = this._originalTimeouts;
+  this._timeouts = this._originalTimeouts.slice(0);
 }
 
 RetryOperation.prototype.stop = function() {
   if (this._timeout) {
     clearTimeout(this._timeout);
+  }
+  if (this._timer) {
+    clearTimeout(this._timer);
   }
 
   this._timeouts       = [];
@@ -46,6 +50,7 @@ RetryOperation.prototype.retry = function(err) {
   }
   var currentTime = new Date().getTime();
   if (err && currentTime - this._operationStart >= this._maxRetryTime) {
+    this._errors.push(err);
     this._errors.unshift(new Error('RetryOperation timeout occurred'));
     return false;
   }
@@ -56,16 +61,15 @@ RetryOperation.prototype.retry = function(err) {
   if (timeout === undefined) {
     if (this._cachedTimeouts) {
       // retry forever, only keep last error
-      this._errors.splice(this._errors.length - 1, this._errors.length);
-      this._timeouts = this._cachedTimeouts.slice(0);
-      timeout = this._timeouts.shift();
+      this._errors.splice(0, this._errors.length - 1);
+      timeout = this._cachedTimeouts.slice(-1);
     } else {
       return false;
     }
   }
 
   var self = this;
-  var timer = setTimeout(function() {
+  this._timer = setTimeout(function() {
     self._attempts++;
 
     if (self._operationTimeoutCb) {
@@ -82,7 +86,7 @@ RetryOperation.prototype.retry = function(err) {
   }, timeout);
 
   if (this._options.unref) {
-      timer.unref();
+      this._timer.unref();
   }
 
   return true;

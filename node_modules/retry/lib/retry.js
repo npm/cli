@@ -3,7 +3,7 @@ var RetryOperation = require('./retry_operation');
 exports.operation = function(options) {
   var timeouts = exports.timeouts(options);
   return new RetryOperation(timeouts, {
-      forever: options && options.forever,
+      forever: options && (options.forever || options.retries === Infinity),
       unref: options && options.unref,
       maxRetryTime: options && options.maxRetryTime
   });
@@ -51,7 +51,7 @@ exports.createTimeout = function(attempt, opts) {
     ? (Math.random() + 1)
     : 1;
 
-  var timeout = Math.round(random * opts.minTimeout * Math.pow(opts.factor, attempt));
+  var timeout = Math.round(random * Math.max(opts.minTimeout, 1) * Math.pow(opts.factor, attempt));
   timeout = Math.min(timeout, opts.maxTimeout);
 
   return timeout;
