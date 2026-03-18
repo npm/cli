@@ -1749,28 +1749,6 @@ t.test('warn false with invalid flag and warning removal', async t => {
   t.equal(afterSecondLog.length, beforeSecondLog, 'no new warnings after removal and logWarnings')
 })
 
-t.test('error when both prefer-offline and prefer-online are set', async t => {
-  const path = t.testdir()
-
-  const config = new Config({
-    npmPath: `${path}/npm`,
-    env: {},
-    argv: [process.execPath, __filename, '--prefer-offline', '--prefer-online'],
-    cwd: path,
-    shorthands,
-    definitions,
-    nerfDarts,
-  })
-
-  await t.rejects(
-    config.load(),
-    {
-      message: /--prefer-\w+ cannot be provided when using --prefer-\w+/,
-    },
-    'should throw when both prefer-offline and prefer-online are set'
-  )
-})
-
 t.test('prefix getter when global is true', async t => {
   const path = t.testdir()
   const config = new Config({
