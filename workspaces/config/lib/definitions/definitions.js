@@ -1624,6 +1624,7 @@ const definitions = {
   'prefer-offline': new Definition('prefer-offline', {
     default: false,
     type: Boolean,
+    exclusive: ['prefer-online'],
     description: `
       If true, staleness checks for cached data will be bypassed, but missing
       data will be requested from the server. To force full offline mode, use
@@ -1634,6 +1635,7 @@ const definitions = {
   'prefer-online': new Definition('prefer-online', {
     default: false,
     type: Boolean,
+    exclusive: ['prefer-offline'],
     description: `
       If true, staleness checks for cached data will be forced, making the CLI
       look for updates immediately even for fresh package data.

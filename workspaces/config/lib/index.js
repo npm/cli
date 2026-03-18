@@ -266,12 +266,6 @@ class Config {
     // private attributes, as that module also does a bunch of get operations
     this.#loaded = true
 
-    // check for mutually exclusive config flags
-    if (this.get('prefer-offline') && this.get('prefer-online')) {
-      this.queueWarning('prefer-offline',
-        'config', 'Both prefer-offline and prefer-online are set. prefer-offline takes precedence.')
-    }
-
     // set proper globalPrefix now that everything is loaded
     this.globalPrefix = this.get('prefix')
 
