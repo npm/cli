@@ -1749,6 +1749,32 @@ t.test('warn false with invalid flag and warning removal', async t => {
   t.equal(afterSecondLog.length, beforeSecondLog, 'no new warnings after removal and logWarnings')
 })
 
+t.test('warn when both prefer-offline and prefer-online are set', async t => {
+  const path = t.testdir()
+  const logs = []
+  const logHandler = (...args) => logs.push(args)
+  process.on('log', logHandler)
+  t.teardown(() => process.off('log', logHandler))
+
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--prefer-offline', '--prefer-online'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  await config.load()
+
+  const warnings = logs.filter(l =>
+    l[0] === 'warn' && l[1] === 'config' && typeof l[2] === 'string' &&
+    l[2].includes('prefer-offline') && l[2].includes('prefer-online')
+  )
+  t.equal(warnings.length, 1, 'should warn about conflicting prefer-offline and prefer-online')
+})
+
 t.test('prefix getter when global is true', async t => {
   const path = t.testdir()
   const config = new Config({
