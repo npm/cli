@@ -270,7 +270,6 @@ graph LR;
   debug-->ms;
   fdir-->picomatch;
   fs-minipass-->minipass;
-  gar-promise-retry-->retry;
   glob-->minimatch;
   glob-->minipass;
   glob-->path-scurry;
