@@ -12,7 +12,6 @@ graph LR;
   bin-links-->write-file-atomic;
   cacache-->npmcli-fs["@npmcli/fs"];
   cacache-->ssri;
-  cacache-->unique-filename;
   init-package-json-->npm-package-arg;
   init-package-json-->npmcli-package-json["@npmcli/package-json"];
   init-package-json-->promzard;
@@ -246,7 +245,6 @@ graph LR;
   parse-conflict-json-->json-parse-even-better-errors;
   promzard-->read;
   read-->mute-stream;
-  unique-filename-->unique-slug;
 ```
 
 ## all dependencies
@@ -268,7 +266,6 @@ graph LR;
   cacache-->npmcli-fs["@npmcli/fs"];
   cacache-->p-map;
   cacache-->ssri;
-  cacache-->unique-filename;
   debug-->ms;
   fdir-->picomatch;
   fs-minipass-->minipass;
@@ -716,8 +713,6 @@ graph LR;
   tuf-js-->tufjs-models["@tufjs/models"];
   tufjs-models-->minimatch;
   tufjs-models-->tufjs-canonical-json["@tufjs/canonical-json"];
-  unique-filename-->unique-slug;
-  unique-slug-->imurmurhash;
   which-->isexe;
   write-file-atomic-->signal-exit;
 ```
@@ -737,5 +732,5 @@ packages higher up the chain.
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
  - @npmcli/smoke-tests, @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
- - @npmcli/docs, @npmcli/fs, npm-bundled, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, @npmcli/mock-globals, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, which, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, ssri, unique-slug, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/docs, @npmcli/fs, npm-bundled, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, npm-packlist, bin-links, nopt, parse-conflict-json, @npmcli/mock-globals, read
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, which, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, ssri, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate
