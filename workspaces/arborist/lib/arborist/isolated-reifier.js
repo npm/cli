@@ -4,6 +4,7 @@ const { join } = require('node:path')
 const { depth } = require('treeverse')
 const crypto = require('node:crypto')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
+const nameFromFolder = require('@npmcli/name-from-folder')
 
 // generate short hash key based on the dependency tree starting at this node
 const getKey = (startNode) => {
@@ -149,7 +150,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         node.root.path,
         'node_modules',
         '.store',
-        `${node.packageName}@${node.version}`
+        `${result.packageName}@${node.version}`
       )
       mkdirSync(dir, { recursive: true })
       // TODO this approach feels wrong and shouldn't be necessary for shrinkwraps
@@ -191,7 +192,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.id = this.counter++
     /* istanbul ignore next - packageName is always set for real packages */
     result.name = result.isWorkspace ? (node.packageName || node.name) : node.name
-    result.packageName = node.packageName || node.name
+    result.packageName = nameFromFolder(node.packageName || node.path)
     result.package = { ...node.package }
     result.package.bundleDependencies = undefined
 

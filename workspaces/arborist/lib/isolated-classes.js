@@ -1,6 +1,7 @@
 // Alternate versions of different classes that we use for isolated mode
 const CaseInsensitiveMap = require('./case-insensitive-map.js')
 const { resolve } = require('node:path')
+const nameFromFolder = require('@npmcli/name-from-folder')
 
 // fake lib/inventory.js
 class IsolatedInventory extends Map {
@@ -102,6 +103,10 @@ class IsolatedNode {
     const { hasInstallScript, scripts } = this.package
     const { install, preinstall, postinstall } = scripts || {}
     return !!(hasInstallScript || install || preinstall || postinstall)
+  }
+
+  get packageName () {
+    return nameFromFolder(this.path)
   }
 
   get version () {
