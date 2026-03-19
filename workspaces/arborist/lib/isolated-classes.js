@@ -105,6 +105,7 @@ class IsolatedNode {
     return !!(hasInstallScript || install || preinstall || postinstall)
   }
 
+  /* istanbul ignore next -- emulate lib/node.js */
   get packageName () {
     return nameFromFolder(this.path)
   }
