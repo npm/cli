@@ -124,6 +124,26 @@ t.test('ignore mismatched platform for optional dependencies', async t => {
   t.equal(tree.children.get('platform-specifying-test-package').package.version, '1.0.0', 'added the optional dep to the ideal tree')
 })
 
+t.test('ignore mismatched engine for omitted dev dependencies', async () => {
+  const path = resolve(fixtures, 'dev-engine-specification')
+  await buildIdeal(path, {
+    nodeVersion: '12.18.4',
+    engineStrict: true,
+    omit: ['dev'],
+  })
+})
+
+t.test('fail on mismatched engine for dev dep when not omitted', async t => {
+  const path = resolve(fixtures, 'dev-engine-specification')
+  await t.rejects(buildIdeal(path, {
+    nodeVersion: '12.18.4',
+    engineStrict: true,
+  }),
+  { code: 'EBADENGINE' },
+  'should fail with EBADENGINE when dev deps are not omitted'
+  )
+})
+
 t.test('no options', async t => {
   const arb = new Arborist()
   t.match(

@@ -564,6 +564,43 @@ class Node {
     return this === this.root || this === this.root.target
   }
 
+  // Stateless predicate that determines whether this node should be
+  // excluded from an operation (engine check, reify, audit) given the
+  // caller-supplied omitSet.  No omit configuration is cached on the
+  // node itself, so sequential calls with different sets (e.g. audit
+  // followed by reify with different --omit flags) are always correct.
+  //
+  // A node is omitted when its dep-type flag matches an entry in the set:
+  //   dev      → omitSet.has('dev')
+  //   optional → omitSet.has('optional')
+  //   peer     → omitSet.has('peer')
+  //
+  // devOptional is special: it marks a node that exists in the *overlap*
+  // of the dev and optional dependency trees (see calc-dep-flags.js).
+  // Because such a node is reachable through either tree, it can only be
+  // safely omitted when *both* trees are excluded — i.e. the set must
+  // contain both 'dev' AND 'optional'.  Omitting only one still leaves
+  // the node reachable through the other tree, so it must be kept.
+  shouldOmit (omitSet) {
+    if (!omitSet) {
+      return false
+    }
+
+    // coerce array input to a Set for callers that pass options.omit
+    // directly without wrapping
+    const set = omitSet instanceof Set ? omitSet : new Set(omitSet)
+
+    if (set.size === 0) {
+      return false
+    }
+    return !!(
+      this.peer && set.has('peer') ||
+      this.dev && set.has('dev') ||
+      this.optional && set.has('optional') ||
+      this.devOptional && set.has('optional') && set.has('dev')
+    )
+  }
+
   get isRegistryDependency () {
     if (this.edgesIn.size === 0) {
       return false

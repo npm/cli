@@ -3322,3 +3322,142 @@ t.test('should find inconsistency between the edge\'s override set and the targe
 
   t.end()
 })
+
+t.test('shouldOmit', t => {
+  const root = new Node({
+    pkg: { name: 'root', version: '1.0.0' },
+    path: '/home/user/projects/root',
+    realpath: '/home/user/projects/root',
+  })
+
+  const devNode = new Node({
+    pkg: { name: 'devdep', version: '1.0.0' },
+    path: '/home/user/projects/root/node_modules/devdep',
+    realpath: '/home/user/projects/root/node_modules/devdep',
+    parent: root,
+    dev: true,
+    optional: false,
+    devOptional: false,
+    peer: false,
+  })
+
+  const optNode = new Node({
+    pkg: { name: 'optdep', version: '1.0.0' },
+    path: '/home/user/projects/root/node_modules/optdep',
+    realpath: '/home/user/projects/root/node_modules/optdep',
+    parent: root,
+    dev: false,
+    optional: true,
+    devOptional: false,
+    peer: false,
+  })
+
+  const peerNode = new Node({
+    pkg: { name: 'peerdep', version: '1.0.0' },
+    path: '/home/user/projects/root/node_modules/peerdep',
+    realpath: '/home/user/projects/root/node_modules/peerdep',
+    parent: root,
+    dev: false,
+    optional: false,
+    devOptional: false,
+    peer: true,
+  })
+
+  const devOptNode = new Node({
+    pkg: { name: 'devoptdep', version: '1.0.0' },
+    path: '/home/user/projects/root/node_modules/devoptdep',
+    realpath: '/home/user/projects/root/node_modules/devoptdep',
+    parent: root,
+    dev: false,
+    optional: false,
+    devOptional: true,
+    peer: false,
+  })
+
+  const prodNode = new Node({
+    pkg: { name: 'proddep', version: '1.0.0' },
+    path: '/home/user/projects/root/node_modules/proddep',
+    realpath: '/home/user/projects/root/node_modules/proddep',
+    parent: root,
+    dev: false,
+    optional: false,
+    devOptional: false,
+    peer: false,
+  })
+
+  t.test('returns false with no omit set', t => {
+    t.equal(devNode.shouldOmit(new Set()), false)
+    t.equal(devNode.shouldOmit(null), false)
+    t.equal(devNode.shouldOmit(undefined), false)
+    t.end()
+  })
+
+  t.test('dev node omitted when omit has dev', t => {
+    t.equal(devNode.shouldOmit(new Set(['dev'])), true)
+    t.equal(devNode.shouldOmit(new Set(['optional'])), false)
+    t.end()
+  })
+
+  t.test('optional node omitted when omit has optional', t => {
+    t.equal(optNode.shouldOmit(new Set(['optional'])), true)
+    t.equal(optNode.shouldOmit(new Set(['dev'])), false)
+    t.end()
+  })
+
+  t.test('peer node omitted when omit has peer', t => {
+    t.equal(peerNode.shouldOmit(new Set(['peer'])), true)
+    t.equal(peerNode.shouldOmit(new Set(['dev'])), false)
+    t.end()
+  })
+
+  t.test('devOptional node omitted only when both dev and optional are omitted', t => {
+    t.equal(devOptNode.shouldOmit(new Set(['dev'])), false,
+      'devOptional NOT omitted with only dev')
+    t.equal(devOptNode.shouldOmit(new Set(['optional'])), false,
+      'devOptional NOT omitted with only optional')
+    t.equal(devOptNode.shouldOmit(new Set(['dev', 'optional'])), true,
+      'devOptional IS omitted with both dev and optional')
+    t.equal(devOptNode.shouldOmit(new Set(['dev', 'peer'])), false,
+      'devOptional NOT omitted with dev+peer (missing optional)')
+    t.equal(devOptNode.shouldOmit(new Set(['optional', 'peer'])), false,
+      'devOptional NOT omitted with optional+peer (missing dev)')
+    t.equal(devOptNode.shouldOmit(new Set(['dev', 'optional', 'peer'])), true,
+      'devOptional IS omitted with all three omit types')
+    t.end()
+  })
+
+  t.test('prod node is never omitted', t => {
+    t.equal(prodNode.shouldOmit(new Set(['dev'])), false)
+    t.equal(prodNode.shouldOmit(new Set(['optional'])), false)
+    t.equal(prodNode.shouldOmit(new Set(['peer'])), false)
+    t.equal(prodNode.shouldOmit(new Set(['dev', 'optional', 'peer'])), false)
+    t.end()
+  })
+
+  t.test('coerces array input to Set', t => {
+    t.equal(devNode.shouldOmit(['dev']), true,
+      'array with dev omits dev node')
+    t.equal(devNode.shouldOmit(['optional']), false,
+      'array with optional does not omit dev node')
+    t.equal(devOptNode.shouldOmit(['dev', 'optional']), true,
+      'array with dev+optional omits devOptional node')
+    t.equal(devOptNode.shouldOmit([]), false,
+      'empty array omits nothing')
+    t.end()
+  })
+
+  t.test('is stateless across sequential calls with different sets', t => {
+    // same node, different omitSets — each call must be independent
+    t.equal(devNode.shouldOmit(new Set(['dev'])), true,
+      'first call: dev node omitted with dev set')
+    t.equal(devNode.shouldOmit(new Set(['optional'])), false,
+      'second call: same dev node NOT omitted with optional set')
+    t.equal(devNode.shouldOmit(new Set(['dev'])), true,
+      'third call: dev node omitted again with dev set')
+    t.equal(devNode.shouldOmit(new Set()), false,
+      'fourth call: empty set omits nothing')
+    t.end()
+  })
+
+  t.end()
+})

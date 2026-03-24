@@ -84,9 +84,7 @@ module.exports = cls => class Reifier extends cls {
   #bundleUnpacked = new Set() // the nodes we unpack to read their bundles
   #dryRun
   #nmValidated = new Set()
-  #omitDev
-  #omitPeer
-  #omitOptional
+  #omitSet = new Set()
   #retiredPaths = {}
   #retiredUnchanged = {}
   #savePrefix
@@ -110,10 +108,7 @@ module.exports = cls => class Reifier extends cls {
       throw er
     }
 
-    const omit = new Set(options.omit || [])
-    this.#omitDev = omit.has('dev')
-    this.#omitOptional = omit.has('optional')
-    this.#omitPeer = omit.has('peer')
+    this.#omitSet = new Set(options.omit || [])
 
     // start tracker block
     this.addTracker('reify')
@@ -562,7 +557,7 @@ module.exports = cls => class Reifier extends cls {
   // adding to the trash list will skip reifying, and delete them
   // if they are currently in the tree and otherwise untouched.
   [_addOmitsToTrashList] () {
-    if (!this.#omitDev && !this.#omitOptional && !this.#omitPeer) {
+    if (!this.#omitSet.size) {
       return
     }
 
@@ -583,12 +578,7 @@ module.exports = cls => class Reifier extends cls {
       }
 
       // omit node if the dep type matches any omit flags that were set
-      if (
-        node.peer && this.#omitPeer ||
-        node.dev && this.#omitDev ||
-        node.optional && this.#omitOptional ||
-        node.devOptional && this.#omitOptional && this.#omitDev
-      ) {
+      if (node.shouldOmit(this.#omitSet)) {
         this[_addNodeToTrashList](node)
       }
     }
