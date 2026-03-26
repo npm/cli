@@ -187,7 +187,7 @@ safer to use a registry-provided authentication bearer token stored in the
 
 * Default: 'public' for new packages, existing packages it will not change the
   current level
-* Type: null, "restricted", or "public"
+* Type: null, "restricted", "public", or "private"
 
 If you do not want your scoped package to be publicly viewable (and
 installable) set \`--access=restricted\`.
@@ -198,6 +198,8 @@ Note: This defaults to not changing the current access level for existing
 packages. Specifying a value of \`restricted\` or \`public\` during publish will
 change the access for an existing package the same way that \`npm access set
 status\` would.
+
+The value \`private\` is an alias for \`restricted\`.
 
 
 
@@ -5178,7 +5180,7 @@ Usage:
 npm publish <package-spec>
 
 Options:
-[--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
+[--tag <tag>] [--access <restricted|public|private>] [--dry-run] [--otp <otp>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--provenance|--provenance-file <file>]
 

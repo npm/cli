@@ -173,6 +173,28 @@ exports[`test/lib/commands/publish.js TAP prioritize CLI flags over publishConfi
 + @npmcli/test-package@1.0.0
 `
 
+exports[`test/lib/commands/publish.js TAP private access > must match snapshot 1`] = `
+Array [
+  "package: @npm/test-package@1.0.0",
+  "Tarball Contents",
+  "55B package.json",
+  "Tarball Details",
+  "name: @npm/test-package",
+  "version: 1.0.0",
+  "filename: npm-test-package-1.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 55 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
+  "Publishing to https://registry.npmjs.org/ with tag latest and restricted access",
+]
+`
+
+exports[`test/lib/commands/publish.js TAP private access > new package version 1`] = `
++ @npm/test-package@1.0.0
+`
+
 exports[`test/lib/commands/publish.js TAP public access > must match snapshot 1`] = `
 Array [
   "package: @npm/test-package@1.0.0",
