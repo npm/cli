@@ -16,6 +16,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.4): `@npmcli/arborist@8.0.4`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.5): `@npmcli/arborist@8.0.5`
+
 ## [9.0.0](https://github.com/npm/cli/compare/libnpmexec-v8.1.4...libnpmexec-v9.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmexec` now supports node `^18.17.0 || >=20.5.0`
