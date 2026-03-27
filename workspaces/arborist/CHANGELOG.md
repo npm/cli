@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.0.5](https://github.com/npm/cli/compare/arborist-v8.0.4...arborist-v8.0.5) (2026-03-27)
+### Bug Fixes
+* [`8aa9c82`](https://github.com/npm/cli/commit/8aa9c822c14f34c674880df2150e3d3d6bb3a901) [#9152](https://github.com/npm/cli/pull/9152) eagerly require promise-retry to survive self-upgrade (@owlstronaut)
+
 ## [8.0.4](https://github.com/npm/cli/compare/arborist-v8.0.3...arborist-v8.0.4) (2026-03-18)
 ### Bug Fixes
 * [`bbcd455`](https://github.com/npm/cli/commit/bbcd45502315365286ce8b35a9585c5e4c516e6b) [#9120](https://github.com/npm/cli/pull/9120) arborist: v10 - backport store, lock-only, and override sibling fixes (#9120) (@manzoorwanijk)

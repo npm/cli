@@ -1,5 +1,13 @@
 # Changelog
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.5): `@npmcli/arborist@8.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v7.0.5): `libnpmdiff@7.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v9.0.5): `libnpmexec@9.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v6.0.5): `libnpmfund@6.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v8.0.5): `libnpmpack@8.0.5`
+
 ## [10.9.7](https://github.com/npm/cli/compare/v10.9.6...v10.9.7) (2026-03-18)
 ### Bug Fixes
 * [`bbcd455`](https://github.com/npm/cli/commit/bbcd45502315365286ce8b35a9585c5e4c516e6b) [#9120](https://github.com/npm/cli/pull/9120) arborist: v10 - backport store, lock-only, and override sibling fixes (#9120) (@manzoorwanijk)
