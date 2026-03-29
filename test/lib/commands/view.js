@@ -465,6 +465,29 @@ t.test('package with --json and semver range', async t => {
   t.matchSnapshot(joinedOutput())
 })
 
+t.test('package with --json and single-match semver range preserves array output', async t => {
+  const { view, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
+  await view.exec(['single-version@^1'])
+  const parsed = JSON.parse(joinedOutput())
+  t.ok(Array.isArray(parsed), 'preserves the top-level array for semver ranges')
+  t.equal(parsed.length, 1, 'returns the single matching version in an array')
+  t.match(parsed[0], {
+    name: 'single-version',
+    version: '1.0.0',
+    dist: {
+      shasum: '123',
+      tarball: 'http://hm.single-version.com/1.0.0.tgz',
+      fileCount: 1,
+    },
+  }, 'returns the expected package data')
+})
+
+t.test('package field with --json and single-match semver range preserves array output', async t => {
+  const { view, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
+  await view.exec(['single-version@^1', 'version'])
+  t.strictSame(JSON.parse(joinedOutput()), ['1.0.0'], 'does not unwrap single field matches for semver ranges')
+})
+
 t.test('package with _npmUser.trustedPublisher shows cleaned up property with --json', async t => {
   const { view, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
   await view.exec(['cyan-oidc@^1.0.0'])
