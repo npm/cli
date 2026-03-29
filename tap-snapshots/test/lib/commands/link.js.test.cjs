@@ -20,12 +20,11 @@ exports[`test/lib/commands/link.js TAP link global linked pkg to local nm when u
 `
 
 exports[`test/lib/commands/link.js TAP link global linked pkg to local workspace using args > should create a local symlink to global pkg 1`] = `
-{CWD}/prefix/node_modules/@myscope/bar -> {CWD}/global/node_modules/@myscope/bar
-{CWD}/prefix/node_modules/@myscope/linked -> {CWD}/other/scoped-linked
-{CWD}/prefix/node_modules/a -> {CWD}/global/node_modules/a
-{CWD}/prefix/node_modules/link-me-too -> {CWD}/other/link-me-too
-{CWD}/prefix/node_modules/test-pkg-link -> {CWD}/other/test-pkg-link
-{CWD}/prefix/node_modules/x -> {CWD}/prefix/packages/x
+{CWD}/prefix/packages/x/node_modules/@myscope/bar -> {CWD}/global/node_modules/@myscope/bar
+{CWD}/prefix/packages/x/node_modules/@myscope/linked -> {CWD}/other/scoped-linked
+{CWD}/prefix/packages/x/node_modules/a -> {CWD}/global/node_modules/a
+{CWD}/prefix/packages/x/node_modules/link-me-too -> {CWD}/other/link-me-too
+{CWD}/prefix/packages/x/node_modules/test-pkg-link -> {CWD}/other/test-pkg-link
 
 `
 
