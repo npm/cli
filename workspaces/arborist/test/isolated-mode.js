@@ -1789,6 +1789,57 @@ tap.test('file: dependency with linked strategy', async t => {
   t.ok(setupRequire(dir)('project2'), 'project2 can be required from root')
 })
 
+tap.test('npm link (external file: dep) with linked strategy', async t => {
+  // Regression test: `npm link` creates a file: dependency pointing outside the project root.
+  // The linked strategy should symlink it directly instead of trying to extract it into .store/.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '2.0.0' },
+    ],
+    root: {
+      name: 'my-app',
+      version: '1.0.0',
+      dependencies: { abbrev: '2.0.0' },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Create an external package OUTSIDE the project root (simulates npm link target)
+  const externalPkgDir = path.join(path.dirname(dir), 'external-pkg')
+  fs.mkdirSync(externalPkgDir, { recursive: true })
+  fs.writeFileSync(path.join(externalPkgDir, 'package.json'), JSON.stringify({
+    name: 'external-pkg',
+    version: '1.0.0',
+  }))
+  fs.writeFileSync(path.join(externalPkgDir, 'index.js'), "module.exports = 'external'")
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  // First install without the linked package
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Now simulate `npm link external-pkg` by adding a file: dep and reifying
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked', add: [`file:${externalPkgDir}`] })
+
+  // The external package should be symlinked in node_modules
+  const linkPath = path.join(dir, 'node_modules', 'external-pkg')
+  const stat = fs.lstatSync(linkPath)
+  t.ok(stat.isSymbolicLink(), 'external-pkg is a symlink in node_modules')
+
+  // The symlink should resolve to the actual external directory
+  const realpath = fs.realpathSync(linkPath)
+  t.equal(realpath, externalPkgDir, 'symlink points to the correct external directory')
+
+  // The existing store packages should still be intact
+  const storePath = path.join(dir, 'node_modules', '.store')
+  const storeEntries = fs.readdirSync(storePath)
+  t.ok(storeEntries.some(e => e.startsWith('abbrev@')), 'abbrev is still in the store')
+  t.notOk(storeEntries.some(e => e.startsWith('external-pkg@')), 'external-pkg is NOT in the store')
+})
+
 tap.test('subsequent linked install is a no-op', async t => {
   const graph = {
     registry: [

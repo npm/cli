@@ -113,7 +113,11 @@ module.exports = cls => class IsolatedReifier extends cls {
       })
       // local `file:` deps are in fsChildren but are not workspaces.
       // they are already handled as workspace-like proxies above and should not go through the external/store extraction path.
-      if (!next.isProjectRoot && !next.isWorkspace && !next.inert && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
+      // Links with file: resolved paths (from `npm link`) should also be treated as local dependencies and symlinked directly instead of being extracted into the store.
+      const isLocalFileDep = next.isLink && next.resolved?.startsWith('file:')
+      if (isLocalFileDep && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
+        this.idealGraph.workspaces.push(await this.#workspaceProxy(next.target))
+      } else if (!next.isProjectRoot && !next.isWorkspace && !next.inert && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
         this.idealGraph.external.push(await this.#externalProxy(next))
       }
     }
