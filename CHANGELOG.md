@@ -40,7 +40,7 @@
 ### Bug Fixes
 * [`a9d242b`](https://github.com/npm/cli/commit/a9d242bc4f04440630141743949ddb0d323f90b4) [#9099](https://github.com/npm/cli/pull/9099) include all subcommands on main command help (#9099) (@wraithgar)
 * [`29b8407`](https://github.com/npm/cli/commit/29b8407971af1b9a2a3dcdb3849adfa04363fa7f) [#9087](https://github.com/npm/cli/pull/9087) unwrap comments and lines meant for output (#9087) (@wraithgar)
-* [`b56986a`](https://github.com/npm/cli/commit/b56986acb0661fba2c80135eff3d140aa659dcf5) [#9095](https://github.com/npm/cli/pull/9095) ls: suppress false UNMET DEPENDENCYs in linked strategy (#9095) (@manzoorwanijk)
+* [`b56986a`](https://github.com/npm/cli/commit/b56986acb0661fba2c80135eff3d140aa659dcf5) [#9095](https://github.com/npm/cli/pull/9095) ls: suppress false UNMET dependencies in linked strategy (#9095) (@manzoorwanijk)
 * [`76c76e5`](https://github.com/npm/cli/commit/76c76e5ad7cc5c7f641a92334b900c9d0c9a3fbd) [#9083](https://github.com/npm/cli/pull/9083) ci: don't error on optional deps in the lockfile (#9083) (@wraithgar)
 * [`a29aeee`](https://github.com/npm/cli/commit/a29aeee18f3ddc2348a8e00787d237c874642789) [#9028](https://github.com/npm/cli/pull/9028) arborist: retry bin-links on Windows EPERM (#9028) (@manzoorwanijk)
 * [`6565eeb`](https://github.com/npm/cli/commit/6565eeb818494e1feb4e14492804ce936b394b4a) [#9045](https://github.com/npm/cli/pull/9045) bypass packument cache to prevent ETARGET errors after publish (#9045) (@Jadu07)
