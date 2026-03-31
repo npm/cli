@@ -870,9 +870,17 @@ const combinators = {
   },
 }
 
+const shouldBypassBefore = (name, exclude) => {
+  const patterns = Array.isArray(exclude) ? exclude : [exclude]
+  return patterns
+    .filter(pattern => typeof pattern === 'string' && pattern)
+    .some(pattern => minimatch(name, pattern))
+}
+
 // get a list of available versions of a package filtered to respect --before
 // NOTE: this runs over each node and should not throw
 const getPackageVersions = async (name, opts) => {
+  const minReleaseAgeExclude = opts.minReleaseAgeExclude ?? opts['min-release-age-exclude']
   let packument
   try {
     packument = await pacote.packument(name, {
@@ -890,7 +898,7 @@ const getPackageVersions = async (name, opts) => {
 
   // if the packument has a time property, and the user passed a before flag, then
   // we filter this list down to only those versions that existed before the specified date
-  if (packument.time && opts.before) {
+  if (packument.time && opts.before && !shouldBypassBefore(name, minReleaseAgeExclude)) {
     candidates = candidates.filter((version) => {
       // this version isn't found in the times at all, drop it
       if (!packument.time[version]) {

@@ -393,6 +393,9 @@ t.test('query-selector-all', async t => {
             : options.before
         title += ` before ${friendlyTime}`
       }
+      if (options.minReleaseAgeExclude) {
+        title += ` exclude ${JSON.stringify(options.minReleaseAgeExclude)}`
+      }
       t.test(title, async t => {
         const res = await querySelectorAll(tree, selector, options)
         t.same(
@@ -865,6 +868,20 @@ t.test('query-selector-all', async t => {
     [':outdated(out-of-range)', [
       'dash-separated-pkg@1.0.0', // 2.0.0 is available, out-of-range and published yesterday
     ], { before: yesterday }],
+    [':outdated(out-of-range)', [
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available, out-of-range and published yesterday
+      'bar@1.4.0', // excluded from --before filter
+    ], {
+      before: yesterday,
+      minReleaseAgeExclude: ['bar'],
+    }],
+    [':outdated(out-of-range)', [
+      'dash-separated-pkg@1.0.0', // 2.0.0 is available, out-of-range and published yesterday
+      'bar@1.4.0', // excluded from --before filter by glob
+    ], {
+      before: yesterday,
+      minReleaseAgeExclude: ['ba*'],
+    }],
     [':outdated(nonsense)', [], { before: yesterday }], // again, no results here ever
 
     // vuln pseudo

@@ -1151,6 +1151,19 @@ This config cannot be used with: \`before\`
 
 This value is not exported to the environment for child processes.
 
+#### \`min-release-age-exclude\`
+
+* Default:
+* Type: String (can be set multiple times)
+
+Exclude package names from \`min-release-age\` and \`before\` publish-time
+filtering.
+
+Values can be exact package names (\`left-pad\`) or glob patterns
+(\`@myorg/*\`).
+
+This value is not exported to the environment for child processes.
+
 #### \`name\`
 
 * Default: null
@@ -2350,6 +2363,7 @@ Array [
   "maxsockets",
   "message",
   "min-release-age",
+  "min-release-age-exclude",
   "node-gyp",
   "node-options",
   "noproxy",
@@ -2508,6 +2522,7 @@ Array [
   "maxsockets",
   "message",
   "min-release-age",
+  "min-release-age-exclude",
   "node-gyp",
   "noproxy",
   "offline",
@@ -2675,6 +2690,7 @@ Object {
   "logColor": false,
   "maxSockets": 15,
   "message": "%s",
+  "minReleaseAgeExclude": Array [],
   "name": null,
   "nodeBin": "{NODE}",
   "nodeGyp": "{CWD}/node_modules/node-gyp/bin/node-gyp.js",
@@ -3948,8 +3964,10 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--allow-git <all|none|root>]
-[--no-audit] [--before <date>|--min-release-age <days>] [--no-bin-links]
-[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--no-audit] [--before <date>|--min-release-age <days>]
+[--min-release-age-exclude <package-name> [--min-release-age-exclude <package-name> ...]]
+[--no-bin-links] [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4006,6 +4024,9 @@ Options:
 
   --min-release-age
     If set, npm will build the npm tree such that only versions that were
+
+  --min-release-age-exclude
+    Exclude package names from \`min-release-age\` and \`before\` publish-time
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
@@ -4066,6 +4087,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`audit\`
 #### \`before\`
 #### \`min-release-age\`
+#### \`min-release-age-exclude\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
@@ -4189,8 +4211,10 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--allow-git <all|none|root>]
-[--no-audit] [--before <date>|--min-release-age <days>] [--no-bin-links]
-[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--no-audit] [--before <date>|--min-release-age <days>]
+[--min-release-age-exclude <package-name> [--min-release-age-exclude <package-name> ...]]
+[--no-bin-links] [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4247,6 +4271,9 @@ Options:
 
   --min-release-age
     If set, npm will build the npm tree such that only versions that were
+
+  --min-release-age-exclude
+    Exclude package names from \`min-release-age\` and \`before\` publish-time
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
@@ -4307,6 +4334,7 @@ alias: it
 #### \`audit\`
 #### \`before\`
 #### \`min-release-age\`
+#### \`min-release-age-exclude\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
@@ -4739,6 +4767,7 @@ Options:
 [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--before <date>|--min-release-age <days>]
+[--min-release-age-exclude <package-name> [--min-release-age-exclude <package-name> ...]]
 
   -a|--all
     When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
@@ -4761,6 +4790,9 @@ Options:
   --before
     If passed to \`npm install\`, will rebuild the npm tree such that only
 
+  --min-release-age-exclude
+    Exclude package names from \`min-release-age\` and \`before\` publish-time
+
 
 Run "npm help outdated" for more info
 
@@ -4776,6 +4808,7 @@ npm outdated [<package-spec> ...]
 #### \`workspace\`
 #### \`before\`
 #### \`min-release-age\`
+#### \`min-release-age-exclude\`
 `
 
 exports[`test/lib/docs.js TAP usage owner > must match snapshot 1`] = `
@@ -5132,6 +5165,8 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--package-lock-only]
 [--expect-results|--expect-result-count <count>]
+[--before <date>|--min-release-age <days>]
+[--min-release-age-exclude <package-name> [--min-release-age-exclude <package-name> ...]]
 
   -g|--global
     Operates in "global" mode, so that packages are installed into the
@@ -5151,6 +5186,12 @@ Options:
   --expect-results
     Tells npm whether or not to expect results from the command.
 
+  --before
+    If passed to \`npm install\`, will rebuild the npm tree such that only
+
+  --min-release-age-exclude
+    Exclude package names from \`min-release-age\` and \`before\` publish-time
+
 
 Run "npm help query" for more info
 
@@ -5165,6 +5206,9 @@ npm query <selector>
 #### \`package-lock-only\`
 #### \`expect-results\`
 #### \`expect-result-count\`
+#### \`before\`
+#### \`min-release-age\`
+#### \`min-release-age-exclude\`
 `
 
 exports[`test/lib/docs.js TAP usage rebuild > must match snapshot 1`] = `

@@ -1382,6 +1382,25 @@ const definitions = {
       }
     },
   }),
+  'min-release-age-exclude': new Definition('min-release-age-exclude', {
+    default: [],
+    hint: '<package-name>',
+    type: [String, Array],
+    envExport: false,
+    description: `
+      Exclude package names from \`min-release-age\` and \`before\` publish-time
+      filtering.
+
+      Values can be exact package names (\`left-pad\`) or glob patterns
+      (\`@myorg/*\`).
+    `,
+    flatten: (key, obj, flatOptions) => {
+      const patterns = Array.isArray(obj[key])
+        ? obj[key]
+        : obj[key] ? [obj[key]] : []
+      flatOptions.minReleaseAgeExclude = patterns.filter(Boolean)
+    },
+  }),
   'node-gyp': new Definition('node-gyp', {
     default: (() => {
       try {
