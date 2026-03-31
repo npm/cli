@@ -1360,7 +1360,7 @@ const definitions = {
     flatten,
   }),
   'min-release-age': new Definition('min-release-age', {
-    default: null,
+    default: 3,
     hint: '<days>',
     type: [null, Number],
     exclusive: ['before'],

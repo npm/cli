@@ -104,7 +104,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "name": null,
   "maxsockets": 15,
   "message": "%s",
-  "min-release-age": null,
+  "min-release-age": 3,
   "node-gyp": "{CWD}/node_modules/node-gyp/bin/node-gyp.js",
   "node-options": null,
   "noproxy": [
@@ -283,7 +283,7 @@ logs-max = 10
 ; long = false ; overridden by cli
 maxsockets = 15
 message = "%s"
-min-release-age = null
+min-release-age = 3
 name = null
 node-gyp = "{CWD}/node_modules/node-gyp/bin/node-gyp.js"
 node-options = null
