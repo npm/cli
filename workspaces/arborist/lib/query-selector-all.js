@@ -6,7 +6,7 @@ const localeCompare = require('@isaacs/string-locale-compare')('en')
 const { log } = require('proc-log')
 const { minimatch } = require('minimatch')
 const npa = require('npm-package-arg')
-const { shouldBypassBefore } = require('npm-pick-manifest')
+const { isExcludedFromTimeFilter } = require('npm-pick-manifest')
 const pacote = require('pacote')
 const semver = require('semver')
 const npmFetch = require('npm-registry-fetch')
@@ -892,7 +892,7 @@ const getPackageVersions = async (name, opts) => {
 
   // if the packument has a time property, and the user passed a before flag, then
   // we filter this list down to only those versions that existed before the specified date
-  if (packument.time && opts.before && !shouldBypassBefore(name, minReleaseAgeExclude)) {
+  if (packument.time && opts.before && !isExcludedFromTimeFilter(name, minReleaseAgeExclude)) {
     candidates = candidates.filter((version) => {
       // this version isn't found in the times at all, drop it
       if (!packument.time[version]) {

@@ -1141,23 +1141,23 @@ t.test('linked strategy: :root > * excludes transitive deps and store nodes', as
   ], ':root * should return all descendants including transitive deps')
 })
 
-t.test('shouldBypassBefore with scoped package patterns', async t => {
-  const { shouldBypassBefore } = require('npm-pick-manifest')
+t.test('isExcludedFromTimeFilter with scoped package patterns', async t => {
+  const { isExcludedFromTimeFilter } = require('npm-pick-manifest')
 
-  t.equal(shouldBypassBefore('@myorg/foo', ['@myorg/*']), true,
+  t.equal(isExcludedFromTimeFilter('@myorg/foo', ['@myorg/*']), true,
     'scoped glob @myorg/* matches @myorg/foo')
-  t.equal(shouldBypassBefore('@myorg/bar', ['@myorg/*']), true,
+  t.equal(isExcludedFromTimeFilter('@myorg/bar', ['@myorg/*']), true,
     'scoped glob @myorg/* matches @myorg/bar')
-  t.equal(shouldBypassBefore('@other/foo', ['@myorg/*']), false,
+  t.equal(isExcludedFromTimeFilter('@other/foo', ['@myorg/*']), false,
     'scoped glob @myorg/* does not match @other/foo')
-  t.equal(shouldBypassBefore('unscoped', ['@myorg/*']), false,
+  t.equal(isExcludedFromTimeFilter('unscoped', ['@myorg/*']), false,
     'scoped glob @myorg/* does not match unscoped package')
-  t.equal(shouldBypassBefore('@myorg/foo', ['@myorg/foo']), true,
+  t.equal(isExcludedFromTimeFilter('@myorg/foo', ['@myorg/foo']), true,
     'exact scoped name matches')
-  t.equal(shouldBypassBefore('@myorg/foo', ['@myorg/bar']), false,
+  t.equal(isExcludedFromTimeFilter('@myorg/foo', ['@myorg/bar']), false,
     'exact scoped name does not match different package')
-  t.equal(shouldBypassBefore('@myorg/foo', []), false,
+  t.equal(isExcludedFromTimeFilter('@myorg/foo', []), false,
     'empty exclude list matches nothing')
-  t.equal(shouldBypassBefore('@myorg/foo', undefined), false,
+  t.equal(isExcludedFromTimeFilter('@myorg/foo', undefined), false,
     'undefined exclude list matches nothing')
 })

@@ -5189,6 +5189,9 @@ Options:
   --before
     If passed to \`npm install\`, will rebuild the npm tree such that only
 
+  --min-release-age
+    If set, npm will build the npm tree such that only versions that were
+
   --min-release-age-exclude
     Exclude package names from \`min-release-age\` and \`before\` publish-time
 
