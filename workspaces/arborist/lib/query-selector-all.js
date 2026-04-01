@@ -6,6 +6,7 @@ const localeCompare = require('@isaacs/string-locale-compare')('en')
 const { log } = require('proc-log')
 const { minimatch } = require('minimatch')
 const npa = require('npm-package-arg')
+const { shouldBypassBefore } = require('npm-pick-manifest')
 const pacote = require('pacote')
 const semver = require('semver')
 const npmFetch = require('npm-registry-fetch')
@@ -870,17 +871,10 @@ const combinators = {
   },
 }
 
-const shouldBypassBefore = (name, exclude) => {
-  const patterns = Array.isArray(exclude) ? exclude : [exclude]
-  return patterns
-    .filter(pattern => typeof pattern === 'string' && pattern)
-    .some(pattern => minimatch(name, pattern))
-}
-
 // get a list of available versions of a package filtered to respect --before
 // NOTE: this runs over each node and should not throw
 const getPackageVersions = async (name, opts) => {
-  const minReleaseAgeExclude = opts.minReleaseAgeExclude ?? opts['min-release-age-exclude']
+  const minReleaseAgeExclude = opts.minReleaseAgeExclude
   let packument
   try {
     packument = await pacote.packument(name, {

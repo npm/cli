@@ -1140,3 +1140,24 @@ t.test('linked strategy: :root > * excludes transitive deps and store nodes', as
     'nopt@7.2.1',
   ], ':root * should return all descendants including transitive deps')
 })
+
+t.test('shouldBypassBefore with scoped package patterns', async t => {
+  const { shouldBypassBefore } = require('npm-pick-manifest')
+
+  t.equal(shouldBypassBefore('@myorg/foo', ['@myorg/*']), true,
+    'scoped glob @myorg/* matches @myorg/foo')
+  t.equal(shouldBypassBefore('@myorg/bar', ['@myorg/*']), true,
+    'scoped glob @myorg/* matches @myorg/bar')
+  t.equal(shouldBypassBefore('@other/foo', ['@myorg/*']), false,
+    'scoped glob @myorg/* does not match @other/foo')
+  t.equal(shouldBypassBefore('unscoped', ['@myorg/*']), false,
+    'scoped glob @myorg/* does not match unscoped package')
+  t.equal(shouldBypassBefore('@myorg/foo', ['@myorg/foo']), true,
+    'exact scoped name matches')
+  t.equal(shouldBypassBefore('@myorg/foo', ['@myorg/bar']), false,
+    'exact scoped name does not match different package')
+  t.equal(shouldBypassBefore('@myorg/foo', []), false,
+    'empty exclude list matches nothing')
+  t.equal(shouldBypassBefore('@myorg/foo', undefined), false,
+    'undefined exclude list matches nothing')
+})
