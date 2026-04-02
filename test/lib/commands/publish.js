@@ -990,6 +990,26 @@ t.test('semver highest dist tag', async t => {
     registry.publish(pkg, { noGet: true, packuments })
     await npm.exec('publish', [])
   })
+
+  await t.test('ALLOWS publish when highest is HIGHER with --skip-publish-checks', async t => {
+    const version = '99.0.0'
+    const { npm, registry } = await loadNpmWithRegistry(t, {
+      ...init({ version }),
+      argv: ['--skip-publish-checks'],
+    })
+    registry.publish(pkg, { noGet: true, packuments })
+    await npm.exec('publish', [])
+  })
+
+  await t.test('ALLOWS publish when version EXISTS with --skip-publish-checks', async t => {
+    const version = '100.0.0'
+    const { npm, registry } = await loadNpmWithRegistry(t, {
+      ...init({ version }),
+      argv: ['--skip-publish-checks'],
+    })
+    registry.publish(pkg, { noGet: true, packuments })
+    await npm.exec('publish', [])
+  })
 })
 
 t.test('oidc token exchange - no provenance', t => {

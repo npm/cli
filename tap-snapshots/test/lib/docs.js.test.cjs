@@ -1757,6 +1757,18 @@ this to work properly.
 
 
 
+#### \`skip-publish-checks\`
+
+* Default: false
+* Type: Boolean
+
+When set to true, npm publish will skip the check that prevents publishing
+versions that already exist in the registry and the check that requires a
+\`--tag\` when the existing highest version is greater than the version being
+published.
+
+
+
 #### \`strict-peer-deps\`
 
 * Default: false
@@ -2407,6 +2419,7 @@ Array [
   "shrinkwrap",
   "sign-git-commit",
   "sign-git-tag",
+  "skip-publish-checks",
   "strict-peer-deps",
   "strict-ssl",
   "tag",
@@ -2563,6 +2576,7 @@ Array [
   "shrinkwrap",
   "sign-git-commit",
   "sign-git-tag",
+  "skip-publish-checks",
   "strict-peer-deps",
   "strict-ssl",
   "tag",
@@ -2738,6 +2752,7 @@ Object {
   "signGitCommit": false,
   "signGitTag": false,
   "silent": false,
+  "skipPublishChecks": false,
   "strictPeerDeps": false,
   "strictSSL": true,
   "tagVersionPrefix": "v",
@@ -5078,6 +5093,7 @@ Options:
 [--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--provenance|--provenance-file <file>]
+[--skip-publish-checks]
 
   --tag
     If you ask npm to install a package and don't tell it a specific version,
@@ -5103,6 +5119,9 @@ Options:
   --provenance
     When publishing from a supported cloud CI/CD system, the package will be
 
+  --skip-publish-checks
+    When set to true, npm publish will skip the check that prevents
+
 
 Run "npm help publish" for more info
 
@@ -5119,6 +5138,7 @@ npm publish <package-spec>
 #### \`include-workspace-root\`
 #### \`provenance\`
 #### \`provenance-file\`
+#### \`skip-publish-checks\`
 `
 
 exports[`test/lib/docs.js TAP usage query > must match snapshot 1`] = `

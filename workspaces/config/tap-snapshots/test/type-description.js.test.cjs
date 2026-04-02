@@ -553,6 +553,9 @@ Object {
   "sign-git-tag": Array [
     "boolean value (true or false)",
   ],
+  "skip-publish-checks": Array [
+    "boolean value (true or false)",
+  ],
   "strict-peer-deps": Array [
     "boolean value (true or false)",
   ],

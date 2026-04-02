@@ -2163,6 +2163,17 @@ const definitions = {
     `,
     flatten,
   }),
+  'skip-publish-checks': new Definition('skip-publish-checks', {
+    default: false,
+    type: Boolean,
+    description: `
+      When set to true, npm publish will skip the check that prevents
+      publishing versions that already exist in the registry and the check
+      that requires a \`--tag\` when the existing highest version is greater
+      than the version being published.
+    `,
+    flatten,
+  }),
   'strict-peer-deps': new Definition('strict-peer-deps', {
     default: false,
     type: Boolean,
