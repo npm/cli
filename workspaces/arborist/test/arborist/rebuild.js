@@ -847,3 +847,19 @@ t.test('do not run lifecycle scripts of linked deps twice', async t => {
   const arb = new Arborist({ path, ignoreScripts: true })
   await arb.rebuild()
 })
+
+t.test('handle scripts: null gracefully', async t => {
+  const path = t.testdir({
+    node_modules: {
+      dep: {
+        'package.json': JSON.stringify({
+          name: 'dep',
+          version: '1.0.0',
+          scripts: null,
+        }),
+      },
+    },
+  })
+  const arb = newArb({ path })
+  await arb.rebuild()
+})
