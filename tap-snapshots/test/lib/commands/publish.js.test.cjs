@@ -99,7 +99,7 @@ exports[`test/lib/commands/publish.js TAP json > new package json 1`] = `
     {
       "path": "package.json",
       "size": "{size}",
-      "mode": 420
+      "mode": 493
     }
   ],
   "entryCount": 1,
@@ -356,6 +356,24 @@ exports[`test/lib/commands/publish.js TAP tarball > new package json 1`] = `
 + test-tar-package@1.0.0
 `
 
+exports[`test/lib/commands/publish.js TAP tolerate-republish > must match snapshot 1`] = `
+Array [
+  "package: @npmcli/test-package@1.0.0",
+  "Tarball Contents",
+  "95B package.json",
+  "Tarball Details",
+  "name: @npmcli/test-package",
+  "version: 1.0.0",
+  "filename: npmcli-test-package-1.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 95 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
+  "Publishing to https://other.registry.npmjs.org/ with tag latest and default access",
+]
+`
+
 exports[`test/lib/commands/publish.js TAP workspaces all workspaces - color > all public workspaces 1`] = `
 + workspace-a@1.2.3-a
 + workspace-b@1.2.3-n
@@ -425,7 +443,7 @@ exports[`test/lib/commands/publish.js TAP workspaces json > all workspaces in js
       {
         "path": "package.json",
         "size": "{size}",
-        "mode": 420
+        "mode": 493
       }
     ],
     "entryCount": 1,
@@ -444,7 +462,7 @@ exports[`test/lib/commands/publish.js TAP workspaces json > all workspaces in js
       {
         "path": "package.json",
         "size": "{size}",
-        "mode": 420
+        "mode": 493
       }
     ],
     "entryCount": 1,
@@ -463,7 +481,7 @@ exports[`test/lib/commands/publish.js TAP workspaces json > all workspaces in js
       {
         "path": "package.json",
         "size": "{size}",
-        "mode": 420
+        "mode": 493
       }
     ],
     "entryCount": 1,

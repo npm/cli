@@ -151,6 +151,25 @@ t.test('dry-run', async t => {
   t.matchSnapshot(logs.notice)
 })
 
+t.test('tolerate-republish', async t => {
+  const { npm, joinedOutput, registry, logs } = await loadNpmWithRegistry(t, {
+    config: {
+      registry: alternateRegistry,
+      [`${alternateRegistry.slice(6)}/:_authToken`]: 'test-publish-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify(pkgJson, null, 2),
+    },
+    registry: alternateRegistry,
+    authorization: 'test-publish-token',
+    argv: ['--tolerate-republish'],
+  })
+  registry.publish(pkg)
+  await npm.exec('publish', [])
+  t.equal(joinedOutput(), `+ ${pkg}@1.0.0`)
+  t.matchSnapshot(logs.notice)
+})
+
 t.test('foreground-scripts defaults to true', async t => {
   const { outputs, npm, logs, registry } = await loadNpmWithRegistry(t, {
     config: {
