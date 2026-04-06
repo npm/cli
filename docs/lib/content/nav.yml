@@ -162,12 +162,6 @@
   - title: npm shrinkwrap
     url: /commands/npm-shrinkwrap
     description: Lock down dependency versions for publication
-  - title: npm star
-    url: /commands/npm-star
-    description: Mark your favorite packages
-  - title: npm stars
-    url: /commands/npm-stars
-    description: View packages marked as favorites
   - title: npm start
     url: /commands/npm-start
     description: Start a package
@@ -195,9 +189,6 @@
   - title: npm unpublish
     url: /commands/npm-unpublish
     description: Remove a package from the registry
-  - title: npm unstar
-    url: /commands/npm-unstar
-    description: Remove an item from your favorite packages
   - title: npm update
     url: /commands/npm-update
     description: Update packages

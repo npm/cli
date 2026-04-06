@@ -27,9 +27,9 @@ All commands:
     init, install, install-ci-test, install-test, link, ll,
     login, logout, ls, org, outdated, owner, pack, ping, pkg,
     prefix, profile, prune, publish, query, rebuild, repo,
-    restart, root, run, sbom, search, set, shrinkwrap, star,
-    stars, start, stop, team, test, token, trust, undeprecate,
-    uninstall, unpublish, unstar, update, version, view, whoami
+    restart, root, run, sbom, search, set, shrinkwrap, start,
+    stop, team, test, token, trust, undeprecate, uninstall,
+    unpublish, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     {NPM}/{TESTDIR}/home/.npmrc

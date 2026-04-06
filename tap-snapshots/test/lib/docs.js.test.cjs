@@ -146,8 +146,6 @@ Array [
   "search",
   "set",
   "shrinkwrap",
-  "star",
-  "stars",
   "start",
   "stop",
   "team",
@@ -157,7 +155,6 @@ Array [
   "undeprecate",
   "uninstall",
   "unpublish",
-  "unstar",
   "update",
   "version",
   "view",
@@ -5489,62 +5486,6 @@ Note: This command is unaware of workspaces.
 NO PARAMS
 `
 
-exports[`test/lib/docs.js TAP usage star > must match snapshot 1`] = `
-Mark your favorite packages
-
-Usage:
-npm star [<package-spec>...]
-
-Options:
-[--registry <registry>] [--unicode] [--otp <otp>]
-
-  --registry
-    The base URL of the npm registry.
-
-  --unicode
-    When set to true, npm uses unicode characters in the tree output.  When
-
-  --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
-
-
-Run "npm help star" for more info
-
-\`\`\`bash
-npm star [<package-spec>...]
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-#### \`registry\`
-#### \`unicode\`
-#### \`otp\`
-`
-
-exports[`test/lib/docs.js TAP usage stars > must match snapshot 1`] = `
-View packages marked as favorites
-
-Usage:
-npm stars [<user>]
-
-Options:
-[--registry <registry>]
-
-  --registry
-    The base URL of the npm registry.
-
-
-Run "npm help stars" for more info
-
-\`\`\`bash
-npm stars [<user>]
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-#### \`registry\`
-`
-
 exports[`test/lib/docs.js TAP usage start > must match snapshot 1`] = `
 Start a package
 
@@ -5920,38 +5861,6 @@ npm unpublish [<package-spec>]
 #### \`force\`
 #### \`workspace\`
 #### \`workspaces\`
-`
-
-exports[`test/lib/docs.js TAP usage unstar > must match snapshot 1`] = `
-Remove an item from your favorite packages
-
-Usage:
-npm unstar [<package-spec>...]
-
-Options:
-[--registry <registry>] [--unicode] [--otp <otp>]
-
-  --registry
-    The base URL of the npm registry.
-
-  --unicode
-    When set to true, npm uses unicode characters in the tree output.  When
-
-  --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
-
-
-Run "npm help unstar" for more info
-
-\`\`\`bash
-npm unstar [<package-spec>...]
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-#### \`registry\`
-#### \`unicode\`
-#### \`otp\`
 `
 
 exports[`test/lib/docs.js TAP usage update > must match snapshot 1`] = `
