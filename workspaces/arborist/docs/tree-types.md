@@ -10,7 +10,7 @@ Arborist handles three different types of tree:
   `arborist.loadVirtual()`.
 
     This method _may_ be called with an argument
-    specifyig the node to use as the `root` of the tree, like
+    specifying the node to use as the `root` of the tree, like
     `arborist.loadVirtual({ root: nodeObject })`.  If a root is not specified
     then a missing shrinkwrap is treated as a failure.  If a root is not
     specified, then a shrinkwrap file must be present, or the virtual load

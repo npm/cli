@@ -27,7 +27,7 @@ exports[`test/definitions/definition.js TAP basic definition > description of de
 
 a number
 
-This config can not be used with: \`x\`
+This config cannot be used with: \`x\`
 `
 
 exports[`test/definitions/definition.js TAP basic definition > human-readable description 1`] = `

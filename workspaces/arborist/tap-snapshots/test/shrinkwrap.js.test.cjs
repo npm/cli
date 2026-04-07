@@ -390,6 +390,9 @@ Object {
       "funding": Object {
         "url": "https://example.com/",
       },
+      "libc": Array [
+        "glibc",
+      ],
       "os": Array [
         "any",
         "!win32",
@@ -547,6 +550,9 @@ Object {
   "funding": Object {
     "url": "https://example.com/",
   },
+  "libc": Array [
+    "glibc",
+  ],
   "os": Array [
     "any",
     "!win32",
@@ -644,29 +650,6 @@ Object {
       },
     },
     "node_modules/abbrev": Object {
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
-      "name": "abbrev",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "version": "1.1.1",
-    },
-  },
-  "requires": true,
-}
-`
-
-exports[`test/shrinkwrap.js TAP load a hidden lockfile with ideallyInert > must match snapshot 1`] = `
-Object {
-  "dependencies": Object {},
-  "lockfileVersion": 3,
-  "name": "hidden-lockfile",
-  "packages": Object {
-    "": Object {
-      "dependencies": Object {
-        "abbrev": "^1.1.1",
-      },
-    },
-    "node_modules/abbrev": Object {
-      "ideallyInert": true,
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
       "name": "abbrev",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
@@ -2668,81 +2651,6 @@ Object {
 `
 
 exports[`test/shrinkwrap.js TAP loadActual tests selflink > shrinkwrap data 1`] = `
-Object {
-  "lockfileVersion": 3,
-  "name": "selflink",
-  "packages": Object {
-    "": Object {
-      "dependencies": Object {
-        "@scope/x": "",
-        "@scope/y": "",
-        "foo": "",
-      },
-      "name": "selflink",
-      "version": "1.2.3",
-    },
-    "node_modules/@scope/y": Object {
-      "dependencies": Object {
-        "foo": "*",
-      },
-      "version": "1.2.3",
-    },
-    "node_modules/@scope/z": Object {
-      "dependencies": Object {
-        "glob": "4",
-      },
-      "extraneous": true,
-      "version": "1.2.3",
-    },
-    "node_modules/@scope/z/node_modules/glob": Object {
-      "link": true,
-      "resolved": "node_modules/foo/node_modules/glob",
-    },
-    "node_modules/foo": Object {
-      "dependencies": Object {
-        "glob": "4",
-        "selflink": "*",
-      },
-      "version": "1.2.3",
-    },
-    "node_modules/foo/node_modules/glob": Object {
-      "version": "4.0.5",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/graceful-fs": Object {
-      "extraneous": true,
-      "version": "3.0.2",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/inherits": Object {
-      "extraneous": true,
-      "version": "2.0.1",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/minimatch": Object {
-      "extraneous": true,
-      "version": "1.0.0",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/lru-cache": Object {
-      "extraneous": true,
-      "version": "2.5.0",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/sigmund": Object {
-      "extraneous": true,
-      "version": "1.0.0",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/once": Object {
-      "extraneous": true,
-      "version": "1.3.0",
-    },
-    "node_modules/foo/node_modules/selflink": Object {
-      "link": true,
-      "resolved": "",
-    },
-  },
-  "requires": true,
-  "version": "1.2.3",
-}
-`
-
-exports[`test/shrinkwrap.js TAP loadActual tests selflink > shrinkwrap data 2`] = `
 Object {
   "lockfileVersion": 3,
   "name": "selflink",

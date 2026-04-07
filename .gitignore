@@ -5,6 +5,7 @@
 
 !**/.gitignore
 !/.commitlintrc.js
+!/.eslint.config.js
 !/.eslintrc.js
 !/.eslintrc.local.*
 !/.git-blame-ignore-revs

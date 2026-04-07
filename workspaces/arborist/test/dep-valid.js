@@ -9,133 +9,136 @@ const emptyRequestor = {
   edgesOut: new Map(),
 }
 
-t.ok(depValid({}, '', null, emptyRequestor), '* is always ok')
+t.test('basic', t => {
+  t.ok(depValid({}, '', null, emptyRequestor), '* is always ok')
 
-t.ok(depValid({
-  package: {
-    version: '1.2.3',
-  },
-  get version () {
-    return this.package.version
-  },
-}, '1.x', null, emptyRequestor), 'range that is satisfied')
-
-t.ok(depValid({
-  package: {
-    version: '2.2.3',
-  },
-  get version () {
-    return this.package.version
-  },
-}, '1.x', '2.x', emptyRequestor), 'range that is acceptable')
-
-t.ok(depValid({
-  isLink: true,
-  realpath: '/some/path',
-}, normalizePaths(npa('file:/some/path')), null, emptyRequestor), 'links must point at intended target')
-
-t.notOk(depValid({
-  isLink: true,
-  realpath: '/some/other/path',
-}, 'file:/some/path', null, emptyRequestor), 'links must point at intended target')
-
-t.notOk(depValid({
-  realpath: '/some/path',
-}, 'file:/some/path', null, emptyRequestor), 'file:// must be a link')
-
-t.ok(depValid({
-  name: 'foo',
-  resolved: 'git://host/repo#somebranch',
-  package: {
-    version: '1.2.3',
-  },
-  get version () {
-    return this.package.version
-  },
-}, 'git://host/repo#semver:1.x', null, emptyRequestor), 'git url with semver range')
-
-t.ok(depValid({
-  name: 'foo',
-  package: {
-    name: 'bar',
-    version: '1.2.3',
-  },
-  get version () {
-    return this.package.version
-  },
-}, 'npm:bar@1.2.3', null, emptyRequestor), 'alias is ok')
-
-t.ok(depValid({
-  resolved: 'https://registry/abbrev-1.1.1.tgz',
-  package: {},
-  get version () {
-    return this.package.version
-  },
-}, 'https://registry/abbrev-1.1.1.tgz', null, emptyRequestor), 'remote url match')
-
-t.ok(depValid({
-  resolved: 'git+ssh://git@github.com/foo/bar',
-  package: {},
-  get version () {
-    return this.package.version
-  },
-}, 'git+ssh://git@github.com/foo/bar.git', null, emptyRequestor), 'matching _from saveSpec')
-
-t.notOk(depValid({
-  resolved: 'git+ssh://git@github.com/foo/bar',
-  package: {},
-  get version () {
-    return this.package.version
-  },
-}, 'git+ssh://git@github.com/bar/foo.git', null, emptyRequestor), 'different repo')
-
-t.notOk(depValid({
-  package: {},
-  get version () {
-    return this.package.version
-  },
-}, 'git+ssh://git@github.com/bar/foo.git', null, emptyRequestor), 'missing repo')
-
-t.ok(depValid({
-  resolved: `file:${resolve('/path/to/tarball.tgz')}`,
-}, resolve('/path/to/tarball.tgz'), null, emptyRequestor), 'same tarball')
-
-t.notOk(depValid({
-  resolved: 'file:/path/to/other/tarball.tgz',
-}, '/path/to/tarball.tgz', null, emptyRequestor), 'different tarball')
-
-t.notOk(depValid({
-  isLink: true,
-}, '/path/to/tarball.tgz', null, emptyRequestor), 'links are not tarballs')
-
-t.ok(depValid({
-  package: {
-    _requested: {
-      saveSpec: 'file:tarball.tgz',
+  t.ok(depValid({
+    package: {
+      version: '1.2.3',
     },
-  },
-  get version () {
-    return this.package.version
-  },
-}, './tarball.tgz', null, emptyRequestor), 'probably the same-ish, hopefully')
+    get version () {
+      return this.package.version
+    },
+  }, '1.x', null, emptyRequestor), 'range that is satisfied')
 
-t.notOk(depValid({
-  package: {},
-  get version () {
-    return this.package.version
-  },
-}, './tarball.tgz', null, emptyRequestor), 'too uncertain, nope')
+  t.ok(depValid({
+    package: {
+      version: '2.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, '1.x', '2.x', emptyRequestor), 'range that is acceptable')
 
-t.ok(depValid({
-  resolved: 'https://registry.npmjs.org/foo/foo-1.2.3.tgz',
-}, 'latest', null, emptyRequestor), 'tagged registry version needs remote tarball')
+  t.ok(depValid({
+    isLink: true,
+    realpath: '/some/path',
+  }, normalizePaths(npa('file:/some/path')), null, emptyRequestor), 'links must point at intended target')
 
-t.notOk(depValid({
-  resolved: 'git+https://registry.npmjs.org/foo/foo-1.2.3.git',
-}, 'latest', null, emptyRequestor), 'tagged registry version needs remote tarball, not git')
+  t.notOk(depValid({
+    isLink: true,
+    realpath: '/some/other/path',
+  }, 'file:/some/path', null, emptyRequestor), 'links must point at intended target')
 
-t.notOk(depValid({}, 'latest', null, emptyRequestor),
-  'tagged registry version needs remote tarball resolution')
+  t.notOk(depValid({
+    realpath: '/some/path',
+  }, 'file:/some/path', null, emptyRequestor), 'file:// must be a link')
+
+  t.ok(depValid({
+    name: 'foo',
+    resolved: 'git://host/repo#somebranch',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, 'git://host/repo#semver:1.x', null, emptyRequestor), 'git url with semver range')
+
+  t.ok(depValid({
+    name: 'foo',
+    package: {
+      name: 'bar',
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, 'npm:bar@1.2.3', null, emptyRequestor), 'alias is ok')
+
+  t.ok(depValid({
+    resolved: 'https://registry/abbrev-1.1.1.tgz',
+    package: {},
+    get version () {
+      return this.package.version
+    },
+  }, 'https://registry/abbrev-1.1.1.tgz', null, emptyRequestor), 'remote url match')
+
+  t.ok(depValid({
+    resolved: 'git+ssh://git@github.com/foo/bar',
+    package: {},
+    get version () {
+      return this.package.version
+    },
+  }, 'git+ssh://git@github.com/foo/bar.git', null, emptyRequestor), 'matching _from saveSpec')
+
+  t.notOk(depValid({
+    resolved: 'git+ssh://git@github.com/foo/bar',
+    package: {},
+    get version () {
+      return this.package.version
+    },
+  }, 'git+ssh://git@github.com/bar/foo.git', null, emptyRequestor), 'different repo')
+
+  t.notOk(depValid({
+    package: {},
+    get version () {
+      return this.package.version
+    },
+  }, 'git+ssh://git@github.com/bar/foo.git', null, emptyRequestor), 'missing repo')
+
+  t.ok(depValid({
+    resolved: `file:${resolve('/path/to/tarball.tgz')}`,
+  }, resolve('/path/to/tarball.tgz'), null, emptyRequestor), 'same tarball')
+
+  t.notOk(depValid({
+    resolved: 'file:/path/to/other/tarball.tgz',
+  }, '/path/to/tarball.tgz', null, emptyRequestor), 'different tarball')
+
+  t.notOk(depValid({
+    isLink: true,
+  }, '/path/to/tarball.tgz', null, emptyRequestor), 'links are not tarballs')
+
+  t.ok(depValid({
+    package: {
+      _requested: {
+        saveSpec: 'file:tarball.tgz',
+      },
+    },
+    get version () {
+      return this.package.version
+    },
+  }, './tarball.tgz', null, emptyRequestor), 'probably the same-ish, hopefully')
+
+  t.notOk(depValid({
+    package: {},
+    get version () {
+      return this.package.version
+    },
+  }, './tarball.tgz', null, emptyRequestor), 'too uncertain, nope')
+
+  t.ok(depValid({
+    resolved: 'https://registry.npmjs.org/foo/foo-1.2.3.tgz',
+  }, 'latest', null, emptyRequestor), 'tagged registry version needs remote tarball')
+
+  t.notOk(depValid({
+    resolved: 'git+https://registry.npmjs.org/foo/foo-1.2.3.git',
+  }, 'latest', null, emptyRequestor), 'tagged registry version needs remote tarball, not git')
+
+  t.notOk(depValid({}, 'latest', null, emptyRequestor),
+    'tagged registry version needs remote tarball resolution')
+  t.end()
+})
 
 t.test('unsupported dependency type', t => {
   const requestor = { errors: [], edgesOut: new Map() }
@@ -200,5 +203,53 @@ t.test('installLinks does not make workspace nodes invalid', t => {
   }
   const request = normalizePaths(npa('file:/some/path'))
   t.ok(depValid(child, request, null, requestor))
+  t.end()
+})
+
+t.test('sha-1 and sha-256', t => {
+  t.ok(depValid({
+    name: 'foo',
+    resolved: 'npm/repo#0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, 'npm/repo#0d7bd85a85fa2571fa532d2fc842ed099b236ad2', null, emptyRequestor), 'git url with full sha-1 hash match')
+
+  t.notOk(depValid({
+    name: 'foo',
+    resolved: 'npm/repo#0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, 'npm/repo#1d7bd85a85fa2571fa532d2fc842ed099b236ad2', null, emptyRequestor), 'git url with full sha-1 hash mismatch')
+
+  t.ok(depValid({
+    name: 'foo',
+    resolved: 'npm/repo#8e3a9b3579ab330238c06b761e7f1b5dc5b4ac6e5a96da4dd2fb3b7411009df8',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, 'npm/repo#8e3a9b3579ab330238c06b761e7f1b5dc5b4ac6e5a96da4dd2fb3b7411009df8', null, emptyRequestor), 'git url with full sha-256 hash match')
+
+  t.notOk(depValid({
+    name: 'foo',
+    resolved: 'npm/repo#8e3a9b3579ab330238c06b761e7f1b5dc5b4ac6e5a96da4dd2fb3b7411009df8',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, 'npm/repo#9e3a9b3579ab330238c06b761e7f1b5dc5b4ac6e5a96da4dd2fb3b7411009df8', null, emptyRequestor), 'git url with full sha-256 hash mismatch')
+
   t.end()
 })

@@ -4,6 +4,98 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.1): `@npmcli/arborist@9.1.1`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.2): `@npmcli/arborist@9.1.2`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.3): `@npmcli/arborist@9.1.3`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.4): `@npmcli/arborist@9.1.4`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.9): `@npmcli/arborist@9.1.9`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.10): `@npmcli/arborist@9.1.10`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.3.0): `@npmcli/arborist@9.3.0`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.3.1): `@npmcli/arborist@9.3.1`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.1): `@npmcli/arborist@9.4.1`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.2): `@npmcli/arborist@9.4.2`
+
+## [10.2.3](https://github.com/npm/cli/compare/libnpmexec-v10.2.2...libnpmexec-v10.2.3) (2026-02-25)
+### Bug Fixes
+* [`cf88236`](https://github.com/npm/cli/commit/cf8823608afe4229cb05f8b6c29890a6bda64502) [#9008](https://github.com/npm/cli/pull/9008) use @gar/promise-retry instead of promise-retry (@wraithgar)
+### Dependencies
+* [`60f332c`](https://github.com/npm/cli/commit/60f332c9df28e736f510ef8ac1f207175687dcad) [#9008](https://github.com/npm/cli/pull/9008) remove promise-retry
+* [`cb8b9c7`](https://github.com/npm/cli/commit/cb8b9c7a45d81883ada7891f492afbf998574d10) [#9008](https://github.com/npm/cli/pull/9008) add `@gar/promise-retry@1.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.0): `@npmcli/arborist@9.4.0`
+
+## [10.2.0](https://github.com/npm/cli/compare/libnpmexec-v10.1.12...libnpmexec-v10.2.0) (2026-02-04)
+### Features
+* [`f5f6cf7`](https://github.com/npm/cli/commit/f5f6cf7c9fc9315b96eb29c5c7d5ab63ad3a9122) [#8943](https://github.com/npm/cli/pull/8943) config: add --allow-git (@wraithgar)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.2.0): `@npmcli/arborist@9.2.0`
+
+## [10.1.10](https://github.com/npm/cli/compare/libnpmexec-v10.1.9...libnpmexec-v10.1.10) (2025-11-25)
+### Dependencies
+* [`e2ac092`](https://github.com/npm/cli/commit/e2ac092fdab0ccbf3b20abbac7ff1ebb7cda9a88) [#8770](https://github.com/npm/cli/pull/8770) `read@5.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.8): `@npmcli/arborist@9.1.8`
+
+## [10.1.9](https://github.com/npm/cli/compare/libnpmexec-v10.1.8...libnpmexec-v10.1.9) (2025-11-19)
+### Bug Fixes
+* [`3439a89`](https://github.com/npm/cli/commit/3439a89d58a25deac08650da53157595e8b8edfb) [#8733](https://github.com/npm/cli/pull/8733) libnpmexec: fix lock compromise logic (#8733) (@jenseng)
+### Dependencies
+* [`05ac7a7`](https://github.com/npm/cli/commit/05ac7a7ea2a4d258658537a19ba350e07df34fda) [#8723](https://github.com/npm/cli/pull/8723) `proc-log@6.0.0`
+* [`0a74f6d`](https://github.com/npm/cli/commit/0a74f6d1d8643f3a089f6e63502df77e6e3038ff) [#8723](https://github.com/npm/cli/pull/8723) `bin-links@6.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.7): `@npmcli/arborist@9.1.7`
+
+## [10.1.8](https://github.com/npm/cli/compare/libnpmexec-v10.1.7...libnpmexec-v10.1.8) (2025-10-08)
+### Bug Fixes
+* [`d62c5fe`](https://github.com/npm/cli/commit/d62c5fe9a7c6b180019cd4d62e7963f232038ebb) [#8625](https://github.com/npm/cli/pull/8625) spelling in workspaces/libnpmexec (#8625) (@jsoref)
+### Chores
+* [`91393de`](https://github.com/npm/cli/commit/91393deaf71bad084bb1d2aa868d5f895cc5f103) [#8599](https://github.com/npm/cli/pull/8599) Update references for arborist to cli (#8599) (@jsoref)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.6): `@npmcli/arborist@9.1.6`
+
+## [10.1.7](https://github.com/npm/cli/compare/libnpmexec-v10.1.6...libnpmexec-v10.1.7) (2025-09-23)
+### Bug Fixes
+* [`1eedf82`](https://github.com/npm/cli/commit/1eedf82f2a36df193a51dca2c07fdc82dcb18a68) [#8576](https://github.com/npm/cli/pull/8576) use @npmcli/package-json to parse package.json (@wraithgar)
+* [`7949cff`](https://github.com/npm/cli/commit/7949cff04d28e2344461a18ef30bf36fc76a091d) [#8577](https://github.com/npm/cli/pull/8577) libnpmexec: improve withLock stability (#8577) (@jenseng)
+* [`5db81c3`](https://github.com/npm/cli/commit/5db81c350654dbbe2e1442d623efada9a24e04f1) [#8512](https://github.com/npm/cli/pull/8512) allow concurrent non-local npx calls (#8512) (@jenseng, @wraithgar)
+### Dependencies
+* [`bf6b686`](https://github.com/npm/cli/commit/bf6b6862731e03002cc6fa3b86b6f090df46b009) [#8576](https://github.com/npm/cli/pull/8576) `npm-package-arg@13.0.0`
+* [`6b4c5f9`](https://github.com/npm/cli/commit/6b4c5f92865230ed9a260cd3e8486bf3991120eb) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/run-script@10.0.0`
+* [`b6bb9ae`](https://github.com/npm/cli/commit/b6bb9aea4134c47f0593c111a734eda12ec3c20d) [#8576](https://github.com/npm/cli/pull/8576) `pacote@21.0.3`
+* [`ceae674`](https://github.com/npm/cli/commit/ceae674c32a080b81e62d79003c2d537d7ca93d2) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/package-json@7.0.1`
+* [`4f37534`](https://github.com/npm/cli/commit/4f37534300553e9ddfbc413c14d1ef15b02b46f2) [#8576](https://github.com/npm/cli/pull/8576) remove read-package-json-fast
+### Chores
+* [`402a0ab`](https://github.com/npm/cli/commit/402a0ab1b4e5d1a8414dd063d0cbde0c0bc5a192) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/template-oss@4.25.1` (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.5): `@npmcli/arborist@9.1.5`
+
 ## [10.1.2](https://github.com/npm/cli/compare/libnpmexec-v10.1.1...libnpmexec-v10.1.2) (2025-05-15)
 ### Bug Fixes
 * [`fdc3413`](https://github.com/npm/cli/commit/fdc3413019c2f34f1fde35449e5f3a6b0fb51ba2) [#8221](https://github.com/npm/cli/pull/8221) exec: Fails to Execute Binaries Named After Shell Keywords (#8221) (@13sfaith)

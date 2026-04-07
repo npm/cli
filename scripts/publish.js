@@ -150,7 +150,7 @@ const main = async (opts) => {
 
   if (smokePublish) {
     // when we have a smoke test run we'd want to bump the version or else npm will throw an error even with dry-run
-    // this is the equivlent of running `npm version prerelease`, but ensureing all internally used workflows are bumped
+    // this is the equivalent of running `npm version prerelease`, but ensuring all internally used workflows are bumped
     for (const publish of publishes) {
       const { version } = await publish.updatePkg((pkg) => ({ ...pkg, version: `${pkg.version}-smoke.0` }))
       for (const ipublish of publishes) {

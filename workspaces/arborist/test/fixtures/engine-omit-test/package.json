@@ -1,0 +1,7 @@
+{
+  "name": "engine-omit-test",
+  "version": "1.0.0",
+  "devDependencies": {
+    "strict-engine-dev": "1.0.0"
+  }
+}

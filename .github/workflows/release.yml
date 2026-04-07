@@ -140,7 +140,7 @@ jobs:
       - name: Run Post Pull Request Actions
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node . run rp-pull-request --ignore-scripts -ws -iwr --if-present -- --pr="${{ needs.release.outputs.pr-number }}" --commentId="${{ needs.release.outputs.comment-id }}"
+        run: node . run rp-pull-request --ignore-scripts --workspaces --include-workspace-root --if-present -- --pr="${{ needs.release.outputs.pr-number }}" --commentId="${{ needs.release.outputs.comment-id }}"
       - name: Commit
         id: commit
         env:

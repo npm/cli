@@ -259,6 +259,7 @@ ArboristNode {
           "type": "peerOptional",
         },
       },
+      "extraneous": true,
       "location": "node_modules/semver",
       "name": "semver",
       "optional": true,
@@ -13345,12 +13346,6 @@ ArboristNode {
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "version": "1.1.1",
     },
-    "acorn-jsx" => ArboristNode {
-      "location": "node_modules/acorn-jsx",
-      "name": "acorn-jsx",
-      "path": "{CWD}/test/fixtures/install-types/node_modules/acorn-jsx",
-      "version": "5.3.1",
-    },
     "balanced-match" => ArboristNode {
       "edgesIn": Set {
         EdgeIn {
@@ -14040,12 +14035,6 @@ ArboristNode {
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "version": "1.1.1",
     },
-    "acorn-jsx" => ArboristNode {
-      "location": "node_modules/acorn-jsx",
-      "name": "acorn-jsx",
-      "path": "{CWD}/test/fixtures/install-types/node_modules/acorn-jsx",
-      "version": "5.3.1",
-    },
     "balanced-match" => ArboristNode {
       "edgesIn": Set {
         EdgeIn {
@@ -14734,12 +14723,6 @@ ArboristNode {
       "path": "{CWD}/test/arborist/tap-testdir-load-virtual-load-from-npm-shrinkwrap.json/node_modules/abbrev",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "version": "1.1.1",
-    },
-    "acorn-jsx" => ArboristNode {
-      "location": "node_modules/acorn-jsx",
-      "name": "acorn-jsx",
-      "path": "{CWD}/test/arborist/tap-testdir-load-virtual-load-from-npm-shrinkwrap.json/node_modules/acorn-jsx",
-      "version": "5.3.1",
     },
     "balanced-match" => ArboristNode {
       "edgesIn": Set {

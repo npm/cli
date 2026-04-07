@@ -141,9 +141,9 @@ workspaces will try to install deps from registry if no satisfying semver versio
 
 ### Build Ideal Tree
 
-1. Read list of "workpaces" from `package.json`
+1. Read list of "workspaces" from `package.json`
 2. Turn globs into actual locations, retrieve the final list of workspaces paths
-3. Arborist needs to be made aware of the list of worskpaces paths
+3. Arborist needs to be made aware of the list of workspaces paths
   1. Workspace info parsed (steps 1 and 2) needs to be attached before build ideal tree
   2. On building ideal tree, checks against existing workspaces to append them as child nodes
   3. Edge needs to support a `workspace` type
@@ -156,7 +156,7 @@ NOTE:
 
 ### Load Virtual
 
-1. How to figure out all the structure of workspaces form a pakcage-lock
+1. How to figure out all the structure of workspaces form a package-lock
   1. How it gets saved?
   2. How to build the virtual tree out of reading package-lock
 2. maybe support a subset of glob? we need to optimize mapWorkspace regardless
@@ -168,7 +168,7 @@ NOTE:
 
 ### Reify
 
-1. Correctly symlink workspaces to its dependants `node_modules`
+1. Correctly symlink workspaces to its dependents `node_modules`
 
 ## Open Ended Questions
 

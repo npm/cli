@@ -162,14 +162,6 @@ t.test('cwd is default root', t => {
     t.matchSnapshot(tree, 'loaded tree'))
 })
 
-t.test('shake out Link target timing issue', t => {
-  process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ = '1'
-  t.teardown(() => process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ = '')
-  const dir = resolve(fixtures, 'selflink')
-  return loadActual(dir).then(tree =>
-    t.matchSnapshot(tree, 'loaded tree'))
-})
-
 t.test('broken json', async t => {
   const d = await loadActual(resolve(fixtures, 'bad'))
   t.ok(d.errors.length, 'Got an error object')
@@ -311,7 +303,7 @@ t.test('transplant workspace targets, even if links not present', async t => {
   }), 'do not transplant node named "a"')
 })
 
-t.test('load workspaces when loading from hidding lockfile', async t => {
+t.test('load workspaces when loading from hidden lockfile', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       workspaces: ['packages/*'],
@@ -460,7 +452,7 @@ t.test('no edge errors for nested deps', async t => {
     },
   })
 
-  // disable treeCheck since it prevents the original issue from occuring
+  // disable treeCheck since it prevents the original issue from occurring
   const ArboristNoTreeCheck = t.mock('../../lib/arborist', {
     '../../lib/tree-check.js': tree => tree,
   })

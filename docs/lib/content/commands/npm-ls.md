@@ -10,17 +10,13 @@ description: List installed packages
 
 ### Description
 
-This command will print to stdout all the versions of packages that are
-installed, as well as their dependencies when `--all` is specified, in a
-tree structure.
+This command will print to stdout all the versions of packages that are installed, as well as their dependencies when `--all` is specified, in a tree structure.
 
-Note: to get a "bottoms up" view of why a given package is included in the
-tree at all, use [`npm explain`](/commands/npm-explain).
+Note: to get a "bottoms up" view of why a given package is included in the tree at all, use [`npm explain`](/commands/npm-explain).
 
-Positional arguments are `name@version-range` identifiers, which will limit
-the results to only the paths to the packages named.  Note that nested
-packages will *also* show the paths to the specified packages.  For
-example, running `npm ls promzard` in npm's source tree will show:
+Positional arguments are `name@version-range` identifiers, which will limit the results to only the paths to the packages named.
+Note that nested packages will *also* show the paths to the specified packages.
+For example, running `npm ls promzard` in npm's source tree will show:
 
 ```bash
 npm@@VERSION@ /path/to/npm
@@ -30,12 +26,9 @@ npm@@VERSION@ /path/to/npm
 
 It will print out extraneous, missing, and invalid packages.
 
-If a project specifies git urls for dependencies these are shown
-in parentheses after the `name@version` to make it easier for users to
-recognize potential forks of a project.
+If a project specifies git urls for dependencies these are shown in parentheses after the `name@version` to make it easier for users to recognize potential forks of a project.
 
-The tree shown is the logical dependency tree, based on package
-dependencies, not the physical layout of your `node_modules` folder.
+The tree shown is the logical dependency tree, based on package dependencies, not the physical layout of your `node_modules` folder.
 
 When run as `ll` or `la`, it shows extended information by default.
 

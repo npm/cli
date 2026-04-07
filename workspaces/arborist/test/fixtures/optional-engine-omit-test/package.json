@@ -1,0 +1,7 @@
+{
+  "name": "optional-engine-omit-test",
+  "version": "1.0.0",
+  "optionalDependencies": {
+    "strict-engine-optional": "1.0.0"
+  }
+}

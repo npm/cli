@@ -5,7 +5,7 @@ around.
 
 They're untested (or, in some sense, some of them _are_ tests, albeit ad
 hoc ones for use when figuring out what a thing should even be), and really
-moroe like spikes or examples than anything dependable or useful.
+more like spikes or examples than anything dependable or useful.
 
 At some point it would be good to gather up some of this and turn it into a
 proper `arb` executable.

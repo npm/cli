@@ -378,56 +378,256 @@ t.test('constructor', async (t) => {
     t.ok(!OverrideSet.doOverrideSetsConflict(overrides5, overrides5), 'override sets are the same object')
     t.ok(!OverrideSet.doOverrideSetsConflict(overrides5, overrides6), 'one override set is the specific version of the other')
     t.ok(!OverrideSet.doOverrideSetsConflict(overrides6, overrides5), 'one override set is the specific version of the other')
-    t.ok(OverrideSet.doOverrideSetsConflict(overrides5, overrides7), 'no override set is the specific version of the other')
-    t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides5), 'no override set is the specific version of the other')
+    // With semantic conflict detection, overrides5 and overrides7 don't conflict because
+    // they have the same value for 'bat' (2.0.0). Structurally they're incomparable,
+    // but semantically they're compatible.
+    t.ok(!OverrideSet.doOverrideSetsConflict(overrides5, overrides7), 'structurally incomparable but semantically compatible')
+    t.ok(!OverrideSet.doOverrideSetsConflict(overrides7, overrides5), 'structurally incomparable but semantically compatible')
     t.ok(!overrides7.isEqual(overrides8), 'two override sets that differ in the version are not equal')
     t.ok(!overrides8.isEqual(overrides9), 'two override sets that differ in the range are not equal')
     t.ok(!overrides7.isEqual(overrides9), 'two override sets that differ in both version and range are not equal')
-    t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides8), 'override sets are incomparable due to version')
-    t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides9), 'override sets are incomparable due to version and range')
-    t.ok(OverrideSet.doOverrideSetsConflict(overrides8, overrides9), 'override sets are incomparable due to range')
+    // overrides7 (bat: 2.0.0) and overrides8 (bat: 1.2.0) have conflicting versions for the same package
+    t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides8), 'override sets have conflicting versions for bat')
+    // overrides7 (bat: 2.0.0) and overrides9 (bat@3.0.0: 1.2.0) don't directly conflict because
+    // overrides9 only applies to bat@3.x, not bat@2.x
+    t.ok(!OverrideSet.doOverrideSetsConflict(overrides7, overrides9), 'override sets apply to different version ranges')
+    // overrides8 (bat: 1.2.0) and overrides9 (bat@3.0.0: 1.2.0) have same target version
+    t.ok(!OverrideSet.doOverrideSetsConflict(overrides8, overrides9), 'override sets have compatible target versions')
+  })
+
+  t.test('semantic conflict detection (haveConflictingRules)', async (t) => {
+    t.test('no conflict when packages are different', async (t) => {
+      const overrides1 = new OverrideSet({
+        overrides: {
+          foo: '1.0.0',
+        },
+      })
+      const overrides2 = new OverrideSet({
+        overrides: {
+          bar: '1.0.0',
+        },
+      })
+      t.ok(!OverrideSet.haveConflictingRules(overrides1, overrides2), 'different packages should not conflict')
+    })
+
+    t.test('no conflict when version ranges intersect', async (t) => {
+      const overrides1 = new OverrideSet({
+        overrides: {
+          lodash: '^4.0.0',
+        },
+      })
+      const overrides2 = new OverrideSet({
+        overrides: {
+          lodash: '4.17.0',
+        },
+      })
+      t.ok(!OverrideSet.haveConflictingRules(overrides1, overrides2), 'intersecting ranges should not conflict')
+    })
+
+    t.test('conflict when version ranges do not intersect', async (t) => {
+      const overrides1 = new OverrideSet({
+        overrides: {
+          lodash: '1.x',
+        },
+      })
+      const overrides2 = new OverrideSet({
+        overrides: {
+          lodash: '4.x',
+        },
+      })
+      t.ok(OverrideSet.haveConflictingRules(overrides1, overrides2), 'non-intersecting ranges should conflict')
+    })
+
+    t.test('no conflict when using reference overrides', async (t) => {
+      const overrides1 = new OverrideSet({
+        overrides: {
+          lodash: '$ref1',
+        },
+      })
+      const overrides2 = new OverrideSet({
+        overrides: {
+          lodash: '$ref2',
+        },
+      })
+      t.ok(!OverrideSet.haveConflictingRules(overrides1, overrides2), 'reference overrides should not conflict')
+    })
+
+    t.test('no conflict when one is a reference override', async (t) => {
+      const overrides1 = new OverrideSet({
+        overrides: {
+          lodash: '$ref1',
+        },
+      })
+      const overrides2 = new OverrideSet({
+        overrides: {
+          lodash: '4.17.21',
+        },
+      })
+      t.ok(!OverrideSet.haveConflictingRules(overrides1, overrides2), 'reference override with version should not conflict')
+    })
+
+    t.test('no conflict when rules are equal', async (t) => {
+      const overrides1 = new OverrideSet({
+        overrides: {
+          lodash: '4.17.21',
+        },
+      })
+      const overrides2 = new OverrideSet({
+        overrides: {
+          lodash: '4.17.21',
+        },
+      })
+      t.ok(!OverrideSet.haveConflictingRules(overrides1, overrides2), 'equal rules should not conflict')
+    })
+
+    t.test('handles non-semver spec types gracefully', async (t) => {
+      const overrides1 = new OverrideSet({
+        overrides: {
+          foo: 'github:user/repo',
+        },
+      })
+      const overrides2 = new OverrideSet({
+        overrides: {
+          foo: 'file:./local',
+        },
+      })
+      // Non-semver types should not be considered conflicting
+      t.ok(!OverrideSet.haveConflictingRules(overrides1, overrides2), 'non-semver specs should not conflict')
+    })
+
+    t.test('regression test for issue #8688 - Vaadin case', async (t) => {
+      const overridesComponents = new OverrideSet({
+        overrides: {
+          '@vaadin/react-components': '24.9.2',
+        },
+      })
+      const overridesComponentsPro = new OverrideSet({
+        overrides: {
+          '@vaadin/react-components-pro': '24.9.2',
+        },
+      })
+      t.ok(!OverrideSet.doOverrideSetsConflict(overridesComponents, overridesComponentsPro), 'Vaadin components should not conflict')
+    })
   })
 })
 
-t.test('coverage for final line in isEqual (parent != null)', async t => {
-  // Both parents have the SAME config -> parent.isEqual(...) will return TRUE
-  const parentA = new OverrideSet({ overrides: { foo: '1.0.0' } })
-  const parentB = new OverrideSet({ overrides: { foo: '1.0.0' } })
-
-  // Child override sets with the same parent config => should be equal
-  const childA = new OverrideSet({
-    overrides: { bar: '2.0.0' },
-    key: 'bar',
-    parent: parentA,
-  })
-  const childB = new OverrideSet({
-    overrides: { bar: '2.0.0' },
-    key: 'bar',
-    parent: parentB,
+t.test('findSpecificOverrideSet returns common ancestor for compatible siblings', async (t) => {
+  // Regression test for https://github.com/npm/cli/issues/9109
+  // When two top-level overrides (e.g. react + react-dom) share a transitive dep (e.g. loose-envify), the dep's node gets override sets from both siblings. findSpecificOverrideSet must return their common ancestor instead of undefined.
+  const root = new OverrideSet({
+    overrides: {
+      react: '18.3.1',
+      'react-dom': '18.3.1',
+    },
   })
 
-  // This specifically covers the code path where parent != null
-  // AND parent.isEqual(...) returns true
-  t.ok(childA.isEqual(childB), 'two children with equivalent parents are equal')
+  const reactChild = root.children.get('react')
+  const reactDomChild = root.children.get('react-dom')
 
-  // Different parent configs -> parent.isEqual(...) will return FALSE
-  const parentC = new OverrideSet({ overrides: { foo: '1.0.0' } })
-  const parentD = new OverrideSet({ overrides: { foo: '1.0.1' } })
+  t.ok(reactChild, 'react child exists')
+  t.ok(reactDomChild, 'react-dom child exists')
 
-  const childC = new OverrideSet({
-    overrides: { bar: '2.0.0' },
-    key: 'bar',
-    parent: parentC,
+  // These are siblings - neither is an ancestor of the other
+  const result = OverrideSet.findSpecificOverrideSet(reactChild, reactDomChild)
+  t.ok(result, 'findSpecificOverrideSet should not return undefined for compatible siblings')
+  t.ok(result.isEqual(root), 'should return the common ancestor (root)')
+
+  const reverse = OverrideSet.findSpecificOverrideSet(reactDomChild, reactChild)
+  t.ok(reverse, 'reverse order should also return a result')
+  t.ok(reverse.isEqual(root), 'reverse order should also return the root')
+})
+
+t.test('findCommonAncestor', async (t) => {
+  const root = new OverrideSet({
+    overrides: {
+      foo: '1.0.0',
+      bar: '2.0.0',
+    },
   })
-  const childD = new OverrideSet({
-    overrides: { bar: '2.0.0' },
-    key: 'bar',
-    parent: parentD,
+
+  const fooChild = root.children.get('foo')
+  const barChild = root.children.get('bar')
+
+  const ancestor = OverrideSet.findCommonAncestor(fooChild, barChild)
+  t.ok(ancestor, 'should find a common ancestor')
+  t.ok(ancestor.isEqual(root), 'common ancestor should be the root')
+
+  // Two unrelated roots have no common ancestor
+  const other = new OverrideSet({ overrides: { baz: '3.0.0' } })
+  const noAncestor = OverrideSet.findCommonAncestor(fooChild, other)
+  t.equal(noAncestor, null, 'unrelated sets have no common ancestor')
+})
+
+t.test('findSpecificOverrideSet returns undefined for truly conflicting siblings', async (t) => {
+  // Siblings with conflicting rules should still return undefined
+  const root = new OverrideSet({
+    overrides: {
+      foo: {
+        '.': '1.0.0',
+        shared: '1.0.0',
+      },
+      bar: {
+        '.': '2.0.0',
+        shared: '99.0.0',
+      },
+    },
   })
 
-  // This specifically covers the code path where parent != null
-  // AND parent.isEqual(...) returns false
-  t.notOk(childC.isEqual(childD), 'two children with different parents are not equal')
+  const fooChild = root.children.get('foo')
+  const barChild = root.children.get('bar')
 
-  t.end()
+  t.ok(fooChild, 'foo child exists')
+  t.ok(barChild, 'bar child exists')
+
+  const result = OverrideSet.findSpecificOverrideSet(fooChild, barChild)
+  t.equal(result, undefined, 'truly conflicting siblings should return undefined')
+})
+
+t.test('coverage for isEqual edge cases', async t => {
+  t.test('isEqual with null/undefined other', async t => {
+    const overrides = new OverrideSet({ overrides: { foo: '1.0.0' } })
+    t.ok(!overrides.isEqual(null), 'override set is not equal to null')
+    t.ok(!overrides.isEqual(undefined), 'override set is not equal to undefined')
+  })
+
+  t.test('isEqual when parent != null', async t => {
+    // Both parents have the SAME config -> parent.isEqual(...) will return TRUE
+    const parentA = new OverrideSet({ overrides: { foo: '1.0.0' } })
+    const parentB = new OverrideSet({ overrides: { foo: '1.0.0' } })
+
+    // Child override sets with the same parent config => should be equal
+    const childA = new OverrideSet({
+      overrides: { bar: '2.0.0' },
+      key: 'bar',
+      parent: parentA,
+    })
+    const childB = new OverrideSet({
+      overrides: { bar: '2.0.0' },
+      key: 'bar',
+      parent: parentB,
+    })
+
+    // This specifically covers the code path where parent != null
+    // AND parent.isEqual(...) returns true
+    t.ok(childA.isEqual(childB), 'two children with equivalent parents are equal')
+
+    // Different parent configs -> parent.isEqual(...) will return FALSE
+    const parentC = new OverrideSet({ overrides: { foo: '1.0.0' } })
+    const parentD = new OverrideSet({ overrides: { foo: '1.0.1' } })
+
+    const childC = new OverrideSet({
+      overrides: { bar: '2.0.0' },
+      key: 'bar',
+      parent: parentC,
+    })
+    const childD = new OverrideSet({
+      overrides: { bar: '2.0.0' },
+      key: 'bar',
+      parent: parentD,
+    })
+
+    // This specifically covers the code path where parent != null
+    // AND parent.isEqual(...) returns false
+    t.notOk(childC.isEqual(childD), 'two children with different parents are not equal')
+  })
 })

@@ -1,62 +1,60 @@
 ---
-title: config
+title: Config
 section: 7
-description: More than you probably want to know about npm configuration
+description: About npm configuration
 ---
 
 ### Description
 
-This article details npm configuration in general. To learn about the `config` command, 
-see [`npm config`](/commands/npm-config).
+This article details npm configuration in general.
+To learn about the `config` command, see [`npm config`](/commands/npm-config).
 
 npm gets its configuration values from the following sources, sorted by priority:
 
 #### Command Line Flags
 
-Putting `--foo bar` on the command line sets the `foo` configuration
-parameter to `"bar"`.  A `--` argument tells the cli parser to stop
-reading flags.  Using `--flag` without specifying any value will set
-the value to `true`.
+Putting `--foo bar` on the command line sets the `foo` configuration parameter to `"bar"`.
+A `--` argument tells the cli parser to stop reading flags.
+Using `--flag` without specifying any value will set the value to `true`.
 
-Example: `--flag1 --flag2` will set both configuration parameters
-to `true`, while `--flag1 --flag2 bar` will set `flag1` to `true`,
-and `flag2` to `bar`.  Finally, `--flag1 --flag2 -- bar` will set
-both configuration parameters to `true`, and the `bar` is taken
-as a command argument.
+Example: `--flag1 --flag2` will set both configuration parameters to `true`, while `--flag1 --flag2 bar` will set `flag1` to `true`, and `flag2` to `bar`.
+Finally, `--flag1 --flag2 -- bar` will set both configuration parameters to `true`, and the `bar` is taken as a command argument.
+
+**Common examples:**
+
+* `npm install --prefix /path/to/dir` - Runs npm commands in a different directory without changing the current working directory
+* `npm install --global` - Installs packages globally (shorthand: `-g`)
+* `npm install --save-dev` - Saves to devDependencies (shorthand: `-D`)
+
+Any configuration option documented in the [Config Settings](#config-settings) section below can be set via command line flags using `--option-name value` syntax.
 
 #### Environment Variables
 
-Any environment variables that start with `npm_config_` will be
-interpreted as a configuration parameter.  For example, putting
-`npm_config_foo=bar` in your environment will set the `foo`
-configuration parameter to `bar`.  Any environment configurations that
-are not given a value will be given the value of `true`.  Config
-values are case-insensitive, so `NPM_CONFIG_FOO=bar` will work the
-same. However, please note that inside [`scripts`](/using-npm/scripts)
-npm will set its own environment variables and Node will prefer
-those lowercase versions over any uppercase ones that you might set.
+Any environment variables that start with `npm_config_` will be interpreted as a configuration parameter.
+For example, putting `npm_config_foo=bar` in your environment will set the `foo` configuration parameter to `bar`.
+Any environment configurations that are not given a value will be given the value of `true`.
+Config values are case-insensitive, so `NPM_CONFIG_FOO=bar` will work the same.
+However, please note that inside [`scripts`](/using-npm/scripts) npm will set its own environment variables and Node will prefer those lowercase versions over any uppercase ones that you might set.
 For details see [this issue](https://github.com/npm/npm/issues/14528).
 
-Notice that you need to use underscores instead of dashes, so `--allow-same-version`
-would become `npm_config_allow_same_version=true`.
+Notice that you need to use underscores instead of dashes, so `--allow-same-version` would become `npm_config_allow_same_version=true`.
+
+**Important:** When defining custom configuration keys in `.npmrc` files, use hyphens instead of underscores (e.g., `custom-key=value`). This ensures they can be overridden by environment variables, since npm automatically converts underscores to hyphens when reading environment variables. Keys with underscores in `.npmrc` files cannot be overridden via environment variables.
 
 #### npmrc Files
 
 The four relevant files are:
 
 * per-project configuration file (`/path/to/my/project/.npmrc`)
-* per-user configuration file (defaults to `$HOME/.npmrc`; configurable via CLI
-  option `--userconfig` or environment variable `$NPM_CONFIG_USERCONFIG`)
-* global configuration file (defaults to `$PREFIX/etc/npmrc`; configurable via
-  CLI option `--globalconfig` or environment variable `$NPM_CONFIG_GLOBALCONFIG`)
+* per-user configuration file (defaults to `$HOME/.npmrc`; configurable via CLI option `--userconfig` or environment variable `$NPM_CONFIG_USERCONFIG`)
+* global configuration file (defaults to `$PREFIX/etc/npmrc`; configurable via CLI option `--globalconfig` or environment variable `$NPM_CONFIG_GLOBALCONFIG`)
 * npm's built-in configuration file (`/path/to/npm/npmrc`)
 
 See [npmrc](/configuring-npm/npmrc) for more details.
 
 #### Default Configs
 
-Run `npm config ls -l` to see a set of configuration parameters that are
-internal to npm, and are defaults if nothing else is specified.
+Run `npm config ls -l` to see a set of configuration parameters that are internal to npm, and are defaults if nothing else is specified.
 
 ### Shorthands and Other CLI Niceties
 
@@ -64,9 +62,8 @@ The following shorthands are parsed on the command-line:
 
 <!-- AUTOGENERATED CONFIG SHORTHANDS -->
 
-If the specified configuration param resolves unambiguously to a known
-configuration parameter, then it is expanded to that configuration
-parameter.  For example:
+If the specified configuration param resolves unambiguously to a known configuration parameter, then it is expanded to that configuration parameter.
+For example:
 
 ```bash
 npm ls --par
@@ -74,10 +71,8 @@ npm ls --par
 npm ls --parseable
 ```
 
-If multiple single-character shorthands are strung together, and the
-resulting combination is unambiguously not some other configuration
-param, then it is expanded to its various component pieces.  For
-example:
+If multiple single-character shorthands are strung together, and the resulting combination is unambiguously not some other configuration param, then it is expanded to its various component pieces.
+For example:
 
 ```bash
 npm ls -gpld

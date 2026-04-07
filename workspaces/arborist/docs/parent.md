@@ -18,7 +18,7 @@ consistent.
 ## parent
 
 If a package is located in a `node_modules` folder, then its `parent`
-represents the the package that contains that `node_modules` folder.
+represents the package that contains that `node_modules` folder.
 
 For example:
 
@@ -32,7 +32,7 @@ In this tree, `x` is `y`'s parent.
 
 `y` can resolve its dependents either within its own `node_modules` folder
 (ie, it's `children` nodes), or its parent's `node_modules` folder (ie,
-it's parent's `children`), or its parent's parent's, and so on up the tree.
+its parent's `children`), or its parent's parent's, and so on up the tree.
 
 Setting `node.parent` to another Node object will move it into that
 location in the tree, automatically adding it to `parent.children`,

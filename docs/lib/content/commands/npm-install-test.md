@@ -10,8 +10,8 @@ description: Install package(s) and run tests
 
 ### Description
 
-This command runs an `npm install` followed immediately by an `npm test`. It
-takes exactly the same arguments as `npm install`.
+This command runs an `npm install` followed immediately by an `npm test`.
+It takes exactly the same arguments as `npm install`.
 
 ### Configuration
 

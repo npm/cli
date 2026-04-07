@@ -197,7 +197,7 @@ a
 ```
 
 This actually means that we move each unchanging node's _contents_ (other
-than `node_mdules`) into the new location.  (Maybe we ought to _only_ ever
+than `node_modules`) into the new location.  (Maybe we ought to _only_ ever
 move files, not directories?)
 
 Fail: move unchanging nodes back to retired tree, fail step 2

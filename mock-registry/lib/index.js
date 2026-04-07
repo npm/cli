@@ -80,7 +80,11 @@ class MockRegistry {
         // XXX: this is opt-in currently because it breaks some existing CLI
         // tests. We should work towards making this the default for all tests.
         t.comment(logReq(req, 'interceptors', 'socket', 'response', '_events'))
-        t.fail(`Unmatched request: ${req.method} ${req.path}`)
+        const protocol = req?.options?.protocol || 'http:'
+        const hostname = req?.options?.hostname || req?.hostname || 'localhost'
+        const p = req?.path || '/'
+        const url = new URL(p, `${protocol}//${hostname}`).toString()
+        t.fail(`Unmatched request: ${req.method} ${url}`)
       }
     }
 
@@ -280,7 +284,7 @@ class MockRegistry {
 
   weblogin ({ token = 'npm_default-test-token' }) {
     const doneUrl = new URL('/npm-cli-test/done', this.origin).href
-    const loginUrl = new URL('/npm-cli-test/login', this.origin).href
+    const loginUrl = new URL('/npm-cli-test/login/cli/00000000-0000-0000-0000-000000000000', this.origin).href
     this.nock = this.nock
       .post(this.fullPath('/-/v1/login'), () => {
         return true
@@ -359,7 +363,7 @@ class MockRegistry {
   }
 
   publish (name, {
-    packageJson, access, noGet, noPut, putCode, manifest, packuments,
+    packageJson, access, noGet, noPut, putCode, manifest, packuments, token,
   } = {}) {
     if (!noGet) {
       // this getPackage call is used to get the latest semver version before publish
@@ -373,7 +377,7 @@ class MockRegistry {
       }
     }
     if (!noPut) {
-      this.putPackage(name, { code: putCode, packageJson, access })
+      this.putPackage(name, { code: putCode, packageJson, access, token })
     }
   }
 
@@ -391,10 +395,14 @@ class MockRegistry {
     this.nock = nock
   }
 
-  putPackage (name, { code = 200, resp = {}, ...putPackagePayload }) {
-    this.nock.put(`/${npa(name).escapedName}`, body => {
+  putPackage (name, { code = 200, resp = {}, token, ...putPackagePayload }) {
+    let n = this.nock.put(`/${npa(name).escapedName}`, body => {
       return this.#tap.match(body, this.putPackagePayload({ name, ...putPackagePayload }))
-    }).reply(code, resp)
+    })
+    if (token) {
+      n = n.matchHeader('authorization', `Bearer ${token}`)
+    }
+    n.reply(code, resp)
   }
 
   putPackagePayload (opts) {
@@ -434,7 +442,7 @@ class MockRegistry {
   }
 
   getTokens (tokens) {
-    return this.nock.get('/-/npm/v1/tokens')
+    return this.nock.get(this.fullPath('/-/npm/v1/tokens'))
       .reply(200, {
         objects: tokens,
         urls: {},
@@ -443,19 +451,26 @@ class MockRegistry {
       })
   }
 
-  createToken ({ password, readonly = false, cidr = [] }) {
-    return this.nock.post('/-/npm/v1/tokens', {
-      password,
-      readonly,
-      cidr_whitelist: cidr,
-    }).reply(200, {
-      key: 'n3wk3y',
-      token: 'n3wt0k3n',
-      created: new Date(),
-      updated: new Date(),
-      readonly,
-      cidr_whitelist: cidr,
-    })
+  // The server has rules for what resultData correlates with what tokenData but we don't need to be 100% in sync with that, we just need to be able to pass all of the possible tokenData attributes, and be able to accept all of the possible resultData attributes
+  createToken (tokenData, resultData = {}) {
+    return this.nock.post(this.fullPath('/-/npm/v1/tokens'), tokenData)
+      .reply(201, {
+        id: `0xdeadbeef`,
+        key: 'n3wk3y',
+        token: 'n3wt0k3n',
+        created: new Date(),
+        updated: new Date(),
+        access: 'read-only',
+        name: tokenData.name,
+        password: tokenData.password,
+        ...resultData,
+      })
+  }
+
+  revokeToken (token) {
+    return this.nock.delete(
+      this.fullPath(`/-/npm/v1/tokens/token/${token}`)
+    ).reply(200)
   }
 
   async package ({ manifest, times = 1, query, tarballs }) {
@@ -584,7 +599,7 @@ class MockRegistry {
   }
 
   /**
-   * this is a simpler convience method for creating mockable registry with
+   * this is a simpler convenience method for creating mockable registry with
    * tarballs for specific versions
    */
   async setup (packages) {
@@ -625,6 +640,33 @@ class MockRegistry {
         })
       }
     }
+  }
+
+  mockOidcTokenExchange ({ packageName, idToken, statusCode = 200, body } = {}) {
+    const encodedPackageName = npa(packageName).escapedName
+    this.nock.post(this.fullPath(`/-/npm/v1/oidc/token/exchange/package/${encodedPackageName}`))
+      .matchHeader('authorization', `Bearer ${idToken}`)
+      .reply(statusCode, body || {})
+  }
+
+  // Trust API methods
+  trustList ({ packageName, responseCode = 200, body = [] }) {
+    const spec = npa(packageName)
+    this.nock = this.nock.get(this.fullPath(`/-/package/${spec.escapedName}/trust`))
+      .reply(responseCode, body)
+  }
+
+  trustCreate ({ packageName, responseCode = 200, body = { ok: true } }) {
+    const spec = npa(packageName)
+    this.nock = this.nock.post(this.fullPath(`/-/package/${spec.escapedName}/trust`))
+      .reply(responseCode, body)
+  }
+
+  trustRevoke ({ packageName, id, responseCode = 200, body = { ok: true } }) {
+    const spec = npa(packageName)
+    const encodedId = encodeURIComponent(id)
+    this.nock = this.nock.delete(this.fullPath(`/-/package/${spec.escapedName}/trust/${encodedId}`))
+      .reply(responseCode, body)
   }
 }
 

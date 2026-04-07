@@ -1,0 +1,7 @@
+{
+  "name": "peer-engine-omit-test",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "strict-engine-peer": "1.0.0"
+  }
+}

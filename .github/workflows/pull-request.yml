@@ -10,6 +10,9 @@ on:
       - edited
       - synchronize
 
+permissions:
+  contents: read
+
 jobs:
   commitlint:
     name: Lint Commits

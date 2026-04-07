@@ -129,7 +129,7 @@ if (hiddenLocks.length) {
   }
 }
 
-writeFileSync(outFile, `// generated from ${rel}
+writeFileSync(outFile, `// generated from ${rel.replaceAll('\\', '/')}
 module.exports = t => {
   const path = ${output}
   return path

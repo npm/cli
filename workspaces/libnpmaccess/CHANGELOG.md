@@ -1,5 +1,20 @@
 # Changelog
 
+## [10.0.3](https://github.com/npm/cli/compare/libnpmaccess-v10.0.2...libnpmaccess-v10.0.3) (2025-10-08)
+### Bug Fixes
+* [`f367507`](https://github.com/npm/cli/commit/f367507b2a8156c00687426034d0a76188e90b4c) [#8624](https://github.com/npm/cli/pull/8624) spelling (#8624) (@jsoref)
+### Chores
+* [`7f1c3a3`](https://github.com/npm/cli/commit/7f1c3a37316b42e652b61ea4919e40305c8de06f) [#8606](https://github.com/npm/cli/pull/8606) fix spelling - permissions (#8606) (@jsoref)
+
+## [10.0.2](https://github.com/npm/cli/compare/libnpmaccess-v10.0.1...libnpmaccess-v10.0.2) (2025-09-23)
+### Dependencies
+* [`bf6b686`](https://github.com/npm/cli/commit/bf6b6862731e03002cc6fa3b86b6f090df46b009) [#8576](https://github.com/npm/cli/pull/8576) `npm-package-arg@13.0.0`
+* [`1149971`](https://github.com/npm/cli/commit/11499711e4c10e4ddb97bf3e1ef1652d151894fb) [#8576](https://github.com/npm/cli/pull/8576) `npm-registry-fetch@19.0.0`
+### Chores
+* [`402a0ab`](https://github.com/npm/cli/commit/402a0ab1b4e5d1a8414dd063d0cbde0c0bc5a192) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/template-oss@4.25.1` (@wraithgar)
+* [`3f60b5f`](https://github.com/npm/cli/commit/3f60b5f9621b43ae0b8796d3a7160a603748f756) [#8383](https://github.com/npm/cli/pull/8383) `@npmcli/template-oss@4.24.4` (#8383) (@wraithgar)
+* [`01f8cc6`](https://github.com/npm/cli/commit/01f8cc6f001e3211135fa0563f7129aed09dc46c) [#8381](https://github.com/npm/cli/pull/8381) `@npmcli/template-oss@4.24.3` (#8381) (@wraithgar)
+
 ## [10.0.1](https://github.com/npm/cli/compare/libnpmaccess-v10.0.0...libnpmaccess-v10.0.1) (2025-05-15)
 ### Bug Fixes
 * [`5b5e886`](https://github.com/npm/cli/commit/5b5e886edadf77ee48368695e6bc52ad6c4f06c3) [#8289](https://github.com/npm/cli/pull/8289) libnpmaccess: formatting of options in README (#8289) (@mbtools)
@@ -220,7 +235,7 @@
 - `2668386` deps: npm-registry-fetch@8.0.0 ([@mikemimik](https://github.com/mikemimik))
 - `ef093e2` deps: tap@14.10.6 ([@mikemimik](https://github.com/mikemimik))
 
-### Miscellanieous
+### Miscellaneous
 - `8e33902` chore: basic project updates ([@claudiahdz](https://github.com/claudiahdz))
 - `50e1433` fix: update return value; add tests ([@mikemimik](https://github.com/mikemimik))
 - `36d5c80` chore: updated gitignore; includes coverage folder ([@mikemimik](https://github.com/mikemimik))

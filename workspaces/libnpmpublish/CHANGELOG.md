@@ -1,5 +1,40 @@
 # Changelog
 
+## [11.1.3](https://github.com/npm/cli/compare/libnpmpublish-v11.1.2...libnpmpublish-v11.1.3) (2025-11-19)
+### Dependencies
+* [`8cc9f70`](https://github.com/npm/cli/commit/8cc9f70c2769f068ea0ef77a602162cdd949998e) [#8723](https://github.com/npm/cli/pull/8723) `ssri@13.0.0`
+* [`05ac7a7`](https://github.com/npm/cli/commit/05ac7a7ea2a4d258658537a19ba350e07df34fda) [#8723](https://github.com/npm/cli/pull/8723) `proc-log@6.0.0`
+
+## [11.1.2](https://github.com/npm/cli/compare/libnpmpublish-v11.1.1...libnpmpublish-v11.1.2) (2025-10-08)
+### Dependencies
+* [`fa7cc6f`](https://github.com/npm/cli/commit/fa7cc6f9338e6d9c0be1dbe7002d683fd389794a) [#8662](https://github.com/npm/cli/pull/8662) `ci-info@4.3.1` (#8662)
+* [`b05461b`](https://github.com/npm/cli/commit/b05461b6b16f262179efdea45fccf388f88ddc51) [#8663](https://github.com/npm/cli/pull/8663) `@sigstore/sign@4.0.1` (#8663)
+### Chores
+* [`5e0909b`](https://github.com/npm/cli/commit/5e0909b74ea1510eaae348d66548c75030911ed8) [#8620](https://github.com/npm/cli/pull/8620) fix spelling in workspaces (#8620) (@jsoref)
+
+## [11.1.1](https://github.com/npm/cli/compare/libnpmpublish-v11.1.0...libnpmpublish-v11.1.1) (2025-09-23)
+### Dependencies
+* [`bf6b686`](https://github.com/npm/cli/commit/bf6b6862731e03002cc6fa3b86b6f090df46b009) [#8576](https://github.com/npm/cli/pull/8576) `npm-package-arg@13.0.0`
+* [`a2bdecc`](https://github.com/npm/cli/commit/a2bdecc6677abcd58ed3037ab0edafb419ea86fa) [#8576](https://github.com/npm/cli/pull/8576) `sigstore@4.0.0`
+* [`1149971`](https://github.com/npm/cli/commit/11499711e4c10e4ddb97bf3e1ef1652d151894fb) [#8576](https://github.com/npm/cli/pull/8576) `npm-registry-fetch@19.0.0`
+* [`ceae674`](https://github.com/npm/cli/commit/ceae674c32a080b81e62d79003c2d537d7ca93d2) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/package-json@7.0.1`
+### Chores
+* [`402a0ab`](https://github.com/npm/cli/commit/402a0ab1b4e5d1a8414dd063d0cbde0c0bc5a192) [#8576](https://github.com/npm/cli/pull/8576) `@npmcli/template-oss@4.25.1` (@wraithgar)
+
+## [11.1.0](https://github.com/npm/cli/compare/libnpmpublish-v11.0.1...libnpmpublish-v11.1.0) (2025-07-24)
+### Features
+* [`1cce318`](https://github.com/npm/cli/commit/1cce31810eb5ff1e0f7c8ee4516e7c73cedb38a1) [#8336](https://github.com/npm/cli/pull/8336) adds support for oidc publish (#8336) (@reggi)
+### Chores
+* [`3f60b5f`](https://github.com/npm/cli/commit/3f60b5f9621b43ae0b8796d3a7160a603748f756) [#8383](https://github.com/npm/cli/pull/8383) `@npmcli/template-oss@4.24.4` (#8383) (@wraithgar)
+* [`01f8cc6`](https://github.com/npm/cli/commit/01f8cc6f001e3211135fa0563f7129aed09dc46c) [#8381](https://github.com/npm/cli/pull/8381) `@npmcli/template-oss@4.24.3` (#8381) (@wraithgar)
+
+## [11.0.1](https://github.com/npm/cli/compare/libnpmpublish-v11.0.0...libnpmpublish-v11.0.1) (2025-06-11)
+### Bug Fixes
+* [`71cb65b`](https://github.com/npm/cli/commit/71cb65b3c551e663a7bbdb25f5b3c3ddebb1a8c8) [#8317](https://github.com/npm/cli/pull/8317) libnpmpublish: Remove dependence on deprecated library (@owlstronaut)
+### Dependencies
+* [`dda6f87`](https://github.com/npm/cli/commit/dda6f871331280eeb37493a4ccc57361a27949eb) [#8317](https://github.com/npm/cli/pull/8317) `@npmcli/package-json@6.2.0`
+* [`bc08ac7`](https://github.com/npm/cli/commit/bc08ac7a82f047485885d9c41a8b6fc48e8981b0) [#8317](https://github.com/npm/cli/pull/8317) remove normalize-package-data
+
 ## [11.0.0](https://github.com/npm/cli/compare/libnpmpublish-v11.0.0-pre.0...libnpmpublish-v11.0.0) (2024-12-16)
 ### Features
 * [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)
@@ -391,7 +426,7 @@
 
 * [`f6bf2b8`](https://github.com/npm/libnpmpublish/commit/f6bf2b8) feat: unpublish code refactor ([@claudiahdz](https://github.com/claudiahdz))
 
-### Miscellaneuous
+### Miscellaneous
 
 * [`5cea10f`](https://github.com/npm/libnpmpublish/commit/5cea10f) chore: basic project updates ([@claudiahdz](https://github.com/claudiahdz))
 * [`3010b93`](https://github.com/npm/libnpmpublish/commit/3010b93) chore: cleanup badges + contributing ([@ruyadorno](https://github.com/ruyadorno))
