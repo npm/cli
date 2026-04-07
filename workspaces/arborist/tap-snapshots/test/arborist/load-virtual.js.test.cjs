@@ -16382,15 +16382,18 @@ ArboristNode {
     "arg" => ArboristNode {
       "edgesIn": Set {
         EdgeIn {
-          "error": "INVALID",
           "from": "ws",
           "name": "arg",
+          "override": "4.1.3",
           "spec": "4.1.2",
           "type": "prod",
         },
       },
       "location": "node_modules/arg",
       "name": "arg",
+      "overrides": Map {
+        "arg" => "4.1.3",
+      },
       "path": "{CWD}/test/fixtures/workspaces-with-overrides/node_modules/arg",
       "resolved": "https://registry.npmjs.org/arg/-/arg-4.1.3.tgz",
       "version": "4.1.3",
@@ -16431,8 +16434,8 @@ ArboristNode {
     ArboristNode {
       "edgesOut": Map {
         "arg" => EdgeOut {
-          "error": "INVALID",
           "name": "arg",
+          "override": "4.1.3",
           "spec": "4.1.2",
           "to": "node_modules/arg",
           "type": "prod",
@@ -16441,6 +16444,9 @@ ArboristNode {
       "isWorkspace": true,
       "location": "ws",
       "name": "ws",
+      "overrides": Map {
+        "arg" => "4.1.3",
+      },
       "path": "{CWD}/test/fixtures/workspaces-with-overrides/ws",
       "version": "1.0.0",
     },

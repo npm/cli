@@ -406,6 +406,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         global: this.options.global,
         installLinks: this.installLinks,
         legacyPeerDeps: this.legacyPeerDeps,
+        loadOverrides: true,
         root,
       })
     }
