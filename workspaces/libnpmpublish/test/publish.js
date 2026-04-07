@@ -1105,6 +1105,31 @@ t.test('publish existing package with provenance in gitlab', async t => {
   ])
 })
 
+t.test('stage publish returns stageId', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+  const spec = npa(manifest.name)
+
+  registry.nock
+    .post(`/-/stage/package/${spec.escapedName}`)
+    .reply(201, { stageId: 'test-stage-id' })
+
+  const ret = await publish(manifest, tarData, {
+    ...opts,
+    stage: true,
+  })
+  t.equal(ret.stageId, 'test-stage-id', 'stageId returned from response')
+})
+
 t.test('gitlab provenance, no token available', async t => {
   mockGlobals(t, {
     'process.env': {

@@ -159,6 +159,9 @@
   - title: npm set
     url: /commands/npm-set
     description: Set a value in the npm configuration
+  - title: npm stage
+    url: /commands/npm-stage
+    description: Stage packages for publishing
   - title: npm start
     url: /commands/npm-start
     description: Start a package
