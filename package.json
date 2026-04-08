@@ -196,7 +196,7 @@
     "ajv-formats": "^3.0.1",
     "ajv-formats-draft2019": "^1.6.1",
     "cli-table3": "^0.6.4",
-    "diff": "^8.0.3",
+    "diff": "^8.0.4",
     "nock": "^13.4.0",
     "npm-packlist": "^10.0.4",
     "remark": "^15.0.1",
