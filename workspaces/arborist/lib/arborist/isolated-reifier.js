@@ -157,6 +157,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         ...this.options,
         resolved: node.resolved,
         integrity: node.integrity,
+        // TODO _isRoot
       })
       const Arborist = this.constructor
       const arb = new Arborist({ ...this.options, path: dir })
