@@ -66,8 +66,8 @@ Before using `npm stage` commands, ensure the following requirements are met:
 | Command | Requires 2FA | Notes |
 | --- | --- | --- |
 | `npm stage publish` | No | Designed for automated workflows; defers 2FA to approval |
-| `npm stage list` | Yes | Prompts for 2FA to view staged packages |
-| `npm stage view` | Yes | Prompts for 2FA to view staged package details |
+| `npm stage list` | No | View staged packages |
+| `npm stage view` | No | View staged package details |
 | `npm stage approve` | Yes | Prompts for 2FA to publish the staged package |
 | `npm stage reject` | Yes | Prompts for 2FA to permanently remove the staged package |
 | `npm stage download` | No | Downloads the tarball for local inspection |
