@@ -295,6 +295,49 @@ t.test('set process.title', async t => {
     t.equal(npm.title, 'npm token revoke notatoken')
     t.equal(process.title, 'npm token revoke notatoken')
   })
+
+  t.test('show project name as a prefix if config enabled and project name set', async t => {
+    const packageJson = {
+      name: 'my-project',
+      description: 'npm test package',
+      version: '1.0.0',
+      scripts: {
+        dev: 'nodemon --exec ts-node src/index.ts',
+      },
+    }
+    const { npm } = await loadMockNpm(t, {
+      config: {
+        'prefix-package-name-in-title': true,
+      },
+      prefixDir: {
+        'package.json': JSON.stringify(packageJson, null, 2),
+      },
+      argv: ['run', 'dev'],
+    })
+    t.equal(npm.title, 'my-project :: npm run dev')
+    t.equal(process.title, 'my-project :: npm run dev')
+  })
+
+  t.test('show project name as a prefix if config enabled and project name set', async t => {
+    const packageJson = {
+      description: 'npm test package',
+      version: '1.0.0',
+      scripts: {
+        dev: 'nodemon --exec ts-node src/index.ts',
+      },
+    }
+    const { npm } = await loadMockNpm(t, {
+      config: {
+        'prefix-package-name-in-title': true,
+      },
+      prefixDir: {
+        'package.json': JSON.stringify(packageJson, null, 2),
+      },
+      argv: ['run', 'dev'],
+    })
+    t.equal(npm.title, 'npm run dev')
+    t.equal(process.title, 'npm run dev')
+  })
 })
 
 t.test('debug log', async t => {

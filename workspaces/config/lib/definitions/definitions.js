@@ -1655,6 +1655,14 @@ const definitions = {
       it forces non-global commands to run in the specified folder.
     `,
   }),
+  'prefix-package-name-in-title': new Definition('prefix-package-name-in-title', {
+    default: false,
+    type: Boolean,
+    description: `
+      If true, terminal/shell titles will be prefixed with the package name.
+    `,
+    flatten,
+  }),
   preid: new Definition('preid', {
     default: '',
     hint: 'prerelease-id',
