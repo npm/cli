@@ -128,6 +128,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "prefer-offline": false,
   "prefer-online": false,
   "prefix": "{CWD}/global",
+  "prefix-package-name-in-title": false,
   "preid": "",
   "production": null,
   "progress": {PROGRESS},
@@ -311,6 +312,7 @@ prefer-dedupe = false
 prefer-offline = false
 prefer-online = false
 prefix = "{CWD}/global"
+prefix-package-name-in-title = false
 preid = ""
 production = null
 progress = {PROGRESS}

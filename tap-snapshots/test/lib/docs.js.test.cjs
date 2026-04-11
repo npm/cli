@@ -1420,6 +1420,15 @@ forces non-global commands to run in the specified folder.
 
 
 
+#### \`prefix-package-name-in-title\`
+
+* Default: false
+* Type: Boolean
+
+If true, terminal/shell titles will be prefixed with the package name.
+
+
+
 #### \`preid\`
 
 * Default: ""
@@ -2371,6 +2380,7 @@ Array [
   "prefer-offline",
   "prefer-online",
   "prefix",
+  "prefix-package-name-in-title",
   "preid",
   "production",
   "progress",
@@ -2527,6 +2537,7 @@ Array [
   "prefer-dedupe",
   "prefer-offline",
   "prefer-online",
+  "prefix-package-name-in-title",
   "preid",
   "production",
   "progress",
@@ -2703,6 +2714,7 @@ Object {
   "preferDedupe": false,
   "preferOffline": false,
   "preferOnline": false,
+  "prefixPackageNameInTitle": false,
   "preid": "",
   "progress": false,
   "projectScope": "",
