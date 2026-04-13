@@ -1,0 +1,96 @@
+name: Backport
+
+on:
+  pull_request_target:
+    types: [closed, labeled]
+  # TODO: Remove before merging — manual trigger for testing from any branch
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'Merged PR number to test backporting'
+        required: true
+        type: number
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  backport:
+    name: Backport
+    runs-on: ubuntu-latest
+    # Run when a labeled PR is merged, or when a backport label is added to an already-merged PR.
+    # Uses pull_request_target so the token has write access even for PRs from forks.
+    if: >-
+      github.repository_owner == 'npm' &&
+      github.event.pull_request.merged == true &&
+      (
+        (github.event.action == 'closed' &&
+         contains(join(github.event.pull_request.labels.*.name, ','), 'backport:'))
+        ||
+        (github.event.action == 'labeled' &&
+         startsWith(github.event.label.name, 'backport:'))
+      )
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Create Backports
+        uses: actions/github-script@v7
+        env:
+          MERGE_COMMIT_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+        with:
+          script: |
+            const backport = require('./scripts/backport.js')
+            await backport({ github, context, core })
+
+  # TODO: Remove before merging — manual test job
+  backport-test:
+    name: Backport (Test)
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Create Backports
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: ${{ inputs.pr_number }},
+            })
+
+            if (!pr.merged) {
+              return core.setFailed('PR #${{ inputs.pr_number }} is not merged')
+            }
+
+            process.env.MERGE_COMMIT_SHA = pr.merge_commit_sha
+
+            const backport = require('./scripts/backport.js')
+            await backport({
+              github,
+              core,
+              context: {
+                ...context,
+                payload: { action: 'closed', pull_request: pr },
+              },
+            })
