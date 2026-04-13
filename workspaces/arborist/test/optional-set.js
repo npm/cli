@@ -89,3 +89,44 @@ t.equal(setM.has(nodeN), true, 'set m includes n')
 const setB = optionalSet(nodeB)
 t.equal(setB.size, 1, 'gathering from b is only b')
 t.equal(setB.has(nodeB), true, 'set b includes b')
+
+// tree (OPT opt-p, OPT opt-q)
+// +-- OPT opt-p (PROD shared-dep)
+// +-- OPT opt-q (PROD shared-dep)
+// +-- shared-dep ()
+const sharedTree = new Node({
+  path: '/path/to/shared-tree',
+  pkg: {
+    optionalDependencies: {
+      'opt-p': '',
+      'opt-q': '',
+    },
+  },
+  children: [
+    { pkg: { name: 'opt-p', version: '1.0.0', dependencies: { 'shared-dep': '' } } },
+    { pkg: { name: 'opt-q', version: '1.0.0', dependencies: { 'shared-dep': '' } } },
+    { pkg: { name: 'shared-dep', version: '1.0.0' } },
+  ],
+})
+
+calcDepFlags(sharedTree)
+
+const nodeOptP = sharedTree.children.get('opt-p')
+const nodeOptQ = sharedTree.children.get('opt-q')
+const nodeSharedDep = sharedTree.children.get('shared-dep')
+
+// Simulate opt-p failing platform check and being marked inert first
+const setOptP = optionalSet(nodeOptP)
+// shared-dep is excluded because opt-q (not yet inert) also depends on it
+t.equal(setOptP.has(nodeOptP), true, 'set opt-p includes opt-p')
+t.equal(setOptP.has(nodeSharedDep), false, 'set opt-p excludes shared-dep (opt-q is not inert)')
+for (const n of setOptP) {
+  n.inert = true
+}
+
+// Simulate opt-q failing platform check second (opt-p is already inert)
+const setOptQ = optionalSet(nodeOptQ)
+// shared-dep now has no active external dependents and is included
+t.equal(setOptQ.has(nodeOptQ), true, 'set opt-q includes opt-q')
+t.equal(setOptQ.has(nodeSharedDep), true, 'set opt-q includes shared-dep (opt-p is inert)')
+t.equal(setOptQ.size, 2, 'set opt-q has two nodes: opt-q and shared-dep')
