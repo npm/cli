@@ -95,6 +95,11 @@ module.exports = async ({ github, context, core }) => {
         base: target,
       })
 
+      // Trigger CI on the backport branch. Events from GITHUB_TOKEN don't trigger workflows, but workflow_dispatch is an explicit exception to that rule.
+      await github.rest.actions.createWorkflowDispatch({
+        owner, repo, workflow_id: 'ci.yml', ref: branch,
+      })
+
       results.push(`🎉 Backport to \`${target}\` created: #${backportPr.number}`)
       core.info(`Created backport PR #${backportPr.number} for ${target}`)
     } catch (error) {
