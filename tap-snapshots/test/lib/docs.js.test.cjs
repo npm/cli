@@ -414,6 +414,19 @@ true, then only prints color codes for tty file descriptors.
 
 
 
+#### \`command\`
+
+* Default: null
+* Type: null or String
+
+When used with \`npm config set\`, \`npm config get\`, or \`npm config delete\`,
+specifies the command section to target. For example, \`npm config set
+registry=https://registry.npmjs.org/ --command=publish\` will set the
+registry only for the \`publish\` command by writing it under a \`[publish]\`
+section in the .npmrc file.
+
+
+
 #### \`commit-hooks\`
 
 * Default: true
@@ -2276,6 +2289,7 @@ Array [
   "cert",
   "cidr",
   "color",
+  "command",
   "commit-hooks",
   "cpu",
   "depth",
@@ -2578,6 +2592,7 @@ Array [
 
 exports[`test/lib/docs.js TAP config > keys that are not flattened 1`] = `
 Array [
+  "command",
   "expect-result-count",
   "expect-results",
   "init-author-email",
@@ -3169,7 +3184,7 @@ npm config fix
 
 Options:
 [--json] [-g|--global] [--editor <editor>] [-L|--location <global|user|project>]
-[-l|--long]
+[-l|--long] [--command <command>]
 
   --json
     Whether or not to output JSON data, rather than the normal output.
@@ -3185,6 +3200,9 @@ Options:
 
   -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
+
+  --command
+    When used with \`npm config set\`, \`npm config get\`, or
 
 
 alias: c
@@ -3209,6 +3227,7 @@ Note: This command is unaware of workspaces.
 #### \`editor\`
 #### \`location\`
 #### \`long\`
+#### \`command\`
 `
 
 exports[`test/lib/docs.js TAP usage dedupe > must match snapshot 1`] = `

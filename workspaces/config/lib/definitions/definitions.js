@@ -466,6 +466,17 @@ const definitions = {
         : !!process.stderr.isTTY
     },
   }),
+  command: new Definition('command', {
+    default: null,
+    type: [null, String],
+    description: `
+      When used with \`npm config set\`, \`npm config get\`, or
+      \`npm config delete\`, specifies the command section to target.
+      For example, \`npm config set registry=https://registry.npmjs.org/
+      --command=publish\` will set the registry only for the \`publish\`
+      command by writing it under a \`[publish]\` section in the .npmrc file.
+    `,
+  }),
   'commit-hooks': new Definition('commit-hooks', {
     default: true,
     type: Boolean,

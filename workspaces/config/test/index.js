@@ -1868,3 +1868,320 @@ t.test('before and min-release-age', async t => {
   // Simple gut check to make sure we didn't do + instead of -
   t.ok(config.flat.before < Date.now(), 'before date is in the past not the future')
 })
+
+t.test('command-specific configs via INI sections', async t => {
+  t.test('parses [command] sections and applies them', async t => {
+    const path = t.testdir({
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': [
+          'registry=http://localhost:1337/npm',
+          '',
+          '[publish]',
+          'registry=https://registry.npmjs.org/',
+        ].join('\n'),
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    t.equal(config.get('registry'), 'http://localhost:1337/npm',
+      'before applyCommand, registry is the default')
+
+    config.applyCommand('publish')
+    t.equal(config.get('registry'), 'https://registry.npmjs.org/',
+      'after applyCommand("publish"), registry is from [publish] section')
+  })
+
+  t.test('non-matching command does not override config', async t => {
+    const path = t.testdir({
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': [
+          'registry=http://localhost:1337/npm',
+          '',
+          '[publish]',
+          'registry=https://registry.npmjs.org/',
+        ].join('\n'),
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    config.applyCommand('install')
+    t.equal(config.get('registry'), 'http://localhost:1337/npm',
+      'install command does not get publish-scoped registry')
+  })
+
+  t.test('CLI flags override command sections', async t => {
+    const path = t.testdir({
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': [
+          'registry=http://localhost:1337/npm',
+          '',
+          '[publish]',
+          'registry=https://registry.npmjs.org/',
+        ].join('\n'),
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename, '--registry=http://cli-override/'],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    config.applyCommand('publish')
+    t.equal(config.get('registry'), 'http://cli-override/',
+      'CLI --registry overrides [publish] section')
+  })
+
+  t.test('command sections from multiple layers cascade correctly', async t => {
+    const path = t.testdir({
+      global: {
+        etc: {
+          npmrc: [
+            '[publish]',
+            'registry=http://global-publish/',
+          ].join('\n'),
+        },
+      },
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': [
+          '[publish]',
+          'registry=http://project-publish/',
+        ].join('\n'),
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [
+        process.execPath, __filename,
+        `--globalconfig=${path}/global/etc/npmrc`,
+        `--userconfig=${path}/noexist`,
+      ],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    config.applyCommand('publish')
+    t.equal(config.get('registry'), 'http://project-publish/',
+      'project [publish] overrides global [publish]')
+  })
+
+  t.test('command sections beat non-sectioned values from higher layers', async t => {
+    const path = t.testdir({
+      user: {
+        '.npmrc': [
+          '[publish]',
+          'registry=http://user-publish/',
+        ].join('\n'),
+      },
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': 'registry=http://project-default/',
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [
+        process.execPath, __filename,
+        `--userconfig=${path}/user/.npmrc`,
+        `--globalconfig=${path}/noexist`,
+      ],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    config.applyCommand('publish')
+    t.equal(config.get('registry'), 'http://user-publish/',
+      '[publish] from user .npmrc beats non-sectioned registry from project .npmrc')
+  })
+
+  t.test('save round-trips sections correctly', async t => {
+    const path = t.testdir({
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': [
+          'registry=http://localhost:1337/npm',
+          '',
+          '[publish]',
+          'registry=https://registry.npmjs.org/',
+        ].join('\n'),
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    await config.save('project')
+
+    const saved = readFileSync(`${path}/project/.npmrc`, 'utf8')
+    t.match(saved, /registry=http:\/\/localhost:1337\/npm/)
+    t.match(saved, /\[publish\]/)
+    t.match(saved, /registry=https:\/\/registry\.npmjs\.org\//)
+  })
+
+  t.test('setCommandConfig adds a new section', async t => {
+    const path = t.testdir({
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': 'registry=http://localhost:1337/npm',
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    config.setCommandConfig('publish', 'registry', 'https://registry.npmjs.org/', 'project')
+    await config.save('project')
+
+    const saved = readFileSync(`${path}/project/.npmrc`, 'utf8')
+    t.match(saved, /registry=http:\/\/localhost:1337\/npm/)
+    t.match(saved, /\[publish\]/)
+    t.match(saved, /registry=https:\/\/registry\.npmjs\.org\//)
+  })
+
+  t.test('deleteCommandConfig removes a section key', async t => {
+    const path = t.testdir({
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': [
+          'registry=http://localhost:1337/npm',
+          '',
+          '[publish]',
+          'registry=https://registry.npmjs.org/',
+        ].join('\n'),
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    config.deleteCommandConfig('publish', 'registry', 'project')
+    await config.save('project')
+
+    const saved = readFileSync(`${path}/project/.npmrc`, 'utf8')
+    t.match(saved, /registry=http:\/\/localhost:1337\/npm/)
+    t.notMatch(saved, /\[publish\]/)
+  })
+
+  t.test('getCommandConfig returns scoped value', async t => {
+    const path = t.testdir({
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': [
+          'registry=http://localhost:1337/npm',
+          '',
+          '[publish]',
+          'registry=https://registry.npmjs.org/',
+        ].join('\n'),
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    t.equal(config.getCommandConfig('publish', 'registry'),
+      'https://registry.npmjs.org/',
+      'getCommandConfig returns section value')
+    t.equal(config.getCommandConfig('install', 'registry'),
+      undefined,
+      'getCommandConfig returns undefined for non-matching command')
+    t.equal(config.getCommandConfig('publish', 'registry', 'project'),
+      'https://registry.npmjs.org/',
+      'getCommandConfig with where returns section value from that layer')
+  })
+
+  t.test('applyCommand with null/undefined is a no-op', async t => {
+    const path = t.testdir({
+      project: {
+        'package.json': '{"name":"test"}',
+        '.npmrc': 'registry=http://localhost:1337/npm',
+      },
+    })
+
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: `${path}/project`,
+      definitions,
+      shorthands,
+      flatten,
+    })
+
+    await config.load()
+    config.applyCommand(null)
+    config.applyCommand(undefined)
+    t.equal(config.get('registry'), 'http://localhost:1337/npm',
+      'config unchanged after null/undefined applyCommand')
+  })
+})

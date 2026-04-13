@@ -32,6 +32,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "call": "",
   "cert": null,
   "cidr": null,
+  "command": null,
   "commit-hooks": true,
   "cpu": null,
   "depth": null,
@@ -211,6 +212,7 @@ call = ""
 cert = null
 cidr = null
 ; color = {COLOR}
+command = null
 commit-hooks = true
 cpu = null
 depth = null
