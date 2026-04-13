@@ -4,4 +4,5 @@ module.exports = {
   // This is needed while workspaces and npm have different engines.
   // TODO: make npm and its workspaces always use the same engines and delete this.
   npm: 'npm',
+  updateNpm: false,
 }
