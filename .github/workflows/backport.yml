@@ -12,6 +12,7 @@ on:
         type: number
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
