@@ -184,6 +184,44 @@ export ELECTRON_CUSTOM_DIR="{{ version }}"
 Environment variables are the most portable approach and work regardless
 of `.npmrc` format.
 
+### Command-specific configuration
+
+You can scope configuration to a specific npm command using INI section
+headers. For example, to use a different registry only when publishing:
+
+```ini
+registry=http://localhost:1337/npm
+
+[publish]
+registry=https://registry.npmjs.org/
+```
+
+Any npm configuration option can be placed inside a command section. The
+section name must match an npm command name (e.g., `[install]`, `[publish]`,
+`[audit]`).
+
+Command-specific configs follow the standard priority cascade
+(builtin < global < user < project), but **command sections always override
+non-sectioned values from any file layer**. CLI flags (`--registry=...`)
+and environment variables (`npm_config_registry=...`) still take the
+highest precedence.
+
+You can manage command-scoped configs using the `--command` flag:
+
+```bash
+# Set a registry only for publish
+npm config set registry=https://registry.npmjs.org/ --command=publish
+
+# Get the publish-scoped registry value
+npm config get registry --command=publish
+
+# Delete a command-scoped value
+npm config delete registry --command=publish
+```
+
+Command sections work in all `.npmrc` files: per-project, per-user,
+global, and builtin.
+
 ### See also
 
 * [npm folders](/configuring-npm/folders)

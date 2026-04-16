@@ -46,13 +46,22 @@ const confFileTypes = new Set([
   'project',
 ])
 
+// file types that can contain [command] sections
+const confSectionTypes = new Set([
+  'builtin',
+  ...confFileTypes,
+])
+
 const confTypes = new Set([
   'default',
   'builtin',
   ...confFileTypes,
+  'command',
   'env',
   'cli',
 ])
+
+const unsafeKeys = new Set(['__proto__', 'constructor', 'prototype'])
 
 class Config {
   #loaded = false
@@ -60,6 +69,9 @@ class Config {
   // populated the first time we flatten the object
   #flatOptions = null
   #warnings = []
+  // stores per-command config sections from .npmrc files
+  // Map<where, Map<commandName, { key: value }>>
+  #commandConfigs = new Map()
 
   static get typeDefs () {
     return typeDefs
@@ -236,6 +248,123 @@ class Config {
     if (['global', 'user', 'project'].includes(where)) {
       delete raw[key]
     }
+  }
+
+  // Apply command-specific configs from [command] sections in .npmrc files.
+  // Call this after the command name is resolved but before reading config values.
+  applyCommand (commandName) {
+    if (!commandName) {
+      return
+    }
+    if (!this.loaded) {
+      throw new Error('call config.load() before applying command configs')
+    }
+
+    const commandConf = this.data.get('command')
+    commandConf.source = `command-specific configs for "${commandName}"`
+    this.sources.set(commandConf.source, 'command')
+
+    // Walk file-based layers in cascade order (builtin < global < user < project)
+    // and overlay matching command sections onto the command layer
+    for (const where of ['builtin', 'global', 'user', 'project']) {
+      const whereCommands = this.#commandConfigs.get(where)
+      if (!whereCommands) {
+        continue
+      }
+      const sectionData = whereCommands.get(commandName)
+      if (!sectionData) {
+        continue
+      }
+      for (const [key, value] of Object.entries(sectionData)) {
+        const k = envReplace(key, this.env)
+        const v = this.parseField(value, k)
+        this.#checkDeprecated(k)
+        commandConf.data[k] = v
+      }
+    }
+
+    // invalidate flat options so they're regenerated with command configs
+    this.#flatOptions = null
+  }
+
+  // Set a config value within a command section for a given file layer.
+  setCommandConfig (commandName, key, val, where) {
+    if (!this.loaded) {
+      throw new Error('call config.load() before setting command configs')
+    }
+    if (unsafeKeys.has(commandName)) {
+      throw new Error('invalid command name: ' + commandName)
+    }
+    if (!confFileTypes.has(where) && where !== 'builtin') {
+      throw new Error('invalid config location for command config: ' + where)
+    }
+    if (!this.#commandConfigs.has(where)) {
+      this.#commandConfigs.set(where, new Map())
+    }
+    const whereCommands = this.#commandConfigs.get(where)
+    if (!whereCommands.has(commandName)) {
+      whereCommands.set(commandName, {})
+    }
+    whereCommands.get(commandName)[key] = val
+
+    // Also update the raw data so it saves correctly
+    const conf = this.data.get(where)
+    if (!hasOwnProperty(conf.raw, commandName)) {
+      conf.raw[commandName] = {}
+    }
+    conf.raw[commandName][key] = val
+
+    this.#flatOptions = null
+  }
+
+  // Delete a config value from a command section for a given file layer.
+  deleteCommandConfig (commandName, key, where) {
+    if (!this.loaded) {
+      throw new Error('call config.load() before deleting command configs')
+    }
+    if (unsafeKeys.has(commandName)) {
+      throw new Error('invalid command name: ' + commandName)
+    }
+    const whereCommands = this.#commandConfigs.get(where)
+    if (whereCommands?.has(commandName)) {
+      const sectionData = whereCommands.get(commandName)
+      delete sectionData[key]
+      if (Object.keys(sectionData).length === 0) {
+        whereCommands.delete(commandName)
+      }
+    }
+
+    // Also update raw data
+    const conf = this.data.get(where)
+    if (hasOwnProperty(conf.raw, commandName)) {
+      delete conf.raw[commandName][key]
+      if (Object.keys(conf.raw[commandName]).length === 0) {
+        delete conf.raw[commandName]
+      }
+    }
+
+    this.#flatOptions = null
+  }
+
+  // Get the command-specific value for a key, if set in any [command] section.
+  getCommandConfig (commandName, key, where = null) {
+    if (!this.loaded) {
+      throw new Error('call config.load() before getting command configs')
+    }
+    if (where) {
+      const whereCommands = this.#commandConfigs.get(where)
+      const sectionData = whereCommands?.get(commandName)
+      return sectionData?.[key]
+    }
+    // Walk in reverse priority order to find the highest-priority value
+    for (const w of ['project', 'user', 'global', 'builtin']) {
+      const whereCommands = this.#commandConfigs.get(w)
+      const sectionData = whereCommands?.get(commandName)
+      if (sectionData && key in sectionData) {
+        return sectionData[key]
+      }
+    }
+    return undefined
   }
 
   async load () {
@@ -583,6 +712,26 @@ class Config {
     } else {
       conf.raw = obj
       outer: for (const [key, value] of Object.entries(obj)) {
+        // Detect INI sections: object values from ini.parse() represent [section] headers
+        if (confSectionTypes.has(where) && value !== null && typeof value === 'object' && !Array.isArray(value)) {
+          // Skip unsafe keys (ini package already filters __proto__ but be safe)
+          if (unsafeKeys.has(key)) {
+            continue
+          }
+          // Store command-specific configs separately
+          if (!this.#commandConfigs.has(where)) {
+            this.#commandConfigs.set(where, new Map())
+          }
+          const whereCommands = this.#commandConfigs.get(where)
+          whereCommands.set(key, value)
+
+          // Validate keys inside the section against known config definitions
+          for (const sectionKey of Object.keys(value)) {
+            this.checkUnknown(`${where}:[${key}]`, sectionKey)
+          }
+          continue
+        }
+
         const k = envReplace(key, this.env)
         const v = this.parseField(value, k)
         if (where !== 'default') {
