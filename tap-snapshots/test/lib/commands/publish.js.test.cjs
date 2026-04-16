@@ -87,23 +87,25 @@ Array [
 
 exports[`test/lib/commands/publish.js TAP json > new package json 1`] = `
 {
-  "id": "@npmcli/test-package@1.0.0",
-  "name": "@npmcli/test-package",
-  "version": "1.0.0",
-  "size": "{size}",
-  "unpackedSize": 95,
-  "shasum": "{sha}",
-  "integrity": "{integrity}",
-  "filename": "npmcli-test-package-1.0.0.tgz",
-  "files": [
-    {
-      "path": "package.json",
-      "size": "{size}",
-      "mode": 420
-    }
-  ],
-  "entryCount": 1,
-  "bundled": []
+  "@npmcli/test-package": {
+    "id": "@npmcli/test-package@1.0.0",
+    "name": "@npmcli/test-package",
+    "version": "1.0.0",
+    "size": "{size}",
+    "unpackedSize": 95,
+    "shasum": "{sha}",
+    "integrity": "{integrity}",
+    "filename": "npmcli-test-package-1.0.0.tgz",
+    "files": [
+      {
+        "path": "package.json",
+        "size": "{size}",
+        "mode": 420
+      }
+    ],
+    "entryCount": 1,
+    "bundled": []
+  }
 }
 `
 
