@@ -13,7 +13,6 @@ const { lstat, readlink } = require('node:fs/promises')
 const { depth } = require('treeverse')
 const { log, time } = require('proc-log')
 const { redact } = require('@npmcli/redact')
-const semver = require('semver')
 
 const {
   OK,
@@ -294,10 +293,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           }).then(meta => Object.assign(root, { meta }))
         } else {
           return this.loadVirtual({ root })
-            .then(tree => {
-              this.#applyRootOverridesToWorkspaces(tree)
-              return tree
-            })
         }
       })
 
@@ -406,6 +401,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         global: this.options.global,
         installLinks: this.installLinks,
         legacyPeerDeps: this.legacyPeerDeps,
+        loadOverrides: true,
         root,
       })
     }
@@ -1505,32 +1501,6 @@ This is a one-time fix-up, please be patient...
     }
 
     timeEnd()
-  }
-
-  #applyRootOverridesToWorkspaces (tree) {
-    const rootOverrides = tree.root.package.overrides || {}
-
-    for (const node of tree.root.inventory.values()) {
-      if (!node.isWorkspace) {
-        continue
-      }
-
-      for (const depName of Object.keys(rootOverrides)) {
-        const edge = node.edgesOut.get(depName)
-        const rootNode = tree.root.children.get(depName)
-
-        // safely skip if either edge or rootNode doesn't exist yet
-        if (!edge || !rootNode) {
-          continue
-        }
-
-        const resolvedRootVersion = rootNode.package.version
-        if (!semver.satisfies(resolvedRootVersion, edge.spec)) {
-          edge.detach()
-          node.children.delete(depName)
-        }
-      }
-    }
   }
 
   #idealTreePrune () {
