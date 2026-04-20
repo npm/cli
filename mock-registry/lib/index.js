@@ -96,7 +96,7 @@ class MockRegistry {
       // this requires that mocks not be shared between sub tests but it helps
       // find mistakes quicker instead of waiting for the entire test to end
       t.afterEach((t) => {
-        t.strictSame(server.pendingMocks(), [], 'no pending mocks after each')
+        t.strictSame(server.pendingMocks(), [], 'no pending mocks afterEach')
       })
     }
 

@@ -290,7 +290,7 @@ module.exports = cls => class Reifier extends cls {
     })
 
     // [rollbackfn, [...actions]]
-    // after each step, if the process was terminated, execute the rollback
+    // afterEach step, if the process was terminated, execute the rollback
     // note that each rollback *also* calls the previous one when it's
     // finished, and then the first one throws the error, so we only need
     // a new rollback step when we have a new thing that must be done to
