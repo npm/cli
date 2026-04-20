@@ -4992,7 +4992,7 @@ module.exports = t => {
           "package.json": JSON.stringify({
             "name": "ms",
             "version": "2.0.0",
-            "description": "Tiny milisecond conversion utility",
+            "description": "Tiny millisecond conversion utility",
             "repository": "zeit/ms",
             "main": "./index",
             "files": [

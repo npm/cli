@@ -2,7 +2,7 @@
   "_id": "https-browserify",
   "_rev": "9-880a61611dbcc5663dcb3364ce5cdfc3",
   "name": "https-browserify",
-  "description": "https module compatability for browserify",
+  "description": "https module compatibility for browserify",
   "dist-tags": {
     "latest": "1.0.0"
   },
@@ -10,7 +10,7 @@
     "0.0.0": {
       "name": "https-browserify",
       "version": "0.0.0",
-      "description": "https module compatability for browserify",
+      "description": "https module compatibility for browserify",
       "main": "index.js",
       "repository": {
         "type": "git",
@@ -53,7 +53,7 @@
     "0.0.1": {
       "name": "https-browserify",
       "version": "0.0.1",
-      "description": "https module compatability for browserify",
+      "description": "https module compatibility for browserify",
       "main": "index.js",
       "repository": {
         "type": "git",
@@ -107,7 +107,7 @@
     },
     "1.0.0": {
       "name": "https-browserify",
-      "description": "https module compatability for browserify",
+      "description": "https module compatibility for browserify",
       "version": "1.0.0",
       "author": {
         "name": "James Halliday",
@@ -170,7 +170,7 @@
       "directories": {}
     }
   },
-  "readme": "# https-browserify\n\nhttps module compatability for browserify\n\n# example\n\n``` js\nvar https = require('https-browserify')\nvar r = https.request('https://github.com')\nr.on('request', function (res) {\n  console.log(res)\n})\n```\n\n# methods\n\nThe API is the same as the client portion of the\n[node core https module](http://nodejs.org/docs/latest/api/https.html).\n\n# license\n\nMIT\n",
+  "readme": "# https-browserify\n\nhttps module compatibility for browserify\n\n# example\n\n``` js\nvar https = require('https-browserify')\nvar r = https.request('https://github.com')\nr.on('request', function (res) {\n  console.log(res)\n})\n```\n\n# methods\n\nThe API is the same as the client portion of the\n[node core https module](http://nodejs.org/docs/latest/api/https.html).\n\n# license\n\nMIT\n",
   "maintainers": [
     {
       "name": "feross",
