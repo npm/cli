@@ -1848,7 +1848,6 @@ Object {
 exports[`test/shrinkwrap.js TAP loadActual tests link-dep-cycle > shrinkwrap data 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "link-dep-cycle",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -2302,7 +2301,6 @@ Object {
 exports[`test/shrinkwrap.js TAP loadActual tests noname > shrinkwrap data 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "noname",
   "packages": Object {
     "node_modules/foo": Object {
       "extraneous": true,
@@ -2405,7 +2403,6 @@ Object {
 exports[`test/shrinkwrap.js TAP loadActual tests other > shrinkwrap data 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "other",
   "packages": Object {
     "../root/node_modules/@scope/x/node_modules/glob": Object {
       "dependencies": Object {
@@ -9866,7 +9863,6 @@ Object {
 exports[`test/shrinkwrap.js TAP loadActual tests yarn-lock-mkdirp-file-dep > shrinkwrap data 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "yarn-lock-mkdirp-file-dep",
   "packages": Object {
     "": Object {
       "dependencies": Object {
