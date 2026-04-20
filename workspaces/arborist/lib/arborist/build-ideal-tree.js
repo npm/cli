@@ -658,7 +658,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     for (const node of this.idealTree.inventory.values()) {
       // XXX add any invalid edgesOut to the queue
       if (this[_updateNames].includes(node.name) &&
-        !node.isTop && !node.inDepBundle && !node.inShrinkwrap) {
+        !node.isTop && !node.inDepBundle) {
         for (const edge of node.edgesIn) {
           this.addTracker('idealTree', edge.from.name, edge.from.location)
           this.#depsQueue.push(edge.from)
@@ -781,15 +781,11 @@ This is a one-time fix-up, please be patient...
     const node = this.#depsQueue.pop()
     const bd = node.package.bundleDependencies
     const hasBundle = bd && Array.isArray(bd) && bd.length
-    const { hasShrinkwrap } = node
 
     // if the node was already visited, or has since been removed from the
-    // tree, skip over it and process the rest of the queue.  If a node has
-    // a shrinkwrap, also skip it, because it's going to get its deps
-    // satisfied by whatever's in that file anyway.
+    // tree, skip over it and process the rest of the queue.
     if (this.#depsSeen.has(node) ||
-        node.root !== this.idealTree ||
-        hasShrinkwrap && !this.#complete) {
+        node.root !== this.idealTree) {
       return this.#buildDepStep()
     }
 
@@ -799,15 +795,15 @@ This is a one-time fix-up, please be patient...
 
     // if we're loading a _complete_ ideal tree, for a --package-lock-only
     // installation for example, we have to crack open the tarball and
-    // look inside if it has bundle deps or shrinkwraps.  note that this is
+    // look inside if it has bundle deps.  note that this is
     // not necessary during a reification, because we just update the
-    // ideal tree by reading bundles/shrinkwraps in place.
+    // ideal tree by reading bundles in place.
     // Don't bother if the node is from the actual tree and hasn't
     // been resolved, because we can't fetch it anyway, could be anything!
     const crackOpen = this.#complete &&
       node !== this.idealTree &&
       node.resolved &&
-      (hasBundle || hasShrinkwrap) &&
+      hasBundle &&
       !node.inert
     if (crackOpen) {
       const Arborist = this.constructor
@@ -820,15 +816,8 @@ This is a one-time fix-up, please be patient...
           integrity: node.integrity,
         })
 
-        if (hasShrinkwrap) {
-          await new Arborist({ ...this.options, path })
-            .loadVirtual({ root: node })
-        }
-
-        if (hasBundle) {
-          await new Arborist({ ...this.options, path })
-            .loadActual({ root: node, ignoreMissing: true })
-        }
+        await new Arborist({ ...this.options, path })
+          .loadActual({ root: node, ignoreMissing: true })
       })
     }
 
@@ -1141,11 +1130,6 @@ This is a one-time fix-up, please be patient...
 
       // If it's already been logged as a load failure, skip it.
       if (edge.to && this.#loadFailures.has(edge.to)) {
-        continue
-      }
-
-      // If it's shrinkwrapped, we use what the shrinkwap wants.
-      if (edge.to && edge.to.inShrinkwrap) {
         continue
       }
 

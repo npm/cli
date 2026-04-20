@@ -159,9 +159,6 @@
   - title: npm set
     url: /commands/npm-set
     description: Set a value in the npm configuration
-  - title: npm shrinkwrap
-    url: /commands/npm-shrinkwrap
-    description: Lock down dependency versions for publication
   - title: npm start
     url: /commands/npm-start
     description: Start a package
@@ -217,9 +214,6 @@
   - title: .npmrc
     url: /configuring-npm/npmrc
     description: The npm config files
-  - title: npm-shrinkwrap.json
-    url: /configuring-npm/npm-shrinkwrap-json
-    description: A publishable lockfile
   - title: package.json
     url: /configuring-npm/package-json
     description: Specifics of npm's package.json handling

@@ -544,9 +544,6 @@ Object {
   "shell": Array [
     Function String(),
   ],
-  "shrinkwrap": Array [
-    "boolean value (true or false)",
-  ],
   "sign-git-commit": Array [
     "boolean value (true or false)",
   ],

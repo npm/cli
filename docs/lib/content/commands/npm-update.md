@@ -141,7 +141,6 @@ NOTE: If a package has been upgraded to a version newer than `latest`, it will b
 
 * [npm install](/commands/npm-install)
 * [npm outdated](/commands/npm-outdated)
-* [npm shrinkwrap](/commands/npm-shrinkwrap)
 * [npm registry](/using-npm/registry)
 * [npm folders](/configuring-npm/folders)
 * [npm ls](/commands/npm-ls)

@@ -6,18 +6,18 @@ Arborist handles three different types of tree:
   on disk.  It's loaded by calling `arborist.loadActual()`.
 
 - `arborist.virtualTree` - This is the package tree as captured in a
-  `package-lock.json` or `npm-shrinkwrap.json`.  It's loaded by calling
+  `package-lock.json`.  It's loaded by calling
   `arborist.loadVirtual()`.
 
     This method _may_ be called with an argument
     specifying the node to use as the `root` of the tree, like
     `arborist.loadVirtual({ root: nodeObject })`.  If a root is not specified
-    then a missing shrinkwrap is treated as a failure.  If a root is not
-    specified, then a shrinkwrap file must be present, or the virtual load
+    then a missing lockfile is treated as a failure.  If a root is not
+    specified, then a lockfile must be present, or the virtual load
     fails.
 
 - `arborist.idealTree` - This is the tree of package data that we intend to
-  install.  It's built up based on the shrinkwrap/lockfile if present, the
+  install.  It's built up based on the lockfile if present, the
   dependencies in package.json, and any add/remove/update changes requested.
 
     This is loaded by calling `arborist.buildIdealTree(options)`.  The

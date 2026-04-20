@@ -44,14 +44,7 @@ t.test('test out bumping the version in all the ways', async t => {
     git: {
       'package-lock.json': JSON.stringify(lock, null, 2),
     },
-    'not-git': {
-      'npm-shrinkwrap.json': JSON.stringify({
-        ...lock,
-        packages: {
-          '': { ...pkg },
-        },
-      }, null, 2),
-    },
+    'not-git': {},
   })
 
   await t.test('git dir', async t => {
@@ -246,7 +239,6 @@ t.test('test out bumping the version in all the ways', async t => {
       t.match(actionLog, [
         ['run-script', 'preversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
         ['write-json', path + '/package.json', pkg],
-        ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['run-script', 'version', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
         ['run-script', 'postversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
@@ -257,7 +249,6 @@ t.test('test out bumping the version in all the ways', async t => {
       t.equal(await version('minor', { path, pkg, ignoreScripts: true }), '2.1.0')
       t.match(actionLog, [
         ['write-json', path + '/package.json', pkg],
-        ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
       ])
       t.equal(pkg.version, '2.1.0')
@@ -267,7 +258,6 @@ t.test('test out bumping the version in all the ways', async t => {
       t.match(actionLog, [
         ['run-script', 'preversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
         ['write-json', path + '/package.json', pkg],
-        ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['run-script', 'version', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
         ['run-script', 'postversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
@@ -279,7 +269,6 @@ t.test('test out bumping the version in all the ways', async t => {
       t.match(actionLog, [
         ['run-script', 'preversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
         ['write-json', path + '/package.json', pkg],
-        ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['run-script', 'version', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
         ['run-script', 'postversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
@@ -292,7 +281,6 @@ t.test('test out bumping the version in all the ways', async t => {
         ['run-script', 'preversion',
           { npm_old_version: '2.1.1-0', npm_new_version: '2.1.1-alpha.0' }],
         ['write-json', path + '/package.json', pkg],
-        ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['run-script', 'version', { npm_old_version: '2.1.1-0', npm_new_version: '2.1.1-alpha.0' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
         ['run-script', 'postversion',
@@ -306,7 +294,6 @@ t.test('test out bumping the version in all the ways', async t => {
         ['run-script', 'preversion',
           { npm_old_version: '2.1.1-alpha.0', npm_new_version: '3.2.1' }],
         ['write-json', path + '/package.json', pkg],
-        ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['run-script', 'version', { npm_old_version: '2.1.1-alpha.0', npm_new_version: '3.2.1' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
         ['run-script', 'postversion',
@@ -335,7 +322,6 @@ t.test('test out bumping the version in all the ways', async t => {
         ['run-script', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
         ['write-json', path + '/package.json', pkg],
-        ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['run-script', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
@@ -351,7 +337,6 @@ t.test('test out bumping the version in all the ways', async t => {
         ['run-script', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
         ['write-json', path + '/package.json', pkg],
-        ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['run-script', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
@@ -366,4 +351,39 @@ t.test('test out bumping the version in all the ways', async t => {
       })
     })
   })
+})
+
+t.test('covers lockfile with packages[""] and git dir missing a lockfile', async t => {
+  const pkg = { name: 'foo', version: '1.2.0' }
+  const dir = t.testdir({
+    'git-with-packages-lock': {
+      'package-lock.json': JSON.stringify({
+        name: 'foo',
+        version: '1.2.0',
+        packages: { '': { name: 'foo', version: '1.2.0' } },
+      }, null, 2),
+    },
+    'git-without-lock': {},
+  })
+
+  const versionWithFailingLockAdd = requireInject('../lib/version.js', {
+    '../lib/enforce-clean.js': async () => true,
+    '../lib/write-json.js': async () => {},
+    '../lib/commit.js': async () => {},
+    '../lib/tag.js': async () => {},
+    '../lib/retrieve-tag.js': async () => '1.2.3',
+    '@npmcli/git': {
+      is: async () => true,
+      spawn: async args => {
+        if (args[0] === 'add' && /package-lock\.json$/.test(args[1])) {
+          throw new Error('gitignored lockfile')
+        }
+      },
+    },
+    '@npmcli/run-script': async () => {},
+    'proc-log': { log: { verbose: () => {} } },
+  })
+
+  await versionWithFailingLockAdd('patch', { path: `${dir}/git-with-packages-lock`, pkg: { ...pkg }, gitTagVersion: true })
+  await version('patch', { path: `${dir}/git-without-lock`, pkg: { ...pkg }, gitTagVersion: true })
 })

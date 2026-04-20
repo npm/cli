@@ -223,7 +223,7 @@ peer:true,
 target:{location:'c'}}}}
 `
 
-exports[`test/printable.js TAP show bundle/shrinkwrap info > must match snapshot 1`] = `
+exports[`test/printable.js TAP show bundle info > must match snapshot 1`] = `
 {
 "children":Map{
 "a" =>{
@@ -479,45 +479,6 @@ EdgeIn{
 "optional":true,
 "path":"/path/to/root/node_modules/extraneous",
 "peer":true,
-"version":"1.2.3",},
-"wrapper" =>{
-"children":Map{
-"a" =>{
-"dev":true,
-"edgesIn":Set{
-EdgeIn{
-"from":"node_modules/wrapper",
-"name":"a",
-"spec":"1",
-"type":"prod",},},
-"extraneous":true,
-"inShrinkwrap":true,
-"location":"node_modules/wrapper/node_modules/a",
-"name":"a",
-"optional":true,
-"path":"/path/to/root/node_modules/wrapper/node_modules/a",
-"peer":true,
-"version":"1.2.3",},},
-"dev":true,
-"edgesIn":Set{
-EdgeIn{
-"from":"",
-"name":"wrapper",
-"spec":"*",
-"type":"prod",},},
-"edgesOut":Map{
-"a" => EdgeOut{
-"name":"a",
-"spec":"1",
-"to":"node_modules/wrapper/node_modules/a",
-"type":"prod",},},
-"extraneous":true,
-"hasShrinkwrap":true,
-"location":"node_modules/wrapper",
-"name":"wrapper",
-"optional":true,
-"path":"/path/to/root/node_modules/wrapper",
-"peer":true,
 "version":"1.2.3",},},
 "dev":true,
 "edgesOut":Map{
@@ -540,11 +501,6 @@ EdgeIn{
 "name":"c",
 "spec":"3",
 "to":"node_modules/c",
-"type":"prod",},
-"wrapper" => EdgeOut{
-"name":"wrapper",
-"spec":"*",
-"to":"node_modules/wrapper",
 "type":"prod",},},
 "extraneous":true,
 "isProjectRoot":true,

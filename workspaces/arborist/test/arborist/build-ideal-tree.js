@@ -206,16 +206,10 @@ t.test('tap vs react15', async t => {
   await t.resolveMatchSnapshot(printIdeal(path), 'build ideal tree with tap collision')
 })
 
-t.test('tap vs react15 with legacy shrinkwrap', async t => {
+t.test('tap vs react15 with legacy lockfile', async t => {
   const path = resolve(fixtures, 'tap-react15-collision-legacy-sw')
   createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path), 'tap collision with legacy sw file')
-})
-
-t.test('bad shrinkwrap file', async t => {
-  const path = resolve(fixtures, 'testing-peer-deps-bad-sw')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path), 'bad shrinkwrap')
+  await t.resolveMatchSnapshot(printIdeal(path), 'tap collision with legacy lockfile')
 })
 
 t.test('a direct link dep has a dep with optional dependencies', async t => {
@@ -268,7 +262,7 @@ t.test('nested cyclical peer deps', async t => {
     resolve(fixtures, 'peer-dep-cycle-nested-with-sw'),
   ]
 
-  // if we have a shrinkwrap, then we'll get a collision with the current
+  // if we have a lockfile, then we'll get a collision with the current
   // version already there.  if we don't, then we'll get a peerConflict
   // when we try to put the second one there.
   const ers = {
@@ -437,42 +431,6 @@ t.test('unresolvable peer deps', async t => {
     message: 'unable to resolve dependency tree',
     code: 'ERESOLVE',
   }, 'unacceptable')
-})
-
-t.test('do not add shrinkwrapped deps', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-no-lock')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path, { update: true }))
-})
-
-t.test('do add shrinkwrapped deps when complete:true is set', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-no-lock')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path, {
-    complete: true,
-    update: true,
-  }))
-})
-
-t.test('do not update shrinkwrapped deps', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-with-lock')
-  createRegistry(t, false)
-  await t.resolveMatchSnapshot(printIdeal(path,
-    { update: { names: ['abbrev'] } }))
-})
-
-t.test('do not update shrinkwrapped deps, ignore lockfile', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-with-lock')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path,
-    { packageLock: false, update: { names: ['abbrev'] } }))
-})
-
-t.test('do not update shrinkwrapped deps when complete:true is set', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-with-lock')
-  createRegistry(t, false)
-  await t.resolveMatchSnapshot(printIdeal(path,
-    { update: { names: ['abbrev'] }, complete: true }))
 })
 
 t.test('deduped transitive deps with asymmetrical bin declaration', async t => {
@@ -2408,54 +2366,6 @@ t.test('set the current on ERESOLVE triggered by devDeps', async t => {
       },
       location: 'node_modules/eslint',
     },
-  })
-})
-
-t.test('shrinkwrapped dev/optional deps should not clobber flags', async t => {
-  await t.test('optional', async t => {
-    const path = t.testdir({
-      'package.json': JSON.stringify({
-        name: 'project',
-        version: '1.2.3',
-        optionalDependencies: {
-          '@isaacs/test-package-with-shrinkwrap': '^1.0.0',
-        },
-      }),
-    })
-    createRegistry(t, true)
-    const tree = await buildIdeal(path, { complete: true })
-    const swName = '@isaacs/test-package-with-shrinkwrap'
-    const swDep = tree.children.get(swName)
-    const metaDep = swDep.children.get('abbrev')
-    t.equal(swDep.optional, true, 'shrinkwrapped dep is optional')
-    t.equal(metaDep.optional, true, 'shrinkwrapped metadep optional')
-
-    // make sure we're not just somehow leaving ALL flags true
-    t.equal(swDep.dev, false, 'sw dep is not dev')
-    t.equal(metaDep.dev, false, 'meta dep is not dev')
-  })
-
-  await t.test('dev', async t => {
-    const path = t.testdir({
-      'package.json': JSON.stringify({
-        name: 'project',
-        version: '1.2.3',
-        devDependencies: {
-          '@isaacs/test-package-with-shrinkwrap': '^1.0.0',
-        },
-      }),
-    })
-    createRegistry(t, true)
-    const tree = await buildIdeal(path, { complete: true })
-    const swName = '@isaacs/test-package-with-shrinkwrap'
-    const swDep = tree.children.get(swName)
-    const metaDep = swDep.children.get('abbrev')
-    t.equal(swDep.dev, true, 'shrinkwrapped dep is dev')
-    t.equal(metaDep.dev, true, 'shrinkwrapped metadep dev')
-
-    // make sure we're not just somehow leaving ALL flags true
-    t.equal(swDep.optional, false, 'sw dep is not optional')
-    t.equal(metaDep.optional, false, 'meta dep is not optional')
   })
 })
 

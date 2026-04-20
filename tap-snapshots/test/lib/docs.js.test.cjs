@@ -146,7 +146,6 @@ Array [
   "sbom",
   "search",
   "set",
-  "shrinkwrap",
   "start",
   "stop",
   "team",
@@ -692,8 +691,7 @@ but can be useful for debugging.
 * Default: true
 * Type: Boolean
 
-Format \`package-lock.json\` or \`npm-shrinkwrap.json\` as a human readable
-file.
+Format \`package-lock.json\` as a human readable file.
 
 
 
@@ -1045,8 +1043,8 @@ instead of the current working directory. See
   otherwise, maintain current lockfile version.
 * Type: null, 1, 2, 3, "1", "2", or "3"
 
-Set the lockfile format version to be used in package-lock.json and
-npm-shrinkwrap-json files. Possible options are:
+Set the lockfile format version to be used in package-lock.json files.
+Possible options are:
 
 1: The lockfile version used by npm versions 5 and 6. Lacks some data that
 is used during the install, resulting in slower and possibly less
@@ -1211,8 +1209,7 @@ allow the CLI to fill in missing cache data, see \`--prefer-offline\`.
 Dependency types to omit from the installation tree on disk.
 
 Note that these dependencies _are_ still resolved and added to the
-\`package-lock.json\` or \`npm-shrinkwrap.json\` file. They are just not
-physically installed on disk.
+\`package-lock.json\` file. They are just not physically installed on disk.
 
 If a package type appears in both the \`--include\` and \`--omit\` lists, then
 it will be included.
@@ -2236,16 +2233,6 @@ Alias for --include=optional or --omit=optional
 Alias for \`--omit=dev\`
 
 
-
-#### \`shrinkwrap\`
-
-* Default: true
-* Type: Boolean
-* DEPRECATED: Use the --package-lock setting instead.
-
-Alias for --package-lock
-
-
 `
 
 exports[`test/lib/docs.js TAP config > all keys 1`] = `
@@ -2400,7 +2387,6 @@ Array [
   "searchopts",
   "searchstaleness",
   "shell",
-  "shrinkwrap",
   "sign-git-commit",
   "sign-git-tag",
   "strict-peer-deps",
@@ -2556,7 +2542,6 @@ Array [
   "searchopts",
   "searchstaleness",
   "shell",
-  "shrinkwrap",
   "sign-git-commit",
   "sign-git-tag",
   "strict-peer-deps",
@@ -5468,23 +5453,6 @@ Note: This command is unaware of workspaces.
 
 #### \`global\`
 #### \`location\`
-`
-
-exports[`test/lib/docs.js TAP usage shrinkwrap > must match snapshot 1`] = `
-Lock down dependency versions for publication
-
-Usage:
-npm shrinkwrap
-
-Run "npm help shrinkwrap" for more info
-
-\`\`\`bash
-npm shrinkwrap
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-NO PARAMS
 `
 
 exports[`test/lib/docs.js TAP usage start > must match snapshot 1`] = `

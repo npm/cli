@@ -47,7 +47,6 @@ const _checkBins = Symbol.for('checkBins')
 // TODO tests should not be this deep into internals
 const _diffTrees = Symbol.for('diffTrees')
 const _createSparseTree = Symbol.for('createSparseTree')
-const _loadShrinkwrapsAndUpdateTrees = Symbol.for('loadShrinkwrapsAndUpdateTrees')
 const _reifyNode = Symbol.for('reifyNode')
 const _updateAll = Symbol.for('updateAll')
 const _updateNames = Symbol.for('updateNames')
@@ -72,7 +71,6 @@ module.exports = cls => class Reifier extends cls {
   #omit
   #retiredPaths = {}
   #retiredUnchanged = {}
-  #shrinkwrapInflated = new Set()
   #sparseTreeDirs = new Set()
   #sparseTreeRoots = new Set()
   #linkedActualForDiff = null
@@ -301,7 +299,6 @@ module.exports = cls => class Reifier extends cls {
       ]],
       [_rollbackCreateSparseTree, [
         _createSparseTree,
-        _loadShrinkwrapsAndUpdateTrees,
         _loadBundlesAndUpdateTrees,
         _submitQuickAudit,
         _unpackNewModules,
@@ -461,7 +458,6 @@ module.exports = cls => class Reifier extends cls {
     // and ideal trees.
     this.diff = Diff.calculate({
       omit: this.#omit,
-      shrinkwrapInflated: this.#shrinkwrapInflated,
       filterNodes,
       actual: this.#linkedActualForDiff || this.actualTree,
       ideal: this.idealTree,
@@ -610,39 +606,6 @@ module.exports = cls => class Reifier extends cls {
     })
       .then(timeEnd)
       .then(() => this[_rollbackRetireShallowNodes](er))
-  }
-
-  // shrinkwrap nodes define their dependency branches with a file, so
-  // we need to unpack them, read that shrinkwrap file, and then update
-  // the tree by calling loadVirtual with the node as the root.
-  [_loadShrinkwrapsAndUpdateTrees] () {
-    const seen = this.#shrinkwrapInflated
-    const shrinkwraps = this.diff.leaves
-      .filter(d => (d.action === 'CHANGE' || d.action === 'ADD' || !d.action) &&
-        d.ideal.hasShrinkwrap && !seen.has(d.ideal) &&
-        !this[_trashList].has(d.ideal.path))
-
-    if (!shrinkwraps.length) {
-      return
-    }
-
-    const timeEnd = time.start('reify:loadShrinkwraps')
-
-    const Arborist = this.constructor
-    return promiseAllRejectLate(shrinkwraps.map(diff => {
-      const node = diff.ideal
-      seen.add(node)
-      return diff.action ? this[_reifyNode](node) : node
-    }))
-      .then(nodes => promiseAllRejectLate(nodes.map(node => new Arborist({
-        ...this.options,
-        path: node.path,
-      }).loadVirtual({ root: node }))))
-      // reload the diff and sparse tree because the ideal tree changed
-      .then(() => this[_diffTrees]())
-      .then(() => this[_createSparseTree]())
-      .then(() => this[_loadShrinkwrapsAndUpdateTrees]())
-      .then(timeEnd)
   }
 
   // create a symlink for Links, extract for Nodes
@@ -1146,7 +1109,6 @@ module.exports = cls => class Reifier extends cls {
 
         const node = diff.ideal
         const bd = this.#bundleUnpacked.has(node)
-        const sw = this.#shrinkwrapInflated.has(node)
         const bundleMissing = this.#bundleMissing.has(node)
 
         // check whether we still need to unpack this one.
@@ -1156,8 +1118,6 @@ module.exports = cls => class Reifier extends cls {
           !node.isRoot &&
           // already unpacked to read bundle
           !bd &&
-          // already unpacked to read sw
-          !sw &&
           // already unpacked by another dep's bundle
           (bundleMissing || !node.inDepBundle)
 

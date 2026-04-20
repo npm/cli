@@ -301,7 +301,7 @@ Some files are always ignored by default:
 * `config.gypi`
 * `node_modules`
 * `npm-debug.log`
-* `package-lock.json` (use [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) if you wish it to be published)
+* `package-lock.json`
 * `pnpm-lock.yaml`
 * `yarn.lock`
 * `bun.lockb`
@@ -872,7 +872,7 @@ These changes can be scoped as specific or as vague as desired.
 
 Overrides are only considered in the root `package.json` file for a project.
 Overrides in installed dependencies (including [workspaces](/using-npm/workspaces)) are not considered in dependency tree resolution.
-Published packages may dictate their resolutions by pinning dependencies or using an [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) file.
+Published packages may dictate their resolutions by pinning dependencies or using [`bundleDependencies`](#bundledependencies).
 
 To make sure the package `@npm/foo` is always installed as version `1.0.0` no matter what version your dependencies rely on:
 

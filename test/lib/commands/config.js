@@ -342,14 +342,6 @@ t.test('config set invalid option', async t => {
   )
 })
 
-t.test('config set deprecated option', async t => {
-  const { npm } = await loadMockNpm(t)
-  await t.rejects(
-    npm.exec('config', ['set', 'shrinkwrap', 'true']),
-    /deprecated/
-  )
-})
-
 t.test('config set nerf-darted option', async t => {
   const { npm } = await loadMockNpm(t)
   await npm.exec('config', ['set', '//npm.pkg.github.com/:_authToken', '0xdeadbeef'])

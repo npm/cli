@@ -82,7 +82,6 @@ class Node {
       fsChildren,
       fsParent,
       global = false,
-      hasShrinkwrap,
       inert = false,
       installLinks = false,
       integrity,
@@ -170,7 +169,6 @@ class Node {
       }
     }
     this.integrity = integrity || this.package._integrity || null
-    this.hasShrinkwrap = hasShrinkwrap || this.package._hasShrinkwrap || false
     this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
 
@@ -1101,8 +1099,8 @@ class Node {
   // is depending on it would be fine with the thing that they would resolve
   // to if it was removed, or nothing is depending on it in the first place.
   canDedupe (preferDedupe = false, explicitRequest = false) {
-    // not allowed to mess with shrinkwraps or bundles
-    if (this.inDepBundle || this.inShrinkwrap) {
+    // not allowed to mess with bundles
+    if (this.inDepBundle) {
       return false
     }
 
@@ -1247,11 +1245,6 @@ class Node {
     }
 
     treeCheck(this)
-  }
-
-  get inShrinkwrap () {
-    return this.parent &&
-      (this.parent.hasShrinkwrap || this.parent.inShrinkwrap)
   }
 
   get parent () {

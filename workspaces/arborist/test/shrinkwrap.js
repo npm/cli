@@ -17,7 +17,6 @@ const YarnLock = require('../lib/yarn-lock.js')
 const yarnFixture = resolve(__dirname, 'fixtures/yarn-stuff')
 const emptyFixture = resolve(__dirname, 'fixtures/empty')
 const depTypesFixture = resolve(__dirname, 'fixtures/dev-deps')
-const badJsonFixture = resolve(__dirname, 'fixtures/testing-peer-deps-bad-sw')
 const hiddenLockfileFixture = resolve(__dirname, 'fixtures/hidden-lockfile')
 const hidden = 'node_modules/.package-lock.json'
 const saxFixture = resolve(__dirname, 'fixtures/sax')
@@ -120,7 +119,8 @@ t.test('loading in bad dir gets empty lockfile', async t => {
 })
 
 t.test('failure to parse json gets empty lockfile', async t => {
-  const sw = await Shrinkwrap.load({ path: badJsonFixture })
+  const path = t.testdir({ 'package-lock.json': 'this is not valid json {' })
+  const sw = await Shrinkwrap.load({ path })
   t.strictSame(sw.data, {
     lockfileVersion: 3,
     requires: true,
@@ -677,7 +677,7 @@ t.test('write the shrinkwrap back to disk', t => {
   t.end()
 })
 
-t.test('load shrinkwrap if no package-lock.json present', async t => {
+t.test('ignore npm-shrinkwrap.json at the project root', async t => {
   const dir = t.testdir({
     'npm-shrinkwrap.json': JSON.stringify({
       lockfileVersion: 1,
@@ -686,14 +686,12 @@ t.test('load shrinkwrap if no package-lock.json present', async t => {
     }),
   })
   let s
-  s = await Shrinkwrap.load({ path: dir, shrinkwrapOnly: true })
-  t.equal(s.type, 'npm-shrinkwrap.json', 'loaded with swonly')
-  s = await Shrinkwrap.reset({ path: dir, shrinkwrapOnly: true })
-  t.equal(s.type, 'npm-shrinkwrap.json', 'loaded fresh')
   s = await Shrinkwrap.load({ path: dir })
-  t.equal(s.type, 'npm-shrinkwrap.json', 'loaded without swonly')
+  t.equal(s.loadedFromDisk, false, 'shrinkwrap is not loaded from disk')
+  t.notOk(s.filename.endsWith('npm-shrinkwrap.json'), 'filename is package-lock.json')
   s = await Shrinkwrap.reset({ path: dir })
-  t.equal(s.type, 'npm-shrinkwrap.json', 'loaded fresh without swonly')
+  t.equal(s.loadedFromDisk, false, 'reset does not find shrinkwrap')
+  t.notOk(s.filename.endsWith('npm-shrinkwrap.json'), 'reset filename is package-lock.json')
 })
 
 t.test('load yarn.lock file if present', async t => {
@@ -1600,14 +1598,15 @@ t.test('shrinkwrap where root is a link node', async t => {
   })
 })
 
-t.test('prioritize npm-shrinkwrap.json over package-lock.json', async t => {
+t.test('ignore npm-shrinkwrap.json even when package-lock.json is also present', async t => {
   const path = t.testdir({
-    'npm-shrinkwrap.json': '{}',
-    'package-lock.json': '{}',
+    'npm-shrinkwrap.json': '{"name":"from-shrinkwrap"}',
+    'package-lock.json': '{"name":"from-package-lock"}',
     'package.json': '{}',
   })
   const sw = await Shrinkwrap.load({ path })
-  t.equal(sw.type, 'npm-shrinkwrap.json')
+  t.equal(sw.type, 'package-lock.json')
+  t.equal(sw.data.name, 'from-package-lock', 'read package-lock.json, not npm-shrinkwrap.json')
 })
 
 t.test('do not add metadata if versions mismatch', async t => {

@@ -772,7 +772,7 @@ const definitions = {
     default: true,
     type: Boolean,
     description: `
-      Format \`package-lock.json\` or \`npm-shrinkwrap.json\` as a human
+      Format \`package-lock.json\` as a human
       readable file.
     `,
     flatten,
@@ -1254,8 +1254,8 @@ const definitions = {
       Version 3 if no lockfile, auto-converting v1 lockfiles to v3; otherwise,
       maintain current lockfile version.`,
     description: `
-      Set the lockfile format version to be used in package-lock.json and
-      npm-shrinkwrap-json files.  Possible options are:
+      Set the lockfile format version to be used in package-lock.json files.
+      Possible options are:
 
       1: The lockfile version used by npm versions 5 and 6.  Lacks some data that
       is used during the install, resulting in slower and possibly less
@@ -1449,7 +1449,7 @@ const definitions = {
       Dependency types to omit from the installation tree on disk.
 
       Note that these dependencies _are_ still resolved and added to the
-      \`package-lock.json\` or \`npm-shrinkwrap.json\` file.  They are just
+      \`package-lock.json\` file.  They are just
       not physically installed on disk.
 
       If a package type appears in both the \`--include\` and \`--omit\`
@@ -2124,20 +2124,6 @@ const definitions = {
       The shell to run for the \`npm explore\` command.
     `,
     flatten,
-  }),
-  shrinkwrap: new Definition('shrinkwrap', {
-    default: true,
-    type: Boolean,
-    deprecated: `
-      Use the --package-lock setting instead.
-    `,
-    description: `
-      Alias for --package-lock
-    `,
-    flatten (key, obj, flatOptions) {
-      obj['package-lock'] = obj.shrinkwrap
-      definitions['package-lock'].flatten('package-lock', obj, flatOptions)
-    },
   }),
   'sign-git-commit': new Definition('sign-git-commit', {
     default: false,

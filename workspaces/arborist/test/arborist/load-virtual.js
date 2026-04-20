@@ -43,7 +43,7 @@ t.test('load from fixture using filesystem root path', t => {
     .then(virtualTree => t.equal(virtualTree, root))
 })
 
-t.test('load from root that already has shrinkwrap', t =>
+t.test('load from root with existing package-lock', t =>
   Shrinkwrap.load({ path: tapAndFlow }).then(meta => {
     const root = new Node({
       path: tapAndFlow,
@@ -67,19 +67,21 @@ t.test('load from cwd', t => {
 
 t.test('loading without a package-lock fails', t =>
   t.rejects(loadVirtual(badfixture), {
-    message: 'loadVirtual requires existing shrinkwrap file',
+    message: 'loadVirtual requires existing package-lock.json file',
     code: 'ENOLOCK',
   }))
 
-t.test('load from npm-shrinkwrap.json', t => {
+t.test('ignore npm-shrinkwrap.json when loading virtual tree', t => {
   const lock = require(fixture + '/package-lock.json')
   const pkg = require(fixture + '/package.json')
   const path = t.testdir({
     'npm-shrinkwrap.json': JSON.stringify(lock),
     'package.json': JSON.stringify(pkg),
   })
-  return loadVirtual(path).then(tree =>
-    t.matchSnapshot(printTree(tree), 'loaded virtual tree from fixture'))
+  return t.rejects(loadVirtual(path), {
+    message: 'loadVirtual requires existing package-lock.json file',
+    code: 'ENOLOCK',
+  })
 })
 
 t.test('load without a root package.json is fine', t => {
