@@ -182,6 +182,115 @@ t.test('lifecycle scripts', async t => {
   ], 'runs appropriate scripts, in order')
 })
 
+// Regression test: `npm ci` must run root `preinstall` before reify populates node_modules, matching `npm install` behavior.
+t.test('preinstall runs before reify for npm ci', async t => {
+  const events = []
+  const { npm, registry } = await loadMockNpm(t, {
+    prefixDir: {
+      abbrev: abbrev,
+      'package.json': JSON.stringify({
+        ...packageJson,
+        scripts: {
+          preinstall: 'echo preinstall',
+          postinstall: 'echo postinstall',
+        },
+      }),
+      'package-lock.json': JSON.stringify(packageLock),
+    },
+    mocks: {
+      '@npmcli/run-script': async (opts) => {
+        if (opts.path === npm.prefix) {
+          const abbrevPkg = path.join(npm.prefix, 'node_modules', 'abbrev', 'package.json')
+          events.push({ event: opts.event, depInstalled: fs.existsSync(abbrevPkg) })
+        }
+      },
+    },
+  })
+  const manifest = registry.manifest({ name: 'abbrev' })
+  await registry.tarball({
+    manifest: manifest.versions['1.0.0'],
+    tarball: path.join(npm.prefix, 'abbrev'),
+  })
+  registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  await npm.exec('ci', [])
+
+  const pre = events.find(e => e.event === 'preinstall')
+  const post = events.find(e => e.event === 'postinstall')
+  t.ok(pre, 'preinstall ran')
+  t.ok(post, 'postinstall ran')
+  t.equal(pre.depInstalled, false, 'preinstall runs before dependencies are installed')
+  t.equal(post.depInstalled, true, 'postinstall runs after dependencies are installed')
+})
+
+// Regression test: --ignore-scripts must suppress the new pre-reify `preinstall` path in `npm ci`, matching the symmetric guarantee in `npm install`.
+t.test('--ignore-scripts skips preinstall entirely for npm ci', async t => {
+  const events = []
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      abbrev: abbrev,
+      'package.json': JSON.stringify({
+        ...packageJson,
+        scripts: {
+          preinstall: 'echo preinstall',
+          postinstall: 'echo postinstall',
+        },
+      }),
+      'package-lock.json': JSON.stringify(packageLock),
+    },
+    mocks: {
+      '@npmcli/run-script': async (opts) => {
+        if (opts.path === npm.prefix) {
+          events.push(opts.event)
+        }
+      },
+    },
+  })
+  const manifest = registry.manifest({ name: 'abbrev' })
+  await registry.tarball({
+    manifest: manifest.versions['1.0.0'],
+    tarball: path.join(npm.prefix, 'abbrev'),
+  })
+  await npm.exec('ci', [])
+  t.strictSame(events, [], 'no root lifecycle scripts run when --ignore-scripts is set')
+})
+
+// Regression test: symmetric to the install-side guarantee — a failing root `preinstall` must short-circuit before reify runs in `npm ci`, so dependencies never reach disk on failure.
+t.test('a failing preinstall prevents reify for npm ci', async t => {
+  const events = []
+  const { npm } = await loadMockNpm(t, {
+    prefixDir: {
+      abbrev: abbrev,
+      'package.json': JSON.stringify({
+        ...packageJson,
+        scripts: {
+          preinstall: 'exit 1',
+          postinstall: 'echo postinstall',
+        },
+      }),
+      'package-lock.json': JSON.stringify(packageLock),
+    },
+    mocks: {
+      '@npmcli/run-script': async (opts) => {
+        if (opts.path === npm.prefix) {
+          events.push(opts.event)
+          if (opts.event === 'preinstall') {
+            throw Object.assign(new Error('preinstall failed'), { code: 'ELIFECYCLE' })
+          }
+        }
+      },
+    },
+  })
+
+  await t.rejects(npm.exec('ci', []), /preinstall failed/, 'ci rejects when preinstall fails')
+  t.strictSame(events, ['preinstall'], 'only preinstall ran; no post-reify scripts')
+  t.equal(
+    fs.existsSync(path.join(npm.prefix, 'node_modules', 'abbrev', 'package.json')),
+    false,
+    'no dependency reached disk after preinstall failure'
+  )
+})
+
 t.test('should throw if package-lock.json is missing', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
