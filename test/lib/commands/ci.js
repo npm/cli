@@ -182,6 +182,46 @@ t.test('lifecycle scripts', async t => {
   ], 'runs appropriate scripts, in order')
 })
 
+// Regression test: `npm ci` must run root `preinstall` before reify populates node_modules, matching `npm install` behavior.
+t.test('preinstall runs before reify for npm ci', async t => {
+  const events = []
+  const { npm, registry } = await loadMockNpm(t, {
+    prefixDir: {
+      abbrev: abbrev,
+      'package.json': JSON.stringify({
+        ...packageJson,
+        scripts: {
+          preinstall: 'echo preinstall',
+          postinstall: 'echo postinstall',
+        },
+      }),
+      'package-lock.json': JSON.stringify(packageLock),
+    },
+    mocks: {
+      '@npmcli/run-script': (opts) => {
+        if (opts.path === npm.prefix) {
+          const abbrevPkg = path.join(npm.prefix, 'node_modules', 'abbrev', 'package.json')
+          events.push({ event: opts.event, depInstalled: fs.existsSync(abbrevPkg) })
+        }
+      },
+    },
+  })
+  const manifest = registry.manifest({ name: 'abbrev' })
+  await registry.tarball({
+    manifest: manifest.versions['1.0.0'],
+    tarball: path.join(npm.prefix, 'abbrev'),
+  })
+  registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  await npm.exec('ci', [])
+
+  const pre = events.find(e => e.event === 'preinstall')
+  const post = events.find(e => e.event === 'postinstall')
+  t.ok(pre, 'preinstall ran')
+  t.ok(post, 'postinstall ran')
+  t.equal(pre.depInstalled, false, 'preinstall runs before dependencies are installed')
+  t.equal(post.depInstalled, true, 'postinstall runs after dependencies are installed')
+})
+
 t.test('should throw if package-lock.json is missing', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {

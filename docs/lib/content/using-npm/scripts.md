@@ -111,7 +111,7 @@ It is run AFTER the changes have been applied and the `package.json` and `packag
 
 #### [`npm ci`](/commands/npm-ci)
 
-* `preinstall`
+* `preinstall` (before dependencies are installed)
 * `install`
 * `postinstall`
 * `prepublish`
@@ -119,8 +119,9 @@ It is run AFTER the changes have been applied and the `package.json` and `packag
 * `prepare`
 * `postprepare`
 
-These all run after the actual installation of modules into
- `node_modules`, in order, with no internal actions happening in between
+`preinstall` runs before any dependencies are fetched or unpacked into
+`node_modules`. The remaining scripts run after the installation of modules
+into `node_modules`, in order, with no internal actions happening in between.
 
 #### [`npm diff`](/commands/npm-diff)
 
@@ -128,15 +129,20 @@ These all run after the actual installation of modules into
 
 #### [`npm install`](/commands/npm-install)
 
-These also run when you run `npm install -g <pkg-name>`
+These run on a bare `npm install` in a local project (no package arguments).
 
-* `preinstall`
+* `preinstall` (before dependencies are installed)
 * `install`
 * `postinstall`
 * `prepublish`
 * `preprepare`
 * `prepare`
 * `postprepare`
+
+`preinstall` runs before any dependencies are fetched or unpacked into
+`node_modules`, so scripts can prepare the environment (for example, setting
+up authentication for a private registry) before resolution begins. The
+remaining scripts run after installation has completed.
 
 If there is a `binding.gyp` file in the root of your package and you haven't defined your own `install` or `preinstall` scripts, npm will default the `install` command to compile using node-gyp via `node-gyp rebuild`
 
