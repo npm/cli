@@ -58,8 +58,8 @@ t.test('stages with --json', async t => {
   registry.nock.post('/-/stage/package/@npmcli%2ftest-package').reply(201, {})
   await npm.exec('stage', ['publish'])
   const out = JSON.parse(joinedOutput())
-  t.equal(out.name, pkg)
-  t.equal(out.version, '1.0.0')
+  t.equal(out[pkg].name, pkg)
+  t.equal(out[pkg].version, '1.0.0')
 })
 
 t.test('stages with --json includes stageId', async t => {
@@ -78,8 +78,8 @@ t.test('stages with --json includes stageId', async t => {
   registry.nock.post('/-/stage/package/@npmcli%2ftest-package').reply(201, { stageId })
   await npm.exec('stage', ['publish'])
   const out = JSON.parse(joinedOutput())
-  t.equal(out.name, pkg)
-  t.equal(out.stageId, stageId)
+  t.equal(out[pkg].name, pkg)
+  t.equal(out[pkg].stageId, stageId)
 })
 
 t.test('throws on invalid semver tag', async t => {

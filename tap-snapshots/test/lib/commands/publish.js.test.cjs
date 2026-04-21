@@ -165,7 +165,7 @@ exports[`test/lib/commands/publish.js TAP no auth dry-run > must match snapshot 
 
 exports[`test/lib/commands/publish.js TAP no auth dry-run > warns about auth being needed 1`] = `
 Array [
-  "This command requires you to be logged in to https://registry.npmjs.org/ (dry-run)",
+  "publish This command requires you to be logged in to https://registry.npmjs.org/ (dry-run)",
 ]
 `
 
