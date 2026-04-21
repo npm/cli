@@ -391,7 +391,7 @@
     "0.7.2": {
       "name": "ms",
       "version": "0.7.2",
-      "description": "Tiny millisecond conversion utility",
+      "description": "Tiny milisecond conversion utility",
       "repository": {
         "type": "git",
         "url": "git+https://github.com/zeit/ms.git"
@@ -463,7 +463,7 @@
     "0.7.3": {
       "name": "ms",
       "version": "0.7.3",
-      "description": "Tiny millisecond conversion utility",
+      "description": "Tiny milisecond conversion utility",
       "repository": {
         "type": "git",
         "url": "git+https://github.com/zeit/ms.git"
@@ -535,7 +535,7 @@
     "1.0.0": {
       "name": "ms",
       "version": "1.0.0",
-      "description": "Tiny millisecond conversion utility",
+      "description": "Tiny milisecond conversion utility",
       "repository": {
         "type": "git",
         "url": "git+https://github.com/zeit/ms.git"
@@ -608,7 +608,7 @@
     "2.0.0": {
       "name": "ms",
       "version": "2.0.0",
-      "description": "Tiny millisecond conversion utility",
+      "description": "Tiny milisecond conversion utility",
       "repository": {
         "type": "git",
         "url": "git+https://github.com/zeit/ms.git"

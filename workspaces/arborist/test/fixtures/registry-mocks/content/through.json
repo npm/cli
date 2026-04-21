@@ -10,7 +10,7 @@
     "0.0.1": {
       "name": "through",
       "version": "0.0.1",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -48,7 +48,7 @@
     "0.0.2": {
       "name": "through",
       "version": "0.0.2",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -86,7 +86,7 @@
     "0.0.3": {
       "name": "through",
       "version": "0.0.3",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -124,7 +124,7 @@
     "0.0.4": {
       "name": "through",
       "version": "0.0.4",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -162,7 +162,7 @@
     "0.1.0": {
       "name": "through",
       "version": "0.1.0",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -200,7 +200,7 @@
     "0.1.1": {
       "name": "through",
       "version": "0.1.1",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -238,7 +238,7 @@
     "0.1.2": {
       "name": "through",
       "version": "0.1.2",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -276,7 +276,7 @@
     "0.1.3": {
       "name": "through",
       "version": "0.1.3",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -319,7 +319,7 @@
     "0.1.4": {
       "name": "through",
       "version": "0.1.4",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -362,7 +362,7 @@
     "1.0.0": {
       "name": "through",
       "version": "1.0.0",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -405,7 +405,7 @@
     "1.1.0": {
       "name": "through",
       "version": "1.1.0",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -453,7 +453,7 @@
     "1.1.1": {
       "name": "through",
       "version": "1.1.1",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -501,7 +501,7 @@
     "1.1.2": {
       "name": "through",
       "version": "1.1.2",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -549,7 +549,7 @@
     "2.0.0": {
       "name": "through",
       "version": "2.0.0",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -597,7 +597,7 @@
     "2.1.0": {
       "name": "through",
       "version": "2.1.0",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -645,7 +645,7 @@
     "2.2.0": {
       "name": "through",
       "version": "2.2.0",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -694,7 +694,7 @@
     "2.2.1": {
       "name": "through",
       "version": "2.2.1",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "asynct test/*.js"
@@ -743,7 +743,7 @@
     "2.2.2": {
       "name": "through",
       "version": "2.2.2",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "set -e; for t in test/*.js; do node $t; done"
@@ -800,7 +800,7 @@
     "2.2.4": {
       "name": "through",
       "version": "2.2.4",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "set -e; for t in test/*.js; do node $t; done"
@@ -857,7 +857,7 @@
     "2.2.5": {
       "name": "through",
       "version": "2.2.5",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "set -e; for t in test/*.js; do node $t; done"
@@ -914,7 +914,7 @@
     "2.2.6": {
       "name": "through",
       "version": "2.2.6",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "set -e; for t in test/*.js; do node $t; done"
@@ -971,7 +971,7 @@
     "2.2.7": {
       "name": "through",
       "version": "2.2.7",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "set -e; for t in test/*.js; do node $t; done"
@@ -1028,7 +1028,7 @@
     "2.3.1": {
       "name": "through",
       "version": "2.3.1",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "set -e; for t in test/*.js; do node $t; done"
@@ -1085,7 +1085,7 @@
     "2.3.2": {
       "name": "through",
       "version": "2.3.2",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "set -e; for t in test/*.js; do node $t; done"
@@ -1142,7 +1142,7 @@
     "2.3.3": {
       "name": "through",
       "version": "2.3.3",
-      "description": "simplified stream construction",
+      "description": "simplified stream contruction",
       "main": "index.js",
       "scripts": {
         "test": "set -e; for t in test/*.js; do node $t; done"
