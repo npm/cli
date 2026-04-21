@@ -1281,6 +1281,77 @@ t.test('saving the ideal tree', t => {
     })
   })
 
+  t.test('save-spec round-trip preserves alias prefix per aliasType', async t => {
+    // For each of the three alias prefixes npm-package-arg recognizes,
+    // reify must write the dep back to package.json in a form that re-parses
+    // to the same intent. jsr: specifically must NOT leak the internal
+    // @jsr/<scope>__<name> form into package.json — that name is an
+    // on-registry detail and would break round-tripping through pnpm/yarn.
+    createRegistry(t, false)
+    const pkg = {
+      dependencies: {
+        // npm: existing behavior — saves with the target package's name.
+        legacy: 'npm:lodash@^4',
+        // jsr: must save the source scoped name, not @jsr/<scope>__<name>.
+        jsrdep: 'jsr:@scope/name@^1',
+        // github: keeps the scoped name as-is (GitHub Packages doesn't remap).
+        ghdep: 'github:@owner/name@^1',
+      },
+    }
+
+    const npa = require('npm-package-arg')
+    const kResolvedAdd = Symbol.for('resolvedAdd')
+    const path = t.testdir({
+      'package.json': JSON.stringify(pkg),
+    })
+    const a = newArb({ path })
+    const tree = await a.loadActual()
+    const meta = await Shrinkwrap.load({ path })
+    tree.meta = meta
+    meta.add(tree)
+    a.idealTree = tree
+
+    // Simulated installed nodes. packageName on each reflects what the
+    // target registry actually serves — that's the value reify reads to
+    // decide the saved spec's form.
+    new Node({
+      name: 'legacy',
+      resolved: 'https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz',
+      pkg: { name: 'lodash', version: '4.17.21' },
+      parent: tree,
+    })
+    new Node({
+      name: 'jsrdep',
+      resolved: 'https://npm.jsr.io/@jsr/scope__name/-/scope__name-1.2.3.tgz',
+      pkg: { name: '@jsr/scope__name', version: '1.2.3' },
+      parent: tree,
+    })
+    new Node({
+      name: 'ghdep',
+      resolved: 'https://npm.pkg.github.com/@owner/name/-/name-1.2.3.tgz',
+      pkg: { name: '@owner/name', version: '1.2.3' },
+      parent: tree,
+    })
+
+    a[kResolvedAdd] = [
+      npa('legacy@npm:lodash@^4'),
+      npa('jsrdep@jsr:@scope/name@^1'),
+      npa('ghdep@github:@owner/name@^1'),
+    ].map(spec => Object.assign(spec, { tree }))
+
+    await a[kSaveIdealTree]({})
+    const saved = JSON.parse(fs.readFileSync(path + '/package.json', 'utf8'))
+
+    t.equal(saved.dependencies.legacy, 'npm:lodash@^4.17.21',
+      'npm: alias saves with target package name')
+    t.equal(saved.dependencies.jsrdep, 'jsr:@scope/name@^1.2.3',
+      'jsr: alias saves the user-written scoped name, not @jsr/scope__name')
+    t.notMatch(saved.dependencies.jsrdep, '@jsr/scope__name',
+      'jsr: saved form must not leak the internal @jsr/<scope>__<name>')
+    t.equal(saved.dependencies.ghdep, 'github:@owner/name@^1.2.3',
+      'github: alias keeps the scoped name as-is')
+  })
+
   t.end()
 })
 

@@ -1432,7 +1432,21 @@ module.exports = cls => class Reifier extends cls {
 
           const pname = child.packageName
           const alias = name !== pname
-          newSpec = alias ? `npm:${pname}@${range}` : range
+          if (alias) {
+            // Preserve the original alias prefix (npm:, jsr:, github:) so
+            // round-tripping a package.json keeps the author's intent.
+            // For jsr:, save the scoped source name (e.g. @scope/pkg) rather
+            // than the internal @jsr/scope__pkg form.
+            if (req.aliasType === 'jsr' && req.jsrName) {
+              newSpec = `jsr:${req.jsrName}@${range}`
+            } else if (req.aliasType === 'github') {
+              newSpec = `github:${pname}@${range}`
+            } else {
+              newSpec = `npm:${pname}@${range}`
+            }
+          } else {
+            newSpec = range
+          }
         } else if (req.hosted) {
           // save the git+https url if it has auth; otherwise, shortcut
           const h = req.hosted
