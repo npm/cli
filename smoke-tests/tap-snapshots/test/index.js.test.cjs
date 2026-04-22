@@ -344,7 +344,7 @@ exports[`test/index.js TAP basic npm pkg > should have expected pkg delete outpu
 `
 
 exports[`test/index.js TAP basic npm pkg > should have expected pkg get output 1`] = `
-"ISC"
+ISC
 `
 
 exports[`test/index.js TAP basic npm pkg > should have expected pkg set output 1`] = `
@@ -352,28 +352,20 @@ exports[`test/index.js TAP basic npm pkg > should have expected pkg set output 1
 `
 
 exports[`test/index.js TAP basic npm pkg > should print package.json contents 1`] = `
-{
-  "name": "project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo /"Error: no test specified/" && exit 1",
-    "hello": "echo Hello"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "abbrev": "^1.0.4"
-  },
-  "tap": {
-    "test-env": [
-      "LC_ALL=sk"
-    ]
-  }
+name = 'project'
+version = '1.0.0'
+description = ''
+main = 'index.js'
+scripts = {
+  test: 'echo "Error: no test specified" && exit 1',
+  hello: 'echo Hello'
 }
+keywords = []
+author = ''
+license = 'ISC'
+type = 'commonjs'
+dependencies = { abbrev: '^1.0.4' }
+tap = { 'test-env': [ 'LC_ALL=sk' ] }
 `
 
 exports[`test/index.js TAP basic npm pkg set scripts > should have expected script added package.json result 1`] = `

@@ -5,13 +5,13 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/commands/pkg.js TAP delete multiple field > should delete multiple fields from package.json 1`] = `
+exports[`test/lib/commands/pkg.js TAP delete delete multiple field > should delete multiple fields from package.json 1`] = `
 Object {
   "name": "foo",
 }
 `
 
-exports[`test/lib/commands/pkg.js TAP delete nested field > should delete nested fields from package.json 1`] = `
+exports[`test/lib/commands/pkg.js TAP delete delete nested field > should delete nested fields from package.json 1`] = `
 Object {
   "info": Object {
     "foo": Object {
@@ -25,7 +25,7 @@ Object {
 }
 `
 
-exports[`test/lib/commands/pkg.js TAP delete single field > should delete single field from package.json 1`] = `
+exports[`test/lib/commands/pkg.js TAP delete delete single field > should delete single field from package.json 1`] = `
 Object {
   "name": "foo",
 }
@@ -39,59 +39,63 @@ Object {
 `
 
 exports[`test/lib/commands/pkg.js TAP get array field > should print retrieved array field 1`] = `
-[
-  "index.js",
-  "cli.js"
-]
+[ 'index.js', 'cli.js' ]
 `
 
 exports[`test/lib/commands/pkg.js TAP get array item > should print retrieved array field 1`] = `
-
+index.js
 `
 
-exports[`test/lib/commands/pkg.js TAP get array nested items notation > should print json result containing matching results 1`] = `
-{
-  "contributors[0].name": "Ruy",
-  "contributors[1].name": "Gar"
-}
+exports[`test/lib/commands/pkg.js TAP get get array nested items notation > should print json result containing matching results 1`] = `
+contributors[0].name = 'Ruy'
+contributors[1].name = 'Gar'
 `
 
-exports[`test/lib/commands/pkg.js TAP get multiple arg > should print retrieved package.json fields 1`] = `
+exports[`test/lib/commands/pkg.js TAP get json no args > should print package.json content 1`] = `
 {
   "name": "foo",
   "version": "1.1.1"
 }
 `
 
-exports[`test/lib/commands/pkg.js TAP get multiple arg with empty value > should print retrieved package.json field regardless of empty value 1`] = `
-{
-  "name": "foo",
-  "author": ""
-}
-`
-
-exports[`test/lib/commands/pkg.js TAP get multiple arg with only one arg existing > should print retrieved package.json field 1`] = `
+exports[`test/lib/commands/pkg.js TAP get json with args > should print package.json content 1`] = `
 {
   "name": "foo"
 }
 `
 
+exports[`test/lib/commands/pkg.js TAP get multiple arg > should print retrieved package.json fields 1`] = `
+name = 'foo'
+version = '1.1.1'
+`
+
+exports[`test/lib/commands/pkg.js TAP get multiple arg with empty value > should print retrieved package.json field regardless of empty value 1`] = `
+name = 'foo'
+author = ''
+`
+
+exports[`test/lib/commands/pkg.js TAP get multiple arg with only one arg existing > should print retrieved package.json field 1`] = `
+name = 'foo'
+`
+
 exports[`test/lib/commands/pkg.js TAP get nested arg > node test.js 1`] = `
-"node test.js"
+node test.js
 `
 
 exports[`test/lib/commands/pkg.js TAP get no args > should print package.json content 1`] = `
-{
-  "name": "foo",
-  "version": "1.1.1"
-}
+name = 'foo'
+version = '1.1.1'
+`
+
+exports[`test/lib/commands/pkg.js TAP get non string > should print retrieved package.json field 1`] = `
+{ '@npmcli/test': '*' }
 `
 
 exports[`test/lib/commands/pkg.js TAP get single arg > should print retrieved package.json field 1`] = `
-"1.1.1"
+1.1.1
 `
 
-exports[`test/lib/commands/pkg.js TAP push to array syntax > should append to arrays using empty bracket syntax 1`] = `
+exports[`test/lib/commands/pkg.js TAP set push to array syntax > should append to arrays using empty bracket syntax 1`] = `
 Object {
   "keywords": Array [
     "foo",
@@ -103,7 +107,7 @@ Object {
 }
 `
 
-exports[`test/lib/commands/pkg.js TAP set --json > should add fields to package.json 1`] = `
+exports[`test/lib/commands/pkg.js TAP set set --json > should add fields to package.json 1`] = `
 Object {
   "description": "awesome",
   "foo": Object {
@@ -123,7 +127,7 @@ Object {
 }
 `
 
-exports[`test/lib/commands/pkg.js TAP set = separate value > should add single field to package.json 1`] = `
+exports[`test/lib/commands/pkg.js TAP set set = separate value > should add single field to package.json 1`] = `
 Object {
   "name": "foo",
   "tap": Object {
@@ -135,7 +139,7 @@ Object {
 }
 `
 
-exports[`test/lib/commands/pkg.js TAP set multiple fields > should add single field to package.json 1`] = `
+exports[`test/lib/commands/pkg.js TAP set set multiple fields > should add single field to package.json 1`] = `
 Object {
   "bin": Object {
     "foo": "foo.js",
@@ -148,7 +152,7 @@ Object {
 }
 `
 
-exports[`test/lib/commands/pkg.js TAP set single field > should add single field to package.json 1`] = `
+exports[`test/lib/commands/pkg.js TAP set set single field > should add single field to package.json 1`] = `
 Object {
   "description": "Awesome stuff",
   "name": "foo",
@@ -157,21 +161,22 @@ Object {
 `
 
 exports[`test/lib/commands/pkg.js TAP single workspace multiple args > should only return info for one workspace 1`] = `
-{
-  "a": {
-    "name": "a",
-    "version": "1.0.0"
-  }
-}
+a name = 'a'
+a version = '1.0.0'
 `
 
 exports[`test/lib/commands/pkg.js TAP single workspace single arg > should only return info for one workspace 1`] = `
-{
-  "a": "1.0.0"
-}
+a 1.0.0
 `
 
 exports[`test/lib/commands/pkg.js TAP workspaces get > should return expected result for configured workspaces 1`] = `
+a name = 'a'
+a version = '1.0.0'
+b name = 'b'
+b version = '1.2.3'
+`
+
+exports[`test/lib/commands/pkg.js TAP workspaces get json > should return expected json result for configured workspaces 1`] = `
 {
   "a": {
     "name": "a",
