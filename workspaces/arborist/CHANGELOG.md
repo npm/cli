@@ -1,5 +1,11 @@
 # Changelog
 
+## [9.4.3](https://github.com/npm/cli/compare/arborist-v9.4.2...arborist-v9.4.3) (2026-04-22)
+### Bug Fixes
+* [`7cd45c6`](https://github.com/npm/cli/commit/7cd45c6037e2a09e7692d64d6bf16e1eaa24550a) [#9253](https://github.com/npm/cli/pull/9253) arborist: handle `npm link` with install-strategy=linked (@manzoorwanijk)
+* [`7e3a66e`](https://github.com/npm/cli/commit/7e3a66e96431e13ca7a0c09b2f8d421b9350aa13) [#9238](https://github.com/npm/cli/pull/9238) arborist: do not install inert optional extraneous shared dependencies (#9238) (@github-actions[bot], @lovell)
+* [`cff9ce9`](https://github.com/npm/cli/commit/cff9ce9f5c604478d0a4dfaa164844c43f0eb38d) [#9237](https://github.com/npm/cli/pull/9237) pass _isRoot context where missing (#9237) (@github-actions[bot])
+
 ## [9.4.2](https://github.com/npm/cli/compare/arborist-v9.4.1...arborist-v9.4.2) (2026-03-18)
 ### Bug Fixes
 * [`21ea382`](https://github.com/npm/cli/commit/21ea382a60b3693ff6c44c81447caa5d0294169c) [#9110](https://github.com/npm/cli/pull/9110) arborist: resolve sibling override sets via common ancestor (#9110) (@manzoorwanijk)

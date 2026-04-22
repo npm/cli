@@ -1,5 +1,31 @@
 # Changelog
 
+## [11.13.0](https://github.com/npm/cli/compare/v11.12.1...v11.13.0) (2026-04-22)
+### Features
+* [`8e8dadb`](https://github.com/npm/cli/commit/8e8dadb8ae378c1dde0b98c15167d739abaa9b37) [#9246](https://github.com/npm/cli/pull/9246) add `u` as alias for `update` command (#9246) (@github-actions[bot], @Ausoj)
+### Bug Fixes
+* [`ecd161b`](https://github.com/npm/cli/commit/ecd161b206ca49f22f455585ff7ced0b6d0e0511) [#9258](https://github.com/npm/cli/pull/9258) ignore intended error code (@owlstronaut)
+### Dependencies
+* [`8d2fdcd`](https://github.com/npm/cli/commit/8d2fdcdeb09e78b6b6dd0a7e9eaa5b222ec91071) [#9272](https://github.com/npm/cli/pull/9272) `lru-cache@11.3.5`
+* [`e603d36`](https://github.com/npm/cli/commit/e603d36910c6ad91bf7ff890a29149758201a98b) [#9272](https://github.com/npm/cli/pull/9272) `node-gyp@12.3.0`
+* [`d48b7da`](https://github.com/npm/cli/commit/d48b7da10bc0cbc8821d3bdbba9b571d84d5509d) [#9272](https://github.com/npm/cli/pull/9272) `is-cidr@6.0.4`
+* [`032a5ca`](https://github.com/npm/cli/commit/032a5ca94a5b6095883256a1538a59f840adce80) [#9240](https://github.com/npm/cli/pull/9240) `@sigstore/protobuf-specs@0.5.1`
+* [`33a81e7`](https://github.com/npm/cli/commit/33a81e7f1c63b522d025142ecd6acc1a368dc603) [#9240](https://github.com/npm/cli/pull/9240) `tinyglobby@0.2.16`
+* [`68dc4a0`](https://github.com/npm/cli/commit/68dc4a02480563be34daf205ad08b6d3ca3cc550) [#9240](https://github.com/npm/cli/pull/9240) `picomatch@4.0.4`
+* [`1bb6703`](https://github.com/npm/cli/commit/1bb670362d3fe6724e9837a1dedf3bac9ff343dd) [#9240](https://github.com/npm/cli/pull/9240) `lru-cache@11.3.3`
+* [`37059e4`](https://github.com/npm/cli/commit/37059e41129c444839fcadcfb01f2aade63054d2) [#9240](https://github.com/npm/cli/pull/9240) `diff@8.0.4`
+* [`fb450ab`](https://github.com/npm/cli/commit/fb450ab4f85cde6aa9936f1f76b6a6b0ecbe9b56) [#9240](https://github.com/npm/cli/pull/9240) `minimatch@10.2.5`
+* [`7c4bbbf`](https://github.com/npm/cli/commit/7c4bbbfae55dcce038e1e9482ac946d99ad02442) [#9240](https://github.com/npm/cli/pull/9240) `tar@7.5.13`
+* [`703a3bc`](https://github.com/npm/cli/commit/703a3bc9e7f0f035729ab49e5122c2f4bf7fbf32) [#9240](https://github.com/npm/cli/pull/9240) `minipass-flush@1.0.6`
+### Chores
+* [`e0724ac`](https://github.com/npm/cli/commit/e0724ac79e1b2acbb40694869a0fc67f050e4918) [#9272](https://github.com/npm/cli/pull/9272) dev dependency updates (@owlstronaut)
+* [`d249341`](https://github.com/npm/cli/commit/d2493410f7559837ad65a7b4117111a3590c4e8f) [#9230](https://github.com/npm/cli/pull/9230) don't run npm update in CI (@owlstronaut)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.3): `@npmcli/arborist@9.4.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.1.6): `libnpmdiff@8.1.6`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.2.6): `libnpmexec@10.2.6`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.20): `libnpmfund@7.0.20`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.1.6): `libnpmpack@9.1.6`
+
 ## [11.12.1](https://github.com/npm/cli/compare/v11.12.0...v11.12.1) (2026-03-24)
 ### Bug Fixes
 * [`596706a`](https://github.com/npm/cli/commit/596706a3d10100587e3751d860b4cfcc59342d2f) [#9148](https://github.com/npm/cli/pull/9148) revert prefer-offline/prefer-online exclusivity (#9129) (@owlstronaut)
