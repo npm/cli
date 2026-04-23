@@ -45,7 +45,26 @@ const fsMocks = {
   'node:fs': mockFs,
 }
 
-const { definitions, shorthands, nerfDarts, flatten } = t.mock('../lib/definitions/index.js', fsMocks)
+const { definitions: realDefinitions, shorthands, nerfDarts, flatten } =
+  t.mock('../lib/definitions/index.js', fsMocks)
+
+// Extend the real definitions with stub entries for fake config keys used
+// in the shared fixture below. Treating them as known lets merge-order,
+// env-override, and similar tests exercise Config.load() without tripping
+// the npm 12 unknown-config throw. Tests that want to exercise unknown
+// behavior use keys NOT in this stub list (e.g. "totally-unknown-key").
+const stubDef = (key) => ({ key, type: [String, Boolean] })
+const definitions = {
+  ...realDefinitions,
+  'builtin-config': stubDef('builtin-config'),
+  'global-config': stubDef('global-config'),
+  'user-config-from-builtin': stubDef('user-config-from-builtin'),
+  'default-user-config-in-home': stubDef('default-user-config-in-home'),
+  'project-config': stubDef('project-config'),
+  'cli-config': stubDef('cli-config'),
+  foo: stubDef('foo'),
+  bAr: stubDef('bAr'),
+}
 const Config = t.mock('../', fsMocks)
 
 // because we used t.mock above, the require cache gets blown and we lose our direct equality
@@ -138,6 +157,7 @@ prefix = ${path}/global
 `,
       '.npmrc-from-builtin': `
 user-config-from-builtin = true
+default-user-config-in-home = true
 foo = from-custom-userconfig
 globalconfig = ${path}/global/etc/npmrc
 `,
@@ -186,6 +206,7 @@ loglevel = yolo
       cwd: join(`${path}/project`),
       shorthands,
       definitions,
+      nerfDarts,
     })
     await t.rejects(() => config.load(), {
       message: `double-loading config "${resolve(path, 'npm/npmrc')}" as "user",` +
@@ -201,6 +222,7 @@ loglevel = yolo
       cwd: join(`${path}/project`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -217,6 +239,7 @@ loglevel = yolo
       cwd: join(`${path}/project`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -238,6 +261,7 @@ loglevel = yolo
       cwd: path,
       shorthands,
       definitions,
+      nerfDarts,
     })
     logs.length = 0
     await config.load()
@@ -288,10 +312,10 @@ loglevel = yolo
     t.equal(config.get('global', 'env'), undefined, 'empty env is missing')
     t.equal(config.get('global'), false, 'empty env is missing')
 
-    config.set('asdf', 'quux', 'global')
+    config.set('foo', 'quux', 'global')
     await config.save('global')
     const gres = readFileSync(`${path}/global/etc/npmrc`, 'utf8')
-    t.match(gres, 'asdf=quux')
+    t.match(gres, 'foo=quux')
 
     const cliData = config.data.get('cli')
     t.throws(() => cliData.loadError = true, {
@@ -381,8 +405,6 @@ loglevel = yolo
     // warn logs are emitted as a side effect of validate
     config.validate()
     t.strictSame(logs.filter(l => l[0] === 'warn'), [
-      ['warn', 'Unknown builtin config "builtin-config". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown builtin config "foo". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
       ['warn', 'invalid config', 'registry="hello"', 'set in command line options'],
       ['warn', 'invalid config', 'Must be', 'full url with "http://"'],
       ['warn', 'invalid config', 'proxy="hello"', 'set in command line options'],
@@ -399,13 +421,6 @@ loglevel = yolo
       ['warn', 'invalid config', 'prefix=true', 'set in command line options'],
       ['warn', 'invalid config', 'Must be', 'valid filesystem path'],
       ['warn', 'config', 'also', 'Please use --include=dev instead.'],
-      ['warn', 'Unknown env config "foo". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown project config "project-config". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown project config "foo". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown user config "user-config-from-builtin". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown user config "foo". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown global config "global-config". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown global config "foo". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
       ['warn', 'invalid config', 'loglevel="yolo"', `set in ${resolve(path, 'project/.npmrc')}`],
       ['warn', 'invalid config', 'Must be one of:',
         ['silent', 'error', 'warn', 'notice', 'http', 'info', 'verbose', 'silly'].join(', '),
@@ -458,6 +473,7 @@ loglevel = yolo
 
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -491,6 +507,7 @@ loglevel = yolo
 
       shorthands,
       definitions,
+      nerfDarts,
     })
     await config.load()
 
@@ -600,12 +617,6 @@ loglevel = yolo
       ['warn', 'invalid config', 'prefix=true', 'set in command line options'],
       ['warn', 'invalid config', 'Must be', 'valid filesystem path'],
       ['warn', 'config', 'also', 'Please use --include=dev instead.'],
-      ['warn', 'Unknown env config "foo". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown user config "default-user-config-in-home". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown user config "foo". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown global config "global-config". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown global config "foo". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
-      ['warn', 'Unknown global config "asdf". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'],
     ])
     logs.length = 0
   })
@@ -627,6 +638,7 @@ t.test('cafile loads as ca (and some saving tests)', async t => {
   const config = new Config({
     shorthands,
     definitions,
+    nerfDarts,
     npmPath: __dirname,
     env: { HOME: dir, PREFIX: dir },
     flatten,
@@ -665,6 +677,7 @@ fakey mc fakerson
   const config = new Config({
     shorthands,
     definitions,
+    nerfDarts,
     npmPath: __dirname,
     env: {
       HOME: dir,
@@ -686,6 +699,7 @@ t.test('ignore cafile if it does not load', async t => {
   const config = new Config({
     shorthands,
     definitions,
+    nerfDarts,
     npmPath: __dirname,
     env: { HOME: dir },
   })
@@ -704,6 +718,7 @@ t.test('raise error if reading ca file error other than ENOENT', async t => {
   const config = new Config({
     shorthands,
     definitions,
+    nerfDarts,
     npmPath: __dirname,
     env: { HOME: dir },
     flatten,
@@ -718,8 +733,7 @@ t.test('credentials management', async t => {
     nerfed_userpass: {
       '.npmrc': `//registry.example/:username = hello
 //registry.example/:_password = ${Buffer.from('world').toString('base64')}
-//registry.example/:email = i@izs.me
-//registry.example/:always-auth = "false"`,
+//registry.example/:email = i@izs.me`,
     },
     nerfed_auth: { // note: does not load, because we don't do _auth per reg
       '.npmrc': `//registry.example/:_auth = ${Buffer.from('hello:world').toString('base64')}`,
@@ -734,7 +748,6 @@ t.test('credentials management', async t => {
     nerfed_mtlsUserPass: { '.npmrc': `//registry.example/:username = hello
 //registry.example/:_password = ${Buffer.from('world').toString('base64')}
 //registry.example/:email = i@izs.me
-//registry.example/:always-auth = "false"
 //registry.example/:certfile = /path/to/cert
 //registry.example/:keyfile = /path/to/key`,
     },
@@ -773,16 +786,39 @@ always-auth = true`,
 
   const defReg = 'https://registry.example/'
   const otherReg = 'https://other.registry/'
+  // Cases whose fixtures include top-level legacy auth keys that are no
+  // longer tolerated in npm 12 — Config collects them as unknowns; the
+  // error is raised by base-cmd.validateCli when the command runs.
+  const mustCollect = new Set([
+    'def_userpass',
+    'def_userNoPass',
+    'def_passNoUser',
+    'def_auth',
+    'none_authToken',
+    'none_lcAuthToken',
+  ])
   for (const testCase of Object.keys(fixtures)) {
     t.test(testCase, async t => {
       const c = new Config({
         npmPath: path,
         shorthands,
         definitions,
+        nerfDarts,
         env: { HOME: resolve(path, testCase) },
         argv: ['node', 'file', '--registry', defReg],
       })
+
       await c.load()
+
+      if (mustCollect.has(testCase)) {
+        const unknowns = [
+          ...c.getUnknownConfigs('user'),
+          ...c.getUnknownConfigs('project'),
+          ...c.getUnknownConfigs('global'),
+        ]
+        t.ok(unknowns.length > 0, 'unknown top-level legacy auth keys collected')
+        return
+      }
 
       // only have to do this the first time, it's redundant otherwise
       if (testCase === 'none_noConfig') {
@@ -801,25 +837,20 @@ always-auth = true`,
         })
       }
 
-      // the def_ and none_ prefixed cases have unscoped auth values and should throw
-      if (testCase.startsWith('def_') ||
-          testCase === 'none_authToken' ||
-          testCase === 'none_lcAuthToken') {
+      // def_authEnv still needs validate+repair (uses defined `_auth` at top
+      // level, which loads fine but validate flags as incomplete auth).
+      if (testCase === 'def_authEnv') {
         try {
           c.validate()
-          // validate should throw, fail the test here if it doesn't
           t.fail('validate should have thrown')
         } catch (err) {
           if (err.code !== 'ERR_INVALID_AUTH') {
             throw err
           }
-
-          // we got our expected invalid auth error, so now repair it
           c.repair(err.problems)
           t.ok(c.valid, 'config is valid')
         }
       } else {
-        // validate won't throw for these ones, so let's prove it and repair are no-ops
         c.validate()
         c.repair()
       }
@@ -878,6 +909,7 @@ t.test('finding the global prefix', t => {
       },
       shorthands,
       definitions,
+      nerfDarts,
       npmPath,
     })
     c.loadGlobalPrefix()
@@ -893,6 +925,7 @@ t.test('finding the global prefix', t => {
       execPath: '/path/to/nodejs/node.exe',
       shorthands,
       definitions,
+      nerfDarts,
       npmPath,
     })
     c.loadGlobalPrefix()
@@ -905,6 +938,7 @@ t.test('finding the global prefix', t => {
       execPath: '/path/to/nodejs/bin/node',
       shorthands,
       definitions,
+      nerfDarts,
       npmPath,
     })
     c.loadGlobalPrefix()
@@ -918,6 +952,7 @@ t.test('finding the global prefix', t => {
       env: { DESTDIR: '/some/dest/dir' },
       shorthands,
       definitions,
+      nerfDarts,
       npmPath,
     })
     c.loadGlobalPrefix()
@@ -943,6 +978,7 @@ t.test('finding the local prefix', t => {
       argv: [process.execPath, __filename, '-C', path],
       shorthands,
       definitions,
+      nerfDarts,
       npmPath: path,
     })
     await c.load()
@@ -953,6 +989,7 @@ t.test('finding the local prefix', t => {
       cwd: join(`${path}/hasNM/x/y/z`),
       shorthands,
       definitions,
+      nerfDarts,
       npmPath: path,
     })
     await c.load()
@@ -963,6 +1000,7 @@ t.test('finding the local prefix', t => {
       cwd: join(`${path}/hasPJ/x/y/z`),
       shorthands,
       definitions,
+      nerfDarts,
       npmPath: path,
     })
     await c.load()
@@ -973,6 +1011,7 @@ t.test('finding the local prefix', t => {
       cwd: join('/this/path/does/not/exist/x/y/z'),
       shorthands,
       definitions,
+      nerfDarts,
       npmPath: path,
     })
     await c.load()
@@ -992,26 +1031,29 @@ t.test('setting basic auth creds and email', async t => {
     definitions: {
       registry: { default: registry },
     },
-    npmPath: process.cwd(),
+    nerfDarts,
+    cwd: path,
+    excludeNpmCwd: true,
+    npmPath: path,
   }
   const c = new Config(opts)
   await c.load()
-  c.set('email', 'name@example.com', 'user')
-  t.equal(c.get('email', 'user'), 'name@example.com', 'email was set')
+  c.setCredentialsByURI(registry, {
+    username: 'admin',
+    password: 'admin',
+  })
+  c.set('//registry.npmjs.org/:email', 'name@example.com', 'user')
   await c.save('user')
-  t.equal(c.get('email', 'user'), 'name@example.com', 'email still top level')
-  t.strictSame(c.getCredentialsByURI(registry), { email: 'name@example.com' })
+  t.strictSame(c.getCredentialsByURI(registry), {
+    email: 'name@example.com',
+    username: 'admin',
+    password: 'admin',
+    auth: _auth,
+  })
   const d = new Config(opts)
   await d.load()
-  t.strictSame(d.getCredentialsByURI(registry), { email: 'name@example.com' })
-  d.set('_auth', _auth, 'user')
-  t.equal(d.get('_auth', 'user'), _auth, '_auth was set')
-  d.repair()
-  await d.save('user')
-  const e = new Config(opts)
-  await e.load()
-  t.equal(e.get('_auth', 'user'), undefined, 'un-nerfed _auth deleted')
-  t.strictSame(e.getCredentialsByURI(registry), {
+  t.equal(d.get('_auth', 'user'), undefined, 'un-nerfed _auth not present')
+  t.strictSame(d.getCredentialsByURI(registry), {
     email: 'name@example.com',
     username: 'admin',
     password: 'admin',
@@ -1029,26 +1071,25 @@ t.test('setting username/password/email individually', async t => {
     definitions: {
       registry: { default: registry },
     },
-    npmPath: process.cwd(),
+    nerfDarts,
+    cwd: path,
+    excludeNpmCwd: true,
+    npmPath: path,
   }
   const c = new Config(opts)
   await c.load()
-  c.set('email', 'name@example.com', 'user')
-  t.equal(c.get('email'), 'name@example.com')
-  c.set('username', 'admin', 'user')
-  t.equal(c.get('username'), 'admin')
-  c.set('_password', Buffer.from('admin').toString('base64'), 'user')
-  t.equal(c.get('_password'), Buffer.from('admin').toString('base64'))
+  c.setCredentialsByURI(registry, {
+    username: 'admin',
+    password: 'admin',
+  })
+  c.set('//registry.npmjs.org/:email', 'name@example.com', 'user')
+  t.equal(c.get('//registry.npmjs.org/:email'), 'name@example.com')
+  t.equal(c.get('//registry.npmjs.org/:username'), 'admin')
   t.equal(c.get('_auth'), undefined)
-  c.repair()
   await c.save('user')
 
   const d = new Config(opts)
   await d.load()
-  t.equal(d.get('email'), 'name@example.com')
-  t.equal(d.get('username'), undefined)
-  t.equal(d.get('_password'), undefined)
-  t.equal(d.get('_auth'), undefined)
   t.strictSame(d.getCredentialsByURI(registry), {
     email: 'name@example.com',
     username: 'admin',
@@ -1057,7 +1098,7 @@ t.test('setting username/password/email individually', async t => {
   })
 })
 
-t.test('nerfdart auths set at the top level into the registry', async t => {
+t.test('nerfdart auths set at the top level now throw in npm 12', async t => {
   const registry = 'https://registry.npmjs.org/'
   const _auth = Buffer.from('admin:admin').toString('base64')
   const username = 'admin'
@@ -1065,90 +1106,301 @@ t.test('nerfdart auths set at the top level into the registry', async t => {
   const email = 'i@izs.me'
   const _authToken = 'deadbeefblahblah'
 
-  // name: [ini, expect, wontThrow]
-  const cases = {
-    '_auth only, no email': [`_auth=${_auth}`, {
-      '//registry.npmjs.org/:_auth': _auth,
-    }],
-    '_auth with email': [`_auth=${_auth}\nemail=${email}`, {
-      '//registry.npmjs.org/:_auth': _auth,
-      email,
-    }],
-    '_authToken alone': [`_authToken=${_authToken}`, {
-      '//registry.npmjs.org/:_authToken': _authToken,
-    }],
-    '_authToken and email': [`_authToken=${_authToken}\nemail=${email}`, {
-      '//registry.npmjs.org/:_authToken': _authToken,
-      email,
-    }],
-    'username and _password': [`username=${username}\n_password=${_password}`, {
-      '//registry.npmjs.org/:username': username,
-      '//registry.npmjs.org/:_password': _password,
-    }],
-    'username, password, email': [`username=${username}\n_password=${_password}\nemail=${email}`, {
-      '//registry.npmjs.org/:username': username,
-      '//registry.npmjs.org/:_password': _password,
-      email,
-    }],
-    // handled invalid/legacy cases
-    'username, no _password': [`username=${username}`, {}],
-    '_password, no username': [`_password=${_password}`, {}],
-    '_authtoken instead of _authToken': [`_authtoken=${_authToken}`, {}],
-    '-authtoken instead of _authToken': [`-authtoken=${_authToken}`, {}],
-    // de-nerfdart the email, if present in that way
-    'nerf-darted email': [`//registry.npmjs.org/:email=${email}`, {
-      email,
-    }, true],
+  // All these legacy fixtures place auth-like keys at the top level of an
+  // .npmrc. In npm 11 these produced warnings and `repair()` migrated them
+  // into a nerfdart section. In npm 12 they are collected as unknown
+  // configs; base-cmd.validateCli throws on them when the command runs.
+  const throwingCases = {
+    '_auth only, no email': `_auth=${_auth}`,
+    '_auth with email': `_auth=${_auth}\nemail=${email}`,
+    '_authToken alone': `_authToken=${_authToken}`,
+    '_authToken and email': `_authToken=${_authToken}\nemail=${email}`,
+    'username and _password': `username=${username}\n_password=${_password}`,
+    'username, password, email':
+      `username=${username}\n_password=${_password}\nemail=${email}`,
+    'username, no _password': `username=${username}`,
+    '_password, no username': `_password=${_password}`,
+    '_authtoken instead of _authToken': `_authtoken=${_authToken}`,
+    '-authtoken instead of _authToken': `-authtoken=${_authToken}`,
   }
 
-  const logs = []
-  const logHandler = (...args) => logs.push(args)
-  process.on('log', logHandler)
-  t.teardown(() => {
-    process.removeListener('log', logHandler)
-  })
-  const cwd = process.cwd()
-  for (const [name, [ini, expect, wontThrow]] of Object.entries(cases)) {
+  for (const [name, ini] of Object.entries(throwingCases)) {
     t.test(name, async t => {
-      t.teardown(() => {
-        process.chdir(cwd)
-        logs.length = 0
-      })
       const path = t.testdir({
         '.npmrc': ini,
         'package.json': JSON.stringify({}),
       })
-      process.chdir(path)
-      const argv = [
+      const opts = {
+        shorthands: {},
+        argv: [
+          'node',
+          __filename,
+          `--prefix=${path}`,
+          `--userconfig=${path}/.npmrc`,
+          `--globalconfig=${path}/etc/npmrc`,
+        ],
+        env: {},
+        definitions: {
+          registry: { default: registry },
+        },
+        cwd: path,
+        excludeNpmCwd: true,
+        npmPath: path,
+      }
+      const c = new Config(opts)
+      await c.load()
+      const unknowns = [
+        ...c.getUnknownConfigs('user'),
+        ...c.getUnknownConfigs('project'),
+        ...c.getUnknownConfigs('global'),
+        ...c.getUnknownConfigs('builtin'),
+      ]
+      t.ok(unknowns.length > 0, 'legacy top-level auth keys collected as unknown')
+      t.throws(
+        () => c.validate(),
+        { code: 'ERR_INVALID_AUTH' },
+        'validate() throws ErrInvalidAuth with a message describing each problem'
+      )
+    })
+  }
+
+  t.test('nerf-darted email still loads', async t => {
+    const path = t.testdir({
+      '.npmrc': `//registry.npmjs.org/:email=${email}`,
+      'package.json': JSON.stringify({}),
+    })
+    const opts = {
+      shorthands: {},
+      argv: [
         'node',
         __filename,
         `--prefix=${path}`,
         `--userconfig=${path}/.npmrc`,
         `--globalconfig=${path}/etc/npmrc`,
-      ]
-      const opts = {
-        shorthands: {},
-        argv,
-        env: {},
-        definitions: {
-          registry: { default: registry },
-        },
-        npmPath: process.cwd(),
-      }
+      ],
+      env: {},
+      definitions: {
+        registry: { default: registry },
+      },
+      nerfDarts,
+      cwd: path,
+      excludeNpmCwd: true,
+      npmPath: path,
+    }
+    const c = new Config(opts)
+    await c.load()
+    c.repair()
+    await c.save('user')
+    t.same(c.data.get('user').data, { '//registry.npmjs.org/:email': email })
+  })
+})
 
-      const c = new Config(opts)
-      await c.load()
+t.test('checkUnknown and repair carve-outs', async t => {
+  const registry = 'https://registry.npmjs.org/'
+  const _authToken = 'deadbeef'
 
-      if (!wontThrow) {
-        t.throws(() => c.validate(), { code: 'ERR_INVALID_AUTH' })
-      }
-
-      // now we go ahead and do the repair, and save
-      c.repair()
-      await c.save('user')
-      t.same(c.data.get('user').data, expect)
+  t.test('repair() with no args validates and fixes auth problems', async t => {
+    const path = t.testdir({
+      '.npmrc': `_authtoken=${_authToken}`,
+      'package.json': JSON.stringify({}),
     })
-  }
+    const c = new Config({
+      shorthands: {},
+      argv: [
+        'node',
+        __filename,
+        `--prefix=${path}`,
+        `--userconfig=${path}/.npmrc`,
+        `--globalconfig=${path}/etc/npmrc`,
+      ],
+      env: {},
+      definitions: { registry: { default: registry } },
+      cwd: path,
+      excludeNpmCwd: true,
+      npmPath: path,
+    })
+    await c.load()
+    t.throws(() => c.validate(), { code: 'ERR_INVALID_AUTH' }, 'pre-repair validate throws')
+    c.repair()
+    t.equal(c.get('_authtoken', 'user'), undefined, 'deleted from user config')
+    t.doesNotThrow(() => c.validate(), 'post-repair validate passes')
+  })
+
+  t.test('repair() migrates top-level email to nerfdart form', async t => {
+    const email = 'me@example.com'
+    const path = t.testdir({
+      '.npmrc': `email=${email}`,
+      'package.json': JSON.stringify({}),
+    })
+    const c = new Config({
+      shorthands: {},
+      argv: [
+        'node',
+        __filename,
+        `--prefix=${path}`,
+        `--userconfig=${path}/.npmrc`,
+        `--globalconfig=${path}/etc/npmrc`,
+      ],
+      env: {},
+      definitions: { registry: { default: registry } },
+      cwd: path,
+      excludeNpmCwd: true,
+      npmPath: path,
+    })
+    await c.load()
+    t.throws(() => c.validate(), { code: 'ERR_INVALID_AUTH' },
+      'pre-repair validate flags top-level email')
+    c.repair()
+    t.equal(c.get('email', 'user'), undefined, 'top-level email deleted')
+    t.equal(c.get('//registry.npmjs.org/:email', 'user'), email,
+      'email moved to nerfdart form')
+    t.doesNotThrow(() => c.validate(), 'post-repair validate passes')
+  })
+
+  t.test('repair() migrates certfile+keyfile pair to nerfdart form', async t => {
+    const path = t.testdir({
+      '.npmrc': 'certfile=/path/to/cert\nkeyfile=/path/to/key',
+      'package.json': JSON.stringify({}),
+    })
+    const c = new Config({
+      shorthands: {},
+      argv: [
+        'node',
+        __filename,
+        `--prefix=${path}`,
+        `--userconfig=${path}/.npmrc`,
+        `--globalconfig=${path}/etc/npmrc`,
+      ],
+      env: {},
+      definitions: { registry: { default: registry } },
+      cwd: path,
+      excludeNpmCwd: true,
+      npmPath: path,
+    })
+    await c.load()
+    t.throws(() => c.validate(), { code: 'ERR_INVALID_AUTH' },
+      'pre-repair validate flags top-level certfile/keyfile')
+    c.repair()
+    t.equal(c.get('certfile', 'user'), undefined, 'top-level certfile deleted')
+    t.equal(c.get('keyfile', 'user'), undefined, 'top-level keyfile deleted')
+    t.equal(c.get('//registry.npmjs.org/:certfile', 'user'), '/path/to/cert',
+      'certfile moved to nerfdart form')
+    t.equal(c.get('//registry.npmjs.org/:keyfile', 'user'), '/path/to/key',
+      'keyfile moved to nerfdart form')
+    t.doesNotThrow(() => c.validate(), 'post-repair validate passes')
+  })
+
+  t.test('repair() drops orphan certfile (no matching keyfile)', async t => {
+    const path = t.testdir({
+      '.npmrc': 'certfile=/path/to/cert',
+      'package.json': JSON.stringify({}),
+    })
+    const c = new Config({
+      shorthands: {},
+      argv: [
+        'node',
+        __filename,
+        `--prefix=${path}`,
+        `--userconfig=${path}/.npmrc`,
+        `--globalconfig=${path}/etc/npmrc`,
+      ],
+      env: {},
+      definitions: { registry: { default: registry } },
+      cwd: path,
+      excludeNpmCwd: true,
+      npmPath: path,
+    })
+    await c.load()
+    c.repair()
+    t.equal(c.get('certfile', 'user'), undefined, 'orphan certfile deleted')
+    t.equal(c.get('//registry.npmjs.org/:certfile', 'user'), undefined,
+      'orphan certfile NOT moved (useless without keyfile)')
+  })
+
+  t.test('repair() preserves existing scoped destination on collision', async t => {
+    // Stale top-level + current scoped should keep the scoped value.
+    const stale = 'old@example.com'
+    const current = 'new@example.com'
+    const path = t.testdir({
+      '.npmrc': `email=${stale}\n//registry.npmjs.org/:email=${current}`,
+      'package.json': JSON.stringify({}),
+    })
+    const c = new Config({
+      shorthands: {},
+      argv: [
+        'node',
+        __filename,
+        `--prefix=${path}`,
+        `--userconfig=${path}/.npmrc`,
+        `--globalconfig=${path}/etc/npmrc`,
+      ],
+      env: {},
+      definitions: { registry: { default: registry } },
+      cwd: path,
+      excludeNpmCwd: true,
+      npmPath: path,
+    })
+    await c.load()
+    c.repair()
+    t.equal(c.get('email', 'user'), undefined, 'stale top-level email deleted')
+    t.equal(c.get('//registry.npmjs.org/:email', 'user'), current,
+      'existing scoped email preserved (not clobbered)')
+  })
+
+  t.test('publishConfig unknown warns but does not error', async t => {
+    const path = t.testdir({ 'package.json': JSON.stringify({}) })
+    const c = new Config({
+      shorthands: {},
+      argv: ['node', __filename, `--prefix=${path}`],
+      env: {},
+      definitions: { registry: { default: registry } },
+      cwd: path,
+      excludeNpmCwd: true,
+      npmPath: path,
+      warn: false,
+    })
+    await c.load()
+    c.checkUnknown('publishConfig', 'bogus-pub-key')
+    c.checkUnknown('publishConfig', '@scope:bogus-scoped-pub')
+    const pubUnknowns = c.getUnknownConfigs('publishConfig')
+    t.equal(pubUnknowns.length, 2, 'publishConfig unknowns collected')
+    t.notOk(
+      c.getUnknownConfigs().some(u => u.where === 'publishConfig'),
+      'publishConfig unknowns excluded from default getUnknownConfigs()'
+    )
+  })
+
+  t.test('getUnknownConfigs() returns all file + cli entries', async t => {
+    const path = t.testdir({
+      '.npmrc': 'bogus-user-key=yes',
+      'package.json': JSON.stringify({}),
+    })
+    const c = new Config({
+      shorthands: {},
+      argv: [
+        'node',
+        __filename,
+        `--prefix=${path}`,
+        `--userconfig=${path}/.npmrc`,
+        `--globalconfig=${path}/etc/npmrc`,
+      ],
+      env: {
+        npm_config_bogus_env_key: 'x',
+        'npm_config_@scope:bogus-scoped-env': 'y',
+      },
+      definitions: { registry: { default: registry } },
+      cwd: path,
+      excludeNpmCwd: true,
+      npmPath: path,
+    })
+    await c.load()
+    const all = c.getUnknownConfigs()
+    t.ok(all.some(u => u.key === 'bogus-user-key' && u.where === 'user'), 'includes user file key')
+    t.notOk(all.some(u => u.where === 'env'), 'excludes env entries')
+    const envUnknowns = c.getUnknownConfigs('env')
+    t.ok(envUnknowns.some(u => !u.baseKey), 'plain env unknown collected')
+    t.ok(envUnknowns.some(u => u.baseKey), 'scoped env unknown collected')
+  })
 })
 
 t.test('workspaces', async (t) => {
@@ -1199,6 +1451,7 @@ t.test('workspaces', async (t) => {
       cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -1222,6 +1475,7 @@ t.test('workspaces', async (t) => {
       cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -1478,6 +1732,7 @@ t.test('exclusive env option is skipped when sibling is set via CLI', async t =>
   const path = t.testdir()
   const config = new Config({
     env: {
+      HOME: path,
       npm_config_truth: 'true',
     },
     npmPath: __dirname,
@@ -1487,6 +1742,7 @@ t.test('exclusive env option is skipped when sibling is set via CLI', async t =>
       '--lie=true',
     ],
     cwd: join(`${path}/project`),
+    excludeNpmCwd: true,
     shorthands,
     definitions: {
       ...definitions,
@@ -1503,6 +1759,7 @@ t.test('exclusive env option is skipped when sibling is set via CLI', async t =>
         exclusive: ['truth'],
       }),
     },
+    nerfDarts,
     flatten,
   })
   // should not throw — env `truth` is skipped because `lie` was set via CLI
@@ -1519,8 +1776,12 @@ t.test('env-replaced config from files is not clobbered when saving', async (t) 
     env: { TEST: 'test value' },
     definitions: {
       registry: { default: 'https://registry.npmjs.org/' },
+      test: { default: '' },
+      other: { default: '' },
     },
-    npmPath: process.cwd(),
+    cwd: path,
+    excludeNpmCwd: true,
+    npmPath: path,
   }
   const c = new Config(opts)
   await c.load()
@@ -1548,6 +1809,7 @@ t.test('umask', async t => {
       cwd: join(`${path}/project`),
       shorthands,
       definitions,
+      nerfDarts,
       flatten,
     })
     await config.load()
@@ -1582,6 +1844,7 @@ t.test('catch project config prefix error', async t => {
     cwd: join(`${path}/project`),
     shorthands,
     definitions,
+    nerfDarts,
   })
   const logs = []
   const logHandler = (...args) => logs.push(args)
@@ -1596,12 +1859,8 @@ t.test('catch project config prefix error', async t => {
   ]], 'Expected error logged')
 })
 
-t.test('invalid single hyphen warnings', async t => {
+t.test('invalid single hyphen errors', async t => {
   const path = t.testdir()
-  const logs = []
-  const logHandler = (...args) => logs.push(args)
-  process.on('log', logHandler)
-  t.teardown(() => process.off('log', logHandler))
   const config = new Config({
     npmPath: `${path}/npm`,
     env: {},
@@ -1611,15 +1870,13 @@ t.test('invalid single hyphen warnings', async t => {
     definitions,
     nerfDarts,
   })
-  await config.load()
-  const filtered = logs.filter(l => l[0] === 'warn')
-  t.match(filtered, [
-    ['warn', '-iwr is not a valid single-hyphen cli flag and will be removed in the future'],
-    ['warn', '-ws is not a valid single-hyphen cli flag and will be removed in the future'],
-  ], 'Warns about single hyphen configs')
+  await t.rejects(config.load(), {
+    code: 'EUNKNOWNCONFIG',
+    message: /single-hyphen/,
+  }, 'Throws on invalid single-hyphen flag')
 })
 
-t.test('positional arg warnings', async t => {
+t.test('positional arg is collected as unknown cli config', async t => {
   const path = t.testdir()
   const logs = []
   const logHandler = (...args) => logs.push(args)
@@ -1634,20 +1891,20 @@ t.test('positional arg warnings', async t => {
     definitions,
     nerfDarts,
   })
+  // Unknown CLI flags are collected silently during load(); base-cmd throws
+  // later once command-scoped definitions are known.
   await config.load()
   const filtered = logs.filter(l => l[0] === 'warn')
   t.match(filtered, [
     ['warn', '"extra" is being parsed as a normal command line argument.'],
-    ['warn', 'Unknown cli config "--something". This will stop working in the next major version of npm.'],
-  ], 'Warns about positional cli arg')
+  ], 'Still warns about positional cli arg being parsed as positional')
+  const unknowns = config.getUnknownConfigs('cli')
+  t.ok(unknowns.some(u => u.key === 'something'),
+    'unknown cli flag collected for later validation')
 })
 
-t.test('abbreviation expansion warnings', async t => {
+t.test('abbreviation expansion errors', async t => {
   const path = t.testdir()
-  const logs = []
-  const logHandler = (...args) => logs.push(args)
-  process.on('log', logHandler)
-  t.teardown(() => process.off('log', logHandler))
   const config = new Config({
     npmPath: `${path}/npm`,
     env: {},
@@ -1657,11 +1914,10 @@ t.test('abbreviation expansion warnings', async t => {
     definitions,
     nerfDarts,
   })
-  await config.load()
-  const filtered = logs.filter(l => l[0] === 'warn')
-  t.match(filtered, [
-    ['warn', 'Expanding --bef to --before. This will stop working in the next major version of npm'],
-  ], 'Warns about expanded abbreviations')
+  await t.rejects(config.load(), {
+    code: 'EUNKNOWNCONFIG',
+    message: /--bef.*--before/,
+  }, 'Throws on abbreviation expansion')
 })
 
 t.test('warning suppression and logging', async t => {
@@ -1706,7 +1962,7 @@ t.test('warning suppression and logging', async t => {
   t.equal(finalWarnings.length, warningCount, 'no duplicate warnings after second logWarnings()')
 })
 
-t.test('warn false with invalid flag and warning removal', async t => {
+t.test('warn false with unknown env flag and warning removal', async t => {
   const path = t.testdir()
   const logs = []
   const logHandler = (...args) => logs.push(args)
@@ -1715,8 +1971,8 @@ t.test('warn false with invalid flag and warning removal', async t => {
 
   const config = new Config({
     npmPath: `${path}/npm`,
-    env: {},
-    argv: [process.execPath, __filename, '--invalid-flag', 'value'],
+    env: { npm_config_invalid_flag: 'value' },
+    argv: [process.execPath, __filename],
     cwd: path,
     shorthands,
     definitions,
@@ -1726,18 +1982,17 @@ t.test('warn false with invalid flag and warning removal', async t => {
   config.warn = false
   await config.load()
 
-  // First logWarnings call - should log the queued warning
+  // First logWarnings call - should log the queued env-unknown warning
   const logsBeforeFirst = logs.filter(l => l[0] === 'warn').length
   config.logWarnings()
   const logsAfterFirst = logs.filter(l => l[0] === 'warn')
 
-  // Check we have warnings and the invalid-flag warning is there
   t.ok(logsAfterFirst.length > logsBeforeFirst, 'warnings were logged')
   const invalidFlagWarnings = logsAfterFirst.filter(w => w[1] && w[1].includes('invalid-flag'))
   t.ok(invalidFlagWarnings.length > 0, 'invalid-flag warning present')
 
   // Trigger the same warning again
-  config.checkUnknown('cli', 'invalid-flag')
+  config.checkUnknown('env', 'invalid-flag')
 
   // Remove the warning
   config.removeWarning('invalid-flag')
@@ -1861,6 +2116,7 @@ t.test('before and min-release-age', async t => {
     argv: [process.execPath, __filename, '--min-release-age', '30'],
     cwd: path,
     definitions,
+    nerfDarts,
     shorthands,
     flatten,
   })
