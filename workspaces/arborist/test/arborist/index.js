@@ -253,3 +253,74 @@ t.test('valid global/installStrategy values', t => {
   t.equal(new Arborist({ installStrategy: 'hoisted' }).options.installStrategy, 'hoisted')
   t.end()
 })
+
+t.test('lockfileString', async t => {
+  const fs = require('node:fs')
+  const { resolve } = require('node:path')
+
+  t.test('returns the lockfile contents as a string without writing to disk', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'lockfile-string-test',
+        version: '1.0.0',
+      }),
+    })
+
+    const arb = new Arborist({ path })
+    const str = await arb.lockfileString()
+
+    t.type(str, 'string', 'returns a string')
+    const parsed = JSON.parse(str)
+    t.equal(parsed.name, 'lockfile-string-test')
+    t.ok(parsed.lockfileVersion, 'has a lockfileVersion')
+    t.ok(parsed.packages, 'has a packages map')
+    t.equal(
+      fs.existsSync(resolve(path, 'package-lock.json')),
+      false,
+      'no package-lock.json was written to disk'
+    )
+  })
+
+  t.test('reuses an already-built ideal tree', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'lockfile-string-reuse',
+        version: '1.0.0',
+      }),
+    })
+
+    const arb = new Arborist({ path })
+    const tree = await arb.buildIdealTree()
+    const str = await arb.lockfileString()
+
+    t.equal(arb.idealTree, tree, 'did not rebuild the tree')
+    t.equal(JSON.parse(str).name, 'lockfile-string-reuse')
+  })
+
+  t.test('respects lockfileVersion option', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'lockfile-string-version',
+        version: '1.0.0',
+      }),
+    })
+
+    const arb = new Arborist({ path, lockfileVersion: 2 })
+    const str = await arb.lockfileString()
+
+    t.equal(JSON.parse(str).lockfileVersion, 2)
+  })
+
+  t.test('does not modify an existing lockfile on disk', async t => {
+    const fixture = resolve(__dirname, '../fixtures/workspaces-simple-virtual')
+    const before = fs.readFileSync(resolve(fixture, 'package-lock.json'), 'utf8')
+
+    const arb = new Arborist({ path: fixture })
+    const str = await arb.lockfileString()
+
+    const after = fs.readFileSync(resolve(fixture, 'package-lock.json'), 'utf8')
+    t.equal(after, before, 'fixture lockfile is unchanged')
+    t.type(str, 'string')
+    t.equal(JSON.parse(str).name, 'workspace-simple')
+  })
+})
