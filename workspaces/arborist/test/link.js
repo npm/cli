@@ -207,6 +207,55 @@ t.test('link gets version from target', t => {
   t.end()
 })
 
+t.test('recalculateOutEdgesOverrides forwards overrides to target', t => {
+  const root = new Node({
+    path: '/path/to/root',
+    pkg: {
+      name: 'root',
+      dependencies: { foo: '1.0.0' },
+      overrides: { bar: '2.0.0' },
+    },
+    loadOverrides: true,
+  })
+
+  const target = new Node({
+    path: '/path/to/store/foo',
+    pkg: {
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: { bar: '1.0.0' },
+    },
+    root,
+  })
+
+  const link = new Link({
+    pkg: { name: 'foo', version: '1.0.0' },
+    path: '/path/to/root/node_modules/foo',
+    realpath: '/path/to/store/foo',
+    target,
+    parent: root,
+  })
+
+  // The root has overrides, and the edge from root -> link should propagate them
+  t.ok(root.overrides, 'root has overrides')
+  t.ok(link.overrides, 'link received overrides from root edge')
+  t.ok(link.target.overrides, 'target received overrides forwarded from link')
+
+  // The target's edge to "bar" should have the override applied
+  const barEdge = link.target.edgesOut.get('bar')
+  t.ok(barEdge, 'target has edge to bar')
+  t.ok(barEdge.overrides, 'bar edge has overrides')
+  t.equal(barEdge.spec, '2.0.0', 'bar edge spec is overridden to 2.0.0')
+  t.equal(barEdge.rawSpec, '1.0.0', 'bar edge rawSpec is original 1.0.0')
+
+  // recalculateOutEdgesOverrides is a no-op when target is null
+  link.target = null
+  t.doesNotThrow(() => link.recalculateOutEdgesOverrides(),
+    'no-op when target is null')
+
+  t.end()
+})
+
 t.test('link to root path gets root as target', t => {
   const root = new Node({
     path: '/project/root',

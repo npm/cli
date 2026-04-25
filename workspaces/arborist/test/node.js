@@ -1016,43 +1016,6 @@ t.test('setting package refreshes deps', t => {
   t.end()
 })
 
-t.test('nodes in shrinkwraps', t => {
-  const root = new Node({
-    pkg: { dependencies: { a: '' } },
-    path: '/path/to/root',
-    children: [
-      {
-        name: 'a',
-        pkg: {
-          name: 'a',
-          version: '1.2.3',
-          dependencies: { b: '' },
-          _hasShrinkwrap: true,
-        },
-        children: [
-          {
-            name: 'b',
-            pkg: {
-              version: '1.2.3',
-              name: 'b',
-              dependencies: { c: '' },
-            },
-            children: [{ name: 'c', pkg: { name: 'c', version: '1.2.3' } }],
-          },
-        ],
-      },
-    ],
-  })
-  const a = root.children.get('a')
-  const b = a.children.get('b')
-  const c = b.children.get('c')
-
-  t.equal(a.hasShrinkwrap, true, 'a has a shrinkwrap')
-  t.equal(b.inShrinkwrap, true, 'b is in shrinkwrap')
-  t.equal(c.inShrinkwrap, true, 'c is in shrinkwrap')
-  t.end()
-})
-
 t.test('bin paths', t => {
   const root = new Node({
     path: '/a/b/c',
@@ -2365,7 +2328,7 @@ t.test('canDedupe()', t => {
   |   +-- a 1.2.3 (removable, matches)
   +-- extraneous 1.2.3
   +-- wrapper
-      +-- a 1.2.3 (not removable, in shrinkwrap)
+      +-- a 1.2.3 (removable, matches root a)
   */
 
   const root = new Node({
@@ -2405,9 +2368,7 @@ t.test('canDedupe()', t => {
           dependencies: {
             a: '1',
           },
-          _hasShrinkwrap: true,
         },
-        hasShrinkwrap: true,
         children: [
           {
             pkg: { name: 'a', version: '1.2.3' },
@@ -2480,6 +2441,7 @@ t.test('canDedupe()', t => {
   const canDedupeLocs = [...root.inventory.filter(n => n.canDedupe())]
     .map(n => n.location)
   t.match(canDedupeLocs, [
+    'node_modules/wrapper/node_modules/a',
     'node_modules/c/node_modules/a',
     'node_modules/b/node_modules/e',
     'node_modules/b/node_modules/c/node_modules/a/node_modules/e',
@@ -2488,6 +2450,7 @@ t.test('canDedupe()', t => {
   const canDedupeTrueLocs = [...root.inventory.filter(n => n.canDedupe(true))]
     .map(n => n.location)
   t.match(canDedupeTrueLocs, [
+    'node_modules/wrapper/node_modules/a',
     'node_modules/c/node_modules/a',
     // this is the one that's only deduped if we preferDedupe
     'node_modules/b/node_modules/a',

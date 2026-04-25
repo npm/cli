@@ -16,7 +16,6 @@ class IsolatedNode {
   edgesIn = new Set()
   edgesOut = new CaseInsensitiveMap()
   fsChildren = new Set()
-  hasShrinkwrap = false
   integrity = null
   inventory = new IsolatedInventory()
   isInStore = false

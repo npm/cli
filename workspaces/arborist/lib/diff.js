@@ -11,10 +11,9 @@ const { existsSync } = require('node:fs')
 const ssri = require('ssri')
 
 class Diff {
-  constructor ({ actual, ideal, filterSet, shrinkwrapInflated, omit }) {
+  constructor ({ actual, ideal, filterSet, omit }) {
     this.omit = omit
     this.filterSet = filterSet
-    this.shrinkwrapInflated = shrinkwrapInflated
     this.children = []
     this.actual = actual
     this.ideal = ideal
@@ -36,7 +35,6 @@ class Diff {
     actual,
     ideal,
     filterNodes = [],
-    shrinkwrapInflated = new Set(),
     omit = new Set(),
   }) {
     // if there's a filterNode, then:
@@ -102,7 +100,7 @@ class Diff {
     }
 
     return depth({
-      tree: new Diff({ actual, ideal, filterSet, shrinkwrapInflated, omit }),
+      tree: new Diff({ actual, ideal, filterSet, omit }),
       getChildren,
       leave,
     })
@@ -191,25 +189,15 @@ const getChildren = diff => {
     unchanged,
     removed,
     filterSet,
-    shrinkwrapInflated,
     omit,
   } = diff
 
   // Note: we DON'T diff fsChildren themselves, because they are either
-  // included in the package contents, or part of some other project, and
-  // will never appear in legacy shrinkwraps anyway.  but we _do_ include the
-  // child nodes of fsChildren, because those are nodes that we are typically
-  // responsible for installing.
+  // included in the package contents, or part of some other project.
+  // But we _do_ include the child nodes of fsChildren, because those are
+  // nodes that we are typically responsible for installing.
   const actualKids = allChildren(actual)
   const idealKids = allChildren(ideal)
-
-  if (ideal && ideal.hasShrinkwrap && !shrinkwrapInflated.has(ideal)) {
-    // Guaranteed to get a diff.leaves here, because we always
-    // be called with a proper Diff object when ideal has a shrinkwrap
-    // that has not been inflated.
-    diff.leaves.push(diff)
-    return children
-  }
 
   const paths = new Set([...actualKids.keys(), ...idealKids.keys()])
   for (const path of paths) {
@@ -222,7 +210,6 @@ const getChildren = diff => {
       unchanged,
       removed,
       filterSet,
-      shrinkwrapInflated,
       omit,
     })
   }
@@ -241,7 +228,6 @@ const diffNode = ({
   unchanged,
   removed,
   filterSet,
-  shrinkwrapInflated,
   omit,
 }) => {
   if (filterSet.size && !(filterSet.has(ideal) || filterSet.has(actual))) {
@@ -264,11 +250,11 @@ const diffNode = ({
 
   // if it's a match, then get its children
   // otherwise, this is the child diff node
-  if (action || (!shrinkwrapInflated.has(ideal) && ideal.hasShrinkwrap)) {
+  if (action) {
     if (action === 'REMOVE') {
       removed.push(actual)
     }
-    children.push(new Diff({ actual, ideal, filterSet, shrinkwrapInflated, omit }))
+    children.push(new Diff({ actual, ideal, filterSet, omit }))
   } else {
     unchanged.push(ideal)
     // !*! Weird dirty hack warning !*!
@@ -307,7 +293,6 @@ const diffNode = ({
       unchanged,
       removed,
       filterSet,
-      shrinkwrapInflated,
       omit,
     }))
   }

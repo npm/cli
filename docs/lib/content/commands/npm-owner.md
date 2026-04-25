@@ -35,4 +35,4 @@ If you have two-factor authentication enabled with `auth-and-writes` (see [`npm-
 * [npm profile](/commands/npm-profile)
 * [npm publish](/commands/npm-publish)
 * [npm registry](/using-npm/registry)
-* [npm adduser](/commands/npm-adduser)
+* [npm login](/commands/npm-login)

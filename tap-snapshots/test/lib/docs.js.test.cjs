@@ -36,7 +36,6 @@ npm@{VERSION} {BASEDIR}
 exports[`test/lib/docs.js TAP command list > aliases 1`] = `
 Object {
   "add": "install",
-  "add-user": "adduser",
   "author": "owner",
   "c": "config",
   "cit": "install-ci-test",
@@ -81,6 +80,7 @@ Object {
   "sit": "install-ci-test",
   "t": "test",
   "tst": "test",
+  "u": "update",
   "udpate": "update",
   "un": "uninstall",
   "unlink": "uninstall",
@@ -97,7 +97,6 @@ Object {
 exports[`test/lib/docs.js TAP command list > commands 1`] = `
 Array [
   "access",
-  "adduser",
   "audit",
   "bugs",
   "cache",
@@ -147,9 +146,6 @@ Array [
   "sbom",
   "search",
   "set",
-  "shrinkwrap",
-  "star",
-  "stars",
   "start",
   "stop",
   "team",
@@ -159,7 +155,6 @@ Array [
   "undeprecate",
   "uninstall",
   "unpublish",
-  "unstar",
   "update",
   "version",
   "view",
@@ -696,8 +691,7 @@ but can be useful for debugging.
 * Default: true
 * Type: Boolean
 
-Format \`package-lock.json\` or \`npm-shrinkwrap.json\` as a human readable
-file.
+Format \`package-lock.json\` as a human readable file.
 
 
 
@@ -1049,8 +1043,8 @@ instead of the current working directory. See
   otherwise, maintain current lockfile version.
 * Type: null, 1, 2, 3, "1", "2", or "3"
 
-Set the lockfile format version to be used in package-lock.json and
-npm-shrinkwrap-json files. Possible options are:
+Set the lockfile format version to be used in package-lock.json files.
+Possible options are:
 
 1: The lockfile version used by npm versions 5 and 6. Lacks some data that
 is used during the install, resulting in slower and possibly less
@@ -1215,8 +1209,7 @@ allow the CLI to fill in missing cache data, see \`--prefer-offline\`.
 Dependency types to omit from the installation tree on disk.
 
 Note that these dependencies _are_ still resolved and added to the
-\`package-lock.json\` or \`npm-shrinkwrap.json\` file. They are just not
-physically installed on disk.
+\`package-lock.json\` file. They are just not physically installed on disk.
 
 If a package type appears in both the \`--include\` and \`--omit\` lists, then
 it will be included.
@@ -2249,16 +2242,6 @@ Alias for --include=optional or --omit=optional
 Alias for \`--omit=dev\`
 
 
-
-#### \`shrinkwrap\`
-
-* Default: true
-* Type: Boolean
-* DEPRECATED: Use the --package-lock setting instead.
-
-Alias for --package-lock
-
-
 `
 
 exports[`test/lib/docs.js TAP config > all keys 1`] = `
@@ -2414,7 +2397,6 @@ Array [
   "searchopts",
   "searchstaleness",
   "shell",
-  "shrinkwrap",
   "sign-git-commit",
   "sign-git-tag",
   "strict-peer-deps",
@@ -2571,7 +2553,6 @@ Array [
   "searchopts",
   "searchstaleness",
   "shell",
-  "shrinkwrap",
   "sign-git-commit",
   "sign-git-tag",
   "strict-peer-deps",
@@ -2849,42 +2830,6 @@ Note: This command is unaware of workspaces.
 #### \`json\`
 #### \`otp\`
 #### \`registry\`
-`
-
-exports[`test/lib/docs.js TAP usage adduser > must match snapshot 1`] = `
-Add a registry user account
-
-Usage:
-npm adduser
-
-Options:
-[--registry <registry>] [--scope <@scope>] [--auth-type <legacy|web>]
-
-  --registry
-    The base URL of the npm registry.
-
-  --scope
-    Associate an operation with a scope for a scoped registry.
-
-  --auth-type
-    What authentication strategy to use with \`login\`.
-
-
-alias: add-user
-
-Run "npm help adduser" for more info
-
-\`\`\`bash
-npm adduser
-
-alias: add-user
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-#### \`registry\`
-#### \`scope\`
-#### \`auth-type\`
 `
 
 exports[`test/lib/docs.js TAP usage audit > must match snapshot 1`] = `
@@ -5522,79 +5467,6 @@ Note: This command is unaware of workspaces.
 #### \`location\`
 `
 
-exports[`test/lib/docs.js TAP usage shrinkwrap > must match snapshot 1`] = `
-Lock down dependency versions for publication
-
-Usage:
-npm shrinkwrap
-
-Run "npm help shrinkwrap" for more info
-
-\`\`\`bash
-npm shrinkwrap
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-NO PARAMS
-`
-
-exports[`test/lib/docs.js TAP usage star > must match snapshot 1`] = `
-Mark your favorite packages
-
-Usage:
-npm star [<package-spec>...]
-
-Options:
-[--registry <registry>] [--unicode] [--otp <otp>]
-
-  --registry
-    The base URL of the npm registry.
-
-  --unicode
-    When set to true, npm uses unicode characters in the tree output.  When
-
-  --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
-
-
-Run "npm help star" for more info
-
-\`\`\`bash
-npm star [<package-spec>...]
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-#### \`registry\`
-#### \`unicode\`
-#### \`otp\`
-`
-
-exports[`test/lib/docs.js TAP usage stars > must match snapshot 1`] = `
-View packages marked as favorites
-
-Usage:
-npm stars [<user>]
-
-Options:
-[--registry <registry>]
-
-  --registry
-    The base URL of the npm registry.
-
-
-Run "npm help stars" for more info
-
-\`\`\`bash
-npm stars [<user>]
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-#### \`registry\`
-`
-
 exports[`test/lib/docs.js TAP usage start > must match snapshot 1`] = `
 Start a package
 
@@ -5972,38 +5844,6 @@ npm unpublish [<package-spec>]
 #### \`workspaces\`
 `
 
-exports[`test/lib/docs.js TAP usage unstar > must match snapshot 1`] = `
-Remove an item from your favorite packages
-
-Usage:
-npm unstar [<package-spec>...]
-
-Options:
-[--registry <registry>] [--unicode] [--otp <otp>]
-
-  --registry
-    The base URL of the npm registry.
-
-  --unicode
-    When set to true, npm uses unicode characters in the tree output.  When
-
-  --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
-
-
-Run "npm help unstar" for more info
-
-\`\`\`bash
-npm unstar [<package-spec>...]
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-#### \`registry\`
-#### \`unicode\`
-#### \`otp\`
-`
-
 exports[`test/lib/docs.js TAP usage update > must match snapshot 1`] = `
 Update packages
 
@@ -6083,14 +5923,14 @@ Options:
     When set file: protocol dependencies will be packed and installed as
 
 
-aliases: up, upgrade, udpate
+aliases: u, up, upgrade, udpate
 
 Run "npm help update" for more info
 
 \`\`\`bash
 npm update [<pkg>...]
 
-aliases: up, upgrade, udpate
+aliases: u, up, upgrade, udpate
 \`\`\`
 
 #### \`save\`

@@ -25,7 +25,7 @@ This option does not filter the report output, it simply changes the command's f
 
 ### Package lock
 
-By default npm requires a package-lock or shrinkwrap in order to run the audit.
+By default npm requires a package-lock in order to run the audit.
 You can bypass the package lock with `--no-package-lock` but be aware the results may be different with every run, since npm will re-build the dependency tree each time.
 
 ### Audit Signatures

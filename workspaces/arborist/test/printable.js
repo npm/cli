@@ -290,7 +290,7 @@ t.test('show workspaces in printable node output', t => {
   t.end()
 })
 
-t.test('show bundle/shrinkwrap info', t => {
+t.test('show bundle info', t => {
   const tree = new Node({
     path: '/path/to/root',
     pkg: {
@@ -298,7 +298,6 @@ t.test('show bundle/shrinkwrap info', t => {
       version: '1.2.3',
       dependencies: {
         bundler: '',
-        wrapper: '',
         a: '1',
         b: '2',
         c: '3',
@@ -314,23 +313,6 @@ t.test('show bundle/shrinkwrap info', t => {
             a: '1',
           },
         },
-        children: [
-          {
-            pkg: { name: 'a', version: '1.2.3' },
-            integrity: 'a123',
-          },
-        ],
-      },
-      {
-        pkg: {
-          name: 'wrapper',
-          version: '1.2.3',
-          dependencies: {
-            a: '1',
-          },
-          _hasShrinkwrap: true,
-        },
-        hasShrinkwrap: true,
         children: [
           {
             pkg: { name: 'a', version: '1.2.3' },

@@ -113,25 +113,7 @@ a
 
 Fail: rimraf sparse tree, fail step 1
 
-### step 3: load shrinkwraps
-
-Unpack any shrinkwrapped nodes, and `loadVirtual` on them, and then update
-the ideal tree with their virtual tree nodes.  These will always be leaf
-nodes, because any `hasShrinkwrap` nodes did not have their deps loaded in
-the buildIdealTree step.
-
-If no shrinkwraps present, proceed to step 4.
-
-Else:
-
-- loadVirtual in the newly unpacked shrinkwrap node using the current ideal
-  node as the root of the virtual tree
-- diff trees again
-- create the sparse tree
-
-Fail: fail step 2
-
-### step 4: unpack bundled deps into sparse tree and update
+### step 3: unpack bundled deps into sparse tree and update
 
 1. Group all nodes with bundles by depth.
 2. For depth = 0 to max, for all nodes at that depth with bundleDeps,
@@ -248,17 +230,7 @@ Scan actualTree inventory.  For each node:
 
 `mkdir` every path in ideal tree that does not exist in actualTree
 
-### step 3: extract shrinkwrap modules
-
-Each node with a shrinkwrap is already a tip of the tree, because its child
-nodes are not traversed in the ideal tree.
-
-Unpack them into place, and then call loadVirtual using the shrinkwrapped
-node as the root, this filling out the ideal tree with the virtual nodes.
-
-Repeat step 2 if any shrinkwrap nodes were created.
-
-### step 4: extract bundlers
+### step 3: extract bundlers
 
 1. Group all nodes with bundles by depth.
 2. for depth = 0, for all nodes at that depth with bundleDependencies,
@@ -268,7 +240,7 @@ Repeat step 2 if any shrinkwrap nodes were created.
        depth=1 child node into the ideal tree.
 3. if any bundle deps unpacked, prune tree
 
-### step 5: extract all others
+### step 4: extract all others
 
 Extract all remaining packages in parallel.
 

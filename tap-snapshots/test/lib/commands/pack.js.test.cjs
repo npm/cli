@@ -62,8 +62,8 @@ Array []
 
 exports[`test/lib/commands/pack.js TAP should log output as valid json > outputs as json 1`] = `
 Array [
-  Array [
-    Object {
+  Object {
+    "test-package": Object {
       "bundled": Array [],
       "entryCount": 1,
       "filename": "test-package-1.0.0.tgz",
@@ -82,7 +82,7 @@ Array [
       "unpackedSize": 41,
       "version": "1.0.0",
     },
-  ],
+  },
 ]
 `
 
@@ -92,8 +92,8 @@ Array []
 
 exports[`test/lib/commands/pack.js TAP should log scoped package output as valid json > outputs as json 1`] = `
 Array [
-  Array [
-    Object {
+  Object {
+    "@myscope/test-package": Object {
       "bundled": Array [],
       "entryCount": 1,
       "filename": "myscope-test-package-1.0.0.tgz",
@@ -112,7 +112,7 @@ Array [
       "unpackedSize": 88,
       "version": "1.0.0",
     },
-  ],
+  },
 ]
 `
 

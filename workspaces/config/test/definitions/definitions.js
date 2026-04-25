@@ -586,16 +586,10 @@ t.test('strictSSL', t => {
   t.end()
 })
 
-t.test('shrinkwrap/package-lock', t => {
-  const obj = { shrinkwrap: false }
+t.test('package-lock', t => {
+  const obj = {}
   const flat = {}
-  mockDefs().shrinkwrap.flatten('shrinkwrap', obj, flat)
-  t.strictSame(flat, { packageLock: false })
-  obj.shrinkwrap = true
-  mockDefs().shrinkwrap.flatten('shrinkwrap', obj, flat)
-  t.strictSame(flat, { packageLock: true })
 
-  delete obj.shrinkwrap
   obj['package-lock'] = false
   mockDefs()['package-lock'].flatten('package-lock', obj, flat)
   t.strictSame(flat, { packageLock: false })

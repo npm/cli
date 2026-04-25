@@ -39,7 +39,7 @@ module.exports = cls => class VirtualLoader extends cls {
       resolveOptions: this.options,
     })
     if (!s.loadedFromDisk && !options.root) {
-      const er = new Error('loadVirtual requires existing shrinkwrap file')
+      const er = new Error('loadVirtual requires existing package-lock.json file')
       throw Object.assign(er, { code: 'ENOLOCK' })
     }
 
@@ -244,7 +244,6 @@ To fix:
       integrity: sw.integrity,
       resolved: consistentResolve(sw.resolved, this.path, path),
       pkg: sw,
-      hasShrinkwrap: sw.hasShrinkwrap,
       loadOverrides,
       // cast to boolean because they're undefined in the lock file when false
       extraneous: !!sw.extraneous,

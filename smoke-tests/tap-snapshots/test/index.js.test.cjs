@@ -21,16 +21,15 @@ npm help npm       more involved overview
 
 All commands:
 
-    access, adduser, audit, bugs, cache, ci, completion,
-    config, dedupe, deprecate, diff, dist-tag, docs, doctor,
-    edit, exec, explain, explore, find-dupes, fund, get, help,
-    help-search, init, install, install-ci-test, install-test,
-    link, ll, login, logout, ls, org, outdated, owner, pack,
-    ping, pkg, prefix, profile, prune, publish, query, rebuild,
-    repo, restart, root, run, sbom, search, set, shrinkwrap,
-    star, stars, start, stop, team, test, token, trust,
-    undeprecate, uninstall, unpublish, unstar, update, version,
-    view, whoami
+    access, audit, bugs, cache, ci, completion, config,
+    dedupe, deprecate, diff, dist-tag, docs, doctor, edit, exec,
+    explain, explore, find-dupes, fund, get, help, help-search,
+    init, install, install-ci-test, install-test, link, ll,
+    login, logout, ls, org, outdated, owner, pack, ping, pkg,
+    prefix, profile, prune, publish, query, rebuild, repo,
+    restart, root, run, sbom, search, set, start, stop, team,
+    test, token, trust, undeprecate, uninstall, unpublish,
+    update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     {NPM}/{TESTDIR}/home/.npmrc
@@ -45,7 +44,7 @@ npm {NPM}
 exports[`test/index.js TAP basic npm ci > should throw mismatch deps in lock file error 1`] = `
 npm error code EUSAGE
 npm error
-npm error \`npm ci\` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with \`npm install\` before continuing.
+npm error \`npm ci\` can only install packages when your package.json and package-lock.json are in sync. Please update your lock file with \`npm install\` before continuing.
 npm error
 npm error Invalid: lock file's abbrev@1.0.4 does not satisfy abbrev@1.1.1
 npm error
@@ -345,7 +344,7 @@ exports[`test/index.js TAP basic npm pkg > should have expected pkg delete outpu
 `
 
 exports[`test/index.js TAP basic npm pkg > should have expected pkg get output 1`] = `
-"ISC"
+ISC
 `
 
 exports[`test/index.js TAP basic npm pkg > should have expected pkg set output 1`] = `
@@ -353,28 +352,20 @@ exports[`test/index.js TAP basic npm pkg > should have expected pkg set output 1
 `
 
 exports[`test/index.js TAP basic npm pkg > should print package.json contents 1`] = `
-{
-  "name": "project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo /"Error: no test specified/" && exit 1",
-    "hello": "echo Hello"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "abbrev": "^1.0.4"
-  },
-  "tap": {
-    "test-env": [
-      "LC_ALL=sk"
-    ]
-  }
+name = 'project'
+version = '1.0.0'
+description = ''
+main = 'index.js'
+scripts = {
+  test: 'echo "Error: no test specified" && exit 1',
+  hello: 'echo Hello'
 }
+keywords = []
+author = ''
+license = 'ISC'
+type = 'commonjs'
+dependencies = { abbrev: '^1.0.4' }
+tap = { 'test-env': [ 'LC_ALL=sk' ] }
 `
 
 exports[`test/index.js TAP basic npm pkg set scripts > should have expected script added package.json result 1`] = `

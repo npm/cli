@@ -206,16 +206,10 @@ t.test('tap vs react15', async t => {
   await t.resolveMatchSnapshot(printIdeal(path), 'build ideal tree with tap collision')
 })
 
-t.test('tap vs react15 with legacy shrinkwrap', async t => {
+t.test('tap vs react15 with legacy lockfile', async t => {
   const path = resolve(fixtures, 'tap-react15-collision-legacy-sw')
   createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path), 'tap collision with legacy sw file')
-})
-
-t.test('bad shrinkwrap file', async t => {
-  const path = resolve(fixtures, 'testing-peer-deps-bad-sw')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path), 'bad shrinkwrap')
+  await t.resolveMatchSnapshot(printIdeal(path), 'tap collision with legacy lockfile')
 })
 
 t.test('a direct link dep has a dep with optional dependencies', async t => {
@@ -268,7 +262,7 @@ t.test('nested cyclical peer deps', async t => {
     resolve(fixtures, 'peer-dep-cycle-nested-with-sw'),
   ]
 
-  // if we have a shrinkwrap, then we'll get a collision with the current
+  // if we have a lockfile, then we'll get a collision with the current
   // version already there.  if we don't, then we'll get a peerConflict
   // when we try to put the second one there.
   const ers = {
@@ -437,42 +431,6 @@ t.test('unresolvable peer deps', async t => {
     message: 'unable to resolve dependency tree',
     code: 'ERESOLVE',
   }, 'unacceptable')
-})
-
-t.test('do not add shrinkwrapped deps', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-no-lock')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path, { update: true }))
-})
-
-t.test('do add shrinkwrapped deps when complete:true is set', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-no-lock')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path, {
-    complete: true,
-    update: true,
-  }))
-})
-
-t.test('do not update shrinkwrapped deps', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-with-lock')
-  createRegistry(t, false)
-  await t.resolveMatchSnapshot(printIdeal(path,
-    { update: { names: ['abbrev'] } }))
-})
-
-t.test('do not update shrinkwrapped deps, ignore lockfile', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-with-lock')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path,
-    { packageLock: false, update: { names: ['abbrev'] } }))
-})
-
-t.test('do not update shrinkwrapped deps when complete:true is set', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-with-lock')
-  createRegistry(t, false)
-  await t.resolveMatchSnapshot(printIdeal(path,
-    { update: { names: ['abbrev'] }, complete: true }))
 })
 
 t.test('deduped transitive deps with asymmetrical bin declaration', async t => {
@@ -2411,54 +2369,6 @@ t.test('set the current on ERESOLVE triggered by devDeps', async t => {
   })
 })
 
-t.test('shrinkwrapped dev/optional deps should not clobber flags', async t => {
-  await t.test('optional', async t => {
-    const path = t.testdir({
-      'package.json': JSON.stringify({
-        name: 'project',
-        version: '1.2.3',
-        optionalDependencies: {
-          '@isaacs/test-package-with-shrinkwrap': '^1.0.0',
-        },
-      }),
-    })
-    createRegistry(t, true)
-    const tree = await buildIdeal(path, { complete: true })
-    const swName = '@isaacs/test-package-with-shrinkwrap'
-    const swDep = tree.children.get(swName)
-    const metaDep = swDep.children.get('abbrev')
-    t.equal(swDep.optional, true, 'shrinkwrapped dep is optional')
-    t.equal(metaDep.optional, true, 'shrinkwrapped metadep optional')
-
-    // make sure we're not just somehow leaving ALL flags true
-    t.equal(swDep.dev, false, 'sw dep is not dev')
-    t.equal(metaDep.dev, false, 'meta dep is not dev')
-  })
-
-  await t.test('dev', async t => {
-    const path = t.testdir({
-      'package.json': JSON.stringify({
-        name: 'project',
-        version: '1.2.3',
-        devDependencies: {
-          '@isaacs/test-package-with-shrinkwrap': '^1.0.0',
-        },
-      }),
-    })
-    createRegistry(t, true)
-    const tree = await buildIdeal(path, { complete: true })
-    const swName = '@isaacs/test-package-with-shrinkwrap'
-    const swDep = tree.children.get(swName)
-    const metaDep = swDep.children.get('abbrev')
-    t.equal(swDep.dev, true, 'shrinkwrapped dep is dev')
-    t.equal(metaDep.dev, true, 'shrinkwrapped metadep dev')
-
-    // make sure we're not just somehow leaving ALL flags true
-    t.equal(swDep.optional, false, 'sw dep is not optional')
-    t.equal(metaDep.optional, false, 'meta dep is not optional')
-  })
-})
-
 t.test('do not ERESOLVE on peerOptionals that are ignored anyway', async t => {
   // this simulates three cases where a conflict occurs during the peerSet
   // generation phase, but will not manifest in the tree building phase.
@@ -4064,10 +3974,10 @@ t.test('overrides', async t => {
       '1.1.1',
       'second install: root "abbrev" is still forced to version 1.1.1')
 
-    // Overrides should NOT persist unnecessarily
-    t.notOk(
-      onepackageNode2.overrides && onepackageNode2.overrides.has('abbrev'),
-      'workspace node should not unnecessarily retain overrides after subsequent install'
+    // Workspace targets inherit the root override set via their parent Link node, which is correct behavior needed for proper override propagation through the dependency tree.
+    t.ok(
+      onepackageNode2.overrides,
+      'workspace target inherits root overrides via link propagation'
     )
   })
 })
@@ -4570,4 +4480,83 @@ t.test('skip invalid peerOptional edges in problemEdges when save=false (#8726)'
   t.equal(tree.children.get('shared').version, '1.1.0',
     'shared stays at 1.1.0 - peerOptional mismatch is not treated as a problem')
   t.ok(tree.children.get('util'), 'util is in the tree')
+})
+
+t.test('overrides with bundledDependencies', async t => {
+  t.test('does not infinite loop with bundledDependencies and overrides', async t => {
+    // https://github.com/npm/cli/issues/9227
+    const registry = createRegistry(t, false)
+
+    const bPacks = registry.packuments([
+      { version: '1.0.0', dependencies: { bar: '1.0.0' } },
+    ], 'b')
+    const cPacks = registry.packuments([
+      { version: '1.0.0', dependencies: { bar: '1.0.0' } },
+    ], 'c')
+    const barPacks = registry.packuments(['1.0.0', '2.0.0'], 'bar')
+    await registry.package({ manifest: registry.manifest({ name: 'b', packuments: bPacks }) })
+    await registry.package({ manifest: registry.manifest({ name: 'c', packuments: cPacks }) })
+    await registry.package({ manifest: registry.manifest({ name: 'bar', packuments: barPacks }), times: 2 })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: { b: '1.0.0', c: '1.0.0' },
+        bundledDependencies: true,
+        overrides: { bar: '2.0.0' },
+      }),
+    })
+
+    const tree = await buildIdeal(path)
+    t.equal(tree.children.get('bar').version, '2.0.0', 'override applied')
+  })
+
+  t.test('overrides apply to deps the root will bundle and edges are valid', async t => {
+    const registry = createRegistry(t, false)
+
+    const fooPacks = registry.packuments([
+      { version: '1.0.0', dependencies: { bar: '1.0.0' } },
+    ], 'foo')
+    const barPacks = registry.packuments(['1.0.0', '2.0.0'], 'bar')
+    await registry.package({ manifest: registry.manifest({ name: 'foo', packuments: fooPacks }) })
+    await registry.package({ manifest: registry.manifest({ name: 'bar', packuments: barPacks }) })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: { foo: '1.0.0' },
+        bundledDependencies: ['foo'],
+        overrides: { bar: '2.0.0' },
+      }),
+    })
+
+    const tree = await buildIdeal(path)
+    t.equal(tree.children.get('bar').version, '2.0.0', 'override installed correct version')
+
+    const fooBarEdge = tree.edgesOut.get('foo').to.edgesOut.get('bar')
+    t.equal(fooBarEdge.valid, true, 'overridden edge is valid')
+  })
+
+  t.test('overrides do not apply inside a dependency that bundles', async t => {
+    const registry = createRegistry(t, false)
+
+    const depPacks = registry.packuments([{
+      version: '1.0.0',
+      dependencies: { bar: '1.0.0' },
+      bundleDependencies: ['bar'],
+    }], 'dep')
+    await registry.package({ manifest: registry.manifest({ name: 'dep', packuments: depPacks }) })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: { dep: '1.0.0' },
+        overrides: { bar: '2.0.0' },
+      }),
+    })
+
+    const tree = await buildIdeal(path)
+    t.equal(tree.edgesOut.get('dep').valid, true, 'dep edge is valid')
+    t.notOk(tree.children.get('bar'), 'bar stays inside dep bundle')
+  })
 })

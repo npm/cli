@@ -161,7 +161,6 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "searchopts": "",
   "searchstaleness": 900,
   "shell": "{SHELL}",
-  "shrinkwrap": true,
   "sign-git-commit": false,
   "sign-git-tag": false,
   "strict-peer-deps": false,
@@ -341,7 +340,6 @@ searchlimit = 20
 searchopts = ""
 searchstaleness = 900
 shell = "{SHELL}"
-shrinkwrap = true
 sign-git-commit = false
 sign-git-tag = false
 strict-peer-deps = false

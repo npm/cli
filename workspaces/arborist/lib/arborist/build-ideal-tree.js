@@ -13,7 +13,6 @@ const { lstat, readlink } = require('node:fs/promises')
 const { depth } = require('treeverse')
 const { log, time } = require('proc-log')
 const { redact } = require('@npmcli/redact')
-const semver = require('semver')
 
 const {
   OK,
@@ -294,10 +293,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           }).then(meta => Object.assign(root, { meta }))
         } else {
           return this.loadVirtual({ root })
-            .then(tree => {
-              this.#applyRootOverridesToWorkspaces(tree)
-              return tree
-            })
         }
       })
 
@@ -406,6 +401,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         global: this.options.global,
         installLinks: this.installLinks,
         legacyPeerDeps: this.legacyPeerDeps,
+        loadOverrides: true,
         root,
       })
     }
@@ -662,7 +658,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     for (const node of this.idealTree.inventory.values()) {
       // XXX add any invalid edgesOut to the queue
       if (this[_updateNames].includes(node.name) &&
-        !node.isTop && !node.inDepBundle && !node.inShrinkwrap) {
+        !node.isTop && !node.inDepBundle) {
         for (const edge of node.edgesIn) {
           this.addTracker('idealTree', edge.from.name, edge.from.location)
           this.#depsQueue.push(edge.from)
@@ -785,15 +781,11 @@ This is a one-time fix-up, please be patient...
     const node = this.#depsQueue.pop()
     const bd = node.package.bundleDependencies
     const hasBundle = bd && Array.isArray(bd) && bd.length
-    const { hasShrinkwrap } = node
 
     // if the node was already visited, or has since been removed from the
-    // tree, skip over it and process the rest of the queue.  If a node has
-    // a shrinkwrap, also skip it, because it's going to get its deps
-    // satisfied by whatever's in that file anyway.
+    // tree, skip over it and process the rest of the queue.
     if (this.#depsSeen.has(node) ||
-        node.root !== this.idealTree ||
-        hasShrinkwrap && !this.#complete) {
+        node.root !== this.idealTree) {
       return this.#buildDepStep()
     }
 
@@ -803,15 +795,15 @@ This is a one-time fix-up, please be patient...
 
     // if we're loading a _complete_ ideal tree, for a --package-lock-only
     // installation for example, we have to crack open the tarball and
-    // look inside if it has bundle deps or shrinkwraps.  note that this is
+    // look inside if it has bundle deps.  note that this is
     // not necessary during a reification, because we just update the
-    // ideal tree by reading bundles/shrinkwraps in place.
+    // ideal tree by reading bundles in place.
     // Don't bother if the node is from the actual tree and hasn't
     // been resolved, because we can't fetch it anyway, could be anything!
     const crackOpen = this.#complete &&
       node !== this.idealTree &&
       node.resolved &&
-      (hasBundle || hasShrinkwrap) &&
+      hasBundle &&
       !node.inert
     if (crackOpen) {
       const Arborist = this.constructor
@@ -824,15 +816,8 @@ This is a one-time fix-up, please be patient...
           integrity: node.integrity,
         })
 
-        if (hasShrinkwrap) {
-          await new Arborist({ ...this.options, path })
-            .loadVirtual({ root: node })
-        }
-
-        if (hasBundle) {
-          await new Arborist({ ...this.options, path })
-            .loadActual({ root: node, ignoreMissing: true })
-        }
+        await new Arborist({ ...this.options, path })
+          .loadActual({ root: node, ignoreMissing: true })
       })
     }
 
@@ -950,7 +935,7 @@ This is a one-time fix-up, please be patient...
         tree: pd,
         getChildren: pd => pd.children,
         visit: pd => {
-          const { placed, edge, canPlace: cpd } = pd
+          const { placed, edge, canPlace: cpd, parent } = pd
           // if we didn't place anything, nothing to do here
           if (!placed) {
             return
@@ -1011,8 +996,7 @@ This is a one-time fix-up, please be patient...
             return
           }
 
-          // lastly, also check for the missing deps of the node we placed,
-          // and any holes created by pruning out conflicted peer sets.
+          // lastly, also check for the missing deps of the node we placed, and any holes created by pruning out conflicted peer sets.
           this.#depsQueue.push(placed)
           for (const dep of pd.needEvaluation) {
             this.#depsSeen.delete(dep)
@@ -1020,16 +1004,14 @@ This is a one-time fix-up, please be patient...
           }
 
           // pre-fetch any problem edges, since we'll need these soon
-          // if it fails at this point, though, don't worry because it
-          // may well be an optional dep that has gone missing.  it'll
-          // fail later anyway.
+          // if it fails at this point, though, don't worry because it may well be an optional dep that has gone missing
+          // it'll fail later anyway
           for (const e of this.#problemEdges(placed)) {
-            // XXX This is somehow load bearing.  This makes tests that print
-            // the ideal tree of a tree with tarball dependencies fail. This
-            // can't be changed or removed till we figure out why
+            // XXX This is somehow load bearing.  This makes tests that print the ideal tree of a tree with tarball dependencies fail
+            // This can't be changed or removed till we figure out why
             // The test is named "tarball deps with transitive tarball deps"
             promises.push(() =>
-              this.#fetchManifest(npa.resolve(e.name, e.spec, fromPath(placed, e)))
+              this.#fetchManifest(npa.resolve(e.name, e.spec, fromPath(placed, e)), parent)
                 .catch(() => null)
             )
           }
@@ -1047,26 +1029,18 @@ This is a one-time fix-up, please be patient...
     return this.#buildDepStep()
   }
 
-  // loads a node from an edge, and then loads its peer deps (and their
-  // peer deps, on down the line) into a virtual root parent.
+  // loads a node from an edge, and then loads its peer deps (and their peer deps, on down the line) into a virtual root parent.
   async #nodeFromEdge (edge, parent_, secondEdge, required) {
-    // create a virtual root node with the same deps as the node that
-    // is requesting this one, so that we can get all the peer deps in
-    // a context where they're likely to be resolvable.
-    // Note that the virtual root will also have virtual copies of the
-    // targets of any child Links, so that they resolve appropriately.
+    // create a virtual root node with the same deps as the node that is requesting this one, so that we can get all the peer deps in a context where they're likely to be resolvable.
+    // Note that the virtual root will also have virtual copies of the targets of any child Links, so that they resolve appropriately.
     const parent = parent_ || this.#virtualRoot(edge.from)
 
     const spec = npa.resolve(edge.name, edge.spec, edge.from.path)
     const first = await this.#nodeFromSpec(edge.name, spec, parent, edge)
 
-    // we might have a case where the parent has a peer dependency on
-    // `foo@*` which resolves to v2, but another dep in the set has a
-    // peerDependency on `foo@1`.  In that case, if we force it to be v2,
-    // we're unnecessarily triggering an ERESOLVE.
-    // If we have a second edge to worry about, and it's not satisfied
-    // by the first node, try a second and see if that satisfies the
-    // original edge here.
+    // we might have a case where the parent has a peer dependency on `foo@*` which resolves to v2, but another dep in the set has a peerDependency on `foo@1`.
+    // In that case, if we force it to be v2, we're unnecessarily triggering an ERESOLVE.
+    // If we have a second edge to worry about, and it's not satisfied by the first node, try a second and see if that satisfies the original edge here.
     const spec2 = secondEdge && npa.resolve(
       edge.name,
       secondEdge.spec,
@@ -1159,11 +1133,6 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
-      // If it's shrinkwrapped, we use what the shrinkwap wants.
-      if (edge.to && edge.to.inShrinkwrap) {
-        continue
-      }
-
       // If the edge has no destination, that's a problem, unless
       // if it's peerOptional and not explicitly requested.
       if (!edge.to) {
@@ -1210,11 +1179,12 @@ This is a one-time fix-up, please be patient...
     return problems
   }
 
-  async #fetchManifest (spec) {
+  async #fetchManifest (spec, parent) {
     const options = {
       ...this.options,
       avoid: this.#avoidRange(spec.name),
       fullMetadata: true,
+      _isRoot: parent?.isProjectRoot || parent?.isWorkspace,
     }
     // get the intended spec and stored metadata from yarn.lock file,
     // if available and valid.
@@ -1231,10 +1201,8 @@ This is a one-time fix-up, please be patient...
   }
 
   async #nodeFromSpec (name, spec, parent, edge) {
-    // pacote will slap integrity on its options, so we have to clone
-    // the object so it doesn't get mutated.
-    // Don't bother to load the manifest for link deps, because the target
-    // might be within another package that doesn't exist yet.
+    // pacote will slap integrity on its options, so we have to clone the object so it doesn't get mutated.
+    // Don't bother to load the manifest for link deps, because the target might be within another package that doesn't exist yet.
     const { installLinks, legacyPeerDeps } = this
     const isWorkspace = this.idealTree.workspaces && this.idealTree.workspaces.has(spec.name)
 
@@ -1287,7 +1255,7 @@ This is a one-time fix-up, please be patient...
 
     // spec isn't a directory, and either isn't a workspace or the workspace we have
     // doesn't satisfy the edge. try to fetch a manifest and build a node from that.
-    return this.#fetchManifest(spec)
+    return this.#fetchManifest(spec, parent)
       .then(pkg => new Node({ name, pkg, parent, installLinks, legacyPeerDeps }), error => {
         error.requiredBy = edge.from.location || '.'
 
@@ -1517,32 +1485,6 @@ This is a one-time fix-up, please be patient...
     }
 
     timeEnd()
-  }
-
-  #applyRootOverridesToWorkspaces (tree) {
-    const rootOverrides = tree.root.package.overrides || {}
-
-    for (const node of tree.root.inventory.values()) {
-      if (!node.isWorkspace) {
-        continue
-      }
-
-      for (const depName of Object.keys(rootOverrides)) {
-        const edge = node.edgesOut.get(depName)
-        const rootNode = tree.root.children.get(depName)
-
-        // safely skip if either edge or rootNode doesn't exist yet
-        if (!edge || !rootNode) {
-          continue
-        }
-
-        const resolvedRootVersion = rootNode.package.version
-        if (!semver.satisfies(resolvedRootVersion, edge.spec)) {
-          edge.detach()
-          node.children.delete(depName)
-        }
-      }
-    }
   }
 
   #idealTreePrune () {

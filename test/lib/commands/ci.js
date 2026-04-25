@@ -182,7 +182,7 @@ t.test('lifecycle scripts', async t => {
   ], 'runs appropriate scripts, in order')
 })
 
-t.test('should throw if package-lock.json or npm-shrinkwrap missing', async t => {
+t.test('should throw if package-lock.json is missing', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify(packageJson),

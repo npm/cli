@@ -813,7 +813,7 @@ t.test('manifest', async t => {
   }
   delete manifest.gitHead
 
-  manifest.man.sort()
+  manifest.man?.sort()
 
   t.matchSnapshot(manifest, 'manifest')
 })
