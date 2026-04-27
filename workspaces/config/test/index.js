@@ -1867,4 +1867,5 @@ t.test('before and min-release-age', async t => {
   await config.load()
   // Simple gut check to make sure we didn't do + instead of -
   t.ok(config.flat.before < Date.now(), 'before date is in the past not the future')
+  t.equal(config.get('min-release-age'), 30, 'min-release-age config remains readable after flattening')
 })
