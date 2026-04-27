@@ -1378,7 +1378,6 @@ const definitions = {
       if (obj['min-release-age'] !== null) {
         flatOptions.before = new Date(Date.now() - (86400000 * obj['min-release-age']))
         obj.before = flatOptions.before
-        delete obj['min-release-age']
       }
     },
   }),
