@@ -58,8 +58,9 @@ npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundlin
 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
-npm error [--allow-git <all|none|root>] [--no-audit] [--no-bin-links] [--no-fund]
-npm error [--dry-run]
+npm error [--allow-directory <all|none|root>] [--allow-file <all|none|root>]
+npm error [--allow-git <all|none|root>] [--allow-remote <all|none|root>] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 npm error [--workspaces] [--include-workspace-root] [--install-links]
 npm error
@@ -87,8 +88,17 @@ npm error
 npm error   --ignore-scripts
 npm error     If true, npm does not run scripts specified in package.json files.
 npm error
+npm error   --allow-directory
+npm error     Limits the ability for npm to install dependencies from directories.
+npm error
+npm error   --allow-file
+npm error     Limits the ability for npm to install dependencies from tarball files.
+npm error
 npm error   --allow-git
 npm error     Limits the ability for npm to fetch dependencies from git references.
+npm error
+npm error   --allow-remote
+npm error     Limits the ability for npm to fetch dependencies from urls.
 npm error
 npm error   --audit
 npm error     When "true" submit audit reports alongside the current npm command to the
