@@ -19,7 +19,22 @@ Object {
   "all": Array [
     "boolean value (true or false)",
   ],
+  "allow-directory": Array [
+    "all",
+    "none",
+    "root",
+  ],
+  "allow-file": Array [
+    "all",
+    "none",
+    "root",
+  ],
   "allow-git": Array [
+    "all",
+    "none",
+    "root",
+  ],
+  "allow-remote": Array [
     "all",
     "none",
     "root",
