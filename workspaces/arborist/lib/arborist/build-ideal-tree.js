@@ -906,7 +906,9 @@ This is a one-time fix-up, please be patient...
         || this.#explicitRequests.has(edge)
         || (edge.to && this.auditReport?.isVulnerable(edge.to))
       if (!dep && edge.type === 'peerOptional' && !skipExistingShortcut) {
-        dep = this.#findHoistableNode(edge.from.resolveParent || edge.from, edge)
+        dep = this.#findHoistableNode(
+          /* istanbul ignore next - resolveParent is always set for non-root nodes */
+          edge.from.resolveParent || edge.from, edge)
       }
       if (!dep) {
         dep = await this.#nodeFromEdge(edge, parent, null, required)
