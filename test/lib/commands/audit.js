@@ -2238,3 +2238,541 @@ t.test('audit signatures', async t => {
     })
   })
 })
+
+t.test('audit min-release-age', async t => {
+  // Tree fixture with a single registry dep we can mock.
+  const cooldownTree = {
+    'package.json': JSON.stringify({
+      name: 'cooldown-test',
+      version: '1.0.0',
+      dependencies: {
+        'old-dep': '1.0.0',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'cooldown-test',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'cooldown-test',
+          version: '1.0.0',
+          dependencies: {
+            'old-dep': '1.0.0',
+          },
+        },
+        'node_modules/old-dep': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/old-dep/-/old-dep-1.0.0.tgz',
+          integrity: 'sha512-AAA',
+        },
+      },
+    }),
+  }
+
+  const setupRegistry = (npm, t, { time, includeVersion = true } = {}) => {
+    const registry = new MockRegistry({
+      tap: t,
+      registry: npm.config.get('registry'),
+    })
+    const manifest = registry.manifest({
+      name: 'old-dep',
+      packuments: [{ version: '1.0.0' }],
+    })
+    if (!includeVersion) {
+      delete manifest.versions['1.0.0']
+    }
+    if (time === null) {
+      delete manifest.time
+    } else if (time !== undefined) {
+      manifest.time = { '1.0.0': time }
+    }
+    registry.nock.get('/old-dep').reply(200, manifest)
+    return registry
+  }
+
+  t.test('errors when neither --min-release-age nor --before is set', async t => {
+    const { npm } = await loadMockNpm(t, { prefixDir: cooldownTree })
+    await t.rejects(
+      npm.exec('audit', ['min-release-age']),
+      {
+        code: 'EUSAGE',
+        message: /requires .*--min-release-age.* or .*--before/,
+      }
+    )
+  })
+
+  t.test('errors when cutoff is in the future', async t => {
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: cooldownTree,
+      config: { before: '2999-01-01' },
+    })
+    await t.rejects(
+      npm.exec('audit', ['min-release-age']),
+      {
+        code: 'EUSAGE',
+        message: /cutoff is in the future/,
+      }
+    )
+  })
+
+  t.test('errors when no lockfile is present', async t => {
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: {
+        'package.json': JSON.stringify({ name: 't', version: '1.0.0' }),
+      },
+      config: { 'min-release-age': 1 },
+    })
+    await t.rejects(
+      npm.exec('audit', ['min-release-age']),
+      /requires an existing package-lock\.json/
+    )
+  })
+
+  t.test('passes when locked package is older than the cutoff', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: cooldownTree,
+      config: { 'min-release-age': 1 },
+    })
+    setupRegistry(npm, t, { time: '2010-01-01T00:00:00.000Z' })
+    await npm.exec('audit', ['min-release-age'])
+    t.notOk(process.exitCode, 'exits cleanly')
+    t.match(joinedOutput(), /audited 1 package/)
+    t.match(joinedOutput(), /verified as published on or before the cutoff/)
+  })
+
+  t.test('fails when locked package is newer than the cutoff', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: cooldownTree,
+      config: { 'min-release-age': 7 },
+    })
+    // Published "now" — should be inside the 7-day cooldown window.
+    setupRegistry(npm, t, { time: new Date().toISOString() })
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'exits with code 1')
+    t.match(joinedOutput(), /1 package has a publish time newer than the cutoff/)
+    t.match(joinedOutput(), /old-dep@1\.0\.0/)
+  })
+
+  t.test('json output reports violations', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: cooldownTree,
+      config: { 'min-release-age': 7, json: true },
+    })
+    const publishedAt = new Date().toISOString()
+    setupRegistry(npm, t, { time: publishedAt })
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'exits with code 1')
+    const result = JSON.parse(joinedOutput())
+    t.equal(result.audited, 1)
+    t.equal(result.verified, 0)
+    t.equal(result.violations.length, 1)
+    t.equal(result.violations[0].name, 'old-dep')
+    t.equal(result.violations[0].version, '1.0.0')
+    t.equal(result.violations[0].publishedAt, publishedAt)
+    t.same(result.unverifiable, [])
+  })
+
+  t.test('reports missing time data as unverifiable', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: cooldownTree,
+      config: { 'min-release-age': 1, json: true },
+    })
+    setupRegistry(npm, t, { time: null })
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'exits with code 1 on unverifiable')
+    const result = JSON.parse(joinedOutput())
+    t.equal(result.violations.length, 0)
+    t.equal(result.unverifiable.length, 1)
+    t.equal(result.unverifiable[0].code, 'EMISSINGTIME')
+  })
+
+  t.test('reports unpublished version as unverifiable', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: cooldownTree,
+      config: { 'min-release-age': 1, json: true },
+    })
+    setupRegistry(npm, t, { includeVersion: false, time: null })
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1)
+    const result = JSON.parse(joinedOutput())
+    t.equal(result.unverifiable.length, 1)
+    t.equal(result.unverifiable[0].code, 'EUNPUBLISHED')
+  })
+
+  t.test('skips non-registry sources', async t => {
+    // package.json declares old-dep as a git dep, lockfile resolves it as such.
+    // No registry mock needed; if we incorrectly tried to fetch, nock would throw an unmocked-request error.
+    const gitTree = {
+      'package.json': JSON.stringify({
+        name: 'cooldown-test',
+        version: '1.0.0',
+        dependencies: {
+          'old-dep': 'git+https://example.com/old-dep.git',
+        },
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'cooldown-test',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            name: 'cooldown-test',
+            version: '1.0.0',
+            dependencies: {
+              'old-dep': 'git+https://example.com/old-dep.git',
+            },
+          },
+          'node_modules/old-dep': {
+            version: '1.0.0',
+            resolved: 'git+https://example.com/old-dep.git#abc123',
+          },
+        },
+      }),
+    }
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: gitTree,
+      config: { 'min-release-age': 1 },
+    })
+    await t.rejects(
+      npm.exec('audit', ['min-release-age']),
+      /found no registry dependencies in lockfile to audit/
+    )
+  })
+
+  t.test('--before accepts an explicit date', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: cooldownTree,
+      config: { before: '2015-01-01' },
+    })
+    // Published in 2010, before our 2015 cutoff → passes.
+    setupRegistry(npm, t, { time: '2010-01-01T00:00:00.000Z' })
+    await npm.exec('audit', ['min-release-age'])
+    t.notOk(process.exitCode, 'exits cleanly')
+    t.match(joinedOutput(), /verified as published on or before the cutoff/)
+  })
+})
+
+// Integration tests using real captured packuments from the public registry.
+// Fixtures live in test/fixtures/packuments/<name>.json and are full packuments (`fullMetadata: true`) including the registry's real `time` data.
+// We use absolute `--before` dates so these tests stay deterministic over time.
+t.test('audit min-release-age - real packument fixtures', async t => {
+  const realPackuments = {
+    abbrev: require('../../fixtures/packuments/abbrev.json'),
+    once: require('../../fixtures/packuments/once.json'),
+    inherits: require('../../fixtures/packuments/inherits.json'),
+  }
+
+  // Sanity: confirm fixtures match the publish times we assert on.
+  // If npm republishes (which they shouldn't for these versions) we want a clear failure here, not in the assertions below.
+  t.equal(realPackuments.abbrev.time['4.0.0'], '2025-10-20T18:51:05.929Z',
+    'fixture: abbrev@4.0.0 publish time')
+  t.equal(realPackuments.abbrev.time['1.1.1'], '2017-09-28T02:47:13.220Z',
+    'fixture: abbrev@1.1.1 publish time')
+  t.equal(realPackuments.once.time['1.4.0'], '2016-09-06T21:11:09.367Z',
+    'fixture: once@1.4.0 publish time')
+  t.equal(realPackuments.inherits.time['2.0.4'], '2019-06-19T20:18:52.465Z',
+    'fixture: inherits@2.0.4 publish time')
+
+  const lockfileFor = (deps) => {
+    const packages = {
+      '': {
+        name: 'real-pku-test',
+        version: '1.0.0',
+        dependencies: deps,
+      },
+    }
+    for (const [name, version] of Object.entries(deps)) {
+      packages[`node_modules/${name}`] = {
+        version,
+        resolved: `https://registry.npmjs.org/${name}/-/${name}-${version}.tgz`,
+        integrity: 'sha512-AAAAA',
+      }
+    }
+    return {
+      'package.json': JSON.stringify({
+        name: 'real-pku-test',
+        version: '1.0.0',
+        dependencies: deps,
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'real-pku-test',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages,
+      }),
+    }
+  }
+
+  const mockRealRegistry = (npm, t, names) => {
+    const registry = new MockRegistry({
+      tap: t,
+      registry: npm.config.get('registry'),
+    })
+    for (const name of names) {
+      registry.nock.get(`/${name}`).reply(200, realPackuments[name])
+    }
+    return registry
+  }
+
+  t.test('all locked packages predate the cutoff: clean exit', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({ once: '1.4.0', inherits: '2.0.4' }),
+      config: { before: '2025-01-01' },
+    })
+    mockRealRegistry(npm, t, ['once', 'inherits'])
+    await npm.exec('audit', ['min-release-age'])
+    t.notOk(process.exitCode, 'exits cleanly')
+    t.match(joinedOutput(), /audited 2 packages against cutoff 2025-01-01/)
+    t.match(joinedOutput(), /all 2 packages were verified/)
+  })
+
+  t.test('locked package post-dates the cutoff: violation', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({ abbrev: '4.0.0' }),
+      config: { before: '2025-01-01' },
+    })
+    mockRealRegistry(npm, t, ['abbrev'])
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'exits with code 1')
+    t.match(joinedOutput(), /1 package has a publish time newer than the cutoff/)
+    t.match(joinedOutput(), /abbrev@4\.0\.0 \(published 2025-10-20T18:51:05\.929Z/)
+  })
+
+  t.test('mixed tree: ancient pass, fresh violate', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({ abbrev: '4.0.0', once: '1.4.0' }),
+      config: { before: '2020-01-01', json: true },
+    })
+    mockRealRegistry(npm, t, ['abbrev', 'once'])
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'exits with code 1')
+    const result = JSON.parse(joinedOutput())
+    t.equal(result.cutoff, '2020-01-01T00:00:00.000Z')
+    t.equal(result.audited, 2)
+    t.equal(result.verified, 1)
+    t.equal(result.violations.length, 1)
+    t.equal(result.violations[0].name, 'abbrev')
+    t.equal(result.violations[0].version, '4.0.0')
+    t.equal(result.violations[0].publishedAt, '2025-10-20T18:51:05.929Z',
+      'publishedAt comes straight from the real packument time')
+    t.equal(result.unverifiable.length, 0)
+  })
+
+  t.test('cutoff exactly matches the publish time: passes (<= semantics)', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({ abbrev: '1.1.1' }),
+      // Cutoff is the exact publish time of abbrev@1.1.1.
+      // The check is inclusive: published on or before the cutoff is fine.
+      config: { before: '2017-09-28T02:47:13.220Z' },
+    })
+    mockRealRegistry(npm, t, ['abbrev'])
+    await npm.exec('audit', ['min-release-age'])
+    t.notOk(process.exitCode, 'exits cleanly')
+    t.match(joinedOutput(), /all 1 package was verified/)
+  })
+
+  t.test('cutoff one ms before publish time: violation', async t => {
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({ abbrev: '1.1.1' }),
+      // 1ms before publish.
+      config: { before: '2017-09-28T02:47:13.219Z' },
+    })
+    mockRealRegistry(npm, t, ['abbrev'])
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'exits with code 1')
+  })
+
+  t.test('locked version not in real packument: unverifiable', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      // 99.99.99 doesn't exist in the real abbrev packument.
+      prefixDir: lockfileFor({ abbrev: '99.99.99' }),
+      config: { before: '2025-01-01', json: true },
+    })
+    mockRealRegistry(npm, t, ['abbrev'])
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'exits non-zero on unverifiable')
+    const result = JSON.parse(joinedOutput())
+    t.equal(result.unverifiable.length, 1)
+    t.equal(result.unverifiable[0].name, 'abbrev')
+    t.equal(result.unverifiable[0].version, '99.99.99')
+    t.equal(result.unverifiable[0].code, 'EUNPUBLISHED')
+  })
+
+  t.test('multiple violations: all are reported in human and JSON output', async t => {
+    // Cutoff is older than every version of every fixture, so all three packages violate.
+    // Verifies that the report is not truncated to one entry and that ordering is stable (alphabetical by name).
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({
+        abbrev: '4.0.0',
+        inherits: '2.0.4',
+        once: '1.4.0',
+      }),
+      config: { before: '2010-01-01' },
+    })
+    mockRealRegistry(npm, t, ['abbrev', 'inherits', 'once'])
+
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'exits with code 1')
+    const out = joinedOutput()
+
+    t.match(out, /3 packages have a publish time newer than the cutoff/,
+      'header counts all 3 violations')
+    t.match(out, /abbrev@4\.0\.0 \(published 2025-10-20T18:51:05\.929Z/,
+      'lists abbrev with real publish time')
+    t.match(out, /inherits@2\.0\.4 \(published 2019-06-19T20:18:52\.465Z/,
+      'lists inherits with real publish time')
+    t.match(out, /once@1\.4\.0 \(published 2016-09-06T21:11:09\.367Z/,
+      'lists once with real publish time')
+
+    // Ordering: alphabetical by name (sortByNameVersion).
+    const idxAbbrev = out.indexOf('abbrev@4.0.0')
+    const idxInherits = out.indexOf('inherits@2.0.4')
+    const idxOnce = out.indexOf('once@1.4.0')
+    t.ok(idxAbbrev < idxInherits && idxInherits < idxOnce,
+      'violations are sorted alphabetically by package name')
+  })
+
+  t.test('multiple violations in JSON output', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({
+        abbrev: '4.0.0',
+        inherits: '2.0.4',
+        once: '1.4.0',
+      }),
+      config: { before: '2010-01-01', json: true },
+    })
+    mockRealRegistry(npm, t, ['abbrev', 'inherits', 'once'])
+
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'exits with code 1')
+    const result = JSON.parse(joinedOutput())
+    t.equal(result.audited, 3)
+    t.equal(result.verified, 0)
+    t.equal(result.violations.length, 3, 'all 3 violations present in JSON')
+    t.same(
+      result.violations.map(v => `${v.name}@${v.version}`),
+      ['abbrev@4.0.0', 'inherits@2.0.4', 'once@1.4.0'],
+      'JSON violations are sorted alphabetically'
+    )
+    // Each entry has the real publish time straight from the packument.
+    t.equal(result.violations[0].publishedAt, '2025-10-20T18:51:05.929Z')
+    t.equal(result.violations[1].publishedAt, '2019-06-19T20:18:52.465Z')
+    t.equal(result.violations[2].publishedAt, '2016-09-06T21:11:09.367Z')
+  })
+})
+
+t.test('audit min-release-age - --allow-unverifiable escape hatch', async t => {
+  const realPackuments = {
+    abbrev: require('../../fixtures/packuments/abbrev.json'),
+    once: require('../../fixtures/packuments/once.json'),
+  }
+
+  const lockfileFor = (deps) => {
+    const packages = {
+      '': { name: 'allow-test', version: '1.0.0', dependencies: deps },
+    }
+    for (const [name, version] of Object.entries(deps)) {
+      packages[`node_modules/${name}`] = {
+        version,
+        resolved: `https://registry.npmjs.org/${name}/-/${name}-${version}.tgz`,
+        integrity: 'sha512-AAAAA',
+      }
+    }
+    return {
+      'package.json': JSON.stringify({
+        name: 'allow-test',
+        version: '1.0.0',
+        dependencies: deps,
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'allow-test',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages,
+      }),
+    }
+  }
+
+  const mockRealRegistry = (npm, t, names) => {
+    const registry = new MockRegistry({
+      tap: t,
+      registry: npm.config.get('registry'),
+    })
+    for (const name of names) {
+      registry.nock.get(`/${name}`).reply(200, realPackuments[name])
+    }
+    return registry
+  }
+
+  t.test('only-unverifiable + --allow-unverifiable: exits 0 but still reports', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      // 99.99.99 doesn't exist in the abbrev packument → unverifiable.
+      prefixDir: lockfileFor({ abbrev: '99.99.99' }),
+      config: { before: '2025-01-01', 'allow-unverifiable': true, json: true },
+    })
+    mockRealRegistry(npm, t, ['abbrev'])
+    await npm.exec('audit', ['min-release-age'])
+    t.notOk(process.exitCode, 'exits cleanly when only failures are unverifiable')
+    const result = JSON.parse(joinedOutput())
+    t.equal(result.allowUnverifiable, true, 'flag reflected in JSON output')
+    t.equal(result.unverifiable.length, 1, 'unverifiable still listed')
+    t.equal(result.violations.length, 0)
+  })
+
+  t.test('violations present + --allow-unverifiable: still exits 1', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      // abbrev@4.0.0 is a real violation; once@99.99.99 is unverifiable.
+      prefixDir: lockfileFor({ abbrev: '4.0.0', once: '99.99.99' }),
+      config: { before: '2025-01-01', 'allow-unverifiable': true, json: true },
+    })
+    mockRealRegistry(npm, t, ['abbrev', 'once'])
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'violations still cause non-zero exit')
+    const result = JSON.parse(joinedOutput())
+    t.equal(result.violations.length, 1)
+    t.equal(result.violations[0].name, 'abbrev')
+    t.equal(result.unverifiable.length, 1)
+    t.equal(result.unverifiable[0].name, 'once')
+  })
+
+  t.test('without --allow-unverifiable: unverifiable causes exit 1 (default)', async t => {
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({ abbrev: '99.99.99' }),
+      config: { before: '2025-01-01' },
+    })
+    mockRealRegistry(npm, t, ['abbrev'])
+    await npm.exec('audit', ['min-release-age'])
+    t.equal(process.exitCode, 1, 'default behavior unchanged')
+  })
+
+  t.test('human output mentions --allow-unverifiable when it is in effect', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({ abbrev: '99.99.99' }),
+      config: { before: '2025-01-01', 'allow-unverifiable': true },
+    })
+    mockRealRegistry(npm, t, ['abbrev'])
+    await npm.exec('audit', ['min-release-age'])
+    t.notOk(process.exitCode, 'exits cleanly')
+    t.match(
+      joinedOutput(),
+      /allowed by --allow-unverifiable/,
+      'human output explains why the build wasn\'t failed'
+    )
+  })
+
+  t.test('--allow-unverifiable is a no-op when nothing is unverifiable', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: lockfileFor({ once: '1.4.0' }),
+      config: { before: '2025-01-01', 'allow-unverifiable': true },
+    })
+    mockRealRegistry(npm, t, ['once'])
+    await npm.exec('audit', ['min-release-age'])
+    t.notOk(process.exitCode, 'exits cleanly')
+    t.match(joinedOutput(), /all 1 package was verified/)
+  })
+})

@@ -94,6 +94,82 @@ Keys response:
 
 See this [example key's response from the public npm registry](https://registry.npmjs.org/-/npm/v1/keys).
 
+### Audit Minimum Release Age
+
+The `npm audit min-release-age` subcommand verifies that every package in your `package-lock.json` was published on or before a configured cutoff date.
+This is useful for enforcing a "cooldown" / supply-chain freshness policy in CI when a lockfile may have been generated locally without the [`min-release-age`](/using-npm/config#min-release-age) config set.
+
+```bash
+$ npm audit min-release-age --min-release-age=14
+```
+
+The cutoff is determined by either [`--min-release-age`](/using-npm/config#min-release-age) (relative, in days) or [`--before`](/using-npm/config#before) (an explicit date).
+At least one of these must be set; the command will error otherwise.
+A future cutoff is rejected.
+
+The check is read-only.
+It loads the lockfile via the equivalent of `loadVirtual` (no `node_modules` is required), so it can run on a clean checkout before `npm ci`.
+
+For each registry-source dependency in the lockfile, the command fetches the registry packument and compares the `time` entry for the locked version against the cutoff.
+The check skips:
+
+- the project root and workspace packages themselves
+- non-registry sources (git, file:, http tarballs, link:, workspace:, etc.)
+- bundled dependencies — their freshness is governed by the bundling parent's publish time, and the parent itself is checked
+- any types listed in [`omit`](/using-npm/config#omit) (for example `--omit=dev` to exclude `devDependencies`)
+
+Results are split into three categories so CI logs can distinguish policy hits from coverage gaps:
+
+- **violations**: the registry confirmed the version was published after the cutoff.
+- **unverifiable**: the registry returned no `time` entry, the version is not in the packument (unpublished/yanked), or the registry call failed.
+- **verified**: confirmed published on or before the cutoff.
+
+The command exits with code `1` if either `violations` or `unverifiable` is non-empty, and `0` otherwise.
+
+Pass [`--allow-unverifiable`](/using-npm/config#allow-unverifiable) to ignore unverifiable packages while still failing on confirmed violations.
+This is useful when your dependency tree contains packages whose registry metadata is incomplete and you don't want those to block the build.
+Unverifiable packages are still listed in the report.
+
+To get machine-readable output, use:
+
+```bash
+$ npm audit min-release-age --min-release-age=14 --json
+```
+
+JSON output has the shape:
+
+```json
+{
+  "cutoff": "<ISO date>",
+  "audited": <number>,
+  "verified": <number>,
+  "violations": [
+    {
+      "name": "<pkg>",
+      "version": "<version>",
+      "registry": "<registry url>",
+      "publishedAt": "<ISO date>",
+      "ageMs": <number>,
+      "locations": ["node_modules/..."]
+    }
+  ],
+  "unverifiable": [
+    {
+      "name": "<pkg>",
+      "version": "<version>",
+      "registry": "<registry url>",
+      "code": "EMISSINGTIME|EUNPUBLISHED|EPACKUMENT|EINVALIDTIME",
+      "reason": "<human-readable explanation>",
+      "locations": ["node_modules/..."]
+    }
+  ]
+}
+```
+
+Note that `npm ci` and `npm install` themselves do not consult `min-release-age` when an existing lockfile already satisfies `package.json` — they short-circuit version resolution and install what is locked.
+That is by design: `npm ci`'s contract is to install the lockfile verbatim.
+Run `npm audit min-release-age` as a separate step to enforce the cooldown policy against an existing lockfile.
+
 ### Audit Endpoints
 
 There are two audit endpoints that npm may use to fetch vulnerability information: the `Bulk Advisory` endpoint and the `Quick Audit` endpoint.
@@ -156,6 +232,8 @@ The `npm audit` command will exit with a 0 exit code if no vulnerabilities were 
 The `npm audit fix` command will exit with 0 exit code if no vulnerabilities are found _or_ if the remediation is able to successfully fix all vulnerabilities.
 
 If vulnerabilities were found the exit code will depend on the [`audit-level` config](/using-npm/config#audit-level).
+
+The `npm audit min-release-age` command will exit with a 0 exit code if every locked package was published on or before the configured cutoff, and a 1 exit code if any package is too new or could not be verified.
 
 ### Examples
 

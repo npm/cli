@@ -203,6 +203,58 @@ t.test('should throw ECIGLOBAL', async t => {
   await t.rejects(npm.exec('ci', []), { code: 'ECIGLOBAL' })
 })
 
+t.test('warns when --before / --min-release-age is set', async t => {
+  // npm ci does not re-resolve, so the cooldown filters silently no-op.
+  // The warning should fire (and point at `npm audit min-release-age`) regardless of source, but it must not error or change install behavior.
+  // Tests use --dry-run so they don't need a registry mock; the warning fires before reify either way.
+  const fixtures = {
+    abbrev: abbrev,
+    'package.json': JSON.stringify(packageJson),
+    'package-lock.json': JSON.stringify(packageLock),
+  }
+
+  await t.test('--before via CLI', async t => {
+    const { npm, logs } = await loadMockNpm(t, {
+      prefixDir: fixtures,
+      config: { before: '2099-01-01', 'dry-run': true },
+    })
+    await npm.exec('ci', [])
+    t.match(
+      logs.warn,
+      [/`--before` and `--min-release-age` have no effect on `npm ci`/],
+      'warns about ineffective cooldown flags'
+    )
+    t.match(
+      logs.warn,
+      [/Run `npm audit min-release-age`/],
+      'points to the lockfile validation subcommand'
+    )
+  })
+
+  await t.test('--min-release-age via CLI', async t => {
+    const { npm, logs } = await loadMockNpm(t, {
+      prefixDir: fixtures,
+      config: { 'min-release-age': 14, 'dry-run': true },
+    })
+    await npm.exec('ci', [])
+    t.match(
+      logs.warn,
+      [/`--before` and `--min-release-age` have no effect on `npm ci`/],
+      'min-release-age (which flattens to before) also triggers the warning'
+    )
+  })
+
+  await t.test('no warning when neither flag is set', async t => {
+    const { npm, logs } = await loadMockNpm(t, {
+      prefixDir: fixtures,
+      config: { 'dry-run': true },
+    })
+    await npm.exec('ci', [])
+    const cooldownWarnings = logs.warn.filter(l => /min-release-age|--before/.test(l))
+    t.equal(cooldownWarnings.length, 0, 'no cooldown warning emitted')
+  })
+})
+
 t.test('should throw error when ideal inventory mismatches virtual', async t => {
   const { npm, registry } = await loadMockNpm(t, {
     prefixDir: {

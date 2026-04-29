@@ -16,6 +16,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "access": null,
   "all": false,
   "allow-same-version": false,
+  "allow-unverifiable": false,
   "allow-directory": "all",
   "allow-file": "all",
   "allow-git": "all",
@@ -199,6 +200,7 @@ allow-file = "all"
 allow-git = "all"
 allow-remote = "all"
 allow-same-version = false
+allow-unverifiable = false
 also = null
 audit = true
 audit-level = null

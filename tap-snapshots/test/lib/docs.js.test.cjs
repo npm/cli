@@ -294,6 +294,23 @@ to the same value as the current version.
 
 
 
+#### \`allow-unverifiable\`
+
+* Default: false
+* Type: Boolean
+
+When set, \`npm audit min-release-age\` will not exit non-zero solely because
+some packages could not be verified against the cooldown (e.g. missing
+\`time\` data, unpublished versions, or registry fetch failures). Confirmed
+policy violations still cause a non-zero exit. Unverifiable packages are
+still listed in the report.
+
+Use this in CI when your dependency tree contains packages whose registry
+metadata is incomplete and you don't want those to block the build, while
+still failing on actual cooldown violations.
+
+
+
 #### \`audit\`
 
 * Default: true
@@ -2296,6 +2313,7 @@ Array [
   "access",
   "all",
   "allow-same-version",
+  "allow-unverifiable",
   "allow-directory",
   "allow-file",
   "allow-git",
@@ -2475,6 +2493,7 @@ Array [
   "access",
   "all",
   "allow-same-version",
+  "allow-unverifiable",
   "allow-directory",
   "allow-file",
   "allow-git",
@@ -2663,6 +2682,7 @@ Object {
   "allowGit": "all",
   "allowRemote": "all",
   "allowSameVersion": false,
+  "allowUnverifiable": false,
   "audit": true,
   "auditLevel": null,
   "authType": "web",
@@ -2888,7 +2908,7 @@ exports[`test/lib/docs.js TAP usage audit > must match snapshot 1`] = `
 Run a security audit
 
 Usage:
-npm audit [fix|signatures]
+npm audit [fix|signatures|min-release-age]
 
 Options:
 [--audit-level <info|low|moderate|high|critical|none>] [--dry-run] [-f|--force]
@@ -2896,6 +2916,7 @@ Options:
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--foreground-scripts] [--ignore-scripts] [--include-attestations]
+[--before <date>|--min-release-age <days>] [--allow-unverifiable]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -2932,6 +2953,15 @@ Options:
   --include-attestations
     When used with \`npm audit signatures --json\`, includes the full
 
+  --before
+    If passed to \`npm install\`, will rebuild the npm tree such that only
+
+  --min-release-age
+    If set, npm will build the npm tree such that only versions that were
+
+  --allow-unverifiable
+    When set, \`npm audit min-release-age\` will not exit non-zero solely because some packages could not be verified against the cooldown (e.g. missing \`time\` data, unpublished versions, or registry fetch failures).
+
   -w|--workspace
     Enable running a command in the context of the configured workspaces of the
 
@@ -2948,7 +2978,7 @@ Options:
 Run "npm help audit" for more info
 
 \`\`\`bash
-npm audit [fix|signatures]
+npm audit [fix|signatures|min-release-age]
 \`\`\`
 
 #### \`audit-level\`
@@ -2962,6 +2992,9 @@ npm audit [fix|signatures]
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`include-attestations\`
+#### \`before\`
+#### \`min-release-age\`
+#### \`allow-unverifiable\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`

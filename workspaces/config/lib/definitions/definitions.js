@@ -187,6 +187,18 @@ const definitions = {
   `,
     flatten,
   }),
+  'allow-unverifiable': new Definition('allow-unverifiable', {
+    default: false,
+    type: Boolean,
+    description: `
+      When set, \`npm audit min-release-age\` will not exit non-zero solely because some packages could not be verified against the cooldown (e.g. missing \`time\` data, unpublished versions, or registry fetch failures).
+      Confirmed policy violations still cause a non-zero exit.
+      Unverifiable packages are still listed in the report.
+
+      Use this in CI when your dependency tree contains packages whose registry metadata is incomplete and you don't want those to block the build, while still failing on actual cooldown violations.
+    `,
+    flatten,
+  }),
   'allow-directory': new Definition('allow-directory', {
     default: 'all',
     type: ['all', 'none', 'root'],
