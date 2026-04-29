@@ -900,11 +900,12 @@ This is a one-time fix-up, please be patient...
       const parent = edge.peer ? virtualRoot : null
       let dep = vrDep && vrDep.satisfies(edge) ? vrDep : null
 
-      // A peerOptional conflict can be resolved by finding an existing
-      // node in the tree that satisfies the edge, avoiding a registry
-      // fetch that may introduce an extraneous package.
-      // See npm/cli#9249.
-      if (!dep && edge.type === 'peerOptional') {
+      // A peerOptional conflict can be resolved by finding an existing node in the tree that satisfies the edge, avoiding a registry fetch that may introduce an extraneous package. See npm/cli#9249.
+      // Skip the shortcut when the user has signaled an explicit re-fetch intent (npm update by name, explicit request, or audit fix), so we honor those signals rather than silently keeping the existing node.
+      const skipExistingShortcut = this[_updateNames].includes(edge.name)
+        || this.#explicitRequests.has(edge)
+        || (edge.to && this.auditReport?.isVulnerable(edge.to))
+      if (!dep && edge.type === 'peerOptional' && !skipExistingShortcut) {
         dep = this.#findHoistableNode(edge.from.resolveParent || edge.from, edge)
       }
       if (!dep) {
