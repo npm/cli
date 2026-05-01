@@ -292,7 +292,6 @@ const definitions = {
     default: null,
     hint: '<date>',
     type: [null, Date],
-    exclusive: ['min-release-age'],
     description: `
       If passed to \`npm install\`, will rebuild the npm tree such that only
       versions that were available **on or before** the given date are
@@ -303,6 +302,12 @@ const definitions = {
       pass the \`--before\` filter, the most recent version less than or equal
       to that tag will be used. For example, \`foo@latest\` might install
       \`foo@1.2\` even though \`latest\` is \`2.0\`.
+
+      If \`before\` and \`min-release-age\` are both set in the same source,
+      \`before\` wins (an explicit absolute date overrides a relative window).
+      Across sources, the standard precedence applies (cli > env > project >
+      user > global), so a higher-priority source can always relax or
+      override a lower-priority one.
     `,
     flatten,
   }),
@@ -1409,7 +1414,6 @@ const definitions = {
     default: null,
     hint: '<days>',
     type: [null, Number],
-    exclusive: ['before'],
     envExport: false,
     description: `
        If set, npm will build the npm tree such that only versions that were
@@ -1418,12 +1422,19 @@ const definitions = {
        command will error.
 
        This flag is a complement to \`before\`, which accepts an exact date
-       instead of a relative number of days.
+       instead of a relative number of days. The two may coexist (e.g.
+       \`min-release-age\` in your \`.npmrc\` is preserved when npm internally
+       spawns a sub-process with \`--before\` while preparing a \`git:\` or
+       \`github:\` dependency); when both apply, \`before\` wins within a
+       single source and across sources the standard precedence rules apply.
     `,
     flatten: (key, obj, flatOptions) => {
-      if (obj['min-release-age'] !== null) {
+      // If `before` is set in the same source, defer to it: an explicit
+      // absolute date overrides a relative window. Across sources, normal
+      // priority ordering means a higher-priority `before` will overwrite
+      // this `flatOptions.before` later in the flatten loop.
+      if (obj['min-release-age'] != null && obj.before == null) {
         flatOptions.before = new Date(Date.now() - (86400000 * obj['min-release-age']))
-        obj.before = flatOptions.before
       }
     },
   }),
