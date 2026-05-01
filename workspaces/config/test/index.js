@@ -1869,3 +1869,85 @@ t.test('before and min-release-age', async t => {
   t.ok(config.flat.before < Date.now(), 'before date is in the past not the future')
   t.equal(config.get('min-release-age'), 30, 'min-release-age config remains readable after flattening')
 })
+
+// Regression test for https://github.com/npm/cli/issues/9291
+// pacote spawns child npm processes with `--before=<date>` whenever it has a
+// `before` option (which includes the case where the parent derived `before`
+// from `min-release-age`). The child process then loads the user's npmrc, which
+// still contains `min-release-age=N`. Previously this combination crashed
+// because the two options were declared mutually exclusive.
+t.test('min-release-age in npmrc coexists with --before from CLI (pacote spawn)', async t => {
+  const dir = t.testdir({
+    '.npmrc': 'min-release-age=7',
+  })
+  const cliBefore = new Date('2024-01-15T00:00:00.000Z')
+  const config = new Config({
+    npmPath: __dirname,
+    env: { HOME: dir },
+    argv: [process.execPath, __filename, `--before=${cliBefore.toISOString()}`],
+    cwd: dir,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await t.resolves(config.load(), 'loads without crashing on previously exclusive options')
+  // CLI is the highest-priority source, so its `before` overrides whatever
+  // `min-release-age` in the npmrc would have produced.
+  t.equal(
+    config.flat.before.toISOString(),
+    cliBefore.toISOString(),
+    'CLI --before overrides npmrc min-release-age'
+  )
+})
+
+// A higher-priority source must be able to relax (or override) a stricter
+// lower-priority `min-release-age`. Previously this would have thrown via
+// the `exclusive` check; now it follows normal cli > npmrc precedence.
+t.test('CLI --min-release-age=0 relaxes a stricter npmrc min-release-age', async t => {
+  const dir = t.testdir({
+    '.npmrc': 'min-release-age=30',
+  })
+  const config = new Config({
+    npmPath: __dirname,
+    env: { HOME: dir },
+    argv: [process.execPath, __filename, '--min-release-age=0'],
+    cwd: dir,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  // min-release-age=0 means "now" — the CLI must win, not the npmrc's 30 days.
+  const now = Date.now()
+  t.ok(
+    Math.abs(config.flat.before.getTime() - now) < 60_000,
+    'flat.before resolves to ~now (CLI overrode the stricter npmrc)'
+  )
+})
+
+// Within a single source, an explicit `before` wins over a relative
+// `min-release-age` so the resolution is deterministic regardless of the
+// argv parser's key-iteration order.
+t.test('within a single source, before wins over min-release-age', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [
+      process.execPath,
+      __filename,
+      '--min-release-age=1',
+      '--before=2020-01-01T00:00:00.000Z',
+    ],
+    cwd: path,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  t.equal(
+    config.flat.before.toISOString(),
+    '2020-01-01T00:00:00.000Z',
+    'explicit --before wins over --min-release-age in the same source'
+  )
+})
