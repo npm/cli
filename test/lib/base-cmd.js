@@ -677,3 +677,100 @@ t.test('flags() does not throw when positionals is null (unlimited)', async t =>
   t.same(remains, ['pkg1', 'extra1', 'extra2'], 'all positionals are in remains')
   t.equal(flags.id, null, 'id flag uses default')
 })
+
+t.test('flags() correctly skips global flags before command name', async t => {
+  const { npm } = await loadMockNpm(t)
+
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command'
+    static params = ['mountain']
+
+    static definitions = [
+      new Definition('mountain', {
+        type: String,
+        default: 'everest',
+        description: 'Your favorite mountain',
+        usage: '--mountain=<mountain>',
+      }),
+    ]
+
+    async exec () {
+      return this.flags(['test-command'])
+    }
+  }
+
+  // Global flags (--registry) appear before the command name in argv
+  npm.config.argv = ['node', 'npm', '--registry', 'http://example.com', 'test-command', '--mountain=denali']
+
+  const command = new TestCommand(npm)
+  const [flags, remains] = await command.exec()
+
+  t.equal(flags.mountain, 'denali', 'parses command flag correctly despite global flags before command')
+  t.same(remains, [], 'no unexpected positional args')
+})
+
+t.test('flags() correctly skips global flags before subcommand names', async t => {
+  const { npm } = await loadMockNpm(t)
+
+  class TestSubCommand extends BaseCommand {
+    static name = 'sub'
+    static description = 'Test subcommand'
+    static params = ['mountain']
+
+    static definitions = [
+      new Definition('mountain', {
+        type: String,
+        default: 'everest',
+        description: 'Your favorite mountain',
+        usage: '--mountain=<mountain>',
+      }),
+    ]
+
+    async exec () {
+      return this.flags(['parent', 'sub'])
+    }
+  }
+
+  // Global flags push command names to higher positions
+  npm.config.argv = ['node', 'npm', '--registry', 'http://example.com', 'parent', 'sub', '--mountain=rainier', 'positional-arg']
+
+  const command = new TestSubCommand(npm)
+  const [flags, remains] = await command.exec()
+
+  t.equal(flags.mountain, 'rainier', 'parses subcommand flag correctly despite global flags')
+  t.same(remains, ['positional-arg'], 'positional arg is preserved')
+})
+
+t.test('flags() handles command name appearing as a flag value', async t => {
+  const { npm } = await loadMockNpm(t)
+
+  class TestCommand extends BaseCommand {
+    static name = 'trust'
+    static description = 'Test command'
+    static params = ['mountain']
+
+    static definitions = [
+      new Definition('mountain', {
+        type: String,
+        default: 'everest',
+        description: 'Your favorite mountain',
+        usage: '--mountain=<mountain>',
+      }),
+    ]
+
+    async exec () {
+      return this.flags(['trust', 'list'])
+    }
+  }
+
+  // 'trust' appears as both a flag value and a command name
+  // The contiguous sequence ['trust', 'list'] only matches at position 5
+  npm.config.argv = ['node', 'npm', '--scope', 'trust', 'trust', 'list', '--mountain=k2']
+
+  const command = new TestCommand(npm)
+  const [flags, remains] = await command.exec()
+
+  t.equal(flags.mountain, 'k2', 'finds the correct contiguous command path match')
+  t.same(remains, [], 'no unexpected positional args')
+})
