@@ -503,7 +503,7 @@ t.test('package with --json and no versions', async t => {
 t.test('package with --json and single string arg', async t => {
   const { view, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
   await view.exec(['blue', 'dist-tags.latest'])
-  t.equal(JSON.parse(joinedOutput()), '1.0.0', 'no info to display')
+  t.strictSame(JSON.parse(joinedOutput()), ['1.0.0'], 'returns single string value as array')
 })
 
 t.test('package with single version', async t => {
@@ -517,7 +517,7 @@ t.test('package with single version', async t => {
     const { view, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
     await view.exec(['single-version', 'versions'])
     const parsed = JSON.parse(joinedOutput())
-    t.strictSame(parsed, ['1.0.0'], 'does not unwrap single item arrays in json')
+    t.strictSame(parsed, [['1.0.0']], 'does not unwrap single item arrays in json')
   })
 
   t.test('no json and versions arg', async t => {
