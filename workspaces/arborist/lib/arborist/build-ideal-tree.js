@@ -446,6 +446,11 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       const paths = await readdirScoped(nm).catch(() => [])
       for (const p of paths) {
         const name = p.replace(/\\/g, '/')
+        // Match loadActual behavior: hidden entries and retired scoped package
+        // folders are not installed global packages.
+        if (/^(@[^/]+\/)?\./.test(name)) {
+          continue
+        }
         const updateName = this[_updateNames].includes(name)
         if (this[_updateAll] || updateName) {
           if (updateName) {

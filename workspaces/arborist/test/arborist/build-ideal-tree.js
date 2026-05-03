@@ -2236,6 +2236,44 @@ t.test('update global when nothing in global', async t => {
     'update with empty node_modules')
 })
 
+t.test('update global ignores hidden node_modules entries', async t => {
+  const path = t.testdir({
+    node_modules: {
+      '.hidden-non-package': {
+        node_modules: {},
+      },
+      '@scope': {
+        '.retired-package': {
+          node_modules: {},
+        },
+      },
+      once: {
+        'package.json': JSON.stringify({
+          name: 'once',
+          version: '1.3.1',
+          dependencies: {
+            wrappy: '1',
+          },
+        }),
+        node_modules: {
+          wrappy: {
+            'package.json': JSON.stringify({
+              name: 'wrappy',
+              version: '1.0.1',
+            }),
+          },
+        },
+      },
+    },
+  })
+  createRegistry(t, true)
+  const tree = await buildIdeal(path, { global: true, update: true })
+  const deps = tree.target.package.dependencies
+  t.notOk(deps['.hidden-non-package'], 'hidden entries are not queued for global update')
+  t.notOk(deps['@scope/.retired-package'], 'retired scoped entries are not queued for global update')
+  t.equal(deps.once, '*', 'visible global packages are queued for global update')
+})
+
 t.test('peer dep that needs to be replaced', async t => {
   // this verifies that the webpack 5 that gets placed by default for
   // the initial dep will be successfully replaced by webpack 4 that
