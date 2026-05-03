@@ -1,7 +1,7 @@
 name: Backport
 
 on:
-  pull_request_target:
+  pull_request:
     types: [closed, labeled]
   # TODO: Remove before merging — manual trigger for testing from any branch
   workflow_dispatch:
@@ -12,18 +12,15 @@ on:
         type: number
 
 permissions:
-  actions: write
-  contents: write
-  pull-requests: write
+  contents: read
+  pull-requests: read
 
 jobs:
   backport:
     name: Backport
     runs-on: ubuntu-latest
     # Run when a labeled PR is merged, or when a backport label is added to an already-merged PR.
-    # Uses pull_request_target so the token has write access even for PRs from forks.
     if: >-
-      github.repository_owner == 'npm' &&
       github.event.pull_request.merged == true &&
       (
         (github.event.action == 'closed' &&
@@ -58,6 +55,9 @@ jobs:
     name: Backport (Test)
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     defaults:
       run:
         shell: bash
