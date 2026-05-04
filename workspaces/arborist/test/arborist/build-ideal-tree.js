@@ -4571,3 +4571,137 @@ t.test('skip invalid peerOptional edges in problemEdges when save=false (#8726)'
     'shared stays at 1.1.0 - peerOptional mismatch is not treated as a problem')
   t.ok(tree.children.get('util'), 'util is in the tree')
 })
+
+t.test('peerOptional prefers existing tree node over registry fetch (#9249)', async t => {
+  // Reproduction: ts-jest has peerOptional jest-util@"^29||^30".
+  // @types/jest@28 → expect@28 → jest-util@28 placed at root first.
+  // jest@29 → jest-util@29 nested (root slot taken by @28).
+  // ts-jest re-queued, peerOptional jest-util resolves to root @28 → INVALID.
+  // Without fix: #nodeFromEdge fetches jest-util@30 (latest ^29||^30), blocks @29.
+  // With fix: #findHoistableNode finds nested @29, PlaceDep hoists it to root.
+  const registry = createRegistry(t, false)
+
+  const jestPack = registry.packument({
+    name: 'jest',
+    version: '29.0.0',
+    dependencies: { 'jest-util': '^29.0.0' },
+  })
+  const jestManifest = registry.manifest({ name: 'jest', packuments: [jestPack] })
+  await registry.package({ manifest: jestManifest })
+
+  const tsJestPack = registry.packument({
+    name: 'ts-jest',
+    version: '29.0.0',
+    peerDependencies: { jest: '^29.0.0', 'jest-util': '^29.0.0 || ^30.0.0' },
+    peerDependenciesMeta: { 'jest-util': { optional: true } },
+  })
+  const tsJestManifest = registry.manifest({ name: 'ts-jest', packuments: [tsJestPack] })
+  await registry.package({ manifest: tsJestManifest })
+
+  const expectPack = registry.packument({
+    name: 'expect',
+    version: '28.0.0',
+    dependencies: { 'jest-util': '^28.0.0' },
+  })
+  const expectManifest = registry.manifest({ name: 'expect', packuments: [expectPack] })
+  await registry.package({ manifest: expectManifest })
+
+  const atTypesPack = registry.packument({
+    name: '@types/jest',
+    version: '28.0.0',
+    dependencies: { expect: '^28.0.0' },
+  })
+  const atTypesManifest = registry.manifest({ name: '@types/jest', packuments: [atTypesPack] })
+  await registry.package({ manifest: atTypesManifest })
+
+  // Only publish 28, 29, and 30.
+  const jestUtilPacks = registry.packuments(['28.0.0', '29.0.0', '30.0.0'], 'jest-util')
+  const jestUtilManifest = registry.manifest({ name: 'jest-util', packuments: jestUtilPacks })
+  await registry.package({ manifest: jestUtilManifest, times: 3 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: {
+        jest: '^29.0.0',
+        'ts-jest': '^29.0.0',
+        '@types/jest': '^28.0.0',
+      },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree()
+
+  // jest-util@29 at root — found via #findHoistableNode, not fetched as @30
+  t.equal(tree.children.get('jest-util').version, '29.0.0',
+    'jest-util@29 hoisted to root from nested location')
+
+  // ts-jest's peerOptional resolved to @29 from the tree, not @30 from registry
+  const tsJest = tree.children.get('ts-jest')
+  const peerOptEdge = tsJest.edgesOut.get('jest-util')
+  t.equal(peerOptEdge.to.version, '29.0.0',
+    'ts-jest peerOptional jest-util resolved to @29')
+
+  // jest-util@28 nested under expect (incompatible with root @29)
+  const expectNode = [...tree.inventory.query('name', 'expect')][0]
+  t.equal(expectNode?.children?.get('jest-util')?.version, '28.0.0',
+    'jest-util@28 nested under expect')
+})
+
+t.test('peerOptional skips dedupe shortcut when update.names includes the dep', async t => {
+  // Same scenario as above, but with update: { names: ['jest-util'] }.
+  // skipExistingShortcut=true so #findHoistableNode is NOT called;
+  // #nodeFromEdge fetches from registry, getting jest-util@30 (latest matching ^29||^30).
+  const registry = createRegistry(t, false)
+
+  const jestPack = registry.packument({
+    name: 'jest',
+    version: '29.0.0',
+    dependencies: { 'jest-util': '^29.0.0' },
+  })
+  await registry.package({ manifest: registry.manifest({ name: 'jest', packuments: [jestPack] }) })
+
+  const tsJestPack = registry.packument({
+    name: 'ts-jest',
+    version: '29.0.0',
+    peerDependencies: { jest: '^29.0.0', 'jest-util': '^29.0.0 || ^30.0.0' },
+    peerDependenciesMeta: { 'jest-util': { optional: true } },
+  })
+  await registry.package({ manifest: registry.manifest({ name: 'ts-jest', packuments: [tsJestPack] }) })
+
+  const expectPack = registry.packument({
+    name: 'expect',
+    version: '28.0.0',
+    dependencies: { 'jest-util': '^28.0.0' },
+  })
+  await registry.package({ manifest: registry.manifest({ name: 'expect', packuments: [expectPack] }) })
+
+  const atTypesPack = registry.packument({
+    name: '@types/jest',
+    version: '28.0.0',
+    dependencies: { expect: '^28.0.0' },
+  })
+  await registry.package({ manifest: registry.manifest({ name: '@types/jest', packuments: [atTypesPack] }) })
+
+  const jestUtilPacks = registry.packuments(['28.0.0', '29.0.0', '30.0.0'], 'jest-util')
+  await registry.package({ manifest: registry.manifest({ name: 'jest-util', packuments: jestUtilPacks }), times: 3 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: {
+        jest: '^29.0.0',
+        'ts-jest': '^29.0.0',
+        '@types/jest': '^28.0.0',
+      },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree({ update: { names: ['jest-util'] } })
+
+  // With skipExistingShortcut=true, #nodeFromEdge fetches from registry
+  // so jest-util@30 (latest matching ^29||^30) is used instead of deduping @29
+  const tsJest = tree.children.get('ts-jest')
+  const peerOptEdge = tsJest.edgesOut.get('jest-util')
+  t.equal(peerOptEdge.to?.version, '30.0.0', 'peerOptional jest-util refetched to @30, not deduped to @29')
+})
