@@ -1281,35 +1281,126 @@ module.exports = cls => class Reifier extends cls {
 
   // After a linked install, scan node_modules/.store/ and remove any directories that are not referenced by the current ideal tree.
   // Store entries become orphaned when dependencies are updated or removed, because the diff never sees the old store keys.
+  // Then sweep the top-level node_modules/ for orphaned symlinks (e.g. an uninstalled dep whose store entry was just removed) so we don't leave dangling links.
   async #cleanOrphanedStoreEntries () {
-    const storeDir = resolve(this.path, 'node_modules', '.store')
+    const nmDir = resolve(this.path, 'node_modules')
+    const storeDir = resolve(nmDir, '.store')
+
     let entries
     try {
       entries = await readdir(storeDir)
     } catch {
-      return
+      entries = null
     }
 
-    // Collect valid store keys from the isolated ideal tree (location: node_modules/.store/{key}/node_modules/{pkg})
+    // Collect valid store keys and valid top-level links per node_modules directory.
+    // Store entries have location node_modules/.store/{key}/node_modules/{pkg}.
+    // Top-level links have location {prefix}/node_modules/{pkg} or {prefix}/node_modules/@scope/{pkg}, where {prefix} is empty for the root project and the workspace's localLocation for workspace deps.
     const validKeys = new Set()
+    const nmDirs = new Map()
+    const storeMarker = `${sep}.store${sep}`
     for (const child of this.idealTree.children.values()) {
       if (child.isInStore) {
         const key = child.location.split(sep)[2]
         validKeys.add(key)
+        continue
+      }
+      if (!child.isLink) {
+        continue
+      }
+      const nmIdx = child.location.lastIndexOf(`node_modules${sep}`)
+      if (nmIdx === -1 || child.location.includes(storeMarker)) {
+        continue
+      }
+      const prefix = child.location.slice(0, nmIdx)
+      const dir = resolve(this.path, prefix, 'node_modules')
+      const rest = child.location.slice(nmIdx + `node_modules${sep}`.length)
+      let entry
+      if (rest.startsWith('@')) {
+        const [scope, name] = rest.split(sep)
+        entry = `${scope}${sep}${name}`
+      } else {
+        entry = rest.split(sep)[0]
+      }
+      let set = nmDirs.get(dir)
+      if (!set) {
+        set = new Set()
+        nmDirs.set(dir, set)
+      }
+      set.add(entry)
+    }
+    // Always sweep the root node_modules even if no top-level links remain (e.g. last dep was just uninstalled)
+    if (!nmDirs.has(nmDir)) {
+      nmDirs.set(nmDir, new Set())
+    }
+
+    if (entries) {
+      const orphaned = entries.filter(e => !validKeys.has(e))
+      if (orphaned.length) {
+        log.silly('reify', 'cleaning orphaned store entries', orphaned)
+        await promiseAllRejectLate(
+          orphaned.map(e =>
+            rm(resolve(storeDir, e), { recursive: true, force: true })
+              .catch(/* istanbul ignore next -- rm with force rarely fails */
+                er => log.warn('cleanup', `Failed to remove orphaned store entry ${e}`, er))
+          )
+        )
       }
     }
 
-    const orphaned = entries.filter(e => !validKeys.has(e))
+    for (const [dir, valid] of nmDirs) {
+      await this.#cleanOrphanedTopLevelLinks(dir, valid)
+    }
+  }
+
+  /* Remove node_modules/ entries that aren't represented in the ideal tree.
+   * Run for the project root and each workspace's node_modules.
+   * The linked diff path can't see these because #buildLinkedActualForDiff derives the actual tree from the ideal, so removed deps are never compared.
+   * Only symlinks are removed; real directories are left alone since they were created by another tool and aren't ours to delete.
+   */
+  async #cleanOrphanedTopLevelLinks (nmDir, validTopLevel) {
+    let dirents
+    try {
+      dirents = await readdir(nmDir, { withFileTypes: true })
+    } catch {
+      return
+    }
+
+    const orphaned = []
+    for (const ent of dirents) {
+      // skip npm-managed entries (.bin, .store, .package-lock.json, etc)
+      if (ent.name.startsWith('.')) {
+        continue
+      }
+      if (ent.name.startsWith('@')) {
+        let scoped
+        try {
+          scoped = await readdir(resolve(nmDir, ent.name), { withFileTypes: true })
+        } catch {
+          /* istanbul ignore next -- readdir of an entry we just listed should not fail */
+          continue
+        }
+        for (const pkgEnt of scoped) {
+          const key = `${ent.name}${sep}${pkgEnt.name}`
+          if (!validTopLevel.has(key) && pkgEnt.isSymbolicLink()) {
+            orphaned.push(key)
+          }
+        }
+      } else if (!validTopLevel.has(ent.name) && ent.isSymbolicLink()) {
+        orphaned.push(ent.name)
+      }
+    }
+
     if (!orphaned.length) {
       return
     }
 
-    log.silly('reify', 'cleaning orphaned store entries', orphaned)
+    log.silly('reify', 'cleaning orphaned top-level links', orphaned)
     await promiseAllRejectLate(
-      orphaned.map(e =>
-        rm(resolve(storeDir, e), { recursive: true, force: true })
+      orphaned.map(name =>
+        rm(resolve(nmDir, name), { recursive: true, force: true })
           .catch(/* istanbul ignore next -- rm with force rarely fails */
-            er => log.warn('cleanup', `Failed to remove orphaned store entry ${e}`, er))
+            er => log.warn('cleanup', `Failed to remove orphaned link ${name}`, er))
       )
     )
   }

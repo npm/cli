@@ -1794,6 +1794,82 @@ tap.test('orphaned store entries are cleaned up on dependency removal', async t 
   const entriesAfterRemoval = fs.readdirSync(storeDir)
   t.equal(entriesAfterRemoval.length, 0,
     'all store entries are removed when dependencies are removed')
+
+  /* https://github.com/npm/cli/issues/9308 — the top-level node_modules symlink for the removed dep was left behind, dangling into the just-cleaned store. */
+  t.notOk(fs.existsSync(path.join(dir, 'node_modules', 'which')),
+    'top-level symlink for removed dependency is also cleaned up')
+})
+
+tap.test('orphaned link inside workspace node_modules is cleaned up on dependency removal', async t => {
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+    ],
+    root: {
+      name: 'root',
+      version: '1.0.0',
+    },
+    workspaces: [
+      { name: 'a', version: '1.0.0', dependencies: { abbrev: '^4.0.0' } },
+    ],
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  const wsLink = path.join(dir, 'packages', 'a', 'node_modules', 'abbrev')
+  t.ok(fs.existsSync(wsLink), 'abbrev is linked into workspace node_modules')
+
+  // Drop abbrev from the workspace package.json
+  const wsPkgPath = path.join(dir, 'packages', 'a', 'package.json')
+  const wsPkg = JSON.parse(fs.readFileSync(wsPkgPath, 'utf8'))
+  delete wsPkg.dependencies
+  fs.writeFileSync(wsPkgPath, JSON.stringify(wsPkg))
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.existsSync(wsLink), 'abbrev symlink target no longer resolves')
+  t.notOk(fs.lstatSync(wsLink, { throwIfNoEntry: false }),
+    'abbrev symlink itself is removed from workspace node_modules')
+})
+
+tap.test('orphaned scoped top-level link is cleaned up when only one of two scoped deps is removed', async t => {
+  const graph = {
+    registry: [
+      { name: '@scope/a', version: '1.0.0' },
+      { name: '@scope/b', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { '@scope/a': '1.0.0', '@scope/b': '1.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', '@scope', 'a')), '@scope/a installed')
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', '@scope', 'b')), '@scope/b installed')
+
+  // Drop @scope/a from package.json
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  delete pkg.dependencies['@scope/a']
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.existsSync(path.join(dir, 'node_modules', '@scope', 'a')),
+    '@scope/a top-level symlink is removed')
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', '@scope', 'b')),
+    '@scope/b top-level symlink is preserved')
 })
 
 tap.test('store symlinks are updated when hash changes after adding a dep', async t => {
