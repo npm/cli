@@ -125,8 +125,8 @@ module.exports = cls => class Reifier extends cls {
     await this.#reifyPackages()
     if (linked) {
       // The sweep mutates node_modules on disk, so skip it for dry runs and lockfile-only installs (those modes also short-circuit #reifyPackages).
-      // Skip when a filter is active too: filtered installs intentionally leave out-of-scope workspaces alone, and the ideal tree we'd sweep against does not represent their on-disk state.
-      if (!this.options.dryRun && !this.options.packageLockOnly && !this.diff?.filterSet?.size) {
+      // The sweep itself scopes to in-filter workspaces when a filter is active, so it's safe to run for filtered installs too.
+      if (!this.options.dryRun && !this.options.packageLockOnly) {
         await this.#cleanOrphanedStoreEntries()
       }
       // swap back in the idealTree
@@ -1300,31 +1300,34 @@ module.exports = cls => class Reifier extends cls {
     // Collect valid store keys and valid top-level links per node_modules directory.
     // Store entries have location node_modules/.store/{key}/node_modules/{pkg}.
     // Top-level links have location {prefix}/node_modules/{pkg} or {prefix}/node_modules/@scope/{pkg}, where {prefix} is empty for the root project and the workspace's localLocation for workspace deps.
+    // Locations are normalized to forward slashes here because IsolatedNode/IsolatedLink locations are built with path.join, which uses backslashes on Windows.
     const validKeys = new Set()
     const nmDirs = new Map()
-    const storeMarker = `${sep}.store${sep}`
+    const NM_PREFIX = 'node_modules/'
+    const STORE_MARKER = '/.store/'
     for (const child of this.idealTree.children.values()) {
+      const loc = child.location.replace(/\\/g, '/')
       if (child.isInStore) {
-        const key = child.location.split(sep)[2]
+        const key = loc.split('/')[2]
         validKeys.add(key)
         continue
       }
       if (!child.isLink) {
         continue
       }
-      const nmIdx = child.location.lastIndexOf(`node_modules${sep}`)
-      if (nmIdx === -1 || child.location.includes(storeMarker)) {
+      const nmIdx = loc.lastIndexOf(NM_PREFIX)
+      if (nmIdx === -1 || loc.includes(STORE_MARKER)) {
         continue
       }
-      const prefix = child.location.slice(0, nmIdx)
+      const prefix = loc.slice(0, nmIdx)
       const dir = resolve(this.path, prefix, 'node_modules')
-      const rest = child.location.slice(nmIdx + `node_modules${sep}`.length)
+      const rest = loc.slice(nmIdx + NM_PREFIX.length)
       let entry
       if (rest.startsWith('@')) {
-        const [scope, name] = rest.split(sep)
+        const [scope, name] = rest.split('/')
         entry = `${scope}${sep}${name}`
       } else {
-        entry = rest.split(sep)[0]
+        entry = rest.split('/')[0]
       }
       let set = nmDirs.get(dir)
       if (!set) {
@@ -1333,15 +1336,38 @@ module.exports = cls => class Reifier extends cls {
       }
       set.add(entry)
     }
-    // Always sweep the root node_modules and every workspace's node_modules even if no top-level links remain (e.g. last dep was just uninstalled).
-    // Without this, a workspace whose only remaining symlinks were removed would never be revisited and would leak orphan links.
-    if (!nmDirs.has(nmDir)) {
-      nmDirs.set(nmDir, new Set())
-    }
-    for (const ws of this.idealTree.fsChildren) {
-      const wsNmDir = resolve(ws.path, 'node_modules')
-      if (!nmDirs.has(wsNmDir)) {
-        nmDirs.set(wsNmDir, new Set())
+
+    // Determine which node_modules directories to sweep.
+    // For an unfiltered install, sweep the project root and every workspace's node_modules even if no top-level links remain (e.g. last dep was just uninstalled).
+    // For a filtered install (npm install -w <ws>), restrict the sweep to the in-scope workspaces so out-of-scope workspaces and the project root are left untouched, mirroring what the diff would do.
+    const filteredNames = this.options.workspaces
+    const isFiltered = Array.isArray(filteredNames) && filteredNames.length > 0
+    if (isFiltered) {
+      const allowedDirs = new Set()
+      for (const ws of this.idealTree.fsChildren) {
+        if (filteredNames.includes(ws.packageName) || filteredNames.includes(ws.name)) {
+          allowedDirs.add(resolve(ws.path, 'node_modules'))
+        }
+      }
+      for (const dir of [...nmDirs.keys()]) {
+        if (!allowedDirs.has(dir)) {
+          nmDirs.delete(dir)
+        }
+      }
+      for (const dir of allowedDirs) {
+        if (!nmDirs.has(dir)) {
+          nmDirs.set(dir, new Set())
+        }
+      }
+    } else {
+      if (!nmDirs.has(nmDir)) {
+        nmDirs.set(nmDir, new Set())
+      }
+      for (const ws of this.idealTree.fsChildren) {
+        const wsNmDir = resolve(ws.path, 'node_modules')
+        if (!nmDirs.has(wsNmDir)) {
+          nmDirs.set(wsNmDir, new Set())
+        }
       }
     }
 

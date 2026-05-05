@@ -1916,19 +1916,26 @@ tap.test('orphan sweep is skipped on dryRun and packageLockOnly linked installs'
     'real install cleans up the orphan symlink')
 })
 
-tap.test('orphan sweep skips out-of-filter workspaces during workspace-filtered linked install', async t => {
-  // Filtered installs intentionally leave out-of-scope workspaces alone.
-  // The sweep would otherwise delete a stray-but-untouched symlink from a workspace that wasn't part of the filter.
+tap.test('orphan sweep is scoped to in-filter workspaces during workspace-filtered linked install', async t => {
+  // Filtered installs should clean up dependencies removed from the targeted workspace, but leave out-of-scope workspaces alone.
+  // ws-a is the in-filter workspace: it keeps one dep (which) and drops one (abbrev) so both the surviving-link and orphan-sweep paths are exercised inside an in-scope workspace.
+  // ws-c is also in the filter but starts with one dep (abbrev) and drops it entirely, exercising the case where the in-filter workspace's node_modules dir is not populated by any surviving links.
+  // ws-b is out of filter and gets a stale link planted to verify it is preserved.
   const graph = {
     registry: [
       { name: 'abbrev', version: '4.0.0' },
+      { name: 'which', version: '4.0.0' },
     ],
     root: {
-      name: 'myroot', version: '1.0.0',
+      name: 'myroot',
+      version: '1.0.0',
+      // ws-c is declared as a root dep so its self-link lives at root node_modules — that means ws-c's own node_modules has no self-link, and dropping its only dep leaves the dir empty.
+      dependencies: { 'ws-c': '*' },
     },
     workspaces: [
-      { name: 'ws-a', version: '1.0.0', dependencies: { abbrev: '4.0.0' } },
+      { name: 'ws-a', version: '1.0.0', dependencies: { abbrev: '4.0.0', which: '4.0.0' } },
       { name: 'ws-b', version: '1.0.0', dependencies: { abbrev: '4.0.0' } },
+      { name: 'ws-c', version: '1.0.0', dependencies: { abbrev: '4.0.0' } },
     ],
   }
 
@@ -1938,25 +1945,43 @@ tap.test('orphan sweep skips out-of-filter workspaces during workspace-filtered 
   const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arb1.reify({ installStrategy: 'linked' })
 
-  // Plant a stale orphan link inside ws-b's node_modules to simulate an out-of-filter workspace having an entry the sweep would otherwise remove.
+  // Plant a stale orphan link inside ws-b (out-of-filter): the sweep must NOT touch it.
   const stalePath = path.join(dir, 'packages', 'ws-b', 'node_modules', 'stale-pkg')
   fs.symlinkSync('../../../node_modules/.store/nonexistent/node_modules/stale-pkg', stalePath)
+
+  // Drop abbrev from ws-a's package.json so that ws-a/node_modules/abbrev becomes orphan; which stays as a surviving link.
+  const wsAPkgPath = path.join(dir, 'packages', 'ws-a', 'package.json')
+  const wsAPkg = JSON.parse(fs.readFileSync(wsAPkgPath, 'utf8'))
+  wsAPkg.dependencies = { which: '4.0.0' }
+  fs.writeFileSync(wsAPkgPath, JSON.stringify(wsAPkg))
+
+  // Drop all deps from ws-c so its node_modules has no surviving links — exercises the in-filter empty-dir seeding path.
+  const wsCPkgPath = path.join(dir, 'packages', 'ws-c', 'package.json')
+  const wsCPkg = JSON.parse(fs.readFileSync(wsCPkgPath, 'utf8'))
+  delete wsCPkg.dependencies
+  fs.writeFileSync(wsCPkgPath, JSON.stringify(wsCPkg))
 
   const arb2 = new Arborist({
     path: dir,
     registry,
     packumentCache: new Map(),
     cache,
-    workspaces: ['ws-a'],
+    workspaces: ['ws-a', 'ws-c'],
   })
   await arb2.reify({
     installStrategy: 'linked',
-    workspaces: ['ws-a'],
+    workspaces: ['ws-a', 'ws-c'],
   })
 
-  t.ok(arb2.diff.filterSet.size > 0, 'filterSet is populated for ws-a-only install')
+  t.ok(arb2.diff.filterSet.size > 0, 'filterSet is populated for filtered install')
+  t.notOk(fs.lstatSync(path.join(dir, 'packages', 'ws-a', 'node_modules', 'abbrev'), { throwIfNoEntry: false }),
+    'orphan link in in-filter workspace with surviving deps is removed')
+  t.ok(fs.lstatSync(path.join(dir, 'packages', 'ws-a', 'node_modules', 'which'), { throwIfNoEntry: false }),
+    'surviving link in in-filter workspace is preserved')
+  t.notOk(fs.lstatSync(path.join(dir, 'packages', 'ws-c', 'node_modules', 'abbrev'), { throwIfNoEntry: false }),
+    'orphan link in in-filter workspace with no surviving deps is removed')
   t.ok(fs.lstatSync(stalePath, { throwIfNoEntry: false }),
-    'stale link in out-of-filter workspace is left untouched during filtered install')
+    'stale link in out-of-filter workspace is preserved')
 })
 
 tap.test('orphaned workspace self-link in root node_modules is cleaned up when workspace is undeclared', async t => {
