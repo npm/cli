@@ -11,7 +11,7 @@ const { depth: dfwalk } = require('treeverse')
 const { dirname, resolve, relative, join, sep } = require('node:path')
 const { log, time } = require('proc-log')
 const { existsSync } = require('node:fs')
-const { lstat, mkdir, readdir, rm, symlink } = require('node:fs/promises')
+const { lstat, mkdir, readdir, readlink, rm, symlink } = require('node:fs/promises')
 const { moveFile } = require('@npmcli/fs')
 const { subset, intersects } = require('semver')
 const { walkUp } = require('walk-up-path')
@@ -1329,9 +1329,16 @@ module.exports = cls => class Reifier extends cls {
       }
       set.add(entry)
     }
-    // Always sweep the root node_modules even if no top-level links remain (e.g. last dep was just uninstalled)
+    // Always sweep the root node_modules and every workspace's node_modules even if no top-level links remain (e.g. last dep was just uninstalled).
+    // Without this, a workspace whose only remaining symlinks were removed would never be revisited and would leak orphan links.
     if (!nmDirs.has(nmDir)) {
       nmDirs.set(nmDir, new Set())
+    }
+    for (const ws of this.idealTree.fsChildren) {
+      const wsNmDir = resolve(ws.path, 'node_modules')
+      if (!nmDirs.has(wsNmDir)) {
+        nmDirs.set(wsNmDir, new Set())
+      }
     }
 
     if (entries) {
@@ -1356,14 +1363,27 @@ module.exports = cls => class Reifier extends cls {
   /* Remove node_modules/ entries that aren't represented in the ideal tree.
    * Run for the project root and each workspace's node_modules.
    * The linked diff path can't see these because #buildLinkedActualForDiff derives the actual tree from the ideal, so removed deps are never compared.
-   * Only symlinks are removed; real directories are left alone since they were created by another tool and aren't ours to delete.
+   * Only symlinks whose target resolves inside the project root are removed — that covers store links (node_modules/.store/...) and workspace self-links (e.g. node_modules/<ws> -> ../packages/<ws>) that npm itself created.
+   * Symlinks pointing outside the project (e.g. `npm link foo` without --save targeting the global prefix, or hand-made `ln -s` to an external path) and real directories are preserved.
    */
   async #cleanOrphanedTopLevelLinks (nmDir, validTopLevel) {
+    const projectPrefix = resolve(this.path) + sep
     let dirents
     try {
       dirents = await readdir(nmDir, { withFileTypes: true })
     } catch {
       return
+    }
+
+    const isOurOrphan = async (linkPath) => {
+      let target
+      try {
+        target = await readlink(linkPath)
+      } catch {
+        /* istanbul ignore next -- readlink of an entry we just listed as a symlink should not fail */
+        return false
+      }
+      return resolve(dirname(linkPath), target).startsWith(projectPrefix)
     }
 
     const orphaned = []
@@ -1382,11 +1402,11 @@ module.exports = cls => class Reifier extends cls {
         }
         for (const pkgEnt of scoped) {
           const key = `${ent.name}${sep}${pkgEnt.name}`
-          if (!validTopLevel.has(key) && pkgEnt.isSymbolicLink()) {
+          if (!validTopLevel.has(key) && pkgEnt.isSymbolicLink() && await isOurOrphan(resolve(nmDir, key))) {
             orphaned.push(key)
           }
         }
-      } else if (!validTopLevel.has(ent.name) && ent.isSymbolicLink()) {
+      } else if (!validTopLevel.has(ent.name) && ent.isSymbolicLink() && await isOurOrphan(resolve(nmDir, ent.name))) {
         orphaned.push(ent.name)
       }
     }
