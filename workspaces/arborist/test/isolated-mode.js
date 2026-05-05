@@ -1873,6 +1873,92 @@ tap.test('orphaned link in declared-workspace node_modules is cleaned up when la
     'abbrev symlink is removed even though the workspace itself is the only declared root dep')
 })
 
+tap.test('orphan sweep is skipped on dryRun and packageLockOnly linked installs', async t => {
+  // The sweep mutates node_modules; dry-run and package-lock-only installs must not touch the filesystem.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { abbrev: '^4.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+  const linkPath = path.join(dir, 'node_modules', 'abbrev')
+  t.ok(fs.lstatSync(linkPath, { throwIfNoEntry: false }), 'abbrev link present after first install')
+
+  // Drop the dep, then run dryRun and packageLockOnly — neither should remove the orphan
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  delete pkg.dependencies
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arbDry = new Arborist({ path: dir, registry, packumentCache: new Map(), cache, dryRun: true })
+  await arbDry.reify({ installStrategy: 'linked', dryRun: true })
+  t.ok(fs.lstatSync(linkPath, { throwIfNoEntry: false }),
+    'dryRun does not remove orphan symlink')
+
+  const arbLockOnly = new Arborist({ path: dir, registry, packumentCache: new Map(), cache, packageLockOnly: true })
+  await arbLockOnly.reify({ installStrategy: 'linked', packageLockOnly: true })
+  t.ok(fs.lstatSync(linkPath, { throwIfNoEntry: false }),
+    'packageLockOnly does not remove orphan symlink')
+
+  // A real install does perform the cleanup
+  const arbReal = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arbReal.reify({ installStrategy: 'linked' })
+  t.notOk(fs.lstatSync(linkPath, { throwIfNoEntry: false }),
+    'real install cleans up the orphan symlink')
+})
+
+tap.test('orphan sweep skips out-of-filter workspaces during workspace-filtered linked install', async t => {
+  // Filtered installs intentionally leave out-of-scope workspaces alone.
+  // The sweep would otherwise delete a stray-but-untouched symlink from a workspace that wasn't part of the filter.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+    ],
+    root: {
+      name: 'myroot', version: '1.0.0',
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { abbrev: '4.0.0' } },
+      { name: 'ws-b', version: '1.0.0', dependencies: { abbrev: '4.0.0' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Plant a stale orphan link inside ws-b's node_modules to simulate an out-of-filter workspace having an entry the sweep would otherwise remove.
+  const stalePath = path.join(dir, 'packages', 'ws-b', 'node_modules', 'stale-pkg')
+  fs.symlinkSync('../../../node_modules/.store/nonexistent/node_modules/stale-pkg', stalePath)
+
+  const arb2 = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    workspaces: ['ws-a'],
+  })
+  await arb2.reify({
+    installStrategy: 'linked',
+    workspaces: ['ws-a'],
+  })
+
+  t.ok(arb2.diff.filterSet.size > 0, 'filterSet is populated for ws-a-only install')
+  t.ok(fs.lstatSync(stalePath, { throwIfNoEntry: false }),
+    'stale link in out-of-filter workspace is left untouched during filtered install')
+})
+
 tap.test('orphaned workspace self-link in root node_modules is cleaned up when workspace is undeclared', async t => {
   // When root declares a workspace as a dependency, the workspace gets a self-link at root node_modules (e.g. node_modules/a -> ../packages/a).
   // If the workspace is later removed from root's dependencies, that self-link must be cleaned up.

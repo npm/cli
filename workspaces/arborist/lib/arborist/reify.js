@@ -124,7 +124,11 @@ module.exports = cls => class Reifier extends cls {
     await this[_diffTrees]()
     await this.#reifyPackages()
     if (linked) {
-      await this.#cleanOrphanedStoreEntries()
+      // The sweep mutates node_modules on disk, so skip it for dry runs and lockfile-only installs (those modes also short-circuit #reifyPackages).
+      // Skip when a filter is active too: filtered installs intentionally leave out-of-scope workspaces alone, and the ideal tree we'd sweep against does not represent their on-disk state.
+      if (!this.options.dryRun && !this.options.packageLockOnly && !this.diff?.filterSet?.size) {
+        await this.#cleanOrphanedStoreEntries()
+      }
       // swap back in the idealTree
       // so that the lockfile is preserved
       this.idealTree = oldTree
