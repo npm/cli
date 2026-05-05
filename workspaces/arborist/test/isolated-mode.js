@@ -1795,7 +1795,7 @@ tap.test('orphaned store entries are cleaned up on dependency removal', async t 
   t.equal(entriesAfterRemoval.length, 0,
     'all store entries are removed when dependencies are removed')
 
-  /* https://github.com/npm/cli/issues/9308 — the top-level node_modules symlink for the removed dep was left behind, dangling into the just-cleaned store. */
+  // https://github.com/npm/cli/issues/9308 — the top-level node_modules symlink for the removed dep was left behind, dangling into the just-cleaned store.
   t.notOk(fs.existsSync(path.join(dir, 'node_modules', 'which')),
     'top-level symlink for removed dependency is also cleaned up')
 })
@@ -2001,9 +2001,8 @@ tap.test('orphaned workspace self-link in root node_modules is cleaned up when w
 })
 
 tap.test('unmanaged symlinks (e.g. npm link) in node_modules are preserved across reify', async t => {
-  /* The orphan sweep should only touch links the linked strategy itself created (those resolving into the project's node_modules/.store/).
-   * A symlink pointing outside .store/ — e.g. one created by `npm link foo` without --save or by hand — must be left alone.
-   */
+  // The orphan sweep should only touch links the linked strategy itself created (those resolving into the project's node_modules/.store/).
+  // A symlink pointing outside .store/ — e.g. one created by `npm link foo` without --save or by hand — must be left alone.
   const graph = {
     registry: [
       { name: 'abbrev', version: '4.0.0' },

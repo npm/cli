@@ -1364,12 +1364,11 @@ module.exports = cls => class Reifier extends cls {
     }
   }
 
-  /* Remove node_modules/ entries that aren't represented in the ideal tree.
-   * Run for the project root and each workspace's node_modules.
-   * The linked diff path can't see these because #buildLinkedActualForDiff derives the actual tree from the ideal, so removed deps are never compared.
-   * Only symlinks whose target resolves inside the project root are removed — that covers store links (node_modules/.store/...) and workspace self-links (e.g. node_modules/<ws> -> ../packages/<ws>) that npm itself created.
-   * Symlinks pointing outside the project (e.g. `npm link foo` without --save targeting the global prefix, or hand-made `ln -s` to an external path) and real directories are preserved.
-   */
+  // Remove node_modules/ entries that aren't represented in the ideal tree.
+  // Run for the project root and each workspace's node_modules.
+  // The linked diff path can't see these because #buildLinkedActualForDiff derives the actual tree from the ideal, so removed deps are never compared.
+  // Only symlinks whose target resolves inside the project root are removed — that covers store links (node_modules/.store/...) and workspace self-links (e.g. node_modules/<ws> -> ../packages/<ws>) that npm itself created.
+  // Symlinks pointing outside the project (e.g. `npm link foo` without --save targeting the global prefix, or hand-made `ln -s` to an external path) and real directories are preserved.
   async #cleanOrphanedTopLevelLinks (nmDir, validTopLevel) {
     const projectPrefix = resolve(this.path) + sep
     let dirents
