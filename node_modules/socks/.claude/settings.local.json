@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm test:*)",
+      "Bash(npm run lint:*)",
+      "Bash(npm run build:*)",
+      "Bash(find:*)",
+      "Bash(wc:*)",
+      "Bash(git:*)",
+      "Bash(npm run:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npx eslint:*)",
+      "Bash(gh issue:*)",
+      "Bash(npx vitest:*)",
+      "WebFetch(domain:www.openssh.com)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(npm pack:*)",
+      "Bash(npx tsc:*)",
+      "Bash(node:*)",
+      "Bash(npm info:*)",
+      "Bash(cp:*)"
+    ]
+  }
+}
