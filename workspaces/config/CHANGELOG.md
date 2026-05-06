@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.9.0](https://github.com/npm/cli/compare/config-v10.8.1...config-v10.9.0) (2026-05-06)
+### Features
+* [`45fc5e0`](https://github.com/npm/cli/commit/45fc5e0dd144bb21148d7aa35439695ab44cdfda) [#9288](https://github.com/npm/cli/pull/9288) add allow-directory, allow-file, and allow-remote (#9288) (@github-actions[bot], @wraithgar)
+### Bug Fixes
+* [`574b73a`](https://github.com/npm/cli/commit/574b73a9bef6d8c88329b0d19a54dcf6817c45a8) [#9293](https://github.com/npm/cli/pull/9293) config: preserve min-release-age after flattening (@lawrence3699)
+
 ## [10.8.1](https://github.com/npm/cli/compare/config-v10.8.0...config-v10.8.1) (2026-03-24)
 ### Bug Fixes
 * [`596706a`](https://github.com/npm/cli/commit/596706a3d10100587e3751d860b4cfcc59342d2f) [#9148](https://github.com/npm/cli/pull/9148) revert prefer-offline/prefer-online exclusivity (#9129) (@owlstronaut)

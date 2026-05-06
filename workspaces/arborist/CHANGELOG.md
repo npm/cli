@@ -1,5 +1,14 @@
 # Changelog
 
+## [9.5.0](https://github.com/npm/cli/compare/arborist-v9.4.3...arborist-v9.5.0) (2026-05-06)
+### Features
+* [`20fb6a0`](https://github.com/npm/cli/commit/20fb6a0d0f2ffc65656d08504eb6ca14980d2c71) [#9312](https://github.com/npm/cli/pull/9312) arborist: add lockfileString() for in-memory lockfile generation (@ljharb)
+### Bug Fixes
+* [`c3ea2cf`](https://github.com/npm/cli/commit/c3ea2cf9ce37f23992bbfcc3eef976897ef2e5a0) [#9315](https://github.com/npm/cli/pull/9315) arborist: clean up orphan top-level symlinks in linked strategy (#9315) (@github-actions[bot], @manzoorwanijk)
+* [`3298369`](https://github.com/npm/cli/commit/329836962f2b2438196a827688e8d9047e5c4c4d) [#9303](https://github.com/npm/cli/pull/9303) arborist: ignore hidden entries in global update (#9299) (@Grynn)
+* [`e19b349`](https://github.com/npm/cli/commit/e19b349e33675be90dc10c86e35c51a39de94125) [#9301](https://github.com/npm/cli/pull/9301) prefer existing tree nodes for peerOptional deps (#9249) (#9283) (@everett1992)
+* [`e7805c3`](https://github.com/npm/cli/commit/e7805c3a47b3c78093e78ac796c8e4120ffea876) [#9254](https://github.com/npm/cli/pull/9254) arborist: propagate overrides through Link nodes to targets (#9198) (@manzoorwanijk)
+
 ## [9.4.3](https://github.com/npm/cli/compare/arborist-v9.4.2...arborist-v9.4.3) (2026-04-22)
 ### Bug Fixes
 * [`7cd45c6`](https://github.com/npm/cli/commit/7cd45c6037e2a09e7692d64d6bf16e1eaa24550a) [#9253](https://github.com/npm/cli/pull/9253) arborist: handle `npm link` with install-strategy=linked (@manzoorwanijk)
