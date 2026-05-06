@@ -1984,6 +1984,91 @@ tap.test('orphan sweep is scoped to in-filter workspaces during workspace-filter
     'stale link in out-of-filter workspace is preserved')
 })
 
+tap.test('orphan sweep includes root node_modules when --include-workspace-root is set', async t => {
+  // With --include-workspace-root, the filter scope pulls root deps in too, so dropped root deps must be cleaned up alongside the in-filter workspaces.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+      { name: 'which', version: '4.0.0' },
+    ],
+    root: {
+      name: 'myroot',
+      version: '1.0.0',
+      dependencies: { which: '4.0.0' },
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { abbrev: '4.0.0' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+  t.ok(fs.lstatSync(path.join(dir, 'node_modules', 'which'), { throwIfNoEntry: false }), 'which is installed at root')
+
+  // Drop the root dep so node_modules/which becomes orphan.
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  delete pkg.dependencies
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arb2 = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    workspaces: ['ws-a'],
+    includeWorkspaceRoot: true,
+  })
+  await arb2.reify({
+    installStrategy: 'linked',
+    workspaces: ['ws-a'],
+    includeWorkspaceRoot: true,
+  })
+
+  t.notOk(fs.lstatSync(path.join(dir, 'node_modules', 'which'), { throwIfNoEntry: false }),
+    'orphan root dep is removed when --include-workspace-root scope covers it')
+})
+
+tap.test('hand-made symlink inside the project root is intentionally swept by linked install', async t => {
+  // Documents an explicit trade-off: a hand-made symlink whose target lives inside the project (e.g. node_modules/local-tool -> ../tools/local-tool) is indistinguishable from a workspace self-link or store link by target alone.
+  // The linked sweep treats it as orphaned and removes it on the next reify, matching how the default install strategy already behaves with intra-project symlinks.
+  // External targets (outside the project root) remain preserved — see the sibling test 'unmanaged symlinks (e.g. npm link) in node_modules are preserved across reify'.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { abbrev: '^4.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Create a target folder inside the project root and link to it from node_modules.
+  const localToolDir = path.join(dir, 'tools', 'local-tool')
+  fs.mkdirSync(localToolDir, { recursive: true })
+  fs.writeFileSync(path.join(localToolDir, 'package.json'),
+    JSON.stringify({ name: 'local-tool', version: '0.0.0' }))
+  const intraLink = path.join(dir, 'node_modules', 'local-tool')
+  fs.symlinkSync(path.join('..', 'tools', 'local-tool'), intraLink)
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.lstatSync(intraLink, { throwIfNoEntry: false }),
+    'intra-project hand-made symlink is removed by the sweep (intentional trade-off)')
+  t.ok(fs.existsSync(localToolDir),
+    'the target directory itself is left intact — only the symlink is removed')
+})
+
 tap.test('orphaned workspace self-link in root node_modules is cleaned up when workspace is undeclared', async t => {
   // When root declares a workspace as a dependency, the workspace gets a self-link at root node_modules (e.g. node_modules/a -> ../packages/a).
   // If the workspace is later removed from root's dependencies, that self-link must be cleaned up.

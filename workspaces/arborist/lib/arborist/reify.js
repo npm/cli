@@ -1339,7 +1339,8 @@ module.exports = cls => class Reifier extends cls {
 
     // Determine which node_modules directories to sweep.
     // For an unfiltered install, sweep the project root and every workspace's node_modules even if no top-level links remain (e.g. last dep was just uninstalled).
-    // For a filtered install (npm install -w <ws>), restrict the sweep to the in-scope workspaces so out-of-scope workspaces and the project root are left untouched, mirroring what the diff would do.
+    // For a filtered install (npm install -w <ws>), restrict the sweep to the in-scope workspaces so out-of-scope workspaces are left untouched, mirroring what the diff would do.
+    // When --include-workspace-root is set, the filter scope pulls in root deps too, so the root node_modules is included in the sweep.
     const filteredNames = this.options.workspaces
     const isFiltered = Array.isArray(filteredNames) && filteredNames.length > 0
     if (isFiltered) {
@@ -1348,6 +1349,9 @@ module.exports = cls => class Reifier extends cls {
         if (filteredNames.includes(ws.packageName) || filteredNames.includes(ws.name)) {
           allowedDirs.add(resolve(ws.path, 'node_modules'))
         }
+      }
+      if (this.options.includeWorkspaceRoot) {
+        allowedDirs.add(nmDir)
       }
       for (const dir of [...nmDirs.keys()]) {
         if (!allowedDirs.has(dir)) {
