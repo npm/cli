@@ -1,5 +1,24 @@
 # Changelog
 
+## [11.14.0](https://github.com/npm/cli/compare/v11.13.0...v11.14.0) (2026-05-06)
+### Features
+* [`45fc5e0`](https://github.com/npm/cli/commit/45fc5e0dd144bb21148d7aa35439695ab44cdfda) [#9288](https://github.com/npm/cli/pull/9288) add allow-directory, allow-file, and allow-remote (#9288) (@github-actions[bot], @wraithgar)
+### Bug Fixes
+* [`6c17544`](https://github.com/npm/cli/commit/6c17544d757a4ee167edd03b47ad5e5da92d8ce6) [#9318](https://github.com/npm/cli/pull/9318) sbom: dedupe per-node dependsOn / relationships (#9318) (@github-actions[bot], @mikaelkristiansson)
+### Dependencies
+* [`840fe18`](https://github.com/npm/cli/commit/840fe18eb466d0253ad5891fdf211e0bcb174936) [#9322](https://github.com/npm/cli/pull/9322) `socks@10.1.1`
+* [`b771289`](https://github.com/npm/cli/commit/b77128922b59cc3b4a7578131a1d75b53b84065e) [#9322](https://github.com/npm/cli/pull/9322) `ip-address@10.1.1`
+* [`addffcb`](https://github.com/npm/cli/commit/addffcb389388d753fe8f394077ffeb2a6590efb) [#9322](https://github.com/npm/cli/pull/9322) `cidr-regex@5.0.5`
+### Chores
+* [`041fd58`](https://github.com/npm/cli/commit/041fd5879704c39a0cde6eaba299285877c728c7) [#9322](https://github.com/npm/cli/pull/9322) dev dependency updates (@owlstronaut)
+* [`89c505a`](https://github.com/npm/cli/commit/89c505aec8f9263acb43cd892b9582e4860dde8a) [#9320](https://github.com/npm/cli/pull/9320) add cli-triage team as codeowner (#9320) (@github-actions[bot], @owlstronaut)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.5.0): `@npmcli/arborist@9.5.0`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v10.9.0): `@npmcli/config@10.9.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.1.7): `libnpmdiff@8.1.7`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.2.7): `libnpmexec@10.2.7`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.21): `libnpmfund@7.0.21`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.1.7): `libnpmpack@9.1.7`
+
 ## [11.13.0](https://github.com/npm/cli/compare/v11.12.1...v11.13.0) (2026-04-22)
 ### Features
 * [`8e8dadb`](https://github.com/npm/cli/commit/8e8dadb8ae378c1dde0b98c15167d739abaa9b37) [#9246](https://github.com/npm/cli/pull/9246) add `u` as alias for `update` command (#9246) (@github-actions[bot], @Ausoj)
