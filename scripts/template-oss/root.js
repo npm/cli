@@ -16,6 +16,7 @@ module.exports = {
   },
   rootRepo: {
     add: {
+      '.github/CODEOWNERS': 'CODEOWNERS.hbs',
       '.github/ISSUE_TEMPLATE/bug.yml': false,
       '.github/ISSUE_TEMPLATE/config.yml': false,
       '.github/dependabot.yml': false,
