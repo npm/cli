@@ -3930,6 +3930,39 @@ t.test('install strategy linked', async (t) => {
     t.ok(store.isDirectory(), 'abbrev got installed')
     t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
   })
+
+  t.test('does not re-create a workspace dir removed from manifest', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9331
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        workspaces: ['packages/a', 'packages/b'],
+      }),
+      packages: {
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+      },
+    })
+
+    createRegistry(t, false)
+    await reify(path, { installStrategy: 'linked' })
+
+    // Drop workspace b: remove its directory and its entry from package.json.
+    fs.rmSync(resolve(path, 'packages/b'), { recursive: true, force: true })
+    fs.writeFileSync(resolve(path, 'package.json'), JSON.stringify({
+      name: 'host',
+      version: '1.0.0',
+      workspaces: ['packages/a'],
+    }))
+
+    await reify(path, { installStrategy: 'linked' })
+
+    t.notOk(
+      fs.existsSync(resolve(path, 'packages/b')),
+      'packages/b should remain absent after reinstall'
+    )
+  })
 })
 
 t.test('workspace installs retain existing versions with newer package specs', async t => {
