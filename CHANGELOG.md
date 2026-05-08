@@ -1,5 +1,9 @@
 # Changelog
 
+## [11.14.1](https://github.com/npm/cli/compare/v11.14.0...v11.14.1) (2026-05-08)
+### Bug Fixes
+* [`dca12cb`](https://github.com/npm/cli/commit/dca12cb24199aa7046eb53547097906b8731e51b) [#9328](https://github.com/npm/cli/pull/9328) remove settings (#9328) (@github-actions[bot], @owlstronaut)
+
 ## [11.14.0](https://github.com/npm/cli/compare/v11.13.0...v11.14.0) (2026-05-06)
 ### Features
 * [`45fc5e0`](https://github.com/npm/cli/commit/45fc5e0dd144bb21148d7aa35439695ab44cdfda) [#9288](https://github.com/npm/cli/pull/9288) add allow-directory, allow-file, and allow-remote (#9288) (@github-actions[bot], @wraithgar)
