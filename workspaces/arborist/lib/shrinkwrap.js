@@ -905,6 +905,10 @@ class Shrinkwrap {
           continue
         }
         const loc = relpath(this.path, node.path)
+        // Drop lockfile entries for extraneous nodes outside node_modules. These are stale workspace entries: the workspace was removed from package.json or its directory was deleted, so it should not be tracked in package-lock.json.
+        if (node.extraneous && !/(^|\/)node_modules\//.test(loc) && loc !== 'node_modules') {
+          continue
+        }
         this.data.packages[loc] = Shrinkwrap.metaFromNode(
           node,
           this.path,
