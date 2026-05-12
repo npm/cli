@@ -649,6 +649,37 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     return vuln.range
   }
 
+  // Enforces the allow-git / allow-file / allow-directory / allow-remote configs at the arborist resolution layer, before any branching into the symlink (Link) path or the manifest-fetch path.
+  // Pacote also enforces these inside FetcherBase.get() as defense-in-depth, but the symlink branch never reaches pacote, and the manifest cache here would bypass pacote on a cached hit.
+  // Throws the same { code: EALLOW${TYPE} } shape pacote uses, so callers and downstream consumers stay consistent.
+  #checkAllow (spec, edge) {
+    const optionFor = {
+      git: 'allowGit',
+      remote: 'allowRemote',
+      file: 'allowFile',
+      directory: 'allowDirectory',
+    }
+    const optName = optionFor[spec.type]
+    if (!optName) {
+      return
+    }
+    const allow = this.options[optName] ?? 'all'
+    if (allow === 'all') {
+      return
+    }
+    const isRoot = !!(edge?.from?.isProjectRoot || edge?.from?.isWorkspace)
+    if (allow !== 'none' && isRoot) {
+      return
+    }
+    throw Object.assign(
+      new Error(`Fetching${allow === 'root' ? ' non-root' : ''} packages of type "${spec.type}" have been disabled`),
+      {
+        code: `EALLOW${spec.type.toUpperCase()}`,
+        package: spec.toString(),
+      }
+    )
+  }
+
   #queueNamedUpdates () {
     // ignore top nodes, since they are not loaded the same way, and
     // probably have their own project associated with them.
@@ -1029,7 +1060,7 @@ This is a one-time fix-up, please be patient...
             // This can't be changed or removed till we figure out why
             // The test is named "tarball deps with transitive tarball deps"
             promises.push(() =>
-              this.#fetchManifest(npa.resolve(e.name, e.spec, fromPath(placed, e)), parent)
+              this.#fetchManifest(npa.resolve(e.name, e.spec, fromPath(placed, e)), parent, e)
                 .catch(() => null)
             )
           }
@@ -1215,12 +1246,14 @@ This is a one-time fix-up, please be patient...
     return problems
   }
 
-  async #fetchManifest (spec, parent) {
+  async #fetchManifest (spec, parent, edge) {
+    // Enforce allow-* gates before consulting the manifest cache so a cached entry from a different edge cannot bypass the policy.
+    this.#checkAllow(spec, edge)
     const options = {
       ...this.options,
       avoid: this.#avoidRange(spec.name),
       fullMetadata: true,
-      _isRoot: parent?.isProjectRoot || parent?.isWorkspace,
+      _isRoot: !!(edge?.from?.isProjectRoot || edge?.from?.isWorkspace),
     }
     // get the intended spec and stored metadata from yarn.lock file,
     // if available and valid.
@@ -1237,6 +1270,23 @@ This is a one-time fix-up, please be patient...
   }
 
   async #nodeFromSpec (name, spec, parent, edge) {
+    // Enforce allow-git / allow-file / allow-directory / allow-remote before any branching, so the symlink (Link) path is enforced as well as the manifest-fetch path.
+    // Route the failure through #loadFailures so optional-dep semantics apply (e.g. a transitive optionalDependencies entry that resolves to a disallowed git URL is silently dropped rather than failing the install).
+    try {
+      this.#checkAllow(spec, edge)
+    } catch (error) {
+      error.requiredBy = edge?.from?.location || '.'
+      const n = new Node({
+        name,
+        parent,
+        error,
+        installLinks: this.installLinks,
+        legacyPeerDeps: this.legacyPeerDeps,
+      })
+      this.#loadFailures.add(n)
+      return n
+    }
+
     // pacote will slap integrity on its options, so we have to clone the object so it doesn't get mutated.
     // Don't bother to load the manifest for link deps, because the target might be within another package that doesn't exist yet.
     const { installLinks, legacyPeerDeps } = this
@@ -1291,7 +1341,7 @@ This is a one-time fix-up, please be patient...
 
     // spec isn't a directory, and either isn't a workspace or the workspace we have
     // doesn't satisfy the edge. try to fetch a manifest and build a node from that.
-    return this.#fetchManifest(spec, parent)
+    return this.#fetchManifest(spec, parent, edge)
       .then(pkg => new Node({ name, pkg, parent, installLinks, legacyPeerDeps }), error => {
         error.requiredBy = edge.from.location || '.'
 

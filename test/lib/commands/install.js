@@ -257,7 +257,7 @@ t.test('exec commands', async t => {
   t.test('allow-git=root refuses non-root git dependency', async t => {
     const { npm } = await loadMockNpm(t, {
       config: {
-        'allow-git': 'none',
+        'allow-git': 'root',
       },
       prefixDir: {
         'package.json': JSON.stringify({ name: '@npmcli/test-package', version: '1.0.0' }),
@@ -268,7 +268,80 @@ t.test('exec commands', async t => {
     })
     await t.rejects(
       npm.exec('install', ['./abbrev']),
-      /Fetching packages of type "git" have been disabled/
+      /Fetching non-root packages of type "git" have been disabled/
+    )
+  })
+
+  t.test('allow-directory=none blocks default symlink install', async t => {
+    const { npm } = await loadMockNpm(t, {
+      config: {
+        'allow-directory': 'none',
+      },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: '@npmcli/test-package',
+          version: '1.0.0',
+          dependencies: { 'dir-dep': 'file:./dir-dep' },
+        }),
+        'dir-dep': {
+          'package.json': JSON.stringify({ name: 'dir-dep', version: '1.0.0' }),
+        },
+      },
+    })
+    await t.rejects(
+      npm.exec('install', []),
+      {
+        code: 'EALLOWDIRECTORY',
+        message: 'Fetching packages of type "directory" have been disabled',
+      }
+    )
+  })
+
+  t.test('allow-directory=root permits top-level directory dependency', async t => {
+    const { npm } = await loadMockNpm(t, {
+      config: {
+        'allow-directory': 'root',
+      },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: '@npmcli/test-package',
+          version: '1.0.0',
+          dependencies: { 'dir-dep': 'file:./dir-dep' },
+        }),
+        'dir-dep': {
+          'package.json': JSON.stringify({ name: 'dir-dep', version: '1.0.0' }),
+        },
+      },
+    })
+    await npm.exec('install', [])
+    const installedPkg = require(path.join(npm.prefix, 'node_modules', 'dir-dep', 'package.json'))
+    t.equal(installedPkg.name, 'dir-dep', 'dir-dep is installed and readable through node_modules')
+  })
+
+  t.test('allow-git=root soft-skips transitive optional git dependency', async t => {
+    const { npm } = await loadMockNpm(t, {
+      config: {
+        'allow-git': 'root',
+      },
+      prefixDir: {
+        'package.json': JSON.stringify({ name: '@npmcli/test-package', version: '1.0.0' }),
+        abbrev: {
+          'package.json': JSON.stringify({
+            name: 'abbrev',
+            version: '1.0.0',
+            optionalDependencies: { npm: 'npm/npm' },
+          }),
+        },
+      },
+    })
+    await npm.exec('install', ['./abbrev'])
+    t.ok(
+      fs.existsSync(path.join(npm.prefix, 'node_modules', 'abbrev', 'package.json')),
+      'abbrev (the legitimate parent) is installed'
+    )
+    t.notOk(
+      fs.existsSync(path.join(npm.prefix, 'node_modules', 'npm')),
+      'optional transitive git dep is silently skipped'
     )
   })
 })

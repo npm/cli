@@ -4732,3 +4732,87 @@ t.test('overrides with bundledDependencies', async t => {
     t.notOk(tree.children.get('bar'), 'bar stays inside dep bundle')
   })
 })
+
+t.test('allow-directory=root permits a top-level directory dependency', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { 'dir-dep': 'file:./dir-dep' },
+    }),
+    'dir-dep': {
+      'package.json': JSON.stringify({ name: 'dir-dep', version: '1.0.0' }),
+    },
+  })
+  const tree = await buildIdeal(path, { allowDirectory: 'root' })
+  t.ok(tree.children.get('dir-dep'), 'dir-dep is in the ideal tree')
+  t.equal(tree.children.get('dir-dep').isLink, true, 'dir-dep is a Link node')
+})
+
+t.test('allow-directory=none blocks a top-level directory dependency before the symlink branch', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { 'dir-dep': 'file:./dir-dep' },
+    }),
+    'dir-dep': {
+      'package.json': JSON.stringify({ name: 'dir-dep', version: '1.0.0' }),
+    },
+  })
+  await t.rejects(
+    buildIdeal(path, { allowDirectory: 'none' }),
+    { code: 'EALLOWDIRECTORY' },
+    'arborist refuses before reaching pacote or the Link branch'
+  )
+})
+
+t.test('allow-directory=root blocks a transitive directory dependency', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { parent: 'file:./parent' },
+    }),
+    parent: {
+      'package.json': JSON.stringify({
+        name: 'parent',
+        version: '1.0.0',
+        dependencies: { child: 'file:./child' },
+      }),
+      child: {
+        'package.json': JSON.stringify({ name: 'child', version: '1.0.0' }),
+      },
+    },
+  })
+  await t.rejects(
+    buildIdeal(path, { allowDirectory: 'root' }),
+    { code: 'EALLOWDIRECTORY' },
+    'transitive directory dep is refused because edge.from is not the project root'
+  )
+})
+
+t.test('allow-directory=root soft-skips a transitive optional directory dependency', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { parent: 'file:./parent' },
+    }),
+    parent: {
+      'package.json': JSON.stringify({
+        name: 'parent',
+        version: '1.0.0',
+        optionalDependencies: { 'opt-child': 'file:./opt-child' },
+      }),
+      'opt-child': {
+        'package.json': JSON.stringify({ name: 'opt-child', version: '1.0.0' }),
+      },
+    },
+  })
+  const tree = await buildIdeal(path, { allowDirectory: 'root' })
+  t.ok(tree.children.get('parent'), 'parent (root-edge) is in the tree')
+  const optChild = [...tree.inventory.values()].find(n => n.name === 'opt-child')
+  t.ok(optChild, 'blocked optional transitive is recorded in the tree')
+  t.equal(optChild.inert, true, 'blocked optional transitive is marked inert (will not be reified)')
+})

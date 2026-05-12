@@ -704,7 +704,11 @@ module.exports = cls => class Reifier extends cls {
         ...this.options,
         resolved: node.resolved,
         integrity: node.integrity,
-        _isRoot: node.parent?.isProjectRoot || node.parent?.isWorkspace,
+        // A node counts as "root" for allow-* enforcement if it satisfies at least one valid dependency edge declared by the project root or a workspace.
+        // node.parent is unsafe here: after hoisting, transitive packages can have the project root as their tree parent.
+        _isRoot: [...node.edgesIn].some(e =>
+          e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
+        ),
       })
       // store nodes don't use Node class so node.package doesn't get updated
       if (node.isInStore) {
