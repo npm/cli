@@ -758,7 +758,7 @@ Edge {
 }
 `
 
-exports[`test/edge.js TAP > peer dep at top level, nesting is ok 1`] = `
+exports[`test/edge.js TAP > peer dep at top level, nesting allowed 1`] = `
 Edge {
   "dev": false,
   "error": null,
@@ -863,7 +863,7 @@ Edge {
 }
 `
 
-exports[`test/edge.js TAP > peer dep below top level, nesting not ok 1`] = `
+exports[`test/edge.js TAP > peer dep below top level, nesting disallowed 1`] = `
 Edge {
   "dev": false,
   "error": "PEER LOCAL",
@@ -1032,7 +1032,7 @@ Edge {
 }
 `
 
-exports[`test/edge.js TAP > peer dep below top level, parallel ok 1`] = `
+exports[`test/edge.js TAP > peer dep below top level, parallel allowed 1`] = `
 Edge {
   "dev": false,
   "error": null,
