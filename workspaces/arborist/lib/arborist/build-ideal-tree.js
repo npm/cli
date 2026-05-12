@@ -1351,7 +1351,22 @@ This is a one-time fix-up, please be patient...
     // doesn't satisfy the edge. try to fetch a manifest and build a node from that.
     return this.#fetchManifest(spec, parent, edge)
       .then(
-        pkg => new Node({ name, pkg, parent, installLinks, legacyPeerDeps }),
+        pkg => {
+          // When a proxy/upstream registry returns an incomplete manifest
+          // (e.g. missing version field for platform-specific packages it
+          // hasn't cached), treat it as a load failure so that optional deps
+          // are properly pruned instead of written to the lockfile without
+          // version metadata.  Only apply to registry specs — file: deps
+          // legitimately omit version.
+          if (!pkg.version && spec.registry) {
+            const error = Object.assign(
+              new Error(`incomplete manifest for ${name}, missing version`),
+              { code: 'EINCOMPLETEMANIFEST' }
+            )
+            return this.#failureNode(name, parent, error, edge)
+          }
+          return new Node({ name, pkg, parent, installLinks, legacyPeerDeps })
+        },
         error => this.#failureNode(name, parent, error, edge)
       )
   }
