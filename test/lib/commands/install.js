@@ -344,6 +344,51 @@ t.test('exec commands', async t => {
       'optional transitive git dep is silently skipped'
     )
   })
+
+  t.test('allow-remote=none does not block registry tarballs', async t => {
+    const { npm, registry } = await loadMockNpm(t, {
+      config: {
+        'allow-remote': 'none',
+        audit: false,
+      },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          ...packageJson,
+          dependencies: { abbrev: '^1.0.0' },
+        }),
+        abbrev,
+      },
+    })
+    const manifest = registry.manifest({ name: 'abbrev' })
+    await registry.package({ manifest })
+    await registry.tarball({
+      manifest: manifest.versions['1.0.0'],
+      tarball: path.join(npm.prefix, 'abbrev'),
+    })
+    await npm.exec('install', [])
+    const installed = require(path.join(npm.prefix, 'node_modules', 'abbrev', 'package.json'))
+    t.equal(installed.name, 'abbrev', 'registry dep is installed despite allow-remote=none')
+  })
+
+  t.test('allow-remote=none still blocks a user-supplied remote URL', async t => {
+    const { npm } = await loadMockNpm(t, {
+      config: {
+        'allow-remote': 'none',
+      },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: '@npmcli/test-package',
+          version: '1.0.0',
+          dependencies: { abbrev: 'https://registry.npmjs.org/abbrev/-/abbrev-2.0.0.tgz' },
+        }),
+      },
+    })
+    await t.rejects(
+      npm.exec('install', []),
+      { code: 'EALLOWREMOTE' },
+      'user-supplied remote URL is still blocked'
+    )
+  })
 })
 
 t.test('completion', async t => {
