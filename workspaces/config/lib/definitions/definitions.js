@@ -935,6 +935,29 @@ const definitions = {
     `,
     flatten,
   }),
+  // the global-ignore-file has its default defined outside of this module
+  'global-ignore-file': new Definition('global-ignore-file', {
+    type: path,
+    default: '',
+    defaultDescription: `
+      The global --prefix setting plus 'etc/npmignore'. For example,
+      '/usr/local/etc/npmignore'
+    `,
+    description: `
+      An additional ignore file applied during \`npm pack\` and \`npm
+      publish\`, owned by the current user rather than the package. Patterns
+      follow the same syntax as a package's local \`.npmignore\` file.
+      Useful for keeping editor metadata (such as \`.idea/\` or \`*.iml\`)
+      and scratch directories out of every package you publish, without
+      adding them to each package's own ignore rules.
+
+      The global rules apply in addition to a package's local \`.npmignore\`.
+      When a package uses a \`files\` field in its \`package.json\`, an entry
+      in \`files\` that contradicts a global rule (i.e., explicitly includes
+      a path the global rule would exclude) still wins.
+    `,
+    flatten,
+  }),
   'global-style': new Definition('global-style', {
     default: false,
     type: Boolean,

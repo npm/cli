@@ -71,6 +71,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "git-tag-version": true,
   "global": false,
   "globalconfig": "{CWD}/global/etc/npmrc",
+  "global-ignore-file": "{CWD}/global/etc/npmignore",
   "global-style": false,
   "heading": "npm",
   "https-proxy": null,
@@ -255,6 +256,7 @@ fund = true
 git = "git"
 git-tag-version = true
 global = false
+global-ignore-file = "{CWD}/global/etc/npmignore"
 global-style = false
 globalconfig = "{CWD}/global/etc/npmrc"
 heading = "npm"

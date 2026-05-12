@@ -2315,3 +2315,46 @@ t.test('CLI --min-release-age beats env npm_config_min_release_age', async t => 
     'CLI --min-release-age=3 overrides env npm_config_min_release_age=30'
   )
 })
+
+t.test('global-ignore-file defaults to ${prefix}/etc/npmignore', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--prefix', `${path}/global`],
+    cwd: path,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  t.equal(
+    config.get('global-ignore-file'),
+    resolve(`${path}/global/etc/npmignore`),
+    'computed from --prefix, mirrors globalconfig'
+  )
+  t.equal(config.flat.globalIgnoreFile, resolve(`${path}/global/etc/npmignore`), 'flattens to camelCase')
+})
+
+t.test('global-ignore-file follows an explicit override', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [
+      process.execPath, __filename,
+      '--prefix', `${path}/global`,
+      '--global-ignore-file', `${path}/custom/.npmignore`,
+    ],
+    cwd: path,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  t.equal(
+    config.get('global-ignore-file'),
+    resolve(`${path}/custom/.npmignore`),
+    'cli override wins over computed default'
+  )
+})

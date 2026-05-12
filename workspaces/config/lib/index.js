@@ -317,6 +317,24 @@ class Config {
       configurable: true,
       enumerable: true,
     })
+
+    // like globalconfig, the global-ignore-file default is computed from
+    // the current prefix. since prefix may be overridden after defaults
+    // load (via cli, env, or userconfig), expose a getter and only freeze
+    // to a value once explicitly set.
+    Object.defineProperty(data, 'global-ignore-file', {
+      get: () => resolve(this.#get('prefix'), 'etc/npmignore'),
+      set (value) {
+        Object.defineProperty(data, 'global-ignore-file', {
+          value,
+          configurable: true,
+          writable: true,
+          enumerable: true,
+        })
+      },
+      configurable: true,
+      enumerable: true,
+    })
   }
 
   loadHome () {

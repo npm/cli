@@ -224,6 +224,9 @@ Object {
   "global": Array [
     "boolean value (true or false)",
   ],
+  "global-ignore-file": Array [
+    "valid filesystem path",
+  ],
   "global-style": Array [
     "boolean value (true or false)",
   ],

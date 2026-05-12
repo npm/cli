@@ -1174,3 +1174,19 @@ t.test('dangerously-allow-all-scripts', t => {
   t.strictSame(flat, { dangerouslyAllowAllScripts: true })
   t.end()
 })
+
+t.test('global-ignore-file', t => {
+  const defs = mockDefs()
+  const def = defs['global-ignore-file']
+
+  t.ok(def, 'global-ignore-file definition is exported')
+  t.equal(def.type, require('../../lib/type-defs.js').path.type, 'is a path typed config')
+  t.equal(def.default, '', 'default value is empty (computed at load time)')
+  t.ok(/ignore/i.test(def.description), 'has a descriptive entry')
+
+  const flat = {}
+  def.flatten('global-ignore-file', { 'global-ignore-file': '/path/to/npmignore' }, flat)
+  t.strictSame(flat, { globalIgnoreFile: '/path/to/npmignore' }, 'flattens to camelCase')
+
+  t.end()
+})

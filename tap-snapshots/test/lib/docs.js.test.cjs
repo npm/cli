@@ -865,6 +865,25 @@ folder instead of the current working directory. See
 
 
 
+#### \`global-ignore-file\`
+
+* Default: The global --prefix setting plus 'etc/npmignore'. For example,
+  '/usr/local/etc/npmignore'
+* Type: Path
+
+An additional ignore file applied during \`npm pack\` and \`npm publish\`, owned
+by the current user rather than the package. Patterns follow the same syntax
+as a package's local \`.npmignore\` file. Useful for keeping editor metadata
+(such as \`.idea/\` or \`*.iml\`) and scratch directories out of every package
+you publish, without adding them to each package's own ignore rules.
+
+The global rules apply in addition to a package's local \`.npmignore\`. When a
+package uses a \`files\` field in its \`package.json\`, an entry in \`files\` that
+contradicts a global rule (i.e., explicitly includes a path the global rule
+would exclude) still wins.
+
+
+
 #### \`globalconfig\`
 
 * Default: The global --prefix setting plus 'etc/npmrc'. For example,
@@ -2437,6 +2456,7 @@ Array [
   "git-tag-version",
   "global",
   "globalconfig",
+  "global-ignore-file",
   "global-style",
   "heading",
   "https-proxy",
@@ -2619,6 +2639,7 @@ Array [
   "git-tag-version",
   "global",
   "globalconfig",
+  "global-ignore-file",
   "global-style",
   "heading",
   "https-proxy",
@@ -2800,6 +2821,7 @@ Object {
   "gitTagVersion": true,
   "global": false,
   "globalconfig": "{CWD}/global/etc/npmrc",
+  "globalIgnoreFile": "{CWD}/global/etc/npmignore",
   "heading": "npm",
   "httpsProxy": null,
   "ifPresent": false,
