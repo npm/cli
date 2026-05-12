@@ -1,4 +1,4 @@
----
+npm find-dupes---
 title: npm-find-dupes
 section: 1
 description: Find duplication in the package tree
