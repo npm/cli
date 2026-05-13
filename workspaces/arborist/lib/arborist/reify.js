@@ -844,9 +844,10 @@ module.exports = cls => class Reifier extends cls {
       return false
     }
     try {
-      const resolvedHost = new URL(node.resolved).hostname
+      // Hostnames are case-insensitive; lowercase both sides for safety even though WHATWG URL already normalizes.
+      const resolvedHost = new URL(node.resolved).hostname.toLowerCase()
       // pickRegistry only consults spec.scope, so a bare-name (tag) parse is sufficient and avoids a node.version dependency.
-      const registryHost = new URL(pickRegistry(npa(node.name), this.options)).hostname
+      const registryHost = new URL(pickRegistry(npa(node.name), this.options)).hostname.toLowerCase()
       return resolvedHost === registryHost
     } catch {
       return false

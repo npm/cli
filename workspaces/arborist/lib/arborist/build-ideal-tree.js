@@ -28,6 +28,15 @@ const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
 const Node = require('../node.js')
 const Link = require('../link.js')
+
+// Maps a parsed spec.type to the corresponding allow-* arborist option name.
+// Hoisted to module scope so #checkAllow doesn't re-allocate it per call.
+const ALLOW_OPTION_FOR_TYPE = {
+  git: 'allowGit',
+  remote: 'allowRemote',
+  file: 'allowFile',
+  directory: 'allowDirectory',
+}
 const addRmPkgDeps = require('../add-rm-pkg-deps.js')
 const optionalSet = require('../optional-set.js')
 const { checkEngine, checkPlatform } = require('npm-install-checks')
@@ -653,13 +662,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   // Pacote also enforces these inside FetcherBase.get() as defense-in-depth, but the symlink branch never reaches pacote, and the manifest cache here would bypass pacote on a cached hit.
   // Throws the same { code: EALLOW${TYPE} } shape pacote uses, so callers and downstream consumers stay consistent.
   #checkAllow (spec, edge) {
-    const optionFor = {
-      git: 'allowGit',
-      remote: 'allowRemote',
-      file: 'allowFile',
-      directory: 'allowDirectory',
-    }
-    const optName = optionFor[spec.type]
+    const optName = ALLOW_OPTION_FOR_TYPE[spec.type]
     if (!optName) {
       return
     }
@@ -678,6 +681,20 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         package: spec.toString(),
       }
     )
+  }
+
+  // Builds a Node representing a spec we failed to load (allow-* gate, network failure, ENOTARGET, etc.) and records it in #loadFailures so #pruneFailedOptional can later decide whether the failure is fatal or silently dropped for optional deps.
+  #failureNode (name, parent, error, edge) {
+    error.requiredBy = edge?.from?.location || '.'
+    const n = new Node({
+      name,
+      parent,
+      error,
+      installLinks: this.installLinks,
+      legacyPeerDeps: this.legacyPeerDeps,
+    })
+    this.#loadFailures.add(n)
+    return n
   }
 
   #queueNamedUpdates () {
@@ -1275,16 +1292,7 @@ This is a one-time fix-up, please be patient...
     try {
       this.#checkAllow(spec, edge)
     } catch (error) {
-      error.requiredBy = edge?.from?.location || '.'
-      const n = new Node({
-        name,
-        parent,
-        error,
-        installLinks: this.installLinks,
-        legacyPeerDeps: this.legacyPeerDeps,
-      })
-      this.#loadFailures.add(n)
-      return n
+      return this.#failureNode(name, parent, error, edge)
     }
 
     // pacote will slap integrity on its options, so we have to clone the object so it doesn't get mutated.
@@ -1342,22 +1350,10 @@ This is a one-time fix-up, please be patient...
     // spec isn't a directory, and either isn't a workspace or the workspace we have
     // doesn't satisfy the edge. try to fetch a manifest and build a node from that.
     return this.#fetchManifest(spec, parent, edge)
-      .then(pkg => new Node({ name, pkg, parent, installLinks, legacyPeerDeps }), error => {
-        error.requiredBy = edge.from.location || '.'
-
-        // failed to load the spec, either because of enotarget or
-        // fetch failure of some other sort.  save it so we can verify
-        // later that it's optional; otherwise, the error is fatal.
-        const n = new Node({
-          name,
-          parent,
-          error,
-          installLinks,
-          legacyPeerDeps,
-        })
-        this.#loadFailures.add(n)
-        return n
-      })
+      .then(
+        pkg => new Node({ name, pkg, parent, installLinks, legacyPeerDeps }),
+        error => this.#failureNode(name, parent, error, edge)
+      )
   }
 
   // load all peer deps and meta-peer deps into the node's parent

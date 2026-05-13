@@ -242,6 +242,7 @@ t.test('exec commands', async t => {
     const { npm } = await loadMockNpm(t, {
       config: {
         'allow-git': 'none',
+        audit: false,
       },
     })
     await t.rejects(
@@ -258,6 +259,7 @@ t.test('exec commands', async t => {
     const { npm } = await loadMockNpm(t, {
       config: {
         'allow-git': 'root',
+        audit: false,
       },
       prefixDir: {
         'package.json': JSON.stringify({ name: '@npmcli/test-package', version: '1.0.0' }),
@@ -276,6 +278,7 @@ t.test('exec commands', async t => {
     const { npm } = await loadMockNpm(t, {
       config: {
         'allow-directory': 'none',
+        audit: false,
       },
       prefixDir: {
         'package.json': JSON.stringify({
@@ -301,6 +304,7 @@ t.test('exec commands', async t => {
     const { npm } = await loadMockNpm(t, {
       config: {
         'allow-directory': 'root',
+        audit: false,
       },
       prefixDir: {
         'package.json': JSON.stringify({
@@ -322,6 +326,7 @@ t.test('exec commands', async t => {
     const { npm } = await loadMockNpm(t, {
       config: {
         'allow-git': 'root',
+        audit: false,
       },
       prefixDir: {
         'package.json': JSON.stringify({ name: '@npmcli/test-package', version: '1.0.0' }),
@@ -374,6 +379,7 @@ t.test('exec commands', async t => {
     const { npm } = await loadMockNpm(t, {
       config: {
         'allow-remote': 'none',
+        audit: false,
       },
       prefixDir: {
         'package.json': JSON.stringify({
