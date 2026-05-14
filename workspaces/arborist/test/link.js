@@ -256,6 +256,51 @@ t.test('recalculateOutEdgesOverrides forwards overrides to target', t => {
   t.end()
 })
 
+t.test('recalculateOutEdgesOverrides does not forward when no rule matches a target dep — npm/cli#9357', t => {
+  // Regression: prior to the fix, Link.recalculateOutEdgesOverrides forwarded the link's full OverrideSet to the target unconditionally.
+  // For a target whose edges are NOT named in any override rule, that flipped target.overrides from undefined to the root's OverrideSet.
+  // Downstream, that "has overrides" state changed canPlaceDep's KEEP-vs-REPLACE decision and made `npm ci` re-resolve lockfile-pinned edges from the registry.
+  // After the fix, propagation is gated on at least one rule whose name matches an edge in target.edgesOut.
+  const root = new Node({
+    path: '/path/to/root',
+    pkg: {
+      name: 'root',
+      dependencies: { foo: '1.0.0' },
+      // override is for "bar", but the linked target only depends on "baz"
+      overrides: { bar: '2.0.0' },
+    },
+    loadOverrides: true,
+  })
+
+  const target = new Node({
+    path: '/path/to/store/foo',
+    pkg: {
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: { baz: '1.0.0' },
+    },
+    root,
+  })
+
+  // eslint-disable-next-line no-new
+  new Link({
+    pkg: { name: 'foo', version: '1.0.0' },
+    path: '/path/to/root/node_modules/foo',
+    realpath: '/path/to/store/foo',
+    target,
+    parent: root,
+  })
+
+  t.ok(root.overrides, 'root has overrides')
+  t.notOk(target.overrides,
+    'target.overrides stays undefined when no rule matches a target dep')
+  const bazEdge = target.edgesOut.get('baz')
+  t.notOk(bazEdge.overrides,
+    'unrelated edge keeps edge.overrides undefined')
+  t.equal(bazEdge.spec, '1.0.0', 'unrelated edge spec is unchanged')
+  t.end()
+})
+
 t.test('link to root path gets root as target', t => {
   const root = new Node({
     path: '/project/root',
