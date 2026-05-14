@@ -458,6 +458,12 @@ Object {
     null,
     Function String(),
   ],
+  "pending": Array [
+    "boolean value (true or false)",
+  ],
+  "pin": Array [
+    "boolean value (true or false)",
+  ],
   "prefer-dedupe": Array [
     "boolean value (true or false)",
   ],

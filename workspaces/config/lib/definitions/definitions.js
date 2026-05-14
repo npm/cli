@@ -1732,6 +1732,27 @@ const definitions = {
     `,
     flatten,
   }),
+  pending: new Definition('pending', {
+    default: false,
+    type: Boolean,
+    description: `
+      List packages with install scripts that are not yet covered by the
+      \`allowScripts\` policy, without modifying \`package.json\`. Only
+      meaningful for \`npm approve-scripts\`.
+    `,
+    flatten,
+  }),
+  pin: new Definition('pin', {
+    default: true,
+    type: Boolean,
+    description: `
+      Write pinned (\`pkg@version\`) entries when approving install scripts.
+      Set to \`false\` to write name-only entries that allow any version.
+      Has no effect on \`npm deny-scripts\`, which always writes name-only
+      entries regardless of this setting.
+    `,
+    flatten,
+  }),
   'prefer-dedupe': new Definition('prefer-dedupe', {
     default: false,
     type: Boolean,

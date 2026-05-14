@@ -97,6 +97,7 @@ Object {
 exports[`test/lib/docs.js TAP command list > commands 1`] = `
 Array [
   "access",
+  "approve-scripts",
   "audit",
   "bugs",
   "cache",
@@ -104,6 +105,7 @@ Array [
   "completion",
   "config",
   "dedupe",
+  "deny-scripts",
   "deprecate",
   "diff",
   "dist-tag",
@@ -1462,6 +1464,29 @@ tokens, though it's generally safer to be prompted for it.
 
 
 
+#### \`pending\`
+
+* Default: false
+* Type: Boolean
+
+List packages with install scripts that are not yet covered by the
+\`allowScripts\` policy, without modifying \`package.json\`. Only meaningful for
+\`npm approve-scripts\`.
+
+
+
+#### \`pin\`
+
+* Default: true
+* Type: Boolean
+
+Write pinned (\`pkg@version\`) entries when approving install scripts. Set to
+\`false\` to write name-only entries that allow any version. Has no effect on
+\`npm deny-scripts\`, which always writes name-only entries regardless of this
+setting.
+
+
+
 #### \`prefer-dedupe\`
 
 * Default: false
@@ -2462,6 +2487,8 @@ Array [
   "pack-destination",
   "packages",
   "parseable",
+  "pending",
+  "pin",
   "prefer-dedupe",
   "prefer-offline",
   "prefer-online",
@@ -2624,6 +2651,8 @@ Array [
   "pack-destination",
   "packages",
   "parseable",
+  "pending",
+  "pin",
   "prefer-dedupe",
   "prefer-offline",
   "prefer-online",
@@ -2805,6 +2834,8 @@ Object {
   "packDestination": ".",
   "parseable": false,
   "password": null,
+  "pending": false,
+  "pin": true,
   "preferDedupe": false,
   "preferOffline": false,
   "preferOnline": false,
@@ -2943,6 +2974,46 @@ Note: This command is unaware of workspaces.
 #### \`json\`
 #### \`otp\`
 #### \`registry\`
+`
+
+exports[`test/lib/docs.js TAP usage approve-scripts > must match snapshot 1`] = `
+Approve install scripts for specific dependencies
+
+Usage:
+npm approve-scripts <pkg> [<pkg> ...]
+npm approve-scripts --all
+npm approve-scripts --pending
+
+Options:
+[-a|--all] [--pending] [--no-pin] [--json]
+
+  -a|--all
+    When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
+
+  --pending
+    List packages with install scripts that are not yet covered by the
+
+  --pin
+    Write pinned (\`pkg@version\`) entries when approving install scripts.
+
+  --json
+    Whether or not to output JSON data, rather than the normal output.
+
+
+Run "npm help approve-scripts" for more info
+
+\`\`\`bash
+npm approve-scripts <pkg> [<pkg> ...]
+npm approve-scripts --all
+npm approve-scripts --pending
+\`\`\`
+
+Note: This command is unaware of workspaces.
+
+#### \`all\`
+#### \`pending\`
+#### \`pin\`
+#### \`json\`
 `
 
 exports[`test/lib/docs.js TAP usage audit > must match snapshot 1`] = `
@@ -3417,6 +3488,44 @@ alias: ddp
 #### \`workspaces\`
 #### \`include-workspace-root\`
 #### \`install-links\`
+`
+
+exports[`test/lib/docs.js TAP usage deny-scripts > must match snapshot 1`] = `
+Deny install scripts for specific dependencies
+
+Usage:
+npm deny-scripts <pkg> [<pkg> ...]
+npm deny-scripts --all
+
+Options:
+[-a|--all] [--pending] [--no-pin] [--json]
+
+  -a|--all
+    When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
+
+  --pending
+    List packages with install scripts that are not yet covered by the
+
+  --pin
+    Write pinned (\`pkg@version\`) entries when approving install scripts.
+
+  --json
+    Whether or not to output JSON data, rather than the normal output.
+
+
+Run "npm help deny-scripts" for more info
+
+\`\`\`bash
+npm deny-scripts <pkg> [<pkg> ...]
+npm deny-scripts --all
+\`\`\`
+
+Note: This command is unaware of workspaces.
+
+#### \`all\`
+#### \`pending\`
+#### \`pin\`
+#### \`json\`
 `
 
 exports[`test/lib/docs.js TAP usage deprecate > must match snapshot 1`] = `

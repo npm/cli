@@ -131,6 +131,8 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "pack-destination": ".",
   "packages": [],
   "parseable": false,
+  "pending": false,
+  "pin": true,
   "prefer-dedupe": false,
   "prefer-offline": false,
   "prefer-online": false,
@@ -319,6 +321,8 @@ packages-all = false
 packages-and-scopes-permission = null
 parseable = false
 password = (protected)
+pending = false
+pin = true
 prefer-dedupe = false
 prefer-offline = false
 prefer-online = false
