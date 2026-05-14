@@ -42,6 +42,10 @@ Object {
   "allow-same-version": Array [
     "boolean value (true or false)",
   ],
+  "allow-scripts": Array [
+    Function String(),
+    Function Array(),
+  ],
   "also": Array [
     null,
     "dev",
@@ -117,6 +121,9 @@ Object {
   "cpu": Array [
     null,
     Function String(),
+  ],
+  "dangerously-allow-all-scripts": Array [
+    "boolean value (true or false)",
   ],
   "depth": Array [
     null,
@@ -566,6 +573,9 @@ Object {
     "boolean value (true or false)",
   ],
   "strict-peer-deps": Array [
+    "boolean value (true or false)",
+  ],
+  "strict-script-builds": Array [
     "boolean value (true or false)",
   ],
   "strict-ssl": Array [

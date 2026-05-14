@@ -247,6 +247,39 @@ const definitions = {
   `,
     flatten,
   }),
+  'allow-scripts': new Definition('allow-scripts', {
+    default: '',
+    type: [String, Array],
+    hint: '<package-list>',
+    description: `
+      Comma-separated list of packages whose install-time lifecycle scripts
+      (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for
+      non-registry dependencies) are allowed to run. Used as a fallback when
+      no \`allowScripts\` field is set in the root project's \`package.json\`,
+      and for global/npx contexts where no project \`package.json\` exists.
+
+      Each name is matched against a dependency's resolved identity, not
+      against the package's self-reported name. CLI flags take precedence
+      over \`package.json\`, which takes precedence over this setting.
+      Layers are not merged.
+
+      This setting is part of an opt-in install-script policy that will land
+      across multiple npm releases. In this release, install scripts still
+      run as they always have. Setting this field does not block anything;
+      it records your intent so the install command can list the packages
+      that would still need to be reviewed before the future release that
+      flips the default.
+  `,
+    flatten (key, obj, flatOptions) {
+      if (Array.isArray(obj[key])) {
+        flatOptions.allowScripts = obj[key]
+      } else if (obj[key]) {
+        flatOptions.allowScripts = obj[key].split(',').map(s => s.trim()).filter(Boolean)
+      } else {
+        flatOptions.allowScripts = []
+      }
+    },
+  }),
   also: new Definition('also', {
     default: null,
     type: [null, 'dev', 'development'],
@@ -532,6 +565,22 @@ const definitions = {
       Override CPU architecture of native modules to install.
       Acceptable values are same as \`cpu\` field of package.json,
       which comes from \`process.arch\`.
+    `,
+    flatten,
+  }),
+  'dangerously-allow-all-scripts': new Definition('dangerously-allow-all-scripts', {
+    default: false,
+    type: Boolean,
+    description: `
+      Reserved for a future release. When that release lands, setting this
+      to \`true\` will tell npm to run every dependency install script
+      regardless of the \`allowScripts\` policy — an escape hatch for
+      migration. Its use will be strongly discouraged.
+
+      In this release, install scripts still run as they always have, so
+      this setting has no effect on install behaviour. The flag is
+      registered now so projects can pin it in their tooling ahead of the
+      release that flips the default.
     `,
     flatten,
   }),
@@ -2221,6 +2270,20 @@ const definitions = {
       When such an override is performed, a warning is printed, explaining the
       conflict and the packages involved.  If \`--strict-peer-deps\` is set,
       then this warning is treated as a failure.
+    `,
+    flatten,
+  }),
+  'strict-script-builds': new Definition('strict-script-builds', {
+    default: false,
+    type: Boolean,
+    description: `
+      Reserved for a future release. When that release lands, setting this
+      to \`true\` will turn the install-script policy from a warning into a
+      hard error: any unreviewed install script will fail the install
+      instead of being skipped with a notice.
+
+      In this release, install scripts still run as they always have, so
+      this setting has no effect on install behaviour.
     `,
     flatten,
   }),
