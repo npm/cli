@@ -1083,7 +1083,7 @@ t.test('allow-scripts', t => {
     t.end()
   })
 
-  t.test('passes array values through unchanged', t => {
+  t.test('passes array values through (multiple --allow-scripts flags)', t => {
     const flat = {}
     mockDefs()['allow-scripts'].flatten(
       'allow-scripts',
@@ -1102,6 +1102,17 @@ t.test('allow-scripts', t => {
       flat
     )
     t.strictSame(flat, { allowScripts: ['canvas', 'sqlite3'] })
+    t.end()
+  })
+
+  t.test('splits commas within each array entry (CLI single value)', t => {
+    const flat = {}
+    mockDefs()['allow-scripts'].flatten(
+      'allow-scripts',
+      { 'allow-scripts': ['canvas,sharp', 'sqlite3'] },
+      flat
+    )
+    t.strictSame(flat, { allowScripts: ['canvas', 'sharp', 'sqlite3'] })
     t.end()
   })
 

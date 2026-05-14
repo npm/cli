@@ -20,6 +20,9 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "allow-file": "all",
   "allow-git": "all",
   "allow-remote": "all",
+  "allow-scripts": [
+    ""
+  ],
   "also": null,
   "audit": true,
   "audit-level": null,
@@ -37,6 +40,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "cidr": null,
   "commit-hooks": true,
   "cpu": null,
+  "dangerously-allow-all-scripts": false,
   "depth": null,
   "description": true,
   "dev": false,
@@ -166,6 +170,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "sign-git-commit": false,
   "sign-git-tag": false,
   "strict-peer-deps": false,
+  "strict-script-builds": false,
   "strict-ssl": true,
   "tag": "latest",
   "tag-version-prefix": "v",
@@ -199,6 +204,7 @@ allow-file = "all"
 allow-git = "all"
 allow-remote = "all"
 allow-same-version = false
+allow-scripts = [""]
 also = null
 audit = true
 audit-level = null
@@ -218,6 +224,7 @@ cidr = null
 ; color = {COLOR}
 commit-hooks = true
 cpu = null
+dangerously-allow-all-scripts = false
 depth = null
 description = true
 dev = false
@@ -347,6 +354,7 @@ shell = "{SHELL}"
 sign-git-commit = false
 sign-git-tag = false
 strict-peer-deps = false
+strict-script-builds = false
 strict-ssl = true
 tag = "latest"
 tag-version-prefix = "v"

@@ -271,13 +271,29 @@ const definitions = {
       flips the default.
   `,
     flatten (key, obj, flatOptions) {
-      if (Array.isArray(obj[key])) {
-        flatOptions.allowScripts = obj[key]
-      } else if (obj[key]) {
-        flatOptions.allowScripts = obj[key].split(',').map(s => s.trim()).filter(Boolean)
-      } else {
-        flatOptions.allowScripts = []
+      const raw = obj[key]
+      const parts = []
+      if (Array.isArray(raw)) {
+        for (const entry of raw) {
+          if (typeof entry !== 'string') {
+            continue
+          }
+          for (const part of entry.split(',')) {
+            const trimmed = part.trim()
+            if (trimmed) {
+              parts.push(trimmed)
+            }
+          }
+        }
+      } else if (typeof raw === 'string' && raw) {
+        for (const part of raw.split(',')) {
+          const trimmed = part.trim()
+          if (trimmed) {
+            parts.push(trimmed)
+          }
+        }
       }
+      flatOptions.allowScripts = parts
     },
   }),
   also: new Definition('also', {

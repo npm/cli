@@ -100,6 +100,7 @@ class Arborist extends Base {
       nodeVersion: process.version,
       ...options,
       Arborist: this.constructor,
+      allowScripts: options.allowScripts ?? null,
       binLinks: 'binLinks' in options ? !!options.binLinks : true,
       cache: options.cache || `${homedir()}/.npm/_cacache`,
       dryRun: !!options.dryRun,
