@@ -61,6 +61,7 @@ exports[`test/lib/commands/completion.js TAP completion multiple command names >
 Array [
   String(
     access
+    approve-scripts
     audit
     author
     add

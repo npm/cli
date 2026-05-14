@@ -148,6 +148,7 @@ Array [
   "sbom",
   "search",
   "set",
+  "stage",
   "start",
   "stop",
   "team",
@@ -301,19 +302,22 @@ to the same value as the current version.
 * Default: ""
 * Type: String (can be set multiple times)
 
-Comma-separated list of packages whose install scripts (\`preinstall\`,
-\`install\`, \`postinstall\`) are allowed to run. Used as a fallback when no
-\`allowScripts\` field is set in the root project's \`package.json\`, and for
-global/npx contexts where no project \`package.json\` exists.
+Comma-separated list of packages whose install-time lifecycle scripts
+(\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for non-registry
+dependencies) are allowed to run. Used as a fallback when no \`allowScripts\`
+field is set in the root project's \`package.json\`, and for global/npx
+contexts where no project \`package.json\` exists.
 
-The \`package.json\` \`allowScripts\` field takes precedence over this setting.
-Layers are not merged: the first source in the precedence chain that defines
-any allowlist configuration wins for the entire install.
+Each name is matched against a dependency's resolved identity, not against
+the package's self-reported name. CLI flags take precedence over
+\`package.json\`, which takes precedence over this setting. Layers are not
+merged.
 
-This setting is part of an opt-in install-script policy. In the current
-release, scripts are not blocked by default; this setting prepares your
-project for a future release that will block dependency install scripts
-unless they are explicitly allowed.
+This setting is part of an opt-in install-script policy that will land
+across multiple npm releases. In this release, install scripts still run as
+they always have. Setting this field does not block anything; it records
+your intent so the install command can list the packages that would still
+need to be reviewed before the future release that flips the default.
 
 
 
@@ -364,7 +368,13 @@ If the requested version is a \`dist-tag\` and the given tag does not pass the
 will be used. For example, \`foo@latest\` might install \`foo@1.2\` even though
 \`latest\` is \`2.0\`.
 
-This config cannot be used with: \`min-release-age\`
+If \`before\` and \`min-release-age\` are both set in the same source, \`before\`
+wins (an explicit absolute date overrides a relative window). Across
+sources, the standard precedence applies (cli > env > project > user >
+global), so a higher-priority source can always relax or override a
+lower-priority one.
+
+
 
 #### \`bin-links\`
 
@@ -511,14 +521,15 @@ are same as \`cpu\` field of package.json, which comes from \`process.arch\`.
 * Default: false
 * Type: Boolean
 
-When \`true\`, all dependency install scripts run regardless of the
-\`allowScripts\` field in \`package.json\` or the \`allow-scripts\` config. This
-is an escape hatch for migration and emergency use; its use is strongly
-discouraged.
+Reserved for a future release. When that release lands, setting this to
+\`true\` will tell npm to run every dependency install script regardless of
+the \`allowScripts\` policy — an escape hatch for migration. Its use will be
+strongly discouraged.
 
-This setting has no effect in the current release, where dependency install
-scripts already run by default. It is reserved for a future release that
-will block them unless explicitly allowed.
+In this release, install scripts still run as they always have, so this
+setting has no effect on install behaviour. The flag is registered now so
+projects can pin it in their tooling ahead of the release that flips the
+default.
 
 
 
@@ -1233,9 +1244,11 @@ are no versions available for the current set of dependencies, the command
 will error.
 
 This flag is a complement to \`before\`, which accepts an exact date instead
-of a relative number of days.
-
-This config cannot be used with: \`before\`
+of a relative number of days. The two may coexist (e.g. \`min-release-age\` in
+your \`.npmrc\` is preserved when npm internally spawns a sub-process with
+\`--before\` while preparing a \`git:\` or \`github:\` dependency); when both
+apply, \`before\` wins within a single source and across sources the standard
+precedence rules apply.
 
 This value is not exported to the environment for child processes.
 
@@ -1893,13 +1906,13 @@ this warning is treated as a failure.
 * Default: false
 * Type: Boolean
 
-When \`true\`, any dependency install script that is blocked by the
-\`allowScripts\` policy causes the install to fail with an error instead of
-printing a warning and continuing.
+Reserved for a future release. When that release lands, setting this to
+\`true\` will turn the install-script policy from a warning into a hard error:
+any unreviewed install script will fail the install instead of being skipped
+with a notice.
 
-This setting has no effect in the current release, where dependency install
-scripts run by default and no scripts are blocked. It is reserved for a
-future release that will block install scripts unless explicitly allowed.
+In this release, install scripts still run as they always have, so this
+setting has no effect on install behaviour.
 
 
 
@@ -3236,13 +3249,13 @@ Options:
     Limits the ability for npm to fetch dependencies from urls.
 
   --allow-scripts
-    Comma-separated list of packages whose install scripts (\`preinstall\`,
+    Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-script-builds
-    When \`true\`, any dependency install script that is blocked by the
+    Reserved for a future release. When that release lands, setting this
 
   --dangerously-allow-all-scripts
-    When \`true\`, all dependency install scripts run regardless of the
+    Reserved for a future release. When that release lands, setting this
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -3779,6 +3792,8 @@ Options:
 [--package <package-spec> [--package <package-spec> ...]] [-c|--call <call>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root]
+[--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
+[--strict-script-builds] [--dangerously-allow-all-scripts]
 
   --package
     The package or packages to install for [\`npm exec\`](/commands/npm-exec)
@@ -3794,6 +3809,15 @@ Options:
 
   --include-workspace-root
     Include the workspace root when workspaces are enabled for a command.
+
+  --allow-scripts
+    Comma-separated list of packages whose install-time lifecycle scripts
+
+  --strict-script-builds
+    Reserved for a future release. When that release lands, setting this
+
+  --dangerously-allow-all-scripts
+    Reserved for a future release. When that release lands, setting this
 
 
 alias: x
@@ -3814,6 +3838,9 @@ alias: x
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
+#### \`allow-scripts\`
+#### \`strict-script-builds\`
+#### \`dangerously-allow-all-scripts\`
 `
 
 exports[`test/lib/docs.js TAP usage explain > must match snapshot 1`] = `
@@ -4172,7 +4199,7 @@ Options:
 [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-script-builds] [--dangerously-allow-all-scripts] [--no-audit]
-[--before <date>|--min-release-age <days>] [--no-bin-links] [--no-fund]
+[--before <date>] [--min-release-age <days>] [--no-bin-links] [--no-fund]
 [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
@@ -4232,13 +4259,13 @@ Options:
     Limits the ability for npm to fetch dependencies from urls.
 
   --allow-scripts
-    Comma-separated list of packages whose install scripts (\`preinstall\`,
+    Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-script-builds
-    When \`true\`, any dependency install script that is blocked by the
+    Reserved for a future release. When that release lands, setting this
 
   --dangerously-allow-all-scripts
-    When \`true\`, all dependency install scripts run regardless of the
+    Reserved for a future release. When that release lands, setting this
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4382,13 +4409,13 @@ Options:
     Limits the ability for npm to fetch dependencies from urls.
 
   --allow-scripts
-    Comma-separated list of packages whose install scripts (\`preinstall\`,
+    Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-script-builds
-    When \`true\`, any dependency install script that is blocked by the
+    Reserved for a future release. When that release lands, setting this
 
   --dangerously-allow-all-scripts
-    When \`true\`, all dependency install scripts run regardless of the
+    Reserved for a future release. When that release lands, setting this
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4468,7 +4495,7 @@ Options:
 [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-script-builds] [--dangerously-allow-all-scripts] [--no-audit]
-[--before <date>|--min-release-age <days>] [--no-bin-links] [--no-fund]
+[--before <date>] [--min-release-age <days>] [--no-bin-links] [--no-fund]
 [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
@@ -4528,13 +4555,13 @@ Options:
     Limits the ability for npm to fetch dependencies from urls.
 
   --allow-scripts
-    Comma-separated list of packages whose install scripts (\`preinstall\`,
+    Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-script-builds
-    When \`true\`, any dependency install script that is blocked by the
+    Reserved for a future release. When that release lands, setting this
 
   --dangerously-allow-all-scripts
-    When \`true\`, all dependency install scripts run regardless of the
+    Reserved for a future release. When that release lands, setting this
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -5055,7 +5082,7 @@ npm outdated [<package-spec> ...]
 Options:
 [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[--before <date>|--min-release-age <days>]
+[--before <date>] [--min-release-age <days>]
 
   -a|--all
     When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
@@ -5077,6 +5104,9 @@ Options:
 
   --before
     If passed to \`npm install\`, will rebuild the npm tree such that only
+
+  --min-release-age
+    If set, npm will build the npm tree such that only versions that were
 
 
 Run "npm help outdated" for more info
@@ -5492,6 +5522,8 @@ npm rebuild [<package-spec>] ...]
 
 Options:
 [-g|--global] [--no-bin-links] [--foreground-scripts] [--ignore-scripts]
+[--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
+[--strict-script-builds] [--dangerously-allow-all-scripts]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -5506,6 +5538,15 @@ Options:
 
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
+
+  --allow-scripts
+    Comma-separated list of packages whose install-time lifecycle scripts
+
+  --strict-script-builds
+    Reserved for a future release. When that release lands, setting this
+
+  --dangerously-allow-all-scripts
+    Reserved for a future release. When that release lands, setting this
 
   -w|--workspace
     Enable running a command in the context of the configured workspaces of the
@@ -5534,6 +5575,9 @@ alias: rb
 #### \`bin-links\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
+#### \`allow-scripts\`
+#### \`strict-script-builds\`
+#### \`dangerously-allow-all-scripts\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
@@ -5827,6 +5871,61 @@ Note: This command is unaware of workspaces.
 #### \`location\`
 `
 
+exports[`test/lib/docs.js TAP usage stage > must match snapshot 1`] = `
+Stage packages for publishing, deferring proof-of-presence (2FA) to a later point in time
+
+Usage:
+npm stage
+npm stage publish <package-spec>
+npm stage list [<package-spec>]
+npm stage view <stage-id>
+npm stage approve <stage-id>
+npm stage reject <stage-id>
+npm stage download <stage-id>
+
+Subcommands:
+  publish
+    Stage a package for publishing, deferring proof-of-presence (2FA) to a later point in time
+
+  list
+    List all staged package versions
+
+  view
+    View details of a specific staged package
+
+  approve
+    Approve a staged package, publishing it to the npm registry
+
+  reject
+    Reject a staged package, removing it from the registry
+
+  download
+    Download the tarball of a staged package for inspection
+
+Run "npm stage <subcommand> --help" for more info on a subcommand.
+
+Run "npm help stage" for more info
+
+\`\`\`bash
+npm stage
+\`\`\`
+
+Note: This command is unaware of workspaces.
+
+#### Synopsis
+#### Flags
+#### Synopsis
+#### Flags
+#### Synopsis
+#### Flags
+#### Synopsis
+#### Flags
+#### Synopsis
+#### Flags
+#### Synopsis
+#### Flags
+`
+
 exports[`test/lib/docs.js TAP usage start > must match snapshot 1`] = `
 Start a package
 
@@ -6047,9 +6146,9 @@ exports[`test/lib/docs.js TAP usage trust > must match snapshot 1`] = `
 Create a trusted relationship between a package and a OIDC provider
 
 Usage:
-npm trust github [package] --file [--repo|--repository] [--env|--environment] [-y|--yes]
-npm trust gitlab [package] --file [--project|--repo|--repository] [--env|--environment] [-y|--yes]
-npm trust circleci [package] --org-id <uuid> --project-id <uuid> --pipeline-definition-id <uuid> --vcs-origin <origin> [--context-id <uuid>...] [-y|--yes]
+npm trust github [package] --file [--repo|--repository] [--env|--environment] [--allow-publish] [--allow-stage-publish] [-y|--yes]
+npm trust gitlab [package] --file [--project|--repo|--repository] [--env|--environment] [--allow-publish] [--allow-stage-publish] [-y|--yes]
+npm trust circleci [package] --org-id <uuid> --project-id <uuid> --pipeline-definition-id <uuid> --vcs-origin <origin> [--context-id <uuid>...] [--allow-publish] [--allow-stage-publish] [-y|--yes]
 npm trust list [package]
 npm trust revoke [package] --id=<trust-id>
 
@@ -6217,8 +6316,11 @@ Options:
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
-[--ignore-scripts] [--no-audit] [--before <date>|--min-release-age <days>]
-[--no-bin-links] [--no-fund] [--dry-run]
+[--ignore-scripts]
+[--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
+[--strict-script-builds] [--dangerously-allow-all-scripts] [--no-audit]
+[--before <date>] [--min-release-age <days>] [--no-bin-links] [--no-fund]
+[--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -6255,11 +6357,23 @@ Options:
   --ignore-scripts
     If true, npm does not run scripts specified in package.json files.
 
+  --allow-scripts
+    Comma-separated list of packages whose install-time lifecycle scripts
+
+  --strict-script-builds
+    Reserved for a future release. When that release lands, setting this
+
+  --dangerously-allow-all-scripts
+    Reserved for a future release. When that release lands, setting this
+
   --audit
     When "true" submit audit reports alongside the current npm command to the
 
   --before
     If passed to \`npm install\`, will rebuild the npm tree such that only
+
+  --min-release-age
+    If set, npm will build the npm tree such that only versions that were
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
@@ -6304,6 +6418,9 @@ aliases: u, up, upgrade, udpate
 #### \`package-lock\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
+#### \`allow-scripts\`
+#### \`strict-script-builds\`
+#### \`dangerously-allow-all-scripts\`
 #### \`audit\`
 #### \`before\`
 #### \`min-release-age\`

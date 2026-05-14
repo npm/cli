@@ -110,3 +110,54 @@ t.test('deny-scripts requires positional args or --all', async t => {
   })
   await t.rejects(npm.exec('deny-scripts', []), { code: 'EUSAGE' })
 })
+
+t.test('deny-scripts --all with no unreviewed packages prints message', async t => {
+  const { npm, joinedOutput } = await _mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
+      'package-lock.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: { '': { name: 'host', version: '1.0.0' } },
+      }),
+      node_modules: {},
+    },
+    config: { all: true },
+  })
+  await npm.exec('deny-scripts', [])
+  t.match(joinedOutput(), /No packages with unreviewed install scripts/)
+})
+
+t.test('deny-scripts fails on global', async t => {
+  const { npm } = await _mockNpm(t, {
+    config: { global: true },
+  })
+  await t.rejects(npm.exec('deny-scripts', ['canvas']), { code: 'EGLOBAL' })
+})
+
+t.test('deny-scripts <pkg> on a package already denied is no-op', async t => {
+  const { npm, joinedOutput, prefix } = await _mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['core-js'],
+      allowScripts: { 'core-js': false },
+    }),
+  })
+  await npm.exec('deny-scripts', ['core-js'])
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'core-js': false })
+  t.match(joinedOutput(), /Nothing to deny/)
+})
+
+t.test('deny-scripts --json outputs structured summary', async t => {
+  const { npm, joinedOutput } = await _mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['core-js'] }),
+    config: { json: true },
+  })
+  await npm.exec('deny-scripts', ['core-js'])
+  const parsed = JSON.parse(joinedOutput())
+  t.match(parsed, {
+    allowScripts: [{ name: 'core-js', changes: [{ key: 'core-js', change: 'added' }] }],
+  })
+})

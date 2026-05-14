@@ -84,3 +84,25 @@ t.test('warnWorkspaceAllowScripts emits one log.warn per offender', async t => {
   t.match(warnings[0][1], /allowScripts in workspace a/)
   t.match(warnings[1][1], /allowScripts in workspace b/)
 })
+
+t.test('warnWorkspaceAllowScripts uses node.name when packageName missing', async t => {
+  const warnings = []
+  const listener = (level, ...args) => {
+    if (level === 'warn') {
+      warnings.push(args)
+    }
+  }
+  process.on('log', listener)
+  t.teardown(() => process.off('log', listener))
+
+  // packageName undefined, name set
+  const ws = {
+    name: 'fallback-name',
+    path: '/x',
+    isWorkspace: true,
+    isProjectRoot: false,
+    package: { allowScripts: { x: true } },
+  }
+  warnWorkspaceAllowScripts({ inventory: new Map([['node_modules/ws', ws]]) })
+  t.match(warnings[0][1], /workspace fallback-name/)
+})
