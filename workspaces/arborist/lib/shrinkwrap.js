@@ -933,10 +933,20 @@ class Shrinkwrap {
         if (node.extraneous && !/(^|\/)node_modules\//.test(loc) && loc !== 'node_modules') {
           continue
         }
-        this.data.packages[loc] = Shrinkwrap.metaFromNode(
+        const meta = Shrinkwrap.metaFromNode(
           node,
           this.path,
           this.resolveOptions)
+        // Skip inert nodes — these are optional deps that failed to load
+        // (e.g. 404 from a proxy registry that hasn't cached the package,
+        // or incomplete manifest missing version field).
+        // #pruneFailedOptional marks them inert so they won't be reified;
+        // writing them to the lockfile produces invalid entries like
+        // {"optional": true} that cause "Invalid Version:" errors.
+        if (node.inert && !node.package.version) {
+          continue
+        }
+        this.data.packages[loc] = meta
       }
     } else if (this.#awaitingUpdate.size > 0) {
       for (const loc of this.#awaitingUpdate.keys()) {
