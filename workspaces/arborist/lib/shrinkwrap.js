@@ -919,7 +919,7 @@ class Shrinkwrap {
         // #pruneFailedOptional marks them inert so they won't be reified;
         // writing them to the lockfile produces invalid entries like
         // {"optional": true} that cause "Invalid Version:" errors.
-        if (node.inert) {
+        if (node.inert && !node.package.version) {
           continue
         }
         this.data.packages[loc] = meta
