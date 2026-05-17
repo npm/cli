@@ -1,0 +1,23 @@
+{
+  "name": "circle-gateway-deposit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deposit USDC into Circle Gateway from an EVM wallet to credit the unified balance.",
+  "type": "module",
+  "main": "deposit.js",
+  "bin": {
+    "circle-gateway-deposit": "./deposit.js"
+  },
+  "scripts": {
+    "deposit": "node deposit.js",
+    "deposit:dry-run": "node deposit.js --dry-run",
+    "balances": "node balances.js"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "dependencies": {
+    "viem": "^2.21.0"
+  },
+  "license": "ISC"
+}
