@@ -1917,12 +1917,10 @@ t.test('CLI --min-release-age=0 relaxes a stricter npmrc min-release-age', async
     flatten,
   })
   await config.load()
-  // min-release-age=0 means "now" — the CLI must win, not the npmrc's 30 days.
-  const now = Date.now()
-  t.ok(
-    Math.abs(config.flat.before.getTime() - now) < 60_000,
-    'flat.before resolves to ~now (CLI overrode the stricter npmrc)'
-  )
+  // CLI=0 explicitly asserts "no minimum age", clearing the before filter
+  // derived from the lower-priority npmrc value. (Setting `before = now`
+  // here would still filter out brand-new versions due to clock skew.)
+  t.equal(config.flat.before, null, 'CLI 0 clears the npmrc-derived before filter')
 })
 
 // Within a single source, an explicit `before` wins over a relative
@@ -1949,5 +1947,115 @@ t.test('within a single source, before wins over min-release-age', async t => {
     config.flat.before.toISOString(),
     '2020-01-01T00:00:00.000Z',
     'explicit --before wins over --min-release-age in the same source'
+  )
+})
+
+t.test('min-release-age=0 does not set a before filter', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--min-release-age', '0'],
+    cwd: path,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  t.equal(config.flat.before, null, 'flat.before remains null when min-release-age=0')
+  t.equal(config.get('min-release-age'), 0, 'min-release-age=0 is preserved')
+})
+
+t.test('higher-priority min-release-age overrides a lower-priority before', async t => {
+  const dir = t.testdir({
+    '.npmrc': 'before=2020-01-01T00:00:00.000Z',
+  })
+  const config = new Config({
+    npmPath: __dirname,
+    env: { HOME: dir },
+    argv: [process.execPath, __filename, '--min-release-age=7'],
+    cwd: dir,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  const expected = Date.now() - (7 * 86400000)
+  t.ok(
+    Math.abs(config.flat.before.getTime() - expected) < 60_000,
+    'flat.before reflects CLI --min-release-age, not npmrc before'
+  )
+})
+
+t.test('CLI --min-release-age=0 clears a lower-priority npmrc before', async t => {
+  const dir = t.testdir({
+    '.npmrc': 'before=2020-01-01T00:00:00.000Z',
+  })
+  const config = new Config({
+    npmPath: __dirname,
+    env: { HOME: dir },
+    argv: [process.execPath, __filename, '--min-release-age=0'],
+    cwd: dir,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  t.equal(config.flat.before, null, 'CLI 0 clears the npmrc-set before')
+})
+
+// Env source (`npm_config_*`) routes through the same flatten path as cli and npmrc; lock down its precedence behavior too.
+t.test('env npm_config_min_release_age applies as a relative window', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: { npm_config_min_release_age: '7' },
+    argv: [process.execPath, __filename],
+    cwd: path,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  const expected = Date.now() - (7 * 86400000)
+  t.ok(
+    Math.abs(config.flat.before.getTime() - expected) < 60_000,
+    'flat.before reflects env-source min-release-age'
+  )
+})
+
+t.test('env npm_config_min_release_age=0 clears a lower-priority npmrc before', async t => {
+  const dir = t.testdir({
+    '.npmrc': 'before=2020-01-01T00:00:00.000Z',
+  })
+  const config = new Config({
+    npmPath: __dirname,
+    env: { HOME: dir, npm_config_min_release_age: '0' },
+    argv: [process.execPath, __filename],
+    cwd: dir,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  t.equal(config.flat.before, null, 'env 0 clears the npmrc-set before')
+})
+
+t.test('CLI --min-release-age beats env npm_config_min_release_age', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: { npm_config_min_release_age: '30' },
+    argv: [process.execPath, __filename, '--min-release-age=3'],
+    cwd: path,
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  const expected = Date.now() - (3 * 86400000)
+  t.ok(
+    Math.abs(config.flat.before.getTime() - expected) < 60_000,
+    'CLI --min-release-age=3 overrides env npm_config_min_release_age=30'
   )
 })

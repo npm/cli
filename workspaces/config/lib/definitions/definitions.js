@@ -1429,12 +1429,11 @@ const definitions = {
        single source and across sources the standard precedence rules apply.
     `,
     flatten: (key, obj, flatOptions) => {
-      // If `before` is set in the same source, defer to it: an explicit
-      // absolute date overrides a relative window. Across sources, normal
-      // priority ordering means a higher-priority `before` will overwrite
-      // this `flatOptions.before` later in the flatten loop.
-      if (obj['min-release-age'] != null && obj.before == null) {
-        flatOptions.before = new Date(Date.now() - (86400000 * obj['min-release-age']))
+      const age = obj['min-release-age']
+      // `hasOwn` so a `before` inherited via ConfigData's prototype chain (lib/index.js) from a lower-priority source doesn't silently win.
+      // The `: null` clear depends on `Config#flat` iterating sources low → high.
+      if (age != null && !Object.hasOwn(obj, 'before')) {
+        flatOptions.before = age ? new Date(Date.now() - (86400000 * age)) : null
       }
     },
   }),
