@@ -59,6 +59,23 @@ t.test('logObject with custom predicate', async t => {
   t.match(out, /b: \[two\]/)
 })
 
+t.test('logStageItem without actorType shows actor alone', async t => {
+  const { joinedOutput } = await loadMockNpm(t)
+  const chalk = { cyan: v => v, green: v => v }
+  logStageItem({
+    id: 'abc',
+    packageName: 'pkg',
+    version: '1.0.0',
+    tag: 'latest',
+    createdAt: '2026-01-01',
+    actor: 'user',
+    shasum: 'sha1',
+  }, { chalk })
+  const out = joinedOutput()
+  t.match(out, /staged by: user/)
+  t.notMatch(out, /\(/)
+})
+
 t.test('logObject with all values skipped produces no output', async t => {
   const { joinedOutput } = await loadMockNpm(t)
   const chalk = { cyan: v => v, green: v => v }
