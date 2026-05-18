@@ -29,3 +29,44 @@ t.test('throws usageError without stage-id', async t => {
     code: 'EUSAGE',
   })
 })
+
+t.test('throws on invalid uuid', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: authConfig,
+  })
+  await t.rejects(npm.exec('stage', ['approve', 'not-a-uuid']), {
+    message: /stage-id must be a valid UUID/,
+  })
+})
+
+t.test('throws on 404 (stage-id not found)', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { ...authConfig, otp: '123456' },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: token,
+  })
+  registry.nock.post(`/-/stage/${stageId}/approve`)
+    .reply(404, { error: 'Not found' })
+  await t.rejects(npm.exec('stage', ['approve', stageId]), {
+    statusCode: 404,
+  })
+})
+
+t.test('throws on 403 (not an owner)', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { ...authConfig, otp: '123456' },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: token,
+  })
+  registry.nock.post(`/-/stage/${stageId}/approve`)
+    .reply(403, { error: 'You do not have permission to approve this package' })
+  await t.rejects(npm.exec('stage', ['approve', stageId]), {
+    statusCode: 403,
+  })
+})

@@ -85,6 +85,38 @@ t.test('throws on invalid uuid', async t => {
   })
 })
 
+t.test('throws on 404 (stage-id not found)', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: authConfig,
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: token,
+  })
+  registry.nock.get(`/-/stage/${stageId}/tarball`)
+    .reply(404, { error: 'Not found' })
+  await t.rejects(npm.exec('stage', ['download', stageId]), {
+    statusCode: 404,
+  })
+})
+
+t.test('throws on 403 (not an owner)', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: authConfig,
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: token,
+  })
+  registry.nock.get(`/-/stage/${stageId}/tarball`)
+    .reply(403, { error: 'You do not have permission to download this package' })
+  await t.rejects(npm.exec('stage', ['download', stageId]), {
+    statusCode: 403,
+  })
+})
+
 t.test('throws when tarball has no package.json', async t => {
   const { npm, prefix } = await loadMockNpm(t, {
     config: authConfig,
