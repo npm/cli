@@ -29,7 +29,7 @@ Browser unavailable. Please open the URL manually:
 https://www.npmjs.com
 `
 
-exports[`test/lib/utils/open-url.js TAP open url prompt opens a url > must match snapshot 1`] = `
+exports[`test/lib/utils/open-url.js TAP open url prompt opens a url when ENTER is pressed > must match snapshot 1`] = `
 npm home:
 https://www.npmjs.com
 `

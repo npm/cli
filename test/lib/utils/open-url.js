@@ -38,9 +38,9 @@ const mockOpenUrl = async (t, args, { openerResult, ...config } = {}) => {
 }
 
 const mockOpenUrlPrompt = async (t, {
-  questionShouldResolve = true,
-  openUrlPromptInterrupted = false,
+  key = { name: 'return' },
   openerResult = null,
+  clipboardResult = null,
   isTTY = true,
   abort = false,
   url: openUrl = 'https://www.npmjs.com',
@@ -50,12 +50,15 @@ const mockOpenUrlPrompt = async (t, {
     globals: {
       'process.stdin.isTTY': isTTY,
       'process.stdout.isTTY': isTTY,
+      'process.stdin.isRaw': false,
+      'process.stdin.setRawMode': () => {},
     },
     config,
   })
 
   let openerUrl = null
   let openerOpts = null
+  let clipboardText = null
 
   const { openUrlPrompt } = tmock(t, '{LIB}/utils/open-url.js', {
     '@npmcli/promise-spawn': {
@@ -67,29 +70,15 @@ const mockOpenUrlPrompt = async (t, {
         }
       },
     },
-    'node:readline/promises': {
-      createInterface: () => {
-        return Object.assign(new EventEmitter(), {
-          question: async (p, { signal } = {}) => {
-            if (questionShouldResolve !== true) {
-              await new Promise((res, rej) => {
-                if (signal) {
-                  signal.addEventListener('abort', () => {
-                    const err = new Error('abort')
-                    err.name = 'AbortError'
-                    rej(err)
-                  })
-                }
-              })
-            }
-          },
-          close: () => {},
-          once: function (event, cb) {
-            if (openUrlPromptInterrupted && event === 'SIGINT') {
-              cb()
-            }
-          },
-        })
+    'node:readline': {
+      emitKeypressEvents: () => {},
+    },
+    '{LIB}/utils/clipboard.js': {
+      copyToClipboard: async (text) => {
+        clipboardText = text
+        if (clipboardResult) {
+          throw clipboardResult
+        }
       },
     },
   })
@@ -97,10 +86,17 @@ const mockOpenUrlPrompt = async (t, {
   let error
   const abortController = new AbortController()
   const args = [mock.npm, openUrl, 'npm home', 'prompt', { signal: abortController.signal }]
+
   if (abort) {
     mock.open = openUrlPrompt(...args)
   } else {
-    await openUrlPrompt(...args).catch((er) => error = er)
+    // The keypress handler is registered synchronously inside the Promise constructor,
+    // so we can emit the keypress right after calling openUrlPrompt and before awaiting.
+    const promptPromise = openUrlPrompt(...args)
+    if (isTTY && key) {
+      process.stdin.emit('keypress', key.str || '', key)
+    }
+    await promptPromise.catch((er) => error = er)
   }
 
   mock.npm.finish()
@@ -109,6 +105,7 @@ const mockOpenUrlPrompt = async (t, {
     ...mock,
     openerUrl,
     openerOpts,
+    clipboardText,
     OUTPUT: mock.joinedOutput(),
     error,
     abortController,
@@ -123,7 +120,7 @@ t.test('open url prompt', async t => {
     t.same(openerOpts, null, 'did not open')
   })
 
-  t.test('opens a url', async t => {
+  t.test('opens a url when ENTER is pressed', async t => {
     const { OUTPUT, openerUrl, openerOpts } = await mockOpenUrlPrompt(t, { browser: true })
 
     t.equal(openerUrl, 'https://www.npmjs.com', 'opened the given url')
@@ -157,14 +154,12 @@ t.test('open url prompt', async t => {
     t.same(OUTPUT, '', 'printed no output')
   })
 
-  t.test('does not open url if canceled', async t => {
+  t.test('does not open url if canceled via abort signal', async t => {
     const { openerUrl, openerOpts, open, abortController } = await mockOpenUrlPrompt(t, {
-      questionShouldResolve: false,
       abort: true,
     })
 
     abortController.abort()
-
     await open
 
     t.equal(openerUrl, null, 'did not open')
@@ -177,7 +172,7 @@ t.test('open url prompt', async t => {
     })
 
     t.match(error, /Opener failed/, 'got the correct error')
-    t.equal(openerUrl, 'https://www.npmjs.com', 'did not open')
+    t.equal(openerUrl, 'https://www.npmjs.com', 'did open')
   })
 
   t.test('does not error when opener cannot find command', async t => {
@@ -186,18 +181,36 @@ t.test('open url prompt', async t => {
     })
 
     t.notOk(error, 'Did not error')
-    t.equal(openerUrl, 'https://www.npmjs.com', 'did not open')
+    t.equal(openerUrl, 'https://www.npmjs.com', 'tried to open')
     t.matchSnapshot(OUTPUT, 'Outputs extra Browser unavailable message and url')
   })
 
-  t.test('throws "canceled" error on SIGINT', async t => {
-    const { open } = await mockOpenUrlPrompt(t, {
-      questionShouldResolve: false,
-      openUrlPromptInterrupted: true,
-      abort: true,
+  t.test('throws "canceled" error on ctrl+c', async t => {
+    const { error } = await mockOpenUrlPrompt(t, {
+      key: { ctrl: true, name: 'c' },
     })
 
-    await t.rejects(open, /canceled/, 'message is canceled')
+    t.match(error, /canceled/, 'message is canceled')
+  })
+
+  t.test('copies url to clipboard when c is pressed', async t => {
+    const { OUTPUT, clipboardText, openerUrl } = await mockOpenUrlPrompt(t, {
+      key: { name: 'c' },
+    })
+
+    t.equal(clipboardText, 'https://www.npmjs.com', 'copied the correct url')
+    t.equal(openerUrl, null, 'did not open browser')
+    t.match(OUTPUT, /Copied URL to clipboard/, 'printed success message')
+  })
+
+  t.test('handles clipboard failure gracefully', async t => {
+    const { OUTPUT, error } = await mockOpenUrlPrompt(t, {
+      key: { name: 'c' },
+      clipboardResult: new Error('clipboard unavailable'),
+    })
+
+    t.notOk(error, 'did not throw')
+    t.match(OUTPUT, /Unable to copy URL to clipboard/, 'printed failure message')
   })
 })
 
