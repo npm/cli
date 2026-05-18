@@ -82,6 +82,18 @@ t.test('stages with --json includes stageId', async t => {
   t.equal(out[pkg].stageId, stageId)
 })
 
+t.test('completion returns subcommands', async t => {
+  const Stage = require('../../../../lib/commands/stage/index.js')
+  const res = await Stage.completion({ conf: { argv: { remain: ['npm', 'stage'] } } })
+  t.strictSame(res, ['publish', 'list', 'view', 'approve', 'reject', 'download'])
+})
+
+t.test('completion returns empty for subcommand', async t => {
+  const Stage = require('../../../../lib/commands/stage/index.js')
+  const res = await Stage.completion({ conf: { argv: { remain: ['npm', 'stage', 'publish'] } } })
+  t.strictSame(res, [])
+})
+
 t.test('throws on invalid semver tag', async t => {
   const { npm } = await loadMockNpm(t, {
     config: { ...authConfig, tag: '1.0.0' },
