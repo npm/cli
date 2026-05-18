@@ -34,7 +34,7 @@ t.test('downloads a staged tarball', async t => {
 
   await npm.exec('stage', ['download', stageId])
   const out = joinedOutput()
-  const expectedFilename = `npmcli-test-package-${stageId}.tgz`
+  const expectedFilename = `npmcli-test-package-1.0.0-${stageId}.tgz`
   t.match(out, expectedFilename)
   t.ok(fs.existsSync(path.join(prefix, expectedFilename)))
 })
@@ -62,8 +62,8 @@ t.test('downloads with --json', async t => {
 
   await npm.exec('stage', ['download', stageId])
   const out = joinedOutput()
-  t.notMatch(out, `npmcli-test-package-${stageId}.tgz`)
-  const expectedFilename = `npmcli-test-package-${stageId}.tgz`
+  t.notMatch(out, `npmcli-test-package-1.0.0-${stageId}.tgz`)
+  const expectedFilename = `npmcli-test-package-1.0.0-${stageId}.tgz`
   t.ok(fs.existsSync(path.join(prefix, expectedFilename)))
 })
 
