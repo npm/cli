@@ -62,7 +62,7 @@ Remove the 'private' field from the package.json to publish it.`),
   }
   if (opts.stage) {
     const json = await res.json()
-    return { ...res, stageId: json.stageId }
+    res.stageId = json.stageId
   }
   return res
 }
