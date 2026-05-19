@@ -28,6 +28,17 @@ The `[package]` argument specifies the package name. If omitted, npm will use th
 
 Each trust relationship has its own set of configuration options and flags based on the OIDC claims provided by that provider. OIDC claims come from the CI/CD provider and include information such as repository name, workflow file, or environment. Since each provider's claims differ, the available flags and configuration keys are not universal—npm matches the claims supported by each provider's OIDC configuration. For specific details on which claims and flags are supported for a given provider, use `npm trust <provider> --help`.
 
+### Permissions
+
+When creating a trust relationship, you must specify at least one permission flag to indicate which operations the trusted publisher is allowed to perform:
+
+* `--allow-publish`: Allows the trusted publisher to run `npm publish` for the package.
+* `--allow-stage-publish`: Allows the trusted publisher to run `npm stage` for the package. The alias `--allow-staged-publish` is also accepted.
+
+At least one of these flags is required when creating a trust configuration. You can specify both to grant both permissions.
+
+### Provider Options
+
 The required options depend on the CI/CD provider you're configuring. Detailed information about each option is available in the [managing trusted publisher configurations](https://docs.npmjs.com/trusted-publishers#managing-trusted-publisher-configurations) section of the npm documentation. If a provider is repository-based and the option is not provided, npm will use the `repository.url` field from your `package.json`, if available.
 
 Currently, the registry only supports one configuration per package. If you attempt to create a new trust relationship when one already exists, it will result in an error. To replace an existing configuration:
