@@ -126,7 +126,7 @@ t.test('trust-cmd via trust github missing permissions', async t => {
 
   await t.rejects(
     npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repository', 'npm/cli']),
-    { message: /--allow-stage-publish.*--allow-publish/ }
+    { message: /At least one permission flag is required/ }
   )
 })
 
