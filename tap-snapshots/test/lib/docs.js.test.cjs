@@ -5877,9 +5877,9 @@ exports[`test/lib/docs.js TAP usage trust > must match snapshot 1`] = `
 Create a trusted relationship between a package and a OIDC provider
 
 Usage:
-npm trust github [package] --file [--repo|--repository] [--env|--environment] [-y|--yes]
-npm trust gitlab [package] --file [--project|--repo|--repository] [--env|--environment] [-y|--yes]
-npm trust circleci [package] --org-id <uuid> --project-id <uuid> --pipeline-definition-id <uuid> --vcs-origin <origin> [--context-id <uuid>...] [-y|--yes]
+npm trust github [package] --file [--repo|--repository] [--env|--environment] [--allow-publish] [--allow-stage-publish] [-y|--yes]
+npm trust gitlab [package] --file [--project|--repo|--repository] [--env|--environment] [--allow-publish] [--allow-stage-publish] [-y|--yes]
+npm trust circleci [package] --org-id <uuid> --project-id <uuid> --pipeline-definition-id <uuid> --vcs-origin <origin> [--context-id <uuid>...] [--allow-publish] [--allow-stage-publish] [-y|--yes]
 npm trust list [package]
 npm trust revoke [package] --id=<trust-id>
 

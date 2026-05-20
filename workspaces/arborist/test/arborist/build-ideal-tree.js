@@ -4732,3 +4732,154 @@ t.test('overrides with bundledDependencies', async t => {
     t.notOk(tree.children.get('bar'), 'bar stays inside dep bundle')
   })
 })
+
+t.test('allow-directory=root permits a top-level directory dependency', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { 'dir-dep': 'file:./dir-dep' },
+    }),
+    'dir-dep': {
+      'package.json': JSON.stringify({ name: 'dir-dep', version: '1.0.0' }),
+    },
+  })
+  const tree = await buildIdeal(path, { allowDirectory: 'root' })
+  t.ok(tree.children.get('dir-dep'), 'dir-dep is in the ideal tree')
+  t.equal(tree.children.get('dir-dep').isLink, true, 'dir-dep is a Link node')
+})
+
+t.test('allow-directory=none blocks a top-level directory dependency before the symlink branch', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { 'dir-dep': 'file:./dir-dep' },
+    }),
+    'dir-dep': {
+      'package.json': JSON.stringify({ name: 'dir-dep', version: '1.0.0' }),
+    },
+  })
+  await t.rejects(
+    buildIdeal(path, { allowDirectory: 'none' }),
+    { code: 'EALLOWDIRECTORY' },
+    'arborist refuses before reaching pacote or the Link branch'
+  )
+})
+
+t.test('allow-directory=root blocks a transitive directory dependency', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { parent: 'file:./parent' },
+    }),
+    parent: {
+      'package.json': JSON.stringify({
+        name: 'parent',
+        version: '1.0.0',
+        dependencies: { child: 'file:./child' },
+      }),
+      child: {
+        'package.json': JSON.stringify({ name: 'child', version: '1.0.0' }),
+      },
+    },
+  })
+  await t.rejects(
+    buildIdeal(path, { allowDirectory: 'root' }),
+    { code: 'EALLOWDIRECTORY' },
+    'transitive directory dep is refused because edge.from is not the project root'
+  )
+})
+
+t.test('allow-directory=root soft-skips a transitive optional directory dependency', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { parent: 'file:./parent' },
+    }),
+    parent: {
+      'package.json': JSON.stringify({
+        name: 'parent',
+        version: '1.0.0',
+        optionalDependencies: { 'opt-child': 'file:./opt-child' },
+      }),
+      'opt-child': {
+        'package.json': JSON.stringify({ name: 'opt-child', version: '1.0.0' }),
+      },
+    },
+  })
+  const tree = await buildIdeal(path, { allowDirectory: 'root' })
+  t.ok(tree.children.get('parent'), 'parent (root-edge) is in the tree')
+  const optChild = [...tree.inventory.values()].find(n => n.name === 'opt-child')
+  t.ok(optChild, 'blocked optional transitive is recorded in the tree')
+  t.equal(optChild.inert, true, 'blocked optional transitive is marked inert (will not be reified)')
+})
+
+t.test('incomplete manifest from proxy registry prunes optional dep (#9342)', async t => {
+  // When a proxy/upstream registry returns an
+  // incomplete manifest for a platform-specific optional dep it hasn't
+  // cached, the version field is missing.  Our fix in #nodeFromSpec
+  // treats this as EINCOMPLETEMANIFEST load failure so that
+  // #pruneFailedOptional() marks it inert instead of writing a broken
+  // lockfile entry like {"optional": true}.
+  const registry = createRegistry(t, false)
+
+  // parent package with an optional dep
+  const esbuildPack = registry.packument({
+    name: 'esbuild',
+    version: '0.27.7',
+    optionalDependencies: {
+      '@esbuild/aix-ppc64': '0.27.7',
+    },
+  })
+  const esbuildManifest = registry.manifest({ name: 'esbuild', packuments: [esbuildPack] })
+  await registry.package({ manifest: esbuildManifest })
+
+  // simulate proxy registry returning incomplete manifest (no version field)
+  await registry.package({
+    manifest: {
+      _id: '@esbuild/aix-ppc64',
+      _rev: '00-incomplete',
+      name: '@esbuild/aix-ppc64',
+      description: 'incomplete proxy manifest',
+      'dist-tags': { latest: '0.27.7' },
+      versions: {
+        '0.27.7': {
+          _id: '@esbuild/aix-ppc64@0.27.7',
+          name: '@esbuild/aix-ppc64',
+          // NO version field — this is the proxy registry bug
+          dependencies: {},
+          dist: {
+            tarball: 'https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.27.7.tgz',
+          },
+        },
+      },
+    },
+  })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-incomplete-manifest',
+      version: '1.0.0',
+      devDependencies: { esbuild: '^0.27.0' },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree()
+
+  // esbuild itself should be in the tree
+  t.ok(tree.children.get('esbuild'), 'esbuild is installed')
+  t.equal(tree.children.get('esbuild').version, '0.27.7', 'esbuild has correct version')
+
+  // @esbuild/aix-ppc64 should be marked inert (EINCOMPLETEMANIFEST → loadFailure)
+  // pruneFailedOptional marks it inert so it won't be written to lockfile
+  const aixNodes = [...tree.inventory.query('name', '@esbuild/aix-ppc64')]
+  const aixNode = aixNodes.find(n => n.root === tree)
+  t.ok(aixNode, 'incomplete optional dep node exists in tree')
+  t.equal(aixNode.inert, true, 'incomplete optional dep is marked inert')
+  t.equal(aixNode.errors[0].code, 'EINCOMPLETEMANIFEST',
+    'node has EINCOMPLETEMANIFEST error')
+})

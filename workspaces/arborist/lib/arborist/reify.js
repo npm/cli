@@ -4,6 +4,7 @@ const hgi = require('hosted-git-info')
 const npa = require('npm-package-arg')
 const packageContents = require('@npmcli/installed-package-contents')
 const pacote = require('pacote')
+const { pickRegistry } = require('npm-registry-fetch')
 const promiseAllRejectLate = require('promise-all-reject-late')
 const runScript = require('@npmcli/run-script')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
@@ -704,7 +705,14 @@ module.exports = cls => class Reifier extends cls {
         ...this.options,
         resolved: node.resolved,
         integrity: node.integrity,
-        _isRoot: node.parent?.isProjectRoot || node.parent?.isWorkspace,
+        // A node counts as "root" for allow-* enforcement if it satisfies at least one valid dependency edge declared by the project root or a workspace.
+        // node.parent is unsafe here: after hoisting, transitive packages can have the project root as their tree parent.
+        _isRoot: [...node.edgesIn].some(e =>
+          e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
+        ),
+        // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.
+        // Override only when we can prove the URL is registry-mediated; see #isRegistryResolvedTarball.
+        ...(this.#isRegistryResolvedTarball(node) ? { allowRemote: 'all' } : {}),
       })
       // store nodes don't use Node class so node.package doesn't get updated
       if (node.isInStore) {
@@ -826,6 +834,24 @@ module.exports = cls => class Reifier extends cls {
     wrapper.inventory = actualTree.inventory
 
     return wrapper
+  }
+
+  // When extracting a registry-resolved package, the spec we hand to pacote is name@URL.
+  // pacote re-parses that with npa and gets spec.type === 'remote', so without an override the allow-remote gate would fire on every registry tarball (both =none and =root mis-fire).
+  // Returns true only when we are confident this is a registry-mediated install: the node's inbound edges must all be registry-typed (no exotic spec smuggled the URL in) AND the resolved URL's host must match the registry npm-registry-fetch selected for this spec, so a tampered lockfile pointing at an attacker host still hits the gate.
+  #isRegistryResolvedTarball (node) {
+    if (!node.resolved || !node.isRegistryDependency) {
+      return false
+    }
+    try {
+      // Hostnames are case-insensitive; lowercase both sides for safety even though WHATWG URL already normalizes.
+      const resolvedHost = new URL(node.resolved).hostname.toLowerCase()
+      // pickRegistry only consults spec.scope, so a bare-name (tag) parse is sufficient and avoids a node.version dependency.
+      const registryHost = new URL(pickRegistry(npa(node.name), this.options)).hostname.toLowerCase()
+      return resolvedHost === registryHost
+    } catch {
+      return false
+    }
   }
 
   #registryResolved (resolved) {

@@ -1960,6 +1960,65 @@ t.test('filtered reification in workspaces', async t => {
     'hidden lockfile - foo/x linked, c, old x, removed a')
 })
 
+// Regression for https://github.com/npm/cli/issues/5463: a workspace whose directory has been deleted should not leave behind an extraneous entry (or a lingering reference in the root's workspaces array) in package-lock.json after `npm install`.
+t.test('removed workspace is pruned from package-lock.json', async t => {
+  const setup = () => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'remove-ws',
+        version: '1.0.0',
+        workspaces: ['packages/a', 'packages/b'],
+      }),
+      packages: {
+        a: {
+          'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }),
+        },
+        b: {
+          'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }),
+        },
+      },
+    })
+    return path
+  }
+
+  // The lockfile's root.workspaces array mirrors package.json verbatim and is intentionally not mutated here, so we only assert that orphan package/link entries are dropped.
+  const assertClean = (t, path, label) => {
+    const lock = JSON.parse(fs.readFileSync(`${path}/package-lock.json`, 'utf8'))
+    t.notOk(lock.packages['packages/b'],
+      `${label}: packages/b entry removed from lockfile`)
+    t.notOk(lock.packages['node_modules/b'],
+      `${label}: node_modules/b link removed from lockfile`)
+    t.notOk(lock.dependencies && lock.dependencies.b,
+      `${label}: dependencies.b removed from legacy lockfile`)
+  }
+
+  for (const strategy of ['hoisted', 'linked']) {
+    t.test(`${strategy} strategy, package.json kept stale`, async t => {
+      const path = setup()
+      createRegistry(t, false)
+      await reify(path, { installStrategy: strategy })
+      // Remove only the directory, leave package.json's workspaces array alone.
+      fs.rmSync(`${path}/packages/b`, { recursive: true, force: true })
+      await reify(path, { installStrategy: strategy })
+      assertClean(t, path, `${strategy}/keep-pj`)
+    })
+
+    t.test(`${strategy} strategy, package.json updated`, async t => {
+      const path = setup(strategy)
+      createRegistry(t, false)
+      await reify(path, { installStrategy: strategy })
+      fs.rmSync(`${path}/packages/b`, { recursive: true, force: true })
+      fs.writeFileSync(`${path}/package.json`, JSON.stringify({
+        name: 'remove-ws',
+        version: '1.0.0',
+        workspaces: ['packages/a'],
+      }))
+      await reify(path, { installStrategy: strategy })
+      assertClean(t, path, `${strategy}/clean-pj`)
+    })
+  }
+})
+
 t.test('project with bundled deps and a link dep on itself', async t => {
   const pkg = {
     name: '@isaacs/testing-bundle-self-link',
@@ -3747,6 +3806,39 @@ t.test('install strategy linked', async (t) => {
     const store = fs.lstatSync(resolve(path, 'node_modules', '.store'))
     t.ok(store.isDirectory(), 'abbrev got installed')
     t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
+  })
+
+  t.test('does not re-create a workspace dir removed from manifest', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9331
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        workspaces: ['packages/a', 'packages/b'],
+      }),
+      packages: {
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+      },
+    })
+
+    createRegistry(t, false)
+    await reify(path, { installStrategy: 'linked' })
+
+    // Drop workspace b: remove its directory and its entry from package.json.
+    fs.rmSync(resolve(path, 'packages/b'), { recursive: true, force: true })
+    fs.writeFileSync(resolve(path, 'package.json'), JSON.stringify({
+      name: 'host',
+      version: '1.0.0',
+      workspaces: ['packages/a'],
+    }))
+
+    await reify(path, { installStrategy: 'linked' })
+
+    t.notOk(
+      fs.existsSync(resolve(path, 'packages/b')),
+      'packages/b should remain absent after reinstall'
+    )
   })
 })
 

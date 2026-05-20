@@ -3183,10 +3183,6 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
     "apps/x": {
       "version": "1.2.3"
     },
-    "foo/x": {
-      "version": "1.2.3",
-      "extraneous": true
-    },
     "node_modules/c": {
       "resolved": "packages/c",
       "link": true
@@ -32369,9 +32365,6 @@ Object {
       "workspaces": Array [
         "e",
       ],
-    },
-    "e": Object {
-      "extraneous": true,
     },
     "node_modules/a": Object {
       "extraneous": true,

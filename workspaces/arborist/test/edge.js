@@ -198,7 +198,7 @@ t.matchSnapshot(new Edge({
   type: 'peer',
   name: 'a',
   spec: '1.2.3',
-}), 'peer dep at top level, nesting is ok')
+}), 'peer dep at top level, nesting allowed')
 reset(top)
 reset(a)
 
@@ -215,7 +215,7 @@ t.matchSnapshot(new Edge({
   type: 'peer',
   name: 'aa',
   spec: '1.2.3',
-}), 'peer dep below top level, nesting not ok')
+}), 'peer dep below top level, nesting disallowed')
 reset(a)
 reset(aa)
 
@@ -224,7 +224,7 @@ t.matchSnapshot(new Edge({
   type: 'peer',
   name: 'b',
   spec: '1.2.3',
-}), 'peer dep below top level, parallel ok')
+}), 'peer dep below top level, parallel allowed')
 reset(a)
 reset(b)
 

@@ -842,6 +842,16 @@ This is a map of package name to version or URL, just like the `dependencies` ob
 The difference is that build failures do not cause installation to fail.
 Running `npm install --omit=optional` will prevent these dependencies from being installed.
 
+For example:
+
+```json
+{
+  "optionalDependencies": {
+    "@npm/foo": "^1.0.0"
+  }
+}
+```
+
 It is still your program's responsibility to handle the lack of the dependency.
 For example, something like this:
 
