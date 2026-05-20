@@ -1,5 +1,18 @@
 # Changelog
 
+## [9.6.0](https://github.com/npm/cli/compare/arborist-v9.5.0...arborist-v9.6.0) (2026-05-20)
+### Features
+* [`8df10f5`](https://github.com/npm/cli/commit/8df10f5a399048c9d2dd7eba1d65c0b4b6a5b1c8) [#9339](https://github.com/npm/cli/pull/9339) add allow-git/allow-file/allow-directory/allow-remote configs (@owlstronaut)
+### Bug Fixes
+* [`d7e195a`](https://github.com/npm/cli/commit/d7e195a703d97e44fc3d9afee5a8bbc1c736a296) [#9362](https://github.com/npm/cli/pull/9362) arborist: skip lockfile entries for optional deps with incomplete manifests (#9362) (@github-actions[bot], @ecanturk, @owlstronaut)
+* [`9c78f2a`](https://github.com/npm/cli/commit/9c78f2a06818e2df27a186628e61b8aee7228be2) [#9361](https://github.com/npm/cli/pull/9361) arborist: only forward Link overrides when a rule names a target dep (@manzoorwanijk)
+* [`468550f`](https://github.com/npm/cli/commit/468550fb8f6ded97df03e6b8a82dbfbcb7b47d30) [#9339](https://github.com/npm/cli/pull/9339) refactor #failureNode, adjust tests and safety (@owlstronaut)
+* [`cabe249`](https://github.com/npm/cli/commit/cabe2499347c17d97eecc3bbca3d96fe2f556d0d) [#9339](https://github.com/npm/cli/pull/9339) allow-remote=none does not block registry tarballs (@owlstronaut)
+* [`2169018`](https://github.com/npm/cli/commit/21690186fe054c8a2d1e54fbf8ed7aa9b7978d71) [#9340](https://github.com/npm/cli/pull/9340) arborist: skip extraneous fsChildren in linked-strategy reify (@manzoorwanijk)
+* [`1d0395e`](https://github.com/npm/cli/commit/1d0395ef02d1b68122f9f4964c2ad56e3303cfc4) [#9338](https://github.com/npm/cli/pull/9338) arborist: prune removed-workspace entries from package-lock.json (@manzoorwanijk)
+### Chores
+* [`6a2bdbc`](https://github.com/npm/cli/commit/6a2bdbc81b9653d98b54133cc6a3fcb61c1d1d21) [#9350](https://github.com/npm/cli/pull/9350) change test wording to not collide with tap (#9350) (@github-actions[bot], @owlstronaut)
+
 ## [9.5.0](https://github.com/npm/cli/compare/arborist-v9.4.3...arborist-v9.5.0) (2026-05-06)
 ### Features
 * [`20fb6a0`](https://github.com/npm/cli/commit/20fb6a0d0f2ffc65656d08504eb6ca14980d2c71) [#9312](https://github.com/npm/cli/pull/9312) arborist: add lockfileString() for in-memory lockfile generation (@ljharb)

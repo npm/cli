@@ -1,5 +1,34 @@
 # Changelog
 
+## [11.15.0](https://github.com/npm/cli/compare/v11.14.1...v11.15.0) (2026-05-20)
+### Features
+* [`0d5d899`](https://github.com/npm/cli/commit/0d5d899ea8a6981a2a1d3c724384d12fd1908a90) [#9379](https://github.com/npm/cli/pull/9379) npm stage (@reggi, @Copilot)
+* [`1433740`](https://github.com/npm/cli/commit/1433740a8b42f9359a2178d00a40e3f770b6b1b2) [#9376](https://github.com/npm/cli/pull/9376) add permissions support to trust commands (#9376) (@github-actions[bot], @reggi, @Copilot)
+* [`8df10f5`](https://github.com/npm/cli/commit/8df10f5a399048c9d2dd7eba1d65c0b4b6a5b1c8) [#9339](https://github.com/npm/cli/pull/9339) add allow-git/allow-file/allow-directory/allow-remote configs (@owlstronaut)
+### Bug Fixes
+* [`39b625e`](https://github.com/npm/cli/commit/39b625e60628e7fdc96ee88cbe1c3b613bdc1ac5) [#9381](https://github.com/npm/cli/pull/9381) key stage download --json output by package name (#9381) (@reggi, @Copilot)
+* [`6aa332d`](https://github.com/npm/cli/commit/6aa332d4cc37c0981f29cfb7e1efc66eee65578c) [#9339](https://github.com/npm/cli/pull/9339) allow min-release-age in npmrc to coexist with --before (@raazkhnl)
+* [`468550f`](https://github.com/npm/cli/commit/468550fb8f6ded97df03e6b8a82dbfbcb7b47d30) [#9339](https://github.com/npm/cli/pull/9339) refactor #failureNode, adjust tests and safety (@owlstronaut)
+* [`cabe249`](https://github.com/npm/cli/commit/cabe2499347c17d97eecc3bbca3d96fe2f556d0d) [#9339](https://github.com/npm/cli/pull/9339) allow-remote=none does not block registry tarballs (@owlstronaut)
+### Dependencies
+* [`8416a60`](https://github.com/npm/cli/commit/8416a6034d5998bdc3980fe0c682b26579ed207e) [#9383](https://github.com/npm/cli/pull/9383) `socks@2.8.9`
+* [`5e5a25b`](https://github.com/npm/cli/commit/5e5a25b5a1f2c2cb6911be22fbf4456d3ed17d88) [#9383](https://github.com/npm/cli/pull/9383) `lru-cache@11.5.0`
+* [`a6f9ad2`](https://github.com/npm/cli/commit/a6f9ad298531c6619f0b2df16e4ed3c27b616765) [#9383](https://github.com/npm/cli/pull/9383) `ip-address@10.2.0`
+* [`63f8114`](https://github.com/npm/cli/commit/63f8114f275830f55c3b0427a2ca9fff4e4cf333) [#9383](https://github.com/npm/cli/pull/9383) `brace-expansion@5.0.6`
+* [`6918b4c`](https://github.com/npm/cli/commit/6918b4cd149a3917e7d84beddb1b20138cc0ebac) [#9383](https://github.com/npm/cli/pull/9383) `bin-links@6.0.2`
+* [`bf84079`](https://github.com/npm/cli/commit/bf84079a507c20d8215bc0154bac65e6d14b27f8) [#9383](https://github.com/npm/cli/pull/9383) `tar@7.5.15`
+* [`bdef82c`](https://github.com/npm/cli/commit/bdef82c2e003b682f4be324a1a45a5a6b09d0ec1) [#9383](https://github.com/npm/cli/pull/9383) `semver@7.8.0`
+* [`3f38a67`](https://github.com/npm/cli/commit/3f38a6777ae746e136756521e0134f92a4425c90) [#9383](https://github.com/npm/cli/pull/9383) `hosted-git-info@9.0.3`
+### Chores
+* [`816f3bf`](https://github.com/npm/cli/commit/816f3bfeed3b8f19bd480ba305eb48c71e779f59) [#9383](https://github.com/npm/cli/pull/9383) dev dependency updates (@owlstronaut)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.6.0): `@npmcli/arborist@9.6.0`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v10.9.1): `@npmcli/config@10.9.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.1.8): `libnpmdiff@8.1.8`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.2.8): `libnpmexec@10.2.8`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.22): `libnpmfund@7.0.22`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.1.8): `libnpmpack@9.1.8`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v11.2.0): `libnpmpublish@11.2.0`
+
 ## [11.14.1](https://github.com/npm/cli/compare/v11.14.0...v11.14.1) (2026-05-08)
 ### Bug Fixes
 * [`dca12cb`](https://github.com/npm/cli/commit/dca12cb24199aa7046eb53547097906b8731e51b) [#9328](https://github.com/npm/cli/pull/9328) remove settings (#9328) (@github-actions[bot], @owlstronaut)
