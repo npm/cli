@@ -44,6 +44,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.5.0): `@npmcli/arborist@9.5.0`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.6.0): `@npmcli/arborist@9.6.0`
+
 ## [10.2.6](https://github.com/npm/cli/compare/libnpmexec-v10.2.5...libnpmexec-v10.2.6) (2026-04-22)
 ### Bug Fixes
 * [`e200696`](https://github.com/npm/cli/commit/e200696c3555fc9a9a0e388064da0b5238ae2b73) [#9256](https://github.com/npm/cli/pull/9256) libnpmexec: skip redundant reify for cached directory specs (#9256) (@github-actions[bot], @manzoorwanijk)

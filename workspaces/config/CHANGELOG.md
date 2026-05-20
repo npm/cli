@@ -1,5 +1,10 @@
 # Changelog
 
+## [10.9.1](https://github.com/npm/cli/compare/config-v10.9.0...config-v10.9.1) (2026-05-20)
+### Bug Fixes
+* [`25708d3`](https://github.com/npm/cli/commit/25708d3500a5193fd656e91fdd27695efe85426c) [#9339](https://github.com/npm/cli/pull/9339) min-release-age=0 doesn't filter, honor cross-source precedence (@owlstronaut)
+* [`6aa332d`](https://github.com/npm/cli/commit/6aa332d4cc37c0981f29cfb7e1efc66eee65578c) [#9339](https://github.com/npm/cli/pull/9339) allow min-release-age in npmrc to coexist with --before (@raazkhnl)
+
 ## [10.9.0](https://github.com/npm/cli/compare/config-v10.8.1...config-v10.9.0) (2026-05-06)
 ### Features
 * [`45fc5e0`](https://github.com/npm/cli/commit/45fc5e0dd144bb21148d7aa35439695ab44cdfda) [#9288](https://github.com/npm/cli/pull/9288) add allow-directory, allow-file, and allow-remote (#9288) (@github-actions[bot], @wraithgar)
