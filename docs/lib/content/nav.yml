@@ -165,6 +165,9 @@
   - title: npm shrinkwrap
     url: /commands/npm-shrinkwrap
     description: Lock down dependency versions for publication
+  - title: npm stage
+    url: /commands/npm-stage
+    description: Stage packages for publishing
   - title: npm star
     url: /commands/npm-star
     description: Mark your favorite packages
