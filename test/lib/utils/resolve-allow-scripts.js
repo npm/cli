@@ -68,7 +68,7 @@ t.test('reads from package.json when only package.json is set', async t => {
   t.strictSame(result.policy, { canvas: true, 'core-js': false, 'sharp@0.33.2': true })
 })
 
-t.test('CLI flag wins over package.json (RFC layer 1 > layer 2)', async t => {
+t.test('--allow-scripts CLI flag is rejected in project-scoped installs', async t => {
   const mock = await mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -80,13 +80,26 @@ t.test('CLI flag wins over package.json (RFC layer 1 > layer 2)', async t => {
     config: { 'allow-scripts': 'canvas' },
   })
   const resolveAllowScripts = loadResolver(t)
+  await t.rejects(
+    resolveAllowScripts(mock.npm),
+    { code: 'EALLOWSCRIPTS', message: /--allow-scripts is not allowed/ }
+  )
+})
+
+t.test('--allow-scripts CLI flag is accepted in global installs (RFC layer 1 wins)', async t => {
+  const mock = await mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'p',
+        allowScripts: { sharp: true },
+      }),
+    },
+    config: { 'allow-scripts': 'canvas', global: true },
+  })
+  const resolveAllowScripts = loadResolver(t)
   const result = await resolveAllowScripts(mock.npm)
   t.equal(result.source, 'cli')
   t.strictSame(result.policy, { canvas: true })
-  t.match(
-    mock.logs.warn.byTitle('allow-scripts'),
-    [/package.json#allowScripts is being ignored because --allow-scripts/]
-  )
 })
 
 t.test('package.json wins over .npmrc setting (RFC layer 2 > layer 3)', async t => {
@@ -124,7 +137,7 @@ t.test('.npmrc setting is used when nothing higher is set', async t => {
   t.strictSame(result.policy, { canvas: true, sharp: true })
 })
 
-t.test('CLI flag wins over .npmrc with no package.json policy', async t => {
+t.test('--allow-scripts CLI flag is accepted via skipProjectConfig (npm exec)', async t => {
   const mock = await mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({ name: 'p' }),
@@ -133,7 +146,7 @@ t.test('CLI flag wins over .npmrc with no package.json policy', async t => {
     config: { 'allow-scripts': 'sharp' },
   })
   const resolveAllowScripts = loadResolver(t)
-  const result = await resolveAllowScripts(mock.npm)
+  const result = await resolveAllowScripts(mock.npm, { skipProjectConfig: true })
   t.equal(result.source, 'cli')
   t.strictSame(result.policy, { sharp: true })
   t.match(

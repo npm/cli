@@ -1119,17 +1119,17 @@ t.test('allow-scripts', t => {
   t.end()
 })
 
-t.test('strict-script-builds', t => {
+t.test('strict-allow-scripts', t => {
   const defs = mockDefs()
-  t.equal(defs['strict-script-builds'].default, false)
-  t.equal(defs['strict-script-builds'].type, Boolean)
+  t.equal(defs['strict-allow-scripts'].default, false)
+  t.equal(defs['strict-allow-scripts'].type, Boolean)
   const flat = {}
-  defs['strict-script-builds'].flatten(
-    'strict-script-builds',
-    { 'strict-script-builds': true },
+  defs['strict-allow-scripts'].flatten(
+    'strict-allow-scripts',
+    { 'strict-allow-scripts': true },
     flat
   )
-  t.strictSame(flat, { strictScriptBuilds: true })
+  t.strictSame(flat, { strictAllowScripts: true })
   t.end()
 })
 

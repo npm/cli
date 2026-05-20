@@ -172,7 +172,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "sign-git-commit": false,
   "sign-git-tag": false,
   "strict-peer-deps": false,
-  "strict-script-builds": false,
+  "strict-allow-scripts": false,
   "strict-ssl": true,
   "tag": "latest",
   "tag-version-prefix": "v",
@@ -357,8 +357,8 @@ searchstaleness = 900
 shell = "{SHELL}"
 sign-git-commit = false
 sign-git-tag = false
+strict-allow-scripts = false
 strict-peer-deps = false
-strict-script-builds = false
 strict-ssl = true
 tag = "latest"
 tag-version-prefix = "v"

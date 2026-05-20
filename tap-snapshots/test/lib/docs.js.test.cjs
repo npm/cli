@@ -304,20 +304,18 @@ to the same value as the current version.
 
 Comma-separated list of packages whose install-time lifecycle scripts
 (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for non-registry
-dependencies) are allowed to run. Used as a fallback when no \`allowScripts\`
-field is set in the root project's \`package.json\`, and for global/npx
-contexts where no project \`package.json\` exists.
+dependencies) are allowed to run.
+
+This setting is intended for one-off and global contexts: \`npm exec\`, \`npx\`,
+and \`npm install -g\`, where no project \`package.json\` is involved. For
+team-wide policy in a project, use the \`allowScripts\` field in
+\`package.json\` (which also supports explicit denials), or configure it in
+\`.npmrc\`. Passing \`--allow-scripts\` on the command line during a
+project-scoped \`npm install\`, \`ci\`, \`update\`, or \`rebuild\` is an error.
 
 Each name is matched against a dependency's resolved identity, not against
-the package's self-reported name. CLI flags take precedence over
-\`package.json\`, which takes precedence over this setting. Layers are not
-merged.
-
-This setting is part of an opt-in install-script policy that will land
-across multiple npm releases. In this release, install scripts still run as
-they always have. Setting this field does not block anything; it records
-your intent so the install command can list the packages that would still
-need to be reviewed before the future release that flips the default.
+the package's self-reported name. \`--ignore-scripts\` and
+\`--dangerously-allow-all-scripts\` both override this setting.
 
 
 
@@ -521,15 +519,10 @@ are same as \`cpu\` field of package.json, which comes from \`process.arch\`.
 * Default: false
 * Type: Boolean
 
-Reserved for a future release. When that release lands, setting this to
-\`true\` will tell npm to run every dependency install script regardless of
-the \`allowScripts\` policy — an escape hatch for migration. Its use will be
-strongly discouraged.
-
-In this release, install scripts still run as they always have, so this
-setting has no effect on install behaviour. The flag is registered now so
-projects can pin it in their tooling ahead of the release that flips the
-default.
+If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+dependency install script regardless of whether it was approved or denied.
+Intended as a migration escape hatch only; its use is strongly discouraged.
+\`--ignore-scripts\` still takes precedence over this setting.
 
 
 
@@ -1880,6 +1873,22 @@ this to work properly.
 
 
 
+#### \`strict-allow-scripts\`
+
+* Default: false
+* Type: Boolean
+
+If \`true\`, turn the install-script policy from a warning into a hard error:
+any dependency with install scripts not covered by \`allowScripts\` will fail
+the install instead of running with a notice.
+
+Dependencies explicitly denied with \`false\` in \`allowScripts\` are always
+silently skipped; this setting only affects unreviewed entries.
+\`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this
+setting.
+
+
+
 #### \`strict-peer-deps\`
 
 * Default: false
@@ -1898,21 +1907,6 @@ the range set in their package's \`peerDependencies\` object.
 When such an override is performed, a warning is printed, explaining the
 conflict and the packages involved. If \`--strict-peer-deps\` is set, then
 this warning is treated as a failure.
-
-
-
-#### \`strict-script-builds\`
-
-* Default: false
-* Type: Boolean
-
-Reserved for a future release. When that release lands, setting this to
-\`true\` will turn the install-script policy from a warning into a hard error:
-any unreviewed install script will fail the install instead of being skipped
-with a notice.
-
-In this release, install scripts still run as they always have, so this
-setting has no effect on install behaviour.
 
 
 
@@ -2542,7 +2536,7 @@ Array [
   "sign-git-commit",
   "sign-git-tag",
   "strict-peer-deps",
-  "strict-script-builds",
+  "strict-allow-scripts",
   "strict-ssl",
   "tag",
   "tag-version-prefix",
@@ -2705,7 +2699,7 @@ Array [
   "sign-git-commit",
   "sign-git-tag",
   "strict-peer-deps",
-  "strict-script-builds",
+  "strict-allow-scripts",
   "strict-ssl",
   "tag",
   "tag-version-prefix",
@@ -2887,8 +2881,8 @@ Object {
   "signGitCommit": false,
   "signGitTag": false,
   "silent": false,
+  "strictAllowScripts": false,
   "strictPeerDeps": false,
-  "strictScriptBuilds": false,
   "strictSSL": true,
   "tagVersionPrefix": "v",
   "timeout": 300000,
@@ -3207,7 +3201,7 @@ Options:
 [--allow-directory <all|none|root>] [--allow-file <all|none|root>]
 [--allow-git <all|none|root>] [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
-[--strict-script-builds] [--dangerously-allow-all-scripts] [--no-audit]
+[--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
@@ -3251,11 +3245,11 @@ Options:
   --allow-scripts
     Comma-separated list of packages whose install-time lifecycle scripts
 
-  --strict-script-builds
-    Reserved for a future release. When that release lands, setting this
+  --strict-allow-scripts
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
-    Reserved for a future release. When that release lands, setting this
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -3305,7 +3299,7 @@ aliases: clean-install, ic, install-clean, isntall-clean
 #### \`allow-git\`
 #### \`allow-remote\`
 #### \`allow-scripts\`
-#### \`strict-script-builds\`
+#### \`strict-allow-scripts\`
 #### \`dangerously-allow-all-scripts\`
 #### \`audit\`
 #### \`bin-links\`
@@ -3793,7 +3787,7 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
-[--strict-script-builds] [--dangerously-allow-all-scripts]
+[--strict-allow-scripts] [--dangerously-allow-all-scripts]
 
   --package
     The package or packages to install for [\`npm exec\`](/commands/npm-exec)
@@ -3813,11 +3807,11 @@ Options:
   --allow-scripts
     Comma-separated list of packages whose install-time lifecycle scripts
 
-  --strict-script-builds
-    Reserved for a future release. When that release lands, setting this
+  --strict-allow-scripts
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
-    Reserved for a future release. When that release lands, setting this
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
 
 
 alias: x
@@ -3839,7 +3833,7 @@ alias: x
 #### \`workspaces\`
 #### \`include-workspace-root\`
 #### \`allow-scripts\`
-#### \`strict-script-builds\`
+#### \`strict-allow-scripts\`
 #### \`dangerously-allow-all-scripts\`
 `
 
@@ -4198,7 +4192,7 @@ Options:
 [--allow-file <all|none|root>] [--allow-git <all|none|root>]
 [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
-[--strict-script-builds] [--dangerously-allow-all-scripts] [--no-audit]
+[--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--before <date>] [--min-release-age <days>] [--no-bin-links] [--no-fund]
 [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -4261,11 +4255,11 @@ Options:
   --allow-scripts
     Comma-separated list of packages whose install-time lifecycle scripts
 
-  --strict-script-builds
-    Reserved for a future release. When that release lands, setting this
+  --strict-allow-scripts
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
-    Reserved for a future release. When that release lands, setting this
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4336,7 +4330,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`allow-git\`
 #### \`allow-remote\`
 #### \`allow-scripts\`
-#### \`strict-script-builds\`
+#### \`strict-allow-scripts\`
 #### \`dangerously-allow-all-scripts\`
 #### \`audit\`
 #### \`before\`
@@ -4367,7 +4361,7 @@ Options:
 [--allow-directory <all|none|root>] [--allow-file <all|none|root>]
 [--allow-git <all|none|root>] [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
-[--strict-script-builds] [--dangerously-allow-all-scripts] [--no-audit]
+[--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
@@ -4411,11 +4405,11 @@ Options:
   --allow-scripts
     Comma-separated list of packages whose install-time lifecycle scripts
 
-  --strict-script-builds
-    Reserved for a future release. When that release lands, setting this
+  --strict-allow-scripts
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
-    Reserved for a future release. When that release lands, setting this
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4465,7 +4459,7 @@ aliases: cit, clean-install-test, sit
 #### \`allow-git\`
 #### \`allow-remote\`
 #### \`allow-scripts\`
-#### \`strict-script-builds\`
+#### \`strict-allow-scripts\`
 #### \`dangerously-allow-all-scripts\`
 #### \`audit\`
 #### \`bin-links\`
@@ -4494,7 +4488,7 @@ Options:
 [--allow-file <all|none|root>] [--allow-git <all|none|root>]
 [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
-[--strict-script-builds] [--dangerously-allow-all-scripts] [--no-audit]
+[--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--before <date>] [--min-release-age <days>] [--no-bin-links] [--no-fund]
 [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -4557,11 +4551,11 @@ Options:
   --allow-scripts
     Comma-separated list of packages whose install-time lifecycle scripts
 
-  --strict-script-builds
-    Reserved for a future release. When that release lands, setting this
+  --strict-allow-scripts
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
-    Reserved for a future release. When that release lands, setting this
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -4632,7 +4626,7 @@ alias: it
 #### \`allow-git\`
 #### \`allow-remote\`
 #### \`allow-scripts\`
-#### \`strict-script-builds\`
+#### \`strict-allow-scripts\`
 #### \`dangerously-allow-all-scripts\`
 #### \`audit\`
 #### \`before\`
@@ -5523,7 +5517,7 @@ npm rebuild [<package-spec>] ...]
 Options:
 [-g|--global] [--no-bin-links] [--foreground-scripts] [--ignore-scripts]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
-[--strict-script-builds] [--dangerously-allow-all-scripts]
+[--strict-allow-scripts] [--dangerously-allow-all-scripts]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -5542,11 +5536,11 @@ Options:
   --allow-scripts
     Comma-separated list of packages whose install-time lifecycle scripts
 
-  --strict-script-builds
-    Reserved for a future release. When that release lands, setting this
+  --strict-allow-scripts
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
-    Reserved for a future release. When that release lands, setting this
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
 
   -w|--workspace
     Enable running a command in the context of the configured workspaces of the
@@ -5576,7 +5570,7 @@ alias: rb
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`allow-scripts\`
-#### \`strict-script-builds\`
+#### \`strict-allow-scripts\`
 #### \`dangerously-allow-all-scripts\`
 #### \`workspace\`
 #### \`workspaces\`
@@ -6318,7 +6312,7 @@ Options:
 [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
 [--ignore-scripts]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
-[--strict-script-builds] [--dangerously-allow-all-scripts] [--no-audit]
+[--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--before <date>] [--min-release-age <days>] [--no-bin-links] [--no-fund]
 [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -6360,11 +6354,11 @@ Options:
   --allow-scripts
     Comma-separated list of packages whose install-time lifecycle scripts
 
-  --strict-script-builds
-    Reserved for a future release. When that release lands, setting this
+  --strict-allow-scripts
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
-    Reserved for a future release. When that release lands, setting this
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
 
   --audit
     When "true" submit audit reports alongside the current npm command to the
@@ -6419,7 +6413,7 @@ aliases: u, up, upgrade, udpate
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`allow-scripts\`
-#### \`strict-script-builds\`
+#### \`strict-allow-scripts\`
 #### \`dangerously-allow-all-scripts\`
 #### \`audit\`
 #### \`before\`

@@ -254,21 +254,19 @@ const definitions = {
     description: `
       Comma-separated list of packages whose install-time lifecycle scripts
       (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for
-      non-registry dependencies) are allowed to run. Used as a fallback when
-      no \`allowScripts\` field is set in the root project's \`package.json\`,
-      and for global/npx contexts where no project \`package.json\` exists.
+      non-registry dependencies) are allowed to run.
+
+      This setting is intended for one-off and global contexts: \`npm exec\`,
+      \`npx\`, and \`npm install -g\`, where no project \`package.json\` is
+      involved. For team-wide policy in a project, use the \`allowScripts\`
+      field in \`package.json\` (which also supports explicit denials), or
+      configure it in \`.npmrc\`. Passing \`--allow-scripts\` on the command
+      line during a project-scoped \`npm install\`, \`ci\`, \`update\`, or
+      \`rebuild\` is an error.
 
       Each name is matched against a dependency's resolved identity, not
-      against the package's self-reported name. CLI flags take precedence
-      over \`package.json\`, which takes precedence over this setting.
-      Layers are not merged.
-
-      This setting is part of an opt-in install-script policy that will land
-      across multiple npm releases. In this release, install scripts still
-      run as they always have. Setting this field does not block anything;
-      it records your intent so the install command can list the packages
-      that would still need to be reviewed before the future release that
-      flips the default.
+      against the package's self-reported name. \`--ignore-scripts\` and
+      \`--dangerously-allow-all-scripts\` both override this setting.
   `,
     flatten (key, obj, flatOptions) {
       const raw = obj[key]
@@ -588,15 +586,11 @@ const definitions = {
     default: false,
     type: Boolean,
     description: `
-      Reserved for a future release. When that release lands, setting this
-      to \`true\` will tell npm to run every dependency install script
-      regardless of the \`allowScripts\` policy — an escape hatch for
-      migration. Its use will be strongly discouraged.
-
-      In this release, install scripts still run as they always have, so
-      this setting has no effect on install behaviour. The flag is
-      registered now so projects can pin it in their tooling ahead of the
-      release that flips the default.
+      If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+      dependency install script regardless of whether it was approved or
+      denied. Intended as a migration escape hatch only; its use is strongly
+      discouraged. \`--ignore-scripts\` still takes precedence over this
+      setting.
     `,
     flatten,
   }),
@@ -2310,17 +2304,19 @@ const definitions = {
     `,
     flatten,
   }),
-  'strict-script-builds': new Definition('strict-script-builds', {
+  'strict-allow-scripts': new Definition('strict-allow-scripts', {
     default: false,
     type: Boolean,
     description: `
-      Reserved for a future release. When that release lands, setting this
-      to \`true\` will turn the install-script policy from a warning into a
-      hard error: any unreviewed install script will fail the install
-      instead of being skipped with a notice.
+      If \`true\`, turn the install-script policy from a warning into a hard
+      error: any dependency with install scripts not covered by
+      \`allowScripts\` will fail the install instead of running with a
+      notice.
 
-      In this release, install scripts still run as they always have, so
-      this setting has no effect on install behaviour.
+      Dependencies explicitly denied with \`false\` in \`allowScripts\` are
+      always silently skipped; this setting only affects unreviewed entries.
+      \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both
+      override this setting.
     `,
     flatten,
   }),

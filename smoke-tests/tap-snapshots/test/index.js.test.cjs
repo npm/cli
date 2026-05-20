@@ -62,7 +62,7 @@ npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
 npm error [--allow-directory <all|none|root>] [--allow-file <all|none|root>]
 npm error [--allow-git <all|none|root>] [--allow-remote <all|none|root>]
 npm error [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
-npm error [--strict-script-builds] [--dangerously-allow-all-scripts] [--no-audit]
+npm error [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 npm error [--no-bin-links] [--no-fund] [--dry-run]
 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 npm error [--workspaces] [--include-workspace-root] [--install-links]
@@ -106,11 +106,11 @@ npm error
 npm error   --allow-scripts
 npm error     Comma-separated list of packages whose install-time lifecycle scripts
 npm error
-npm error   --strict-script-builds
-npm error     Reserved for a future release. When that release lands, setting this
+npm error   --strict-allow-scripts
+npm error     If \`true\`, turn the install-script policy from a warning into a hard
 npm error
 npm error   --dangerously-allow-all-scripts
-npm error     Reserved for a future release. When that release lands, setting this
+npm error     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
 npm error
 npm error   --audit
 npm error     When "true" submit audit reports alongside the current npm command to the

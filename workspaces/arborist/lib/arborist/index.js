@@ -103,6 +103,7 @@ class Arborist extends Base {
       allowScripts: options.allowScripts ?? null,
       binLinks: 'binLinks' in options ? !!options.binLinks : true,
       cache: options.cache || `${homedir()}/.npm/_cacache`,
+      dangerouslyAllowAllScripts: !!options.dangerouslyAllowAllScripts,
       dryRun: !!options.dryRun,
       formatPackageLock: 'formatPackageLock' in options ? !!options.formatPackageLock : true,
       force: !!options.force,
