@@ -574,6 +574,11 @@ t.test('config edit', async t => {
     },
   })
 
+  const inputEvents = []
+  const inputListener = (level) => inputEvents.push(level)
+  process.on('input', inputListener)
+  t.teardown(() => process.off('input', inputListener))
+
   await npm.exec('config', ['edit'])
 
   t.ok(editor.called, 'editor was spawned')
@@ -582,6 +587,7 @@ t.test('config edit', async t => {
     [join(home, '.npmrc')],
     'editor opened the user config file'
   )
+  t.same(inputEvents.slice(0, 2), ['start', 'end'], 'progress paused and resumed around editor')
 
   const contents = await fs.readFile(join(home, '.npmrc'), { encoding: 'utf8' })
   t.ok(contents.includes('foo=bar'), 'kept foo')
