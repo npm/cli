@@ -1,5 +1,11 @@
 # Changelog
 
+## [11.2.0-pre.0.0](https://github.com/npm/cli/compare/libnpmpublish-v11.1.3...libnpmpublish-v11.2.0-pre.0.0) (2026-05-20)
+### Features
+* [`254809e`](https://github.com/npm/cli/commit/254809e318ee0046092d07d68a99154c3f672147) [#9201](https://github.com/npm/cli/pull/9201) npm stage (#9201) (@reggi, @Copilot)
+### Chores
+* [`40fcab4`](https://github.com/npm/cli/commit/40fcab45d356545f8db7f34df3e5630116d0dd40) [#8991](https://github.com/npm/cli/pull/8991) `@npmcli/template-oss@4.29.0` (@wraithgar)
+
 ## [11.1.3](https://github.com/npm/cli/compare/libnpmpublish-v11.1.2...libnpmpublish-v11.1.3) (2025-11-19)
 ### Dependencies
 * [`8cc9f70`](https://github.com/npm/cli/commit/8cc9f70c2769f068ea0ef77a602162cdd949998e) [#8723](https://github.com/npm/cli/pull/8723) `ssri@13.0.0`

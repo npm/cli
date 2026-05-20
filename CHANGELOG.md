@@ -1,5 +1,88 @@
 # Changelog
 
+## [12.0.0-pre.0.0](https://github.com/npm/cli/compare/v11.12.1...v12.0.0-pre.0.0) (2026-05-20)
+### ⚠️ BREAKING CHANGES
+* npm view --json now always returns an array.
+* `npm sbom --sbom-format=cyclonedx` now reports the `name` field from each package's `package.json` instead of the on-disk directory name. The `name`, `bom-ref`, and `purl` of the root component and of aliased dependencies may change.
+* npm no longer registers man pages with the system when installed globally. `man npm-install` will no longer work, but `npm help install` is unaffected.
+* The `npm pkg` output is no longer forced to json.  This means you can get single values without having to worry about wrapping of the values.  It also outputs non-json content more similarly to `npm view`.
+* `npm shrinkwrap` is removed, the `shrinkwrap` config alias is removed, and `npm-shrinkwrap.json` is no longer loaded or honored at the project root or from inside dependency tarballs. Rename project-root `npm-shrinkwrap.json` to `package-lock.json`; use `bundleDependencies` if you need to ship a locked dependency tree.
+* The Twitter and Freenode profile fields have been removed from the npm registry. This means that users will no longer be able to set or view these fields in their npm profiles.
+* npm will no longer attempt to resolve the path to node via whichnode. process.execPath is already set by Node to the resolved real path of the node binary, so the lookup was redundant. Scripts that expected npm to override process.execPath with a PATH-resolved (potentially symlinked) node path may be affected.
+* the --json output of `npm pack` and `npm publish` have changed. They are now always consistent, and in the same format.
+* the `star`, `stars` and `unstar` commands have been removed
+* The `npm adduser` command has been removed. Create and manage user accounts on the npm website, and use `npm login` to authenticate on the command line.
+### Features
+* [`254809e`](https://github.com/npm/cli/commit/254809e318ee0046092d07d68a99154c3f672147) [#9201](https://github.com/npm/cli/pull/9201) npm stage (#9201) (@reggi, @Copilot)
+* [`cf94dbe`](https://github.com/npm/cli/commit/cf94dbe2432251623966bb7be1c6ded15ea97e14) [#9248](https://github.com/npm/cli/pull/9248) add permissions support to trust commands (#9248) (@reggi, @Copilot)
+* [`e0f12f7`](https://github.com/npm/cli/commit/e0f12f7e57aca36f71c9615bd971f427ed23e91a) [#9348](https://github.com/npm/cli/pull/9348) add allow-git/allow-file/allow-directory/allow-remote configs (@owlstronaut)
+* [`916cb4b`](https://github.com/npm/cli/commit/916cb4b262df1d188ce7644e916b138fbc78c4e7) [#9287](https://github.com/npm/cli/pull/9287) add allow-directory, allow-file, and allow-remote (#9287) (@wraithgar)
+* [`2e5dcad`](https://github.com/npm/cli/commit/2e5dcad17a59ee9f69eeec27fc5b087b5b032df7) [#9262](https://github.com/npm/cli/pull/9262) drop npm-shrinkwrap.json support (@owlstronaut)
+* [`2397196`](https://github.com/npm/cli/commit/239719668a73afbacc02eedcedcd3d3dd7f36b01) [#9265](https://github.com/npm/cli/pull/9265) Remove Twitter and Freenode profile fields (@owlstronaut)
+* [`738be10`](https://github.com/npm/cli/commit/738be10651522e94038f1eff0da12f15b10438ea) [#9196](https://github.com/npm/cli/pull/9196) remove star commands (#9196) (@wraithgar)
+* [`db7c1f8`](https://github.com/npm/cli/commit/db7c1f887eb1c1cb281ea7c9f6d84fba8f10d44d) [#9163](https://github.com/npm/cli/pull/9163) add `u` as alias for `update` command (#9163) (@Ausoj)
+* [`45e44dd`](https://github.com/npm/cli/commit/45e44dd7ac2a3af815684ece3bdc99ada2f317f7) [#9228](https://github.com/npm/cli/pull/9228) adds a backport script (@owlstronaut)
+### Bug Fixes
+* [`2a13550`](https://github.com/npm/cli/commit/2a1355011540a06eac841c04136f07cdf086fd75) [#9380](https://github.com/npm/cli/pull/9380) key stage download --json output by package name (#9380) (@reggi, @Copilot)
+* [`ca585c8`](https://github.com/npm/cli/commit/ca585c80dee759fedb85c5c20f9dd3ea8d017be4) [#9368](https://github.com/npm/cli/pull/9368) allow min-release-age in npmrc to coexist with --before (@raazkhnl)
+* [`f550eb4`](https://github.com/npm/cli/commit/f550eb415de0aff83a5fa297850104f5390a6e30) [#9348](https://github.com/npm/cli/pull/9348) refactor #failureNode, adjust tests and safety (@owlstronaut)
+* [`1f17566`](https://github.com/npm/cli/commit/1f17566ad90353b88e81fa1f8a4da5879d3ec7a3) [#9348](https://github.com/npm/cli/pull/9348) allow-remote=none does not block registry tarballs (@owlstronaut)
+* [`70af7b3`](https://github.com/npm/cli/commit/70af7b3c727fed6c7078d4ff7177fe02349e9b65) [#9327](https://github.com/npm/cli/pull/9327) remove settings (#9327) (@owlstronaut)
+* [`d623988`](https://github.com/npm/cli/commit/d6239889dc9b4eff776cd2a258fbaf5b645f5585) [#9311](https://github.com/npm/cli/pull/9311) sbom: dedupe per-node dependsOn / relationships (#9311) (@mikaelkristiansson)
+* [`d36945d`](https://github.com/npm/cli/commit/d36945dec26ffdc6899b3dc561260cd1b980a2f8) [#9160](https://github.com/npm/cli/pull/9160) do not unwrap single-item arrays in --json output (@yetanotheraryan)
+* [`faf7348`](https://github.com/npm/cli/commit/faf7348549c418de3c2a5be26f0a882e7189b5b2) [#9284](https://github.com/npm/cli/pull/9284) align CycloneDX SBOM component names with SPDX (#9284) (@cyphercodes, @cyphercodes)
+* [`e20424b`](https://github.com/npm/cli/commit/e20424b01a2d60c6ff5edb0480dcea529edf2dec) [#9035](https://github.com/npm/cli/pull/9035) don't install man pages in system locations (@owlstronaut)
+* [`01d9acd`](https://github.com/npm/cli/commit/01d9acd41c357f6b607d026bf5bc1cc44ad92db6) [#9269](https://github.com/npm/cli/pull/9269) pkg: output like npm view does, do not force json output (@wraithgar)
+* [`27567ab`](https://github.com/npm/cli/commit/27567ab27bef8af303bde0b2d7da0386da182b81) [#9257](https://github.com/npm/cli/pull/9257) ignore intended error code (@owlstronaut)
+* [`4ef5b6e`](https://github.com/npm/cli/commit/4ef5b6e0439297048dee92729b5c93529ad39488) [#9039](https://github.com/npm/cli/pull/9039) stop resolving node path via whichnode (@owlstronaut)
+* [`2e9b26e`](https://github.com/npm/cli/commit/2e9b26eff18114b2fe34ea7c8159500b5eafb98e) [#9247](https://github.com/npm/cli/pull/9247) sync json output of pack and publish (#9247) (@wraithgar)
+* [`7357d7f`](https://github.com/npm/cli/commit/7357d7fd82a61657618d632b5a842d4d04335be5) [#9036](https://github.com/npm/cli/pull/9036) remove npm adduser command (@owlstronaut)
+### Documentation
+* [`c97b39b`](https://github.com/npm/cli/commit/c97b39b1e3436cd20a67ab5f4012a5f395c538b9) [#9363](https://github.com/npm/cli/pull/9363) add example to optionalDependencies section (#9363) (@verifizieren)
+* [`6704ab2`](https://github.com/npm/cli/commit/6704ab2c8a025800d871571889466e06399bf6a2) [#9335](https://github.com/npm/cli/pull/9335) npm view with json outputs array docs update (#9335) (@yetanotheraryan)
+### Dependencies
+* [`d151521`](https://github.com/npm/cli/commit/d1515210085586c147a6653cdc6ae25f672d45db) [#9382](https://github.com/npm/cli/pull/9382) `socks@2.8.9`
+* [`a77416e`](https://github.com/npm/cli/commit/a77416ee08e8884f35b1a2390ee98f6b570b3a0d) [#9382](https://github.com/npm/cli/pull/9382) `lru-cache@11.5.0`
+* [`b2717e4`](https://github.com/npm/cli/commit/b2717e46e4ea6c70b137f68b37440ef7f016bc66) [#9382](https://github.com/npm/cli/pull/9382) `ip-address@10.2.0`
+* [`1c4a796`](https://github.com/npm/cli/commit/1c4a79667af9703ede9683c2cc0f33b05983b724) [#9382](https://github.com/npm/cli/pull/9382) `brace-expansion@5.0.6`
+* [`e36a4e3`](https://github.com/npm/cli/commit/e36a4e3f237d0e60d7b85490da8ff8e3663fdea9) [#9382](https://github.com/npm/cli/pull/9382) `bin-links@6.0.2`
+* [`91bd674`](https://github.com/npm/cli/commit/91bd674ff822adc0f84bb79069e8b21d640bb40e) [#9382](https://github.com/npm/cli/pull/9382) `tar@7.5.15`
+* [`66c7ff1`](https://github.com/npm/cli/commit/66c7ff1e66e3d0bf5b9ed5cae172ac6a7501ce4c) [#9382](https://github.com/npm/cli/pull/9382) `semver@7.8.0`
+* [`514c71b`](https://github.com/npm/cli/commit/514c71b253f7e91afc3aa17a28aa6cb6f7d01b30) [#9382](https://github.com/npm/cli/pull/9382) `hosted-git-info@9.0.3`
+* [`fbe1dd0`](https://github.com/npm/cli/commit/fbe1dd03a9a4b0690725df8ca40e96c49a0319ac) [#9316](https://github.com/npm/cli/pull/9316) `socks@10.1.1`
+* [`af65766`](https://github.com/npm/cli/commit/af65766bd2d18923e5d24cc86f6a0e502450db33) [#9316](https://github.com/npm/cli/pull/9316) `ip-address@10.1.1`
+* [`37bd0c6`](https://github.com/npm/cli/commit/37bd0c63a176ca8fe7012c08b8acbebff2e65865) [#9316](https://github.com/npm/cli/pull/9316) `cidr-regex@5.0.5`
+* [`5af02ec`](https://github.com/npm/cli/commit/5af02ecf3e3ed27e62b57ceaf59a293f42d3e309) [#9270](https://github.com/npm/cli/pull/9270) `lru-cache@11.3.5`
+* [`799866f`](https://github.com/npm/cli/commit/799866f4d877241cdd30501229901a0ba355adbb) [#9270](https://github.com/npm/cli/pull/9270) `node-gyp@12.3.0`
+* [`79d394e`](https://github.com/npm/cli/commit/79d394e9f5e74b6fba3adb09e4bfd6e7b63e9839) [#9270](https://github.com/npm/cli/pull/9270) `is-cidr@6.0.4`
+* [`9669d31`](https://github.com/npm/cli/commit/9669d31060a2ed7220e140c354a45cfe993a0e7d) [#9207](https://github.com/npm/cli/pull/9207) `@sigstore/protobuf-specs@0.5.1`
+* [`b09a5ac`](https://github.com/npm/cli/commit/b09a5ac3c59f6a70f05ee035c9c6ee03dfdd1eda) [#9207](https://github.com/npm/cli/pull/9207) `tinyglobby@0.2.16`
+* [`150231d`](https://github.com/npm/cli/commit/150231d74a90ff1fb34ec588eefb94aeb4979fd2) [#9207](https://github.com/npm/cli/pull/9207) `picomatch@4.0.4`
+* [`413e0a0`](https://github.com/npm/cli/commit/413e0a00aee08b4f190bffd360b53efb20783ad1) [#9207](https://github.com/npm/cli/pull/9207) `lru-cache@11.3.3`
+* [`6faa25e`](https://github.com/npm/cli/commit/6faa25ecff4eb72aa9c16adba53bf46d39d556df) [#9207](https://github.com/npm/cli/pull/9207) `diff@8.0.4`
+* [`87bb9d0`](https://github.com/npm/cli/commit/87bb9d069375e74354bcd69f39a081ad960009de) [#9207](https://github.com/npm/cli/pull/9207) `minimatch@10.2.5`
+* [`2501dd8`](https://github.com/npm/cli/commit/2501dd83ea9e9fc39b0bf6814728a132dd57fa6d) [#9207](https://github.com/npm/cli/pull/9207) `tar@7.5.13`
+* [`ccce5f6`](https://github.com/npm/cli/commit/ccce5f611daf50727a134ba1df46ac9c53caa61a) [#9207](https://github.com/npm/cli/pull/9207) `minipass-flush@1.0.6`
+### Chores
+* [`f502c4f`](https://github.com/npm/cli/commit/f502c4f07fb14eef041f4dfb04ad5d9f287c6ba4) [#9382](https://github.com/npm/cli/pull/9382) dev dependency updates (@owlstronaut)
+* [`4259e57`](https://github.com/npm/cli/commit/4259e57f26640a137b38cb7e0b1eda04e6c42026) [#9316](https://github.com/npm/cli/pull/9316) dev dependency updates (@owlstronaut)
+* [`d68bd36`](https://github.com/npm/cli/commit/d68bd365960da9933b215c87b3335b0b8d9b2bda) [#9317](https://github.com/npm/cli/pull/9317) add cli-triage team as codeowner (#9317) (@owlstronaut)
+* [`b9332e6`](https://github.com/npm/cli/commit/b9332e6370cb4c3ee32c7b87cfab5847f4657acc) [#9270](https://github.com/npm/cli/pull/9270) dev dependency updates (@owlstronaut)
+* [`cc468a8`](https://github.com/npm/cli/commit/cc468a81fd9fc000dc430c782ba05f0c6fcea079) [#9269](https://github.com/npm/cli/pull/9269) refactor tests (@wraithgar)
+* [`2ca36c4`](https://github.com/npm/cli/commit/2ca36c4b37f50419303db41cf482d05f5ec69023) [#9261](https://github.com/npm/cli/pull/9261) fixed non-functional typos throughout the codebase (@opensourcezeal)
+* [`8131de4`](https://github.com/npm/cli/commit/8131de4453af45a351fd610a660a1d60724ef74f) [#9239](https://github.com/npm/cli/pull/9239) add action permission for backport workflow (@owlstronaut)
+* [`6df5f91`](https://github.com/npm/cli/commit/6df5f918a350e30d865a647cbbbe0a8e713d0189) [#9232](https://github.com/npm/cli/pull/9232) backports can trigger CI (@owlstronaut)
+* [`07552f5`](https://github.com/npm/cli/commit/07552f58111dea3aa563693ea103342fb625d47b) [#9224](https://github.com/npm/cli/pull/9224) don't run npm update in CI (@owlstronaut)
+* [`05dbba5`](https://github.com/npm/cli/commit/05dbba5b8d727ddb2c098ce0553714eae791c5f2) [#9195](https://github.com/npm/cli/pull/9195) enable prerelease mode (#9195) (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0-pre.0.0): `@npmcli/arborist@10.0.0-pre.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v11.0.0-pre.0.0): `@npmcli/config@11.0.0-pre.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.1.6-pre.0.0): `libnpmdiff@8.1.6-pre.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.2.6-pre.0.0): `libnpmexec@10.2.6-pre.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.20-pre.0.0): `libnpmfund@7.0.20-pre.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v10.0.0-pre.0.0): `libnpmpack@10.0.0-pre.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v11.2.0-pre.0.0): `libnpmpublish@11.2.0-pre.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmversion-v9.0.0-pre.0.0): `libnpmversion@9.0.0-pre.0.0`
+
 ## [11.12.1](https://github.com/npm/cli/compare/v11.12.0...v11.12.1) (2026-03-24)
 ### Bug Fixes
 * [`596706a`](https://github.com/npm/cli/commit/596706a3d10100587e3751d860b4cfcc59342d2f) [#9148](https://github.com/npm/cli/pull/9148) revert prefer-offline/prefer-online exclusivity (#9129) (@owlstronaut)
