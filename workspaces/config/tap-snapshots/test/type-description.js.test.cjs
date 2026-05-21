@@ -15,6 +15,7 @@ Object {
     null,
     "restricted",
     "public",
+    "private",
   ],
   "all": Array [
     "boolean value (true or false)",
