@@ -460,7 +460,7 @@ t.test('prints unreviewed install scripts summary', async t => {
     })
     reifyOutput(mock.npm, reify, extras)
     mock.npm.finish()
-    return mock.joinedOutput()
+    return mock
   }
 
   const baseReify = {
@@ -479,11 +479,12 @@ t.test('prints unreviewed install scripts summary', async t => {
     },
   ]
 
-  const out = await mockReifyWithExtras(t, baseReify, { unreviewedScripts })
-  t.match(out, /2 packages have install scripts not yet covered/)
-  t.match(out, /canvas@2\.11\.0 \(install: node-gyp rebuild\)/)
-  t.match(out, /sharp@0\.33\.2 \(preinstall: pre; postinstall: post\)/)
-  t.match(out, /npm approve-scripts --pending/)
+  const mock = await mockReifyWithExtras(t, baseReify, { unreviewedScripts })
+  const warn = mock.logs.warn.byTitle('allow-scripts').join('\n')
+  t.match(warn, /2 packages have install scripts not yet covered/)
+  t.match(warn, /canvas@2\.11\.0 \(install: node-gyp rebuild\)/)
+  t.match(warn, /sharp@0\.33\.2 \(preinstall: pre; postinstall: post\)/)
+  t.match(warn, /npm approve-scripts --allow-scripts-pending/)
 })
 
 t.test('single unreviewed script uses singular wording', async t => {
@@ -491,10 +492,10 @@ t.test('single unreviewed script uses singular wording', async t => {
     const mock = await mockNpm(t, {})
     reifyOutput(mock.npm, reify, extras)
     mock.npm.finish()
-    return mock.joinedOutput()
+    return mock
   }
 
-  const out = await mockReifyWithExtras(
+  const mock = await mockReifyWithExtras(
     t,
     { actualTree: { inventory: { has: () => false } }, diff: { children: [] } },
     {
@@ -504,7 +505,7 @@ t.test('single unreviewed script uses singular wording', async t => {
       }],
     }
   )
-  t.match(out, /1 package has install scripts/)
+  t.match(mock.logs.warn.byTitle('allow-scripts').join('\n'), /1 package has install scripts/)
 })
 
 t.test('json output includes unreviewedScripts', async t => {
@@ -540,7 +541,7 @@ t.test('unreviewed script with node.name only (no packageName) still renders', a
     }],
   })
   mock.npm.finish()
-  t.match(mock.joinedOutput(), / fallback \(install: cmd\)/)
+  t.match(mock.logs.warn.byTitle('allow-scripts').join('\n'), / fallback \(install: cmd\)/)
 })
 
 t.test('json output includes node.name when packageName is missing', async t => {

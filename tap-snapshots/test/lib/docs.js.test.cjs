@@ -319,6 +319,29 @@ the package's self-reported name. \`--ignore-scripts\` and
 
 
 
+#### \`allow-scripts-pending\`
+
+* Default: false
+* Type: Boolean
+
+List packages with install scripts that are not yet covered by the
+\`allowScripts\` policy, without modifying \`package.json\`. Only meaningful for
+\`npm approve-scripts\`.
+
+
+
+#### \`allow-scripts-pin\`
+
+* Default: true
+* Type: Boolean
+
+Write pinned (\`pkg@version\`) entries when approving install scripts. Set to
+\`false\` to write name-only entries that allow any version. Has no effect on
+\`npm deny-scripts\`, which always writes name-only entries regardless of this
+setting.
+
+
+
 #### \`audit\`
 
 * Default: true
@@ -1470,29 +1493,6 @@ tokens, though it's generally safer to be prompted for it.
 
 
 
-#### \`pending\`
-
-* Default: false
-* Type: Boolean
-
-List packages with install scripts that are not yet covered by the
-\`allowScripts\` policy, without modifying \`package.json\`. Only meaningful for
-\`npm approve-scripts\`.
-
-
-
-#### \`pin\`
-
-* Default: true
-* Type: Boolean
-
-Write pinned (\`pkg@version\`) entries when approving install scripts. Set to
-\`false\` to write name-only entries that allow any version. Has no effect on
-\`npm deny-scripts\`, which always writes name-only entries regardless of this
-setting.
-
-
-
 #### \`prefer-dedupe\`
 
 * Default: false
@@ -2494,8 +2494,8 @@ Array [
   "pack-destination",
   "packages",
   "parseable",
-  "pending",
-  "pin",
+  "allow-scripts-pending",
+  "allow-scripts-pin",
   "prefer-dedupe",
   "prefer-offline",
   "prefer-online",
@@ -2658,8 +2658,8 @@ Array [
   "pack-destination",
   "packages",
   "parseable",
-  "pending",
-  "pin",
+  "allow-scripts-pending",
+  "allow-scripts-pin",
   "prefer-dedupe",
   "prefer-offline",
   "prefer-online",
@@ -2758,6 +2758,8 @@ Object {
   "allowRemote": "all",
   "allowSameVersion": false,
   "allowScripts": Array [],
+  "allowScriptsPending": false,
+  "allowScriptsPin": true,
   "audit": true,
   "auditLevel": null,
   "authType": "web",
@@ -2841,8 +2843,6 @@ Object {
   "packDestination": ".",
   "parseable": false,
   "password": null,
-  "pending": false,
-  "pin": true,
   "preferDedupe": false,
   "preferOffline": false,
   "preferOnline": false,
@@ -2989,18 +2989,18 @@ Approve install scripts for specific dependencies
 Usage:
 npm approve-scripts <pkg> [<pkg> ...]
 npm approve-scripts --all
-npm approve-scripts --pending
+npm approve-scripts --allow-scripts-pending
 
 Options:
-[-a|--all] [--pending] [--no-pin] [--json]
+[-a|--all] [--allow-scripts-pending] [--no-allow-scripts-pin] [--json]
 
   -a|--all
     When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
 
-  --pending
+  --allow-scripts-pending
     List packages with install scripts that are not yet covered by the
 
-  --pin
+  --allow-scripts-pin
     Write pinned (\`pkg@version\`) entries when approving install scripts.
 
   --json
@@ -3012,14 +3012,14 @@ Run "npm help approve-scripts" for more info
 \`\`\`bash
 npm approve-scripts <pkg> [<pkg> ...]
 npm approve-scripts --all
-npm approve-scripts --pending
+npm approve-scripts --allow-scripts-pending
 \`\`\`
 
 Note: This command is unaware of workspaces.
 
 #### \`all\`
-#### \`pending\`
-#### \`pin\`
+#### \`allow-scripts-pending\`
+#### \`allow-scripts-pin\`
 #### \`json\`
 `
 
@@ -3505,15 +3505,15 @@ npm deny-scripts <pkg> [<pkg> ...]
 npm deny-scripts --all
 
 Options:
-[-a|--all] [--pending] [--no-pin] [--json]
+[-a|--all] [--allow-scripts-pending] [--no-allow-scripts-pin] [--json]
 
   -a|--all
     When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
 
-  --pending
+  --allow-scripts-pending
     List packages with install scripts that are not yet covered by the
 
-  --pin
+  --allow-scripts-pin
     Write pinned (\`pkg@version\`) entries when approving install scripts.
 
   --json
@@ -3530,8 +3530,8 @@ npm deny-scripts --all
 Note: This command is unaware of workspaces.
 
 #### \`all\`
-#### \`pending\`
-#### \`pin\`
+#### \`allow-scripts-pending\`
+#### \`allow-scripts-pin\`
 #### \`json\`
 `
 

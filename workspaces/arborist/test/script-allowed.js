@@ -1,5 +1,6 @@
 const t = require('tap')
 const isScriptAllowed = require('../lib/script-allowed.js')
+const { trustedDisplay } = isScriptAllowed
 
 // Test nodes default to a consistent registry-tarball shape: the resolved
 // URL's name+version match the supplied name+version. Tests that need to
@@ -562,10 +563,11 @@ t.test('alias-typed policy key never matches anything', t => {
   t.end()
 })
 
-t.test('registry — `pkg@latest` tag spec matches by name only', t => {
-  // npa parses `canvas@latest` as { type: 'tag' }; treat as name-only.
+t.test('registry — `pkg@latest` tag spec does not match (rejected up front)', t => {
+  // npa parses `canvas@latest` as { type: 'tag' }. Validated out by
+  // resolve-allow-scripts.js#validatePolicy; defense-in-depth here.
   const n = node({ name: 'canvas', version: '2.11.0' })
-  t.equal(isScriptAllowed(n, { 'canvas@latest': true }), true)
+  t.equal(isScriptAllowed(n, { 'canvas@latest': true }), null)
   t.equal(isScriptAllowed(n, { 'other@latest': true }), null)
   t.end()
 })
@@ -603,5 +605,31 @@ t.test('omit-lockfile: edges with only non-registry specs yield no trusted name'
     ]),
   }
   t.equal(isScriptAllowed(omitted, { canvas: true }), null)
+  t.end()
+})
+
+t.test('trustedDisplay returns URL-derived identity when available', t => {
+  // Registry tarball URL carries name and version — those are trusted and
+  // must override the tarball-self-claimed package fields.
+  const n = node({
+    name: 'pkg',
+    packageName: 'lying-name',
+    version: '9.9.9',
+    resolved: 'https://registry.npmjs.org/canvas/-/canvas-2.11.0.tgz',
+  })
+  t.strictSame(trustedDisplay(n), { name: 'canvas', version: '2.11.0' })
+  t.end()
+})
+
+t.test('trustedDisplay falls back to node.name/version when URL has no identity', t => {
+  // Git source: matchGit handles it for matching, but trustedDisplay
+  // accepts the node's self-reported name/version for human-facing output.
+  const n = node({
+    name: 'bar',
+    packageName: 'bar',
+    version: '1.2.3',
+    resolved: 'git+ssh://git@github.com/foo/bar.git#deadbeefcafebabe1234567890abcdef12345678',
+  })
+  t.strictSame(trustedDisplay(n), { name: 'bar', version: '1.2.3' })
   t.end()
 })

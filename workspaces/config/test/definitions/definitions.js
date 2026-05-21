@@ -1116,6 +1116,17 @@ t.test('allow-scripts', t => {
     t.end()
   })
 
+  t.test('non-string non-array values flatten to empty list', t => {
+    const flat = {}
+    mockDefs()['allow-scripts'].flatten(
+      'allow-scripts',
+      { 'allow-scripts': null },
+      flat
+    )
+    t.strictSame(flat, { allowScripts: [] })
+    t.end()
+  })
+
   t.end()
 })
 

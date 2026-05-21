@@ -54,7 +54,7 @@ t.test('deny-scripts <pkg> writes name-only false entry', async t => {
 t.test('deny-scripts <pkg> ignores --pin and always writes name-only', async t => {
   const { npm, prefix } = await _mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['core-js'] }),
-    config: { pin: true },
+    config: { 'allow-scripts-pin': true },
   })
   await npm.exec('deny-scripts', ['core-js'])
 
@@ -78,7 +78,7 @@ t.test('deny-scripts <pkg> replaces existing pinned allow', async t => {
 t.test('deny-scripts --pending is rejected', async t => {
   const { npm } = await _mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['core-js'] }),
-    config: { pending: true },
+    config: { 'allow-scripts-pending': true },
   })
   await t.rejects(npm.exec('deny-scripts', []), { code: 'EUSAGE' })
 })

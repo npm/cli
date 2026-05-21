@@ -46,6 +46,12 @@ Object {
     Function String(),
     Function Array(),
   ],
+  "allow-scripts-pending": Array [
+    "boolean value (true or false)",
+  ],
+  "allow-scripts-pin": Array [
+    "boolean value (true or false)",
+  ],
   "also": Array [
     null,
     "dev",
@@ -458,12 +464,6 @@ Object {
     null,
     Function String(),
   ],
-  "pending": Array [
-    "boolean value (true or false)",
-  ],
-  "pin": Array [
-    "boolean value (true or false)",
-  ],
   "prefer-dedupe": Array [
     "boolean value (true or false)",
   ],
@@ -578,10 +578,10 @@ Object {
   "sign-git-tag": Array [
     "boolean value (true or false)",
   ],
-  "strict-peer-deps": Array [
+  "strict-allow-scripts": Array [
     "boolean value (true or false)",
   ],
-  "strict-script-builds": Array [
+  "strict-peer-deps": Array [
     "boolean value (true or false)",
   ],
   "strict-ssl": Array [

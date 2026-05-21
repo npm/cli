@@ -10,21 +10,34 @@ const { isNodeGypPackage } = require('@npmcli/node-gyp')
 //     and the package does not opt out via `gypfile: false` or define its
 //     own install / preinstall script
 
-const isRegistrySource = (node) => {
-  // Prefer arborist's edge-based check when available — symmetric with
-  // isRegistryNode in script-allowed.js. A node whose edges resolve to
-  // non-registry specs must be treated as non-registry even if its
-  // resolved URL happens to share the registry tarball shape.
+// Lifecycle-script enumeration boundary.
+//
+// IMPORTANT: this helper decides whether `prepare` should be included
+// in the enumerated install scripts (true for non-registry sources only).
+// It is NOT a policy-matching predicate. The policy matcher in
+// script-allowed.js uses `isRegistryNode`, which is strictly tied to
+// versionFromTgz(node.resolved). The two helpers exist separately on
+// purpose:
+//
+//   - `hasNonRegistryShape` (here): "should we consider running prepare
+//     on this node?" — a yes/no for what to enumerate.
+//   - `isRegistryNode` (script-allowed.js): "do we trust this node's
+//     identity enough to apply a policy entry?" — a security check.
+//
+// The looser fallback here (treating unknown-resolved nodes as registry,
+// thus skipping `prepare`) is the safer default for enumeration: we'd
+// rather omit a script we should have run than synthesise one for a
+// non-registry source we couldn't confirm. The policy matcher's stricter
+// behaviour is correct for its boundary; the two helpers must not be
+// merged.
+const hasNonRegistryShape = (node) => {
   if (typeof node.isRegistryDependency === 'boolean') {
-    return node.isRegistryDependency
+    return !node.isRegistryDependency
   }
   if (!node.resolved) {
-    // Without a resolved field or the arborist getter, fall back to
-    // treating the node as a registry source. Used by lockfiles produced
-    // with omit-lockfile-registry-resolved.
-    return true
+    return false
   }
-  return /^https?:\/\/[^/]+\/.+\/-\/[^/]+-\d/.test(node.resolved)
+  return !/^https?:\/\/[^/]+\/.+\/-\/[^/]+-\d/.test(node.resolved)
 }
 
 const getInstallScripts = async (node) => {
@@ -44,7 +57,7 @@ const getInstallScripts = async (node) => {
   if (scripts.postinstall) {
     collected.postinstall = scripts.postinstall
   }
-  if (scripts.prepare && !isRegistrySource(node)) {
+  if (scripts.prepare && hasNonRegistryShape(node)) {
     collected.prepare = scripts.prepare
   }
 

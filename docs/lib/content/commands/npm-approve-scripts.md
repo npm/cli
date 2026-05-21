@@ -24,17 +24,17 @@ There are three modes:
 ```bash
 npm approve-scripts <pkg> [<pkg> ...]
 npm approve-scripts --all
-npm approve-scripts --pending
+npm approve-scripts --allow-scripts-pending
 ```
 
 `<pkg>` matches every installed version of that package. By default the
 command writes pinned entries (`pkg@1.2.3`), which keep their approval
-narrowed to the specific version you reviewed. Pass `--no-pin` to write
+narrowed to the specific version you reviewed. Pass `--no-allow-scripts-pin` to write
 name-only entries that allow any future version.
 
 `--all` approves every package with unreviewed install scripts in one go.
 
-`--pending` is read-only: it lists every package whose install scripts
+`--allow-scripts-pending` is read-only: it lists every package whose install scripts
 are not yet covered by `allowScripts`, without modifying `package.json`.
 
 `approve-scripts` honours the asymmetric pin rule: if you re-approve a
@@ -55,10 +55,10 @@ npm approve-scripts --all
 npm approve-scripts canvas sharp
 
 # Approve name-only (any version of this package is allowed)
-npm approve-scripts --no-pin canvas
+npm approve-scripts --no-allow-scripts-pin canvas
 
 # Preview which packages still need review
-npm approve-scripts --pending
+npm approve-scripts --allow-scripts-pending
 ```
 
 ### Configuration

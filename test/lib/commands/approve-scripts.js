@@ -51,7 +51,7 @@ const setupProject = ({ allowScripts, withScripts = ['canvas'] } = {}) => {
 t.test('approve-scripts --pending lists unreviewed packages', async t => {
   const { npm, joinedOutput } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas', 'sharp'] }),
-    config: { pending: true },
+    config: { 'allow-scripts-pending': true },
   })
   await npm.exec('approve-scripts', [])
   const out = joinedOutput()
@@ -66,7 +66,7 @@ t.test('approve-scripts --pending with no unreviewed says so', async t => {
       allowScripts: { canvas: true },
       withScripts: ['canvas'],
     }),
-    config: { pending: true },
+    config: { 'allow-scripts-pending': true },
   })
   await npm.exec('approve-scripts', [])
   t.match(joinedOutput(), /No packages with unreviewed install scripts/)
@@ -85,7 +85,7 @@ t.test('approve-scripts <pkg> writes pinned entry by default', async t => {
 t.test('approve-scripts <pkg> --no-pin writes name-only entry', async t => {
   const { npm, prefix } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas'] }),
-    config: { pin: false },
+    config: { 'allow-scripts-pin': false },
   })
   await npm.exec('approve-scripts', ['canvas'])
 
@@ -142,7 +142,7 @@ t.test('approve-scripts requires positional args, --all, or --pending', async t 
 t.test('approve-scripts --pending cannot be combined with positional', async t => {
   const { npm } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas'] }),
-    config: { pending: true },
+    config: { 'allow-scripts-pending': true },
   })
   await t.rejects(npm.exec('approve-scripts', ['canvas']), { code: 'EUSAGE' })
 })
@@ -202,7 +202,7 @@ t.test('approve-scripts <pkg> on a package already at the right pin is no-op', a
 t.test('approve-scripts --pending with single package uses singular wording', async t => {
   const { npm, joinedOutput } = await _mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas'] }),
-    config: { pending: true },
+    config: { 'allow-scripts-pending': true },
   })
   await npm.exec('approve-scripts', [])
   t.match(joinedOutput(), /1 package has install scripts/)
@@ -212,7 +212,7 @@ t.test('approve-scripts --pending lists package with no version', async t => {
   // Use a fixture where the lockfile records a synthetic node without a version
   const { npm } = await _mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas'] }),
-    config: { pending: true },
+    config: { 'allow-scripts-pending': true },
   })
   await npm.exec('approve-scripts', [])
   // Just exercising; no assertion needed for additional coverage.
@@ -302,7 +302,7 @@ t.test('approve-scripts --pending handles node with no version', async t => {
       }),
       node_modules: {},
     },
-    config: { pending: true },
+    config: { 'allow-scripts-pending': true },
     mocks: {
       // Make the walker return a synthetic node with no version
       '{LIB}/utils/check-allow-scripts.js': async () => [{
@@ -326,7 +326,7 @@ t.test('forbidden semver range in package.json#allowScripts is dropped with a wa
       // ^0.33.0 is a forbidden range per RFC.
       allowScripts: { 'canvas@^0.33.0': true },
     }),
-    config: { pending: true },
+    config: { 'allow-scripts-pending': true },
   })
   await mock.npm.exec('approve-scripts', [])
 
@@ -376,7 +376,7 @@ t.test('approve-scripts --pending lists packages that only have binding.gyp', as
         },
       },
     },
-    config: { pending: true },
+    config: { 'allow-scripts-pending': true },
   })
   await mock.npm.exec('approve-scripts', [])
 

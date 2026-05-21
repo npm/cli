@@ -1,4 +1,5 @@
 const Definition = require('./definition.js')
+const parseAllowScriptsList = require('../parse-allow-scripts-list.js')
 
 const ciInfo = require('ci-info')
 const querystring = require('node:querystring')
@@ -269,29 +270,7 @@ const definitions = {
       \`--dangerously-allow-all-scripts\` both override this setting.
   `,
     flatten (key, obj, flatOptions) {
-      const raw = obj[key]
-      const parts = []
-      if (Array.isArray(raw)) {
-        for (const entry of raw) {
-          if (typeof entry !== 'string') {
-            continue
-          }
-          for (const part of entry.split(',')) {
-            const trimmed = part.trim()
-            if (trimmed) {
-              parts.push(trimmed)
-            }
-          }
-        }
-      } else if (typeof raw === 'string' && raw) {
-        for (const part of raw.split(',')) {
-          const trimmed = part.trim()
-          if (trimmed) {
-            parts.push(trimmed)
-          }
-        }
-      }
-      flatOptions.allowScripts = parts
+      flatOptions.allowScripts = parseAllowScriptsList(obj[key])
     },
   }),
   also: new Definition('also', {
@@ -1726,7 +1705,7 @@ const definitions = {
     `,
     flatten,
   }),
-  pending: new Definition('pending', {
+  'allow-scripts-pending': new Definition('allow-scripts-pending', {
     default: false,
     type: Boolean,
     description: `
@@ -1736,7 +1715,7 @@ const definitions = {
     `,
     flatten,
   }),
-  pin: new Definition('pin', {
+  'allow-scripts-pin': new Definition('allow-scripts-pin', {
     default: true,
     type: Boolean,
     description: `

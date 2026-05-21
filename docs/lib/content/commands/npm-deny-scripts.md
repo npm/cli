@@ -26,7 +26,7 @@ npm deny-scripts --all
 ```
 
 `<pkg>` matches every installed version of that package. Denies are always
-written name-only (`"pkg": false`), regardless of `--pin`. Pinning a deny
+written name-only (`"pkg": false`), regardless of `--allow-scripts-pin`. Pinning a deny
 to a specific version would silently re-allow scripts for any other version
 of the same package, which defeats the purpose; the command picks the
 safer default for you.

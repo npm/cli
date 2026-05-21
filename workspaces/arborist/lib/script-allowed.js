@@ -114,9 +114,13 @@ const matchRegistry = (node, parsed) => {
     return false
   }
 
-  // `tag` covers `pkg@latest`. Treat as name-only allow.
+  // `tag` covers `pkg@latest`. Rejected up front by validatePolicy in
+  // resolve-allow-scripts.js because tags look like a pin but can't be
+  // verified at install time. Defense-in-depth: if one slips through
+  // (e.g. arborist invoked directly without the resolver), don't match.
   if (parsed.type === 'tag') {
-    return true
+    /* istanbul ignore next: validatePolicy filters this; defensive */
+    return false
   }
 
   // `range` includes `pkg@^1`, `pkg@1 || 2`, `pkg@*`, `pkg@>=0`, and bare
@@ -315,7 +319,22 @@ const isRegistryNode = (node) => {
   return /^https?:\/\/[^/]+\/.+\/-\/[^/]+-\d/.test(node.resolved)
 }
 
+// Trusted display identity for human-facing output (`npm install`
+// advisory, `npm approve-scripts --allow-scripts-pending`). Same idea as
+// getTrustedRegistryIdentity, but for DISPLAY only — version falls back
+// to node.version when the URL doesn't carry one. Must never be used
+// for policy matching.
+const trustedDisplay = (node) => {
+  const trusted = getTrustedRegistryIdentity(node)
+  /* istanbul ignore next: defensive fallbacks for nodes without name/version */
+  return {
+    name: (trusted && trusted.name) || node.name || null,
+    version: (trusted && trusted.version) || node.version || null,
+  }
+}
+
 module.exports = isScriptAllowed
 module.exports.isScriptAllowed = isScriptAllowed
 module.exports.isExactVersionDisjunction = isExactVersionDisjunction
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
+module.exports.trustedDisplay = trustedDisplay
