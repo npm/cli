@@ -1521,7 +1521,7 @@ t.test('more peer dep conflicts', async t => {
           '@isaacs/testing-peer-dep-conflict-chain-p': '1',
         },
       },
-      // XXX should this be false?  it's not OUR fault, after all?
+      // XXX should this be false?  it's not OUR fault, afterAll?
       // but it is a conflict in a peerSet that the root is sourcing.
       error: true,
     },

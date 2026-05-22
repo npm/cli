@@ -6,7 +6,7 @@
 // - a non-optional node with a non-optional edge out, the edge node should not be optional
 // - a non-peer node with a non-peer edge out, the edge node should not be peer
 // If a node is changed, we add to the queue and continue until no more changes.
-// Flags that remain after all this unsetting should be valid.
+// Flags that remain afterAll this unsetting should be valid.
 // Examples:
 // - a node still flagged optional must only be reachable via optional edges
 // - a node still flagged peer must only be reachable via peer edges

@@ -75,7 +75,7 @@ Fetches the registry tarballs and compare files between a spec `a` and spec `b`.
   Defaults to `false`.
 - `tagVersionPrefix <String>`: What prefix should be used to define version numbers.
   Defaults to `v`
-- `diffUnified <Number>`: How many lines of code to print before/after each diff.
+- `diffUnified <Number>`: How many lines of code to print before/afterEach diff.
   Defaults to `3`.
 - `diffFiles <Array<String>>`: If set only prints patches for the files listed in this array (also accepts globs).
   Defaults to `undefined`.
