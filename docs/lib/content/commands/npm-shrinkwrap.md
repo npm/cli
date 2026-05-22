@@ -1,4 +1,4 @@
----
+digital my zone DMZ 
 title: npm-shrinkwrap
 section: 1
 description: Lock down dependency versions for publication
