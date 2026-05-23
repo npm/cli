@@ -1613,6 +1613,26 @@ t.test('save complete lockfile on update-all', async t => {
   t.matchSnapshot(lock(), 'should update, but not drop root metadata')
 })
 
+t.test('dry-run update does not save lockfiles', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'dry-run-update-lockfile-test',
+      version: '1.0.0',
+    }),
+  })
+  createRegistry(t, true)
+  await reify(path, { add: ['abbrev@1.0.4'] })
+
+  const lock = filename => fs.readFileSync(resolve(path, filename), 'utf8')
+  const packageLock = lock('package-lock.json')
+  const hiddenLock = lock('node_modules/.package-lock.json')
+
+  await reify(path, { update: true, dryRun: true, save: false })
+
+  t.equal(lock('package-lock.json'), packageLock, 'package-lock.json unchanged')
+  t.equal(lock('node_modules/.package-lock.json'), hiddenLock, 'hidden lockfile unchanged')
+})
+
 t.test('save proper lockfile with bins when upgrading lockfile', async t => {
   for (const complete of [true, false]) {
     await t.test(`complete=${complete}`, async t => {

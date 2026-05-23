@@ -237,7 +237,7 @@ module.exports = cls => class Reifier extends cls {
     this.actualTree = this.idealTree
     this.idealTree = null
 
-    if (!this.options.global) {
+    if (!this.options.global && !this.options.dryRun) {
       await this.actualTree.meta.save()
       const ignoreScripts = !!this.options.ignoreScripts
       // if we aren't doing a dry run or ignoring scripts and we actually made changes to the dep
