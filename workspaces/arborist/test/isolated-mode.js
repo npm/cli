@@ -42,7 +42,8 @@ const rule1 = {
   apply: (t, dir, resolvedGraph, alreadyAsserted) => {
     const graph = parseGraph(resolvedGraph)
     const allPackages = getAllPackages(withRequireChain(graph))
-    allPackages.filter(p => p.chain.length !== 0).forEach(p => {
+    // Workspaces are excluded: linked-strategy workspaces have no self-symlink, so self-referencing requires an `exports` field (matching pnpm).
+    allPackages.filter(p => p.chain.length !== 0 && !p.workspace).forEach(p => {
       const resolveChain = [...p.chain, p.name]
       const key = p.initialDir + ' => ' + resolveChain.join(' => ')
       if (alreadyAsserted.has(key)) {
@@ -1672,8 +1673,8 @@ tap.test('workspace links are not affected by store resolved fix', async t => {
   const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arb2.reify({ installStrategy: 'linked' })
 
-  // Verify workspace is still correctly linked (workspace can resolve itself via self-link)
-  t.ok(setupRequire(path.join(dir, 'packages', 'mypkg'))('mypkg'), 'workspace is requireable via self-link after second install')
+  // Verify the workspace's own deps still resolve from inside the workspace after the second install
+  t.ok(setupRequire(path.join(dir, 'packages', 'mypkg'))('abbrev'), 'workspace dep is requireable from inside workspace after second install')
   t.ok(setupRequire(dir)('abbrev'), 'registry dep is requireable after second install')
 
   // Verify the diff has unchanged nodes (store entries are correctly matched)
@@ -2403,6 +2404,50 @@ tap.test('undeclared workspaces are not hoisted to root node_modules', async t =
   // ws-c has no dependencies and is not depended on — should not be able to access ws-b
   t.notOk(pathExists(path.join(dir, 'packages', 'ws-c', 'node_modules', 'ws-b')),
     'ws-c cannot access ws-b (no dependency declared)')
+})
+
+tap.test('undeclared workspaces do not get a self-link in their own node_modules', async t => {
+  // Undeclared workspaces used to be self-symlinked into their own node_modules/.
+  // Cross-workspace dep links remain unaffected, and stale self-links from older npm versions are swept on the next install.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myapp',
+      version: '1.0.0',
+      dependencies: { '@scope/a': '*' },
+    },
+    workspaces: [
+      { name: '@scope/a', version: '1.0.0', dependencies: { '@scope/test': '*', abbrev: '1.0.0' } },
+      { name: '@scope/test', version: '1.0.0' },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // No self-link inside the undeclared workspace's own node_modules
+  t.notOk(fs.lstatSync(path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope', 'test'), { throwIfNoEntry: false }),
+    'undeclared workspace has no self-link in its own node_modules')
+
+  // Cross-workspace dep link still works: @scope/a depends on @scope/test
+  t.ok(fs.lstatSync(path.join(dir, 'packages', '@scope', 'a', 'node_modules', '@scope', 'test'), { throwIfNoEntry: false })?.isSymbolicLink(),
+    '@scope/a still has a symlink to @scope/test in its node_modules')
+
+  // Stale self-link from an older npm version must be swept on a subsequent install
+  fs.mkdirSync(path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope'), { recursive: true })
+  fs.symlinkSync('../../..', path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope', 'test'))
+  t.ok(fs.lstatSync(path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope', 'test'), { throwIfNoEntry: false }),
+    'stale self-link planted')
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.lstatSync(path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope', 'test'), { throwIfNoEntry: false }),
+    'stale self-link is removed by the orphan sweep on the next install')
 })
 
 tap.test('omit dev dependencies with linked strategy', async t => {

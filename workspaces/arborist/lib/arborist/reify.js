@@ -723,6 +723,12 @@ module.exports = cls => class Reifier extends cls {
     }
 
     // node.isLink
+
+    // Tree-only Link: present in the tree for diff/filter participation, never materialized on disk.
+    if (node.isUndeclaredWorkspaceLink) {
+      return
+    }
+
     await rm(node.path, { recursive: true, force: true })
 
     // symlink
@@ -1339,6 +1345,10 @@ module.exports = cls => class Reifier extends cls {
         continue
       }
       if (!child.isLink) {
+        continue
+      }
+      // Tree-only Links never exist on disk; skipping them lets the sweep remove any stale self-link left by an older npm version.
+      if (child.isUndeclaredWorkspaceLink) {
         continue
       }
       const nmIdx = loc.lastIndexOf(NM_PREFIX)
