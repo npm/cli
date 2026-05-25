@@ -5,6 +5,18 @@ set -eo pipefail
 IS_LOCAL="false"
 IS_CI="true"
 
+require_cmd() {
+  local cmd="$1"
+  if ! command -v "$cmd" >/dev/null 2>&1; then
+    echo "Error: required command '$cmd' was not found in PATH"
+    exit 1
+  fi
+}
+
+for required_cmd in git mktemp npm node; do
+  require_cmd "$required_cmd"
+done
+
 if [ -z "$CI" ]; then
   echo "Running locally will overwrite your globally installed npm."
   GITHUB_SHA=$(git rev-parse HEAD)
