@@ -164,3 +164,28 @@ t.test('error message includes script bodies', async t => {
     { message: /canvas@2\.11\.0 \(install: node-gyp rebuild\)/ }
   )
 })
+
+t.test('error label falls back to node.name when package.version is missing', async t => {
+  // Exercises the `version ? '${name}@${version}' : name` branch in the
+  // error formatter when a node has no package.version (and the name
+  // falls back to node.name via `node.package?.name || node.name`).
+  const bare = {
+    name: 'no-version-pkg',
+    resolved: 'https://registry.npmjs.org/no-version-pkg/-/no-version-pkg-1.0.0.tgz',
+    hasInstallScript: true,
+    path: '/fake/no-version-pkg',
+    isProjectRoot: false,
+    isWorkspace: false,
+    isLink: false,
+    package: { scripts: { install: 'node-gyp rebuild' } },
+  }
+  const arb = makeArb({ ideal: tree([bare]) })
+  await t.rejects(
+    preflight({
+      arb,
+      npm: { flatOptions: { strictAllowScripts: true } },
+      idealTreeOpts: {},
+    }),
+    { message: /no-version-pkg \(install: node-gyp rebuild\)/ }
+  )
+})

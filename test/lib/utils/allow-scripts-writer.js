@@ -618,3 +618,20 @@ t.test('applyApprovalForPackage — multi-version entry + --pin=false adds name-
     canvas: true,
   })
 })
+
+t.test('versionedKeyFor — registry resolved that versionFromTgz cannot parse returns null', async t => {
+  // Private-registry mirror / alternate CDN URL shape that doesn't match
+  // the standard `/-/name-version.tgz` pattern. Exercises the log.silly
+  // breadcrumb path in versionedKeyFor, including each fallback branch
+  // of the `node.path || node.name || '<unknown>'` label expression.
+  const resolved = 'https://private-mirror.example.com/blobs/abc123'
+  t.equal(versionedKeyFor({
+    path: '/fake/mystery', name: 'mystery', resolved, isRegistryDependency: true,
+  }), null, 'falls back when node has a path')
+  t.equal(versionedKeyFor({
+    name: 'mystery', resolved, isRegistryDependency: true,
+  }), null, 'falls back when node has only a name')
+  t.equal(versionedKeyFor({
+    resolved, isRegistryDependency: true,
+  }), null, 'falls back when node has neither path nor name')
+})
