@@ -228,6 +228,27 @@ t.test('drops package.json entries with forbidden semver ranges and warns', asyn
   t.equal(warnings.filter(m => /semver ranges/.test(m)).length, 3)
 })
 
+t.test('drops package.json entries with dist-tag specs and warns', async t => {
+  const mock = await mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'p',
+        allowScripts: {
+          'sharp@latest': true, // forbidden: dist-tag
+          'canvas@next': true, // forbidden: dist-tag
+          'good@1.2.3': true, // OK: exact pin
+        },
+      }),
+    },
+  })
+  const resolveAllowScripts = loadResolver(t)
+  const result = await resolveAllowScripts(mock.npm)
+  t.equal(result.source, 'package.json')
+  t.strictSame(result.policy, { 'good@1.2.3': true })
+  const warnings = mock.logs.warn.byTitle('allow-scripts')
+  t.equal(warnings.filter(m => /dist-tag specs/.test(m)).length, 2)
+})
+
 t.test('drops .npmrc forbidden ranges (and warns) but keeps valid entries', async t => {
   const mock = await mockNpm(t, {
     prefixDir: {
