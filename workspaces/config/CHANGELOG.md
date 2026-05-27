@@ -1,5 +1,10 @@
 # Changelog
 
+## [10.10.0](https://github.com/npm/cli/compare/config-v10.9.1...config-v10.10.0) (2026-05-27)
+### Features
+* [`4b67f6e`](https://github.com/npm/cli/commit/4b67f6ed21a8bf7e47ae78b7fc9cc9fbdfa95057) [#9416](https://github.com/npm/cli/pull/9416) publish --access=private alias for restricted (#9416) (@github-actions[bot], @reggi, @Copilot)
+* [`a10c7ca`](https://github.com/npm/cli/commit/a10c7caf3ad9d2d5e17234c5c5e615dbce7717f9) [#9415](https://github.com/npm/cli/pull/9415) Phase 1 of `allowScripts` opt-in install-script policy (#9360) (#9415) (@owlstronaut, @JamieMagee)
+
 ## [10.9.1](https://github.com/npm/cli/compare/config-v10.9.0...config-v10.9.1) (2026-05-20)
 ### Bug Fixes
 * [`25708d3`](https://github.com/npm/cli/commit/25708d3500a5193fd656e91fdd27695efe85426c) [#9339](https://github.com/npm/cli/pull/9339) min-release-age=0 doesn't filter, honor cross-source precedence (@owlstronaut)

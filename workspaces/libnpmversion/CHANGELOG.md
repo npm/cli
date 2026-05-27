@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.0.4](https://github.com/npm/cli/compare/libnpmversion-v8.0.3...libnpmversion-v8.0.4) (2026-05-27)
+### Documentation
+* [`c5e9d73`](https://github.com/npm/cli/commit/c5e9d73b47056c5a901a7100919f4b29fcfb4d0f) [#9390](https://github.com/npm/cli/pull/9390) Document `npm_old_version` and `npm_new_version` environment variables (#9389) (@github-actions[bot], @36degrees)
+### Chores
+* [`40fcab4`](https://github.com/npm/cli/commit/40fcab45d356545f8db7f34df3e5630116d0dd40) [#8991](https://github.com/npm/cli/pull/8991) `@npmcli/template-oss@4.29.0` (@wraithgar)
+
 ## [8.0.3](https://github.com/npm/cli/compare/libnpmversion-v8.0.2...libnpmversion-v8.0.3) (2025-11-19)
 ### Dependencies
 * [`05ac7a7`](https://github.com/npm/cli/commit/05ac7a7ea2a4d258658537a19ba350e07df34fda) [#8723](https://github.com/npm/cli/pull/8723) `proc-log@6.0.0`

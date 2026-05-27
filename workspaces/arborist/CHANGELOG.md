@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.7.0](https://github.com/npm/cli/compare/arborist-v9.6.0...arborist-v9.7.0) (2026-05-27)
+### Features
+* [`a10c7ca`](https://github.com/npm/cli/commit/a10c7caf3ad9d2d5e17234c5c5e615dbce7717f9) [#9415](https://github.com/npm/cli/pull/9415) Phase 1 of `allowScripts` opt-in install-script policy (#9360) (#9415) (@owlstronaut, @JamieMagee)
+### Bug Fixes
+* [`d8a7803`](https://github.com/npm/cli/commit/d8a7803200c66f178f9a4f049a478a0f96107d39) [#9418](https://github.com/npm/cli/pull/9418) arborist: drop self-link materialization for undeclared workspaces (#9418) (@github-actions[bot], @manzoorwanijk)
+* [`4d141a0`](https://github.com/npm/cli/commit/4d141a09a8738ce83d4751033191385c9cede8e8) [#9417](https://github.com/npm/cli/pull/9417) skip hidden lockfile save on dry run (#9417) (@github-actions[bot], @puneetdixit200, @puneetdixit200)
+
 ## [9.6.0](https://github.com/npm/cli/compare/arborist-v9.5.0...arborist-v9.6.0) (2026-05-20)
 ### Features
 * [`8df10f5`](https://github.com/npm/cli/commit/8df10f5a399048c9d2dd7eba1d65c0b4b6a5b1c8) [#9339](https://github.com/npm/cli/pull/9339) add allow-git/allow-file/allow-directory/allow-remote configs (@owlstronaut)

@@ -48,6 +48,15 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.6.0): `@npmcli/arborist@9.6.0`
 
+## [10.2.9](https://github.com/npm/cli/compare/libnpmexec-v10.2.8...libnpmexec-v10.2.9) (2026-05-27)
+### Bug Fixes
+* [`5000cbf`](https://github.com/npm/cli/commit/5000cbf24f25b5b26beb0db06d5d9f23d698241a) [#9409](https://github.com/npm/cli/pull/9409) exempt local project introspection from allow-directory (@owlstronaut)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.7.0): `@npmcli/arborist@9.7.0`
+
 ## [10.2.6](https://github.com/npm/cli/compare/libnpmexec-v10.2.5...libnpmexec-v10.2.6) (2026-04-22)
 ### Bug Fixes
 * [`e200696`](https://github.com/npm/cli/commit/e200696c3555fc9a9a0e388064da0b5238ae2b73) [#9256](https://github.com/npm/cli/pull/9256) libnpmexec: skip redundant reify for cached directory specs (#9256) (@github-actions[bot], @manzoorwanijk)
