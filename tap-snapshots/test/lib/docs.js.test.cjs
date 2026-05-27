@@ -1530,6 +1530,17 @@ by the underlying \`request\` library.
 
 
 
+#### \`publish-registry\`
+
+* Default: null
+* Type: null or URL
+
+The base URL of the npm registry to use for \`npm publish\` and \`npm
+unpublish\`. When set, overrides \`registry\` for these commands while leaving
+\`registry\` in effect for all other operations like install and view.
+
+
+
 #### \`read-only\`
 
 * Default: false
@@ -2429,6 +2440,7 @@ Array [
   "proxy",
   "read-only",
   "rebuild-bundle",
+  "publish-registry",
   "registry",
   "replace-registry-host",
   "save",
@@ -2587,6 +2599,7 @@ Array [
   "proxy",
   "read-only",
   "rebuild-bundle",
+  "publish-registry",
   "registry",
   "replace-registry-host",
   "save",
@@ -2763,6 +2776,7 @@ Object {
   "provenance": false,
   "provenanceFile": null,
   "proxy": null,
+  "publishRegistry": null,
   "readOnly": false,
   "rebuildBundle": true,
   "registry": "https://registry.npmjs.org/",
@@ -5179,6 +5193,7 @@ npm publish <package-spec>
 
 Options:
 [--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
+[--publish-registry <publish-registry>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--provenance|--provenance-file <file>]
 
@@ -5193,6 +5208,9 @@ Options:
 
   --otp
     This is a one-time password from a two-factor authenticator.  It's needed
+
+  --publish-registry
+    The base URL of the npm registry to use for \`npm publish\` and
 
   -w|--workspace
     Enable running a command in the context of the configured workspaces of the
@@ -5217,6 +5235,7 @@ npm publish <package-spec>
 #### \`access\`
 #### \`dry-run\`
 #### \`otp\`
+#### \`publish-registry\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
@@ -6016,7 +6035,7 @@ Usage:
 npm unpublish [<package-spec>]
 
 Options:
-[--dry-run] [-f|--force]
+[--dry-run] [-f|--force] [--publish-registry <publish-registry>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces]
 
@@ -6025,6 +6044,9 @@ Options:
 
   -f|--force
     Removes various protections against unfortunate side effects, common
+
+  --publish-registry
+    The base URL of the npm registry to use for \`npm publish\` and
 
   -w|--workspace
     Enable running a command in the context of the configured workspaces of the
@@ -6041,6 +6063,7 @@ npm unpublish [<package-spec>]
 
 #### \`dry-run\`
 #### \`force\`
+#### \`publish-registry\`
 #### \`workspace\`
 #### \`workspaces\`
 `

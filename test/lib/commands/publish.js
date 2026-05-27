@@ -58,6 +58,64 @@ t.test('respects publishConfig.registry, runs appropriate scripts', async t => {
   t.same(logs.warn, ['Unknown publishConfig config "other". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'])
 })
 
+t.test('respects publish-registry config', async t => {
+  const publishRegistry = alternateRegistry
+  const { joinedOutput, npm, registry } = await loadNpmWithRegistry(t, {
+    config: {
+      'publish-registry': publishRegistry,
+      [`${publishRegistry.slice(6)}/:_authToken`]: 'test-other-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify(pkgJson, null, 2),
+    },
+    registry: publishRegistry,
+    authorization: 'test-other-token',
+  })
+  registry.getPackage(pkg, { times: 2, code: 404 })
+  registry.putPackage(pkg, { packageJson: pkgJson, registry: publishRegistry })
+  await npm.exec('publish', [])
+  t.matchSnapshot(joinedOutput(), 'new package version')
+})
+
+t.test('publish-registry config overridden by publishConfig.registry', async t => {
+  const publishRegistry = alternateRegistry
+  const thirdRegistry = 'https://third.registry.npmjs.org'
+  const packageJson = {
+    ...pkgJson,
+    publishConfig: { registry: thirdRegistry },
+  }
+  const { joinedOutput, npm, registry } = await loadNpmWithRegistry(t, {
+    config: {
+      'publish-registry': publishRegistry,
+      [`${thirdRegistry.slice(6)}/:_authToken`]: 'test-third-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify(packageJson, null, 2),
+    },
+    registry: thirdRegistry,
+    authorization: 'test-third-token',
+  })
+  registry.publish(pkg, { packageJson })
+  await npm.exec('publish', [])
+  t.matchSnapshot(joinedOutput(), 'new package version')
+})
+
+t.test('publish-registry config does not affect install registry', async t => {
+  const publishRegistry = alternateRegistry
+  const { npm } = await loadNpmWithRegistry(t, {
+    config: {
+      'publish-registry': publishRegistry,
+      ...auth,
+    },
+    prefixDir: {
+      'package.json': JSON.stringify(pkgJson, null, 2),
+    },
+    authorization: token,
+  })
+  t.equal(npm.config.get('registry'), 'https://registry.npmjs.org/')
+  t.equal(npm.config.get('publish-registry'), alternateRegistry + '/')
+})
+
 t.test('re-loads publishConfig.registry if added during script process', async t => {
   const initPackageJson = {
     ...pkgJson,

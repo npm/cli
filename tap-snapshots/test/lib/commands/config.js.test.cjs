@@ -137,6 +137,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "proxy": null,
   "read-only": false,
   "rebuild-bundle": true,
+  "publish-registry": null,
   "registry": "https://registry.npmjs.org/",
   "replace-registry-host": "npmjs",
   "save": true,
@@ -319,6 +320,7 @@ progress = {PROGRESS}
 provenance = false
 provenance-file = null
 proxy = null
+publish-registry = null
 read-only = false
 rebuild-bundle = true
 registry = "https://registry.npmjs.org/"
