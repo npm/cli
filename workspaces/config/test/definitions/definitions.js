@@ -33,6 +33,23 @@ t.test('basic flattening function camelCases from css-case', t => {
   t.end()
 })
 
+t.test('access flattening maps private to restricted', t => {
+  const definitions = mockDefs()
+  const flatPrivate = {}
+  definitions.access.flatten('access', { access: 'private' }, flatPrivate)
+  t.equal(flatPrivate.access, 'restricted', 'private is mapped to restricted')
+  const flatRestricted = {}
+  definitions.access.flatten('access', { access: 'restricted' }, flatRestricted)
+  t.equal(flatRestricted.access, 'restricted', 'restricted is passed through')
+  const flatPublic = {}
+  definitions.access.flatten('access', { access: 'public' }, flatPublic)
+  t.equal(flatPublic.access, 'public', 'public is passed through')
+  const flatNull = {}
+  definitions.access.flatten('access', { access: null }, flatNull)
+  t.equal(flatNull.access, null, 'null is passed through')
+  t.end()
+})
+
 t.test('editor', t => {
   t.test('has EDITOR and VISUAL, use EDITOR', t => {
     mockGlobals(t, { 'process.env': { EDITOR: 'vim', VISUAL: 'mate' } })
