@@ -156,6 +156,7 @@ Object {
   "man": Array [
     "man/man1/npm-access.1",
     "man/man1/npm-adduser.1",
+    "man/man1/npm-approve-scripts.1",
     "man/man1/npm-audit.1",
     "man/man1/npm-bugs.1",
     "man/man1/npm-cache.1",
@@ -163,6 +164,7 @@ Object {
     "man/man1/npm-completion.1",
     "man/man1/npm-config.1",
     "man/man1/npm-dedupe.1",
+    "man/man1/npm-deny-scripts.1",
     "man/man1/npm-deprecate.1",
     "man/man1/npm-diff.1",
     "man/man1/npm-dist-tag.1",

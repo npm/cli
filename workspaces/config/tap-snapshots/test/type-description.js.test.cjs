@@ -42,6 +42,16 @@ Object {
   "allow-same-version": Array [
     "boolean value (true or false)",
   ],
+  "allow-scripts": Array [
+    Function String(),
+    Function Array(),
+  ],
+  "allow-scripts-pending": Array [
+    "boolean value (true or false)",
+  ],
+  "allow-scripts-pin": Array [
+    "boolean value (true or false)",
+  ],
   "also": Array [
     null,
     "dev",
@@ -117,6 +127,9 @@ Object {
   "cpu": Array [
     null,
     Function String(),
+  ],
+  "dangerously-allow-all-scripts": Array [
+    "boolean value (true or false)",
   ],
   "depth": Array [
     null,
@@ -566,6 +579,9 @@ Object {
     "boolean value (true or false)",
   ],
   "sign-git-tag": Array [
+    "boolean value (true or false)",
+  ],
+  "strict-allow-scripts": Array [
     "boolean value (true or false)",
   ],
   "strict-peer-deps": Array [

@@ -114,6 +114,46 @@ t.test('do not run scripts if ignoreScripts=true', async t => {
   t.throws(() => fs.statSync(file), 'bundle build script not run')
 })
 
+t.test('allowScripts deny entry skips the build set entry for that node', async t => {
+  // Verifies the deny gate in #addToBuildSet: when `allowScripts` resolves
+  // a node's policy to `false`, that node's scripts are skipped while
+  // others continue to run.
+  const path = fixture(t, 'testing-rebuild-script-env-flags')
+  const arb = newArb({
+    path,
+    allowScripts: { devdep: false },
+  })
+  await arb.rebuild()
+  // devdep is denied — its postinstall must NOT have produced the `env`
+  // file inside its directory.
+  t.throws(
+    () => fs.statSync(resolve(path, 'node_modules/devdep/env')),
+    'devdep postinstall did not run'
+  )
+  // devopt is not denied, so its postinstall still runs.
+  t.equal(
+    fs.statSync(resolve(path, 'node_modules/devopt/env')).isFile(),
+    true,
+    'devopt postinstall ran'
+  )
+})
+
+t.test('dangerouslyAllowAllScripts bypasses the deny gate', async t => {
+  // Same setup as above, but the escape hatch must let denied scripts run.
+  const path = fixture(t, 'testing-rebuild-script-env-flags')
+  const arb = newArb({
+    path,
+    allowScripts: { devdep: false },
+    dangerouslyAllowAllScripts: true,
+  })
+  await arb.rebuild()
+  t.equal(
+    fs.statSync(resolve(path, 'node_modules/devdep/env')).isFile(),
+    true,
+    'devdep postinstall ran despite deny entry'
+  )
+})
+
 t.test('do nothing if ignoreScripts=true and binLinks=false', async t => {
   const path = fixture(t, 'testing-rebuild-bundle-reified')
   const file = resolve(path, 'node_modules/@isaacs/testing-rebuild-bundle-a/node_modules/@isaacs/testing-rebuild-bundle-b/cwd')

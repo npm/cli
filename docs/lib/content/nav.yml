@@ -15,6 +15,9 @@
   - title: npm adduser
     url: /commands/npm-adduser
     description: Add a registry user account
+  - title: npm approve-scripts
+    url: /commands/npm-approve-scripts
+    description: Approve install scripts for specific dependencies
   - title: npm audit
     url: /commands/npm-audit
     description: Run a security audit
@@ -36,6 +39,9 @@
   - title: npm dedupe
     url: /commands/npm-dedupe
     description: Reduce duplication in the package tree
+  - title: npm deny-scripts
+    url: /commands/npm-deny-scripts
+    description: Deny install scripts for specific dependencies
   - title: npm deprecate
     url: /commands/npm-deprecate
     description: Deprecate a version of a package

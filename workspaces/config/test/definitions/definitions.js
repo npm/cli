@@ -1056,3 +1056,110 @@ t.test('node-gyp', t => {
 
   t.end()
 })
+
+t.test('allow-scripts', t => {
+  t.test('defaults to empty string and flattens to []', t => {
+    const defs = mockDefs()
+    t.equal(defs['allow-scripts'].default, '')
+    const flat = {}
+    defs['allow-scripts'].flatten('allow-scripts', { 'allow-scripts': '' }, flat)
+    t.strictSame(flat, { allowScripts: [] })
+    t.end()
+  })
+
+  t.test('parses comma-separated string into trimmed array', t => {
+    const flat = {}
+    mockDefs()['allow-scripts'].flatten(
+      'allow-scripts',
+      { 'allow-scripts': 'canvas, sharp ,sqlite3' },
+      flat
+    )
+    t.strictSame(flat, { allowScripts: ['canvas', 'sharp', 'sqlite3'] })
+    t.end()
+  })
+
+  t.test('drops empty entries', t => {
+    const flat = {}
+    mockDefs()['allow-scripts'].flatten(
+      'allow-scripts',
+      { 'allow-scripts': '  canvas , , sharp  ' },
+      flat
+    )
+    t.strictSame(flat, { allowScripts: ['canvas', 'sharp'] })
+    t.end()
+  })
+
+  t.test('passes array values through (multiple --allow-scripts flags)', t => {
+    const flat = {}
+    mockDefs()['allow-scripts'].flatten(
+      'allow-scripts',
+      { 'allow-scripts': ['canvas', 'sharp'] },
+      flat
+    )
+    t.strictSame(flat, { allowScripts: ['canvas', 'sharp'] })
+    t.end()
+  })
+
+  t.test('ignores non-string entries in array values', t => {
+    const flat = {}
+    mockDefs()['allow-scripts'].flatten(
+      'allow-scripts',
+      { 'allow-scripts': ['canvas', 42, null, { name: 'sharp' }, 'sqlite3'] },
+      flat
+    )
+    t.strictSame(flat, { allowScripts: ['canvas', 'sqlite3'] })
+    t.end()
+  })
+
+  t.test('splits commas within each array entry (CLI single value)', t => {
+    const flat = {}
+    mockDefs()['allow-scripts'].flatten(
+      'allow-scripts',
+      { 'allow-scripts': ['canvas,sharp', 'sqlite3'] },
+      flat
+    )
+    t.strictSame(flat, { allowScripts: ['canvas', 'sharp', 'sqlite3'] })
+    t.end()
+  })
+
+  t.test('non-string non-array values flatten to empty list', t => {
+    const flat = {}
+    mockDefs()['allow-scripts'].flatten(
+      'allow-scripts',
+      { 'allow-scripts': null },
+      flat
+    )
+    t.strictSame(flat, { allowScripts: [] })
+    t.end()
+  })
+
+  t.end()
+})
+
+t.test('strict-allow-scripts', t => {
+  const defs = mockDefs()
+  t.equal(defs['strict-allow-scripts'].default, false)
+  t.equal(defs['strict-allow-scripts'].type, Boolean)
+  const flat = {}
+  defs['strict-allow-scripts'].flatten(
+    'strict-allow-scripts',
+    { 'strict-allow-scripts': true },
+    flat
+  )
+  t.strictSame(flat, { strictAllowScripts: true })
+  t.end()
+})
+
+t.test('dangerously-allow-all-scripts', t => {
+  const defs = mockDefs()
+  t.equal(defs['dangerously-allow-all-scripts'].default, false)
+  t.equal(defs['dangerously-allow-all-scripts'].type, Boolean)
+  const flat = {}
+  defs['dangerously-allow-all-scripts'].flatten(
+    'dangerously-allow-all-scripts',
+    { 'dangerously-allow-all-scripts': true },
+    flat
+  )
+  t.strictSame(flat, { dangerouslyAllowAllScripts: true })
+  t.end()
+})
