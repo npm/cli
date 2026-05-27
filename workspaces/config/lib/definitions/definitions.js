@@ -154,7 +154,7 @@ const definitions = {
     defaultDescription: `
     'public' for new packages, existing packages it will not change the current level
   `,
-    type: [null, 'restricted', 'public'],
+    type: [null, 'restricted', 'public', 'private'],
     description: `
     If you do not want your scoped package to be publicly viewable (and
     installable) set \`--access=restricted\`.
@@ -165,8 +165,13 @@ const definitions = {
     packages.  Specifying a value of \`restricted\` or \`public\` during
     publish will change the access for an existing package the same way that
     \`npm access set status\` would.
+
+    The value \`private\` is an alias for \`restricted\`.
   `,
-    flatten,
+    flatten (key, obj, flatOptions) {
+      const value = obj[key]
+      flatOptions.access = value === 'private' ? 'restricted' : value
+    },
   }),
   all: new Definition('all', {
     default: false,
