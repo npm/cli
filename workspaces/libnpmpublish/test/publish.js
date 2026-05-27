@@ -57,7 +57,7 @@ t.test('basic publish - no npmVersion', async t => {
         },
       },
     },
-    access: 'public',
+    access: null,
     _attachments: {
       'libnpmpublish-test-1.0.0.tgz': {
         content_type: 'application/octet-stream',
@@ -110,7 +110,7 @@ t.test('scoped publish', async t => {
         },
       },
     },
-    access: 'public',
+    access: null,
     _attachments: {
       '@npmcli/libnpmpublish-test-1.0.0.tgz': {
         content_type: 'application/octet-stream',
@@ -302,7 +302,7 @@ t.test('other error code', async t => {
   const packument = {
     name: 'libnpmpublish',
     description: 'some stuff',
-    access: 'public',
+    access: null,
     _id: 'libnpmpublish',
     'dist-tags': {
       latest: '1.0.0',
@@ -546,6 +546,7 @@ t.test('publish existing package with provenance in gha', async t => {
 
   const ret = await publish(manifest, tarData, {
     ...opts,
+    access: 'public',
     provenance: true,
     fulcioURL: fulcioURL,
     rekorURL: rekorURL,
@@ -766,7 +767,7 @@ t.test('user-supplied provenance - success', async t => {
         },
       },
     },
-    access: 'public',
+    access: null,
     _attachments: {
       '@npmcli/libnpmpublish-test-1.0.0.tgz': {
         content_type: 'application/octet-stream',
@@ -1091,6 +1092,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
 
   const ret = await publish(manifest, tarData, {
     ...opts,
+    access: 'public',
     provenance: true,
     fulcioURL: fulcioURL,
     rekorURL: rekorURL,

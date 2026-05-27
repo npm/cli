@@ -23,7 +23,7 @@ Remove the 'private' field from the package.json to publish it.`),
   // spec is used to pick the appropriate registry/auth combo
   const spec = npa.resolve(manifest.name, manifest.version)
   opts = {
-    access: 'public',
+    access: null,
     algorithms: ['sha512'],
     defaultTag: 'latest',
     ...opts,
