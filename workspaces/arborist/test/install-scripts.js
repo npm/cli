@@ -182,7 +182,7 @@ t.test('lockfile-only node with hasInstallScript=true emits a sentinel', async t
 
 t.test('sentinel is not emitted when scripts are already enumerated', async t => {
   // If `hasInstallScript: true` coexists with a real `scripts` map, we
-  // surface the real names — the sentinel must not overwrite them.
+  // surface the real names, and the sentinel must not overwrite them.
   const getInstallScripts = mockGetInstallScripts(t)
   const node = {
     resolved: 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
@@ -205,4 +205,179 @@ t.test('sentinel is not emitted when hasInstallScript is absent', async t => {
     package: { name: 'pkg', version: '1.0.0' },
   }
   t.strictSame(await getInstallScripts(node), {})
+})
+
+t.test('lockfile-only node hydrates real scripts from package.json on disk', async t => {
+  // The common lockfile-driven case (`npm ci`, a repeat `npm install`):
+  // `node.package.scripts` is empty but the package is unpacked on disk.
+  // We must read the installed package.json and surface the real script
+  // body instead of the sentinel.
+  const getInstallScripts = mockGetInstallScripts(t)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'pkg',
+      version: '1.0.0',
+      scripts: { postinstall: 'node -e "console.log(1)"' },
+    }),
+  })
+  const lockfileNode = {
+    resolved: 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
+    path,
+    isRegistryDependency: true,
+    hasInstallScript: true,
+    package: { name: 'pkg', version: '1.0.0' },
+  }
+  t.strictSame(
+    await getInstallScripts(lockfileNode),
+    { postinstall: 'node -e "console.log(1)"' }
+  )
+})
+
+t.test('lockfile-only node hydrates an explicit install script from disk', async t => {
+  // A native package such as fsevents that ships a prebuilt binary (no
+  // binding.gyp, so synthetic gyp detection finds nothing) but declares an
+  // explicit `install: node-gyp rebuild`. The disk read must recover it
+  // rather than emitting the sentinel.
+  const getInstallScripts = mockGetInstallScripts(t)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'fsevents',
+      version: '2.3.3',
+      scripts: { install: 'node-gyp rebuild' },
+    }),
+  })
+  const lockfileNode = {
+    resolved: 'https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz',
+    path,
+    isRegistryDependency: true,
+    hasInstallScript: true,
+    package: { name: 'fsevents', version: '2.3.3' },
+  }
+  t.strictSame(
+    await getInstallScripts(lockfileNode),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
+t.test('lockfile-only node hydrates a preinstall script from disk', async t => {
+  // Cover the disk `preinstall` recovery path.
+  const getInstallScripts = mockGetInstallScripts(t)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'pkg',
+      version: '1.0.0',
+      scripts: { preinstall: 'node pre.js' },
+    }),
+  })
+  const lockfileNode = {
+    resolved: 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
+    path,
+    isRegistryDependency: true,
+    hasInstallScript: true,
+    package: { name: 'pkg', version: '1.0.0' },
+  }
+  t.strictSame(
+    await getInstallScripts(lockfileNode),
+    { preinstall: 'node pre.js' }
+  )
+})
+
+t.test('lockfile-only non-registry node hydrates prepare from disk', async t => {
+  // A git/file dependency installed from a lockfile: `prepare` runs for
+  // non-registry sources, so the disk read must recover it.
+  const getInstallScripts = mockGetInstallScripts(t)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'pkg',
+      version: '1.0.0',
+      scripts: { prepare: 'node build.js' },
+    }),
+  })
+  const lockfileNode = {
+    resolved: 'git+ssh://git@github.com/foo/bar.git#abc',
+    path,
+    isRegistryDependency: false,
+    hasInstallScript: true,
+    package: { name: 'pkg', version: '1.0.0' },
+  }
+  t.strictSame(
+    await getInstallScripts(lockfileNode),
+    { prepare: 'node build.js' }
+  )
+})
+
+t.test('hydrated prepare is ignored for registry deps', async t => {
+  // Hydration reuses the same registry/non-registry boundary as the
+  // in-memory path: a registry dep whose on-disk package.json only has a
+  // `prepare` script falls through to the sentinel, since `prepare` never
+  // runs for registry installs.
+  const getInstallScripts = mockGetInstallScripts(t)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'pkg',
+      version: '1.0.0',
+      scripts: { prepare: 'build' },
+    }),
+  })
+  const lockfileNode = {
+    resolved: 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
+    path,
+    isRegistryDependency: true,
+    hasInstallScript: true,
+    package: { name: 'pkg', version: '1.0.0' },
+  }
+  t.strictSame(
+    await getInstallScripts(lockfileNode),
+    { install: '(install scripts present)' }
+  )
+})
+
+t.test('falls back to sentinel when on-disk package.json has no install scripts', async t => {
+  // The lockfile flagged install scripts but the on-disk package.json has
+  // none we recognise (e.g. only lifecycle scripts like `test`). Keep the
+  // sentinel so the advisory still surfaces that something was flagged.
+  const getInstallScripts = mockGetInstallScripts(t)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'pkg',
+      version: '1.0.0',
+      scripts: { test: 'tap' },
+    }),
+  })
+  const lockfileNode = {
+    resolved: 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
+    path,
+    isRegistryDependency: true,
+    hasInstallScript: true,
+    package: { name: 'pkg', version: '1.0.0' },
+  }
+  t.strictSame(
+    await getInstallScripts(lockfileNode),
+    { install: '(install scripts present)' }
+  )
+})
+
+t.test('disk hydration does not mutate node.package', async t => {
+  // The enumeration helper is read-only: recovering scripts from disk must
+  // not write them back onto the node (unlike Builder#addToBuildSet, which
+  // owns the node and hydrates it deliberately).
+  const getInstallScripts = mockGetInstallScripts(t)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'pkg',
+      version: '1.0.0',
+      scripts: { postinstall: 'echo hi' },
+    }),
+  })
+  const pkg = { name: 'pkg', version: '1.0.0' }
+  const lockfileNode = {
+    resolved: 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
+    path,
+    isRegistryDependency: true,
+    hasInstallScript: true,
+    package: pkg,
+  }
+  await getInstallScripts(lockfileNode)
+  t.strictSame(pkg, { name: 'pkg', version: '1.0.0' }, 'node.package untouched')
+  t.notOk(pkg.scripts, 'no scripts written back onto node.package')
 })
