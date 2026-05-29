@@ -184,6 +184,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       await resolvePatchedDependencies(this.idealTree, {
         path: this.path,
         allowUnusedPatches: this.options.allowUnusedPatches,
+        installStrategy: this.options.installStrategy,
       })
     } finally {
       timeEnd()

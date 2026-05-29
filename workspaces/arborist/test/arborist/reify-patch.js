@@ -217,6 +217,28 @@ t.test('reify rejects a patch whose contents changed after build-ideal-tree', as
     'reify rejects an integrity mismatch introduced after build-ideal-tree')
 })
 
+t.test('a patched optional dependency still fails loudly on patch problems', async t => {
+  // optional installs tolerate platform/env failures, but a declared patch must not be silently skipped
+  const registry = createRegistry(t)
+  await mockPackage(t, registry)
+  const patchRel = `patches/${PKG_NAME}@${PKG_VERSION}.patch`
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      optionalDependencies: { [PKG_NAME]: `^${PKG_VERSION}` },
+      patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: patchRel },
+    }),
+    patches: { [`${PKG_NAME}@${PKG_VERSION}.patch`]: filePatch('index.js', ORIGINAL, PATCHED) },
+  })
+
+  const arb = newArb({ path })
+  await arb.buildIdealTree()
+  fs.rmSync(resolve(path, patchRel))
+  await t.rejects(arb.reify(), { code: 'EPATCHNOTFOUND' },
+    'optional patch failure is not swallowed by optional handling')
+})
+
 t.test('restores node.patched from an existing v4 lockfile', async t => {
   const patchRel = `patches/${PKG_NAME}@${PKG_VERSION}.patch`
   const path = makeProject(t, {

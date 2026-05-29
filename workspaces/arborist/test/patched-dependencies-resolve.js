@@ -49,6 +49,33 @@ t.test('attaches node.patched on an exact match', async t => {
   t.match(dep.patched.integrity, /^sha512-/, 'records the sha512 integrity')
 })
 
+t.test('EPATCHUNSUPPORTED with install-strategy=linked', async t => {
+  const path = t.testdir({
+    'fix.patch': PATCH,
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { dep: '^1.0.0' },
+      patchedDependencies: { 'dep@1.0.0': 'fix.patch' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root', version: '1.0.0', dependencies: { dep: '^1.0.0' } },
+        'node_modules/dep': lockEntry('dep', '1.0.0'),
+      },
+    }),
+    node_modules: {
+      dep: { 'package.json': JSON.stringify({ name: 'dep', version: '1.0.0' }) },
+    },
+  })
+  // patching is not yet wired into the linked side-store, so it must fail loudly
+  await t.rejects(buildIdeal(path, { installStrategy: 'linked' }), { code: 'EPATCHUNSUPPORTED' })
+})
+
 t.test('no patchedDependencies is a no-op', async t => {
   // empty patchedDependencies hits the early return guard
   const path = t.testdir({

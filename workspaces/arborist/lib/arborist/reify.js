@@ -790,7 +790,11 @@ module.exports = cls => class Reifier extends cls {
   // if the node is optional, then the failure of the promise is nonfatal
   // just add it and its optional set to the trash list.
   [_handleOptionalFailure] (node, p) {
-    return (node.optional ? p.catch(() => {
+    return (node.optional ? p.catch((er) => {
+      // a declared patch must apply or fail loudly, even on an optional dep
+      if (typeof er?.code === 'string' && er.code.startsWith('EPATCH')) {
+        throw er
+      }
       const set = optionalSet(node)
       for (const node of set) {
         log.verbose('reify', 'failed optional dependency', node.path)
