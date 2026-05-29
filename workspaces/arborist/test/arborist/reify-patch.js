@@ -181,3 +181,32 @@ t.test('missing patch file throws EPATCHNOTFOUND', async t => {
   await t.rejects(newArb({ path }).reify(), { code: 'EPATCHNOTFOUND' },
     'missing patch file on disk hard-errors')
 })
+
+t.test('restores node.patched from an existing v4 lockfile', async t => {
+  const patchRel = `patches/${PKG_NAME}@${PKG_VERSION}.patch`
+  const path = makeProject(t, {
+    patch: filePatch('index.js', ORIGINAL, PATCHED),
+    patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: patchRel },
+    extra: {
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        lockfileVersion: 4,
+        requires: true,
+        packages: {
+          '': { name: 'root', version: '1.0.0', dependencies: { [PKG_NAME]: `^${PKG_VERSION}` } },
+          [`node_modules/${PKG_NAME}`]: {
+            version: PKG_VERSION,
+            resolved: `https://registry.npmjs.org/${PKG_NAME}/-/${PKG_NAME}-${PKG_VERSION}.tgz`,
+            integrity: 'sha512-deadbeef',
+            patched: { path: patchRel, integrity: 'sha512-abc' },
+          },
+        },
+      }),
+    },
+  })
+  const tree = await newArb({ path }).loadVirtual()
+  const dep = [...tree.inventory.values()].find(n => n.name === PKG_NAME)
+  t.strictSame(dep.patched, { path: patchRel, integrity: 'sha512-abc' },
+    'node.patched is read back from the lockfile packages entry')
+})

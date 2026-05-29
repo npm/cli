@@ -756,17 +756,8 @@ module.exports = cls => class Reifier extends cls {
       return
     }
     const { path: patchPath } = node.patched
-    const absPatch = resolve(this.path, patchPath)
-
-    let contents
-    try {
-      contents = await readFile(absPatch)
-    } catch {
-      throw Object.assign(
-        new Error(`patch file not found: ${patchPath}`),
-        { code: 'EPATCHNOTFOUND', path: patchPath, node: node.name }
-      )
-    }
+    // existence and integrity were already validated by resolvePatchedDependencies in build-ideal-tree
+    const contents = await readFile(resolve(this.path, patchPath))
 
     try {
       await applyPatchToDir({ patch: contents, cwd: node.path })

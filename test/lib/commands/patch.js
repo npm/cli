@@ -284,8 +284,7 @@ t.test('add: not-installed bare name rejects with EPATCHNOTINSTALLED', async t =
 })
 
 t.test('add: ambiguous when multiple versions installed', async t => {
-  // root-direct 1.0.0 plus two nested 2.0.0 copies, so the dedup guard and the
-  // root-dependant label are both exercised while listing the ambiguity
+  // root-direct 1.0.0 plus two nested 2.0.0 copies, so the dedup guard and the root-dependant label are both exercised while listing the ambiguity
   const nestedDep = v => ({
     node_modules: { [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: v }) } },
   })

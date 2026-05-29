@@ -714,10 +714,6 @@ class Shrinkwrap {
       meta.integrity = lock.integrity
     }
 
-    if (lock.patched) {
-      meta.patched = lock.patched
-    }
-
     if (lock.version && !lock.integrity) {
       // this is usually going to be a git url or symlink, but it could
       // also be a registry dependency that did not have integrity at
@@ -957,7 +953,7 @@ class Shrinkwrap {
       this.lockfileVersion = defaultLockfileVersion
     }
     // patched nodes force lockfileVersion 4 so older clients abort the install
-    const hasPatched = Object.values(this.data.packages || {}).some(p => p?.patched)
+    const hasPatched = Object.values(this.data.packages).some(p => p.patched)
     if (hasPatched && this.lockfileVersion < patchedLockfileVersion) {
       this.lockfileVersion = patchedLockfileVersion
     }

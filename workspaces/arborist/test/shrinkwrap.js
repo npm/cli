@@ -78,6 +78,20 @@ t.test('starting out with a reset lockfile is an empty lockfile', async t => {
   t.equal(sw.filename, resolve(fixture, 'package-lock.json'))
 })
 
+t.test('errors on a lockfileVersion newer than supported', async t => {
+  const dir = t.testdir({
+    'package-lock.json': JSON.stringify({
+      name: 'x',
+      version: '1.0.0',
+      lockfileVersion: 5,
+      requires: true,
+      packages: {},
+    }),
+  })
+  await t.rejects(Shrinkwrap.load({ path: dir }), { code: 'ELOCKFILEVERSION' },
+    'a lockfile newer than the supported version is refused')
+})
+
 t.test('reset in a bad dir gets an empty lockfile with no lockfile version', async t => {
   const nullLockDir = t.testdir({
     'package-lock.json': JSON.stringify(null),
