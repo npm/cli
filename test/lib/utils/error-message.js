@@ -167,7 +167,15 @@ t.test('args are cleaned', async t => {
   t.matchSnapshot(errorMessage(Object.assign(new Error('cmd err'), {
     cmd: 'some command',
     signal: 'SIGYOLO',
-    args: ['a', 'r', 'g', 's', 'https://evil:password@npmjs.org'],
+    args: [
+      'a',
+      'r',
+      'g',
+      's',
+      'https://evil:password@npmjs.org',
+      '--//registry.npmjs.org/:_authToken',
+      'plain-secret',
+    ],
     stdout: 'stdout',
     stderr: 'stderr',
   })))
