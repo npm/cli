@@ -343,6 +343,17 @@ t.test('should throw ECIGLOBAL', async t => {
   await t.rejects(npm.exec('ci', []), { code: 'ECIGLOBAL' })
 })
 
+t.test('rejects the patch relax flags', async t => {
+  for (const flag of ['allow-unused-patches', 'ignore-patch-failures']) {
+    t.test(flag, async t => {
+      const { npm } = await loadMockNpm(t, {
+        config: { [flag]: true },
+      })
+      await t.rejects(npm.exec('ci', []), { code: 'ECIPATCHFLAG' })
+    })
+  }
+})
+
 t.test('should throw error when ideal inventory mismatches virtual', async t => {
   const { npm, registry } = await loadMockNpm(t, {
     prefixDir: {

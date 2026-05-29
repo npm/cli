@@ -1801,15 +1801,18 @@ const definitions = {
     `,
     flatten,
   }),
-  // Intended to be CLI-only and rejected by `npm ci`; that restriction is not yet enforced.
+  // CLI-only: deliberately no flatten, so a value in .npmrc/env never reaches the install pipeline.
+  // npm install reads it from the cli layer only, and npm ci rejects it.
   'allow-unused-patches': new Definition('allow-unused-patches', {
     default: false,
     type: Boolean,
     description: `
       Install even when a registered patch in \`patchedDependencies\` matches no
       installed package. Does not silence patch apply failures.
+
+      This flag is only honored when passed on the command line; it is ignored
+      in \`.npmrc\` and environment variables, and rejected by \`npm ci\`.
     `,
-    flatten,
   }),
   'ignore-patch-failures': new Definition('ignore-patch-failures', {
     default: false,
@@ -1817,8 +1820,10 @@ const definitions = {
     description: `
       Install even when a registered patch fails to apply, with a warning per
       failure. Intended for incident response only.
+
+      This flag is only honored when passed on the command line; it is ignored
+      in \`.npmrc\` and environment variables, and rejected by \`npm ci\`.
     `,
-    flatten,
   }),
   'edit-dir': new Definition('edit-dir', {
     default: null,

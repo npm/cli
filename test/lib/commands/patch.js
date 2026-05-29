@@ -700,3 +700,36 @@ t.test('rm keeps a patch file still referenced by another selector', async t => 
   t.ok(after.patchedDependencies[DEP_NAME], 'name-only selector kept')
   t.notOk(after.patchedDependencies[`${DEP_NAME}@${DEP_VERSION}`], 'exact selector removed')
 })
+
+t.test('install honors --allow-unused-patches only from the cli', async t => {
+  // an empty project with a ghost patch entry triggers EPATCHUNUSED entirely offline
+  const prefixDir = {
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      patchedDependencies: { 'ghost@1.0.0': 'patches/ghost.patch' },
+    }),
+    patches: { 'ghost.patch': '--- a/x\n+++ b/x\n' },
+  }
+
+  t.test('unused patch is a hard error by default', async t => {
+    const { npm } = await loadMockNpm(t, { config: { 'ignore-scripts': true, audit: false }, prefixDir })
+    await t.rejects(npm.exec('install', []), { code: 'EPATCHUNUSED' })
+  })
+
+  t.test('the cli flag suppresses the error', async t => {
+    const { npm } = await loadMockNpm(t, {
+      config: { 'ignore-scripts': true, audit: false, 'allow-unused-patches': true },
+      prefixDir,
+    })
+    await t.resolves(npm.exec('install', []))
+  })
+
+  t.test('the same flag in .npmrc is ignored', async t => {
+    const { npm } = await loadMockNpm(t, {
+      config: { 'ignore-scripts': true, audit: false },
+      prefixDir: { ...prefixDir, '.npmrc': 'allow-unused-patches=true' },
+    })
+    await t.rejects(npm.exec('install', []), { code: 'EPATCHUNUSED' })
+  })
+})

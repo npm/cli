@@ -366,6 +366,9 @@ setting.
 Install even when a registered patch in \`patchedDependencies\` matches no
 installed package. Does not silence patch apply failures.
 
+This flag is only honored when passed on the command line; it is ignored in
+\`.npmrc\` and environment variables, and rejected by \`npm ci\`.
+
 
 
 #### \`audit\`
@@ -987,6 +990,9 @@ fresh.
 
 Install even when a registered patch fails to apply, with a warning per
 failure. Intended for incident response only.
+
+This flag is only honored when passed on the command line; it is ignored in
+\`.npmrc\` and environment variables, and rejected by \`npm ci\`.
 
 
 
@@ -2808,8 +2814,6 @@ Array [
   "pack-destination",
   "packages",
   "patches-dir",
-  "allow-unused-patches",
-  "ignore-patch-failures",
   "parseable",
   "allow-scripts-pending",
   "allow-scripts-pin",
@@ -2887,6 +2891,8 @@ Array [
   "logs-max",
   "long",
   "node-options",
+  "allow-unused-patches",
+  "ignore-patch-failures",
   "edit-dir",
   "ignore-existing",
   "keep-edit-dir",
@@ -2916,7 +2922,6 @@ Object {
   "allowScripts": Array [],
   "allowScriptsPending": false,
   "allowScriptsPin": true,
-  "allowUnusedPatches": false,
   "audit": true,
   "auditLevel": null,
   "authType": "web",
@@ -2959,7 +2964,6 @@ Object {
   "heading": "npm",
   "httpsProxy": null,
   "ifPresent": false,
-  "ignorePatchFailures": false,
   "ignoreScripts": false,
   "includeAttestations": false,
   "includeStaged": false,
