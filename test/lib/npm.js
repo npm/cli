@@ -460,6 +460,22 @@ t.test('subcommand handling', async t => {
     // Check if output was generated - the format may be different
     t.ok(outputs.some(o => o && o[0]), 'has output content')
   })
+
+  t.test('subcommand usage errors include full command path', async t => {
+    const { npm } = await loadMockNpm(t)
+    let err
+
+    try {
+      await npm.exec('stage', ['approve'])
+    } catch (e) {
+      err = e
+    }
+
+    t.equal(err.code, 'EUSAGE', 'throws usage error')
+    t.match(err.message, 'npm stage approve <stage-id>', 'prints full subcommand usage')
+    t.notMatch(err.message, /\nnpm approve <stage-id>/, 'does not print bare subcommand usage')
+    t.match(err.message, 'Run "npm help stage" for more info', 'points to the parent command help')
+  })
 })
 
 t.test('exec edge cases', async t => {
