@@ -1792,6 +1792,34 @@ const definitions = {
     `,
     flatten,
   }),
+  'patches-dir': new Definition('patches-dir', {
+    default: 'patches',
+    type: path,
+    description: `
+      The directory, relative to the project root, where \`npm patch commit\`
+      writes patch files for \`patchedDependencies\`.
+    `,
+    flatten,
+  }),
+  // Intended to be CLI-only and rejected by `npm ci`; that restriction is not yet enforced.
+  'allow-unused-patches': new Definition('allow-unused-patches', {
+    default: false,
+    type: Boolean,
+    description: `
+      Install even when a registered patch in \`patchedDependencies\` matches no
+      installed package. Does not silence patch apply failures.
+    `,
+    flatten,
+  }),
+  'ignore-patch-failures': new Definition('ignore-patch-failures', {
+    default: false,
+    type: Boolean,
+    description: `
+      Install even when a registered patch fails to apply, with a warning per
+      failure. Intended for incident response only.
+    `,
+    flatten,
+  }),
   parseable: new Definition('parseable', {
     default: false,
     type: Boolean,

@@ -130,6 +130,9 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "package-lock-only": false,
   "pack-destination": ".",
   "packages": [],
+  "patches-dir": "{CWD}/prefix/patches",
+  "allow-unused-patches": false,
+  "ignore-patch-failures": false,
   "parseable": false,
   "allow-scripts-pending": false,
   "allow-scripts-pin": true,
@@ -208,6 +211,7 @@ allow-same-version = false
 allow-scripts = [""]
 allow-scripts-pending = false
 allow-scripts-pin = true
+allow-unused-patches = false
 also = null
 audit = true
 audit-level = null
@@ -263,6 +267,7 @@ globalconfig = "{CWD}/global/etc/npmrc"
 heading = "npm"
 https-proxy = null
 if-present = false
+ignore-patch-failures = false
 ignore-scripts = false
 include = []
 include-attestations = false
@@ -324,6 +329,7 @@ packages-all = false
 packages-and-scopes-permission = null
 parseable = false
 password = (protected)
+patches-dir = "{CWD}/prefix/patches"
 prefer-dedupe = false
 prefer-offline = false
 prefer-online = false

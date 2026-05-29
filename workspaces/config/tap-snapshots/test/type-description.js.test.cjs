@@ -53,6 +53,9 @@ Object {
   "allow-scripts-pin": Array [
     "boolean value (true or false)",
   ],
+  "allow-unused-patches": Array [
+    "boolean value (true or false)",
+  ],
   "also": Array [
     null,
     "dev",
@@ -241,6 +244,9 @@ Object {
     "full url with \\"http://\\"",
   ],
   "if-present": Array [
+    "boolean value (true or false)",
+  ],
+  "ignore-patch-failures": Array [
     "boolean value (true or false)",
   ],
   "ignore-scripts": Array [
@@ -471,6 +477,9 @@ Object {
   "password": Array [
     null,
     Function String(),
+  ],
+  "patches-dir": Array [
+    "valid filesystem path",
   ],
   "prefer-dedupe": Array [
     "boolean value (true or false)",

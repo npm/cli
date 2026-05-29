@@ -357,6 +357,16 @@ setting.
 
 
 
+#### \`allow-unused-patches\`
+
+* Default: false
+* Type: Boolean
+
+Install even when a registered patch in \`patchedDependencies\` matches no
+installed package. Does not silence patch apply failures.
+
+
+
 #### \`audit\`
 
 * Default: true
@@ -948,6 +958,16 @@ running scripts that may only apply for some builds in an otherwise generic
 CI setup.
 
 This value is not exported to the environment for child processes.
+
+#### \`ignore-patch-failures\`
+
+* Default: false
+* Type: Boolean
+
+Install even when a registered patch fails to apply, with a warning per
+failure. Intended for incident response only.
+
+
 
 #### \`ignore-scripts\`
 
@@ -1568,6 +1588,16 @@ Output parseable results from commands that write to standard output. For
 
 Password for authentication. Can be provided via command line when creating
 tokens, though it's generally safer to be prompted for it.
+
+
+
+#### \`patches-dir\`
+
+* Default: "patches"
+* Type: Path
+
+The directory, relative to the project root, where \`npm patch commit\` writes
+patch files for \`patchedDependencies\`.
 
 
 
@@ -2574,6 +2604,9 @@ Array [
   "package-lock-only",
   "pack-destination",
   "packages",
+  "patches-dir",
+  "allow-unused-patches",
+  "ignore-patch-failures",
   "parseable",
   "allow-scripts-pending",
   "allow-scripts-pin",
@@ -2740,6 +2773,9 @@ Array [
   "package-lock-only",
   "pack-destination",
   "packages",
+  "patches-dir",
+  "allow-unused-patches",
+  "ignore-patch-failures",
   "parseable",
   "allow-scripts-pending",
   "allow-scripts-pin",
@@ -2843,6 +2879,7 @@ Object {
   "allowScripts": Array [],
   "allowScriptsPending": false,
   "allowScriptsPin": true,
+  "allowUnusedPatches": false,
   "audit": true,
   "auditLevel": null,
   "authType": "web",
@@ -2885,6 +2922,7 @@ Object {
   "heading": "npm",
   "httpsProxy": null,
   "ifPresent": false,
+  "ignorePatchFailures": false,
   "ignoreScripts": false,
   "includeAttestations": false,
   "includeStaged": false,
@@ -2928,6 +2966,7 @@ Object {
   "packDestination": ".",
   "parseable": false,
   "password": null,
+  "patchesDir": "{CWD}/prefix/patches",
   "preferDedupe": false,
   "preferOffline": false,
   "preferOnline": false,
