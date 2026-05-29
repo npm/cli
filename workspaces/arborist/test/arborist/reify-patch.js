@@ -162,6 +162,10 @@ t.test('ignorePatchFailures downgrades EPATCHFAILED to a warning', async t => {
   // file remains as extracted since the patch was skipped
   t.equal(fs.readFileSync(installedFile(path), 'utf8'), ORIGINAL,
     'package left unpatched after skipped failure')
+  // the skipped patch must not be recorded in the lockfile
+  const lock = JSON.parse(fs.readFileSync(resolve(path, 'package-lock.json'), 'utf8'))
+  t.notOk(lock.packages[`node_modules/${PKG_NAME}`].patched,
+    'unapplied patch is not written to the lockfile')
 })
 
 t.test('missing patch file throws EPATCHNOTFOUND', async t => {

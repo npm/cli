@@ -773,6 +773,8 @@ module.exports = cls => class Reifier extends cls {
     } catch (er) {
       if (this.options.ignorePatchFailures) {
         log.warn('patch', `failed to apply ${patchPath} to ${node.name}: ${er.message}`)
+        // the patch was not applied, so do not record it in the lockfile
+        node.patched = null
         return
       }
       throw er

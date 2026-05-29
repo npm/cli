@@ -574,6 +574,37 @@ t.test('ls tolerates ambiguous overlapping range selectors', async t => {
   t.match(joinedOutput(), /\(error: ambiguous selectors\)/, 'ls surfaces the ambiguity')
 })
 
+t.test('ls flags only the conflicting range selectors, not an exact one', async t => {
+  // an exact selector for the same name must not be reported as ambiguous
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        dependencies: { [DEP_NAME]: '1.0.0', b: '1.0.0' },
+        patchedDependencies: {
+          [`${DEP_NAME}@1.0.0`]: 'patches/exact.patch',
+          [`${DEP_NAME}@>=2.0.0 <4.0.0`]: 'patches/a.patch',
+          [`${DEP_NAME}@>=3.0.0 <5.0.0`]: 'patches/b.patch',
+        },
+      }),
+      node_modules: {
+        [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: '1.0.0' }) },
+        b: {
+          'package.json': JSON.stringify({ name: 'b', version: '1.0.0', dependencies: { [DEP_NAME]: '3.5.0' } }),
+          node_modules: { [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: '3.5.0' }) } },
+        },
+      },
+    },
+  })
+  await npm.exec('patch', ['ls'])
+  const out = joinedOutput()
+  t.match(out, new RegExp(`patches/exact\\.patch\\t${DEP_NAME}@1\\.0\\.0\\t\\(1 node\\)`), 'exact selector counts its node')
+  t.match(out, /patches\/a\.patch\t.*\(error: ambiguous selectors\)/, 'first overlapping range flagged')
+  t.match(out, /patches\/b\.patch\t.*\(error: ambiguous selectors\)/, 'second overlapping range flagged')
+})
+
 t.test('ls reports plural node counts for a name-only selector', async t => {
   // offline fixture with two installed copies so the match count is plural
   const { npm, joinedOutput } = await loadMockNpm(t, {
@@ -596,6 +627,24 @@ t.test('ls reports plural node counts for a name-only selector', async t => {
   })
   await npm.exec('patch', ['ls'])
   t.match(joinedOutput(), /\(2 nodes\)/, 'name-only selector matches both installed copies')
+})
+
+t.test('rm refuses to delete a patch file outside the project root', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        patchedDependencies: { [`${DEP_NAME}@1.0.0`]: '../escape.patch' },
+      }),
+    },
+  })
+  await t.rejects(
+    npm.exec('patch', ['rm', DEP_NAME]),
+    { code: 'EPATCHUNSAFE' },
+    'a crafted escaping patch path is not deleted'
+  )
 })
 
 t.test('rm removes every selector for a bare name', async t => {
