@@ -24,7 +24,7 @@ const debug = require('../debug.js')
 const onExit = require('../signal-handling.js')
 const optionalSet = require('../optional-set.js')
 const relpath = require('../relpath.js')
-const { applyPatchToDir } = require('../patch.js')
+const { applyPatchToDir, patchIntegrity } = require('../patch.js')
 const { readFile } = require('node:fs/promises')
 const retirePath = require('../retire-path.js')
 const treeCheck = require('../tree-check.js')
@@ -755,9 +755,24 @@ module.exports = cls => class Reifier extends cls {
     if (!node.patched) {
       return
     }
-    const { path: patchPath } = node.patched
-    // existence and integrity were already validated by resolvePatchedDependencies in build-ideal-tree
-    const contents = await readFile(resolve(this.path, patchPath))
+    const { path: patchPath, integrity } = node.patched
+
+    // validate the patch file here too, since reify can run on an ideal tree that skipped resolvePatchedDependencies
+    let contents
+    try {
+      contents = await readFile(resolve(this.path, patchPath))
+    } catch {
+      throw Object.assign(
+        new Error(`patch file not found: ${patchPath}`),
+        { code: 'EPATCHNOTFOUND', path: patchPath, node: node.name }
+      )
+    }
+    if (patchIntegrity(contents) !== integrity) {
+      throw Object.assign(
+        new Error(`patch file ${patchPath} does not match the recorded integrity`),
+        { code: 'EPATCHINTEGRITY', path: patchPath, node: node.name }
+      )
+    }
 
     try {
       await applyPatchToDir({ patch: contents, cwd: node.path })

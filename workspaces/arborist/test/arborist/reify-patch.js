@@ -182,6 +182,41 @@ t.test('missing patch file throws EPATCHNOTFOUND', async t => {
     'missing patch file on disk hard-errors')
 })
 
+t.test('reify revalidates the patch file when build-ideal-tree was already run', async t => {
+  // build-ideal-tree validates first, but reify must still guard against a file removed afterwards
+  const registry = createRegistry(t)
+  await mockPackage(t, registry)
+  const patchRel = `patches/${PKG_NAME}@${PKG_VERSION}.patch`
+  const path = makeProject(t, {
+    patch: filePatch('index.js', ORIGINAL, PATCHED),
+    patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: patchRel },
+  })
+
+  const arb = newArb({ path })
+  await arb.buildIdealTree()
+  // delete the validated patch file; reify reuses the cached ideal tree and re-checks
+  fs.rmSync(resolve(path, patchRel))
+  await t.rejects(arb.reify(), { code: 'EPATCHNOTFOUND' },
+    'reify re-checks the patch file even on a prebuilt ideal tree')
+})
+
+t.test('reify rejects a patch whose contents changed after build-ideal-tree', async t => {
+  const registry = createRegistry(t)
+  await mockPackage(t, registry)
+  const patchRel = `patches/${PKG_NAME}@${PKG_VERSION}.patch`
+  const path = makeProject(t, {
+    patch: filePatch('index.js', ORIGINAL, PATCHED),
+    patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: patchRel },
+  })
+
+  const arb = newArb({ path })
+  await arb.buildIdealTree()
+  // change the patch contents after validation so the integrity no longer matches
+  fs.writeFileSync(resolve(path, patchRel), filePatch('index.js', ORIGINAL, 'module.exports = "other"\n'))
+  await t.rejects(arb.reify(), { code: 'EPATCHINTEGRITY' },
+    'reify rejects an integrity mismatch introduced after build-ideal-tree')
+})
+
 t.test('restores node.patched from an existing v4 lockfile', async t => {
   const patchRel = `patches/${PKG_NAME}@${PKG_VERSION}.patch`
   const path = makeProject(t, {
