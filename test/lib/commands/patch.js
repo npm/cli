@@ -191,6 +191,38 @@ t.test('bare form routes to add', async t => {
   t.match(joinedOutput(), /You can now edit the following directory: /, 'bare form extracts like add')
 })
 
+t.test('npm ci rejects patch path drift from the lockfile', async t => {
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: basePrefix(),
+  })
+  await setupDep(npm, registry)
+  await npm.exec('install', [])
+
+  // commit a real patch so the lockfile records patched.path
+  const editDir = path.join(npm.prefix, 'edit')
+  await pacote.extract(`${DEP_NAME}@${DEP_VERSION}`, editDir, npm.flatOptions)
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'module.exports = () => "patched"\n')
+  await npm.exec('patch', ['commit', editDir])
+
+  // move the patch file and repoint package.json without updating the lockfile
+  const pkgPath = path.join(npm.prefix, 'package.json')
+  const pkg = readJson(pkgPath)
+  const key = `${DEP_NAME}@${DEP_VERSION}`
+  const oldPath = path.join(npm.prefix, pkg.patchedDependencies[key])
+  const newRel = 'patches/renamed.patch'
+  fs.renameSync(oldPath, path.join(npm.prefix, newRel))
+  pkg.patchedDependencies[key] = newRel
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  await t.rejects(
+    npm.exec('ci', []),
+    /package-lock\.json are in sync/,
+    'npm ci refuses when the patch path diverges from the lockfile'
+  )
+})
+
 t.test('rm with no registered patch rejects with EPATCHNOTFOUND', async t => {
   const { npm } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },
@@ -451,6 +483,25 @@ t.test('add: range not installed resolves against the registry', async t => {
   t.match(joinedOutput(), /You can now edit the following directory: /, 'resolved the range via the registry')
 })
 
+t.test('commit: a patches-dir outside the project is rejected', async t => {
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false, 'patches-dir': '../outside' },
+    strictRegistryNock: false,
+    prefixDir: basePrefix(),
+  })
+  await setupDep(npm, registry)
+  await npm.exec('install', [])
+
+  const editDir = path.join(npm.prefix, 'edit')
+  await pacote.extract(`${DEP_NAME}@${DEP_VERSION}`, editDir, npm.flatOptions)
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'module.exports = () => "patched"\n')
+  await t.rejects(
+    npm.exec('patch', ['commit', editDir]),
+    { code: 'EPATCHUNSAFE' },
+    'commit refuses to write the patch outside the project root'
+  )
+})
+
 t.test('commit: edit dir package.json missing version rejects', async t => {
   const { npm } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },
@@ -520,7 +571,7 @@ t.test('ls tolerates ambiguous overlapping range selectors', async t => {
     },
   })
   await npm.exec('patch', ['ls'])
-  t.match(joinedOutput(), /\(0 nodes\)/, 'ambiguous node is skipped, ls still prints')
+  t.match(joinedOutput(), /\(error: ambiguous selectors\)/, 'ls surfaces the ambiguity')
 })
 
 t.test('ls reports plural node counts for a name-only selector', async t => {

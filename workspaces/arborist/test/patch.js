@@ -63,6 +63,14 @@ t.test('refuses to write outside the package directory', async t => {
   )
 })
 
+t.test('refuses an absolute-path target', async t => {
+  const dir = t.testdir({ 'index.js': 'x\n' })
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('/tmp/escape.js', '', 'pwned\n'), cwd: dir }),
+    { code: 'EPATCHUNSAFE' }
+  )
+})
+
 t.test('refuses to delete outside the package directory', async t => {
   const dir = t.testdir({ 'index.js': 'x\n' })
   await t.rejects(
