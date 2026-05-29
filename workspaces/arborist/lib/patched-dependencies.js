@@ -1,7 +1,6 @@
 // Resolve the root patchedDependencies map against an ideal tree.
-// Attaches node.patched = { path, integrity } to each matched node and
-// enforces the failure modes (workspace-member entry, missing file, unused
-// patch, non-registry target, ambiguous selectors) as hard errors.
+// Attaches node.patched = { path, integrity } to each matched node.
+// Enforces the failure modes (workspace-member entry, missing file, unused patch, non-registry target, ambiguous selectors) as hard errors.
 const semver = require('semver')
 const { resolve } = require('node:path')
 const { readFile } = require('node:fs/promises')
@@ -20,22 +19,13 @@ const err = (message, code, extra = {}) =>
 
 // Pick the most specific range among several that all match a version.
 // Returns the strict subset, or throws when ordering is ambiguous.
+// semver.subset is transitive, so the running minimum is a subset of every range it did not throw on.
 const pickRange = (ranges, name, version) => {
   let best = ranges[0]
   for (const r of ranges.slice(1)) {
     if (semver.subset(r.spec, best.spec, { loose: true })) {
       best = r
     } else if (!semver.subset(best.spec, r.spec, { loose: true })) {
-      throw err(
-        `Ambiguous patch selectors for ${name}@${version}: ` +
-          `"${name}@${best.spec}" and "${name}@${r.spec}" overlap but neither ` +
-          `is a subset. Add an exact "${name}@${version}" entry to disambiguate.`,
-        'EPATCHAMBIGUOUS'
-      )
-    }
-  }
-  for (const r of ranges) {
-    if (r !== best && !semver.subset(best.spec, r.spec, { loose: true })) {
       throw err(
         `Ambiguous patch selectors for ${name}@${version}: ` +
           `"${name}@${best.spec}" and "${name}@${r.spec}" overlap but neither ` +
@@ -71,24 +61,7 @@ const matchSelector = (selectors, node) => {
 }
 
 const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) => {
-  const patchedDependencies = tree.package?.patchedDependencies
-  if (!patchedDependencies || !Object.keys(patchedDependencies).length) {
-    return
-  }
-
-  // patchedDependencies is honoured only in the root manifest
-  for (const node of tree.inventory.values()) {
-    const pkg = node.target?.package || node.package
-    if (node.isWorkspace && pkg?.patchedDependencies) {
-      throw err(
-        `patchedDependencies is only supported in the root package.json, ` +
-          `but was found in workspace "${node.name}". Move the entry to the root.`,
-        'EPATCHWORKSPACE',
-        { workspace: node.name }
-      )
-    }
-  }
-
+  const patchedDependencies = tree.package?.patchedDependencies || {}
   const selectors = Object.entries(patchedDependencies)
     .map(([key, patchPath]) => ({ ...parseSelector(key), key, patchPath }))
 
@@ -111,11 +84,28 @@ const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) =>
 
   const usedKeys = new Set()
   for (const node of tree.inventory.values()) {
-    if (node.isProjectRoot || node.isWorkspace || node.isLink) {
+    // patchedDependencies is honoured only in the root manifest
+    if (node.isWorkspace) {
+      // Link.package already delegates to its target's package
+      const pkg = node.package
+      if (pkg?.patchedDependencies && Object.keys(pkg.patchedDependencies).length) {
+        throw err(
+          `patchedDependencies is only supported in the root package.json, ` +
+            `but was found in workspace "${node.name}". Move the entry to the root.`,
+          'EPATCHWORKSPACE',
+          { workspace: node.name }
+        )
+      }
       continue
     }
+    if (node.isProjectRoot || node.isLink) {
+      continue
+    }
+
     const selector = matchSelector(selectors, node)
     if (!selector) {
+      // clear any stale patch record inherited from the lockfile
+      node.patched = null
       continue
     }
 
@@ -133,7 +123,7 @@ const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) =>
     usedKeys.add(selector.key)
   }
 
-  if (!allowUnusedPatches) {
+  if (selectors.length && !allowUnusedPatches) {
     const unused = selectors.filter(s => !usedKeys.has(s.key))
     if (unused.length) {
       throw err(

@@ -1,6 +1,5 @@
 // Native dependency patching helpers shared across build-ideal-tree and reify.
-// Patches are plain unified diffs (git apply-compatible) and are applied with
-// jsdiff using a fuzz factor of 0 so that any context drift fails loudly.
+// Patches are plain unified diffs (git apply-compatible) applied with jsdiff using a fuzz factor of 0 so that any context drift fails loudly.
 const { applyPatch, parsePatch } = require('diff')
 const ssri = require('ssri')
 const fs = require('node:fs')
