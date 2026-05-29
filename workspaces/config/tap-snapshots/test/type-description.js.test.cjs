@@ -173,6 +173,10 @@ Object {
   "dry-run": Array [
     "boolean value (true or false)",
   ],
+  "edit-dir": Array [
+    null,
+    "valid filesystem path",
+  ],
   "editor": Array [
     Function String(),
   ],
@@ -244,6 +248,9 @@ Object {
     "full url with \\"http://\\"",
   ],
   "if-present": Array [
+    "boolean value (true or false)",
+  ],
+  "ignore-existing": Array [
     "boolean value (true or false)",
   ],
   "ignore-patch-failures": Array [
@@ -322,6 +329,9 @@ Object {
     "linked",
   ],
   "json": Array [
+    "boolean value (true or false)",
+  ],
+  "keep-edit-dir": Array [
     "boolean value (true or false)",
   ],
   "key": Array [
@@ -479,7 +489,7 @@ Object {
     Function String(),
   ],
   "patches-dir": Array [
-    "valid filesystem path",
+    Function String(),
   ],
   "prefer-dedupe": Array [
     "boolean value (true or false)",

@@ -120,6 +120,9 @@
   - title: npm pack
     url: /commands/npm-pack
     description: Create a tarball from a package
+  - title: npm patch
+    url: /commands/npm-patch
+    description: Apply local patches to installed dependencies
   - title: npm ping
     url: /commands/npm-ping
     description: Ping npm registry

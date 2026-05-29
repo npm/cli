@@ -1794,7 +1794,7 @@ const definitions = {
   }),
   'patches-dir': new Definition('patches-dir', {
     default: 'patches',
-    type: path,
+    type: String,
     description: `
       The directory, relative to the project root, where \`npm patch commit\`
       writes patch files for \`patchedDependencies\`.
@@ -1819,6 +1819,30 @@ const definitions = {
       failure. Intended for incident response only.
     `,
     flatten,
+  }),
+  'edit-dir': new Definition('edit-dir', {
+    default: null,
+    type: [null, path],
+    description: `
+      Override the temporary directory used by \`npm patch add\` to prepare a
+      package for editing.
+    `,
+  }),
+  'ignore-existing': new Definition('ignore-existing', {
+    default: false,
+    type: Boolean,
+    description: `
+      With \`npm patch add\`, discard a previous unfinished edit directory and
+      start fresh.
+    `,
+  }),
+  'keep-edit-dir': new Definition('keep-edit-dir', {
+    default: false,
+    type: Boolean,
+    description: `
+      With \`npm patch commit\`, do not remove the edit directory after
+      committing the patch.
+    `,
   }),
   parseable: new Definition('parseable', {
     default: false,

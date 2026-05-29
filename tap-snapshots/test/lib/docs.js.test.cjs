@@ -133,6 +133,7 @@ Array [
   "outdated",
   "owner",
   "pack",
+  "patch",
   "ping",
   "pkg",
   "prefix",
@@ -692,6 +693,16 @@ Note: This is NOT honored by other network related commands, eg \`dist-tags\`,
 
 
 
+#### \`edit-dir\`
+
+* Default: null
+* Type: null or Path
+
+Override the temporary directory used by \`npm patch add\` to prepare a
+package for editing.
+
+
+
 #### \`editor\`
 
 * Default: The EDITOR or VISUAL environment variables, or
@@ -959,6 +970,16 @@ CI setup.
 
 This value is not exported to the environment for child processes.
 
+#### \`ignore-existing\`
+
+* Default: false
+* Type: Boolean
+
+With \`npm patch add\`, discard a previous unfinished edit directory and start
+fresh.
+
+
+
 #### \`ignore-patch-failures\`
 
 * Default: false
@@ -1148,6 +1169,16 @@ Whether or not to output JSON data, rather than the normal output.
   saving them to your \`package.json\`.
 
 Not supported by all npm commands.
+
+
+
+#### \`keep-edit-dir\`
+
+* Default: false
+* Type: Boolean
+
+With \`npm patch commit\`, do not remove the edit directory after committing
+the patch.
 
 
 
@@ -1594,7 +1625,7 @@ tokens, though it's generally safer to be prompted for it.
 #### \`patches-dir\`
 
 * Default: "patches"
-* Type: Path
+* Type: String
 
 The directory, relative to the project root, where \`npm patch commit\` writes
 patch files for \`patchedDependencies\`.
@@ -2607,6 +2638,9 @@ Array [
   "patches-dir",
   "allow-unused-patches",
   "ignore-patch-failures",
+  "edit-dir",
+  "ignore-existing",
+  "keep-edit-dir",
   "parseable",
   "allow-scripts-pending",
   "allow-scripts-pin",
@@ -2853,6 +2887,9 @@ Array [
   "logs-max",
   "long",
   "node-options",
+  "edit-dir",
+  "ignore-existing",
+  "keep-edit-dir",
   "prefix",
   "timing",
   "update-notifier",
@@ -2966,7 +3003,7 @@ Object {
   "packDestination": ".",
   "parseable": false,
   "password": null,
-  "patchesDir": "{CWD}/prefix/patches",
+  "patchesDir": "patches",
   "preferDedupe": false,
   "preferOffline": false,
   "preferOnline": false,
@@ -5350,6 +5387,64 @@ npm pack <package-spec>
 #### \`workspaces\`
 #### \`include-workspace-root\`
 #### \`ignore-scripts\`
+`
+
+exports[`test/lib/docs.js TAP usage patch > must match snapshot 1`] = `
+Apply local patches to installed dependencies
+
+Usage:
+npm patch <pkg>[@<version>]
+npm patch add <pkg>[@<version>] [--edit-dir <path>] [--ignore-existing]
+npm patch commit <edit-dir> [--patches-dir <dir>] [--keep-edit-dir]
+npm patch ls
+npm patch rm <pkg>[@<version>]
+
+Options:
+[--patches-dir <patches-dir>] [--allow-unused-patches] [--ignore-patch-failures]
+[--edit-dir <edit-dir>] [--ignore-existing] [--keep-edit-dir]
+[--registry <registry>]
+
+  --patches-dir
+    The directory, relative to the project root, where \`npm patch commit\`
+
+  --allow-unused-patches
+    Install even when a registered patch in \`patchedDependencies\` matches no
+
+  --ignore-patch-failures
+    Install even when a registered patch fails to apply, with a warning per
+
+  --edit-dir
+    Override the temporary directory used by \`npm patch add\` to prepare a
+
+  --ignore-existing
+    With \`npm patch add\`, discard a previous unfinished edit directory and
+
+  --keep-edit-dir
+    With \`npm patch commit\`, do not remove the edit directory after
+
+  --registry
+    The base URL of the npm registry.
+
+
+Run "npm help patch" for more info
+
+\`\`\`bash
+npm patch <pkg>[@<version>]
+npm patch add <pkg>[@<version>] [--edit-dir <path>] [--ignore-existing]
+npm patch commit <edit-dir> [--patches-dir <dir>] [--keep-edit-dir]
+npm patch ls
+npm patch rm <pkg>[@<version>]
+\`\`\`
+
+Note: This command is unaware of workspaces.
+
+#### \`patches-dir\`
+#### \`allow-unused-patches\`
+#### \`ignore-patch-failures\`
+#### \`edit-dir\`
+#### \`ignore-existing\`
+#### \`keep-edit-dir\`
+#### \`registry\`
 `
 
 exports[`test/lib/docs.js TAP usage ping > must match snapshot 1`] = `
