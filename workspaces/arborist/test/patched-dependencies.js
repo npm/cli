@@ -30,9 +30,11 @@ t.test('name-only is the fallback', t => {
   t.end()
 })
 
-t.test('most specific (subset) range wins', t => {
-  const selectors = [sel('x', '>=1.0.0 <3.0.0'), sel('x', '>=1.5.0 <2.0.0')]
-  t.equal(matchSelector(selectors, { name: 'x', version: '1.7.0' }).key, 'x@>=1.5.0 <2.0.0')
+t.test('most specific (subset) range wins regardless of order', t => {
+  const wideFirst = [sel('x', '>=1.0.0 <3.0.0'), sel('x', '>=1.5.0 <2.0.0')]
+  t.equal(matchSelector(wideFirst, { name: 'x', version: '1.7.0' }).key, 'x@>=1.5.0 <2.0.0')
+  const narrowFirst = [sel('x', '>=1.5.0 <2.0.0'), sel('x', '>=1.0.0 <3.0.0')]
+  t.equal(matchSelector(narrowFirst, { name: 'x', version: '1.7.0' }).key, 'x@>=1.5.0 <2.0.0')
   t.end()
 })
 

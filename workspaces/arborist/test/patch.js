@@ -41,6 +41,12 @@ t.test('creates nested directories for new files', async t => {
   t.equal(readFileSync(resolve(dir, 'lib/deep/x.js'), 'utf8'), 'deep\n')
 })
 
+t.test('empty patch content is a no-op', async t => {
+  const dir = t.testdir({ 'index.js': 'unchanged\n' })
+  await applyPatchToDir({ patch: '', cwd: dir })
+  t.equal(readFileSync(resolve(dir, 'index.js'), 'utf8'), 'unchanged\n')
+})
+
 t.test('throws on context drift (fuzz 0)', async t => {
   const dir = t.testdir({ 'index.js': 'totally different content\n' })
   await t.rejects(
