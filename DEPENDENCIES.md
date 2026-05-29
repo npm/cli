@@ -540,6 +540,7 @@ graph LR;
   npmcli-arborist-->bin-links;
   npmcli-arborist-->cacache;
   npmcli-arborist-->common-ancestor-path;
+  npmcli-arborist-->diff;
   npmcli-arborist-->gar-promise-retry["@gar/promise-retry"];
   npmcli-arborist-->hosted-git-info;
   npmcli-arborist-->isaacs-string-locale-compare["@isaacs/string-locale-compare"];

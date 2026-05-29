@@ -242,6 +242,7 @@ To fix:
       path,
       realpath: path,
       integrity: sw.integrity,
+      patched: sw.patched,
       resolved: consistentResolve(sw.resolved, this.path, path),
       pkg: sw,
       loadOverrides,

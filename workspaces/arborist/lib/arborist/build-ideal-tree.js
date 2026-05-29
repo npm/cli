@@ -25,6 +25,7 @@ const debug = require('../debug.js')
 const fromPath = require('../from-path.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const { isReleaseAgeExcluded, trustedSpecName } = require('../release-age-exclude.js')
+const { resolvePatchedDependencies } = require('../patched-dependencies.js')
 const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
 const Node = require('../node.js')
@@ -180,6 +181,10 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       await this.#fixDepFlags()
       await this.#pruneFailedOptional()
       await this.#checkEngineAndPlatform()
+      await resolvePatchedDependencies(this.idealTree, {
+        path: this.path,
+        allowUnusedPatches: this.options.allowUnusedPatches,
+      })
     } finally {
       timeEnd()
       this.finishTracker('idealTree')

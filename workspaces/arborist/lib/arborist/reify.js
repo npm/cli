@@ -24,6 +24,8 @@ const debug = require('../debug.js')
 const onExit = require('../signal-handling.js')
 const optionalSet = require('../optional-set.js')
 const relpath = require('../relpath.js')
+const { applyPatchToDir, patchIntegrity } = require('../patch.js')
+const { readFile } = require('node:fs/promises')
 const retirePath = require('../retire-path.js')
 const treeCheck = require('../tree-check.js')
 const { defaultLockfileVersion } = require('../shrinkwrap.js')
@@ -720,6 +722,7 @@ module.exports = cls => class Reifier extends cls {
         const { content: pkg } = await PackageJson.normalize(node.path)
         node.package.scripts = pkg.scripts
       }
+      await this.#applyPatch(node)
       return
     }
 
@@ -745,6 +748,44 @@ module.exports = cls => class Reifier extends cls {
 
     await mkdir(dir, { recursive: true })
     return symlink(rel, node.path, 'junction')
+  }
+
+  // apply a registered patch to a freshly extracted node, after extract and before rebuild
+  async #applyPatch (node) {
+    if (!node.patched) {
+      return
+    }
+    const { path: patchPath, integrity } = node.patched
+    const absPatch = resolve(this.path, patchPath)
+
+    let contents
+    try {
+      contents = await readFile(absPatch)
+    } catch {
+      throw Object.assign(
+        new Error(`patch file not found: ${patchPath}`),
+        { code: 'EPATCHNOTFOUND', path: patchPath, node: node.name }
+      )
+    }
+
+    // detect drift between the recorded hash and the on-disk patch (npm ci safety)
+    const onDisk = patchIntegrity(contents)
+    if (integrity && onDisk !== integrity) {
+      throw Object.assign(
+        new Error(`patch file ${patchPath} does not match the integrity in the lockfile`),
+        { code: 'EPATCHINTEGRITY', path: patchPath, node: node.name }
+      )
+    }
+
+    try {
+      await applyPatchToDir({ patch: contents, cwd: node.path })
+    } catch (er) {
+      if (this.options.ignorePatchFailures) {
+        log.warn('patch', `failed to apply ${patchPath} to ${node.name}: ${er.message}`)
+        return
+      }
+      throw er
+    }
   }
 
   // if the node is optional, then the failure of the promise is nonfatal

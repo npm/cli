@@ -10,6 +10,9 @@
 
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const defaultLockfileVersion = 3
+// Bumped to 4 only when a node carries a patch record, so older clients abort.
+const patchedLockfileVersion = 4
+const maxLockfileVersion = 4
 
 // for comparing nodes to yarn.lock entries
 const mismatch = (a, b) => a && b && a !== b
@@ -107,6 +110,7 @@ const nodeMetaKeys = [
   'integrity',
   'inBundle',
   'hasInstallScript',
+  'patched',
 ]
 
 const metaFieldFromPkg = (pkg, key) => {
@@ -458,6 +462,14 @@ class Shrinkwrap {
       this.ancientLockfile = false
       data = {}
     }
+    // refuse lockfiles newer than we understand so we never install unpatched
+    if (data.lockfileVersion > maxLockfileVersion) {
+      throw Object.assign(
+        new Error(`Unsupported lockfileVersion ${data.lockfileVersion}. ` +
+          `This npm only supports up to ${maxLockfileVersion}. Please upgrade npm.`),
+        { code: 'ELOCKFILEVERSION' }
+      )
+    }
     // auto convert v1 lockfiles to v3
     // leave v2 in place unless configured
     // v3 by default
@@ -702,6 +714,10 @@ class Shrinkwrap {
       meta.integrity = lock.integrity
     }
 
+    if (lock.patched) {
+      meta.patched = lock.patched
+    }
+
     if (lock.version && !lock.integrity) {
       // this is usually going to be a git url or symlink, but it could
       // also be a registry dependency that did not have integrity at
@@ -939,6 +955,11 @@ class Shrinkwrap {
     // if we haven't set it by now, use the default
     if (!this.lockfileVersion) {
       this.lockfileVersion = defaultLockfileVersion
+    }
+    // patched nodes force lockfileVersion 4 so older clients abort the install
+    const hasPatched = Object.values(this.data.packages || {}).some(p => p?.patched)
+    if (hasPatched && this.lockfileVersion < patchedLockfileVersion) {
+      this.lockfileVersion = patchedLockfileVersion
     }
     this.data.lockfileVersion = this.lockfileVersion
 

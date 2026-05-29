@@ -94,6 +94,7 @@ class Node {
       optional = true,
       overrides,
       parent,
+      patched = null,
       path,
       peer = true,
       realpath,
@@ -169,6 +170,8 @@ class Node {
       }
     }
     this.integrity = integrity || this.package._integrity || null
+    // Patch record { path, integrity } or null, set from patchedDependencies or the lockfile.
+    this.patched = patched || null
     this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
 
