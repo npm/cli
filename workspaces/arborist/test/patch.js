@@ -111,6 +111,15 @@ t.test('modify fails when the target is missing', async t => {
   )
 })
 
+t.test('re-codes a raw filesystem error as EPATCHFAILED', async t => {
+  // "foo" exists as a file, so creating "foo/bar.js" makes mkdir throw a raw FS error
+  const dir = t.testdir({ foo: 'i am a file, not a directory\n' })
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('foo/bar.js', '', 'new\n'), cwd: dir }),
+    { code: 'EPATCHFAILED' }
+  )
+})
+
 t.test('patchIntegrity is stable and content-addressed', t => {
   const a = patchIntegrity('hello')
   const b = patchIntegrity(Buffer.from('hello'))

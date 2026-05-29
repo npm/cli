@@ -93,7 +93,15 @@ const applyPatchToDir = async ({ patch, cwd }) => {
     if (!filePatch.hunks.length && isDevNull(filePatch.oldFileName) && isDevNull(filePatch.newFileName)) {
       continue
     }
-    await applyFilePatch(filePatch, cwd)
+    try {
+      await applyFilePatch(filePatch, cwd)
+    } catch (er) {
+      // re-code raw filesystem errors so a patch failure is never mistaken for an optional-install skip
+      if (typeof er?.code === 'string' && er.code.startsWith('EPATCH')) {
+        throw er
+      }
+      throw Object.assign(new Error(`failed to apply patch: ${er.message}`), { code: 'EPATCHFAILED', cause: er })
+    }
   }
 }
 

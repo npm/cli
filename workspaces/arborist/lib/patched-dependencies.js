@@ -60,19 +60,10 @@ const matchSelector = (selectors, node) => {
   return matches.find(s => s.spec === null) || null
 }
 
-const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches, installStrategy }) => {
+const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) => {
   const patchedDependencies = tree.package?.patchedDependencies || {}
   const selectors = Object.entries(patchedDependencies)
     .map(([key, patchPath]) => ({ ...parseSelector(key), key, patchPath }))
-
-  // linked installs store packages in a content-addressed side-store that this slice does not patch yet, so fail loudly instead of silently installing unpatched code
-  if (selectors.length && installStrategy === 'linked') {
-    throw err(
-      `patchedDependencies is not yet supported with install-strategy=linked.`,
-      'EPATCHUNSUPPORTED',
-      { installStrategy }
-    )
-  }
 
   // cache patch file integrity by path so shared diffs are read once
   const integrityCache = new Map()

@@ -217,6 +217,34 @@ t.test('reify rejects a patch whose contents changed after build-ideal-tree', as
     'reify rejects an integrity mismatch introduced after build-ideal-tree')
 })
 
+t.test('reify rejects patches under install-strategy=linked', async t => {
+  // patching is not wired into the linked side-store yet, so it must fail loudly, not silently skip
+  const patchRel = `patches/${PKG_NAME}@${PKG_VERSION}.patch`
+  const path = makeProject(t, {
+    patch: filePatch('index.js', ORIGINAL, PATCHED),
+    patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: patchRel },
+    extra: {
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        lockfileVersion: 4,
+        requires: true,
+        packages: {
+          '': { name: 'root', version: '1.0.0', dependencies: { [PKG_NAME]: `^${PKG_VERSION}` } },
+          [`node_modules/${PKG_NAME}`]: {
+            version: PKG_VERSION,
+            resolved: `https://registry.npmjs.org/${PKG_NAME}/-/${PKG_NAME}-${PKG_VERSION}.tgz`,
+            integrity: 'sha512-deadbeef',
+          },
+        },
+      }),
+    },
+  })
+  // offline + lockfile means the guard fires before any extraction is attempted
+  await t.rejects(newArb({ path, installStrategy: 'linked', offline: true }).reify(),
+    { code: 'EPATCHUNSUPPORTED' }, 'linked install with a declared patch is rejected')
+})
+
 t.test('a patched optional dependency still fails loudly on patch problems', async t => {
   // optional installs tolerate platform/env failures, but a declared patch must not be silently skipped
   const registry = createRegistry(t)

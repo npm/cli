@@ -113,6 +113,15 @@ module.exports = cls => class Reifier extends cls {
 
     const oldTree = this.idealTree
     if (linked) {
+      // patching is not yet wired into the linked side-store, so fail loudly instead of silently installing unpatched code
+      for (const node of this.idealTree.inventory.values()) {
+        if (node.patched) {
+          throw Object.assign(
+            new Error('patchedDependencies is not yet supported with install-strategy=linked.'),
+            { code: 'EPATCHUNSUPPORTED', node: node.name }
+          )
+        }
+      }
       // swap out the tree with the isolated tree
       // this is currently technical debt which will be resolved in a refactor
       // of Node/Link trees
