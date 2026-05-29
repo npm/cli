@@ -24,7 +24,7 @@ const debug = require('../debug.js')
 const onExit = require('../signal-handling.js')
 const optionalSet = require('../optional-set.js')
 const relpath = require('../relpath.js')
-const { applyPatchToDir, patchIntegrity } = require('../patch.js')
+const { applyPatchToDir } = require('../patch.js')
 const { readFile } = require('node:fs/promises')
 const retirePath = require('../retire-path.js')
 const treeCheck = require('../tree-check.js')
@@ -755,7 +755,7 @@ module.exports = cls => class Reifier extends cls {
     if (!node.patched) {
       return
     }
-    const { path: patchPath, integrity } = node.patched
+    const { path: patchPath } = node.patched
     const absPatch = resolve(this.path, patchPath)
 
     let contents
@@ -765,15 +765,6 @@ module.exports = cls => class Reifier extends cls {
       throw Object.assign(
         new Error(`patch file not found: ${patchPath}`),
         { code: 'EPATCHNOTFOUND', path: patchPath, node: node.name }
-      )
-    }
-
-    // detect drift between the recorded hash and the on-disk patch (npm ci safety)
-    const onDisk = patchIntegrity(contents)
-    if (integrity && onDisk !== integrity) {
-      throw Object.assign(
-        new Error(`patch file ${patchPath} does not match the integrity in the lockfile`),
-        { code: 'EPATCHINTEGRITY', path: patchPath, node: node.name }
       )
     }
 
