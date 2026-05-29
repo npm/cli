@@ -67,6 +67,24 @@ t.test('mismatching versions on inventory', async t => {
   )
 })
 
+t.test('mismatching patch integrity or path', async t => {
+  t.matchSnapshot(
+    validateLockfile(
+      new Map([
+        ['foo', { name: 'foo', version: '1.0.0', patched: { path: 'patches/foo.patch', integrity: 'sha512-aaa' } }],
+        ['bar', { name: 'bar', version: '2.0.0', patched: { path: 'patches/bar.patch', integrity: 'sha512-bbb' } }],
+        ['baz', { name: 'baz', version: '3.0.0' }],
+      ]),
+      new Map([
+        ['foo', { name: 'foo', version: '1.0.0', patched: { path: 'patches/foo.patch', integrity: 'sha512-CHANGED' } }],
+        ['bar', { name: 'bar', version: '2.0.0', patched: { path: 'patches/moved.patch', integrity: 'sha512-bbb' } }],
+        ['baz', { name: 'baz', version: '3.0.0', patched: { path: 'patches/baz.patch', integrity: 'sha512-ccc' } }],
+      ])
+    ),
+    'should error on integrity drift, path drift, and a newly added patch'
+  )
+})
+
 t.test('missing virtualTree inventory', async t => {
   t.matchSnapshot(
     validateLockfile(

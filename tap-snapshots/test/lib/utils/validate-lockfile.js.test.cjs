@@ -19,6 +19,14 @@ exports[`test/lib/utils/validate-lockfile.js TAP identical inventory for both id
 Array []
 `
 
+exports[`test/lib/utils/validate-lockfile.js TAP mismatching patch integrity or path > should error on integrity drift, path drift, and a newly added patch 1`] = `
+Array [
+  "Invalid: patch for foo@1.0.0 does not match the patch recorded in the lock file",
+  "Invalid: patch for bar@2.0.0 does not match the patch recorded in the lock file",
+  "Invalid: patch for baz@3.0.0 does not match the patch recorded in the lock file",
+]
+`
+
 exports[`test/lib/utils/validate-lockfile.js TAP mismatching versions on inventory > should have errors for each mismatching version 1`] = `
 Array [
   "Invalid: lock file's foo@1.0.0 does not satisfy foo@2.0.0",

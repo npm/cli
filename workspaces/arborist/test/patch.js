@@ -55,6 +55,54 @@ t.test('throws on context drift (fuzz 0)', async t => {
   )
 })
 
+t.test('refuses to write outside the package directory', async t => {
+  const dir = t.testdir({ 'index.js': 'x\n' })
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('../escape.js', '', 'pwned\n'), cwd: dir }),
+    { code: 'EPATCHUNSAFE' }
+  )
+})
+
+t.test('refuses to delete outside the package directory', async t => {
+  const dir = t.testdir({ 'index.js': 'x\n' })
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('../escape.js', 'secret\n', ''), cwd: dir }),
+    { code: 'EPATCHUNSAFE' }
+  )
+})
+
+t.test('delete fails when the file drifted from the diff', async t => {
+  const dir = t.testdir({ 'gone.js': 'different content\n' })
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('gone.js', 'original\n', ''), cwd: dir }),
+    { code: 'EPATCHFAILED' }
+  )
+})
+
+t.test('delete fails when the target is missing', async t => {
+  const dir = t.testdir({})
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('gone.js', 'original\n', ''), cwd: dir }),
+    { code: 'EPATCHFAILED' }
+  )
+})
+
+t.test('add fails when the file already exists', async t => {
+  const dir = t.testdir({ 'added.js': 'already here\n' })
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('added.js', '', 'new\n'), cwd: dir }),
+    { code: 'EPATCHFAILED' }
+  )
+})
+
+t.test('modify fails when the target is missing', async t => {
+  const dir = t.testdir({})
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('index.js', 'a\n', 'b\n'), cwd: dir }),
+    { code: 'EPATCHFAILED' }
+  )
+})
+
 t.test('patchIntegrity is stable and content-addressed', t => {
   const a = patchIntegrity('hello')
   const b = patchIntegrity(Buffer.from('hello'))

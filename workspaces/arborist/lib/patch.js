@@ -4,7 +4,7 @@ const { applyPatch, parsePatch } = require('diff')
 const ssri = require('ssri')
 const fs = require('node:fs')
 const { promises: fsp } = fs
-const { resolve, dirname } = require('node:path')
+const { resolve, relative, dirname, isAbsolute } = require('node:path')
 
 // Compute the SSRI integrity of a patch file's contents.
 // Accepts a string or Buffer and returns a sha512 SSRI string.
@@ -14,52 +14,73 @@ const patchIntegrity = data =>
   }).toString()
 
 // Strip a leading git-style "a/" or "b/" prefix from a diff path.
-const stripPrefix = file => {
-  if (!file || file === '/dev/null') {
-    return file
-  }
-  return file.replace(/^[ab]\//, '')
-}
+const stripPrefix = file => file.replace(/^[ab]\//, '')
 
 // True when a diff path points at /dev/null, signalling a file add or delete.
 const isDevNull = file => !file || file === '/dev/null' || /(^|\/)\.dev\/null$/.test(file)
 
+const patchError = (message, code, file) =>
+  Object.assign(new Error(message), { code, file })
+
+// Resolve a diff path under cwd and refuse anything that escapes the package directory.
+const containedTarget = (cwd, file) => {
+  const target = resolve(cwd, file)
+  const rel = relative(cwd, target)
+  if (!rel || rel.startsWith('..') || isAbsolute(rel)) {
+    throw patchError(`patch path escapes the package directory: ${file}`, 'EPATCHUNSAFE', file)
+  }
+  return target
+}
+
+// Run a parsed file patch against a source string with fuzz 0.
+// Returns the patched text, or throws EPATCHFAILED on any context mismatch.
+const strictApply = (source, filePatch, file) => {
+  const patched = applyPatch(source, filePatch, { fuzzFactor: 0 })
+  if (patched === false) {
+    throw patchError(`patch could not be applied to ${file}`, 'EPATCHFAILED', file)
+  }
+  return patched
+}
+
 // Apply a single parsed file patch under cwd.
 // Handles modified, added (--- /dev/null) and deleted (+++ /dev/null) files.
 const applyFilePatch = async (filePatch, cwd) => {
-  const oldFile = stripPrefix(filePatch.oldFileName)
-  const newFile = stripPrefix(filePatch.newFileName)
   const isAdd = isDevNull(filePatch.oldFileName)
   const isDelete = isDevNull(filePatch.newFileName)
 
   if (isDelete) {
-    await fsp.rm(resolve(cwd, oldFile), { force: true })
+    const file = stripPrefix(filePatch.oldFileName)
+    const target = containedTarget(cwd, file)
+    // verify the file still matches the diff before removing it
+    const source = await fsp.readFile(target, 'utf8').catch(() => {
+      throw patchError(`patch target to delete is missing: ${file}`, 'EPATCHFAILED', file)
+    })
+    strictApply(source, filePatch, file)
+    await fsp.rm(target, { force: true })
     return
   }
 
-  const target = resolve(cwd, newFile)
+  const file = stripPrefix(filePatch.newFileName)
+  const target = containedTarget(cwd, file)
 
-  let source = ''
-  let mode
-  if (!isAdd) {
-    source = await fsp.readFile(target, 'utf8')
-    mode = (await fsp.stat(target)).mode
+  if (isAdd) {
+    // a new file must not already exist, otherwise the tarball drifted
+    if (fs.existsSync(target)) {
+      throw patchError(`patch adds a file that already exists: ${file}`, 'EPATCHFAILED', file)
+    }
+    const created = strictApply('', filePatch, file)
+    await fsp.mkdir(dirname(target), { recursive: true })
+    await fsp.writeFile(target, created)
+    return
   }
 
-  // fuzzFactor 0: any context mismatch returns false and is treated as fatal.
-  const patched = applyPatch(source, filePatch, { fuzzFactor: 0 })
-  if (patched === false) {
-    throw Object.assign(
-      new Error(`patch could not be applied to ${newFile}`),
-      { code: 'EPATCHFAILED', file: newFile }
-    )
-  }
-
-  await fsp.mkdir(dirname(target), { recursive: true })
+  const source = await fsp.readFile(target, 'utf8').catch(() => {
+    throw patchError(`patch target is missing: ${file}`, 'EPATCHFAILED', file)
+  })
+  const mode = (await fsp.stat(target)).mode
+  const patched = strictApply(source, filePatch, file)
   await fsp.writeFile(target, patched)
-  if (mode !== undefined) {
-    await fsp.chmod(target, mode)
-  }
+  await fsp.chmod(target, mode)
 }
 
 // Apply a unified diff to the package extracted at `cwd`.

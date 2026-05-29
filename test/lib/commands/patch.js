@@ -285,6 +285,51 @@ t.test('add: ambiguous when multiple versions installed', async t => {
   )
 })
 
+t.test('add: an installed file: dependency is rejected as non-registry', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project', version: '1.0.0', dependencies: { [DEP_NAME]: 'file:./local' },
+      }),
+      local: { 'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }) },
+      node_modules: {
+        [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }) },
+      },
+    },
+  })
+  await t.rejects(
+    npm.exec('patch', ['add', DEP_NAME]),
+    { code: 'EPATCHNONREGISTRY' },
+    'cannot patch a file: dependency that is already installed'
+  )
+})
+
+t.test('add: a range matching multiple installed versions is ambiguous', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        dependencies: { [DEP_NAME]: '1.0.0', b: '1.0.0' },
+      }),
+      node_modules: {
+        [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: '1.0.0' }) },
+        b: {
+          'package.json': JSON.stringify({ name: 'b', version: '1.0.0', dependencies: { [DEP_NAME]: '2.0.0' } }),
+          node_modules: { [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: '2.0.0' }) } },
+        },
+      },
+    },
+  })
+  await t.rejects(
+    npm.exec('patch', ['add', `${DEP_NAME}@>=1.0.0`]),
+    { code: 'EPATCHAMBIGUOUS' },
+    'a range matching two installed versions errors'
+  )
+})
+
 t.test('add: explicit exact version is honored without install', async t => {
   const { npm, joinedOutput, registry } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },
@@ -453,6 +498,29 @@ t.test('ls counts nodes for a range selector', async t => {
   })
   await npm.exec('patch', ['ls'])
   t.match(joinedOutput(), /\(1 node\)/, 'range selector matches the installed version')
+})
+
+t.test('ls tolerates ambiguous overlapping range selectors', async t => {
+  // two overlapping non-subset ranges make matchSelector throw; ls must not crash
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        dependencies: { [DEP_NAME]: '1.5.0' },
+        patchedDependencies: {
+          [`${DEP_NAME}@>=1.0.0 <2.0.0`]: 'patches/a.patch',
+          [`${DEP_NAME}@>=1.4.0 <3.0.0`]: 'patches/b.patch',
+        },
+      }),
+      node_modules: {
+        [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: '1.5.0' }) },
+      },
+    },
+  })
+  await npm.exec('patch', ['ls'])
+  t.match(joinedOutput(), /\(0 nodes\)/, 'ambiguous node is skipped, ls still prints')
 })
 
 t.test('ls reports plural node counts for a name-only selector', async t => {

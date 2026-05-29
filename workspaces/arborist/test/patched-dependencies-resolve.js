@@ -263,3 +263,29 @@ t.test('EPATCHNOTFOUND when the patch file is missing on disk', async t => {
 
   await t.rejects(buildIdeal(path), { code: 'EPATCHNOTFOUND', path: 'missing.patch' })
 })
+
+t.test('EPATCHUNSAFE when the patch path escapes the project', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { dep: '^1.0.0' },
+      patchedDependencies: { 'dep@1.0.0': '../outside.patch' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root', version: '1.0.0', dependencies: { dep: '^1.0.0' } },
+        'node_modules/dep': lockEntry('dep', '1.0.0'),
+      },
+    }),
+    node_modules: {
+      dep: { 'package.json': JSON.stringify({ name: 'dep', version: '1.0.0' }) },
+    },
+  })
+
+  await t.rejects(buildIdeal(path), { code: 'EPATCHUNSAFE' })
+})

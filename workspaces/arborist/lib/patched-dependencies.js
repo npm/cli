@@ -2,7 +2,7 @@
 // Attaches node.patched = { path, integrity } to each matched node.
 // Enforces the failure modes (workspace-member entry, missing file, unused patch, non-registry target, ambiguous selectors) as hard errors.
 const semver = require('semver')
-const { resolve } = require('node:path')
+const { resolve, relative, isAbsolute } = require('node:path')
 const { readFile } = require('node:fs/promises')
 const { patchIntegrity } = require('./patch.js')
 
@@ -71,9 +71,15 @@ const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) =>
     if (integrityCache.has(patchPath)) {
       return integrityCache.get(patchPath)
     }
+    // patch files must live inside the project so the patch set stays auditable
+    const abs = resolve(path, patchPath)
+    const rel = relative(path, abs)
+    if (!rel || rel.startsWith('..') || isAbsolute(rel)) {
+      throw err(`patch path escapes the project: ${patchPath}`, 'EPATCHUNSAFE', { path: patchPath })
+    }
     let contents
     try {
-      contents = await readFile(resolve(path, patchPath))
+      contents = await readFile(abs)
     } catch {
       throw err(`patch file not found: ${patchPath}`, 'EPATCHNOTFOUND', { path: patchPath })
     }
@@ -98,7 +104,7 @@ const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) =>
       }
       continue
     }
-    if (node.isProjectRoot || node.isLink) {
+    if (node.isProjectRoot) {
       continue
     }
 
@@ -109,7 +115,8 @@ const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) =>
       continue
     }
 
-    if (!node.isRegistryDependency) {
+    // links and other non-registry resolutions cannot be patched
+    if (node.isLink || !node.isRegistryDependency) {
       throw err(
         `Cannot patch non-registry dependency ${node.name}@${node.version} ` +
           `(selector "${selector.key}"). Only registry dependencies can be patched.`,
