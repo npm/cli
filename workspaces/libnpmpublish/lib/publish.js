@@ -87,6 +87,8 @@ const patchManifest = async (_manifest, opts) => {
     )
   }
   manifest.version = version
+  // patchedDependencies is consumer-side state and must never be published
+  delete manifest.patchedDependencies
   return manifest
 }
 

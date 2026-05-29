@@ -75,6 +75,60 @@ t.test('basic publish - no npmVersion', async t => {
   t.ok(ret, 'publish succeeded')
 })
 
+t.test('publish strips patchedDependencies from the registry manifest', async t => {
+  const { publish } = t.mock('..')
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+    authorization: token,
+  })
+  const manifest = {
+    name: 'libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+    patchedDependencies: { 'lodash@4.17.21': 'patches/lodash@4.17.21.patch' },
+  }
+  const spec = npa(manifest.name)
+  // patchedDependencies must not appear in the published version metadata
+  const { patchedDependencies, ...clean } = manifest
+
+  const packument = {
+    _id: manifest.name,
+    name: manifest.name,
+    description: manifest.description,
+    'dist-tags': {
+      latest: '1.0.0',
+    },
+    versions: {
+      '1.0.0': {
+        _id: `${manifest.name}@${manifest.version}`,
+        _nodeVersion: process.versions.node,
+        ...clean,
+        dist: {
+          shasum,
+          integrity: integrity.sha512[0].toString(),
+          tarball: 'http://mock.reg/libnpmpublish-test/-/libnpmpublish-test-1.0.0.tgz',
+        },
+      },
+    },
+    access: null,
+    _attachments: {
+      'libnpmpublish-test-1.0.0.tgz': {
+        content_type: 'application/octet-stream',
+        data: tarData.toString('base64'),
+        length: tarData.length,
+      },
+    },
+  }
+
+  registry.nock.put(`/${spec.escapedName}`, packument).reply(201, {})
+  const ret = await publish(manifest, tarData, {
+    ...opts,
+    npmVersion: null,
+  })
+  t.ok(ret, 'publish succeeded with patchedDependencies stripped')
+})
+
 t.test('scoped publish', async t => {
   const { publish } = t.mock('..')
   const registry = new MockRegistry({
