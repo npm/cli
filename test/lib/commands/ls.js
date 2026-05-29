@@ -5405,3 +5405,47 @@ t.test('ls --install-strategy=linked', async t => {
       'should report declared workspace as UNMET DEPENDENCY')
   })
 })
+
+t.test('patched dependency annotation', async t => {
+  const patchedLock = {
+    name: 'test-npm-ls',
+    version: '1.0.0',
+    lockfileVersion: 4,
+    requires: true,
+    packages: {
+      '': { name: 'test-npm-ls', version: '1.0.0', dependencies: { foo: '^1.0.0' } },
+      'node_modules/foo': {
+        version: '1.0.0',
+        resolved: 'https://registry.npmjs.org/foo/-/foo-1.0.0.tgz',
+        integrity: 'sha512-deadbeef',
+        patched: { path: 'patches/foo@1.0.0.patch', integrity: 'sha512-abc' },
+      },
+    },
+  }
+  const prefixDir = {
+    'package.json': JSON.stringify({
+      name: 'test-npm-ls',
+      version: '1.0.0',
+      dependencies: { foo: '^1.0.0' },
+      patchedDependencies: { 'foo@1.0.0': 'patches/foo@1.0.0.patch' },
+    }),
+    node_modules: {
+      '.package-lock.json': JSON.stringify(patchedLock),
+      foo: { 'package.json': JSON.stringify({ name: 'foo', version: '1.0.0' }) },
+    },
+  }
+
+  t.test('human output annotates the patched dependency', async t => {
+    const { npm, result, ls } = await mockLs(t, { config: {}, prefixDir })
+    touchHiddenPackageLock(npm.prefix)
+    await ls.exec([])
+    t.match(result(), /foo@1\.0\.0 \[patched: patches\/foo@1\.0\.0\.patch\]/)
+  })
+
+  t.test('json output records the patch path', async t => {
+    const { npm, result, ls } = await mockLs(t, { config: { json: true }, prefixDir })
+    touchHiddenPackageLock(npm.prefix)
+    await ls.exec([])
+    t.equal(JSON.parse(result()).dependencies.foo.patched, 'patches/foo@1.0.0.patch')
+  })
+})
