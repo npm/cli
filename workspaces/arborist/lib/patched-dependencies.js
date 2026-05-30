@@ -110,7 +110,10 @@ const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) =>
 
     const selector = matchSelector(selectors, node)
     if (!selector) {
-      // clear any stale patch record inherited from the lockfile
+      // a node that was patched but no longer matches a selector must be re-extracted to revert its files
+      if (node.patched) {
+        node.patchRemoved = true
+      }
       node.patched = null
       continue
     }

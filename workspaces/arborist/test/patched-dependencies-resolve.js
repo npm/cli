@@ -64,6 +64,38 @@ t.test('no patchedDependencies is a no-op', async t => {
   }
 })
 
+t.test('marks patchRemoved when a lockfile-patched node loses its selector', async t => {
+  // the lockfile records a patch but package.json declares none, so the node must be re-extracted
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { dep: '^1.0.0' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 4,
+      requires: true,
+      packages: {
+        '': { name: 'root', version: '1.0.0', dependencies: { dep: '^1.0.0' } },
+        'node_modules/dep': {
+          ...lockEntry('dep', '1.0.0'),
+          patched: { path: 'patches/dep@1.0.0.patch', integrity: 'sha512-old' },
+        },
+      },
+    }),
+    node_modules: {
+      dep: { 'package.json': JSON.stringify({ name: 'dep', version: '1.0.0' }) },
+    },
+  })
+
+  const tree = await buildIdeal(path)
+  const dep = tree.inventory.query('name', 'dep').values().next().value
+  t.notOk(dep.patched, 'the stale patch record is cleared')
+  t.ok(dep.patchRemoved, 'the node is marked for re-extraction')
+})
+
 t.test('shares integrity cache across selectors pointing at one file', async t => {
   // two selectors reference the same patch path, so the file is read once and both matched nodes get the identical integrity value
   const path = t.testdir({
