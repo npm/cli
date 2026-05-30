@@ -182,6 +182,23 @@ t.test('missing patch file throws EPATCHNOTFOUND', async t => {
     'missing patch file on disk hard-errors')
 })
 
+t.test('warns when a patch upgrades the lockfile version', async t => {
+  const registry = createRegistry(t)
+  await mockPackage(t, registry)
+  const path = makeProject(t, {
+    patch: filePatch('index.js', ORIGINAL, PATCHED),
+    patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: `patches/${PKG_NAME}@${PKG_VERSION}.patch` },
+  })
+
+  const warnings = []
+  const onLog = (level, prefix, msg) => level === 'warn' && warnings.push(`${prefix} ${msg}`)
+  process.on('log', onLog)
+  t.teardown(() => process.removeListener('log', onLog))
+
+  await newArb({ path }).reify()
+  t.match(warnings.join('\n'), /requires lockfileVersion 4/, 'warns that the lockfile was upgraded')
+})
+
 t.test('reify revalidates the patch file when build-ideal-tree was already run', async t => {
   // build-ideal-tree validates first, but reify must still guard against a file removed afterwards
   const registry = createRegistry(t)

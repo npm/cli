@@ -955,6 +955,7 @@ class Shrinkwrap {
     // patched nodes force lockfileVersion 4 so older clients abort the install
     const hasPatched = Object.values(this.data.packages).some(p => p.patched)
     if (hasPatched && this.lockfileVersion < patchedLockfileVersion) {
+      log.warn('shrinkwrap', `patchedDependencies requires lockfileVersion ${patchedLockfileVersion}; upgrading the lockfile from version ${this.lockfileVersion}.`)
       this.lockfileVersion = patchedLockfileVersion
     }
     this.data.lockfileVersion = this.lockfileVersion
