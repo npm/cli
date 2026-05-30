@@ -25,6 +25,7 @@ class IsolatedNode {
   linksIn = new Set()
   meta = { loadedFromDisk: false }
   optional = false
+  patched = null
   parent = null
   root = null
   tops = new Set()
@@ -60,6 +61,9 @@ class IsolatedNode {
     }
     if (options.optional) {
       this.optional = true
+    }
+    if (options.patched) {
+      this.patched = options.patched
     }
   }
 

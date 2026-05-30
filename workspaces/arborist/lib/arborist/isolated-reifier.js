@@ -13,7 +13,10 @@ const getKey = (startNode) => {
     getChildren: node => node.dependencies,
     visit: node => {
       branch.push(`${node.packageName}@${node.version}`)
-      deps.push(`${branch.join('->')}::${node.resolved}`)
+      // a patch changes the materialized contents, so it must change the store key.
+      // the patch segment is only appended when present, so unpatched keys are unchanged.
+      const patch = node.patched ? `::patch:${node.patched.integrity}` : ''
+      deps.push(`${branch.join('->')}::${node.resolved}${patch}`)
     },
     leave: () => {
       branch.pop()
@@ -28,7 +31,9 @@ const getKey = (startNode) => {
     .replace(/\+/g, '-')
     .replace(/\//g, '_')
     .replace(/=+$/m, '')
-  return `${startNode.packageName}@${startNode.version}-${hash}`
+  // a patched entry gets a distinct, identifiable side-store key so unpatched consumers keep sharing the original
+  const patchSuffix = startNode.patched ? '+patch' : ''
+  return `${startNode.packageName}@${startNode.version}-${hash}${patchSuffix}`
 }
 
 module.exports = cls => class IsolatedReifier extends cls {
@@ -49,6 +54,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       optional: node.optional,
       package: pkg,
       parent: root,
+      patched: node.patched,
       path: join(this.idealGraph.localPath, location),
       resolved: node.resolved,
       root,
@@ -173,6 +179,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.name = result.isWorkspace ? (node.packageName || node.name) : node.name
     // strip any path traversal from package.json name fields before they hit path.join below
     result.packageName = nameFromFolder(node.packageName || node.path)
+    result.patched = node.patched
     result.package = { ...node.package }
     result.package.bundleDependencies = undefined
 
