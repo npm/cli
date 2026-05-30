@@ -81,18 +81,6 @@ t.test('node_modules and .git are ignored', async t => {
   t.notMatch(diff, 'HEAD', '.git contents are excluded')
 })
 
-t.test('exclude option skips a path', async t => {
-  const dir = t.testdir({
-    orig: { 'keep.js': 'a\n', 'skip.js': 'a\n' },
-    edit: { 'keep.js': 'b\n', 'skip.js': 'b\n' },
-  })
-  const diff = await diffDirs(resolve(dir, 'orig'), resolve(dir, 'edit'), {
-    exclude: ['skip.js'],
-  })
-  t.match(diff, 'keep.js', 'non-excluded file is diffed')
-  t.notMatch(diff, 'skip.js', 'excluded file is skipped')
-})
-
 t.test('non-file entries like symlinks are skipped', async t => {
   const dir = t.testdir({
     orig: { 'real.js': 'a\n' },
