@@ -355,6 +355,38 @@ t.test('add: an installed file: dependency is rejected as non-registry', async t
   )
 })
 
+t.test('add: a version installed as both registry and file: is rejected', async t => {
+  // one consumer pulls the registry copy, another pulls a file: copy of the same version;
+  // the file: edge must still cause a rejection even though a registry edge also exists
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        dependencies: { [DEP_NAME]: '1.0.0', b: '1.0.0' },
+      }),
+      local: { 'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }) },
+      node_modules: {
+        [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }) },
+        b: {
+          'package.json': JSON.stringify({
+            name: 'b', version: '1.0.0', dependencies: { [DEP_NAME]: 'file:../../local' },
+          }),
+          node_modules: {
+            [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }) },
+          },
+        },
+      },
+    },
+  })
+  await t.rejects(
+    npm.exec('patch', ['add', DEP_NAME]),
+    { code: 'EPATCHNONREGISTRY' },
+    'a version with any file: consumer cannot be patched'
+  )
+})
+
 t.test('add: a range matching multiple installed versions is ambiguous', async t => {
   const { npm } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },

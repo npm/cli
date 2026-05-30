@@ -2,6 +2,7 @@
 // Attaches node.patched = { path, integrity } to each matched node.
 // Enforces the failure modes (workspace-member entry, missing file, unused patch, non-registry target, ambiguous selectors) as hard errors.
 const semver = require('semver')
+const npa = require('npm-package-arg')
 const { resolve, relative, isAbsolute } = require('node:path')
 const { readFile } = require('node:fs/promises')
 const { patchIntegrity } = require('./patch.js')
@@ -118,8 +119,9 @@ const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) =>
       continue
     }
 
-    // links and other non-registry resolutions cannot be patched
-    if (node.isLink || !node.isRegistryDependency) {
+    // a non-registry consumer edge (file:, git:, http(s)) means there is no registry tarball to patch; npm: aliases stay registry.
+    // checking edges (not isRegistryDependency) avoids rejecting an edgeless node, which is still a registry dep.
+    if ([...node.edgesIn].some(e => e.spec && !npa(e.spec).registry)) {
       throw err(
         `Cannot patch non-registry dependency ${node.name}@${node.version} ` +
           `(selector "${selector.key}"). Only registry dependencies can be patched.`,
