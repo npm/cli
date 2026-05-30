@@ -1322,9 +1322,27 @@ module.exports = cls => class Reifier extends cls {
     const nmDir = resolve(this.path, 'node_modules')
     const storeDir = resolve(nmDir, '.store')
 
+    // Enumerate on-disk store entries as full keys, descending one level into each @scope directory because scoped keys nest as .store/@scope/pkg@version-hash.
     let entries
     try {
-      entries = await readdir(storeDir)
+      const topLevel = await readdir(storeDir, { withFileTypes: true })
+      entries = []
+      for (const ent of topLevel) {
+        if (ent.name.startsWith('@')) {
+          let scoped
+          try {
+            scoped = await readdir(resolve(storeDir, ent.name))
+          } catch {
+            /* istanbul ignore next -- readdir of an entry we just listed should not fail */
+            continue
+          }
+          for (const name of scoped) {
+            entries.push(`${ent.name}/${name}`)
+          }
+        } else {
+          entries.push(ent.name)
+        }
+      }
     } catch {
       entries = null
     }
@@ -1340,7 +1358,10 @@ module.exports = cls => class Reifier extends cls {
     for (const child of this.idealTree.children.values()) {
       const loc = child.location.replace(/\\/g, '/')
       if (child.isInStore) {
-        const key = loc.split('/')[2]
+        // Store location is node_modules/.store/{key}/node_modules/{pkg}.
+        // For a scoped package the key is @scope/pkg@version-hash, which spans two path segments, so reconstruct both instead of taking only the scope.
+        const parts = loc.split('/')
+        const key = parts[2].startsWith('@') ? `${parts[2]}/${parts[3]}` : parts[2]
         validKeys.add(key)
         continue
       }
@@ -1421,6 +1442,23 @@ module.exports = cls => class Reifier extends cls {
               .catch(/* istanbul ignore next -- rm with force rarely fails */
                 er => log.warn('cleanup', `Failed to remove orphaned store entry ${e}`, er))
           )
+        )
+        // Removing the last scoped orphan under a scope leaves an empty @scope directory behind, so prune any scope directory that is now empty.
+        const scopes = new Set(
+          orphaned.filter(e => e.startsWith('@')).map(e => e.split('/')[0])
+        )
+        await promiseAllRejectLate(
+          [...scopes].map(async scope => {
+            const scopeDir = resolve(storeDir, scope)
+            try {
+              const remaining = await readdir(scopeDir)
+              if (!remaining.length) {
+                await rm(scopeDir, { recursive: true, force: true })
+              }
+            } catch {
+              /* istanbul ignore next -- readdir of a scope dir we just listed should not fail */
+            }
+          })
         )
       }
     }

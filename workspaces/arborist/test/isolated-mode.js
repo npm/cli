@@ -1760,6 +1760,85 @@ tap.test('orphaned store entries are cleaned up on dependency update', async t =
     'old which@1.0.0 store entry is removed after update')
 })
 
+tap.test('orphaned scoped store entries are cleaned up on dependency update', async t => {
+  // https://github.com/npm/cli/issues/9440 — a scoped store key spans two path segments (.store/@scope/pkg@version-hash), so the single-segment orphan cleanup never swept the stale entry.
+  const graph = {
+    registry: [
+      { name: '@scope/which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: '@scope/which', version: '2.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { '@scope/which': '1.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const storeDir = path.join(dir, 'node_modules', '.store')
+  const scopeDir = path.join(storeDir, '@scope')
+
+  // First install — @scope/which@1.0.0
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  const entriesAfterV1 = fs.readdirSync(scopeDir)
+  t.ok(entriesAfterV1.some(e => e.startsWith('which@1.0.0-')),
+    'store has @scope/which@1.0.0 entry after first install')
+
+  // Update package.json to depend on @scope/which@2.0.0
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  pkg.dependencies['@scope/which'] = '2.0.0'
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  // Second install — @scope/which@2.0.0
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  const entriesAfterV2 = fs.readdirSync(scopeDir)
+  t.ok(entriesAfterV2.some(e => e.startsWith('which@2.0.0-')),
+    'store has @scope/which@2.0.0 entry after update')
+  t.notOk(entriesAfterV2.some(e => e.startsWith('which@1.0.0-')),
+    'old @scope/which@1.0.0 store entry is removed after update')
+})
+
+tap.test('orphaned scoped store entries leave no empty scope directory when last dep is removed', async t => {
+  // https://github.com/npm/cli/issues/9440 — when the last package under a scope is orphaned, the now-empty @scope directory should also be pruned.
+  const graph = {
+    registry: [
+      { name: '@scope/which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { '@scope/which': '1.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const storeDir = path.join(dir, 'node_modules', '.store')
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  t.ok(fs.existsSync(path.join(storeDir, '@scope')), 'store has @scope directory after install')
+
+  // Remove the dependency
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  delete pkg.dependencies
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.existsSync(path.join(storeDir, '@scope')),
+    'empty @scope directory is pruned after the last scoped dep is removed')
+})
+
 tap.test('orphaned store entries are cleaned up on dependency removal', async t => {
   const graph = {
     registry: [
