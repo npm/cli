@@ -242,6 +242,31 @@ t.test('applies a patch under install-strategy=linked via the side-store', async
   )
 })
 
+t.test('removing a patch under install-strategy=linked reverts via the side-store', async t => {
+  const registry = createRegistry(t)
+  await mockPackage(t, registry, { manifestTimes: 1, tarballTimes: 2 })
+  const patchRel = `patches/${PKG_NAME}@${PKG_VERSION}.patch`
+  const path = makeProject(t, {
+    patch: filePatch('index.js', ORIGINAL, PATCHED),
+    patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: patchRel },
+  })
+
+  // first install materializes the patched +patch side-store entry
+  await newArb({ path, installStrategy: 'linked' }).reify()
+  t.equal(fs.readFileSync(installedFile(path), 'utf8'), PATCHED, 'patched before removal')
+
+  // remove the patch declaration and its file, then reinstall
+  const pkg = JSON.parse(fs.readFileSync(resolve(path, 'package.json'), 'utf8'))
+  delete pkg.patchedDependencies
+  fs.writeFileSync(resolve(path, 'package.json'), JSON.stringify(pkg))
+  fs.rmSync(resolve(path, patchRel))
+
+  await newArb({ path, installStrategy: 'linked' }).reify()
+  t.equal(fs.readFileSync(installedFile(path), 'utf8'), ORIGINAL, 'consumer reverted to unpatched contents')
+  const store = fs.readdirSync(resolve(path, 'node_modules', '.store'))
+  t.notOk(store.some(e => e.endsWith('+patch')), 'the +patch side-store entry was pruned')
+})
+
 t.test('linked ignorePatchFailures cannot skip a failed patch', async t => {
   // the content-addressed side-store cannot represent an unpatched package at a patched key,
   // so a failed patch must error rather than silently leave unpatched contents that later installs trust.
