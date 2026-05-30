@@ -242,6 +242,24 @@ t.test('applies a patch under install-strategy=linked via the side-store', async
   )
 })
 
+t.test('linked ignorePatchFailures cannot skip a failed patch', async t => {
+  // the content-addressed side-store cannot represent an unpatched package at a patched key,
+  // so a failed patch must error rather than silently leave unpatched contents that later installs trust.
+  const registry = createRegistry(t)
+  await mockPackage(t, registry)
+  const patch = filePatch('index.js', 'totally different\n', 'something else\n')
+  const path = makeProject(t, {
+    patch,
+    patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: `patches/${PKG_NAME}@${PKG_VERSION}.patch` },
+  })
+
+  await t.rejects(
+    newArb({ path, installStrategy: 'linked', ignorePatchFailures: true }).reify(),
+    { code: 'EPATCHFAILED', message: /install-strategy=linked/ },
+    'a failed patch cannot be skipped under linked mode'
+  )
+})
+
 t.test('a patched optional dependency still fails loudly on patch problems', async t => {
   // optional installs tolerate platform/env failures, but a declared patch must not be silently skipped
   const registry = createRegistry(t)

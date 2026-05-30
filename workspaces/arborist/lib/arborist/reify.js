@@ -778,6 +778,14 @@ module.exports = cls => class Reifier extends cls {
       await applyPatchToDir({ patch: contents, cwd: node.path })
     } catch (er) {
       if (this.options.ignorePatchFailures) {
+        // the linked side-store keys a package by its patch, so an unpatched package cannot be represented at a patched key and would be trusted on later installs
+        if (node.isInStore) {
+          throw Object.assign(
+            new Error(`Cannot skip the failed patch for ${node.name} under install-strategy=linked. ` +
+              `Fix the patch or install with a different strategy.`),
+            { code: 'EPATCHFAILED', path: patchPath, node: node.name }
+          )
+        }
         log.warn('patch', `failed to apply ${patchPath} to ${node.name}: ${er.message}`)
         // the patch was not applied, so do not record it in the lockfile
         node.patched = null
