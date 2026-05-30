@@ -90,6 +90,25 @@ t.test('add rejects non-registry spec with EPATCHNONREGISTRY', async t => {
   )
 })
 
+t.test('add accepts an edgeless installed node (extraneous / linked store)', async t => {
+  // an installed-but-undeclared dep has no edges, so isRegistryDependency is false;
+  // it must not be misread as non-registry the way a linked store node or extraneous install would be
+  const { npm, joinedOutput, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: {
+      'dep-tarball': depTarball,
+      'package.json': JSON.stringify({ name: 'root-project', version: '1.0.0' }),
+      node_modules: {
+        [DEP_NAME]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }) },
+      },
+    },
+  })
+  await setupDep(npm, registry)
+  await npm.exec('patch', ['add', DEP_NAME])
+  t.match(joinedOutput(), /You can now edit the following directory: /, 'edgeless node is patchable')
+})
+
 t.test('full round-trip: install, add, edit, commit, ls, rm', async t => {
   const { npm, joinedOutput, registry, outputs } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },
