@@ -2,78 +2,13 @@
 # directly within the CLI documentation.  Instead, it will be used
 # for the https://docs.npmjs.com/ site.
 
-- title: CLI Commands
-  shortName: Commands
-  url: /commands
-  children:
-  - title: npm
-    url: /commands/npm
-    description: javascript package manager
-  - title: npm access
-    url: /commands/npm-access
-    description: Set access level on published packages
-  - title: npm approve-scripts
-    url: /commands/npm-approve-scripts
-    description: Approve install scripts for specific dependencies
-  - title: npm audit
-    url: /commands/npm-audit
-    description: Run a security audit
-  - title: npm bugs
-    url: /commands/npm-bugs
-    description: Report bugs for a package in a web browser
-  - title: npm cache
-    url: /commands/npm-cache
-    description: Manipulates packages cache
-  - title: npm ci
-    url: /commands/npm-ci
-    description: Clean install a project
-  - title: npm completion
-    url: /commands/npm-completion
-    description: Tab Completion for npm
-  - title: npm config
-    url: /commands/npm-config
-    description: Manage the npm configuration files
-  - title: npm dedupe
-    url: /commands/npm-dedupe
-    description: Reduce duplication in the package tree
-  - title: npm deny-scripts
-    url: /commands/npm-deny-scripts
-    description: Deny install scripts for specific dependencies
-  - title: npm deprecate
-    url: /commands/npm-deprecate
-    description: Deprecate a version of a package
-  - title: npm diff
-    url: /commands/npm-diff
-    description: The registry diff command
-  - title: npm dist-tag
-    url: /commands/npm-dist-tag
-    description: Modify package distribution tags
-  - title: npm docs
-    url: /commands/npm-docs
-    description: Open documentation for a package in a web browser
-  - title: npm doctor
-    url: /commands/npm-doctor
-    description: Check the health of your npm environment
-  - title: npm edit
-    url: /commands/npm-edit
-    description: Edit an installed package
-  - title: npm exec
-    url: /commands/npm-exec
-    description: Run a command from a local or remote npm package
-  - title: npm explain
-    url: /commands/npm-explain
-    description: Explain installed packages
-  - title: npm explore
-    url: /commands/npm-explore
-    description: Browse an installed package
-  - title: npm find-dupes
-    url: /commands/npm-find-dupes
-    description: Find duplication in the package tree
-  - title: npm fund
-    url: /commands/npm-fund
-    description: Retrieve funding information
-  - title: npm get
-    url: /commands/npm-get
+title: CLI Commands
+# This is the navigation for the documentation pages; it is not used
+# directly within the CLI documentation.  Instead, it will be used
+# for the https://docs.npmjs.com/ site.
+
+title: CLI Commands
+  yes  yes    url: /commands/npm-get
     description: Get a value from the npm configuration
   - title: npm help
     url: /commands/npm-help
