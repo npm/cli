@@ -301,7 +301,7 @@ Some files are always ignored by default:
 * `config.gypi`
 * `node_modules`
 * `npm-debug.log`
-* `package-lock.json` (use [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) if you wish it to be published)
+* `package-lock.json`
 * `pnpm-lock.yaml`
 * `yarn.lock`
 * `bun.lockb`
@@ -399,9 +399,11 @@ See [folders](/configuring-npm/folders#executables) for more info on executables
 
 ### man
 
-Specify either a single file or an array of filenames to put in place for the `man` program to find.
+> **Note:** As of npm v12, man pages are no longer registered with the system `man` program. This field is retained for backward compatibility with package metadata and tools that consume it, but `man <pkgname>` will not work after a global install. Use `npm help <pkgname>` instead where supported.
 
-If only a single file is provided, then it's installed such that it is the result from `man <pkgname>`, regardless of its actual filename.
+Specify either a single file or an array of filenames to include as man pages.
+
+If only a single file is provided, then it corresponds to `man <pkgname>`, regardless of its actual filename.
 For example:
 
 ```json
@@ -414,7 +416,7 @@ For example:
 }
 ```
 
-would link the `./man/doc.1` file in such that it is the target for `man foo`
+would associate the `./man/doc.1` file such that it is the target for `man foo`
 
 If the filename doesn't start with the package name, then it's prefixed.
 So, this:
@@ -432,10 +434,10 @@ So, this:
 }
 ```
 
-will create files to do `man foo` and `man foo-bar`.
+will correspond to `man foo` and `man foo-bar`.
 
 Man files must end with a number, and optionally a `.gz` suffix if they are compressed.
-The number dictates which man section the file is installed into.
+The number dictates which man section the file belongs to.
 
 ```json
 {
@@ -469,7 +471,7 @@ If you want to specify individual files, use `bin`, and for all the files in an 
 #### directories.man
 
 A folder that is full of man pages.
-Sugar to generate a "man" array by walking the folder.
+Sugar to generate a "man" array by walking the folder. See the note on [`man`](#man) above: as of npm v12, these are no longer installed into the system `man` path.
 
 ### repository
 
@@ -840,6 +842,16 @@ This is a map of package name to version or URL, just like the `dependencies` ob
 The difference is that build failures do not cause installation to fail.
 Running `npm install --omit=optional` will prevent these dependencies from being installed.
 
+For example:
+
+```json
+{
+  "optionalDependencies": {
+    "@npm/foo": "^1.0.0"
+  }
+}
+```
+
 It is still your program's responsibility to handle the lack of the dependency.
 For example, something like this:
 
@@ -872,7 +884,7 @@ These changes can be scoped as specific or as vague as desired.
 
 Overrides are only considered in the root `package.json` file for a project.
 Overrides in installed dependencies (including [workspaces](/using-npm/workspaces)) are not considered in dependency tree resolution.
-Published packages may dictate their resolutions by pinning dependencies or using an [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) file.
+Published packages may dictate their resolutions by pinning dependencies or using [`bundleDependencies`](#bundledependencies).
 
 To make sure the package `@npm/foo` is always installed as version `1.0.0` no matter what version your dependencies rely on:
 

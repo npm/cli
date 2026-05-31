@@ -24,4 +24,4 @@ If logged into a registry that uses Basic Auth, then simply print the `username`
 
 * [npm config](/commands/npm-config)
 * [npmrc](/configuring-npm/npmrc)
-* [npm adduser](/commands/npm-adduser)
+* [npm login](/commands/npm-login)

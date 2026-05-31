@@ -25,11 +25,10 @@ Options:
 
 ## to BUILD IDEAL TREE:
 
-1. Load the root node's package and (if present) shrinkwrap
+1. Load the root node's package and (if present) lockfile
 2. Add and remove deps to/from the root node's package if requested
 3. If any named updates specified, then for each name on the list:
-    1. Find all nodes in the tree by that name that are not in a shrinkwrap
-       or bundle
+    1. Find all nodes in the tree by that name that are not in a bundle
     2. For each dependent in their edgesIn set, add the dependent to the
        queue of packages to be checked for updates
 4. Add the root node to the queue of packages to be checked for updates
@@ -41,21 +40,19 @@ Options:
        visited)
     4. If node has been moved out of the tree or replaced, continue to next
        node (it's no longer relevant)
-    5. If node has a shrinkwrap, continue to next node (its deps are
-       locked)
-    6. For each dependency in node.edgesOut:
-        1. If part of a bundle or shrinkwrap, continue to next dependency
+    5. For each dependency in node.edgesOut:
+        1. If part of a bundle, continue to next dependency
         2. If edge is invalid, or name is on the update.names list:
             1. Fetch the manifest for the dependency, and create a new Node
             2. Add Node to virtual root node, also load Node's
                peerDependencies (and meta-peerDependencies)
             3. Attempt to PLACE the dep in the tree
         3. Add each placed node to the queue to be checked for updates
-6. If the shrinkwrap was loaded from disk, and the tree was mutated, reset
+6. If the lockfile was loaded from disk, and the tree was mutated, reset
    all dependency flags to true (dev, optional, devOptional, extraneous)
-7. If the shrinkwrap was not loaded from disk, or the tree was mutated,
+7. If the lockfile was not loaded from disk, or the tree was mutated,
    calculate dependency flags appropriately (like for a `loadActual` walk)
-8. If options.prune is not false, and we started from a shrinkwrap and then
+8. If options.prune is not false, and we started from a lockfile and then
    mutated the tree, prune any deps that are now extraneous.
 
 ## to PLACE a dep in the tree to satisfy an edge for a node:

@@ -2734,14 +2734,6 @@ Object {
       "name": "example",
       "version": "1.0.0",
     },
-    "../bar": Object {
-      "extraneous": true,
-      "version": "1.0.0",
-    },
-    "../linked-node-modules/foo": Object {
-      "extraneous": true,
-      "version": "1.0.0",
-    },
     "node_modules/bar": Object {
       "link": true,
       "resolved": "../bar",
@@ -9755,16 +9747,6 @@ Object {
     "": Object {
       "name": "workspace3",
     },
-    "app": Object {
-      "dependencies": Object {
-        "a": "",
-        "b": "",
-        "c": "",
-        "i": "",
-      },
-      "extraneous": true,
-      "version": "1.2.3",
-    },
     "app/node_modules/i": Object {
       "extraneous": true,
       "version": "1.2.3",
@@ -9785,38 +9767,11 @@ Object {
       "link": true,
       "resolved": "packages/c",
     },
-    "packages/a": Object {
-      "dependencies": Object {
-        "b": "",
-        "c": "",
-        "x": "",
-      },
-      "extraneous": true,
-      "version": "1.2.3",
-    },
     "packages/a/node_modules/x": Object {
       "extraneous": true,
       "version": "1.2.3",
     },
-    "packages/b": Object {
-      "dependencies": Object {
-        "a": "",
-        "c": "",
-        "y": "",
-      },
-      "extraneous": true,
-      "version": "1.2.3",
-    },
     "packages/b/node_modules/y": Object {
-      "extraneous": true,
-      "version": "1.2.3",
-    },
-    "packages/c": Object {
-      "dependencies": Object {
-        "a": "",
-        "b": "",
-        "z": "",
-      },
       "extraneous": true,
       "version": "1.2.3",
     },

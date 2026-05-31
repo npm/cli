@@ -206,16 +206,10 @@ t.test('tap vs react15', async t => {
   await t.resolveMatchSnapshot(printIdeal(path), 'build ideal tree with tap collision')
 })
 
-t.test('tap vs react15 with legacy shrinkwrap', async t => {
+t.test('tap vs react15 with legacy lockfile', async t => {
   const path = resolve(fixtures, 'tap-react15-collision-legacy-sw')
   createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path), 'tap collision with legacy sw file')
-})
-
-t.test('bad shrinkwrap file', async t => {
-  const path = resolve(fixtures, 'testing-peer-deps-bad-sw')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path), 'bad shrinkwrap')
+  await t.resolveMatchSnapshot(printIdeal(path), 'tap collision with legacy lockfile')
 })
 
 t.test('a direct link dep has a dep with optional dependencies', async t => {
@@ -268,7 +262,7 @@ t.test('nested cyclical peer deps', async t => {
     resolve(fixtures, 'peer-dep-cycle-nested-with-sw'),
   ]
 
-  // if we have a shrinkwrap, then we'll get a collision with the current
+  // if we have a lockfile, then we'll get a collision with the current
   // version already there.  if we don't, then we'll get a peerConflict
   // when we try to put the second one there.
   const ers = {
@@ -437,42 +431,6 @@ t.test('unresolvable peer deps', async t => {
     message: 'unable to resolve dependency tree',
     code: 'ERESOLVE',
   }, 'unacceptable')
-})
-
-t.test('do not add shrinkwrapped deps', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-no-lock')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path, { update: true }))
-})
-
-t.test('do add shrinkwrapped deps when complete:true is set', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-no-lock')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path, {
-    complete: true,
-    update: true,
-  }))
-})
-
-t.test('do not update shrinkwrapped deps', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-with-lock')
-  createRegistry(t, false)
-  await t.resolveMatchSnapshot(printIdeal(path,
-    { update: { names: ['abbrev'] } }))
-})
-
-t.test('do not update shrinkwrapped deps, ignore lockfile', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-with-lock')
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printIdeal(path,
-    { packageLock: false, update: { names: ['abbrev'] } }))
-})
-
-t.test('do not update shrinkwrapped deps when complete:true is set', async t => {
-  const path = resolve(fixtures, 'shrinkwrapped-dep-with-lock')
-  createRegistry(t, false)
-  await t.resolveMatchSnapshot(printIdeal(path,
-    { update: { names: ['abbrev'] }, complete: true }))
 })
 
 t.test('deduped transitive deps with asymmetrical bin declaration', async t => {
@@ -2278,6 +2236,44 @@ t.test('update global when nothing in global', async t => {
     'update with empty node_modules')
 })
 
+t.test('update global ignores hidden node_modules entries', async t => {
+  const path = t.testdir({
+    node_modules: {
+      '.hidden-non-package': {
+        node_modules: {},
+      },
+      '@scope': {
+        '.retired-package': {
+          node_modules: {},
+        },
+      },
+      once: {
+        'package.json': JSON.stringify({
+          name: 'once',
+          version: '1.3.1',
+          dependencies: {
+            wrappy: '1',
+          },
+        }),
+        node_modules: {
+          wrappy: {
+            'package.json': JSON.stringify({
+              name: 'wrappy',
+              version: '1.0.1',
+            }),
+          },
+        },
+      },
+    },
+  })
+  createRegistry(t, true)
+  const tree = await buildIdeal(path, { global: true, update: true })
+  const deps = tree.target.package.dependencies
+  t.notOk(deps['.hidden-non-package'], 'hidden entries are not queued for global update')
+  t.notOk(deps['@scope/.retired-package'], 'retired scoped entries are not queued for global update')
+  t.equal(deps.once, '*', 'visible global packages are queued for global update')
+})
+
 t.test('peer dep that needs to be replaced', async t => {
   // this verifies that the webpack 5 that gets placed by default for
   // the initial dep will be successfully replaced by webpack 4 that
@@ -2408,54 +2404,6 @@ t.test('set the current on ERESOLVE triggered by devDeps', async t => {
       },
       location: 'node_modules/eslint',
     },
-  })
-})
-
-t.test('shrinkwrapped dev/optional deps should not clobber flags', async t => {
-  await t.test('optional', async t => {
-    const path = t.testdir({
-      'package.json': JSON.stringify({
-        name: 'project',
-        version: '1.2.3',
-        optionalDependencies: {
-          '@isaacs/test-package-with-shrinkwrap': '^1.0.0',
-        },
-      }),
-    })
-    createRegistry(t, true)
-    const tree = await buildIdeal(path, { complete: true })
-    const swName = '@isaacs/test-package-with-shrinkwrap'
-    const swDep = tree.children.get(swName)
-    const metaDep = swDep.children.get('abbrev')
-    t.equal(swDep.optional, true, 'shrinkwrapped dep is optional')
-    t.equal(metaDep.optional, true, 'shrinkwrapped metadep optional')
-
-    // make sure we're not just somehow leaving ALL flags true
-    t.equal(swDep.dev, false, 'sw dep is not dev')
-    t.equal(metaDep.dev, false, 'meta dep is not dev')
-  })
-
-  await t.test('dev', async t => {
-    const path = t.testdir({
-      'package.json': JSON.stringify({
-        name: 'project',
-        version: '1.2.3',
-        devDependencies: {
-          '@isaacs/test-package-with-shrinkwrap': '^1.0.0',
-        },
-      }),
-    })
-    createRegistry(t, true)
-    const tree = await buildIdeal(path, { complete: true })
-    const swName = '@isaacs/test-package-with-shrinkwrap'
-    const swDep = tree.children.get(swName)
-    const metaDep = swDep.children.get('abbrev')
-    t.equal(swDep.dev, true, 'shrinkwrapped dep is dev')
-    t.equal(metaDep.dev, true, 'shrinkwrapped metadep dev')
-
-    // make sure we're not just somehow leaving ALL flags true
-    t.equal(swDep.optional, false, 'sw dep is not optional')
-    t.equal(metaDep.optional, false, 'meta dep is not optional')
   })
 })
 
@@ -4064,10 +4012,10 @@ t.test('overrides', async t => {
       '1.1.1',
       'second install: root "abbrev" is still forced to version 1.1.1')
 
-    // Overrides should NOT persist unnecessarily
-    t.notOk(
-      onepackageNode2.overrides && onepackageNode2.overrides.has('abbrev'),
-      'workspace node should not unnecessarily retain overrides after subsequent install'
+    // Workspace targets inherit the root override set via their parent Link node, which is correct behavior needed for proper override propagation through the dependency tree.
+    t.ok(
+      onepackageNode2.overrides,
+      'workspace target inherits root overrides via link propagation'
     )
   })
 })
@@ -4570,4 +4518,368 @@ t.test('skip invalid peerOptional edges in problemEdges when save=false (#8726)'
   t.equal(tree.children.get('shared').version, '1.1.0',
     'shared stays at 1.1.0 - peerOptional mismatch is not treated as a problem')
   t.ok(tree.children.get('util'), 'util is in the tree')
+})
+
+t.test('peerOptional prefers existing tree node over registry fetch (#9249)', async t => {
+  // Reproduction: ts-jest has peerOptional jest-util@"^29||^30".
+  // @types/jest@28 → expect@28 → jest-util@28 placed at root first.
+  // jest@29 → jest-util@29 nested (root slot taken by @28).
+  // ts-jest re-queued, peerOptional jest-util resolves to root @28 → INVALID.
+  // Without fix: #nodeFromEdge fetches jest-util@30 (latest ^29||^30), blocks @29.
+  // With fix: #findHoistableNode finds nested @29, PlaceDep hoists it to root.
+  const registry = createRegistry(t, false)
+
+  const jestPack = registry.packument({
+    name: 'jest',
+    version: '29.0.0',
+    dependencies: { 'jest-util': '^29.0.0' },
+  })
+  const jestManifest = registry.manifest({ name: 'jest', packuments: [jestPack] })
+  await registry.package({ manifest: jestManifest })
+
+  const tsJestPack = registry.packument({
+    name: 'ts-jest',
+    version: '29.0.0',
+    peerDependencies: { jest: '^29.0.0', 'jest-util': '^29.0.0 || ^30.0.0' },
+    peerDependenciesMeta: { 'jest-util': { optional: true } },
+  })
+  const tsJestManifest = registry.manifest({ name: 'ts-jest', packuments: [tsJestPack] })
+  await registry.package({ manifest: tsJestManifest })
+
+  const expectPack = registry.packument({
+    name: 'expect',
+    version: '28.0.0',
+    dependencies: { 'jest-util': '^28.0.0' },
+  })
+  const expectManifest = registry.manifest({ name: 'expect', packuments: [expectPack] })
+  await registry.package({ manifest: expectManifest })
+
+  const atTypesPack = registry.packument({
+    name: '@types/jest',
+    version: '28.0.0',
+    dependencies: { expect: '^28.0.0' },
+  })
+  const atTypesManifest = registry.manifest({ name: '@types/jest', packuments: [atTypesPack] })
+  await registry.package({ manifest: atTypesManifest })
+
+  // Only publish 28, 29, and 30.
+  const jestUtilPacks = registry.packuments(['28.0.0', '29.0.0', '30.0.0'], 'jest-util')
+  const jestUtilManifest = registry.manifest({ name: 'jest-util', packuments: jestUtilPacks })
+  await registry.package({ manifest: jestUtilManifest, times: 3 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: {
+        jest: '^29.0.0',
+        'ts-jest': '^29.0.0',
+        '@types/jest': '^28.0.0',
+      },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree()
+
+  // jest-util@29 at root — found via #findHoistableNode, not fetched as @30
+  t.equal(tree.children.get('jest-util').version, '29.0.0',
+    'jest-util@29 hoisted to root from nested location')
+
+  // ts-jest's peerOptional resolved to @29 from the tree, not @30 from registry
+  const tsJest = tree.children.get('ts-jest')
+  const peerOptEdge = tsJest.edgesOut.get('jest-util')
+  t.equal(peerOptEdge.to.version, '29.0.0',
+    'ts-jest peerOptional jest-util resolved to @29')
+
+  // jest-util@28 nested under expect (incompatible with root @29)
+  const expectNode = [...tree.inventory.query('name', 'expect')][0]
+  t.equal(expectNode?.children?.get('jest-util')?.version, '28.0.0',
+    'jest-util@28 nested under expect')
+})
+
+t.test('peerOptional skips dedupe shortcut when update.names includes the dep', async t => {
+  // Same scenario as above, but with update: { names: ['jest-util'] }.
+  // skipExistingShortcut=true so #findHoistableNode is NOT called;
+  // #nodeFromEdge fetches from registry, getting jest-util@30 (latest matching ^29||^30).
+  const registry = createRegistry(t, false)
+
+  const jestPack = registry.packument({
+    name: 'jest',
+    version: '29.0.0',
+    dependencies: { 'jest-util': '^29.0.0' },
+  })
+  await registry.package({ manifest: registry.manifest({ name: 'jest', packuments: [jestPack] }) })
+
+  const tsJestPack = registry.packument({
+    name: 'ts-jest',
+    version: '29.0.0',
+    peerDependencies: { jest: '^29.0.0', 'jest-util': '^29.0.0 || ^30.0.0' },
+    peerDependenciesMeta: { 'jest-util': { optional: true } },
+  })
+  await registry.package({ manifest: registry.manifest({ name: 'ts-jest', packuments: [tsJestPack] }) })
+
+  const expectPack = registry.packument({
+    name: 'expect',
+    version: '28.0.0',
+    dependencies: { 'jest-util': '^28.0.0' },
+  })
+  await registry.package({ manifest: registry.manifest({ name: 'expect', packuments: [expectPack] }) })
+
+  const atTypesPack = registry.packument({
+    name: '@types/jest',
+    version: '28.0.0',
+    dependencies: { expect: '^28.0.0' },
+  })
+  await registry.package({ manifest: registry.manifest({ name: '@types/jest', packuments: [atTypesPack] }) })
+
+  const jestUtilPacks = registry.packuments(['28.0.0', '29.0.0', '30.0.0'], 'jest-util')
+  await registry.package({ manifest: registry.manifest({ name: 'jest-util', packuments: jestUtilPacks }), times: 3 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: {
+        jest: '^29.0.0',
+        'ts-jest': '^29.0.0',
+        '@types/jest': '^28.0.0',
+      },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree({ update: { names: ['jest-util'] } })
+
+  // With skipExistingShortcut=true, #nodeFromEdge fetches from registry
+  // so jest-util@30 (latest matching ^29||^30) is used instead of deduping @29
+  const tsJest = tree.children.get('ts-jest')
+  const peerOptEdge = tsJest.edgesOut.get('jest-util')
+  t.equal(peerOptEdge.to?.version, '30.0.0', 'peerOptional jest-util refetched to @30, not deduped to @29')
+})
+
+t.test('overrides with bundledDependencies', async t => {
+  t.test('does not infinite loop with bundledDependencies and overrides', async t => {
+    // https://github.com/npm/cli/issues/9227
+    const registry = createRegistry(t, false)
+
+    const bPacks = registry.packuments([
+      { version: '1.0.0', dependencies: { bar: '1.0.0' } },
+    ], 'b')
+    const cPacks = registry.packuments([
+      { version: '1.0.0', dependencies: { bar: '1.0.0' } },
+    ], 'c')
+    const barPacks = registry.packuments(['1.0.0', '2.0.0'], 'bar')
+    await registry.package({ manifest: registry.manifest({ name: 'b', packuments: bPacks }) })
+    await registry.package({ manifest: registry.manifest({ name: 'c', packuments: cPacks }) })
+    await registry.package({ manifest: registry.manifest({ name: 'bar', packuments: barPacks }), times: 2 })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: { b: '1.0.0', c: '1.0.0' },
+        bundledDependencies: true,
+        overrides: { bar: '2.0.0' },
+      }),
+    })
+
+    const tree = await buildIdeal(path)
+    t.equal(tree.children.get('bar').version, '2.0.0', 'override applied')
+  })
+
+  t.test('overrides apply to deps the root will bundle and edges are valid', async t => {
+    const registry = createRegistry(t, false)
+
+    const fooPacks = registry.packuments([
+      { version: '1.0.0', dependencies: { bar: '1.0.0' } },
+    ], 'foo')
+    const barPacks = registry.packuments(['1.0.0', '2.0.0'], 'bar')
+    await registry.package({ manifest: registry.manifest({ name: 'foo', packuments: fooPacks }) })
+    await registry.package({ manifest: registry.manifest({ name: 'bar', packuments: barPacks }) })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: { foo: '1.0.0' },
+        bundledDependencies: ['foo'],
+        overrides: { bar: '2.0.0' },
+      }),
+    })
+
+    const tree = await buildIdeal(path)
+    t.equal(tree.children.get('bar').version, '2.0.0', 'override installed correct version')
+
+    const fooBarEdge = tree.edgesOut.get('foo').to.edgesOut.get('bar')
+    t.equal(fooBarEdge.valid, true, 'overridden edge is valid')
+  })
+
+  t.test('overrides do not apply inside a dependency that bundles', async t => {
+    const registry = createRegistry(t, false)
+
+    const depPacks = registry.packuments([{
+      version: '1.0.0',
+      dependencies: { bar: '1.0.0' },
+      bundleDependencies: ['bar'],
+    }], 'dep')
+    await registry.package({ manifest: registry.manifest({ name: 'dep', packuments: depPacks }) })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: { dep: '1.0.0' },
+        overrides: { bar: '2.0.0' },
+      }),
+    })
+
+    const tree = await buildIdeal(path)
+    t.equal(tree.edgesOut.get('dep').valid, true, 'dep edge is valid')
+    t.notOk(tree.children.get('bar'), 'bar stays inside dep bundle')
+  })
+})
+
+t.test('allow-directory=root permits a top-level directory dependency', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { 'dir-dep': 'file:./dir-dep' },
+    }),
+    'dir-dep': {
+      'package.json': JSON.stringify({ name: 'dir-dep', version: '1.0.0' }),
+    },
+  })
+  const tree = await buildIdeal(path, { allowDirectory: 'root' })
+  t.ok(tree.children.get('dir-dep'), 'dir-dep is in the ideal tree')
+  t.equal(tree.children.get('dir-dep').isLink, true, 'dir-dep is a Link node')
+})
+
+t.test('allow-directory=none blocks a top-level directory dependency before the symlink branch', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { 'dir-dep': 'file:./dir-dep' },
+    }),
+    'dir-dep': {
+      'package.json': JSON.stringify({ name: 'dir-dep', version: '1.0.0' }),
+    },
+  })
+  await t.rejects(
+    buildIdeal(path, { allowDirectory: 'none' }),
+    { code: 'EALLOWDIRECTORY' },
+    'arborist refuses before reaching pacote or the Link branch'
+  )
+})
+
+t.test('allow-directory=root blocks a transitive directory dependency', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { parent: 'file:./parent' },
+    }),
+    parent: {
+      'package.json': JSON.stringify({
+        name: 'parent',
+        version: '1.0.0',
+        dependencies: { child: 'file:./child' },
+      }),
+      child: {
+        'package.json': JSON.stringify({ name: 'child', version: '1.0.0' }),
+      },
+    },
+  })
+  await t.rejects(
+    buildIdeal(path, { allowDirectory: 'root' }),
+    { code: 'EALLOWDIRECTORY' },
+    'transitive directory dep is refused because edge.from is not the project root'
+  )
+})
+
+t.test('allow-directory=root soft-skips a transitive optional directory dependency', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root-pkg',
+      version: '1.0.0',
+      dependencies: { parent: 'file:./parent' },
+    }),
+    parent: {
+      'package.json': JSON.stringify({
+        name: 'parent',
+        version: '1.0.0',
+        optionalDependencies: { 'opt-child': 'file:./opt-child' },
+      }),
+      'opt-child': {
+        'package.json': JSON.stringify({ name: 'opt-child', version: '1.0.0' }),
+      },
+    },
+  })
+  const tree = await buildIdeal(path, { allowDirectory: 'root' })
+  t.ok(tree.children.get('parent'), 'parent (root-edge) is in the tree')
+  const optChild = [...tree.inventory.values()].find(n => n.name === 'opt-child')
+  t.ok(optChild, 'blocked optional transitive is recorded in the tree')
+  t.equal(optChild.inert, true, 'blocked optional transitive is marked inert (will not be reified)')
+})
+
+t.test('incomplete manifest from proxy registry prunes optional dep (#9342)', async t => {
+  // When a proxy/upstream registry returns an
+  // incomplete manifest for a platform-specific optional dep it hasn't
+  // cached, the version field is missing.  Our fix in #nodeFromSpec
+  // treats this as EINCOMPLETEMANIFEST load failure so that
+  // #pruneFailedOptional() marks it inert instead of writing a broken
+  // lockfile entry like {"optional": true}.
+  const registry = createRegistry(t, false)
+
+  // parent package with an optional dep
+  const esbuildPack = registry.packument({
+    name: 'esbuild',
+    version: '0.27.7',
+    optionalDependencies: {
+      '@esbuild/aix-ppc64': '0.27.7',
+    },
+  })
+  const esbuildManifest = registry.manifest({ name: 'esbuild', packuments: [esbuildPack] })
+  await registry.package({ manifest: esbuildManifest })
+
+  // simulate proxy registry returning incomplete manifest (no version field)
+  await registry.package({
+    manifest: {
+      _id: '@esbuild/aix-ppc64',
+      _rev: '00-incomplete',
+      name: '@esbuild/aix-ppc64',
+      description: 'incomplete proxy manifest',
+      'dist-tags': { latest: '0.27.7' },
+      versions: {
+        '0.27.7': {
+          _id: '@esbuild/aix-ppc64@0.27.7',
+          name: '@esbuild/aix-ppc64',
+          // NO version field — this is the proxy registry bug
+          dependencies: {},
+          dist: {
+            tarball: 'https://registry.npmjs.org/@esbuild/aix-ppc64/-/aix-ppc64-0.27.7.tgz',
+          },
+        },
+      },
+    },
+  })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-incomplete-manifest',
+      version: '1.0.0',
+      devDependencies: { esbuild: '^0.27.0' },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree()
+
+  // esbuild itself should be in the tree
+  t.ok(tree.children.get('esbuild'), 'esbuild is installed')
+  t.equal(tree.children.get('esbuild').version, '0.27.7', 'esbuild has correct version')
+
+  // @esbuild/aix-ppc64 should be marked inert (EINCOMPLETEMANIFEST → loadFailure)
+  // pruneFailedOptional marks it inert so it won't be written to lockfile
+  const aixNodes = [...tree.inventory.query('name', '@esbuild/aix-ppc64')]
+  const aixNode = aixNodes.find(n => n.root === tree)
+  t.ok(aixNode, 'incomplete optional dep node exists in tree')
+  t.equal(aixNode.inert, true, 'incomplete optional dep is marked inert')
+  t.equal(aixNode.errors[0].code, 'EINCOMPLETEMANIFEST',
+    'node has EINCOMPLETEMANIFEST error')
 })

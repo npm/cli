@@ -72,6 +72,17 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.2): `@npmcli/arborist@9.4.2`
 
+## [10.0.0-pre.0.0](https://github.com/npm/cli/compare/libnpmpack-v9.1.5...libnpmpack-v10.0.0-pre.0.0) (2026-05-20)
+### ⚠️ BREAKING CHANGES
+* npm pack and npm publish now error when a package's overrides apply to one or more of its bundled packages (bundledDependencies / bundleDependencies). Defining both fields is still allowed as long as no override actually targets a bundled package. To resolve the error, remove the affected entries from either overrides or the bundle.
+### Bug Fixes
+* [`b1965d6`](https://github.com/npm/cli/commit/b1965d6af116dff6edcec7f70524b483d554ec4f) [#9271](https://github.com/npm/cli/pull/9271) refuse to pack when overrides apply to bundled packages (@owlstronaut)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0-pre.0.0): `@npmcli/arborist@10.0.0-pre.0.0`
+
 ## [9.1.0](https://github.com/npm/cli/compare/libnpmpack-v9.0.13...libnpmpack-v9.1.0) (2026-02-04)
 ### Features
 * [`f5f6cf7`](https://github.com/npm/cli/commit/f5f6cf7c9fc9315b96eb29c5c7d5ab63ad3a9122) [#8943](https://github.com/npm/cli/pull/8943) config: add --allow-git (@wraithgar)

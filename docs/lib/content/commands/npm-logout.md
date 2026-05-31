@@ -24,7 +24,7 @@ If `--scope` is provided, this will find the credentials for the registry connec
 
 ### See Also
 
-* [npm adduser](/commands/npm-adduser)
+* [npm login](/commands/npm-login)
 * [npm registry](/using-npm/registry)
 * [npm config](/commands/npm-config)
 * [npm whoami](/commands/npm-whoami)

@@ -14,13 +14,12 @@ This command is similar to [`npm install`](/commands/npm-install), except it's m
 
 The main differences between using `npm install` and `npm ci` are:
 
-* The project **must** have an existing `package-lock.json` or
-  `npm-shrinkwrap.json`.
+* The project **must** have an existing `package-lock.json`.
 * If dependencies in the package lock do not match those in `package.json`,
   `npm ci` will exit with an error, instead of updating the package lock.
 * `npm ci` can only install entire projects at a time: individual dependencies cannot be added with this command.
 * If a `node_modules` is already present, it will be automatically removed before `npm ci` begins its install.
-* It will never write to `package.json` or any of the package-locks:
+* It will never write to `package.json` or `package-lock.json`:
   installs are essentially frozen.
 
 NOTE: If you create your `package-lock.json` file by running `npm install` with flags that can affect the shape of your dependency tree, such as

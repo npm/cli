@@ -1,5 +1,30 @@
 # Changelog
 
+## [10.0.0-pre.0.0](https://github.com/npm/cli/compare/arborist-v9.4.2...arborist-v10.0.0-pre.0.0) (2026-05-20)
+### ⚠️ BREAKING CHANGES
+* `npm shrinkwrap` is removed, the `shrinkwrap` config alias is removed, and `npm-shrinkwrap.json` is no longer loaded or honored at the project root or from inside dependency tarballs. Rename project-root `npm-shrinkwrap.json` to `package-lock.json`; use `bundleDependencies` if you need to ship a locked dependency tree.
+### Features
+* [`e0f12f7`](https://github.com/npm/cli/commit/e0f12f7e57aca36f71c9615bd971f427ed23e91a) [#9348](https://github.com/npm/cli/pull/9348) add allow-git/allow-file/allow-directory/allow-remote configs (@owlstronaut)
+* [`b8655c7`](https://github.com/npm/cli/commit/b8655c7b12a3e299b159f879a2b1dfed71016ec2) [#9282](https://github.com/npm/cli/pull/9282) arborist: add lockfileString() for in-memory lockfile generation (@ljharb)
+* [`2e5dcad`](https://github.com/npm/cli/commit/2e5dcad17a59ee9f69eeec27fc5b087b5b032df7) [#9262](https://github.com/npm/cli/pull/9262) drop npm-shrinkwrap.json support (@owlstronaut)
+### Bug Fixes
+* [`822ce86`](https://github.com/npm/cli/commit/822ce861a056c599be38ddf58683179f4c9bd9c6) [#9343](https://github.com/npm/cli/pull/9343) arborist: skip lockfile entries for optional deps with incomplete manifests (#9343) (@ecanturk, @owlstronaut)
+* [`2c9587e`](https://github.com/npm/cli/commit/2c9587e92b4490bcfb6e7cef6beb5ee6d9c9b730) [#9359](https://github.com/npm/cli/pull/9359) arborist: only forward Link overrides when a rule names a target dep (@manzoorwanijk)
+* [`f550eb4`](https://github.com/npm/cli/commit/f550eb415de0aff83a5fa297850104f5390a6e30) [#9348](https://github.com/npm/cli/pull/9348) refactor #failureNode, adjust tests and safety (@owlstronaut)
+* [`1f17566`](https://github.com/npm/cli/commit/1f17566ad90353b88e81fa1f8a4da5879d3ec7a3) [#9348](https://github.com/npm/cli/pull/9348) allow-remote=none does not block registry tarballs (@owlstronaut)
+* [`81793ae`](https://github.com/npm/cli/commit/81793aeabcd862ed2be3d62b7864bf7ea34d0b2b) [#9332](https://github.com/npm/cli/pull/9332) arborist: skip extraneous fsChildren in linked-strategy reify (@manzoorwanijk)
+* [`4c7f6ba`](https://github.com/npm/cli/commit/4c7f6baf70bba8200b4a9fe335fd66d3e8314523) [#9330](https://github.com/npm/cli/pull/9330) arborist: prune removed-workspace entries from package-lock.json (@manzoorwanijk)
+* [`076551b`](https://github.com/npm/cli/commit/076551b8724741b0c615b26d44595348c3111dc2) [#9309](https://github.com/npm/cli/pull/9309) arborist: clean up orphan top-level symlinks in linked strategy (#9309) (@manzoorwanijk)
+* [`32940e2`](https://github.com/npm/cli/commit/32940e231e34121aaf378309361b4b34fafdf939) [#9299](https://github.com/npm/cli/pull/9299) arborist: ignore hidden entries in global update (#9299) (@Grynn)
+* [`0629fbf`](https://github.com/npm/cli/commit/0629fbf736eafcb555428d96bd86a69f8e791d70) [#9283](https://github.com/npm/cli/pull/9283) prefer existing tree nodes for peerOptional deps (#9249) (#9283) (@everett1992)
+* [`bc32d94`](https://github.com/npm/cli/commit/bc32d94d3845078784603022e9c3504e1c5cde4a) [#9198](https://github.com/npm/cli/pull/9198) arborist: propagate overrides through Link nodes to targets (#9198) (@manzoorwanijk)
+* [`1ab20c8`](https://github.com/npm/cli/commit/1ab20c8abd58cadc976429bb3b7b35cd6b627db4) [#9235](https://github.com/npm/cli/pull/9235) arborist: fix infinite loop with bundledDependencies and overrides (#9235) (@everett1992)
+* [`0dc5585`](https://github.com/npm/cli/commit/0dc5585fa284f5c8cac36579983119304775c1c8) [#9167](https://github.com/npm/cli/pull/9167) arborist: handle `npm link` with install-strategy=linked (@manzoorwanijk)
+* [`1d058b0`](https://github.com/npm/cli/commit/1d058b0cc7161fa728cba2020a265a81e0ec7cdf) [#9221](https://github.com/npm/cli/pull/9221) arborist: do not install inert optional extraneous shared dependencies (#9221) (@lovell)
+* [`dcad8ec`](https://github.com/npm/cli/commit/dcad8ec1f830874d2ec1c3312f2c15d03109ce49) [#9206](https://github.com/npm/cli/pull/9206) pass _isRoot context where missing (#9206) (@wraithgar)
+### Chores
+* [`b61281d`](https://github.com/npm/cli/commit/b61281da2d4e0a60a93f7138392bfc5893595705) [#9349](https://github.com/npm/cli/pull/9349) change test wording to not collide with tap (#9349) (@owlstronaut)
+
 ## [9.4.2](https://github.com/npm/cli/compare/arborist-v9.4.1...arborist-v9.4.2) (2026-03-18)
 ### Bug Fixes
 * [`21ea382`](https://github.com/npm/cli/commit/21ea382a60b3693ff6c44c81447caa5d0294169c) [#9110](https://github.com/npm/cli/pull/9110) arborist: resolve sibling override sets via common ancestor (#9110) (@manzoorwanijk)

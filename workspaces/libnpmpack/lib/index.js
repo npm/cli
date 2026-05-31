@@ -14,6 +14,42 @@ async function pack (spec = 'file:.', opts = {}) {
 
   const manifest = await pacote.manifest(spec, { ...opts, Arborist, _isRoot: true })
 
+  if (spec.type === 'directory') {
+    const hasBundled = manifest.bundleDependencies?.length > 0
+    const hasOverrides = manifest.overrides
+      && typeof manifest.overrides === 'object'
+      && Object.keys(manifest.overrides).length > 0
+    if (hasBundled && hasOverrides) {
+      // Only refuse when an override rule actually applies to a package that is bundled by the root.
+      // Overrides targeting dev dependencies or any package outside the bundled tree are harmless to consumers, because consumers do not apply the publishing package's overrides.
+      // We rely on Arborist's own semantics (inBundle/inDepBundle/overridden) rather than reimplementing what npm-packlist/arborist already knows.
+      const arb = new Arborist({ path: spec.fetchSpec })
+      const tree = await arb.loadActual()
+      const offenders = new Set()
+      for (const node of tree.inventory.values()) {
+        if (node.isRoot) {
+          continue
+        }
+        // Only packages bundled by the root are at risk: nested dep-bundles are published as-is and arborist already treats them as immune to the root's overrides (see Edge#satisfiedBy).
+        if (!node.inBundle || node.inDepBundle) {
+          continue
+        }
+        if (node.overridden) {
+          offenders.add(node.name)
+        }
+      }
+      if (offenders.size) {
+        const names = [...offenders].sort()
+        const list = names.join(', ')
+        const isOne = names.length === 1
+        throw Object.assign(
+          new Error(`Cannot pack or publish: "overrides" ${isOne ? 'affects a bundled package' : 'affect bundled packages'} (${list}). Consumers do not apply your package's overrides, so the published bundle will produce invalid dependency edges. Remove ${isOne ? 'this package' : 'these packages'} from "bundledDependencies"/"bundleDependencies" or from "overrides" before publishing.`),
+          { code: 'EBUNDLEOVERRIDE', packages: names }
+        )
+      }
+    }
+  }
+
   const stdio = opts.foregroundScripts ? 'inherit' : 'pipe'
 
   if (spec.type === 'directory' && !opts.ignoreScripts) {

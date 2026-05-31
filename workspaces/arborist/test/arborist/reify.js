@@ -170,7 +170,7 @@ t.test('testing-peer-deps package', async t => {
   await t.resolveMatchSnapshot(printReified(fixture(t, 'testing-peer-deps')))
 })
 
-t.test('just the shrinkwrap', async t => {
+t.test('just the lockfile', async t => {
   await t.test('cli-750-fresh', async t => {
     const path = fixture(t, 'cli-750-fresh')
     createRegistry(t, false)
@@ -443,11 +443,6 @@ t.test('omits when both dev and optional flags are set', t => {
   }))
 })
 
-t.test('bad shrinkwrap file', async t => {
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printReified(fixture(t, 'testing-peer-deps-bad-sw')))
-})
-
 t.test('multiple bundles at the same level', t => {
   const path = fixture(t, 'two-bundled-deps')
   createRegistry(t, true)
@@ -476,41 +471,6 @@ t.test('update a node without updating its children', async t => {
   createRegistry(t, true)
   await t.resolveMatchSnapshot(printReified(fixture(t, 'once-outdated'),
     { update: { names: ['once'] }, save: false }))
-})
-
-t.test('do not add shrinkwrapped deps', async t => {
-  createRegistry(t, true)
-  await t.resolveMatchSnapshot(printReified(
-    fixture(t, 'shrinkwrapped-dep-no-lock'), { update: true }))
-})
-
-t.test('do not update shrinkwrapped deps', async t => {
-  createRegistry(t, false)
-  await t.resolveMatchSnapshot(printReified(
-    fixture(t, 'shrinkwrapped-dep-with-lock'),
-    { update: { names: ['abbrev'] } }))
-})
-
-t.test('tracks changes of shrinkwrapped dep correctly', async t => {
-  const path = t.testdir({ 'package.json': '{}' })
-  createRegistry(t, true)
-
-  const install1 = await printReified(path, { add: ['@nlf/shrinkwrapped-dep-updates-a@1.0.0'] })
-  t.matchSnapshot(install1, 'install added the correct tree')
-
-  const update1 = await printReified(path, { update: true })
-  t.match(install1, update1, 'update maintains the same correct tree')
-
-  const install2 = await printReified(path, { add: ['@nlf/shrinkwrapped-dep-updates-a@2.0.0'] })
-  t.matchSnapshot(install2, 'installing new version brings in the correct children')
-
-  const update2 = await printReified(path, { update: true })
-  t.match(install2, update2, 'update maintains the same correct tree')
-
-  // delete a dependency that was installed as part of the shrinkwrap
-  fs.rmSync(resolve(path, 'node_modules/@nlf/shrinkwrapped-dep-updates-a/node_modules/@nlf/shrinkwrapped-dep-updates-b'), { recursive: true, force: true })
-  const repair = await printReified(path)
-  t.match(repair, install2, 'tree got repaired')
 })
 
 t.test('do not install optional deps with mismatched platform specifications', async t => {
@@ -570,8 +530,6 @@ t.test('fail to install optional deps with matched os and matched cpu and mismat
 
 t.test('dry run, do not get anything wet', async t => {
   const cases = [
-    ['shrinkwrapped-dep-with-lock-empty', false],
-    ['shrinkwrapped-dep-no-lock-empty', true],
     ['link-dep-empty', false],
     ['link-meta-deps-empty', true],
     ['testing-bundledeps-empty', true],
@@ -585,31 +543,6 @@ t.test('dry run, do not get anything wet', async t => {
       t.matchSnapshot(printTree(await arb.reify()))
       t.throws(() => fs.statSync(resolve(path, 'node_modules')))
       t.ok(arb.diff)
-    })
-  }
-})
-
-t.test('reifying with shronk warp dep', t => {
-  const cases = [
-    ['shrinkwrapped-dep-with-lock', false],
-    ['shrinkwrapped-dep-with-lock-empty', true],
-    ['shrinkwrapped-dep-no-lock', true],
-    ['shrinkwrapped-dep-no-lock-empty', true],
-  ]
-  t.plan(cases.length)
-  for (const [c, mocks] of cases) {
-    t.test(c, async t => {
-      const path = fixture(t, c)
-      createRegistry(t, mocks)
-      const tree = await printReified(path, {
-        // set update so that we don't start the idealTree
-        // with the actualTree, and can see that the deps
-        // are indeed getting set up from the shrink wrap
-        update: /no-lock/.test(c),
-      })
-      t.matchSnapshot(tree)
-      const dep = `${path}/node_modules/@isaacs/shrinkwrapped-dependency`
-      t.equal(fs.statSync(`${dep}/package.json`).isFile(), true, 'has package.json')
     })
   }
 })
@@ -980,33 +913,6 @@ t.test('rollbacks', { buffered: false }, t => {
         ])
       })
       .then(() => failRm = false)
-  })
-
-  t.test('fail loading shrinkwraps and updating trees', t => {
-    const path = fixture(t, 'shrinkwrapped-dep-no-lock-empty')
-    createRegistry(t, true)
-    const a = newArb({ path, installStrategy: 'nested' })
-    const kLoadSW = Symbol.for('loadShrinkwrapsAndUpdateTrees')
-    const loadShrinkwrapsAndUpdateTrees = a[kLoadSW]
-    a[kLoadSW] = seen => {
-      a[kLoadSW] = loadShrinkwrapsAndUpdateTrees
-      const kDiff = Symbol.for('diffTrees')
-      const diffTrees = a[kDiff]
-      a[kDiff] = () => {
-        a[kDiff] = diffTrees
-        return Promise.reject(new Error('poop'))
-      }
-      return a[kLoadSW](seen)
-    }
-    const kRollback = Symbol.for('rollbackCreateSparseTree')
-    const rollbackCreateSparseTree = a[kRollback]
-    a[kRollback] = er => {
-      t.match(er, new Error('poop'))
-      a[kRollback] = rollbackCreateSparseTree
-      return a[kRollback](er)
-    }
-
-    return t.rejects(a.reify(), new Error('poop'))
   })
 
   t.test('fail loading bundles and updating trees', t => {
@@ -1559,7 +1465,7 @@ t.test('fail early if bins will conflict', async t => {
   await t.rejects(arb.reify({ add: ['semver'] }), { code: 'EEXIST' })
 })
 
-t.test('add a dep present in the tree, with v1 shrinkwrap', async t => {
+t.test('add a dep present in the tree, with v1 lockfile', async t => {
   // https://github.com/npm/arborist/issues/70
   const path = fixture(t, 'old-package-lock')
   createRegistry(t, true)
@@ -1707,6 +1613,26 @@ t.test('save complete lockfile on update-all', async t => {
   t.matchSnapshot(lock(), 'should update, but not drop root metadata')
 })
 
+t.test('dry-run update does not save lockfiles', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'dry-run-update-lockfile-test',
+      version: '1.0.0',
+    }),
+  })
+  createRegistry(t, true)
+  await reify(path, { add: ['abbrev@1.0.4'] })
+
+  const lock = filename => fs.readFileSync(resolve(path, filename), 'utf8')
+  const packageLock = lock('package-lock.json')
+  const hiddenLock = lock('node_modules/.package-lock.json')
+
+  await reify(path, { update: true, dryRun: true, save: false })
+
+  t.equal(lock('package-lock.json'), packageLock, 'package-lock.json unchanged')
+  t.equal(lock('node_modules/.package-lock.json'), hiddenLock, 'hidden lockfile unchanged')
+})
+
 t.test('save proper lockfile with bins when upgrading lockfile', async t => {
   for (const complete of [true, false]) {
     await t.test(`complete=${complete}`, async t => {
@@ -1756,7 +1682,6 @@ t.test('rollback if process is terminated during reify process', async t => {
   const methods = [
     Symbol.for('retireShallowNodes'),
     Symbol.for('createSparseTree'),
-    Symbol.for('loadShrinkwrapsAndUpdateTrees'),
     Symbol.for('loadBundlesAndUpdateTrees'),
     Symbol.for('unpackNewModules'),
     Symbol.for('moveBackRetiredUnchanged'),
@@ -2053,6 +1978,65 @@ t.test('filtered reification in workspaces', async t => {
 
   t.matchSnapshot(fs.readFileSync(hiddenLock, 'utf8'),
     'hidden lockfile - foo/x linked, c, old x, removed a')
+})
+
+// Regression for https://github.com/npm/cli/issues/5463: a workspace whose directory has been deleted should not leave behind an extraneous entry (or a lingering reference in the root's workspaces array) in package-lock.json after `npm install`.
+t.test('removed workspace is pruned from package-lock.json', async t => {
+  const setup = () => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'remove-ws',
+        version: '1.0.0',
+        workspaces: ['packages/a', 'packages/b'],
+      }),
+      packages: {
+        a: {
+          'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }),
+        },
+        b: {
+          'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }),
+        },
+      },
+    })
+    return path
+  }
+
+  // The lockfile's root.workspaces array mirrors package.json verbatim and is intentionally not mutated here, so we only assert that orphan package/link entries are dropped.
+  const assertClean = (t, path, label) => {
+    const lock = JSON.parse(fs.readFileSync(`${path}/package-lock.json`, 'utf8'))
+    t.notOk(lock.packages['packages/b'],
+      `${label}: packages/b entry removed from lockfile`)
+    t.notOk(lock.packages['node_modules/b'],
+      `${label}: node_modules/b link removed from lockfile`)
+    t.notOk(lock.dependencies && lock.dependencies.b,
+      `${label}: dependencies.b removed from legacy lockfile`)
+  }
+
+  for (const strategy of ['hoisted', 'linked']) {
+    t.test(`${strategy} strategy, package.json kept stale`, async t => {
+      const path = setup()
+      createRegistry(t, false)
+      await reify(path, { installStrategy: strategy })
+      // Remove only the directory, leave package.json's workspaces array alone.
+      fs.rmSync(`${path}/packages/b`, { recursive: true, force: true })
+      await reify(path, { installStrategy: strategy })
+      assertClean(t, path, `${strategy}/keep-pj`)
+    })
+
+    t.test(`${strategy} strategy, package.json updated`, async t => {
+      const path = setup(strategy)
+      createRegistry(t, false)
+      await reify(path, { installStrategy: strategy })
+      fs.rmSync(`${path}/packages/b`, { recursive: true, force: true })
+      fs.writeFileSync(`${path}/package.json`, JSON.stringify({
+        name: 'remove-ws',
+        version: '1.0.0',
+        workspaces: ['packages/a'],
+      }))
+      await reify(path, { installStrategy: strategy })
+      assertClean(t, path, `${strategy}/clean-pj`)
+    })
+  }
 })
 
 t.test('project with bundled deps and a link dep on itself', async t => {
@@ -2510,34 +2494,6 @@ t.test('update a dep when the lockfile is lying about it', async t => {
   const abbrev = tree.children.get('abbrev')
   t.equal(abbrev.version, '1.1.1')
   t.equal(require(abbrev.path + '/package.json').version, '1.1.1')
-})
-
-t.test('shrinkwrap which lacks metadata updates deps', async t => {
-  const path = t.testdir({
-    'package.json': '{}',
-  })
-
-  createRegistry(t, true)
-  const first = await reify(path, {
-    add: ['@isaacs/testing-shrinkwrap-abbrev@1.2.0'],
-  })
-  const firstAbbrev = first.children.get('@isaacs/testing-shrinkwrap-abbrev')
-    .children.get('abbrev')
-  t.equal(firstAbbrev.version, '1.1.0')
-
-  const abbrevPath = firstAbbrev.path
-  const abbrevpj = () =>
-    JSON.parse(fs.readFileSync(abbrevPath + '/package.json', 'utf8'))
-
-  t.equal(abbrevpj().version, firstAbbrev.version)
-
-  const second = await reify(path, {
-    add: ['@isaacs/testing-shrinkwrap-abbrev@1.2.1'],
-  })
-  const secondAbbrev = second.children.get('@isaacs/testing-shrinkwrap-abbrev')
-    .children.get('abbrev')
-  t.equal(secondAbbrev.version, '1.1.1')
-  t.equal(abbrevpj().version, secondAbbrev.version)
 })
 
 t.test('move aside symlink clutter', async t => {
@@ -3870,6 +3826,39 @@ t.test('install strategy linked', async (t) => {
     const store = fs.lstatSync(resolve(path, 'node_modules', '.store'))
     t.ok(store.isDirectory(), 'abbrev got installed')
     t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
+  })
+
+  t.test('does not re-create a workspace dir removed from manifest', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9331
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        workspaces: ['packages/a', 'packages/b'],
+      }),
+      packages: {
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+      },
+    })
+
+    createRegistry(t, false)
+    await reify(path, { installStrategy: 'linked' })
+
+    // Drop workspace b: remove its directory and its entry from package.json.
+    fs.rmSync(resolve(path, 'packages/b'), { recursive: true, force: true })
+    fs.writeFileSync(resolve(path, 'package.json'), JSON.stringify({
+      name: 'host',
+      version: '1.0.0',
+      workspaces: ['packages/a'],
+    }))
+
+    await reify(path, { installStrategy: 'linked' })
+
+    t.notOk(
+      fs.existsSync(resolve(path, 'packages/b')),
+      'packages/b should remain absent after reinstall'
+    )
   })
 })
 

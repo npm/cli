@@ -15,16 +15,42 @@ Object {
     null,
     "restricted",
     "public",
+    "private",
   ],
   "all": Array [
     "boolean value (true or false)",
+  ],
+  "allow-directory": Array [
+    "all",
+    "none",
+    "root",
+  ],
+  "allow-file": Array [
+    "all",
+    "none",
+    "root",
   ],
   "allow-git": Array [
     "all",
     "none",
     "root",
   ],
+  "allow-remote": Array [
+    "all",
+    "none",
+    "root",
+  ],
   "allow-same-version": Array [
+    "boolean value (true or false)",
+  ],
+  "allow-scripts": Array [
+    Function String(),
+    Function Array(),
+  ],
+  "allow-scripts-pending": Array [
+    "boolean value (true or false)",
+  ],
+  "allow-scripts-pin": Array [
     "boolean value (true or false)",
   ],
   "also": Array [
@@ -102,6 +128,9 @@ Object {
   "cpu": Array [
     null,
     Function String(),
+  ],
+  "dangerously-allow-all-scripts": Array [
+    "boolean value (true or false)",
   ],
   "depth": Array [
     null,
@@ -194,6 +223,9 @@ Object {
   ],
   "global": Array [
     "boolean value (true or false)",
+  ],
+  "global-ignore-file": Array [
+    "valid filesystem path",
   ],
   "global-style": Array [
     "boolean value (true or false)",
@@ -544,13 +576,13 @@ Object {
   "shell": Array [
     Function String(),
   ],
-  "shrinkwrap": Array [
-    "boolean value (true or false)",
-  ],
   "sign-git-commit": Array [
     "boolean value (true or false)",
   ],
   "sign-git-tag": Array [
+    "boolean value (true or false)",
+  ],
+  "strict-allow-scripts": Array [
     "boolean value (true or false)",
   ],
   "strict-peer-deps": Array [

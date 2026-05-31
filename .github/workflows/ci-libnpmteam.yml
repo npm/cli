@@ -42,10 +42,6 @@ jobs:
           node-version: 22.x
           check-latest: contains('22.x', '.x')
           cache: npm
-      - name: Install Latest npm
-        uses: ./.github/actions/install-latest-npm
-        with:
-          node: ${{ steps.node.outputs.node-version }}
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
@@ -106,10 +102,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           check-latest: contains(matrix.node-version, '.x')
           cache: npm
-      - name: Install Latest npm
-        uses: ./.github/actions/install-latest-npm
-        with:
-          node: ${{ steps.node.outputs.node-version }}
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps

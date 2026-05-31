@@ -1,5 +1,3 @@
-const { mkdirSync } = require('node:fs')
-const pacote = require('pacote')
 const { join } = require('node:path')
 const { depth } = require('treeverse')
 const crypto = require('node:crypto')
@@ -97,7 +95,9 @@ module.exports = cls => class IsolatedReifier extends cls {
     }
     this.counter = 0
 
-    this.idealGraph.workspaces = await Promise.all(Array.from(idealTree.fsChildren.values(), w => this.#workspaceProxy(w)))
+    // Skip extraneous fsChildren: workspaces removed from the root manifest can linger in fsChildren via the lockfile, and re-materializing them here would re-create a directory the user just deleted.
+    const fsChildren = Array.from(idealTree.fsChildren.values()).filter(w => !w.extraneous)
+    this.idealGraph.workspaces = await Promise.all(fsChildren.map(w => this.#workspaceProxy(w)))
     const processed = new Set()
     const queue = [idealTree, ...idealTree.fsChildren]
     while (queue.length !== 0) {
@@ -113,7 +113,11 @@ module.exports = cls => class IsolatedReifier extends cls {
       })
       // local `file:` deps are in fsChildren but are not workspaces.
       // they are already handled as workspace-like proxies above and should not go through the external/store extraction path.
-      if (!next.isProjectRoot && !next.isWorkspace && !next.inert && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
+      // Links with file: resolved paths (from `npm link`) should also be treated as local dependencies and symlinked directly instead of being extracted into the store.
+      const isLocalFileDep = next.isLink && next.resolved?.startsWith('file:')
+      if (isLocalFileDep && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
+        this.idealGraph.workspaces.push(await this.#workspaceProxy(next.target))
+      } else if (!next.isProjectRoot && !next.isWorkspace && !next.inert && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
         this.idealGraph.external.push(await this.#externalProxy(next))
       }
     }
@@ -143,49 +147,14 @@ module.exports = cls => class IsolatedReifier extends cls {
     const result = {}
     // XXX this goes recursive if we don't set here because assignCommonProperties also calls this.#externalProxy
     this.#externalProxies.set(node, result)
-    await this.#assignCommonProperties(node, result, !node.hasShrinkwrap)
-    if (node.hasShrinkwrap) {
-      const dir = join(
-        node.root.path,
-        'node_modules',
-        '.store',
-        `${node.packageName}@${node.version}`
-      )
-      mkdirSync(dir, { recursive: true })
-      // TODO this approach feels wrong and shouldn't be necessary for shrinkwraps
-      await pacote.extract(node.resolved, dir, {
-        ...this.options,
-        resolved: node.resolved,
-        integrity: node.integrity,
-      })
-      const Arborist = this.constructor
-      const arb = new Arborist({ ...this.options, path: dir })
-      // Make sure that the ideal tree is build as the rest of the algorithm depends on it.
-      await arb.buildIdealTree({
-        complete: false,
-        dev: false,
-      })
-      await arb.makeIdealGraph()
-      this.idealGraph.external.push(...arb.idealGraph.external)
-      for (const edge of arb.idealGraph.external) {
-        edge.root = this.idealGraph
-        edge.id = `${node.id}=>${edge.id}`
-      }
-      result.localDependencies = []
-      result.externalDependencies = arb.idealGraph.externalDependencies
-      result.externalOptionalDependencies = arb.idealGraph.externalOptionalDependencies
-      result.dependencies = [
-        ...result.externalDependencies,
-        ...result.externalOptionalDependencies,
-      ]
-    }
+    await this.#assignCommonProperties(node, result)
     result.optional = node.optional
     result.resolved = node.resolved
     result.version = node.version
     return result
   }
 
-  async #assignCommonProperties (node, result, populateDeps = true) {
+  async #assignCommonProperties (node, result) {
     result.root = this.idealGraph
     // XXX does anything need this?
     result.id = this.counter++
@@ -194,10 +163,6 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.packageName = node.packageName || node.name
     result.package = { ...node.package }
     result.package.bundleDependencies = undefined
-
-    if (!populateDeps) {
-      return
-    }
 
     let edges = [...node.edgesOut.values()].filter(edge =>
       edge.to?.target &&
@@ -328,7 +293,8 @@ module.exports = cls => class IsolatedReifier extends cls {
       root.inventory.set(workspace.location, workspace)
       root.workspaces.set(wsName, workspace.path)
 
-      // Create workspace Link. For root declared deps, link at root node_modules/. For undeclared deps, link at the workspace's own node_modules/ (self-link).
+      // Declared workspaces are symlinked at root node_modules/.
+      // Undeclared workspaces get a tree-only Link kept for diff/filter participation but not materialized on disk.
       const isDeclared = this.#rootDeclaredDeps.has(wsName)
       const wsLink = new IsolatedLink({
         location: isDeclared ? join('node_modules', wsName) : join(c.localLocation, 'node_modules', wsName),
@@ -341,7 +307,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         target: workspace,
       })
       if (!isDeclared) {
-        workspace.children.set(wsName, wsLink)
+        wsLink.isUndeclaredWorkspaceLink = true
       }
       root.children.set(wsName, wsLink)
       root.inventory.set(wsLink.location, wsLink)

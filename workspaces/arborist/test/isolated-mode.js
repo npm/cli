@@ -42,7 +42,8 @@ const rule1 = {
   apply: (t, dir, resolvedGraph, alreadyAsserted) => {
     const graph = parseGraph(resolvedGraph)
     const allPackages = getAllPackages(withRequireChain(graph))
-    allPackages.filter(p => p.chain.length !== 0).forEach(p => {
+    // Workspaces are excluded: linked-strategy workspaces have no self-symlink, so self-referencing requires an `exports` field (matching pnpm).
+    allPackages.filter(p => p.chain.length !== 0 && !p.workspace).forEach(p => {
       const resolveChain = [...p.chain, p.name]
       const key = p.initialDir + ' => ' + resolveChain.join(' => ')
       if (alreadyAsserted.has(key)) {
@@ -687,240 +688,6 @@ tap.test('Optional deps are installed when possible', async t => {
 
   // TODO: make sure that existsSync is not deprecated
   t.ok(fs.existsSync(path.join(dir, 'node_modules', '.bin', 'which')))
-})
-
-tap.test('shrinkwrap', async t => {
-  const shrinkwrap = JSON.stringify({
-    name: 'which',
-    version: '1.0.0',
-    lockfileVersion: 2,
-    requires: true,
-    packages: {
-      '': {
-        name: 'which',
-        version: '1.0.0',
-        dependencies: {
-          isexe: '^1.0.0',
-        },
-      },
-      'node_modules/isexe': {
-        version: '1.0.0',
-        resolved: '##REG##/isexe/1.0.0.tar',
-      },
-    },
-    dependencies: {
-      isexe: {
-        version: '1.0.0',
-        resolved: '##REG##/isexe/1.0.0.tar',
-      },
-    },
-  })
-
-  // Input of arborist
-  const graph = {
-    registry: [
-      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' }, shrinkwrap, _hasShrinkwrap: true },
-      { name: 'isexe', version: '1.1.0' },
-      { name: 'isexe', version: '1.0.0' },
-    ],
-    root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
-    },
-  }
-
-  // expected output
-  const resolved = {
-    'foo@1.2.3 (root)': {
-      'which@1.0.0': {
-        'isexe@1.0.0': {},
-      },
-      'isexe@1.1.0': {},
-    },
-  }
-
-  const { dir, registry } = await getRepo(graph)
-
-  // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ installStrategy: 'linked' })
-
-  const asserted = new Set()
-  rule1.apply(t, dir, resolved, asserted)
-  rule2.apply(t, dir, resolved, asserted)
-  rule3.apply(t, dir, resolved, asserted)
-  rule4.apply(t, dir, resolved, asserted)
-  rule5.apply(t, dir, resolved, asserted)
-  rule6.apply(t, dir, resolved, asserted)
-  rule7.apply(t, dir, resolved, asserted)
-})
-
-tap.test('shrinkwrap install dev deps (like hoisting does)', async t => {
-  const shrinkwrap = JSON.stringify({
-    name: 'which',
-    version: '1.0.0',
-    lockfileVersion: 2,
-    requires: true,
-    packages: {
-      '': {
-        name: 'which',
-        version: '1.0.0',
-        devDependencies: {
-          isexe: '^1.0.0',
-        },
-      },
-      'node_modules/isexe': {
-        version: '1.0.0',
-        dev: true,
-        resolved: '##REG##/isexe/1.0.0.tar',
-      },
-    },
-    dependencies: {
-      isexe: {
-        version: '1.0.0',
-        dev: true,
-        resolved: '##REG##/isexe/1.0.0.tar',
-      },
-    },
-  })
-
-  // Input of arborist
-  const graph = {
-    registry: [
-      { name: 'which', version: '1.0.0', devDependencies: { isexe: '^1.0.0' }, shrinkwrap, _hasShrinkwrap: true },
-      { name: 'isexe', version: '1.1.0' },
-      { name: 'isexe', version: '1.0.0' },
-    ],
-    root: {
-      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0', isexe: '^1.0.0' },
-    },
-  }
-
-  // expected output
-  const resolved = {
-    'foo@1.2.3 (root)': {
-      'which@1.0.0': {
-        'isexe@1.0.0': {},
-      },
-      'isexe@1.1.0': {},
-    },
-  }
-
-  const { dir, registry } = await getRepo(graph)
-
-  // Note that we override this cache to prevent interference from other tests
-  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ installStrategy: 'linked' })
-
-  const asserted = new Set()
-  rule1.apply(t, dir, resolved, asserted)
-  rule2.apply(t, dir, resolved, asserted)
-  rule3.apply(t, dir, resolved, asserted)
-  rule4.apply(t, dir, resolved, asserted)
-  rule5.apply(t, dir, resolved, asserted)
-  rule6.apply(t, dir, resolved, asserted)
-  rule7.apply(t, dir, resolved, asserted)
-})
-
-tap.test('shrinkwrap with peer dependencies', async t => {
-  const shrinkwrap = JSON.stringify({
-    name: 'which',
-    version: '1.0.0',
-    lockfileVersion: 2,
-    requires: true,
-    packages: {
-      '': {
-        name: 'which',
-        version: '1.0.0',
-        dependencies: {
-          isexe: '^1.0.0',
-        },
-        devDependencies: {
-          bar: '1.0.0',
-        },
-        peerDependencies: {
-          bar: '*',
-        },
-      },
-      'node_modules/bar': {
-        version: '1.0.0',
-        resolved: '##REG##/bar/1.0.0.tar',
-        dev: true,
-        bin: {
-          bar: 'bin.js',
-        },
-      },
-      'node_modules/isexe': {
-        version: '1.0.0',
-        resolved: '##REG##/isexe/1.0.0.tar',
-        bin: {
-          isexe: 'bin.js',
-        },
-      },
-    },
-    dependencies: {
-      bar: {
-        version: '1.0.0',
-        resolved: '##REG##/bar/1.0.0.tar',
-        dev: true,
-      },
-      isexe: {
-        version: '1.0.0',
-        resolved: '##REG##/isexe/1.0.0.tar',
-      },
-    },
-  })
-  // expected output
-  const resolved = {
-    'foo@1.0.0 (root)': {
-      'which@1.0.0': {
-        'isexe@1.0.0': {},
-        'bar@1.0.0': {},
-      },
-      'isexe@1.1.0': {},
-      'bar@1.1.0': {},
-    },
-  }
-
-  // Input of arborist
-  const graph = {
-    registry: [
-      {
-        name: 'which',
-        version: '1.0.0',
-        dependencies: { isexe: '^1.0.0' },
-        peerDependencies: { bar: '*' },
-        devDependencies: { bar: '1.0.0' },
-        shrinkwrap,
-        _hasShrinkwrap: true,
-      },
-      { name: 'isexe', version: '1.1.0' },
-      { name: 'isexe', version: '1.0.0' },
-      { name: 'bar', version: '1.1.0' },
-      { name: 'bar', version: '1.0.0' },
-    ],
-    root: {
-      name: 'foo',
-      version: '1.0.0',
-      dependencies: { isexe: '^1.0.0', bar: '^1.0.0', which: '1.0.0' },
-    },
-  }
-
-  const { dir, registry } = await getRepo(graph)
-  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
-  await arborist.reify({ installStrategy: 'linked' })
-
-  // TODO: create the resolved object
-  const asserted = new Set()
-  rule1.apply(t, dir, resolved, asserted)
-  rule2.apply(t, dir, resolved, asserted)
-  rule3.apply(t, dir, resolved, asserted)
-  rule4.apply(t, dir, resolved, asserted)
-  rule5.apply(t, dir, resolved, asserted)
-  rule6.apply(t, dir, resolved, asserted)
-  rule7.apply(t, dir, resolved, asserted)
 })
 
 tap.test('bundled dependencies of external packages', async t => {
@@ -1789,6 +1556,57 @@ tap.test('file: dependency with linked strategy', async t => {
   t.ok(setupRequire(dir)('project2'), 'project2 can be required from root')
 })
 
+tap.test('npm link (external file: dep) with linked strategy', async t => {
+  // Regression test: `npm link` creates a file: dependency pointing outside the project root.
+  // The linked strategy should symlink it directly instead of trying to extract it into .store/.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '2.0.0' },
+    ],
+    root: {
+      name: 'my-app',
+      version: '1.0.0',
+      dependencies: { abbrev: '2.0.0' },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Create an external package OUTSIDE the project root (simulates npm link target)
+  const externalPkgDir = path.join(path.dirname(dir), 'external-pkg')
+  fs.mkdirSync(externalPkgDir, { recursive: true })
+  fs.writeFileSync(path.join(externalPkgDir, 'package.json'), JSON.stringify({
+    name: 'external-pkg',
+    version: '1.0.0',
+  }))
+  fs.writeFileSync(path.join(externalPkgDir, 'index.js'), "module.exports = 'external'")
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  // First install without the linked package
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Now simulate `npm link external-pkg` by adding a file: dep and reifying
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked', add: [`file:${externalPkgDir}`] })
+
+  // The external package should be symlinked in node_modules
+  const linkPath = path.join(dir, 'node_modules', 'external-pkg')
+  const stat = fs.lstatSync(linkPath)
+  t.ok(stat.isSymbolicLink(), 'external-pkg is a symlink in node_modules')
+
+  // The symlink should resolve to the actual external directory
+  const realpath = fs.realpathSync(linkPath)
+  t.equal(realpath, externalPkgDir, 'symlink points to the correct external directory')
+
+  // The existing store packages should still be intact
+  const storePath = path.join(dir, 'node_modules', '.store')
+  const storeEntries = fs.readdirSync(storePath)
+  t.ok(storeEntries.some(e => e.startsWith('abbrev@')), 'abbrev is still in the store')
+  t.notOk(storeEntries.some(e => e.startsWith('external-pkg@')), 'external-pkg is NOT in the store')
+})
+
 tap.test('subsequent linked install is a no-op', async t => {
   const graph = {
     registry: [
@@ -1855,8 +1673,8 @@ tap.test('workspace links are not affected by store resolved fix', async t => {
   const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arb2.reify({ installStrategy: 'linked' })
 
-  // Verify workspace is still correctly linked (workspace can resolve itself via self-link)
-  t.ok(setupRequire(path.join(dir, 'packages', 'mypkg'))('mypkg'), 'workspace is requireable via self-link after second install')
+  // Verify the workspace's own deps still resolve from inside the workspace after the second install
+  t.ok(setupRequire(path.join(dir, 'packages', 'mypkg'))('abbrev'), 'workspace dep is requireable from inside workspace after second install')
   t.ok(setupRequire(dir)('abbrev'), 'registry dep is requireable after second install')
 
   // Verify the diff has unchanged nodes (store entries are correctly matched)
@@ -1977,6 +1795,397 @@ tap.test('orphaned store entries are cleaned up on dependency removal', async t 
   const entriesAfterRemoval = fs.readdirSync(storeDir)
   t.equal(entriesAfterRemoval.length, 0,
     'all store entries are removed when dependencies are removed')
+
+  // https://github.com/npm/cli/issues/9308 — the top-level node_modules symlink for the removed dep was left behind, dangling into the just-cleaned store.
+  t.notOk(fs.existsSync(path.join(dir, 'node_modules', 'which')),
+    'top-level symlink for removed dependency is also cleaned up')
+})
+
+tap.test('orphaned link inside workspace node_modules is cleaned up on dependency removal', async t => {
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+    ],
+    root: {
+      name: 'root',
+      version: '1.0.0',
+    },
+    workspaces: [
+      { name: 'a', version: '1.0.0', dependencies: { abbrev: '^4.0.0' } },
+    ],
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  const wsLink = path.join(dir, 'packages', 'a', 'node_modules', 'abbrev')
+  t.ok(fs.existsSync(wsLink), 'abbrev is linked into workspace node_modules')
+
+  // Drop abbrev from the workspace package.json
+  const wsPkgPath = path.join(dir, 'packages', 'a', 'package.json')
+  const wsPkg = JSON.parse(fs.readFileSync(wsPkgPath, 'utf8'))
+  delete wsPkg.dependencies
+  fs.writeFileSync(wsPkgPath, JSON.stringify(wsPkg))
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.existsSync(wsLink), 'abbrev symlink target no longer resolves')
+  t.notOk(fs.lstatSync(wsLink, { throwIfNoEntry: false }),
+    'abbrev symlink itself is removed from workspace node_modules')
+})
+
+tap.test('orphaned link in declared-workspace node_modules is cleaned up when last dep is removed', async t => {
+  // Reproduces the case where the workspace is also a root dependency, so its self-link sits at the ROOT node_modules and the workspace's own node_modules has no surviving links after removing its only dep.
+  // Without explicitly seeding each workspace's node_modules into the sweep map, that directory would never be visited and the orphan symlink would remain.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+    ],
+    root: {
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { a: '*' },
+    },
+    workspaces: [
+      { name: 'a', version: '1.0.0', dependencies: { abbrev: '^4.0.0' } },
+    ],
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  const wsLink = path.join(dir, 'packages', 'a', 'node_modules', 'abbrev')
+  t.ok(fs.lstatSync(wsLink, { throwIfNoEntry: false }), 'abbrev is linked into workspace node_modules')
+
+  const wsPkgPath = path.join(dir, 'packages', 'a', 'package.json')
+  const wsPkg = JSON.parse(fs.readFileSync(wsPkgPath, 'utf8'))
+  delete wsPkg.dependencies
+  fs.writeFileSync(wsPkgPath, JSON.stringify(wsPkg))
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.lstatSync(wsLink, { throwIfNoEntry: false }),
+    'abbrev symlink is removed even though the workspace itself is the only declared root dep')
+})
+
+tap.test('orphan sweep is skipped on dryRun and packageLockOnly linked installs', async t => {
+  // The sweep mutates node_modules; dry-run and package-lock-only installs must not touch the filesystem.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { abbrev: '^4.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+  const linkPath = path.join(dir, 'node_modules', 'abbrev')
+  t.ok(fs.lstatSync(linkPath, { throwIfNoEntry: false }), 'abbrev link present after first install')
+
+  // Drop the dep, then run dryRun and packageLockOnly — neither should remove the orphan
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  delete pkg.dependencies
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arbDry = new Arborist({ path: dir, registry, packumentCache: new Map(), cache, dryRun: true })
+  await arbDry.reify({ installStrategy: 'linked', dryRun: true })
+  t.ok(fs.lstatSync(linkPath, { throwIfNoEntry: false }),
+    'dryRun does not remove orphan symlink')
+
+  const arbLockOnly = new Arborist({ path: dir, registry, packumentCache: new Map(), cache, packageLockOnly: true })
+  await arbLockOnly.reify({ installStrategy: 'linked', packageLockOnly: true })
+  t.ok(fs.lstatSync(linkPath, { throwIfNoEntry: false }),
+    'packageLockOnly does not remove orphan symlink')
+
+  // A real install does perform the cleanup
+  const arbReal = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arbReal.reify({ installStrategy: 'linked' })
+  t.notOk(fs.lstatSync(linkPath, { throwIfNoEntry: false }),
+    'real install cleans up the orphan symlink')
+})
+
+tap.test('orphan sweep is scoped to in-filter workspaces during workspace-filtered linked install', async t => {
+  // Filtered installs should clean up dependencies removed from the targeted workspace, but leave out-of-scope workspaces alone.
+  // ws-a is the in-filter workspace: it keeps one dep (which) and drops one (abbrev) so both the surviving-link and orphan-sweep paths are exercised inside an in-scope workspace.
+  // ws-c is also in the filter but starts with one dep (abbrev) and drops it entirely, exercising the case where the in-filter workspace's node_modules dir is not populated by any surviving links.
+  // ws-b is out of filter and gets a stale link planted to verify it is preserved.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+      { name: 'which', version: '4.0.0' },
+    ],
+    root: {
+      name: 'myroot',
+      version: '1.0.0',
+      // ws-c is declared as a root dep so its self-link lives at root node_modules — that means ws-c's own node_modules has no self-link, and dropping its only dep leaves the dir empty.
+      dependencies: { 'ws-c': '*' },
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { abbrev: '4.0.0', which: '4.0.0' } },
+      { name: 'ws-b', version: '1.0.0', dependencies: { abbrev: '4.0.0' } },
+      { name: 'ws-c', version: '1.0.0', dependencies: { abbrev: '4.0.0' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Plant a stale orphan link inside ws-b (out-of-filter): the sweep must NOT touch it.
+  const stalePath = path.join(dir, 'packages', 'ws-b', 'node_modules', 'stale-pkg')
+  fs.symlinkSync('../../../node_modules/.store/nonexistent/node_modules/stale-pkg', stalePath)
+
+  // Drop abbrev from ws-a's package.json so that ws-a/node_modules/abbrev becomes orphan; which stays as a surviving link.
+  const wsAPkgPath = path.join(dir, 'packages', 'ws-a', 'package.json')
+  const wsAPkg = JSON.parse(fs.readFileSync(wsAPkgPath, 'utf8'))
+  wsAPkg.dependencies = { which: '4.0.0' }
+  fs.writeFileSync(wsAPkgPath, JSON.stringify(wsAPkg))
+
+  // Drop all deps from ws-c so its node_modules has no surviving links — exercises the in-filter empty-dir seeding path.
+  const wsCPkgPath = path.join(dir, 'packages', 'ws-c', 'package.json')
+  const wsCPkg = JSON.parse(fs.readFileSync(wsCPkgPath, 'utf8'))
+  delete wsCPkg.dependencies
+  fs.writeFileSync(wsCPkgPath, JSON.stringify(wsCPkg))
+
+  const arb2 = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    workspaces: ['ws-a', 'ws-c'],
+  })
+  await arb2.reify({
+    installStrategy: 'linked',
+    workspaces: ['ws-a', 'ws-c'],
+  })
+
+  t.ok(arb2.diff.filterSet.size > 0, 'filterSet is populated for filtered install')
+  t.notOk(fs.lstatSync(path.join(dir, 'packages', 'ws-a', 'node_modules', 'abbrev'), { throwIfNoEntry: false }),
+    'orphan link in in-filter workspace with surviving deps is removed')
+  t.ok(fs.lstatSync(path.join(dir, 'packages', 'ws-a', 'node_modules', 'which'), { throwIfNoEntry: false }),
+    'surviving link in in-filter workspace is preserved')
+  t.notOk(fs.lstatSync(path.join(dir, 'packages', 'ws-c', 'node_modules', 'abbrev'), { throwIfNoEntry: false }),
+    'orphan link in in-filter workspace with no surviving deps is removed')
+  t.ok(fs.lstatSync(stalePath, { throwIfNoEntry: false }),
+    'stale link in out-of-filter workspace is preserved')
+})
+
+tap.test('orphan sweep includes root node_modules when --include-workspace-root is set', async t => {
+  // With --include-workspace-root, the filter scope pulls root deps in too, so dropped root deps must be cleaned up alongside the in-filter workspaces.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+      { name: 'which', version: '4.0.0' },
+    ],
+    root: {
+      name: 'myroot',
+      version: '1.0.0',
+      dependencies: { which: '4.0.0' },
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { abbrev: '4.0.0' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+  t.ok(fs.lstatSync(path.join(dir, 'node_modules', 'which'), { throwIfNoEntry: false }), 'which is installed at root')
+
+  // Drop the root dep so node_modules/which becomes orphan.
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  delete pkg.dependencies
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arb2 = new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache,
+    workspaces: ['ws-a'],
+    includeWorkspaceRoot: true,
+  })
+  await arb2.reify({
+    installStrategy: 'linked',
+    workspaces: ['ws-a'],
+    includeWorkspaceRoot: true,
+  })
+
+  t.notOk(fs.lstatSync(path.join(dir, 'node_modules', 'which'), { throwIfNoEntry: false }),
+    'orphan root dep is removed when --include-workspace-root scope covers it')
+})
+
+tap.test('hand-made symlink inside the project root is intentionally swept by linked install', async t => {
+  // Documents an explicit trade-off: a hand-made symlink whose target lives inside the project (e.g. node_modules/local-tool -> ../tools/local-tool) is indistinguishable from a workspace self-link or store link by target alone.
+  // The linked sweep treats it as orphaned and removes it on the next reify, matching how the default install strategy already behaves with intra-project symlinks.
+  // External targets (outside the project root) remain preserved — see the sibling test 'unmanaged symlinks (e.g. npm link) in node_modules are preserved across reify'.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { abbrev: '^4.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Create a target folder inside the project root and link to it from node_modules.
+  const localToolDir = path.join(dir, 'tools', 'local-tool')
+  fs.mkdirSync(localToolDir, { recursive: true })
+  fs.writeFileSync(path.join(localToolDir, 'package.json'),
+    JSON.stringify({ name: 'local-tool', version: '0.0.0' }))
+  const intraLink = path.join(dir, 'node_modules', 'local-tool')
+  fs.symlinkSync(path.join('..', 'tools', 'local-tool'), intraLink)
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.lstatSync(intraLink, { throwIfNoEntry: false }),
+    'intra-project hand-made symlink is removed by the sweep (intentional trade-off)')
+  t.ok(fs.existsSync(localToolDir),
+    'the target directory itself is left intact — only the symlink is removed')
+})
+
+tap.test('orphaned workspace self-link in root node_modules is cleaned up when workspace is undeclared', async t => {
+  // When root declares a workspace as a dependency, the workspace gets a self-link at root node_modules (e.g. node_modules/a -> ../packages/a).
+  // If the workspace is later removed from root's dependencies, that self-link must be cleaned up.
+  // It is a symlink npm itself created, but its target lives outside .store/, so the sweep must accept any orphan whose target resolves inside the project root.
+  const graph = {
+    registry: [],
+    root: {
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { a: '*', b: '*' },
+    },
+    workspaces: [
+      { name: 'a', version: '1.0.0' },
+      { name: 'b', version: '1.0.0' },
+    ],
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  t.ok(fs.lstatSync(path.join(dir, 'node_modules', 'a'), { throwIfNoEntry: false }), 'a self-link present')
+  t.ok(fs.lstatSync(path.join(dir, 'node_modules', 'b'), { throwIfNoEntry: false }), 'b self-link present')
+
+  // Drop workspace a from both root deps and the workspaces glob
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  pkg.workspaces = ['packages/b']
+  pkg.dependencies = { b: '*' }
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.lstatSync(path.join(dir, 'node_modules', 'a'), { throwIfNoEntry: false }),
+    'orphan workspace self-link is removed')
+  t.ok(fs.lstatSync(path.join(dir, 'node_modules', 'b'), { throwIfNoEntry: false }),
+    'still-declared workspace self-link is preserved')
+})
+
+tap.test('unmanaged symlinks (e.g. npm link) in node_modules are preserved across reify', async t => {
+  // The orphan sweep should only touch links the linked strategy itself created (those resolving into the project's node_modules/.store/).
+  // A symlink pointing outside .store/ — e.g. one created by `npm link foo` without --save or by hand — must be left alone.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '4.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { abbrev: '^4.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  // Drop a hand-made symlink to a target outside the project's .store/
+  const externalDir = fs.mkdtempSync(`${getTempDir()}/external-`)
+  fs.writeFileSync(path.join(externalDir, 'package.json'),
+    JSON.stringify({ name: 'external-pkg', version: '1.0.0' }))
+  const externalLink = path.join(dir, 'node_modules', 'external-pkg')
+  fs.symlinkSync(externalDir, externalLink)
+
+  // Remove abbrev so the sweep runs and would otherwise consider external-pkg orphaned
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  delete pkg.dependencies
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.existsSync(path.join(dir, 'node_modules', 'abbrev')),
+    'orphan link into our .store/ is removed')
+  t.ok(fs.lstatSync(externalLink, { throwIfNoEntry: false }),
+    'unmanaged symlink pointing outside .store/ is preserved')
+})
+
+tap.test('orphaned scoped top-level link is cleaned up when only one of two scoped deps is removed', async t => {
+  const graph = {
+    registry: [
+      { name: '@scope/a', version: '1.0.0' },
+      { name: '@scope/b', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { '@scope/a': '1.0.0', '@scope/b': '1.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+
+  const arb1 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb1.reify({ installStrategy: 'linked' })
+
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', '@scope', 'a')), '@scope/a installed')
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', '@scope', 'b')), '@scope/b installed')
+
+  // Drop @scope/a from package.json
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  delete pkg.dependencies['@scope/a']
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.existsSync(path.join(dir, 'node_modules', '@scope', 'a')),
+    '@scope/a top-level symlink is removed')
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', '@scope', 'b')),
+    '@scope/b top-level symlink is preserved')
 })
 
 tap.test('store symlinks are updated when hash changes after adding a dep', async t => {
@@ -2195,6 +2404,50 @@ tap.test('undeclared workspaces are not hoisted to root node_modules', async t =
   // ws-c has no dependencies and is not depended on — should not be able to access ws-b
   t.notOk(pathExists(path.join(dir, 'packages', 'ws-c', 'node_modules', 'ws-b')),
     'ws-c cannot access ws-b (no dependency declared)')
+})
+
+tap.test('undeclared workspaces do not get a self-link in their own node_modules', async t => {
+  // Undeclared workspaces used to be self-symlinked into their own node_modules/.
+  // Cross-workspace dep links remain unaffected, and stale self-links from older npm versions are swept on the next install.
+  const graph = {
+    registry: [
+      { name: 'abbrev', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myapp',
+      version: '1.0.0',
+      dependencies: { '@scope/a': '*' },
+    },
+    workspaces: [
+      { name: '@scope/a', version: '1.0.0', dependencies: { '@scope/test': '*', abbrev: '1.0.0' } },
+      { name: '@scope/test', version: '1.0.0' },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // No self-link inside the undeclared workspace's own node_modules
+  t.notOk(fs.lstatSync(path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope', 'test'), { throwIfNoEntry: false }),
+    'undeclared workspace has no self-link in its own node_modules')
+
+  // Cross-workspace dep link still works: @scope/a depends on @scope/test
+  t.ok(fs.lstatSync(path.join(dir, 'packages', '@scope', 'a', 'node_modules', '@scope', 'test'), { throwIfNoEntry: false })?.isSymbolicLink(),
+    '@scope/a still has a symlink to @scope/test in its node_modules')
+
+  // Stale self-link from an older npm version must be swept on a subsequent install
+  fs.mkdirSync(path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope'), { recursive: true })
+  fs.symlinkSync('../../..', path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope', 'test'))
+  t.ok(fs.lstatSync(path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope', 'test'), { throwIfNoEntry: false }),
+    'stale self-link planted')
+
+  const arb2 = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arb2.reify({ installStrategy: 'linked' })
+
+  t.notOk(fs.lstatSync(path.join(dir, 'packages', '@scope', 'test', 'node_modules', '@scope', 'test'), { throwIfNoEntry: false }),
+    'stale self-link is removed by the orphan sweep on the next install')
 })
 
 tap.test('omit dev dependencies with linked strategy', async t => {

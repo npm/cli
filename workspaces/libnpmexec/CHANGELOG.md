@@ -40,6 +40,17 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.2): `@npmcli/arborist@9.4.2`
 
+## [10.2.6-pre.0.0](https://github.com/npm/cli/compare/libnpmexec-v10.2.5...libnpmexec-v10.2.6-pre.0.0) (2026-05-20)
+### Bug Fixes
+* [`e9b0157`](https://github.com/npm/cli/commit/e9b0157b367aef184e7c4e99b90d9fcb8f0bff54) [#9255](https://github.com/npm/cli/pull/9255) libnpmexec: skip redundant reify for cached directory specs (#9255) (@manzoorwanijk)
+### Chores
+* [`2ca36c4`](https://github.com/npm/cli/commit/2ca36c4b37f50419303db41cf482d05f5ec69023) [#9261](https://github.com/npm/cli/pull/9261) fixed non-functional typos throughout the codebase (@opensourcezeal)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0-pre.0.0): `@npmcli/arborist@10.0.0-pre.0.0`
+
 ## [10.2.3](https://github.com/npm/cli/compare/libnpmexec-v10.2.2...libnpmexec-v10.2.3) (2026-02-25)
 ### Bug Fixes
 * [`cf88236`](https://github.com/npm/cli/commit/cf8823608afe4229cb05f8b6c29890a6bda64502) [#9008](https://github.com/npm/cli/pull/9008) use @gar/promise-retry instead of promise-retry (@wraithgar)

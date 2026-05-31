@@ -100,7 +100,7 @@ See [`package.json`](/configuring-npm/package-json) for more info on what can an
 * [npm-packlist package](http://npm.im/npm-packlist)
 * [npm registry](/using-npm/registry)
 * [npm scope](/using-npm/scope)
-* [npm adduser](/commands/npm-adduser)
+* [npm login](/commands/npm-login)
 * [npm owner](/commands/npm-owner)
 * [npm deprecate](/commands/npm-deprecate)
 * [npm dist-tag](/commands/npm-dist-tag)

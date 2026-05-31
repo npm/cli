@@ -278,6 +278,59 @@ t.test('no npxCache', async t => {
   }), /Must provide a valid npxCache path/)
 })
 
+t.test('local file system path - skips reify on subsequent runs', async t => {
+  let reifyCount = 0
+  const Arborist = require('@npmcli/arborist')
+  const { exec, chmod, readOutput, rmOutput, path } = setup(t, {
+    mocks: {
+      'ci-info': { isCI: true },
+      '@npmcli/arborist': class extends Arborist {
+        async reify (...args) {
+          reifyCount++
+          return super.reify(...args)
+        }
+      },
+    },
+    testdir: {
+      a: {
+        'package.json': {
+          name: 'a',
+          bin: {
+            a: './index.js',
+          },
+        },
+        'index.js': { key: 'a', value: 'LOCAL PKG' },
+      },
+    },
+  })
+
+  await chmod('a/index.js')
+
+  // First run should reify (cold cache)
+  await exec({
+    args: [`file:${resolve(path, 'a')}`, 'resfile'],
+  })
+
+  t.match(await readOutput('a'), {
+    value: 'LOCAL PKG',
+    args: ['resfile'],
+  })
+  t.equal(reifyCount, 1, 'first run should reify')
+
+  await rmOutput('a')
+
+  // Second run should skip reify (cached)
+  await exec({
+    args: [`file:${resolve(path, 'a')}`, 'resfile'],
+  })
+
+  t.match(await readOutput('a'), {
+    value: 'LOCAL PKG',
+    args: ['resfile'],
+  })
+  t.equal(reifyCount, 1, 'second run should not reify')
+})
+
 t.test('local file system path', async t => {
   const { exec, chmod, readOutput, path } = setup(t, {
     mocks: {
@@ -370,3 +423,49 @@ t.test('global scoped pkg', async t => {
     created: 'global/node_modules/@npmcli/create-test/bin-file.js',
   })
 })
+
+// Regression: local bin lookup must not be gated by allow-directory,
+// even when the policy is `none` or `root`.
+for (const allowDirectory of ['none', 'root']) {
+  t.test(`local bin still resolves with allow-directory=${allowDirectory}`, async t => {
+    const { pkg, fixtures } = createPkg({
+      version: '1.0.0',
+      name: '@npmcli/local-pkg-allow-directory-test',
+      bin: {
+        a: 'local-bin-test.js',
+      },
+      files: {
+        'local-bin-test.js': { key: 'local-bin', value: 'LOCAL PKG' },
+      },
+    })
+
+    const { exec, chmod, readOutput, path } = setup(t, {
+      pkg,
+      testdir: merge(
+        fixtures.packages[`@npmcli-local-pkg-allow-directory-test-1.0.0`],
+        {
+          node_modules: {
+            '@npmcli': {
+              'some-other-pkg-with-same-scope': {},
+            },
+          },
+        }
+      ),
+    })
+
+    const localBin = resolve(path, 'node_modules', '.bin')
+
+    await chmod('local-bin-test.js')
+
+    await exec({
+      localBin,
+      args: ['a', 'argument-a'],
+      allowDirectory,
+    })
+
+    t.match(await readOutput('local-bin'), {
+      value: 'LOCAL PKG',
+      args: ['argument-a'],
+    })
+  })
+}

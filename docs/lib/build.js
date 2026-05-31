@@ -105,7 +105,6 @@ const generateNav = async (contentPath, navPath) => {
     '/configuring-npm/install',
     '/configuring-npm/folders',
     '/configuring-npm/npmrc',
-    '/configuring-npm/npm-shrinkwrap-json',
     '/configuring-npm/package-json',
     '/configuring-npm/package-lock-json',
   ]

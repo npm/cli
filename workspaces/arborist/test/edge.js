@@ -198,7 +198,7 @@ t.matchSnapshot(new Edge({
   type: 'peer',
   name: 'a',
   spec: '1.2.3',
-}), 'peer dep at top level, nesting is ok')
+}), 'peer dep at top level, nesting allowed')
 reset(top)
 reset(a)
 
@@ -215,7 +215,7 @@ t.matchSnapshot(new Edge({
   type: 'peer',
   name: 'aa',
   spec: '1.2.3',
-}), 'peer dep below top level, nesting not ok')
+}), 'peer dep below top level, nesting disallowed')
 reset(a)
 reset(aa)
 
@@ -224,7 +224,7 @@ t.matchSnapshot(new Edge({
   type: 'peer',
   name: 'b',
   spec: '1.2.3',
-}), 'peer dep below top level, parallel ok')
+}), 'peer dep below top level, parallel allowed')
 reset(a)
 reset(b)
 
@@ -1009,127 +1009,6 @@ t.test('override references find the correct root', (t) => {
   t.end()
 })
 
-t.test('shrinkwrapped and bundled deps are not overridden and remain valid', (t) => {
-  const overrides = new OverrideSet({
-    overrides: {
-      bar: '^2.0.0',
-    },
-  })
-
-  const root = {
-    name: 'root',
-    packageName: 'root',
-    edgesOut: new Map(),
-    edgesIn: new Set(),
-    explain: () => 'root node explanation',
-    package: {
-      name: 'root',
-      version: '1.2.3',
-      dependencies: {
-        foo: '^1.0.0',
-      },
-      overrides: {
-        bar: '^2.0.0',
-      },
-    },
-    get version () {
-      return this.package.version
-    },
-    isTop: true,
-    parent: null,
-    overrides,
-    resolve (n) {
-      return n === 'foo' ? foo : null
-    },
-    addEdgeOut (edge) {
-      this.edgesOut.set(edge.name, edge)
-    },
-    addEdgeIn (edge) {
-      this.edgesIn.add(edge)
-    },
-    deleteEdgeIn (edge) {
-      this.edgesIn.delete(edge)
-    },
-  }
-
-  const foo = {
-    name: 'foo',
-    packageName: 'foo',
-    edgesOut: new Map(),
-    edgesIn: new Set(),
-    explain: () => 'foo node explanation',
-    hasShrinkwrap: true,
-    package: {
-      name: 'foo',
-      version: '1.2.3',
-      dependencies: {
-        bar: '^1.0.0',
-      },
-    },
-    get version () {
-      return this.package.version
-    },
-    parent: root,
-    root,
-    resolve (n) {
-      return n === 'bar' ? bar : this.parent.resolve(n)
-    },
-    addEdgeOut (edge) {
-      this.edgesOut.set(edge.name, edge)
-    },
-    addEdgeIn (edge) {
-      this.edgesIn.add(edge)
-    },
-    deleteEdgeIn (edge) {
-      this.edgesIn.delete(edge)
-    },
-  }
-  foo.overrides = overrides.getNodeRule(foo)
-
-  const bar = {
-    name: 'bar',
-    packageName: 'bar',
-    edgesOut: new Map(),
-    edgesIn: new Set(),
-    explain: () => 'bar node explanation',
-    inShrinkwrap: true,
-    package: {
-      name: 'bar',
-      version: '1.2.3',
-      dependencies: {},
-    },
-    get version () {
-      return this.package.version
-    },
-    parent: foo,
-    root,
-    resolve (n) {
-      return this.parent.resolve(n)
-    },
-    addEdgeOut (edge) {
-      this.edgesOut.set(edge.name, edge)
-    },
-    addEdgeIn (edge) {
-      this.edgesIn.add(edge)
-    },
-    deleteEdgeIn (edge) {
-      this.edgesIn.delete(edge)
-    },
-  }
-  bar.overrides = foo.overrides.getNodeRule(bar)
-
-  const edge = new Edge({
-    from: foo,
-    type: 'prod',
-    spec: '^1.0.0',
-    name: 'bar',
-    overrides: overrides.getEdgeRule({ name: 'bar', spec: '^1.0.0' }),
-  })
-
-  t.ok(edge.valid, 'edge is valid')
-  t.end()
-})
-
 t.test('overrideset comparison logic', (t) => {
   const overrides1 = new OverrideSet({
     overrides: {
@@ -1330,5 +1209,71 @@ t.test('edge with overrides should not crash when target has no overrides', t =>
   }, 'should not crash when target node has no overrides')
 
   t.ok(edge.valid, 'edge should be valid')
+  t.end()
+})
+
+t.test('overrides and bundled deps in satisfiedBy', t => {
+  const makeNode = (name, version, extras = {}) => ({
+    name,
+    packageName: name,
+    version,
+    package: { name, version },
+    edgesOut: new Map(),
+    edgesIn: new Set(),
+    explain: () => `${name}@${version}`,
+    isTop: false,
+    parent: top,
+    resolve: () => undefined,
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    addEdgeIn (edge) {
+      this.edgesIn.add(edge)
+    },
+    deleteEdgeIn (edge) {
+      this.edgesIn.delete(edge)
+    },
+    inBundle: false,
+    inDepBundle: false,
+    ...extras,
+  })
+
+  const overrides = new OverrideSet({ overrides: { bar: '2.x' } })
+  a.overrides = overrides
+
+  const makeOverriddenEdge = () => {
+    const edge = new Edge({
+      from: a,
+      type: 'prod',
+      name: 'bar',
+      spec: '1.x',
+      overrides: overrides.getEdgeRule({ name: 'bar', spec: '1.x' }),
+    })
+    reset(a)
+    a.overrides = overrides
+    return edge
+  }
+
+  t.test('node bundled by root uses overridden spec', t => {
+    const edge = makeOverriddenEdge()
+    const node = makeNode('bar', '2.0.0', { inBundle: true, inDepBundle: false })
+    t.ok(edge.satisfiedBy(node), 'bar@2.0.0 bundled by root satisfies override 2.x')
+
+    const nodeOld = makeNode('bar', '1.0.0', { inBundle: true, inDepBundle: false })
+    t.notOk(edge.satisfiedBy(nodeOld), 'bar@1.0.0 bundled by root does not satisfy override 2.x')
+    t.end()
+  })
+
+  t.test('node bundled inside a dependency uses rawSpec', t => {
+    const edge = makeOverriddenEdge()
+    const node = makeNode('bar', '1.0.0', { inBundle: true, inDepBundle: true })
+    t.ok(edge.satisfiedBy(node), 'bar@1.0.0 in dep bundle satisfies rawSpec 1.x')
+
+    const nodeNew = makeNode('bar', '2.0.0', { inBundle: true, inDepBundle: true })
+    t.notOk(edge.satisfiedBy(nodeNew), 'bar@2.0.0 in dep bundle does not satisfy rawSpec 1.x')
+    t.end()
+  })
+
+  delete a.overrides
   t.end()
 })

@@ -212,3 +212,229 @@ t.test('doesn\'t run scripts when ignoreScripts === true', async t => {
     spawk.clean()
   })
 })
+
+t.test('refuses to pack when overrides affect a bundled package', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      bundledDependencies: ['foo'],
+      dependencies: { foo: '1.0.0' },
+      overrides: { bar: '2.0.0' },
+    }, null, 2),
+    node_modules: {
+      foo: {
+        'package.json': JSON.stringify({
+          name: 'foo',
+          version: '1.0.0',
+          dependencies: { bar: '^1.0.0' },
+        }),
+        node_modules: {
+          bar: {
+            'package.json': JSON.stringify({ name: 'bar', version: '2.0.0' }),
+          },
+        },
+      },
+    },
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+  t.teardown(() => process.chdir(cwd))
+
+  await t.rejects(
+    pack('file:.'),
+    {
+      code: 'EBUNDLEOVERRIDE',
+      packages: ['bar'],
+      message: /affects a bundled package \(bar\)/,
+    },
+    'throws EBUNDLEOVERRIDE listing the offending bundled package'
+  )
+})
+
+t.test('lists all offenders when multiple bundled packages are overridden', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      bundledDependencies: ['foo'],
+      dependencies: { foo: '1.0.0' },
+      overrides: { bar: '2.0.0', baz: '3.0.0' },
+    }, null, 2),
+    node_modules: {
+      foo: {
+        'package.json': JSON.stringify({
+          name: 'foo',
+          version: '1.0.0',
+          dependencies: { bar: '^1.0.0', baz: '^1.0.0' },
+        }),
+        node_modules: {
+          bar: {
+            'package.json': JSON.stringify({ name: 'bar', version: '2.0.0' }),
+          },
+          baz: {
+            'package.json': JSON.stringify({ name: 'baz', version: '3.0.0' }),
+          },
+        },
+      },
+    },
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+  t.teardown(() => process.chdir(cwd))
+
+  await t.rejects(
+    pack('file:.'),
+    {
+      code: 'EBUNDLEOVERRIDE',
+      packages: ['bar', 'baz'],
+      message: /affect bundled packages \(bar, baz\)/,
+    },
+    'lists every overridden bundled package and uses plural wording'
+  )
+})
+
+t.test('refuses to pack with bundleDependencies (alt spelling) + affected override', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      bundleDependencies: ['foo'],
+      dependencies: { foo: '1.0.0' },
+      overrides: { bar: '2.0.0' },
+    }, null, 2),
+    node_modules: {
+      foo: {
+        'package.json': JSON.stringify({
+          name: 'foo',
+          version: '1.0.0',
+          dependencies: { bar: '^1.0.0' },
+        }),
+        node_modules: {
+          bar: {
+            'package.json': JSON.stringify({ name: 'bar', version: '2.0.0' }),
+          },
+        },
+      },
+    },
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+  t.teardown(() => process.chdir(cwd))
+
+  await t.rejects(
+    pack('file:.'),
+    { code: 'EBUNDLEOVERRIDE' },
+    'throws EBUNDLEOVERRIDE with alternate bundleDependencies spelling'
+  )
+})
+
+t.test('packs when overrides target only a dev dependency (not bundled)', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      bundledDependencies: ['keep'],
+      dependencies: { keep: '1.0.0' },
+      devDependencies: { dev: '1.0.0' },
+      overrides: { transdev: '2.0.0' },
+    }, null, 2),
+    node_modules: {
+      keep: {
+        'package.json': JSON.stringify({ name: 'keep', version: '1.0.0' }),
+      },
+      dev: {
+        'package.json': JSON.stringify({
+          name: 'dev',
+          version: '1.0.0',
+          dependencies: { transdev: '^1.0.0' },
+        }),
+        node_modules: {
+          transdev: {
+            'package.json': JSON.stringify({ name: 'transdev', version: '2.0.0' }),
+          },
+        },
+      },
+    },
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+  t.teardown(() => process.chdir(cwd))
+
+  const tarball = await pack('file:.')
+  t.ok(tarball, 'pack succeeds — overridden dev-only transitive dep is not in the bundle')
+})
+
+t.test('packs when overrides target a package outside the bundled subtree', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      bundledDependencies: ['foo'],
+      dependencies: { foo: '1.0.0', qux: '^1.0.0' },
+      overrides: { baz: '2.0.0' },
+    }, null, 2),
+    node_modules: {
+      foo: {
+        'package.json': JSON.stringify({ name: 'foo', version: '1.0.0' }),
+      },
+      qux: {
+        'package.json': JSON.stringify({
+          name: 'qux',
+          version: '1.0.0',
+          dependencies: { baz: '^1.0.0' },
+        }),
+        node_modules: {
+          baz: {
+            'package.json': JSON.stringify({ name: 'baz', version: '2.0.0' }),
+          },
+        },
+      },
+    },
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+  t.teardown(() => process.chdir(cwd))
+
+  const tarball = await pack('file:.')
+  t.ok(tarball, 'pack succeeds — overridden package is not bundled')
+})
+
+t.test('packs with only bundledDependencies (no overrides)', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      bundledDependencies: [],
+    }, null, 2),
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+  t.teardown(() => process.chdir(cwd))
+
+  const tarball = await pack('file:.')
+  t.ok(tarball)
+})
+
+t.test('packs with only overrides (no bundled)', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-cool-pkg',
+      version: '1.0.0',
+      overrides: { 'lru-cache': '6.0.0' },
+    }, null, 2),
+  })
+
+  const cwd = process.cwd()
+  process.chdir(testDir)
+  t.teardown(() => process.chdir(cwd))
+
+  const tarball = await pack('file:.')
+  t.ok(tarball)
+})

@@ -11,13 +11,12 @@ description: Install a package
 ### Description
 
 This command installs a package and any packages that it depends on.
-If the package has a package-lock, or an npm shrinkwrap file, or a yarn lock file, the installation of dependencies will be driven by that, respecting the following order of precedence:
+If the package has a package-lock or a yarn lock file, the installation of dependencies will be driven by that, respecting the following order of precedence:
 
-* `npm-shrinkwrap.json`
 * `package-lock.json`
 * `yarn.lock`
 
-See [package-lock.json](/configuring-npm/package-lock-json) and [`npm shrinkwrap`](/commands/npm-shrinkwrap).
+See [package-lock.json](/configuring-npm/package-lock-json).
 
 #### How `npm install` uses `package-lock.json`
 
@@ -136,7 +135,7 @@ Even if you never publish your package, you can still get a lot of benefits of u
 
     * `-B, --save-bundle`: Saved dependencies will also be added to your `bundleDependencies` list.
 
-    Further, if you have an `npm-shrinkwrap.json` or `package-lock.json` then it will be updated as well.
+    Further, if you have a `package-lock.json` then it will be updated as well.
 
     `<scope>` is optional.
     The package will be downloaded from the registry associated with the specified scope.
@@ -402,6 +401,5 @@ See [folders](/configuring-npm/folders) for a more detailed description of the s
 * [npm registry](/using-npm/registry)
 * [npm dist-tag](/commands/npm-dist-tag)
 * [npm uninstall](/commands/npm-uninstall)
-* [npm shrinkwrap](/commands/npm-shrinkwrap)
 * [package.json](/configuring-npm/package-json)
 * [workspaces](/using-npm/workspaces)

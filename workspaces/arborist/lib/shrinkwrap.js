@@ -1,5 +1,4 @@
-// a module that manages a shrinkwrap file (npm-shrinkwrap.json or
-// package-lock.json).
+// a module that manages a lockfile (package-lock.json).
 
 // Increment whenever the lockfile version updates
 // v1 - npm <=6
@@ -98,7 +97,6 @@ const pkgMetaKeys = [
   'libc',
   '_integrity',
   'license',
-  '_hasShrinkwrap',
   'hasInstallScript',
   'bin',
   'deprecated',
@@ -108,7 +106,6 @@ const pkgMetaKeys = [
 const nodeMetaKeys = [
   'integrity',
   'inBundle',
-  'hasShrinkwrap',
   'hasInstallScript',
 ]
 
@@ -199,17 +196,14 @@ class Shrinkwrap {
     const s = new Shrinkwrap(options)
     s.reset()
 
-    const [sw, lock] = await s.resetFiles
+    const [lock] = await s.resetFiles
 
-    // XXX this is duplicated in this.load(), but using loadFiles instead of resetFiles
     if (s.hiddenLockfile) {
       s.filename = resolve(s.path, 'node_modules/.package-lock.json')
-    } else if (s.shrinkwrapOnly || sw) {
-      s.filename = resolve(s.path, 'npm-shrinkwrap.json')
     } else {
       s.filename = resolve(s.path, 'package-lock.json')
     }
-    s.loadedFromDisk = !!(sw || lock)
+    s.loadedFromDisk = !!lock
     // TODO what uses this?
     s.type = basename(s.filename)
 
@@ -286,7 +280,6 @@ class Shrinkwrap {
       path,
       indent = 2,
       newline = '\n',
-      shrinkwrapOnly = false,
       hiddenLockfile = false,
       lockfileVersion,
       resolveOptions = {},
@@ -312,8 +305,6 @@ class Shrinkwrap {
     this.hiddenLockfile = hiddenLockfile
     this.loadingError = null
     this.resolveOptions = resolveOptions
-    // only load npm-shrinkwrap.json in dep trees, not package-lock
-    this.shrinkwrapOnly = shrinkwrapOnly
   }
 
   // check to see if a spec is present in the yarn.lock file, and if so,
@@ -369,14 +360,10 @@ class Shrinkwrap {
 
   // files to potentially read from and write to, in order of priority
   get #filenameSet () {
-    if (this.shrinkwrapOnly) {
-      return [`${this.path}/npm-shrinkwrap.json`]
-    }
     if (this.hiddenLockfile) {
       return [`${this.path}/node_modules/.package-lock.json`]
     }
     return [
-      `${this.path}/npm-shrinkwrap.json`,
       `${this.path}/package-lock.json`,
       `${this.path}/yarn.lock`,
     ]
@@ -396,9 +383,9 @@ class Shrinkwrap {
   }
 
   get resetFiles () {
-    // slice out yarn, we only care about lock or shrinkwrap when checking
+    // slice out yarn, we only care about the package-lock when checking
     // this way, since we're not actually loading the full lock metadata
-    return Promise.all(this.#filenameSet.slice(0, 2)
+    return Promise.all(this.#filenameSet.slice(0, 1)
       .map(file => file && stat(file).then(st => st.isFile(), er => {
         /* istanbul ignore else - can't test without breaking module itself */
         if (er.code === 'ENOENT') {
@@ -425,25 +412,18 @@ class Shrinkwrap {
   }
 
   async load () {
-    // we don't need to load package-lock.json except for top of tree nodes,
-    // only npm-shrinkwrap.json.
     let data
     try {
-      const [sw, lock, yarn] = await this.loadFiles
-      data = sw || lock || '{}'
+      const [lock, yarn] = await this.loadFiles
+      data = lock || '{}'
 
-      // use shrinkwrap only for deps; otherwise, prefer package-lock
-      // and ignore npm-shrinkwrap if both are present.
-      // TODO: emit a warning here or something if both are present.
       if (this.hiddenLockfile) {
         this.filename = resolve(this.path, 'node_modules/.package-lock.json')
-      } else if (this.shrinkwrapOnly || sw) {
-        this.filename = resolve(this.path, 'npm-shrinkwrap.json')
       } else {
         this.filename = resolve(this.path, 'package-lock.json')
       }
       this.type = basename(this.filename)
-      this.loadedFromDisk = Boolean(sw || lock)
+      this.loadedFromDisk = Boolean(lock)
 
       if (yarn) {
         this.yarnLock = new YarnLock()
@@ -809,7 +789,6 @@ class Shrinkwrap {
       const {
         resolved,
         integrity,
-        hasShrinkwrap,
         version,
       } = this.get(node.path)
 
@@ -836,17 +815,14 @@ class Shrinkwrap {
       if (allOk) {
         node.resolved = node.resolved || pathFixed || null
         node.integrity = node.integrity || integrity || null
-        node.hasShrinkwrap = node.hasShrinkwrap || hasShrinkwrap || false
       } else {
         // try to read off the package or node itself
         const {
           resolved,
           integrity,
-          hasShrinkwrap,
         } = Shrinkwrap.metaFromNode(node, this.path, this.resolveOptions)
         node.resolved = node.resolved || resolved || null
         node.integrity = node.integrity || integrity || null
-        node.hasShrinkwrap = node.hasShrinkwrap || hasShrinkwrap || false
       }
     }
     this.#awaitingUpdate.set(loc, node)
@@ -929,10 +905,24 @@ class Shrinkwrap {
           continue
         }
         const loc = relpath(this.path, node.path)
-        this.data.packages[loc] = Shrinkwrap.metaFromNode(
+        // Drop lockfile entries for extraneous nodes outside node_modules. These are stale workspace entries: the workspace was removed from package.json or its directory was deleted, so it should not be tracked in package-lock.json.
+        if (node.extraneous && !/(^|\/)node_modules\//.test(loc) && loc !== 'node_modules') {
+          continue
+        }
+        const meta = Shrinkwrap.metaFromNode(
           node,
           this.path,
           this.resolveOptions)
+        // Skip inert nodes — these are optional deps that failed to load
+        // (e.g. 404 from a proxy registry that hasn't cached the package,
+        // or incomplete manifest missing version field).
+        // #pruneFailedOptional marks them inert so they won't be reified;
+        // writing them to the lockfile produces invalid entries like
+        // {"optional": true} that cause "Invalid Version:" errors.
+        if (node.inert && !node.package.version) {
+          continue
+        }
+        this.data.packages[loc] = meta
       }
     } else if (this.#awaitingUpdate.size > 0) {
       for (const loc of this.#awaitingUpdate.keys()) {

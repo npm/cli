@@ -109,8 +109,8 @@ class Edge {
     }
 
     // NOTE: this condition means we explicitly do not support overriding
-    // bundled or shrinkwrapped dependencies
-    if (node.hasShrinkwrap || node.inShrinkwrap || node.inBundle) {
+    // bundled dependencies
+    if (node.inDepBundle) {
       return depValid(node, this.rawSpec, this.#accept, this.#from)
     }
 

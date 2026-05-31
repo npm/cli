@@ -27,12 +27,12 @@ class StreamToBuffer extends Stream.Writable {
  * packPackageToStream
  * Uses 'tar-stream' to create the tar stream without touching the file system.
  */
-function packPackageToStream (manifest, reg) {
+function packPackageToStream (manifest) {
   const {
     name,
     version,
   } = manifest
-  const { shrinkwrap, bundledDeps, ...rest } = manifest
+  const { bundledDeps, ...rest } = manifest
 
   const pack = tar.pack()
   const manifestString = JSON.stringify({
@@ -44,9 +44,6 @@ function packPackageToStream (manifest, reg) {
   pack.entry({ name: `${unscopedName}/package.json` }, manifestString)
   pack.entry({ name: `${unscopedName}/index.js` }, index)
   pack.entry({ name: `${unscopedName}/bin.js` }, '#!/usr/bin/env node\nconsole.log("bin")')
-  if (shrinkwrap) {
-    pack.entry({ name: `${unscopedName}/npm-shrinkwrap.json` }, shrinkwrap.replace(/##REG##/g, reg))
-  }
   if (bundledDeps) {
     pack.entry({ name: `${unscopedName}/node_modules`, type: 'directory' })
     bundledDeps.forEach(d => {
@@ -65,8 +62,8 @@ function packPackageToStream (manifest, reg) {
  * Pack a package for publish.
  * Returns a buffer containing a tarball of the package.
  */
-async function packPackage (manifest, reg) {
-  const packStream = packPackageToStream(manifest, reg)
+async function packPackage (manifest) {
+  const packStream = packPackageToStream(manifest)
 
   const tarBuffer = packStream.pipe(new StreamToBuffer())
 
@@ -86,7 +83,7 @@ async function publishPackage (registry, manifest, packuments) {
     name,
     version,
   } = manifest
-  const { shrinkwrap, bundledDeps, ...rest } = manifest
+  const { bundledDeps, ...rest } = manifest
 
   if (packuments.has(name)) {
     packuments.get(name).versions[version] = {
@@ -114,7 +111,7 @@ async function publishPackage (registry, manifest, packuments) {
     })
   }
 
-  const tarball = await packPackage(manifest, registry)
+  const tarball = await packPackage(manifest)
 
   nock(registry)
     .persist()
