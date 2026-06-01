@@ -103,6 +103,11 @@ class IsolatedNode {
     return !!(hasInstallScript || install || preinstall || postinstall)
   }
 
+  /* istanbul ignore next -- emulate lib/node.js */
+  get packageName () {
+    return this.package.name || null
+  }
+
   get version () {
     return this.package.version
   }
