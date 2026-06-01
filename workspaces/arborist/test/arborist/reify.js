@@ -4065,6 +4065,128 @@ t.test('workspace installs retain existing versions with newer package specs', a
     'another-cool-package package.json should be updated to abbrev@1.0.4')
 })
 
+for (const poisoned of ['../../../escape-target', '@evil/../../../escape-target']) {
+  t.test(`install strategy linked sanitizes traversal in lockfile name (${poisoned})`, async t => {
+    // a poisoned lockfile name field would otherwise escape node_modules/.store
+    const testDir = t.testdir({
+      'package.json': JSON.stringify({
+        dependencies: {
+          abbrev: '1.1.1',
+        },
+      }),
+      'package-lock.json': JSON.stringify({
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            dependencies: {
+              abbrev: '1.1.1',
+            },
+          },
+          'node_modules/abbrev': {
+            name: poisoned,
+            version: '1.1.1',
+            resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+            integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
+          },
+        },
+      }),
+    })
+
+    const arb = new Arborist({
+      path: testDir,
+      registry: 'https://registry.npmjs.org',
+      cache: resolve(testDir, 'cache'),
+      installStrategy: 'linked',
+      packageLockOnly: true,
+    })
+    await arb.reify({ installStrategy: 'linked', packageLockOnly: true })
+
+    const external = arb.idealGraph.external
+    t.equal(external.length, 1, 'one external dep planned')
+
+    const pkgName = external[0].packageName
+    t.notMatch(pkgName, /\.\./, 'packageName has no traversal segments')
+    t.ok(!pkgName.includes('/') || pkgName.startsWith('@'),
+      'packageName is a single segment (or @scope/name)')
+
+    // joining the sanitized name into the .store layout must not escape
+    const storePrefix = resolve(testDir, 'node_modules/.store/key/node_modules')
+    const projected = resolve(storePrefix, pkgName)
+    t.ok(projected.startsWith(storePrefix), 'projected path stays inside .store')
+
+    // belt-and-suspenders: nothing should have been written outside testDir,
+    // even if a future change starts materializing paths during reify
+    t.notOk(fs.existsSync(resolve(testDir, '..', 'escape-target')),
+      'no escape-target leaked one level above testDir')
+    t.notOk(fs.existsSync(resolve(testDir, '..', '..', 'escape-target')),
+      'no escape-target leaked two levels above testDir')
+    t.notOk(fs.existsSync(resolve(testDir, '..', '..', '..', 'escape-target')),
+      'no escape-target leaked three levels above testDir')
+  })
+}
+
+for (const poisoned of ['../../../escape-target', '@evil/../../../escape-target']) {
+  t.test(`install strategy linked sanitizes traversal in shrinkwrapped lockfile name (${poisoned})`, async t => {
+    // the hasShrinkwrap branch in #externalProxy materializes
+    // node_modules/.store/<name>@<version> via mkdirSync before any other
+    // check, so a poisoned name in a shrinkwrapped entry would escape
+    // node_modules/.store on disk without sanitization
+    const testDir = t.testdir({
+      'package.json': JSON.stringify({
+        dependencies: {
+          abbrev: '1.1.1',
+        },
+      }),
+      'package-lock.json': JSON.stringify({
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            dependencies: {
+              abbrev: '1.1.1',
+            },
+          },
+          'node_modules/abbrev': {
+            name: poisoned,
+            version: '1.1.1',
+            hasShrinkwrap: true,
+            resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+            integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
+          },
+        },
+      }),
+    })
+
+    const arb = new Arborist({
+      path: testDir,
+      registry: 'https://registry.npmjs.org',
+      cache: resolve(testDir, 'cache'),
+      installStrategy: 'linked',
+      packageLockOnly: true,
+    })
+    // pacote.extract may fail in this offline test setup; the mkdirSync that
+    // runs before it is what we care about and runs unconditionally
+    try {
+      await arb.reify({ installStrategy: 'linked', packageLockOnly: true })
+    } catch {
+      // expected in offline test setup
+    }
+
+    // the sanitized store entry must land inside testDir/node_modules/.store
+    t.ok(fs.existsSync(resolve(testDir, 'node_modules/.store/escape-target@1.1.1')),
+      'sanitized .store/escape-target@1.1.1 created inside the project')
+
+    // and no escape-target@1.1.1 directory should appear above testDir
+    t.notOk(fs.existsSync(resolve(testDir, '..', 'escape-target@1.1.1')),
+      'no escape-target@1.1.1 leaked one level above testDir')
+    t.notOk(fs.existsSync(resolve(testDir, '..', '..', 'escape-target@1.1.1')),
+      'no escape-target@1.1.1 leaked two levels above testDir')
+    t.notOk(fs.existsSync(resolve(testDir, '..', '..', '..', 'escape-target@1.1.1')),
+      'no escape-target@1.1.1 leaked three levels above testDir')
+  })
+}
+
 t.test('externalOptionalDependencies excludes inert optional node with installStrategy linked', async t => {
   const testDir = t.testdir({
     'package.json': JSON.stringify({
