@@ -210,9 +210,10 @@ The value \`private\` is an alias for \`restricted\`.
 * Default: false
 * Type: Boolean
 
-When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show all
-outdated or installed packages, rather than only those directly depended
-upon by the current project.
+Show or act on all packages, not just the ones your project directly depends
+on. For \`npm outdated\` and \`npm ls\` this lists every outdated or installed
+package. For \`npm approve-scripts\` and \`npm deny-scripts\` it selects every
+package with pending install scripts.
 
 
 
@@ -3019,7 +3020,7 @@ Options:
 [-a|--all] [--allow-scripts-pending] [--no-allow-scripts-pin] [--json]
 
   -a|--all
-    When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
+    Show or act on all packages, not just the ones your project directly
 
   --allow-scripts-pending
     List packages with install scripts that are not yet covered by the
@@ -3532,7 +3533,7 @@ Options:
 [-a|--all] [--allow-scripts-pending] [--no-allow-scripts-pin] [--json]
 
   -a|--all
-    When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
+    Show or act on all packages, not just the ones your project directly
 
   --allow-scripts-pending
     List packages with install scripts that are not yet covered by the
@@ -4807,7 +4808,7 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -a|--all
-    When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
+    Show or act on all packages, not just the ones your project directly
 
   --json
     Whether or not to output JSON data, rather than the normal output.
@@ -4954,7 +4955,7 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -a|--all
-    When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
+    Show or act on all packages, not just the ones your project directly
 
   --json
     Whether or not to output JSON data, rather than the normal output.
@@ -5103,7 +5104,7 @@ Options:
 [--before <date>] [--min-release-age <days>]
 
   -a|--all
-    When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
+    Show or act on all packages, not just the ones your project directly
 
   --json
     Whether or not to output JSON data, rather than the normal output.

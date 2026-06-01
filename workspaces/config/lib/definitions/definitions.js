@@ -178,9 +178,10 @@ const definitions = {
     type: Boolean,
     short: 'a',
     description: `
-    When running \`npm outdated\` and \`npm ls\`, setting \`--all\` will show
-    all outdated or installed packages, rather than only those directly
-    depended upon by the current project.
+    Show or act on all packages, not just the ones your project directly
+    depends on. For \`npm outdated\` and \`npm ls\` this lists every outdated
+    or installed package. For \`npm approve-scripts\` and \`npm deny-scripts\`
+    it selects every package with pending install scripts.
   `,
     flatten,
   }),
@@ -2347,13 +2348,13 @@ const definitions = {
       If you ask npm to install a package and don't tell it a specific version,
       then it will install the specified tag.
 
-      It is the tag added to the package@version specified in the 
+      It is the tag added to the package@version specified in the
       \`npm dist-tag add\` command, if no explicit tag is given.
 
       When used by the \`npm diff\` command, this is the tag used to fetch the
       tarball that will be compared with the local files by default.
-      
-      If used in the \`npm publish\` command, this is the tag that will be 
+
+      If used in the \`npm publish\` command, this is the tag that will be
       added to the package submitted to the registry.
     `,
     flatten (key, obj, flatOptions) {
