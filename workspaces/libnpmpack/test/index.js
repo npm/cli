@@ -36,6 +36,29 @@ t.test('packs from local directory', async t => {
   })
 })
 
+t.test('flattens path separators in name so tarball stays in packDestination', async t => {
+  const testDir = t.testdir({
+    src: {
+      'package.json': JSON.stringify({
+        name: 'x/../../../../../../escaped',
+        version: '1.0.0',
+      }, null, 2),
+    },
+    dest: {},
+  })
+
+  const dest = path.join(testDir, 'dest')
+  await pack(`file:${path.join(testDir, 'src')}`, {
+    dryRun: false,
+    packDestination: dest,
+    silent: true,
+  })
+
+  const written = fs.readdirSync(dest)
+  t.same(written, ['x-..-..-..-..-..-..-escaped-1.0.0.tgz'], 'separators flattened to a single filename')
+  t.notOk(fs.existsSync(path.join(testDir, 'escaped-1.0.0.tgz')), 'nothing escaped the destination')
+})
+
 t.test('writes tarball to file when dryRun === false', async t => {
   const testDir = t.testdir({
     'package.json': JSON.stringify({
