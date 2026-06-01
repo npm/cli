@@ -875,7 +875,7 @@ This is a one-time fix-up, please be patient...
 
         if (hasShrinkwrap) {
           await new Arborist({ ...this.options, path })
-            .loadVirtual({ root: node })
+            .loadVirtual({ root: node, subtreeOnly: true })
         }
 
         if (hasBundle) {

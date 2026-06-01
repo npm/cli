@@ -642,7 +642,7 @@ module.exports = cls => class Reifier extends cls {
       .then(nodes => promiseAllRejectLate(nodes.map(node => new Arborist({
         ...this.options,
         path: node.path,
-      }).loadVirtual({ root: node }))))
+      }).loadVirtual({ root: node, subtreeOnly: true }))))
       // reload the diff and sparse tree because the ideal tree changed
       .then(() => this[_diffTrees]())
       .then(() => this[_createSparseTree]())

@@ -286,3 +286,157 @@ t.test('error when link target is missing', async t => {
     message: /Missing target in lock file:.*but does not exist/,
   })
 })
+
+t.test('subtreeOnly containment', t => {
+  // simulates the sub-Arborist invocation reify uses when inflating a
+  // dependency's bundled npm-shrinkwrap.json. a dep must not be able to
+  // declare entries that resolve outside its own install directory.
+
+  const makeDep = (sw) => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({ name: 'dep', version: '1.0.0' }),
+      'npm-shrinkwrap.json': JSON.stringify({
+        name: 'dep',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': { name: 'dep', version: '1.0.0' },
+          ...sw,
+        },
+      }),
+    })
+    const root = new Node({
+      path,
+      pkg: require(path + '/package.json'),
+    })
+    return { path, root }
+  }
+
+  t.test('rejects traversal package key', async t => {
+    const { path, root } = makeDep({
+      '../sibling': { name: 'sibling', version: '9.9.9' },
+    })
+    await t.rejects(
+      new Arborist({ path }).loadVirtual({ root, subtreeOnly: true }),
+      { code: 'EINVALIDLOCATION', location: '../sibling' },
+      'traversal package entry is rejected with EINVALIDLOCATION'
+    )
+  })
+
+  t.test('rejects deeply traversing package key', async t => {
+    const { path, root } = makeDep({
+      'node_modules/x/../../../escape': { name: 'escape', version: '1.0.0' },
+    })
+    await t.rejects(
+      new Arborist({ path }).loadVirtual({ root, subtreeOnly: true }),
+      { code: 'EINVALIDLOCATION' },
+      'normalized traversal is rejected'
+    )
+  })
+
+  t.test('rejects absolute package key', async t => {
+    const { path, root } = makeDep({
+      '/etc/passwd': { name: 'whatever', version: '1.0.0' },
+    })
+    await t.rejects(
+      new Arborist({ path }).loadVirtual({ root, subtreeOnly: true }),
+      { code: 'EINVALIDLOCATION', location: '/etc/passwd' },
+      'absolute package key is rejected'
+    )
+  })
+
+  t.test('rejects non-root location that normalizes back to base', async t => {
+    const { path, root } = makeDep({
+      'node_modules/..': { name: 'dep', version: '9.9.9' },
+    })
+    await t.rejects(
+      new Arborist({ path }).loadVirtual({ root, subtreeOnly: true }),
+      { code: 'EINVALIDLOCATION' },
+      'collapsed-to-base path is rejected'
+    )
+  })
+
+  t.test('rejects link entry whose location traverses', async t => {
+    const { path, root } = makeDep({
+      '../evil-link': { resolved: 'node_modules/x', link: true },
+      'node_modules/x': { name: 'x', version: '1.0.0' },
+    })
+    await t.rejects(
+      new Arborist({ path }).loadVirtual({ root, subtreeOnly: true }),
+      { code: 'EINVALIDLOCATION' },
+      'link location that escapes the subtree is rejected'
+    )
+  })
+
+  t.test('rejects link entry whose resolved target traverses', async t => {
+    const { path, root } = makeDep({
+      'node_modules/x': { resolved: '../escape-target', link: true },
+    })
+    await t.rejects(
+      new Arborist({ path }).loadVirtual({ root, subtreeOnly: true }),
+      { code: 'EINVALIDLOCATION' },
+      'link resolved target outside the subtree is rejected'
+    )
+  })
+
+  t.test('rejects link entry with empty resolved (falls back to location)', async t => {
+    const { path, root } = makeDep({
+      'node_modules/x': { resolved: '', link: true },
+    })
+    await t.rejects(
+      new Arborist({ path }).loadVirtual({ root, subtreeOnly: true }),
+      { code: 'EINVALIDLOCATION', location: 'node_modules/x' },
+      'link without a real resolved target is rejected'
+    )
+  })
+
+  t.test('permits legitimate intra-subtree entries', async t => {
+    const { path, root } = makeDep({
+      'node_modules/abbrev': {
+        version: '1.1.1',
+        resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+        integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
+      },
+    })
+    const tree = await new Arborist({ path }).loadVirtual({ root, subtreeOnly: true })
+    t.equal(tree, root, 'returns the supplied root')
+    t.ok(tree.children.get('abbrev'), 'abbrev node was materialized')
+  })
+
+  t.test('without subtreeOnly, root lockfiles with file:../ entries still load', async t => {
+    // root lockfiles can legitimately point at external file: deps; the
+    // containment check only applies in subtreeOnly mode.
+    const dir = t.testdir({
+      sibling: {
+        'package.json': JSON.stringify({ name: 'sibling', version: '1.0.0' }),
+      },
+      project: {
+        'package.json': JSON.stringify({
+          name: 'project',
+          version: '1.0.0',
+          dependencies: { sibling: 'file:../sibling' },
+        }),
+        'package-lock.json': JSON.stringify({
+          name: 'project',
+          version: '1.0.0',
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            '': {
+              name: 'project',
+              version: '1.0.0',
+              dependencies: { sibling: 'file:../sibling' },
+            },
+            '../sibling': { name: 'sibling', version: '1.0.0' },
+            'node_modules/sibling': { resolved: '../sibling', link: true },
+          },
+        }),
+      },
+    })
+    const tree = await loadVirtual(resolve(dir, 'project'))
+    t.ok(tree.children.get('sibling'), 'external file:../ link still loads')
+  })
+
+  t.end()
+})
