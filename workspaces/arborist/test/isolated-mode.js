@@ -1310,6 +1310,56 @@ tap.test('failing optional peer deps are not installed', async t => {
   t.notOk(setupRequire(dir)('bar', 'which'), 'Failing optional peer deps should not be installed')
 })
 
+tap.test('optional peer declared only in peerDependenciesMeta is materialized when provided', async t => {
+  // Regression for npm/cli#9460.
+  // `bar` declares `which` as an optional peer via peerDependenciesMeta only, with no peerDependencies entry, so no edge is created for it.
+  // The workspace provides `which`, so under the linked strategy `which` should be linked into `bar`'s store node_modules (matching pnpm).
+  // `which` is not a root dependency, so it is not hoisted to the top-level node_modules where parent-dir lookup would mask the result.
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0' },
+      { name: 'bar', version: '1.0.0', peerDependenciesMeta: { which: { optional: true } } },
+    ],
+    root: { name: 'foo', version: '1.2.3' },
+    workspaces: [
+      { name: 'app', version: '1.0.0', dependencies: { bar: '*', which: '1.0.0' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Note that we override this cache to prevent interference from other tests
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  t.ok(setupRequire(path.join(dir, 'packages', 'app'))('bar', 'which'),
+    'optional peer provided by the workspace is materialized into bar store node_modules')
+})
+
+tap.test('optional peer declared only in peerDependenciesMeta is omitted when not provided', async t => {
+  // Counterpart to the regression above: when nobody provides the optional peer it must stay omitted, preserving "optional" semantics.
+  const graph = {
+    registry: [
+      { name: 'bar', version: '1.0.0', peerDependenciesMeta: { which: { optional: true } } },
+    ],
+    root: { name: 'foo', version: '1.2.3' },
+    workspaces: [
+      { name: 'app', version: '1.0.0', dependencies: { bar: '*' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Note that we override this cache to prevent interference from other tests
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  t.notOk(setupRequire(path.join(dir, 'packages', 'app'))('bar', 'which'),
+    'optional peer that nobody provides is not materialized')
+})
+
 // Virtual packages are 2 packages that have the same version but are
 // duplicated on disk to solve peer-dependency conflict.
 tap.test('virtual packages', async t => {
