@@ -244,7 +244,7 @@ t.test('emits Phase 1 advisory warning for unreviewed install scripts', async t 
   )
 })
 
-t.test('global advisory warning points at .npmrc, not approve-scripts', async t => {
+t.test('global advisory warning points at npm config set, not approve-scripts', async t => {
   const { npm, logs } = await setupMockNpm(t, {
     config: {
       global: true,
@@ -265,7 +265,7 @@ t.test('global advisory warning points at .npmrc, not approve-scripts', async t 
   await npm.exec('rebuild', [])
   const warn = logs.warn.byTitle('rebuild').join('\n')
   t.match(warn, /install scripts not yet covered by allowScripts/)
-  t.match(warn, /allow-scripts.*\.npmrc/s)
+  t.match(warn, /npm config set allow-scripts=canvas/)
   t.notMatch(warn, /approve-scripts/)
 })
 

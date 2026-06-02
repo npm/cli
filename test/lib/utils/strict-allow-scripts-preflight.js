@@ -213,7 +213,7 @@ t.test('global error points at --allow-scripts, not approve-scripts', async t =>
     (err) => {
       t.equal(err.code, 'ESTRICTALLOWSCRIPTS')
       t.match(err.message, /--allow-scripts/)
-      t.match(err.message, /\.npmrc/)
+      t.match(err.message, /npm config set allow-scripts=canvas/)
       t.notMatch(err.message, /approve-scripts/)
       return true
     }

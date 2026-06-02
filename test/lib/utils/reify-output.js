@@ -516,7 +516,7 @@ t.test('global install suggests --allow-scripts, not approve-scripts', async t =
   t.match(warn, /2 packages have install scripts not yet covered/)
   t.match(warn, /canvas@2\.11\.0 \(install: node-gyp rebuild\)/)
   t.match(warn, /npm install -g --allow-scripts=canvas,sharp/)
-  t.match(warn, /allow-scripts.*\.npmrc/s)
+  t.match(warn, /npm config set allow-scripts=canvas,sharp/)
   t.notMatch(warn, /approve-scripts/)
 })
 
