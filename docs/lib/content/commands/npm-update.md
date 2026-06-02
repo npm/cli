@@ -128,8 +128,7 @@ In this case if you really did need your package to use a newer version you woul
 
 `npm update -g` will apply the `update` action to each globally installed package that is `outdated` -- that is, has a version that is different from `wanted`.
 
-Note: Globally installed packages are treated as if they are installed with a caret semver range specified.
-So if you require to update to `latest` you may need to run `npm install -g [<pkg>...]`
+Note: Globally installed packages do not have a `package.json` semver range available, so their `wanted` version is `latest`.
 
 NOTE: If a package has been upgraded to a version newer than `latest`, it will be _downgraded_.
 
