@@ -18,8 +18,8 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "allow-same-version": false,
   "allow-directory": "all",
   "allow-file": "all",
-  "allow-git": "all",
-  "allow-remote": "all",
+  "allow-git": "none",
+  "allow-remote": "none",
   "allow-scripts": [
     ""
   ],
@@ -201,8 +201,8 @@ access = null
 all = false
 allow-directory = "all"
 allow-file = "all"
-allow-git = "all"
-allow-remote = "all"
+allow-git = "none"
+allow-remote = "none"
 allow-same-version = false
 allow-scripts = [""]
 allow-scripts-pending = false

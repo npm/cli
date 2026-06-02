@@ -1068,6 +1068,33 @@ t.test('node-gyp', t => {
   t.end()
 })
 
+t.test('allow-git defaults to none and flattens to allowGit', t => {
+  const defs = mockDefs()
+  t.equal(defs['allow-git'].default, 'none')
+  t.strictSame(defs['allow-git'].type, ['all', 'none', 'root'])
+  const flat = {}
+  defs['allow-git'].flatten('allow-git', { 'allow-git': 'root' }, flat)
+  t.strictSame(flat, { allowGit: 'root' })
+  t.end()
+})
+
+t.test('allow-remote defaults to none and flattens to allowRemote', t => {
+  const defs = mockDefs()
+  t.equal(defs['allow-remote'].default, 'none')
+  t.strictSame(defs['allow-remote'].type, ['all', 'none', 'root'])
+  const flat = {}
+  defs['allow-remote'].flatten('allow-remote', { 'allow-remote': 'all' }, flat)
+  t.strictSame(flat, { allowRemote: 'all' })
+  t.end()
+})
+
+t.test('allow-file and allow-directory still default to all', t => {
+  const defs = mockDefs()
+  t.equal(defs['allow-file'].default, 'all', 'allow-file unchanged')
+  t.equal(defs['allow-directory'].default, 'all', 'allow-directory unchanged')
+  t.end()
+})
+
 t.test('allow-scripts', t => {
   t.test('defaults to empty string and flattens to []', t => {
     const defs = mockDefs()

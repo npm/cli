@@ -394,7 +394,9 @@ const loadMockNpm = async function (t, opts = {}) {
 }
 
 t.test('package from git', async t => {
-  const { view, joinedOutput } = await loadMockNpm(t, { config: { unicode: false } })
+  const { view, joinedOutput } = await loadMockNpm(t, {
+    config: { unicode: false, 'allow-git': 'all' },
+  })
   await view.exec(['https://github.com/npm/green'])
   t.matchSnapshot(joinedOutput())
 })

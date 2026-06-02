@@ -255,7 +255,7 @@ dependencies to be used for other commands like \`npm view\`
 
 #### \`allow-git\`
 
-* Default: "all"
+* Default: "none"
 * Type: "all", "none", or "root"
 
 Limits the ability for npm to fetch dependencies from git references. That
@@ -263,6 +263,11 @@ is, dependencies that point to a git repo instead of a version or semver
 range. Please note that this could leave your tree incomplete and some
 packages may not function as intended or designed. Changing this setting
 will not remove dependencies that are already installed.
+
+As of npm 12 the default is \`none\`. Git dependencies run \`git\` against a
+remote repo and may install configuration the project does not control. Opt
+in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you
+need git deps.
 
 \`all\` allows any git dependencies to be fetched and installed. \`none\`
 prevents any git dependencies from being fetched and installed. \`root\` only
@@ -274,7 +279,7 @@ like \`npm view\`
 
 #### \`allow-remote\`
 
-* Default: "all"
+* Default: "none"
 * Type: "all", "none", or "root"
 
 Limits the ability for npm to fetch dependencies from urls. That is,
@@ -282,6 +287,13 @@ dependencies that point to a tarball url instead of a version or semver
 range. Please note that this could leave your tree incomplete and some
 packages may not function as intended or designed. Changing this setting
 will not remove dependencies that are already installed.
+
+As of npm 12 the default is \`none\`. Tarballs that share a hostname with the
+configured registry (the typical case for the npm registry, GitHub Packages,
+and most private registries) are still installed normally. If your registry
+serves tarballs from a different host, set \`replace-registry-host\` or
+override this setting. Opt in explicitly per project (in \`.npmrc\`) or per
+command (on the CLI) when you intentionally install from a URL.
 
 \`all\` allows any url to be installed. \`none\` prevents any url from being
 installed. \`root\` only allows urls defined in your project's package.json to
@@ -2778,8 +2790,8 @@ Object {
   "all": false,
   "allowDirectory": "all",
   "allowFile": "all",
-  "allowGit": "all",
-  "allowRemote": "all",
+  "allowGit": "none",
+  "allowRemote": "none",
   "allowSameVersion": false,
   "allowScripts": Array [],
   "allowScriptsPending": false,

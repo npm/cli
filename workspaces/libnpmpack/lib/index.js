@@ -64,11 +64,18 @@ async function pack (spec = 'file:.', opts = {}) {
   }
 
   // packs tarball
-  const tarball = await pacote.tarball(manifest._resolved, {
+  const tarballOpts = {
     ...opts,
     Arborist,
     integrity: manifest._integrity,
-  })
+  }
+  // pacote re-parses manifest._resolved as type=remote, so allow-remote=none
+  // would mis-fire on the tarball URL the registry just handed us. mirror
+  // arborist reify's carve-out: trust resolved tarballs for registry-typed specs.
+  if (spec.registry) {
+    tarballOpts.allowRemote = 'all'
+  }
+  const tarball = await pacote.tarball(manifest._resolved, tarballOpts)
 
   // check for explicit `false` so the default behavior is to skip writing to disk
   if (opts.dryRun === false) {

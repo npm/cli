@@ -93,3 +93,51 @@ t.test('pkg not in a node_modules folder', async t => {
     'should call regular pacote.tarball method instead'
   )
 })
+
+t.test('allowRemote carve-out for registry-mediated tarballs', async t => {
+  const originalTarball = pacote.tarball
+  let captured
+  pacote.tarball = async (resolved, opts) => {
+    captured = { resolved, opts }
+    return Buffer.alloc(0)
+  }
+  t.teardown(() => {
+    pacote.tarball = originalTarball
+  })
+
+  t.beforeEach(() => {
+    captured = undefined
+  })
+
+  t.test('registry-typed _from sets allowRemote=all', async t => {
+    await tarball({
+      _from: 'abbrev@1.0.0',
+      _resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.0.0.tgz',
+    }, {})
+    t.equal(captured.opts.allowRemote, 'all')
+  })
+
+  t.test('non-registry _from leaves allowRemote untouched', async t => {
+    await tarball({
+      _from: 'https://example.com/foo.tgz',
+      _resolved: 'https://example.com/foo.tgz',
+    }, {})
+    t.notOk(captured.opts.allowRemote)
+  })
+
+  t.test('missing _from leaves allowRemote untouched', async t => {
+    await tarball({
+      _resolved: 'https://example.com/foo.tgz',
+    }, {})
+    t.notOk(captured.opts.allowRemote)
+  })
+
+  t.test('unparseable _from leaves allowRemote untouched', async t => {
+    // npa throws on tags with reserved characters, exercising the catch branch
+    await tarball({
+      _from: '@',
+      _resolved: 'https://example.com/foo.tgz',
+    }, {})
+    t.notOk(captured.opts.allowRemote)
+  })
+})

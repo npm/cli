@@ -367,6 +367,20 @@ t.test('exec commands', async t => {
     )
   })
 
+  t.test('allow-git default rejects git deps', async t => {
+    const { npm } = await loadMockNpm(t, {
+      config: { audit: false },
+    })
+    await t.rejects(
+      npm.exec('install', ['npm/npm']),
+      {
+        code: 'EALLOWGIT',
+        package: 'github:npm/npm',
+      },
+      'no explicit allow-git config still blocks git installs'
+    )
+  })
+
   t.test('allow-git=root refuses non-root git dependency', async t => {
     const { npm } = await loadMockNpm(t, {
       config: {
@@ -505,6 +519,24 @@ t.test('exec commands', async t => {
       npm.exec('install', []),
       { code: 'EALLOWREMOTE' },
       'user-supplied remote URL is still blocked'
+    )
+  })
+
+  t.test('allow-remote default rejects a user-supplied remote URL', async t => {
+    const { npm } = await loadMockNpm(t, {
+      config: { audit: false },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: '@npmcli/test-package',
+          version: '1.0.0',
+          dependencies: { abbrev: 'https://registry.npmjs.org/abbrev/-/abbrev-2.0.0.tgz' },
+        }),
+      },
+    })
+    await t.rejects(
+      npm.exec('install', []),
+      { code: 'EALLOWREMOTE' },
+      'no explicit allow-remote config still blocks user-supplied tarball URLs'
     )
   })
 })
