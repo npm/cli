@@ -18,6 +18,6 @@ contact_links:
   - name: 📫 Support
     url: https://github.community/
     about: For general support questions please open a topic over at github.community
-   - name: 🚑 Support Policy
+  - name: 🚑 Support Policy
     url: https://github.com/npm/cli/wiki/Support-Policy
     about: Information about what version(s) of the CLI we support
