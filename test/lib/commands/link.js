@@ -18,12 +18,12 @@ const mockLink = async (t, { globalPrefixDir, ...opts } = {}) => {
     },
   })
 
-  const printLinks = async ({ global = false } = {}) => {
+  const printLinks = async ({ global = false, path } = {}) => {
     let res = ''
     const arb = new Arborist(global ? {
       path: resolve(mock.npm.globalDir, '..'),
       global: true,
-    } : { path: mock.prefix })
+    } : { path: path || mock.prefix })
     const tree = await arb.loadActual()
     const linkedItems = [...tree.inventory.values()]
       .sort((a, b) => a.pkgid.localeCompare(b.pkgid, 'en'))
@@ -190,7 +190,7 @@ t.test('link global linked pkg to local nm when using args', async t => {
 })
 
 t.test('link global linked pkg to local workspace using args', async t => {
-  const { link, printLinks } = await mockLink(t, {
+  const { link, printLinks, prefix } = await mockLink(t, {
     globalPrefixDir: {
       node_modules: {
         '@myscope': {
@@ -286,7 +286,9 @@ t.test('link global linked pkg to local workspace using args', async t => {
     'file:../other/link-me-too',
   ])
 
-  t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
+  t.matchSnapshot(await printLinks({
+    path: resolve(prefix, 'packages/x'),
+  }), 'should create a local symlink to global pkg')
 })
 
 t.test('link pkg already in global space', async t => {
