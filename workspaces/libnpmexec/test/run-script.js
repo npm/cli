@@ -130,6 +130,20 @@ t.test('isWindows', async t => {
   await runScript()
 })
 
+t.test('escapes executable name to neutralize shell metacharacters', async t => {
+  let pkg
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async (opts) => {
+      pkg = opts.pkg
+    },
+    '../lib/is-windows.js': false,
+  })
+
+  await runScript({ args: [`evil'; touch pwned #`] })
+  t.equal(pkg.scripts.npx, `'evil'\\''; touch pwned #'`)
+})
+
 t.test('isNotWindows', async t => {
   const { runScript } = await mockRunScript(t, {
     'ci-info': { isCI: true },
