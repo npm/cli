@@ -397,10 +397,10 @@ t.test('approve-scripts --pending lists packages that only have binding.gyp', as
   t.match(out, /install: node-gyp rebuild/, 'synthetic node-gyp install is named')
 })
 
-t.test('approve-scripts --all skips bundled deps with a notice', async t => {
-  // Bundled deps cannot be allowlisted in Phase 1 (RFC defers their
-  // allowlisting to a follow-up). --all must not silently write a key
-  // derived from the bundled tarball's self-claimed identity.
+t.test('approve-scripts --all never approves bundled deps', async t => {
+  // Bundled deps never run their install scripts and cannot be
+  // allowlisted. They never reach the unreviewed list, so --all must not
+  // write a key derived from the bundled tarball's self-claimed identity.
   const { npm, logs, prefix } = await _mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -457,7 +457,8 @@ t.test('approve-scripts --all skips bundled deps with a notice', async t => {
     'non-bundled parent gets approved')
   t.notOk(Object.keys(pkg.allowScripts).some(k => k.startsWith('inner')),
     'bundled inner is not approved')
-  t.match(logs.warn.byTitle('approve-scripts'), [/Skipping 1 bundled dependency/])
+  t.strictSame(logs.warn.byTitle('approve-scripts'), [],
+    'no warning; bundled deps are excluded upstream')
 })
 
 t.test('approve-scripts <bundled-pkg> positional is ignored', async t => {
@@ -517,7 +518,7 @@ t.test('approve-scripts <bundled-pkg> positional is ignored', async t => {
   )
 })
 
-t.test('approve-scripts --all with only bundled deps prints "no eligible" notice', async t => {
+t.test('approve-scripts --all with only bundled deps has nothing to review', async t => {
   const { npm, logs, joinedOutput, prefix } = await _mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
@@ -566,8 +567,9 @@ t.test('approve-scripts --all with only bundled deps prints "no eligible" notice
     config: { all: true },
   })
   await npm.exec('approve-scripts', [])
-  t.match(joinedOutput(), /No packages eligible for approval/)
-  t.match(logs.warn.byTitle('approve-scripts'), [/Skipping 1 bundled dependency/])
+  t.match(joinedOutput(), /No packages with unreviewed install scripts/)
+  t.strictSame(logs.warn.byTitle('approve-scripts'), [],
+    'no warning; bundled deps are excluded upstream')
   // Ensure no policy entry was written.
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.notOk(pkg.allowScripts, 'no allowScripts written')
