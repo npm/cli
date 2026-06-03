@@ -244,6 +244,31 @@ t.test('emits Phase 1 advisory warning for unreviewed install scripts', async t 
   )
 })
 
+t.test('global advisory warning points at npm config set, not approve-scripts', async t => {
+  const { npm, logs } = await setupMockNpm(t, {
+    config: {
+      global: true,
+    },
+    globalPrefixDir: {
+      node_modules: {
+        canvas: {
+          'index.js': '',
+          'package.json': JSON.stringify({
+            name: 'canvas',
+            version: '1.0.0',
+            scripts: { install: 'echo install' },
+          }),
+        },
+      },
+    },
+  })
+  await npm.exec('rebuild', [])
+  const warn = logs.warn.byTitle('rebuild').join('\n')
+  t.match(warn, /install scripts not yet covered by allowScripts/)
+  t.match(warn, /npm config set allow-scripts=canvas/)
+  t.notMatch(warn, /approve-scripts/)
+})
+
 t.test('no advisory warning when allowScripts covers the package', async t => {
   const { npm, logs } = await setupMockNpm(t, {
     prefixDir: {
