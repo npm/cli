@@ -60,6 +60,18 @@ t.test('approve-scripts --pending lists unreviewed packages', async t => {
   t.match(out, /sharp@1\.0\.0/)
 })
 
+t.test('approve-scripts --pending lists unreviewed packages even with ignore-scripts set', async t => {
+  const { npm, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas', 'sharp'] }),
+    config: { 'allow-scripts-pending': true, 'ignore-scripts': true },
+  })
+  await npm.exec('approve-scripts', [])
+  const out = joinedOutput()
+  t.match(out, /2 packages have install scripts not yet covered/)
+  t.match(out, /canvas@1\.0\.0/)
+  t.match(out, /sharp@1\.0\.0/)
+})
+
 t.test('approve-scripts --pending with no unreviewed says so', async t => {
   const { npm, joinedOutput } = await mockNpm(t, {
     prefixDir: setupProject({

@@ -57,6 +57,20 @@ t.test('returns [] when ignoreScripts is set', async t => {
   t.strictSame(result, [])
 })
 
+t.test('returns unreviewed nodes when ignoreScripts is set but includeWhenIgnored is true', async t => {
+  const checkAllowScripts = mockCheck(t)
+  const result = await checkAllowScripts({
+    arb: arb({
+      nodes: [node({ name: 'a', scripts: { install: 'do-stuff' } })],
+      ignoreScripts: true,
+    }),
+    npm: { flatOptions: {} },
+    includeWhenIgnored: true,
+  })
+  t.equal(result.length, 1)
+  t.strictSame(result[0].scripts, { install: 'do-stuff' })
+})
+
 t.test('returns [] when dangerouslyAllowAllScripts is set', async t => {
   const checkAllowScripts = mockCheck(t)
   const result = await checkAllowScripts({
