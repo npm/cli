@@ -24,13 +24,13 @@ const versionFromTgz = require('./version-from-tgz.js')
 //     resolved committish
 
 const isScriptAllowed = (node, policy) => {
-  // Bundled dependencies cannot be allowlisted in Phase 1. The RFC defers
-  // allowlisting them to a follow-up RFC because matching by name@version
-  // from the bundled tarball would reintroduce manifest confusion (a
-  // bundled tarball can claim any name and version). Returning null here
-  // marks bundled deps as unreviewed regardless of any policy entries, so
-  // their install scripts surface in the Phase 1 advisory warning and
-  // (eventually) get blocked at the install-time gate.
+  // Bundled dependencies never run their install scripts and cannot be
+  // allowlisted. Matching by name@version from the bundled tarball would
+  // reintroduce manifest confusion (a bundled tarball can claim any name
+  // and version). Returning null marks them as not-allowed regardless of
+  // any policy entry, so their install scripts are blocked by the
+  // install-time gate. A package that needs a bundled dep's script must
+  // forward it as one of its own lifecycle scripts.
   if (node.inBundle) {
     return null
   }
@@ -319,11 +319,11 @@ const isRegistryNode = (node) => {
   return /^https?:\/\/[^/]+\/.+\/-\/[^/]+-\d/.test(node.resolved)
 }
 
-// Trusted display identity for human-facing output (`npm install`
-// advisory, `npm approve-scripts --allow-scripts-pending`). Same idea as
-// getTrustedRegistryIdentity, but for DISPLAY only — version falls back
-// to node.version when the URL doesn't carry one. Must never be used
-// for policy matching.
+// Trusted display identity for human-facing output (the `npm install`
+// blocked-scripts summary and `npm approve-scripts --allow-scripts-pending`).
+// Same as getTrustedRegistryIdentity, but for display only: version
+// falls back to node.version when the URL doesn't carry one. Do not
+// use for policy matching.
 const trustedDisplay = (node) => {
   const trusted = getTrustedRegistryIdentity(node)
   /* istanbul ignore next: defensive fallbacks for nodes without name/version */
