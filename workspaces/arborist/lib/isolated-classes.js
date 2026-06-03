@@ -19,6 +19,7 @@ class IsolatedNode {
   integrity = null
   inventory = new IsolatedInventory()
   isInStore = false
+  inBundle = false
   linksIn = new Set()
   meta = { loadedFromDisk: false }
   optional = false
@@ -45,6 +46,9 @@ class IsolatedNode {
     }
     if (options.isInStore) {
       this.isInStore = true
+    }
+    if (options.inBundle) {
+      this.inBundle = true
     }
     if (options.optional) {
       this.optional = true

@@ -314,11 +314,11 @@ t.test('isRegistryNode — arborist isRegistryDependency true accepts even unusu
   t.equal(isScriptAllowed(arboristNode, { 'trusted@1.0.0': true }), true)
 })
 
-t.test('bundled deps cannot be allowlisted (Phase 1 blocks outright)', async t => {
+t.test('bundled deps cannot be allowlisted (never run)', async t => {
   // Bundled dependencies have inBundle=true and no independent resolved
-  // URL. The RFC explicitly forbids allowlisting them in Phase 1 because
-  // matching by name@version from the bundled tarball would reintroduce
-  // manifest confusion. They must always return null (unreviewed).
+  // URL. They can never be allowlisted because matching by name@version
+  // from the bundled tarball would reintroduce manifest confusion. They
+  // always return null, and their install scripts never run.
 
   const bundled = {
     name: 'bundled-pkg',
@@ -341,8 +341,8 @@ t.test('bundled deps cannot be allowlisted (Phase 1 blocks outright)', async t =
 
 t.test('bundled deps: deny entry does not match either (returns null, not false)', async t => {
   // A deny entry doesn't apply to bundled deps because they're outside
-  // the policy scope entirely. Phase 1 blocks them via the walker, not
-  // via the policy.
+  // the policy scope entirely. They're blocked because they never run,
+  // not via a policy entry.
   const bundled = {
     name: 'bundled-pkg',
     packageName: 'bundled-pkg',
@@ -376,6 +376,41 @@ t.test('inBundle: false does not affect normal matching', async t => {
     inBundle: false,
   }
   t.equal(isScriptAllowed(normal, { 'pkg@1.0.0': true }), true)
+})
+
+t.test('isolated mode (linked): bundled IsolatedNode is blocked', async t => {
+  // Regression guard: in isolated/linked mode the gate runs against
+  // IsolatedNode instances, not real Nodes. A bundled IsolatedNode must
+  // report inBundle so the gate blocks it even when its resolved URL
+  // looks like a registry identity that a name entry would otherwise
+  // match. Without inBundle on IsolatedNode the guard is silently
+  // skipped and the bundled install script runs.
+  const { IsolatedNode } = require('../lib/isolated-classes.js')
+
+  const bundled = new IsolatedNode({
+    inBundle: true,
+    location: 'node_modules/bundled-pkg',
+    name: 'bundled-pkg',
+    package: { name: 'bundled-pkg', version: '1.0.0' },
+    path: '/project/node_modules/bundled-pkg',
+    resolved: 'https://registry.npmjs.org/bundled-pkg/-/bundled-pkg-1.0.0.tgz',
+  })
+
+  t.equal(bundled.inBundle, true, 'bundled IsolatedNode reports inBundle')
+  t.equal(isScriptAllowed(bundled, { 'bundled-pkg': true }), null)
+  t.equal(isScriptAllowed(bundled, { 'bundled-pkg@1.0.0': true }), null)
+
+  const store = new IsolatedNode({
+    isInStore: true,
+    location: 'node_modules/.store/store-pkg@1.0.0/node_modules/store-pkg',
+    name: 'store-pkg',
+    package: { name: 'store-pkg', version: '1.0.0' },
+    path: '/project/node_modules/.store/store-pkg@1.0.0/node_modules/store-pkg',
+    resolved: 'https://registry.npmjs.org/store-pkg/-/store-pkg-1.0.0.tgz',
+  })
+
+  t.equal(store.inBundle, false, 'external store IsolatedNode is not bundled')
+  t.equal(isScriptAllowed(store, { 'store-pkg@1.0.0': true }), true)
 })
 
 t.test('manifest confusion: malicious tarball self-name cannot bypass allow entry', async t => {

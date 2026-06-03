@@ -38,9 +38,10 @@ module.exports = cls => class IsolatedReifier extends cls {
   #processedEdges = new Set()
   #workspaceProxies = new Map()
 
-  #generateChild (node, location, pkg, isInStore, root) {
+  #generateChild (node, location, pkg, isInStore, root, inBundle = false) {
     const newChild = new IsolatedNode({
       isInStore,
+      inBundle,
       location,
       name: node.packageName || node.name,
       optional: node.optional,
@@ -327,7 +328,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     })
 
     bundledTree.nodes.forEach(node => {
-      this.#generateChild(node, node.location, node.pkg, false, root)
+      this.#generateChild(node, node.location, node.pkg, false, root, true)
     })
 
     bundledTree.edges.forEach(edge => {
