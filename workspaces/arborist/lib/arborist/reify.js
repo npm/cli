@@ -844,17 +844,18 @@ module.exports = cls => class Reifier extends cls {
 
   // When extracting a registry-resolved package, the spec we hand to pacote is name@URL.
   // pacote re-parses that with npa and gets spec.type === 'remote', so without an override the allow-remote gate would fire on every registry tarball (both =none and =root mis-fire).
-  // Returns true only when we are confident this is a registry-mediated install: the node's inbound edges must all be registry-typed (no exotic spec smuggled the URL in) AND the resolved URL's host must match the registry npm-registry-fetch selected for this spec, so a tampered lockfile pointing at an attacker host still hits the gate.
+  // Returns true only when we are confident this is a registry-mediated install.
   #isRegistryResolvedTarball (node) {
     if (!node.resolved || !node.isRegistryDependency) {
       return false
     }
     try {
-      // Hostnames are case-insensitive; lowercase both sides for safety even though WHATWG URL already normalizes.
-      const resolvedHost = new URL(node.resolved).hostname.toLowerCase()
+      const resolved = new URL(node.resolved)
       // pickRegistry only consults spec.scope, so a bare-name (tag) parse is sufficient and avoids a node.version dependency.
-      const registryHost = new URL(pickRegistry(npa(node.name), this.options)).hostname.toLowerCase()
-      return resolvedHost === registryHost
+      const registry = new URL(pickRegistry(npa(node.name), this.options))
+      const registryPath = registry.pathname.replace(/\/?$/, '/')
+      return resolved.origin === registry.origin &&
+        (registryPath === '/' || resolved.pathname.startsWith(registryPath))
     } catch {
       return false
     }
