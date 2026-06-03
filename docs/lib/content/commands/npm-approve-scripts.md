@@ -19,6 +19,14 @@ In the current release, this field is advisory: install scripts still run
 by default, but installs print a list of packages whose scripts have not
 been reviewed. A future release will block unreviewed install scripts.
 
+This command only works inside a project that has a `package.json`. It does
+not apply to global installs (`npm install -g`) or one-off executions
+(`npm exec` / `npx`), which have no project `package.json` to write to and
+will fail with an `EGLOBAL` error. To allow install scripts in those
+contexts, use the `--allow-scripts` flag at install time (for example
+`npm install -g --allow-scripts=canvas,sharp`) or persist the setting with
+`npm config set allow-scripts=canvas,sharp --location=user`.
+
 There are three modes:
 
 ```bash
