@@ -107,7 +107,7 @@ npm error   --allow-scripts
 npm error     Comma-separated list of packages whose install-time lifecycle scripts
 npm error
 npm error   --strict-allow-scripts
-npm error     If \`true\`, turn the install-script policy from a warning into a hard
+npm error     If \`true\`, turn the install-script policy from a silent skip into a
 npm error
 npm error   --dangerously-allow-all-scripts
 npm error     If \`true\`, bypass the \`allowScripts\` policy entirely and run every

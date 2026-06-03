@@ -344,7 +344,7 @@ t.test('Bundles rebuilt as long as rebuildBundle not false', async t => {
     const a = resolve(path, 'node_modules/@isaacs/testing-rebuild-bundle-a')
     const dir = resolve(a, 'node_modules/@isaacs/testing-rebuild-bundle-b')
     const file = resolve(dir, 'cwd')
-    await reify(path)
+    await reify(path, { dangerouslyAllowAllScripts: true })
     t.equal(fs.readFileSync(file, 'utf8'), dir)
   })
   t.test('do not rebuild the bundle', async t => {
@@ -610,13 +610,13 @@ t.test('optional dependency failures', async t => {
     await t.test(`${c} save=false`, async t => {
       createRegistry(t, true)
       await t.resolveMatchSnapshot(printReified(fixture(t, c),
-        { update: true, save: false }))
+        { update: true, save: false, dangerouslyAllowAllScripts: true }))
     })
     // npm update --save
     await t.test(`${c} save=true`, async t => {
       createRegistry(t, true)
       await t.resolveMatchSnapshot(printReified(fixture(t, c),
-        { update: true, save: true }))
+        { update: true, save: true, dangerouslyAllowAllScripts: true }))
     })
   }
 })
@@ -637,7 +637,7 @@ t.test('failing script means install failure, unless ignoreScripts', async t => 
   for (const c of cases) {
     await t.test(c, async t => {
       createRegistry(t, true)
-      t.rejects(printReified(fixture(t, c)))
+      t.rejects(printReified(fixture(t, c), { dangerouslyAllowAllScripts: true }))
     })
     await t.test(`${c} --ignore-scripts`, async t => {
       createRegistry(t, true)

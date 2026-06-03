@@ -1383,7 +1383,7 @@ tap.test('postinstall scripts are run', async t => {
 
   // Note that we override this cache to prevent interference from other tests
   const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache, dangerouslyAllowAllScripts: true })
   await arborist.reify({ installStrategy: 'linked' })
 
   const postInstallRanWhich = pathExists(`${setupRequire(dir)('which')}/postInstallRanWhich`)
@@ -1415,7 +1415,7 @@ tap.test('postinstall scripts run once for store packages', async t => {
   const { dir, registry } = await getRepo(graph)
 
   const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
-  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache, dangerouslyAllowAllScripts: true })
   await arborist.reify({ installStrategy: 'linked' })
 
   const whichDir = setupRequire(dir)('which')

@@ -1912,12 +1912,13 @@ this to work properly.
 * Default: false
 * Type: Boolean
 
-If \`true\`, turn the install-script policy from a warning into a hard error:
-any dependency with install scripts not covered by \`allowScripts\` will fail
-the install instead of running with a notice.
+If \`true\`, turn the install-script policy from a silent skip into a hard
+error: any dependency with install scripts not covered by \`allowScripts\`
+will fail the install instead of being silently skipped.
 
-Dependencies explicitly denied with \`false\` in \`allowScripts\` are always
-silently skipped; this setting only affects unreviewed entries.
+By default, dependencies whose install scripts are not approved in
+\`allowScripts\` are silently skipped; this setting promotes that silent skip
+into a hard failure, which is the recommended posture for CI.
 \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this
 setting.
 
@@ -3283,7 +3284,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a silent skip into a
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -3845,7 +3846,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a silent skip into a
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -4293,7 +4294,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a silent skip into a
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -4443,7 +4444,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a silent skip into a
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -4589,7 +4590,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a silent skip into a
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -5574,7 +5575,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a silent skip into a
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -6392,7 +6393,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a silent skip into a
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
