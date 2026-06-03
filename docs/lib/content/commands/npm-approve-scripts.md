@@ -25,7 +25,7 @@ not apply to global installs (`npm install -g`) or one-off executions
 will fail with an `EGLOBAL` error. To allow install scripts in those
 contexts, use the `--allow-scripts` flag at install time (for example
 `npm install -g --allow-scripts=canvas,sharp`) or persist the setting with
-`npm config set allow-scripts=canvas,sharp`.
+`npm config set allow-scripts=canvas,sharp --location=user`.
 
 There are three modes:
 
