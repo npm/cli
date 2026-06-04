@@ -45,6 +45,31 @@ t.test('nameKeyFor / versionedKeyFor — file', async t => {
   t.equal(versionedKeyFor(n), 'file:../local')
 })
 
+t.test('nameKeyFor / versionedKeyFor — local directory link target', async t => {
+  const targetPath = path.resolve('local')
+  const n = {
+    name: 'local',
+    packageName: 'local',
+    version: '1.0.0',
+    resolved: null,
+    path: targetPath,
+    realpath: targetPath,
+    linksIn: new Set([{ resolved: 'file:../local' }]),
+  }
+
+  t.equal(nameKeyFor(n), 'file:../local')
+  t.equal(versionedKeyFor(n), 'file:../local')
+
+  t.strictSame(
+    applyApprovalForPackage({}, [n], { pin: true }).allowScripts,
+    { 'file:../local': true }
+  )
+  t.match(
+    applyApprovalForPackage({ 'file:local': false }, [n], { pin: true }).warning,
+    /denied|versioned deny/
+  )
+})
+
 t.test('isSingleVersionPin', async t => {
   t.ok(isSingleVersionPin('pkg@1.2.3'))
   t.notOk(isSingleVersionPin('pkg'))
