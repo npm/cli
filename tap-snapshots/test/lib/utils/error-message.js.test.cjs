@@ -196,7 +196,7 @@ Object {
       "s",
       "https://evil:***@npmjs.org",
       "--//registry.npmjs.org/:_authToken",
-      "***",
+      "plain-secret",
     ],
     Array [
       "",

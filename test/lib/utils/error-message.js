@@ -181,6 +181,28 @@ t.test('args are cleaned', async t => {
   })))
 })
 
+t.test('child process args keep protected-looking flags', async t => {
+  const { errorMessage } = await loadMockNpm(t)
+  const msg = errorMessage(Object.assign(new Error('cmd err'), {
+    cmd: 'some command',
+    args: [
+      '--password',
+      'hunter2',
+      '--registry',
+      'https://evil:password@npmjs.org',
+    ],
+  }))
+
+  t.strictSame(msg.detail, [[
+    'command',
+    'some command',
+    '--password',
+    'hunter2',
+    '--registry',
+    'https://evil:***@npmjs.org',
+  ]])
+})
+
 t.test('eacces/eperm', async t => {
   const runTest = (windows, loaded, cachePath, cacheDest) => async t => {
     const { errorMessage, logs, cache } = await loadMockNpm(t, {
