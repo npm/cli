@@ -2515,6 +2515,16 @@ const definitions = {
       while still writing the timing file, use \`--silent\`.
     `,
   }),
+  to: new Definition('to', {
+    default: null,
+    hint: '<version>',
+    type: [null, String],
+    description: `
+      Used by \`npm patch update\` to set the version to rebase a patch onto
+      when it cannot be read from \`package-lock.json\` — for example an
+      exact-version selector, or a version that has not been installed yet.
+    `,
+  }),
   umask: new Definition('umask', {
     default: 0,
     type: Umask,

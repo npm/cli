@@ -623,6 +623,10 @@ Object {
   "timing": Array [
     "boolean value (true or false)",
   ],
+  "to": Array [
+    null,
+    Function String(),
+  ],
   "token-description": Array [
     null,
     Function String(),

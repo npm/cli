@@ -182,6 +182,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "strict-ssl": true,
   "tag-version-prefix": "v",
   "timing": false,
+  "to": null,
   "umask": 0,
   "unicode": false,
   "update-notifier": true,
@@ -376,6 +377,7 @@ strict-ssl = true
 ; tag = "latest" ; overridden by project
 tag-version-prefix = "v"
 timing = false
+to = null
 token-description = null
 umask = 0
 unicode = false

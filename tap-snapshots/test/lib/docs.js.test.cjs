@@ -2118,6 +2118,17 @@ while still writing the timing file, use \`--silent\`.
 
 
 
+#### \`to\`
+
+* Default: null
+* Type: null or String
+
+Used by \`npm patch update\` to set the version to rebase a patch onto when it
+cannot be read from \`package-lock.json\` — for example an exact-version
+selector, or a version that has not been installed yet.
+
+
+
 #### \`token-description\`
 
 * Default: null
@@ -2695,6 +2706,7 @@ Array [
   "tag",
   "tag-version-prefix",
   "timing",
+  "to",
   "umask",
   "unicode",
   "update-notifier",
@@ -2898,6 +2910,7 @@ Array [
   "keep-edit-dir",
   "prefix",
   "timing",
+  "to",
   "update-notifier",
   "usage",
   "userconfig",
@@ -5400,12 +5413,13 @@ Usage:
 npm patch <pkg>[@<version>]
 npm patch add <pkg>[@<version>] [--edit-dir <path>] [--ignore-existing]
 npm patch commit <edit-dir> [--patches-dir <dir>] [--keep-edit-dir]
+npm patch update <pkg>[@<old-version>] [--to <new-version>] [--patches-dir <dir>]
 npm patch ls
 npm patch rm <pkg>[@<version>]
 
 Options:
 [--patches-dir <patches-dir>] [--allow-unused-patches] [--ignore-patch-failures]
-[--edit-dir <edit-dir>] [--ignore-existing] [--keep-edit-dir]
+[--edit-dir <edit-dir>] [--ignore-existing] [--keep-edit-dir] [--to <version>]
 [--registry <registry>]
 
   --patches-dir
@@ -5426,6 +5440,9 @@ Options:
   --keep-edit-dir
     With \`npm patch commit\`, do not remove the edit directory after
 
+  --to
+    Used by \`npm patch update\` to set the version to rebase a patch onto
+
   --registry
     The base URL of the npm registry.
 
@@ -5436,6 +5453,7 @@ Run "npm help patch" for more info
 npm patch <pkg>[@<version>]
 npm patch add <pkg>[@<version>] [--edit-dir <path>] [--ignore-existing]
 npm patch commit <edit-dir> [--patches-dir <dir>] [--keep-edit-dir]
+npm patch update <pkg>[@<old-version>] [--to <new-version>] [--patches-dir <dir>]
 npm patch ls
 npm patch rm <pkg>[@<version>]
 \`\`\`
@@ -5448,6 +5466,7 @@ Note: This command is unaware of workspaces.
 #### \`edit-dir\`
 #### \`ignore-existing\`
 #### \`keep-edit-dir\`
+#### \`to\`
 #### \`registry\`
 `
 

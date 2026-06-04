@@ -525,6 +525,392 @@ t.test('commit: package.json change alongside code is dropped with a warning', a
   )
 })
 
+// Serve several versions of a package, each with its own index.js source.
+const setupVersions = async (npm, registry, name, sources) => {
+  const versions = Object.keys(sources)
+  const manifest = registry.manifest({ name, versions })
+  for (const version of versions) {
+    const dir = path.join(npm.prefix, `pkg-${name}-${version}`)
+    fs.mkdirSync(dir, { recursive: true })
+    fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify({ name, version }))
+    fs.writeFileSync(path.join(dir, 'index.js'), sources[version])
+    const tar = await pacote.tarball(dir, { Arborist })
+    const { pathname } = new URL(manifest.versions[version].dist.tarball)
+    registry.nock.get(pathname).reply(200, tar).persist()
+  }
+  registry.nock.get(`/${name}`).reply(200, manifest).persist()
+  return manifest
+}
+
+const rootWith = dep => ({
+  'package.json': JSON.stringify({
+    name: 'root-project', version: '1.0.0', dependencies: dep,
+  }),
+})
+
+const updatePrefix = patchedDependencies => ({
+  'package.json': JSON.stringify({
+    name: 'root-project', version: '1.0.0', patchedDependencies,
+  }),
+})
+
+t.test('update --to rebases an exact patch onto a new version', async t => {
+  const name = 'upd-exact'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+  // v2 differs from v1 only on the last line; the patch edits the first line -> clean 3-way merge
+  await setupVersions(npm, registry, name, { '1.0.0': 'a\nb\nc\n', '2.0.0': 'a\nb\nCC\n' })
+  await npm.exec('install', [])
+
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'AA\nb\nc\n')
+  await npm.exec('patch', ['commit', editDir])
+
+  npm.config.set('to', '2.0.0')
+  await npm.exec('patch', ['update', name])
+
+  const pkg = readJson(path.join(npm.prefix, 'package.json'))
+  t.same(pkg.patchedDependencies, { [`${name}@2.0.0`]: `patches/${name}@2.0.0.patch` },
+    'selector renamed to the new version')
+  t.notOk(fs.existsSync(path.join(npm.prefix, 'patches', `${name}@1.0.0.patch`)), 'old patch file removed')
+  t.match(fs.readFileSync(path.join(npm.prefix, 'patches', `${name}@2.0.0.patch`), 'utf8'), /\+AA/,
+    'rebased patch keeps the edit')
+})
+
+t.test('update auto-detects the new version and drops a fully-shadowed range', async t => {
+  const name = 'upd-range'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '1.0.0' }),
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'x\n', '1.1.0': 'x\n' })
+  await npm.exec('install', [])
+  // a patch that adds a file applies to any version, so the dep can float
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(editDir, 'EXTRA.txt'), 'extra\n')
+  await npm.exec('patch', ['commit', editDir])
+
+  // turn the exact selector into a range and float the lockfile to 1.1.0
+  const pkg = readJson(path.join(npm.prefix, 'package.json'))
+  pkg.dependencies[name] = '^1.0.0'
+  pkg.patchedDependencies = { [`${name}@^1.0.0`]: pkg.patchedDependencies[`${name}@1.0.0`] }
+  fs.writeFileSync(path.join(npm.prefix, 'package.json'), JSON.stringify(pkg))
+  // clear the resolved tree so a fresh install floats the range up to 1.1.0
+  fs.rmSync(path.join(npm.prefix, 'package-lock.json'))
+  fs.rmSync(path.join(npm.prefix, 'node_modules'), { recursive: true, force: true })
+  await npm.exec('install', [])
+
+  await npm.exec('patch', ['update', name])
+  t.same(readJson(path.join(npm.prefix, 'package.json')).patchedDependencies,
+    { [`${name}@1.1.0`]: `patches/${name}@1.1.0.patch` }, 'shadowed range dropped, new exact entry added')
+})
+
+t.test('update conflict leaves an edit dir; commit finalizes the rename', async t => {
+  const name = 'upd-conflict'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+  // v2 changes the same line the patch edits -> conflict
+  await setupVersions(npm, registry, name, { '1.0.0': 'a\nb\nc\n', '2.0.0': 'a\nBB\nc\n' })
+  await npm.exec('install', [])
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const addDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(addDir, 'index.js'), 'a\nMINE\nc\n')
+  await npm.exec('patch', ['commit', addDir])
+
+  npm.config.set('to', '2.0.0')
+  outputs.length = 0
+  await npm.exec('patch', ['update', name])
+  const editDir = joinedOutput().match(/Resolve the conflicts in: (.+)/)[1].trim()
+  t.ok(fs.existsSync(path.join(editDir, '.npm-patch-update.json')), 'cleanup marker written')
+  t.match(fs.readFileSync(path.join(editDir, 'index.js'), 'utf8'), /<<<<<<</, 'conflict markers present')
+  t.same(readJson(path.join(npm.prefix, 'package.json')).patchedDependencies,
+    { [`${name}@1.0.0`]: `patches/${name}@1.0.0.patch` }, 'manifest unchanged on conflict')
+
+  // resolve by keeping our line, then commit
+  let src = fs.readFileSync(path.join(editDir, 'index.js'), 'utf8')
+  src = src.replace(/<<<<<<<[^\n]*\n[\s\S]*?=======\n([\s\S]*?)>>>>>>>[^\n]*\n/, '$1')
+  fs.writeFileSync(path.join(editDir, 'index.js'), src)
+  await npm.exec('patch', ['commit', editDir])
+  t.same(readJson(path.join(npm.prefix, 'package.json')).patchedDependencies,
+    { [`${name}@2.0.0`]: `patches/${name}@2.0.0.patch` }, 'renamed after the resolving commit')
+  t.notOk(fs.existsSync(path.join(npm.prefix, 'patches', `${name}@1.0.0.patch`)), 'old patch file removed')
+})
+
+t.test('update conflict on a range selector writes no rename marker', async t => {
+  const name = 'upd-rconflict'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'a\nb\nc\n', '2.0.0': 'a\nBB\nc\n' })
+  await npm.exec('install', [])
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const addDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(addDir, 'index.js'), 'a\nMINE\nc\n')
+  await npm.exec('patch', ['commit', addDir])
+  // turn it into a name-only selector so the conflict path takes the non-exact branch
+  const pkg = readJson(path.join(npm.prefix, 'package.json'))
+  pkg.patchedDependencies = { [name]: pkg.patchedDependencies[`${name}@1.0.0`] }
+  fs.writeFileSync(path.join(npm.prefix, 'package.json'), JSON.stringify(pkg))
+
+  npm.config.set('to', '2.0.0')
+  outputs.length = 0
+  await npm.exec('patch', ['update', name])
+  const editDir = joinedOutput().match(/Resolve the conflicts in: (.+)/)[1].trim()
+  t.notOk(fs.existsSync(path.join(editDir, '.npm-patch-update.json')),
+    'no rename marker for a non-exact selector')
+})
+
+t.test('update: no registered patch rejects with EPATCHNOTFOUND', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: { 'package.json': JSON.stringify({ name: 'r', version: '1.0.0' }) },
+  })
+  await t.rejects(npm.exec('patch', ['update', 'nope']), { code: 'EPATCHNOTFOUND' })
+})
+
+t.test('update: an unknown explicit selector rejects with EPATCHNOTFOUND', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: updatePrefix({ 'foo@1.0.0': 'patches/foo@1.0.0.patch' }),
+  })
+  await t.rejects(npm.exec('patch', ['update', 'foo@9.9.9']), { code: 'EPATCHNOTFOUND' })
+})
+
+t.test('update: multiple entries for a bare name reject with EPATCHAMBIGUOUS', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: updatePrefix({ 'foo@1.0.0': 'patches/foo@1.0.0.patch', 'foo@2.0.0': 'patches/foo@2.0.0.patch' }),
+  })
+  await t.rejects(npm.exec('patch', ['update', 'foo']), { code: 'EPATCHAMBIGUOUS' })
+})
+
+t.test('update: an unparseable patch filename rejects with EPATCHBASE', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: updatePrefix({ 'foo@1.0.0': 'patches/custom.patch' }),
+  })
+  await t.rejects(npm.exec('patch', ['update', 'foo@1.0.0']), { code: 'EPATCHBASE' })
+})
+
+t.test('update: --to equal to the baseline rejects with EPATCHNOOP', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: updatePrefix({ 'foo@1.0.0': 'patches/foo@1.0.0.patch' }),
+  })
+  npm.config.set('to', '1.0.0')
+  await t.rejects(npm.exec('patch', ['update', 'foo@1.0.0']), { code: 'EPATCHNOOP' })
+})
+
+t.test('update: an invalid --to rejects with EPATCHBADTO', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: updatePrefix({ 'foo@1.0.0': 'patches/foo@1.0.0.patch' }),
+  })
+  npm.config.set('to', 'not-a-version')
+  await t.rejects(npm.exec('patch', ['update', 'foo@1.0.0']), { code: 'EPATCHBADTO' })
+})
+
+t.test('update: an existing target entry rejects with EPATCHEXISTS', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: updatePrefix({ 'foo@1.0.0': 'patches/foo@1.0.0.patch', 'foo@2.0.0': 'patches/foo@2.0.0.patch' }),
+  })
+  npm.config.set('to', '2.0.0')
+  await t.rejects(npm.exec('patch', ['update', 'foo@1.0.0']), { code: 'EPATCHEXISTS' })
+})
+
+t.test('update: a missing lockfile with no --to rejects with EPATCHSTALE', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: updatePrefix({ 'foo@^1.0.0': 'patches/foo@1.0.0.patch' }),
+  })
+  await t.rejects(npm.exec('patch', ['update', 'foo']), { code: 'EPATCHSTALE' })
+})
+
+t.test('update: wrong arg count rejects with EUSAGE', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: { 'package.json': JSON.stringify({ name: 'r', version: '1.0.0' }) },
+  })
+  await t.rejects(npm.exec('patch', ['update']), { code: 'EUSAGE' })
+})
+
+// install a single version of `name` and commit a patch, then hand-edit the selector to `selectorKey`.
+const installAndPatch = async (t, name, { src = 'x\n', addFile, selectorKey } = {}) => {
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': src })
+  await npm.exec('install', [])
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  if (addFile) {
+    fs.writeFileSync(path.join(editDir, addFile), 'extra\n')
+  } else {
+    fs.writeFileSync(path.join(editDir, 'index.js'), 'A\n')
+  }
+  await npm.exec('patch', ['commit', editDir])
+  if (selectorKey) {
+    const pkg = readJson(path.join(npm.prefix, 'package.json'))
+    pkg.patchedDependencies = { [selectorKey]: pkg.patchedDependencies[`${name}@1.0.0`] }
+    fs.writeFileSync(path.join(npm.prefix, 'package.json'), JSON.stringify(pkg))
+  }
+  return { npm, joinedOutput, outputs }
+}
+
+t.test('update: exact selector with no --to is a no-op', async t => {
+  const { npm } = await installAndPatch(t, 'upd-noop')
+  await t.rejects(npm.exec('patch', ['update', 'upd-noop']), { code: 'EPATCHNOOP' })
+})
+
+t.test('update: a name-only selector resolves the installed version', async t => {
+  const { npm } = await installAndPatch(t, 'upd-nameonly', { selectorKey: 'upd-nameonly' })
+  // only 1.0.0 installed, so the name-only selector resolves to it -> no-op
+  await t.rejects(npm.exec('patch', ['update', 'upd-nameonly']), { code: 'EPATCHNOOP' })
+})
+
+t.test('update: a range matching no installed version rejects with EPATCHSTALE', async t => {
+  const { npm } = await installAndPatch(t, 'upd-norange', { selectorKey: 'upd-norange@^5.0.0' })
+  await t.rejects(npm.exec('patch', ['update', 'upd-norange']), { code: 'EPATCHSTALE' })
+})
+
+t.test('update: a patch that no longer applies to its baseline rejects with EPATCHBASE', async t => {
+  const name = 'upd-drift'
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'real\n', '2.0.0': 'real2\n' })
+  await npm.exec('install', [])
+  // a patch whose context does not exist in the baseline tarball cannot be re-applied during rebase
+  fs.mkdirSync(path.join(npm.prefix, 'patches'), { recursive: true })
+  fs.writeFileSync(path.join(npm.prefix, 'patches', `${name}@1.0.0.patch`),
+    '--- a/index.js\t\n+++ b/index.js\t\n@@ -1,1 +1,1 @@\n-NOT-THE-REAL-LINE\n+changed\n')
+  const pkg = readJson(path.join(npm.prefix, 'package.json'))
+  pkg.patchedDependencies = { [`${name}@1.0.0`]: `patches/${name}@1.0.0.patch` }
+  fs.writeFileSync(path.join(npm.prefix, 'package.json'), JSON.stringify(pkg))
+  npm.config.set('to', '2.0.0')
+  await t.rejects(npm.exec('patch', ['update', name]), { code: 'EPATCHBASE' })
+})
+
+t.test('update: when the new version already contains the patch, reports EPATCHEMPTY', async t => {
+  const name = 'upd-empty'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+  // v2 already has the value the patch sets, so the rebase yields nothing
+  await setupVersions(npm, registry, name, { '1.0.0': 'old\n', '2.0.0': 'new\n' })
+  await npm.exec('install', [])
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'new\n')
+  await npm.exec('patch', ['commit', editDir])
+  npm.config.set('to', '2.0.0')
+  await t.rejects(npm.exec('patch', ['update', name]), { code: 'EPATCHEMPTY' })
+})
+
+t.test('update: a patches-dir outside the project is rejected', async t => {
+  const name = 'upd-unsafe'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'a\nb\nc\n', '2.0.0': 'a\nb\nCC\n' })
+  await npm.exec('install', [])
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'AA\nb\nc\n')
+  await npm.exec('patch', ['commit', editDir])
+  npm.config.set('to', '2.0.0')
+  npm.config.set('patches-dir', '../outside')
+  await t.rejects(npm.exec('patch', ['update', name]), { code: 'EPATCHUNSAFE' })
+})
+
+t.test('update --to keeps a range selector when the lockfile is unknown', async t => {
+  const name = 'upd-keep'
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        dependencies: { [name]: '*' },
+        patchedDependencies: { [`${name}@^1.0.0`]: `patches/${name}@1.0.0.patch` },
+      }),
+      patches: { [`${name}@1.0.0.patch`]: '--- /dev/null\t\n+++ b/EXTRA.txt\t\n@@ -0,0 +1 @@\n+extra\n' },
+    },
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'x\n', '2.0.0': 'x\n' })
+  // no install -> no lockfile -> installed versions unknown; --to drives the target
+  npm.config.set('to', '2.0.0')
+  await npm.exec('patch', ['update', name])
+  t.same(readJson(path.join(npm.prefix, 'package.json')).patchedDependencies, {
+    [`${name}@^1.0.0`]: `patches/${name}@1.0.0.patch`,
+    [`${name}@2.0.0`]: `patches/${name}@2.0.0.patch`,
+  }, 'range kept, new exact entry added')
+})
+
+t.test('commit: a foreign update marker does not hijack a normal commit', async t => {
+  const name = 'upd-foreign'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'a\n' })
+  await npm.exec('install', [])
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'patched\n')
+  // a valid marker naming a different package must be ignored, not acted on
+  fs.writeFileSync(path.join(editDir, '.npm-patch-update.json'), JSON.stringify({ removeKey: 'other-pkg@9.9.9' }))
+  await npm.exec('patch', ['commit', editDir])
+
+  const pkg = readJson(path.join(npm.prefix, 'package.json'))
+  t.ok(pkg.patchedDependencies[`${name}@1.0.0`], 'normal commit recorded its own selector')
+  // a normal commit does a full reify, so node_modules is patched (not the metadata-only update path)
+  t.equal(fs.readFileSync(path.join(npm.prefix, 'node_modules', name, 'index.js'), 'utf8'), 'patched\n',
+    'node_modules is patched despite the foreign marker')
+})
+
+t.test('commit: an invalid update marker rejects with EPATCHBADMARKER', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: { 'package.json': JSON.stringify({ name: 'r', version: '1.0.0' }) },
+  })
+  const editDir = path.join(npm.prefix, 'ed')
+  fs.mkdirSync(editDir, { recursive: true })
+  fs.writeFileSync(path.join(editDir, 'package.json'), JSON.stringify({ name: 'foo', version: '1.0.0' }))
+  fs.writeFileSync(path.join(editDir, '.npm-patch-update.json'), 'not json')
+  await t.rejects(npm.exec('patch', ['commit', editDir]), { code: 'EPATCHBADMARKER' })
+})
+
 t.test('rm: no pkg arg rejects with EUSAGE', async t => {
   const { npm } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },
@@ -536,7 +922,7 @@ t.test('rm: no pkg arg rejects with EUSAGE', async t => {
 t.test('completion lists subcommands at the right depth', async t => {
   t.same(
     await Patch.completion({ conf: { argv: { remain: ['npm', 'patch'] } } }),
-    ['add', 'commit', 'ls', 'rm']
+    ['add', 'commit', 'update', 'ls', 'rm']
   )
   t.same(await Patch.completion({ conf: { argv: { remain: ['npm', 'patch', 'add', 'x'] } } }), [])
 })
