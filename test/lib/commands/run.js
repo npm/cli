@@ -760,7 +760,7 @@ t.test('workspaces', async t => {
     ])
   })
 
-  t.test('failed workspace run fails fast', async t => {
+  t.test('failed workspace run bail on failed tests', async t => {
     const { cleanLogs, RUN_SCRIPTS, prefix } = await mockWorkspaces(t, {
       runScript: (opts) => {
         if (opts.pkg.name === 'a') {
@@ -769,7 +769,7 @@ t.test('workspaces', async t => {
       },
       exec: ['glorp'],
       workspaces: ['a', 'b'],
-      'fail-fast': true
+      'bail': true
     })
 
     t.matchSnapshot(

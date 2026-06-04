@@ -27,6 +27,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "audit": true,
   "audit-level": null,
   "auth-type": "web",
+  "bail": false,
   "before": null,
   "bin-links": true,
   "browser": null,
@@ -58,7 +59,6 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "expect-result-count": null,
   "expect-results": null,
   "expires": null,
-  "fail-fast": false,
   "fetch-retries": 2,
   "fetch-retry-factor": 10,
   "fetch-retry-maxtimeout": 60000,
@@ -212,6 +212,7 @@ also = null
 audit = true
 audit-level = null
 auth-type = "web"
+bail = false
 before = null
 bin-links = true
 browser = null
@@ -245,7 +246,6 @@ engine-strict = false
 expect-result-count = null
 expect-results = null
 expires = null
-fail-fast = false
 fetch-retries = 2
 fetch-retry-factor = 10
 fetch-retry-maxtimeout = 60000

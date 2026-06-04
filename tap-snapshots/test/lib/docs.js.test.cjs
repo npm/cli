@@ -389,6 +389,23 @@ config is given, this value will always be set to \`legacy\`.
 
 
 
+#### \`bail\`
+
+* Default: false
+* Type: Boolean
+
+Designed to be used with the \`--workspaces\` or multiple \`--workspace\`
+option.
+
+If true, when executing commands with the \`run\` command across a workspace. Rather
+than the default behavior of running the command in all packages in the
+workspace and logging the failure, on the first failing package, exit with
+the error code of the failing command. This is helpful if packages have
+relationship and the work should not continue if the previous package
+failed.
+
+
+
 #### \`before\`
 
 * Default: null
@@ -725,23 +742,6 @@ This config cannot be used with: \`expect-result-count\`
 When creating a Granular Access Token with \`npm token create\`, this sets the
 expiration in days. If not specified, the server will determine the default
 expiration.
-
-
-
-#### \`fail-fast\`
-
-* Default: false
-* Type: Boolean
-
-Designed to be used with the \`--workspaces\` or multiple \`--workspace\`
-option.
-
-If true, when executing commands with the \`run\` across a workspace. Rather
-than the default behavior of running the command in all packages in the
-workspace and logging the failure, on the first failing package, exit with
-the error code of the failing command. This is helpful if packages have
-relationship and the work should not continue if the previous package
-failed.
 
 
 
@@ -2441,6 +2441,7 @@ Array [
   "audit",
   "audit-level",
   "auth-type",
+  "bail",
   "before",
   "bin-links",
   "browser",
@@ -2474,7 +2475,6 @@ Array [
   "expect-result-count",
   "expect-results",
   "expires",
-  "fail-fast",
   "fetch-retries",
   "fetch-retry-factor",
   "fetch-retry-maxtimeout",
@@ -2769,9 +2769,9 @@ Array [
 
 exports[`test/lib/docs.js TAP config > keys that are not flattened 1`] = `
 Array [
+  "bail",
   "expect-result-count",
   "expect-results",
-  "fail-fast",
   "init-author-email",
   "init-author-name",
   "init-author-url",
@@ -5734,7 +5734,7 @@ npm run <command> [-- <args>]
 Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--if-present] [--ignore-scripts]
-[--foreground-scripts] [--script-shell <script-shell>] [--fail-fast]
+[--foreground-scripts] [--script-shell <script-shell>] [--bail]
 
   -w|--workspace
     Enable running a command in the context of the configured workspaces of the
@@ -5775,7 +5775,7 @@ aliases: run-script, rum, urn
 #### \`ignore-scripts\`
 #### \`foreground-scripts\`
 #### \`script-shell\`
-#### \`fail-fast\`
+#### \`bail\`
 `
 
 exports[`test/lib/docs.js TAP usage sbom > must match snapshot 1`] = `

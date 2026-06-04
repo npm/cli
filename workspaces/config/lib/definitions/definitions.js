@@ -767,13 +767,13 @@ const definitions = {
     `,
     flatten,
   }),
-  'fail-fast':  new Definition('fail-fast', {
+  'bail':  new Definition('bail', {
     default: false,
     type: Boolean,
     description: `
       Designed to be used with the \`--workspaces\` or multiple \`--workspace\` option.
 
-      If true, when executing commands with the \`run\` across a workspace. 
+      If true, when executing commands with the \`run\` command across a workspace. 
       Rather than the default behavior of running the command in all packages 
       in the workspace and logging the failure, on the first failing package,
       exit with the error code of the failing command. This is helpful if 

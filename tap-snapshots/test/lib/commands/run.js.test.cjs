@@ -50,7 +50,7 @@ Scripts available in x@1.2.3 via \`npm run\`:
     echo doing the glerp glop
 `
 
-exports[`test/lib/commands/run.js TAP workspaces failed workspace run fails fast > should log error msgs for each workspace script 1`] = `
+exports[`test/lib/commands/run.js TAP workspaces failed workspace run bail on failed tests > should log error msgs for each workspace script 1`] = `
 Lifecycle script \`glorp\` failed with error:
 code ERR
 workspace a@1.0.0
