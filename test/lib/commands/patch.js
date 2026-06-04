@@ -467,6 +467,64 @@ t.test('commit: no changes logs a warning and does not write a patch', async t =
   t.notOk(pkg.patchedDependencies, 'no patchedDependencies added when nothing changed')
 })
 
+t.test('commit: only package.json changed warns and writes no patch', async t => {
+  const { npm, logs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: basePrefix(),
+  })
+  await setupDep(npm, registry)
+  await npm.exec('install', [])
+
+  await npm.exec('patch', ['add', DEP_NAME])
+  const editDir = path.join(npm.prefix, 'clean-edit')
+  await pacote.extract(`${DEP_NAME}@${DEP_VERSION}`, editDir, npm.flatOptions)
+
+  // edit only package.json, which is excluded from patches
+  const pkgPath = path.join(editDir, 'package.json')
+  const edited = readJson(pkgPath)
+  edited.description = 'edited'
+  fs.writeFileSync(pkgPath, JSON.stringify(edited))
+
+  await npm.exec('patch', ['commit', editDir])
+  t.notOk(
+    fs.existsSync(path.join(npm.prefix, 'patches', `${DEP_NAME}@${DEP_VERSION}.patch`)),
+    'no patch file written when only package.json changed'
+  )
+  t.match(logs.warn.join('\n'), /only package.json changed/, 'warns package.json is not patchable')
+})
+
+t.test('commit: package.json change alongside code is dropped with a warning', async t => {
+  const { npm, logs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: basePrefix(),
+  })
+  await setupDep(npm, registry)
+  await npm.exec('install', [])
+
+  await npm.exec('patch', ['add', DEP_NAME])
+  const editDir = path.join(npm.prefix, 'clean-edit')
+  await pacote.extract(`${DEP_NAME}@${DEP_VERSION}`, editDir, npm.flatOptions)
+
+  // edit both package.json and a real file
+  const pkgPath = path.join(editDir, 'package.json')
+  const edited = readJson(pkgPath)
+  edited.description = 'edited'
+  fs.writeFileSync(pkgPath, JSON.stringify(edited))
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'module.exports = () => "patched"\n')
+
+  await npm.exec('patch', ['commit', editDir])
+  const patchPath = path.join(npm.prefix, 'patches', `${DEP_NAME}@${DEP_VERSION}.patch`)
+  t.ok(fs.existsSync(patchPath), 'patch written for the code change')
+  t.notMatch(fs.readFileSync(patchPath, 'utf8'), 'package.json', 'patch excludes package.json')
+  t.match(
+    logs.warn.join('\n'),
+    /changes to package.json are not included/,
+    'warns the package.json edit was ignored'
+  )
+})
+
 t.test('rm: no pkg arg rejects with EUSAGE', async t => {
   const { npm } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },
