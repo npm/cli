@@ -122,6 +122,30 @@ t.test('removing an extension on reinstall reverts the locked graph', async t =>
   t.notOk(lock.packages['node_modules/foo'].packageExtensionsApplied, 'foo provenance cleared')
 })
 
+t.test('adding an extension to an existing lockfile applies it on reinstall', async t => {
+  // first install with no extension, so the lockfile has foo but no bar
+  const dir = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', dependencies: { foo: '1.0.0' } }),
+    src: {
+      foo: { 'package.json': JSON.stringify({ name: 'foo', version: '1.0.0' }) },
+      bar: { 'package.json': JSON.stringify({ name: 'bar', version: '1.2.3' }) },
+    },
+  })
+  await register(t, dir, { withBar: false })
+  await newArb(dir).reify()
+  t.notOk(readLock(dir).packages['node_modules/bar'], 'no bar before the extension is added')
+
+  // add the extension and reinstall; the stale foo node must be rebuilt and gain the bar edge
+  fs.writeFileSync(join(dir, 'package.json'),
+    JSON.stringify({ name: 'root', dependencies: { foo: '1.0.0' }, packageExtensions: ext }))
+  await register(t, dir)
+  await newArb(dir).reify()
+  const lock = readLock(dir)
+  t.ok(lock.packages['node_modules/bar'], 'bar added after the extension is introduced')
+  t.strictSame(lock.packages['node_modules/foo'].packageExtensionsApplied,
+    { selector: 'foo@1', dependencies: ['bar'] }, 'provenance recorded for the newly extended node')
+})
+
 t.test('changing an extension range on reinstall re-resolves the edge', async t => {
   const dir = t.testdir({
     'package.json': JSON.stringify({ name: 'root', dependencies: { foo: '1.0.0' }, packageExtensions: ext }),
