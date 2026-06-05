@@ -308,6 +308,49 @@ t.test('ls', async t => {
     t.matchSnapshot(cleanCwd(result()), 'should contain overridden output')
   })
 
+  const packageExtensionsPrefix = {
+    'package.json': JSON.stringify({
+      name: 'test-package-extensions',
+      version: '1.0.0',
+      dependencies: { foo: '^1.0.0' },
+      packageExtensions: { 'foo@1': { dependencies: { bar: '^1.0.0' } } },
+    }),
+    node_modules: {
+      '.package-lock.json': JSON.stringify({
+        packages: {
+          'node_modules/foo': {
+            version: '1.0.0',
+            dependencies: { bar: '^1.0.0' },
+            packageExtensionsApplied: { selector: 'foo@1', dependencies: ['bar'] },
+          },
+          'node_modules/bar': { version: '1.0.0' },
+        },
+      }),
+      foo: {
+        'package.json': JSON.stringify({ name: 'foo', version: '1.0.0', dependencies: { bar: '^1.0.0' } }),
+      },
+      bar: { 'package.json': JSON.stringify({ name: 'bar', version: '1.0.0' }) },
+    },
+  }
+
+  t.test('packageExtensions dep', async t => {
+    const { npm, result, ls } = await mockLs(t, { config: {}, prefixDir: packageExtensionsPrefix })
+    touchHiddenPackageLock(npm.prefix)
+    await ls.exec([])
+    t.matchSnapshot(cleanCwd(result()), 'human output annotates the extended node')
+  })
+
+  t.test('packageExtensions dep --json', async t => {
+    const { npm, result, ls } = await mockLs(t, {
+      config: { json: true },
+      prefixDir: packageExtensionsPrefix,
+    })
+    touchHiddenPackageLock(npm.prefix)
+    await ls.exec([])
+    const applied = JSON.parse(result()).dependencies.foo.packageExtensionsApplied
+    t.match(applied, { selector: 'foo@1', dependencies: ['bar'] }, 'json output includes provenance')
+  })
+
   t.test('with filter arg', async t => {
     const config = {
       color: 'always',

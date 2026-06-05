@@ -160,6 +160,16 @@ class Edge {
       }
       if (this.#from) {
         explanation.from = this.#from.explain(null, seen)
+        // note when this edge was created by a root packageExtensions repair on the from node
+        const applied = this.#from.packageExtensionsApplied
+        if (applied) {
+          for (const field of ['dependencies', 'optionalDependencies', 'peerDependencies', 'peerDependenciesMeta']) {
+            if (applied[field]?.includes(this.#name)) {
+              explanation.packageExtensions = { selector: applied.selector, field }
+              break
+            }
+          }
+        }
       }
       this.#explanation = explanation
     }

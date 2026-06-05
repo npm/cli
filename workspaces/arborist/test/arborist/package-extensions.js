@@ -58,6 +58,35 @@ t.test('adds a missing dependency edge', async t => {
   t.equal(barEdge.to.version, '1.2.3', 'resolved to the highest 1.x')
   t.strictSame(foo.packageExtensionsApplied, { selector: 'foo@1', dependencies: ['bar'] },
     'provenance attached to the extended node')
+  t.strictSame(barEdge.explain().packageExtensions, { selector: 'foo@1', field: 'dependencies' },
+    'edge explanation records the extension provenance')
+})
+
+t.test('edge explanation omits provenance for non-extension edges', async t => {
+  // foo declares baz itself; the extension only adds bar
+  const registry = createRegistry(t)
+  const fooManifest = registry.manifest({
+    name: 'foo',
+    packuments: registry.packuments([{ version: '1.0.0', dependencies: { baz: '1.0.0' } }], 'foo'),
+  })
+  const barManifest = registry.manifest({ name: 'bar', packuments: registry.packuments(['1.2.3'], 'bar') })
+  const bazManifest = registry.manifest({ name: 'baz', packuments: registry.packuments(['1.0.0'], 'baz') })
+  await registry.package({ manifest: fooManifest })
+  await registry.package({ manifest: barManifest })
+  await registry.package({ manifest: bazManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      dependencies: { foo: '1.0.0' },
+      packageExtensions: { 'foo@1': { dependencies: { bar: '^1.0.0' } } },
+    }),
+  })
+  const tree = await buildIdeal(path)
+  const foo = tree.edgesOut.get('foo').to
+  t.ok(foo.edgesOut.get('bar').explain().packageExtensions, 'extension-created edge has provenance')
+  t.equal(foo.edgesOut.get('baz').explain().packageExtensions, undefined,
+    'a self-declared edge from the same node has no provenance')
 })
 
 t.test('composes with overrides', async t => {

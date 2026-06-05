@@ -556,6 +556,12 @@ exports[`test/lib/commands/ls.js TAP ls overridden dep w/ color > should contain
 [0m[0m
 `
 
+exports[`test/lib/commands/ls.js TAP ls packageExtensions dep > human output annotates the extended node 1`] = `
+test-package-extensions@1.0.0 {CWD}/prefix
+\`-- foo@1.0.0 packageExtensions: dependencies.bar
+  \`-- bar@1.0.0
+`
+
 exports[`test/lib/commands/ls.js TAP ls print deduped symlinks > should output tree containing linked deps 1`] = `
 print-deduped-symlinks@1.0.0 {CWD}/prefix
 +-- a@1.0.0
