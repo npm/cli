@@ -26,6 +26,7 @@ const fromPath = require('../from-path.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const { isReleaseAgeExcluded, trustedSpecName } = require('../release-age-exclude.js')
 const { resolvePatchedDependencies } = require('../patched-dependencies.js')
+const PackageExtensions = require('../package-extensions.js')
 const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
 const Node = require('../node.js')
@@ -98,6 +99,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   #loadFailures = new Set()
   #manifests = new Map()
   #mutateTree = false
+  #packageExtensions = null
   // a map of each module in a peer set to the thing that depended on
   // that set of peers in the first place.  Use a WeakMap so that we
   // don't hold onto references for nodes that are garbage collected.
@@ -175,6 +177,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     try {
       await this.#initTree()
+      this.#loadPackageExtensions()
       await this.#inflateAncientLockfile()
       await this.#applyUserRequests(options)
       await this.#buildDeps()
@@ -185,6 +188,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         path: this.path,
         allowUnusedPatches: this.options.allowUnusedPatches,
       })
+      this.#warnWorkspacePackageExtensions()
     } finally {
       timeEnd()
       this.finishTracker('idealTree')
@@ -228,6 +232,47 @@ module.exports = cls => class IdealTreeBuilder extends cls {
             node.inert = true
           }
         }
+      }
+    }
+  }
+
+  // Load the root project's packageExtensions rule set.
+  // Only the workspace root is authoritative, matching the root-only model of overrides.
+  // The canonical hash is stashed on the lockfile meta so commit() can persist it.
+  #loadPackageExtensions () {
+    const rootPkg = this.idealTree.target.package
+    this.#packageExtensions = new PackageExtensions(rootPkg.packageExtensions)
+    this.idealTree.meta.packageExtensionsHash = this.#packageExtensions.hash
+  }
+
+  // Apply a matching root packageExtension to a copy of a candidate manifest.
+  // Returns the possibly-extended manifest and the provenance to attach to the node.
+  // Workspace candidates are never extended; that warning is emitted separately.
+  #applyPackageExtension (pkg) {
+    if (!this.#packageExtensions?.present) {
+      return { pkg, applied: null }
+    }
+    const res = this.#packageExtensions.apply(pkg)
+    return res ? { pkg: res.pkg, applied: res.applied } : { pkg, applied: null }
+  }
+
+  // Warn when packageExtensions appears in a non-root workspace, or when a root selector matches a workspace member.
+  // Workspace package manifests are edited directly and are never extension targets.
+  #warnWorkspacePackageExtensions () {
+    if (!this.#packageExtensions?.present) {
+      return
+    }
+    for (const node of this.idealTree.inventory.values()) {
+      if (!node.isWorkspace) {
+        continue
+      }
+      if (node.package.packageExtensions !== undefined) {
+        log.warn('packageExtensions',
+          `"packageExtensions" in workspace ${node.name} is ignored; it is only honored at the workspace root`)
+      }
+      if (this.#packageExtensions.wouldMatch(node.name, node.version)) {
+        log.warn('packageExtensions',
+          `selector matches workspace package ${node.name}@${node.version}; edit its package.json directly instead of using packageExtensions`)
       }
     }
   }
@@ -1401,7 +1446,13 @@ This is a one-time fix-up, please be patient...
             )
             return this.#failureNode(name, parent, error, edge)
           }
-          return new Node({ name, pkg, parent, installLinks, legacyPeerDeps })
+          // Apply a matching root packageExtension to a manifest copy before the Node reads its dependency and peer edges.
+          const { pkg: extended, applied } = this.#applyPackageExtension(pkg)
+          const node = new Node({ name, pkg: extended, parent, installLinks, legacyPeerDeps })
+          if (applied) {
+            node.packageExtensionsApplied = applied
+          }
+          return node
         },
         error => this.#failureNode(name, parent, error, edge)
       )

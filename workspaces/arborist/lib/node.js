@@ -93,6 +93,7 @@ class Node {
       name, // allow setting name explicitly when we haven't set a path yet
       optional = true,
       overrides,
+      packageExtensionsApplied = null,
       parent,
       patched = null,
       path,
@@ -172,6 +173,9 @@ class Node {
     this.integrity = integrity || this.package._integrity || null
     // Patch record { path, integrity } or null, set from patchedDependencies or the lockfile.
     this.patched = patched || null
+    // Provenance for a root packageExtensions repair applied to this node's manifest, or null.
+    // Shape: { selector, dependencies?, optionalDependencies?, peerDependencies?, peerDependenciesMeta? }.
+    this.packageExtensionsApplied = packageExtensionsApplied
     this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
 
