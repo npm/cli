@@ -97,6 +97,41 @@ const matches = (node, key) => {
   }
 }
 
+const resolvedSourceSpecs = (node) => {
+  const specs = []
+  const seen = new Set()
+  const add = (spec) => {
+    if (typeof spec !== 'string' || spec === '' || seen.has(spec)) {
+      return
+    }
+    seen.add(spec)
+    specs.push(spec)
+  }
+
+  add(node?.resolved)
+
+  if (!node?.resolved && node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+    let hasIncomingLink = false
+    for (const link of node.linksIn) {
+      hasIncomingLink = true
+      add(link.resolved)
+    }
+
+    if (hasIncomingLink) {
+      // Link targets for local directory deps are separate inventory nodes
+      // whose own `resolved` is null. The incoming Link carries the saved spec
+      // (for example `file:../pkg`, relative to node_modules), while policy
+      // entries written by hand often use the dependency spec from package.json
+      // (for example `file:pkg`, resolved by npa to this target path). Include
+      // the real target paths so both forms can match the same local dep.
+      add(node.realpath)
+      add(node.path)
+    }
+  }
+
+  return specs
+}
+
 const matchRegistry = (node, parsed) => {
   // If this node is not a registry dep, refuse the match. A registry-style
   // key (`pkg`, `pkg@1`, `pkg@1 || 2`) must not match a tarball or git node
@@ -282,17 +317,13 @@ const matchGit = (node, parsed) => {
 }
 
 const matchFileOrDir = (node, parsed) => {
-  if (!node.resolved) {
-    return false
-  }
-  return node.resolved === parsed.saveSpec || node.resolved === parsed.fetchSpec
+  return resolvedSourceSpecs(node)
+    .some(resolved => resolved === parsed.saveSpec || resolved === parsed.fetchSpec)
 }
 
 const matchRemote = (node, parsed) => {
-  if (!node.resolved) {
-    return false
-  }
-  return node.resolved === parsed.fetchSpec || node.resolved === parsed.saveSpec
+  return resolvedSourceSpecs(node)
+    .some(resolved => resolved === parsed.fetchSpec || resolved === parsed.saveSpec)
 }
 
 const isRegistryNode = (node) => {
@@ -337,4 +368,5 @@ module.exports = isScriptAllowed
 module.exports.isScriptAllowed = isScriptAllowed
 module.exports.isExactVersionDisjunction = isExactVersionDisjunction
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
+module.exports.resolvedSourceSpecs = resolvedSourceSpecs
 module.exports.trustedDisplay = trustedDisplay
