@@ -37,6 +37,7 @@
     "semver": "^7.3.7",
     "ssri": "^14.0.0",
     "treeverse": "^3.0.0",
+    "validate-npm-package-name": "^7.0.2",
     "walk-up-path": "^4.0.0"
   },
   "devDependencies": {
