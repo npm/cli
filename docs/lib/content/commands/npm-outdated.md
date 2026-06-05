@@ -18,7 +18,7 @@ Use `--all` to find all outdated meta-dependencies as well.
 In the output:
 
 * `wanted` is the maximum version of the package that satisfies the semver range specified in `package.json`.
-  If there's no available semver range (i.e. you're running `npm outdated --global`, or the package isn't included in `package.json`), then `wanted` shows the currently-installed version.
+  If there's no available semver range (i.e. you're running `npm outdated --global`, or the package isn't included in `package.json`), then `wanted` shows the latest version.
 * `latest` is the version of the package tagged as latest in the registry.
   Running `npm publish` with no special configuration will publish the package with a dist-tag of `latest`.
   This may or may not be the maximum version of the package, or the most-recently published version of the package, depending on how the package's developer manages the latest [dist-tag](/commands/npm-dist-tag).
