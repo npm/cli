@@ -452,6 +452,7 @@ t.test('isolated mode (linked): bundled IsolatedNode is blocked', async t => {
 
   const store = new IsolatedNode({
     isInStore: true,
+    isRegistryDependency: true, // carried from the source node by #externalProxy
     location: 'node_modules/.store/store-pkg@1.0.0/node_modules/store-pkg',
     name: 'store-pkg',
     package: { name: 'store-pkg', version: '1.0.0' },
