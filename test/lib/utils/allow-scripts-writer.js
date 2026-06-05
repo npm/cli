@@ -70,6 +70,23 @@ t.test('nameKeyFor / versionedKeyFor — local directory link target', async t =
   )
 })
 
+t.test('nameKeyFor / versionedKeyFor — empty link target has no portable file key', async t => {
+  const targetPath = path.resolve('local')
+  const n = {
+    name: 'local',
+    packageName: 'local',
+    version: '1.0.0',
+    resolved: null,
+    path: targetPath,
+    realpath: targetPath,
+    linksIn: new Set(),
+  }
+
+  t.equal(nameKeyFor(n), null)
+  t.equal(versionedKeyFor(n), null)
+  t.strictSame(applyApprovalForPackage({}, [n], { pin: true }).allowScripts, {})
+})
+
 t.test('isSingleVersionPin', async t => {
   t.ok(isSingleVersionPin('pkg@1.2.3'))
   t.notOk(isSingleVersionPin('pkg'))

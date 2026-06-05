@@ -110,19 +110,23 @@ const resolvedSourceSpecs = (node) => {
 
   add(node?.resolved)
 
-  if (node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+  if (!node?.resolved && node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+    let hasIncomingLink = false
     for (const link of node.linksIn) {
+      hasIncomingLink = true
       add(link.resolved)
     }
 
-    // Link targets for local directory deps are separate inventory nodes
-    // whose own `resolved` is null. The incoming Link carries the saved spec
-    // (for example `file:../pkg`, relative to node_modules), while policy
-    // entries written by hand often use the dependency spec from package.json
-    // (for example `file:pkg`, resolved by npa to this target path). Include
-    // the real target paths so both forms can match the same local dep.
-    add(node.realpath)
-    add(node.path)
+    if (hasIncomingLink) {
+      // Link targets for local directory deps are separate inventory nodes
+      // whose own `resolved` is null. The incoming Link carries the saved spec
+      // (for example `file:../pkg`, relative to node_modules), while policy
+      // entries written by hand often use the dependency spec from package.json
+      // (for example `file:pkg`, resolved by npa to this target path). Include
+      // the real target paths so both forms can match the same local dep.
+      add(node.realpath)
+      add(node.path)
+    }
   }
 
   return specs
