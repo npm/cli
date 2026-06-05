@@ -20,6 +20,7 @@ class IsolatedNode {
   inventory = new IsolatedInventory()
   isInStore = false
   inBundle = false
+  isRegistryDependency = false
   linksIn = new Set()
   meta = { loadedFromDisk: false }
   optional = false
@@ -49,6 +50,9 @@ class IsolatedNode {
     }
     if (options.inBundle) {
       this.inBundle = true
+    }
+    if (options.isRegistryDependency) {
+      this.isRegistryDependency = true
     }
     if (options.optional) {
       this.optional = true

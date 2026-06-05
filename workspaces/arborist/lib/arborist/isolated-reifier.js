@@ -42,6 +42,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     const newChild = new IsolatedNode({
       isInStore,
       inBundle,
+      isRegistryDependency: node.isRegistryDependency,
       location,
       name: node.packageName || node.name,
       optional: node.optional,
@@ -153,6 +154,9 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.optional = node.optional
     result.resolved = node.resolved
     result.version = node.version
+    // Carry the source node's registry-dependency flag so the store node retains it.
+    // IsolatedNode has no edges to recompute it from, and reify's registry-tarball allow-remote exemption depends on it.
+    result.isRegistryDependency = node.isRegistryDependency
     return result
   }
 
