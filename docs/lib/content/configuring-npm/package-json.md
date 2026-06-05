@@ -1033,6 +1033,65 @@ For example, to replace a transitive dependency with a fork:
 }
 ```
 
+### packageExtensions
+
+`packageExtensions` lets a project apply small, declarative repairs to the manifests of third-party dependencies before npm resolves the dependency tree.
+Use it to add a missing `dependencies`, `optionalDependencies`, or `peerDependencies` entry, or to correct `peerDependencies` and `peerDependenciesMeta`, while you wait for the upstream package to publish a fix.
+
+This is especially useful with [`install-strategy=linked`](/using-npm/config#install-strategy), where dependencies are fully isolated and a package only sees what it actually declared.
+A package that worked under a hoisted layout because a dependency happened to be hoisted above it can fail under `linked`; `packageExtensions` records the missing edge as explicit, reviewable, root-owned policy.
+
+`packageExtensions` complements [`overrides`](#overrides): `overrides` changes what an existing dependency edge resolves to, while `packageExtensions` adds or corrects the dependency metadata that creates the edge in the first place.
+For changing the resolved version of a dependency that is already declared, use `overrides`.
+
+Like `overrides`, `packageExtensions` is only honored in the root `package.json` of a project (the workspace root in a workspace).
+The field in installed dependencies and in non-root workspace packages is ignored.
+
+Each key is a package selector: a package name with an optional semver range.
+
+```json
+{
+  "packageExtensions": {
+    "broken-package@1": {
+      "dependencies": {
+        "missing-runtime-dep": "^2.0.0"
+      }
+    },
+    "typescript-plugin@4.3.0": {
+      "peerDependencies": {
+        "typescript": ">=5"
+      },
+      "peerDependenciesMeta": {
+        "typescript": {
+          "optional": true
+        }
+      }
+    },
+    "@scope/uses-types@2": {
+      "dependencies": {
+        "@types/node": "^22.0.0"
+      }
+    }
+  }
+}
+```
+
+- `"foo"` matches all versions of `foo`.
+- `"foo@1"` matches versions satisfying `1`.
+- `"@scope/foo@^2.3.0"` matches versions satisfying `^2.3.0`.
+
+Selectors match a candidate package's own `name` and `version`. They do not accept dist-tags, git, file, directory, URL, or `npm:` alias specs. For aliases, the selector matches the underlying package name. At most one selector may match a given package; overlapping selectors that both match the same package fail the install.
+
+Only `dependencies`, `optionalDependencies`, `peerDependencies`, and `peerDependenciesMeta` may be extended. The merge rules are:
+
+- `dependencies` and `optionalDependencies` entries add a missing dependency only. Adding a name that the package already declares in either field is an error; use `overrides` to change a version.
+- `peerDependencies` entries are merged by name, replacing an existing range.
+- `peerDependenciesMeta` entries are merged by name and then by key, so you can add `optional: true` without dropping other metadata. Every `peerDependenciesMeta` entry must correspond to a `peerDependencies` entry.
+
+Deletion is not supported; a `null`, `false`, or `"-"` value is an error.
+
+`packageExtensions` does not rewrite the installed package's `package.json` on disk and does not modify `bundleDependencies`. Affected packages are recorded in `package-lock.json` and surfaced by [`npm explain`](/commands/npm-explain) and [`npm ls`](/commands/npm-ls), so each repair is easy to audit and to remove once upstream is fixed.
+
 ### engines
 
 You can specify the version of node that your stuff works on:
