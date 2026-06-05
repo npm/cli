@@ -648,7 +648,7 @@ t.test('update conflict leaves an edit dir; commit finalizes the rename', async 
   t.notOk(fs.existsSync(path.join(npm.prefix, 'patches', `${name}@1.0.0.patch`)), 'old patch file removed')
 })
 
-t.test('update conflict on a range selector writes no rename marker', async t => {
+t.test('update conflict on a name-only selector forks and commits without EPATCHUNUSED', async t => {
   const name = 'upd-rconflict'
   const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },
@@ -662,17 +662,28 @@ t.test('update conflict on a range selector writes no rename marker', async t =>
   const addDir = joinedOutput().match(/directory: (.+)/)[1].trim()
   fs.writeFileSync(path.join(addDir, 'index.js'), 'a\nMINE\nc\n')
   await npm.exec('patch', ['commit', addDir])
-  // turn it into a name-only selector so the conflict path takes the non-exact branch
+  // turn it into a name-only selector so the conflict path takes the fork (non-exact) branch
   const pkg = readJson(path.join(npm.prefix, 'package.json'))
   pkg.patchedDependencies = { [name]: pkg.patchedDependencies[`${name}@1.0.0`] }
   fs.writeFileSync(path.join(npm.prefix, 'package.json'), JSON.stringify(pkg))
 
+  // --to 2.0.0 is not installed and conflicts; the fork must still leave a marker
   npm.config.set('to', '2.0.0')
   outputs.length = 0
   await npm.exec('patch', ['update', name])
   const editDir = joinedOutput().match(/Resolve the conflicts in: (.+)/)[1].trim()
-  t.notOk(fs.existsSync(path.join(editDir, '.npm-patch-update.json')),
-    'no rename marker for a non-exact selector')
+  t.same(readJson(path.join(editDir, '.npm-patch-update.json')), { name, removeKey: null },
+    'a fork still writes a marker, with removeKey null')
+
+  // resolve and commit: must finalize metadata-only, not fail with EPATCHUNUSED on the uninstalled 2.0.0
+  let src = fs.readFileSync(path.join(editDir, 'index.js'), 'utf8')
+  src = src.replace(/<<<<<<<[^\n]*\n[\s\S]*?=======\n([\s\S]*?)>>>>>>>[^\n]*\n/, '$1')
+  fs.writeFileSync(path.join(editDir, 'index.js'), src)
+  await npm.exec('patch', ['commit', editDir])
+
+  const after = readJson(path.join(npm.prefix, 'package.json')).patchedDependencies
+  t.ok(after[name], 'the name-only selector is kept')
+  t.ok(after[`${name}@2.0.0`], 'the new exact selector is added')
 })
 
 t.test('update: no registered patch rejects with EPATCHNOTFOUND', async t => {
@@ -889,7 +900,8 @@ t.test('commit: a foreign update marker does not hijack a normal commit', async 
   const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
   fs.writeFileSync(path.join(editDir, 'index.js'), 'patched\n')
   // a valid marker naming a different package must be ignored, not acted on
-  fs.writeFileSync(path.join(editDir, '.npm-patch-update.json'), JSON.stringify({ removeKey: 'other-pkg@9.9.9' }))
+  fs.writeFileSync(path.join(editDir, '.npm-patch-update.json'),
+    JSON.stringify({ name: 'other-pkg', removeKey: 'other-pkg@9.9.9' }))
   await npm.exec('patch', ['commit', editDir])
 
   const pkg = readJson(path.join(npm.prefix, 'package.json'))
