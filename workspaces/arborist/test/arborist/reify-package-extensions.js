@@ -13,6 +13,17 @@ const createRegistry = (t) => new MockRegistry({
   registry: 'https://registry.npmjs.org',
 })
 
+// Serve foo@1.0.0 and bar@1.2.3 as installable tarballs; bar is optional so a reify that does not need it leaves no unconsumed mock.
+const register = async (t, dir, { withBar = true } = {}) => {
+  const registry = createRegistry(t)
+  const fooManifest = registry.manifest({ name: 'foo', packuments: [{ version: '1.0.0' }] })
+  await registry.package({ manifest: fooManifest, tarballs: { '1.0.0': join(dir, 'src/foo') } })
+  if (withBar) {
+    const barManifest = registry.manifest({ name: 'bar', packuments: [{ version: '1.2.3' }] })
+    await registry.package({ manifest: barManifest, tarballs: { '1.2.3': join(dir, 'src/bar') } })
+  }
+}
+
 // foo@1.0.0 does not declare bar; both are served as installable tarballs from source dirs.
 const setup = async (t, { packageExtensions, dependencies = { foo: '1.0.0' }, overrides }) => {
   const dir = t.testdir({
@@ -22,11 +33,7 @@ const setup = async (t, { packageExtensions, dependencies = { foo: '1.0.0' }, ov
       bar: { 'package.json': JSON.stringify({ name: 'bar', version: '1.2.3' }) },
     },
   })
-  const registry = createRegistry(t)
-  const fooManifest = registry.manifest({ name: 'foo', packuments: [{ version: '1.0.0' }] })
-  const barManifest = registry.manifest({ name: 'bar', packuments: [{ version: '1.2.3' }] })
-  await registry.package({ manifest: fooManifest, tarballs: { '1.0.0': join(dir, 'src/foo') } })
-  await registry.package({ manifest: barManifest, tarballs: { '1.2.3': join(dir, 'src/bar') } })
+  await register(t, dir)
   return dir
 }
 
@@ -98,4 +105,49 @@ t.test('refuses a lockfile newer than the supported version', async t => {
   lock.lockfileVersion = 5
   fs.writeFileSync(join(dir, 'package-lock.json'), JSON.stringify(lock))
   await t.rejects(newArb(dir).loadVirtual(), { code: 'ELOCKFILEVERSION' }, 'too-new lockfile is rejected')
+})
+
+t.test('removing an extension on reinstall reverts the locked graph', async t => {
+  const dir = await setup(t, { packageExtensions: ext })
+  await newArb(dir).reify()
+  t.ok(readLock(dir).packages['node_modules/bar'], 'bar installed by the extension')
+
+  // remove the extension and reinstall; the stale extended manifest must not persist
+  fs.writeFileSync(join(dir, 'package.json'), JSON.stringify({ name: 'root', dependencies: { foo: '1.0.0' } }))
+  await register(t, dir, { withBar: false })
+  await newArb(dir).reify()
+  const lock = readLock(dir)
+  t.notOk(lock.packages['node_modules/bar'], 'bar removed once the extension is gone')
+  t.notOk(lock.packages[''].packageExtensionsHash, 'root hash cleared')
+  t.notOk(lock.packages['node_modules/foo'].packageExtensionsApplied, 'foo provenance cleared')
+})
+
+t.test('changing an extension range on reinstall re-resolves the edge', async t => {
+  const dir = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', dependencies: { foo: '1.0.0' }, packageExtensions: ext }),
+    src: {
+      foo: { 'package.json': JSON.stringify({ name: 'foo', version: '1.0.0' }) },
+      bar: { 'package.json': JSON.stringify({ name: 'bar', version: '1.2.3' }) },
+      bar2: { 'package.json': JSON.stringify({ name: 'bar', version: '2.0.0' }) },
+    },
+  })
+  const registerBoth = async () => {
+    const registry = createRegistry(t)
+    const fooManifest = registry.manifest({ name: 'foo', packuments: [{ version: '1.0.0' }] })
+    const barManifest = registry.manifest({ name: 'bar', packuments: [{ version: '1.2.3' }, { version: '2.0.0' }] })
+    await registry.package({ manifest: fooManifest, tarballs: { '1.0.0': join(dir, 'src/foo') } })
+    await registry.package({
+      manifest: barManifest,
+      tarballs: { '1.2.3': join(dir, 'src/bar'), '2.0.0': join(dir, 'src/bar2') },
+    })
+  }
+  await registerBoth()
+  await newArb(dir).reify()
+  t.equal(readLock(dir).packages['node_modules/bar'].version, '1.2.3', 'bar resolved to 1.x')
+
+  fs.writeFileSync(join(dir, 'package.json'),
+    JSON.stringify({ name: 'root', dependencies: { foo: '1.0.0' }, packageExtensions: { 'foo@1': { dependencies: { bar: '^2.0.0' } } } }))
+  await registerBoth()
+  await newArb(dir).reify()
+  t.equal(readLock(dir).packages['node_modules/bar'].version, '2.0.0', 'bar re-resolved to 2.x after the range change')
 })

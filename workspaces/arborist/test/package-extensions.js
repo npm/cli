@@ -20,6 +20,10 @@ t.test('parseSelector', async t => {
   for (const bad of ['foo@latest', 'foo@next', 'foo@git+https://x.com/a.git', 'foo@file:../x', 'foo@npm:bar@1', 'foo@https://x.com/a.tgz']) {
     t.throws(() => parseSelector(bad), { code: 'EEXTENSIONSELECTOR' }, `rejects spec selector ${bad}`)
   }
+  // a blank range is malformed; use the name-only form to match every version
+  for (const bad of ['foo@', 'foo@ ', '@scope/foo@']) {
+    t.throws(() => parseSelector(bad), { code: 'EEXTENSIONSELECTOR' }, `rejects blank range ${JSON.stringify(bad)}`)
+  }
   // invalid package names
   for (const bad of ['  @1', ' space ', '.hidden']) {
     t.throws(() => parseSelector(bad), { code: 'EEXTENSIONSELECTOR' }, `rejects invalid name ${bad}`)
@@ -56,6 +60,11 @@ t.test('constructor validation', async t => {
   for (const del of [null, false, '-']) {
     t.throws(() => new PackageExtensions({ foo: { dependencies: { bar: del } } }),
       { code: 'EEXTENSIONDELETE' }, `rejects deletion value ${JSON.stringify(del)}`)
+  }
+
+  for (const bad of [null, false, '-', 'x', 5]) {
+    t.throws(() => new PackageExtensions({ foo: { peerDependenciesMeta: { bar: bad } } }),
+      { code: 'EEXTENSIONVALUE' }, `rejects non-object peerDependenciesMeta value ${JSON.stringify(bad)}`)
   }
 })
 

@@ -241,8 +241,28 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   // The canonical hash is stashed on the lockfile meta so commit() can persist it.
   #loadPackageExtensions () {
     const rootPkg = this.idealTree.target.package
+    const lockedHash = this.idealTree.meta.packageExtensionsHash
     this.#packageExtensions = new PackageExtensions(rootPkg.packageExtensions)
     this.idealTree.meta.packageExtensionsHash = this.#packageExtensions.hash
+
+    // When the rule set has changed since the lockfile was written, the locked manifests for affected packages are stale.
+    // The locked manifest is the effective, already-extended manifest, so detach those nodes and rebuild them from fresh manifests under the current rules.
+    if (this.idealTree.meta.loadedFromDisk && lockedHash !== this.#packageExtensions.hash) {
+      for (const node of [...this.idealTree.inventory.values()]) {
+        if (node.isProjectRoot || node.isWorkspace || node.isTop) {
+          continue
+        }
+        // a node is affected if it carries provenance from the old rules or matches a current selector
+        const affected = node.packageExtensionsApplied ||
+          this.#packageExtensions.wouldMatch(node.packageName, node.version)
+        if (affected) {
+          for (const edge of node.edgesIn) {
+            this.#depsQueue.push(edge.from)
+          }
+          node.parent = null
+        }
+      }
+    }
   }
 
   // Apply a matching root packageExtension to a copy of a candidate manifest.

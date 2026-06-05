@@ -74,6 +74,21 @@ t.test('packageExtensions: invalid rule set surfaces the engine error', async t 
   t.match(errors[0], /Invalid: .*unsupported field/, 'reports the engine validation error')
 })
 
+t.test('packageExtensions: alias node matches the underlying package name', async t => {
+  // an aliased install: node.name is the alias, node.packageName is the real package
+  const node = {
+    name: 'my-alias',
+    packageName: 'real-pkg',
+    version: '1.0.0',
+    packageExtensionsApplied: { selector: 'real-pkg@1', dependencies: ['bar'] },
+  }
+  const errors = validatePackageExtensions(
+    tree({ hash: 'h', nodes: [node] }),
+    tree({ hash: 'h', packageExtensions: { 'real-pkg@1': { dependencies: { bar: '^1' } } } })
+  )
+  t.strictSame(errors, [], 'provenance validated against the underlying package name, not the alias')
+})
+
 t.test('packageExtensions: locked identity matching two selectors', async t => {
   const node = { name: 'foo', version: '1.0.0' }
   const errors = validatePackageExtensions(

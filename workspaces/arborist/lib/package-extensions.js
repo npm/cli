@@ -35,6 +35,12 @@ const parseSelector = key => {
   if (!validForOldPackages && !validForNewPackages) {
     throw err(`Invalid package name in packageExtensions selector: "${key}"`, 'EEXTENSIONSELECTOR', { selector: key })
   }
+  // A blank range such as "foo@" is malformed; the name-only form "foo" is how you match every version.
+  if (range !== null && range.trim() === '') {
+    throw err(
+      `Invalid packageExtensions selector: "${key}". Use the name only to match every version.`,
+      'EEXTENSIONSELECTOR', { selector: key })
+  }
   // A versioned selector must be a valid semver range, which rejects dist-tags, git, file, url, and alias specs.
   if (range !== null && semver.validRange(range, { loose: true }) === null) {
     throw err(
@@ -79,6 +85,14 @@ const validateExtensionObject = (key, ext) => {
           `packageExtensions["${key}"].${field}.${name} attempts deletion, which is not supported.`,
           'EEXTENSIONDELETE', { selector: key, field, name })
       }
+    }
+  }
+  // Each peerDependenciesMeta entry must be a non-null metadata object, never a deletion sentinel or primitive.
+  for (const [name, meta] of Object.entries(ext.peerDependenciesMeta || {})) {
+    if (meta === null || typeof meta !== 'object' || Array.isArray(meta)) {
+      throw err(
+        `packageExtensions["${key}"].peerDependenciesMeta.${name} must be an object`,
+        'EEXTENSIONVALUE', { selector: key, field: 'peerDependenciesMeta', name })
     }
   }
 }
