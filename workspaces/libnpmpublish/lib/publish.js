@@ -20,6 +20,12 @@ Remove the 'private' field from the package.json to publish it.`),
     )
   }
 
+  // packageExtensions is consumer-side root policy; warn that publishing it has no effect on consumers
+  if (manifest.packageExtensions !== undefined) {
+    log.warn('publish',
+      'packageExtensions is only honored at the project root and will not affect consumers of this package.')
+  }
+
   // spec is used to pick the appropriate registry/auth combo
   const spec = npa.resolve(manifest.name, manifest.version)
   opts = {
