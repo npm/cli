@@ -750,7 +750,8 @@ t.test('update: a missing lockfile with no --to rejects with EPATCHSTALE', async
     config: { 'ignore-scripts': true, audit: false },
     prefixDir: updatePrefix({ 'foo@^1.0.0': 'patches/foo@1.0.0.patch' }),
   })
-  await t.rejects(npm.exec('patch', ['update', 'foo']), { code: 'EPATCHSTALE' })
+  await t.rejects(npm.exec('patch', ['update', 'foo']),
+    { code: 'EPATCHSTALE', message: /could not read the lockfile/ })
 })
 
 t.test('update: wrong arg count rejects with EUSAGE', async t => {
@@ -800,7 +801,8 @@ t.test('update: a name-only selector resolves the installed version', async t =>
 
 t.test('update: a range matching no installed version rejects with EPATCHSTALE', async t => {
   const { npm } = await installAndPatch(t, 'upd-norange', { selectorKey: 'upd-norange@^5.0.0' })
-  await t.rejects(npm.exec('patch', ['update', 'upd-norange']), { code: 'EPATCHSTALE' })
+  await t.rejects(npm.exec('patch', ['update', 'upd-norange']),
+    { code: 'EPATCHSTALE', message: /no installed version matches the patch selector "upd-norange@\^5.0.0"/ })
 })
 
 t.test('update: a patch that no longer applies to its baseline rejects with EPATCHBASE', async t => {
