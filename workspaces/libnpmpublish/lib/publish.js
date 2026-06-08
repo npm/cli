@@ -20,10 +20,12 @@ Remove the 'private' field from the package.json to publish it.`),
     )
   }
 
-  // packageExtensions is consumer-side root policy; warn that publishing it has no effect on consumers
+  // packageExtensions is root-only project policy and must never reach the registry manifest or the published tarball
   if (manifest.packageExtensions !== undefined) {
-    log.warn('publish',
-      'packageExtensions is only honored at the project root and will not affect consumers of this package.')
+    throw Object.assign(
+      new Error('packageExtensions is only honored at the project root and must not be published.'),
+      { code: 'EPACKAGEEXTENSIONS' }
+    )
   }
 
   // spec is used to pick the appropriate registry/auth combo

@@ -1046,6 +1046,7 @@ For changing the resolved version of a dependency that is already declared, use 
 
 Like `overrides`, `packageExtensions` is only honored in the root `package.json` of a project (the workspace root in a workspace).
 The field in installed dependencies and in non-root workspace packages is ignored.
+Because it is root-only project policy, npm refuses to publish a non-private package that contains `packageExtensions`; it remains available to private packages and unpublished local projects.
 
 Each key is a package selector: a package name with an optional semver range.
 

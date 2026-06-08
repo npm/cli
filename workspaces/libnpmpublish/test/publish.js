@@ -129,58 +129,21 @@ t.test('publish strips patchedDependencies from the registry manifest', async t 
   t.ok(ret, 'publish succeeded with patchedDependencies stripped')
 })
 
-t.test('warns when publishing a package with packageExtensions', async t => {
+t.test('fails when publishing a package with packageExtensions', async t => {
   const { publish } = t.mock('..')
-  const registry = new MockRegistry({
-    tap: t,
-    registry: opts.registry,
-    authorization: token,
-  })
+  // no registry interceptor: the publish must fail before any request is made
   const manifest = {
     name: 'libnpmpublish-test',
     version: '1.0.0',
     description: 'test libnpmpublish package',
     packageExtensions: { 'foo@1': { dependencies: { bar: '^1.0.0' } } },
   }
-  const spec = npa(manifest.name)
 
-  // the published version still carries packageExtensions; the nock body proves it is not stripped
-  const packument = {
-    _id: manifest.name,
-    name: manifest.name,
-    description: manifest.description,
-    'dist-tags': { latest: '1.0.0' },
-    versions: {
-      '1.0.0': {
-        _id: `${manifest.name}@${manifest.version}`,
-        _nodeVersion: process.versions.node,
-        ...manifest,
-        dist: {
-          shasum,
-          integrity: integrity.sha512[0].toString(),
-          tarball: 'http://mock.reg/libnpmpublish-test/-/libnpmpublish-test-1.0.0.tgz',
-        },
-      },
-    },
-    access: null,
-    _attachments: {
-      'libnpmpublish-test-1.0.0.tgz': {
-        content_type: 'application/octet-stream',
-        data: tarData.toString('base64'),
-        length: tarData.length,
-      },
-    },
-  }
-
-  const warnings = []
-  const onlog = (level, ...args) => level === 'warn' && warnings.push(args.join(' '))
-  process.on('log', onlog)
-  t.teardown(() => process.removeListener('log', onlog))
-
-  registry.nock.put(`/${spec.escapedName}`, packument).reply(201, {})
-  await publish(manifest, tarData, { ...opts, npmVersion: null })
-  t.match(warnings.join('\n'), /packageExtensions is only honored at the project root/,
-    'warns that packageExtensions does not affect consumers')
+  await t.rejects(
+    publish(manifest, tarData, { ...opts, npmVersion: null }),
+    { code: 'EPACKAGEEXTENSIONS', message: /must not be published/ },
+    'refuses to publish a package containing packageExtensions'
+  )
 })
 
 t.test('scoped publish', async t => {
