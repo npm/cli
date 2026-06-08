@@ -3904,6 +3904,36 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     await t.resolves(arb.reify(), 'registry tarball is allowed under linked strategy')
   })
 
+  t.test('allowRemote=root allows root-direct remote tarball under linked install strategy', async t => {
+    // The linked strategy extracts store nodes as IsolatedNode, which has no edgesIn to recompute root-ness from.
+    // isRootDependency must be carried from the source tree node, otherwise allow-remote=root mis-fires on a genuine remote tarball that is a direct dep of the project root.
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: 'https://remote.example.com/abbrev-1.1.1.tgz',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://remote.example.com')
+      .get('/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'root',
+      installStrategy: 'linked',
+    })
+
+    await t.resolves(arb.reify(), 'root-direct remote tarball is allowed under linked strategy with allow-remote=root')
+  })
+
   t.test('registry with different protocol should swap protocol', async (t) => {
     const abbrevPackument4 = JSON.stringify({
       _id: 'abbrev',

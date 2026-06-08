@@ -707,7 +707,8 @@ module.exports = cls => class Reifier extends cls {
         integrity: node.integrity,
         // A node counts as "root" for allow-* enforcement if it satisfies at least one valid dependency edge declared by the project root or a workspace.
         // node.parent is unsafe here: after hoisting, transitive packages can have the project root as their tree parent.
-        _isRoot: [...node.edgesIn].some(e =>
+        // In the linked strategy the store node has no edgesIn, so isolated-reifier precomputes isRootDependency from the source node's edges.
+        _isRoot: node.isRootDependency || [...node.edgesIn].some(e =>
           e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
         ),
         // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.

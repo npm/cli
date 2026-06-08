@@ -21,6 +21,7 @@ class IsolatedNode {
   isInStore = false
   inBundle = false
   isRegistryDependency = false
+  isRootDependency = false
   linksIn = new Set()
   meta = { loadedFromDisk: false }
   optional = false
@@ -53,6 +54,9 @@ class IsolatedNode {
     }
     if (options.isRegistryDependency) {
       this.isRegistryDependency = true
+    }
+    if (options.isRootDependency) {
+      this.isRootDependency = true
     }
     if (options.optional) {
       this.optional = true
