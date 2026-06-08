@@ -17,6 +17,13 @@ body:
     options:
     - label: I am using the latest npm
       required: true
+- type: checkboxes
+  attributes:
+    label: This is not just a request to bump a dependency for a CVE
+    description: npm bundles its dependencies and updates them on a regular cadence, so transitive-dependency CVEs are picked up automatically. Issues opened solely to request a dependency bump for a CVE will be closed. To report an actual vulnerability in npm, please follow our [security policy](https://github.com/npm/cli/blob/latest/SECURITY.md) instead.
+    options:
+    - label: This is not solely a request to bump a dependency for a CVE
+      required: true
 - type: textarea
   attributes:
     label: Current Behavior

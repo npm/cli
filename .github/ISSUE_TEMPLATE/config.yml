@@ -1,5 +1,8 @@
 blank_issues_enabled: true
 contact_links:
+  - name: 🔒 Dependency CVE / security advisory in a bundled dependency
+    url: https://github.com/npm/cli/blob/latest/SECURITY.md
+    about: npm bundles its dependencies and updates them regularly, so transitive-dependency CVEs are picked up automatically. Please don't open an issue just to request a dependency bump for a CVE. To report a vulnerability in npm, see our security policy.
   - name: ❓ Help with issues in older versions of the CLI
     url: https://github.community/c/software-development/47
     about: Find/file tickets with the community
