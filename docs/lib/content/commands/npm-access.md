@@ -44,7 +44,7 @@ Management of teams and team memberships is done with the `npm team` command.
 
 ### See Also
 
-* [`libnpmaccess`](https://npm.im/libnpmaccess)
+* [`libnpmaccess`](https://npm.im/libnpmaccessy)
 * [npm team](/commands/npm-team)
 * [npm publish](/commands/npm-publish)
 * [npm config](/commands/npm-config)
