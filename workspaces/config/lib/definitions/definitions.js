@@ -2329,16 +2329,16 @@ const definitions = {
     default: false,
     type: Boolean,
     description: `
-      If \`true\`, turn the install-script policy from a silent skip into a
-      hard error: any dependency with install scripts not covered by
-      \`allowScripts\` will fail the install instead of being silently
-      skipped.
+      If \`true\`, turn the install-script policy from a warning into a hard
+      error: any dependency with install scripts that is not covered by
+      \`allowScripts\` will fail the install instead of being blocked with a
+      warning.
 
-      By default, dependencies whose install scripts are not approved in
-      \`allowScripts\` are silently skipped; this setting promotes that
-      silent skip into a hard failure, which is the recommended posture
-      for CI. \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\`
-      both override this setting.
+      Dependencies explicitly denied with \`false\` in \`allowScripts\` are
+      always silently skipped; this setting only affects unreviewed entries
+      (packages with install scripts that are neither approved nor denied).
+      \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both
+      override this setting.
     `,
     flatten,
   }),
