@@ -2039,6 +2039,56 @@ t.test('removed workspace is pruned from package-lock.json', async t => {
   }
 })
 
+// Regression for https://github.com/npm/cli/issues/9433: a file: dependency
+// that itself has a file: dependency leaves a nested extraneous fsChild. That
+// entry must stay in package-lock.json, otherwise `npm ci` reports the nested
+// dep as missing and refuses to install.
+t.test('nested file: dep keeps extraneous fsChild in package-lock.json', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'c',
+      version: '1.0.0',
+      private: true,
+      dependencies: { a: 'file:lib/a', b: 'file:lib/b' },
+    }),
+    lib: {
+      a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0', private: true }) },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          private: true,
+          dependencies: { a: 'file:lib/a' },
+        }),
+        lib: {
+          a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0', private: true }) },
+        },
+      },
+    },
+  })
+  createRegistry(t, false)
+  await reify(path)
+
+  const lock = JSON.parse(fs.readFileSync(`${path}/package-lock.json`, 'utf8'))
+  t.match(lock.packages['lib/b/lib/a'], { version: '1.0.0', extraneous: true },
+    'nested file: dep is recorded as an extraneous entry in the lockfile')
+
+  // Mirror the `npm ci` sync check: every node in the ideal tree built from
+  // package.json must be present in the virtual tree loaded from the lockfile.
+  const virtual = newArb({ path })
+  await virtual.loadVirtual()
+  const virtualInventory = new Map(virtual.virtualTree.inventory)
+  const ideal = newArb({ path })
+  await ideal.buildIdealTree()
+  const missing = []
+  for (const [loc, node] of ideal.idealTree.inventory.entries()) {
+    if (!virtualInventory.has(loc)) {
+      missing.push(`${node.name}@${node.version}`)
+    }
+  }
+  t.same(missing, [], 'lockfile is in sync with package.json, so npm ci would succeed')
+})
+
 t.test('project with bundled deps and a link dep on itself', async t => {
   const pkg = {
     name: '@isaacs/testing-bundle-self-link',
