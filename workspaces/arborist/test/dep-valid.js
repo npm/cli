@@ -253,3 +253,43 @@ t.test('sha-1 and sha-256', t => {
 
   t.end()
 })
+
+t.test('git tag/branch change detected via lockfile committish', t => {
+  // a named ref points at a commit hash, so the recorded committish tells us
+  // whether the spec changed
+  const mkRequestor = (recorded) => ({
+    errors: [],
+    edgesOut: new Map(),
+    realpath: resolve('/some/path'),
+    location: '',
+    root: {
+      meta: { data: { packages: { '': recorded } } },
+    },
+  })
+
+  const child = {
+    name: 'repo',
+    resolved: 'git+ssh://git@github.com/npm/repo.git#0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    package: { version: '1.0.0' },
+    get version () {
+      return this.package.version
+    },
+  }
+
+  t.ok(depValid(child, 'npm/repo#v1.0.0', null,
+    mkRequestor({ dependencies: { repo: 'npm/repo#v1.0.0' } })),
+  'unchanged tag is valid')
+
+  t.notOk(depValid(child, 'npm/repo#v2.0.0', null,
+    mkRequestor({ dependencies: { repo: 'npm/repo#v1.0.0' } })),
+  'changed tag must be re-resolved')
+
+  t.notOk(depValid(child, 'npm/repo#other', null,
+    mkRequestor({ devDependencies: { repo: 'npm/repo#main' } })),
+  'changed branch in devDependencies must be re-resolved')
+
+  t.ok(depValid(child, 'npm/repo#v2.0.0', null, emptyRequestor),
+    'without lockfile data, fall back to the repo-only check')
+
+  t.end()
+})
