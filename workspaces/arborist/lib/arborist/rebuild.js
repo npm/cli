@@ -199,16 +199,20 @@ module.exports = cls => class Builder extends cls {
       const { package: { bin, scripts = {} } } = node.target
       const { preinstall, install, postinstall, prepare } = scripts
       const tests = { bin, preinstall, install, postinstall, prepare }
-      // allowScripts gate (RFC npm/rfcs#868). `true` lets lifecycle
-      // scripts run; `false` and `null` (unreviewed) both block.
-      // --ignore-scripts in #build() still wins. Bypasses:
-      // --dangerously-allow-all-scripts, links and workspaces (the
-      // owner is responsible). Bin linking is not gated.
+      // allowScripts gate (RFC npm/rfcs#868): `true` runs lifecycle
+      // scripts; `false` and `null` (unreviewed) block. Bypassed by
+      // --dangerously-allow-all-scripts and workspaces (owner-managed).
+      // --ignore-scripts still wins (in #build); bins are never gated.
+      //
+      // Checked on node.target, not the Link: a Link's `resolved` is
+      // node_modules-relative (`file:../../dep`) so it can't match a
+      // project-root-relative policy key; the target carries the realpath
+      // and link specs that script-allowed.js matches on (npm/cli#9498).
+      // For non-links node.target === node, so registry deps are unaffected.
       const scriptsAllowed =
         this.options.dangerouslyAllowAllScripts ||
-        node.isLink ||
         node.isWorkspace ||
-        isScriptAllowed(node, this.options.allowScripts) === true
+        isScriptAllowed(node.target, this.options.allowScripts) === true
       for (const [key, has] of Object.entries(tests)) {
         if (!has) {
           continue

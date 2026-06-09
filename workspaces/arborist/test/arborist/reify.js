@@ -2080,7 +2080,7 @@ console.log('ok 1 - this is fine')
 t.test('running lifecycle scripts of unchanged link nodes on reify', async t => {
   const path = fixture(t, 'link-dep-lifecycle-scripts')
   createRegistry(t, false)
-  t.matchSnapshot(await printReified(path), 'result')
+  t.matchSnapshot(await printReified(path, { allowScripts: { 'file:../a': true } }), 'result')
 
   t.ok(fs.lstatSync(resolve(path, 'a/a-prepare')).isFile(),
     'should run prepare lifecycle scripts for links directly linked to the tree')
