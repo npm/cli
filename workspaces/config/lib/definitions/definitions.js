@@ -2476,7 +2476,25 @@ const definitions = {
     `,
     flatten (key, obj, flatOptions) {
       const value = obj[key]
-      const ciName = ciInfo.name?.toLowerCase().split(' ').join('-') || null
+      let ciName = ciInfo.name?.toLowerCase().split(' ').join('-') || null
+      if (ciInfo.GITHUB_ACTIONS) {
+        // Env vars can be absent, empty, or whitespace; normalize before use.
+        const serverUrl = (process.env.GITHUB_SERVER_URL || '').trim()
+        const runnerEnv = (process.env.RUNNER_ENVIRONMENT || '').trim()
+        if (serverUrl === 'https://github.com') {
+          if (runnerEnv === 'github-hosted') {
+            ciName = 'github-actions-dotcom-hosted'
+          } else if (runnerEnv === 'self-hosted') {
+            ciName = 'github-actions-dotcom-selfhosted'
+          } else {
+            ciName = 'github-actions-dotcom'
+          }
+        } else if (serverUrl.endsWith('.ghe.com')) {
+          ciName = 'github-actions-ghecom'
+        } else if (serverUrl) {
+          ciName = 'github-actions-ghes'
+        }
+      }
       let inWorkspaces = false
       if (obj.workspaces || obj.workspace && obj.workspace.length) {
         inWorkspaces = true
