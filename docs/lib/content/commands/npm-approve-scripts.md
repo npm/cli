@@ -20,10 +20,10 @@ silently skip lifecycle scripts for any dependency that does not have a
 matching entry in `allowScripts`, and end with a list of the packages
 whose scripts were skipped so you can review them with this command.
 
-This command only works inside a project that has a `package.json`. It does
-not apply to global installs (`npm install -g`) or one-off executions
-(`npm exec` / `npx`), which have no project `package.json` to write to and
-will fail with an `EGLOBAL` error. To allow install scripts in those
+This command only works inside a project that has a `package.json`. Running
+it with `--global` (`-g`) fails with an `EGLOBAL` error, since global
+installs (`npm install -g`) and one-off executions (`npm exec` / `npx`) have
+no project `package.json` to write to. To allow install scripts in those
 contexts, use the `--allow-scripts` flag at install time (for example
 `npm install -g --allow-scripts=canvas,sharp`) or persist the setting with
 `npm config set allow-scripts=canvas,sharp --location=user`.
