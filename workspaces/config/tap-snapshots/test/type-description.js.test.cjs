@@ -376,6 +376,10 @@ Object {
     null,
     "numeric value",
   ],
+  "min-release-age-exclude": Array [
+    Function Array(),
+    Function String(),
+  ],
   "name": Array [
     null,
     Function String(),
