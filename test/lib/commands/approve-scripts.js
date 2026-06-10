@@ -178,6 +178,51 @@ t.test('approve-scripts --json outputs structured summary', async t => {
   })
 })
 
+t.test('approve-scripts --pending --json lists unreviewed packages as JSON', async t => {
+  const { npm, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas', 'sharp'] }),
+    config: { 'allow-scripts-pending': true, json: true },
+  })
+  await npm.exec('approve-scripts', [])
+  const parsed = JSON.parse(joinedOutput())
+  const byName = Object.fromEntries(parsed.allowScripts.map((e) => [e.name, e.changes]))
+  t.strictSame(byName, {
+    canvas: [{ key: 'canvas@1.0.0', change: 'pending' }],
+    sharp: [{ key: 'sharp@1.0.0', change: 'pending' }],
+  })
+})
+
+t.test('approve-scripts --pending --json with no unreviewed emits empty list', async t => {
+  const { npm, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({
+      allowScripts: { canvas: true },
+      withScripts: ['canvas'],
+    }),
+    config: { 'allow-scripts-pending': true, json: true },
+  })
+  await npm.exec('approve-scripts', [])
+  t.strictSame(JSON.parse(joinedOutput()), { allowScripts: [] })
+})
+
+t.test('approve-scripts --all --json with no unreviewed emits empty list', async t => {
+  const { npm, joinedOutput } = await _mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
+      'package-lock.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: { '': { name: 'host', version: '1.0.0' } },
+      }),
+      node_modules: {},
+    },
+    config: { all: true, json: true },
+  })
+  await npm.exec('approve-scripts', [])
+  t.strictSame(JSON.parse(joinedOutput()), { allowScripts: [] })
+})
+
 t.test('approve-scripts --all with no unreviewed packages prints message', async t => {
   const { npm, joinedOutput } = await _mockNpm(t, {
     prefixDir: {
@@ -231,63 +276,83 @@ t.test('approve-scripts --pending lists package with no version', async t => {
   t.pass()
 })
 
+const twoVersionFixture = {
+  'package.json': JSON.stringify({
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { 'top-of-tree': '*' },
+  }),
+  'package-lock.json': JSON.stringify({
+    name: 'host',
+    version: '1.0.0',
+    lockfileVersion: 3,
+    requires: true,
+    packages: {
+      '': { name: 'host', version: '1.0.0', dependencies: { 'top-of-tree': '*' } },
+      'node_modules/lodash': {
+        version: '4.17.21',
+        resolved: 'https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz',
+        hasInstallScript: true,
+      },
+      'node_modules/top-of-tree': {
+        version: '1.0.0',
+        resolved: 'https://registry.npmjs.org/top-of-tree/-/top-of-tree-1.0.0.tgz',
+        dependencies: { lodash: '3.10.1' },
+      },
+      'node_modules/top-of-tree/node_modules/lodash': {
+        version: '3.10.1',
+        resolved: 'https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz',
+        hasInstallScript: true,
+      },
+    },
+  }),
+  node_modules: {
+    lodash: {
+      'package.json': JSON.stringify({
+        name: 'lodash',
+        version: '4.17.21',
+        scripts: { install: 'echo install' },
+      }),
+    },
+    'top-of-tree': {
+      'package.json': JSON.stringify({ name: 'top-of-tree', version: '1.0.0' }),
+      node_modules: {
+        lodash: {
+          'package.json': JSON.stringify({
+            name: 'lodash',
+            version: '3.10.1',
+            scripts: { install: 'echo install' },
+          }),
+        },
+      },
+    },
+  },
+}
+
+t.test('approve-scripts --pending --json groups multiple versions under one name', async t => {
+  // Two versions of lodash are unreviewed; pendingSummary must collapse
+  // them into a single `lodash` entry (hits the `groups.has(display)`
+  // truthy branch on the second node).
+  const { npm, joinedOutput } = await _mockNpm(t, {
+    prefixDir: twoVersionFixture,
+    config: { 'allow-scripts-pending': true, json: true },
+  })
+  await npm.exec('approve-scripts', [])
+  const parsed = JSON.parse(joinedOutput())
+  t.strictSame(parsed.allowScripts.map((e) => e.name), ['lodash'])
+  t.strictSame(parsed.allowScripts[0].changes.map((c) => c.key).sort(), [
+    'lodash@3.10.1',
+    'lodash@4.17.21',
+  ])
+  t.ok(parsed.allowScripts[0].changes.every((c) => c.change === 'pending'))
+})
+
 t.test('approve-scripts groups multiple installed versions of the same package', async t => {
   // Two versions of lodash exist in the tree; both have install scripts.
   // groupByPackage should put them in the same group (hits the
   // `if (!groups[key])` falsy branch on the second node).
   const { npm, prefix } = await _mockNpm(t, {
-    prefixDir: {
-      'package.json': JSON.stringify({
-        name: 'host',
-        version: '1.0.0',
-        dependencies: { 'top-of-tree': '*' },
-      }),
-      'package-lock.json': JSON.stringify({
-        name: 'host',
-        version: '1.0.0',
-        lockfileVersion: 3,
-        requires: true,
-        packages: {
-          '': { name: 'host', version: '1.0.0', dependencies: { 'top-of-tree': '*' } },
-          'node_modules/lodash': {
-            version: '4.17.21',
-            resolved: 'https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz',
-            hasInstallScript: true,
-          },
-          'node_modules/top-of-tree': {
-            version: '1.0.0',
-            resolved: 'https://registry.npmjs.org/top-of-tree/-/top-of-tree-1.0.0.tgz',
-            dependencies: { lodash: '3.10.1' },
-          },
-          'node_modules/top-of-tree/node_modules/lodash': {
-            version: '3.10.1',
-            resolved: 'https://registry.npmjs.org/lodash/-/lodash-3.10.1.tgz',
-            hasInstallScript: true,
-          },
-        },
-      }),
-      node_modules: {
-        lodash: {
-          'package.json': JSON.stringify({
-            name: 'lodash',
-            version: '4.17.21',
-            scripts: { install: 'echo install' },
-          }),
-        },
-        'top-of-tree': {
-          'package.json': JSON.stringify({ name: 'top-of-tree', version: '1.0.0' }),
-          node_modules: {
-            lodash: {
-              'package.json': JSON.stringify({
-                name: 'lodash',
-                version: '3.10.1',
-                scripts: { install: 'echo install' },
-              }),
-            },
-          },
-        },
-      },
-    },
+    prefixDir: twoVersionFixture,
   })
   await npm.exec('approve-scripts', ['lodash'])
 
@@ -326,6 +391,37 @@ t.test('approve-scripts --pending handles node with no version', async t => {
   await mockSync.npm.exec('approve-scripts', [])
   // Output should mention the package without an @version suffix.
   t.match(mockSync.joinedOutput(), / no-version-pkg \(install: do-stuff\)/)
+})
+
+t.test('approve-scripts --pending --json handles node with no version', async t => {
+  // Exercise pendingSummary's `version ? ... : display` falsy branch: the
+  // key is the bare name when the node has no version field.
+  const { npm, joinedOutput } = await _mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
+      'package-lock.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: { '': { name: 'host', version: '1.0.0' } },
+      }),
+      node_modules: {},
+    },
+    config: { 'allow-scripts-pending': true, json: true },
+    mocks: {
+      '{LIB}/utils/check-allow-scripts.js': async () => [{
+        node: { packageName: 'no-version-pkg', name: 'no-version-pkg', version: undefined },
+        scripts: { install: 'do-stuff' },
+      }],
+    },
+  })
+  await npm.exec('approve-scripts', [])
+  t.strictSame(JSON.parse(joinedOutput()), {
+    allowScripts: [
+      { name: 'no-version-pkg', changes: [{ key: 'no-version-pkg', change: 'pending' }] },
+    ],
+  })
 })
 
 t.test('forbidden semver range in package.json#allowScripts is dropped with a warning', async t => {
