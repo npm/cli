@@ -10,7 +10,6 @@ on:
   push:
     branches:
       - latest
-      - release/v*
     paths:
       - workspaces/libnpmpublish/**
   schedule:

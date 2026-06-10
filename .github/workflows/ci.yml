@@ -14,7 +14,6 @@ on:
   push:
     branches:
       - latest
-      - release/v*
     paths-ignore:
       - docs/**
       - smoke-tests/**

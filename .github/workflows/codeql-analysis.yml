@@ -6,11 +6,9 @@ on:
   push:
     branches:
       - latest
-      - release/v*
   pull_request:
     branches:
       - latest
-      - release/v*
   schedule:
     # "At 10:00 UTC (03:00 PT) on Monday" https://crontab.guru/#0_10_*_*_1
     - cron: "0 10 * * 1"
