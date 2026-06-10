@@ -2852,6 +2852,69 @@ t.test('avoid dedupe when a dep is bundled', async t => {
   })
 })
 
+t.test('min-release-age-exclude exempts matched packages from the before filter', async t => {
+  // The dupes-b fixture publishes 2.0.0 at 16:23:59 and 2.1.0 at 16:25:15.
+  // A `before` of 16:24:00 normally filters 2.1.0 out, leaving 2.0.0.
+  const before = new Date('2021-04-23T16:24:00Z')
+  const pkg = '@isaacs/testing-bundle-dupes-b'
+  const mkPath = () => t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { [pkg]: '2' },
+    }),
+  })
+
+  await t.test('without exclude, before filters to the older version', async t => {
+    createRegistry(t, true)
+    const tree = await buildIdeal(mkPath(), { before })
+    t.equal(tree.children.get(pkg).version, '2.0.0', 'before filter applied')
+  })
+
+  await t.test('exact name in exclude bypasses the before filter', async t => {
+    createRegistry(t, true)
+    const tree = await buildIdeal(mkPath(), {
+      before,
+      minReleaseAgeExclude: [pkg],
+    })
+    t.equal(tree.children.get(pkg).version, '2.1.0', 'newest version installed')
+  })
+
+  await t.test('glob pattern in exclude bypasses the before filter', async t => {
+    createRegistry(t, true)
+    const tree = await buildIdeal(mkPath(), {
+      before,
+      minReleaseAgeExclude: ['@isaacs/*'],
+    })
+    t.equal(tree.children.get(pkg).version, '2.1.0', 'newest version installed')
+  })
+
+  await t.test('non-matching exclude leaves the before filter in place', async t => {
+    createRegistry(t, true)
+    const tree = await buildIdeal(mkPath(), {
+      before,
+      minReleaseAgeExclude: ['some-other-pkg', '@other/*'],
+    })
+    t.equal(tree.children.get(pkg).version, '2.0.0', 'before filter still applied')
+  })
+
+  await t.test('an npm: alias key cannot bypass the filter for its target', async t => {
+    // The exclude must match the resolved registry identity, not the alias key.
+    // Here the alias key `dupes` matches the exclude but the fetched package
+    // `pkg` does not, so the before filter must still apply.
+    createRegistry(t, true)
+    const aliasPath = t.testdir({
+      'package.json': JSON.stringify({
+        dependencies: { dupes: `npm:${pkg}@2` },
+      }),
+    })
+    const tree = await buildIdeal(aliasPath, {
+      before,
+      minReleaseAgeExclude: ['dupes'],
+    })
+    t.equal(tree.children.get('dupes').version, '2.0.0',
+      'before filter still applied to the aliased package')
+  })
+})
+
 t.test('upgrade a partly overlapping peer set', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
