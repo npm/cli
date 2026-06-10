@@ -2499,6 +2499,36 @@ const definitions = {
     flatten (key, obj, flatOptions) {
       const value = obj[key]
       const ciName = ciInfo.name?.toLowerCase().split(' ').join('-') || null
+      // A more specific sub-category for the detected CI, appended to the
+      // ci token as `ci/{ci-name}/{sub-ci-name}` when present.
+      let subCiName = null
+      if (ciInfo.GITHUB_ACTIONS) {
+        // Env vars can be absent, empty, or whitespace; normalize before use.
+        const serverUrl = (process.env.GITHUB_SERVER_URL || '').trim()
+        const runnerEnv = (process.env.RUNNER_ENVIRONMENT || '').trim()
+        let serverHost = ''
+        try {
+          serverHost = new URL(serverUrl).hostname.toLowerCase()
+        } catch {
+          serverHost = ''
+        }
+        if (serverHost === 'github.com') {
+          if (runnerEnv === 'github-hosted') {
+            subCiName = 'dotcom-hosted'
+          } else if (runnerEnv === 'self-hosted') {
+            subCiName = 'dotcom-selfhosted'
+          } else {
+            subCiName = 'dotcom'
+          }
+        } else if (serverHost === 'ghe.com' || serverHost.endsWith('.ghe.com')) {
+          subCiName = 'ghecom'
+        } else if (serverHost) {
+          subCiName = 'ghes'
+        }
+      }
+      const ci = ciName
+        ? `ci/${ciName}${subCiName ? `/${subCiName}` : ''}`
+        : ''
       let inWorkspaces = false
       if (obj.workspaces || obj.workspace && obj.workspace.length) {
         inWorkspaces = true
@@ -2509,7 +2539,7 @@ const definitions = {
           .replace(/\{platform\}/gi, process.platform)
           .replace(/\{arch\}/gi, process.arch)
           .replace(/\{workspaces\}/gi, inWorkspaces)
-          .replace(/\{ci\}/gi, ciName ? `ci/${ciName}` : '')
+          .replace(/\{ci\}/gi, ci)
           .trim()
 
       // We can't clobber the original or else subsequent flattening will fail
