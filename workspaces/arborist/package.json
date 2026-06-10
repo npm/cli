@@ -45,7 +45,7 @@
     "benchmark": "^2.1.4",
     "minify-registry-metadata": "^4.0.0",
     "nock": "^13.3.3",
-    "tap": "^16.3.8",
+    "tap": "^21.7.4",
     "tar-stream": "^3.0.0",
     "tcompare": "^5.0.6"
   },
