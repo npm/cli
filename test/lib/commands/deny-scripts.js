@@ -130,6 +130,25 @@ t.test('deny-scripts --all with no unreviewed packages prints message', async t 
   t.match(joinedOutput(), /No packages with unreviewed install scripts/)
 })
 
+t.test('deny-scripts --all --json with no unreviewed emits empty list', async t => {
+  const { npm, joinedOutput } = await _mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
+      'package-lock.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: { '': { name: 'host', version: '1.0.0' } },
+      }),
+      node_modules: {},
+    },
+    config: { all: true, json: true },
+  })
+  await npm.exec('deny-scripts', [])
+  t.strictSame(JSON.parse(joinedOutput()), { allowScripts: [] })
+})
+
 t.test('deny-scripts fails on global', async t => {
   const { npm } = await _mockNpm(t, {
     config: { global: true },
