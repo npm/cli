@@ -1421,9 +1421,12 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
-      // fixing a security vulnerability with this package, problem
+      // fixing a security vulnerability with this package; skip re-resolution when no fix is available within range and --force is not set
       if (this.auditReport && this.auditReport.isVulnerable(edge.to)) {
-        problems.push(edge)
+        const vuln = this.auditReport.get(edge.to.packageName)
+        if (vuln.fixAvailable === true || this.options.force) {
+          problems.push(edge)
+        }
         continue
       }
 
