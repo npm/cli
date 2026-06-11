@@ -54,6 +54,51 @@ t.test('audit fix reifies out the bad deps', async t => {
   t.matchSnapshot(tree, 'reified out the bad mkdirp and minimist')
 })
 
+t.test('audit fix does not update when fix requires semver-major bump', async t => {
+  const registry = createRegistry(t)
+  const advisory = registry.advisory({ id: 101, vulnerable_versions: '<3.0.0' })
+  const manifest = registry.manifest({
+    name: 'test-pkg',
+    packuments: [{ version: '2.0.0' }, { version: '2.0.1' }, { version: '3.0.0' }],
+  })
+  await registry.package({ manifest, times: 2 })
+  registry.audit({ times: 2, results: { 'test-pkg': [advisory] } })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-project',
+      version: '1.0.0',
+      dependencies: { 'test-pkg': '^2.0.0' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'my-project',
+      version: '1.0.0',
+      lockfileVersion: 2,
+      requires: true,
+      packages: {
+        '': { name: 'my-project', version: '1.0.0', dependencies: { 'test-pkg': '^2.0.0' } },
+        'node_modules/test-pkg': {
+          version: '2.0.0',
+          resolved: 'https://registry.npmjs.org/test-pkg/-/test-pkg-2.0.0.tgz',
+          integrity: 'sha512-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==',
+        },
+      },
+    }),
+    node_modules: {
+      'test-pkg': {
+        'package.json': JSON.stringify({ name: 'test-pkg', version: '2.0.0' }),
+      },
+    },
+  })
+
+  const tree = await newArb(path).audit({ fix: true })
+  t.equal(
+    tree.children.get('test-pkg').version,
+    '2.0.0',
+    'test-pkg not updated when fix requires semver-major bump'
+  )
+})
+
 t.test('audit does not do globals', async t => {
   await t.rejects(newArb('.', { global: true }).audit(), {
     message: '`npm audit` does not support testing globals',
