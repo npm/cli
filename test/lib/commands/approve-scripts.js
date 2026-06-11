@@ -129,6 +129,125 @@ t.test('approve-scripts errors on unknown package', async t => {
   )
 })
 
+t.test('approve-scripts approves a package whose name contains dots', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['cordova.plugins.diagnostic'] }),
+  })
+  await npm.exec('approve-scripts', ['cordova.plugins.diagnostic'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'cordova.plugins.diagnostic@1.0.0': true })
+})
+
+t.test('approve-scripts <pkg@version> approves a dotted name with a version specifier', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['cordova.plugins.diagnostic'] }),
+  })
+  await npm.exec('approve-scripts', ['cordova.plugins.diagnostic@1.0.0'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'cordova.plugins.diagnostic@1.0.0': true })
+})
+
+t.test('approve-scripts <@scope/pkg@version> approves a scoped name with a version', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        dependencies: { '@scope/pkg': '*' },
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': { name: 'host', version: '1.0.0', dependencies: { '@scope/pkg': '*' } },
+          'node_modules/@scope/pkg': {
+            version: '2.0.0',
+            resolved: 'https://registry.npmjs.org/@scope/pkg/-/pkg-2.0.0.tgz',
+            hasInstallScript: true,
+          },
+        },
+      }),
+      node_modules: {
+        '@scope': {
+          pkg: {
+            'package.json': JSON.stringify({
+              name: '@scope/pkg',
+              version: '2.0.0',
+              scripts: { install: 'echo install' },
+            }),
+          },
+        },
+      },
+    },
+  })
+  await npm.exec('approve-scripts', ['@scope/pkg@2.0.0'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { '@scope/pkg@2.0.0': true })
+})
+
+t.test('approve-scripts <pkg@version> errors when no installed version matches', async t => {
+  const { npm } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+  })
+  await t.rejects(
+    npm.exec('approve-scripts', ['canvas@9.9.9']),
+    { code: 'ENOMATCH' }
+  )
+})
+
+t.test('approve-scripts reports only the unmatched args and writes nothing', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+  })
+  const err = await npm.exec('approve-scripts', ['canvas', 'not-installed'])
+    .then(() => null, e => e)
+  t.equal(err.code, 'ENOMATCH')
+  t.match(err.message, /not-installed/)
+  t.notMatch(err.message, /canvas/)
+  // Nothing is written when any arg fails to match.
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk(pkg.allowScripts)
+})
+
+t.test('approve-scripts <pkg@tag> matches every installed version', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+  })
+  // A tag carries no version to filter on, so it behaves like a bare name.
+  await npm.exec('approve-scripts', ['canvas@latest'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'canvas@1.0.0': true })
+})
+
+t.test('approve-scripts errors on an unparseable spec', async t => {
+  const { npm } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+  })
+  // npm-package-arg throws on this; the raw string is used as the name and
+  // matches nothing.
+  await t.rejects(
+    npm.exec('approve-scripts', ['foo@@bar']),
+    { code: 'ENOMATCH' }
+  )
+})
+
+t.test('approve-scripts errors on a spec with no package name', async t => {
+  const { npm } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+  })
+  // A path spec parses but carries no name, so it matches no registry dep.
+  await t.rejects(
+    npm.exec('approve-scripts', ['./local-pkg']),
+    { code: 'ENOMATCH' }
+  )
+})
+
 t.test('approve-scripts respects existing deny entry', async t => {
   const { npm, prefix, logs } = await mockNpm(t, {
     prefixDir: setupProject({
@@ -362,6 +481,26 @@ t.test('approve-scripts groups multiple installed versions of the same package',
     'lodash@3.10.1': true,
     'lodash@4.17.21': true,
   })
+})
+
+t.test('approve-scripts <pkg@version> pins only the matching installed version', async t => {
+  const { npm, prefix } = await _mockNpm(t, {
+    prefixDir: twoVersionFixture,
+  })
+  await npm.exec('approve-scripts', ['lodash@4.17.21'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'lodash@4.17.21': true })
+})
+
+t.test('approve-scripts <pkg@range> pins only versions satisfying the range', async t => {
+  const { npm, prefix } = await _mockNpm(t, {
+    prefixDir: twoVersionFixture,
+  })
+  await npm.exec('approve-scripts', ['lodash@^4'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'lodash@4.17.21': true })
 })
 
 t.test('approve-scripts --pending handles node with no version', async t => {
