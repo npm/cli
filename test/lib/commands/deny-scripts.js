@@ -104,6 +104,16 @@ t.test('deny-scripts errors on unknown package', async t => {
   )
 })
 
+t.test('deny-scripts <pkg@version> denies a dotted name with a version specifier', async t => {
+  const { npm, prefix } = await _mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['cordova.plugins.diagnostic'] }),
+  })
+  await npm.exec('deny-scripts', ['cordova.plugins.diagnostic@1.0.0'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'cordova.plugins.diagnostic': false })
+})
+
 t.test('deny-scripts requires positional args or --all', async t => {
   const { npm } = await _mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['core-js'] }),
