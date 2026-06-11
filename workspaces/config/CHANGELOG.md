@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.11.0](https://github.com/npm/cli/compare/config-v10.10.0...config-v10.11.0) (2026-06-11)
+### Features
+* [`5f73e31`](https://github.com/npm/cli/commit/5f73e3111a39646f549bad7e39b9c3a9b69865cb) [#9539](https://github.com/npm/cli/pull/9539) differentiate GitHub Actions environments in user-agent (#9517) (@reggi, @Copilot)
+* [`ae8ac4e`](https://github.com/npm/cli/commit/ae8ac4ea39776f74551fc850f4a5e766b81c5545) [#9534](https://github.com/npm/cli/pull/9534) add min-release-age-exclude config (@JamieMagee, @caseyjhol)
+### Bug Fixes
+* [`1bb62bb`](https://github.com/npm/cli/commit/1bb62bb639d1f791a0c51d236fba01c25c58992e) [#9454](https://github.com/npm/cli/pull/9454) config: clarify --all help so it's accurate for approve-scripts and deny-scripts (@JamieMagee)
+
 ## [10.10.0](https://github.com/npm/cli/compare/config-v10.9.1...config-v10.10.0) (2026-05-27)
 ### Features
 * [`4b67f6e`](https://github.com/npm/cli/commit/4b67f6ed21a8bf7e47ae78b7fc9cc9fbdfa95057) [#9416](https://github.com/npm/cli/pull/9416) publish --access=private alias for restricted (#9416) (@github-actions[bot], @reggi, @Copilot)
