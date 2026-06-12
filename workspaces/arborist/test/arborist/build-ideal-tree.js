@@ -588,6 +588,27 @@ t.test('force a new nyc (and update mkdirp nicely)', async t => {
   t.equal(arb.idealTree.children.get('nyc').package.version, '15.1.0')
 })
 
+t.test('audit fix warns when min-release-age blocks a fix', async t => {
+  const path = resolve(fixtures, 'audit-nyc-mkdirp')
+  const registry = createRegistry(t, true)
+  registry.audit({ convert: true, results: require('../fixtures/audit-nyc-mkdirp/audit.json') })
+  const warnings = warningTracker(t)
+
+  // mkdirp's fix (0.5.5) was published after this cutoff, so audit fix can't
+  // install it and should warn that the package is left vulnerable.
+  const arb = newArb(path, { before: new Date('2020-01-01') })
+  await arb.audit()
+  await arb.buildIdealTree()
+
+  t.not(arb.idealTree.children.get('mkdirp').package.version, '0.5.5',
+    'mkdirp was not upgraded to the release-age-blocked fix')
+  t.ok(
+    warnings.some(w => w[1] === 'audit' &&
+      /A fix for mkdirp is available \(mkdirp@0\.5\.5\) but was published after/.test(w[2])),
+    'warned that the mkdirp fix is blocked by the release-age window'
+  )
+})
+
 t.test('force a new mkdirp (but not semver major)', async t => {
   const path = resolve(fixtures, 'mkdirp-pinned')
   const registry = createRegistry(t, true)
