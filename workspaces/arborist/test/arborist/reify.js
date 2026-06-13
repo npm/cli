@@ -3914,6 +3914,106 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     await t.resolves(arb.reify(), 'same-origin tarball is allowed for registry root')
   })
 
+  t.test('allowRemote=none allows registry tarball whose resolved origin differs from the configured registry', async t => {
+    // Proxy/mirror case: a committed lockfile pins resolved to the public registry while a private mirror is configured.
+    // replace-registry-host rewrites the host to the configured registry at fetch time, so the effective URL is registry-mediated and must pass allow-remote=none.
+    const abbrevPackumentNpmjs = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            tarball: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/abbrev')
+      .reply(200, abbrevPackumentNpmjs)
+
+    // replace-registry-host (default 'npmjs') rewrites the npmjs.org tarball host to the configured mirror, so the fetch lands here.
+    tnock(t, 'https://registry.example.com')
+      .get('/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+    })
+
+    await t.resolves(arb.reify(), 'mirror-fronted registry tarball is allowed under allow-remote=none')
+  })
+
+  t.test('allowRemote=none allows registry tarball with replaceRegistryHost=always', async t => {
+    // replace-registry-host=always routes every registry tarball fetch through the configured registry, so the effective URL is never remote and must pass allow-remote=none.
+    const abbrevPackumentNpmjs = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            tarball: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev')
+      .reply(200, abbrevPackumentNpmjs)
+
+    // always rewrites the tarball host to the configured registry and prepends the registry path.
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com/npm',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+      replaceRegistryHost: 'always',
+    })
+
+    await t.resolves(arb.reify(), 'registry tarball routed through the configured registry is allowed')
+  })
+
   t.test('allowRemote=none allows registry tarball under linked install strategy', async t => {
     // The linked strategy extracts store nodes as IsolatedNode, which has no edges to recompute isRegistryDependency from.
     // The flag must be carried from the source tree node so the registry-tarball allow-remote exemption still applies.

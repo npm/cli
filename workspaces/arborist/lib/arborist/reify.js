@@ -851,12 +851,14 @@ module.exports = cls => class Reifier extends cls {
       return false
     }
     try {
-      const resolved = new URL(node.resolved)
+      // Match the effective fetch URL, not the raw lockfile value.
+      // #registryResolved applies replace-registry-host, rewriting a public-registry pin to the configured proxy/mirror so it matches.
+      const resolvedURL = new URL(this.#registryResolved(node.resolved))
       // pickRegistry only consults spec.scope, so a bare-name (tag) parse is sufficient and avoids a node.version dependency.
       const registry = new URL(pickRegistry(npa(node.name), this.options))
       const registryPath = registry.pathname.replace(/\/?$/, '/')
-      return resolved.origin === registry.origin &&
-        (registryPath === '/' || resolved.pathname.startsWith(registryPath))
+      return resolvedURL.origin === registry.origin &&
+        (registryPath === '/' || resolvedURL.pathname.startsWith(registryPath))
     } catch {
       return false
     }
