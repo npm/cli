@@ -1,4 +1,4 @@
-const { join, resolve, basename } = require('node:path')
+const { join, resolve, basename, delimiter } = require('node:path')
 const t = require('tap')
 const runScript = require('@npmcli/run-script')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
@@ -4137,6 +4137,76 @@ t.test('install strategy linked', async (t) => {
       'packages/b should remain absent after reinstall'
     )
   })
+})
+
+t.test('linked strategy exposes store node_modules via NODE_PATH for lifecycle scripts', async t => {
+  // Regression for #9549. In the linked strategy a store package's deps are symlinked siblings in its store node_modules.
+  // A separate bin invoked by the script (e.g. napi-postinstall) resolves modules from its own store realpath and cannot see them, so npm exposes them via NODE_PATH.
+  const Arborist = require('../../lib/index.js')
+  const pacote = require('pacote')
+
+  const testdir = t.testdir({
+    src: {
+      'package.json': JSON.stringify({
+        name: 'has-postinstall',
+        version: '1.0.0',
+        scripts: { postinstall: 'node -e ""' },
+      }),
+    },
+    project: {
+      'package.json': JSON.stringify({
+        name: 'myproject',
+        version: '1.0.0',
+        dependencies: { 'has-postinstall': '1.0.0' },
+      }),
+    },
+  })
+
+  const tgz = await pacote.tarball(resolve(testdir, 'src'), { Arborist })
+
+  const packument = JSON.stringify({
+    _id: 'has-postinstall',
+    name: 'has-postinstall',
+    'dist-tags': { latest: '1.0.0' },
+    versions: {
+      '1.0.0': {
+        name: 'has-postinstall',
+        version: '1.0.0',
+        hasInstallScript: true,
+        scripts: { postinstall: 'node -e ""' },
+        dist: {
+          tarball: 'https://registry.npmjs.org/has-postinstall/-/has-postinstall-1.0.0.tgz',
+        },
+      },
+    },
+  })
+
+  tnock(t, 'https://registry.npmjs.org')
+    .get('/has-postinstall')
+    .reply(200, packument)
+
+  tnock(t, 'https://registry.npmjs.org')
+    .get('/has-postinstall/-/has-postinstall-1.0.0.tgz')
+    .reply(200, tgz)
+
+  const path = resolve(testdir, 'project')
+  const arb = new Arborist({
+    path,
+    registry: 'https://registry.npmjs.org',
+    cache: resolve(testdir, 'cache'),
+    installStrategy: 'linked',
+    dangerouslyAllowAllScripts: true,
+  })
+  await arb.reify()
+
+  const run = [...arb.scriptsRun]
+    .find(s => s.pkg.name === 'has-postinstall' && s.event === 'postinstall')
+  t.ok(run, 'postinstall ran for the store package')
+  t.match(run.path, /[\\/]\.store[\\/]/, 'script ran on the store entry')
+  // Assert the leading entry: the fix prepends the store node_modules to any pre-existing NODE_PATH (e.g. the coverage harness on Windows CI).
+  const [firstNodePath] = run.env.NODE_PATH.split(delimiter)
+  t.equal(firstNodePath, resolve(run.path, '..'),
+    'NODE_PATH leads with the store node_modules holding the package deps')
 })
 
 t.test('workspace installs retain existing versions with newer package specs', async t => {

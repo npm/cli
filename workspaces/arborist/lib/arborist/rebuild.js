@@ -11,7 +11,7 @@ const { depth: dfwalk } = require('treeverse')
 const { isNodeGypPackage, defaultGypInstallScript } = require('@npmcli/node-gyp')
 const { promiseRetry } = require('@gar/promise-retry')
 const { log, time } = require('proc-log')
-const { resolve } = require('node:path')
+const { resolve, delimiter } = require('node:path')
 const { isScriptAllowed } = require('../script-allowed.js')
 
 const boolEnv = b => b ? '1' : ''
@@ -307,6 +307,7 @@ module.exports = cls => class Builder extends cls {
     await promiseCallLimit(queue.map(node => async () => {
       const {
         path,
+        name,
         integrity,
         resolved,
         optional,
@@ -315,6 +316,7 @@ module.exports = cls => class Builder extends cls {
         devOptional,
         package: pkg,
         location,
+        isInStore,
       } = node.target
 
       // skip any that we know we'll be deleting
@@ -335,6 +337,12 @@ module.exports = cls => class Builder extends cls {
         npm_package_peer: boolEnv(peer),
         npm_package_dev_optional:
           boolEnv(devOptional && !dev && !optional),
+      }
+      // In the linked strategy a store package's dependencies are symlinked siblings in its store node_modules.
+      // A separate bin invoked by the script (e.g. napi-postinstall) resolves modules from its own realpath in the store and cannot see those deps, so expose them via NODE_PATH.
+      if (isInStore) {
+        const storeNodeModules = resolve(path, ...name.split('/').map(() => '..'))
+        env.NODE_PATH = [storeNodeModules, process.env.NODE_PATH].filter(Boolean).join(delimiter)
       }
       const runOpts = {
         event,
