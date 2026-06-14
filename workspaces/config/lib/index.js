@@ -35,6 +35,17 @@ const hasOwnProperty = (obj, key) =>
 
 const typeDefs = require('./type-defs.js')
 const nerfDart = require('./nerf-dart.js')
+// Ensure the URL ends with / so nerfDart treats the last path component as a directory,
+// not a file. Without this, e.g. 'https://host/npm' resolves to '//host/' instead of
+// '//host/npm/', because URL resolution of '.' against a non-trailing-slash path
+// discards the last segment.
+const nerfDartURI = (uri) => {
+  const parsed = new URL(uri)
+  if (!parsed.pathname.endsWith('/')) {
+    parsed.pathname += '/'
+  }
+  return nerfDart(parsed.href)
+}
 const envReplace = require('./env-replace.js')
 const parseField = require('./parse-field.js')
 const setEnvs = require('./set-envs.js')
@@ -437,7 +448,7 @@ class Config {
           // NOTE we pull registry without restricting to the current 'where' because we want to
           // suggest scoping things to the registry they would be applied to, which is the default
           // regardless of where it was defined
-          const nerfedReg = nerfDart(this.get('registry'))
+          const nerfedReg = nerfDartURI(this.get('registry'))
           // keys that should be nerfed but currently are not
           for (const key of ['_auth', '_authToken', 'username', '_password']) {
             if (this.get(key, entryWhere)) {
@@ -895,8 +906,8 @@ class Config {
   }
 
   clearCredentialsByURI (uri, level = 'user') {
-    const nerfed = nerfDart(uri)
-    const def = nerfDart(this.get('registry'))
+    const nerfed = nerfDartURI(uri)
+    const def = nerfDartURI(this.get('registry'))
     if (def === nerfed) {
       this.delete(`-authtoken`, level)
       this.delete(`_authToken`, level)
@@ -916,7 +927,7 @@ class Config {
   }
 
   setCredentialsByURI (uri, { token, username, password, certfile, keyfile }) {
-    const nerfed = nerfDart(uri)
+    const nerfed = nerfDartURI(uri)
 
     // field that hasn't been used as documented for a LONG time,
     // and as of npm 7.10.0, isn't used at all.  We just always
@@ -955,7 +966,7 @@ class Config {
 
   // this has to be a bit more complicated to support legacy data of all forms
   getCredentialsByURI (uri) {
-    const nerfed = nerfDart(uri)
+    const nerfed = nerfDartURI(uri)
     const creds = {}
 
     // email is handled differently, it used to always be nerfed and now it never should be.
