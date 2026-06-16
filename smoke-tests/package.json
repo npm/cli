@@ -22,7 +22,7 @@
     "@npmcli/eslint-config": "^5.0.1",
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/promise-spawn": "^10.0.0",
-    "@npmcli/template-oss": "4.29.0",
+    "@npmcli/template-oss": "5.1.1",
     "proxy": "^2.1.1",
     "rimraf": "^6.0.1",
     "tap": "^16.3.8",
