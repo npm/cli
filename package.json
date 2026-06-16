@@ -53,7 +53,7 @@
     "@npmcli/fs": "^5.0.0",
     "@npmcli/map-workspaces": "^6.0.0",
     "@npmcli/metavuln-calculator": "^10.0.0",
-    "@npmcli/package-json": "^7.0.5",
+    "@npmcli/package-json": "^8.0.0",
     "@npmcli/promise-spawn": "^9.0.1",
     "@npmcli/redact": "^4.0.0",
     "@npmcli/run-script": "^10.0.4",
