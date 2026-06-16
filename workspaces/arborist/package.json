@@ -6,7 +6,7 @@
     "@gar/promise-retry": "^1.0.0",
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/fs": "^6.0.0",
-    "@npmcli/installed-package-contents": "^4.0.0",
+    "@npmcli/installed-package-contents": "^5.0.0",
     "@npmcli/map-workspaces": "^6.0.0",
     "@npmcli/metavuln-calculator": "^10.0.0",
     "@npmcli/name-from-folder": "^4.0.0",
