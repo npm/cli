@@ -70,7 +70,7 @@
     "hosted-git-info": "^10.1.1",
     "ini": "^7.0.0",
     "init-package-json": "^9.0.0",
-    "is-cidr": "^6.0.4",
+    "is-cidr": "^7.0.0",
     "json-parse-even-better-errors": "^5.0.0",
     "libnpmaccess": "^10.0.3",
     "libnpmdiff": "^8.1.6-pre.0",
