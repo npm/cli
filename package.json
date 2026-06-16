@@ -50,7 +50,7 @@
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/arborist": "^10.0.0-pre.0",
     "@npmcli/config": "^11.0.0-pre.0",
-    "@npmcli/fs": "^5.0.0",
+    "@npmcli/fs": "^6.0.0",
     "@npmcli/map-workspaces": "^6.0.0",
     "@npmcli/metavuln-calculator": "^10.0.0",
     "@npmcli/package-json": "^8.0.0",
