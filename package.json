@@ -101,7 +101,7 @@
     "parse-conflict-json": "^6.0.0",
     "proc-log": "^7.0.0",
     "qrcode-terminal": "^0.12.0",
-    "read": "^5.0.1",
+    "read": "^6.0.0",
     "semver": "^7.8.1",
     "spdx-expression-parse": "^4.0.0",
     "ssri": "^13.0.1",
