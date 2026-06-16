@@ -14,7 +14,7 @@
     "@npmcli/package-json": "^8.0.0",
     "@npmcli/query": "^5.0.0",
     "@npmcli/redact": "^5.0.0",
-    "@npmcli/run-script": "^10.0.0",
+    "@npmcli/run-script": "^11.0.0",
     "bin-links": "^6.0.0",
     "cacache": "^20.0.1",
     "common-ancestor-path": "^2.0.0",
