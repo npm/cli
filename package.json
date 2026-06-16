@@ -60,6 +60,7 @@
     "@sigstore/tuf": "^5.0.0",
     "abbrev": "^5.0.0",
     "archy": "~1.0.0",
+    "bin-links": "^7.0.0",
     "cacache": "^21.0.1",
     "chalk": "^5.6.2",
     "ci-info": "^4.4.0",
