@@ -38,17 +38,17 @@ jobs:
         shell: bash
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         id: node
         with:
-          node-version: 22.x
-          check-latest: contains('22.x', '.x')
+          node-version: 26.x
+          check-latest: contains('26.x', '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js
@@ -79,32 +79,38 @@ jobs:
             os: windows-latest
             shell: cmd
         node-version:
-          - 20.17.0
-          - 20.x
-          - 22.9.0
+          - 22.22.2
           - 22.x
+          - 24.15.0
+          - 24.x
+          - 26.0.0
+          - 26.x
         exclude:
           - platform: { name: macOS, os: macos-15-intel, shell: bash }
-            node-version: 20.17.0
-          - platform: { name: macOS, os: macos-15-intel, shell: bash }
-            node-version: 20.x
-          - platform: { name: macOS, os: macos-15-intel, shell: bash }
-            node-version: 22.9.0
+            node-version: 22.22.2
           - platform: { name: macOS, os: macos-15-intel, shell: bash }
             node-version: 22.x
+          - platform: { name: macOS, os: macos-15-intel, shell: bash }
+            node-version: 24.15.0
+          - platform: { name: macOS, os: macos-15-intel, shell: bash }
+            node-version: 24.x
+          - platform: { name: macOS, os: macos-15-intel, shell: bash }
+            node-version: 26.0.0
+          - platform: { name: macOS, os: macos-15-intel, shell: bash }
+            node-version: 26.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         id: node
         with:
           node-version: ${{ matrix.node-version }}
@@ -130,17 +136,17 @@ jobs:
         shell: bash
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         id: node
         with:
-          node-version: 22.x
-          check-latest: contains('22.x', '.x')
+          node-version: 26.x
+          check-latest: contains('26.x', '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js
@@ -162,7 +168,7 @@ jobs:
         shell: bash
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ inputs.ref }}
       - name: Setup Git User
@@ -178,11 +184,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           sha: ${{ inputs.check-sha }}
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         id: node
         with:
-          node-version: 22.x
-          check-latest: contains('22.x', '.x')
+          node-version: 26.x
+          check-latest: contains('26.x', '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js
@@ -211,7 +217,7 @@ jobs:
         shell: bash
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ inputs.ref }}
       - name: Setup Git User
@@ -227,11 +233,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           sha: ${{ inputs.check-sha }}
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         id: node
         with:
-          node-version: 22.x
-          check-latest: contains('22.x', '.x')
+          node-version: 26.x
+          check-latest: contains('26.x', '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js
@@ -255,17 +261,17 @@ jobs:
         shell: cmd
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         id: node
         with:
-          node-version: 22.x
-          check-latest: contains('22.x', '.x')
+          node-version: 26.x
+          check-latest: contains('26.x', '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js

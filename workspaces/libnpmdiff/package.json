@@ -58,7 +58,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.29.0",
+    "version": "5.1.0",
     "content": "../../scripts/template-oss/index.js"
   },
   "tap": {
