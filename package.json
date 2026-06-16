@@ -128,6 +128,7 @@
     "@sigstore/tuf",
     "abbrev",
     "archy",
+    "bin-links",
     "cacache",
     "chalk",
     "ci-info",
