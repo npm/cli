@@ -111,7 +111,7 @@
     "tiny-relative-date": "^2.0.2",
     "treeverse": "^3.0.0",
     "validate-npm-package-name": "^8.0.0",
-    "which": "^6.0.1"
+    "which": "^7.0.0"
   },
   "bundleDependencies": [
     "@isaacs/string-locale-compare",
