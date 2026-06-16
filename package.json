@@ -104,7 +104,7 @@
     "read": "^6.0.0",
     "semver": "^7.8.4",
     "spdx-expression-parse": "^4.0.0",
-    "ssri": "^13.0.1",
+    "ssri": "^14.0.0",
     "supports-color": "^10.2.2",
     "tar": "^7.5.15",
     "text-table": "~0.2.0",
