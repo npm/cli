@@ -51,7 +51,7 @@
     "@npmcli/arborist": "^10.0.0-pre.0",
     "@npmcli/config": "^11.0.0-pre.0",
     "@npmcli/fs": "^5.0.0",
-    "@npmcli/map-workspaces": "^5.0.3",
+    "@npmcli/map-workspaces": "^6.0.0",
     "@npmcli/metavuln-calculator": "^9.0.3",
     "@npmcli/package-json": "^7.0.5",
     "@npmcli/promise-spawn": "^9.0.1",
