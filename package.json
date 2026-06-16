@@ -185,7 +185,7 @@
   "devDependencies": {
     "@npmcli/docs": "^1.0.0",
     "@npmcli/eslint-config": "^5.1.0",
-    "@npmcli/git": "^7.0.2",
+    "@npmcli/git": "^8.0.0",
     "@npmcli/mock-globals": "^1.0.0",
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/template-oss": "5.1.0",
