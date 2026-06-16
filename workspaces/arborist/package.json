@@ -18,7 +18,7 @@
     "bin-links": "^6.0.0",
     "cacache": "^21.0.1",
     "common-ancestor-path": "^2.0.0",
-    "hosted-git-info": "^9.0.0",
+    "hosted-git-info": "^10.1.1",
     "json-stringify-nice": "^1.1.4",
     "lru-cache": "^11.2.1",
     "minimatch": "^10.0.3",
