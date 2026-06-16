@@ -67,7 +67,7 @@
     "ci-info": "^4.0.0",
     "npm-package-arg": "^14.0.0",
     "pacote": "^22.0.0",
-    "proc-log": "^6.0.0",
+    "proc-log": "^7.0.0",
     "read": "^5.0.1",
     "semver": "^7.3.7",
     "signal-exit": "^4.1.0",
