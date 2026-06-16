@@ -40,7 +40,7 @@
     "@npmcli/arborist": "^10.0.0-pre.0",
     "@npmcli/run-script": "^11.0.0",
     "npm-package-arg": "^14.0.0",
-    "pacote": "^21.0.2"
+    "pacote": "^22.0.0"
   },
   "engines": {
     "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
