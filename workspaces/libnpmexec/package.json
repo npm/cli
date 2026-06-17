@@ -44,6 +44,10 @@
   },
   "tap": {
     "files": "test/*.js",
+    "node-arg": [
+      "--require",
+      "../../scripts/disable-agent-for-tests.js"
+    ],
     "nyc-arg": [
       "--exclude",
       "tap-snapshots/**"

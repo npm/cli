@@ -198,7 +198,7 @@
     "ajv-formats-draft2019": "^1.6.1",
     "cli-table3": "^0.6.4",
     "diff": "^8.0.4",
-    "nock": "^13.4.0",
+    "nock": "^14.0.0",
     "npm-packlist": "^11.2.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
@@ -229,6 +229,10 @@
   "tap": {
     "test-env": [
       "LC_ALL=sk"
+    ],
+    "node-arg": [
+      "--require",
+      "./scripts/disable-agent-for-tests.js"
     ],
     "timeout": 600,
     "nyc-arg": [

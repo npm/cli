@@ -28,7 +28,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^5.0.1",
     "@npmcli/template-oss": "5.1.1",
-    "nock": "^13.3.3",
+    "nock": "^14.0.0",
     "tap": "^16.3.8"
   },
   "repository": {
@@ -50,6 +50,10 @@
     "content": "../../scripts/template-oss/index.js"
   },
   "tap": {
+    "node-arg": [
+      "--require",
+      "../../scripts/disable-agent-for-tests.js"
+    ],
     "nyc-arg": [
       "--exclude",
       "tap-snapshots/**"
