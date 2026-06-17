@@ -41,6 +41,10 @@ Array [
 
 exports[`test/lib/commands/pack.js TAP foreground-scripts defaults to true > logs pack contents 1`] = `
 Array [
+  "run test-fg-scripts@0.0.0 prepack",
+  "run echo prepack!",
+  "run test-fg-scripts@0.0.0 postpack",
+  "run echo postpack!",
   "package: test-fg-scripts@0.0.0",
   "Tarball Contents",
   "110B package.json",
@@ -87,7 +91,10 @@ Array [
 `
 
 exports[`test/lib/commands/pack.js TAP should log scoped package output as valid json > logs pack contents 1`] = `
-Array []
+Array [
+  "run @myscope/test-package@1.0.0 prepack",
+  "run echo prepack!",
+]
 `
 
 exports[`test/lib/commands/pack.js TAP should log scoped package output as valid json > outputs as json 1`] = `
@@ -113,17 +120,6 @@ Array [
       "version": "1.0.0",
     },
   },
-]
-`
-
-exports[`test/lib/commands/pack.js TAP should log scoped package output as valid json > stderr has banners 1`] = `
-Array [
-  String(
-    
-    > @myscope/test-package@1.0.0 prepack
-    > echo prepack!
-    
-  ),
 ]
 `
 

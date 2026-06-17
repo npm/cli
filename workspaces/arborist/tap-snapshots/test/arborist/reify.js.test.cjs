@@ -17395,7 +17395,6 @@ Object {
         "ruy": "bin/index.js",
       },
       "integrity": "sha512-VYppDTCM6INWUMKlWiKws4nVMuCNU5h+xjF6lj/0y90rLq017/m8aEpNy4zQSZFV2qz66U/hRZwwlSLJ5l5JMQ==",
-      "license": "ISC",
       "resolved": "https://registry.npmjs.org/ruy/-/ruy-1.0.0.tgz",
       "version": "1.0.0",
     },
@@ -32290,7 +32289,6 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
       "version": "7.3.2",
       "resolved": "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz",
       "integrity": "sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==",
-      "license": "ISC",
       "bin": {
         "semver": "bin/semver.js"
       },
@@ -32318,7 +32316,6 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
       "version": "7.3.2",
       "resolved": "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz",
       "integrity": "sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==",
-      "license": "ISC",
       "bin": {
         "semver": "bin/semver.js"
       },

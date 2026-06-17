@@ -51,6 +51,10 @@ Array [
 
 exports[`test/lib/commands/publish.js TAP foreground-scripts defaults to true > must match snapshot 1`] = `
 Array [
+  "run test-fg-scripts@0.0.0 prepack",
+  "run echo prepack!",
+  "run test-fg-scripts@0.0.0 postpack",
+  "run echo postpack!",
   "package: test-fg-scripts@0.0.0",
   "Tarball Contents",
   "110B package.json",
@@ -222,15 +226,6 @@ exports[`test/lib/commands/publish.js TAP re-loads publishConfig.registry if add
 `
 
 exports[`test/lib/commands/publish.js TAP respects publishConfig.registry, runs appropriate scripts > new package version 1`] = `
-
-> @npmcli/test-package@1.0.0 prepublishOnly
-> touch scripts-prepublishonly
-
-> @npmcli/test-package@1.0.0 publish
-> touch scripts-publish
-
-> @npmcli/test-package@1.0.0 postpublish
-> touch scripts-postpublish
 + @npmcli/test-package@1.0.0
 `
 

@@ -18,8 +18,8 @@ Module._load = function (request, ...args) {
   const loaded = originalLoad.call(this, request, ...args)
   if (request === '@npmcli/agent' && loaded && typeof loaded.getAgent === 'function') {
     const realGetAgent = loaded.getAgent
-    loaded.getAgent = (url, options = {}) => {
-      if (options && options.proxy) {
+    loaded.getAgent = (url, options) => {
+      if (options.proxy) {
         return realGetAgent(url, options)
       }
       return false

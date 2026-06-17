@@ -174,12 +174,8 @@ t.test('foreground-scripts defaults to true', async t => {
   t.matchSnapshot(logs.notice)
   t.strictSame(
     outputs,
-    [
-      '\n> test-fg-scripts@0.0.0 prepack\n> echo prepack!\n',
-      '\n> test-fg-scripts@0.0.0 postpack\n> echo postpack!\n',
-      `+ test-fg-scripts@0.0.0`,
-    ],
-    'prepack and postpack log to stdout')
+    [`+ test-fg-scripts@0.0.0`],
+    'published package is the only stdout output')
 })
 
 t.test('foreground-scripts can still be set to false', async t => {

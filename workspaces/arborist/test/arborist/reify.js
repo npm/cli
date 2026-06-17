@@ -74,12 +74,14 @@ const warningTracker = () => {
   }
 }
 
-const outputTracker = () => {
+// run-script@11 emits its banners via log.notice('run', ...) rather than
+// output.standard, so capture log events to assert on them.
+const logTracker = () => {
   const list = []
-  const onlog = (...msg) => msg[0] === 'standard' && list.push(msg)
-  process.on('output', onlog)
+  const onlog = (...msg) => list.push(msg)
+  process.on('log', onlog)
   return () => {
-    process.removeListener('output', onlog)
+    process.removeListener('log', onlog)
     return list
   }
 }
@@ -2858,12 +2860,20 @@ t.test('runs dependencies script if tree changes', async (t) => {
     t.not(fs.existsSync(expectedPath), `did not run ${script}`)
   }
 
-  const outputs = outputTracker()
+  const logs = logTracker()
 
   // reify again, this time adding a new dependency
   await reify(path, { foregroundScripts: true, add: ['once@^1.4.0'] })
 
-  t.match(outputs(), [/predependencies/, /dependencies/, /postdependencies/], 'logged banners')
+  const banners = logs()
+    .filter(([level, title]) => level === 'notice' && title === 'run')
+    .map(([, , msg]) => msg)
+    .filter(msg => msg.startsWith('root@1.0.0 '))
+  t.match(
+    banners,
+    [/predependencies/, /dependencies/, /postdependencies/],
+    'logged banners'
+  )
 
   // files should exist again
   for (const script of ['predependencies', 'dependencies', 'postdependencies']) {
