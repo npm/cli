@@ -1002,6 +1002,7 @@ To make this limitation easier to deal with, overrides may also be defined as a 
     // GOOD, specs match so override is allowed
     // "foo": "^1.0.0"
     // BEST, the override is defined as a reference to the dependency
+    // For scoped packages, use the full scoped name in the reference.
     "@npm/foo": "$@npm/foo",
     // the referenced package does not need to match the overridden one
     "@npm/bar": "$@npm/foo"
