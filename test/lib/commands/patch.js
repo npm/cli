@@ -648,6 +648,42 @@ t.test('update conflict leaves an edit dir; commit finalizes the rename', async 
   t.notOk(fs.existsSync(path.join(npm.prefix, 'patches', `${name}@1.0.0.patch`)), 'old patch file removed')
 })
 
+t.test('a no-op resolving commit keeps the marker so a corrected retry still finalizes', async t => {
+  const name = 'upd-noop-retry'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'a\nb\nc\n', '2.0.0': 'a\nBB\nc\n' })
+  await npm.exec('install', [])
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const addDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(addDir, 'index.js'), 'a\nMINE\nc\n')
+  await npm.exec('patch', ['commit', addDir])
+
+  npm.config.set('to', '2.0.0')
+  outputs.length = 0
+  await npm.exec('patch', ['update', name])
+  const editDir = joinedOutput().match(/Resolve the conflicts in: (.+)/)[1].trim()
+  const markerPath = path.join(editDir, '.npm-patch-update.json')
+  t.ok(fs.existsSync(markerPath), 'marker written on conflict')
+
+  // resolve to the new version verbatim (no net change) and commit: a no-op
+  let src = fs.readFileSync(path.join(editDir, 'index.js'), 'utf8')
+  src = src.replace(/<<<<<<<[^\n]*\n([\s\S]*?)=======\n[\s\S]*?>>>>>>>[^\n]*\n/, '$1')
+  fs.writeFileSync(path.join(editDir, 'index.js'), src)
+  await npm.exec('patch', ['commit', editDir])
+  t.ok(fs.existsSync(markerPath), 'marker survives a no-op commit so the update context is not lost')
+
+  // now resolve properly and commit again: must finalize the rename, not throw EPATCHUNUSED on the uninstalled 2.0.0
+  fs.writeFileSync(path.join(editDir, 'index.js'), src.replace('BB', 'MINE'))
+  await npm.exec('patch', ['commit', editDir])
+  t.same(readJson(path.join(npm.prefix, 'package.json')).patchedDependencies,
+    { [`${name}@2.0.0`]: `patches/${name}@2.0.0.patch` }, 'finalized: old selector dropped, new one added')
+})
+
 t.test('update conflict on a name-only selector forks and commits without EPATCHUNUSED', async t => {
   const name = 'upd-rconflict'
   const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
