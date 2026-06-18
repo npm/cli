@@ -1013,7 +1013,7 @@ Using only the unscoped package name, like `$foo`, does not match `@scope/foo`.
     // "@npm/bar": "$bar",
     "@npm/foo": "$@npm/foo",
     // the referenced package does not need to match the overridden one
-    "@npm/bar": "$@npm/bar"
+    "@npm/bar": "$@npm/foo"
   }
 }
 ```
