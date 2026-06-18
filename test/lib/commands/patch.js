@@ -582,6 +582,54 @@ t.test('update --to rebases an exact patch onto a new version', async t => {
     'rebased patch keeps the edit')
 })
 
+t.test('update --to warns when the target version is not installed', async t => {
+  const name = 'upd-uninstalled'
+  const { npm, joinedOutput, outputs, registry, logs } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '1.0.0' }),
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'a\nb\nc\n', '2.0.0': 'a\nb\nCC\n' })
+  await npm.exec('install', [])
+
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'AA\nb\nc\n')
+  await npm.exec('patch', ['commit', editDir])
+
+  // dependency is pinned to 1.0.0, so rebasing onto 2.0.0 targets an uninstalled version
+  npm.config.set('to', '2.0.0')
+  await npm.exec('patch', ['update', name])
+
+  t.match(logs.warn.byTitle('patch'),
+    [new RegExp(`${name}@2\\.0\\.0 is not installed.*EPATCHUNUSED`)],
+    'warns that the target version is not installed')
+})
+
+t.test('update --to is silent when the target version is installed', async t => {
+  const name = 'upd-installed'
+  const { npm, registry, logs } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^2.0.0' }),
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'x\n', '2.0.0': 'x\n' })
+  // 2.0.0 is the installed version; hand-author a patch against 1.0.0 that adds a file (applies to any version)
+  await npm.exec('install', [])
+  fs.mkdirSync(path.join(npm.prefix, 'patches'), { recursive: true })
+  fs.writeFileSync(path.join(npm.prefix, 'patches', `${name}@1.0.0.patch`),
+    '--- /dev/null\t\n+++ b/EXTRA.txt\t\n@@ -0,0 +1 @@\n+extra\n')
+  const pkg = readJson(path.join(npm.prefix, 'package.json'))
+  pkg.patchedDependencies = { [`${name}@1.0.0`]: `patches/${name}@1.0.0.patch` }
+  fs.writeFileSync(path.join(npm.prefix, 'package.json'), JSON.stringify(pkg))
+
+  // rebasing onto 2.0.0, which is installed, must not warn
+  npm.config.set('to', '2.0.0')
+  await npm.exec('patch', ['update', name])
+  t.strictSame(logs.warn.byTitle('patch'), [], 'no warning when --to matches the installed version')
+})
+
 t.test('update auto-detects the new version and drops a fully-shadowed range', async t => {
   const name = 'upd-range'
   const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
