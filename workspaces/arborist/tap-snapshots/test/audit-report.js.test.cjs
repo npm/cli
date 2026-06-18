@@ -1131,6 +1131,10 @@ exports[`test/audit-report.js TAP audit outdated nyc and mkdirp with before: opt
         "name": "nyc",
         "version": "15.1.0",
         "isSemVerMajor": true
+      },
+      "fixBlockedByReleaseAge": {
+        "version": "0.5.5",
+        "before": "2020-01-01T00:00:00.000Z"
       }
     },
     "nyc": {
