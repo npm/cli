@@ -579,6 +579,17 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   // and leaving the user subject to getting it overwritten later anyway.
   async #queueVulnDependents (options) {
     for (const vuln of this.auditReport.values()) {
+      // A fix is available in-range but a release-age window blocks the patched
+      // version, so audit fix leaves this package at a vulnerable version.
+      if (vuln.fixBlockedByReleaseAge) {
+        const { version, before } = vuln.fixBlockedByReleaseAge
+        const cutoff = new Date(before).toISOString().slice(0, 10)
+        log.warn('audit', `A fix for ${vuln.name} is available (${vuln.name}@${version}) ` +
+          `but was published after the configured release-age cutoff (${cutoff}), so ` +
+          `${vuln.name} was left at a vulnerable version.\n` +
+          `To install it, add "${vuln.name}" to min-release-age-exclude, or relax ` +
+          'min-release-age or before.')
+      }
       for (const node of vuln.nodes) {
         const bundler = node.getBundler()
 

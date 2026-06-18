@@ -181,6 +181,71 @@ t.test('audit outdated nyc and mkdirp with before: option', async t => {
   t.equal(report.get('mkdirp').simpleRange, '0.4.1 - 0.5.1')
 })
 
+t.test('min-release-age blocks an available fix', async t => {
+  // mkdirp's fix (0.5.5, published 2020-04) is newer than a 2020-01-01 cutoff,
+  // so the only versions old enough are still vulnerable and audit fix can't
+  // apply the fix it reported as available.
+  const path = resolve(fixtures, 'audit-nyc-mkdirp')
+  const registry = createRegistry(t)
+  registry.audit({ results: require(resolve(path, 'advisory-bulk.json')) })
+  registry.mocks({ dir: join(__dirname, 'fixtures') })
+  const cache = t.testdir()
+  const arb = newArb(path, { before: new Date('2020-01-01'), cache })
+
+  const tree = await arb.loadVirtual()
+  const report = await AuditReport.load(tree, arb.options)
+  t.match(report.get('mkdirp').fixBlockedByReleaseAge, { version: '0.5.5' },
+    'mkdirp fix flagged as blocked by the release-age window')
+})
+
+t.test('min-release-age does not block a fix that is old enough', async t => {
+  const path = resolve(fixtures, 'audit-nyc-mkdirp')
+  const registry = createRegistry(t)
+  registry.audit({ results: require(resolve(path, 'advisory-bulk.json')) })
+  registry.mocks({ dir: join(__dirname, 'fixtures') })
+  const cache = t.testdir()
+  // a cutoff after mkdirp@0.5.5 was published: the fix is reachable
+  const arb = newArb(path, { before: new Date('2021-01-01'), cache })
+
+  const tree = await arb.loadVirtual()
+  const report = await AuditReport.load(tree, arb.options)
+  t.notOk(report.get('mkdirp').fixBlockedByReleaseAge,
+    'fix reachable within the window, so not flagged')
+})
+
+t.test('min-release-age-exclude exempts a package from the block', async t => {
+  const path = resolve(fixtures, 'audit-nyc-mkdirp')
+  const registry = createRegistry(t)
+  registry.audit({ results: require(resolve(path, 'advisory-bulk.json')) })
+  registry.mocks({ dir: join(__dirname, 'fixtures') })
+  const cache = t.testdir()
+  const arb = newArb(path, {
+    before: new Date('2020-01-01'),
+    minReleaseAgeExclude: ['mkdirp'],
+    cache,
+  })
+
+  const tree = await arb.loadVirtual()
+  const report = await AuditReport.load(tree, arb.options)
+  t.notOk(report.get('mkdirp').fixBlockedByReleaseAge,
+    'excluded package is not flagged even when its fix is too new')
+})
+
+t.test('min-release-age blocks when no version is old enough at all', async t => {
+  const path = resolve(fixtures, 'audit-nyc-mkdirp')
+  const registry = createRegistry(t)
+  registry.audit({ results: require(resolve(path, 'advisory-bulk.json')) })
+  registry.mocks({ dir: join(__dirname, 'fixtures') })
+  const cache = t.testdir()
+  // a cutoff before any mkdirp version was published: nothing is installable
+  const arb = newArb(path, { before: new Date('2000-01-01'), cache })
+
+  const tree = await arb.loadVirtual()
+  const report = await AuditReport.load(tree, arb.options)
+  t.match(report.get('mkdirp').fixBlockedByReleaseAge, { version: '0.5.5' },
+    'flagged as blocked when nothing is installable within the window')
+})
+
 t.test('audit returns an error', async t => {
   const path = resolve(fixtures, 'audit-nyc-mkdirp')
   const registry = createRegistry(t)
@@ -419,6 +484,43 @@ t.test('audit supports alias deps', async t => {
   const report = await AuditReport.load(tree, arb.options)
   t.matchSnapshot(JSON.stringify(report, 0, 2), 'json version')
   t.equal(report.get('mkdirp').simpleRange, '0.4.1 - 0.5.1')
+})
+
+t.test('release-age block detection unwraps alias specs', async t => {
+  // An npm: alias edge must be resolved against its target, not fed to
+  // pickManifest as an alias spec (which it rejects). With a release-age
+  // window the alias fix (mkdirp@0.5.5) is too new, so it should be flagged.
+  const path = resolve(fixtures, 'audit-nyc-mkdirp')
+  const registry = createRegistry(t)
+  registry.audit({ results: require(resolve(path, 'advisory-bulk.json')) })
+  registry.mocks({ dir: join(__dirname, 'fixtures') })
+  const cache = t.testdir()
+  const arb = newArb(path, { before: new Date('2020-01-01'), cache })
+  const tree = new Node({
+    path,
+    pkg: {
+      name: 'mkdirp',
+      version: '0.5.0',
+      dependencies: {
+        novulnshereiswear: 'npm:mkdirp@^0.5.0',
+      },
+    },
+    children: [
+      {
+        name: 'novulnshereiswear',
+        pkg: {
+          name: 'mkdirp',
+          version: '0.5.1',
+          dependencies: { minimist: '0.0.8' },
+        },
+      },
+      { pkg: { name: 'minimist', version: '0.0.8' } },
+    ],
+  })
+
+  const report = await AuditReport.load(tree, arb.options)
+  t.match(report.get('mkdirp').fixBlockedByReleaseAge, { version: '0.5.5' },
+    'alias spec is unwrapped and the blocked fix is detected')
 })
 
 t.test('linked local package should not be audited against the registry', async t => {
