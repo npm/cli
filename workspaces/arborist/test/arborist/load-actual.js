@@ -498,3 +498,50 @@ t.test('loading a workspace maintains overrides', async t => {
   const fooEdge = tree.edgesOut.get('foo')
   t.equal(tree.overrides, fooEdge.overrides, 'foo edge got the correct overrides')
 })
+
+t.test('applies root packageExtensions to a linked actual tree', async t => {
+  // packageExtensions never rewrite a package's package.json, so the extension edge lives only in lockfile metadata.
+  // The linked store layout forces loadActual onto the filesystem-scan path, where the edge must be re-derived from the root rule set.
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { broken: '1.0.0', safe: '1.0.0' },
+      packageExtensions: { 'broken@1': { dependencies: { missing: '^1.0.0' } } },
+    }),
+    node_modules: {
+      broken: t.fixture('symlink', '.store/broken@1.0.0/node_modules/broken'),
+      // safe matches no selector, exercising the non-extended path
+      safe: t.fixture('symlink', '.store/safe@1.0.0/node_modules/safe'),
+      '.store': {
+        'broken@1.0.0': {
+          node_modules: {
+            // physical manifest deliberately omits the extension-added dependency
+            broken: { 'package.json': JSON.stringify({ name: 'broken', version: '1.0.0' }) },
+            missing: t.fixture('symlink', '../../missing@1.0.0/node_modules/missing'),
+          },
+        },
+        'missing@1.0.0': {
+          node_modules: {
+            missing: { 'package.json': JSON.stringify({ name: 'missing', version: '1.0.0' }) },
+          },
+        },
+        'safe@1.0.0': {
+          node_modules: {
+            safe: { 'package.json': JSON.stringify({ name: 'safe', version: '1.0.0' }) },
+          },
+        },
+      },
+    },
+  })
+
+  const tree = await loadActual(path)
+  const brokenLink = tree.children.get('broken')
+  const broken = brokenLink.target
+  const edge = broken.edgesOut.get('missing')
+  t.ok(edge && !edge.error, 'extension-added edge is present and resolves')
+  t.equal(edge.to.name, 'missing', 'edge resolves to the installed package')
+  const applied = { selector: 'broken@1', dependencies: ['missing'] }
+  t.strictSame(broken.packageExtensionsApplied, applied, 'provenance recorded on the store node')
+  t.strictSame(brokenLink.packageExtensionsApplied, applied, 'provenance mirrored onto the link')
+})
