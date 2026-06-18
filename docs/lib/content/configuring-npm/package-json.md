@@ -1004,10 +1004,11 @@ To make this limitation easier to deal with, overrides may also be defined as a 
     // BEST, the override is defined as a reference to the dependency
     // For scoped packages, use the full scoped name in the reference.
     // BAD, will not resolve scoped package references.
+    // Do not use unscoped references for scoped dependencies.
+    // Use "$@npm/foo" instead of "$foo", and use "$@npm/bar" instead of "$bar".
+    // "$foo" and "$bar" are unscoped references and will not match scoped packages.
     // "@npm/foo": "$foo",
     // "@npm/bar": "$bar",
-    // Use "$@npm/foo" instead of "$foo", and use "$@npm/bar" instead of "$bar".
-    // `$foo` and `$bar` are unscoped references and will not match scoped packages.
     "@npm/foo": "$@npm/foo",
     // the referenced package does not need to match the overridden one
     "@npm/bar": "$@npm/bar"
