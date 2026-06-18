@@ -102,6 +102,29 @@ t.test('registry dep with patch is applied and recorded in lockfile', async t =>
   t.match(pkgEntry.patched.integrity, /^sha512-/, 'patched.integrity is an SSRI')
 })
 
+t.test('uninstalling a patched package drops its entry from package.json', async t => {
+  const registry = createRegistry(t)
+  // one install, then an uninstall that resolves from the lockfile so no extra fetches
+  await mockPackage(t, registry)
+
+  const patch = filePatch('index.js', ORIGINAL, PATCHED)
+  const path = makeProject(t, {
+    patch,
+    patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: `patches/${PKG_NAME}@${PKG_VERSION}.patch` },
+  })
+
+  await newArb({ path }).reify()
+  t.equal(fs.readFileSync(installedFile(path), 'utf8'), PATCHED, 'package installed and patched')
+
+  // npm uninstall <pkg>: removes the dep but leaves the now-orphaned patch entry
+  await newArb({ path }).reify({ rm: [PKG_NAME] })
+
+  const rootPkg = JSON.parse(fs.readFileSync(resolve(path, 'package.json'), 'utf8'))
+  t.notOk(rootPkg.dependencies?.[PKG_NAME], 'dependency removed from package.json')
+  t.notOk(rootPkg.patchedDependencies, 'orphaned patch entry dropped from package.json')
+  t.notOk(fs.existsSync(resolve(path, 'node_modules', PKG_NAME)), 'package removed from node_modules')
+})
+
 t.test('patch is re-applied on a patch-change reify even with ignoreScripts', async t => {
   const registry = createRegistry(t)
   // two reifys: the second re-extracts the node due to the patch change.

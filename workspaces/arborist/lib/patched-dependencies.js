@@ -3,6 +3,7 @@
 // Enforces the failure modes (workspace-member entry, missing file, unused patch, non-registry target, ambiguous selectors) as hard errors.
 const semver = require('semver')
 const npa = require('npm-package-arg')
+const { log } = require('proc-log')
 const { resolve, relative, isAbsolute } = require('node:path')
 const { readFile } = require('node:fs/promises')
 const { patchIntegrity } = require('./patch.js')
@@ -61,7 +62,7 @@ const matchSelector = (selectors, node) => {
   return matches.find(s => s.spec === null) || null
 }
 
-const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) => {
+const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches, rm }) => {
   const patchedDependencies = tree.package?.patchedDependencies || {}
   const selectors = Object.entries(patchedDependencies)
     .map(([key, patchPath]) => ({ ...parseSelector(key), key, patchPath }))
@@ -135,15 +136,30 @@ const resolvePatchedDependencies = async (tree, { path, allowUnusedPatches }) =>
     usedKeys.add(selector.key)
   }
 
-  if (selectors.length && !allowUnusedPatches) {
+  if (selectors.length) {
     const unused = selectors.filter(s => !usedKeys.has(s.key))
-    if (unused.length) {
+
+    // an explicit `npm uninstall <name>` orphans that package's patch entry, so drop it instead of failing
+    const removed = new Set(rm)
+    const dropped = unused.filter(s => removed.has(s.name))
+    if (dropped.length) {
+      const patched = { ...tree.package.patchedDependencies }
+      for (const s of dropped) {
+        delete patched[s.key]
+        log.notice('patch', `Removing patch entry "${s.key}" for uninstalled ${s.name}; left ${s.patchPath} in place.`)
+      }
+      // undefined drops the key entirely when reify writes package.json
+      tree.package.patchedDependencies = Object.keys(patched).length ? patched : undefined
+    }
+
+    const stillUnused = unused.filter(s => !removed.has(s.name))
+    if (stillUnused.length && !allowUnusedPatches) {
       throw err(
         `The following patches were registered but matched no installed ` +
-          `package:\n${unused.map(s => `  ${s.key} -> ${s.patchPath}`).join('\n')}\n` +
+          `package:\n${stillUnused.map(s => `  ${s.key} -> ${s.patchPath}`).join('\n')}\n` +
           `Use --allow-unused-patches to install anyway.`,
         'EPATCHUNUSED',
-        { unused: unused.map(s => s.key) }
+        { unused: stillUnused.map(s => s.key) }
       )
     }
   }

@@ -1824,6 +1824,8 @@ module.exports = cls => class Reifier extends cls {
           // field so defaulting this to an empty array would add that field to
           // every package.json file.
           bundleDependencies,
+          // resolvePatchedDependencies drops entries orphaned by uninstall; persist that removal
+          patchedDependencies,
         } = tree.package
 
         pkgJson.update({
@@ -1832,6 +1834,7 @@ module.exports = cls => class Reifier extends cls {
           optionalDependencies,
           peerDependencies,
           bundleDependencies,
+          patchedDependencies,
         })
         await pkgJson.save()
       }

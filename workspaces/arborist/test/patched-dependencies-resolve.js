@@ -239,6 +239,114 @@ t.test('EPATCHUNUSED when a registered patch matches no node', async t => {
   await t.rejects(buildIdeal(path), { code: 'EPATCHUNUSED', unused: ['ghost@1.0.0'] })
 })
 
+t.test('uninstalling a patched package drops its orphaned patch entry', async t => {
+  // npm uninstall removes the node but leaves the patchedDependencies entry, which would otherwise be EPATCHUNUSED
+  const path = t.testdir({
+    'fix.patch': PATCH,
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { dep: '^1.0.0' },
+      patchedDependencies: { 'dep@1.0.0': 'fix.patch' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root', version: '1.0.0', dependencies: { dep: '^1.0.0' } },
+        'node_modules/dep': lockEntry('dep', '1.0.0'),
+      },
+    }),
+    node_modules: {
+      dep: { 'package.json': JSON.stringify({ name: 'dep', version: '1.0.0' }) },
+    },
+  })
+
+  const tree = await buildIdeal(path, { rm: ['dep'] })
+  t.notOk(tree.inventory.query('name', 'dep').size, 'dep node is removed')
+  t.notOk(tree.package.patchedDependencies, 'the orphaned patch entry is dropped')
+})
+
+t.test('uninstall keeps patch entries for packages that remain', async t => {
+  // removing one package must not drop another package's still-used patch
+  const path = t.testdir({
+    'a.patch': PATCH,
+    'b.patch': PATCH,
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { a: '^1.0.0', b: '^1.0.0' },
+      patchedDependencies: { 'a@1.0.0': 'a.patch', 'b@1.0.0': 'b.patch' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root', version: '1.0.0', dependencies: { a: '^1.0.0', b: '^1.0.0' } },
+        'node_modules/a': lockEntry('a', '1.0.0'),
+        'node_modules/b': lockEntry('b', '1.0.0'),
+      },
+    }),
+    node_modules: {
+      a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+      b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+    },
+  })
+
+  const tree = await buildIdeal(path, { rm: ['a'] })
+  t.notOk(tree.inventory.query('name', 'a').size, 'a node is removed')
+  t.same(tree.package.patchedDependencies, { 'b@1.0.0': 'b.patch' }, 'b patch entry survives')
+  const b = tree.inventory.query('name', 'b').values().next().value
+  t.ok(b.patched, 'b is still patched')
+})
+
+t.test('uninstall does not drop a patch when the package survives as a transitive dep', async t => {
+  // dep is a direct dep being removed but stays in the tree under parent, so its patch is still used
+  const path = t.testdir({
+    'fix.patch': PATCH,
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { dep: '^1.0.0', parent: '^1.0.0' },
+      patchedDependencies: { 'dep@1.0.0': 'fix.patch' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root', version: '1.0.0', dependencies: { dep: '^1.0.0', parent: '^1.0.0' } },
+        'node_modules/dep': lockEntry('dep', '1.0.0'),
+        'node_modules/parent': {
+          ...lockEntry('parent', '1.0.0'),
+          dependencies: { dep: '^1.0.0' },
+        },
+      },
+    }),
+    node_modules: {
+      dep: { 'package.json': JSON.stringify({ name: 'dep', version: '1.0.0' }) },
+      parent: {
+        'package.json': JSON.stringify({
+          name: 'parent',
+          version: '1.0.0',
+          dependencies: { dep: '^1.0.0' },
+        }),
+      },
+    },
+  })
+
+  const tree = await buildIdeal(path, { rm: ['dep'] })
+  const dep = tree.inventory.query('name', 'dep').values().next().value
+  t.ok(dep, 'dep node survives as a transitive dependency')
+  t.ok(dep.patched, 'dep is still patched')
+  t.same(tree.package.patchedDependencies, { 'dep@1.0.0': 'fix.patch' }, 'patch entry is kept')
+})
+
 t.test('allowUnusedPatches:true suppresses EPATCHUNUSED', async t => {
   const path = t.testdir({
     'fix.patch': PATCH,
