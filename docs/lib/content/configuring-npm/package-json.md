@@ -1010,7 +1010,7 @@ To make this limitation easier to deal with, overrides may also be defined as a 
     // `$foo` and `$bar` are unscoped references and will not match scoped packages.
     "@npm/foo": "$@npm/foo",
     // the referenced package does not need to match the overridden one
-    "@npm/bar": "$@npm/foo"
+    "@npm/bar": "$@npm/bar"
   }
 }
 ```
