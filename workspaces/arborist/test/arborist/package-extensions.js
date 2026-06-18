@@ -179,8 +179,11 @@ t.test('does not extend workspace members but warns', async t => {
   const tree = await buildIdeal(path)
   const ws = [...tree.inventory.values()].find(n => n.name === 'ws')
   t.notOk(ws.edgesOut.get('bar'), 'workspace member is not extended')
-  t.ok(warnings.some(w => /workspace package ws/.test(w[2])), 'warns about the workspace selector match')
-  t.ok(warnings.some(w => /in workspace ws is ignored/.test(w[2])), 'warns about non-root workspace packageExtensions')
+  // a workspace appears in the inventory as both a Link and its target node, so the warning must be deduped to fire once
+  t.equal(warnings.filter(w => /workspace package ws/.test(w[2])).length, 1,
+    'warns exactly once about the workspace selector match')
+  t.equal(warnings.filter(w => /in workspace ws is ignored/.test(w[2])).length, 1,
+    'warns exactly once about non-root workspace packageExtensions')
 })
 
 t.test('ignores packageExtensions from an installed dependency', async t => {

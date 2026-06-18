@@ -283,7 +283,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       return
     }
     for (const node of this.idealTree.inventory.values()) {
-      if (!node.isWorkspace) {
+      // a workspace is in the inventory as both a Link and its target node; warn once by skipping the link
+      if (!node.isWorkspace || node.isLink) {
         continue
       }
       if (node.package.packageExtensions !== undefined) {
