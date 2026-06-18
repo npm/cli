@@ -1005,12 +1005,6 @@ Using only the unscoped package name, like `$foo`, does not match `@scope/foo`.
     // GOOD, specs match so override is allowed
     // "foo": "^1.0.0"
     // BEST, the override is defined as a reference to the dependency
-    // For scoped packages, use the full scoped name in the reference.
-    // BAD, will not resolve scoped package references.
-    // Use "$@npm/foo" instead of "$foo".
-    // "$foo" is an unscoped reference and will not match @npm/foo.
-    // "@npm/foo": "$foo",
-    // "@npm/bar": "$bar",
     "@npm/foo": "$@npm/foo",
     // the referenced package does not need to match the overridden one
     "@npm/bar": "$@npm/foo"
