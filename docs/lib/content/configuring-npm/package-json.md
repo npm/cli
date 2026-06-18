@@ -991,6 +991,9 @@ overriding its children, set `"."` explicitly:
 You may not set an override for a package that you directly depend on unless both the dependency and the override itself share the exact same spec.
 To make this limitation easier to deal with, overrides may also be defined as a reference to a spec for a direct dependency by prefixing the name of the package you wish the version to match with a `$`.
 
+For scoped dependencies, the `$` reference must be the full scoped package name.
+Using only the unscoped package name, like `$foo`, does not match `@scope/foo`.
+
 ```json
 {
   "dependencies": {
@@ -1004,9 +1007,8 @@ To make this limitation easier to deal with, overrides may also be defined as a 
     // BEST, the override is defined as a reference to the dependency
     // For scoped packages, use the full scoped name in the reference.
     // BAD, will not resolve scoped package references.
-    // Do not use unscoped references for scoped dependencies.
-    // Use "$@npm/foo" instead of "$foo", and use "$@npm/bar" instead of "$bar".
-    // "$foo" and "$bar" are unscoped references and will not match scoped packages.
+    // Use "$@npm/foo" instead of "$foo".
+    // "$foo" is an unscoped reference and will not match @npm/foo.
     // "@npm/foo": "$foo",
     // "@npm/bar": "$bar",
     "@npm/foo": "$@npm/foo",
