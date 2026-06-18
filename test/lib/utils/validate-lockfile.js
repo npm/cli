@@ -182,6 +182,20 @@ t.test('mismatching patch integrity or path', async t => {
   )
 })
 
+t.test('lock file records a patch package.json no longer declares', async t => {
+  t.matchSnapshot(
+    validateLockfile(
+      new Map([
+        ['foo', { name: 'foo', version: '1.0.0', patched: { path: 'patches/foo.patch', integrity: 'sha512-aaa' } }],
+      ]),
+      new Map([
+        ['foo', { name: 'foo', version: '1.0.0' }],
+      ])
+    ),
+    'should report a stray lock file patch'
+  )
+})
+
 t.test('missing virtualTree inventory', async t => {
   t.matchSnapshot(
     validateLockfile(

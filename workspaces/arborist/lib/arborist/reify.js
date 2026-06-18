@@ -788,6 +788,8 @@ module.exports = cls => class Reifier extends cls {
         }
         log.warn('patch', `failed to apply ${patchPath} to ${node.name}: ${er.message}`)
         // the patch was not applied, so do not record it in the lockfile
+        // the lockfile and package.json now disagree, so warn that npm ci will reject the tree
+        log.warn('patch', `${node.name} was installed unpatched; package.json still declares this patch, so the lockfile is out of sync and \`npm ci\` will fail until the patch is fixed or its patchedDependencies entry is removed`)
         node.patched = null
         return
       }

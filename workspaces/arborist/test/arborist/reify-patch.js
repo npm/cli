@@ -157,6 +157,11 @@ t.test('ignorePatchFailures downgrades EPATCHFAILED to a warning', async t => {
     patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: `patches/${PKG_NAME}@${PKG_VERSION}.patch` },
   })
 
+  const warnings = []
+  const onLog = (level, prefix, msg) => level === 'warn' && warnings.push(`${prefix} ${msg}`)
+  process.on('log', onLog)
+  t.teardown(() => process.removeListener('log', onLog))
+
   await t.resolves(newArb({ path, ignorePatchFailures: true }).reify(),
     'failure is downgraded and reify continues')
   // file remains as extracted since the patch was skipped
@@ -166,6 +171,9 @@ t.test('ignorePatchFailures downgrades EPATCHFAILED to a warning', async t => {
   const lock = JSON.parse(fs.readFileSync(resolve(path, 'package-lock.json'), 'utf8'))
   t.notOk(lock.packages[`node_modules/${PKG_NAME}`].patched,
     'unapplied patch is not written to the lockfile')
+  // the user is told the lockfile is now out of sync with package.json
+  t.match(warnings.join('\n'), /out of sync and `npm ci` will fail/,
+    'warns that the lockfile no longer matches package.json')
 })
 
 t.test('missing patch file throws EPATCHNOTFOUND', async t => {
