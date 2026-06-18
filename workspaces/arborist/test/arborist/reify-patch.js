@@ -199,6 +199,30 @@ t.test('warns when a patch upgrades the lockfile version', async t => {
   t.match(warnings.join('\n'), /requires lockfileVersion 4/, 'warns that the lockfile was upgraded')
 })
 
+t.test('does not re-warn or bump the hidden lockfile once the lockfile is already v4', async t => {
+  const registry = createRegistry(t)
+  await mockPackage(t, registry)
+  const path = makeProject(t, {
+    patch: filePatch('index.js', ORIGINAL, PATCHED),
+    patchedDependencies: { [`${PKG_NAME}@${PKG_VERSION}`]: `patches/${PKG_NAME}@${PKG_VERSION}.patch` },
+  })
+
+  // the first reify legitimately upgrades the real lockfile to v4
+  await newArb({ path }).reify()
+
+  const warnings = []
+  const onLog = (level, prefix, msg) => level === 'warn' && warnings.push(`${prefix} ${msg}`)
+  process.on('log', onLog)
+  t.teardown(() => process.removeListener('log', onLog))
+
+  // the hidden lockfile is pinned to v3, so a second reify must not re-fire the upgrade warning
+  await newArb({ path }).reify()
+  t.notMatch(warnings.join('\n'), /requires lockfileVersion 4/, 'no spurious upgrade warning when already v4')
+
+  const hidden = JSON.parse(fs.readFileSync(resolve(path, 'node_modules/.package-lock.json'), 'utf8'))
+  t.equal(hidden.lockfileVersion, 3, 'hidden lockfile stays at version 3')
+})
+
 t.test('reify revalidates the patch file when build-ideal-tree was already run', async t => {
   // build-ideal-tree validates first, but reify must still guard against a file removed afterwards
   const registry = createRegistry(t)
