@@ -1121,11 +1121,12 @@ const definitions = {
     `,
   }),
   'init-license': new Definition('init-license', {
-    default: 'ISC',
+    default: '',
     hint: '<license>',
     type: String,
     description: `
       The value \`npm init\` should use by default for the package license.
+      If not set, the license field will be omitted from new packages.
     `,
   }),
   'init-module': new Definition('init-module', {
@@ -1196,7 +1197,7 @@ const definitions = {
     `,
   }),
   'init.license': new Definition('init.license', {
-    default: 'ISC',
+    default: '',
     type: String,
     deprecated: `
       Use \`--init-license\` instead.

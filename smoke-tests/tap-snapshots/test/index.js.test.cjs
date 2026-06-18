@@ -190,7 +190,6 @@ Wrote to {NPM}/{TESTDIR}/project/package.json:
     "test": "echo /"Error: no test specified/" && exit 1"
   },
   "keywords": [],
-  "license": "ISC",
   "type": "commonjs"
 }
 `
@@ -207,7 +206,6 @@ Object {
       "devDependencies": Object {
         "promise-all-reject-late": "^5.0.0",
       },
-      "license": "ISC",
       "name": "project",
       "version": "1.0.0",
     },
@@ -239,7 +237,6 @@ Object {
     "promise-all-reject-late": "^5.0.0",
   },
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -270,7 +267,6 @@ Object {
       "dependencies": Object {
         "abbrev": "^1.0.4",
       },
-      "license": "ISC",
       "name": "project",
       "version": "1.0.0",
     },
@@ -291,7 +287,6 @@ Object {
   },
   "description": "",
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -320,7 +315,6 @@ Object {
   },
   "description": "",
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -339,7 +333,6 @@ Object {
   },
   "description": "",
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -361,7 +354,7 @@ exports[`test/index.js TAP basic npm pkg > should have expected pkg delete outpu
 `
 
 exports[`test/index.js TAP basic npm pkg > should have expected pkg get output 1`] = `
-ISC
+
 `
 
 exports[`test/index.js TAP basic npm pkg > should have expected pkg set output 1`] = `
@@ -378,7 +371,6 @@ scripts = {
   hello: 'echo Hello'
 }
 keywords = []
-license = 'ISC'
 type = 'commonjs'
 dependencies = { abbrev: '^1.0.4' }
 tap = { 'test-env': [ 'LC_ALL=sk' ] }
@@ -394,7 +386,6 @@ Object {
     "promise-all-reject-late": "^5.0.0",
   },
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -427,7 +418,6 @@ Object {
       "dependencies": Object {
         "abbrev": "^1.0.4",
       },
-      "license": "ISC",
       "name": "project",
       "version": "1.0.0",
     },
@@ -448,7 +438,6 @@ Object {
   },
   "description": "",
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -476,7 +465,6 @@ Object {
       "devDependencies": Object {
         "promise-all-reject-late": "^5.0.0",
       },
-      "license": "ISC",
       "name": "project",
       "version": "1.0.0",
     },
@@ -508,7 +496,6 @@ Object {
     "promise-all-reject-late": "^5.0.0",
   },
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
