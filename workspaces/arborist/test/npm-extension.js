@@ -139,19 +139,17 @@ t.test('apply: no-op transform returns null', async t => {
 })
 
 t.test('apply: caches per identity and isolates consumers', async t => {
-  let calls = 0
   const dir = t.testdir({
     '.npm-extension.cjs': cjs(`pkg.dependencies = { ...pkg.dependencies, added: '1.0.0' }; return pkg`),
   })
   const ext = new NpmExtension({ root: dir })
   await ext.load()
-  // count executions by wrapping log via a side-effect file is overkill; instead rely on identity cache returning copies
+  // two consumers of the same cached identity must each get a distinct, deeply isolated object
   const a = ext.apply({ name: 'foo', version: '1.0.0', _integrity: 'sha512-shared' })
   const b = ext.apply({ name: 'foo', version: '1.0.0', _integrity: 'sha512-shared' })
   t.not(a.pkg, b.pkg, 'each consumer gets a distinct object')
   a.pkg.dependencies.added = 'mutated'
   t.equal(b.pkg.dependencies.added, '1.0.0', 'mutating one copy does not affect another')
-  void calls
 })
 
 t.test('apply: rejects invalid transform output', async t => {
@@ -161,7 +159,11 @@ t.test('apply: rejects invalid transform output', async t => {
     ['return []', 'ENPMEXTENSIONRETURN'],
     ['return Promise.resolve(pkg)', 'ENPMEXTENSIONRETURN'],
     [`pkg.scripts = { build: 'x' }; return pkg`, 'ENPMEXTENSIONFIELD'],
+    [`return { name: pkg.name, version: pkg.version, scripts: { build: 'x' } }`, 'ENPMEXTENSIONFIELD'],
     [`pkg.dependencies = 'nope'; return pkg`, 'ENPMEXTENSIONVALUE'],
+    [`pkg.dependencies = null; return pkg`, 'ENPMEXTENSIONVALUE'],
+    [`pkg.dependencies = { x: null }; return pkg`, 'ENPMEXTENSIONVALUE'],
+    [`pkg.peerDependencies = { p: '*' }; pkg.peerDependenciesMeta = { p: null }; return pkg`, 'ENPMEXTENSIONVALUE'],
     [`throw new Error('boom')`, 'ENPMEXTENSIONTHROW'],
   ]
   // a unique dir per case so require/import cache never serves a previous module
@@ -171,6 +173,27 @@ t.test('apply: rejects invalid transform output', async t => {
     await ext.load()
     t.throws(() => ext.apply({ name: 'foo', version: '1.0.0', scripts: {} }), { code }, `${code}: ${body}`)
   }
+})
+
+t.test('apply: a handler may return a new object with only repaired fields', async t => {
+  const dir = t.testdir({
+    '.npm-extension.cjs': cjs(`return { name: pkg.name, version: pkg.version, dependencies: { ...pkg.dependencies, bar: '^2.0.0' } }`),
+  })
+  const ext = new NpmExtension({ root: dir })
+  await ext.load()
+  const res = ext.apply({ name: 'foo', version: '1.0.0', dependencies: { keep: '1' }, scripts: { build: 'x' }, _integrity: 'sha512-z' })
+  t.same(res.pkg.dependencies, { keep: '1', bar: '^2.0.0' }, 'returned dependencies overlaid on the baseline')
+  t.same(res.pkg.scripts, { build: 'x' }, 'omitted non-allowlisted field preserved from the baseline')
+})
+
+t.test('apply: isolates cached provenance between consumers', async t => {
+  const dir = t.testdir({ '.npm-extension.cjs': cjs(`pkg.dependencies = { ...pkg.dependencies, bar: '1' }; return pkg`) })
+  const ext = new NpmExtension({ root: dir })
+  await ext.load()
+  const a = ext.apply({ name: 'foo', version: '1.0.0', _integrity: 'sha512-prov' })
+  const b = ext.apply({ name: 'foo', version: '1.0.0', _integrity: 'sha512-prov' })
+  a.applied.dependencies.push('mutated')
+  t.same(b.applied.dependencies, ['bar'], 'mutating one consumer\'s provenance does not affect another')
 })
 
 t.test('apply: does not mutate the input manifest', async t => {

@@ -28,6 +28,7 @@ const { isReleaseAgeExcluded, trustedSpecName } = require('../release-age-exclud
 const { resolvePatchedDependencies } = require('../patched-dependencies.js')
 const PackageExtensions = require('../package-extensions.js')
 const NpmExtension = require('../npm-extension.js')
+const { hasExtensionFile } = require('../npm-extension.js')
 const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
 const Node = require('../node.js')
@@ -193,6 +194,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         rm: options.rm || [],
       })
       this.#warnWorkspacePackageExtensions()
+      this.#warnWorkspaceNpmExtension()
     } finally {
       timeEnd()
       this.finishTracker('idealTree')
@@ -285,8 +287,9 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   // The selected file's hash is stashed on the lockfile meta so commit() can persist it and npm ci can detect stale extension state.
   async #loadNpmExtension () {
     const lockedHash = this.idealTree.meta.npmExtensionHash
+    // ignore-extension (and, via flatten, ignore-scripts) disables discovery and execution.
+    // Leave any locked extension state untouched so npm ci reifies the locked graph as-is and the lockfile stays internally consistent.
     if (this.options.ignoreExtension) {
-      this.idealTree.meta.npmExtensionHash = null
       return
     }
     const ext = new NpmExtension({
@@ -295,20 +298,22 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     })
     this.#npmExtension = ext
     this.idealTree.meta.npmExtensionHash = ext.hash
-    if (!ext.present) {
-      return
+    if (ext.present) {
+      await ext.load()
     }
-    await ext.load()
 
     // When the extension file changed since the lockfile was written, locked manifests may no longer reflect its output.
-    // Arbitrary code has no selector to predict which packages it affects, so re-resolve any node that carried old provenance or that the new file now transforms.
+    // This also covers removal: a now-absent file hashes to null, which differs from the locked hash and reverts the previously transformed nodes.
+    // Arbitrary code has no selector to predict which packages it affects, so re-resolve any node that carried old provenance or that the current file now transforms.
     if (this.idealTree.meta.loadedFromDisk && lockedHash !== ext.hash) {
       for (const node of [...this.idealTree.inventory.values()]) {
         if (node.isProjectRoot || node.isWorkspace || node.isTop || node.isLink) {
           continue
         }
-        // a node with old provenance carries an already-transformed manifest, so refetch; otherwise its locked manifest is the raw baseline the new file can be tried against
-        const affected = node.npmExtensionApplied || ext.apply(node.package)
+        // A node with old provenance carries an already-transformed manifest, so always refetch it.
+        // Otherwise probe the locked manifest (without caching, so the authoritative full-manifest fetch is not pre-seeded).
+        // The locked manifest carries every resolution-relevant field (name, version, dependencies, peer metadata); a transform that newly targets a node by a field not persisted in the lockfile is the documented edge that may need a manual re-lock.
+        const affected = node.npmExtensionApplied || ext.apply(node.package, { memoize: false })
         if (affected) {
           for (const edge of node.edgesIn) {
             this.#depsQueue.push(edge.from)
@@ -344,6 +349,20 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       if (this.#packageExtensions.wouldMatch(node.name, node.version)) {
         log.warn('packageExtensions',
           `selector matches workspace package ${node.name}@${node.version}; edit its package.json directly instead of using packageExtensions`)
+      }
+    }
+  }
+
+  // Warn when a non-root workspace package contains a .npm-extension file; only the workspace root's file is honored.
+  #warnWorkspaceNpmExtension () {
+    for (const node of this.idealTree.inventory.values()) {
+      // a workspace is in the inventory as both a Link and its target node; warn once by skipping the link
+      if (!node.isWorkspace || node.isLink || node.isProjectRoot) {
+        continue
+      }
+      if (hasExtensionFile(node.realpath)) {
+        log.warn('npm-extension',
+          `".npm-extension" in workspace ${node.name} is ignored; it is only honored at the workspace root`)
       }
     }
   }

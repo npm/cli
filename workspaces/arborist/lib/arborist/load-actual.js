@@ -175,8 +175,9 @@ module.exports = cls => class ActualLoader extends cls {
       await Promise.all(promises)
     }
 
-    this.#applyPackageExtensions()
+    // .npm-extension runs before packageExtensions, matching the ideal-tree resolution order
     await this.#applyNpmExtension()
+    this.#applyPackageExtensions()
 
     if (!ignoreMissing) {
       await this.#findMissingEdges()

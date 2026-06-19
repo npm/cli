@@ -179,6 +179,27 @@ t.test('ignore-extension disables the transform and records no state', async t =
   t.notOk(lock.packages['node_modules/foo'].dependencies, 'foo has no extension-added dependency')
 })
 
+t.test('warns when a non-root workspace contains a .npm-extension file', async t => {
+  const warnings = []
+  const onlog = (...m) => m[0] === 'warn' && m[1] === 'npm-extension' && warnings.push(m[2])
+  process.on('log', onlog)
+  t.teardown(() => process.removeListener('log', onlog))
+
+  const dir = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', workspaces: ['packages/*'] }),
+    packages: {
+      a: {
+        'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }),
+        '.npm-extension.cjs': 'module.exports = { transformManifest (p) { return p } }\n',
+      },
+      b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+    },
+  })
+  await newArb(dir).buildIdealTree()
+  t.match(warnings.join('\n'), /"\.npm-extension" in workspace a is ignored/, 'warns for the workspace with the file')
+  t.notMatch(warnings.join('\n'), /workspace b/, 'does not warn for the workspace without one')
+})
+
 t.test('a project with no .npm-extension installs normally and records no state', async t => {
   const dir = t.testdir({
     'package.json': JSON.stringify({ name: 'root', dependencies: { foo: '1.0.0' } }),
@@ -241,4 +262,19 @@ t.test('changing the extension file re-resolves affected packages', async t => {
   const lock = readLock(dir)
   t.notOk(lock.packages['node_modules/bar'], 'bar removed after the extension stopped adding it')
   t.notOk(lock.packages['node_modules/foo']?.npmExtensionApplied, 'provenance cleared')
+})
+
+t.test('removing the extension file reverts the locked graph', async t => {
+  const dir = await setup(t)
+  await newArb(dir).reify()
+  t.ok(readLock(dir).packages['node_modules/bar'], 'bar installed by the extension')
+
+  // delete the extension file entirely, then reinstall; the transform-added edge and state must be reverted
+  fs.rmSync(join(dir, '.npm-extension.cjs'))
+  await register(t, dir, { withBar: false })
+  await newArb(dir).reify()
+  const lock = readLock(dir)
+  t.notOk(lock.packages['node_modules/bar'], 'bar removed once the extension file is gone')
+  t.notOk(lock.packages[''].npmExtensionHash, 'root hash cleared')
+  t.notOk(lock.packages['node_modules/foo']?.npmExtensionApplied, 'foo provenance cleared')
 })

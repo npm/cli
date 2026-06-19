@@ -3,7 +3,7 @@
 // This module discovers and hashes the root extension file, loads its `transformManifest` export, and applies it to a deeply isolated manifest copy, returning an extended manifest plus minimal provenance.
 // It never mutates the input manifest or any shared cache object.
 const { resolve, sep } = require('node:path')
-const { readFileSync } = require('node:fs')
+const { readFileSync, existsSync } = require('node:fs')
 const { pathToFileURL } = require('node:url')
 const { isDeepStrictEqual } = require('node:util')
 const { log } = require('proc-log')
@@ -102,7 +102,7 @@ class NpmExtension {
     if (this.format === 'mjs') {
       mod = await import(`${pathToFileURL(this.path).href}?h=${this.hash}`)
     } else {
-      delete require.cache[this.path]
+      delete require.cache[require.resolve(this.path)]
       mod = require(this.path)
     }
     const transform = mod?.transformManifest ?? mod?.default?.transformManifest
@@ -114,16 +114,22 @@ class NpmExtension {
 
   // Apply transformManifest to a candidate manifest, returning { pkg, applied } or null when nothing changed.
   // Results are cached once per resolved package identity; consumers get a deeply isolated copy so they cannot mutate the cached effective manifest.
-  apply (pkg) {
+  // Pass { memoize: false } to run without caching, e.g. a staleness probe over partial lockfile manifests that must not seed the cache used by full-manifest fetches.
+  apply (pkg, { memoize = true } = {}) {
     if (!this.#transform || !pkg?.name) {
       return null
     }
     const key = this.#identity(pkg)
-    if (!this.#cache.has(key)) {
-      this.#cache.set(key, this.#run(pkg))
+    let result
+    if (this.#cache.has(key)) {
+      result = this.#cache.get(key)
+    } else {
+      result = this.#run(pkg)
+      if (memoize) {
+        this.#cache.set(key, result)
+      }
     }
-    const result = this.#cache.get(key)
-    return result && { pkg: structuredClone(result.pkg), applied: result.applied }
+    return result && { pkg: structuredClone(result.pkg), applied: structuredClone(result.applied) }
   }
 
   // Identity key for the transform cache: package integrity when available, otherwise resolved source plus name and version.
@@ -157,30 +163,47 @@ class NpmExtension {
         `.npm-extension transformManifest must return a manifest object for ${pkg.name}@${pkg.version}`,
         'ENPMEXTENSIONRETURN', { pkgid: `${pkg.name}@${pkg.version}` })
     }
-    // Only dependency and peer fields may change; any other altered field is rejected so manifest contents stay authoritative.
-    for (const k of new Set([...Object.keys(pkg), ...Object.keys(returned)])) {
+    // Only dependency and peer fields may change; any other field the returned manifest explicitly alters is rejected.
+    // Fields the returned object omits are left untouched, so a handler may return a new object with only the fields it repairs.
+    for (const k of Object.keys(returned)) {
       if (!EXTENSION_FIELDS.includes(k) && !isDeepStrictEqual(returned[k], pkg[k])) {
         throw err(
           `.npm-extension transformManifest changed unsupported field "${k}" on ${pkg.name}@${pkg.version}; only ${EXTENSION_FIELDS.join(', ')} may change`,
           'ENPMEXTENSIONFIELD', { pkgid: `${pkg.name}@${pkg.version}`, field: k })
       }
     }
-    // Build the effective manifest from the original baseline plus the returned allowlisted fields, honoring deletion when a field is omitted.
+    // Build the effective manifest from the normalized baseline plus the returned allowlisted fields.
+    // A field the handler omits is left as the baseline; delete individual entries by returning a field object without them.
     const next = { ...pkg }
     for (const field of EXTENSION_FIELDS) {
       if (returned[field] === undefined) {
-        delete next[field]
         continue
       }
-      if (typeof returned[field] !== 'object' || Array.isArray(returned[field])) {
-        throw err(
-          `.npm-extension transformManifest set ${field} to a non-object on ${pkg.name}@${pkg.version}`,
-          'ENPMEXTENSIONVALUE', { pkgid: `${pkg.name}@${pkg.version}`, field })
-      }
+      this.#validateField(field, returned[field], pkg)
       next[field] = returned[field]
     }
     const applied = this.#provenance(pkg, next)
     return applied && { pkg: next, applied }
+  }
+
+  // Validate a returned allowlisted field and its entries, so invalid output fails with .npm-extension and package context.
+  // Dependency maps hold version strings; peerDependenciesMeta holds metadata objects.
+  #validateField (field, value, pkg) {
+    const fail = (suffix) => err(
+      `.npm-extension transformManifest set ${suffix} to an invalid value on ${pkg.name}@${pkg.version}`,
+      'ENPMEXTENSIONVALUE', { pkgid: `${pkg.name}@${pkg.version}`, field })
+    if (value === null || typeof value !== 'object' || Array.isArray(value)) {
+      throw fail(field)
+    }
+    for (const [name, entry] of Object.entries(value)) {
+      if (field === 'peerDependenciesMeta') {
+        if (entry === null || typeof entry !== 'object' || Array.isArray(entry)) {
+          throw fail(`${field}.${name}`)
+        }
+      } else if (typeof entry !== 'string') {
+        throw fail(`${field}.${name}`)
+      }
+    }
   }
 
   // Minimal provenance: the extension point plus, for each changed allowlisted field, a sorted array of affected dependency names.
@@ -203,8 +226,12 @@ class NpmExtension {
   }
 }
 
+// Whether a directory contains any default .npm-extension file; a non-throwing existence check used for non-root workspace warnings.
+const hasExtensionFile = dir => FORMATS.some(f => existsSync(resolve(dir, f.file)))
+
 module.exports = NpmExtension
 module.exports.NpmExtension = NpmExtension
 module.exports.discover = discover
+module.exports.hasExtensionFile = hasExtensionFile
 module.exports.hashFile = hashFile
 module.exports.EXTENSION_POINT = EXTENSION_POINT
