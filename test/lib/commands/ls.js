@@ -351,6 +351,49 @@ t.test('ls', async t => {
     t.match(applied, { selector: 'foo@1', dependencies: ['bar'] }, 'json output includes provenance')
   })
 
+  const npmExtensionPrefix = {
+    'package.json': JSON.stringify({
+      name: 'test-npm-extension',
+      version: '1.0.0',
+      dependencies: { foo: '^1.0.0' },
+    }),
+    node_modules: {
+      '.package-lock.json': JSON.stringify({
+        packages: {
+          'node_modules/foo': {
+            version: '1.0.0',
+            dependencies: { bar: '^1.0.0' },
+            npmExtensionApplied: { extensionPoint: 'transformManifest', dependencies: ['bar'] },
+          },
+          'node_modules/bar': { version: '1.0.0' },
+        },
+      }),
+      foo: {
+        'package.json': JSON.stringify({ name: 'foo', version: '1.0.0', dependencies: { bar: '^1.0.0' } }),
+      },
+      bar: { 'package.json': JSON.stringify({ name: 'bar', version: '1.0.0' }) },
+    },
+  }
+
+  t.test('.npm-extension dep', async t => {
+    const { npm, result, ls } = await mockLs(t, { config: {}, prefixDir: npmExtensionPrefix })
+    touchHiddenPackageLock(npm.prefix)
+    await ls.exec([])
+    t.matchSnapshot(cleanCwd(result()), 'human output annotates the transformed node')
+  })
+
+  t.test('.npm-extension dep --json', async t => {
+    const { npm, result, ls } = await mockLs(t, {
+      config: { json: true },
+      prefixDir: npmExtensionPrefix,
+    })
+    touchHiddenPackageLock(npm.prefix)
+    await ls.exec([])
+    const applied = JSON.parse(result()).dependencies.foo.npmExtensionApplied
+    t.match(applied, { extensionPoint: 'transformManifest', dependencies: ['bar'] },
+      'json output includes provenance')
+  })
+
   t.test('with filter arg', async t => {
     const config = {
       color: 'always',

@@ -315,6 +315,12 @@ test-npm-ls@1.0.0 {CWD}/prefix
   \`-- dog@2.0.0
 `
 
+exports[`test/lib/commands/ls.js TAP ls .npm-extension dep > human output annotates the transformed node 1`] = `
+test-npm-extension@1.0.0 {CWD}/prefix
+\`-- foo@1.0.0 .npm-extension: dependencies.bar
+  \`-- bar@1.0.0
+`
+
 exports[`test/lib/commands/ls.js TAP ls broken resolved field > should NOT print git refs in output tree 1`] = `
 npm-broken-resolved-field-test@1.0.0 {CWD}/prefix
 \`-- a@1.0.1

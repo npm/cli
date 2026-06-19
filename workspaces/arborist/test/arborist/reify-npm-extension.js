@@ -14,13 +14,17 @@ const createRegistry = (t) => new MockRegistry({
 })
 
 // foo@1.0.0 does not declare bar; both are served as installable tarballs from source dirs.
-const register = async (t, dir, { withBar = true } = {}) => {
+const register = async (t, dir, { withBar = true, withBaz = false } = {}) => {
   const registry = createRegistry(t)
   const fooManifest = registry.manifest({ name: 'foo', packuments: [{ version: '1.0.0' }] })
   await registry.package({ manifest: fooManifest, tarballs: { '1.0.0': join(dir, 'src/foo') } })
   if (withBar) {
     const barManifest = registry.manifest({ name: 'bar', packuments: [{ version: '1.2.3' }] })
     await registry.package({ manifest: barManifest, tarballs: { '1.2.3': join(dir, 'src/bar') } })
+  }
+  if (withBaz) {
+    const bazManifest = registry.manifest({ name: 'baz', packuments: [{ version: '3.0.0' }] })
+    await registry.package({ manifest: bazManifest, tarballs: { '3.0.0': join(dir, 'src/baz') } })
   }
 }
 
@@ -83,11 +87,66 @@ t.test('lockfile records hash, provenance, effective deps, and version 4', async
   t.strictSame(fooEntry.dependencies, { bar: '^1.0.0' }, 'foo entry carries the effective dependency metadata')
 })
 
+t.test('explain annotates the transform-created edge', async t => {
+  const dir = await setup(t)
+  const tree = await newArb(dir).reify()
+  const foo = [...tree.inventory.values()].find(n => n.name === 'foo' && !n.isLink)
+  const explanation = foo.edgesOut.get('bar').explain()
+  t.strictSame(explanation.npmExtension, { extensionPoint: 'transformManifest', field: 'dependencies' },
+    'edge explanation carries the transform provenance')
+})
+
+t.test('explain annotates an edge created in a non-first field', async t => {
+  // adds bar to optionalDependencies, so the edge explanation loop skips `dependencies` before matching
+  const dir = await setup(t, {
+    extension: `module.exports = {
+      transformManifest (pkg) {
+        if (pkg.name === 'foo') {
+          pkg.optionalDependencies = { ...pkg.optionalDependencies, bar: '^1.0.0' }
+        }
+        return pkg
+      },
+    }
+`,
+  })
+  const tree = await newArb(dir).reify()
+  const foo = [...tree.inventory.values()].find(n => n.name === 'foo' && !n.isLink)
+  const explanation = foo.edgesOut.get('bar').explain()
+  t.strictSame(explanation.npmExtension, { extensionPoint: 'transformManifest', field: 'optionalDependencies' },
+    'edge explanation reports the optionalDependencies field')
+})
+
 t.test('does not rewrite the installed dependency package.json', async t => {
   const dir = await setup(t)
   await newArb(dir).reify()
   const installed = JSON.parse(fs.readFileSync(join(dir, 'node_modules/foo/package.json'), 'utf8'))
   t.notOk(installed.dependencies, 'the on-disk foo/package.json is not given a bar dependency')
+})
+
+t.test('composes with packageExtensions on the same package', async t => {
+  // .npm-extension adds bar to foo (runs first); packageExtensions adds baz to foo (runs on the transform output)
+  const dir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      dependencies: { foo: '1.0.0' },
+      packageExtensions: { 'foo@1': { dependencies: { baz: '^3.0.0' } } },
+    }),
+    '.npm-extension.cjs': addBar,
+    src: {
+      foo: { 'package.json': JSON.stringify({ name: 'foo', version: '1.0.0' }) },
+      bar: { 'package.json': JSON.stringify({ name: 'bar', version: '1.2.3' }) },
+      baz: { 'package.json': JSON.stringify({ name: 'baz', version: '3.0.0' }) },
+    },
+  })
+  await register(t, dir, { withBaz: true })
+  const tree = await newArb(dir).reify()
+  const foo = [...tree.inventory.values()].find(n => n.name === 'foo' && !n.isLink)
+  t.ok(foo.edgesOut.get('bar')?.to, 'transform-created bar edge resolved')
+  t.ok(foo.edgesOut.get('baz')?.to, 'packageExtensions-created baz edge resolved')
+  t.same(foo.npmExtensionApplied, { extensionPoint: 'transformManifest', dependencies: ['bar'] },
+    'transform provenance recorded')
+  t.same(foo.packageExtensionsApplied, { selector: 'foo@1', dependencies: ['baz'] },
+    'packageExtensions provenance recorded')
 })
 
 t.test('composes with overrides during reify', async t => {
@@ -118,6 +177,45 @@ t.test('ignore-extension disables the transform and records no state', async t =
   t.notOk(lock.packages[''].npmExtensionHash, 'no extension hash recorded')
   t.notOk(lock.packages['node_modules/bar'], 'bar was never added by the disabled transform')
   t.notOk(lock.packages['node_modules/foo'].dependencies, 'foo has no extension-added dependency')
+})
+
+t.test('a project with no .npm-extension installs normally and records no state', async t => {
+  const dir = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', dependencies: { foo: '1.0.0' } }),
+    src: { foo: { 'package.json': JSON.stringify({ name: 'foo', version: '1.0.0' }) } },
+  })
+  await register(t, dir, { withBar: false })
+  await newArb(dir).reify()
+  const lock = readLock(dir)
+  t.notOk(lock.packages[''].npmExtensionHash, 'no extension hash recorded')
+  t.notOk(lock.packages['node_modules/foo'].dependencies, 'foo unchanged')
+})
+
+t.test('provenance round-trips under install-strategy=linked', async t => {
+  const dir = await setup(t)
+  await newArb(dir, { installStrategy: 'linked' }).reify()
+  // a second linked reify rescans the store and links, re-deriving provenance on both
+  const tree = await newArb(dir, { installStrategy: 'linked' }).reify()
+  const foo = [...tree.inventory.values()].find(n => n.name === 'foo')
+  t.ok(foo.npmExtensionApplied || foo.target?.npmExtensionApplied, 'provenance present on the linked node or its target')
+})
+
+t.test('loadActual re-derives provenance only for transformed installed deps', async t => {
+  // a filesystem-scanned tree: foo is the transform target, qux is an unrelated installed dep
+  const dir = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', dependencies: { foo: '^1.0.0', qux: '^1.0.0' } }),
+    '.npm-extension.cjs': addBar,
+    node_modules: {
+      foo: { 'package.json': JSON.stringify({ name: 'foo', version: '1.0.0' }) },
+      qux: { 'package.json': JSON.stringify({ name: 'qux', version: '1.0.0' }) },
+    },
+  })
+  const actual = await newArb(dir).loadActual()
+  const foo = [...actual.inventory.values()].find(n => n.name === 'foo' && !n.isLink)
+  const qux = [...actual.inventory.values()].find(n => n.name === 'qux' && !n.isLink)
+  t.strictSame(foo.npmExtensionApplied, { extensionPoint: 'transformManifest', dependencies: ['bar'] },
+    'foo carries provenance from the re-derived transform')
+  t.equal(qux.npmExtensionApplied, null, 'qux, untouched by the transform, carries no provenance')
 })
 
 t.test('provenance round-trips through the lockfile', async t => {
