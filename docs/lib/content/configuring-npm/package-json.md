@@ -1001,11 +1001,6 @@ The referenced package can also differ from the override target.
     "@npm/foo": "^1.0.0"
   },
   "overrides": {
-    // BAD, will throw an EOVERRIDE error
-    // "foo": "^2.0.0"
-    // GOOD, specs match so override is allowed
-    // "foo": "^1.0.0"
-    // You can still reference a different direct dependency for the override
     "@npm/foo": "$@npm/foo",
     "@npm/bar": "$@npm/foo"
   }
