@@ -250,6 +250,9 @@ class PlaceDep {
       ...(this.dep.packageExtensionsApplied
         ? { packageExtensionsApplied: this.dep.packageExtensionsApplied }
         : {}),
+      ...(this.dep.npmExtensionApplied
+        ? { npmExtensionApplied: this.dep.npmExtensionApplied }
+        : {}),
       ...(this.dep.overrides ? { overrides: this.dep.overrides } : {}),
       ...(this.dep.isLink ? { target: this.dep.target, realpath: this.dep.realpath } : {}),
     })

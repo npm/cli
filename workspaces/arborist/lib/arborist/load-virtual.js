@@ -244,6 +244,7 @@ To fix:
       integrity: sw.integrity,
       patched: sw.patched,
       packageExtensionsApplied: sw.packageExtensionsApplied,
+      npmExtensionApplied: sw.npmExtensionApplied,
       resolved: consistentResolve(sw.resolved, this.path, path),
       pkg: sw,
       loadOverrides,

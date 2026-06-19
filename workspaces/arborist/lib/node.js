@@ -94,6 +94,7 @@ class Node {
       optional = true,
       overrides,
       packageExtensionsApplied = null,
+      npmExtensionApplied = null,
       parent,
       patched = null,
       path,
@@ -176,6 +177,9 @@ class Node {
     // Provenance for a root packageExtensions repair applied to this node's manifest, or null.
     // Shape: { selector, dependencies?, optionalDependencies?, peerDependencies?, peerDependenciesMeta? }.
     this.packageExtensionsApplied = packageExtensionsApplied
+    // Provenance for a root .npm-extension transformManifest repair applied to this node's manifest, or null.
+    // Shape: { extensionPoint, dependencies?, optionalDependencies?, peerDependencies?, peerDependenciesMeta? }.
+    this.npmExtensionApplied = npmExtensionApplied
     this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
 

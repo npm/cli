@@ -97,10 +97,12 @@ class NpmExtension {
     if (!this.present) {
       return
     }
+    // Key the module load by the file hash so a changed file is reloaded rather than served stale from a module cache within one process.
     let mod
     if (this.format === 'mjs') {
-      mod = await import(pathToFileURL(this.path).href)
+      mod = await import(`${pathToFileURL(this.path).href}?h=${this.hash}`)
     } else {
+      delete require.cache[this.path]
       mod = require(this.path)
     }
     const transform = mod?.transformManifest ?? mod?.default?.transformManifest

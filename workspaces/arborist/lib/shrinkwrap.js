@@ -115,6 +115,7 @@ const nodeMetaKeys = [
   'hasInstallScript',
   'patched',
   'packageExtensionsApplied',
+  'npmExtensionApplied',
 ]
 
 const metaFieldFromPkg = (pkg, key) => {
@@ -356,6 +357,7 @@ class Shrinkwrap {
     this.tree = null
     this.#awaitingUpdate = new Map()
     this.packageExtensionsHash = null
+    this.npmExtensionHash = null
     const lockfileVersion = this.lockfileVersion || defaultLockfileVersion
     this.originalLockfileVersion = lockfileVersion
 
@@ -496,6 +498,8 @@ class Shrinkwrap {
 
     // the canonical packageExtensions hash, if the lockfile recorded one on its root entry
     this.packageExtensionsHash = data.packages?.['']?.packageExtensionsHash || null
+    // the .npm-extension file hash, if the lockfile recorded one on its root entry
+    this.npmExtensionHash = data.packages?.['']?.npmExtensionHash || null
 
     // use default if it wasn't explicitly set, and the current file is
     // less than our default.  otherwise, keep whatever is in the file,
@@ -918,6 +922,10 @@ class Shrinkwrap {
       if (this.packageExtensionsHash) {
         root.packageExtensionsHash = this.packageExtensionsHash
       }
+      // record the .npm-extension file hash on the root entry for the same reason
+      if (this.npmExtensionHash) {
+        root.npmExtensionHash = this.npmExtensionHash
+      }
       this.data.packages = {}
       if (Object.keys(root).length) {
         this.data.packages[''] = root
@@ -971,12 +979,12 @@ class Shrinkwrap {
       log.warn('shrinkwrap', `patchedDependencies requires lockfileVersion ${patchedLockfileVersion}; upgrading the lockfile from version ${this.lockfileVersion}.`)
       this.lockfileVersion = patchedLockfileVersion
     }
-    // packageExtensions state likewise forces lockfileVersion 4 so older clients abort instead of dropping the repaired graph
+    // packageExtensions and .npm-extension state likewise force lockfileVersion 4 so older clients abort instead of dropping the repaired graph
     const hasExtensionState = !this.hiddenLockfile &&
-      (this.packageExtensionsHash ||
-        Object.values(this.data.packages).some(p => p.packageExtensionsApplied))
+      (this.packageExtensionsHash || this.npmExtensionHash ||
+        Object.values(this.data.packages).some(p => p.packageExtensionsApplied || p.npmExtensionApplied))
     if (hasExtensionState && this.lockfileVersion < packageExtensionsLockfileVersion) {
-      log.warn('shrinkwrap', `packageExtensions requires lockfileVersion ${packageExtensionsLockfileVersion}; upgrading the lockfile from version ${this.lockfileVersion}.`)
+      log.warn('shrinkwrap', `manifest extensions require lockfileVersion ${packageExtensionsLockfileVersion}; upgrading the lockfile from version ${this.lockfileVersion}.`)
       this.lockfileVersion = packageExtensionsLockfileVersion
     }
     this.data.lockfileVersion = this.lockfileVersion
