@@ -209,3 +209,31 @@ t.test('missing virtualTree inventory', async t => {
     'should have errors for each mismatching version'
   )
 })
+
+const { validateNpmExtension } = require('../../../lib/utils/validate-lockfile.js')
+
+// build mock virtual/ideal trees for validateNpmExtension (hash-only)
+const extTree = (hash) => ({ meta: { npmExtensionHash: hash } })
+
+t.test('npmExtension: matching hashes', async t => {
+  t.strictSame(validateNpmExtension(extTree('h'), extTree('h')), [], 'no errors when hashes match')
+})
+
+t.test('npmExtension: both absent', async t => {
+  t.strictSame(validateNpmExtension(extTree(null), extTree(null)), [], 'no errors when both absent')
+})
+
+t.test('npmExtension: missing from lock file', async t => {
+  const errors = validateNpmExtension(extTree(null), extTree('h'))
+  t.match(errors[0], /Missing: \.npm-extension state from lock file/, 'reports missing lock state')
+})
+
+t.test('npmExtension: present in lock but no file', async t => {
+  const errors = validateNpmExtension(extTree('h'), extTree(null))
+  t.match(errors[0], /records \.npm-extension state but no \.npm-extension file is present/, 'reports stray lock state')
+})
+
+t.test('npmExtension: hash mismatch', async t => {
+  const errors = validateNpmExtension(extTree('h1'), extTree('h2'))
+  t.match(errors[0], /\.npm-extension file does not match the lock file/, 'reports a hash mismatch')
+})

@@ -157,6 +157,23 @@ const getCases = (testdir) => {
         },
       }],
     },
+
+    npmExtension: {
+      name: 'bar',
+      version: '1.2.3',
+      location: 'node_modules/bar',
+      dependents: [{
+        type: 'prod',
+        name: 'bar',
+        spec: '^1.0.0',
+        npmExtension: { extensionPoint: 'transformManifest', field: 'dependencies' },
+        from: {
+          name: 'foo',
+          version: '1.0.0',
+          location: 'node_modules/foo',
+        },
+      }],
+    },
   }
 
   cases.manyDeps = {
