@@ -232,6 +232,9 @@
   - title: package-lock.json
     url: /configuring-npm/package-lock-json
     description: A manifestation of the manifest
+  - title: .npm-extension
+    url: /configuring-npm/npm-extension
+    description: Imperative, root-owned manifest repairs
 - title: Using npm
   shortName: Using
   url: /using-npm

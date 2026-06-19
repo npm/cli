@@ -107,6 +107,7 @@ const generateNav = async (contentPath, navPath) => {
     '/configuring-npm/npmrc',
     '/configuring-npm/package-json',
     '/configuring-npm/package-lock-json',
+    '/configuring-npm/npm-extension',
   ]
 
   // Hardcoded order for using-npm section (only urls - title/description come from frontmatter)
