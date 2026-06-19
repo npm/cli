@@ -270,6 +270,17 @@ class Config {
     // private attributes, as that module also does a bunch of get operations
     this.#loaded = true
 
+    // extension-file selects root-owned install-time code, so it is only honored from project config or the command line
+    if (this.get('extension-file') != null) {
+      const where = this.find('extension-file')
+      if (!['cli', 'project', 'default'].includes(where)) {
+        throw Object.assign(
+          new Error(`\`extension-file\` may only be set in project config or on the command line, not from ${where} config`),
+          { code: 'ENPMEXTENSIONCONFIG' }
+        )
+      }
+    }
+
     // set proper globalPrefix now that everything is loaded
     this.globalPrefix = this.get('prefix')
 

@@ -58,6 +58,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "expect-result-count": null,
   "expect-results": null,
   "expires": null,
+  "extension-file": null,
   "fetch-retries": 2,
   "fetch-retry-factor": 10,
   "fetch-retry-maxtimeout": 60000,
@@ -76,6 +77,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "heading": "npm",
   "https-proxy": null,
   "if-present": false,
+  "ignore-extension": false,
   "ignore-scripts": false,
   "include": [],
   "include-staged": false,
@@ -254,6 +256,7 @@ engine-strict = false
 expect-result-count = null
 expect-results = null
 expires = null
+extension-file = null
 fetch-retries = 2
 fetch-retry-factor = 10
 fetch-retry-maxtimeout = 60000
@@ -273,6 +276,7 @@ heading = "npm"
 https-proxy = null
 if-present = false
 ignore-existing = false
+ignore-extension = false
 ignore-patch-failures = false
 ignore-scripts = false
 include = []

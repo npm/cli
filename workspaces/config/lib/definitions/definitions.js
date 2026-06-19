@@ -774,6 +774,18 @@ const definitions = {
     `,
     flatten,
   }),
+  'extension-file': new Definition('extension-file', {
+    default: null,
+    type: [null, path],
+    description: `
+      Path to a project-local npm extension file to load instead of
+      discovering \`.npm-extension.mjs\` / \`.npm-extension.cjs\` at the
+      project root. Must resolve inside the project root and use a \`.mjs\`
+      or \`.cjs\` extension. Only honored from project config or the command
+      line, never from user, global, or builtin config.
+    `,
+    flatten,
+  }),
   'fetch-retries': new Definition('fetch-retries', {
     default: 2,
     type: Number,
@@ -1030,6 +1042,17 @@ const definitions = {
     `,
     flatten,
   }),
+  'ignore-extension': new Definition('ignore-extension', {
+    default: false,
+    type: Boolean,
+    description: `
+      If true, npm does not import or execute a root \`.npm-extension.mjs\` /
+      \`.npm-extension.cjs\` file (or one selected via \`extension-file\`).
+      \`ignore-scripts\` implies \`ignore-extension\`, since both disable
+      root-owned install-time code.
+    `,
+    flatten,
+  }),
   'ignore-scripts': new Definition('ignore-scripts', {
     default: false,
     type: Boolean,
@@ -1040,8 +1063,17 @@ const definitions = {
       as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm
       run\` will still run their intended script if \`ignore-scripts\` is
       set, but they will *not* run any pre- or post-scripts.
+
+      Setting \`ignore-scripts\` also disables \`.npm-extension\` execution,
+      as if \`ignore-extension\` were set.
     `,
-    flatten,
+    // ignore-scripts implies ignore-extension: both disable root install-time code
+    flatten (key, obj, flatOptions) {
+      flatOptions.ignoreScripts = obj['ignore-scripts']
+      if (obj['ignore-scripts']) {
+        flatOptions.ignoreExtension = true
+      }
+    },
   }),
   include: new Definition('include', {
     default: [],

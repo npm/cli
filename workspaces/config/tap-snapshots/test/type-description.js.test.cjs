@@ -195,6 +195,10 @@ Object {
     null,
     "numeric value",
   ],
+  "extension-file": Array [
+    null,
+    "valid filesystem path",
+  ],
   "fetch-retries": Array [
     "numeric value",
   ],
@@ -251,6 +255,9 @@ Object {
     "boolean value (true or false)",
   ],
   "ignore-existing": Array [
+    "boolean value (true or false)",
+  ],
+  "ignore-extension": Array [
     "boolean value (true or false)",
   ],
   "ignore-patch-failures": Array [
