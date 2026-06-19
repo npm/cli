@@ -1006,7 +1006,7 @@ Using only the unscoped package name, like `$foo`, does not match `@scope/foo`.
     // "foo": "^1.0.0"
     // BEST, the override is defined as a reference to the dependency
     "@npm/foo": "$@npm/foo",
-    // the referenced package does not need to match the overridden one
+    // The referenced package can differ from the override target
     "@npm/bar": "$@npm/foo"
   }
 }
