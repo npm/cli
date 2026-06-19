@@ -967,9 +967,8 @@ To override `@npm/foo` to `1.0.0`, but only when it's a child of `@npm/bar@2.0.0
 
 Versioned override keys do not just limit when nested overrides apply.
 They also replace the matched package with that version or range.
-In the example above, `@npm/bar@2.0.0` both matches `@npm/bar` at `2.0.0`
-and keeps `@npm/bar` on `2.0.0` while applying the nested `@npm/foo`
-override.
+In this example, the parent key both matches and preserves `@npm/bar@2.0.0`
+while applying the nested `@npm/foo` override.
 
 If you want to keep the parent package on its existing spec while only
 overriding its children, set `"."` explicitly:
