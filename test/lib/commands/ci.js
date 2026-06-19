@@ -139,6 +139,24 @@ t.test('fails when packageExtensions are out of sync with the lock file', async 
   )
 })
 
+t.test('fails when both .npm-extension files are present', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { audit: false },
+    prefixDir: {
+      abbrev,
+      'package.json': JSON.stringify(packageJson),
+      'package-lock.json': JSON.stringify(packageLock),
+      '.npm-extension.mjs': 'export function transformManifest (p) { return p }\n',
+      '.npm-extension.cjs': 'module.exports = { transformManifest (p) { return p } }\n',
+    },
+  })
+  await t.rejects(
+    npm.exec('ci', []),
+    /keep only one/,
+    'ci surfaces the ambiguous extension file error'
+  )
+})
+
 t.test('--no-audit and --ignore-scripts', async t => {
   const { npm, joinedOutput, registry } = await loadMockNpm(t, {
     config: {

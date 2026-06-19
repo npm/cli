@@ -212,28 +212,38 @@ t.test('missing virtualTree inventory', async t => {
 
 const { validateNpmExtension } = require('../../../lib/utils/validate-lockfile.js')
 
-// build mock virtual/ideal trees for validateNpmExtension (hash-only)
-const extTree = (hash) => ({ meta: { npmExtensionHash: hash } })
+// build a mock virtual tree with a root hash and optional provenance-bearing nodes
+const extVirtual = (hash, nodes = []) => ({
+  meta: { npmExtensionHash: hash },
+  inventory: { values: () => nodes },
+})
 
 t.test('npmExtension: matching hashes', async t => {
-  t.strictSame(validateNpmExtension(extTree('h'), extTree('h')), [], 'no errors when hashes match')
+  t.strictSame(validateNpmExtension(extVirtual('h'), 'h'), [], 'no errors when hashes match')
 })
 
 t.test('npmExtension: both absent', async t => {
-  t.strictSame(validateNpmExtension(extTree(null), extTree(null)), [], 'no errors when both absent')
+  t.strictSame(validateNpmExtension(extVirtual(null), null), [], 'no errors when both absent')
 })
 
 t.test('npmExtension: missing from lock file', async t => {
-  const errors = validateNpmExtension(extTree(null), extTree('h'))
+  const errors = validateNpmExtension(extVirtual(null), 'h')
   t.match(errors[0], /Missing: \.npm-extension state from lock file/, 'reports missing lock state')
 })
 
 t.test('npmExtension: present in lock but no file', async t => {
-  const errors = validateNpmExtension(extTree('h'), extTree(null))
+  const errors = validateNpmExtension(extVirtual('h'), null)
   t.match(errors[0], /records \.npm-extension state but no \.npm-extension file is present/, 'reports stray lock state')
 })
 
 t.test('npmExtension: hash mismatch', async t => {
-  const errors = validateNpmExtension(extTree('h1'), extTree('h2'))
+  const errors = validateNpmExtension(extVirtual('h1'), 'h2')
   t.match(errors[0], /\.npm-extension file does not match the lock file/, 'reports a hash mismatch')
+})
+
+t.test('npmExtension: provenance without a root hash and no file fails', async t => {
+  const nodes = [{ name: 'foo', npmExtensionApplied: { extensionPoint: 'transformManifest', dependencies: ['bar'] } }]
+  const errors = validateNpmExtension(extVirtual(null, nodes), null)
+  t.match(errors[0], /records \.npm-extension state but no \.npm-extension file is present/,
+    'per-node provenance counts as extension state even without a root hash')
 })
