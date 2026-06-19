@@ -993,6 +993,7 @@ To make this limitation easier to deal with, overrides may also be defined as a 
 
 For scoped dependencies, the `$` reference must be the full scoped package name.
 Using only the unscoped package name, like `$foo`, does not match `@scope/foo`.
+The referenced package can also differ from the override target.
 
 ```json
 {
@@ -1004,9 +1005,7 @@ Using only the unscoped package name, like `$foo`, does not match `@scope/foo`.
     // "foo": "^2.0.0"
     // GOOD, specs match so override is allowed
     // "foo": "^1.0.0"
-    // BEST, the override is defined as a reference to the dependency
     "@npm/foo": "$@npm/foo",
-    // The referenced package can differ from the override target
     "@npm/bar": "$@npm/foo"
   }
 }
