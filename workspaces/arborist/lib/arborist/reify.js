@@ -26,6 +26,7 @@ const optionalSet = require('../optional-set.js')
 const relpath = require('../relpath.js')
 const retirePath = require('../retire-path.js')
 const treeCheck = require('../tree-check.js')
+const { attachExplanation } = require('../attach-explanation.js')
 const { defaultLockfileVersion } = require('../shrinkwrap.js')
 const { saveTypeMap, hasSubKey } = require('../add-rm-pkg-deps.js')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
@@ -701,20 +702,28 @@ module.exports = cls => class Reifier extends cls {
           })
         }
       })
-      await pacote.extract(res, node.path, {
-        ...this.options,
-        resolved: node.resolved,
-        integrity: node.integrity,
-        // A node counts as "root" for allow-* enforcement if it satisfies at least one valid dependency edge declared by the project root or a workspace.
-        // node.parent is unsafe here: after hoisting, transitive packages can have the project root as their tree parent.
-        // In the linked strategy the store node has no edgesIn, so isolated-reifier precomputes isRootDependency from the source node's edges.
-        _isRoot: node.isRootDependency || [...node.edgesIn].some(e =>
-          e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
-        ),
-        // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.
-        // Override only when we can prove the URL is registry-mediated; see #isRegistryResolvedTarball.
-        ...(this.#isRegistryResolvedTarball(node) ? { allowRemote: 'all' } : {}),
-      })
+      try {
+        await pacote.extract(res, node.path, {
+          ...this.options,
+          resolved: node.resolved,
+          integrity: node.integrity,
+          // A node counts as "root" for allow-* enforcement if it satisfies at least one valid dependency edge declared by the project root or a workspace.
+          // node.parent is unsafe here: after hoisting, transitive packages can have the project root as their tree parent.
+          // In the linked strategy the store node has no edgesIn, so isolated-reifier precomputes isRootDependency from the source node's edges.
+          _isRoot: node.isRootDependency || [...node.edgesIn].some(e =>
+            e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
+          ),
+          // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.
+          // Override only when we can prove the URL is registry-mediated; see #isRegistryResolvedTarball.
+          ...(this.#isRegistryResolvedTarball(node) ? { allowRemote: 'all' } : {}),
+        })
+      } catch (error) {
+        // Reify-time fetch/extract failures (EALLOWREMOTE/EALLOWGIT, tarball or
+        // network errors, integrity mismatches) come from pacote and never pass
+        // through the resolution-phase #failureNode, so explain here too. Hit
+        // when a node is reused from the lockfile and only fetched at reify.
+        throw attachExplanation(error, () => node.explain())
+      }
       // store nodes don't use Node class so node.package doesn't get updated
       if (node.isInStore) {
         const { content: pkg } = await PackageJson.normalize(node.path)

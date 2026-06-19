@@ -1109,6 +1109,33 @@ Object {
 }
 `
 
+exports[`test/lib/utils/error-message.js TAP explain dependency resolution errors > must match snapshot 1`] = `
+Object {
+  "detail": Array [
+    Array [
+      "notarget",
+      "In most cases you or one of your dependencies are requesting a package version that doesn't exist.",
+    ],
+    Array [
+      "",
+      "explanation",
+    ],
+  ],
+  "files": Array [
+    Array [
+      "etarget-report.txt",
+      "report",
+    ],
+  ],
+  "summary": Array [
+    Array [
+      "notarget",
+      "no matching version found for foo@9.9.9",
+    ],
+  ],
+}
+`
+
 exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 1`] = `
 Object {
   "detail": Array [],

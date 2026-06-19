@@ -442,3 +442,90 @@ t.test('explain ERESOLVE errors', async t => {
   t.not(EXPLAIN_CALLED[1].level, 0, 'color chalk level is not 0')
   t.equal(EXPLAIN_CALLED[2].level, 0, 'colorless chalk level is 0')
 })
+
+t.test('explain dependency resolution errors', async t => {
+  const EXPLAIN_CALLED = []
+
+  const { errorMessage } = await loadMockNpm(t, {
+    errorMocks: {
+      '{LIB}/utils/explain-dep-error.js': {
+        report: (...args) => {
+          EXPLAIN_CALLED.push(...args)
+          return { explanation: 'explanation', file: 'report' }
+        },
+      },
+    },
+    config: {
+      color: 'always',
+    },
+  })
+
+  const er = Object.assign(new Error('no matching version found for foo@9.9.9'), {
+    code: 'ETARGET',
+    explanation: { type: 'prod', name: 'foo', spec: '9.9.9', from: { location: '/x' } },
+  })
+
+  const res = errorMessage(er)
+  t.matchSnapshot(res)
+  t.equal(EXPLAIN_CALLED.length, 3, 'report() called once')
+  t.match(EXPLAIN_CALLED, [er, Function, Function])
+  t.not(EXPLAIN_CALLED[1].level, 0, 'color chalk level is not 0')
+  t.equal(EXPLAIN_CALLED[2].level, 0, 'colorless chalk level is 0')
+  t.match(res.files, [['etarget-report.txt', 'report']], 'report file uses code-based name')
+
+  // a non-empty array explanation (ESTRICTALLOWSCRIPTS) also renders
+  const arrEr = Object.assign(new Error('strict scripts'), {
+    code: 'ESTRICTALLOWSCRIPTS',
+    explanation: [{ name: 'a', version: '1.0.0' }],
+  })
+  const arrRes = errorMessage(arrEr)
+  t.match(arrRes.detail, [['', 'explanation']], 'array explanation is rendered')
+  t.match(arrRes.files, [['estrictallowscripts-report.txt', 'report']], 'report file written')
+})
+
+t.test('ERESOLVE does not double-format via explain-dep-error', async t => {
+  const DEP_ERROR_CALLED = []
+
+  const { errorMessage } = await loadMockNpm(t, {
+    errorMocks: {
+      '{LIB}/utils/explain-eresolve.js': {
+        report: () => ({ explanation: 'eresolve', file: 'eresolve-report' }),
+      },
+      '{LIB}/utils/explain-dep-error.js': {
+        report: (...args) => {
+          DEP_ERROR_CALLED.push(...args)
+          return { explanation: 'explanation', file: 'report' }
+        },
+      },
+    },
+  })
+
+  // even if an ERESOLVE error somehow also carries an explanation, the generic
+  // block must not run for it (it has its own richer formatting)
+  const er = Object.assign(new Error('could not resolve'), {
+    code: 'ERESOLVE',
+    explanation: { type: 'prod', name: 'foo', spec: '1', from: { location: '/x' } },
+  })
+
+  errorMessage(er)
+  t.equal(DEP_ERROR_CALLED.length, 0, 'explain-dep-error.report not called for ERESOLVE')
+})
+
+t.test('errors without an explanation are unaffected', async t => {
+  const DEP_ERROR_CALLED = []
+
+  const { errorMessage } = await loadMockNpm(t, {
+    errorMocks: {
+      '{LIB}/utils/explain-dep-error.js': {
+        report: (...args) => {
+          DEP_ERROR_CALLED.push(...args)
+          return { explanation: 'explanation', file: 'report' }
+        },
+      },
+    },
+  })
+
+  errorMessage(Object.assign(new Error('nope'), { code: 'ETARGET' }))
+  errorMessage(Object.assign(new Error('empty'), { code: 'ESTRICTALLOWSCRIPTS', explanation: [] }))
+  t.equal(DEP_ERROR_CALLED.length, 0, 'no report when explanation missing or empty')
+})

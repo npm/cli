@@ -1,5 +1,6 @@
 const isScriptAllowed = require('./script-allowed.js')
 const getInstallScripts = require('./install-scripts.js')
+const { attachExplanation } = require('./attach-explanation.js')
 
 // Shared allowScripts walk used by both the npm CLI
 // (lib/utils/check-allow-scripts.js, lib/utils/strict-allow-scripts-preflight.js)
@@ -82,13 +83,15 @@ const strictAllowScriptsError = (unreviewed, { remediation } = {}) => {
     return `  ${label} (${events})`
   }).join('\n')
 
-  return Object.assign(
+  const error = Object.assign(
     new Error(
       `--strict-allow-scripts: ${unreviewed.length} package(s) have install ` +
       `scripts not covered by allowScripts:\n${lines}\n${remediation}`
     ),
     { code: 'ESTRICTALLOWSCRIPTS' }
   )
+  // explain *why* each unreviewed package is in the tree (one per package)
+  return attachExplanation(error, () => unreviewed.map(({ node }) => node.explain()))
 }
 
 module.exports = { collectUnreviewedScripts, strictAllowScriptsError }

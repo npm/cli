@@ -219,3 +219,45 @@ t.test('global error points at --allow-scripts, not approve-scripts', async t =>
     }
   )
 })
+
+t.test('error carries a dependency explanation for each unreviewed package', async t => {
+  // Real arborist tree nodes have an explain() method; the error must carry
+  // one structured explanation per unreviewed package so the CLI can show
+  // which path pulled it in.
+  const explained = node({ name: 'fsevents', version: '2.3.3' })
+  explained.explain = () => ({
+    name: 'fsevents',
+    version: '2.3.3',
+    location: 'node_modules/fsevents',
+    dependents: [
+      { type: 'prod', name: 'fsevents', spec: '^2.3.0', from: { location: '/proj' } },
+    ],
+  })
+  const arb = makeArb({ ideal: tree([explained]) })
+
+  const err = await preflight({
+    arb,
+    npm: { flatOptions: { strictAllowScripts: true } },
+    idealTreeOpts: {},
+  }).then(() => null, e => e)
+
+  t.equal(err?.code, 'ESTRICTALLOWSCRIPTS')
+  t.ok(Array.isArray(err.explanation) && err.explanation.length === 1,
+    'one explanation per unreviewed package')
+  t.equal(err.explanation[0].name, 'fsevents', 'explanation names the package')
+  t.ok(err.explanation[0].dependents.length, 'explanation records the requiring path')
+})
+
+t.test('explanation is best-effort: nodes without explain() do not throw', async t => {
+  // The plain fixture nodes have no explain(); the error must still be thrown
+  // with its message intact and simply no explanation attached.
+  const arb = makeArb({ ideal: tree([node({ name: 'canvas' })]) })
+  const err = await preflight({
+    arb,
+    npm: { flatOptions: { strictAllowScripts: true } },
+    idealTreeOpts: {},
+  }).then(() => null, e => e)
+  t.equal(err?.code, 'ESTRICTALLOWSCRIPTS')
+  t.match(err.message, /canvas/, 'error message is intact')
+  t.equal(err.explanation, undefined, 'no explanation attached when explain() is unavailable')
+})
