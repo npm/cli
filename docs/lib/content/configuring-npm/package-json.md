@@ -991,8 +991,7 @@ You may not set an override for a package that you directly depend on unless bot
 To make this limitation easier to deal with, overrides may also be defined as a reference to a spec for a direct dependency by prefixing the name of the package you wish the version to match with a `$`.
 
 For scoped dependencies, the `$` reference must be the full scoped package name.
-Using only the unscoped package name, like `$foo`, does not match `@scope/foo`,
-and the referenced package can differ from the override target.
+Using only the unscoped package name, like `$foo`, does not match `@scope/foo`.
 
 ```json
 {
