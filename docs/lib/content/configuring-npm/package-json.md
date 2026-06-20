@@ -988,9 +988,7 @@ overriding its children, set `"."` explicitly:
 ```
 
 You may not set an override for a package that you directly depend on unless both the dependency and the override itself share the exact same spec.
-You can resolve a child override against a direct dependency by using a `$` prefix with the full package name.
-For scoped packages, keep the scope: use `$@scope/name`.
-In this example, `@npm/bar` uses `$@npm/foo` so it inherits the spec from `@npm/foo` while still being overridden itself:
+You can resolve a child override against a direct dependency by using a `$` prefix with the full package name (`$@scope/name`), so the overridden package inherits that direct spec:
 
 ```json
 {
