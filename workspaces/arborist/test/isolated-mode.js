@@ -1657,6 +1657,53 @@ tap.test('npm link (external file: dep) with linked strategy', async t => {
   t.notOk(storeEntries.some(e => e.startsWith('external-pkg@')), 'external-pkg is NOT in the store')
 })
 
+tap.test('workspace file: dependency on a non-workspace local package with linked strategy', async t => {
+  // Regression test for https://github.com/npm/cli/issues/9589
+  // A workspace declaring a file: dep on a local package that is NOT itself a workspace was silently skipped: no symlink, no error.
+  const graph = {
+    registry: [],
+    root: {
+      name: 'mono',
+      version: '1.0.0',
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { 'local-dep': 'file:../../local-dep' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Create the non-workspace local package on disk, outside the workspaces globs
+  const depDir = path.join(dir, 'local-dep')
+  fs.mkdirSync(depDir, { recursive: true })
+  fs.writeFileSync(path.join(depDir, 'package.json'), JSON.stringify({
+    name: 'local-dep',
+    version: '1.0.0',
+  }))
+  fs.writeFileSync(path.join(depDir, 'index.js'), "module.exports = 'local-dep'")
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // The file dep should be symlinked into the workspace's node_modules
+  const linkPath = path.join(dir, 'packages', 'ws-a', 'node_modules', 'local-dep')
+  const stat = fs.lstatSync(linkPath)
+  t.ok(stat.isSymbolicLink(), 'local-dep is a symlink in the workspace node_modules')
+
+  // The symlink should resolve to the actual local directory
+  t.equal(fs.realpathSync(linkPath), fs.realpathSync(depDir), 'symlink points to the correct local directory')
+
+  // It must be symlinked directly, not extracted into the store
+  const storePath = path.join(dir, 'node_modules', '.store')
+  if (fs.existsSync(storePath)) {
+    t.notOk(fs.readdirSync(storePath).some(e => e.startsWith('local-dep@')), 'local-dep is NOT in the store')
+  }
+
+  // The package should be requireable from inside the workspace
+  t.ok(setupRequire(path.join(dir, 'packages', 'ws-a'))('local-dep'), 'local-dep can be required from the workspace')
+})
+
 tap.test('subsequent linked install is a no-op', async t => {
   const graph = {
     registry: [
