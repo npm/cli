@@ -289,6 +289,44 @@ t.test('link global linked pkg to local workspace using args', async t => {
   t.matchSnapshot(await printLinks(), 'should create a local symlink to global pkg')
 })
 
+t.test('link --workspace --save targets the workspace manifest, not the root', async t => {
+  const { link, prefix } = await mockLink(t, {
+    globalPrefixDir: {
+      node_modules: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+          }),
+        },
+      },
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'my-project',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }),
+      packages: {
+        x: {
+          'package.json': JSON.stringify({
+            name: 'x',
+            version: '1.0.0',
+          }),
+        },
+      },
+    },
+    config: { workspace: 'x', save: true },
+  })
+
+  await link.exec(['a'])
+
+  const root = JSON.parse(fs.readFileSync(join(prefix, 'package.json'), 'utf8'))
+  const ws = JSON.parse(fs.readFileSync(join(prefix, 'packages', 'x', 'package.json'), 'utf8'))
+  t.notOk(root.dependencies, 'root manifest should not get the dependency')
+  t.match(ws.dependencies, { a: /^file:/ }, 'workspace manifest should get the file: dependency')
+})
+
 t.test('link pkg already in global space', async t => {
   const { npm, link, printLinks, prefix } = await mockLink(t, {
     globalPrefixDir: {
