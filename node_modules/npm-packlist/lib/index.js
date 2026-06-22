@@ -326,6 +326,8 @@ class PackWalker extends IgnoreWalker {
       '/pnpm-lock.yaml',
       '/bun.lockb',
       '/bun.lock',
+      '/.npm-extension.mjs',
+      '/.npm-extension.cjs',
     ]
 
     // if we have a files array in our package, we need to pull rules from it
