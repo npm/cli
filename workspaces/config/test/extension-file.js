@@ -38,11 +38,10 @@ t.test('extension-file is accepted from the command line', async t => {
   t.equal(config.find('extension-file'), 'cli', 'sourced from cli')
 })
 
-t.test('extension-file is rejected from user config', async t => {
-  await t.rejects(
-    loadConfig(t, { user: 'extension-file=tools/ext.mjs' }),
-    { code: 'ENPMEXTENSIONCONFIG' },
-    'user config source is rejected')
+t.test('extension-file from user config exposes its source for the consumer to reject', async t => {
+  // the config layer loads it and records the source; the npm CLI enforces the source restriction
+  const config = await loadConfig(t, { user: 'extension-file=tools/ext.mjs' })
+  t.equal(config.find('extension-file'), 'user', 'source reported as user')
 })
 
 t.test('extension-file unset loads cleanly', async t => {

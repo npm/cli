@@ -35,6 +35,26 @@ t.test('npm.load', async t => {
     )
   })
 
+  await t.test('rejects extension-file from a disallowed config source', async t => {
+    const { npm } = await loadMockNpm(t, { load: false })
+    // a disallowed (env) source; mockGlobals restores process.env on teardown
+    mockGlobals(t, { 'process.env.npm_config_extension_file': 'tools/ext.mjs' })
+    await t.rejects(
+      () => npm.load(),
+      { code: 'ENPMEXTENSIONCONFIG' },
+      'env config source is rejected with a surfaced error'
+    )
+  })
+
+  await t.test('accepts extension-file from project config', async t => {
+    // config.load() exports npm_config_* to the real env, so clean it up to avoid leaking into raw-env tests
+    t.teardown(() => delete process.env.npm_config_extension_file)
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: { '.npmrc': 'extension-file=tools/ext.mjs' },
+    })
+    t.equal(npm.config.find('extension-file'), 'project', 'loaded from project config without error')
+  })
+
   await t.test('basic loading', async t => {
     const { npm, logs, cache } = await loadMockNpm(t, {
       prefixDir: { node_modules: {} },
