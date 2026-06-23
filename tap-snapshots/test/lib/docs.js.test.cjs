@@ -2062,6 +2062,10 @@ with install scripts that are neither approved nor denied).
 \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this
 setting.
 
+Optional dependencies that cannot be installed on the current platform or
+engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged, because
+their install scripts never run.
+
 
 
 #### \`strict-peer-deps\`

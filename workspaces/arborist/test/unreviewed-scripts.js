@@ -28,6 +28,7 @@ const node = ({
   isWorkspace = false,
   isLink = false,
   inBundle = false,
+  inert = false,
   resolved,
 } = {}) => ({
   name,
@@ -39,6 +40,7 @@ const node = ({
   isWorkspace,
   isLink,
   inBundle,
+  inert,
   isRegistryDependency: true,
   package: { name, version, scripts },
 })
@@ -77,6 +79,14 @@ t.test('collectUnreviewedScripts', async t => {
         node({ name: 'linked', scripts: { install: 'x' }, isLink: true }),
         node({ name: 'bundled', scripts: { install: 'x' }, inBundle: true }),
       ]),
+      policy: null,
+    })
+    t.strictSame(result, [])
+  })
+
+  t.test('skips inert (platform/engine-incompatible) optional nodes', async t => {
+    const result = await collectUnreviewedScripts({
+      tree: tree([node({ name: 'fsevents', scripts: { install: 'x' }, inert: true })]),
       policy: null,
     })
     t.strictSame(result, [])
