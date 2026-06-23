@@ -103,6 +103,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   #mutateTree = false
   #packageExtensions = null
   #npmExtension = null
+  #requestedTreeMutation = false
   // a map of each module in a peer set to the thing that depended on
   // that set of peers in the first place.  Use a WeakMap so that we
   // don't hold onto references for nodes that are garbage collected.
@@ -401,12 +402,13 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     // set if we add anything, but also set here if we know we'll make
     // changes and thus have to maybe prune later.
-    this.#mutateTree = !!(
+    this.#requestedTreeMutation = !!(
       options.add ||
       options.rm ||
       update.all ||
       update.names.length
     )
+    this.#mutateTree = this.#requestedTreeMutation
   }
 
   // load the initial tree, either the virtualTree from a shrinkwrap,
@@ -484,7 +486,9 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           filter: node => node,
           visit: node => {
             for (const edge of node.edgesOut.values()) {
-              const skipPeerOptional = edge.type === 'peerOptional' && this.options.save === false
+              const skipPeerOptional = edge.type === 'peerOptional' &&
+                this.options.save === false &&
+                !this.#requestedTreeMutation
               if (!skipPeerOptional && (!edge.to || !edge.valid)) {
                 this.#depsQueue.push(node)
                 break // no need to continue the loop after the first hit
@@ -1176,9 +1180,16 @@ This is a one-time fix-up, please be patient...
               }
               const { from, valid, peerConflicted } = edgeIn
               if (!peerConflicted && !valid) {
-                if (this.#depsSeen.has(from) && this.options.save) {
-                  // Re-queue already-processed nodes when a newly placed dep creates an invalid edge during npm install (save=true).
-                  // This handles the case where a peerOptional dep was valid (missing) when the node was first processed, but becomes invalid when the dep is later placed by another path with a version that doesn't satisfy the peer spec.
+                if (this.#depsSeen.has(from) &&
+                  (this.options.save ||
+                    (this.options.save === false && this.#requestedTreeMutation))) {
+                  // Re-queue already-processed nodes when a newly placed dep
+                  // creates an invalid edge during npm install or another
+                  // lockfile-mutating operation. This handles the case where a
+                  // peerOptional dep was valid (missing) when the node was
+                  // first processed, but becomes invalid when the dep is later
+                  // placed by another path with a version that doesn't satisfy
+                  // the peer spec.
                   // See npm/cli#8726.
                   this.#depsSeen.delete(from)
                   this.#depsQueue.push(from)
@@ -1384,11 +1395,16 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
-      // If the edge has an error, there's a problem, unless it's peerOptional and we're not saving (e.g. npm ci), in which case we trust the lockfile and skip re-resolution.
-      // When saving (npm install), peerOptional invalid edges ARE treated as problems so the lockfile gets fixed.
+      // If the edge has an error, there's a problem, unless it's peerOptional
+      // and we're not saving or otherwise mutating (e.g. npm ci), in which
+      // case we trust the lockfile and skip re-resolution. When saving (npm
+      // install) or updating, peerOptional invalid edges ARE treated as
+      // problems so the lockfile gets fixed.
       // See npm/cli#8726.
       if (!edge.valid) {
-        if (edge.type !== 'peerOptional' || this.options.save !== false) {
+        if (edge.type !== 'peerOptional' ||
+          this.options.save !== false ||
+          this.#requestedTreeMutation) {
           problems.push(edge)
         }
         continue
