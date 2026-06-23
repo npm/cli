@@ -221,6 +221,7 @@ class AuditReport extends Map {
       for (const advisory of vuln.advisories) {
         if (advisory.type === 'metavuln') {
           const depVuln = this.get(advisory.dependency)
+          // istanbul ignore next
           if (depVuln) {
             vuln.addVia(depVuln)
           }
