@@ -81,6 +81,30 @@ t.test('install-scripts deny <pkg> writes a name-only false entry', async t => {
   t.strictSame(pkg.allowScripts, { canvas: false })
 })
 
+t.test('install-scripts deny --all denies every unreviewed package', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas', 'sharp'] }),
+    config: { all: true },
+  })
+  await npm.exec('install-scripts', ['deny'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { canvas: false, sharp: false })
+})
+
+t.test('install-scripts ignores allow-scripts-pending and still writes', async t => {
+  // The namespace exposes listing through `ls`, so a stray
+  // `allow-scripts-pending` config must not divert approve into list mode.
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+    config: { 'allow-scripts-pending': true },
+  })
+  await npm.exec('install-scripts', ['approve', 'canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'canvas@1.0.0': true })
+})
+
 t.test('install-scripts ls lists unreviewed packages', async t => {
   const { npm, joinedOutput } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas', 'sharp'] }),
