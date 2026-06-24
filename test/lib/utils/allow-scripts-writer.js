@@ -704,7 +704,7 @@ t.test('denyWarning branches on key shape per RFC §approve-scripts', async t =>
     { pin: true }
   )
   t.match(pinned.warning, /versioned deny/)
-  t.match(pinned.warning, /npm deny-scripts canvas/)
+  t.match(pinned.warning, /npm install-scripts deny canvas/)
   t.match(pinned.warning, /widen the deny to all versions/)
   t.match(pinned.warning, /remove the entry/)
 
@@ -715,7 +715,7 @@ t.test('denyWarning branches on key shape per RFC §approve-scripts', async t =>
     { pin: true }
   )
   t.match(multi.warning, /versioned deny/)
-  t.match(multi.warning, /npm deny-scripts canvas/)
+  t.match(multi.warning, /npm install-scripts deny canvas/)
 })
 
 t.test('denyWarning: tag-type key (pkg@latest: false) is name-only', async t => {
