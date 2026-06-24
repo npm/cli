@@ -2,6 +2,7 @@ const t = require('tap')
 const fs = require('node:fs')
 const { resolve } = require('node:path')
 const _mockNpm = require('../../fixtures/mock-npm')
+const InstallScripts = require('../../../lib/commands/install-scripts.js')
 
 const mockNpm = async (t, opts = {}) => {
   return _mockNpm(t, opts)
@@ -46,6 +47,19 @@ const setupProject = ({ allowScripts, withScripts = ['canvas'] } = {}) => {
     node_modules: nodeModules,
   }
 }
+
+t.test('completion', async t => {
+  const comp = (argv) =>
+    InstallScripts.completion({ conf: { argv: { remain: argv } } })
+
+  t.resolveMatch(comp(['npm', 'install-scripts']), ['approve', 'deny', 'ls'])
+  t.resolveMatch(comp(['npm', 'install-scripts', 'approve']), [])
+  t.resolveMatch(comp(['npm', 'install-scripts', 'deny']), [])
+  t.resolveMatch(comp(['npm', 'install-scripts', 'ls']), [])
+  await t.rejects(comp(['npm', 'install-scripts', 'frobnicate']), {
+    message: 'frobnicate not recognized',
+  })
+})
 
 t.test('install-scripts approve <pkg> writes a pinned entry', async t => {
   const { npm, prefix } = await mockNpm(t, {
