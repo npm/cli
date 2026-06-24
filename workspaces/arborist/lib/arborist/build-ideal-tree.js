@@ -45,8 +45,14 @@ const ALLOW_OPTION_FOR_TYPE = {
 const addRmPkgDeps = require('../add-rm-pkg-deps.js')
 const optionalSet = require('../optional-set.js')
 const { checkEngine, checkPlatform } = require('npm-install-checks')
+const { attachExplanation } = require('../attach-explanation.js')
 const relpath = require('../relpath.js')
 const resetDepFlags = require('../reset-dep-flags.js')
+
+// Stashes the edge that required a failed load on its error, so #failureNode
+// can defer the (potentially wasted) explain() until #pruneFailedOptional
+// decides the failure is fatal. Optional failures are dropped without it.
+const _failureEdge = Symbol('failureEdge')
 
 // note: some of these symbols are shared so we can hit
 // them with unit tests and reuse them across mixins
@@ -216,7 +222,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           }
         } catch (err) {
           if (engineStrict) {
-            throw err
+            // explain which path pulled in the incompatible package
+            throw attachExplanation(err, () => node.explain())
           }
           log.warn(err.code, err.message, {
             package: err.pkgid,
@@ -224,7 +231,11 @@ module.exports = cls => class IdealTreeBuilder extends cls {
             current: err.current,
           })
         }
-        checkPlatform(node.package, this.options.force)
+        try {
+          checkPlatform(node.package, this.options.force)
+        } catch (err) {
+          throw attachExplanation(err, () => node.explain())
+        }
       }
       if (node.optional && !node.inert) {
         // Mark any optional packages we can't install as inert.
@@ -842,6 +853,9 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   // Builds a Node representing a spec we failed to load (allow-* gate, network failure, ENOTARGET, etc.) and records it in #loadFailures so #pruneFailedOptional can later decide whether the failure is fatal or silently dropped for optional deps.
   #failureNode (name, parent, error, edge) {
     error.requiredBy = edge?.from?.location || '.'
+    // Stash the requiring edge; #pruneFailedOptional turns it into an
+    // explanation only if the failure is fatal (optional ones are dropped).
+    error[_failureEdge] = edge
     const n = new Node({
       name,
       parent,
@@ -1776,7 +1790,12 @@ This is a one-time fix-up, please be patient...
   #pruneFailedOptional () {
     for (const node of this.#loadFailures) {
       if (!node.optional) {
-        throw node.errors[0]
+        // Only now that the failure is fatal do we walk the graph for the
+        // "why is this here" explanation (see #failureNode). Failures that did
+        // not come through #failureNode have no stashed edge; attachExplanation
+        // swallows the resulting error and simply attaches nothing.
+        const err = node.errors[0]
+        throw attachExplanation(err, () => err[_failureEdge].explain())
       }
 
       const set = optionalSet(node)

@@ -67,13 +67,14 @@ const printIdeal = (path, opt) => buildIdeal(path, opt).then(printTree)
 t.test('fail on mismatched engine when engineStrict is set', async t => {
   const path = resolve(fixtures, 'engine-specification')
 
-  await t.rejects(buildIdeal(path, {
+  const err = await buildIdeal(path, {
     nodeVersion: '12.18.4',
     engineStrict: true,
-  }),
-  { code: 'EBADENGINE' },
-  'should fail with EBADENGINE error'
-  )
+  }).then(() => null, e => e)
+  t.equal(err?.code, 'EBADENGINE', 'should fail with EBADENGINE error')
+  // engine/platform errors carry a dependency explanation so the CLI can show
+  // which path pulled in the incompatible package (removing it avoids the error)
+  t.ok(err.explanation, 'EBADENGINE error carries a dependency explanation')
 })
 
 t.test('fail on malformed package.json', async t => {
@@ -109,9 +110,12 @@ t.test('warn on mismatched engine when engineStrict is false', t => {
 t.test('fail on mismatched platform', async t => {
   const path = resolve(fixtures, 'platform-specification')
   createRegistry(t, true)
-  await t.rejects(buildIdeal(path, {
+  const err = await buildIdeal(path, {
     nodeVersion: '4.0.0',
-  }), { code: 'EBADPLATFORM' })
+  }).then(() => null, e => e)
+  t.equal(err?.code, 'EBADPLATFORM', 'should fail with EBADPLATFORM error')
+  t.ok(err.explanation, 'EBADPLATFORM error carries a dependency explanation')
+  t.ok(err.explanation.name, 'explanation names the incompatible package')
 })
 
 t.test('ignore mismatched platform for optional dependencies', async t => {
@@ -4869,11 +4873,13 @@ t.test('allow-directory=root blocks a transitive directory dependency', async t 
       },
     },
   })
-  await t.rejects(
-    buildIdeal(path, { allowDirectory: 'root' }),
-    { code: 'EALLOWDIRECTORY' },
-    'transitive directory dep is refused because edge.from is not the project root'
-  )
+  const err = await buildIdeal(path, { allowDirectory: 'root' }).then(() => null, e => e)
+  t.equal(err?.code, 'EALLOWDIRECTORY',
+    'transitive directory dep is refused because edge.from is not the project root')
+  // the explanation is computed lazily in #pruneFailedOptional only because
+  // this failure is fatal; it records the path that required the blocked dep
+  t.ok(err.explanation, 'fatal load failure carries a dependency explanation')
+  t.equal(err.explanation.name, 'child', 'explanation names the blocked dependency')
 })
 
 t.test('allow-directory=root soft-skips a transitive optional directory dependency', async t => {

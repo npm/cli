@@ -3879,7 +3879,15 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
       allowRemote: 'none',
     })
 
-    await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' }, 'sibling path tarball is blocked')
+    const err = await arb.reify().then(() => null, e => e)
+    t.equal(err?.code, 'EALLOWREMOTE', 'sibling path tarball is blocked')
+    // reify-time fetch failures must carry a dependency explanation so the CLI
+    // can show *who required* the blocked package (npm/cli regression: this was
+    // missing because the block happens in pacote, not arborist resolution).
+    t.ok(err.explanation, 'EALLOWREMOTE error carries a dependency explanation')
+    t.equal(err.explanation.name, 'abbrev', 'explanation names the blocked package')
+    t.ok(Array.isArray(err.explanation.dependents) && err.explanation.dependents.length,
+      'explanation records who required the package')
   })
 
   t.test('allowRemote=none allows same-origin tarball for root registry path', async t => {
