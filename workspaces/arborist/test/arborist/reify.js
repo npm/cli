@@ -4252,6 +4252,40 @@ t.test('install strategy linked', async (t) => {
       'packages/b should remain absent after reinstall'
     )
   })
+
+  t.test('removes stale .bin shims after uninstall, keeps surviving ones', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9613
+    const path = t.testdir({
+      'package.json': JSON.stringify({ name: 'un', version: '1.0.0' }),
+    })
+    createRegistry(t, true)
+    const binDir = resolve(path, 'node_modules/.bin')
+    const rbin = resolve(binDir, 'rimraf')
+    const sbin = resolve(binDir, 'semver')
+
+    await reify(path, { add: ['rimraf@2.7.1', 'semver@7.3.2'], installStrategy: 'linked' })
+    // lstatSync throws if missing; don't assert symlink since Windows shims are regular files.
+    t.ok(fs.lstatSync(rbin), 'rimraf shim created')
+    t.ok(fs.lstatSync(sbin), 'semver shim created')
+
+    // Plant Windows shim files alongside the POSIX symlinks to cover both layouts: stale (rimraf) and surviving (semver).
+    const rcmd = resolve(binDir, 'rimraf.cmd')
+    const rps1 = resolve(binDir, 'rimraf.ps1')
+    const scmd = resolve(binDir, 'semver.cmd')
+    const sps1 = resolve(binDir, 'semver.ps1')
+    fs.writeFileSync(rcmd, '@echo off\r\n"%~dp0\\..\\rimraf\\bin.js" %*\r\n')
+    fs.writeFileSync(rps1, '& "$basedir/../rimraf/bin.js" $args\r\n')
+    fs.writeFileSync(scmd, '@echo off\r\n"%~dp0\\..\\semver\\bin\\semver.js" %*\r\n')
+    fs.writeFileSync(sps1, '& "$basedir/../semver/bin/semver.js" $args\r\n')
+
+    await reify(path, { rm: ['rimraf'], installStrategy: 'linked' })
+    t.throws(() => fs.lstatSync(rbin), 'stale rimraf symlink removed')
+    t.throws(() => fs.lstatSync(rcmd), 'stale rimraf.cmd removed')
+    t.throws(() => fs.lstatSync(rps1), 'stale rimraf.ps1 removed')
+    t.ok(fs.lstatSync(sbin), 'surviving semver shim kept')
+    t.ok(fs.lstatSync(scmd), 'surviving semver.cmd kept')
+    t.ok(fs.lstatSync(sps1), 'surviving semver.ps1 kept')
+  })
 })
 
 t.test('linked strategy exposes store node_modules via NODE_PATH for lifecycle scripts', async t => {
