@@ -118,6 +118,21 @@ t.test('do not run scripts if ignoreScripts=true', async t => {
   t.throws(() => fs.statSync(file), 'bundle build script not run')
 })
 
+t.test('bundled deps cannot be allowlisted: gate blocks their scripts', async t => {
+  // With the gate active, a bundled dep's script must not run even with an
+  // explicit allow: scripts only run when isScriptAllowed returns true, and
+  // bundled deps return null.
+  const path = fixture(t, 'testing-rebuild-bundle-reified')
+  const file = resolve(path, 'node_modules/@isaacs/testing-rebuild-bundle-a/node_modules/@isaacs/testing-rebuild-bundle-b/cwd')
+  t.throws(() => fs.statSync(file), 'file not there already (gut check)')
+  const arb = new Arborist({
+    path,
+    allowScripts: { '@isaacs/testing-rebuild-bundle-b': true },
+  })
+  await arb.rebuild()
+  t.throws(() => fs.statSync(file), 'bundled dep postinstall did not run despite explicit allow')
+})
+
 t.test('allowScripts deny entry skips the build set entry for that node', async t => {
   // Verifies the deny gate in #addToBuildSet: when `allowScripts` resolves
   // a node's policy to `false`, that node's scripts are skipped while
