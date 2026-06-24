@@ -484,7 +484,7 @@ t.test('prints unreviewed install scripts summary', async t => {
   t.match(warn, /2 packages had install scripts blocked because they are not covered by allowScripts/)
   t.match(warn, /canvas@2\.11\.0 \(install: node-gyp rebuild\)/)
   t.match(warn, /sharp@0\.33\.2 \(preinstall: pre; postinstall: post\)/)
-  t.match(warn, /npm approve-scripts --allow-scripts-pending/)
+  t.match(warn, /npm install-scripts ls/)
 })
 
 t.test('global install suggests --allow-scripts, not approve-scripts', async t => {
