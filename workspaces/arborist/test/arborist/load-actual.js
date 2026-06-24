@@ -2,7 +2,7 @@ const t = require('tap')
 const { format } = require('tcompare')
 const Arborist = require('../../lib/arborist')
 
-const { resolve } = require('node:path')
+const { join, resolve } = require('node:path')
 const Node = require('../../lib/node.js')
 const Shrinkwrap = require('../../lib/shrinkwrap.js')
 const fs = require('node:fs')
@@ -544,4 +544,62 @@ t.test('applies root packageExtensions to a linked actual tree', async t => {
   const applied = { selector: 'broken@1', dependencies: ['missing'] }
   t.strictSame(broken.packageExtensionsApplied, applied, 'provenance recorded on the store node')
   t.strictSame(brokenLink.packageExtensionsApplied, applied, 'provenance mirrored onto the link')
+})
+
+t.test('store nodes do not load devDependencies as required edges', async t => {
+  // A package in the linked store is structurally a tree top, so without the isInStore guard its devDependencies would load as required edges and surface as missing (e.g. npm sbom ESBOMPROBLEMS).
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { dep: '1.0.0' },
+    }),
+    node_modules: {
+      dep: t.fixture('symlink', '.store/dep@1.0.0/node_modules/dep'),
+      '.store': {
+        'dep@1.0.0': {
+          node_modules: {
+            dep: {
+              'package.json': JSON.stringify({
+                name: 'dep',
+                version: '1.0.0',
+                devDependencies: { 'a-dev-dep': '^1.0.0' },
+              }),
+            },
+          },
+        },
+      },
+    },
+  })
+
+  const tree = await loadActual(path)
+  const dep = tree.children.get('dep').target
+  t.equal(dep.isInStore, true, 'store node is flagged isInStore')
+  t.notOk(dep.edgesOut.get('a-dev-dep'), 'devDependency of a store node is not a required edge')
+})
+
+t.test('a project located under a .store path still loads its own devDependencies', async t => {
+  // The loaded root must never be treated as a store node, even when its own path happens to sit under a node_modules/.store directory.
+  const path = t.testdir({
+    node_modules: {
+      '.store': {
+        'root@1.0.0': {
+          node_modules: {
+            root: {
+              'package.json': JSON.stringify({
+                name: 'root',
+                version: '1.0.0',
+                devDependencies: { 'a-dev-dep': '^1.0.0' },
+              }),
+            },
+          },
+        },
+      },
+    },
+  })
+  const root = join(path, 'node_modules/.store/root@1.0.0/node_modules/root')
+
+  const tree = await loadActual(root)
+  t.equal(tree.isInStore, false, 'loaded root is not flagged isInStore')
+  t.ok(tree.edgesOut.get('a-dev-dep'), 'root devDependency is a required edge')
 })

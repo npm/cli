@@ -1,6 +1,6 @@
 // mix-in implementing the loadActual method
 
-const { dirname, join, normalize, relative, resolve } = require('node:path')
+const { dirname, join, normalize, relative, resolve, sep } = require('node:path')
 
 const PackageJson = require('@npmcli/package-json')
 const { readdirScoped } = require('@npmcli/fs')
@@ -269,6 +269,9 @@ module.exports = cls => class ActualLoader extends cls {
         parent,
         root,
         loadOverrides,
+        // A package physically located in the linked strategy's store is a transitive dependency, not a real tree top, so it must not load its devDependencies.
+        // Never flag the loaded root itself, even if its own path happens to sit under a .store directory.
+        isInStore: path !== this.path && real.includes(`${sep}node_modules${sep}.store${sep}`),
       }
 
       try {
