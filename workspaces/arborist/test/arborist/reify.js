@@ -4399,6 +4399,88 @@ t.test('install strategy linked', async (t) => {
     t.ok(fs.lstatSync(scmd), 'surviving semver.cmd kept')
     t.ok(fs.lstatSync(sps1), 'surviving semver.ps1 kept')
   })
+
+  t.test('switching hoisted -> linked removes stale real top-level dirs', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9615
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'sw', version: '1.0.0', dependencies: { minimatch: '3.0.4' },
+      }),
+    })
+    createRegistry(t, true)
+
+    // A hoisted install lays the transitive deps out as real top-level dirs.
+    await reify(path, { installStrategy: 'hoisted' })
+    const nm = resolve(path, 'node_modules')
+    for (const dep of ['balanced-match', 'brace-expansion', 'concat-map']) {
+      t.ok(fs.statSync(resolve(nm, dep)).isDirectory(), `${dep} is a real dir under hoisted`)
+    }
+
+    // Plant a stale scoped real package to cover the scoped removal and empty-scope pruning path.
+    const scopedPkg = resolve(nm, '@scope/stale')
+    fs.mkdirSync(scopedPkg, { recursive: true })
+    fs.writeFileSync(resolve(scopedPkg, 'package.json'),
+      JSON.stringify({ name: '@scope/stale', version: '1.0.0' }))
+    // A non-package real dir must be preserved.
+    fs.mkdirSync(resolve(nm, 'not-a-package'), { recursive: true })
+
+    // Switching to linked must remove those stale real dirs, leaving only the symlink + .store.
+    await reify(path, { installStrategy: 'linked' })
+    for (const dep of ['balanced-match', 'brace-expansion', 'concat-map']) {
+      t.notOk(fs.existsSync(resolve(nm, dep)), `${dep} stale real dir removed after switch to linked`)
+    }
+    t.notOk(fs.existsSync(scopedPkg), 'stale scoped real package removed')
+    t.notOk(fs.existsSync(resolve(nm, '@scope')), 'emptied scope dir pruned')
+    t.ok(fs.existsSync(resolve(nm, 'not-a-package')), 'non-package real dir preserved')
+    t.ok(fs.lstatSync(resolve(nm, 'minimatch')).isSymbolicLink(), 'minimatch is a store symlink')
+    t.ok(fs.statSync(resolve(nm, '.store')).isDirectory(), '.store created')
+  })
+
+  t.test('switching linked -> hoisted removes the stale .store dir', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9615
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'sw', version: '1.0.0', dependencies: { minimatch: '3.0.4' },
+      }),
+    })
+    createRegistry(t, true)
+
+    await reify(path, { installStrategy: 'linked' })
+    const nm = resolve(path, 'node_modules')
+    t.ok(fs.statSync(resolve(nm, '.store')).isDirectory(), '.store created under linked')
+
+    // A hoisted install must not leave the linked store behind.
+    await reify(path, { installStrategy: 'hoisted' })
+    t.notOk(fs.existsSync(resolve(nm, '.store')), '.store removed after switch to hoisted')
+    t.ok(fs.statSync(resolve(nm, 'balanced-match')).isDirectory(), 'transitive dep hoisted to a real dir')
+  })
+
+  t.test('a partial hoisted install does not wipe a still-referenced linked .store', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9615
+    // A workspace-filtered or --workspaces=false hoisted install must not remove the root .store, since out-of-scope workspaces may still link into it.
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root', version: '1.0.0', workspaces: ['packages/*'], dependencies: { minimatch: '3.0.4' },
+      }),
+      packages: {
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+      },
+    })
+    createRegistry(t, true)
+    const nm = resolve(path, 'node_modules')
+
+    await reify(path, { installStrategy: 'linked' })
+    t.ok(fs.statSync(resolve(nm, '.store')).isDirectory(), '.store created under linked')
+
+    await reify(path, { installStrategy: 'hoisted', workspaces: ['a'] })
+    t.ok(fs.existsSync(resolve(nm, '.store')), '.store kept during a workspace-filtered install')
+
+    await reify(path, { installStrategy: 'hoisted', workspacesEnabled: false })
+    t.ok(fs.existsSync(resolve(nm, '.store')), '.store kept during a --workspaces=false install')
+
+    await reify(path, { installStrategy: 'hoisted' })
+    t.notOk(fs.existsSync(resolve(nm, '.store')), '.store removed by a full hoisted install')
+  })
 })
 
 t.test('linked strategy --workspaces=false and --include-workspace-root do not crash', async t => {
