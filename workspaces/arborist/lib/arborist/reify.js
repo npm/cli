@@ -462,7 +462,10 @@ module.exports = cls => class Reifier extends cls {
       }
       if (includeRootDeps) {
         // add all non-workspace nodes to filterNodes
-        for (const tree of [this.idealTree, this.actualTree]) {
+        // Skip the actual tree under the linked diff wrapper: its edge targets have root===actualTree, not the wrapper, which trips Diff.calculate's filterNode guard.
+        // The ideal-side targets alone scope the diff.
+        const trees = this.#linkedActualForDiff ? [this.idealTree] : [this.idealTree, this.actualTree]
+        for (const tree of trees) {
           for (const { type, to } of tree.edgesOut.values()) {
             if (type !== 'workspace' && to) {
               filterNodes.push(to)
