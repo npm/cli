@@ -89,7 +89,9 @@ module.exports = cls => class Reifier extends cls {
 
   // public method
   async reify (options = {}) {
-    const linked = (options.installStrategy || this.options.installStrategy) === 'linked'
+    // Global installs are normalized to the shallow strategy in the constructor; honor that here so a per-call installStrategy:'linked' can't re-engage the unsupported linked path.
+    const linked = !this.options.global &&
+      (options.installStrategy || this.options.installStrategy) === 'linked'
 
     if (this.options.packageLockOnly && this.options.global) {
       const er = new Error('cannot generate lockfile for global packages')

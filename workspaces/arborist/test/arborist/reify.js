@@ -4295,6 +4295,23 @@ t.test('linked strategy --workspaces=false and --include-workspace-root do not c
   t.ok(fs.lstatSync(resolve(path, 'node_modules/abbrev')).isSymbolicLink(), 'remaining root dep still linked')
 })
 
+t.test('global install ignores a per-call linked strategy', async t => {
+  // Regression for #9614. Global installs are normalized to shallow; a per-call installStrategy:'linked' must not re-engage the linked path, which would trip Diff.calculate's filterNode guard on re-install and delete the global package.
+  const path = t.testdir({ lib: {} })
+  const lib = resolve(path, 'lib')
+  const nm = resolve(lib, 'node_modules')
+
+  createRegistry(t, true)
+  await reify(lib, { add: ['abbrev@1.1.1'], global: true })
+
+  // Re-install the already-present package under linked: must not crash and must not remove it.
+  await t.resolves(
+    reify(lib, { add: ['abbrev@1.1.1'], global: true, installStrategy: 'linked' }),
+    'global re-install under linked does not crash'
+  )
+  t.strictSame(fs.readdirSync(nm), ['abbrev'], 'global package retained, no .store created')
+})
+
 t.test('linked strategy exposes store node_modules via NODE_PATH for lifecycle scripts', async t => {
   // Regression for #9549. In the linked strategy a store package's deps are symlinked siblings in its store node_modules.
   // A separate bin invoked by the script (e.g. napi-postinstall) resolves modules from its own store realpath and cannot see them, so npm exposes them via NODE_PATH.
