@@ -4704,15 +4704,19 @@ npm install-scripts approve --all
 npm install-scripts deny <pkg> [<pkg> ...]
 npm install-scripts deny --all
 npm install-scripts ls
+npm install-scripts prune
 
 Options:
-[-a|--all] [--no-allow-scripts-pin] [--json]
+[-a|--all] [--no-allow-scripts-pin] [--dry-run] [--json]
 
   -a|--all
     Show or act on all packages, not just the ones your project directly
 
   --allow-scripts-pin
     Write pinned (\`pkg@version\`) entries when approving install scripts.
+
+  --dry-run
+    Indicates that you don't want npm to make any changes and that it should
 
   --json
     Whether or not to output JSON data, rather than the normal output.
@@ -4726,12 +4730,14 @@ npm install-scripts approve --all
 npm install-scripts deny <pkg> [<pkg> ...]
 npm install-scripts deny --all
 npm install-scripts ls
+npm install-scripts prune
 \`\`\`
 
 Note: This command is unaware of workspaces.
 
 #### \`all\`
 #### \`allow-scripts-pin\`
+#### \`dry-run\`
 #### \`json\`
 `
 
