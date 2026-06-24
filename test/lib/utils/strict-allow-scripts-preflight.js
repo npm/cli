@@ -203,7 +203,7 @@ t.test('error label falls back to node.name when package.version is missing', as
   )
 })
 
-t.test('project-scoped error suggests approve-scripts / deny-scripts', async t => {
+t.test('project-scoped error suggests install-scripts approve / deny', async t => {
   const arb = makeArb({ ideal: tree([node({ name: 'canvas' })]) })
   await t.rejects(
     preflight({
@@ -211,7 +211,7 @@ t.test('project-scoped error suggests approve-scripts / deny-scripts', async t =
       npm: { flatOptions: { strictAllowScripts: true } },
       idealTreeOpts: {},
     }),
-    { message: /Approve them with `npm approve-scripts`/ }
+    { message: /Approve them with `npm install-scripts approve`/ }
   )
 })
 
