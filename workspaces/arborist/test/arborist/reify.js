@@ -4457,26 +4457,36 @@ t.test('install strategy linked', async (t) => {
 
   t.test('a partial hoisted install does not wipe a still-referenced linked .store', async t => {
     // Regression test for https://github.com/npm/cli/issues/9615
-    // A workspace-filtered or --workspaces=false hoisted install must not remove the root .store, since out-of-scope workspaces may still link into it.
+    // A workspace-filtered or --workspaces=false hoisted install must not remove the root .store, since out-of-scope workspaces still link into it.
     const path = t.testdir({
       'package.json': JSON.stringify({
-        name: 'root', version: '1.0.0', workspaces: ['packages/*'], dependencies: { minimatch: '3.0.4' },
+        name: 'root', version: '1.0.0', workspaces: ['packages/*'],
       }),
       packages: {
-        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+        // a is the out-of-scope workspace that keeps a live link into the store.
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0', dependencies: { minimatch: '3.0.4' } }) },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
       },
     })
     createRegistry(t, true)
     const nm = resolve(path, 'node_modules')
+    const aLink = resolve(path, 'packages/a/node_modules/minimatch')
+    // a's dep resolves through the root .store, so deleting the store would break it.
+    const stillLinked = msg => t.ok(
+      fs.lstatSync(aLink).isSymbolicLink() && fs.existsSync(fs.realpathSync(aLink)), msg)
 
     await reify(path, { installStrategy: 'linked' })
     t.ok(fs.statSync(resolve(nm, '.store')).isDirectory(), '.store created under linked')
+    t.match(fs.realpathSync(aLink), /node_modules[\\/]\.store[\\/]/, 'workspace a links into the store')
 
-    await reify(path, { installStrategy: 'hoisted', workspaces: ['a'] })
+    // Filter to workspace b: a is out of scope and must keep its live store link.
+    await reify(path, { installStrategy: 'hoisted', workspaces: ['b'] })
     t.ok(fs.existsSync(resolve(nm, '.store')), '.store kept during a workspace-filtered install')
+    stillLinked('workspace a still resolves through the store after the filtered install')
 
     await reify(path, { installStrategy: 'hoisted', workspacesEnabled: false })
     t.ok(fs.existsSync(resolve(nm, '.store')), '.store kept during a --workspaces=false install')
+    stillLinked('workspace a still resolves through the store after the --workspaces=false install')
 
     await reify(path, { installStrategy: 'hoisted' })
     t.notOk(fs.existsSync(resolve(nm, '.store')), '.store removed by a full hoisted install')
