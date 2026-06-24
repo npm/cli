@@ -414,6 +414,42 @@ tap.test('idempotent install with legacyPeerDeps and workspace peer deps', async
   }
 })
 
+tap.test('reinstall repairs a wrong-but-existing top-level symlink target', async t => {
+  // Regression for https://github.com/npm/cli/issues/9611: an interrupted update can leave a top-level symlink pointing at a valid-but-wrong store key. Reinstall must repoint it, not treat it as already-correct.
+  // root depends on a@1.0.0 directly and on b@1.0.0, which pulls a@2.0.0 — so both versions of `a` live in the store.
+  const graph = {
+    registry: [
+      { name: 'a', version: '1.0.0' },
+      { name: 'a', version: '2.0.0' },
+      { name: 'b', version: '1.0.0', dependencies: { a: '2.0.0' } },
+    ],
+    root: {
+      name: 'myroot', version: '1.0.0', dependencies: { a: '1.0.0', b: '1.0.0' },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const opts = { path: dir, registry, packumentCache: new Map(), cache }
+
+  await new Arborist(opts).reify({ installStrategy: 'linked' })
+
+  const topLink = path.join(dir, 'node_modules', 'a')
+  const readVersion = p => JSON.parse(fs.readFileSync(path.join(p, 'package.json'), 'utf8')).version
+  t.equal(readVersion(fs.realpathSync(topLink)), '1.0.0', 'top-level a resolves to 1.0.0 after install')
+
+  // Simulate an interrupted update: repoint node_modules/a at the wrong (but real) a@2.0.0 store key.
+  const storeDir = path.join(dir, 'node_modules', '.store')
+  const wrongKey = fs.readdirSync(storeDir).find(k => k.startsWith('a@2.0.0'))
+  fs.unlinkSync(topLink)
+  fs.symlinkSync(path.join('.store', wrongKey, 'node_modules', 'a'), topLink, 'junction')
+  t.equal(readVersion(fs.realpathSync(topLink)), '2.0.0', 'symlink corrupted to 2.0.0 before reinstall')
+
+  await new Arborist({ ...opts, packumentCache: new Map() }).reify({ installStrategy: 'linked' })
+
+  t.equal(readVersion(fs.realpathSync(topLink)), '1.0.0', 'reinstall repaired the symlink back to 1.0.0')
+})
+
 tap.test('Lock file is same in hoisted and in isolated mode', async t => {
   const graph = {
     registry: [
