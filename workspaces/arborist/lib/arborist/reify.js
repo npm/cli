@@ -11,7 +11,7 @@ const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { depth: dfwalk } = require('treeverse')
 const { dirname, resolve, relative, join, sep } = require('node:path')
 const { log, time } = require('proc-log')
-const { existsSync } = require('node:fs')
+const { existsSync, realpathSync } = require('node:fs')
 const { lstat, mkdir, readdir, readlink, rm, symlink } = require('node:fs/promises')
 const { moveFile } = require('@npmcli/fs')
 const { subset, intersects } = require('semver')
@@ -904,6 +904,10 @@ module.exports = cls => class Reifier extends cls {
       if (child.isLink && child.resolved?.startsWith('file:.store/') && !existsSync(child.realpath)) {
         continue
       }
+      // Skip a link whose on-disk target is a valid-but-wrong store key (e.g. an interrupted update), so the diff repoints it via ADD.
+      if (child.isLink && this.#linkTargetMismatch(child)) {
+        continue
+      }
       let entry
       if (child.isLink) {
         entry = new IsolatedLink(child)
@@ -941,6 +945,12 @@ module.exports = cls => class Reifier extends cls {
     wrapper.inventory = actualTree.inventory
 
     return wrapper
+  }
+
+  // True when the link's on-disk target resolves to a different path than its ideal target.
+  // The caller only invokes this once both paths exist, so realpathSync won't throw.
+  #linkTargetMismatch (child) {
+    return realpathSync(child.path) !== realpathSync(child.realpath)
   }
 
   // When extracting a registry-resolved package, the spec we hand to pacote is name@URL.
