@@ -1461,6 +1461,8 @@ module.exports = cls => class Reifier extends cls {
     // Locations are normalized to forward slashes here because IsolatedNode/IsolatedLink locations are built with path.join, which uses backslashes on Windows.
     const validKeys = new Set()
     const nmDirs = new Map()
+    // Valid bin shim names per node_modules dir, collected from each top-level link's package.bin so the .bin sweep keeps only shims a still-linked package provides.
+    const binsByDir = new Map()
     const NM_PREFIX = 'node_modules/'
     const STORE_MARKER = '/.store/'
     for (const child of this.idealTree.children.values()) {
@@ -1500,6 +1502,19 @@ module.exports = cls => class Reifier extends cls {
         nmDirs.set(dir, set)
       }
       set.add(entry)
+
+      // package.bin is normalized to an object keyed by bin name; shim names are unscoped even for scoped packages.
+      const bin = child.package?.bin
+      if (bin && typeof bin === 'object') {
+        let binSet = binsByDir.get(dir)
+        if (!binSet) {
+          binSet = new Set()
+          binsByDir.set(dir, binSet)
+        }
+        for (const bn of Object.keys(bin)) {
+          binSet.add(bn)
+        }
+      }
     }
 
     // Determine which node_modules directories to sweep.
@@ -1573,7 +1588,38 @@ module.exports = cls => class Reifier extends cls {
 
     for (const [dir, valid] of nmDirs) {
       await this.#cleanOrphanedTopLevelLinks(dir, valid)
+      await this.#cleanStaleBinLinks(dir, binsByDir.get(dir))
     }
+  }
+
+  // Remove stale bin shims left in node_modules/.bin after an uninstall under linked, where the diff never emits an action to drop them.
+  // A shim is stale when no still-linked package provides its name, or when it is a dangling symlink; matching by name handles both POSIX symlinks and Windows .cmd/.ps1 shims.
+  async #cleanStaleBinLinks (nmDir, validBins = new Set()) {
+    const binDir = resolve(nmDir, '.bin')
+    let names
+    try {
+      names = await readdir(binDir)
+    } catch {
+      return
+    }
+
+    const stale = names.filter(name => {
+      const base = name.replace(/\.(cmd|ps1)$/, '')
+      return !validBins.has(base) || !existsSync(resolve(binDir, name))
+    })
+
+    if (!stale.length) {
+      return
+    }
+
+    log.silly('reify', 'cleaning stale bin links', stale)
+    await promiseAllRejectLate(
+      stale.map(name =>
+        rm(resolve(binDir, name), { force: true })
+          .catch(/* istanbul ignore next -- rm with force rarely fails */
+            er => log.warn('cleanup', `Failed to remove stale bin link ${name}`, er))
+      )
+    )
   }
 
   // Remove node_modules/ entries that aren't represented in the ideal tree.
