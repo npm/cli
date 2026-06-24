@@ -152,11 +152,6 @@ class AuditReport extends Map {
             continue
           }
 
-          // we will have loaded the source already if this is a metavuln
-          if (advisory.type === 'metavuln') {
-            vuln.addVia(this.get(advisory.dependency))
-          }
-
           // already marked this one, no need to do it again
           if (vuln.nodes.has(node)) {
             continue
@@ -215,6 +210,17 @@ class AuditReport extends Map {
           .some(n => advisory.testVersion(n.version))
         if (!relevant) {
           vuln.deleteAdvisory(advisory)
+        }
+      }
+    }
+
+    // post-loop reconciliation: establish all via links
+    // done here to ensure all vulns exist, avoid redundant setter triggers,
+    // and correctly handle multiple paths and omission cleanups.
+    for (const vuln of this.values()) {
+      for (const advisory of vuln.advisories) {
+        if (advisory.type === 'metavuln') {
+          vuln.addVia(this.get(advisory.dependency))
         }
       }
     }
