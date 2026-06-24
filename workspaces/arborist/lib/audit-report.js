@@ -220,11 +220,7 @@ class AuditReport extends Map {
     for (const vuln of this.values()) {
       for (const advisory of vuln.advisories) {
         if (advisory.type === 'metavuln') {
-          const depVuln = this.get(advisory.dependency)
-          // istanbul ignore next
-          if (depVuln) {
-            vuln.addVia(depVuln)
-          }
+          vuln.addVia(this.get(advisory.dependency))
         }
       }
     }
