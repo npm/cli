@@ -567,3 +567,72 @@ t.test('audit with filterSet limiting to only mkdirp and minimist', async t => {
   t.equal(report.get('nyc'), undefined, 'no nyc vuln reported')
   t.equal(report.get('mkdirp').simpleRange, '0.4.1 - 0.5.1', 'mkdirp vuln reported')
 })
+
+t.test('determinism: multiple metavulns with identical range but different dependencies', async t => {
+  const registry = createRegistry(t)
+
+  // Create a tree where A depends on both B and C. Both B and C are vulnerable.
+  const path = t.testdir()
+  const tree = new Node({
+    path,
+    pkg: {
+      name: 'root',
+      dependencies: {
+        A: '1.0.0',
+      },
+    },
+    children: [
+      {
+        pkg: { name: 'A', version: '1.0.0', dependencies: { B: '1.0.0', C: '1.0.0' } },
+      },
+      {
+        pkg: { name: 'B', version: '1.0.0' },
+      },
+      {
+        pkg: { name: 'C', version: '1.0.0' },
+      },
+    ],
+  })
+
+  registry.audit({
+    times: 5,
+    results: {
+      B: [{ id: 1, url: 'https://B', title: 'B vuln', severity: 'high', vulnerable_versions: '*' }],
+      C: [{ id: 2, url: 'https://C', title: 'C vuln', severity: 'high', vulnerable_versions: '*' }],
+    },
+  })
+
+  // We intentionally do not mock the packuments for A, B, and C.
+  // By using the fixtures directory, unmatched GET requests will receive a 404.
+  // This triggers the metavuln calculator fallback which defaults the effective range to `*`.
+  // As a result, both B and C trigger metavulns on A with identical ranges (`*`),
+  // producing the identical collision key `A@*` required to reproduce the determinism bug.
+  registry.mocks({ dir: join(__dirname, 'fixtures') })
+
+  // We loop 5 times just to show it is deterministic.
+  const results = []
+  let lastReport
+  for (let i = 0; i < 5; i++) {
+    lastReport = await AuditReport.load(tree, { registry: 'https://registry.npmjs.org' })
+    results.push(JSON.stringify(lastReport.toJSON()))
+  }
+
+  const uniqueResults = new Set(results)
+  t.equal(uniqueResults.size, 1, 'output is identical across runs')
+
+  // The key assertion is that BOTH B and C are correctly included in A's via list,
+  // which formally proves the determinism bug dropping a via path is fixed.
+  const A = lastReport.get('A')
+  const B = lastReport.get('B')
+  const C = lastReport.get('C')
+
+  t.ok(A, 'A is vulnerable')
+  const viaNames = [...A.via].map(v => v.name)
+  const BEffects = [...B.effects].map(v => v.name)
+  const CEffects = [...C.effects].map(v => v.name)
+
+  t.ok(viaNames.includes('B'), 'A via list includes B')
+  t.ok(viaNames.includes('C'), 'A via list includes C')
+  t.ok(BEffects.includes('A'), 'B effects includes A')
+  t.ok(CEffects.includes('A'), 'C effects includes A')
+})
