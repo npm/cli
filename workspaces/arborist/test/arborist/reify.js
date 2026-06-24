@@ -4220,6 +4220,119 @@ t.test('install strategy linked', async (t) => {
     t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
   })
 
+  t.test('hidden lockfile records the linked .store layout and round-trips', async t => {
+    // Regression for #9612: the hidden lockfile must record the on-disk .store/symlink layout so it round-trips as a valid cache.
+    const Shrinkwrap = require('../../lib/shrinkwrap.js')
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        // once depends on wrappy, so the store has a transitive symlink to validate
+        dependencies: { once: '1.4.0' },
+      }),
+    })
+
+    createRegistry(t, true)
+    await reify(path, { installStrategy: 'linked' })
+
+    const hidden = require(resolve(path, 'node_modules/.package-lock.json'))
+    const locs = Object.keys(hidden.packages)
+    // the layout is recorded at .store paths, not hoisted node_modules/<name>
+    t.ok(locs.some(l => /^node_modules\/\.store\/once@/.test(l)),
+      'once is recorded under .store')
+    t.ok(locs.some(l => /^node_modules\/\.store\/.*\/node_modules\/wrappy$/.test(l)),
+      'the transitive wrappy symlink is recorded inside the store')
+    t.notOk(locs.includes('node_modules/wrappy'),
+      'wrappy is not recorded at a hoisted path')
+
+    // the cache is accepted on reload: assertNoNewer matches it against the real disk layout
+    const meta = await Shrinkwrap.load({ path, hiddenLockfile: true })
+    t.equal(meta.loadedFromDisk, true, 'hidden lockfile is a valid cache of the disk layout')
+
+    // loadActual must reconstruct the tree from the cache with once->wrappy resolved through the store.
+    const actual = await newArb({ path, installStrategy: 'linked' }).loadActual()
+    const onceNode = [...actual.inventory.values()].find(n => n.name === 'once' && !n.isLink)
+    t.ok(onceNode, 'once is in the cached actual tree')
+    const wrappyEdge = onceNode.edgesOut.get('wrappy')
+    t.ok(wrappyEdge && !wrappyEdge.missing, 'once resolves its wrappy dep through the cached store layout')
+  })
+
+  t.test('hidden lockfile round-trips with an undeclared workspace', async t => {
+    // Regression for #9612: an undeclared workspace materializes deps in its own node_modules but isn't linked into root, and the cache must still validate that subtree.
+    const Shrinkwrap = require('../../lib/shrinkwrap.js')
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        workspaces: ['packages/a'],
+        // root does not depend on the workspace, so it stays undeclared
+      }),
+      packages: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: { once: '1.4.0' },
+          }),
+        },
+      },
+    })
+
+    createRegistry(t, true)
+    await reify(path, { installStrategy: 'linked' })
+
+    // the workspace's dep is materialized under its own node_modules, not the root's
+    t.ok(fs.lstatSync(resolve(path, 'packages/a/node_modules/once')).isSymbolicLink(),
+      'once is symlinked into the workspace node_modules')
+    t.notOk(fs.existsSync(resolve(path, 'node_modules/a')),
+      'the undeclared workspace is not symlinked into the root node_modules')
+
+    const meta = await Shrinkwrap.load({ path, hiddenLockfile: true })
+    t.equal(meta.loadedFromDisk, true, 'hidden lockfile validates the undeclared workspace subtree')
+  })
+
+  t.test('hidden lockfile round-trips with an undeclared workspace and no store entries', async t => {
+    // Regression for #9612: with only local deps there is no .store, so the cache must still walk the undeclared workspace subtree to validate it.
+    const Shrinkwrap = require('../../lib/shrinkwrap.js')
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        workspaces: ['packages/w', 'packages/a', 'packages/b'],
+        // only w is declared; a and b stay undeclared, and a depends on b locally
+        dependencies: { w: '1.0.0' },
+      }),
+      packages: {
+        w: { 'package.json': JSON.stringify({ name: 'w', version: '1.0.0' }) },
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: { b: '1.0.0' },
+          }),
+        },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+      },
+    })
+
+    createRegistry(t, false)
+    await reify(path, { installStrategy: 'linked' })
+
+    t.notOk(fs.existsSync(resolve(path, 'node_modules/.store')),
+      'no store is created for an all-local graph')
+    t.ok(fs.lstatSync(resolve(path, 'packages/a/node_modules/b')).isSymbolicLink(),
+      'the undeclared workspace links its local dep')
+
+    const meta = await Shrinkwrap.load({ path, hiddenLockfile: true })
+    t.equal(meta.loadedFromDisk, true, 'hidden lockfile validates the subtree without any store entry')
+
+    // loadActual must reconstruct the undeclared workspace from the cache with its local dep resolved.
+    const actual = await newArb({ path, installStrategy: 'linked' }).loadActual()
+    const aNode = [...actual.inventory.values()].find(n => n.name === 'a' && !n.isLink)
+    const bEdge = aNode && aNode.edgesOut.get('b')
+    t.ok(bEdge && !bEdge.missing, 'the undeclared workspace resolves its local dep through the cache')
+  })
+
   t.test('does not re-create a workspace dir removed from manifest', async t => {
     // Regression test for https://github.com/npm/cli/issues/9331
     const path = t.testdir({

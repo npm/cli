@@ -28,7 +28,8 @@ const { applyPatchToDir, patchIntegrity } = require('../patch.js')
 const { readFile } = require('node:fs/promises')
 const retirePath = require('../retire-path.js')
 const treeCheck = require('../tree-check.js')
-const { defaultLockfileVersion } = require('../shrinkwrap.js')
+const Shrinkwrap = require('../shrinkwrap.js')
+const { defaultLockfileVersion } = Shrinkwrap
 const { saveTypeMap, hasSubKey } = require('../add-rm-pkg-deps.js')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
 
@@ -115,12 +116,15 @@ module.exports = cls => class Reifier extends cls {
     await this[_loadTrees](options)
 
     const oldTree = this.idealTree
+    // Kept to serialize the hidden lockfile from the on-disk .store/symlink layout.
+    let isolatedTree = null
     if (linked) {
       // swap out the tree with the isolated tree
       // this is currently technical debt which will be resolved in a refactor
       // of Node/Link trees
       log.warn('reify', 'The "linked" install strategy is EXPERIMENTAL and may contain bugs.')
       this.idealTree = await this.createIsolatedTree()
+      isolatedTree = this.idealTree
       if (this.actualTree) {
         this.#linkedActualForDiff = this.#buildLinkedActualForDiff(
           this.idealTree, this.actualTree
@@ -241,17 +245,24 @@ module.exports = cls => class Reifier extends cls {
       calcDepFlags(this.idealTree)
     }
 
-    // save the ideal's meta as a hidden lockfile after we actualize it
-    this.idealTree.meta.filename =
-      this.idealTree.realpath + '/node_modules/.package-lock.json'
-    this.idealTree.meta.hiddenLockfile = true
-    this.idealTree.meta.lockfileVersion = defaultLockfileVersion
+    // save the ideal's meta as a hidden lockfile after we actualize it.
+    // Under linked the logical tree is the hoisted layout, so the hidden lockfile is serialized from the isolated tree instead.
+    if (!linked) {
+      this.idealTree.meta.filename =
+        this.idealTree.realpath + '/node_modules/.package-lock.json'
+      this.idealTree.meta.hiddenLockfile = true
+      this.idealTree.meta.lockfileVersion = defaultLockfileVersion
+    }
 
     this.actualTree = this.idealTree
     this.idealTree = null
 
     if (!this.options.global && !this.options.dryRun) {
-      await this.actualTree.meta.save()
+      if (linked) {
+        await this.#saveLinkedHiddenLockfile(isolatedTree)
+      } else {
+        await this.actualTree.meta.save()
+      }
       const ignoreScripts = !!this.options.ignoreScripts
       // if we aren't doing a dry run or ignoring scripts and we actually made changes to the dep
       // tree, then run the dependencies scripts
@@ -849,6 +860,47 @@ module.exports = cls => class Reifier extends cls {
     // Fallback: derive the file path from node.resolved in a platform-agnostic way
     const filePath = node.resolved.replace(/^file:/, '')
     return join(filePath)
+  }
+
+  // Serialize the hidden lockfile from the isolated tree, which mirrors the on-disk .store/symlink layout.
+  // Its children are every materialized node_modules entry: store package dirs and all symlinks.
+  async #saveLinkedHiddenLockfile (isolatedTree) {
+    const path = isolatedTree.realpath
+    const meta = new Shrinkwrap({
+      path,
+      hiddenLockfile: true,
+      lockfileVersion: defaultLockfileVersion,
+      resolveOptions: this.options,
+    })
+    meta.reset()
+    meta.filename = resolve(path, 'node_modules/.package-lock.json')
+    const storeRe = /^(.*\/\.store\/.+?)\/node_modules\//
+    const containers = new Set()
+    const nodes = new Set()
+    for (const node of isolatedTree.children.values()) {
+      // Tree-only undeclared workspace self-links aren't on disk.
+      if (node.isUndeclaredWorkspaceLink) {
+        continue
+      }
+      nodes.add(node)
+      // Record the enclosing .store/<key> dir so loadVirtual can resolve a store package's sibling deps.
+      // node.location uses the platform separator; lockfile keys are posix.
+      const m = node.location.replace(/\\/g, '/').match(storeRe)
+      if (m) {
+        containers.add(m[1])
+      }
+    }
+    // Workspace dirs hold their own dep symlinks; record them so the cache can validate those subtrees.
+    for (const ws of isolatedTree.fsChildren) {
+      nodes.add(ws)
+    }
+    for (const node of nodes) {
+      meta.add(node)
+    }
+    for (const loc of containers) {
+      meta.data.packages[loc] = {}
+    }
+    await meta.save()
   }
 
   // Build a flat actual tree wrapper for linked installs so the diff can correctly match store entries that already exist on disk.

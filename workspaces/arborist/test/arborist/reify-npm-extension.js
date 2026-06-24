@@ -215,10 +215,14 @@ t.test('a project with no .npm-extension installs normally and records no state'
 t.test('provenance round-trips under install-strategy=linked', async t => {
   const dir = await setup(t)
   await newArb(dir, { installStrategy: 'linked' }).reify()
-  // a second linked reify rescans the store and links, re-deriving provenance on both
+  // the hidden lockfile carries the provenance forward on a second linked reify
   const tree = await newArb(dir, { installStrategy: 'linked' }).reify()
   const foo = [...tree.inventory.values()].find(n => n.name === 'foo')
   t.ok(foo.npmExtensionApplied || foo.target?.npmExtensionApplied, 'provenance present on the linked node or its target')
+  // a full rescan (no cache) re-derives provenance on the store node and mirrors it onto the link
+  const actual = await newArb(dir, { installStrategy: 'linked' }).loadActual({ forceActual: true })
+  const fooLink = [...actual.inventory.values()].find(n => n.name === 'foo' && n.isLink)
+  t.ok(fooLink?.npmExtensionApplied, 'a rescan mirrors provenance onto the linked location')
 })
 
 t.test('loadActual re-derives provenance only for transformed installed deps', async t => {
