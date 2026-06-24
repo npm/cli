@@ -90,6 +90,9 @@
   - title: npm install-ci-test
     url: /commands/npm-install-ci-test
     description: Install a project with a clean slate and run tests
+  - title: npm install-scripts
+    url: /commands/npm-install-scripts
+    description: Manage install-script approvals for dependencies
   - title: npm install-test
     url: /commands/npm-install-test
     description: Install package(s) and run tests

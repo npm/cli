@@ -123,6 +123,7 @@ Array [
   "init",
   "install",
   "install-ci-test",
+  "install-scripts",
   "install-test",
   "link",
   "ll",
@@ -4692,6 +4693,46 @@ aliases: cit, clean-install-test, sit
 #### \`workspaces\`
 #### \`include-workspace-root\`
 #### \`install-links\`
+`
+
+exports[`test/lib/docs.js TAP usage install-scripts > must match snapshot 1`] = `
+Manage install-script approvals for dependencies
+
+Usage:
+npm install-scripts approve <pkg> [<pkg> ...]
+npm install-scripts approve --all
+npm install-scripts deny <pkg> [<pkg> ...]
+npm install-scripts deny --all
+npm install-scripts ls
+
+Options:
+[-a|--all] [--no-allow-scripts-pin] [--json]
+
+  -a|--all
+    Show or act on all packages, not just the ones your project directly
+
+  --allow-scripts-pin
+    Write pinned (\`pkg@version\`) entries when approving install scripts.
+
+  --json
+    Whether or not to output JSON data, rather than the normal output.
+
+
+Run "npm help install-scripts" for more info
+
+\`\`\`bash
+npm install-scripts approve <pkg> [<pkg> ...]
+npm install-scripts approve --all
+npm install-scripts deny <pkg> [<pkg> ...]
+npm install-scripts deny --all
+npm install-scripts ls
+\`\`\`
+
+Note: This command is unaware of workspaces.
+
+#### \`all\`
+#### \`allow-scripts-pin\`
+#### \`json\`
 `
 
 exports[`test/lib/docs.js TAP usage install-test > must match snapshot 1`] = `
