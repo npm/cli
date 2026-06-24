@@ -77,6 +77,9 @@ module.exports = cls => class Reifier extends cls {
   #sparseTreeDirs = new Set()
   #sparseTreeRoots = new Set()
   #linkedActualForDiff = null
+  // Under the linked strategy the audit runs against this non-isolated ideal tree.
+  // The isolated tree's inventory has no queryable indexes and its edges route through symlinks, so auditing it reports no vulnerabilities.
+  #linkedIdealForAudit = null
 
   constructor (options) {
     super(options)
@@ -123,21 +126,29 @@ module.exports = cls => class Reifier extends cls {
           this.idealTree, this.actualTree
         )
       }
+      // Keep the non-isolated tree so the quick audit can run against it.
+      this.#linkedIdealForAudit = oldTree
     }
-    await this[_diffTrees]()
-    await this.#reifyPackages()
-    if (linked) {
-      // The sweep mutates node_modules on disk, so skip it for dry runs and lockfile-only installs (those modes also short-circuit #reifyPackages).
-      // The sweep itself scopes to in-filter workspaces when a filter is active, so it's safe to run for filtered installs too.
-      if (!this.options.dryRun && !this.options.packageLockOnly) {
-        await this.#cleanOrphanedStoreEntries()
+    try {
+      await this[_diffTrees]()
+      await this.#reifyPackages()
+      if (linked) {
+        // The sweep mutates node_modules on disk, so skip it for dry runs and lockfile-only installs (those modes also short-circuit #reifyPackages).
+        // The sweep itself scopes to in-filter workspaces when a filter is active, so it's safe to run for filtered installs too.
+        if (!this.options.dryRun && !this.options.packageLockOnly) {
+          await this.#cleanOrphanedStoreEntries()
+        }
       }
-      // swap back in the idealTree
-      // so that the lockfile is preserved
-      this.idealTree = oldTree
+    } finally {
+      // Restore the non-isolated tree so the lockfile is preserved and a reused Arborist never sees the isolated tree, even if reify throws.
+      if (linked) {
+        this.idealTree = oldTree
+      }
+      // The quick audit has captured its tree synchronously by now, so drop the stashed references even on throw.
+      this.#linkedIdealForAudit = null
+      this.#linkedActualForDiff = null
     }
     await this[_saveIdealTree](options)
-    this.#linkedActualForDiff = null
     // clean inert
     for (const node of this.idealTree.inventory.values()) {
       if (node.inert) {
@@ -1169,7 +1180,8 @@ module.exports = cls => class Reifier extends cls {
     // with the reification, and be resolved at a later time.
     const timeEnd = time.start('reify:audit')
     const options = { ...this.options }
-    const tree = this.idealTree
+    // Under the linked strategy idealTree is the isolated tree, which the audit cannot traverse; audit the non-isolated tree instead.
+    const tree = this.#linkedIdealForAudit || this.idealTree
 
     // if we're operating on a workspace, only audit the workspace deps
     if (this.options.workspaces.length) {

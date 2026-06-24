@@ -223,6 +223,21 @@ t.test('packageLockOnly with linked strategy in workspaces', async t => {
   t.throws(() => fs.statSync(path + '/node_modules'), { code: 'ENOENT' })
 })
 
+t.test('linked strategy audits the non-isolated tree', async t => {
+  // The isolated tree has no queryable inventory, so auditing it reports nothing. The install-time audit must run against the non-isolated tree, matching standalone npm audit. https://github.com/npm/cli/issues/9609
+  const src = resolve(fixtures, 'audit-one-vuln')
+  // Copy into a throwaway dir since packageLockOnly rewrites the lockfile.
+  const path = t.testdir({
+    'package.json': fs.readFileSync(join(src, 'package.json'), 'utf8'),
+    'package-lock.json': fs.readFileSync(join(src, 'package-lock.json'), 'utf8'),
+  })
+  const registry = createRegistry(t, true)
+  registry.audit({ convert: true, results: require(join(src, 'audit.json')) })
+  const arb = newArb({ path, audit: true, packageLockOnly: true, installStrategy: 'linked' })
+  await arb.reify()
+  t.ok(arb.auditReport.has('minimist'), 'vulnerable package reported under linked strategy')
+})
+
 t.test('malformed package.json should not be overwritten', async t => {
   t.plan(2)
 
