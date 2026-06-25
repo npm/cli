@@ -4491,6 +4491,39 @@ t.test('install strategy linked', async (t) => {
     await reify(path, { installStrategy: 'hoisted' })
     t.notOk(fs.existsSync(resolve(nm, '.store')), '.store removed by a full hoisted install')
   })
+
+  t.test('installed transitive optional dep is materialized in the FS-scanned actual tree', async t => {
+    // Regression for #9622: under linked, #findMissingEdges skipped unresolved optional edges, so an installed transitive optional dep was reported UNMET.
+    const optionalDependencies = { bar: '^1.0.0', baz: '^1.0.0' }
+    const path = t.testdir({
+      'package.json': JSON.stringify({ name: 'root', version: '1.0.0', dependencies: { foo: '1.0.0' } }),
+      src: {
+        // bar is installed (store sibling); baz is platform-incompatible so its edge must stay unresolved.
+        foo: { 'package.json': JSON.stringify({ name: 'foo', version: '1.0.0', optionalDependencies }) },
+        bar: { 'package.json': JSON.stringify({ name: 'bar', version: '1.2.3' }) },
+      },
+    })
+    const registry = new MockRegistry({ strict: false, tap: t, registry: 'https://registry.npmjs.org' })
+    const fooManifest = registry.manifest({ name: 'foo', packuments: [{ version: '1.0.0', optionalDependencies }] })
+    const barManifest = registry.manifest({ name: 'bar', packuments: [{ version: '1.2.3' }] })
+    const bazManifest = registry.manifest({ name: 'baz', packuments: [{ version: '1.0.0', os: ['nonexistent-platform'] }] })
+    await registry.package({ manifest: fooManifest, tarballs: { '1.0.0': join(path, 'src/foo') } })
+    await registry.package({ manifest: barManifest, tarballs: { '1.2.3': join(path, 'src/bar') } })
+    await registry.package({ manifest: bazManifest })
+
+    await reify(path, { installStrategy: 'linked' })
+    const fooStore = fs.readdirSync(resolve(path, 'node_modules/.store')).find(d => d.startsWith('foo@'))
+    t.ok(fooStore && fs.existsSync(resolve(path, 'node_modules/.store', fooStore, 'node_modules/bar')),
+      'bar is installed as a store sibling of foo')
+
+    // forceActual skips the hidden lockfile, exercising the FS-scan path.
+    const actual = await newArb({ path, installStrategy: 'linked' }).loadActual({ forceActual: true })
+    const foo = [...actual.inventory.values()].find(n => n.name === 'foo' && !n.isLink)
+    const barEdge = foo.edgesOut.get('bar')
+    t.ok(barEdge.to, 'the optional bar edge resolves to an installed node, not UNMET')
+    t.equal(barEdge.to.version, '1.2.3', 'bar resolved to the installed store node')
+    t.notOk(foo.edgesOut.get('baz').to, 'a genuinely uninstalled optional dep stays unresolved')
+  })
 })
 
 t.test('linked strategy --workspaces=false and --include-workspace-root do not crash', async t => {

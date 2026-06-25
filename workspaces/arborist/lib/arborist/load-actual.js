@@ -438,8 +438,8 @@ module.exports = cls => class ActualLoader extends cls {
 
       const depPromises = []
       for (const [name, edge] of node.edgesOut.entries()) {
-        const notMissing = !edge.missing &&
-          !(edge.to && (edge.to.dummy || edge.to.parent !== node))
+        // An unresolved optional edge has edge.missing === false, so walk any edge with no target to find a store sibling.
+        const notMissing = edge.to && !(edge.to.dummy || edge.to.parent !== node)
         if (notMissing) {
           continue
         }
