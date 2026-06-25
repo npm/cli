@@ -470,26 +470,49 @@ for (const allowDirectory of ['none', 'root']) {
   })
 }
 
-t.test('npm exec sequential workspace runs with same-named local bins', async t => {
+t.test('npm exec sequential workspace runs with linked same-named dependency bins', async t => {
   t.plan(2)
   const { path, readOutput, rmOutput, registry } = setup(t, {
     testdir: {
+      'package.json': {
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      },
       packages: {
         a: {
           'package.json': {
             name: 'workspace-a',
             version: '1.0.0',
-            bin: { 'shared-bin': 'cli.js' },
+            dependencies: { 'tool-a': '1.0.0' },
           },
-          'cli.js': { key: 'shared-bin', value: 'A' },
+          node_modules: {
+            'tool-a': {
+              'package.json': {
+                name: 'tool-a',
+                version: '1.0.0',
+                bin: { 'shared-bin': 'cli.js' },
+              },
+              'cli.js': { key: 'shared-bin', value: 'A' },
+            },
+          },
         },
         b: {
           'package.json': {
             name: 'workspace-b',
             version: '1.0.0',
-            bin: { 'shared-bin': 'cli.js' },
+            dependencies: { 'tool-b': '1.0.0' },
           },
-          'cli.js': { key: 'shared-bin', value: 'B' },
+          node_modules: {
+            'tool-b': {
+              'package.json': {
+                name: 'tool-b',
+                version: '1.0.0',
+                bin: { 'shared-bin': 'cli.js' },
+              },
+              'cli.js': { key: 'shared-bin', value: 'B' },
+            },
+          },
         },
       },
     },
@@ -519,7 +542,7 @@ t.test('npm exec sequential workspace runs with same-named local bins', async t 
   })
 
   const outputA = await readOutput('shared-bin')
-  t.equal(outputA.value, 'A', 'should run workspace A bin')
+  t.equal(outputA.value, 'A', 'should run workspace A bin via dependency tool-a')
   await rmOutput('shared-bin')
 
   // Workspace B
@@ -530,5 +553,62 @@ t.test('npm exec sequential workspace runs with same-named local bins', async t 
   })
 
   const outputB = await readOutput('shared-bin')
-  t.equal(outputB.value, 'B', 'should run workspace B bin, not cached workspace A bin')
+  t.equal(outputB.value, 'B', 'should run workspace B bin via dependency tool-b, bypassing hoist collisions')
+})
+
+t.test('resolves binary from hoisted workspace dependency', async t => {
+  t.plan(1)
+  const { chmod, readOutput, path, registry } = setup(t, {
+    testdir: {
+      'package.json': {
+        name: 'root',
+        workspaces: ['packages/*'],
+      },
+      node_modules: {
+        'tool-a': {
+          'package.json': {
+            name: 'tool-a',
+            version: '1.0.0',
+            bin: { 'shared-bin': 'cli.js' },
+          },
+          'cli.js': { key: 'shared-bin', value: 'HOISTED A' },
+        },
+      },
+      packages: {
+        a: {
+          'package.json': {
+            name: 'workspace-a',
+            version: '1.0.0',
+            dependencies: { 'tool-a': '1.0.0' },
+          },
+        },
+      },
+    },
+  })
+
+  const libnpmexec = t.mock('../lib/index.js')
+
+  // Intentionally not creating a .bin/shared-bin symlink — this test verifies that the fix
+  // resolves the binary directly via the dependency graph, bypassing the hoisted .bin directory.
+  await chmod('node_modules/tool-a/cli.js')
+
+  const baseOpts = {
+    path,
+    runPath: path,
+    npxCache: resolve(path, 'npxCache'),
+    registry: registry.origin + '/',
+    localBin: resolve(path, 'node_modules', '.bin'),
+    call: '',
+    scriptShell: 'sh',
+    yes: true,
+  }
+
+  await libnpmexec({
+    ...baseOpts,
+    pkgPath: resolve(path, 'packages/a'),
+    args: ['shared-bin'],
+  })
+
+  const output = await readOutput('shared-bin')
+  t.equal(output.value, 'HOISTED A', 'should correctly resolve hoisted binary via dependency graph')
 })
