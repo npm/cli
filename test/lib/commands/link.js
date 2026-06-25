@@ -592,3 +592,73 @@ t.test('link threads allowScripts policy through to arborist', async t => {
   t.strictSame(localOpts.allowScripts, { canvas: true },
     'local arborist opts.allowScripts populated from package.json')
 })
+
+t.test('link threads allowScripts policy to the global install', async t => {
+  const capturedOpts = []
+  const FakeArborist = function (opts) {
+    capturedOpts.push(opts)
+    this.options = opts
+    this.actualTree = { inventory: new Map() }
+  }
+  FakeArborist.prototype.loadActual = async () => ({ isLink: false, children: new Map() })
+  FakeArborist.prototype.reify = async () => {}
+
+  const mock = await mockNpm(t, {
+    command: 'link',
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        allowScripts: { canvas: true },
+      }),
+    },
+    mocks: {
+      '@npmcli/arborist': FakeArborist,
+      '{LIB}/utils/reify-finish.js': async () => {},
+    },
+  })
+  await mock.npm.exec('link', ['canvas'])
+  // the global Arborist is constructed first; its missing-package install
+  // must carry the project policy.
+  t.strictSame(capturedOpts[0].allowScripts, { canvas: true },
+    'global arborist opts.allowScripts populated from package.json')
+})
+
+t.test('link runs the strict-allow-scripts preflight before the global install', async t => {
+  // The mocked preflight stands in for strict mode finding an uncovered
+  // script. It must run and throw before the global reify.
+  const calls = []
+  const FakeArborist = function (opts) {
+    this.options = opts
+    this.actualTree = { inventory: new Map() }
+  }
+  FakeArborist.prototype.loadActual = async () => ({ isLink: false, children: new Map() })
+  FakeArborist.prototype.reify = async () => {
+    calls.push('reify')
+  }
+
+  const mock = await mockNpm(t, {
+    command: 'link',
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+      }),
+    },
+    mocks: {
+      '@npmcli/arborist': FakeArborist,
+      '{LIB}/utils/reify-finish.js': async () => {},
+      '{LIB}/utils/strict-allow-scripts-preflight.js': async () => {
+        calls.push('preflight')
+        throw Object.assign(new Error('blocked'), { code: 'ESTRICTALLOWSCRIPTS' })
+      },
+    },
+  })
+  await t.rejects(
+    mock.npm.exec('link', ['canvas']),
+    { code: 'ESTRICTALLOWSCRIPTS' },
+    'the strict preflight blocks the link'
+  )
+  t.strictSame(calls, ['preflight'],
+    'preflight ran and the global reify never executed')
+})

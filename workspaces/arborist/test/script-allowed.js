@@ -229,6 +229,57 @@ t.test('omitLockfileRegistryResolved: name-only match via edges; version-pinned 
   t.end()
 })
 
+t.test('omitLockfileRegistryResolved: version-pinned deny fails closed', t => {
+  // No resolved URL means no trusted version. A version-pinned deny must
+  // still block (fail closed); a matching allow stays refused.
+  const omitted = () => ({
+    name: 'evilpkg',
+    packageName: 'evilpkg',
+    version: '1.0.0',
+    resolved: undefined,
+    location: 'node_modules/evilpkg',
+    edgesIn: new Set([{ name: 'evilpkg', spec: '^1.0.0' }]),
+  })
+
+  // Exact-version deny: blocked.
+  t.equal(isScriptAllowed(omitted(), { 'evilpkg@1.0.0': false }), false,
+    'version-pinned deny blocks even without a trusted version')
+  // Exact-disjunction deny: blocked.
+  t.equal(isScriptAllowed(omitted(), { 'evilpkg@1.0.0 || 2.0.0': false }), false,
+    'exact-disjunction deny blocks even without a trusted version')
+  // The exploit: name-only allow + version-pinned deny. Deny still wins.
+  t.equal(isScriptAllowed(omitted(), { evilpkg: true, 'evilpkg@1.0.0': false }), false,
+    'deny wins over a name-only allow when the version is unverifiable')
+
+  // Allow stays strict: an unverifiable version is never authorized.
+  t.equal(isScriptAllowed(omitted(), { 'evilpkg@1.0.0 || 2.0.0': true }), null,
+    'exact-disjunction allow is refused without a trusted version')
+
+  // Name mismatch: fail-closed must not over-match a different package.
+  t.equal(isScriptAllowed(omitted(), { 'otherpkg@1.0.0': false }), null,
+    'a version-pinned deny for a different name does not match')
+
+  t.end()
+})
+
+t.test('omitLockfileRegistryResolved + alias: version-pinned deny fails closed', t => {
+  // `"trusted": "npm:naughty@1.0.0"`, resolved omitted. A deny on the
+  // underlying name must block; the alias name authorizes nothing.
+  const aliasOmitted = {
+    name: 'trusted',
+    packageName: 'naughty',
+    version: '1.0.0',
+    resolved: undefined,
+    location: 'node_modules/trusted',
+    edgesIn: new Set([{ name: 'trusted', spec: 'npm:naughty@1.0.0' }]),
+  }
+  t.equal(isScriptAllowed(aliasOmitted, { 'naughty@1.0.0': false }), false,
+    'underlying-name version deny blocks the aliased package')
+  t.equal(isScriptAllowed(aliasOmitted, { 'trusted@1.0.0': false }), null,
+    'alias-name version deny does not match the underlying package')
+  t.end()
+})
+
 t.test('omitLockfileRegistryResolved + alias: location is ignored; underlying name wins', t => {
   // Consumer's package.json has `"trusted": "npm:naughty@1.0.0"`. With
   // omitLockfileRegistryResolved, the resolved URL is absent. The install
