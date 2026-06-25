@@ -72,6 +72,7 @@ module.exports = cls => class ActualLoader extends cls {
           // only reset root flags if we're not re-rooting,
           // otherwise leave as-is
           calcDepFlags(tree, !options.root)
+          this.#repropagateOverrides()
           this.actualTree = treeCheck(tree)
           return this.actualTree
         })
@@ -203,8 +204,6 @@ module.exports = cls => class ActualLoader extends cls {
     }
 
     this.#transplant(root)
-
-    this.#repropagateOverrides()
 
     if (global) {
       // need to depend on the children, or else all of them
@@ -436,7 +435,7 @@ module.exports = cls => class ActualLoader extends cls {
     }
   }
 
-  // Re-forward overrides through links after the tree is complete, since a store Link may forward before its subtree resolves and miss a transitive match (npm/cli#9619).
+  // Re-forward overrides through links once all edges are resolved, since a Link may forward before its subtree resolves and miss a transitive match (npm/cli#9619, #9659).
   #repropagateOverrides () {
     if (!this.#actualTree.overrides) {
       return

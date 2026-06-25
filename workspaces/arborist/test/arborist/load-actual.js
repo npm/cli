@@ -774,6 +774,72 @@ t.test('forwards a transitive override through a linked store link — npm/cli#9
   t.equal(leafEdge.to.target.version, '2.0.0', 'edge resolves to the overridden package')
 })
 
+t.test('forwards a transitive override across a file: link boundary — npm/cli#9659', async t => {
+  // The override path crosses a file: link (root -> a) before entering the store chain (a -> b -> leaf).
+  // Loading from the hidden lockfile, the file link target's subtree resolves late, so override repropagation must run once all edges are resolved or `npm ls` reports the edge `invalid`.
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { a: 'file:./pkgs/a' },
+      overrides: { leaf: '2.0.0' },
+    }),
+    pkgs: {
+      a: {
+        'package.json': JSON.stringify({ name: 'a', version: '1.0.0', dependencies: { b: '1.0.0' } }),
+        node_modules: {
+          b: t.fixture('symlink', '../../../node_modules/.store/b@1.0.0/node_modules/b'),
+        },
+      },
+    },
+    node_modules: {
+      a: t.fixture('symlink', '../pkgs/a'),
+      '.store': {
+        'b@1.0.0': {
+          node_modules: {
+            // leaf is declared ^1.0.0 but overridden to 2.0.0, outside that range
+            b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0', dependencies: { leaf: '^1.0.0' } }) },
+            leaf: t.fixture('symlink', '../../leaf@2.0.0/node_modules/leaf'),
+          },
+        },
+        'leaf@2.0.0': {
+          node_modules: {
+            leaf: { 'package.json': JSON.stringify({ name: 'leaf', version: '2.0.0' }) },
+          },
+        },
+      },
+      '.package-lock.json': JSON.stringify({
+        name: 'root',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': { name: 'root', version: '1.0.0', dependencies: { a: 'file:./pkgs/a' }, overrides: { leaf: '2.0.0' } },
+          'node_modules/a': { resolved: 'pkgs/a', link: true },
+          'pkgs/a': { version: '1.0.0', dependencies: { b: '1.0.0' } },
+          'pkgs/a/node_modules/b': { resolved: 'node_modules/.store/b@1.0.0/node_modules/b', link: true },
+          'node_modules/.store/b@1.0.0': {},
+          'node_modules/.store/b@1.0.0/node_modules/b': { version: '1.0.0', dependencies: { leaf: '^1.0.0' } },
+          'node_modules/.store/b@1.0.0/node_modules/leaf': { resolved: 'node_modules/.store/leaf@2.0.0/node_modules/leaf', link: true },
+          'node_modules/.store/leaf@2.0.0': {},
+          'node_modules/.store/leaf@2.0.0/node_modules/leaf': { version: '2.0.0' },
+        },
+      }),
+    },
+  })
+  // make the hidden lockfile the newest entry so loadActual loads from it
+  const hidden = resolve(path, 'node_modules/.package-lock.json')
+  const then = Date.now() + 10000
+  fs.utimesSync(hidden, new Date(then), new Date(then))
+
+  const tree = await loadActual(path)
+  const b = tree.children.get('a').target.edgesOut.get('b').to.target
+  const leafEdge = b.edgesOut.get('leaf')
+  t.ok(leafEdge && !leafEdge.error, 'transitive overridden edge resolves without error')
+  t.ok(leafEdge.overrides, 'edge carries the override rule')
+  t.equal(leafEdge.spec, '2.0.0', 'edge spec is the overridden version')
+  t.equal(leafEdge.to.target.version, '2.0.0', 'edge resolves to the overridden package')
+})
+
 t.test('store nodes do not load devDependencies as required edges', async t => {
   // A package in the linked store is structurally a tree top, so without the isInStore guard its devDependencies would load as required edges and surface as missing (e.g. npm sbom ESBOMPROBLEMS).
   const path = t.testdir({
