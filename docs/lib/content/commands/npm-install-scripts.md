@@ -28,7 +28,7 @@ contexts, use the `--allow-scripts` flag at install time (for example
 `npm install -g --allow-scripts=canvas,sharp`) or persist the setting with
 `npm config set allow-scripts=canvas,sharp --location=user`.
 
-There are three subcommands:
+There are four subcommands:
 
 ```bash
 npm install-scripts approve <pkg> [<pkg> ...]
@@ -36,6 +36,7 @@ npm install-scripts approve --all
 npm install-scripts deny <pkg> [<pkg> ...]
 npm install-scripts deny --all
 npm install-scripts ls
+npm install-scripts prune
 ```
 
 `approve` allows install scripts for the named packages. `<pkg>` matches
@@ -52,6 +53,14 @@ unreviewed install scripts.
 
 `ls` is read-only: it lists every package whose install scripts are not yet
 covered by `allowScripts`, without modifying `package.json`.
+
+`prune` removes `allowScripts` entries that no longer match an installed
+package with an install script, either because the package is no longer
+installed (a transitive dependency changed, or a pinned `pkg@1.2.3` was
+upgraded) or because it no longer has an install script. Both approvals
+(`true`) and denials (`false`) are removed. It edits only the `allowScripts`
+field in `package.json`, never `.npmrc` or `--allow-scripts`. Pass `--dry-run`
+to preview without writing. Unparseable keys are left alone.
 
 `approve` honours the asymmetric pin rule: if you re-approve a package whose
 installed version has changed, the existing pin is rewritten to track the new
@@ -78,6 +87,10 @@ npm install-scripts deny telemetry-pkg
 
 # Preview which packages still need review
 npm install-scripts ls
+
+# Preview stale allowScripts entries, then remove them
+npm install-scripts prune --dry-run
+npm install-scripts prune
 ```
 
 ### Configuration
