@@ -578,6 +578,43 @@ t.test('store nodes do not load devDependencies as required edges', async t => {
   t.notOk(dep.edgesOut.get('a-dev-dep'), 'devDependency of a store node is not a required edge')
 })
 
+t.test('loads an installed transitive optional dep from the linked store', async t => {
+  // A transitive optional dep lives as a store sibling, and its edge reports missing === false despite having no target.
+  // #findMissingEdges must still walk it, or npm sbom/query omit the installed dep.
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { dep: '1.0.0' },
+    }),
+    node_modules: {
+      dep: t.fixture('symlink', '.store/dep@1.0.0/node_modules/dep'),
+      '.store': {
+        'dep@1.0.0': {
+          node_modules: {
+            dep: {
+              'package.json': JSON.stringify({
+                name: 'dep',
+                version: '1.0.0',
+                optionalDependencies: { opt: '^1.0.0' },
+              }),
+            },
+            // the optional dep is installed as a store sibling of its consumer
+            opt: { 'package.json': JSON.stringify({ name: 'opt', version: '1.0.0' }) },
+          },
+        },
+      },
+    },
+  })
+
+  const tree = await loadActual(path)
+  const dep = tree.children.get('dep').target
+  const edge = dep.edgesOut.get('opt')
+  t.ok(edge && !edge.error, 'optional edge resolves')
+  t.equal(edge.to?.name, 'opt', 'edge resolves to the installed package')
+  t.ok([...tree.inventory.values()].some(n => n.name === 'opt'), 'opt is present in the inventory')
+})
+
 t.test('a project located under a .store path still loads its own devDependencies', async t => {
   // The loaded root must never be treated as a store node, even when its own path happens to sit under a node_modules/.store directory.
   const path = t.testdir({
