@@ -391,6 +391,25 @@ t.test('added packages should be looked up within returned tree', async t => {
 
     t.matchSnapshot(out)
   })
+
+  t.test('linked store package counted though absent from actualTree', async t => {
+    const out = await mockReify(t, {
+      actualTree: {
+        name: 'foo',
+        inventory: {
+          has: () => false,
+        },
+      },
+      diff: {
+        children: [
+          { action: 'ADD', ideal: { path: 'test/baz', name: 'baz', isInStore: true, isLink: false, package: { version: '1.0.0' } } },
+          { action: 'ADD', ideal: { path: 'test/baz-link', name: 'baz', isInStore: false, isLink: true, package: { version: '1.0.0' } } },
+        ],
+      },
+    })
+
+    t.matchSnapshot(out)
+  })
 })
 
 t.test('prints dedupe difference on dry-run', async t => {
