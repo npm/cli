@@ -303,6 +303,49 @@ t.test('transplant workspace targets, even if links not present', async t => {
   }), 'do not transplant node named "a"')
 })
 
+t.test('linked strategy propagates dep flags into undeclared workspaces', async t => {
+  // Undeclared workspaces aren't in root node_modules under linked; without the fix their edges resolve to null and stay dev.
+  // `tools` is also a devDependency of `app`, so it is reached by both a prod root link and a dev `app` link.
+  // `app` is linked into root node_modules, so its edge already resolves and the synthesis is skipped.
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      workspaces: ['packages/*'],
+    }),
+    node_modules: {
+      '@test': {
+        app: t.fixture('symlink', '../../packages/app'),
+      },
+    },
+    packages: {
+      app: {
+        'package.json': JSON.stringify({
+          name: '@test/app',
+          version: '1.0.0',
+          devDependencies: { '@test/tools': '*' },
+        }),
+        node_modules: {
+          '@test': {
+            tools: t.fixture('symlink', '../../../tools'),
+          },
+        },
+      },
+      tools: {
+        'package.json': JSON.stringify({
+          name: '@test/tools',
+          version: '1.0.0',
+        }),
+      },
+    },
+  })
+  const tree = await loadActual(path, { installStrategy: 'linked' })
+  const byLocation = loc => [...tree.inventory.values()].find(n => n.location === loc)
+  const app = byLocation('packages/app')
+  const tools = byLocation('packages/tools')
+  t.equal(app.dev, false, 'app workspace is prod')
+  t.equal(tools.dev, false, 'tools workspace is prod, not overwritten by the dev app link')
+})
+
 t.test('load workspaces when loading from hidden lockfile', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
