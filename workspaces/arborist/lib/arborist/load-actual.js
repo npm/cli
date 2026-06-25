@@ -93,6 +93,8 @@ module.exports = cls => class ActualLoader extends cls {
       transplantFilter = () => true,
       ignoreMissing = false,
       forceActual = false,
+      // always present: the public loadActual merges this.options, which sets installStrategy
+      installStrategy,
     } = options
     this.#filter = filter
     this.#transplantFilter = transplantFilter
@@ -173,6 +175,20 @@ module.exports = cls => class ActualLoader extends cls {
         }
       }
       await Promise.all(promises)
+
+      // Linked undeclared workspaces aren't symlinked into root node_modules, so their edges resolve to null and flags never propagate.
+      // Synthesize the links from the loaded targets. Gated to linked; under hoisted a null workspace edge is a real missing link.
+      if (installStrategy === 'linked') {
+        for (const [name, path] of this.#actualTree.workspaces.entries()) {
+          const edge = this.#actualTree.edgesOut.get(name)
+          // skip workspaces already linked into root node_modules (declared deps)
+          if (edge.to) {
+            continue
+          }
+          const target = this.#cache.get(path)
+          new Link({ parent: this.#actualTree, name, realpath: path, target, pkg: target.package })
+        }
+      }
     }
 
     // .npm-extension runs before packageExtensions, matching the ideal-tree resolution order
