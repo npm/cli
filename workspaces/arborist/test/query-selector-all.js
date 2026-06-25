@@ -1144,6 +1144,13 @@ t.test('linked strategy: :root > * excludes transitive deps and store nodes', as
     'nopt@7.2.1',
   ], ':root > * should only return direct dependencies, not transitive deps or store nodes')
 
+  // :root > * must return the logical Links, not the store backing nodes
+  const rawChildren = await q(tree, ':root > *')
+  t.same(rawChildren.map(n => n.location).sort(), [
+    'node_modules/ini',
+    'node_modules/nopt',
+  ], ':root > * returns the logical link locations, not .store backing paths')
+
   const rootDescendants = await querySelectorAll(tree, ':root *')
   t.same(rootDescendants, [
     'abbrev@2.0.0',
