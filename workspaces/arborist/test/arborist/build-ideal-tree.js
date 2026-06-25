@@ -3565,6 +3565,46 @@ t.test('overrides', async t => {
     t.equal(barEdge.to.version, '2.0.0')
   })
 
+  t.test('overrides a nested dependency reached through a file: link — npm/cli#9659', async (t) => {
+    // A root override targeting a transitive dep must apply even when the path to that dep crosses a file:/workspace link boundary.
+    const registry = createRegistry(t, false)
+    const barPackuments = registry.packuments([
+      { version: '1.0.0', dependencies: { baz: '^1.0.0' } },
+    ], 'bar')
+    const barManifest = registry.manifest({ name: 'bar', packuments: barPackuments })
+    const bazPackuments = registry.packuments(['1.0.0', '2.0.0'], 'baz')
+    const bazManifest = registry.manifest({ name: 'baz', packuments: bazPackuments })
+    await registry.package({ manifest: barManifest })
+    await registry.package({ manifest: bazManifest })
+
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        dependencies: {
+          a: 'file:./pkgs/a',
+        },
+        overrides: {
+          baz: '2.0.0',
+        },
+      }),
+      pkgs: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: { bar: '1.0.0' },
+          }),
+        },
+      },
+    })
+
+    const tree = await buildIdeal(path)
+
+    const barNode = tree.inventory.query('name', 'bar').values().next().value
+    const bazEdge = barNode.edgesOut.get('baz')
+    t.equal(bazEdge.to.version, '2.0.0', 'override applies across the file: link')
+  })
+
   t.test('does not override a nested dependency when parent spec does not match', async (t) => {
     const registry = createRegistry(t, false)
     const fooPackuments = registry.packuments([

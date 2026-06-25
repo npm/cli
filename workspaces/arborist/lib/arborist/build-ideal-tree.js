@@ -1729,6 +1729,10 @@ This is a one-time fix-up, please be patient...
           !link.target.parent &&
           !link.target.fsParent ||
           unseenLink) {
+        // Forward the link's overrides before its subtree resolves, so a root override reaches a transitive dep across the link boundary (npm/cli#9659).
+        if (link.overrides) {
+          link.target.updateOverridesEdgeInAdded(link.overrides)
+        }
         this.addTracker('idealTree', link.target.name, link.target.location)
         this.#depsQueue.push(link.target)
       }
