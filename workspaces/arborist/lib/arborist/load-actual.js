@@ -93,8 +93,6 @@ module.exports = cls => class ActualLoader extends cls {
       transplantFilter = () => true,
       ignoreMissing = false,
       forceActual = false,
-      // always present: the public loadActual merges this.options, which sets installStrategy
-      installStrategy,
     } = options
     this.#filter = filter
     this.#transplantFilter = transplantFilter
@@ -145,6 +143,7 @@ module.exports = cls => class ActualLoader extends cls {
             root: this.#actualTree,
           })
           await this[_setWorkspaces](this.#actualTree)
+          this.#linkActualWorkspaces()
 
           this.#transplant(root)
           return this.#actualTree
@@ -175,21 +174,9 @@ module.exports = cls => class ActualLoader extends cls {
         }
       }
       await Promise.all(promises)
-
-      // Linked undeclared workspaces aren't symlinked into root node_modules, so their edges resolve to null and flags never propagate.
-      // Synthesize the links from the loaded targets. Gated to linked; under hoisted a null workspace edge is a real missing link.
-      if (installStrategy === 'linked') {
-        for (const [name, path] of this.#actualTree.workspaces.entries()) {
-          const edge = this.#actualTree.edgesOut.get(name)
-          // skip workspaces already linked into root node_modules (declared deps)
-          if (edge.to) {
-            continue
-          }
-          const target = this.#cache.get(path)
-          new Link({ parent: this.#actualTree, name, realpath: path, target, pkg: target.package })
-        }
-      }
     }
+
+    this.#linkActualWorkspaces()
 
     // .npm-extension runs before packageExtensions, matching the ideal-tree resolution order
     await this.#applyNpmExtension()
@@ -233,6 +220,48 @@ module.exports = cls => class ActualLoader extends cls {
       actualRoot.package = { ...actualRoot.package, dependencies }
     }
     return this.#actualTree
+  }
+
+  // Under the linked (isolated) strategy, workspaces the root does not depend on are not symlinked into the root node_modules, so neither the on-disk scan nor the hidden lockfile gives the root's workspace edges a node_modules/<ws> link to resolve to.
+  // Synthesize those links from the authoritative workspaces map so npm ls and npm query surface the workspaces, matching hoisted and the logical package-lock.
+  #linkActualWorkspaces () {
+    const root = this.#actualTree
+    if (this.options.installStrategy !== 'linked' || !root.workspaces) {
+      return
+    }
+    // Declared workspaces ARE symlinked at root node_modules under linked, so a missing link there is a real problem that must surface as UNMET.
+    // Only undeclared workspaces are intentionally absent from root node_modules and need a synthesized link so their root edges resolve.
+    const pkg = root.package
+    const declared = new Set(Object.keys(Object.assign({},
+      pkg.dependencies,
+      pkg.devDependencies,
+      pkg.optionalDependencies,
+      pkg.peerDependencies
+    )))
+    // index loaded workspace targets by both path and realpath, so a workspace reached through a symlinked dir still matches
+    const byLoc = new Map()
+    for (const node of root.fsChildren) {
+      byLoc.set(node.path, node)
+      byLoc.set(node.realpath, node)
+    }
+    for (const [name, path] of root.workspaces.entries()) {
+      // declared workspaces, and any name already a root child, resolve their edge without a synthesized link
+      if (declared.has(name) || root.children.has(name)) {
+        continue
+      }
+      const target = byLoc.get(path)
+      if (target) {
+        // eslint-disable-next-line no-new
+        new Link({
+          name,
+          path: resolve(root.path, 'node_modules', name),
+          realpath: target.realpath,
+          target,
+          parent: root,
+          root,
+        })
+      }
+    }
   }
 
   #transplant (root) {

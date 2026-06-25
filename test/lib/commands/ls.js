@@ -5425,6 +5425,7 @@ t.test('ls --install-strategy=linked', async t => {
     const output = cleanCwd(result())
     t.notMatch(output, /UNMET DEPENDENCY/, 'should not report undeclared workspace as UNMET DEPENDENCY')
     t.match(output, /workspace-a/, 'should list declared workspace')
+    t.match(output, /workspace-b/, 'should list undeclared workspace (npm/cli#9618)')
   })
 
   t.test('should not report devDeps of store packages as UNMET DEPENDENCY', async t => {
