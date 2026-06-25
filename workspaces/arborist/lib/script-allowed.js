@@ -366,6 +366,7 @@ const trustedDisplay = (node) => {
 
 module.exports = isScriptAllowed
 module.exports.isScriptAllowed = isScriptAllowed
+module.exports.matches = matches
 module.exports.isExactVersionDisjunction = isExactVersionDisjunction
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
 module.exports.resolvedSourceSpecs = resolvedSourceSpecs
