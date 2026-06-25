@@ -301,6 +301,44 @@ t.test('recalculateOutEdgesOverrides does not forward when no rule matches a tar
   t.end()
 })
 
+t.test('recalculateOutEdgesOverrides does not forward a version-qualified rule that does not apply', t => {
+  // The rule names the target's dep but its keySpec (^3) does not intersect the declared range (^1), so the override does not apply and must not flip the target to "has overrides".
+  const root = new Node({
+    path: '/path/to/root',
+    pkg: {
+      name: 'root',
+      dependencies: { foo: '1.0.0' },
+      overrides: { 'leaf@^3': '3.0.0' },
+    },
+    loadOverrides: true,
+  })
+
+  const target = new Node({
+    path: '/path/to/store/foo',
+    pkg: {
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: { leaf: '^1.0.0' },
+    },
+    root,
+  })
+
+  // eslint-disable-next-line no-new
+  new Link({
+    pkg: { name: 'foo', version: '1.0.0' },
+    path: '/path/to/root/node_modules/foo',
+    realpath: '/path/to/store/foo',
+    target,
+    parent: root,
+  })
+
+  t.notOk(target.overrides, 'target.overrides stays undefined for a non-applicable rule')
+  const leafEdge = target.edgesOut.get('leaf')
+  t.notOk(leafEdge.overrides, 'edge keeps edge.overrides undefined')
+  t.equal(leafEdge.spec, '^1.0.0', 'edge spec is unchanged')
+  t.end()
+})
+
 t.test('link to root path gets root as target', t => {
   const root = new Node({
     path: '/project/root',

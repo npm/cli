@@ -201,6 +201,8 @@ module.exports = cls => class ActualLoader extends cls {
 
     this.#transplant(root)
 
+    this.#repropagateOverrides()
+
     if (global) {
       // need to depend on the children, or else all of them
       // will end up being flagged as extraneous, since the
@@ -385,6 +387,18 @@ module.exports = cls => class ActualLoader extends cls {
     for (const node of this.#actualTree.inventory.values()) {
       if (node.isLink && node.target?.packageExtensionsApplied) {
         node.packageExtensionsApplied = node.target.packageExtensionsApplied
+      }
+    }
+  }
+
+  // Re-forward overrides through links after the tree is complete, since a store Link may forward before its subtree resolves and miss a transitive match (npm/cli#9619).
+  #repropagateOverrides () {
+    if (!this.#actualTree.overrides) {
+      return
+    }
+    for (const node of this.#actualTree.inventory.values()) {
+      if (node.isLink && node.overrides) {
+        node.recalculateOutEdgesOverrides()
       }
     }
   }

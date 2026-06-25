@@ -546,6 +546,72 @@ t.test('applies root packageExtensions to a linked actual tree', async t => {
   t.strictSame(brokenLink.packageExtensionsApplied, applied, 'provenance mirrored onto the link')
 })
 
+t.test('forwards a transitive override through a linked store link — npm/cli#9619', async t => {
+  // The override must propagate through the intermediate store Link whose own direct deps don't name the overridden package, or `npm ls` reports the edge `invalid` instead of `overridden`.
+  // Shaped like glob -> minimatch -> brace-expansion: the override target sits two links deep, with a shared node reached by two paths.
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { a: '1.0.0' },
+      overrides: { leaf: '2.0.0' },
+    }),
+    node_modules: {
+      a: t.fixture('symlink', '.store/a@1.0.0/node_modules/a'),
+      '.store': {
+        'a@1.0.0': {
+          node_modules: {
+            a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0', dependencies: { b: '1.0.0', c: '1.0.0' } }) },
+            b: t.fixture('symlink', '../../b@1.0.0/node_modules/b'),
+            c: t.fixture('symlink', '../../c@1.0.0/node_modules/c'),
+          },
+        },
+        'b@1.0.0': {
+          node_modules: {
+            // leaf is declared ^1.0.0 but overridden to 2.0.0, which is outside that range
+            b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0', dependencies: { leaf: '^1.0.0', shared: '1.0.0' } }) },
+            leaf: t.fixture('symlink', '../../leaf@2.0.0/node_modules/leaf'),
+            shared: t.fixture('symlink', '../../shared@1.0.0/node_modules/shared'),
+          },
+        },
+        'c@1.0.0': {
+          node_modules: {
+            // c's subtree has no overridden package but reaches shared via both c and c->d, so its walk revisits a seen node
+            c: { 'package.json': JSON.stringify({ name: 'c', version: '1.0.0', dependencies: { d: '1.0.0', shared: '1.0.0' } }) },
+            d: t.fixture('symlink', '../../d@1.0.0/node_modules/d'),
+            shared: t.fixture('symlink', '../../shared@1.0.0/node_modules/shared'),
+          },
+        },
+        'd@1.0.0': {
+          node_modules: {
+            d: { 'package.json': JSON.stringify({ name: 'd', version: '1.0.0', dependencies: { shared: '1.0.0' } }) },
+            shared: t.fixture('symlink', '../../shared@1.0.0/node_modules/shared'),
+          },
+        },
+        'leaf@2.0.0': {
+          node_modules: {
+            leaf: { 'package.json': JSON.stringify({ name: 'leaf', version: '2.0.0' }) },
+          },
+        },
+        'shared@1.0.0': {
+          node_modules: {
+            shared: { 'package.json': JSON.stringify({ name: 'shared', version: '1.0.0' }) },
+          },
+        },
+      },
+    },
+  })
+
+  const tree = await loadActual(path)
+  const b = tree.children.get('a').target.edgesOut.get('b').to.target
+  const leafEdge = b.edgesOut.get('leaf')
+  t.ok(leafEdge && !leafEdge.error, 'transitive overridden edge resolves without error')
+  t.ok(leafEdge.overrides, 'edge carries the override rule')
+  t.equal(leafEdge.spec, '2.0.0', 'edge spec is the overridden version')
+  t.equal(leafEdge.rawSpec, '^1.0.0', 'edge rawSpec is the original declared range')
+  t.equal(leafEdge.to.target.version, '2.0.0', 'edge resolves to the overridden package')
+})
+
 t.test('store nodes do not load devDependencies as required edges', async t => {
   // A package in the linked store is structurally a tree top, so without the isInStore guard its devDependencies would load as required edges and surface as missing (e.g. npm sbom ESBOMPROBLEMS).
   const path = t.testdir({
