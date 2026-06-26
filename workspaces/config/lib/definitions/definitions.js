@@ -2049,7 +2049,7 @@ const definitions = {
   }),
   'replace-registry-host': new Definition('replace-registry-host', {
     default: 'npmjs',
-    hint: '<npmjs|never|always> | hostname',
+    hint: '<npmjs|never|always> | hostname | url',
     type: ['npmjs', 'never', 'always', String],
     description: `
       Defines behavior for replacing the registry host in a lockfile with the
@@ -2060,7 +2060,14 @@ const definitions = {
       "never", then use the registry value. If set to "always", then replace the
       registry host with the configured host every time.
 
-      You may also specify a bare hostname (e.g., "registry.npmjs.org").
+      You may also specify a bare hostname (e.g., "registry.npmjs.org") to only
+      replace URLs coming from that host.
+
+      You may also specify a full URL including a path (e.g.,
+      "https://old-registry.example.com/npm/path"). In that case, resolved URLs
+      whose host and path begin with that prefix will have the entire prefix
+      replaced with the configured registry URL (host and path), without
+      duplicating path segments.
     `,
     flatten,
   }),
