@@ -1277,8 +1277,7 @@ const definitions = {
         necessary within directory structure.
       nested: (formerly --legacy-bundling) install in place, no hoisting.
       shallow (formerly --global-style) only install direct deps at top-level.
-      linked: (experimental) install in node_modules/.store, link in place,
-        unhoisted.
+      linked: install in node_modules/.store, link in place, unhoisted.
     `,
     flatten,
   }),
