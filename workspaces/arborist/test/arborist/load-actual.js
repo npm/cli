@@ -346,6 +346,125 @@ t.test('linked strategy propagates dep flags into undeclared workspaces', async 
   t.equal(tools.dev, false, 'tools workspace is prod, not overwritten by the dev app link')
 })
 
+t.test('linked strategy surfaces undeclared workspaces', async t => {
+  // Under linked, undeclared workspaces are not symlinked into root node_modules, so loadActual must synthesize their root links for their edges to resolve (npm/cli#9618).
+  const fixture = {
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      workspaces: ['packages/*'],
+      // declared workspace is symlinked at root; undeclared one is not
+      dependencies: { a: '*' },
+    }),
+    node_modules: {
+      a: t.fixture('symlink', '../packages/a'),
+    },
+    packages: {
+      a: { 'package.json': JSON.stringify({ name: 'a', version: '1.2.3' }) },
+      b: { 'package.json': JSON.stringify({ name: 'b', version: '1.2.3' }) },
+    },
+  }
+
+  const assertVisible = (t, tree) => {
+    const aLink = tree.children.get('a')
+    const bLink = tree.children.get('b')
+    t.ok(aLink, 'declared workspace a present (from disk symlink)')
+    t.ok(bLink, 'undeclared workspace b synthesized')
+    t.equal(tree.edgesOut.get('b').to, bLink, 'workspace edge b resolves to its link')
+    t.notOk(tree.edgesOut.get('b').missing, 'workspace edge b is not missing')
+    t.equal(bLink.target.version, '1.2.3', 'b target loaded')
+  }
+
+  t.test('filesystem scan', async t => {
+    const path = t.testdir(fixture)
+    assertVisible(t, await loadActual(path, { installStrategy: 'linked' }))
+  })
+
+  t.test('hidden lockfile', async t => {
+    const path = t.testdir({
+      ...fixture,
+      node_modules: {
+        a: t.fixture('symlink', '../packages/a'),
+        '.package-lock.json': JSON.stringify({
+          name: 'root',
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            'node_modules/a': { resolved: 'packages/a', link: true },
+            'packages/a': { version: '1.2.3' },
+            'packages/b': { version: '1.2.3' },
+          },
+        }),
+      },
+    })
+    const hidden = resolve(path, 'node_modules/.package-lock.json')
+    const then = Date.now() + 10000
+    fs.utimesSync(hidden, new Date(then), new Date(then))
+    assertVisible(t, await loadActual(path, { installStrategy: 'linked' }))
+  })
+
+  t.test('no workspaces is a no-op', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({ name: 'root', version: '1.0.0' }),
+    })
+    const tree = await loadActual(path, { installStrategy: 'linked' })
+    t.notOk(tree.workspaces, 'no workspaces set')
+    t.equal(tree.children.size, 0, 'no links synthesized')
+  })
+
+  t.test('does not clobber an existing root child', async t => {
+    // an undeclared workspace that already has a root symlink keeps that child instead of a synthesized link
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }),
+      node_modules: {
+        b: t.fixture('symlink', '../packages/b'),
+      },
+      packages: {
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.2.3' }) },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.2.3' }) },
+      },
+    })
+    const tree = await loadActual(path, { installStrategy: 'linked' })
+    t.equal(tree.children.get('b').realpath, resolve(path, 'packages/b'), 'existing b child preserved')
+    t.ok(tree.children.get('a'), 'undeclared a still synthesized')
+  })
+
+  t.test('skips a workspace with no loaded target', async t => {
+    // hidden lockfile omits packages/b, so it is in the workspaces map but never loaded; it must be skipped, not crash
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }),
+      node_modules: {
+        '.package-lock.json': JSON.stringify({
+          name: 'root',
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            'packages/a': { version: '1.2.3' },
+          },
+        }),
+      },
+      packages: {
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.2.3' }) },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.2.3' }) },
+      },
+    })
+    const hidden = resolve(path, 'node_modules/.package-lock.json')
+    const then = Date.now() + 10000
+    fs.utimesSync(hidden, new Date(then), new Date(then))
+    const tree = await loadActual(path, { installStrategy: 'linked' })
+    t.ok(tree.children.get('a'), 'loaded workspace a synthesized')
+    t.notOk(tree.children.get('b'), 'unloaded workspace b skipped')
+  })
+})
+
 t.test('load workspaces when loading from hidden lockfile', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({

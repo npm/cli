@@ -489,3 +489,24 @@ t.test('missing', async t => {
   await npm.exec('query', [':missing'])
   t.matchSnapshot(joinedOutput(), 'should return missing node')
 })
+
+t.test('linked strategy surfaces undeclared workspaces', async t => {
+  // npm/cli#9618: undeclared workspaces are not symlinked into root node_modules under linked, but must remain visible to `npm query`.
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: { 'install-strategy': 'linked' },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }),
+      packages: {
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+      },
+    },
+  })
+  await npm.exec('query', [':root > *'])
+  const names = JSON.parse(joinedOutput()).map(n => n.name).sort()
+  t.same(names, ['a', 'b'], 'both undeclared workspaces are listed')
+})
