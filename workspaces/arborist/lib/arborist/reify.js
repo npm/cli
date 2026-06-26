@@ -124,7 +124,6 @@ module.exports = cls => class Reifier extends cls {
       // swap out the tree with the isolated tree
       // this is currently technical debt which will be resolved in a refactor
       // of Node/Link trees
-      log.warn('reify', 'The "linked" install strategy is EXPERIMENTAL and may contain bugs.')
       this.idealTree = await this.createIsolatedTree()
       isolatedTree = this.idealTree
       if (this.actualTree) {
