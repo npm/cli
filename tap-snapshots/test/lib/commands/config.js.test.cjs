@@ -59,6 +59,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "expect-result-count": null,
   "expect-results": null,
   "expires": null,
+  "extension-file": null,
   "fetch-retries": 2,
   "fetch-retry-factor": 10,
   "fetch-retry-maxtimeout": 60000,
@@ -77,6 +78,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "heading": "npm",
   "https-proxy": null,
   "if-present": false,
+  "ignore-extension": false,
   "ignore-scripts": false,
   "include": [],
   "include-staged": false,
@@ -91,7 +93,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "init.author.email": "",
   "init.author.name": "",
   "init.author.url": "",
-  "init.license": "ISC",
+  "init.license": "",
   "init.module": "{CWD}/home/.npm-init.js",
   "init.version": "1.0.0",
   "install-links": false,
@@ -112,6 +114,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "maxsockets": 15,
   "message": "%s",
   "min-release-age": null,
+  "min-release-age-exclude": [],
   "node-gyp": "{CWD}/node_modules/node-gyp/bin/node-gyp.js",
   "node-options": null,
   "noproxy": [
@@ -130,6 +133,12 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "package-lock-only": false,
   "pack-destination": ".",
   "packages": [],
+  "patches-dir": "patches",
+  "allow-unused-patches": false,
+  "ignore-patch-failures": false,
+  "edit-dir": null,
+  "ignore-existing": false,
+  "keep-edit-dir": false,
   "parseable": false,
   "allow-scripts-pending": false,
   "allow-scripts-pin": true,
@@ -176,6 +185,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "strict-ssl": true,
   "tag-version-prefix": "v",
   "timing": false,
+  "to": null,
   "umask": 0,
   "unicode": false,
   "update-notifier": true,
@@ -208,6 +218,7 @@ allow-same-version = false
 allow-scripts = [""]
 allow-scripts-pending = false
 allow-scripts-pin = true
+allow-unused-patches = false
 also = null
 audit = true
 audit-level = null
@@ -241,11 +252,13 @@ diff-src-prefix = "a/"
 diff-text = false
 diff-unified = 3
 dry-run = false
+edit-dir = null
 editor = "{EDITOR}"
 engine-strict = false
 expect-result-count = null
 expect-results = null
 expires = null
+extension-file = null
 fetch-retries = 2
 fetch-retry-factor = 10
 fetch-retry-maxtimeout = 60000
@@ -264,6 +277,9 @@ globalconfig = "{CWD}/global/etc/npmrc"
 heading = "npm"
 https-proxy = null
 if-present = false
+ignore-existing = false
+ignore-extension = false
+ignore-patch-failures = false
 ignore-scripts = false
 include = []
 include-attestations = false
@@ -272,7 +288,7 @@ include-workspace-root = false
 init-author-email = ""
 ; init-author-name = "" ; overridden by user
 init-author-url = ""
-; init-license = "ISC" ; overridden by global
+; init-license = "" ; overridden by global
 init-module = "{CWD}/home/.npm-init.js"
 init-private = false
 init-type = "commonjs"
@@ -280,12 +296,13 @@ init-version = "1.0.0"
 init.author.email = ""
 init.author.name = ""
 init.author.url = ""
-init.license = "ISC"
+init.license = ""
 init.module = "{CWD}/home/.npm-init.js"
 init.version = "1.0.0"
 install-links = false
 install-strategy = "hoisted"
 json = false
+keep-edit-dir = false
 key = null
 legacy-bundling = false
 legacy-peer-deps = false
@@ -301,6 +318,7 @@ logs-max = 10
 maxsockets = 15
 message = "%s"
 min-release-age = null
+min-release-age-exclude = []
 name = null
 node-gyp = "{CWD}/node_modules/node-gyp/bin/node-gyp.js"
 node-options = null
@@ -324,6 +342,7 @@ packages-all = false
 packages-and-scopes-permission = null
 parseable = false
 password = (protected)
+patches-dir = "patches"
 prefer-dedupe = false
 prefer-offline = false
 prefer-online = false
@@ -364,6 +383,7 @@ strict-ssl = true
 ; tag = "latest" ; overridden by project
 tag-version-prefix = "v"
 timing = false
+to = null
 token-description = null
 umask = 0
 unicode = false

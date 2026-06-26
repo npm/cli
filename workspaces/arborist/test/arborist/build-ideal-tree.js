@@ -588,6 +588,27 @@ t.test('force a new nyc (and update mkdirp nicely)', async t => {
   t.equal(arb.idealTree.children.get('nyc').package.version, '15.1.0')
 })
 
+t.test('audit fix warns when min-release-age blocks a fix', async t => {
+  const path = resolve(fixtures, 'audit-nyc-mkdirp')
+  const registry = createRegistry(t, true)
+  registry.audit({ convert: true, results: require('../fixtures/audit-nyc-mkdirp/audit.json') })
+  const warnings = warningTracker(t)
+
+  // mkdirp's fix (0.5.5) was published after this cutoff, so audit fix can't
+  // install it and should warn that the package is left vulnerable.
+  const arb = newArb(path, { before: new Date('2020-01-01') })
+  await arb.audit()
+  await arb.buildIdealTree()
+
+  t.not(arb.idealTree.children.get('mkdirp').package.version, '0.5.5',
+    'mkdirp was not upgraded to the release-age-blocked fix')
+  t.ok(
+    warnings.some(w => w[1] === 'audit' &&
+      /A fix for mkdirp is available \(mkdirp@0\.5\.5\) but was published after/.test(w[2])),
+    'warned that the mkdirp fix is blocked by the release-age window'
+  )
+})
+
 t.test('force a new mkdirp (but not semver major)', async t => {
   const path = resolve(fixtures, 'mkdirp-pinned')
   const registry = createRegistry(t, true)
@@ -2852,6 +2873,69 @@ t.test('avoid dedupe when a dep is bundled', async t => {
   })
 })
 
+t.test('min-release-age-exclude exempts matched packages from the before filter', async t => {
+  // The dupes-b fixture publishes 2.0.0 at 16:23:59 and 2.1.0 at 16:25:15.
+  // A `before` of 16:24:00 normally filters 2.1.0 out, leaving 2.0.0.
+  const before = new Date('2021-04-23T16:24:00Z')
+  const pkg = '@isaacs/testing-bundle-dupes-b'
+  const mkPath = () => t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { [pkg]: '2' },
+    }),
+  })
+
+  await t.test('without exclude, before filters to the older version', async t => {
+    createRegistry(t, true)
+    const tree = await buildIdeal(mkPath(), { before })
+    t.equal(tree.children.get(pkg).version, '2.0.0', 'before filter applied')
+  })
+
+  await t.test('exact name in exclude bypasses the before filter', async t => {
+    createRegistry(t, true)
+    const tree = await buildIdeal(mkPath(), {
+      before,
+      minReleaseAgeExclude: [pkg],
+    })
+    t.equal(tree.children.get(pkg).version, '2.1.0', 'newest version installed')
+  })
+
+  await t.test('glob pattern in exclude bypasses the before filter', async t => {
+    createRegistry(t, true)
+    const tree = await buildIdeal(mkPath(), {
+      before,
+      minReleaseAgeExclude: ['@isaacs/*'],
+    })
+    t.equal(tree.children.get(pkg).version, '2.1.0', 'newest version installed')
+  })
+
+  await t.test('non-matching exclude leaves the before filter in place', async t => {
+    createRegistry(t, true)
+    const tree = await buildIdeal(mkPath(), {
+      before,
+      minReleaseAgeExclude: ['some-other-pkg', '@other/*'],
+    })
+    t.equal(tree.children.get(pkg).version, '2.0.0', 'before filter still applied')
+  })
+
+  await t.test('an npm: alias key cannot bypass the filter for its target', async t => {
+    // The exclude must match the resolved registry identity, not the alias key.
+    // Here the alias key `dupes` matches the exclude but the fetched package
+    // `pkg` does not, so the before filter must still apply.
+    createRegistry(t, true)
+    const aliasPath = t.testdir({
+      'package.json': JSON.stringify({
+        dependencies: { dupes: `npm:${pkg}@2` },
+      }),
+    })
+    const tree = await buildIdeal(aliasPath, {
+      before,
+      minReleaseAgeExclude: ['dupes'],
+    })
+    t.equal(tree.children.get('dupes').version, '2.0.0',
+      'before filter still applied to the aliased package')
+  })
+})
+
 t.test('upgrade a partly overlapping peer set', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
@@ -4457,14 +4541,53 @@ t.test('re-queue already-seen nodes when placed dep invalidates peerOptional (sa
   t.ok(tree.children.get('shared'), 'shared is in the tree')
 })
 
-t.test('skip invalid peerOptional edges in problemEdges when save=false (#8726)', async t => {
-  // With save=false (npm ci behavior), invalid peerOptional edges should NOT be treated as problems.
-  // We use update.names to force alpha into #problemEdges while shared@1.1.0 (invalid for alpha's peerOptional spec of 1.0.0) is already in the tree from the lockfile.
+t.test('re-queue already-seen nodes when save=false update invalidates peerOptional', async t => {
   const registry = createRegistry(t, false)
 
-  const utilPacks = registry.packuments(['1.0.0', '1.0.1'], 'util')
-  const utilManifest = registry.manifest({ name: 'util', packuments: utilPacks })
-  await registry.package({ manifest: utilManifest })
+  const alphaPack = registry.packument({
+    name: 'alpha',
+    version: '1.0.0',
+    peerDependencies: { shared: '1.0.0' },
+    peerDependenciesMeta: { shared: { optional: true } },
+  })
+  const alphaManifest = registry.manifest({ name: 'alpha', packuments: [alphaPack] })
+  await registry.package({ manifest: alphaManifest })
+
+  const betaPack = registry.packument({
+    name: 'beta',
+    version: '1.0.0',
+    dependencies: { shared: '^1.0.0' },
+  })
+  const betaManifest = registry.manifest({ name: 'beta', packuments: [betaPack] })
+  await registry.package({ manifest: betaManifest })
+
+  const sharedPacks = registry.packuments(['1.0.0', '1.1.0'], 'shared')
+  const sharedManifest = registry.manifest({ name: 'shared', packuments: sharedPacks })
+  await registry.package({ manifest: sharedManifest, times: 2 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-8726-save-false-update',
+      version: '1.0.0',
+      dependencies: {
+        alpha: '1.0.0',
+        beta: '1.0.0',
+      },
+    }),
+  })
+
+  const arb = newArb(path, { save: false })
+  const tree = await arb.buildIdealTree({ update: true })
+
+  t.ok(tree.children.get('alpha'), 'alpha is in the tree')
+  t.ok(tree.children.get('beta'), 'beta is in the tree')
+  t.ok(tree.children.get('shared'), 'shared is in the tree')
+})
+
+t.test('skip invalid peerOptional edges when save=false and not mutating (#8726)', async t => {
+  // With save=false and no tree mutation (npm ci behavior), invalid peerOptional
+  // edges should NOT be treated as problems. The locked tree is trusted as-is.
+  createRegistry(t, false)
 
   const path = t.testdir({
     'package.json': JSON.stringify({
@@ -4489,7 +4612,6 @@ t.test('skip invalid peerOptional edges in problemEdges when save=false (#8726)'
         'node_modules/alpha': {
           version: '1.0.0',
           resolved: 'https://registry.npmjs.org/alpha/-/alpha-1.0.0.tgz',
-          dependencies: { util: '^1.0.0' },
           peerDependencies: { shared: '1.0.0' },
           peerDependenciesMeta: { shared: { optional: true } },
         },
@@ -4502,22 +4624,178 @@ t.test('skip invalid peerOptional edges in problemEdges when save=false (#8726)'
           version: '1.1.0',
           resolved: 'https://registry.npmjs.org/shared/-/shared-1.1.0.tgz',
         },
-        'node_modules/util': {
+      },
+    }),
+  })
+
+  const arb = newArb(path, { save: false })
+  const tree = await arb.buildIdealTree()
+
+  t.ok(tree.children.get('alpha'), 'alpha is in the tree')
+  t.ok(tree.children.get('beta'), 'beta is in the tree')
+  t.equal(tree.children.get('shared').version, '1.1.0',
+    'shared stays at 1.1.0 - peerOptional mismatch is not treated as a problem')
+})
+
+t.test('save=false non-mutating build ignores invalid peerOptional problem edges', async t => {
+  const registry = createRegistry(t, false)
+
+  const gammaPack = registry.packument({
+    name: 'gamma',
+    version: '1.0.0',
+  })
+  const gammaManifest = registry.manifest({ name: 'gamma', packuments: [gammaPack] })
+  await registry.package({ manifest: gammaManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-8726-save-false-non-mutating-problem-edges',
+      version: '1.0.0',
+      dependencies: {
+        alpha: '1.0.0',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'test-8726-save-false-non-mutating-problem-edges',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'test-8726-save-false-non-mutating-problem-edges',
           version: '1.0.0',
-          resolved: 'https://registry.npmjs.org/util/-/util-1.0.0.tgz',
+          dependencies: { alpha: '1.0.0' },
+        },
+        'node_modules/alpha': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/alpha/-/alpha-1.0.0.tgz',
+          dependencies: { gamma: '1.0.0' },
+          peerDependencies: { shared: '1.0.0' },
+          peerDependenciesMeta: { shared: { optional: true } },
+        },
+        'node_modules/shared': {
+          version: '1.1.0',
+          resolved: 'https://registry.npmjs.org/shared/-/shared-1.1.0.tgz',
         },
       },
     }),
   })
 
   const arb = newArb(path, { save: false })
-  const tree = await arb.buildIdealTree({ update: { names: ['util'] } })
+  const tree = await arb.buildIdealTree()
 
-  t.ok(tree.children.get('alpha'), 'alpha is in the tree')
-  t.ok(tree.children.get('beta'), 'beta is in the tree')
-  t.equal(tree.children.get('shared').version, '1.1.0',
-    'shared stays at 1.1.0 - peerOptional mismatch is not treated as a problem')
-  t.ok(tree.children.get('util'), 'util is in the tree')
+  t.ok(tree.children.get('gamma'), 'missing non-peer dependency is resolved')
+})
+
+t.test('update does not leave invalid peerOptional edges when save=false', async t => {
+  // npm update defaults to save=false because it should not rewrite package.json
+  // ranges. It still mutates and writes the lockfile, so it cannot use the
+  // npm-ci behavior of trusting invalid peerOptional edges in the locked tree.
+  const registry = createRegistry(t, false)
+
+  const alphaPacks = [
+    registry.packument({ name: 'alpha', version: '1.0.0' }),
+    registry.packument({
+      name: 'alpha',
+      version: '1.1.0',
+      peerDependencies: { shared: '^1.0.0' },
+      peerDependenciesMeta: { shared: { optional: true } },
+    }),
+  ]
+  const alphaManifest = registry.manifest({ name: 'alpha', packuments: alphaPacks })
+  await registry.package({ manifest: alphaManifest })
+
+  const sharedPacks = registry.packuments(['1.0.0', '2.0.0', '2.0.1'], 'shared')
+  const sharedManifest = registry.manifest({ name: 'shared', packuments: sharedPacks })
+  await registry.package({ manifest: sharedManifest, times: 2 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-peer-optional-update',
+      version: '1.0.0',
+      dependencies: {
+        alpha: '^1.0.0',
+        shared: '^2.0.0',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'test-peer-optional-update',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'test-peer-optional-update',
+          version: '1.0.0',
+          dependencies: { alpha: '^1.0.0', shared: '^2.0.0' },
+        },
+        'node_modules/alpha': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/alpha/-/alpha-1.0.0.tgz',
+        },
+        'node_modules/shared': {
+          version: '2.0.0',
+          resolved: 'https://registry.npmjs.org/shared/-/shared-2.0.0.tgz',
+        },
+      },
+    }),
+  })
+
+  const arb = newArb(path, { save: false })
+  await t.rejects(arb.buildIdealTree({ update: true }), {
+    code: 'ERESOLVE',
+  }, 'lockfile-mutating update should reject instead of keeping an invalid peerOptional edge')
+})
+
+t.test('add does not leave invalid peerOptional edges when save=false', async t => {
+  // npm install <pkg> --no-save also mutates and writes the lockfile without
+  // changing package.json. It should not use npm-ci behavior either.
+  const registry = createRegistry(t, false)
+
+  const alphaPack = registry.packument({
+    name: 'alpha',
+    version: '1.0.0',
+    peerDependencies: { shared: '^1.0.0' },
+    peerDependenciesMeta: { shared: { optional: true } },
+  })
+  const alphaManifest = registry.manifest({ name: 'alpha', packuments: [alphaPack] })
+  await registry.package({ manifest: alphaManifest })
+
+  const sharedPacks = registry.packuments(['1.0.0', '2.0.0'], 'shared')
+  const sharedManifest = registry.manifest({ name: 'shared', packuments: sharedPacks })
+  await registry.package({ manifest: sharedManifest, times: 2 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-peer-optional-add',
+      version: '1.0.0',
+      dependencies: {
+        shared: '^2.0.0',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'test-peer-optional-add',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'test-peer-optional-add',
+          version: '1.0.0',
+          dependencies: { shared: '^2.0.0' },
+        },
+        'node_modules/shared': {
+          version: '2.0.0',
+          resolved: 'https://registry.npmjs.org/shared/-/shared-2.0.0.tgz',
+        },
+      },
+    }),
+  })
+
+  const arb = newArb(path, { save: false })
+  await t.rejects(arb.buildIdealTree({ add: ['alpha@1.0.0'] }), {
+    code: 'ERESOLVE',
+  }, 'lockfile-mutating add should reject instead of keeping an invalid peerOptional edge')
 })
 
 t.test('peerOptional prefers existing tree node over registry fetch (#9249)', async t => {

@@ -2,13 +2,6 @@
 const CaseInsensitiveMap = require('./case-insensitive-map.js')
 const { resolve } = require('node:path')
 
-// fake lib/inventory.js
-class IsolatedInventory extends Map {
-  query () {
-    return []
-  }
-}
-
 // fake lib/node.js
 class IsolatedNode {
   binPaths = []
@@ -17,12 +10,15 @@ class IsolatedNode {
   edgesOut = new CaseInsensitiveMap()
   fsChildren = new Set()
   integrity = null
-  inventory = new IsolatedInventory()
+  inventory = new Map()
   isInStore = false
   inBundle = false
+  isRegistryDependency = false
+  isRootDependency = false
   linksIn = new Set()
   meta = { loadedFromDisk: false }
   optional = false
+  patched = null
   parent = null
   root = null
   tops = new Set()
@@ -50,8 +46,17 @@ class IsolatedNode {
     if (options.inBundle) {
       this.inBundle = true
     }
+    if (options.isRegistryDependency) {
+      this.isRegistryDependency = true
+    }
+    if (options.isRootDependency) {
+      this.isRootDependency = true
+    }
     if (options.optional) {
       this.optional = true
+    }
+    if (options.patched) {
+      this.patched = options.patched
     }
   }
 

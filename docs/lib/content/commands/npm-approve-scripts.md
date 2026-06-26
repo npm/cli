@@ -20,10 +20,10 @@ silently skip lifecycle scripts for any dependency that does not have a
 matching entry in `allowScripts`, and end with a list of the packages
 whose scripts were skipped so you can review them with this command.
 
-This command only works inside a project that has a `package.json`. It does
-not apply to global installs (`npm install -g`) or one-off executions
-(`npm exec` / `npx`), which have no project `package.json` to write to and
-will fail with an `EGLOBAL` error. To allow install scripts in those
+This command only works inside a project that has a `package.json`. Running
+it with `--global` (`-g`) fails with an `EGLOBAL` error, since global
+installs (`npm install -g`) and one-off executions (`npm exec` / `npx`) have
+no project `package.json` to write to. To allow install scripts in those
 contexts, use the `--allow-scripts` flag at install time (for example
 `npm install -g --allow-scripts=canvas,sharp`) or persist the setting with
 `npm config set allow-scripts=canvas,sharp --location=user`.
@@ -53,6 +53,14 @@ to track the new installed version. Multi-version statements
 the command cannot infer. Existing `false` entries always win;
 `approve-scripts` will not silently re-allow a package you previously
 denied.
+
+If a registry dependency has no `resolved` URL in your `package-lock.json`
+(for example, an older lockfile or one written with
+`omit-lockfile-registry-resolved`), npm cannot verify a trusted version for
+it and cannot pin it: a `pkg@1.2.3` entry never matches, so the package
+keeps appearing under `--allow-scripts-pending`. `approve-scripts` approves
+these by name (`pkg: true`) and warns when it does. To restore pinning,
+refresh the lockfile with `npm install`.
 
 ### Examples
 

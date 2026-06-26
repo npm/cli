@@ -122,6 +122,41 @@ t.test('reifies, audits, removes node_modules on repeat run', async t => {
   t.equal(fs.existsSync(nmAbbrev), true, 'installs abbrev')
 })
 
+t.test('fails when packageExtensions are out of sync with the lock file', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { audit: false },
+    prefixDir: {
+      abbrev,
+      // packageExtensions present in package.json but the lock file records no hash
+      'package.json': JSON.stringify({ ...packageJson, packageExtensions: {} }),
+      'package-lock.json': JSON.stringify(packageLock),
+    },
+  })
+  await t.rejects(
+    npm.exec('ci', []),
+    /packageExtensions state from lock file/,
+    'ci refuses to install with stale packageExtensions state'
+  )
+})
+
+t.test('fails when both .npm-extension files are present', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { audit: false },
+    prefixDir: {
+      abbrev,
+      'package.json': JSON.stringify(packageJson),
+      'package-lock.json': JSON.stringify(packageLock),
+      '.npm-extension.mjs': 'export function transformManifest (p) { return p }\n',
+      '.npm-extension.cjs': 'module.exports = { transformManifest (p) { return p } }\n',
+    },
+  })
+  await t.rejects(
+    npm.exec('ci', []),
+    /keep only one/,
+    'ci surfaces the ambiguous extension file error'
+  )
+})
+
 t.test('--no-audit and --ignore-scripts', async t => {
   const { npm, joinedOutput, registry } = await loadMockNpm(t, {
     config: {
@@ -148,6 +183,37 @@ t.test('--no-audit and --ignore-scripts', async t => {
   })
   await npm.exec('ci', [])
   t.match(joinedOutput(), 'added 1 package in', 'would fail if install script ran')
+})
+
+t.test('allow-remote=none blocks same-host tarball outside registry path', async t => {
+  const token = 'test-path-token'
+  const registryUrl = 'https://registry.example.com/npm/'
+  const evilTarball = 'https://registry.example.com/evil/abbrev-1.0.0.tgz'
+  const lock = JSON.parse(JSON.stringify(packageLock))
+  lock.packages['node_modules/abbrev'].resolved = evilTarball
+  lock.dependencies.abbrev.resolved = evilTarball
+
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      audit: false,
+      'allow-remote': 'none',
+      registry: registryUrl,
+      [`//registry.example.com/npm/:_authToken`]: token,
+    },
+    prefixDir: {
+      abbrev,
+      'package.json': JSON.stringify(packageJson),
+      'package-lock.json': JSON.stringify(lock),
+    },
+  })
+
+  await t.rejects(
+    npm.exec('ci', []),
+    { code: 'EALLOWREMOTE' },
+    'sibling-path tarball is blocked by allow-remote=none'
+  )
+  const nmAbbrev = path.join(npm.prefix, 'node_modules', 'abbrev')
+  t.equal(fs.existsSync(nmAbbrev), false, 'does not install tarball outside configured registry path')
 })
 
 t.test('lifecycle scripts', async t => {
@@ -310,6 +376,17 @@ t.test('should throw ECIGLOBAL', async t => {
     config: { global: true },
   })
   await t.rejects(npm.exec('ci', []), { code: 'ECIGLOBAL' })
+})
+
+t.test('rejects the patch relax flags', async t => {
+  for (const flag of ['allow-unused-patches', 'ignore-patch-failures']) {
+    t.test(flag, async t => {
+      const { npm } = await loadMockNpm(t, {
+        config: { [flag]: true },
+      })
+      await t.rejects(npm.exec('ci', []), { code: 'ECIPATCHFLAG' })
+    })
+  }
 })
 
 t.test('should throw error when ideal inventory mismatches virtual', async t => {

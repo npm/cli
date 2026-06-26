@@ -1,5 +1,68 @@
 # Changelog
 
+## [10.0.0-pre.1](https://github.com/npm/cli/compare/arborist-v10.0.0-pre.0...arborist-v10.0.0-pre.1) (2026-06-19)
+### ⚠️ BREAKING CHANGES
+* Preserve https protocol when working with git (#8703)
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+### Features
+* [`ce7681f`](https://github.com/npm/cli/commit/ce7681fe7dbcc20abb5f1379558e14ddd069654f) [#9496](https://github.com/npm/cli/pull/9496) packageExtensions for root-owned dependency manifest repairs (#9496) (@manzoorwanijk)
+* [`1db885c`](https://github.com/npm/cli/commit/1db885c84b2dfc5126ab663abb12262b533922c1) [#9439](https://github.com/npm/cli/pull/9439) native dependency patching (npm patch add/commit/update/ls/rm) (#9439) (@manzoorwanijk)
+* [`be8053c`](https://github.com/npm/cli/commit/be8053c390a2be3902b9382d3c7d4ad9012fa1c2) [#9544](https://github.com/npm/cli/pull/9544) warn when min-release-age blocks an audit fix (#9544) (@JamieMagee)
+* [`18eb967`](https://github.com/npm/cli/commit/18eb9672dc884be4412752fb6e55e9d33c261c65) [#9559](https://github.com/npm/cli/pull/9559) bump to new node engine range (@owlstronaut)
+* [`c3e1a71`](https://github.com/npm/cli/commit/c3e1a7175c6475553e212e2f7671bd31bfe07aba) [#9532](https://github.com/npm/cli/pull/9532) add min-release-age-exclude config (@JamieMagee, @caseyjhol)
+* [`5cd5150`](https://github.com/npm/cli/commit/5cd5150d3e85dcf5d246e7e5c9de216c2ff849db) [#9424](https://github.com/npm/cli/pull/9424) default-deny install scripts (allowScripts opt-in) [v12] (@JamieMagee)
+* [`64e3f79`](https://github.com/npm/cli/commit/64e3f798344e66f4c500636cb8aec5c8111a1fe9) [#9480](https://github.com/npm/cli/pull/9480) allowScripts tooling and inBundle hardening (#9480) (@JamieMagee)
+* [`7068d42`](https://github.com/npm/cli/commit/7068d4286eb446fdb0ded08d15d7b5c3883d80f5) [#9360](https://github.com/npm/cli/pull/9360) Phase 1 of `allowScripts` opt-in install-script policy (#9360) (@JamieMagee)
+### Bug Fixes
+* [`e96a7de`](https://github.com/npm/cli/commit/e96a7decbd00d637ec8d9121c62cef2930abbb69) [#8703](https://github.com/npm/cli/pull/8703) Preserve https protocol when working with git (#8703) (@oldium)
+* [`afce424`](https://github.com/npm/cli/commit/afce42408b4643d01ce0c9303effe8f94cc02d64) [#9551](https://github.com/npm/cli/pull/9551) arborist: expose store node_modules via NODE_PATH for linked-strategy install scripts (#9551) (@manzoorwanijk)
+* [`8bbd70d`](https://github.com/npm/cli/commit/8bbd70d939cec237b4e045993955895971c9eb85) [#9550](https://github.com/npm/cli/pull/9550) arborist: allow-remote exemption for proxy/mirror-fronted registry tarballs (#9550) (@manzoorwanijk)
+* [`315e3bd`](https://github.com/npm/cli/commit/315e3bd7c8ece0e118131c423deb6c8240695089) [#9574](https://github.com/npm/cli/pull/9574) arborist: drop orphaned patch entry on uninstall instead of EPATCHUNUSED (#9574) (@manzoorwanijk)
+* [`62b0694`](https://github.com/npm/cli/commit/62b0694d5ec4c529076bf968c3fe6cd47c3f2bb0) [#9576](https://github.com/npm/cli/pull/9576) patch: explain out-of-sync lockfile after --ignore-patch-failures (#9576) (@manzoorwanijk)
+* [`cfda867`](https://github.com/npm/cli/commit/cfda86742b2cfd992c730a5ec5cfd74ef863104a) [#9570](https://github.com/npm/cli/pull/9570) arborist: warn once for workspace packageExtensions selector match (#9570) (@manzoorwanijk)
+* [`f9c977c`](https://github.com/npm/cli/commit/f9c977c2e28896a31e873ed8ffe0ec88b30ec8ef) [#9569](https://github.com/npm/cli/pull/9569) arborist: re-apply packageExtensions to the linked actual tree (#9569) (@manzoorwanijk)
+* [`fc3ef5a`](https://github.com/npm/cli/commit/fc3ef5a096854a73817af407fabb5eb5f98b50b1) [#9559](https://github.com/npm/cli/pull/9559) adapt to @npmcli/run-script@11 breaking changes (@owlstronaut)
+* [`fc6268a`](https://github.com/npm/cli/commit/fc6268ab7fa4ce1dcaefd6cd470a1f73eb192565) [#9523](https://github.com/npm/cli/pull/9523) keep nested file: deps and re-resolve changed git refs (#9523) (@owlstronaut)
+* [`34dbdf5`](https://github.com/npm/cli/commit/34dbdf51ce4877055fe46751c15c4a445694256f) [#9525](https://github.com/npm/cli/pull/9525) arborist: enforce allowScripts for file:/link: dep scripts (@JamieMagee)
+* [`d70e116`](https://github.com/npm/cli/commit/d70e116f01af63bac49ad611cd63ac7709bb0bc5) [#9510](https://github.com/npm/cli/pull/9510) arborist: honor allow-remote=root for root-direct remote tarballs (#9510) (@manzoorwanijk)
+* [`4bcba54`](https://github.com/npm/cli/commit/4bcba546420119ebf9ee73e903b00b757f643fdf) [#9495](https://github.com/npm/cli/pull/9495) arborist: apply registry-tarball allow-remote exemption in linked strategy (#9495) (@manzoorwanijk)
+* [`2cbb13b`](https://github.com/npm/cli/commit/2cbb13b77edd9410704eac6f30ffea30a18c7046) [#9490](https://github.com/npm/cli/pull/9490) recognize allowScripts for local link targets (#9490) (@cyphercodes, @cyphercodes)
+* [`bf623e0`](https://github.com/npm/cli/commit/bf623e0a9ea568a47b777c563e48a097cb12e442) [#9473](https://github.com/npm/cli/pull/9473) validate registry path for allow-remote tarballs (@Abhinav-143x)
+* [`a105799`](https://github.com/npm/cli/commit/a10579959a5ed83d459f4c6d2f039ef5b62b4ff1) [#9461](https://github.com/npm/cli/pull/9461) arborist: link meta-only optional peers in linked strategy (@manzoorwanijk)
+* [`275bc69`](https://github.com/npm/cli/commit/275bc6934cc2d7c645e2c18dc2c12dc75d148e61) [#9441](https://github.com/npm/cli/pull/9441) arborist: clean up orphaned scoped store entries in linked strategy (@manzoorwanijk)
+* [`9f3c97f`](https://github.com/npm/cli/commit/9f3c97f83443ee00b9ca6beaf3e8cec95d3199ad) [#9452](https://github.com/npm/cli/pull/9452) sanitize package name in linked-strategy path construction (@owlstronaut)
+* [`a81f2f8`](https://github.com/npm/cli/commit/a81f2f8f4e89c202e57c32b60ee9d27020b49be0) [#9428](https://github.com/npm/cli/pull/9428) arborist: read install scripts from disk on lockfile installs instead of a sentinel (@JamieMagee)
+* [`c5292fa`](https://github.com/npm/cli/commit/c5292fa8a09a56b25394d393faf21e47ffb096c0) [#9422](https://github.com/npm/cli/pull/9422) use prerelease strategy without a bug (@owlstronaut)
+* [`dac7ff6`](https://github.com/npm/cli/commit/dac7ff6d3d62422bb8dad136fcb8f48e99a4594a) [#9399](https://github.com/npm/cli/pull/9399) arborist: drop self-link materialization for undeclared workspaces (#9399) (@manzoorwanijk)
+* [`b77850e`](https://github.com/npm/cli/commit/b77850e550a15c6205fdafc9e3843323b7135923) [#9395](https://github.com/npm/cli/pull/9395) skip hidden lockfile save on dry run (#9395) (@puneetdixit200, @puneetdixit200)
+### Dependencies
+* [`cc45055`](https://github.com/npm/cli/commit/cc450554861ec9f6ec8f1c4494fa9144379eb741) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/node-gyp@6.0.0`
+* [`a12e2c8`](https://github.com/npm/cli/commit/a12e2c8f40e0d551e79f12df25e1f1d93ac90ac5) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/name-from-folder@5.0.0`
+* [`cc96d57`](https://github.com/npm/cli/commit/cc96d57246df7cbcaedca6c2540d4e45190d9bb8) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/installed-package-contents@5.0.0`
+* [`b62db95`](https://github.com/npm/cli/commit/b62db95b7768049f58a0aca0d7266cba6ed17757) [#9559](https://github.com/npm/cli/pull/9559) `bin-links@7.0.0`
+* [`2f5da83`](https://github.com/npm/cli/commit/2f5da83be1e90f00542f0445f06b142084f1ec5a) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/fs@6.0.0`
+* [`1502286`](https://github.com/npm/cli/commit/15022869509f110510fa8336144500108cdc6677) [#9559](https://github.com/npm/cli/pull/9559) `ssri@14.0.0`
+* [`21df0ab`](https://github.com/npm/cli/commit/21df0ab3c629496511a3c481ee721b0e62c16e92) [#9559](https://github.com/npm/cli/pull/9559) `proc-log@7.0.0`
+* [`8f85646`](https://github.com/npm/cli/commit/8f856463d0e85f7083312b3825d0b72304f369e7) [#9559](https://github.com/npm/cli/pull/9559) `parse-conflict-json@6.0.0`
+* [`a44c1cf`](https://github.com/npm/cli/commit/a44c1cf1635de5ecda02ed80af70f5d7360111b6) [#9559](https://github.com/npm/cli/pull/9559) `pacote@22.0.0`
+* [`1f9c567`](https://github.com/npm/cli/commit/1f9c56792493f80fb3b3d61710086ed748312f2a) [#9559](https://github.com/npm/cli/pull/9559) `npm-registry-fetch@20.0.1`
+* [`998ff1d`](https://github.com/npm/cli/commit/998ff1d50816061706c88c56664d131fcfe83f31) [#9559](https://github.com/npm/cli/pull/9559) `npm-pick-manifest@12.0.0`
+* [`d80859a`](https://github.com/npm/cli/commit/d80859a2dd97376e4ea621812b3bc7de6a218d21) [#9559](https://github.com/npm/cli/pull/9559) `npm-package-arg@14.0.0`
+* [`5e1d513`](https://github.com/npm/cli/commit/5e1d513b9c5e8eef7e318125bd2c34276ffe3858) [#9559](https://github.com/npm/cli/pull/9559) `npm-install-checks@9.0.0`
+* [`471309f`](https://github.com/npm/cli/commit/471309f580efdf7f8055020ac0a08610f692a4f4) [#9559](https://github.com/npm/cli/pull/9559) `nopt@10.0.1`
+* [`d867351`](https://github.com/npm/cli/commit/d867351cf9d3b75956b555659040c56334f8f4c1) [#9559](https://github.com/npm/cli/pull/9559) `hosted-git-info@10.1.1`
+* [`66d46bc`](https://github.com/npm/cli/commit/66d46bc23909f06433237985452c0102181e8fc9) [#9559](https://github.com/npm/cli/pull/9559) `cacache@21.0.1`
+* [`9d13ebf`](https://github.com/npm/cli/commit/9d13ebfc2adca5543e4797632039adaa7a318985) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/run-script@11.0.0`
+* [`27c4dcc`](https://github.com/npm/cli/commit/27c4dcc7e4aa3521563c1af80617e7697d88cd16) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/redact@5.0.0`
+* [`0be6ae2`](https://github.com/npm/cli/commit/0be6ae21c79eb3986a76d5d769d5dd5ef00283c2) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/package-json@8.0.0`
+* [`f86a019`](https://github.com/npm/cli/commit/f86a0198bec5a70153bbb29d276fddb30c682792) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/metavuln-calculator@10.0.0`
+* [`4d234b2`](https://github.com/npm/cli/commit/4d234b22e59416f6307eb75bef52ac9b43ee6628) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/map-workspaces@6.0.0`
+### Chores
+* [`1453954`](https://github.com/npm/cli/commit/1453954f9328a6b2480c183f9d1903ac93764915) [#9559](https://github.com/npm/cli/pull/9559) `nock@14.0.0` (@owlstronaut)
+* [`0323f2d`](https://github.com/npm/cli/commit/0323f2d74bf2e747957c74992d9431e3fca35f85) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+* [`ee3d87f`](https://github.com/npm/cli/commit/ee3d87fe521bc144493b93a94d456c22eb147dbf) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/template-oss@5.1.1` (@owlstronaut)
+* [`d25a179`](https://github.com/npm/cli/commit/d25a1798f3ba8ff80437f491afc17e98ef07c77f) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+
 ## [10.0.0-pre.0.0](https://github.com/npm/cli/compare/arborist-v9.4.2...arborist-v10.0.0-pre.0.0) (2026-05-20)
 ### ⚠️ BREAKING CHANGES
 * `npm shrinkwrap` is removed, the `shrinkwrap` config alias is removed, and `npm-shrinkwrap.json` is no longer loaded or honored at the project root or from inside dependency tarballs. Rename project-root `npm-shrinkwrap.json` to `package-lock.json`; use `bundleDependencies` if you need to ship a locked dependency tree.

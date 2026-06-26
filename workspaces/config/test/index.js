@@ -2316,6 +2316,75 @@ t.test('CLI --min-release-age beats env npm_config_min_release_age', async t => 
   )
 })
 
+t.test('min-release-age-exclude', async t => {
+  t.test('defaults to an empty array', async t => {
+    const path = t.testdir()
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: path,
+      definitions,
+      shorthands,
+      flatten,
+    })
+    await config.load()
+    t.same(config.flat.minReleaseAgeExclude, [], 'flattens to []')
+  })
+
+  t.test('a single value flattens to a one-element array', async t => {
+    const path = t.testdir()
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename, '--min-release-age-exclude=@myorg/*'],
+      cwd: path,
+      definitions,
+      shorthands,
+      flatten,
+    })
+    await config.load()
+    t.same(config.flat.minReleaseAgeExclude, ['@myorg/*'], 'single pattern')
+  })
+
+  t.test('repeated flags accumulate into an array', async t => {
+    const path = t.testdir()
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [
+        process.execPath,
+        __filename,
+        '--min-release-age-exclude=@myorg/*',
+        '--min-release-age-exclude=lodash',
+      ],
+      cwd: path,
+      definitions,
+      shorthands,
+      flatten,
+    })
+    await config.load()
+    t.same(config.flat.minReleaseAgeExclude, ['@myorg/*', 'lodash'], 'two patterns')
+  })
+
+  t.test('a comma-delimited string is split, trimmed, and deduped', async t => {
+    const dir = t.testdir({
+      '.npmrc': 'min-release-age-exclude = @myorg/* , lodash ,@myorg/*',
+    })
+    const config = new Config({
+      npmPath: __dirname,
+      env: { HOME: dir },
+      argv: [process.execPath, __filename],
+      cwd: dir,
+      definitions,
+      shorthands,
+      flatten,
+    })
+    await config.load()
+    t.same(config.flat.minReleaseAgeExclude, ['@myorg/*', 'lodash'], 'normalized list')
+  })
+})
+
 t.test('global-ignore-file defaults to ${prefix}/etc/npmignore', async t => {
   const path = t.testdir()
   const config = new Config({

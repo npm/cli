@@ -21,18 +21,18 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^5.0.1",
     "@npmcli/mock-registry": "^1.0.0",
-    "@npmcli/promise-spawn": "^9.0.0",
-    "@npmcli/template-oss": "4.29.0",
+    "@npmcli/promise-spawn": "^10.0.0",
+    "@npmcli/template-oss": "5.1.1",
     "proxy": "^2.1.1",
     "rimraf": "^6.0.1",
     "tap": "^16.3.8",
-    "which": "^6.0.0"
+    "which": "^7.0.0"
   },
   "author": "GitHub Inc.",
   "license": "ISC",
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.29.0",
+    "version": "5.1.1",
     "content": "../scripts/template-oss/index.js"
   },
   "tap": {
@@ -50,6 +50,6 @@
     "lib/"
   ],
   "engines": {
-    "node": "^20.17.0 || >=22.9.0"
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
   }
 }

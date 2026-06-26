@@ -28,6 +28,7 @@ const node = ({
   isWorkspace = false,
   isLink = false,
   inBundle = false,
+  inert = false,
   resolved,
 } = {}) => ({
   name,
@@ -39,6 +40,7 @@ const node = ({
   isWorkspace,
   isLink,
   inBundle,
+  inert,
   isRegistryDependency: true,
   package: { name, version, scripts },
 })
@@ -82,6 +84,14 @@ t.test('collectUnreviewedScripts', async t => {
     t.strictSame(result, [])
   })
 
+  t.test('skips inert (platform/engine-incompatible) optional nodes', async t => {
+    const result = await collectUnreviewedScripts({
+      tree: tree([node({ name: 'fsevents', scripts: { install: 'x' }, inert: true })]),
+      policy: null,
+    })
+    t.strictSame(result, [])
+  })
+
   t.test('skips nodes with no install-relevant scripts', async t => {
     const result = await collectUnreviewedScripts({
       tree: tree([node({ scripts: { test: 'jest' } })]),
@@ -116,6 +126,25 @@ t.test('collectUnreviewedScripts', async t => {
     })
     t.equal(result.length, 1)
     t.equal(result[0].node.name, 'pending')
+  })
+
+  t.test('skips reviewed local directory link targets', async t => {
+    const target = node({ name: 'local', scripts: { install: 'x' } })
+    target.resolved = null
+    target.isRegistryDependency = false
+    target.path = require('node:path').resolve('local')
+    target.realpath = target.path
+    target.linksIn = new Set([{ resolved: 'file:../local' }])
+
+    t.strictSame(await collectUnreviewedScripts({
+      tree: tree([target]),
+      policy: { 'file:../local': false },
+    }), [])
+
+    t.strictSame(await collectUnreviewedScripts({
+      tree: tree([target]),
+      policy: { 'file:local': true },
+    }), [])
   })
 
   t.test('detects synthetic node-gyp via binding.gyp runtime check', async t => {

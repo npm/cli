@@ -439,6 +439,30 @@ t.test('extraneous pruning in workspaces', async t => {
   t.matchSnapshot(pruneWsB, 'prune in workspace B')
 })
 
+t.test('a removed patch forces a CHANGE even when other metadata matches', t => {
+  const integrity = 'sha512-iWml6OqIudarD/AngxZbQoeX0QoPywHRJ2rJbCcB0l9BfL1c5+Tl433R3V+AU404jppRHZGBofm97m48yKTRiA=='
+  const resolved = 'https://registry.npmjs.org/foo/-/foo-1.0.0.tgz'
+  const build = () => new Node({
+    path: '/some/path',
+    pkg: { dependencies: { foo: '' } },
+    children: [
+      { name: 'foo', resolved, integrity, pkg: { name: 'foo', version: '1.0.0' } },
+    ],
+  })
+  const actual = build()
+
+  // identical trees produce no diff entry for foo
+  t.equal(Diff.calculate({ actual, ideal: build() }).children.length, 0)
+
+  // but a node marked patchRemoved must be re-extracted to revert its files
+  const ideal = build()
+  ideal.children.get('foo').patchRemoved = true
+  t.match(Diff.calculate({ actual, ideal }).children, [
+    { ideal: ideal.children.get('foo'), action: 'CHANGE' },
+  ])
+  t.end()
+})
+
 t.test('check versions (even if all other metadata is missing)', t => {
   const actual = new Node({
     path: '/some/path',

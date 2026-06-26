@@ -118,6 +118,56 @@ t.test('file path — exact resolved match', t => {
   t.end()
 })
 
+t.test('file path — link target matches incoming link source', t => {
+  const targetPath = require('node:path').resolve('local-pkg')
+  const target = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+  })
+  target.resolved = null
+  target.path = targetPath
+  target.realpath = targetPath
+  target.linksIn = new Set([{ resolved: 'file:../local-pkg' }])
+
+  t.equal(isScriptAllowed(target, { 'file:../local-pkg': true }), true)
+  t.equal(isScriptAllowed(target, { 'file:local-pkg': true }), true)
+  t.equal(isScriptAllowed(target, { 'file:../local-pkg': false }), false)
+  t.equal(isScriptAllowed(target, { 'file:../other': true }), null)
+  t.end()
+})
+
+t.test('file path — registry nodes do not match by install path', t => {
+  const reg = node({
+    name: 'sharp',
+    packageName: 'sharp',
+    version: '0.33.0',
+    path: 'node_modules/sharp',
+    realpath: require('node:path').resolve('node_modules/sharp'),
+    linksIn: new Set(),
+  })
+
+  t.equal(isScriptAllowed(reg, { 'file:node_modules/sharp': true }), null)
+  t.end()
+})
+
+t.test('file path — empty link sets do not add install paths', t => {
+  const targetPath = require('node:path').resolve('local-pkg')
+  const target = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+  })
+  target.resolved = null
+  target.path = targetPath
+  target.realpath = targetPath
+  target.linksIn = new Set()
+
+  t.equal(isScriptAllowed(target, { 'file:local-pkg': true }), null)
+  t.equal(isScriptAllowed(target, { [targetPath]: true }), null)
+  t.end()
+})
+
 t.test('directory key — npa parses absolute paths as type=directory', t => {
   // npa treats absolute paths as { type: 'directory' }, which the
   // matcher shares with the 'file' case. path.resolve produces a
@@ -176,6 +226,57 @@ t.test('omitLockfileRegistryResolved: name-only match via edges; version-pinned 
   t.equal(isScriptAllowed(omitted, { 'canvas@2.11.0': true }), null,
     'version-pinned match requires the trusted URL-derived version')
   t.equal(isScriptAllowed(omitted, { 'canvas@3': true }), null)
+  t.end()
+})
+
+t.test('omitLockfileRegistryResolved: version-pinned deny fails closed', t => {
+  // No resolved URL means no trusted version. A version-pinned deny must
+  // still block (fail closed); a matching allow stays refused.
+  const omitted = () => ({
+    name: 'evilpkg',
+    packageName: 'evilpkg',
+    version: '1.0.0',
+    resolved: undefined,
+    location: 'node_modules/evilpkg',
+    edgesIn: new Set([{ name: 'evilpkg', spec: '^1.0.0' }]),
+  })
+
+  // Exact-version deny: blocked.
+  t.equal(isScriptAllowed(omitted(), { 'evilpkg@1.0.0': false }), false,
+    'version-pinned deny blocks even without a trusted version')
+  // Exact-disjunction deny: blocked.
+  t.equal(isScriptAllowed(omitted(), { 'evilpkg@1.0.0 || 2.0.0': false }), false,
+    'exact-disjunction deny blocks even without a trusted version')
+  // The exploit: name-only allow + version-pinned deny. Deny still wins.
+  t.equal(isScriptAllowed(omitted(), { evilpkg: true, 'evilpkg@1.0.0': false }), false,
+    'deny wins over a name-only allow when the version is unverifiable')
+
+  // Allow stays strict: an unverifiable version is never authorized.
+  t.equal(isScriptAllowed(omitted(), { 'evilpkg@1.0.0 || 2.0.0': true }), null,
+    'exact-disjunction allow is refused without a trusted version')
+
+  // Name mismatch: fail-closed must not over-match a different package.
+  t.equal(isScriptAllowed(omitted(), { 'otherpkg@1.0.0': false }), null,
+    'a version-pinned deny for a different name does not match')
+
+  t.end()
+})
+
+t.test('omitLockfileRegistryResolved + alias: version-pinned deny fails closed', t => {
+  // `"trusted": "npm:naughty@1.0.0"`, resolved omitted. A deny on the
+  // underlying name must block; the alias name authorizes nothing.
+  const aliasOmitted = {
+    name: 'trusted',
+    packageName: 'naughty',
+    version: '1.0.0',
+    resolved: undefined,
+    location: 'node_modules/trusted',
+    edgesIn: new Set([{ name: 'trusted', spec: 'npm:naughty@1.0.0' }]),
+  }
+  t.equal(isScriptAllowed(aliasOmitted, { 'naughty@1.0.0': false }), false,
+    'underlying-name version deny blocks the aliased package')
+  t.equal(isScriptAllowed(aliasOmitted, { 'trusted@1.0.0': false }), null,
+    'alias-name version deny does not match the underlying package')
   t.end()
 })
 
@@ -402,6 +503,7 @@ t.test('isolated mode (linked): bundled IsolatedNode is blocked', async t => {
 
   const store = new IsolatedNode({
     isInStore: true,
+    isRegistryDependency: true, // carried from the source node by #externalProxy
     location: 'node_modules/.store/store-pkg@1.0.0/node_modules/store-pkg',
     name: 'store-pkg',
     package: { name: 'store-pkg', version: '1.0.0' },

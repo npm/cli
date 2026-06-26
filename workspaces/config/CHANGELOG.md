@@ -1,5 +1,39 @@
 # Changelog
 
+## [11.0.0-pre.1](https://github.com/npm/cli/compare/config-v11.0.0-pre.0...config-v11.0.0-pre.1) (2026-06-19)
+### ⚠️ BREAKING CHANGES
+* The default license for `npm init` has been changed from "ISC" to an empty string. If not set, the license field will be omitted from new packages.
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+* allow-git and allow-remote now default to "none"; set them to "all" (or "root") to install git or user-supplied tarball-URL dependencies.
+* unknown configs in .npmrc, unknown CLI flags, abbreviated flags, and single-hyphen multi-char shorthands now throw instead of warning.
+### Features
+* [`1db885c`](https://github.com/npm/cli/commit/1db885c84b2dfc5126ab663abb12262b533922c1) [#9439](https://github.com/npm/cli/pull/9439) native dependency patching (npm patch add/commit/update/ls/rm) (#9439) (@manzoorwanijk)
+* [`fc80bb3`](https://github.com/npm/cli/commit/fc80bb359502699bb0a055157e01eaedd5bd73c8) [#9234](https://github.com/npm/cli/pull/9234) remove default license for npm init (@owlstronaut)
+* [`be8053c`](https://github.com/npm/cli/commit/be8053c390a2be3902b9382d3c7d4ad9012fa1c2) [#9544](https://github.com/npm/cli/pull/9544) warn when min-release-age blocks an audit fix (#9544) (@JamieMagee)
+* [`18eb967`](https://github.com/npm/cli/commit/18eb9672dc884be4412752fb6e55e9d33c261c65) [#9559](https://github.com/npm/cli/pull/9559) bump to new node engine range (@owlstronaut)
+* [`c3e1a71`](https://github.com/npm/cli/commit/c3e1a7175c6475553e212e2f7671bd31bfe07aba) [#9532](https://github.com/npm/cli/pull/9532) add min-release-age-exclude config (@JamieMagee, @caseyjhol)
+* [`f6a9aad`](https://github.com/npm/cli/commit/f6a9aad3c5b47d6fd8dba3a604e63b0000901c9d) [#9517](https://github.com/npm/cli/pull/9517) differentiate GitHub Actions environments in user-agent (#9517) (@reggi, @Copilot)
+* [`5cd5150`](https://github.com/npm/cli/commit/5cd5150d3e85dcf5d246e7e5c9de216c2ff849db) [#9424](https://github.com/npm/cli/pull/9424) default-deny install scripts (allowScripts opt-in) [v12] (@JamieMagee)
+* [`caa3295`](https://github.com/npm/cli/commit/caa329568d32587e53f6e098f43b550dd2685034) [#9466](https://github.com/npm/cli/pull/9466) default allow-git and allow-remote to none (@owlstronaut)
+* [`f2e4a28`](https://github.com/npm/cli/commit/f2e4a285ec5ed43055462a47db6d330758a16e64) [#9351](https://github.com/npm/cli/pull/9351) add a global npmignore file (#9351) (@ljharb)
+* [`c9be2d1`](https://github.com/npm/cli/commit/c9be2d1efadd353e743bcebd52faaa5aa64e2fc0) [#9153](https://github.com/npm/cli/pull/9153) publish --access=private alias for restricted (#9153) (@reggi, @Copilot)
+* [`7068d42`](https://github.com/npm/cli/commit/7068d4286eb446fdb0ded08d15d7b5c3883d80f5) [#9360](https://github.com/npm/cli/pull/9360) Phase 1 of `allowScripts` opt-in install-script policy (#9360) (@JamieMagee)
+* [`979518d`](https://github.com/npm/cli/commit/979518dd198b9f2beb788c6c3cdcd1e055b03d22) [#9276](https://github.com/npm/cli/pull/9276) error on unknown configs, flags, and abbreviations (#9276) (@owlstronaut)
+### Bug Fixes
+* [`9b5c7b0`](https://github.com/npm/cli/commit/9b5c7b0c8ea47823156111d27800aa6e741c7a2c) [#9521](https://github.com/npm/cli/pull/9521) config: strict-allow-scripts default blocks with a warning, not silently (@JamieMagee)
+* [`6efac6e`](https://github.com/npm/cli/commit/6efac6ead98af50c5a40fc45cb657bbee496a584) [#9453](https://github.com/npm/cli/pull/9453) config: clarify --all help so it's accurate for approve-scripts and deny-scripts (@JamieMagee)
+* [`c5292fa`](https://github.com/npm/cli/commit/c5292fa8a09a56b25394d393faf21e47ffb096c0) [#9422](https://github.com/npm/cli/pull/9422) use prerelease strategy without a bug (@owlstronaut)
+### Dependencies
+* [`21df0ab`](https://github.com/npm/cli/commit/21df0ab3c629496511a3c481ee721b0e62c16e92) [#9559](https://github.com/npm/cli/pull/9559) `proc-log@7.0.0`
+* [`471309f`](https://github.com/npm/cli/commit/471309f580efdf7f8055020ac0a08610f692a4f4) [#9559](https://github.com/npm/cli/pull/9559) `nopt@10.0.1`
+* [`406820a`](https://github.com/npm/cli/commit/406820a15bc2c19543c7457a4331ea40ae8d0cf6) [#9559](https://github.com/npm/cli/pull/9559) `ini@7.0.0`
+* [`0be6ae2`](https://github.com/npm/cli/commit/0be6ae21c79eb3986a76d5d769d5dd5ef00283c2) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/package-json@8.0.0`
+* [`4d234b2`](https://github.com/npm/cli/commit/4d234b22e59416f6307eb75bef52ac9b43ee6628) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/map-workspaces@6.0.0`
+### Chores
+* [`0323f2d`](https://github.com/npm/cli/commit/0323f2d74bf2e747957c74992d9431e3fca35f85) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+* [`ee3d87f`](https://github.com/npm/cli/commit/ee3d87fe521bc144493b93a94d456c22eb147dbf) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/template-oss@5.1.1` (@owlstronaut)
+* [`d25a179`](https://github.com/npm/cli/commit/d25a1798f3ba8ff80437f491afc17e98ef07c77f) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+
 ## [11.0.0-pre.0.0](https://github.com/npm/cli/compare/config-v10.8.1...config-v11.0.0-pre.0.0) (2026-05-20)
 ### ⚠️ BREAKING CHANGES
 * `npm shrinkwrap` is removed, the `shrinkwrap` config alias is removed, and `npm-shrinkwrap.json` is no longer loaded or honored at the project root or from inside dependency tarballs. Rename project-root `npm-shrinkwrap.json` to `package-lock.json`; use `bundleDependencies` if you need to ship a locked dependency tree.

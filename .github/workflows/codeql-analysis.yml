@@ -28,7 +28,7 @@ jobs:
       security-events: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"

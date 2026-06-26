@@ -414,6 +414,42 @@ tap.test('idempotent install with legacyPeerDeps and workspace peer deps', async
   }
 })
 
+tap.test('reinstall repairs a wrong-but-existing top-level symlink target', async t => {
+  // Regression for https://github.com/npm/cli/issues/9611: an interrupted update can leave a top-level symlink pointing at a valid-but-wrong store key. Reinstall must repoint it, not treat it as already-correct.
+  // root depends on a@1.0.0 directly and on b@1.0.0, which pulls a@2.0.0 — so both versions of `a` live in the store.
+  const graph = {
+    registry: [
+      { name: 'a', version: '1.0.0' },
+      { name: 'a', version: '2.0.0' },
+      { name: 'b', version: '1.0.0', dependencies: { a: '2.0.0' } },
+    ],
+    root: {
+      name: 'myroot', version: '1.0.0', dependencies: { a: '1.0.0', b: '1.0.0' },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const opts = { path: dir, registry, packumentCache: new Map(), cache }
+
+  await new Arborist(opts).reify({ installStrategy: 'linked' })
+
+  const topLink = path.join(dir, 'node_modules', 'a')
+  const readVersion = p => JSON.parse(fs.readFileSync(path.join(p, 'package.json'), 'utf8')).version
+  t.equal(readVersion(fs.realpathSync(topLink)), '1.0.0', 'top-level a resolves to 1.0.0 after install')
+
+  // Simulate an interrupted update: repoint node_modules/a at the wrong (but real) a@2.0.0 store key.
+  const storeDir = path.join(dir, 'node_modules', '.store')
+  const wrongKey = fs.readdirSync(storeDir).find(k => k.startsWith('a@2.0.0'))
+  fs.unlinkSync(topLink)
+  fs.symlinkSync(path.join('.store', wrongKey, 'node_modules', 'a'), topLink, 'junction')
+  t.equal(readVersion(fs.realpathSync(topLink)), '2.0.0', 'symlink corrupted to 2.0.0 before reinstall')
+
+  await new Arborist({ ...opts, packumentCache: new Map() }).reify({ installStrategy: 'linked' })
+
+  t.equal(readVersion(fs.realpathSync(topLink)), '1.0.0', 'reinstall repaired the symlink back to 1.0.0')
+})
+
 tap.test('Lock file is same in hoisted and in isolated mode', async t => {
   const graph = {
     registry: [
@@ -1655,6 +1691,101 @@ tap.test('npm link (external file: dep) with linked strategy', async t => {
   const storeEntries = fs.readdirSync(storePath)
   t.ok(storeEntries.some(e => e.startsWith('abbrev@')), 'abbrev is still in the store')
   t.notOk(storeEntries.some(e => e.startsWith('external-pkg@')), 'external-pkg is NOT in the store')
+})
+
+tap.test('workspace file: dependency on a non-workspace local package with linked strategy', async t => {
+  // Regression test for https://github.com/npm/cli/issues/9589
+  // A workspace declaring a file: dep on a local package that is NOT itself a workspace was silently skipped: no symlink, no error.
+  const graph = {
+    registry: [],
+    root: {
+      name: 'mono',
+      version: '1.0.0',
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { 'local-dep': 'file:../../local-dep' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Create the non-workspace local package on disk, outside the workspaces globs
+  const depDir = path.join(dir, 'local-dep')
+  fs.mkdirSync(depDir, { recursive: true })
+  fs.writeFileSync(path.join(depDir, 'package.json'), JSON.stringify({
+    name: 'local-dep',
+    version: '1.0.0',
+  }))
+  fs.writeFileSync(path.join(depDir, 'index.js'), "module.exports = 'local-dep'")
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // The file dep should be symlinked into the workspace's node_modules
+  const linkPath = path.join(dir, 'packages', 'ws-a', 'node_modules', 'local-dep')
+  const stat = fs.lstatSync(linkPath)
+  t.ok(stat.isSymbolicLink(), 'local-dep is a symlink in the workspace node_modules')
+
+  // The symlink should resolve to the actual local directory
+  t.equal(fs.realpathSync(linkPath), fs.realpathSync(depDir), 'symlink points to the correct local directory')
+
+  // It must be symlinked directly, not extracted into the store
+  const storePath = path.join(dir, 'node_modules', '.store')
+  if (fs.existsSync(storePath)) {
+    t.notOk(fs.readdirSync(storePath).some(e => e.startsWith('local-dep@')), 'local-dep is NOT in the store')
+  }
+
+  // The package should be requireable from inside the workspace
+  t.ok(setupRequire(path.join(dir, 'packages', 'ws-a'))('local-dep'), 'local-dep can be required from the workspace')
+})
+
+tap.test('workspace file: dependency on a package outside the repo root with linked strategy', async t => {
+  // Regression test for the out-of-repo variant of https://github.com/npm/cli/issues/9589 (the real `npm --workspace link <external>` case, https://github.com/npm/cli/issues/9115).
+  // A workspace file: dep whose target resolves OUTSIDE the repo root was silently skipped.
+  // The target is not in idealTree.fsChildren, so the fix must detect it from the file: link edge.
+  const graph = {
+    registry: [],
+    root: {
+      name: 'mono',
+      version: '1.0.0',
+    },
+    workspaces: [
+      { name: 'ws-a', version: '1.0.0', dependencies: { 'ext-pkg': 'file:../../../ext-pkg' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  // Create the external package OUTSIDE the repo root
+  const extDir = path.join(path.dirname(dir), 'ext-pkg')
+  fs.mkdirSync(extDir, { recursive: true })
+  fs.writeFileSync(path.join(extDir, 'package.json'), JSON.stringify({
+    name: 'ext-pkg',
+    version: '1.0.0',
+  }))
+  fs.writeFileSync(path.join(extDir, 'index.js'), "module.exports = 'ext-pkg'")
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  // The file dep should be symlinked into the workspace's node_modules
+  const linkPath = path.join(dir, 'packages', 'ws-a', 'node_modules', 'ext-pkg')
+  const stat = fs.lstatSync(linkPath)
+  t.ok(stat.isSymbolicLink(), 'ext-pkg is a symlink in the workspace node_modules')
+
+  // The symlink should resolve to the actual external directory
+  t.equal(fs.realpathSync(linkPath), fs.realpathSync(extDir), 'symlink points to the correct external directory')
+
+  // It must be symlinked directly, not extracted into the store
+  const storePath = path.join(dir, 'node_modules', '.store')
+  if (fs.existsSync(storePath)) {
+    t.notOk(fs.readdirSync(storePath).some(e => e.startsWith('ext-pkg@')), 'ext-pkg is NOT in the store')
+  }
+
+  // The package should be requireable from inside the workspace
+  t.ok(setupRequire(path.join(dir, 'packages', 'ws-a'))('ext-pkg'), 'ext-pkg can be required from the workspace')
 })
 
 tap.test('subsequent linked install is a no-op', async t => {

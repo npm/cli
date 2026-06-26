@@ -13,7 +13,10 @@ const getKey = (startNode) => {
     getChildren: node => node.dependencies,
     visit: node => {
       branch.push(`${node.packageName}@${node.version}`)
-      deps.push(`${branch.join('->')}::${node.resolved}`)
+      // a patch changes the materialized contents, so it must change the store key.
+      // the patch segment is only appended when present, so unpatched keys are unchanged.
+      const patch = node.patched ? `::patch:${node.patched.integrity}` : ''
+      deps.push(`${branch.join('->')}::${node.resolved}${patch}`)
     },
     leave: () => {
       branch.pop()
@@ -28,7 +31,9 @@ const getKey = (startNode) => {
     .replace(/\+/g, '-')
     .replace(/\//g, '_')
     .replace(/=+$/m, '')
-  return `${startNode.packageName}@${startNode.version}-${hash}`
+  // a patched entry gets a distinct, identifiable side-store key so unpatched consumers keep sharing the original
+  const patchSuffix = startNode.patched ? '+patch' : ''
+  return `${startNode.packageName}@${startNode.version}-${hash}${patchSuffix}`
 }
 
 module.exports = cls => class IsolatedReifier extends cls {
@@ -42,11 +47,14 @@ module.exports = cls => class IsolatedReifier extends cls {
     const newChild = new IsolatedNode({
       isInStore,
       inBundle,
+      isRegistryDependency: node.isRegistryDependency,
+      isRootDependency: node.isRootDependency,
       location,
       name: node.packageName || node.name,
       optional: node.optional,
       package: pkg,
       parent: root,
+      patched: node.patched,
       path: join(this.idealGraph.localPath, location),
       resolved: node.resolved,
       root,
@@ -153,6 +161,13 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.optional = node.optional
     result.resolved = node.resolved
     result.version = node.version
+    // Carry the source node's registry-dependency flag so the store node retains it.
+    // IsolatedNode has no edges to recompute it from, and reify's registry-tarball allow-remote exemption depends on it.
+    result.isRegistryDependency = node.isRegistryDependency
+    // Same reasoning for allow-remote=root: the store node has no edgesIn, so capture from the source node whether it satisfies a valid edge from the project root or a workspace.
+    result.isRootDependency = [...node.edgesIn].some(e =>
+      e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
+    )
     return result
   }
 
@@ -164,6 +179,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.name = result.isWorkspace ? (node.packageName || node.name) : node.name
     // strip any path traversal from package.json name fields before they hit path.join below
     result.packageName = nameFromFolder(node.packageName || node.path)
+    result.patched = node.patched
     result.package = { ...node.package }
     result.package.bundleDependencies = undefined
 
@@ -212,7 +228,9 @@ module.exports = cls => class IsolatedReifier extends cls {
     }
 
     // local `file:` deps (non-workspace fsChildren) should be treated as local dependencies, not external, so they get symlinked directly instead of being extracted into the store.
-    const isLocal = (n) => n.isWorkspace || node.fsChildren?.has(n)
+    // A file: dep surfaces as a Link edge whose resolved spec starts with file:; detect it from the edge so the target is treated as local even when it is absent from idealTree.fsChildren (a workspace consumer, or a target outside the repo root via npm link).
+    const fileLinkTargets = new Set(edges.filter(e => e.to?.isLink && e.to.resolved?.startsWith('file:')).map(e => e.to.target))
+    const isLocal = (n) => n.isWorkspace || node.fsChildren?.has(n) || fileLinkTargets.has(n)
     const optionalDeps = edges.filter(edge => edge.optional).map(edge => edge.to.target)
 
     // Optional peers declared only in peerDependenciesMeta (e.g. `@types/react`) have no edge, so the materialization above misses them.

@@ -93,7 +93,10 @@ class Node {
       name, // allow setting name explicitly when we haven't set a path yet
       optional = true,
       overrides,
+      packageExtensionsApplied = null,
+      npmExtensionApplied = null,
       parent,
+      patched = null,
       path,
       peer = true,
       realpath,
@@ -169,6 +172,14 @@ class Node {
       }
     }
     this.integrity = integrity || this.package._integrity || null
+    // Patch record { path, integrity } or null, set from patchedDependencies or the lockfile.
+    this.patched = patched || null
+    // Provenance for a root packageExtensions repair applied to this node's manifest, or null.
+    // Shape: { selector, dependencies?, optionalDependencies?, peerDependencies?, peerDependenciesMeta? }.
+    this.packageExtensionsApplied = packageExtensionsApplied
+    // Provenance for a root .npm-extension transformManifest repair applied to this node's manifest, or null.
+    // Shape: { extensionPoint, dependencies?, optionalDependencies?, peerDependencies?, peerDependenciesMeta? }.
+    this.npmExtensionApplied = npmExtensionApplied
     this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
 
@@ -925,7 +936,8 @@ class Node {
       isTop: srcTop,
       path: srcPath,
     } = sourceReference || {}
-    const thisDev = isTop && !globalTop && path
+    // A package in the linked strategy's .store is a transitive dependency that is structurally a tree top, but its devDependencies are never installed or required, so they must not be loaded.
+    const thisDev = isTop && !globalTop && path && !this.isInStore
     const srcDev = !sourceReference || srcTop && !srcGlobalTop && srcPath
     if (thisDev && srcDev) {
       this.#loadDepType(this.package.devDependencies, 'dev', ad)

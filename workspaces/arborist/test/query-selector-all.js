@@ -1035,9 +1035,37 @@ t.test('query-selector-all', async t => {
     ['#a, #bar:semver(2), #foo:semver(2.2.2)', ['a@1.0.0', 'bar@2.0.0', 'foo@2.2.2']],
     ['#b *', ['a@1.0.0', 'bar@2.0.0', 'baz@1.0.0', 'lorem@1.0.0', 'moo@3.0.0']],
   ])
-})
 
-// Simulates the linked install strategy layout where packages live in node_modules/.store/ and are symlinked from node_modules/.
+  // :outdated combined with --before and min-release-age-exclude.
+  // bar's 2.0.0 was published today, so `before: yesterday` normally filters it
+  // out and bar drops off the outdated list. Excluding bar bypasses the filter
+  // for that package so its newer version is considered again.
+  await t.test(':outdated honors min-release-age-exclude (exact name)', async t => {
+    const res = await querySelectorAll(tree, ':outdated', {
+      before: yesterday,
+      minReleaseAgeExclude: ['bar'],
+    })
+    t.same(res, [
+      'abbrev@1.1.1',
+      'baz@1.0.0',
+      'dash-separated-pkg@1.0.0',
+      'bar@1.4.0', // not filtered by before because bar is excluded
+    ], 'excluded package is not filtered by before')
+  })
+
+  await t.test(':outdated honors min-release-age-exclude (glob)', async t => {
+    const res = await querySelectorAll(tree, ':outdated', {
+      before: yesterday,
+      minReleaseAgeExclude: ['b*'],
+    })
+    t.same(res, [
+      'abbrev@1.1.1',
+      'baz@1.0.0',
+      'dash-separated-pkg@1.0.0',
+      'bar@1.4.0', // glob matches bar, bypassing the before filter
+    ], 'glob pattern excludes bar from the before filter')
+  })
+})
 t.test('linked strategy: :root > * excludes transitive deps and store nodes', async t => {
   /*
    fixture tree (linked strategy layout):
@@ -1115,6 +1143,13 @@ t.test('linked strategy: :root > * excludes transitive deps and store nodes', as
     'ini@4.1.3',
     'nopt@7.2.1',
   ], ':root > * should only return direct dependencies, not transitive deps or store nodes')
+
+  // :root > * must return the logical Links, not the store backing nodes
+  const rawChildren = await q(tree, ':root > *')
+  t.same(rawChildren.map(n => n.location).sort(), [
+    'node_modules/ini',
+    'node_modules/nopt',
+  ], ':root > * returns the logical link locations, not .store backing paths')
 
   const rootDescendants = await querySelectorAll(tree, ':root *')
   t.same(rootDescendants, [

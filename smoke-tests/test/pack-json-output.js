@@ -7,6 +7,6 @@ t.test('pack --json returns only json on stdout', async t => {
 
   const { stderr, stdout } = await npmLocal('pack', '--json', { force: true })
 
-  t.match(stderr, /> npm@.* prepack\n/, 'stderr has banner')
+  t.match(stderr, /npm notice run npm@.* prepack\n/, 'stderr has banner')
   t.ok(JSON.parse(stdout), 'stdout can be parsed as json')
 })

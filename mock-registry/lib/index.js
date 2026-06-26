@@ -261,15 +261,18 @@ class MockRegistry {
       .reply(200, { token })
   }
 
-  weblogin ({ token = 'npm_default-test-token' }) {
-    const doneUrl = new URL('/npm-cli-test/done', this.origin).href
+  weblogin ({ token = 'npm_default-test-token', doneRegistry } = {}) {
+    const donePath = '/npm-cli-test/done'
+    // doneRegistry emulates a proxy/mirror that advertises a doneUrl on a different origin than the configured registry.
+    // The poll itself is always mocked on this registry, since that is where the session lives.
+    const doneUrl = new URL(donePath, doneRegistry ?? this.origin).href
     const loginUrl = new URL('/npm-cli-test/login/cli/00000000-0000-0000-0000-000000000000', this.origin).href
     this.nock = this.nock
       .post(this.fullPath('/-/v1/login'), () => {
         return true
       })
       .reply(200, { doneUrl, loginUrl })
-      .get('/npm-cli-test/done')
+      .get(donePath)
       .reply(200, { token })
   }
 

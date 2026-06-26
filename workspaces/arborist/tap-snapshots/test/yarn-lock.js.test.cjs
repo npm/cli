@@ -122,7 +122,7 @@ fs.realpath@^1.0.0:
 
 "full-git-url@git+https://github.com/isaacs/abbrev-js.git":
   version "1.1.1"
-  resolved "git+ssh://git@github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb"
+  resolved "git+https://github.com/isaacs/abbrev-js.git#a9ee72ebc8fe3975f1b0c7aeb3a8f2a806a432eb"
 
 "ghshort@github:isaacs/abbrev-js":
   version "1.1.1"

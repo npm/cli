@@ -118,6 +118,21 @@ t.test('do not run scripts if ignoreScripts=true', async t => {
   t.throws(() => fs.statSync(file), 'bundle build script not run')
 })
 
+t.test('bundled deps cannot be allowlisted: gate blocks their scripts', async t => {
+  // With the gate active, a bundled dep's script must not run even with an
+  // explicit allow: scripts only run when isScriptAllowed returns true, and
+  // bundled deps return null.
+  const path = fixture(t, 'testing-rebuild-bundle-reified')
+  const file = resolve(path, 'node_modules/@isaacs/testing-rebuild-bundle-a/node_modules/@isaacs/testing-rebuild-bundle-b/cwd')
+  t.throws(() => fs.statSync(file), 'file not there already (gut check)')
+  const arb = new Arborist({
+    path,
+    allowScripts: { '@isaacs/testing-rebuild-bundle-b': true },
+  })
+  await arb.rebuild()
+  t.throws(() => fs.statSync(file), 'bundled dep postinstall did not run despite explicit allow')
+})
+
 t.test('allowScripts deny entry skips the build set entry for that node', async t => {
   // Verifies the deny gate in #addToBuildSet: when `allowScripts` resolves
   // a node's policy to `false`, that node's scripts are skipped while
@@ -156,6 +171,89 @@ t.test('dangerouslyAllowAllScripts bypasses the deny gate', async t => {
     fs.statSync(resolve(path, 'node_modules/devdep/env')).isFile(),
     true,
     'devdep postinstall ran despite deny entry'
+  )
+})
+
+t.test('allowScripts gates local file: dep scripts (npm/cli#9498)', async t => {
+  const aPrepare = p => resolve(p, 'a/a-prepare')
+  const aPostinstall = p => resolve(p, 'a/a-post-install')
+
+  t.test('true: scripts run when the target is allowed', async t => {
+    const path = fixture(t, 'link-dep-lifecycle-scripts')
+    const arb = newArb({
+      path,
+      allowScripts: { 'file:../a': true },
+      dangerouslyAllowAllScripts: false,
+    })
+    await arb.rebuild()
+    t.equal(fs.statSync(aPrepare(path)).isFile(), true, 'prepare ran')
+    t.equal(fs.statSync(aPostinstall(path)).isFile(), true, 'postinstall ran')
+  })
+
+  t.test('false: deny entry blocks the scripts', async t => {
+    const path = fixture(t, 'link-dep-lifecycle-scripts')
+    const arb = newArb({
+      path,
+      allowScripts: { 'file:../a': false },
+      dangerouslyAllowAllScripts: false,
+    })
+    await arb.rebuild()
+    t.throws(() => fs.statSync(aPrepare(path)), 'prepare did not run')
+    t.throws(() => fs.statSync(aPostinstall(path)), 'postinstall did not run')
+  })
+
+  t.test('absent: default-deny blocks the scripts', async t => {
+    const path = fixture(t, 'link-dep-lifecycle-scripts')
+    const arb = newArb({
+      path,
+      allowScripts: {},
+      dangerouslyAllowAllScripts: false,
+    })
+    await arb.rebuild()
+    t.throws(() => fs.statSync(aPrepare(path)), 'prepare did not run')
+    t.throws(() => fs.statSync(aPostinstall(path)), 'postinstall did not run')
+  })
+
+  t.test('dangerouslyAllowAllScripts bypasses the gate for file: deps', async t => {
+    const path = fixture(t, 'link-dep-lifecycle-scripts')
+    const arb = newArb({ path, dangerouslyAllowAllScripts: true })
+    await arb.rebuild()
+    t.equal(fs.statSync(aPrepare(path)).isFile(), true, 'prepare ran')
+    t.equal(fs.statSync(aPostinstall(path)).isFile(), true, 'postinstall ran')
+  })
+})
+
+t.test('workspaces bypass the allowScripts gate (owner-managed)', async t => {
+  // Workspaces are owner-managed, so their scripts run regardless of the
+  // allowScripts policy. This must survive the #9498 fix that stopped
+  // bypassing all link nodes.
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'ws-root',
+      version: '1.0.0',
+      workspaces: ['ws'],
+    }),
+    node_modules: {
+      ws: t.fixture('symlink', '../ws'),
+    },
+    ws: {
+      'package.json': JSON.stringify({
+        name: 'ws',
+        version: '1.0.0',
+        scripts: {
+          prepare: `node -e "require('fs').writeFileSync('ws-prepare', '')"`,
+        },
+      }),
+    },
+  })
+  // No allowScripts entry and the escape hatch off: only the isWorkspace
+  // bypass can let this script through.
+  const arb = newArb({ path, dangerouslyAllowAllScripts: false })
+  await arb.rebuild()
+  t.equal(
+    fs.statSync(resolve(path, 'ws/ws-prepare')).isFile(),
+    true,
+    'workspace prepare ran despite no allowScripts entry'
   )
 })
 

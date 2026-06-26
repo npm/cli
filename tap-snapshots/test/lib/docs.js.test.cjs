@@ -123,6 +123,7 @@ Array [
   "init",
   "install",
   "install-ci-test",
+  "install-scripts",
   "install-test",
   "link",
   "ll",
@@ -133,6 +134,7 @@ Array [
   "outdated",
   "owner",
   "pack",
+  "patch",
   "ping",
   "pkg",
   "prefix",
@@ -357,6 +359,19 @@ setting.
 
 
 
+#### \`allow-unused-patches\`
+
+* Default: false
+* Type: Boolean
+
+Install even when a registered patch in \`patchedDependencies\` matches no
+installed package. Does not silence patch apply failures.
+
+This flag is only honored when passed on the command line; it is ignored in
+\`.npmrc\` and environment variables, and rejected by \`npm ci\`.
+
+
+
 #### \`audit\`
 
 * Default: true
@@ -426,6 +441,13 @@ wins (an explicit absolute date overrides a relative window). Across
 sources, the standard precedence applies (cli > env > project > user >
 global), so a higher-priority source can always relax or override a
 lower-priority one.
+
+As with \`min-release-age\`, when this cutoff blocks a fix that \`npm audit
+fix\` would install, npm keeps the vulnerable version, warns, and exits with
+a non-zero code.
+
+Packages whose names match \`min-release-age-exclude\` are exempt from this
+filter.
 
 
 
@@ -692,6 +714,16 @@ Note: This is NOT honored by other network related commands, eg \`dist-tags\`,
 
 
 
+#### \`edit-dir\`
+
+* Default: null
+* Type: null or Path
+
+Override the temporary directory used by \`npm patch add\` to prepare a
+package for editing.
+
+
+
 #### \`editor\`
 
 * Default: The EDITOR or VISUAL environment variables, or
@@ -742,6 +774,19 @@ This config cannot be used with: \`expect-result-count\`
 When creating a Granular Access Token with \`npm token create\`, this sets the
 expiration in days. If not specified, the server will determine the default
 expiration.
+
+
+
+#### \`extension-file\`
+
+* Default: null
+* Type: null or Path
+
+Path to a project-local npm extension file to load instead of discovering
+\`.npm-extension.mjs\` / \`.npm-extension.cjs\` at the project root. Must
+resolve inside the project root and use a \`.mjs\` or \`.cjs\` extension. Only
+honored from project config or the command line, never from user, global, or
+builtin config.
 
 
 
@@ -959,6 +1004,41 @@ CI setup.
 
 This value is not exported to the environment for child processes.
 
+#### \`ignore-existing\`
+
+* Default: false
+* Type: Boolean
+
+With \`npm patch add\`, discard a previous unfinished edit directory and start
+fresh.
+
+
+
+#### \`ignore-extension\`
+
+* Default: false
+* Type: Boolean
+
+If true, npm does not import or execute a root \`.npm-extension.mjs\` /
+\`.npm-extension.cjs\` file (or one selected via \`extension-file\`).
+\`ignore-scripts\` implies \`ignore-extension\`, since both disable root-owned
+install-time code.
+
+
+
+#### \`ignore-patch-failures\`
+
+* Default: false
+* Type: Boolean
+
+Install even when a registered patch fails to apply, with a warning per
+failure. Intended for incident response only.
+
+This flag is only honored when passed on the command line; it is ignored in
+\`.npmrc\` and environment variables, and rejected by \`npm ci\`.
+
+
+
 #### \`ignore-scripts\`
 
 * Default: false
@@ -970,6 +1050,9 @@ Note that commands explicitly intended to run a particular script, such as
 \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still
 run their intended script if \`ignore-scripts\` is set, but they will *not*
 run any pre- or post-scripts.
+
+Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if
+\`ignore-extension\` were set.
 
 
 
@@ -1054,10 +1137,11 @@ homepage.
 
 #### \`init-license\`
 
-* Default: "ISC"
+* Default: ""
 * Type: String
 
-The value \`npm init\` should use by default for the package license.
+The value \`npm init\` should use by default for the package license. If not
+set, the license field will be omitted from new packages.
 
 
 
@@ -1138,6 +1222,16 @@ Whether or not to output JSON data, rather than the normal output.
   saving them to your \`package.json\`.
 
 Not supported by all npm commands.
+
+
+
+#### \`keep-edit-dir\`
+
+* Default: false
+* Type: Boolean
+
+With \`npm patch commit\`, do not remove the edit directory after committing
+the patch.
 
 
 
@@ -1316,6 +1410,43 @@ your \`.npmrc\` is preserved when npm internally spawns a sub-process with
 \`--before\` while preparing a \`git:\` or \`github:\` dependency); when both
 apply, \`before\` wins within a single source and across sources the standard
 precedence rules apply.
+
+When this window stops \`npm audit fix\` from installing a patched version
+(because the fix was published too recently), npm keeps the package at its
+vulnerable version, warns that the fix was blocked, and exits with a
+non-zero code. To install the fix, add the package to
+\`min-release-age-exclude\`, or relax \`min-release-age\` or \`before\`.
+
+Packages whose names match \`min-release-age-exclude\` are exempt from this
+filter.
+
+This value is not exported to the environment for child processes.
+
+#### \`min-release-age-exclude\`
+
+* Default:
+* Type: String (can be set multiple times)
+
+A list of package names or \`minimatch\` glob patterns that are exempt from
+the \`min-release-age\` (and \`before\`) filter. A matching package can always
+resolve to its newest version, even when a release-age window is set.
+
+For example, to apply a release-age window to third-party dependencies while
+letting internally maintained packages update immediately:
+
+\`\`\`
+min-release-age=7
+min-release-age-exclude[]=@myorg/*
+min-release-age-exclude[]=my-internal-pkg
+\`\`\`
+
+Only the named package is exempt; its own dependencies still follow the
+release-age policy unless they also match a pattern. Patterns match against
+the package name, so \`@myorg/*\` matches \`@myorg/shared-utils\`.
+
+Excluding a package does not change which registry it is fetched from. You
+should own your private scope on the public registry so that nobody else can
+publish a package with the same name.
 
 This value is not exported to the environment for child processes.
 
@@ -1541,6 +1672,16 @@ Output parseable results from commands that write to standard output. For
 
 Password for authentication. Can be provided via command line when creating
 tokens, though it's generally safer to be prompted for it.
+
+
+
+#### \`patches-dir\`
+
+* Default: "patches"
+* Type: String
+
+The directory, relative to the project root, where \`npm patch commit\` writes
+patch files for \`patchedDependencies\`.
 
 
 
@@ -1929,15 +2070,19 @@ this to work properly.
 * Default: false
 * Type: Boolean
 
-If \`true\`, turn the install-script policy from a silent skip into a hard
-error: any dependency with install scripts not covered by \`allowScripts\`
-will fail the install instead of being silently skipped.
+If \`true\`, turn the install-script policy from a warning into a hard error:
+any dependency with install scripts that is not covered by \`allowScripts\`
+will fail the install instead of being blocked with a warning.
 
-By default, dependencies whose install scripts are not approved in
-\`allowScripts\` are silently skipped; this setting promotes that silent skip
-into a hard failure, which is the recommended posture for CI.
+Dependencies explicitly denied with \`false\` in \`allowScripts\` are always
+silently skipped; this setting only affects unreviewed entries (packages
+with install scripts that are neither approved nor denied).
 \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this
 setting.
+
+Optional dependencies that cannot be installed on the current platform or
+engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged, because
+their install scripts never run.
 
 
 
@@ -2021,6 +2166,17 @@ You can quickly view it with this [json](https://npm.im/json) command line:
 
 Timing information will also be reported in the terminal. To suppress this
 while still writing the timing file, use \`--silent\`.
+
+
+
+#### \`to\`
+
+* Default: null
+* Type: null or String
+
+Used by \`npm patch update\` to set the version to rebase a patch onto when it
+cannot be read from \`package-lock.json\` — for example an exact-version
+selector, or a version that has not been installed yet.
 
 
 
@@ -2329,7 +2485,7 @@ Alias for \`--init-author-url\`
 
 #### \`init.license\`
 
-* Default: "ISC"
+* Default: ""
 * Type: String
 * DEPRECATED: Use \`--init-license\` instead.
 
@@ -2475,6 +2631,7 @@ Array [
   "expect-result-count",
   "expect-results",
   "expires",
+  "extension-file",
   "fetch-retries",
   "fetch-retry-factor",
   "fetch-retry-maxtimeout",
@@ -2493,6 +2650,7 @@ Array [
   "heading",
   "https-proxy",
   "if-present",
+  "ignore-extension",
   "ignore-scripts",
   "include",
   "include-staged",
@@ -2531,6 +2689,7 @@ Array [
   "maxsockets",
   "message",
   "min-release-age",
+  "min-release-age-exclude",
   "node-gyp",
   "node-options",
   "noproxy",
@@ -2547,6 +2706,12 @@ Array [
   "package-lock-only",
   "pack-destination",
   "packages",
+  "patches-dir",
+  "allow-unused-patches",
+  "ignore-patch-failures",
+  "edit-dir",
+  "ignore-existing",
+  "keep-edit-dir",
   "parseable",
   "allow-scripts-pending",
   "allow-scripts-pin",
@@ -2595,6 +2760,7 @@ Array [
   "tag",
   "tag-version-prefix",
   "timing",
+  "to",
   "umask",
   "unicode",
   "update-notifier",
@@ -2658,6 +2824,7 @@ Array [
   "editor",
   "engine-strict",
   "expires",
+  "extension-file",
   "fetch-retries",
   "fetch-retry-factor",
   "fetch-retry-maxtimeout",
@@ -2676,6 +2843,7 @@ Array [
   "heading",
   "https-proxy",
   "if-present",
+  "ignore-extension",
   "ignore-scripts",
   "include",
   "include-staged",
@@ -2697,6 +2865,7 @@ Array [
   "maxsockets",
   "message",
   "min-release-age",
+  "min-release-age-exclude",
   "node-gyp",
   "noproxy",
   "offline",
@@ -2712,6 +2881,7 @@ Array [
   "package-lock-only",
   "pack-destination",
   "packages",
+  "patches-dir",
   "parseable",
   "allow-scripts-pending",
   "allow-scripts-pin",
@@ -2790,8 +2960,14 @@ Array [
   "logs-max",
   "long",
   "node-options",
+  "allow-unused-patches",
+  "ignore-patch-failures",
+  "edit-dir",
+  "ignore-existing",
+  "keep-edit-dir",
   "prefix",
   "timing",
+  "to",
   "update-notifier",
   "usage",
   "userconfig",
@@ -2846,6 +3022,7 @@ Object {
   "editor": "{EDITOR}",
   "engineStrict": false,
   "expires": null,
+  "extensionFile": null,
   "force": false,
   "foregroundScripts": false,
   "formatPackageLock": true,
@@ -2858,6 +3035,7 @@ Object {
   "heading": "npm",
   "httpsProxy": null,
   "ifPresent": false,
+  "ignoreExtension": false,
   "ignoreScripts": false,
   "includeAttestations": false,
   "includeStaged": false,
@@ -2875,6 +3053,7 @@ Object {
   "logColor": false,
   "maxSockets": 15,
   "message": "%s",
+  "minReleaseAgeExclude": Array [],
   "name": null,
   "nodeBin": "{NODE}",
   "nodeGyp": "{CWD}/node_modules/node-gyp/bin/node-gyp.js",
@@ -2900,6 +3079,7 @@ Object {
   "packDestination": ".",
   "parseable": false,
   "password": null,
+  "patchesDir": "patches",
   "preferDedupe": false,
   "preferOffline": false,
   "preferOnline": false,
@@ -3303,7 +3483,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a silent skip into a
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -3865,7 +4045,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a silent skip into a
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -4250,8 +4430,10 @@ Options:
 [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
-[--before <date>] [--min-release-age <days>] [--no-bin-links] [--no-fund]
-[--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--before <date>] [--min-release-age <days>]
+[--min-release-age-exclude <pkg|glob> [--min-release-age-exclude <pkg|glob> ...]]
+[--no-bin-links] [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4313,7 +4495,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a silent skip into a
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -4326,6 +4508,9 @@ Options:
 
   --min-release-age
     If set, npm will build the npm tree such that only versions that were
+
+  --min-release-age-exclude
+    A list of package names or \`minimatch\` glob patterns that are exempt
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
@@ -4392,6 +4577,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`audit\`
 #### \`before\`
 #### \`min-release-age\`
+#### \`min-release-age-exclude\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
@@ -4463,7 +4649,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a silent skip into a
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -4528,6 +4714,52 @@ aliases: cit, clean-install-test, sit
 #### \`install-links\`
 `
 
+exports[`test/lib/docs.js TAP usage install-scripts > must match snapshot 1`] = `
+Manage install-script approvals for dependencies
+
+Usage:
+npm install-scripts approve <pkg> [<pkg> ...]
+npm install-scripts approve --all
+npm install-scripts deny <pkg> [<pkg> ...]
+npm install-scripts deny --all
+npm install-scripts ls
+npm install-scripts prune
+
+Options:
+[-a|--all] [--no-allow-scripts-pin] [--dry-run] [--json]
+
+  -a|--all
+    Show or act on all packages, not just the ones your project directly
+
+  --allow-scripts-pin
+    Write pinned (\`pkg@version\`) entries when approving install scripts.
+
+  --dry-run
+    Indicates that you don't want npm to make any changes and that it should
+
+  --json
+    Whether or not to output JSON data, rather than the normal output.
+
+
+Run "npm help install-scripts" for more info
+
+\`\`\`bash
+npm install-scripts approve <pkg> [<pkg> ...]
+npm install-scripts approve --all
+npm install-scripts deny <pkg> [<pkg> ...]
+npm install-scripts deny --all
+npm install-scripts ls
+npm install-scripts prune
+\`\`\`
+
+Note: This command is unaware of workspaces.
+
+#### \`all\`
+#### \`allow-scripts-pin\`
+#### \`dry-run\`
+#### \`json\`
+`
+
 exports[`test/lib/docs.js TAP usage install-test > must match snapshot 1`] = `
 Install package(s) and run tests
 
@@ -4546,8 +4778,10 @@ Options:
 [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
-[--before <date>] [--min-release-age <days>] [--no-bin-links] [--no-fund]
-[--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--before <date>] [--min-release-age <days>]
+[--min-release-age-exclude <pkg|glob> [--min-release-age-exclude <pkg|glob> ...]]
+[--no-bin-links] [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4609,7 +4843,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a silent skip into a
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -4622,6 +4856,9 @@ Options:
 
   --min-release-age
     If set, npm will build the npm tree such that only versions that were
+
+  --min-release-age-exclude
+    A list of package names or \`minimatch\` glob patterns that are exempt
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
@@ -4688,6 +4925,7 @@ alias: it
 #### \`audit\`
 #### \`before\`
 #### \`min-release-age\`
+#### \`min-release-age-exclude\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
@@ -5134,6 +5372,7 @@ Options:
 [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--before <date>] [--min-release-age <days>]
+[--min-release-age-exclude <pkg|glob> [--min-release-age-exclude <pkg|glob> ...]]
 
   -a|--all
     Show or act on all packages, not just the ones your project directly
@@ -5159,6 +5398,9 @@ Options:
   --min-release-age
     If set, npm will build the npm tree such that only versions that were
 
+  --min-release-age-exclude
+    A list of package names or \`minimatch\` glob patterns that are exempt
+
 
 Run "npm help outdated" for more info
 
@@ -5174,6 +5416,7 @@ npm outdated [<package-spec> ...]
 #### \`workspace\`
 #### \`before\`
 #### \`min-release-age\`
+#### \`min-release-age-exclude\`
 `
 
 exports[`test/lib/docs.js TAP usage owner > must match snapshot 1`] = `
@@ -5266,6 +5509,70 @@ npm pack <package-spec>
 #### \`workspaces\`
 #### \`include-workspace-root\`
 #### \`ignore-scripts\`
+`
+
+exports[`test/lib/docs.js TAP usage patch > must match snapshot 1`] = `
+Apply local patches to installed dependencies
+
+Usage:
+npm patch <pkg>[@<version>]
+npm patch add <pkg>[@<version>] [--edit-dir <path>] [--ignore-existing]
+npm patch commit <edit-dir> [--patches-dir <dir>] [--keep-edit-dir]
+npm patch update <pkg>[@<old-version>] [--to <new-version>] [--patches-dir <dir>]
+npm patch ls
+npm patch rm <pkg>[@<version>]
+
+Options:
+[--patches-dir <patches-dir>] [--allow-unused-patches] [--ignore-patch-failures]
+[--edit-dir <edit-dir>] [--ignore-existing] [--keep-edit-dir] [--to <version>]
+[--registry <registry>]
+
+  --patches-dir
+    The directory, relative to the project root, where \`npm patch commit\`
+
+  --allow-unused-patches
+    Install even when a registered patch in \`patchedDependencies\` matches no
+
+  --ignore-patch-failures
+    Install even when a registered patch fails to apply, with a warning per
+
+  --edit-dir
+    Override the temporary directory used by \`npm patch add\` to prepare a
+
+  --ignore-existing
+    With \`npm patch add\`, discard a previous unfinished edit directory and
+
+  --keep-edit-dir
+    With \`npm patch commit\`, do not remove the edit directory after
+
+  --to
+    Used by \`npm patch update\` to set the version to rebase a patch onto
+
+  --registry
+    The base URL of the npm registry.
+
+
+Run "npm help patch" for more info
+
+\`\`\`bash
+npm patch <pkg>[@<version>]
+npm patch add <pkg>[@<version>] [--edit-dir <path>] [--ignore-existing]
+npm patch commit <edit-dir> [--patches-dir <dir>] [--keep-edit-dir]
+npm patch update <pkg>[@<old-version>] [--to <new-version>] [--patches-dir <dir>]
+npm patch ls
+npm patch rm <pkg>[@<version>]
+\`\`\`
+
+Note: This command is unaware of workspaces.
+
+#### \`patches-dir\`
+#### \`allow-unused-patches\`
+#### \`ignore-patch-failures\`
+#### \`edit-dir\`
+#### \`ignore-existing\`
+#### \`keep-edit-dir\`
+#### \`to\`
+#### \`registry\`
 `
 
 exports[`test/lib/docs.js TAP usage ping > must match snapshot 1`] = `
@@ -5529,7 +5836,9 @@ Options:
 [-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--package-lock-only]
-[--expect-results|--expect-result-count <count>]
+[--expect-results|--expect-result-count <count>] [--before <date>]
+[--min-release-age <days>]
+[--min-release-age-exclude <pkg|glob> [--min-release-age-exclude <pkg|glob> ...]]
 
   -g|--global
     Operates in "global" mode, so that packages are installed into the
@@ -5549,6 +5858,15 @@ Options:
   --expect-results
     Tells npm whether or not to expect results from the command.
 
+  --before
+    If passed to \`npm install\`, will rebuild the npm tree such that only
+
+  --min-release-age
+    If set, npm will build the npm tree such that only versions that were
+
+  --min-release-age-exclude
+    A list of package names or \`minimatch\` glob patterns that are exempt
+
 
 Run "npm help query" for more info
 
@@ -5563,6 +5881,9 @@ npm query <selector>
 #### \`package-lock-only\`
 #### \`expect-results\`
 #### \`expect-result-count\`
+#### \`before\`
+#### \`min-release-age\`
+#### \`min-release-age-exclude\`
 `
 
 exports[`test/lib/docs.js TAP usage rebuild > must match snapshot 1`] = `
@@ -5594,7 +5915,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a silent skip into a
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -6371,8 +6692,9 @@ Options:
 [--ignore-scripts]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
-[--before <date>] [--min-release-age <days>] [--no-bin-links] [--no-fund]
-[--dry-run]
+[--before <date>] [--min-release-age <days>]
+[--min-release-age-exclude <pkg|glob> [--min-release-age-exclude <pkg|glob> ...]]
+[--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -6413,7 +6735,7 @@ Options:
     Comma-separated list of packages whose install-time lifecycle scripts
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a silent skip into a
+    If \`true\`, turn the install-script policy from a warning into a hard
 
   --dangerously-allow-all-scripts
     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -6426,6 +6748,9 @@ Options:
 
   --min-release-age
     If set, npm will build the npm tree such that only versions that were
+
+  --min-release-age-exclude
+    A list of package names or \`minimatch\` glob patterns that are exempt
 
   --bin-links
     Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
@@ -6476,6 +6801,7 @@ aliases: u, up, upgrade, udpate
 #### \`audit\`
 #### \`before\`
 #### \`min-release-age\`
+#### \`min-release-age-exclude\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`

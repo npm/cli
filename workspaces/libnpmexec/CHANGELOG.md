@@ -40,6 +40,31 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.2): `@npmcli/arborist@9.4.2`
 
+## [11.0.0-pre.0](https://github.com/npm/cli/compare/libnpmexec-v10.2.6-pre.0...libnpmexec-v11.0.0-pre.0) (2026-06-19)
+### ⚠️ BREAKING CHANGES
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+### Features
+* [`18eb967`](https://github.com/npm/cli/commit/18eb9672dc884be4412752fb6e55e9d33c261c65) [#9559](https://github.com/npm/cli/pull/9559) bump to new node engine range (@owlstronaut)
+* [`64e3f79`](https://github.com/npm/cli/commit/64e3f798344e66f4c500636cb8aec5c8111a1fe9) [#9480](https://github.com/npm/cli/pull/9480) allowScripts tooling and inBundle hardening (#9480) (@JamieMagee)
+### Bug Fixes
+* [`6901bb1`](https://github.com/npm/cli/commit/6901bb185a5ca323d6d76561136a906a5023ea6d) [#9436](https://github.com/npm/cli/pull/9436) escape executable name in libnpmexec run-script (#9436) (@rootvector2)
+* [`c5292fa`](https://github.com/npm/cli/commit/c5292fa8a09a56b25394d393faf21e47ffb096c0) [#9422](https://github.com/npm/cli/pull/9422) use prerelease strategy without a bug (@owlstronaut)
+* [`6237783`](https://github.com/npm/cli/commit/62377832db5f91ae50856ef871c16e3d07c074e2) [#9408](https://github.com/npm/cli/pull/9408) exempt local project introspection from allow-directory (@owlstronaut)
+### Dependencies
+* [`b62db95`](https://github.com/npm/cli/commit/b62db95b7768049f58a0aca0d7266cba6ed17757) [#9559](https://github.com/npm/cli/pull/9559) `bin-links@7.0.0`
+* [`3484d7f`](https://github.com/npm/cli/commit/3484d7f1cdb7595353562129e6ab6ef83204f227) [#9559](https://github.com/npm/cli/pull/9559) `read@6.0.0`
+* [`21df0ab`](https://github.com/npm/cli/commit/21df0ab3c629496511a3c481ee721b0e62c16e92) [#9559](https://github.com/npm/cli/pull/9559) `proc-log@7.0.0`
+* [`a44c1cf`](https://github.com/npm/cli/commit/a44c1cf1635de5ecda02ed80af70f5d7360111b6) [#9559](https://github.com/npm/cli/pull/9559) `pacote@22.0.0`
+* [`d80859a`](https://github.com/npm/cli/commit/d80859a2dd97376e4ea621812b3bc7de6a218d21) [#9559](https://github.com/npm/cli/pull/9559) `npm-package-arg@14.0.0`
+* [`9d13ebf`](https://github.com/npm/cli/commit/9d13ebfc2adca5543e4797632039adaa7a318985) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/run-script@11.0.0`
+* [`0be6ae2`](https://github.com/npm/cli/commit/0be6ae21c79eb3986a76d5d769d5dd5ef00283c2) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/package-json@8.0.0`
+### Chores
+* [`1453954`](https://github.com/npm/cli/commit/1453954f9328a6b2480c183f9d1903ac93764915) [#9559](https://github.com/npm/cli/pull/9559) `nock@14.0.0` (@owlstronaut)
+* [`0323f2d`](https://github.com/npm/cli/commit/0323f2d74bf2e747957c74992d9431e3fca35f85) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+* [`ee3d87f`](https://github.com/npm/cli/commit/ee3d87fe521bc144493b93a94d456c22eb147dbf) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/template-oss@5.1.1` (@owlstronaut)
+* [`d25a179`](https://github.com/npm/cli/commit/d25a1798f3ba8ff80437f491afc17e98ef07c77f) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0-pre.1): `@npmcli/arborist@10.0.0-pre.1`
+
 ## [10.2.6-pre.0.0](https://github.com/npm/cli/compare/libnpmexec-v10.2.5...libnpmexec-v10.2.6-pre.0.0) (2026-05-20)
 ### Bug Fixes
 * [`e9b0157`](https://github.com/npm/cli/commit/e9b0157b367aef184e7c4e99b90d9fcb8f0bff54) [#9255](https://github.com/npm/cli/pull/9255) libnpmexec: skip redundant reify for cached directory specs (#9255) (@manzoorwanijk)

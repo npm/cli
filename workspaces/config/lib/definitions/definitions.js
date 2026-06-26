@@ -353,6 +353,13 @@ const definitions = {
       Across sources, the standard precedence applies (cli > env > project >
       user > global), so a higher-priority source can always relax or
       override a lower-priority one.
+
+      As with \`min-release-age\`, when this cutoff blocks a fix that
+      \`npm audit fix\` would install, npm keeps the vulnerable version, warns,
+      and exits with a non-zero code.
+
+      Packages whose names match \`min-release-age-exclude\` are exempt from
+      this filter.
     `,
     flatten,
   }),
@@ -781,6 +788,18 @@ const definitions = {
       previous package failed.
     `
   }),
+  'extension-file': new Definition('extension-file', {
+    default: null,
+    type: [null, path],
+    description: `
+      Path to a project-local npm extension file to load instead of
+      discovering \`.npm-extension.mjs\` / \`.npm-extension.cjs\` at the
+      project root. Must resolve inside the project root and use a \`.mjs\`
+      or \`.cjs\` extension. Only honored from project config or the command
+      line, never from user, global, or builtin config.
+    `,
+    flatten,
+  }),
   'fetch-retries': new Definition('fetch-retries', {
     default: 2,
     type: Number,
@@ -1037,6 +1056,17 @@ const definitions = {
     `,
     flatten,
   }),
+  'ignore-extension': new Definition('ignore-extension', {
+    default: false,
+    type: Boolean,
+    description: `
+      If true, npm does not import or execute a root \`.npm-extension.mjs\` /
+      \`.npm-extension.cjs\` file (or one selected via \`extension-file\`).
+      \`ignore-scripts\` implies \`ignore-extension\`, since both disable
+      root-owned install-time code.
+    `,
+    flatten,
+  }),
   'ignore-scripts': new Definition('ignore-scripts', {
     default: false,
     type: Boolean,
@@ -1047,8 +1077,17 @@ const definitions = {
       as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm
       run\` will still run their intended script if \`ignore-scripts\` is
       set, but they will *not* run any pre- or post-scripts.
+
+      Setting \`ignore-scripts\` also disables \`.npm-extension\` execution,
+      as if \`ignore-extension\` were set.
     `,
-    flatten,
+    // ignore-scripts implies ignore-extension: both disable root install-time code
+    flatten (key, obj, flatOptions) {
+      flatOptions.ignoreScripts = obj['ignore-scripts']
+      if (obj['ignore-scripts']) {
+        flatOptions.ignoreExtension = true
+      }
+    },
   }),
   include: new Definition('include', {
     default: [],
@@ -1128,11 +1167,12 @@ const definitions = {
     `,
   }),
   'init-license': new Definition('init-license', {
-    default: 'ISC',
+    default: '',
     hint: '<license>',
     type: String,
     description: `
       The value \`npm init\` should use by default for the package license.
+      If not set, the license field will be omitted from new packages.
     `,
   }),
   'init-module': new Definition('init-module', {
@@ -1203,7 +1243,7 @@ const definitions = {
     `,
   }),
   'init.license': new Definition('init.license', {
-    default: 'ISC',
+    default: '',
     type: String,
     deprecated: `
       Use \`--init-license\` instead.
@@ -1521,6 +1561,15 @@ const definitions = {
        spawns a sub-process with \`--before\` while preparing a \`git:\` or
        \`github:\` dependency); when both apply, \`before\` wins within a
        single source and across sources the standard precedence rules apply.
+
+       When this window stops \`npm audit fix\` from installing a patched
+       version (because the fix was published too recently), npm keeps the
+       package at its vulnerable version, warns that the fix was blocked, and
+       exits with a non-zero code. To install the fix, add the package to
+       \`min-release-age-exclude\`, or relax \`min-release-age\` or \`before\`.
+
+       Packages whose names match \`min-release-age-exclude\` are exempt from
+       this filter.
     `,
     flatten: (key, obj, flatOptions) => {
       const age = obj['min-release-age']
@@ -1529,6 +1578,45 @@ const definitions = {
       if (age != null && !Object.hasOwn(obj, 'before')) {
         flatOptions.before = age ? new Date(Date.now() - (86400000 * age)) : null
       }
+    },
+  }),
+  'min-release-age-exclude': new Definition('min-release-age-exclude', {
+    default: [],
+    hint: '<pkg|glob>',
+    type: [Array, String],
+    envExport: false,
+    description: `
+       A list of package names or \`minimatch\` glob patterns that are exempt
+       from the \`min-release-age\` (and \`before\`) filter. A matching package
+       can always resolve to its newest version, even when a release-age window
+       is set.
+
+       For example, to apply a release-age window to third-party dependencies
+       while letting internally maintained packages update immediately:
+
+       \`\`\`
+       min-release-age=7
+       min-release-age-exclude[]=@myorg/*
+       min-release-age-exclude[]=my-internal-pkg
+       \`\`\`
+
+       Only the named package is exempt; its own dependencies still follow the
+       release-age policy unless they also match a pattern. Patterns match
+       against the package name, so \`@myorg/*\` matches \`@myorg/shared-utils\`.
+
+       Excluding a package does not change which registry it is fetched from. You
+       should own your private scope on the public registry so that nobody else
+       can publish a package with the same name.
+    `,
+    flatten: (key, obj, flatOptions) => {
+      // The config layer always resolves this to an array (nopt and .npmrc both
+      // coerce `[Array, String]` to a list, default `[]`), so treat it as one.
+      // A single value may still pack multiple names as a comma string.
+      const list = obj[key]
+        .flatMap(v => String(v).split(','))
+        .map(v => v.trim())
+        .filter(Boolean)
+      flatOptions.minReleaseAgeExclude = [...new Set(list)]
     },
   }),
   'node-gyp': new Definition('node-gyp', {
@@ -1750,6 +1838,63 @@ const definitions = {
       this limits the token access to specific packages.
     `,
     flatten,
+  }),
+  'patches-dir': new Definition('patches-dir', {
+    default: 'patches',
+    type: String,
+    description: `
+      The directory, relative to the project root, where \`npm patch commit\`
+      writes patch files for \`patchedDependencies\`.
+    `,
+    flatten,
+  }),
+  // CLI-only: deliberately no flatten, so a value in .npmrc/env never reaches the install pipeline.
+  // npm install reads it from the cli layer only, and npm ci rejects it.
+  'allow-unused-patches': new Definition('allow-unused-patches', {
+    default: false,
+    type: Boolean,
+    description: `
+      Install even when a registered patch in \`patchedDependencies\` matches no
+      installed package. Does not silence patch apply failures.
+
+      This flag is only honored when passed on the command line; it is ignored
+      in \`.npmrc\` and environment variables, and rejected by \`npm ci\`.
+    `,
+  }),
+  'ignore-patch-failures': new Definition('ignore-patch-failures', {
+    default: false,
+    type: Boolean,
+    description: `
+      Install even when a registered patch fails to apply, with a warning per
+      failure. Intended for incident response only.
+
+      This flag is only honored when passed on the command line; it is ignored
+      in \`.npmrc\` and environment variables, and rejected by \`npm ci\`.
+    `,
+  }),
+  'edit-dir': new Definition('edit-dir', {
+    default: null,
+    type: [null, path],
+    description: `
+      Override the temporary directory used by \`npm patch add\` to prepare a
+      package for editing.
+    `,
+  }),
+  'ignore-existing': new Definition('ignore-existing', {
+    default: false,
+    type: Boolean,
+    description: `
+      With \`npm patch add\`, discard a previous unfinished edit directory and
+      start fresh.
+    `,
+  }),
+  'keep-edit-dir': new Definition('keep-edit-dir', {
+    default: false,
+    type: Boolean,
+    description: `
+      With \`npm patch commit\`, do not remove the edit directory after
+      committing the patch.
+    `,
   }),
   parseable: new Definition('parseable', {
     default: false,
@@ -2343,16 +2488,20 @@ const definitions = {
     default: false,
     type: Boolean,
     description: `
-      If \`true\`, turn the install-script policy from a silent skip into a
-      hard error: any dependency with install scripts not covered by
-      \`allowScripts\` will fail the install instead of being silently
-      skipped.
+      If \`true\`, turn the install-script policy from a warning into a hard
+      error: any dependency with install scripts that is not covered by
+      \`allowScripts\` will fail the install instead of being blocked with a
+      warning.
 
-      By default, dependencies whose install scripts are not approved in
-      \`allowScripts\` are silently skipped; this setting promotes that
-      silent skip into a hard failure, which is the recommended posture
-      for CI. \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\`
-      both override this setting.
+      Dependencies explicitly denied with \`false\` in \`allowScripts\` are
+      always silently skipped; this setting only affects unreviewed entries
+      (packages with install scripts that are neither approved nor denied).
+      \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both
+      override this setting.
+
+      Optional dependencies that cannot be installed on the current platform
+      or engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged,
+      because their install scripts never run.
     `,
     flatten,
   }),
@@ -2415,6 +2564,16 @@ const definitions = {
 
       Timing information will also be reported in the terminal. To suppress this
       while still writing the timing file, use \`--silent\`.
+    `,
+  }),
+  to: new Definition('to', {
+    default: null,
+    hint: '<version>',
+    type: [null, String],
+    description: `
+      Used by \`npm patch update\` to set the version to rebase a patch onto
+      when it cannot be read from \`package-lock.json\` — for example an
+      exact-version selector, or a version that has not been installed yet.
     `,
   }),
   umask: new Definition('umask', {
@@ -2491,6 +2650,36 @@ const definitions = {
     flatten (key, obj, flatOptions) {
       const value = obj[key]
       const ciName = ciInfo.name?.toLowerCase().split(' ').join('-') || null
+      // A more specific sub-category for the detected CI, appended to the
+      // ci token as `ci/{ci-name}/{sub-ci-name}` when present.
+      let subCiName = null
+      if (ciInfo.GITHUB_ACTIONS) {
+        // Env vars can be absent, empty, or whitespace; normalize before use.
+        const serverUrl = (process.env.GITHUB_SERVER_URL || '').trim()
+        const runnerEnv = (process.env.RUNNER_ENVIRONMENT || '').trim()
+        let serverHost = ''
+        try {
+          serverHost = new URL(serverUrl).hostname.toLowerCase()
+        } catch {
+          serverHost = ''
+        }
+        if (serverHost === 'github.com') {
+          if (runnerEnv === 'github-hosted') {
+            subCiName = 'dotcom-hosted'
+          } else if (runnerEnv === 'self-hosted') {
+            subCiName = 'dotcom-selfhosted'
+          } else {
+            subCiName = 'dotcom'
+          }
+        } else if (serverHost === 'ghe.com' || serverHost.endsWith('.ghe.com')) {
+          subCiName = 'ghecom'
+        } else if (serverHost) {
+          subCiName = 'ghes'
+        }
+      }
+      const ci = ciName
+        ? `ci/${ciName}${subCiName ? `/${subCiName}` : ''}`
+        : ''
       let inWorkspaces = false
       if (obj.workspaces || obj.workspace && obj.workspace.length) {
         inWorkspaces = true
@@ -2501,7 +2690,7 @@ const definitions = {
           .replace(/\{platform\}/gi, process.platform)
           .replace(/\{arch\}/gi, process.arch)
           .replace(/\{workspaces\}/gi, inWorkspaces)
-          .replace(/\{ci\}/gi, ciName ? `ci/${ciName}` : '')
+          .replace(/\{ci\}/gi, ci)
           .trim()
 
       // We can't clobber the original or else subsequent flattening will fail

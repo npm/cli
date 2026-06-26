@@ -343,6 +343,37 @@ t.test('set parents to not extraneous when visiting', t => {
   t.end()
 })
 
+t.test('multiple links to one target keep the most permissive flags', async t => {
+  // `tools` is reached by a prod root link and a dev `app` link; the dev link must not overwrite the prod dev flag.
+  const root = new Node({
+    path: '/r',
+    realpath: '/r',
+    pkg: { name: 'root', workspaces: ['app', 'tools'] },
+  })
+  const app = new Node({
+    path: '/r/app',
+    realpath: '/r/app',
+    root,
+    pkg: { name: 'app', version: '1.0.0', devDependencies: { tools: '*' } },
+  })
+  const tools = new Node({
+    path: '/r/tools',
+    realpath: '/r/tools',
+    root,
+    pkg: { name: 'tools', version: '1.0.0' },
+  })
+  new Link({ name: 'app', parent: root, realpath: '/r/app', target: app })
+  new Link({ name: 'tools', parent: root, realpath: '/r/tools', target: tools })
+  new Link({ name: 'tools', parent: app, realpath: '/r/tools', target: tools })
+  root.workspaces = new Map([['app', '/r/app'], ['tools', '/r/tools']])
+
+  calcDepFlags(root)
+
+  t.equal(tools.dev, false, 'tools is prod via the root workspace link')
+  t.equal(app.dev, false, 'app is prod via the root workspace link')
+  t.end()
+})
+
 t.test('check null target in link', async t => {
   const root = new Link({
     path: '/some/path',

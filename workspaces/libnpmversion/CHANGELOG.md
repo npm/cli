@@ -1,5 +1,24 @@
 # Changelog
 
+## [9.0.0-pre.1](https://github.com/npm/cli/compare/libnpmversion-v9.0.0-pre.0...libnpmversion-v9.0.0-pre.1) (2026-06-19)
+### ⚠️ BREAKING CHANGES
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+### Features
+* [`18eb967`](https://github.com/npm/cli/commit/18eb9672dc884be4412752fb6e55e9d33c261c65) [#9559](https://github.com/npm/cli/pull/9559) bump to new node engine range (@owlstronaut)
+### Bug Fixes
+* [`c5292fa`](https://github.com/npm/cli/commit/c5292fa8a09a56b25394d393faf21e47ffb096c0) [#9422](https://github.com/npm/cli/pull/9422) use prerelease strategy without a bug (@owlstronaut)
+### Documentation
+* [`d124c08`](https://github.com/npm/cli/commit/d124c0858da0b138cda2addcb0987b063ca86a47) [#9385](https://github.com/npm/cli/pull/9385) Document `npm_old_version` and `npm_new_version` environment variables (#9385) (@36degrees)
+### Dependencies
+* [`3dc18e5`](https://github.com/npm/cli/commit/3dc18e561b3304778f38f9e7637ab5e0b696797e) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/git@8.0.0`
+* [`21df0ab`](https://github.com/npm/cli/commit/21df0ab3c629496511a3c481ee721b0e62c16e92) [#9559](https://github.com/npm/cli/pull/9559) `proc-log@7.0.0`
+* [`30e89d9`](https://github.com/npm/cli/commit/30e89d922c0ee790524151a98049aad47de70773) [#9559](https://github.com/npm/cli/pull/9559) `json-parse-even-better-errors@6.0.0`
+* [`9d13ebf`](https://github.com/npm/cli/commit/9d13ebfc2adca5543e4797632039adaa7a318985) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/run-script@11.0.0`
+### Chores
+* [`0323f2d`](https://github.com/npm/cli/commit/0323f2d74bf2e747957c74992d9431e3fca35f85) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+* [`ee3d87f`](https://github.com/npm/cli/commit/ee3d87fe521bc144493b93a94d456c22eb147dbf) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/template-oss@5.1.1` (@owlstronaut)
+* [`d25a179`](https://github.com/npm/cli/commit/d25a1798f3ba8ff80437f491afc17e98ef07c77f) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+
 ## [9.0.0-pre.0.0](https://github.com/npm/cli/compare/libnpmversion-v8.0.3...libnpmversion-v9.0.0-pre.0.0) (2026-05-20)
 ### ⚠️ BREAKING CHANGES
 * `npm shrinkwrap` is removed, the `shrinkwrap` config alias is removed, and `npm-shrinkwrap.json` is no longer loaded or honored at the project root or from inside dependency tarballs. Rename project-root `npm-shrinkwrap.json` to `package-lock.json`; use `bundleDependencies` if you need to ship a locked dependency tree.

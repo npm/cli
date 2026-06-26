@@ -1,4 +1,4 @@
-const { join, resolve, basename } = require('node:path')
+const { join, resolve, basename, delimiter } = require('node:path')
 const t = require('tap')
 const runScript = require('@npmcli/run-script')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
@@ -74,12 +74,14 @@ const warningTracker = () => {
   }
 }
 
-const outputTracker = () => {
+// run-script@11 emits its banners via log.notice('run', ...) rather than
+// output.standard, so capture log events to assert on them.
+const logTracker = () => {
   const list = []
-  const onlog = (...msg) => msg[0] === 'standard' && list.push(msg)
-  process.on('output', onlog)
+  const onlog = (...msg) => list.push(msg)
+  process.on('log', onlog)
   return () => {
-    process.removeListener('output', onlog)
+    process.removeListener('log', onlog)
     return list
   }
 }
@@ -219,6 +221,21 @@ t.test('packageLockOnly with linked strategy in workspaces', async t => {
   await reify(path, { packageLockOnly: true, installStrategy: 'linked' })
   t.ok(fs.existsSync(path + '/package-lock.json'), 'lock file created')
   t.throws(() => fs.statSync(path + '/node_modules'), { code: 'ENOENT' })
+})
+
+t.test('linked strategy audits the non-isolated tree', async t => {
+  // The isolated tree has no queryable inventory, so auditing it reports nothing. The install-time audit must run against the non-isolated tree, matching standalone npm audit. https://github.com/npm/cli/issues/9609
+  const src = resolve(fixtures, 'audit-one-vuln')
+  // Copy into a throwaway dir since packageLockOnly rewrites the lockfile.
+  const path = t.testdir({
+    'package.json': fs.readFileSync(join(src, 'package.json'), 'utf8'),
+    'package-lock.json': fs.readFileSync(join(src, 'package-lock.json'), 'utf8'),
+  })
+  const registry = createRegistry(t, true)
+  registry.audit({ convert: true, results: require(join(src, 'audit.json')) })
+  const arb = newArb({ path, audit: true, packageLockOnly: true, installStrategy: 'linked' })
+  await arb.reify()
+  t.ok(arb.auditReport.has('minimist'), 'vulnerable package reported under linked strategy')
 })
 
 t.test('malformed package.json should not be overwritten', async t => {
@@ -2039,6 +2056,56 @@ t.test('removed workspace is pruned from package-lock.json', async t => {
   }
 })
 
+// Regression for https://github.com/npm/cli/issues/9433: a file: dependency
+// that itself has a file: dependency leaves a nested extraneous fsChild. That
+// entry must stay in package-lock.json, otherwise `npm ci` reports the nested
+// dep as missing and refuses to install.
+t.test('nested file: dep keeps extraneous fsChild in package-lock.json', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'c',
+      version: '1.0.0',
+      private: true,
+      dependencies: { a: 'file:lib/a', b: 'file:lib/b' },
+    }),
+    lib: {
+      a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0', private: true }) },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          private: true,
+          dependencies: { a: 'file:lib/a' },
+        }),
+        lib: {
+          a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0', private: true }) },
+        },
+      },
+    },
+  })
+  createRegistry(t, false)
+  await reify(path)
+
+  const lock = JSON.parse(fs.readFileSync(`${path}/package-lock.json`, 'utf8'))
+  t.match(lock.packages['lib/b/lib/a'], { version: '1.0.0', extraneous: true },
+    'nested file: dep is recorded as an extraneous entry in the lockfile')
+
+  // Mirror the `npm ci` sync check: every node in the ideal tree built from
+  // package.json must be present in the virtual tree loaded from the lockfile.
+  const virtual = newArb({ path })
+  await virtual.loadVirtual()
+  const virtualInventory = new Map(virtual.virtualTree.inventory)
+  const ideal = newArb({ path })
+  await ideal.buildIdealTree()
+  const missing = []
+  for (const [loc, node] of ideal.idealTree.inventory.entries()) {
+    if (!virtualInventory.has(loc)) {
+      missing.push(`${node.name}@${node.version}`)
+    }
+  }
+  t.same(missing, [], 'lockfile is in sync with package.json, so npm ci would succeed')
+})
+
 t.test('project with bundled deps and a link dep on itself', async t => {
   const pkg = {
     name: '@isaacs/testing-bundle-self-link',
@@ -2080,7 +2147,7 @@ console.log('ok 1 - this is fine')
 t.test('running lifecycle scripts of unchanged link nodes on reify', async t => {
   const path = fixture(t, 'link-dep-lifecycle-scripts')
   createRegistry(t, false)
-  t.matchSnapshot(await printReified(path), 'result')
+  t.matchSnapshot(await printReified(path, { allowScripts: { 'file:../a': true } }), 'result')
 
   t.ok(fs.lstatSync(resolve(path, 'a/a-prepare')).isFile(),
     'should run prepare lifecycle scripts for links directly linked to the tree')
@@ -2808,12 +2875,20 @@ t.test('runs dependencies script if tree changes', async (t) => {
     t.not(fs.existsSync(expectedPath), `did not run ${script}`)
   }
 
-  const outputs = outputTracker()
+  const logs = logTracker()
 
   // reify again, this time adding a new dependency
   await reify(path, { foregroundScripts: true, add: ['once@^1.4.0'] })
 
-  t.match(outputs(), [/predependencies/, /dependencies/, /postdependencies/], 'logged banners')
+  const banners = logs()
+    .filter(([level, title]) => level === 'notice' && title === 'run')
+    .map(([, , msg]) => msg)
+    .filter(msg => msg.startsWith('root@1.0.0 '))
+  t.match(
+    banners,
+    [/predependencies/, /dependencies/, /postdependencies/],
+    'logged banners'
+  )
 
   // files should exist again
   for (const script of ['predependencies', 'dependencies', 'postdependencies']) {
@@ -3717,6 +3792,323 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     await t.resolves(arb.reify(), 'reify should complete successfully')
   })
 
+  t.test('allowRemote=none allows registry tarball under registry path without trailing slash', async t => {
+    const abbrevPackument5 = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            tarball: 'https://registry.example.com/npm/abbrev/-/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev')
+      .reply(200, abbrevPackument5)
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com/npm',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+    })
+
+    await t.resolves(arb.reify(), 'registry tarball under configured path is allowed')
+  })
+
+  t.test('allowRemote=none blocks same-origin tarball outside registry path', async t => {
+    const abbrevPackument5 = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            tarball: 'https://registry.example.com/evil/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev')
+      .reply(200, abbrevPackument5)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com/npm/',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+    })
+
+    await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' }, 'sibling path tarball is blocked')
+  })
+
+  t.test('allowRemote=none allows same-origin tarball for root registry path', async t => {
+    const abbrevPackument5 = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            tarball: 'https://registry.example.com/other/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/abbrev')
+      .reply(200, abbrevPackument5)
+
+    tnock(t, 'https://registry.example.com')
+      .get('/other/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+    })
+
+    await t.resolves(arb.reify(), 'same-origin tarball is allowed for registry root')
+  })
+
+  t.test('allowRemote=none allows registry tarball whose resolved origin differs from the configured registry', async t => {
+    // Proxy/mirror case: a committed lockfile pins resolved to the public registry while a private mirror is configured.
+    // replace-registry-host rewrites the host to the configured registry at fetch time, so the effective URL is registry-mediated and must pass allow-remote=none.
+    const abbrevPackumentNpmjs = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            tarball: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/abbrev')
+      .reply(200, abbrevPackumentNpmjs)
+
+    // replace-registry-host (default 'npmjs') rewrites the npmjs.org tarball host to the configured mirror, so the fetch lands here.
+    tnock(t, 'https://registry.example.com')
+      .get('/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+    })
+
+    await t.resolves(arb.reify(), 'mirror-fronted registry tarball is allowed under allow-remote=none')
+  })
+
+  t.test('allowRemote=none allows registry tarball with replaceRegistryHost=always', async t => {
+    // replace-registry-host=always routes every registry tarball fetch through the configured registry, so the effective URL is never remote and must pass allow-remote=none.
+    const abbrevPackumentNpmjs = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            tarball: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev')
+      .reply(200, abbrevPackumentNpmjs)
+
+    // always rewrites the tarball host to the configured registry and prepends the registry path.
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com/npm',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+      replaceRegistryHost: 'always',
+    })
+
+    await t.resolves(arb.reify(), 'registry tarball routed through the configured registry is allowed')
+  })
+
+  t.test('allowRemote=none allows registry tarball under linked install strategy', async t => {
+    // The linked strategy extracts store nodes as IsolatedNode, which has no edges to recompute isRegistryDependency from.
+    // The flag must be carried from the source tree node so the registry-tarball allow-remote exemption still applies.
+    const abbrevPackument5 = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            tarball: 'https://registry.example.com/npm/abbrev/-/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev')
+      .reply(200, abbrevPackument5)
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com/npm',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+      installStrategy: 'linked',
+    })
+
+    await t.resolves(arb.reify(), 'registry tarball is allowed under linked strategy')
+  })
+
+  t.test('allowRemote=root allows root-direct remote tarball under linked install strategy', async t => {
+    // The linked strategy extracts store nodes as IsolatedNode, which has no edgesIn to recompute root-ness from.
+    // isRootDependency must be carried from the source tree node, otherwise allow-remote=root mis-fires on a genuine remote tarball that is a direct dep of the project root.
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: 'https://remote.example.com/abbrev-1.1.1.tgz',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://remote.example.com')
+      .get('/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'root',
+      installStrategy: 'linked',
+    })
+
+    await t.resolves(arb.reify(), 'root-direct remote tarball is allowed under linked strategy with allow-remote=root')
+  })
+
   t.test('registry with different protocol should swap protocol', async (t) => {
     const abbrevPackument4 = JSON.stringify({
       _id: 'abbrev',
@@ -3828,6 +4220,119 @@ t.test('install strategy linked', async (t) => {
     t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
   })
 
+  t.test('hidden lockfile records the linked .store layout and round-trips', async t => {
+    // Regression for #9612: the hidden lockfile must record the on-disk .store/symlink layout so it round-trips as a valid cache.
+    const Shrinkwrap = require('../../lib/shrinkwrap.js')
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        // once depends on wrappy, so the store has a transitive symlink to validate
+        dependencies: { once: '1.4.0' },
+      }),
+    })
+
+    createRegistry(t, true)
+    await reify(path, { installStrategy: 'linked' })
+
+    const hidden = require(resolve(path, 'node_modules/.package-lock.json'))
+    const locs = Object.keys(hidden.packages)
+    // the layout is recorded at .store paths, not hoisted node_modules/<name>
+    t.ok(locs.some(l => /^node_modules\/\.store\/once@/.test(l)),
+      'once is recorded under .store')
+    t.ok(locs.some(l => /^node_modules\/\.store\/.*\/node_modules\/wrappy$/.test(l)),
+      'the transitive wrappy symlink is recorded inside the store')
+    t.notOk(locs.includes('node_modules/wrappy'),
+      'wrappy is not recorded at a hoisted path')
+
+    // the cache is accepted on reload: assertNoNewer matches it against the real disk layout
+    const meta = await Shrinkwrap.load({ path, hiddenLockfile: true })
+    t.equal(meta.loadedFromDisk, true, 'hidden lockfile is a valid cache of the disk layout')
+
+    // loadActual must reconstruct the tree from the cache with once->wrappy resolved through the store.
+    const actual = await newArb({ path, installStrategy: 'linked' }).loadActual()
+    const onceNode = [...actual.inventory.values()].find(n => n.name === 'once' && !n.isLink)
+    t.ok(onceNode, 'once is in the cached actual tree')
+    const wrappyEdge = onceNode.edgesOut.get('wrappy')
+    t.ok(wrappyEdge && !wrappyEdge.missing, 'once resolves its wrappy dep through the cached store layout')
+  })
+
+  t.test('hidden lockfile round-trips with an undeclared workspace', async t => {
+    // Regression for #9612: an undeclared workspace materializes deps in its own node_modules but isn't linked into root, and the cache must still validate that subtree.
+    const Shrinkwrap = require('../../lib/shrinkwrap.js')
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        workspaces: ['packages/a'],
+        // root does not depend on the workspace, so it stays undeclared
+      }),
+      packages: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: { once: '1.4.0' },
+          }),
+        },
+      },
+    })
+
+    createRegistry(t, true)
+    await reify(path, { installStrategy: 'linked' })
+
+    // the workspace's dep is materialized under its own node_modules, not the root's
+    t.ok(fs.lstatSync(resolve(path, 'packages/a/node_modules/once')).isSymbolicLink(),
+      'once is symlinked into the workspace node_modules')
+    t.notOk(fs.existsSync(resolve(path, 'node_modules/a')),
+      'the undeclared workspace is not symlinked into the root node_modules')
+
+    const meta = await Shrinkwrap.load({ path, hiddenLockfile: true })
+    t.equal(meta.loadedFromDisk, true, 'hidden lockfile validates the undeclared workspace subtree')
+  })
+
+  t.test('hidden lockfile round-trips with an undeclared workspace and no store entries', async t => {
+    // Regression for #9612: with only local deps there is no .store, so the cache must still walk the undeclared workspace subtree to validate it.
+    const Shrinkwrap = require('../../lib/shrinkwrap.js')
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'host',
+        version: '1.0.0',
+        workspaces: ['packages/w', 'packages/a', 'packages/b'],
+        // only w is declared; a and b stay undeclared, and a depends on b locally
+        dependencies: { w: '1.0.0' },
+      }),
+      packages: {
+        w: { 'package.json': JSON.stringify({ name: 'w', version: '1.0.0' }) },
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: { b: '1.0.0' },
+          }),
+        },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+      },
+    })
+
+    createRegistry(t, false)
+    await reify(path, { installStrategy: 'linked' })
+
+    t.notOk(fs.existsSync(resolve(path, 'node_modules/.store')),
+      'no store is created for an all-local graph')
+    t.ok(fs.lstatSync(resolve(path, 'packages/a/node_modules/b')).isSymbolicLink(),
+      'the undeclared workspace links its local dep')
+
+    const meta = await Shrinkwrap.load({ path, hiddenLockfile: true })
+    t.equal(meta.loadedFromDisk, true, 'hidden lockfile validates the subtree without any store entry')
+
+    // loadActual must reconstruct the undeclared workspace from the cache with its local dep resolved.
+    const actual = await newArb({ path, installStrategy: 'linked' }).loadActual()
+    const aNode = [...actual.inventory.values()].find(n => n.name === 'a' && !n.isLink)
+    const bEdge = aNode && aNode.edgesOut.get('b')
+    t.ok(bEdge && !bEdge.missing, 'the undeclared workspace resolves its local dep through the cache')
+  })
+
   t.test('does not re-create a workspace dir removed from manifest', async t => {
     // Regression test for https://github.com/npm/cli/issues/9331
     const path = t.testdir({
@@ -3860,6 +4365,260 @@ t.test('install strategy linked', async (t) => {
       'packages/b should remain absent after reinstall'
     )
   })
+
+  t.test('removes stale .bin shims after uninstall, keeps surviving ones', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9613
+    const path = t.testdir({
+      'package.json': JSON.stringify({ name: 'un', version: '1.0.0' }),
+    })
+    createRegistry(t, true)
+    const binDir = resolve(path, 'node_modules/.bin')
+    const rbin = resolve(binDir, 'rimraf')
+    const sbin = resolve(binDir, 'semver')
+
+    await reify(path, { add: ['rimraf@2.7.1', 'semver@7.3.2'], installStrategy: 'linked' })
+    // lstatSync throws if missing; don't assert symlink since Windows shims are regular files.
+    t.ok(fs.lstatSync(rbin), 'rimraf shim created')
+    t.ok(fs.lstatSync(sbin), 'semver shim created')
+
+    // Plant Windows shim files alongside the POSIX symlinks to cover both layouts: stale (rimraf) and surviving (semver).
+    const rcmd = resolve(binDir, 'rimraf.cmd')
+    const rps1 = resolve(binDir, 'rimraf.ps1')
+    const scmd = resolve(binDir, 'semver.cmd')
+    const sps1 = resolve(binDir, 'semver.ps1')
+    fs.writeFileSync(rcmd, '@echo off\r\n"%~dp0\\..\\rimraf\\bin.js" %*\r\n')
+    fs.writeFileSync(rps1, '& "$basedir/../rimraf/bin.js" $args\r\n')
+    fs.writeFileSync(scmd, '@echo off\r\n"%~dp0\\..\\semver\\bin\\semver.js" %*\r\n')
+    fs.writeFileSync(sps1, '& "$basedir/../semver/bin/semver.js" $args\r\n')
+
+    await reify(path, { rm: ['rimraf'], installStrategy: 'linked' })
+    t.throws(() => fs.lstatSync(rbin), 'stale rimraf symlink removed')
+    t.throws(() => fs.lstatSync(rcmd), 'stale rimraf.cmd removed')
+    t.throws(() => fs.lstatSync(rps1), 'stale rimraf.ps1 removed')
+    t.ok(fs.lstatSync(sbin), 'surviving semver shim kept')
+    t.ok(fs.lstatSync(scmd), 'surviving semver.cmd kept')
+    t.ok(fs.lstatSync(sps1), 'surviving semver.ps1 kept')
+  })
+
+  t.test('switching hoisted -> linked removes stale real top-level dirs', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9615
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'sw', version: '1.0.0', dependencies: { minimatch: '3.0.4' },
+      }),
+    })
+    createRegistry(t, true)
+
+    // A hoisted install lays the transitive deps out as real top-level dirs.
+    await reify(path, { installStrategy: 'hoisted' })
+    const nm = resolve(path, 'node_modules')
+    for (const dep of ['balanced-match', 'brace-expansion', 'concat-map']) {
+      t.ok(fs.statSync(resolve(nm, dep)).isDirectory(), `${dep} is a real dir under hoisted`)
+    }
+
+    // Plant a stale scoped real package to cover the scoped removal and empty-scope pruning path.
+    const scopedPkg = resolve(nm, '@scope/stale')
+    fs.mkdirSync(scopedPkg, { recursive: true })
+    fs.writeFileSync(resolve(scopedPkg, 'package.json'),
+      JSON.stringify({ name: '@scope/stale', version: '1.0.0' }))
+    // A non-package real dir must be preserved.
+    fs.mkdirSync(resolve(nm, 'not-a-package'), { recursive: true })
+
+    // Switching to linked must remove those stale real dirs, leaving only the symlink + .store.
+    await reify(path, { installStrategy: 'linked' })
+    for (const dep of ['balanced-match', 'brace-expansion', 'concat-map']) {
+      t.notOk(fs.existsSync(resolve(nm, dep)), `${dep} stale real dir removed after switch to linked`)
+    }
+    t.notOk(fs.existsSync(scopedPkg), 'stale scoped real package removed')
+    t.notOk(fs.existsSync(resolve(nm, '@scope')), 'emptied scope dir pruned')
+    t.ok(fs.existsSync(resolve(nm, 'not-a-package')), 'non-package real dir preserved')
+    t.ok(fs.lstatSync(resolve(nm, 'minimatch')).isSymbolicLink(), 'minimatch is a store symlink')
+    t.ok(fs.statSync(resolve(nm, '.store')).isDirectory(), '.store created')
+  })
+
+  t.test('switching linked -> hoisted removes the stale .store dir', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9615
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'sw', version: '1.0.0', dependencies: { minimatch: '3.0.4' },
+      }),
+    })
+    createRegistry(t, true)
+
+    await reify(path, { installStrategy: 'linked' })
+    const nm = resolve(path, 'node_modules')
+    t.ok(fs.statSync(resolve(nm, '.store')).isDirectory(), '.store created under linked')
+
+    // A hoisted install must not leave the linked store behind.
+    await reify(path, { installStrategy: 'hoisted' })
+    t.notOk(fs.existsSync(resolve(nm, '.store')), '.store removed after switch to hoisted')
+    t.ok(fs.statSync(resolve(nm, 'balanced-match')).isDirectory(), 'transitive dep hoisted to a real dir')
+  })
+
+  t.test('a partial hoisted install does not wipe a still-referenced linked .store', async t => {
+    // Regression test for https://github.com/npm/cli/issues/9615
+    // A workspace-filtered or --workspaces=false hoisted install must not remove the root .store, since out-of-scope workspaces still link into it.
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root', version: '1.0.0', workspaces: ['packages/*'],
+      }),
+      packages: {
+        // a is the out-of-scope workspace that keeps a live link into the store.
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0', dependencies: { minimatch: '3.0.4' } }) },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+      },
+    })
+    createRegistry(t, true)
+    const nm = resolve(path, 'node_modules')
+    const aLink = resolve(path, 'packages/a/node_modules/minimatch')
+    // a's dep resolves through the root .store, so deleting the store would break it.
+    const stillLinked = msg => t.ok(
+      fs.lstatSync(aLink).isSymbolicLink() && fs.existsSync(fs.realpathSync(aLink)), msg)
+
+    await reify(path, { installStrategy: 'linked' })
+    t.ok(fs.statSync(resolve(nm, '.store')).isDirectory(), '.store created under linked')
+    t.match(fs.realpathSync(aLink), /node_modules[\\/]\.store[\\/]/, 'workspace a links into the store')
+
+    // Filter to workspace b: a is out of scope and must keep its live store link.
+    await reify(path, { installStrategy: 'hoisted', workspaces: ['b'] })
+    t.ok(fs.existsSync(resolve(nm, '.store')), '.store kept during a workspace-filtered install')
+    stillLinked('workspace a still resolves through the store after the filtered install')
+
+    await reify(path, { installStrategy: 'hoisted', workspacesEnabled: false })
+    t.ok(fs.existsSync(resolve(nm, '.store')), '.store kept during a --workspaces=false install')
+    stillLinked('workspace a still resolves through the store after the --workspaces=false install')
+
+    await reify(path, { installStrategy: 'hoisted' })
+    t.notOk(fs.existsSync(resolve(nm, '.store')), '.store removed by a full hoisted install')
+  })
+})
+
+t.test('linked strategy --workspaces=false and --include-workspace-root do not crash', async t => {
+  // Regression for #9614. Under linked, the root-dep filter nodes came from the real actual tree, not the synthesized diff wrapper, tripping Diff.calculate's "invalid filterNode" guard.
+  const manifest = deps => JSON.stringify({
+    name: 'root',
+    version: '1.0.0',
+    workspaces: ['packages/*'],
+    dependencies: deps,
+  })
+  const path = t.testdir({
+    'package.json': manifest({ abbrev: '1.1.1', wrappy: '1.0.2' }),
+    packages: {
+      a: {
+        'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }),
+      },
+    },
+  })
+
+  createRegistry(t, true)
+  await reify(path, { installStrategy: 'linked' })
+
+  // --workspaces=false: only root deps are in scope.
+  await t.resolves(
+    reify(path, { installStrategy: 'linked', workspacesEnabled: false }),
+    '--workspaces=false does not crash'
+  )
+
+  // -w a --include-workspace-root: workspace a plus root deps in scope.
+  await t.resolves(
+    reify(path, { installStrategy: 'linked', workspaces: ['a'], includeWorkspaceRoot: true }),
+    '-w a --include-workspace-root does not crash'
+  )
+
+  t.ok(fs.lstatSync(resolve(path, 'node_modules/abbrev')).isSymbolicLink(), 'root dep still linked')
+
+  // Dropping the actual-side filter nodes must not stop a filtered install from pruning a removed root dep.
+  fs.writeFileSync(resolve(path, 'package.json'), manifest({ abbrev: '1.1.1' }))
+  await reify(path, { installStrategy: 'linked', workspacesEnabled: false })
+  t.notOk(fs.existsSync(resolve(path, 'node_modules/wrappy')), 'removed root dep pruned under filtered install')
+  t.ok(fs.lstatSync(resolve(path, 'node_modules/abbrev')).isSymbolicLink(), 'remaining root dep still linked')
+})
+
+t.test('global install ignores a per-call linked strategy', async t => {
+  // Regression for #9614. Global installs are normalized to shallow; a per-call installStrategy:'linked' must not re-engage the linked path, which would trip Diff.calculate's filterNode guard on re-install and delete the global package.
+  const path = t.testdir({ lib: {} })
+  const lib = resolve(path, 'lib')
+  const nm = resolve(lib, 'node_modules')
+
+  createRegistry(t, true)
+  await reify(lib, { add: ['abbrev@1.1.1'], global: true })
+
+  // Re-install the already-present package under linked: must not crash and must not remove it.
+  await t.resolves(
+    reify(lib, { add: ['abbrev@1.1.1'], global: true, installStrategy: 'linked' }),
+    'global re-install under linked does not crash'
+  )
+  t.strictSame(fs.readdirSync(nm), ['abbrev'], 'global package retained, no .store created')
+})
+
+t.test('linked strategy exposes store node_modules via NODE_PATH for lifecycle scripts', async t => {
+  // Regression for #9549. In the linked strategy a store package's deps are symlinked siblings in its store node_modules.
+  // A separate bin invoked by the script (e.g. napi-postinstall) resolves modules from its own store realpath and cannot see them, so npm exposes them via NODE_PATH.
+  const Arborist = require('../../lib/index.js')
+  const pacote = require('pacote')
+
+  const testdir = t.testdir({
+    src: {
+      'package.json': JSON.stringify({
+        name: 'has-postinstall',
+        version: '1.0.0',
+        scripts: { postinstall: 'node -e ""' },
+      }),
+    },
+    project: {
+      'package.json': JSON.stringify({
+        name: 'myproject',
+        version: '1.0.0',
+        dependencies: { 'has-postinstall': '1.0.0' },
+      }),
+    },
+  })
+
+  const tgz = await pacote.tarball(resolve(testdir, 'src'), { Arborist })
+
+  const packument = JSON.stringify({
+    _id: 'has-postinstall',
+    name: 'has-postinstall',
+    'dist-tags': { latest: '1.0.0' },
+    versions: {
+      '1.0.0': {
+        name: 'has-postinstall',
+        version: '1.0.0',
+        hasInstallScript: true,
+        scripts: { postinstall: 'node -e ""' },
+        dist: {
+          tarball: 'https://registry.npmjs.org/has-postinstall/-/has-postinstall-1.0.0.tgz',
+        },
+      },
+    },
+  })
+
+  tnock(t, 'https://registry.npmjs.org')
+    .get('/has-postinstall')
+    .reply(200, packument)
+
+  tnock(t, 'https://registry.npmjs.org')
+    .get('/has-postinstall/-/has-postinstall-1.0.0.tgz')
+    .reply(200, tgz)
+
+  const path = resolve(testdir, 'project')
+  const arb = new Arborist({
+    path,
+    registry: 'https://registry.npmjs.org',
+    cache: resolve(testdir, 'cache'),
+    installStrategy: 'linked',
+    dangerouslyAllowAllScripts: true,
+  })
+  await arb.reify()
+
+  const run = [...arb.scriptsRun]
+    .find(s => s.pkg.name === 'has-postinstall' && s.event === 'postinstall')
+  t.ok(run, 'postinstall ran for the store package')
+  t.match(run.path, /[\\/]\.store[\\/]/, 'script ran on the store entry')
+  // Assert the leading entry: the fix prepends the store node_modules to any pre-existing NODE_PATH (e.g. the coverage harness on Windows CI).
+  const [firstNodePath] = run.env.NODE_PATH.split(delimiter)
+  t.equal(firstNodePath, resolve(run.path, '..'),
+    'NODE_PATH leads with the store node_modules holding the package deps')
 })
 
 t.test('workspace installs retain existing versions with newer package specs', async t => {

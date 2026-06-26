@@ -64,6 +64,26 @@ t.test('throws when unreviewed scripts are present', async t => {
   )
 })
 
+t.test('resolves when the only unreviewed node is inert', async t => {
+  // Inert deps (platform/engine-incompatible) are removed before any script
+  // runs, so strict mode must not reject them (npm/cli#9562).
+  const inertTree = {
+    inventory: new Map([
+      ['node_modules/has-scripts', {
+        name: 'has-scripts',
+        location: 'node_modules/has-scripts',
+        inert: true,
+        package: { scripts: { install: 'node-gyp rebuild' } },
+      }],
+    ]),
+  }
+  const arb = fakeArb(inertTree)
+  await t.resolves(
+    strictAllowScriptsPreflight(arb, { strictAllowScripts: true }),
+    'no error when the unreviewed node is inert'
+  )
+})
+
 t.test('resolves when no unreviewed scripts are present', async t => {
   const cleanTree = {
     inventory: new Map([

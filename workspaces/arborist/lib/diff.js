@@ -130,6 +130,16 @@ const getAction = ({ actual, ideal }) => {
     return 'CHANGE'
   }
 
+  // a change in patch state requires re-extracting and re-applying
+  if ((ideal.patched?.integrity || null) !== (actual.patched?.integrity || null)) {
+    return 'CHANGE'
+  }
+
+  // a node whose patch was just removed must be re-extracted to revert the patched files
+  if (ideal.patchRemoved) {
+    return 'CHANGE'
+  }
+
   const binsExist = ideal.binPaths.every((path) => existsSync(path))
 
   // top nodes, links, and git deps won't have integrity, but do have resolved

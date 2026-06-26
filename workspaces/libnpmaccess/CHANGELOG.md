@@ -1,5 +1,20 @@
 # Changelog
 
+## [11.0.0-pre.0](https://github.com/npm/cli/compare/libnpmaccess-v10.0.3...libnpmaccess-v11.0.0-pre.0) (2026-06-19)
+### ⚠️ BREAKING CHANGES
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+### Features
+* [`18eb967`](https://github.com/npm/cli/commit/18eb9672dc884be4412752fb6e55e9d33c261c65) [#9559](https://github.com/npm/cli/pull/9559) bump to new node engine range (@owlstronaut)
+### Dependencies
+* [`1f9c567`](https://github.com/npm/cli/commit/1f9c56792493f80fb3b3d61710086ed748312f2a) [#9559](https://github.com/npm/cli/pull/9559) `npm-registry-fetch@20.0.1`
+* [`d80859a`](https://github.com/npm/cli/commit/d80859a2dd97376e4ea621812b3bc7de6a218d21) [#9559](https://github.com/npm/cli/pull/9559) `npm-package-arg@14.0.0`
+### Chores
+* [`1453954`](https://github.com/npm/cli/commit/1453954f9328a6b2480c183f9d1903ac93764915) [#9559](https://github.com/npm/cli/pull/9559) `nock@14.0.0` (@owlstronaut)
+* [`0323f2d`](https://github.com/npm/cli/commit/0323f2d74bf2e747957c74992d9431e3fca35f85) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+* [`ee3d87f`](https://github.com/npm/cli/commit/ee3d87fe521bc144493b93a94d456c22eb147dbf) [#9559](https://github.com/npm/cli/pull/9559) `@npmcli/template-oss@5.1.1` (@owlstronaut)
+* [`d25a179`](https://github.com/npm/cli/commit/d25a1798f3ba8ff80437f491afc17e98ef07c77f) [#9559](https://github.com/npm/cli/pull/9559) template-oss-apply (@owlstronaut)
+* [`40fcab4`](https://github.com/npm/cli/commit/40fcab45d356545f8db7f34df3e5630116d0dd40) [#8991](https://github.com/npm/cli/pull/8991) `@npmcli/template-oss@4.29.0` (@wraithgar)
+
 ## [10.0.3](https://github.com/npm/cli/compare/libnpmaccess-v10.0.2...libnpmaccess-v10.0.3) (2025-10-08)
 ### Bug Fixes
 * [`f367507`](https://github.com/npm/cli/commit/f367507b2a8156c00687426034d0a76188e90b4c) [#8624](https://github.com/npm/cli/pull/8624) spelling (#8624) (@jsoref)

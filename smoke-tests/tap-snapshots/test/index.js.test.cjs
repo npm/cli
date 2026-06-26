@@ -25,12 +25,12 @@ All commands:
     completion, config, dedupe, deny-scripts, deprecate, diff,
     dist-tag, docs, doctor, edit, exec, explain, explore,
     find-dupes, fund, get, help, help-search, init, install,
-    install-ci-test, install-test, link, ll, login, logout, ls,
-    org, outdated, owner, pack, ping, pkg, prefix, profile,
-    prune, publish, query, rebuild, repo, restart, root, run,
-    sbom, search, set, stage, start, stop, team, test, token,
-    trust, undeprecate, uninstall, unpublish, update, version,
-    view, whoami
+    install-ci-test, install-scripts, install-test, link, ll,
+    login, logout, ls, org, outdated, owner, pack, patch, ping,
+    pkg, prefix, profile, prune, publish, query, rebuild, repo,
+    restart, root, run, sbom, search, set, stage, start, stop,
+    team, test, token, trust, undeprecate, uninstall, unpublish,
+    update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     {NPM}/{TESTDIR}/home/.npmrc
@@ -107,7 +107,7 @@ npm error   --allow-scripts
 npm error     Comma-separated list of packages whose install-time lifecycle scripts
 npm error
 npm error   --strict-allow-scripts
-npm error     If \`true\`, turn the install-script policy from a silent skip into a
+npm error     If \`true\`, turn the install-script policy from a warning into a hard
 npm error
 npm error   --dangerously-allow-all-scripts
 npm error     If \`true\`, bypass the \`allowScripts\` policy entirely and run every
@@ -190,8 +190,6 @@ Wrote to {NPM}/{TESTDIR}/project/package.json:
     "test": "echo /"Error: no test specified/" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "commonjs"
 }
 `
@@ -208,7 +206,6 @@ Object {
       "devDependencies": Object {
         "promise-all-reject-late": "^5.0.0",
       },
-      "license": "ISC",
       "name": "project",
       "version": "1.0.0",
     },
@@ -232,7 +229,6 @@ Object {
 
 exports[`test/index.js TAP basic npm install dev dep > should have expected dev dep added package.json result 1`] = `
 Object {
-  "author": "",
   "dependencies": Object {
     "abbrev": "^1.0.4",
   },
@@ -241,7 +237,6 @@ Object {
     "promise-all-reject-late": "^5.0.0",
   },
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -272,7 +267,6 @@ Object {
       "dependencies": Object {
         "abbrev": "^1.0.4",
       },
-      "license": "ISC",
       "name": "project",
       "version": "1.0.0",
     },
@@ -288,13 +282,11 @@ Object {
 
 exports[`test/index.js TAP basic npm install prodDep@version > should have expected package.json result 1`] = `
 Object {
-  "author": "",
   "dependencies": Object {
     "abbrev": "^1.0.4",
   },
   "description": "",
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -318,13 +310,11 @@ abbrev     1.0.4   1.1.1   1.1.1  node_modules/abbrev  project
 
 exports[`test/index.js TAP basic npm pkg > should have expected npm pkg delete modified package.json result 1`] = `
 Object {
-  "author": "",
   "dependencies": Object {
     "abbrev": "^1.0.4",
   },
   "description": "",
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -338,13 +328,11 @@ Object {
 
 exports[`test/index.js TAP basic npm pkg > should have expected npm pkg set modified package.json result 1`] = `
 Object {
-  "author": "",
   "dependencies": Object {
     "abbrev": "^1.0.4",
   },
   "description": "",
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -366,7 +354,7 @@ exports[`test/index.js TAP basic npm pkg > should have expected pkg delete outpu
 `
 
 exports[`test/index.js TAP basic npm pkg > should have expected pkg get output 1`] = `
-ISC
+
 `
 
 exports[`test/index.js TAP basic npm pkg > should have expected pkg set output 1`] = `
@@ -383,8 +371,6 @@ scripts = {
   hello: 'echo Hello'
 }
 keywords = []
-author = ''
-license = 'ISC'
 type = 'commonjs'
 dependencies = { abbrev: '^1.0.4' }
 tap = { 'test-env': [ 'LC_ALL=sk' ] }
@@ -392,7 +378,6 @@ tap = { 'test-env': [ 'LC_ALL=sk' ] }
 
 exports[`test/index.js TAP basic npm pkg set scripts > should have expected script added package.json result 1`] = `
 Object {
-  "author": "",
   "dependencies": Object {
     "abbrev": "^1.0.4",
   },
@@ -401,7 +386,6 @@ Object {
     "promise-all-reject-late": "^5.0.0",
   },
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -422,9 +406,6 @@ exports[`test/index.js TAP basic npm prefix > should have expected prefix output
 `
 
 exports[`test/index.js TAP basic npm run > should have expected run output 1`] = `
-> project@1.0.0 hello
-> echo Hello
-
 Hello
 `
 
@@ -437,7 +418,6 @@ Object {
       "dependencies": Object {
         "abbrev": "^1.0.4",
       },
-      "license": "ISC",
       "name": "project",
       "version": "1.0.0",
     },
@@ -453,13 +433,11 @@ Object {
 
 exports[`test/index.js TAP basic npm uninstall > should have expected uninstall package.json result 1`] = `
 Object {
-  "author": "",
   "dependencies": Object {
     "abbrev": "^1.0.4",
   },
   "description": "",
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
@@ -487,7 +465,6 @@ Object {
       "devDependencies": Object {
         "promise-all-reject-late": "^5.0.0",
       },
-      "license": "ISC",
       "name": "project",
       "version": "1.0.0",
     },
@@ -511,7 +488,6 @@ Object {
 
 exports[`test/index.js TAP basic npm update dep > should have expected update package.json result 1`] = `
 Object {
-  "author": "",
   "dependencies": Object {
     "abbrev": "^1.0.4",
   },
@@ -520,7 +496,6 @@ Object {
     "promise-all-reject-late": "^5.0.0",
   },
   "keywords": Array [],
-  "license": "ISC",
   "main": "index.js",
   "name": "project",
   "scripts": Object {
