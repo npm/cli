@@ -199,10 +199,28 @@ module.exports = cls => class Builder extends cls {
       const { package: { bin, scripts = {} } } = node.target
       const { preinstall, install, postinstall, prepare } = scripts
       const tests = { bin, preinstall, install, postinstall, prepare }
+      // allowScripts gate (#9681): a `false` verdict from the policy
+      // matcher means the user explicitly denied install scripts for this
+      // node, so skip its lifecycle scripts. Bin linking is intentionally
+      // not gated — a denied package must still get its `.bin/` symlinks,
+      // matching the semantics of `--ignore-scripts`.
+      // `true` and `null` (unreviewed) both fall through to the existing
+      // detection logic — unreviewed nodes still run their scripts in
+      // Phase 1 and are surfaced via the post-reify advisory warning.
+      // The global --ignore-scripts kill switch in #build() still takes
+      // precedence, and --dangerously-allow-all-scripts bypasses the gate
+      // entirely.
+      const scriptsDenied =
+        !this.options.dangerouslyAllowAllScripts &&
+        isScriptAllowed(node, this.options.allowScripts) === false
       for (const [key, has] of Object.entries(tests)) {
-        if (has) {
-          this.#queues[key].push(node)
+        if (!has) {
+          continue
         }
+        if (key !== 'bin' && scriptsDenied) {
+          continue
+        }
+        this.#queues[key].push(node)
       }
     }
     timeEnd()
@@ -223,18 +241,6 @@ module.exports = cls => class Builder extends cls {
 
   async #addToBuildSet (node, set, refreshed = false) {
     if (set.has(node)) {
-      return
-    }
-
-    // Phase 1 allowScripts gate: a `false` verdict from the policy matcher
-    // means the user explicitly denied install scripts for this node, so skip
-    // it. `true` and `null` (unreviewed) both fall through to the existing
-    // detection logic — unreviewed nodes still run their scripts in Phase 1
-    // and are surfaced via the post-reify advisory warning. The global
-    // --ignore-scripts kill switch in #build() still takes precedence, and
-    // --dangerously-allow-all-scripts bypasses this gate entirely.
-    if (!this.options.dangerouslyAllowAllScripts &&
-        isScriptAllowed(node, this.options.allowScripts) === false) {
       return
     }
 

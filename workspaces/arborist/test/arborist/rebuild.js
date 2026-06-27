@@ -163,6 +163,29 @@ t.test('do nothing if ignoreScripts=true and binLinks=false', async t => {
   t.throws(() => fs.statSync(file), 'bundle build script not run')
 })
 
+t.test('allowScripts deny still links bins for that node', async t => {
+  // Regression for #9681: a `false` verdict from allowScripts must skip
+  // that node's install scripts but must NOT drop its bin link. Behaves
+  // like --ignore-scripts (scripts off, bins still linked).
+  const path = fixture(t, 'testing-allow-scripts-deny-bin')
+  const arb = newArb({
+    path,
+    allowScripts: { 'denied-with-bin': false },
+  })
+  await arb.rebuild()
+  // The denied package's postinstall must NOT have created its sentinel.
+  t.throws(
+    () => fs.statSync(resolve(path, 'node_modules/denied-with-bin/ran')),
+    'denied postinstall did not run'
+  )
+  // The bin link must still exist.
+  t.equal(
+    fs.lstatSync(resolve(path, 'node_modules/.bin/denied-with-bin')).isSymbolicLink(),
+    true,
+    'bin link for denied package still created'
+  )
+})
+
 t.test('do not link bins for nodes on trash list', async t => {
   const path = fixture(t, 'dep-installed-without-bin-link')
   const semver = resolve(path, 'node_modules/.bin/semver')
