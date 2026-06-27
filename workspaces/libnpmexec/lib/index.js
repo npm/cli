@@ -137,13 +137,6 @@ const exec = async (opts) => {
     return run()
   }
 
-  // Detect workspace context before appending the root path.
-  // In workspace mode, the CLI explicitly sets pkgPath to the workspace dir.
-  // When pkgPath is not provided (undefined), we're not in workspace context.
-  const explicitPkgPath = opts.pkgPath
-  const inWorkspaceContext = explicitPkgPath != null
-    && resolve(String(explicitPkgPath)) !== resolve(path)
-
   // Look in the local tree too
   pkgPaths.push(path)
 
@@ -153,7 +146,6 @@ const exec = async (opts) => {
   // - in any local packages (pkgPaths can have workspaces in them or just the root)
   // - in the local tree (path)
   // - globally
-  let localTree
   if (needPackageCommandSwap) {
     // Local packages and local tree
     for (const p of pkgPaths) {
@@ -171,58 +163,18 @@ const exec = async (opts) => {
       }
     }
     if (needPackageCommandSwap) {
-      const localArb = new Arborist({ ...flatOptions, path })
-      localTree = await localArb.loadActual()
-
-      let targetNode = null
-      for (const p of pkgPaths) {
-        let wsNode = localTree
-        for (const node of localTree.inventory.values()) {
-          if (node.path === p) {
-            wsNode = node; break
-          }
-        }
-
-        // If we didn't find the workspace node in the inventory, and it's not the root path, skip it.
-        if (wsNode === localTree && p !== path) {
-          continue
-        }
-
-        for (const edge of wsNode.edgesOut.values()) {
-          if (edge.to?.package?.bin?.[args[0]]) {
-            targetNode = edge.to
-            break
-          }
-        }
-        if (targetNode) {
-          break
-        }
-      }
-
-      if (targetNode) {
-        const binFile = targetNode.package.bin[args[0]]
-        const execNode = isWindows ? `"${process.execPath}"` : process.execPath
-        args.splice(0, 1, execNode, resolve(targetNode.path, binFile))
+      // no bin entry in local packages or in tree, now we look for binPaths
+      const dir = dirname(dirname(localBin))
+      const localBinPath = await localFileExists(dir, args[0], '/')
+      if (localBinPath) {
+        binPaths.push(localBinPath)
         return await run()
-      } else {
-        // In workspace context, the dep-graph lookup is authoritative —
-        // don't fall back to the hoisted .bin which may contain bins from
-        // other workspaces' dependencies that this workspace doesn't declare.
-        if (!inWorkspaceContext) {
-          const dir = dirname(dirname(localBin))
-          const localBinPath = await localFileExists(dir, args[0], '/')
-          if (localBinPath) {
-            binPaths.push(localBinPath)
-            return await run()
-          }
-        }
-        if (globalPath && await fileExists(`${globalBin}/${args[0]}`)) {
-          binPaths.push(globalBin)
-          return await run()
-        }
-        // We swap out args[0] with the bin from the manifest later
-        packages.push(args[0])
+      } else if (globalPath && await fileExists(`${globalBin}/${args[0]}`)) {
+        binPaths.push(globalBin)
+        return await run()
       }
+      // We swap out args[0] with the bin from the manifest later
+      packages.push(args[0])
     }
   }
 
@@ -236,10 +188,8 @@ const exec = async (opts) => {
     }
   }
 
-  if (!localTree) {
-    const localArb = new Arborist({ ...flatOptions, path })
-    localTree = await localArb.loadActual()
-  }
+  const localArb = new Arborist({ ...flatOptions, path })
+  const localTree = await localArb.loadActual()
 
   // Find anything that isn't installed locally
   const needInstall = []
