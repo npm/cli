@@ -29,7 +29,6 @@ t.test('resolves binary from workspace dependencies', async t => {
       },
     },
     mocks: {
-      '../../lib/is-windows.js': false,
       '@npmcli/arborist': class MockArborist {
         constructor (options) {
           this.path = options.path
