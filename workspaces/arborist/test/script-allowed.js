@@ -415,18 +415,19 @@ t.test('isRegistryNode — arborist isRegistryDependency true accepts even unusu
   t.equal(isScriptAllowed(arboristNode, { 'trusted@1.0.0': true }), true)
 })
 
-t.test('bundled deps cannot be allowlisted (never run)', async t => {
-  // Bundled dependencies have inBundle=true and no independent resolved
-  // URL. They can never be allowlisted because matching by name@version
-  // from the bundled tarball would reintroduce manifest confusion. They
-  // always return null, and their install scripts never run.
+t.test('dep-bundled deps cannot be allowlisted (never run)', async t => {
+  // Dependencies bundled inside another package's tarball have
+  // inDepBundle=true and no independent resolved URL. They can never be
+  // allowlisted because matching by name@version from the bundled
+  // tarball would reintroduce manifest confusion. They always return
+  // null, and their install scripts never run.
 
   const bundled = {
     name: 'bundled-pkg',
     packageName: 'bundled-pkg',
     version: '1.0.0',
     resolved: undefined,
-    inBundle: true,
+    inDepBundle: true,
   }
 
   // Name-only allow: must NOT match a bundled dep.
@@ -440,31 +441,63 @@ t.test('bundled deps cannot be allowlisted (never run)', async t => {
   t.equal(isScriptAllowed(bundled, null), null)
 })
 
-t.test('bundled deps: deny entry does not match either (returns null, not false)', async t => {
-  // A deny entry doesn't apply to bundled deps because they're outside
-  // the policy scope entirely. They're blocked because they never run,
-  // not via a policy entry.
+t.test('dep-bundled deps: deny entry does not match either (returns null, not false)', async t => {
+  // A deny entry doesn't apply to dep-bundled deps because they're
+  // outside the policy scope entirely. They're blocked because they
+  // never run, not via a policy entry.
   const bundled = {
     name: 'bundled-pkg',
     packageName: 'bundled-pkg',
     version: '1.0.0',
     resolved: undefined,
-    inBundle: true,
+    inDepBundle: true,
   }
   t.equal(isScriptAllowed(bundled, { 'bundled-pkg': false }), null)
 })
 
-t.test('bundled dep with resolved field is still rejected', async t => {
-  // Defensive: even if a bundled dep somehow has a resolved URL, the
-  // inBundle flag wins over identity matching.
+t.test('dep-bundled dep with resolved field is still rejected', async t => {
+  // Defensive: even if a dep-bundled dep somehow has a resolved URL,
+  // the inDepBundle flag wins over identity matching.
   const bundledWithResolved = {
     name: 'pkg',
     packageName: 'pkg',
     version: '1.0.0',
     resolved: 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
-    inBundle: true,
+    inDepBundle: true,
   }
   t.equal(isScriptAllowed(bundledWithResolved, { 'pkg@1.0.0': true }), null)
+})
+
+t.test('root-bundled deps remain allowlistable (npm/cli#9679)', async t => {
+  // The root project's bundleDependencies list only controls what ships
+  // in the root's published tarball. At install time those deps are
+  // fetched from the registry like any other direct dep, so they:
+  //   - have a trusted resolved URL (no manifest confusion),
+  //   - actually run install scripts during reify, and
+  //   - must therefore be reviewable via allowScripts.
+  //
+  // Real Nodes report inBundle=true / inDepBundle=false for root-bundled
+  // deps. The gate must key off inDepBundle, not inBundle, or the user
+  // can never approve their own bundled deps' install scripts and the
+  // scripts are silently skipped.
+  const rootBundled = {
+    name: 'pkg',
+    packageName: 'pkg',
+    version: '1.0.0',
+    resolved: 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
+    inBundle: true,
+    inDepBundle: false,
+    isRegistryDependency: true,
+  }
+
+  t.equal(isScriptAllowed(rootBundled, { pkg: true }), true,
+    'name-only allow matches a root-bundled dep')
+  t.equal(isScriptAllowed(rootBundled, { 'pkg@1.0.0': true }), true,
+    'versioned allow matches a root-bundled dep')
+  t.equal(isScriptAllowed(rootBundled, { pkg: false }), false,
+    'deny entry blocks a root-bundled dep')
+  t.equal(isScriptAllowed(rootBundled, null), null,
+    'unreviewed root-bundled dep returns null (blocks scripts, surfaces in pending)')
 })
 
 t.test('inBundle: false does not affect normal matching', async t => {
@@ -482,9 +515,9 @@ t.test('inBundle: false does not affect normal matching', async t => {
 t.test('isolated mode (linked): bundled IsolatedNode is blocked', async t => {
   // Regression guard: in isolated/linked mode the gate runs against
   // IsolatedNode instances, not real Nodes. A bundled IsolatedNode must
-  // report inBundle so the gate blocks it even when its resolved URL
+  // report inDepBundle so the gate blocks it even when its resolved URL
   // looks like a registry identity that a name entry would otherwise
-  // match. Without inBundle on IsolatedNode the guard is silently
+  // match. Without inDepBundle on IsolatedNode the guard is silently
   // skipped and the bundled install script runs.
   const { IsolatedNode } = require('../lib/isolated-classes.js')
 
@@ -498,7 +531,10 @@ t.test('isolated mode (linked): bundled IsolatedNode is blocked', async t => {
   })
 
   t.equal(bundled.inBundle, true, 'bundled IsolatedNode reports inBundle')
-  t.equal(isScriptAllowed(bundled, { 'bundled-pkg': true }), null)
+  t.equal(bundled.inDepBundle, false,
+    'IsolatedNode inDepBundle is always false (class does not track it)')
+  t.equal(isScriptAllowed(bundled, { 'bundled-pkg': true }), null,
+    'isolated bundled node is still blocked via getBundler()===null fallback')
   t.equal(isScriptAllowed(bundled, { 'bundled-pkg@1.0.0': true }), null)
 
   const store = new IsolatedNode({
@@ -512,6 +548,7 @@ t.test('isolated mode (linked): bundled IsolatedNode is blocked', async t => {
   })
 
   t.equal(store.inBundle, false, 'external store IsolatedNode is not bundled')
+  t.equal(store.inDepBundle, false, 'external store IsolatedNode is not dep-bundled')
   t.equal(isScriptAllowed(store, { 'store-pkg@1.0.0': true }), true)
 })
 
