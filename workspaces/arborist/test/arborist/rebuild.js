@@ -114,10 +114,9 @@ t.test('do not run scripts if ignoreScripts=true', async t => {
   t.throws(() => fs.statSync(file), 'bundle build script not run')
 })
 
-t.test('allowScripts deny entry skips the build set entry for that node', async t => {
-  // Verifies the deny gate in #addToBuildSet: when `allowScripts` resolves
-  // a node's policy to `false`, that node's scripts are skipped while
-  // others continue to run.
+t.test('allowScripts deny entry skips scripts for the denied node', async t => {
+  // Deny gate in #buildQueues: a `false` policy skips that node's
+  // scripts while others still run.
   const path = fixture(t, 'testing-rebuild-script-env-flags')
   const arb = newArb({
     path,
@@ -151,6 +150,46 @@ t.test('dangerouslyAllowAllScripts bypasses the deny gate', async t => {
     fs.statSync(resolve(path, 'node_modules/devdep/env')).isFile(),
     true,
     'devdep postinstall ran despite deny entry'
+  )
+})
+
+t.test('allowScripts deny keeps the bin link (npm/cli#9681)', async t => {
+  // Denying a package's scripts must not drop its bin links: the script
+  // is skipped but `.bin/<name>` is still created, like --ignore-scripts.
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'project',
+      version: '1.0.0',
+      dependencies: { 'denied-dep': '1.0.0' },
+    }),
+    node_modules: {
+      'denied-dep': {
+        'package.json': JSON.stringify({
+          name: 'denied-dep',
+          version: '1.0.0',
+          bin: { 'denied-bin': 'index.js' },
+          scripts: {
+            postinstall: `node -e "require('fs').writeFileSync('ran', '1')"`,
+          },
+        }),
+        'index.js': '#!/usr/bin/env node\nconsole.log("hi")\n',
+      },
+    },
+  })
+  const arb = newArb({
+    path,
+    allowScripts: { 'denied-dep': false },
+  })
+  await arb.rebuild()
+
+  t.throws(
+    () => fs.statSync(resolve(path, 'node_modules/denied-dep/ran')),
+    'denied postinstall did not run'
+  )
+  t.equal(
+    fs.statSync(resolve(path, 'node_modules/.bin/denied-bin')).isFile(),
+    true,
+    'denied package bin link is still created'
   )
 })
 
