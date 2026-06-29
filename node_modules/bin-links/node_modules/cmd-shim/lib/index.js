@@ -109,13 +109,12 @@ const writeShim_ = (from, to, prog, args, variables) => {
         + `  SET "_prog=${longProg.replace(/(^")|("$)/g, '')}"\r\n`
         + ') ELSE (\r\n'
         + `  SET "_prog=${prog.replace(/(^")|("$)/g, '')}"\r\n`
-        + '  SET PATHEXT=%PATHEXT:;.JS;=;%\r\n'
         + ')\r\n'
         + '\r\n'
         // prevent "Terminate Batch Job? (Y/n)" message
         // https://github.com/npm/cli/issues/969#issuecomment-737496588
         + 'endLocal & goto #_undefined_# 2>NUL || title %COMSPEC% & '
-        + `"%_prog%" ${args} ${target} %*\r\n`
+        + `set PATHEXT=%PATHEXT:;.JS;=;% & "%_prog%" ${args} ${target} %*\r\n`
   } else {
     cmd = `${head}${prog} ${args} ${target} %*\r\n`
   }
