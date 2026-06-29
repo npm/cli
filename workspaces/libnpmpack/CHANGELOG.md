@@ -88,6 +88,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.7.0): `@npmcli/arborist@9.7.0`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.0): `@npmcli/arborist@9.9.0`
+
 ## [9.1.10](https://github.com/npm/cli/compare/libnpmpack-v9.1.9...libnpmpack-v9.1.10) (2026-06-11)
 ### Bug Fixes
 * [`33d421a`](https://github.com/npm/cli/commit/33d421a6fd56fc549e68c6b91adb32e3bb6073f4) [#9468](https://github.com/npm/cli/pull/9468) flatten path separators in pack output filename (#9468) (@github-actions[bot], @rootvector2)

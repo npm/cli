@@ -1,5 +1,42 @@
 # Changelog
 
+## [11.18.0](https://github.com/npm/cli/compare/v11.17.0...v11.18.0) (2026-06-29)
+### Features
+* [`3021ad6`](https://github.com/npm/cli/commit/3021ad60d9a381ac8c64617843de661b2a0d4620) [#9694](https://github.com/npm/cli/pull/9694) arborist: extend replace-registry-host with URL prefix matching (#6110) (#9694) (@github-actions[bot], @u2mejc)
+* [`abd8c6b`](https://github.com/npm/cli/commit/abd8c6b0ce01f2c2c964b1b14e53b37db90be2f5) [#9677](https://github.com/npm/cli/pull/9677) graduate the linked install strategy from experimental to stable (#9677) (@github-actions[bot], @manzoorwanijk)
+* [`9420673`](https://github.com/npm/cli/commit/9420673bcdc59c4acb35c406308bb641c2aef635) [#9662](https://github.com/npm/cli/pull/9662) install-scripts: prune unused allowScripts entries (#9662) (@github-actions[bot], @JamieMagee)
+* [`fc9d4c7`](https://github.com/npm/cli/commit/fc9d4c72d8ee300a843e8186c5fc39e9c3e874ae) [#9635](https://github.com/npm/cli/pull/9635) namespace install-script approval commands under npm install-scripts (#9635) (@manzoorwanijk)
+* [`073253f`](https://github.com/npm/cli/commit/073253f8642d1177000b8d18ebe0abcad2ac9b1a) [#9564](https://github.com/npm/cli/pull/9564) warn when min-release-age blocks an audit fix (#9564) (@github-actions[bot], @JamieMagee)
+### Bug Fixes
+* [`598ffdb`](https://github.com/npm/cli/commit/598ffdba4495e9b6ad11a830bb874baa49fd8a25) [#9693](https://github.com/npm/cli/pull/9693) sbom: percent-encode vcs_url qualifier in generated purls (#9693) (@github-actions[bot], @ubeddulla)
+* [`05793d0`](https://github.com/npm/cli/commit/05793d05230e99421d3611c919ba5ab4c4f49a8a) [#9691](https://github.com/npm/cli/pull/9691) output all the required parameters for npm token list (#9691) (@github-actions[bot], @rijildaniel)
+* [`cd57139`](https://github.com/npm/cli/commit/cd5713990b2436950158120a7306f6e7de84e21c) [#9669](https://github.com/npm/cli/pull/9669) arborist: surface undeclared workspaces under the linked strategy (backport release/v11) (#9669) (@manzoorwanijk)
+* [`5b6ff9c`](https://github.com/npm/cli/commit/5b6ff9c23e5fbfdfea3bf4c53e3e8094179197c5) [#9667](https://github.com/npm/cli/pull/9667) reify: report added count for fresh linked installs (#9667) (@github-actions[bot], @manzoorwanijk, @owlstronaut)
+* [`8f13beb`](https://github.com/npm/cli/commit/8f13beb2cae8582b50ab44ef43154c4c6aaf8a27) [#9664](https://github.com/npm/cli/pull/9664) query: report logical dep location under linked strategy (#9664) (@github-actions[bot], @manzoorwanijk)
+* [`168ba30`](https://github.com/npm/cli/commit/168ba30915a844075d9217de46030a8f6ce09903) [#9663](https://github.com/npm/cli/pull/9663) allowScripts: close enforcement gaps (#9652) (backport release/v11) (#9663) (@JamieMagee)
+* [`ae64f88`](https://github.com/npm/cli/commit/ae64f883f8345f53cb20f968fafffbb2e6d0c9f6) [#9648](https://github.com/npm/cli/pull/9648) exec: resolve workspace-local bin under the linked install strategy (#9648) (@github-actions[bot], @manzoorwanijk)
+* [`784cbe9`](https://github.com/npm/cli/commit/784cbe99c3e35b128ee0a5e6ff569517305a5c33) [#9636](https://github.com/npm/cli/pull/9636) ls: restore 100% coverage on release/v11 after #9633 (#9636) (@manzoorwanijk)
+* [`70f0ea5`](https://github.com/npm/cli/commit/70f0ea5a0642919f8d2bee9c3c61490e12846b4e) [#9607](https://github.com/npm/cli/pull/9607) approve-scripts: approve deps with no resolved URL by name (#9607) (@github-actions[bot], @JamieMagee)
+* [`b2e6338`](https://github.com/npm/cli/commit/b2e63385c991cfc1430e8e5c347f33a7fd47e0e9) [#9602](https://github.com/npm/cli/pull/9602) arborist: don't flag inert optional deps in strict-allow-scripts (#9602) (@github-actions[bot], @JamieMagee)
+* [`6ad5715`](https://github.com/npm/cli/commit/6ad5715c6500b388c64f76826a5038db990aea3a) [#9595](https://github.com/npm/cli/pull/9595) link: scope `npm link <path> --workspace` to the workspace, not the root (#9595) (@github-actions[bot], @manzoorwanijk)
+### Documentation
+* [`3658bb5`](https://github.com/npm/cli/commit/3658bb5354f6c72fd9b1c778bba6e933ba7ec4cc) [#9690](https://github.com/npm/cli/pull/9690) recommend install-strategy=linked to catch phantom dependencies (#9690) (@github-actions[bot], @manzoorwanijk)
+### Dependencies
+* [`54656b6`](https://github.com/npm/cli/commit/54656b60361318204a72aca9409c2dd4ce4a2c20) [#9696](https://github.com/npm/cli/pull/9696) `undici@6.27.0`
+* [`31c4773`](https://github.com/npm/cli/commit/31c4773502b8a3bca5d853270d53d46fe9749ce1) [#9696](https://github.com/npm/cli/pull/9696) `brace-expansion@5.0.7`
+* [`e773c77`](https://github.com/npm/cli/commit/e773c7792c7611d48a44ef4bb532f627d4e94f7c) [#9696](https://github.com/npm/cli/pull/9696) `tar@7.5.19`
+* [`f05f6af`](https://github.com/npm/cli/commit/f05f6afbafaaf46e38ac4cc0d4e8ea76c7d7c330) [#9696](https://github.com/npm/cli/pull/9696) `semver@7.8.5`
+* [`804f9ba`](https://github.com/npm/cli/commit/804f9badd99c5c530db0a6c288b18104512d10c3) [#9580](https://github.com/npm/cli/pull/9580) `npm-profile@12.0.2`
+### Chores
+* [`f79b37f`](https://github.com/npm/cli/commit/f79b37f01b9c624d9dd3806f2f04b3f5e3434e31) [#9696](https://github.com/npm/cli/pull/9696) dev dependency updates (@owlstronaut)
+* [`a04cd84`](https://github.com/npm/cli/commit/a04cd845e9784ac8a03c1db721dc7a366eadb4f1) [#9584](https://github.com/npm/cli/pull/9584) add web-login proxy doneUrl regression for npm-profile fix (#9584) (@github-actions[bot], @manzoorwanijk)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.0): `@npmcli/arborist@9.9.0`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v10.12.0): `@npmcli/config@10.12.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.1.11): `libnpmdiff@8.1.11`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.3.1): `libnpmexec@10.3.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.25): `libnpmfund@7.0.25`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.1.11): `libnpmpack@9.1.11`
+
 ## [11.17.0](https://github.com/npm/cli/compare/v11.16.0...v11.17.0) (2026-06-11)
 ### Features
 * [`ae8ac4e`](https://github.com/npm/cli/commit/ae8ac4ea39776f74551fc850f4a5e766b81c5545) [#9534](https://github.com/npm/cli/pull/9534) add min-release-age-exclude config (@JamieMagee, @caseyjhol)
