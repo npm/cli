@@ -499,7 +499,7 @@ t.test('prints unreviewed install scripts summary', async t => {
   ]
 
   const mock = await mockReifyWithExtras(t, baseReify, { unreviewedScripts })
-  const warn = mock.logs.warn.byTitle('allow-scripts').join('\n')
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
   t.match(warn, /2 packages had install scripts blocked because they are not covered by allowScripts/)
   t.match(warn, /canvas@2\.11\.0 \(install: node-gyp rebuild\)/)
   t.match(warn, /sharp@0\.33\.2 \(preinstall: pre; postinstall: post\)/)
@@ -531,7 +531,7 @@ t.test('global install suggests --allow-scripts, not approve-scripts', async t =
   ]
 
   const mock = await mockReifyWithExtras(t, baseReify, { unreviewedScripts }, { global: true })
-  const warn = mock.logs.warn.byTitle('allow-scripts').join('\n')
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
   t.match(warn, /2 packages had install scripts blocked because they are not covered by allowScripts/)
   t.match(warn, /canvas@2\.11\.0 \(install: node-gyp rebuild\)/)
   t.match(warn, /npm install -g --allow-scripts=canvas,sharp/)
@@ -557,7 +557,7 @@ t.test('single unreviewed script uses singular wording', async t => {
       }],
     }
   )
-  t.match(mock.logs.warn.byTitle('allow-scripts').join('\n'), /1 package had install scripts blocked/)
+  t.match(mock.logs.warn.byTitle('install-scripts').join('\n'), /1 package had install scripts blocked/)
 })
 
 t.test('optional dep with blocked scripts appears in the summary', async t => {
@@ -579,7 +579,7 @@ t.test('optional dep with blocked scripts appears in the summary', async t => {
     }],
   })
   mock.npm.finish()
-  const warn = mock.logs.warn.byTitle('allow-scripts').join('\n')
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
   t.match(warn, /1 package had install scripts blocked/)
   t.match(warn, /opt@1\.0\.0 \(install: cmd\)/)
 })
@@ -617,7 +617,7 @@ t.test('unreviewed script with node.name only (no packageName) still renders', a
     }],
   })
   mock.npm.finish()
-  t.match(mock.logs.warn.byTitle('allow-scripts').join('\n'), / fallback \(install: cmd\)/)
+  t.match(mock.logs.warn.byTitle('install-scripts').join('\n'), / fallback \(install: cmd\)/)
 })
 
 t.test('json output includes node.name when packageName is missing', async t => {
