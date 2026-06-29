@@ -1,5 +1,31 @@
 # Changelog
 
+## [10.0.0-pre.2](https://github.com/npm/cli/compare/arborist-v10.0.0-pre.1...arborist-v10.0.0-pre.2) (2026-06-29)
+### Features
+* [`b51d156`](https://github.com/npm/cli/commit/b51d156fd9858f418775df9c70859377eba1fa0c) [#9672](https://github.com/npm/cli/pull/9672) arborist: extend replace-registry-host with URL prefix matching (#6110) (#9672) (@u2mejc)
+* [`86416a6`](https://github.com/npm/cli/commit/86416a626e4599791c5d8115ed08aa4369774844) [#9674](https://github.com/npm/cli/pull/9674) graduate the linked install strategy from experimental to stable (#9674) (@manzoorwanijk)
+* [`c4e5356`](https://github.com/npm/cli/commit/c4e53561e5c112f635b1eb5bdca8198d8dffcd12) [#9651](https://github.com/npm/cli/pull/9651) install-scripts: prune unused allowScripts entries (#9651) (@JamieMagee)
+* [`58cd8f5`](https://github.com/npm/cli/commit/58cd8f591d0fdeafbb8f477fb8b8f5aa2e042c90) [#9586](https://github.com/npm/cli/pull/9586) `.npm-extension` transformManifest for imperative manifest repairs (#9586) (@manzoorwanijk)
+### Bug Fixes
+* [`968e42f`](https://github.com/npm/cli/commit/968e42fbd62eb3a6f446466359c9431f41d76b2b) [#9671](https://github.com/npm/cli/pull/9671) arborist: apply overrides across a file:/workspace link boundary (#9671) (@manzoorwanijk)
+* [`ae6dbeb`](https://github.com/npm/cli/commit/ae6dbeb12a6f4b313a28c99068e34ba834ae91d1) [#9657](https://github.com/npm/cli/pull/9657) arborist: surface undeclared workspaces under the linked strategy (#9657) (@manzoorwanijk)
+* [`541c286`](https://github.com/npm/cli/commit/541c2865bf2a961554c889f5764bf182cc7f60e2) [#9658](https://github.com/npm/cli/pull/9658) arborist: forward transitive overrides through linked store links (#9658) (@manzoorwanijk)
+* [`f9e3a80`](https://github.com/npm/cli/commit/f9e3a80a3bb8617bf4e8a9fef20c3ecd4f8d7928) [#9655](https://github.com/npm/cli/pull/9655) arborist: correct dev/prod dep flags for workspaces under the linked strategy (#9655) (@manzoorwanijk)
+* [`6a5bf26`](https://github.com/npm/cli/commit/6a5bf269408b1d2822e5c4d5c126e2aff850c3c2) [#9654](https://github.com/npm/cli/pull/9654) arborist: load transitive optional deps into linked actual tree (#9654) (@manzoorwanijk)
+* [`803ba70`](https://github.com/npm/cli/commit/803ba701d7a4f188308d99d47d1f5587930acbba) [#9656](https://github.com/npm/cli/pull/9656) query: report logical dep location under linked strategy (#9656) (@manzoorwanijk)
+* [`60d0d3d`](https://github.com/npm/cli/commit/60d0d3d7c4c8b394b4a35b18f138439d75308368) [#9652](https://github.com/npm/cli/pull/9652) allowScripts: close three enforcement gaps (#9652) (@JamieMagee)
+* [`ca92323`](https://github.com/npm/cli/commit/ca923237e973313b8b1cdf8c9e0dcfdb2ee875a6) [#9647](https://github.com/npm/cli/pull/9647) arborist: clean up stale .store and hoisted dirs on strategy switch (#9647) (@manzoorwanijk)
+* [`2b976b5`](https://github.com/npm/cli/commit/2b976b521e6cf3804a79bd99d17757358d8bfa6b) [#9637](https://github.com/npm/cli/pull/9637) arborist: invalid filterNode crash under the linked strategy (#9637) (@manzoorwanijk)
+* [`0ffce98`](https://github.com/npm/cli/commit/0ffce98cb6f2e189fa3a866c1ba1209293fb48f9) [#9628](https://github.com/npm/cli/pull/9628) arborist: repair wrong-but-existing symlink target in linked strategy (#9628) (@manzoorwanijk)
+* [`981e249`](https://github.com/npm/cli/commit/981e2498589c83859b3c9e8b92a2cc67562dc06b) [#9632](https://github.com/npm/cli/pull/9632) arborist: remove stale .bin shims after uninstall under linked (#9632) (@manzoorwanijk)
+* [`6968015`](https://github.com/npm/cli/commit/696801574984ad19ffaa9a7200d7e752920a018d) [#9630](https://github.com/npm/cli/pull/9630) arborist: record the linked .store layout in the hidden lockfile (#9630) (@manzoorwanijk)
+* [`2aa1c7c`](https://github.com/npm/cli/commit/2aa1c7cd25399c49f12aab684341cc1743ad1635) [#9605](https://github.com/npm/cli/pull/9605) arborist: validate peerOptional conflicts in no-save mutations (#9605) (@dale-lakes, @dale-lakes)
+* [`690bf17`](https://github.com/npm/cli/commit/690bf170d38a70fb47097f144affda1b2b09f121) [#9603](https://github.com/npm/cli/pull/9603) arborist: fix audit-report determinism due to dropped via links (#9603) (@arjun-vegeta)
+* [`851558c`](https://github.com/npm/cli/commit/851558c02a9c79412aa454113973cab047a47f20) [#9626](https://github.com/npm/cli/pull/9626) arborist: don't load store packages' devDependencies as required edges (#9626) (@manzoorwanijk)
+* [`989f571`](https://github.com/npm/cli/commit/989f571fe9064d170f2a4d7c4b1ed238be3851a9) [#9625](https://github.com/npm/cli/pull/9625) arborist: audit the non-isolated tree under the linked strategy (#9625) (@manzoorwanijk)
+* [`7655822`](https://github.com/npm/cli/commit/765582219fee6ca599ad65681c7b63168801aa15) [#9597](https://github.com/npm/cli/pull/9597) arborist: don't flag inert optional deps in strict-allow-scripts (#9597) (@JamieMagee)
+* [`00b9f9f`](https://github.com/npm/cli/commit/00b9f9fdcc673e22487d4ba29347c1305287da6a) [#9591](https://github.com/npm/cli/pull/9591) arborist: symlink workspace file: deps on non-workspace local packages (#9591) (@manzoorwanijk)
+
 ## [10.0.0-pre.1](https://github.com/npm/cli/compare/arborist-v10.0.0-pre.0...arborist-v10.0.0-pre.1) (2026-06-19)
 ### ⚠️ BREAKING CHANGES
 * Preserve https protocol when working with git (#8703)
