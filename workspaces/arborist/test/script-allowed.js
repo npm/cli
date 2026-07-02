@@ -1,6 +1,6 @@
 const t = require('tap')
 const isScriptAllowed = require('../lib/script-allowed.js')
-const { trustedDisplay } = isScriptAllowed
+const { trustedDisplay, isBundledByDependency } = isScriptAllowed
 
 // Test nodes default to a consistent registry-tarball shape: the resolved
 // URL's name+version match the supplied name+version. Tests that need to
@@ -498,6 +498,56 @@ t.test('root-bundled deps remain allowlistable (npm/cli#9679)', async t => {
     'deny entry blocks a root-bundled dep')
   t.equal(isScriptAllowed(rootBundled, null), null,
     'unreviewed root-bundled dep returns null (blocks scripts, surfaces in pending)')
+})
+
+t.test('root-bundled deps: real Node getBundler()===root path (npm/cli#9679)', async t => {
+  // The plain-object fixture above only exercises the
+  // `typeof getBundler !== 'function'` fallback in isBundledByDependency.
+  // Build a genuine arborist Node whose root lists it in
+  // bundleDependencies so the real getBundler() walk runs: it returns the
+  // root, giving inBundle=true / inDepBundle=false and
+  // getBundler()===root (not null). That is the discriminator that keeps
+  // root-bundled deps reviewable while isolated bundled nodes
+  // (getBundler()===null) stay blocked. Modeled on the IsolatedNode-based
+  // test below, but with a real Node instance.
+  const Node = require('../lib/node.js')
+
+  const root = new Node({
+    pkg: {
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { 'root-bundled-dep': '1.x' },
+      bundleDependencies: ['root-bundled-dep'],
+    },
+    path: '/project',
+    realpath: '/project',
+  })
+  const rootBundled = new Node({
+    pkg: { name: 'root-bundled-dep', version: '1.0.0' },
+    resolved: 'https://registry.npmjs.org/root-bundled-dep/-/root-bundled-dep-1.0.0.tgz',
+    parent: root,
+  })
+
+  // Sanity-check the real getters that drive the gate.
+  t.equal(rootBundled.inBundle, true, 'real root-bundled Node reports inBundle')
+  t.equal(rootBundled.inDepBundle, false,
+    'real root-bundled Node is not dep-bundled (bundler is the root)')
+  t.equal(rootBundled.getBundler(), root,
+    'getBundler() walks to the root, not null (the real-Node path)')
+  t.equal(typeof rootBundled.getBundler, 'function',
+    'real Node has a getBundler method (not the plain-object fallback)')
+  t.equal(isBundledByDependency(rootBundled), false,
+    'isBundledByDependency is false for a real root-bundled Node')
+
+  // The gate must let the user review/allow the dep's scripts.
+  t.equal(isScriptAllowed(rootBundled, { 'root-bundled-dep': true }), true,
+    'name-only allow matches a real root-bundled Node')
+  t.equal(isScriptAllowed(rootBundled, { 'root-bundled-dep@1.0.0': true }), true,
+    'versioned allow matches a real root-bundled Node')
+  t.equal(isScriptAllowed(rootBundled, { 'root-bundled-dep': false }), false,
+    'deny entry blocks a real root-bundled Node')
+  t.equal(isScriptAllowed(rootBundled, null), null,
+    'unreviewed real root-bundled Node returns null (blocks scripts, surfaces in pending)')
 })
 
 t.test('inBundle: false does not affect normal matching', async t => {
