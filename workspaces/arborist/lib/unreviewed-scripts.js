@@ -58,13 +58,8 @@ const collectUnreviewedScripts = async ({
       continue
     }
     if (node.extraneous) {
-      // Extraneous = the node has no incoming dep edge from a real
-      // dependency, so it is slated for pruning before reify runs any
-      // install scripts. buildIdealTree drops top-level orphans, but can
-      // retain an orphan registry node nested inside a workspace's
-      // node_modules. In every case the script never executes, so the
-      // strict-allow-scripts gate must not surface it as unreviewed
-      // (npm/cli#9680).
+      // Extraneous nodes are orphans pruned before reify runs any install script, so their scripts never execute.
+      // buildIdealTree drops top-level orphans but can retain one nested in a workspace's node_modules, so this gate must skip them (npm/cli#9680).
       continue
     }
 
