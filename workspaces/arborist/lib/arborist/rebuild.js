@@ -11,7 +11,8 @@ const { depth: dfwalk } = require('treeverse')
 const { isNodeGypPackage, defaultGypInstallScript } = require('@npmcli/node-gyp')
 const { promiseRetry } = require('@gar/promise-retry')
 const { log, time } = require('proc-log')
-const { resolve, delimiter } = require('node:path')
+const { resolve, delimiter, dirname, relative, basename } = require('node:path')
+const { lstat, mkdir, symlink } = require('node:fs/promises')
 const { isScriptAllowed } = require('../script-allowed.js')
 
 const boolEnv = b => b ? '1' : ''
@@ -393,12 +394,108 @@ module.exports = cls => class Builder extends cls {
     const promises = []
     // sort the queue by node path, so that the module-local collision
     // detector in bin-links will always resolve the same way.
-    for (const node of queue.sort(sortNodes)) {
+    const sorted = queue.sort(sortNodes)
+    for (const node of sorted) {
       // TODO these run before they're awaited
       promises.push(this.#createBinLinks(node))
     }
 
+    // bin-links derives each node's shim location purely from that node's
+    // own physical folder, so two hoisted siblings that happen to export a
+    // bin of the same name silently collide there: only the first (by sort
+    // order) gets a shim, and the loser gets none, anywhere. If a workspace
+    // directly depends on the loser, it has no local node_modules/.bin of
+    // its own to shadow the root with, so `npm exec -w <ws>` falls through
+    // to (and unknowingly runs) whichever sibling won the race.
+    // ref: https://github.com/npm/cli/issues/9712
+    promises.push(...this.#linkShadowedWorkspaceBins(sorted))
+
     await promiseAllRejectLate(promises)
+    timeEnd()
+  }
+
+  // the node_modules folder that bin-links would target for this node's
+  // shims: the node_modules dir directly containing it, one level up for
+  // scoped packages. Mirrors bin-links' own (private) get-node-modules.js.
+  #binTargetDir (node) {
+    const scopeOrNm = dirname(node.path)
+    return basename(scopeOrNm) === 'node_modules' ? scopeOrNm : dirname(scopeOrNm)
+  }
+
+  #linkShadowedWorkspaceBins (sorted) {
+    const claimed = new Map()
+    const shadowed = []
+    for (const node of sorted) {
+      if (node.isTop || node.globalTop || this[_trashList].has(node.path)) {
+        continue
+      }
+      const bin = node.package.bin
+      if (!bin) {
+        continue
+      }
+      const dir = this.#binTargetDir(node)
+      let collided = false
+      for (const name of Object.keys(bin)) {
+        const key = `${dir}\0${name}`
+        if (claimed.has(key)) {
+          collided = true
+        } else {
+          claimed.set(key, node)
+        }
+      }
+      if (collided) {
+        shadowed.push(node)
+      }
+    }
+
+    const promises = []
+    for (const node of shadowed) {
+      for (const edge of node.edgesIn) {
+        if (edge.to === node && edge.from.isWorkspace) {
+          promises.push(this.#createLocalBinLink(edge.from, node))
+        }
+      }
+    }
+    return promises
+  }
+
+  // give a workspace its own local copy of a hoisted-but-shadowed
+  // dependency's bin(s), by symlinking the dependency's real folder into
+  // the workspace's own node_modules and linking bins from there. Reusing
+  // bin-links' own (unmodified) public API this way keeps platform-specific
+  // shim/symlink handling (e.g. Windows cmd-shims) in one place.
+  async #createLocalBinLink (workspace, node) {
+    if (this[_trashList].has(node.path)) {
+      return
+    }
+
+    const timeEnd = time.start(`build:link:local:${node.location}`)
+
+    const nestedPath = resolve(workspace.path, 'node_modules', node.name)
+    const alreadyPresent = await lstat(nestedPath).then(() => true, () => false)
+    if (!alreadyPresent) {
+      await mkdir(dirname(nestedPath), { recursive: true })
+      await symlink(relative(dirname(nestedPath), node.realpath), nestedPath, 'junction')
+    }
+
+    const p = promiseRetry((retry) => binLinks({
+      pkg: node.package,
+      path: nestedPath,
+      top: false,
+      force: this.options.force,
+      global: false,
+    }).catch(/* istanbul ignore next - Windows-only transient antivirus locks */ err => {
+      if (process.platform === 'win32' &&
+          (err.code === 'EPERM' || err.code === 'EACCES' || err.code === 'EBUSY')) {
+        return retry(err)
+      }
+      throw err
+    }), { retries: 5, minTimeout: 500 })
+
+    await (this.#doHandleOptionalFailure
+      ? this[_handleOptionalFailure](node, p)
+      : p)
+
     timeEnd()
   }
 

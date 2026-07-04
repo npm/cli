@@ -801,6 +801,78 @@ t.test('workspaces', async t => {
   })
 })
 
+t.test('workspace bin hoisting collision gives the shadowed workspace its own local shim (npm/cli#9712)', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      workspaces: ['workspace-a', 'workspace-b'],
+    }),
+    node_modules: {
+      'workspace-a': t.fixture('symlink', '../workspace-a'),
+      'workspace-b': t.fixture('symlink', '../workspace-b'),
+      'dep-1': {
+        'package.json': JSON.stringify({
+          name: 'dep-1',
+          version: '1.0.0',
+          bin: { 'my-cli': './cli.js' },
+        }),
+        'cli.js': 'dep-1-script',
+      },
+      'dep-2': {
+        'package.json': JSON.stringify({
+          name: 'dep-2',
+          version: '1.0.0',
+          bin: { 'my-cli': './cli.js' },
+        }),
+        'cli.js': 'dep-2-script',
+      },
+    },
+    'workspace-a': {
+      'package.json': JSON.stringify({
+        name: 'workspace-a',
+        version: '1.0.0',
+        dependencies: { 'dep-1': '^1.0.0' },
+      }),
+    },
+    'workspace-b': {
+      'package.json': JSON.stringify({
+        name: 'workspace-b',
+        version: '1.0.0',
+        dependencies: { 'dep-2': '^1.0.0' },
+      }),
+    },
+  })
+
+  const arb = newArb({ path })
+  await arb.rebuild()
+
+  const readShimTarget = link => {
+    const target = resolve(dirname(link), fs.readlinkSync(link))
+    return fs.readFileSync(target, 'utf8')
+  }
+
+  // root .bin gets whichever dep wins the sort-order race (dep-1)
+  const rootBin = resolve(path, 'node_modules/.bin/my-cli')
+  t.equal(readShimTarget(rootBin), 'dep-1-script', 'root .bin/my-cli resolves to dep-1')
+
+  // workspace-b depends on dep-2, which lost the race for the root .bin
+  // slot and previously had no local .bin of its own, so `npm exec -w
+  // workspace-b -- my-cli` would silently run dep-1's script instead.
+  const wsBBin = resolve(path, 'workspace-b/node_modules/.bin/my-cli')
+  t.equal(fs.existsSync(wsBBin), true, 'workspace-b gets its own local my-cli shim')
+  t.equal(readShimTarget(wsBBin), 'dep-2-script', 'workspace-b shim resolves to dep-2, not the root winner')
+
+  // workspace-a's dep already won the root slot, so no redundant local
+  // shim (or nested copy of dep-1) should be created for it.
+  const wsABin = resolve(path, 'workspace-a/node_modules/.bin/my-cli')
+  t.equal(fs.existsSync(wsABin), false, 'workspace-a has no redundant local shim')
+  t.equal(
+    fs.existsSync(resolve(path, 'workspace-a/node_modules/dep-1')),
+    false,
+    'workspace-a gets no unnecessary nested copy of dep-1'
+  )
+})
+
 t.test('put bins in the right place for linked-global top pkgs', async t => {
   const path = t.testdir({
     lib: t.fixture('symlink', 'target'),
