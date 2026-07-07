@@ -829,7 +829,18 @@ class Config {
         }
 
         const mapWorkspaces = require('@npmcli/map-workspaces')
-        const workspaces = await mapWorkspaces({ cwd: p, pkg })
+        let workspaces
+        try {
+          workspaces = await mapWorkspaces({ cwd: p, pkg })
+        } catch (err) {
+          // reading the workspace map can fail transiently when another
+          // process is writing a sibling workspace's package.json at the
+          // same moment (https://github.com/npm/cli/issues/9412), so treat
+          // the current prefix as a standalone project instead of failing
+          // before any command gets a chance to run
+          log.warn('config', `failed to read workspaces at ${p}: ${err.message}`)
+          continue
+        }
         for (const w of workspaces.values()) {
           if (w === this.localPrefix) {
             // see if there's a .npmrc file in the workspace, if so log a warning
