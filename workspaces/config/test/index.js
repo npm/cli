@@ -1439,6 +1439,50 @@ t.test('workspaces', async (t) => {
   t.teardown(() => process.off('log', logHandler))
   t.afterEach(() => logs.length = 0)
 
+  t.test('corrupt sibling workspace package.json does not break detection', async (t) => {
+    const brokenPath = resolve(t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['./workspaces/*'],
+      }),
+      workspaces: {
+        one: {
+          'package.json': JSON.stringify({
+            name: 'one',
+            version: '1.0.0',
+          }),
+        },
+        broken: {
+          // simulates another process writing this file concurrently
+          'package.json': '',
+        },
+      },
+    }))
+    const cwd = process.cwd()
+    t.teardown(() => process.chdir(cwd))
+    process.chdir(`${brokenPath}/workspaces/one`)
+
+    const config = new Config({
+      npmPath: cwd,
+      env: {},
+      argv: [process.execPath, __filename],
+      cwd: join(`${brokenPath}/workspaces/one`),
+      shorthands,
+      definitions,
+      nerfDarts,
+    })
+
+    await config.load()
+    t.equal(config.localPrefix, join(brokenPath, 'workspaces', 'one'),
+      'localPrefix is the workspace itself')
+    t.same(config.get('workspace'), [], 'did not set a workspace')
+    const warnings = logs.filter(l => l[0] === 'warn')
+    t.match(warnings[0],
+      ['warn', 'config', /^failed to read workspaces/],
+      'warned about the unreadable workspace map')
+  })
+
   t.test('finds own parent', async (t) => {
     const cwd = process.cwd()
     t.teardown(() => process.chdir(cwd))
