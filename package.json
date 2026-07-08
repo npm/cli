@@ -1,5 +1,5 @@
 {
-  "version": "12.0.0-pre.2",
+  "version": "12.0.0-pre.3",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
@@ -49,7 +49,7 @@
   "dependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/arborist": "^10.0.0-pre.2",
-    "@npmcli/config": "^11.0.0-pre.2",
+    "@npmcli/config": "^11.0.0-pre.3",
     "@npmcli/fs": "^6.0.0",
     "@npmcli/git": "^8.0.0",
     "@npmcli/map-workspaces": "^6.0.0",

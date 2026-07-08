@@ -1,5 +1,9 @@
 # Changelog
 
+## [11.0.0-pre.3](https://github.com/npm/cli/compare/config-v11.0.0-pre.2...config-v11.0.0-pre.3) (2026-07-08)
+### Features
+* [`fd75880`](https://github.com/npm/cli/commit/fd7588081c1944d718715c17adb2cd125d5cefc5) [#9729](https://github.com/npm/cli/pull/9729) warn instead of error on unknown .npmrc configs (#9729) (@reggi)
+
 ## [11.0.0-pre.2](https://github.com/npm/cli/compare/config-v11.0.0-pre.1...config-v11.0.0-pre.2) (2026-06-29)
 ### Features
 * [`b51d156`](https://github.com/npm/cli/commit/b51d156fd9858f418775df9c70859377eba1fa0c) [#9672](https://github.com/npm/cli/pull/9672) arborist: extend replace-registry-host with URL prefix matching (#6110) (#9672) (@u2mejc)
