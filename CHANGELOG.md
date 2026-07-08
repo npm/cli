@@ -1,5 +1,17 @@
 # Changelog
 
+## [12.0.0-pre.3](https://github.com/npm/cli/compare/v12.0.0-pre.2...v12.0.0-pre.3) (2026-07-08)
+### Features
+* [`fd75880`](https://github.com/npm/cli/commit/fd7588081c1944d718715c17adb2cd125d5cefc5) [#9729](https://github.com/npm/cli/pull/9729) warn instead of error on unknown .npmrc configs (#9729) (@reggi)
+* [`42b12c2`](https://github.com/npm/cli/commit/42b12c250ff3e2ecd756fd82666454ebafc9386c) [#9697](https://github.com/npm/cli/pull/9697) install-scripts: use install-scripts as the warning log title (@manzoorwanijk)
+### Chores
+* [`6fefd0e`](https://github.com/npm/cli/commit/6fefd0e119c7c2b533019b2428d868d738a6b461) [#9733](https://github.com/npm/cli/pull/9733) clarify unknown-config breaking change note in changelog (#9733) (@reggi, @Copilot)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/config-v11.0.0-pre.3): `@npmcli/config@11.0.0-pre.3`
+
 ## [12.0.0-pre.2](https://github.com/npm/cli/compare/v12.0.0-pre.1...v12.0.0-pre.2) (2026-06-29)
 ### Features
 * [`b51d156`](https://github.com/npm/cli/commit/b51d156fd9858f418775df9c70859377eba1fa0c) [#9672](https://github.com/npm/cli/pull/9672) arborist: extend replace-registry-host with URL prefix matching (#6110) (#9672) (@u2mejc)
