@@ -72,6 +72,18 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0-pre.2): `@npmcli/arborist@10.0.0-pre.2`
 
+## [9.0.0](https://github.com/npm/cli/compare/libnpmdiff-v9.0.0-pre.1...libnpmdiff-v9.0.0) (2026-07-08)
+### ⚠️ BREAKING CHANGES
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+* allow-git and allow-remote now default to "none"; set them to "all" (or "root") to install git or user-supplied tarball-URL dependencies.
+### Features
+* [`5b83698`](https://github.com/npm/cli/commit/5b83698a4f76e3f2962b9954dddb180fa85d4c77) [#9737](https://github.com/npm/cli/pull/9737) trigger release process (#9737) (@reggi)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0): `@npmcli/arborist@10.0.0`
+
 ## [9.0.0-pre.0](https://github.com/npm/cli/compare/libnpmdiff-v8.1.6-pre.0...libnpmdiff-v9.0.0-pre.0) (2026-06-19)
 ### ⚠️ BREAKING CHANGES
 * `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
