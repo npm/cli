@@ -615,6 +615,9 @@ Object {
   "strict-allow-scripts": Array [
     "boolean value (true or false)",
   ],
+  "strict-npmrc": Array [
+    "boolean value (true or false)",
+  ],
   "strict-peer-deps": Array [
     "boolean value (true or false)",
   ],

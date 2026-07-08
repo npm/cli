@@ -181,6 +181,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "sign-git-tag": false,
   "strict-peer-deps": false,
   "strict-allow-scripts": false,
+  "strict-npmrc": false,
   "strict-ssl": true,
   "tag-version-prefix": "v",
   "timing": false,
@@ -376,6 +377,7 @@ shell = "{SHELL}"
 sign-git-commit = false
 sign-git-tag = false
 strict-allow-scripts = false
+strict-npmrc = false
 strict-peer-deps = false
 strict-ssl = true
 ; tag = "latest" ; overridden by project

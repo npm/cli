@@ -2084,6 +2084,19 @@ their install scripts never run.
 
 
 
+#### \`strict-npmrc\`
+
+* Default: false
+* Type: Boolean
+
+If set to \`true\`, unknown configuration keys found in \`.npmrc\` files are
+treated as a hard error instead of a warning.
+
+Unknown command line flags and abbreviated flags always error regardless of
+this setting.
+
+
+
 #### \`strict-peer-deps\`
 
 * Default: false
@@ -2753,6 +2766,7 @@ Array [
   "sign-git-tag",
   "strict-peer-deps",
   "strict-allow-scripts",
+  "strict-npmrc",
   "strict-ssl",
   "tag",
   "tag-version-prefix",
@@ -2922,6 +2936,7 @@ Array [
   "sign-git-tag",
   "strict-peer-deps",
   "strict-allow-scripts",
+  "strict-npmrc",
   "strict-ssl",
   "tag",
   "tag-version-prefix",
@@ -3115,6 +3130,7 @@ Object {
   "signGitTag": false,
   "silent": false,
   "strictAllowScripts": false,
+  "strictNpmrc": false,
   "strictPeerDeps": false,
   "strictSSL": true,
   "tagVersionPrefix": "v",

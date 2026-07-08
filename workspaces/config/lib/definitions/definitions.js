@@ -2505,6 +2505,18 @@ const definitions = {
     `,
     flatten,
   }),
+  'strict-npmrc': new Definition('strict-npmrc', {
+    default: false,
+    type: Boolean,
+    description: `
+      If set to \`true\`, unknown configuration keys found in \`.npmrc\` files
+      are treated as a hard error instead of a warning.
+
+      Unknown command line flags and abbreviated flags always error regardless
+      of this setting.
+    `,
+    flatten,
+  }),
   'strict-ssl': new Definition('strict-ssl', {
     default: true,
     type: Boolean,
