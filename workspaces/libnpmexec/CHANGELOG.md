@@ -40,6 +40,17 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.2): `@npmcli/arborist@9.4.2`
 
+## [11.0.0](https://github.com/npm/cli/compare/libnpmexec-v11.0.0-pre.1...libnpmexec-v11.0.0) (2026-07-08)
+### ⚠️ BREAKING CHANGES
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+### Features
+* [`5b83698`](https://github.com/npm/cli/commit/5b83698a4f76e3f2962b9954dddb180fa85d4c77) [#9737](https://github.com/npm/cli/pull/9737) trigger release process (#9737) (@reggi)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0): `@npmcli/arborist@10.0.0`
+
 ## [11.0.0-pre.1](https://github.com/npm/cli/compare/libnpmexec-v11.0.0-pre.0...libnpmexec-v11.0.0-pre.1) (2026-06-29)
 ### Bug Fixes
 * [`18b930f`](https://github.com/npm/cli/commit/18b930f1abeb1b1154e9a51117bd11bffaa2ad94) [#9650](https://github.com/npm/cli/pull/9650) exec: prevent shared binPaths pollution across workspace runs (#9650) (@arjun-vegeta)

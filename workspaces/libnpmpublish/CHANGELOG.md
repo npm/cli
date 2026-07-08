@@ -1,5 +1,12 @@
 # Changelog
 
+## [12.0.0](https://github.com/npm/cli/compare/libnpmpublish-v12.0.0-pre.0...libnpmpublish-v12.0.0) (2026-07-08)
+### ⚠️ BREAKING CHANGES
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+* `opts.access` now defaults to `null` instead of `'public'`. With `null`, libnpmpublish no longer sets an explicit access level in the publish payload, so new scoped packages are created as `restricted` (registry default) and republishes preserve the existing access level. Callers that want to force public access must now pass `access: 'public'` explicitly.
+### Features
+* [`5b83698`](https://github.com/npm/cli/commit/5b83698a4f76e3f2962b9954dddb180fa85d4c77) [#9737](https://github.com/npm/cli/pull/9737) trigger release process (#9737) (@reggi)
+
 ## [12.0.0-pre.0](https://github.com/npm/cli/compare/libnpmpublish-v11.2.0-pre.0...libnpmpublish-v12.0.0-pre.0) (2026-06-19)
 ### ⚠️ BREAKING CHANGES
 * `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`

@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.0.0](https://github.com/npm/cli/compare/libnpmsearch-v10.0.0-pre.0...libnpmsearch-v10.0.0) (2026-07-08)
+### ⚠️ BREAKING CHANGES
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+### Features
+* [`5b83698`](https://github.com/npm/cli/commit/5b83698a4f76e3f2962b9954dddb180fa85d4c77) [#9737](https://github.com/npm/cli/pull/9737) trigger release process (#9737) (@reggi)
+
 ## [10.0.0-pre.0](https://github.com/npm/cli/compare/libnpmsearch-v9.0.1...libnpmsearch-v10.0.0-pre.0) (2026-06-19)
 ### ⚠️ BREAKING CHANGES
 * `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
