@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.0.1](https://github.com/npm/cli/compare/arborist-v10.0.0...arborist-v10.0.1) (2026-07-10)
+### Bug Fixes
+* [`47fc8b1`](https://github.com/npm/cli/commit/47fc8b191a841ec177f2d7d486dde1b66dc0045c) [#9740](https://github.com/npm/cli/pull/9740) correct bundled sigstore from dev dependency conflict (#9740) (@james-pre)
+
 ## [10.0.0](https://github.com/npm/cli/compare/arborist-v10.0.0-pre.2...arborist-v10.0.0) (2026-07-08)
 ### ⚠️ BREAKING CHANGES
 * `npm shrinkwrap` is removed, the `shrinkwrap` config alias is removed, and `npm-shrinkwrap.json` is no longer loaded or honored at the project root or from inside dependency tarballs. Rename project-root `npm-shrinkwrap.json` to `package-lock.json`; use `bundleDependencies` if you need to ship a locked dependency tree.
