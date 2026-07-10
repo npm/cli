@@ -76,6 +76,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0-pre.2): `@npmcli/arborist@10.0.0-pre.2`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.1): `@npmcli/arborist@10.0.1`
+
 ## [10.0.0](https://github.com/npm/cli/compare/libnpmpack-v10.0.0-pre.2...libnpmpack-v10.0.0) (2026-07-08)
 ### ⚠️ BREAKING CHANGES
 * npm pack and npm publish now error when a package's overrides apply to one or more of its bundled packages (bundledDependencies / bundleDependencies). Defining both fields is still allowed as long as no override actually targets a bundled package. To resolve the error, remove the affected entries from either overrides or the bundle.

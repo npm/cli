@@ -1,5 +1,19 @@
 # Changelog
 
+## [12.0.1](https://github.com/npm/cli/compare/v12.0.0...v12.0.1) (2026-07-10)
+### Bug Fixes
+* [`ecb02a8`](https://github.com/npm/cli/commit/ecb02a88a7ca0940d25957d941dc7c66736af4f7) [#9745](https://github.com/npm/cli/pull/9745) view: avoid wrapping array results (#9745) (@reggi, @martinrrm, @Copilot)
+* [`47fc8b1`](https://github.com/npm/cli/commit/47fc8b191a841ec177f2d7d486dde1b66dc0045c) [#9740](https://github.com/npm/cli/pull/9740) correct bundled sigstore from dev dependency conflict (#9740) (@james-pre)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.1): `@npmcli/arborist@10.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v9.0.1): `libnpmdiff@9.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v11.0.1): `libnpmexec@11.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v8.0.1): `libnpmfund@8.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v10.0.1): `libnpmpack@10.0.1`
+
 ## [12.0.0](https://github.com/npm/cli/compare/v12.0.0-pre.3...v12.0.0) (2026-07-08)
 ### ⚠️ BREAKING CHANGES
 * npm view --json now always returns an array.
