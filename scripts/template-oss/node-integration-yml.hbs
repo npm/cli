@@ -105,7 +105,7 @@ jobs:
           echo "::group::packing npm release $npmVersion"
           pushd "$npmDir" >/dev/null
           node scripts/resetdeps.js
-          npmtarball="$(node . pack --loglevel=silent --json | jq -r .[0].filename)"
+          npmtarball="$(node . pack --loglevel=silent --json | jq -r 'to_entries[0].value.filename')"
           tar czf "$npmFile" -C "$npmDir" .
           popd >/dev/null
           echo "npm=$npmFile" >> $GITHUB_OUTPUT
