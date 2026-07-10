@@ -1255,6 +1255,7 @@ t.test('bin links adding and removing', t => {
   const path = t.testdir({
     'package.json': JSON.stringify({}),
   })
+  createRegistry(t, true)
   const rbin = resolve(path, 'node_modules/.bin/rimraf')
   return reify(path, { add: ['rimraf@2.7.1'] })
     .then(() => fs.statSync(rbin)) // should be there
