@@ -147,3 +147,15 @@ t.test('round-trip: applying the diff reproduces the edited tree', async t => {
   t.equal(read(orig, 'lib', 'deep', 'x.js'), 'after\n', 'nested file matches edit')
   t.notOk(existsSync(resolve(orig, 'del.js')), 'deleted file was removed')
 })
+
+t.test('control chars in a filename cannot forge diff headers', async t => {
+  const { writeFileSync } = require('node:fs')
+  const dir = t.testdir({ orig: {}, edit: {} })
+  // an extracted package can carry a filename with an embedded newline
+  const name = 'a.js\n--- x\n+++ y\n@@ -1 +1 @@\n-real\n+forged'
+  writeFileSync(resolve(dir, 'orig', name), 'one\n')
+  writeFileSync(resolve(dir, 'edit', name), 'two\n')
+  const { diff } = await diffDirs(resolve(dir, 'orig'), resolve(dir, 'edit'))
+  t.notMatch(diff, /^\+forged$/m, 'newline in name does not inject a diff line')
+  t.notMatch(diff, /^--- x$/m, 'newline in name does not forge a --- header')
+})
