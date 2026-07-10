@@ -1,0 +1,42 @@
+# NOTE: This file is NOT managed by @npmcli/template-oss and may be edited.
+# It enforces that production dependency changes are isolated into dedicated
+# `deps:` commits so they are visible in the git history and changelog.
+
+name: Deps Commits
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - edited
+      - synchronize
+
+permissions:
+  contents: read
+
+jobs:
+  deps-commits:
+    name: Check Deps Commits
+    # Skip bot-generated release PRs, which intentionally bump many
+    # inter-workspace dependency versions inside a single `chore: release` commit.
+    if: ${{ !startsWith(github.head_ref, 'release/') }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 26.x
+          check-latest: contains('26.x', '.x')
+      - name: Check Deps Commits
+        run: >-
+          node scripts/check-deps-commits.js
+          --from "origin/${{ github.base_ref }}"
+          --to "${{ github.event.pull_request.head.sha }}"
