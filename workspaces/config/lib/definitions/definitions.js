@@ -1026,7 +1026,9 @@ const definitions = {
       are set, proxy settings will be honored by the underlying
       \`make-fetch-happen\` library.
     `,
-    flatten,
+    flatten (key, obj, flatOptions) {
+      flatOptions.httpsProxy = obj['ignore-proxy'] ? null : obj[key]
+    },
   }),
   'if-present': new Definition('if-present', {
     default: false,
@@ -1052,6 +1054,16 @@ const definitions = {
       root-owned install-time code.
     `,
     flatten,
+  }),
+  'ignore-proxy': new Definition('ignore-proxy', {
+    default: false,
+    type: Boolean,
+    description: `
+      If set to true, all proxy settings (\`proxy\`, \`https-proxy\`) will be
+      ignored, and requests will be made directly without going through
+      any proxy. This is useful when you have a proxy configured
+      globally but need to bypass it for certain operations.
+    `,
   }),
   'ignore-scripts': new Definition('ignore-scripts', {
     default: false,
@@ -2027,7 +2039,9 @@ const definitions = {
       \`http_proxy\` environment variables are set, proxy settings will be
       honored by the underlying \`request\` library.
     `,
-    flatten,
+    flatten (key, obj, flatOptions) {
+      flatOptions.proxy = obj['ignore-proxy'] ? null : obj[key]
+    },
   }),
   'read-only': new Definition('read-only', {
     default: false,
