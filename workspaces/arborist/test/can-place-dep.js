@@ -1409,3 +1409,75 @@ t.test('constructor debug throws', t => {
 
   t.end()
 })
+
+t.test('audit fix replaces a vulnerable current node with an older patched one', t => {
+  const path = '/some/path'
+
+  const makeTree = () => new Node({
+    path,
+    pkg: { name: 'project', version: '1.0.0', dependencies: { a: '^1.0.0' } },
+    children: [{ pkg: { name: 'a', version: '1.0.3' } }],
+  })
+
+  const fakeAuditReport = (vulnerableVersions) => ({
+    isVulnerable (node) {
+      return node.name === 'a' && vulnerableVersions.includes(node.version)
+    },
+  })
+
+  t.test('replaces when current is vulnerable and dep is not', t => {
+    const tree = makeTree()
+    const target = tree
+    const edge = tree.edgesOut.get('a')
+    const dep = new Node({ pkg: { name: 'a', version: '1.0.0' } })
+    const vr = new Node({ sourceReference: tree, path, pkg: { ...tree.package } })
+    dep.parent = vr
+
+    const cpd = new CanPlaceDep({
+      target,
+      edge,
+      dep,
+      auditReport: fakeAuditReport(['1.0.3']),
+    })
+    t.equal(cpd.canPlace, REPLACE, 'downgrades to the patched older version')
+    t.end()
+  })
+
+  t.test('keeps current when neither current nor dep is flagged vulnerable', t => {
+    const tree = makeTree()
+    const target = tree
+    const edge = tree.edgesOut.get('a')
+    const dep = new Node({ pkg: { name: 'a', version: '1.0.0' } })
+    const vr = new Node({ sourceReference: tree, path, pkg: { ...tree.package } })
+    dep.parent = vr
+
+    const cpd = new CanPlaceDep({
+      target,
+      edge,
+      dep,
+      auditReport: fakeAuditReport([]),
+    })
+    t.equal(cpd.canPlace, KEEP, 'no audit reason to prefer the older version')
+    t.end()
+  })
+
+  t.test('does not downgrade to another vulnerable version', t => {
+    const tree = makeTree()
+    const target = tree
+    const edge = tree.edgesOut.get('a')
+    const dep = new Node({ pkg: { name: 'a', version: '1.0.0' } })
+    const vr = new Node({ sourceReference: tree, path, pkg: { ...tree.package } })
+    dep.parent = vr
+
+    const cpd = new CanPlaceDep({
+      target,
+      edge,
+      dep,
+      auditReport: fakeAuditReport(['1.0.3', '1.0.0']),
+    })
+    t.equal(cpd.canPlace, KEEP, 'no fix available, so current node is kept')
+    t.end()
+  })
+
+  t.end()
+})
