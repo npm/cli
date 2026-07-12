@@ -1022,6 +1022,18 @@ This flag is only honored when passed on the command line; it is ignored in
 
 
 
+#### \`ignore-proxy\`
+
+* Default: false
+* Type: Boolean
+
+If set to true, all proxy settings (\`proxy\`, \`https-proxy\`) will be ignored,
+and requests will be made directly without going through any proxy. This is
+useful when you have a proxy configured globally but need to bypass it for
+certain operations.
+
+
+
 #### \`ignore-scripts\`
 
 * Default: false
@@ -2661,6 +2673,7 @@ Array [
   "https-proxy",
   "if-present",
   "ignore-extension",
+  "ignore-proxy",
   "ignore-scripts",
   "include",
   "include-staged",
@@ -2953,6 +2966,7 @@ exports[`test/lib/docs.js TAP config > keys that are not flattened 1`] = `
 Array [
   "expect-result-count",
   "expect-results",
+  "ignore-proxy",
   "init-author-email",
   "init-author-name",
   "init-author-url",
