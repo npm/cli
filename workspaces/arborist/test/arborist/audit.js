@@ -54,6 +54,63 @@ t.test('audit fix reifies out the bad deps', async t => {
   t.matchSnapshot(tree, 'reified out the bad mkdirp and minimist')
 })
 
+t.test('audit fix downgrades to a patched older version when the vulnerable range excludes it', async t => {
+  // Regression test for npm/cli#9557: `npm audit fix` reported a fix was
+  // available but did nothing. This happens when the only non-vulnerable
+  // version that still satisfies the declared semver range is *older* than
+  // what's installed (e.g. a vuln was introduced partway through a range,
+  // and no newer patched version has been published yet).
+  const registry = new MockRegistry({ tap: t, registry: 'https://registry.npmjs.org' })
+
+  const manifest = registry.manifest({ name: 'vuln-pkg', versions: ['1.0.0', '1.0.1', '1.0.2'] })
+  // the packument may be fetched more than once (once for the audit report,
+  // once while building the ideal tree for the fix), allow any number of
+  // fetches instead of guessing an exact count.
+  registry.nock = registry.nock.get(registry.fullPath('/vuln-pkg')).reply(200, manifest).persist()
+
+  const tarballSrc = t.testdir({
+    'package.json': JSON.stringify({ name: 'vuln-pkg', version: '1.0.1' }),
+  })
+  await registry.tarball({ manifest: manifest.versions['1.0.1'], tarball: tarballSrc })
+
+  registry.audit({
+    results: {
+      'vuln-pkg': [{
+        id: 1,
+        url: 'https://example.com/advisories/1',
+        title: 'test vulnerability',
+        severity: 'moderate',
+        vulnerable_versions: '1.0.2',
+      }],
+    },
+  })
+
+  // author the project state directly on disk instead of installing via a
+  // live reify- `reify({ add: [...] })` would overwrite the declared
+  // range with the exact version added, defeating the repro.
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'project',
+      version: '1.0.0',
+      dependencies: { 'vuln-pkg': '^1.0.0' },
+    }),
+    'package-lock.json': JSON.stringify({
+      requires: true,
+      lockfileVersion: 1,
+      dependencies: {
+        'vuln-pkg': {
+          version: '1.0.2',
+          resolved: 'https://registry.npmjs.org/vuln-pkg/-/vuln-pkg-1.0.2.tgz',
+          integrity: 'sha512-8VwMnyGCONIs6cWue2IdpHxHnAjzxnw2Zr7MkVxB2vjmQ2ivqGFb4LEG3SMnv0Gb2F/G/2yA8zUaiL1gywDCCg==',
+        },
+      },
+    }),
+  })
+
+  const fixed = await newArb(path).audit({ fix: true })
+  t.equal(fixed.children.get('vuln-pkg').version, '1.0.1', 'downgraded to the patched older version')
+})
+
 t.test('audit does not do globals', async t => {
   await t.rejects(newArb('.', { global: true }).audit(), {
     message: '`npm audit` does not support testing globals',

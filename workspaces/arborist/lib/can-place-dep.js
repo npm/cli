@@ -62,6 +62,7 @@ class CanPlaceDep {
       parent = null,
       peerPath = [],
       explicitRequest = false,
+      auditReport = null,
     } = options
 
     debug(() => {
@@ -92,6 +93,7 @@ class CanPlaceDep {
     this.target = target
     this.edge = edge
     this.explicitRequest = explicitRequest
+    this.auditReport = auditReport
 
     // preventing cycles when we check peer sets
     this.peerPath = peerPath
@@ -170,7 +172,12 @@ class CanPlaceDep {
 
     const { version: curVer } = current
     const { version: newVer } = dep
-    const tryReplace = curVer && newVer && semver.gte(newVer, curVer)
+    const securityDowngrade = !!(
+      this.auditReport &&
+      this.auditReport.isVulnerable(current) &&
+      !this.auditReport.isVulnerable(dep)
+    )
+    const tryReplace = curVer && newVer && (semver.gte(newVer, curVer) || securityDowngrade)
     if (tryReplace && dep.canReplace(current)) {
       // It's extremely rare that a replaceable node would be a conflict, if
       // the current one wasn't a conflict, but it is theoretically possible
@@ -383,6 +390,7 @@ class CanPlaceDep {
         peerPath,
         // always place peers in preferDedupe mode
         preferDedupe: true,
+        auditReport: this.auditReport,
       })
       /* istanbul ignore next */
       debug(() => {
