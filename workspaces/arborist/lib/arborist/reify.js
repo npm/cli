@@ -10,6 +10,7 @@ const runScript = require('@npmcli/run-script')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { depth: dfwalk } = require('treeverse')
 const { dirname, resolve, relative, join, sep } = require('node:path')
+const { isDeepStrictEqual } = require('node:util')
 const { log, time } = require('proc-log')
 const { existsSync, realpathSync } = require('node:fs')
 const { lstat, mkdir, readdir, readlink, rm, symlink } = require('node:fs/promises')
@@ -81,6 +82,7 @@ module.exports = cls => class Reifier extends cls {
   // Under the linked strategy the audit runs against this non-isolated ideal tree.
   // The isolated tree's inventory has no queryable indexes and its edges route through symlinks, so auditing it reports no vulnerabilities.
   #linkedIdealForAudit = null
+  #linkedDependencyMetadataChanged = false
 
   constructor (options) {
     super(options)
@@ -116,6 +118,7 @@ module.exports = cls => class Reifier extends cls {
       await this.#validateNodeModules(resolve(this.path, 'node_modules'))
     }
     await this[_loadTrees](options)
+    this.#linkedDependencyMetadataChanged = await this.#didLinkedDependencyMetadataChange()
 
     const oldTree = this.idealTree
     // Kept to serialize the hidden lockfile from the on-disk .store/symlink layout.
@@ -275,7 +278,9 @@ module.exports = cls => class Reifier extends cls {
       const ignoreScripts = !!this.options.ignoreScripts
       // if we aren't doing a dry run or ignoring scripts and we actually made changes to the dep
       // tree, then run the dependencies scripts
-      if (!this.options.dryRun && !ignoreScripts && this.diff && this.diff.children.length) {
+      const dependenciesChanged = this.diff &&
+        (this.diff.children.length || this.#linkedDependencyMetadataChanged)
+      if (!this.options.dryRun && !ignoreScripts && dependenciesChanged) {
         const { path, package: pkg } = this.actualTree.target
         const stdio = this.options.foregroundScripts ? 'inherit' : 'pipe'
         const { scripts = {} } = pkg
@@ -299,6 +304,59 @@ module.exports = cls => class Reifier extends cls {
     this.finishTracker('reify')
     timeEnd()
     return treeCheck(this.actualTree)
+  }
+
+  async #didLinkedDependencyMetadataChange () {
+    if (
+      this.options.global ||
+      this.options.packageLockOnly ||
+      this.options.dryRun ||
+      this.options.ignoreScripts ||
+      !this.idealTree.meta.loadedFromDisk
+    ) {
+      return false
+    }
+
+    const { scripts = {} } = this.idealTree.target.package
+    if (!['predependencies', 'dependencies', 'postdependencies']
+      .some(event => Object.prototype.hasOwnProperty.call(scripts, event))) {
+      return false
+    }
+
+    // Shrinkwrap metadata can be updated while the ideal tree is built, so compare
+    // against the entries that were actually present on disk before reification.
+    const { packages = {} } = JSON.parse(
+      await readFile(this.idealTree.meta.filename, 'utf8')
+    )
+
+    const dependencyFields = [
+      'dependencies',
+      'optionalDependencies',
+      'peerDependencies',
+      'peerDependenciesMeta',
+      'bundleDependencies',
+    ]
+    const dependencyMetadata = pkg => Object.fromEntries(
+      dependencyFields
+        .filter(field => pkg[field] !== undefined)
+        .map(field => [field, pkg[field]])
+    )
+
+    for (const node of this.idealTree.target.children.values()) {
+      if (!node.isLink) {
+        continue
+      }
+
+      const previous = packages[node.target.location]
+      if (previous && !isDeepStrictEqual(
+        dependencyMetadata(previous),
+        dependencyMetadata(node.target.package)
+      )) {
+        return true
+      }
+    }
+
+    return false
   }
 
   async #reifyPackages () {

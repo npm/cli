@@ -2899,6 +2899,86 @@ t.test('runs dependencies script if tree changes', async (t) => {
   }
 })
 
+t.test('runs dependencies script if a linked dependency changes dependencies', async (t) => {
+  const path = t.testdir({
+    project: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        dependencies: {
+          dep: 'file:../dep',
+        },
+        scripts: {
+          dependencies: `node -e "require('fs').writeFileSync('ran-dependencies', '')"`,
+        },
+      }),
+    },
+    dep: {
+      'package.json': JSON.stringify({
+        name: 'dep',
+        version: '1.0.0',
+        dependencies: {
+          child: 'file:../child-a',
+        },
+      }),
+    },
+    'child-a': {
+      'package.json': JSON.stringify({
+        name: 'child',
+        version: '1.0.0',
+      }),
+    },
+    'child-b': {
+      'package.json': JSON.stringify({
+        name: 'child',
+        version: '2.0.0',
+      }),
+    },
+  })
+
+  const project = resolve(path, 'project')
+  const dep = resolve(path, 'dep')
+  const marker = resolve(project, 'ran-dependencies')
+
+  await reify(dep)
+  await reify(project)
+  t.ok(fs.existsSync(marker), 'ran after the initial install')
+  fs.unlinkSync(marker)
+
+  fs.writeFileSync(resolve(dep, 'package.json'), JSON.stringify({
+    name: 'dep',
+    version: '1.0.0',
+    dependencies: {
+      child: 'file:../child-b',
+    },
+  }))
+  await reify(dep)
+  await reify(project)
+
+  t.ok(fs.existsSync(marker), 'ran after the linked dependency graph changed')
+  fs.unlinkSync(marker)
+
+  await reify(project)
+  t.notOk(fs.existsSync(marker), 'did not run again without another change')
+
+  fs.writeFileSync(resolve(project, 'package-lock.json'), JSON.stringify({
+    name: 'root',
+    version: '1.0.0',
+    lockfileVersion: 1,
+    requires: true,
+    dependencies: {
+      dep: {
+        version: 'file:../dep',
+      },
+    },
+  }))
+  await reify(project)
+  t.ok(
+    JSON.parse(fs.readFileSync(resolve(project, 'package-lock.json'))).packages,
+    'upgraded a legacy lockfile without package metadata'
+  )
+})
+
 t.test('save package.json on update', t => {
   t.test('should save many deps in multiple package.json when using save=true', async t => {
     const path = fixture(t, 'workspaces-need-update')
