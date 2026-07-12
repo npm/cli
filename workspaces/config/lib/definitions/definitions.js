@@ -2048,7 +2048,7 @@ const definitions = {
   }),
   registry: new Definition('registry', {
     default: 'https://registry.npmjs.org/',
-    type: [url, String],
+    type: [url, 'default'],
     description: `
       The base URL of the npm registry.
 

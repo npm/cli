@@ -1794,9 +1794,13 @@ Rebuild bundled dependencies after installation.
 #### \`registry\`
 
 * Default: "https://registry.npmjs.org/"
-* Type: URL
+* Type: URL or "default"
 
 The base URL of the npm registry.
+
+Can be set to \`"default"\` to use the default npm registry
+(\`https://registry.npmjs.org/\`), which is useful when you have a custom
+registry configured globally but want to temporarily use the default one.
 
 
 
