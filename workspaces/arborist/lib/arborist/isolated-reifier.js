@@ -33,7 +33,11 @@ const getKey = (startNode) => {
     .replace(/=+$/m, '')
   // a patched entry gets a distinct, identifiable side-store key so unpatched consumers keep sharing the original
   const patchSuffix = startNode.patched ? '+patch' : ''
-  return `${startNode.packageName}@${startNode.version}-${hash}${patchSuffix}`
+  // version comes straight from an untrusted package.json and this key becomes a
+  // path segment below (join('node_modules', '.store', key, ...)); strip separators
+  // so a crafted version can't traverse out of the store, matching packageName
+  const version = String(startNode.version).replace(/[/\\]/g, '_')
+  return `${startNode.packageName}@${version}-${hash}${patchSuffix}`
 }
 
 module.exports = cls => class IsolatedReifier extends cls {
