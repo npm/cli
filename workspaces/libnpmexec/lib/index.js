@@ -18,6 +18,7 @@ const noTTY = require('./no-tty.js')
 const runScript = require('./run-script.js')
 const isWindows = require('./is-windows.js')
 const withLock = require('./with-lock.js')
+const { applyReleaseAgeExclude } = require('./release-age-exclude.js')
 
 // when checking the local tree we look up manifests, cache those results by
 // spec.raw so we don't have to fetch again when we check npxCache
@@ -25,8 +26,15 @@ const manifests = new Map()
 
 const getManifest = async (spec, flatOptions) => {
   if (!manifests.has(spec.raw)) {
+    // Honor `min-release-age-exclude` for the top-level exec spec the
+    // same way arborist does inside `npm install`: if the requested
+    // package name matches the exclude list, drop the `before` cutoff
+    // that `min-release-age` set on flatOptions before handing the
+    // options to pacote. Without this, `npx @myscope/foo` fails with
+    // ETARGET even though `min-release-age-exclude=@myscope/*` is set.
+    const manifestOptions = applyReleaseAgeExclude(spec, flatOptions)
     const manifest = await pacote.manifest(spec, {
-      ...flatOptions,
+      ...manifestOptions,
       preferOnline: true,
       Arborist,
       _isRoot: true,
