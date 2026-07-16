@@ -122,7 +122,7 @@ t.test('config list with proxy environment variables', async t => {
     }
   })
 
-  process.env.HTTP_PROXY = 'http://proxy.example.com:8080'
+  process.env.HTTP_PROXY = 'http://proxy-user:proxy-password@proxy.example.com:8080'
   process.env.HTTPS_PROXY = 'https://secure-proxy.example.com:8443'
   process.env.NO_PROXY = 'localhost,127.0.0.1'
 
@@ -136,7 +136,8 @@ t.test('config list with proxy environment variables', async t => {
 
   const output = joinedOutput()
 
-  t.match(output, 'HTTP_PROXY = "http://proxy.example.com:8080"')
+  t.match(output, 'HTTP_PROXY = "http://proxy-user:***@proxy.example.com:8080"')
+  t.notMatch(output, 'proxy-password')
   t.match(output, 'HTTPS_PROXY = "https://secure-proxy.example.com:8443"')
   t.match(output, 'NO_PROXY = "localhost,127.0.0.1"')
   t.match(output, 'environment-related config')
