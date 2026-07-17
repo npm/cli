@@ -19,6 +19,7 @@ const { walkUp } = require('walk-up-path')
 
 const AuditReport = require('../audit-report.js')
 const Diff = require('../diff.js')
+const { isScriptAllowed } = require('../script-allowed.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const debug = require('../debug.js')
 const onExit = require('../signal-handling.js')
@@ -747,6 +748,12 @@ module.exports = cls => class Reifier extends cls {
         _isRoot: node.isRootDependency || [...node.edgesIn].some(e =>
           e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
         ),
+        // pacote runs `prepare` for git and directory deps while extracting, before the
+        // node ever reaches the rebuild queues where the allowScripts gate is applied,
+        // so the policy has to be enforced here too. Both fetchers honor ignoreScripts.
+        ignoreScripts: this.options.ignoreScripts ||
+          !(this.options.dangerouslyAllowAllScripts ||
+            isScriptAllowed(node, this.options.allowScripts) === true),
         // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.
         // Override only when we can prove the URL is registry-mediated; see #isRegistryResolvedTarball.
         ...(this.#isRegistryResolvedTarball(node) ? { allowRemote: 'all' } : {}),

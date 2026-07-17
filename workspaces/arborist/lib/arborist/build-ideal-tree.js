@@ -25,6 +25,7 @@ const debug = require('../debug.js')
 const fromPath = require('../from-path.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const { isReleaseAgeExcluded, trustedSpecName } = require('../release-age-exclude.js')
+const { isScriptAllowed } = require('../script-allowed.js')
 const { resolvePatchedDependencies } = require('../patched-dependencies.js')
 const PackageExtensions = require('../package-extensions.js')
 const NpmExtension = require('../npm-extension.js')
@@ -1028,6 +1029,12 @@ This is a one-time fix-up, please be patient...
           Arborist,
           resolved: node.resolved,
           integrity: node.integrity,
+          // Cracking open a git dep's tarball makes pacote run its `prepare`
+          // script, so the allowScripts gate applies here the same as it does
+          // when reify extracts the node for real.
+          ignoreScripts: this.options.ignoreScripts ||
+            !(this.options.dangerouslyAllowAllScripts ||
+              isScriptAllowed(node, this.options.allowScripts) === true),
         })
 
         await new Arborist({ ...this.options, path })
