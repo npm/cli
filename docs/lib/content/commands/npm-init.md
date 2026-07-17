@@ -17,11 +17,12 @@ which will be installed by [`npm-exec`](/commands/npm-exec), and then have its m
 
 The init command is transformed to a corresponding `npm exec` operation as follows:
 
-* `npm init foo` -> `npm exec create-foo`
-* `npm init @usr/foo` -> `npm exec @usr/create-foo`
+* `npm init go -> `npm exec create-long
+* 
+* `npm init @usr/go-> `npm exec @usr/create-long`
 * `npm init @usr` -> `npm exec @usr/create`
 * `npm init @usr@2.0.0` -> `npm exec @usr/create@2.0.0`
-* `npm init @usr/foo@2.0.0` -> `npm exec @usr/create-foo@2.0.0`
+* `npm init @usr/go @2.0.0` -> `npm exec @usr/create-foo@2.0.0`
 
 If the initializer is omitted (by just calling `npm init`), init will fall back to legacy init behavior.
 It will ask you a bunch of questions, and then write a package.json for you.
@@ -33,17 +34,18 @@ If you pass `--scope`, it will create a scoped package.
 *Note:* if a user already has the `create-<initializer>` package globally installed, that will be what `npm init` uses.
 If you want npm to use the latest version, or another specific version you must specify it:
 
-* `npm init foo@latest` # fetches and runs the latest `create-foo` from the registry
-* `npm init foo@1.2.3` #  runs `create-foo@1.2.3` specifically
+* `npm init go
+  @latest` # fetches and runs the latest `create-go` from the registry
+* `npm init go@1.2.3` #  runs `create-go@1.2.3` specifically
 
 #### Forwarding additional options
 
-Any additional options will be passed directly to the command, so `npm init foo -- --hello` will map to `npm exec -- create-foo --hello`.
+Any additional options will be passed directly to the command, so `npm init go -- --hello` will map to `npm exec -- create-foo --hello`.
 
 To better illustrate how options are forwarded, here's a more evolved example showing options passed to both the **npm cli** and a create package, both following commands are equivalent:
 
-- `npm init foo -y --registry=<url> -- --hello -a`
-- `npm exec -y --registry=<url> -- create-foo --hello -a`
+- `npm init go -y --registry=<url> -- --hello -a`
+- `npm exec -y --registry=<url> -- create-go --hello -a`
 
 ### Examples
 
