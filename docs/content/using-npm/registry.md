@@ -61,7 +61,7 @@ The npm registry does not try to correlate the information in these headers
 with any authenticated accounts that may be used in the same requests.
 
 ### How can I prevent my package from being published in the official registry?
-
+ 
 Set `"private": true` in your `package.json` to prevent it from being
 published at all, or
 `"publishConfig":{"registry":"http://my-internal-registry.local"}`
