@@ -1,6 +1,6 @@
 const t = require('tap')
 const { resolve } = require('node:path')
-const { readFileSync, existsSync, symlinkSync } = require('node:fs')
+const { readFileSync, existsSync, symlinkSync, writeFileSync } = require('node:fs')
 const { diffDirs } = require('../../../lib/utils/patch-diff.js')
 const { applyPatchToDir } = require('@npmcli/arborist/lib/patch.js')
 
@@ -148,8 +148,10 @@ t.test('round-trip: applying the diff reproduces the edited tree', async t => {
   t.notOk(existsSync(resolve(orig, 'del.js')), 'deleted file was removed')
 })
 
-t.test('control chars in a filename cannot forge diff headers', async t => {
-  const { writeFileSync } = require('node:fs')
+// windows will not create a file with a control char in its name
+t.test('control chars in a filename cannot forge diff headers', {
+  skip: process.platform === 'win32' ? 'posix only' : false,
+}, async t => {
   const dir = t.testdir({ orig: {}, edit: {} })
   // an extracted package can carry a filename with an embedded newline
   const name = 'a.js\n--- x\n+++ y\n@@ -1 +1 @@\n-real\n+forged'
