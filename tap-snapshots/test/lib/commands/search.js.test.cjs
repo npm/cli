@@ -85,45 +85,45 @@ Version [34m3.0.1[39m published [34m2019-07-16[39m by [34misaacs[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: npm api package manager lib
 [34mhttps://npm.im/libnpm[39m
-[34m[36mlibnpm[39m[34maccess[39m
+[34m[36mlibnpm[34maccess[39m
 programmatic library for \`npm access\` commands
 Version [34m4.0.1[39m published [34m2020-11-03[39m by [34mnlf[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: libnpmaccess
 [34mhttps://npm.im/libnpmaccess[39m
-[34m@evocateur/[36mlibnpm[39m[34maccess[39m
+[34m@evocateur/[36mlibnpm[34maccess[39m
 programmatic library for \`npm access\` commands
 Version [34m3.1.2[39m published [34m2019-07-16[39m by [34mevocateur[39m
 Maintainers: evocateur
 [34mhttps://npm.im/@evocateur/libnpmaccess[39m
-[34m@evocateur/[36mlibnpm[39m[34mpublish[39m
+[34m@evocateur/[36mlibnpm[34mpublish[39m
 Programmatic API for the bits behind npm publish and unpublish
 Version [34m1.2.2[39m published [34m2019-07-16[39m by [34mevocateur[39m
 Maintainers: evocateur
 [34mhttps://npm.im/@evocateur/libnpmpublish[39m
-[34m[36mlibnpm[39m[34morg[39m
+[34m[36mlibnpm[34morg[39m
 Programmatic api for \`npm org\` commands
 Version [34m2.0.1[39m published [34m2020-11-03[39m by [34mnlf[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: [36mlibnpm[39m npm package manager api orgs teams
 [34mhttps://npm.im/libnpmorg[39m
-[34m[36mlibnpm[39m[34msearch[39m
+[34m[36mlibnpm[34msearch[39m
 Programmatic API for searching in npm and compatible registries.
 Version [34m3.1.0[39m published [34m2020-12-08[39m by [34misaacs[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: npm search api [36mlibnpm[39m
 [34mhttps://npm.im/libnpmsearch[39m
-[34m[36mlibnpm[39m[34mteam[39m
+[34m[36mlibnpm[34mteam[39m
 npm Team management APIs
 Version [34m2.0.2[39m published [34m2020-11-03[39m by [34mnlf[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 [34mhttps://npm.im/libnpmteam[39m
-[34m[36mlibnpm[39m[34mpublish[39m
+[34m[36mlibnpm[34mpublish[39m
 Programmatic API for the bits behind npm publish and unpublish
 Version [34m4.0.0[39m published [34m2020-11-03[39m by [34mnlf[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 [34mhttps://npm.im/libnpmpublish[39m
-[34m[36mlibnpm[39m[34mfund[39m
+[34m[36mlibnpm[34mfund[39m
 Programmatic API for npm fund
 Version [34m1.0.2[39m published [34m2020-12-08[39m by [34misaacs[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
@@ -135,12 +135,12 @@ Version [34m1.0.1[39m published [34m2020-09-30[39m by [34mruyadorno[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: npm  bad map npmcli [36mlibnpm[39m cli workspaces map-workspaces
 [34mhttps://npm.im/@npmcli/map-workspaces[39m
-[34m[36mlibnpm[39m[34mversion[39m
+[34m[36mlibnpm[34mversion[39m
 library to do the things that 'npm version' does
 Version [34m1.0.7[39m published [34m2020-11-04[39m by [34misaacs[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 [34mhttps://npm.im/libnpmversion[39m
-[34m@types/[36mlibnpm[39m[34msearch[39m
+[34m@types/[36mlibnpm[34msearch[39m
 TypeScript definitions for [36mlibnpm[39msearch
 Version [34m2.0.1[39m published [34m2019-09-26[39m by [34mtypes[39m
 Maintainers: types
@@ -939,45 +939,45 @@ Version [34m3.0.1[39m published [34m2019-07-16[39m by [34misaacs[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: npm api package manager lib
 [34mhttps://npm.im/libnpm[39m
-[34m[36mlibnpm[39m[34maccess[39m
+[34m[36mlibnpm[34maccess[39m
 programmatic library for \`npm access\` commands
 Version [34m4.0.1[39m published [34m2020-11-03[39m by [34mnlf[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: libnpmaccess
 [34mhttps://npm.im/libnpmaccess[39m
-[34m@evocateur/[36mlibnpm[39m[34maccess[39m
+[34m@evocateur/[36mlibnpm[34maccess[39m
 programmatic library for \`npm access\` commands
 Version [34m3.1.2[39m published [34m2019-07-16[39m by [34mevocateur[39m
 Maintainers: evocateur
 [34mhttps://npm.im/@evocateur/libnpmaccess[39m
-[34m@evocateur/[36mlibnpm[39m[34m[36mpublish[39m[34m[39m
+[34m@evocateur/[36mlibnpm[34m[36mpublish[39m[39m
 Programmatic API for the bits behind npm [36mpublish[39m and un[36mpublish[39m
 Version [34m1.2.2[39m published [34m2019-07-16[39m by [34mevocateur[39m
 Maintainers: evocateur
 [34mhttps://npm.im/@evocateur/libnpmpublish[39m
-[34m[36mlibnpm[39m[34morg[39m
+[34m[36mlibnpm[34morg[39m
 Programmatic api for \`npm org\` commands
 Version [34m2.0.1[39m published [34m2020-11-03[39m by [34mnlf[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: [36mlibnpm[39m npm package manager api orgs teams
 [34mhttps://npm.im/libnpmorg[39m
-[34m[36mlibnpm[39m[34msearch[39m
+[34m[36mlibnpm[34msearch[39m
 Programmatic API for searching in npm and compatible registries.
 Version [34m3.1.0[39m published [34m2020-12-08[39m by [34misaacs[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: npm search api [36mlibnpm[39m
 [34mhttps://npm.im/libnpmsearch[39m
-[34m[36mlibnpm[39m[34mteam[39m
+[34m[36mlibnpm[34mteam[39m
 npm Team management APIs
 Version [34m2.0.2[39m published [34m2020-11-03[39m by [34mnlf[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 [34mhttps://npm.im/libnpmteam[39m
-[34m[36mlibnpm[39m[34m[36mpublish[39m[34m[39m
+[34m[36mlibnpm[34m[36mpublish[39m[39m
 Programmatic API for the bits behind npm [36mpublish[39m and un[36mpublish[39m
 Version [34m4.0.0[39m published [34m2020-11-03[39m by [34mnlf[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 [34mhttps://npm.im/libnpmpublish[39m
-[34m[36mlibnpm[39m[34mfund[39m
+[34m[36mlibnpm[34mfund[39m
 Programmatic API for npm fund
 Version [34m1.0.2[39m published [34m2020-12-08[39m by [34misaacs[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
@@ -989,12 +989,12 @@ Version [34m1.0.1[39m published [34m2020-09-30[39m by [34mruyadorno[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 Keywords: npm  bad map npmcli [36mlibnpm[39m cli workspaces map-workspaces
 [34mhttps://npm.im/@npmcli/map-workspaces[39m
-[34m[36mlibnpm[39m[34mversion[39m
+[34m[36mlibnpm[34mversion[39m
 library to do the things that 'npm version' does
 Version [34m1.0.7[39m published [34m2020-11-04[39m by [34misaacs[39m
 Maintainers: nlf ruyadorno darcyclarke isaacs
 [34mhttps://npm.im/libnpmversion[39m
-[34m@types/[36mlibnpm[39m[34msearch[39m
+[34m@types/[36mlibnpm[34msearch[39m
 TypeScript definitions for [36mlibnpm[39msearch
 Version [34m2.0.1[39m published [34m2019-09-26[39m by [34mtypes[39m
 Maintainers: types
