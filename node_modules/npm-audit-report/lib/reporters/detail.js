@@ -3,14 +3,14 @@
 const colors = require('../colors.js')
 const install = require('./install.js')
 
-module.exports = (data, { chalk }) => {
-  const summary = install.summary(data, { chalk })
+module.exports = (data, { color }) => {
+  const summary = install.summary(data, { color })
   const none = data.metadata.vulnerabilities.total === 0
-  return none ? summary : fullReport(data, { chalk, summary })
+  return none ? summary : fullReport(data, { color, summary })
 }
 
-const fullReport = (data, { chalk, summary }) => {
-  const c = colors(chalk)
+const fullReport = (data, { color, summary }) => {
+  const c = colors(color)
   const output = [c.white('# npm audit report'), '']
 
   const printed = new Set()

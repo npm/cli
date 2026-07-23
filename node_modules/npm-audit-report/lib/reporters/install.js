@@ -1,7 +1,7 @@
 const colors = require('../colors.js')
 
-const calculate = (data, { chalk }) => {
-  const c = colors(chalk)
+const calculate = (data, { color }) => {
+  const c = colors(color)
   const output = []
   const { metadata: { vulnerabilities } } = data
   const vulnCount = vulnerabilities.total
