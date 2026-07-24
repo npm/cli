@@ -21,11 +21,12 @@ const withLock = require('./with-lock.js')
 const { applyReleaseAgeExclude } = require('./release-age-exclude.js')
 
 // when checking the local tree we look up manifests, cache those results by
-// spec.raw so we don't have to fetch again when we check npxCache
-const manifests = new Map()
-
-const getManifest = async (spec, flatOptions) => {
-  if (!manifests.has(spec.raw)) {
+// spec.raw so we don't have to fetch again when we check npxCache. This cache
+// is scoped to a single exec() call (see `manifestCache` below) so that
+// policy-specific results (e.g. `min-release-age-exclude`) don't leak across
+// separate exec() invocations for the same spec.
+const getManifest = async (spec, flatOptions, manifestCache) => {
+  if (!manifestCache.has(spec.raw)) {
     // Honor `min-release-age-exclude` for the top-level exec spec the
     // same way arborist does inside `npm install`: if the requested
     // package name matches the exclude list, drop the `before` cutoff
@@ -39,14 +40,14 @@ const getManifest = async (spec, flatOptions) => {
       Arborist,
       _isRoot: true,
     })
-    manifests.set(spec.raw, manifest)
+    manifestCache.set(spec.raw, manifest)
   }
-  return manifests.get(spec.raw)
+  return manifestCache.get(spec.raw)
 }
 
 // Returns the required manifest if the spec is missing from the tree
 // Returns the found node if it is in the tree
-const missingFromTree = async ({ spec, tree, flatOptions, isNpxTree, shallow }) => {
+const missingFromTree = async ({ spec, tree, flatOptions, isNpxTree, shallow, manifestCache }) => {
   // If asking for a spec by name only (spec.raw === spec.name):
   //  - In local or global mode go with anything in the tree that matches
   //  - If looking in the npx cache check if a newer version is available
@@ -73,12 +74,12 @@ const missingFromTree = async ({ spec, tree, flatOptions, isNpxTree, shallow }) 
         return { node }
       }
     }
-    const manifest = await getManifest(spec, flatOptions)
+    const manifest = await getManifest(spec, flatOptions, manifestCache)
     return { manifest }
   } else {
     // non-registry spec, or a specific tag, or name only in npx tree.  Look up
     // manifest and check resolved to see if it's in the tree.
-    const manifest = await getManifest(spec, flatOptions)
+    const manifest = await getManifest(spec, flatOptions, manifestCache)
     if (spec.type === 'directory' && !isNpxTree) {
       return { manifest }
     }
@@ -120,6 +121,12 @@ const exec = async (opts) => {
   } = opts
 
   const binPaths = []
+
+  // Scope the manifest cache to this exec() call. Caching within a single
+  // exec() avoids duplicate fetches (local tree + npx tree checks) while
+  // ensuring policy-specific results (e.g. `min-release-age-exclude`) don't
+  // leak into a later exec() call for the same spec.
+  const manifestCache = new Map()
 
   let pkgPaths = opts.pkgPath
   if (typeof pkgPaths === 'string') {
@@ -208,6 +215,7 @@ const exec = async (opts) => {
       spec,
       tree: localTree,
       flatOptions,
+      manifestCache,
     })
     if (manifest) {
       // Package does not exist in the local tree
@@ -239,7 +247,7 @@ const exec = async (opts) => {
       })
       if (globalTree) {
         const { manifest: globalManifest } =
-          await missingFromTree({ spec, tree: globalTree, flatOptions, shallow: true })
+          await missingFromTree({ spec, tree: globalTree, flatOptions, shallow: true, manifestCache })
         if (!globalManifest && await fileExists(`${globalBin}/${args[0]}`)) {
           binPaths.push(globalBin)
           return await run()
@@ -281,6 +289,7 @@ const exec = async (opts) => {
         tree: npxTree,
         flatOptions,
         isNpxTree: true,
+        manifestCache,
       })
       if (manifest) {
         // Manifest is not in npxCache, we need to install it there
