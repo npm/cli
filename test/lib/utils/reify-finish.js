@@ -11,7 +11,14 @@ const readRc = async (dir) => {
   return cleanNewlines(res).trim()
 }
 
-const mockReififyFinish = async (t, { actualTree = {}, otherDirs = {}, ...config }) => {
+const mockReififyFinish = async (t, {
+  actualTree = {},
+  otherDirs = {},
+  diff,
+  unreviewedNodes,
+  captureReifyOutput,
+  ...config
+} = {}) => {
   const mock = await mockNpm(t, {
     npm: ({ other }) => ({
       npmRoot: other,
@@ -23,12 +30,18 @@ const mockReififyFinish = async (t, { actualTree = {}, otherDirs = {}, ...config
     config,
   })
 
-  const reifyFinish = tmock(t, '{LIB}/utils/reify-finish.js', {
-    '{LIB}/utils/reify-output.js': () => {},
-  })
+  const mocks = {
+    '{LIB}/utils/reify-output.js': captureReifyOutput || (() => {}),
+  }
+  if (unreviewedNodes !== undefined) {
+    mocks['{LIB}/utils/check-allow-scripts.js'] = async () =>
+      unreviewedNodes.map((node) => ({ node, scripts: { install: 'x' } }))
+  }
+  const reifyFinish = tmock(t, '{LIB}/utils/reify-finish.js', mocks)
 
   await reifyFinish(mock.npm, {
     options: { global: mock.npm.global },
+    diff,
     actualTree: typeof actualTree === 'function' ? actualTree(mock) : actualTree,
   })
 
@@ -92,4 +105,63 @@ t.test('should write if everything above passes', async t => {
 
   const newFile = await readRc(join(mock.other, 'new-npm'))
   t.equal(mock.builtinRc.raw, newFile)
+})
+
+t.test('unreviewedScripts filtered to nodes touched by this reify (npm/cli#9797)', async t => {
+  const captured = []
+  const touched = { location: 'node_modules/touched', name: 'touched' }
+  const untouched = { location: 'node_modules/untouched', name: 'untouched' }
+  await mockReififyFinish(t, {
+    global: false,
+    unreviewedNodes: [touched, untouched],
+    diff: {
+      children: [
+        { action: 'ADD', ideal: touched, children: [] },
+        { action: 'REMOVE', actual: { location: 'node_modules/removed' }, children: [] },
+      ],
+    },
+    captureReifyOutput: (_npm, _arb, extras) => captured.push(extras),
+  })
+  t.equal(captured.length, 1)
+  t.equal(captured[0].unreviewedScripts.length, 1,
+    'untouched package is filtered out; only touched package is warned about')
+  t.equal(captured[0].unreviewedScripts[0].node.name, 'touched')
+})
+
+t.test('unreviewedScripts pass through when there is no diff (defensive)', async t => {
+  const captured = []
+  const a = { location: 'node_modules/a', name: 'a' }
+  await mockReififyFinish(t, {
+    global: false,
+    unreviewedNodes: [a],
+    captureReifyOutput: (_npm, _arb, extras) => captured.push(extras),
+  })
+  t.equal(captured[0].unreviewedScripts.length, 1)
+})
+
+t.test('diff walker handles CHANGE, nested children, and nullish diff entries', async t => {
+  const captured = []
+  const changed = { location: 'node_modules/changed', name: 'changed' }
+  const nested = { location: 'node_modules/nested', name: 'nested' }
+  const untouched = { location: 'node_modules/untouched', name: 'untouched' }
+  await mockReififyFinish(t, {
+    global: false,
+    unreviewedNodes: [changed, nested, untouched],
+    diff: {
+      children: [
+        null,
+        { action: 'CHANGE', ideal: changed, children: [] },
+        {
+          action: 'ADD',
+          ideal: { location: null },
+          children: [
+            { action: 'ADD', ideal: nested },
+          ],
+        },
+      ],
+    },
+    captureReifyOutput: (_npm, _arb, extras) => captured.push(extras),
+  })
+  const names = captured[0].unreviewedScripts.map(u => u.node.name).sort()
+  t.strictSame(names, ['changed', 'nested'])
 })
