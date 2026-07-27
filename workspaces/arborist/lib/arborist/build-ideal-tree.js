@@ -1639,6 +1639,12 @@ This is a one-time fix-up, please be patient...
             continue
           }
 
+          // The recursion above may replace node with a compatible peer, detaching it.
+          // A detached node has no real conflict to report, so stop instead of crashing on it.
+          if (!node.parent) {
+            break
+          }
+
           // problem
           this.#failPeerConflict(edge, parentEdge)
         }
