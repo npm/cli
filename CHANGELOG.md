@@ -1,5 +1,24 @@
 # Changelog
 
+## [12.0.2](https://github.com/npm/cli/compare/v12.0.1...v12.0.2) (2026-07-27)
+### Bug Fixes
+* [`834408e`](https://github.com/npm/cli/commit/834408e8f0f2295d02205d8ff5d011c859835225) [#9760](https://github.com/npm/cli/pull/9760) pack: honor min-release-age-exclude (#9760) (@martinrrm, @Copilot)
+* [`ef6cfea`](https://github.com/npm/cli/commit/ef6cfeaae218d1177e29f4fd26c591d0a1b86a46) [#9786](https://github.com/npm/cli/pull/9786) owner: use scoped registry for user lookup (#9786) (@martinrrm, @Copilot)
+### Documentation
+* [`9e17dc0`](https://github.com/npm/cli/commit/9e17dc064782ca1a1fd7f549e5a2fc7903f7fe51) [#9805](https://github.com/npm/cli/pull/9805) clarify npm 12 unknown-config breaking change in changelogs (#9805) (@Hashim1999164)
+### Chores
+* [`7b1f6c1`](https://github.com/npm/cli/commit/7b1f6c173d17b3bf30e45426f6df39473c6a1163) [#9747](https://github.com/npm/cli/pull/9747) parse pack --json object output in node integration (#9747) (@reggi, @Copilot)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.2): `@npmcli/arborist@10.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v11.0.1): `@npmcli/config@11.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v9.0.2): `libnpmdiff@9.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v11.0.2): `libnpmexec@11.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v8.0.2): `libnpmfund@8.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v10.0.2): `libnpmpack@10.0.2`
+
 ## [12.0.1](https://github.com/npm/cli/compare/v12.0.0...v12.0.1) (2026-07-10)
 ### Bug Fixes
 * [`ecb02a8`](https://github.com/npm/cli/commit/ecb02a88a7ca0940d25957d941dc7c66736af4f7) [#9745](https://github.com/npm/cli/pull/9745) view: avoid wrapping array results (#9745) (@reggi, @martinrrm, @Copilot)

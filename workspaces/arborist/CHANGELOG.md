@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.0.2](https://github.com/npm/cli/compare/arborist-v10.0.1...arborist-v10.0.2) (2026-07-27)
+### Bug Fixes
+* [`74eff59`](https://github.com/npm/cli/commit/74eff59db40b4aff9665f4083b475a000bb46e50) [#9770](https://github.com/npm/cli/pull/9770) arborist: avoid crash when peer back-off detaches a node (#9770) (@manzoorwanijk)
+* [`882d0b2`](https://github.com/npm/cli/commit/882d0b246b224c37e078f9c581177d99b289476c) [#9761](https://github.com/npm/cli/pull/9761) arborist: allow audit fix to install safe downgrades (#9761) (@martinrrm, @Copilot)
+### Chores
+* [`ddd50e9`](https://github.com/npm/cli/commit/ddd50e92370073a1ea0e0e4483de4088e8e34210) [#9746](https://github.com/npm/cli/pull/9746) arborist: add missing registry mock in bin links reify test (#9746) (@reggi, @Copilot)
+
 ## [10.0.1](https://github.com/npm/cli/compare/arborist-v10.0.0...arborist-v10.0.1) (2026-07-10)
 ### Bug Fixes
 * [`47fc8b1`](https://github.com/npm/cli/commit/47fc8b191a841ec177f2d7d486dde1b66dc0045c) [#9740](https://github.com/npm/cli/pull/9740) correct bundled sigstore from dev dependency conflict (#9740) (@james-pre)
