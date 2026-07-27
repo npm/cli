@@ -1,5 +1,9 @@
 # Changelog
 
+## [11.0.1](https://github.com/npm/cli/compare/config-v11.0.0...config-v11.0.1) (2026-07-27)
+### Documentation
+* [`9e17dc0`](https://github.com/npm/cli/commit/9e17dc064782ca1a1fd7f549e5a2fc7903f7fe51) [#9805](https://github.com/npm/cli/pull/9805) clarify npm 12 unknown-config breaking change in changelogs (#9805) (@Hashim1999164)
+
 ## [11.0.0](https://github.com/npm/cli/compare/config-v11.0.0-pre.3...config-v11.0.0) (2026-07-08)
 ### ⚠️ BREAKING CHANGES
 * `npm shrinkwrap` is removed, the `shrinkwrap` config alias is removed, and `npm-shrinkwrap.json` is no longer loaded or honored at the project root or from inside dependency tarballs. Rename project-root `npm-shrinkwrap.json` to `package-lock.json`; use `bundleDependencies` if you need to ship a locked dependency tree.
