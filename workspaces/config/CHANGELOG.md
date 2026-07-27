@@ -6,7 +6,7 @@
 * The default license for `npm init` has been changed from "ISC" to an empty string. If not set, the license field will be omitted from new packages.
 * `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
 * allow-git and allow-remote now default to "none"; set them to "all" (or "root") to install git or user-supplied tarball-URL dependencies.
-* unknown configs in .npmrc, unknown CLI flags, abbreviated flags, and single-hyphen multi-char shorthands now throw instead of warning.
+* unknown CLI flags, abbreviated flags, and single-hyphen multi-char shorthands now throw instead of warning. (Unknown `.npmrc` configs still warn by default; opt into erroring with the new `strict-npmrc` config.)
 ### Features
 * [`5b83698`](https://github.com/npm/cli/commit/5b83698a4f76e3f2962b9954dddb180fa85d4c77) [#9737](https://github.com/npm/cli/pull/9737) trigger release process (#9737) (@reggi)
 
@@ -29,7 +29,7 @@
 * The default license for `npm init` has been changed from "ISC" to an empty string. If not set, the license field will be omitted from new packages.
 * `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
 * allow-git and allow-remote now default to "none"; set them to "all" (or "root") to install git or user-supplied tarball-URL dependencies.
-* unknown configs in .npmrc, unknown CLI flags, abbreviated flags, and single-hyphen multi-char shorthands now throw instead of warning.
+* unknown CLI flags, abbreviated flags, and single-hyphen multi-char shorthands now throw instead of warning. (Unknown `.npmrc` configs still warn by default; opt into erroring with the new `strict-npmrc` config.)
 ### Features
 * [`1db885c`](https://github.com/npm/cli/commit/1db885c84b2dfc5126ab663abb12262b533922c1) [#9439](https://github.com/npm/cli/pull/9439) native dependency patching (npm patch add/commit/update/ls/rm) (#9439) (@manzoorwanijk)
 * [`fc80bb3`](https://github.com/npm/cli/commit/fc80bb359502699bb0a055157e01eaedd5bd73c8) [#9234](https://github.com/npm/cli/pull/9234) remove default license for npm init (@owlstronaut)
