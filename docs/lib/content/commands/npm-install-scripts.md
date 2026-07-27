@@ -27,7 +27,7 @@ no project `package.json` to write to. To allow install scripts in those
 contexts, use the `--allow-scripts` flag at install time (for example
 `npm install -g --allow-scripts=canvas,sharp`) or persist the setting with
 `npm config set allow-scripts=canvas,sharp --location=user`.
-
+     
 There are four subcommands:
 
 ```bash
