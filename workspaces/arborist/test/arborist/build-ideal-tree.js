@@ -4928,6 +4928,53 @@ t.test('add does not leave invalid peerOptional edges when save=false', async t 
   }, 'lockfile-mutating add should reject instead of keeping an invalid peerOptional edge')
 })
 
+t.test('circular peer back-off does not crash when node is detached mid-resolution (#5222)', async t => {
+  // host (installed) has optional peer plugin@^1.0.0. Adding plugin resolves plugin@2.0.0,
+  // whose peer set replaces it with plugin@1.0.0 to satisfy host, detaching plugin@2 mid-loop.
+  // Previously the invalid edge then crashed #explainPeerConflict on the detached node.
+  const registry = createRegistry(t, false)
+
+  const hostPack = registry.packument({
+    name: 'host',
+    version: '1.0.0',
+    peerDependencies: { plugin: '^1.0.0' },
+    peerDependenciesMeta: { plugin: { optional: true } },
+  })
+  const hostManifest = registry.manifest({ name: 'host', packuments: [hostPack] })
+  await registry.package({ manifest: hostManifest, times: 2 })
+
+  const pluginPacks = [
+    registry.packument({ name: 'plugin', version: '1.0.0', peerDependencies: { host: '*' } }),
+    registry.packument({ name: 'plugin', version: '2.0.0', peerDependencies: { host: '*' } }),
+  ]
+  const pluginManifest = registry.manifest({ name: 'plugin', packuments: pluginPacks })
+  await registry.package({ manifest: pluginManifest, times: 2 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-5222',
+      version: '1.0.0',
+      devDependencies: { host: '^1.0.0' },
+    }),
+    node_modules: {
+      host: {
+        'package.json': JSON.stringify({
+          name: 'host',
+          version: '1.0.0',
+          peerDependencies: { plugin: '^1.0.0' },
+          peerDependenciesMeta: { plugin: { optional: true } },
+        }),
+      },
+    },
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree({ add: ['plugin'], saveType: 'dev' })
+
+  t.equal(tree.children.get('plugin').version, '1.0.0',
+    'backs off to plugin@1.0.0 to satisfy the optional peer instead of crashing')
+})
+
 t.test('peerOptional prefers existing tree node over registry fetch (#9249)', async t => {
   // Reproduction: ts-jest has peerOptional jest-util@"^29||^30".
   // @types/jest@28 → expect@28 → jest-util@28 placed at root first.
