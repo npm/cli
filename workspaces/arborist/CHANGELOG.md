@@ -1,5 +1,10 @@
 # Changelog
 
+## [9.9.1](https://github.com/npm/cli/compare/arborist-v9.9.0...arborist-v9.9.1) (2026-07-28)
+### Bug Fixes
+* [`aea0c6e`](https://github.com/npm/cli/commit/aea0c6e13c9160327659b809d5b9f7369f093ea0) [#9808](https://github.com/npm/cli/pull/9808) arborist: avoid crash when peer back-off detaches a node (#9808) (@github-actions[bot], @manzoorwanijk)
+* [`ca41636`](https://github.com/npm/cli/commit/ca416362fc56d0aae16416409c258f2ef7ad18a8) [#9791](https://github.com/npm/cli/pull/9791) arborist: allow audit fix to install safe downgrades (#9791) (@github-actions[bot], @martinrrm, @Copilot)
+
 ## [9.9.0](https://github.com/npm/cli/compare/arborist-v9.8.0...arborist-v9.9.0) (2026-06-29)
 ### Features
 * [`3021ad6`](https://github.com/npm/cli/commit/3021ad60d9a381ac8c64617843de661b2a0d4620) [#9694](https://github.com/npm/cli/pull/9694) arborist: extend replace-registry-host with URL prefix matching (#6110) (#9694) (@github-actions[bot], @u2mejc)
