@@ -8,6 +8,12 @@
 * [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v6.0.5): `libnpmfund@6.0.5`
 * [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v8.0.5): `libnpmpack@8.0.5`
 
+## [10.9.9](https://github.com/npm/cli/compare/v10.9.8...v10.9.9) (2026-07-28)
+### Dependencies
+* [`5e9f451`](https://github.com/npm/cli/commit/5e9f45190223b143f3ff891dc9cb99fc606bb909) [#9814](https://github.com/npm/cli/pull/9814) `tar@7.5.22` (#9814) (@martinrrm, @Copilot)
+### Chores
+* [`189ba13`](https://github.com/npm/cli/commit/189ba136a75c773927a5cb8922e6b00c71814d35) [#9319](https://github.com/npm/cli/pull/9319) add cli-triage team as codeowner (#9319) (@github-actions[bot], Michael Smith)
+
 ## [10.9.7](https://github.com/npm/cli/compare/v10.9.6...v10.9.7) (2026-03-18)
 ### Bug Fixes
 * [`bbcd455`](https://github.com/npm/cli/commit/bbcd45502315365286ce8b35a9585c5e4c516e6b) [#9120](https://github.com/npm/cli/pull/9120) arborist: v10 - backport store, lock-only, and override sibling fixes (#9120) (@manzoorwanijk)
