@@ -395,6 +395,16 @@ t.test('bundle deps example 1, complete:true', async t => {
   }), 'no missing deps, because complete: true, add dep, save bundled')
 })
 
+t.test('complete build allows registry tarballs with allowRemote=none', async t => {
+  const path = resolve(fixtures, 'testing-bundledeps-empty')
+  createRegistry(t, true)
+
+  await t.resolves(buildIdeal(path, {
+    complete: true,
+    allowRemote: 'none',
+  }))
+})
+
 t.test('bundle deps example 2', async t => {
   // bundled deps at the root level are NOT ignored when building ideal trees
   const path = resolve(fixtures, 'testing-bundledeps-2')
