@@ -1,4 +1,10 @@
-# This is the navigation for the documentation pages; it is not used
+npm access list packages [<user>|<scope>|<scope:team>] [<package>]
+npm access list collaborators [<package> [<user>]]
+npm access get status [<package>]
+npm access set status=public|private [<package>]
+npm access set mfa=none|publish|automation [<package>]
+npm access grant <read-only|read-write> <scope:team> [<package>]
+npm access revoke <scope:team> [<package>]# This is the navigation for the documentation pages; it is not used
 # directly within the CLI documentation.  Instead, it will be used
 # for the https://docs.npmjs.com/ site.
 
