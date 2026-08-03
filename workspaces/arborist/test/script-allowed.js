@@ -1,6 +1,12 @@
 const t = require('tap')
+const path = require('node:path')
+const npa = require('npm-package-arg')
 const isScriptAllowed = require('../lib/script-allowed.js')
-const { trustedDisplay } = isScriptAllowed
+const {
+  filePolicyIdentities,
+  filePolicyIdentity,
+  trustedDisplay,
+} = isScriptAllowed
 
 // Test nodes default to a consistent registry-tarball shape: the resolved
 // URL's name+version match the supplied name+version. Tests that need to
@@ -23,6 +29,13 @@ const node = (overrides = {}) => {
     ...overrides,
   }
 }
+
+const lockfileRoot = (rootPath, entries) => ({
+  path: rootPath,
+  meta: {
+    get: nodePath => entries[nodePath] || {},
+  },
+})
 
 t.test('returns null when no policy is set', t => {
   t.equal(isScriptAllowed(node(), null), null)
@@ -118,8 +131,72 @@ t.test('file path — exact resolved match', t => {
   t.end()
 })
 
-t.test('file path — link target matches incoming link source', t => {
-  const targetPath = require('node:path').resolve('local-pkg')
+t.test('file path — ordinary nodes prefer exact lockfile identities', t => {
+  const rootPath = path.resolve('project')
+  const nodePath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const root = lockfileRoot(rootPath, {
+    [nodePath]: { resolved: 'file:../local-pkg' },
+  })
+  const fileNode = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+    resolved: npa(path.resolve(rootPath, '../local-pkg')).saveSpec,
+    path: nodePath,
+    root,
+  })
+
+  t.strictSame(filePolicyIdentities(fileNode), ['file:../local-pkg'])
+  t.equal(isScriptAllowed(fileNode, { 'file:../local-pkg': true }), true)
+  t.equal(isScriptAllowed(fileNode, { [fileNode.resolved]: true }), null)
+  t.end()
+})
+
+t.test('file path — unparseable lockfile identities fail closed', t => {
+  const rootPath = path.resolve('project')
+  const nodePath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const root = lockfileRoot(rootPath, {
+    [nodePath]: { resolved: 'not valid' },
+  })
+  const fileNode = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+    path: nodePath,
+    root,
+  })
+
+  t.strictSame(filePolicyIdentities(fileNode), [])
+  t.equal(filePolicyIdentity(fileNode), undefined)
+  t.equal(isScriptAllowed(fileNode, { 'file:../local-pkg': true }), null)
+  t.end()
+})
+
+t.test('file path — link nodes do not use transformed runtime identities', t => {
+  const rootPath = path.resolve('project')
+  const linkNode = {
+    isLink: true,
+    path: path.resolve(rootPath, 'node_modules/local-pkg'),
+    resolved: npa(path.resolve(rootPath, '../local-pkg')).saveSpec,
+    root: lockfileRoot(rootPath, {}),
+  }
+
+  t.strictSame(filePolicyIdentities(linkNode), [])
+  t.end()
+})
+
+t.test('file path — link target matches exact lockfile source', t => {
+  const rootPath = path.resolve('project')
+  const targetPath = path.resolve(rootPath, '../local-pkg')
+  const linkPath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const root = lockfileRoot(rootPath, {
+    [linkPath]: { resolved: '../local-pkg', link: true },
+  })
+  const link = {
+    path: linkPath,
+    resolved: 'file:../../local-pkg',
+    root,
+  }
   const target = node({
     name: 'local-pkg',
     packageName: 'local-pkg',
@@ -128,12 +205,106 @@ t.test('file path — link target matches incoming link source', t => {
   target.resolved = null
   target.path = targetPath
   target.realpath = targetPath
-  target.linksIn = new Set([{ resolved: 'file:../local-pkg' }])
+  target.root = root
+  target.linksIn = new Set([link])
 
+  t.equal(filePolicyIdentity(target), 'file:../local-pkg')
   t.equal(isScriptAllowed(target, { 'file:../local-pkg': true }), true)
-  t.equal(isScriptAllowed(target, { 'file:local-pkg': true }), true)
+  t.equal(isScriptAllowed(target, { 'file:local-pkg': true }), null)
+  t.equal(isScriptAllowed(target, { [npa(targetPath).saveSpec]: true }), null)
   t.equal(isScriptAllowed(target, { 'file:../local-pkg': false }), false)
   t.equal(isScriptAllowed(target, { 'file:../other': true }), null)
+  t.end()
+})
+
+t.test('file path — distinct lockfile sources are not conflated by target paths', t => {
+  const rootPath = path.resolve('project')
+  const linkedTarget = (name, resolved) => {
+    const targetPath = path.resolve(rootPath, '..', name)
+    const linkPath = path.resolve(rootPath, `node_modules/${name}`)
+    const root = lockfileRoot(rootPath, {
+      [linkPath]: { resolved, link: true },
+    })
+    const target = node({
+      name: 'tool',
+      packageName: 'tool',
+      version: '1.0.0',
+    })
+    target.resolved = null
+    target.path = targetPath
+    target.realpath = targetPath
+    target.root = root
+    target.linksIn = new Set([{
+      path: linkPath,
+      resolved: `file:../../${name}`,
+      root,
+    }])
+    return target
+  }
+
+  const approved = linkedTarget('good-tool', '../good-tool')
+  const attacker = linkedTarget('attacker-tool', '../attacker-tool')
+  const policy = { 'file:../good-tool': true }
+  t.equal(isScriptAllowed(approved, policy), true)
+  t.equal(isScriptAllowed(attacker, policy), null)
+  t.end()
+})
+
+t.test('file path — unresolved non-file link targets fail closed', t => {
+  const remoteUrl = 'https://example.com/remote-pkg.tgz'
+  const targetPath = path.resolve('remote-pkg')
+  const target = node({
+    name: 'remote-pkg',
+    packageName: 'remote-pkg',
+    version: '1.0.0',
+    resolved: null,
+    path: targetPath,
+    realpath: targetPath,
+    linksIn: new Set([{
+      path: `${targetPath}-link`,
+      root: {
+        path: path.dirname(targetPath),
+        meta: { get: () => ({ resolved: remoteUrl }) },
+      },
+    }]),
+  })
+
+  t.equal(filePolicyIdentity(target), undefined)
+  t.equal(isScriptAllowed(target, { [npa(targetPath).saveSpec]: true }), null)
+  t.equal(isScriptAllowed(target, { [remoteUrl]: true }), null)
+  t.end()
+})
+
+t.test('file path — multiple exact link identities are matchable but not writable', t => {
+  const rootPath = path.resolve('project')
+  const targetPath = path.resolve(rootPath, '../shared')
+  const firstLinkPath = path.resolve(rootPath, 'first')
+  const secondLinkPath = path.resolve(rootPath, 'second')
+  const root = lockfileRoot(rootPath, {
+    [firstLinkPath]: { resolved: '../shared', link: true },
+    [secondLinkPath]: { resolved: 'vendor/shared', link: true },
+  })
+  const target = node({
+    name: 'shared',
+    packageName: 'shared',
+    version: '1.0.0',
+    resolved: null,
+    path: targetPath,
+    realpath: targetPath,
+    root,
+    linksIn: new Set([
+      { path: firstLinkPath, root },
+      { path: secondLinkPath, root },
+    ]),
+  })
+
+  t.strictSame(filePolicyIdentities(target), [
+    'file:../shared',
+    'file:vendor/shared',
+  ])
+  t.equal(filePolicyIdentity(target), null)
+  t.equal(isScriptAllowed(target, { 'file:../shared': true }), true)
+  t.equal(isScriptAllowed(target, { 'file:vendor/shared': false }), false)
   t.end()
 })
 
@@ -163,8 +334,29 @@ t.test('file path — empty link sets do not add install paths', t => {
   target.realpath = targetPath
   target.linksIn = new Set()
 
+  t.equal(filePolicyIdentity(target), undefined)
   t.equal(isScriptAllowed(target, { 'file:local-pkg': true }), null)
   t.equal(isScriptAllowed(target, { [targetPath]: true }), null)
+  t.end()
+})
+
+t.test('file path — incomplete link metadata does not create an identity', t => {
+  const rootPath = path.resolve('project')
+  const linkPath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const root = lockfileRoot(rootPath, {
+    [linkPath]: { link: true },
+  })
+  const target = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    resolved: null,
+    path: path.resolve(rootPath, '../local-pkg'),
+    root,
+    linksIn: new Set([{ path: linkPath, root }]),
+  })
+
+  t.strictSame(filePolicyIdentities(target), [])
+  t.equal(filePolicyIdentity(target), undefined)
   t.end()
 })
 

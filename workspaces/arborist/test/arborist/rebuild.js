@@ -182,7 +182,7 @@ t.test('allowScripts gates local file: dep scripts (npm/cli#9498)', async t => {
     const path = fixture(t, 'link-dep-lifecycle-scripts')
     const arb = newArb({
       path,
-      allowScripts: { 'file:../a': true },
+      allowScripts: { 'file:a': true },
       dangerouslyAllowAllScripts: false,
     })
     await arb.rebuild()
@@ -194,7 +194,19 @@ t.test('allowScripts gates local file: dep scripts (npm/cli#9498)', async t => {
     const path = fixture(t, 'link-dep-lifecycle-scripts')
     const arb = newArb({
       path,
-      allowScripts: { 'file:../a': false },
+      allowScripts: { 'file:a': false },
+      dangerouslyAllowAllScripts: false,
+    })
+    await arb.rebuild()
+    t.throws(() => fs.statSync(aPrepare(path)), 'prepare did not run')
+    t.throws(() => fs.statSync(aPostinstall(path)), 'postinstall did not run')
+  })
+
+  t.test('path-equivalent allow entry does not authorize the target', async t => {
+    const path = fixture(t, 'link-dep-lifecycle-scripts')
+    const arb = newArb({
+      path,
+      allowScripts: { 'file:../a': true },
       dangerouslyAllowAllScripts: false,
     })
     await arb.rebuild()

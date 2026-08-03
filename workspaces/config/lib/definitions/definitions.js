@@ -1915,8 +1915,11 @@ const definitions = {
     description: `
       Write pinned (\`pkg@version\`) entries when approving install scripts.
       Set to \`false\` to write name-only entries that allow any version.
-      Has no effect on \`npm deny-scripts\`, which always writes name-only
-      entries regardless of this setting.
+      Has no effect on \`npm deny-scripts\`, which uses a source-appropriate
+      trusted identity regardless of this setting: a name-only key for
+      registry packages, the exact source for direct remote and file
+      dependencies, and the hosted repository shortcut without a committish
+      for hosted git dependencies.
     `,
     flatten,
   }),

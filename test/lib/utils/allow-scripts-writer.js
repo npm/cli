@@ -1,5 +1,6 @@
 const t = require('tap')
 const path = require('node:path')
+const isScriptAllowed = require('@npmcli/arborist/lib/script-allowed.js')
 const {
   applyApprovalForPackage,
   applyDenyForPackage,
@@ -24,6 +25,39 @@ const node = (overrides = {}) => {
   }
 }
 
+const lockfileRoot = (rootPath, entries) => ({
+  path: rootPath,
+  meta: {
+    get: nodePath => entries[nodePath] || {},
+  },
+})
+
+const registryShapedRemoteUrl =
+  // Registry-shaped so versionFromTgz can parse it; isRegistryDependency:false drives identity.
+  'https://example.com/cypress/-/cypress-15.18.1.tgz'
+const registryShapedRemoteNode = (url = registryShapedRemoteUrl) => ({
+  ...node({
+    name: 'cypress',
+    version: '15.18.1',
+    resolved: url,
+    isRegistryDependency: false,
+  }),
+  edgesIn: new Set([{ spec: url }]),
+})
+
+const linkedCypressNode = (...specs) => ({
+  ...node({
+    name: 'cypress',
+    version: '15.18.1',
+    resolved: registryShapedRemoteUrl,
+    isRegistryDependency: false,
+  }),
+  edgesIn: new Set(),
+  linksIn: new Set(specs.map(spec => ({
+    edgesIn: new Set([{ name: 'cypress', spec }]),
+  }))),
+})
+
 // A registry node with no `resolved` URL in the lockfile. Its trusted name
 // comes from a dependency edge, but its version isn't trustable, so
 // versionedKeyFor returns null (npm/cli#9558).
@@ -47,6 +81,96 @@ t.test('nameKeyFor / versionedKeyFor — registry', async t => {
   t.equal(versionedKeyFor(n), 'canvas@2.11.0')
 })
 
+t.test('nameKeyFor / versionedKeyFor — remote tarball uses exact resolved URL', async t => {
+  for (const url of [
+    registryShapedRemoteUrl,
+    'HTTPS://example.com/cypress/-/cypress-15.18.1.tgz',
+    'https:/example.com/cypress/-/cypress-15.18.1.tgz',
+  ]) {
+    const n = registryShapedRemoteNode(url)
+    t.equal(nameKeyFor(n), url)
+    t.equal(versionedKeyFor(n), url)
+  }
+})
+
+t.test('nameKeyFor / versionedKeyFor — registry tarball URL without remote edge uses registry identity', async t => {
+  const n = Object.assign(registryShapedRemoteNode(), {
+    edgesIn: new Set([{ spec: '^15.18.1' }]),
+  })
+  t.equal(nameKeyFor(n), 'cypress')
+  t.equal(versionedKeyFor(n), 'cypress@15.18.1')
+})
+
+t.test('nameKeyFor / versionedKeyFor — linked remote target uses incoming Link provenance', async t => {
+  const n = linkedCypressNode(registryShapedRemoteUrl)
+
+  t.equal(nameKeyFor(n), registryShapedRemoteUrl)
+  t.equal(versionedKeyFor(n), registryShapedRemoteUrl)
+  t.equal(isScriptAllowed(n, { [registryShapedRemoteUrl]: true }), true)
+})
+
+t.test('nameKeyFor / versionedKeyFor — incoming Link provenance skips cycles and null links', async t => {
+  const n = linkedCypressNode(registryShapedRemoteUrl)
+  const [link] = n.linksIn
+  const provenanceLink = { edgesIn: link.edgesIn }
+  // Put valid provenance last so traversal must pass the cycle and null entry.
+  link.edgesIn = new Set()
+  link.linksIn = new Set([n, null, provenanceLink])
+
+  t.equal(nameKeyFor(n), registryShapedRemoteUrl)
+  t.equal(versionedKeyFor(n), registryShapedRemoteUrl)
+})
+
+t.test('nameKeyFor / versionedKeyFor — linked registry target keeps registry identity', async t => {
+  const n = linkedCypressNode('^15.18.1')
+
+  t.equal(nameKeyFor(n), 'cypress')
+  t.equal(versionedKeyFor(n), 'cypress@15.18.1')
+})
+
+t.test('nameKeyFor / versionedKeyFor — mixed linked provenance prefers exact remote identity', async t => {
+  const n = linkedCypressNode('^15.18.1', registryShapedRemoteUrl)
+
+  t.equal(nameKeyFor(n), registryShapedRemoteUrl)
+  t.equal(versionedKeyFor(n), registryShapedRemoteUrl)
+})
+
+t.test('nameKeyFor / versionedKeyFor — remote provenance without exact resolved URL fails closed', async t => {
+  const n = linkedCypressNode(registryShapedRemoteUrl)
+  n.resolved = null
+  const [link] = n.linksIn
+  link.resolved = 'file:.store/cypress'
+
+  t.equal(nameKeyFor(n), null)
+  t.equal(versionedKeyFor(n), null)
+})
+
+t.test('nameKeyFor / versionedKeyFor — registry-shaped URL without source provenance fails closed', async t => {
+  const n = linkedCypressNode()
+
+  t.equal(nameKeyFor(n), null)
+  t.equal(versionedKeyFor(n), null)
+})
+
+t.test('nameKeyFor / versionedKeyFor — non-registry remote node with no remote edges is not direct-remote', async t => {
+  // isRegistryDependency:false and a remote resolved URL are not sufficient
+  // when none of the incoming edge specs is classified as remote.
+  // Null and malformed specs exercise isRemoteSpec's defensive paths.
+  const n = Object.assign(node({
+    name: 'pkg',
+    isRegistryDependency: false,
+    resolved: 'https://cdn.example.com/releases/pkg.tgz',
+  }), {
+    edgesIn: new Set([
+      { spec: null },
+      { spec: 'https://' },
+      { spec: 'file:../pkg' },
+    ]),
+  })
+  t.equal(nameKeyFor(n), null)
+  t.equal(versionedKeyFor(n), null)
+})
+
 t.test('nameKeyFor / versionedKeyFor — git', async t => {
   const n = node({
     name: 'bar',
@@ -63,7 +187,13 @@ t.test('nameKeyFor / versionedKeyFor — file', async t => {
 })
 
 t.test('nameKeyFor / versionedKeyFor — local directory link target', async t => {
-  const targetPath = path.resolve('local')
+  const rootPath = path.resolve('project')
+  const targetPath = path.resolve(rootPath, '../local')
+  const linkPath = path.resolve(rootPath, 'node_modules/local')
+  const targetKey = 'file:../local'
+  const root = lockfileRoot(rootPath, {
+    [linkPath]: { resolved: '../local', link: true },
+  })
   const n = {
     name: 'local',
     packageName: 'local',
@@ -71,20 +201,65 @@ t.test('nameKeyFor / versionedKeyFor — local directory link target', async t =
     resolved: null,
     path: targetPath,
     realpath: targetPath,
-    linksIn: new Set([{ resolved: 'file:../local' }]),
+    root,
+    linksIn: new Set([{
+      path: linkPath,
+      resolved: 'file:../../local',
+      root,
+    }]),
   }
 
-  t.equal(nameKeyFor(n), 'file:../local')
-  t.equal(versionedKeyFor(n), 'file:../local')
+  t.equal(nameKeyFor(n), targetKey)
+  t.equal(versionedKeyFor(n), targetKey)
 
   t.strictSame(
     applyApprovalForPackage({}, [n], { pin: true }).allowScripts,
-    { 'file:../local': true }
+    { [targetKey]: true }
   )
-  t.match(
-    applyApprovalForPackage({ 'file:local': false }, [n], { pin: true }).warning,
-    /denied|versioned deny/
-  )
+  const blocked = applyApprovalForPackage({ [targetKey]: false }, [n], { pin: true })
+  t.strictSame(blocked.allowScripts, { [targetKey]: false })
+  t.match(blocked.warning, /denied|versioned deny/)
+})
+
+t.test('nameKeyFor / versionedKeyFor — linked file targets use exact resolver identities', async t => {
+  const rootPath = path.resolve('project')
+  const targets = ['good-tool', 'attacker-tool'].map(name => {
+    const targetPath = path.resolve(rootPath, '..', name)
+    const linkPath = path.resolve(rootPath, `node_modules/${name}`)
+    const root = lockfileRoot(rootPath, {
+      [linkPath]: { resolved: `../${name}`, link: true },
+    })
+    return {
+      name: 'tool',
+      packageName: 'tool',
+      version: '1.0.0',
+      resolved: null,
+      path: targetPath,
+      realpath: targetPath,
+      root,
+      linksIn: new Set([{
+        path: linkPath,
+        resolved: `file:../../${name}`,
+        root,
+      }]),
+    }
+  })
+
+  const keys = targets.map(nameKeyFor)
+  t.strictSame(keys, ['file:../good-tool', 'file:../attacker-tool'])
+  t.not(keys[0], keys[1])
+  t.strictSame(targets.map(versionedKeyFor), keys)
+})
+
+t.test('nameKeyFor / versionedKeyFor — unresolved non-file link targets fail closed', async t => {
+  const n = linkedCypressNode(registryShapedRemoteUrl)
+  n.resolved = null
+  const [link] = n.linksIn
+  link.resolved = registryShapedRemoteUrl
+
+  t.equal(nameKeyFor(n), null)
+  t.equal(versionedKeyFor(n), null)
+  t.equal(isScriptAllowed(n, { [registryShapedRemoteUrl]: true }), null)
 })
 
 t.test('nameKeyFor / versionedKeyFor — empty link target has no portable file key', async t => {
@@ -130,6 +305,40 @@ t.test('applyApprovalForPackage — empty allowScripts, --no-pin', async t => {
   )
   t.strictSame(allowScripts, { canvas: true })
   t.strictSame(changes, [{ key: 'canvas', change: 'added' }])
+})
+
+t.test('applyApprovalForPackage — remote tarball writes exact URL with --pin', async t => {
+  const { allowScripts, changes } = applyApprovalForPackage(
+    {},
+    [registryShapedRemoteNode()],
+    { pin: true }
+  )
+  t.strictSame(allowScripts, { [registryShapedRemoteUrl]: true })
+  t.strictSame(changes, [{ key: registryShapedRemoteUrl, change: 'added' }])
+})
+
+t.test('applyApprovalForPackage — remote tarball ignores registry-only deny for same name/version', async t => {
+  const { allowScripts, changes, warning } = applyApprovalForPackage(
+    { 'cypress@15.18.1': false },
+    [registryShapedRemoteNode()],
+    { pin: true }
+  )
+  t.strictSame(allowScripts, {
+    'cypress@15.18.1': false,
+    [registryShapedRemoteUrl]: true,
+  })
+  t.strictSame(changes, [{ key: registryShapedRemoteUrl, change: 'added' }])
+  t.equal(warning, undefined)
+})
+
+t.test('applyApprovalForPackage — remote tarball writes exact URL with --no-pin', async t => {
+  const { allowScripts, changes } = applyApprovalForPackage(
+    {},
+    [registryShapedRemoteNode()],
+    { pin: false }
+  )
+  t.strictSame(allowScripts, { [registryShapedRemoteUrl]: true })
+  t.strictSame(changes, [{ key: registryShapedRemoteUrl, change: 'added' }])
 })
 
 t.test('applyApprovalForPackage — stale pin rewritten to new installed version', async t => {
@@ -305,6 +514,15 @@ t.test('applyDenyForPackage — empty allowScripts adds name-only false', async 
   )
   t.strictSame(allowScripts, { 'core-js': false })
   t.strictSame(changes, [{ key: 'core-js', change: 'added' }])
+})
+
+t.test('applyDenyForPackage — remote tarball writes exact URL', async t => {
+  const { allowScripts, changes } = applyDenyForPackage(
+    {},
+    [registryShapedRemoteNode()]
+  )
+  t.strictSame(allowScripts, { [registryShapedRemoteUrl]: false })
+  t.strictSame(changes, [{ key: registryShapedRemoteUrl, change: 'added' }])
 })
 
 t.test('applyDenyForPackage — pinned allow is replaced by name-only deny', async t => {
@@ -493,14 +711,17 @@ t.test('applyApprovalForPackage — file dep with deny entry blocks approval', a
   t.match(warning, /denied|versioned deny/)
 })
 
-t.test('applyApprovalForPackage — remote tarball deny blocks approval', async t => {
-  const remote = { name: 'pkg', packageName: 'pkg', version: '1.0.0', resolved: 'https://example.com/pkg.tgz' }
-  const { warning } = applyApprovalForPackage(
-    { 'https://example.com/pkg.tgz': false },
-    [remote],
+t.test('applyApprovalForPackage — remote tarball deny requires removal-only guidance', async t => {
+  const { allowScripts, changes, warning } = applyApprovalForPackage(
+    { [registryShapedRemoteUrl]: false },
+    [registryShapedRemoteNode()],
     { pin: true }
   )
-  t.match(warning, /denied|versioned deny/)
+  t.strictSame(allowScripts, { [registryShapedRemoteUrl]: false })
+  t.strictSame(changes, [])
+  t.match(warning, /remove the entry/)
+  t.notMatch(warning, /versioned deny/)
+  t.notMatch(warning, /widen the deny/)
 })
 
 t.test('applyApprovalForPackage — no-pin with no name produces no-op', async t => {
@@ -611,10 +832,7 @@ t.test('keyTargetsNode handles file-type tarball key matching saveSpec', async t
   t.equal(allowScripts['file:pkg.tgz'], false)
 })
 
-t.test('keyTargetsNode handles file-type tarball key matching fetchSpec', async t => {
-  // When node.resolved is an absolute path matching parsed.fetchSpec.
-  // Use path.resolve so the absolute path is platform-correct (npa
-  // parses POSIX-style `/abs/...` as a directory on Windows).
+t.test('keyTargetsNode does not match path-equivalent file keys', async t => {
   const absTgz = path.resolve('pkg.tgz')
   const tarballNode = {
     name: 'pkg',
@@ -628,7 +846,8 @@ t.test('keyTargetsNode handles file-type tarball key matching fetchSpec', async 
     { pin: true }
   )
   t.equal(allowScripts['./pkg.tgz'], false)
-  t.match(warning, /denied|versioned deny/)
+  t.equal(allowScripts[absTgz], true)
+  t.equal(warning, undefined)
 })
 
 t.test('versionedKeyFor — git node without committish', async t => {
@@ -751,9 +970,11 @@ t.test('versionedKeyFor — registry resolved that versionFromTgz cannot parse r
   // breadcrumb path in versionedKeyFor, including each fallback branch
   // of the `node.path || node.name || '<unknown>'` label expression.
   const resolved = 'https://private-mirror.example.com/blobs/abc123'
-  t.equal(versionedKeyFor({
+  const nodeWithPath = {
     path: '/fake/mystery', name: 'mystery', resolved, isRegistryDependency: true,
-  }), null, 'falls back when node has a path')
+  }
+  t.equal(nameKeyFor(nodeWithPath), null, 'does not fall back to the manifest name')
+  t.equal(versionedKeyFor(nodeWithPath), null, 'falls back when node has a path')
   t.equal(versionedKeyFor({
     name: 'mystery', resolved, isRegistryDependency: true,
   }), null, 'falls back when node has only a name')
