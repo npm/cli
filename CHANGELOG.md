@@ -51,6 +51,7 @@
 * allow-git and allow-remote now default to "none"; set them to "all" (or "root") to install git or user-supplied tarball-URL dependencies.
 * root \`preinstall\` now runs before dependencies are installed.
 * unknown CLI flags, abbreviated flags, and single-hyphen multi-char shorthands now throw instead of warning. (Unknown `.npmrc` configs still warn by default; opt into erroring with the new `strict-npmrc` config.)
+* Dependency lifecycle scripts are now blocked by default unless allowed by the root package's `allowScripts` policy. After installing, run `npm install-scripts approve` to record approvals and `npm rebuild` to execute newly approved scripts.
 ### Chores
 * [`b77b532`](https://github.com/npm/cli/commit/b77b5321bd6dc8d4c028b89f3e4bc9c9a2209f8f) [#9735](https://github.com/npm/cli/pull/9735) remove pre-release mode from npm 12 and workspaces (#9735) (@reggi, @Copilot)
 
