@@ -449,7 +449,7 @@ const twoVersionFixture = {
   'package.json': JSON.stringify({
     name: 'host',
     version: '1.0.0',
-    dependencies: { 'top-of-tree': '*' },
+    dependencies: { lodash: '4.17.21', 'top-of-tree': '*' },
   }),
   'package-lock.json': JSON.stringify({
     name: 'host',
@@ -457,7 +457,11 @@ const twoVersionFixture = {
     lockfileVersion: 3,
     requires: true,
     packages: {
-      '': { name: 'host', version: '1.0.0', dependencies: { 'top-of-tree': '*' } },
+      '': {
+        name: 'host',
+        version: '1.0.0',
+        dependencies: { lodash: '4.17.21', 'top-of-tree': '*' },
+      },
       'node_modules/lodash': {
         version: '4.17.21',
         resolved: 'https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz',
@@ -484,7 +488,11 @@ const twoVersionFixture = {
       }),
     },
     'top-of-tree': {
-      'package.json': JSON.stringify({ name: 'top-of-tree', version: '1.0.0' }),
+      'package.json': JSON.stringify({
+        name: 'top-of-tree',
+        version: '1.0.0',
+        dependencies: { lodash: '3.10.1' },
+      }),
       node_modules: {
         lodash: {
           'package.json': JSON.stringify({
@@ -553,9 +561,9 @@ t.test('approve-scripts <pkg@range> pins only versions satisfying the range', as
   t.strictSame(pkg.allowScripts, { 'lodash@4.17.21': true })
 })
 
-t.test('approve-scripts --pending handles node with no version', async t => {
-  // Exercise the ternary's falsy branch in runPending: `node.version ? '@'... : ''`
-  // when the node has no version field.
+t.test('approve-scripts --pending handles node with no version or trusted source', async t => {
+  // A synthetic node without provenance must not expose its manifest version
+  // as a trusted selector.
   const mockSync = await _mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
@@ -578,13 +586,16 @@ t.test('approve-scripts --pending handles node with no version', async t => {
     },
   })
   await mockSync.npm.exec('approve-scripts', [])
-  // Output should mention the package without an @version suffix.
-  t.match(mockSync.joinedOutput(), / no-version-pkg \(install: do-stuff\)/)
+  // The installed name remains visible, but the source is explicitly untrusted.
+  t.match(
+    mockSync.joinedOutput(),
+    / no-version-pkg \[untrusted source\] \(install: do-stuff\)/
+  )
 })
 
 t.test('approve-scripts --pending --json handles node with no version', async t => {
-  // Exercise pendingSummary's `version ? ... : display` falsy branch: the
-  // key is the bare name when the node has no version field.
+  // Without a trusted source or registry version, JSON falls back to the
+  // installed name rather than composing a selector from manifest data.
   const { npm, joinedOutput } = await _mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
