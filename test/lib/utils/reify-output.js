@@ -539,6 +539,58 @@ t.test('global install suggests --allow-scripts, not approve-scripts', async t =
   t.notMatch(warn, /approve-scripts/)
 })
 
+t.test('global install repeats the requested specs in the suggestion', async t => {
+  const mock = await mockNpm(t, {
+    command: 'install',
+    argv: ['esbuild', 'canvas@2'],
+    config: { global: true },
+  })
+  Object.defineProperty(mock.npm, 'command', {
+    get () {
+      return 'install'
+    },
+    enumerable: true,
+  })
+
+  reifyOutput(mock.npm, {
+    actualTree: { name: 'host', inventory: { has: () => false } },
+    diff: { children: [] },
+  }, {
+    unreviewedScripts: [{
+      node: { packageName: 'esbuild', name: 'esbuild', version: '0.28.1', path: '/x/esbuild' },
+      scripts: { postinstall: 'node install.js' },
+    }],
+  })
+  mock.npm.finish()
+
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
+  t.match(warn, /npm install -g esbuild canvas@2 --allow-scripts=esbuild/)
+})
+
+t.test('global command without specs suggests that command', async t => {
+  const mock = await mockNpm(t, { command: 'update', config: { global: true } })
+  Object.defineProperty(mock.npm, 'command', {
+    get () {
+      return 'update'
+    },
+    enumerable: true,
+  })
+
+  reifyOutput(mock.npm, {
+    actualTree: { name: 'host', inventory: { has: () => false } },
+    diff: { children: [] },
+  }, {
+    unreviewedScripts: [{
+      node: { packageName: 'esbuild', name: 'esbuild', version: '0.28.1', path: '/x/esbuild' },
+      scripts: { postinstall: 'node install.js' },
+    }],
+  })
+  mock.npm.finish()
+
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
+  t.match(warn, /npm update -g --allow-scripts=esbuild/)
+})
+
 t.test('single unreviewed script uses singular wording', async t => {
   const mockReifyWithExtras = async (t, reify, extras) => {
     const mock = await mockNpm(t, {})
