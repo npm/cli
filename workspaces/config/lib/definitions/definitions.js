@@ -360,6 +360,10 @@ const definitions = {
 
       Packages whose names match \`min-release-age-exclude\` are exempt from
       this filter.
+
+      NOTE: \`npm ci\` does not apply this setting. It installs the versions
+      recorded in the lockfile without resolving versions or checking release
+      dates.
     `,
     flatten,
   }),
@@ -1563,6 +1567,10 @@ const definitions = {
 
        Packages whose names match \`min-release-age-exclude\` are exempt from
        this filter.
+
+       NOTE: \`npm ci\` does not apply this setting. It installs the versions
+       recorded in the lockfile without resolving versions or checking release
+       dates.
     `,
     flatten: (key, obj, flatOptions) => {
       const age = obj['min-release-age']
