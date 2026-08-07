@@ -131,6 +131,24 @@ t.test('extra inventory items on idealTree', async t => {
   )
 })
 
+t.test('inert inventory items on idealTree', async t => {
+  t.strictSame(
+    validateLockfile(
+      new Map(),
+      new Map([
+        ['missing-optional', {
+          name: 'missing-optional',
+          version: '',
+          optional: true,
+          inert: true,
+        }],
+      ])
+    ),
+    [],
+    'does not require lock file entries for inert optional dependencies'
+  )
+})
+
 t.test('extra inventory items on virtualTree', async t => {
   t.matchSnapshot(
     validateLockfile(
