@@ -95,6 +95,29 @@ t.test('synthetic node-gyp suppressed when gypfile: false', async t => {
   )
 })
 
+t.test('synthetic node-gyp suppressed by gypfile: false on disk', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'dep',
+      version: '1.0.0',
+      gypfile: false,
+    }),
+  })
+  t.strictSame(await getInstallScripts(node({ path })), {})
+})
+
+t.test('synthetic node-gyp still detected when disk has no gypfile', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'dep', version: '1.0.0' }),
+  })
+  t.strictSame(
+    await getInstallScripts(node({ path })),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
 t.test('synthetic node-gyp suppressed when explicit install is present', async t => {
   const getInstallScripts = mockGetInstallScripts(t, () => true)
   t.strictSame(

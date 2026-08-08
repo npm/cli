@@ -603,6 +603,52 @@ t.test('do not rebuild node-gyp dependencies with gypfile:false', async t => {
   await arb.rebuild()
 })
 
+// ref: https://github.com/npm/cli/issues/9837
+t.test('do not rebuild node-gyp dependencies with gypfile:false from a lockfile', async t => {
+  const Arborist = t.mock('../../lib/arborist/index.js', {
+    '@npmcli/run-script': async () => {
+      throw new Error('should not run any scripts')
+    },
+  })
+  const path = t.testdir({
+    node_modules: {
+      dep: {
+        'package.json': JSON.stringify({
+          name: 'dep',
+          version: '1.0.0',
+          gypfile: false,
+        }),
+        'binding.gyp': '',
+      },
+    },
+    'package-lock.json': JSON.stringify({
+      name: 'project',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'project',
+          dependencies: {
+            dep: '1',
+          },
+        },
+        'node_modules/dep': {
+          version: '1.0.0',
+        },
+      },
+    }),
+    'package.json': JSON.stringify({
+      name: 'project',
+      dependencies: {
+        dep: '1',
+      },
+    }),
+  })
+  const arb = new Arborist({ path, dangerouslyAllowAllScripts: true })
+  const tree = await arb.loadVirtual()
+  await arb.rebuild({ nodes: [...tree.inventory.values()] })
+})
+
 // ref: https://github.com/npm/cli/issues/2905
 t.test('do not run lifecycle scripts of linked deps twice', async t => {
   const testdir = t.testdir({
