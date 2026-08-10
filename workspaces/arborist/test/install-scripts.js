@@ -17,10 +17,18 @@ const node = ({
   gypfile,
   resolved = 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
   path = '/fake',
+  name = 'dep',
+  version = '1.0.0',
 } = {}) => ({
   resolved,
   path,
-  package: { scripts, ...(gypfile !== undefined ? { gypfile } : {}) },
+  name,
+  package: {
+    name,
+    version,
+    scripts,
+    ...(gypfile !== undefined ? { gypfile } : {}),
+  },
 })
 
 t.test('collects preinstall, install, postinstall', async t => {
@@ -114,6 +122,60 @@ t.test('synthetic node-gyp still detected when disk has no gypfile', async t => 
   })
   t.strictSame(
     await getInstallScripts(node({ path })),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
+t.test('gypfile: false on disk ignored when the version does not match', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'dep',
+      version: '1.0.0',
+      gypfile: false,
+    }),
+  })
+  // The strict allow-scripts preflight runs before reify swaps node_modules,
+  // so the opt-out on disk belongs to the version that is already installed,
+  // not to the one the node describes.
+  t.strictSame(
+    await getInstallScripts(node({ path, version: '2.0.0' })),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
+t.test('gypfile: false on disk ignored when the name does not match', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'other',
+      version: '1.0.0',
+      gypfile: false,
+    }),
+  })
+  t.strictSame(
+    await getInstallScripts(node({ path })),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
+t.test('gypfile: false on disk ignored when the node has no identity', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'dep',
+      version: '1.0.0',
+      gypfile: false,
+    }),
+  })
+  // No version to compare against, so the disk read cannot be trusted.
+  t.strictSame(
+    await getInstallScripts(node({ path, version: '' })),
+    { install: 'node-gyp rebuild' }
+  )
+  // No name either.
+  t.strictSame(
+    await getInstallScripts(node({ path, name: '' })),
     { install: 'node-gyp rebuild' }
   )
 })

@@ -67,7 +67,7 @@ const getInstallScripts = async (node) => {
   if (
     !hasExplicitGypGate &&
     await isNodeGypPackage(node.path).catch(() => false) &&
-    !await hasGypfileOptOut(node.path, pkg.gypfile)
+    !await hasGypfileOptOut(node.path, pkg, node.name)
   ) {
     collected.install = 'node-gyp rebuild'
   }
