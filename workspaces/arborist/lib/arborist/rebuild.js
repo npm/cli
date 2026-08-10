@@ -252,7 +252,7 @@ module.exports = cls => class Builder extends cls {
     }
 
     const { package: pkg, hasInstallScript } = node.target
-    const { gypfile, bin, scripts = {} } = pkg
+    const { bin, scripts = {} } = pkg
 
     const { preinstall, install, postinstall, prepare } = scripts
     const anyScript = preinstall || install || postinstall || prepare
@@ -281,7 +281,7 @@ module.exports = cls => class Builder extends cls {
     const isGyp = !install &&
       !preinstall &&
       await isNodeGypPackage(node.path) &&
-      !await hasGypfileOptOut(node.path, gypfile)
+      !await hasGypfileOptOut(node.path, pkg, node.target.name)
 
     if (bin || preinstall || install || postinstall || prepare || isGyp) {
       if (bin) {
