@@ -2358,6 +2358,16 @@ t.test('detect conflicts in transitive peerOptional deps', async t => {
     const name = '@isaacs/test-conflicted-optional-peer-dep-peer'
     const peers = tree.inventory.query('name', name)
     t.equal(peers.size, 2, 'installed the peer dep twice to avoid conflict')
+    t.strictSame(
+      [...peers].map(p => p.version).sort(),
+      ['1.0.0', '2.0.0'],
+      'both conflicting versions are present'
+    )
+    for (const peer of peers) {
+      for (const edge of peer.edgesIn) {
+        t.ok(edge.valid, `edge from ${edge.from.name} is valid`)
+      }
+    }
   })
 
   await t.test('omit peerOptionals when not needed for conflicts', async t => {
@@ -4912,6 +4922,46 @@ t.test('does not fetch packuments for peerOptional deps that will not be install
   t.equal(edge.type, 'peerOptional')
   t.equal(edge.to, null, 'peerOptional edge left unresolved')
   t.ok(edge.valid, 'missing peerOptional edge is valid')
+})
+
+t.test('resolves peerOptional deps installed by another dependent', async t => {
+  const registry = createRegistry(t, false)
+
+  const hostPack = registry.packument({
+    name: 'host',
+    version: '1.0.0',
+    peerDependencies: { plugin: '^1.0.0' },
+    peerDependenciesMeta: { plugin: { optional: true } },
+  })
+  const hostManifest = registry.manifest({ name: 'host', packuments: [hostPack] })
+  await registry.package({ manifest: hostManifest })
+
+  const otherPack = registry.packument({
+    name: 'other',
+    version: '1.0.0',
+    dependencies: { plugin: '^1.0.0' },
+  })
+  const otherManifest = registry.manifest({ name: 'other', packuments: [otherPack] })
+  await registry.package({ manifest: otherManifest })
+
+  const pluginManifest = registry.manifest({ name: 'plugin' })
+  await registry.package({ manifest: pluginManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { host: '^1.0.0', other: '^1.0.0' },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree()
+
+  const plugin = tree.children.get('plugin')
+  t.ok(plugin, 'installed the plugin for the dependent that requires it')
+  const edge = tree.children.get('host').edgesOut.get('plugin')
+  t.equal(edge.type, 'peerOptional')
+  t.equal(edge.to, plugin, 'peerOptional edge resolved to the installed plugin')
+  t.ok(edge.valid, 'peerOptional edge is valid')
 })
 
 t.test('peerOptional prefers existing tree node over registry fetch (#9249)', async t => {
