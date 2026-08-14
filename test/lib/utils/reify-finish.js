@@ -165,3 +165,28 @@ t.test('diff walker handles CHANGE, nested children, and nullish diff entries', 
   const names = captured[0].unreviewedScripts.map(u => u.node.name).sort()
   t.strictSame(names, ['changed', 'nested'])
 })
+
+t.test('build candidates include link targets and directly managed unchanged links', async t => {
+  const captured = []
+  const link = { location: 'node_modules/foo', name: 'foo', isLink: true }
+  const linkTarget = { location: 'packages/foo', name: 'foo-target' }
+  link.target = linkTarget
+  const unchangedLink = { location: 'node_modules/bar', name: 'bar', isLink: true }
+  const unchangedTarget = { location: 'packages/bar', name: 'bar-target', fsTop: '/project' }
+  unchangedLink.target = unchangedTarget
+  const root = { target: { location: '', fsTop: '/project' } }
+  unchangedLink.root = root
+  unchangedLink.parent = root.target
+  const untouched = { location: 'node_modules/untouched', name: 'untouched' }
+  await mockReififyFinish(t, {
+    global: false,
+    unreviewedNodes: [linkTarget, unchangedTarget, untouched],
+    diff: {
+      children: [{ action: 'ADD', ideal: link, children: [] }],
+      unchanged: [unchangedLink],
+    },
+    captureReifyOutput: (_npm, _arb, extras) => captured.push(extras),
+  })
+  const names = captured[0].unreviewedScripts.map(u => u.node.name).sort()
+  t.strictSame(names, ['bar-target', 'foo-target'])
+})
