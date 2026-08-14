@@ -1607,6 +1607,11 @@ This is a one-time fix-up, please be patient...
 
       if (!edge.to) {
         if (!parentEdge) {
+          // a missing peerOptional is valid and will never be placed from
+          // here, so don't waste a packument fetch resolving it
+          if (edge.type === 'peerOptional') {
+            continue
+          }
           // easy, just put the thing there
           await this.#nodeFromEdge(edge, node.parent, null, required)
           continue

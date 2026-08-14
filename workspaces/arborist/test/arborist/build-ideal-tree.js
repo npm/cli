@@ -4885,6 +4885,35 @@ t.test('circular peer back-off does not crash when node is detached mid-resoluti
     'backs off to plugin@1.0.0 to satisfy the optional peer instead of crashing')
 })
 
+t.test('does not fetch packuments for peerOptional deps that will not be installed', async t => {
+  const registry = createRegistry(t, false)
+
+  const hostPack = registry.packument({
+    name: 'host',
+    version: '1.0.0',
+    peerDependencies: { plugin: '^1.0.0' },
+    peerDependenciesMeta: { plugin: { optional: true } },
+  })
+  const hostManifest = registry.manifest({ name: 'host', packuments: [hostPack] })
+  await registry.package({ manifest: hostManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { host: '^1.0.0' },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree()
+
+  t.equal(tree.children.get('host').version, '1.0.0', 'installed host')
+  t.equal(tree.children.get('plugin'), undefined, 'did not install the optional peer')
+  const edge = tree.children.get('host').edgesOut.get('plugin')
+  t.equal(edge.type, 'peerOptional')
+  t.equal(edge.to, null, 'peerOptional edge left unresolved')
+  t.ok(edge.valid, 'missing peerOptional edge is valid')
+})
+
 t.test('peerOptional prefers existing tree node over registry fetch (#9249)', async t => {
   // Reproduction: ts-jest has peerOptional jest-util@"^29||^30".
   // @types/jest@28 → expect@28 → jest-util@28 placed at root first.
@@ -4930,7 +4959,7 @@ t.test('peerOptional prefers existing tree node over registry fetch (#9249)', as
   // Only publish 28, 29, and 30.
   const jestUtilPacks = registry.packuments(['28.0.0', '29.0.0', '30.0.0'], 'jest-util')
   const jestUtilManifest = registry.manifest({ name: 'jest-util', packuments: jestUtilPacks })
-  await registry.package({ manifest: jestUtilManifest, times: 3 })
+  await registry.package({ manifest: jestUtilManifest, times: 2 })
 
   const path = t.testdir({
     'package.json': JSON.stringify({

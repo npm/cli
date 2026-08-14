@@ -16755,11 +16755,11 @@ ArboristNode {
 exports[`test/arborist/build-ideal-tree.js TAP detect conflicts in transitive peerOptional deps nest when peerOptional conflicts > must match snapshot 1`] = `
 ArboristNode {
   "children": Map {
-    "@isaacs/test-conflicted-optional-peer-dep-has-peer" => ArboristNode {
+    "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional" => ArboristNode {
       "edgesIn": Set {
         EdgeIn {
-          "from": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer",
-          "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer",
+          "from": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional",
+          "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
           "spec": "1",
           "type": "prod",
         },
@@ -16767,18 +16767,59 @@ ArboristNode {
       "edgesOut": Map {
         "@isaacs/test-conflicted-optional-peer-dep-peer" => EdgeOut {
           "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
-          "spec": "1",
+          "spec": "2",
           "to": "node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
-          "type": "peer",
+          "type": "peerOptional",
         },
       },
-      "location": "node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer",
-      "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer",
-      "path": "{CWD}/test/fixtures/test-conflicted-optional-peer-dep/nest-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer",
-      "resolved": "https://registry.npmjs.org/@isaacs/test-conflicted-optional-peer-dep-has-peer/-/test-conflicted-optional-peer-dep-has-peer-1.0.0.tgz",
+      "location": "node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
+      "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
+      "path": "{CWD}/test/fixtures/test-conflicted-optional-peer-dep/nest-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
+      "resolved": "https://registry.npmjs.org/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional/-/test-conflicted-optional-peer-dep-has-peer-optional-1.0.0.tgz",
       "version": "1.0.0",
     },
     "@isaacs/test-conflicted-optional-peer-dep-meta-peer" => ArboristNode {
+      "children": Map {
+        "@isaacs/test-conflicted-optional-peer-dep-has-peer" => ArboristNode {
+          "edgesIn": Set {
+            EdgeIn {
+              "from": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer",
+              "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer",
+              "spec": "1",
+              "type": "prod",
+            },
+          },
+          "edgesOut": Map {
+            "@isaacs/test-conflicted-optional-peer-dep-peer" => EdgeOut {
+              "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
+              "spec": "1",
+              "to": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer/node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
+              "type": "peer",
+            },
+          },
+          "location": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer",
+          "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer",
+          "path": "{CWD}/test/fixtures/test-conflicted-optional-peer-dep/nest-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer",
+          "resolved": "https://registry.npmjs.org/@isaacs/test-conflicted-optional-peer-dep-has-peer/-/test-conflicted-optional-peer-dep-has-peer-1.0.0.tgz",
+          "version": "1.0.0",
+        },
+        "@isaacs/test-conflicted-optional-peer-dep-peer" => ArboristNode {
+          "edgesIn": Set {
+            EdgeIn {
+              "from": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer",
+              "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
+              "spec": "1",
+              "type": "peer",
+            },
+          },
+          "location": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer/node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
+          "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
+          "path": "{CWD}/test/fixtures/test-conflicted-optional-peer-dep/nest-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer/node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
+          "peer": true,
+          "resolved": "https://registry.npmjs.org/@isaacs/test-conflicted-optional-peer-dep-peer/-/test-conflicted-optional-peer-dep-peer-1.0.0.tgz",
+          "version": "1.0.0",
+        },
+      },
       "edgesIn": Set {
         EdgeIn {
           "from": "",
@@ -16791,7 +16832,7 @@ ArboristNode {
         "@isaacs/test-conflicted-optional-peer-dep-has-peer" => EdgeOut {
           "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer",
           "spec": "1",
-          "to": "node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer",
+          "to": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer",
           "type": "prod",
         },
       },
@@ -16802,49 +16843,6 @@ ArboristNode {
       "version": "1.0.0",
     },
     "@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional" => ArboristNode {
-      "children": Map {
-        "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional" => ArboristNode {
-          "edgesIn": Set {
-            EdgeIn {
-              "from": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional",
-              "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
-              "spec": "1",
-              "type": "prod",
-            },
-          },
-          "edgesOut": Map {
-            "@isaacs/test-conflicted-optional-peer-dep-peer" => EdgeOut {
-              "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
-              "spec": "2",
-              "to": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
-              "type": "peerOptional",
-            },
-          },
-          "location": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
-          "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
-          "path": "{CWD}/test/fixtures/test-conflicted-optional-peer-dep/nest-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
-          "resolved": "https://registry.npmjs.org/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional/-/test-conflicted-optional-peer-dep-has-peer-optional-1.0.0.tgz",
-          "version": "1.0.0",
-        },
-        "@isaacs/test-conflicted-optional-peer-dep-peer" => ArboristNode {
-          "edgesIn": Set {
-            EdgeIn {
-              "from": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
-              "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
-              "spec": "2",
-              "type": "peerOptional",
-            },
-          },
-          "extraneous": true,
-          "location": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
-          "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
-          "optional": true,
-          "path": "{CWD}/test/fixtures/test-conflicted-optional-peer-dep/nest-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
-          "peer": true,
-          "resolved": "https://registry.npmjs.org/@isaacs/test-conflicted-optional-peer-dep-peer/-/test-conflicted-optional-peer-dep-peer-2.0.0.tgz",
-          "version": "2.0.0",
-        },
-      },
       "edgesIn": Set {
         EdgeIn {
           "from": "",
@@ -16857,7 +16855,7 @@ ArboristNode {
         "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional" => EdgeOut {
           "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
           "spec": "1",
-          "to": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
+          "to": "node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
           "type": "prod",
         },
       },
@@ -16870,18 +16868,20 @@ ArboristNode {
     "@isaacs/test-conflicted-optional-peer-dep-peer" => ArboristNode {
       "edgesIn": Set {
         EdgeIn {
-          "from": "node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer",
+          "from": "node_modules/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
           "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
-          "spec": "1",
-          "type": "peer",
+          "spec": "2",
+          "type": "peerOptional",
         },
       },
+      "extraneous": true,
       "location": "node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
       "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
+      "optional": true,
       "path": "{CWD}/test/fixtures/test-conflicted-optional-peer-dep/nest-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
       "peer": true,
-      "resolved": "https://registry.npmjs.org/@isaacs/test-conflicted-optional-peer-dep-peer/-/test-conflicted-optional-peer-dep-peer-1.0.0.tgz",
-      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/@isaacs/test-conflicted-optional-peer-dep-peer/-/test-conflicted-optional-peer-dep-peer-2.0.0.tgz",
+      "version": "2.0.0",
     },
   },
   "edgesOut": Map {
