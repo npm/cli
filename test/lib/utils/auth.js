@@ -141,3 +141,58 @@ t.test('does not prompt if stdin or stdout is not a tty', async (t) => {
     },
   }, fn), { message: 'nope' }, 'rejects with the original error')
 })
+
+const setupLogin = async (t, { creds = {}, ...rest }, opts = {}) => {
+  const { login } = tmock(t, '{LIB}/utils/auth.js', {
+    '{LIB}/utils/read-user-info.js': {
+      username: async () => 'foo',
+      password: async () => 'bar',
+    },
+    'npm-profile': {
+      loginCouch: async () => ({ token: 'test-token' }),
+    },
+  })
+  const { npm } = await setupMockNpm(t, {
+    ...rest,
+    config: { 'auth-type': 'legacy', ...rest.config },
+  })
+  return login(npm, { creds, registry: 'https://registry.npmjs.org/', ...opts })
+}
+
+t.test('login throws a clear error when stdin is not a tty', async (t) => {
+  await t.rejects(setupLogin(t, {
+    globals: {
+      'process.stdin': { isTTY: false },
+      'process.stdout': { isTTY: true },
+    },
+  }), {
+    code: 'ENOTTY',
+    message: /requires a TTY/,
+  }, 'rejects with a clear, actionable error instead of hanging')
+})
+
+t.test('login throws a clear error when stdout is not a tty', async (t) => {
+  await t.rejects(setupLogin(t, {
+    globals: {
+      'process.stdin': { isTTY: true },
+      'process.stdout': { isTTY: false },
+    },
+  }), {
+    code: 'ENOTTY',
+    message: /requires a TTY/,
+  }, 'rejects with a clear, actionable error instead of hanging')
+})
+
+t.test('login succeeds with couch when stdin and stdout are ttys', async (t) => {
+  const result = await setupLogin(t, {
+    globals: {
+      'process.stdin': { isTTY: true },
+      'process.stdout': { isTTY: true },
+    },
+  })
+
+  t.strictSame(result, {
+    message: 'Logged in on https://registry.npmjs.org/.',
+    newCreds: { token: 'test-token' },
+  })
+})
