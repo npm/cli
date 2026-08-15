@@ -1191,6 +1191,28 @@ exports[`test/lib/utils/error-message.js TAP just simple messages > must match s
 Object {
   "detail": Array [
     Array [
+      "network",
+      String(
+        This is a problem related to network connectivity.
+        In most cases you are behind a proxy or have bad network settings.
+        
+        If you are behind a proxy, please make sure that the 'proxy' config is set properly.  See: 'npm help config'
+      ),
+    ],
+  ],
+  "summary": Array [
+    Array [
+      "network",
+      "foo",
+    ],
+  ],
+}
+`
+
+exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 14`] = `
+Object {
+  "detail": Array [
+    Array [
       "notsup",
       String(
         Not compatible with your version of node/npm: some@package
@@ -1212,7 +1234,7 @@ Object {
 }
 `
 
-exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 14`] = `
+exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 15`] = `
 Object {
   "detail": Array [
     Array [
@@ -1232,7 +1254,7 @@ Object {
 }
 `
 
-exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 15`] = `
+exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 16`] = `
 Object {
   "detail": Array [
     Array [
@@ -1249,7 +1271,7 @@ Object {
 }
 `
 
-exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 16`] = `
+exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 17`] = `
 Object {
   "detail": Array [
     Array [
@@ -1265,26 +1287,6 @@ Object {
     Array [
       "enoent",
       "foo",
-    ],
-  ],
-}
-`
-
-exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 17`] = `
-Object {
-  "detail": Array [
-    Array [
-      "typeerror",
-      String(
-        This is an error with npm itself. Please report this error at:
-        https://github.com/npm/cli/issues
-      ),
-    ],
-  ],
-  "summary": Array [
-    Array [
-      "typeerror",
-      "dummy stack trace",
     ],
   ],
 }
@@ -1375,6 +1377,26 @@ exports[`test/lib/utils/error-message.js TAP just simple messages > must match s
 Object {
   "detail": Array [
     Array [
+      "typeerror",
+      String(
+        This is an error with npm itself. Please report this error at:
+        https://github.com/npm/cli/issues
+      ),
+    ],
+  ],
+  "summary": Array [
+    Array [
+      "typeerror",
+      "dummy stack trace",
+    ],
+  ],
+}
+`
+
+exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 22`] = `
+Object {
+  "detail": Array [
+    Array [
       "notarget",
       "In most cases you or one of your dependencies are requesting a package version that doesn't exist.",
     ],
@@ -1388,7 +1410,7 @@ Object {
 }
 `
 
-exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 22`] = `
+exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 23`] = `
 Object {
   "detail": Array [
     Array [
@@ -1405,7 +1427,7 @@ Object {
 }
 `
 
-exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 23`] = `
+exports[`test/lib/utils/error-message.js TAP just simple messages > must match snapshot 24`] = `
 Object {
   "detail": Array [
     Array [
@@ -1569,18 +1591,17 @@ exports[`test/lib/utils/error-message.js TAP just simple messages > must match s
 Object {
   "detail": Array [
     Array [
-      "network",
+      "need auth",
       String(
-        This is a problem related to network connectivity.
-        In most cases you are behind a proxy or have bad network settings.
-        
-        If you are behind a proxy, please make sure that the 'proxy' config is set properly.  See: 'npm help config'
+        Create a granular access token at https://www.npmjs.com/, then set it with:
+          npm config set //registry.npmjs.org/:_authToken=<token>
+        or by setting the NPM_TOKEN environment variable.
       ),
     ],
   ],
   "summary": Array [
     Array [
-      "network",
+      "need auth",
       "foo",
     ],
   ],

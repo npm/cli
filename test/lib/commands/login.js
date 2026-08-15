@@ -12,12 +12,15 @@ const mockLogin = async (t, { stdin: stdinLines, registry: registryUrl, ...optio
   let stdin
   if (stdinLines) {
     stdin = new stream.PassThrough()
+    stdin.isTTY = true
     for (const l of stdinLines) {
       stdin.write(l + '\n')
     }
+    const stdout = new stream.PassThrough() // to quiet readline
+    stdout.isTTY = true
     mockGlobals(t, {
       'process.stdin': stdin,
-      'process.stdout': new stream.PassThrough(), // to quiet readline
+      'process.stdout': stdout,
     }, { replace: true })
   }
   const mock = await loadMockNpm(t, {

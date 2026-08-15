@@ -142,14 +142,18 @@ t.test('does not prompt if stdin or stdout is not a tty', async (t) => {
   }, fn), { message: 'nope' }, 'rejects with the original error')
 })
 
-const setupLogin = async (t, { creds = {}, ...rest }, opts = {}) => {
+const setupLogin = async (t, { creds = {}, loginWeb, ...rest }, opts = {}) => {
   const { login } = tmock(t, '{LIB}/utils/auth.js', {
     '{LIB}/utils/read-user-info.js': {
       username: async () => 'foo',
       password: async () => 'bar',
     },
+    '{LIB}/utils/open-url.js': {
+      createOpener: () => () => {},
+    },
     'npm-profile': {
       loginCouch: async () => ({ token: 'test-token' }),
+      ...(loginWeb ? { loginWeb } : {}),
     },
   })
   const { npm } = await setupMockNpm(t, {
@@ -166,8 +170,8 @@ t.test('login throws a clear error when stdin is not a tty', async (t) => {
       'process.stdout': { isTTY: true },
     },
   }), {
-    code: 'ENOTTY',
-    message: /requires a TTY/,
+    code: 'ENOTTYAUTH',
+    message: /requires an interactive terminal/,
   }, 'rejects with a clear, actionable error instead of hanging')
 })
 
@@ -178,13 +182,59 @@ t.test('login throws a clear error when stdout is not a tty', async (t) => {
       'process.stdout': { isTTY: false },
     },
   }), {
-    code: 'ENOTTY',
-    message: /requires a TTY/,
+    code: 'ENOTTYAUTH',
+    message: /requires an interactive terminal/,
+  }, 'rejects with a clear, actionable error instead of hanging')
+})
+
+t.test('login throws a clear error when neither stdin nor stdout is a tty', async (t) => {
+  await t.rejects(setupLogin(t, {
+    globals: {
+      'process.stdin': { isTTY: false },
+      'process.stdout': { isTTY: false },
+    },
+  }), {
+    code: 'ENOTTYAUTH',
+    message: /requires an interactive terminal/,
   }, 'rejects with a clear, actionable error instead of hanging')
 })
 
 t.test('login succeeds with couch when stdin and stdout are ttys', async (t) => {
   const result = await setupLogin(t, {
+    globals: {
+      'process.stdin': { isTTY: true },
+      'process.stdout': { isTTY: true },
+    },
+  })
+
+  t.strictSame(result, {
+    message: 'Logged in on https://registry.npmjs.org/.',
+    newCreds: { token: 'test-token' },
+  })
+})
+
+t.test('login throws a clear error for the web login ENYI fallback when not a tty', async (t) => {
+  await t.rejects(setupLogin(t, {
+    config: { 'auth-type': 'web' },
+    loginWeb: async () => {
+      throw Object.assign(new Error('web login not supported'), { code: 'ENYI' })
+    },
+    globals: {
+      'process.stdin': { isTTY: false },
+      'process.stdout': { isTTY: false },
+    },
+  }), {
+    code: 'ENOTTYAUTH',
+    message: /requires an interactive terminal/,
+  }, 'rejects with a clear, actionable error instead of hanging on the couch fallback')
+})
+
+t.test('login falls back to couch after web login ENYI when a tty', async (t) => {
+  const result = await setupLogin(t, {
+    config: { 'auth-type': 'web' },
+    loginWeb: async () => {
+      throw Object.assign(new Error('web login not supported'), { code: 'ENYI' })
+    },
     globals: {
       'process.stdin': { isTTY: true },
       'process.stdout': { isTTY: true },

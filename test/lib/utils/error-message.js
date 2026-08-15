@@ -59,6 +59,7 @@ t.test('just simple messages', async t => {
     'EISGIT',
     'EEXIST',
     'ENEEDAUTH',
+    'ENOTTYAUTH',
     'ECONNRESET',
     'ENOTFOUND',
     'ETIMEDOUT',
