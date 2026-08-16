@@ -101,7 +101,7 @@ const mockOidc = async (t, {
     ciInfo.CIRCLE = CIRCLE
   })
 
-  const { npm, registry, joinedOutput, logs } = await loadNpmWithRegistry(t, {
+  const { npm, registry, joinedOutput, logs, prefix } = await loadNpmWithRegistry(t, {
     config: {
       loglevel: 'silly',
       ...config,
@@ -160,7 +160,7 @@ const mockOidc = async (t, {
     })
   }
 
-  return { npm, joinedOutput, logs, ACTIONS_ID_TOKEN_REQUEST_URL }
+  return { npm, registry, prefix, joinedOutput, logs, ACTIONS_ID_TOKEN_REQUEST_URL }
 }
 
 const oidcPublishTest = (opts) => {
