@@ -144,6 +144,12 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
 
   // Handle case where --provenance flag was set to true
   let transparencyLogUrl
+  if (provenance === true && provenanceFile) {
+    throw Object.assign(
+      new Error('provenance and provenanceFile are mutually exclusive'),
+      { code: 'EPROVENANCECONFLICT' }
+    )
+  }
   if (provenance === true || provenanceFile) {
     let provenanceBundle
     const subject = {
