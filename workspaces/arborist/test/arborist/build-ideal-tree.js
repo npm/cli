@@ -2376,6 +2376,12 @@ t.test('remove deps with a version spec', async t => {
   }
 
   await t.rejects(
+    buildIdeal(path, { rm: ['@scope/foo@1.2.3'] }),
+    { code: 'ERMARGS', message: /npm rm @scope\/foo/ },
+    'should throw an error when a scoped package name has a version'
+  )
+
+  await t.rejects(
     buildIdeal(path, { rm: ['./foo'] }),
     { code: 'ERMARGS', message: /npm rm <pkg>/ },
     'should throw an error when the package is a path'

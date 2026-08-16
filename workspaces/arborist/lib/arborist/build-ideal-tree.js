@@ -396,6 +396,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     }
     this[_updateNames] = update.names
 
+    this[_updateAll] = update.all
+
     // validates list of rm names, they must
     // be dep names only, no semver ranges are supported
     for (const name of options.rm || []) {
@@ -411,7 +413,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       }
     }
 
-    this[_updateAll] = update.all
     // we prune by default unless explicitly set to boolean false
     this.#prune = options.prune !== false
 
