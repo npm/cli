@@ -2347,6 +2347,35 @@ t.test('remove deps when initializing tree from actual tree', async t => {
   t.equal(tree.children.get('foo'), undefined, 'removed foo child')
 })
 
+t.test('rm deps with a version spec', async t => {
+  const path = t.testdir({
+    node_modules: {
+      foo: {
+        'package.json': JSON.stringify({
+          name: 'foo',
+          version: '1.2.3',
+        }),
+      },
+    },
+  })
+
+  createRegistry(t, false)
+  const invalidArgs = [
+    'foo@1.2.3',
+    'foo@next',
+    'foo@^1.0.0',
+    'foo@>=2.0.0',
+    'foo@2',
+  ]
+  for (const rmName of invalidArgs) {
+    await t.rejects(
+      newArb(path).buildIdealTree({ rm: [rmName] }),
+      { code: 'ERMARGS' },
+      'should throw an error when using semver ranges'
+    )
+  }
+})
+
 t.test('detect conflicts in transitive peerOptional deps', async t => {
   const base = resolve(fixtures, 'test-conflicted-optional-peer-dep')
 
