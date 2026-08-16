@@ -2347,7 +2347,7 @@ t.test('remove deps when initializing tree from actual tree', async t => {
   t.equal(tree.children.get('foo'), undefined, 'removed foo child')
 })
 
-t.test('rm deps with a version spec', async t => {
+t.test('remove deps with a version spec', async t => {
   const path = t.testdir({
     node_modules: {
       foo: {
@@ -2369,11 +2369,17 @@ t.test('rm deps with a version spec', async t => {
   ]
   for (const rmName of invalidArgs) {
     await t.rejects(
-      newArb(path).buildIdealTree({ rm: [rmName] }),
-      { code: 'ERMARGS' },
-      'should throw an error when using semver ranges'
+      buildIdeal(path, { rm: [rmName] }),
+      { code: 'ERMARGS', message: /npm rm foo/ },
+      'should throw an error when the package name has a version'
     )
   }
+
+  await t.rejects(
+    buildIdeal(path, { rm: ['./foo'] }),
+    { code: 'ERMARGS', message: /npm rm <pkg>/ },
+    'should throw an error when the package is a path'
+  )
 })
 
 t.test('detect conflicts in transitive peerOptional deps', async t => {

@@ -402,7 +402,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       const spec = npa(name)
       const validationError =
         new TypeError(`Remove arguments must only contain package names, eg:
-    npm uninstall ${spec.name}`)
+    npm rm ${spec.name || '<pkg>'}`)
       validationError.code = 'ERMARGS'
 
       // If they gave us anything other than a bare package name
