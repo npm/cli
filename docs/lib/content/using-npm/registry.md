@@ -17,7 +17,7 @@ Use of someone else's registry may be governed by their terms of use.
 
 npm's package registry implementation supports several write APIs as well, to allow for publishing packages and managing user account information.
 
-The registry URL used is determined by the scope of the package (see [`scope`](/using-npm/scope).
+The registry URL used is determined by the scope of the package (see [`scope`](/using-npm/scope)).
 If no scope is specified, the default registry is used, which is supplied by the [`registry` config](/using-npm/config#registry) parameter.
 See [`npm config`](/commands/npm-config), [`npmrc`](/configuring-npm/npmrc), and [`config`](/using-npm/config) for more on managing npm's configuration.
 Authentication configuration such as auth tokens and certificates are configured specifically scoped to an individual registry.
