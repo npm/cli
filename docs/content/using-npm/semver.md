@@ -1,43 +1,275 @@
----
-title: semver
-section: 7
-description: The semantic versioner for npm
----
+# Bifurcar un repositorio
 
-## Install
+Bifurque un repositorio sobre GitHub para proponer cambios, colaborar en proyectos y administrar su propia copia del código base.
 
-```bash
-npm install --save semver
-````
+## Acerca de los forks
 
-## Usage
+Bifurcar un repositorio te permite proponer cambios a un proyecto sin afectar al repositorio original. Consulte [Acerca de los forks](/es/pull-requests/get-started/about-forks).
 
-As a node module:
+## Prerequisites
 
-```js
-const semver = require('semver')
+Si aún no lo ha hecho, configure Git y la autenticación con GitHub.com desde Git. Consulte [Configuración de Git](/es/get-started/git-basics/set-up-git).
 
-semver.valid('1.2.3') // '1.2.3'
-semver.valid('a.b.c') // null
-semver.clean('  =v1.2.3   ') // '1.2.3'
-semver.satisfies('1.2.3', '1.x || >=2.5.0 || 5.0.0 - 7.2.3') // true
-semver.gt('1.2.3', '9.8.7') // false
-semver.lt('1.2.3', '9.8.7') // true
-semver.minVersion('>=1.0.0') // '1.0.0'
-semver.valid(semver.coerce('v2')) // '2.0.0'
-semver.valid(semver.coerce('42.6.7.9.3-alpha')) // '42.6.7'
+## Clonar un repositorio
+
+<div class="ghd-tool webui">
+
+Puedes ramificar un proyecto para proponer cambios en el repositorio ascendente. En este caso, es una buena práctica sincronizar regularmente tu fork con el repositorio original. Para hacerlo, deberás usar Git en la línea de comando. Puede practicar la configuración del repositorio ascendente con el mismo repositorio [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) que acaba de bifurcar.
+
+1. En GitHub, vaya al repositorio [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife).
+2. En la esquina superior derecha de la página, haga clic en **Fork** (Bifurcar).
+
+   ![Captura de pantalla de la página principal del repositorio. Un botón, etiquetado con un icono de fork y "Fork 59.3k", está delineado en naranja oscuro.](/assets/images/help/repository/fork-button.png)
+3. En "Propietario", selecciona el menú desplegable y haz clic sobre un propietario del repositorio bifurcado.
+4. De forma predeterminada, las bifurcaciones tienen el mismo nombre que sus repositorios ascendentes. Opcionalmente, en el campo "Nombre del repositorio", escriba otro nombre para distinguir tu bifurcación.
+5. Opcionalmente, en el campo de descripción, escribe una descripción de tu bifurcación.
+6. Opcionalmente, selecciona **Copiar solo la rama DEFAULT**.
+
+   En muchos escenarios de bifurcación, como los de contribución a proyectos de código abierto, solo tienes que copiar la rama predeterminada. Si no selecciona esta opción, todas las ramas se copiarán en la nueva bifurcación.
+7. Haz clic en **Crear bifurcación**.
+
+> \[!NOTE]
+> Si quieres copiar otras ramas del repositorio ascendente, puedes hacerlo desde la página **Branches**. Consulte [Administración de ramas dentro del repositorio](/es/pull-requests/how-tos/commit-changes/managing-branches-within-your-repository).
+
+</div>
+
+<div class="ghd-tool cli">
+
+> \[!NOTE]
+> Para más información sobre GitHub CLI, consulta [Acerca de GitHub CLI](/es/github-cli/github-cli/about-github-cli).
+
+Para crear una bifurcación de un repositorio, use el subcomando `gh repo fork`.
+
+```shell
+gh repo fork REPOSITORY
 ```
 
-As a command-line utility:
+Para crear la bifurcación en una organización, use la marca `--org`.
 
+```shell
+gh repo fork REPOSITORY --org "octo-org"
 ```
-$ semver -h
 
-A JavaScript implementation of the https://semver.org/ specification
-Copyright Isaac Z. Schlueter
+</div>
 
-Usage: semver [options] <version> [<version> [...]]
-Prints valid versions sorted by SemVer precedence
+<div class="ghd-tool desktop">
+
+Puede bifurcar un repositorio en GitHub.com o en GitHub Desktop. Para obtener información sobre cómo crear una bifurcación en GitHub.com, consulte [la versión de este artículo para el navegador web](/es/pull-requests/how-tos/work-with-forks/fork-a-repo?tool=webui).
+
+En GitHub Desktop, al clonar un repositorio al que no tienes acceso de escritura e insertar después un cambio en el repositorio, se creará una bifurcación automáticamente.
+
+1. En el menú **File**, haga clic en **Clone Repository**.
+
+   <div class="ghd-tool mac">
+
+   ![Captura de pantalla de la barra de menús en un equipo Mac. El menú desplegable "Archivo" se expande y la opción "Clonar repositorio" está resaltada con un contorno naranja.](/assets/images/help/desktop/clone-file-menu-mac.png)
+
+   </div>
+
+   <div class="ghd-tool windows">
+
+   ![Captura de pantalla de la barra de menús "Escritorio de GitHub" en un equipo Windows. El menú desplegable "Archivo" se expande y la opción "Clonar repositorio" está resaltada en naranja.](/assets/images/help/desktop/clone-file-menu-windows.png)
+
+   </div>
+
+2. Haz clic en la pestaña que corresponde a la ubicación del repositorio que deseas clonar. En este ejemplo, hacemos clic en la pestaña URL.
+
+   ![Captura de pantalla de la pestaña "URL" de la ventana "Clone a repository". Las pestañas "GitHub.com", "GitHub Enterprise" y "URL" se resaltan en color naranja oscuro.](/assets/images/help/desktop/choose-repository-location-url-tab-windows.png)
+
+3. Escribe la dirección URL o la ruta de acceso del repositorio que quieres clonar.
+
+   ![Captura de pantalla de la pestaña "URL" de la ventana "Clone a repository". La entrada que contiene "octocat/Spoon-Knife" está resaltada con un contorno naranja.](/assets/images/help/desktop/clone-a-repository-url-tab-name-input.png)
+
+4. Para seleccionar el directorio local en el que quieres clonar el repositorio, junto al campo "Ruta de acceso local", haz clic en **Elegir...** y ve al directorio.
+
+   ![Captura de pantalla de la pestaña "URL" de la ventana "Clone a repository". Un botón, con la etiqueta "Elegir", está resaltado con un contorno naranja.](/assets/images/help/desktop/clone-choose-button-url-windows.png)
+
+5. En la parte inferior de la ventana "Clonar un repositorio", haz clic en **Clonar**.
+
+6. Para crear una bifurcación, inserta un cambio en el repositorio. Por ejemplo, crea una rama y publícala. Aparecerá un mensaje en el que se te preguntará si quieres bifurcar el repositorio.
+
+   ![Captura de pantalla de la ventana "Create a fork prompt". Botón con la etiqueta "Fork this repository" (Bifurcar este repositorio) resaltado con un contorno naranja.](/assets/images/help/desktop/create-fork-button-windows.png)
+
+7. Lee la información en la ventana "¿Cómo planeas usar esta bifurcación?" .
+   * Si planea usar esta bifurcación para contribuir con el repositorio ascendente original, haga clic en **To contribute to the parent project** (Para contribuir con el proyecto).
+   * Si planea usar esta bifurcación para un proyecto que no esta conectado al elemento ascendente, haga clic en **For my own purposes** (Para mis propios propósitos).
+
+8. Haga clic en **Continuar**.
+
+</div>
+
+<div class="ghd-tool webui">
+
+## Clonar tu repositorio bifurcado
+
+Ahora tienes un fork del repositorio Spoon-Knife, pero no tienes los archivos de ese repositorio en tu ordenador.
+
+1. En GitHub, vaya a la **bifurcación** del repositorio de Spoon-Knife.
+
+2. Encima de la lista de archivos, haz clic en **<svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-code" aria-label="code" role="img"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"></path></svg> Code**.
+
+   ![Captura de pantalla de la lista de archivos en la página de aterrizaje de un repositorio. El botón "Código" está resaltado con un contorno naranja oscuro.](/assets/images/help/repository/code-button.png)
+
+3. Copia la dirección URL del repositorio.
+
+   * Para clonar el repositorio mediante HTTPS, en "HTTPS", haga clic en <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-copy" aria-label="Copiar al portapapeles" role="img"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>.
+   * Para clonar el repositorio mediante una clave SSH, incluido un certificado emitido por la entidad de certificación SSH de la organización, haz clic en **SSH** y luego en <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-copy" aria-label="Copy to clipboard" role="img"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>.
+   * Para clonar un repositorio mediante GitHub CLI, haz clic en **GitHub CLI** y, después, en <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-copy" aria-label="Copy to clipboard" role="img"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>.
+
+     ![Captura de pantalla del menú desplegable "Código". A la derecha de la dirección URL HTTPS del repositorio, hay un icono de copia resaltado en naranja oscuro.](/assets/images/help/repository/https-url-clone-cli.png)
+
+4. Abre Terminal o Git Bash.
+
+5. Cambia el directorio de trabajo actual a la ubicación en donde quieres clonar el directorio.
+
+6. Escriba `git clone`y pegue la dirección URL que copió anteriormente. Tendrá este aspecto, con el GitHub nombre de usuario en lugar de `YOUR-USERNAME`:
+
+   ```shell
+   git clone https://github.com/YOUR-USERNAME/Spoon-Knife
+   ```
+
+7. Presione **ENTRAR**. Git crea el clon local.
+
+   ```shell
+   $ git clone https://github.com/YOUR-USERNAME/Spoon-Knife
+   > Cloning into `Spoon-Knife`...
+   > remote: Counting objects: 10, done.
+   > remote: Compressing objects: 100% (8/8), done.
+   > remote: Total 10 (delta 1), reused 10 (delta 1)
+   > Unpacking objects: 100% (10/10), done.
+   ```
+
+</div>
+
+<div class="ghd-tool cli">
+
+## Clonar tu repositorio bifurcado
+
+Ahora tienes un fork del repositorio Spoon-Knife, pero no tienes los archivos de ese repositorio en tu ordenador.
+
+> \[!NOTE]
+> Para más información sobre GitHub CLI, consulta [Acerca de GitHub CLI](/es/github-cli/github-cli/about-github-cli).
+
+Para clonar tu bifurcación, usa la opción `--clone`.
+
+```shell
+gh repo fork REPOSITORY --clone=true
+```
+
+</div>
+
+## Configurar Git para sincronizar tu bifurcación con el repositorio original
+
+Cuando creas una bifurcación de un proyecto para proponer cambios en el repositorio original, puedes configurar Git para incorporar cambios desde el repositorio original al clon local de tu bifurcación.
+
+<div class="ghd-tool webui">
+
+1. En GitHub, vaya al repositorio [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife).
+
+2. Encima de la lista de archivos, haz clic en **<svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-code" aria-label="code" role="img"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.94 8l-3.72-3.72a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Zm-6.56 0a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042L2.06 8l3.72 3.72a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L.47 8.53a.75.75 0 0 1 0-1.06Z"></path></svg> Code**.
+
+   ![Captura de pantalla de la lista de archivos en la página de aterrizaje de un repositorio. El botón "Código" está resaltado con un contorno naranja oscuro.](/assets/images/help/repository/code-button.png)
+
+3. Copia la dirección URL del repositorio.
+
+   * Para clonar el repositorio mediante HTTPS, en "HTTPS", haga clic en <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-copy" aria-label="Copiar al portapapeles" role="img"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>.
+   * Para clonar el repositorio mediante una clave SSH, incluido un certificado emitido por la entidad de certificación SSH de la organización, haz clic en **SSH** y luego en <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-copy" aria-label="Copy to clipboard" role="img"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>.
+   * Para clonar un repositorio mediante GitHub CLI, haz clic en **GitHub CLI** y, después, en <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-copy" aria-label="Copy to clipboard" role="img"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>.
+
+     ![Captura de pantalla del menú desplegable "Código". A la derecha de la dirección URL HTTPS del repositorio, hay un icono de copia resaltado en naranja oscuro.](/assets/images/help/repository/https-url-clone-cli.png)
+
+4. Abre Terminal o Git Bash.
+
+5. Cambie al directorio del fork que clonó.
+   * Para ir al directorio principal, escriba solo `cd` sin ningún otro texto.
+   * Para generar una lista de los archivos y carpetas en su directorio actual, escriba `ls`.
+   * Para ir a uno de los directorios mostrados, escriba `cd YOUR-LISTED-DIRECTORY`.
+   * Para subir un directorio, escriba `cd ..`.
+
+6. Escriba `git remote -v` y presione **Entrar**. Verás el repositorio remoto configurado actualmente para tu fork.
+
+   ```shell
+   $ git remote -v
+   > origin  https://github.com/YOUR-USERNAME/YOUR-FORK.git (fetch)
+   > origin  https://github.com/YOUR-USERNAME/YOUR-FORK.git (push)
+   ```
+
+7. Escriba `git remote add upstream`y pegue la dirección URL que copió en el paso 3 y presione **Entrar**. Tendrá este aspecto:
+
+   ```shell
+   git remote add upstream https://github.com/ORIGINAL-OWNER/Spoon-Knife.git
+   ```
+
+8. Para comprobar el nuevo repositorio ascendente que especificó para la bifurcación, vuelva a escribir `git remote -v` . Deberías ver la URL de tu fork como `origin` y la URL del repositorio upstream como `upstream`.
+
+   ```shell
+   $ git remote -v
+   > origin    https://github.com/YOUR-USERNAME/YOUR-FORK.git (fetch)
+   > origin    https://github.com/YOUR-USERNAME/YOUR-FORK.git (push)
+   > upstream  https://github.com/ORIGINAL-OWNER/ORIGINAL-REPOSITORY.git (fetch)
+   > upstream  https://github.com/ORIGINAL-OWNER/ORIGINAL-REPOSITORY.git (push)
+   ```
+
+Ahora puede mantener su fork sincronizado con el repositorio original con unos pocos comandos de Git. Consulte [Sincronizar una bifurcación](/es/pull-requests/how-tos/work-with-forks/syncing-a-fork).
+
+</div>
+
+<div class="ghd-tool cli">
+
+> \[!NOTE]
+> Para más información sobre GitHub CLI, consulta [Acerca de GitHub CLI](/es/github-cli/github-cli/about-github-cli).
+
+A fin de configurar un repositorio remoto para el repositorio bifurcado, utilice la marca `--remote`.
+
+```shell
+gh repo fork REPOSITORY --remote=true
+```
+
+Para especificar el nombre del repositorio remoto, use la marca `--remote-name`.
+
+```shell
+gh repo fork REPOSITORY --remote-name "main-remote-repo"
+```
+
+</div>
+
+### Edición de una bifurcación
+
+Puedes realizar cualquier cambio a una bifurcación, incluyendo:
+
+* **Crear ramas**: las [*ramas*](/es/pull-requests/how-tos/commit-changes/managing-branches-within-your-repository) permiten compilar características o probar ideas sin poner en riesgo el proyecto principal.
+* **Abrir solicitudes de incorporación de cambios:** Si desea volver a contribuir al repositorio ascendente, puede enviar una solicitud de incorporación de cambios para pedir al autor original que extraiga la bifurcación en su repositorio. Consulte [Crear una solicitud de extracción desde una bifurcación](/es/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork).
+
+## Busca otro repositorio para hacer un fork
+
+Haz un fork de un repositorio para comenzar a contribuir a un proyecto.
+Puedes bifurcar cualquier repositorio público:
+
+* A tu cuenta personal
+* A una organización en la que tengas permiso para crear repositorios
+
+Si tiene acceso a un repositorio privado y el propietario permite la bifurcación, puedes bifurcar el repositorio:
+
+* A tu cuenta personal
+* Para una organización en GitHub Team donde tienes permiso para crear repositorios
+
+No puedes bifurcar un repositorio privado a una organización que use GitHub Free. Para más información sobre GitHub Team y GitHub Free, consulta [planes de GitHub](/es/get-started/learning-about-github/githubs-plans).
+
+Para obtener más información sobre cuándo puede bifurcar un repositorio, consulte [Horquillas](/es/pull-requests/reference/forks).
+
+Puedes explorar [Explore GitHub](https://github.com/explore) para encontrar proyectos y empezar a contribuir a repositorios de código abierto. Consulte [Búsqueda de formas de contribuir a la open source en GitHub](/es/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github).
+
+## Pasos siguientes
+
+Ahora ya has bifurcado un repositorio, has practicado la clonación de tu bifurcación y has configurado un repositorio ascendente.
+
+* Para obtener más información sobre el uso de Git en la línea de comandos para clonar y sincronizar los cambios, consulte [Configuración de Git](/es/get-started/git-basics/set-up-git).
+
+* También puede crear un repositorio para almacenar los proyectos y compartir el código en GitHub. La creación de un repositorio para el proyecto permite almacenar código en GitHub. Esto proporciona una copia de seguridad del trabajo que puedes elegir compartir con otros desarrolladores. Para más información, consulta [Inicio rápido para repositorios](/es/repositories/creating-and-managing-repositories/quickstart-for-repositories).
+
+* Cada repositorio de GitHub es propiedad de una persona o una organización. Puede interactuar con las personas, los repositorios y las organizaciones mediante la conexión y el seguimiento de ellos en GitHub. Para más información, consulta [Detección de proyectos en GitHub](/es/get-started/exploring-projects-on-github/discovering-projects-on-github).
+
+* GitHub tiene una excelente comunidad de soporte técnico en la que puede pedir ayuda y hablar con usuarios de todo el mundo. Únete a la conversación en [GitHub Community](https://github.com/orgs/community/discussions).Prints valid versions sorted by SemVer precedence
 
 Options:
 -r --range <range>
