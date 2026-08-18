@@ -4987,6 +4987,50 @@ t.test('resolves peerOptional deps installed by another dependent', async t => {
   t.ok(edge.valid, 'peerOptional edge is valid')
 })
 
+t.test('does not fetch packuments for peerOptional deps satisfied by the actual tree', async t => {
+  const registry = createRegistry(t, false)
+
+  const hostPack = registry.packument({
+    name: 'host',
+    version: '1.0.0',
+    peerDependencies: { plugin: '^1.0.0' },
+    peerDependenciesMeta: { plugin: { optional: true } },
+  })
+  const hostManifest = registry.manifest({ name: 'host', packuments: [hostPack] })
+  await registry.package({ manifest: hostManifest })
+
+  const path = t.testdir({
+    node_modules: {
+      other: {
+        'package.json': JSON.stringify({
+          name: 'other',
+          version: '1.0.0',
+          dependencies: { plugin: '^1.0.0' },
+        }),
+      },
+      plugin: {
+        'package.json': JSON.stringify({
+          name: 'plugin',
+          version: '1.0.0',
+        }),
+      },
+    },
+    'package.json': JSON.stringify({
+      dependencies: { other: '^1.0.0' },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree({ add: ['host@^1.0.0'] })
+
+  const plugin = tree.children.get('plugin')
+  t.equal(plugin.version, '1.0.0', 'kept the already installed plugin')
+  const edge = tree.children.get('host').edgesOut.get('plugin')
+  t.equal(edge.type, 'peerOptional')
+  t.equal(edge.to, plugin, 'peerOptional edge resolved to the existing plugin')
+  t.ok(edge.valid, 'peerOptional edge is valid')
+})
+
 t.test('peerOptional prefers existing tree node over registry fetch (#9249)', async t => {
   // Reproduction: ts-jest has peerOptional jest-util@"^29||^30".
   // @types/jest@28 → expect@28 → jest-util@28 placed at root first.
