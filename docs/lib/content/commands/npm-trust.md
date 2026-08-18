@@ -41,6 +41,14 @@ At least one of these flags is required when creating a trust configuration. You
 
 The required options depend on the CI/CD provider you're configuring. Detailed information about each option is available in the [managing trusted publisher configurations](https://docs.npmjs.com/trusted-publishers#managing-trusted-publisher-configurations) section of the npm documentation. If a provider is repository-based and the option is not provided, npm will use the `repository.url` field from your `package.json`, if available.
 
+For Buildkite, specify the organization and pipeline slugs whose OIDC claims should be trusted:
+
+```bash
+npm trust buildkite <package> --organization <slug> --pipeline <slug> --allow-publish
+```
+
+When publishing from that pipeline, npm requests an OIDC token from the Buildkite agent and exchanges it for a short-lived npm registry token. No npm token needs to be stored in the pipeline.
+
 Currently, the registry only supports one configuration per package. If you attempt to create a new trust relationship when one already exists, it will result in an error. To replace an existing configuration:
 
 1. Use `npm trust list [package]` to view the ID of the existing trusted publisher
