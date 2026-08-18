@@ -352,7 +352,8 @@ t.test('ignore inherited global config when installing to npx cache', async t =>
   })
 
   const binPath = resolve(path, 'npxCache', hash, 'node_modules', '.bin')
-  t.ok(existsSync(binPath), 'bins should be linked inside the npx cache entry')
+  t.ok(existsSync(binPath), 'bins should be linked at npxCache')
+  t.notOk(existsSync(resolve(path, 'npxCache', 'bin')), 'bins should not be linked globally')
 
   t.match(await readOutput('@npmcli-create-index'), {
     value: 'packages-2.0.0',
