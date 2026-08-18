@@ -2355,19 +2355,42 @@ t.test('detect conflicts in transitive peerOptional deps', async t => {
     createRegistry(t, true)
     const tree = await buildIdeal(path)
     t.matchSnapshot(printTree(tree))
-    const name = '@isaacs/test-conflicted-optional-peer-dep-peer'
-    const peers = tree.inventory.query('name', name)
+    const peerName = '@isaacs/test-conflicted-optional-peer-dep-peer'
+    const requiredHostName = '@isaacs/test-conflicted-optional-peer-dep-has-peer'
+    const optionalHostName = '@isaacs/test-conflicted-optional-peer-dep-has-peer-optional'
+    const optionalMetaName = '@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional'
+
+    const peers = tree.inventory.query('name', peerName)
     t.equal(peers.size, 2, 'installed the peer dep twice to avoid conflict')
-    t.strictSame(
-      [...peers].map(p => p.version).sort(),
-      ['1.0.0', '2.0.0'],
-      'both conflicting versions are present'
+
+    const rootPeer = tree.children.get(peerName)
+    const requiredHost = tree.children.get(requiredHostName)
+    const optionalMeta = tree.children.get(optionalMetaName)
+    const optionalHost = optionalMeta?.children.get(optionalHostName)
+    const nestedPeer = optionalMeta?.children.get(peerName)
+
+    t.equal(rootPeer?.version, '1.0.0', 'required peer retains the root slot')
+    t.equal(
+      requiredHost?.edgesOut.get(peerName)?.to,
+      rootPeer,
+      'required peer edge resolves to the root provider'
     )
-    for (const peer of peers) {
-      for (const edge of peer.edgesIn) {
-        t.ok(edge.valid, `edge from ${edge.from.name} is valid`)
-      }
-    }
+
+    t.notOk(
+      tree.children.get(optionalHostName),
+      'optional peer dependent is not hoisted to the root'
+    )
+    t.ok(optionalHost, 'optional peer dependent is nested under its branch')
+    t.equal(
+      nestedPeer?.version,
+      '2.0.0',
+      'compatible optional peer is nested with its dependent'
+    )
+    t.equal(
+      optionalHost?.edgesOut.get(peerName)?.to,
+      nestedPeer,
+      'optional peer edge resolves to its nested provider'
+    )
   })
 
   await t.test('omit peerOptionals when not needed for conflicts', async t => {
