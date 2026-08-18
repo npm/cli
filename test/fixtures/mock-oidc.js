@@ -45,6 +45,18 @@ function circleciIdToken () {
   return makeJwt(payload)
 }
 
+function buildkiteIdToken () {
+  const now = Math.floor(Date.now() / 1000)
+  const payload = {
+    organization_slug: 'npm',
+    pipeline_slug: 'trust-publish-test',
+    runner_environment: 'buildkite-hosted',
+    iat: now,
+    exp: now + 300,
+  }
+  return makeJwt(payload)
+}
+
 const mockOidc = async (t, {
   oidcOptions = {},
   packageName = '@npmcli/test-package',
@@ -52,6 +64,7 @@ const mockOidc = async (t, {
   packageJson = {},
   load = {},
   mockGithubOidcOptions = false,
+  mockBuildkiteOidcOptions = false,
   mockOidcTokenExchangeOptions = false,
   publishOptions = {},
   provenance = false,
@@ -60,6 +73,7 @@ const mockOidc = async (t, {
   const github = oidcOptions.github ?? false
   const gitlab = oidcOptions.gitlab ?? false
   const circleci = oidcOptions.circleci ?? false
+  const buildkite = oidcOptions.buildkite ?? false
 
   const ACTIONS_ID_TOKEN_REQUEST_URL = oidcOptions.ACTIONS_ID_TOKEN_REQUEST_URL ?? 'https://github.com/actions/id-token'
   const ACTIONS_ID_TOKEN_REQUEST_TOKEN = oidcOptions.ACTIONS_ID_TOKEN_REQUEST_TOKEN ?? 'ACTIONS_ID_TOKEN_REQUEST_TOKEN'
@@ -69,10 +83,11 @@ const mockOidc = async (t, {
       env: {
         ACTIONS_ID_TOKEN_REQUEST_TOKEN: ACTIONS_ID_TOKEN_REQUEST_TOKEN,
         ACTIONS_ID_TOKEN_REQUEST_URL: ACTIONS_ID_TOKEN_REQUEST_URL,
-        CI: github || gitlab || circleci ? 'true' : undefined,
+        CI: github || gitlab || circleci || buildkite ? 'true' : undefined,
         ...(github ? { GITHUB_ACTIONS: 'true' } : {}),
         ...(gitlab ? { GITLAB_CI: 'true' } : {}),
         ...(circleci ? { CIRCLECI: 'true' } : {}),
+        ...(buildkite ? { BUILDKITE: 'true' } : {}),
         ...(oidcOptions.NPM_ID_TOKEN ? { NPM_ID_TOKEN: oidcOptions.NPM_ID_TOKEN } : {}),
         /* eslint-disable-next-line max-len */
         ...(oidcOptions.SIGSTORE_ID_TOKEN ? { SIGSTORE_ID_TOKEN: oidcOptions.SIGSTORE_ID_TOKEN } : {}),
@@ -83,9 +98,11 @@ const mockOidc = async (t, {
   const GITHUB_ACTIONS = ciInfo.GITHUB_ACTIONS
   const GITLAB = ciInfo.GITLAB
   const CIRCLE = ciInfo.CIRCLE
+  const BUILDKITE = ciInfo.BUILDKITE
   delete ciInfo.GITHUB_ACTIONS
   delete ciInfo.GITLAB
   delete ciInfo.CIRCLE
+  delete ciInfo.BUILDKITE
   if (github) {
     ciInfo.GITHUB_ACTIONS = 'true'
   }
@@ -95,11 +112,28 @@ const mockOidc = async (t, {
   if (circleci) {
     ciInfo.CIRCLE = 'true'
   }
+  if (buildkite) {
+    ciInfo.BUILDKITE = 'true'
+  }
   t.teardown(() => {
     ciInfo.GITHUB_ACTIONS = GITHUB_ACTIONS
     ciInfo.GITLAB = GITLAB
     ciInfo.CIRCLE = CIRCLE
+    ciInfo.BUILDKITE = BUILDKITE
   })
+
+  const mocks = { ...load.mocks }
+  if (buildkite) {
+    mocks['@npmcli/promise-spawn'] = async (command, args) => {
+      const { audience, error, idToken = '' } = mockBuildkiteOidcOptions || {}
+      t.equal(command, 'buildkite-agent')
+      t.strictSame(args, ['oidc', 'request-token', '--audience', audience])
+      if (error) {
+        throw error
+      }
+      return { stdout: idToken }
+    }
+  }
 
   const { npm, registry, joinedOutput, logs } = await loadNpmWithRegistry(t, {
     config: {
@@ -114,6 +148,7 @@ const mockOidc = async (t, {
       }, null, 2),
     },
     ...load,
+    mocks,
   })
 
   if (mockGithubOidcOptions) {
@@ -176,6 +211,7 @@ const oidcPublishTest = (opts) => {
 }
 
 module.exports = {
+  buildkiteIdToken,
   circleciIdToken,
   gitlabIdToken,
   githubIdToken,
