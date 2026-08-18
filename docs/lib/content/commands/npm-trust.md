@@ -47,7 +47,7 @@ For Buildkite, specify the organization and pipeline slugs whose OIDC claims sho
 npm trust buildkite <package> --organization <slug> --pipeline <slug> --allow-publish
 ```
 
-When publishing from that pipeline, npm requests an OIDC token from the Buildkite agent and exchanges it for a short-lived npm registry token. No npm token needs to be stored in the pipeline.
+When publishing from that pipeline, npm requests an OIDC token from the Buildkite agent and exchanges it for a short-lived npm registry token. No long-lived npm publish token needs to be stored in the pipeline.
 
 Currently, the registry only supports one configuration per package. If you attempt to create a new trust relationship when one already exists, it will result in an error. To replace an existing configuration:
 
