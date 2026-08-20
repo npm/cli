@@ -196,6 +196,21 @@ t.test('local tarball key — npa parses *.tgz paths as type=file', t => {
   t.end()
 })
 
+t.test('local tarball key — relative key matches an absolute resolved', t => {
+  // The installed tree carries the absolutized `file:` spec that
+  // consistent-resolve.js builds, with platform-native separators, while
+  // the key in package.json is the relative one from the lockfile.
+  const tgzNode = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+    resolved: `file:${require('node:path').resolve('local-pkg.tgz')}`,
+  })
+  t.equal(isScriptAllowed(tgzNode, { 'file:local-pkg.tgz': true }), true)
+  t.equal(isScriptAllowed(tgzNode, { 'file:other-pkg.tgz': true }), null)
+  t.end()
+})
+
 t.test('remote tarball — exact resolved match', t => {
   const remoteNode = node({
     name: 'pkg',

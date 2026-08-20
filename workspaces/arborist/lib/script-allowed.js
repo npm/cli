@@ -328,8 +328,15 @@ const matchGit = (node, parsed) => {
 }
 
 const matchFileOrDir = (node, parsed) => {
+  // A local dep's `resolved` is built by consistent-resolve.js as `file:`
+  // glued onto the absolute fetchSpec, so it keeps the platform separators.
+  // npa's saveSpec stays relative when the key is relative and is always
+  // forward-slashed, so neither form matches it on Windows.
+  const resolvedSpec = `file:${parsed.fetchSpec}`
   return resolvedSourceSpecs(node)
-    .some(resolved => resolved === parsed.saveSpec || resolved === parsed.fetchSpec)
+    .some(resolved => resolved === parsed.saveSpec ||
+      resolved === parsed.fetchSpec ||
+      resolved === resolvedSpec)
 }
 
 const matchRemote = (node, parsed) => {
