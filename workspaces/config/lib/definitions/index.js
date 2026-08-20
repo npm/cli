@@ -1,4 +1,11 @@
-const definitions = require('./definitions.js')
+
+const baseDefinitions = require('./definitions.js')
+const trustPolicyDefinitions = require('./trust-policy.js')
+
+const definitions = Object.fromEntries(
+  Object.entries({ ...baseDefinitions, ...trustPolicyDefinitions })
+    .sort(([a], [b]) => a.localeCompare(b))
+)
 
 // use the defined flattening function, and copy over any scoped
 // registries and registry-specific "nerfdart" configs verbatim
