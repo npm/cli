@@ -123,7 +123,8 @@ const checkTrustDowngrade = (packument, version, {
     new Error(
       `High-risk trust downgrade for "${name}@${version}" (possible package takeover): ` +
       `earlier versions had ${trustLabel(strongestPriorEvidence)}, ` +
-      `but this version has ${trustLabel(currentEvidence)}.`
+      `but this version has ${trustLabel(currentEvidence)}. ` +
+      `If this downgrade is expected, add "${name}@${version}" to trust-policy-exclude.`
     ),
     {
       code: 'ETRUSTDOWNGRADE',
