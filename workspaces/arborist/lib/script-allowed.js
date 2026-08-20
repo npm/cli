@@ -85,9 +85,8 @@ const matches = (node, key, failClosed) => {
       return matchGit(node, parsed)
     case 'file':
     case 'directory':
-      return matchFileOrDir(node, parsed)
     case 'remote':
-      return matchRemote(node, parsed)
+      return matchesResolvedSource(node, parsed)
     case 'alias':
       // Disallowed: aliases as policy keys do not match anything.
       // The user has to address the real package name.
@@ -327,21 +326,17 @@ const matchGit = (node, parsed) => {
   return nodeCommittish.startsWith(keyCommittish)
 }
 
-const matchFileOrDir = (node, parsed) => {
-  // A local dep's `resolved` is built by consistent-resolve.js as `file:`
-  // glued onto the absolute fetchSpec, so it keeps the platform separators.
-  // npa's saveSpec stays relative when the key is relative and is always
-  // forward-slashed, so neither form matches it on Windows.
-  const resolvedSpec = `file:${parsed.fetchSpec}`
+// A local dep's `resolved` is built by consistent-resolve.js as `file:`
+// glued onto the absolute fetchSpec. npa keeps saveSpec in the form the key
+// was written in and always forward-slashes it, so a relative key never
+// equals that spec, and on Windows no key form does. Relative keys resolve
+// against the cwd npa was called from, the project root for `npm install`.
+const matchesResolvedSource = (node, parsed) => {
+  const absoluteFileSpec = `file:${parsed.fetchSpec}`
   return resolvedSourceSpecs(node)
     .some(resolved => resolved === parsed.saveSpec ||
       resolved === parsed.fetchSpec ||
-      resolved === resolvedSpec)
-}
-
-const matchRemote = (node, parsed) => {
-  return resolvedSourceSpecs(node)
-    .some(resolved => resolved === parsed.fetchSpec || resolved === parsed.saveSpec)
+      resolved === absoluteFileSpec)
 }
 
 const isRegistryNode = (node) => {
@@ -388,4 +383,5 @@ module.exports.matches = matches
 module.exports.isExactVersionDisjunction = isExactVersionDisjunction
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
 module.exports.resolvedSourceSpecs = resolvedSourceSpecs
+module.exports.matchesResolvedSource = matchesResolvedSource
 module.exports.trustedDisplay = trustedDisplay

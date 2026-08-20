@@ -185,7 +185,7 @@ t.test('directory key — npa parses absolute paths as type=directory', t => {
 
 t.test('local tarball key — npa parses *.tgz paths as type=file', t => {
   // npa treats `*.tgz` paths as { type: 'file' }, separate from
-  // 'directory'. Both share the matchFileOrDir body.
+  // 'directory'. Both share the matchesResolvedSource body.
   const tgzNode = node({
     name: 'local-pkg',
     packageName: 'local-pkg',
@@ -198,15 +198,17 @@ t.test('local tarball key — npa parses *.tgz paths as type=file', t => {
 
 t.test('local tarball key — relative key matches an absolute resolved', t => {
   // The installed tree carries the absolutized `file:` spec that
-  // consistent-resolve.js builds, with platform-native separators, while
-  // the key in package.json is the relative one from the lockfile.
+  // consistent-resolve.js builds, while the allowScripts key keeps the
+  // relative form the user wrote.
+  const tgzPath = require('node:path').resolve('local-pkg.tgz')
   const tgzNode = node({
     name: 'local-pkg',
     packageName: 'local-pkg',
     version: '1.0.0',
-    resolved: `file:${require('node:path').resolve('local-pkg.tgz')}`,
+    resolved: `file:${tgzPath}`,
   })
   t.equal(isScriptAllowed(tgzNode, { 'file:local-pkg.tgz': true }), true)
+  t.equal(isScriptAllowed(tgzNode, { [`file:${tgzPath}`]: true }), true)
   t.equal(isScriptAllowed(tgzNode, { 'file:other-pkg.tgz': true }), null)
   t.end()
 })
