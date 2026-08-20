@@ -6,7 +6,20 @@ description: Lock down dependency versions for publication
 
 ### Synopsis
 
-```bash
+```bashnpm install (with no args, in package dir)
+npm install [<@scope>/]<name>
+npm install [<@scope>/]<name>@<tag>
+npm install [<@scope>/]<name>@<version>
+npm install [<@scope>/]<name>@<version range>
+npm install <alias>@npm:<name>
+npm install <git-host>:<git-user>/<repo-name>
+npm install <git repo url>
+npm install <tarball file>
+npm install <tarball url>
+npm install <folder>
+
+aliases: npm i, npm add
+common options: [-P|--save-prod|-D|--save-dev|-O|--save-optional] [-E|--save-exact] [-B|--save-bundle] [--no-save] [--dry-run]
 npm shrinkwrap
 ```
 
