@@ -1,8 +1,12 @@
+
 const t = require('tap')
+const pacote = require('pacote')
 const {
   checkTrustDowngrade,
   getTrustEvidence,
   isTrustPolicyExcluded,
+  registrySpecForNode,
+  verifyTrustPolicy,
 } = require('../lib/trust-policy.js')
 
 const provenance = {
@@ -34,6 +38,25 @@ const packument = ({ current = {}, prior = provenance } = {}) => ({
     '1.0.0': prior,
     '2.0.0': current,
   },
+})
+
+const registryNode = (overrides = {}) => ({
+  isRoot: false,
+  isWorkspace: false,
+  isLink: false,
+  path: '/tmp/project/node_modules/example-package',
+  resolved: 'https://registry.npmjs.org/example-package/-/example-package-2.0.0.tgz',
+  packageName: 'example-package',
+  version: '2.0.0',
+  package: {
+    name: 'example-package',
+    version: '2.0.0',
+  },
+  ...overrides,
+})
+
+const treeWith = (...nodes) => ({
+  inventory: new Map(nodes.map((node, index) => [String(index), node])),
 })
 
 t.test('detects trust evidence', t => {
@@ -160,4 +183,92 @@ t.test('fails closed when selected version metadata is incomplete', t => {
     }
   )
   t.end()
+})
+
+t.test('registry node detection ignores non-registry and local nodes', t => {
+  t.ok(registrySpecForNode(registryNode(), { registry: 'https://registry.npmjs.org/' }))
+  t.equal(registrySpecForNode(registryNode({
+    resolved: 'https://example.test/example-package-2.0.0.tgz',
+  }), { registry: 'https://registry.npmjs.org/' }), null)
+  t.equal(registrySpecForNode(registryNode({ isWorkspace: true }), {}), null)
+  t.equal(registrySpecForNode(registryNode({ isLink: true }), {}), null)
+  t.equal(registrySpecForNode(registryNode({ version: 'workspace:*' }), {}), null)
+  t.end()
+})
+
+t.test('trust verifier is disabled unless no-downgrade is selected', async t => {
+  const original = pacote.packument
+  let calls = 0
+  pacote.packument = async () => {
+    calls++
+    return packument({ current: provenance })
+  }
+  t.teardown(() => {
+    pacote.packument = original
+  })
+
+  await verifyTrustPolicy(treeWith(registryNode()), {
+    registry: 'https://registry.npmjs.org/',
+  })
+  t.equal(calls, 0)
+})
+
+t.test('trust verifier deduplicates identical package versions', async t => {
+  const original = pacote.packument
+  let calls = 0
+  pacote.packument = async () => {
+    calls++
+    return packument({ current: provenance })
+  }
+  t.teardown(() => {
+    pacote.packument = original
+  })
+
+  await verifyTrustPolicy(treeWith(
+    registryNode(),
+    registryNode({ path: '/tmp/project/node_modules/a/node_modules/example-package' })
+  ), {
+    trustPolicy: 'no-downgrade',
+    registry: 'https://registry.npmjs.org/',
+  })
+  t.equal(calls, 1)
+})
+
+t.test('trust verifier rejects a registry provenance downgrade', async t => {
+  const original = pacote.packument
+  pacote.packument = async () => packument()
+  t.teardown(() => {
+    pacote.packument = original
+  })
+
+  await t.rejects(
+    verifyTrustPolicy(treeWith(registryNode()), {
+      trustPolicy: 'no-downgrade',
+      registry: 'https://registry.npmjs.org/',
+    }),
+    {
+      code: 'ETRUSTDOWNGRADE',
+      package: 'example-package',
+      version: '2.0.0',
+    }
+  )
+})
+
+t.test('trust verifier honors an exclusion before fetching metadata', async t => {
+  const original = pacote.packument
+  let calls = 0
+  pacote.packument = async () => {
+    calls++
+    return packument()
+  }
+  t.teardown(() => {
+    pacote.packument = original
+  })
+
+  await verifyTrustPolicy(treeWith(registryNode()), {
+    trustPolicy: 'no-downgrade',
+    trustPolicyExclude: ['example-package@2.0.0'],
+    registry: 'https://registry.npmjs.org/',
+  })
+  t.equal(calls, 0)
 })
