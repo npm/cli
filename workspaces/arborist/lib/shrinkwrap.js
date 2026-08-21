@@ -412,8 +412,9 @@ class Shrinkwrap {
   get loadFiles () {
     return Promise.all(
       this.#filenameSet.map(file => file && readFile(file, 'utf8').then(d => d, er => {
+        const optionalYarnLock = basename(file) === 'yarn.lock' && er.code === 'EISDIR'
         /* istanbul ignore else - can't test without breaking module itself */
-        if (er.code === 'ENOENT') {
+        if (er.code === 'ENOENT' || optionalYarnLock) {
           return ''
         } else {
           throw er
