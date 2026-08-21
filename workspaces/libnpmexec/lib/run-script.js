@@ -1,3 +1,4 @@
+const { styleText } = require('node:util')
 const ciInfo = require('ci-info')
 const runScript = require('@npmcli/run-script')
 const pkgJson = require('@npmcli/package-json')
@@ -48,14 +49,18 @@ const run = async ({
         return log.warn('exec', 'Interactive mode disabled in CI environment')
       }
 
-      const { chalk } = flatOptions
+      // npm computes its own color boolean (config + tty); force styleText to
+      // match it rather than letting it re-detect the stream.
+      const paint = (format, text) => flatOptions.color
+        ? styleText(format, text, { validateStream: false })
+        : text
 
       output.standard(`${
-        chalk.reset('\nEntering npm script environment')
+        paint('reset', '\nEntering npm script environment')
       }${
-        chalk.reset(locationMsg || ` at location:\n${chalk.dim(runPath)}`)
+        paint('reset', locationMsg || ` at location:\n${paint('dim', runPath)}`)
       }${
-        chalk.bold('\nType \'exit\' or ^D when finished\n')
+        paint('bold', '\nType \'exit\' or ^D when finished\n')
       }`)
     }
   }

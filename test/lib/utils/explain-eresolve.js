@@ -1,12 +1,12 @@
 const t = require('tap')
 const { explain, report } = require('../../../lib/utils/explain-eresolve.js')
+const { colorize } = require('../../../lib/utils/color.js')
 
 const cases = require('../../fixtures/eresolve-explanations.js')
 
 t.test('basic', async t => {
-  const { Chalk } = await import('chalk')
-  const color = new Chalk({ level: 3 })
-  const noColor = new Chalk({ level: 0 })
+  const color = colorize(true)
+  const noColor = colorize(false)
 
   for (const [name, expl] of Object.entries(cases)) {
   // no sense storing the whole contents of each object in the snapshot

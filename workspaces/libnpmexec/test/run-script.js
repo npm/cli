@@ -1,8 +1,7 @@
 const t = require('tap')
 
-const mockRunScript = async (t, mocks, { level = 0 } = {}) => {
+const mockRunScript = async (t, mocks, { color = false } = {}) => {
   const mockedRunScript = t.mock('../lib/run-script.js', mocks)
-  const { Chalk } = await import('chalk')
 
   const outputs = []
   const handleOutput = (_level, msg) => {
@@ -29,7 +28,7 @@ const mockRunScript = async (t, mocks, { level = 0 } = {}) => {
       ? process.env.ComSpec || 'cmd'
       : process.env.SHELL || 'sh',
     ...opts,
-    flatOptions: { chalk: new Chalk({ level }) },
+    flatOptions: { color },
   })
   return { runScript, outputs, logs }
 }
@@ -62,7 +61,7 @@ t.test('colorized interactive mode msg', async t => {
       t.ok('should call run-script')
     },
     '../lib/no-tty.js': () => false,
-  }, { level: 3 })
+  }, { color: true })
 
   await runScript({
     runPath: '/foo/',

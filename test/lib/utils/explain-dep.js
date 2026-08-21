@@ -1,6 +1,7 @@
 const { resolve } = require('node:path')
 const t = require('tap')
 const { explainNode, printNode, explainEdge } = require('../../../lib/utils/explain-dep.js')
+const { colorize } = require('../../../lib/utils/color.js')
 const { cleanCwd } = require('../../fixtures/clean-snapshot')
 
 t.cleanSnapshot = (str) => cleanCwd(str)
@@ -285,9 +286,8 @@ const getCases = (testdir) => {
 }
 
 t.test('basic', async t => {
-  const { Chalk } = await import('chalk')
-  const color = new Chalk({ level: 3 })
-  const noColor = new Chalk({ level: 0 })
+  const color = colorize(true)
+  const noColor = colorize(false)
 
   const testdir = t.testdir()
   const cases = getCases(testdir)

@@ -439,6 +439,6 @@ t.test('explain ERESOLVE errors', async t => {
   t.matchSnapshot(errorMessage(er))
   t.equal(EXPLAIN_CALLED.length, 3)
   t.match(EXPLAIN_CALLED, [er, Function, Function])
-  t.not(EXPLAIN_CALLED[1].level, 0, 'color chalk level is not 0')
-  t.equal(EXPLAIN_CALLED[2].level, 0, 'colorless chalk level is 0')
+  t.not(EXPLAIN_CALLED[1]('red', 'x'), 'x', 'color colorizer applies styling')
+  t.equal(EXPLAIN_CALLED[2]('red', 'x'), 'x', 'colorless colorizer leaves text unstyled')
 })

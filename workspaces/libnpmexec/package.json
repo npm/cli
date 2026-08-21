@@ -58,7 +58,6 @@
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/template-oss": "5.1.1",
     "bin-links": "^7.0.0",
-    "chalk": "^5.2.0",
     "just-extend": "^6.2.0",
     "just-safe-set": "^4.2.1",
     "tap": "^16.3.8"

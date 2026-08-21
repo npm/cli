@@ -7,13 +7,13 @@
 'use strict'
 exports[`test/lib/utils/explain-eresolve.js TAP basic chain-conflict > explain with color, depth of 2 1`] = `
 While resolving: project@1.2.3
-Found: @isaacs/testing-peer-dep-conflict-chain-d@2.0.0[2m[22m
-[2mnode_modules/@isaacs/testing-peer-dep-conflict-chain-d[22m
+Found: @isaacs/testing-peer-dep-conflict-chain-d@2.0.0[2m
+node_modules/@isaacs/testing-peer-dep-conflict-chain-d[22m
   @isaacs/testing-peer-dep-conflict-chain-d@"2" from the root project
 
 Could not resolve dependency:
-[95mpeer[39m @isaacs/testing-peer-dep-conflict-chain-d@"1" from @isaacs/testing-peer-dep-conflict-chain-c@1.0.0[2m[22m
-[2mnode_modules/@isaacs/testing-peer-dep-conflict-chain-c[22m
+[95mpeer[39m @isaacs/testing-peer-dep-conflict-chain-d@"1" from @isaacs/testing-peer-dep-conflict-chain-c@1.0.0[2m
+node_modules/@isaacs/testing-peer-dep-conflict-chain-c[22m
   @isaacs/testing-peer-dep-conflict-chain-c@"1" from the root project
 `
 
@@ -47,13 +47,13 @@ Fix the upstream dependency conflict, or retry this command with --force or --le
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic chain-conflict > report with color 1`] = `
 While resolving: project@1.2.3
-Found: @isaacs/testing-peer-dep-conflict-chain-d@2.0.0[2m[22m
-[2mnode_modules/@isaacs/testing-peer-dep-conflict-chain-d[22m
+Found: @isaacs/testing-peer-dep-conflict-chain-d@2.0.0[2m
+node_modules/@isaacs/testing-peer-dep-conflict-chain-d[22m
   @isaacs/testing-peer-dep-conflict-chain-d@"2" from the root project
 
 Could not resolve dependency:
-[95mpeer[39m @isaacs/testing-peer-dep-conflict-chain-d@"1" from @isaacs/testing-peer-dep-conflict-chain-c@1.0.0[2m[22m
-[2mnode_modules/@isaacs/testing-peer-dep-conflict-chain-c[22m
+[95mpeer[39m @isaacs/testing-peer-dep-conflict-chain-d@"1" from @isaacs/testing-peer-dep-conflict-chain-c@1.0.0[2m
+node_modules/@isaacs/testing-peer-dep-conflict-chain-c[22m
   @isaacs/testing-peer-dep-conflict-chain-c@"1" from the root project
 
 Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.
@@ -74,21 +74,21 @@ Fix the upstream dependency conflict, or retry this command with --force or --le
 `
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic cycleNested > explain with color, depth of 2 1`] = `
-Found: @isaacs/peer-dep-cycle-c@2.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-c[22m
+Found: @isaacs/peer-dep-cycle-c@2.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-c[22m
   @isaacs/peer-dep-cycle-c@"2.x" from the root project
 
 Could not resolve dependency:
-[95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-a[22m
+[95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-a[22m
   @isaacs/peer-dep-cycle-a@"1.x" from the root project
 
-Conflicting peer dependency: @isaacs/peer-dep-cycle-c@1.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-c[22m
-  [95mpeer[39m @isaacs/peer-dep-cycle-c@"1" from @isaacs/peer-dep-cycle-b@1.0.0[2m[22m
-  [2mnode_modules/@isaacs/peer-dep-cycle-b[22m
-    [95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m[22m
-    [2mnode_modules/@isaacs/peer-dep-cycle-a[22m
+Conflicting peer dependency: @isaacs/peer-dep-cycle-c@1.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-c[22m
+  [95mpeer[39m @isaacs/peer-dep-cycle-c@"1" from @isaacs/peer-dep-cycle-b@1.0.0[2m
+  node_modules/@isaacs/peer-dep-cycle-b[22m
+    [95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m
+    node_modules/@isaacs/peer-dep-cycle-a[22m
 `
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic cycleNested > explain with no color, depth of 6 1`] = `
@@ -134,21 +134,21 @@ Fix the upstream dependency conflict, or retry this command with --no-strict-pee
 `
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic cycleNested > report with color 1`] = `
-Found: @isaacs/peer-dep-cycle-c@2.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-c[22m
+Found: @isaacs/peer-dep-cycle-c@2.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-c[22m
   @isaacs/peer-dep-cycle-c@"2.x" from the root project
 
 Could not resolve dependency:
-[95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-a[22m
+[95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-a[22m
   @isaacs/peer-dep-cycle-a@"1.x" from the root project
 
-Conflicting peer dependency: @isaacs/peer-dep-cycle-c@1.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-c[22m
-  [95mpeer[39m @isaacs/peer-dep-cycle-c@"1" from @isaacs/peer-dep-cycle-b@1.0.0[2m[22m
-  [2mnode_modules/@isaacs/peer-dep-cycle-b[22m
-    [95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m[22m
-    [2mnode_modules/@isaacs/peer-dep-cycle-a[22m
+Conflicting peer dependency: @isaacs/peer-dep-cycle-c@1.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-c[22m
+  [95mpeer[39m @isaacs/peer-dep-cycle-c@"1" from @isaacs/peer-dep-cycle-b@1.0.0[2m
+  node_modules/@isaacs/peer-dep-cycle-b[22m
+    [95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m
+    node_modules/@isaacs/peer-dep-cycle-a[22m
       @isaacs/peer-dep-cycle-a@"1.x" from the root project
 
 Fix the upstream dependency conflict, or retry this command with --no-strict-peer-deps, --force, or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.
@@ -177,18 +177,18 @@ Fix the upstream dependency conflict, or retry this command with --no-strict-pee
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic eslint-plugin case > explain with color, depth of 2 1`] = `
 While resolving: eslint-plugin-react@7.24.0
-Found: eslint@6.8.0[2m[22m
-[2mnode_modules/eslint[22m
+Found: eslint@6.8.0[2m
+node_modules/eslint[22m
   [34mdev[39m eslint@"^3 || ^4 || ^5 || ^6 || ^7" from the root project
   3 more (@typescript-eslint/parser, ...)
 
 Could not resolve dependency:
 [34mdev[39m eslint-plugin-eslint-plugin@"^3.1.0" from the root project
 
-Conflicting peer dependency: eslint@7.31.0[2m[22m
-[2mnode_modules/eslint[22m
-  [95mpeer[39m eslint@"^7.0.0" from eslint-plugin-eslint-plugin@3.5.1[2m[22m
-  [2mnode_modules/eslint-plugin-eslint-plugin[22m
+Conflicting peer dependency: eslint@7.31.0[2m
+node_modules/eslint[22m
+  [95mpeer[39m eslint@"^7.0.0" from eslint-plugin-eslint-plugin@3.5.1[2m
+  node_modules/eslint-plugin-eslint-plugin[22m
     [34mdev[39m eslint-plugin-eslint-plugin@"^3.1.0" from the root project
 `
 
@@ -249,21 +249,21 @@ Fix the upstream dependency conflict, or retry this command with --force or --le
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic eslint-plugin case > report with color 1`] = `
 While resolving: eslint-plugin-react@7.24.0
-Found: eslint@6.8.0[2m[22m
-[2mnode_modules/eslint[22m
+Found: eslint@6.8.0[2m
+node_modules/eslint[22m
   [34mdev[39m eslint@"^3 || ^4 || ^5 || ^6 || ^7" from the root project
-  [95mpeer[39m eslint@"^5.0.0 || ^6.0.0" from @typescript-eslint/parser@2.34.0[2m[22m
-  [2mnode_modules/@typescript-eslint/parser[22m
+  [95mpeer[39m eslint@"^5.0.0 || ^6.0.0" from @typescript-eslint/parser@2.34.0[2m
+  node_modules/@typescript-eslint/parser[22m
     [34mdev[39m @typescript-eslint/parser@"^2.34.0" from the root project
   2 more (eslint-config-airbnb-base, eslint-plugin-import)
 
 Could not resolve dependency:
 [34mdev[39m eslint-plugin-eslint-plugin@"^3.1.0" from the root project
 
-Conflicting peer dependency: eslint@7.31.0[2m[22m
-[2mnode_modules/eslint[22m
-  [95mpeer[39m eslint@"^7.0.0" from eslint-plugin-eslint-plugin@3.5.1[2m[22m
-  [2mnode_modules/eslint-plugin-eslint-plugin[22m
+Conflicting peer dependency: eslint@7.31.0[2m
+node_modules/eslint[22m
+  [95mpeer[39m eslint@"^7.0.0" from eslint-plugin-eslint-plugin@3.5.1[2m
+  node_modules/eslint-plugin-eslint-plugin[22m
     [34mdev[39m eslint-plugin-eslint-plugin@"^3.1.0" from the root project
 
 Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.
@@ -293,18 +293,18 @@ Fix the upstream dependency conflict, or retry this command with --force or --le
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic gatsby > explain with color, depth of 2 1`] = `
 While resolving: gatsby-recipes@0.2.31
-Found: ink@3.0.0-7[2m[22m
-[2mnode_modules/ink[22m
-  [34mdev[39m ink@"next" from gatsby-recipes@0.2.31[2m[22m
-  [2mnode_modules/gatsby-recipes[22m
-    gatsby-recipes@"^0.2.31" from gatsby-cli@2.12.107[2m[22m
-    [2mnode_modules/gatsby-cli[22m
+Found: ink@3.0.0-7[2m
+node_modules/ink[22m
+  [34mdev[39m ink@"next" from gatsby-recipes@0.2.31[2m
+  node_modules/gatsby-recipes[22m
+    gatsby-recipes@"^0.2.31" from gatsby-cli@2.12.107[2m
+    node_modules/gatsby-cli[22m
 
 Could not resolve dependency:
-[95mpeer[39m ink@">=2.0.0" from ink-box@1.0.0[2m[22m
-[2mnode_modules/ink-box[22m
-  ink-box@"^1.0.0" from gatsby-recipes@0.2.31[2m[22m
-  [2mnode_modules/gatsby-recipes[22m
+[95mpeer[39m ink@">=2.0.0" from ink-box@1.0.0[2m
+node_modules/ink-box[22m
+  ink-box@"^1.0.0" from gatsby-recipes@0.2.31[2m
+  node_modules/gatsby-recipes[22m
 `
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic gatsby > explain with no color, depth of 6 1`] = `
@@ -361,25 +361,25 @@ Fix the upstream dependency conflict, or retry this command with --no-strict-pee
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic gatsby > report with color 1`] = `
 While resolving: gatsby-recipes@0.2.31
-Found: ink@3.0.0-7[2m[22m
-[2mnode_modules/ink[22m
-  [34mdev[39m ink@"next" from gatsby-recipes@0.2.31[2m[22m
-  [2mnode_modules/gatsby-recipes[22m
-    gatsby-recipes@"^0.2.31" from gatsby-cli@2.12.107[2m[22m
-    [2mnode_modules/gatsby-cli[22m
-      gatsby-cli@"^2.12.107" from gatsby@2.24.74[2m[22m
-      [2mnode_modules/gatsby[22m
+Found: ink@3.0.0-7[2m
+node_modules/ink[22m
+  [34mdev[39m ink@"next" from gatsby-recipes@0.2.31[2m
+  node_modules/gatsby-recipes[22m
+    gatsby-recipes@"^0.2.31" from gatsby-cli@2.12.107[2m
+    node_modules/gatsby-cli[22m
+      gatsby-cli@"^2.12.107" from gatsby@2.24.74[2m
+      node_modules/gatsby[22m
         gatsby@"" from the root project
 
 Could not resolve dependency:
-[95mpeer[39m ink@">=2.0.0" from ink-box@1.0.0[2m[22m
-[2mnode_modules/ink-box[22m
-  ink-box@"^1.0.0" from gatsby-recipes@0.2.31[2m[22m
-  [2mnode_modules/gatsby-recipes[22m
-    gatsby-recipes@"^0.2.31" from gatsby-cli@2.12.107[2m[22m
-    [2mnode_modules/gatsby-cli[22m
-      gatsby-cli@"^2.12.107" from gatsby@2.24.74[2m[22m
-      [2mnode_modules/gatsby[22m
+[95mpeer[39m ink@">=2.0.0" from ink-box@1.0.0[2m
+node_modules/ink-box[22m
+  ink-box@"^1.0.0" from gatsby-recipes@0.2.31[2m
+  node_modules/gatsby-recipes[22m
+    gatsby-recipes@"^0.2.31" from gatsby-cli@2.12.107[2m
+    node_modules/gatsby-cli[22m
+      gatsby-cli@"^2.12.107" from gatsby@2.24.74[2m
+      node_modules/gatsby[22m
 
 Fix the upstream dependency conflict, or retry this command with --no-strict-peer-deps, --force, or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.
 `
@@ -414,8 +414,8 @@ While resolving: eslint@7.22.0
 Found: [34mdev[39m eslint@"file:." from the root project
 
 Could not resolve dependency:
-[95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m[22m
-[2mnode_modules/eslint-plugin-jsdoc[22m
+[95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m
+node_modules/eslint-plugin-jsdoc[22m
   [34mdev[39m eslint-plugin-jsdoc@"^22.1.0" from the root project
 `
 
@@ -448,8 +448,8 @@ While resolving: eslint@7.22.0
 Found: [34mdev[39m eslint@"file:." from the root project
 
 Could not resolve dependency:
-[95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m[22m
-[2mnode_modules/eslint-plugin-jsdoc[22m
+[95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m
+node_modules/eslint-plugin-jsdoc[22m
   [34mdev[39m eslint-plugin-jsdoc@"^22.1.0" from the root project
 
 Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.
@@ -469,13 +469,13 @@ Fix the upstream dependency conflict, or retry this command with --force or --le
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic no current node, no current edge, idk > explain with color, depth of 2 1`] = `
 While resolving: eslint@7.22.0
-Found: [95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m[22m
-[2mnode_modules/eslint-plugin-jsdoc[22m
+Found: [95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m
+node_modules/eslint-plugin-jsdoc[22m
   [34mdev[39m eslint-plugin-jsdoc@"^22.1.0" from the root project
 
 Could not resolve dependency:
-[95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m[22m
-[2mnode_modules/eslint-plugin-jsdoc[22m
+[95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m
+node_modules/eslint-plugin-jsdoc[22m
   [34mdev[39m eslint-plugin-jsdoc@"^22.1.0" from the root project
 `
 
@@ -509,13 +509,13 @@ Fix the upstream dependency conflict, or retry this command with --force or --le
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic no current node, no current edge, idk > report with color 1`] = `
 While resolving: eslint@7.22.0
-Found: [95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m[22m
-[2mnode_modules/eslint-plugin-jsdoc[22m
+Found: [95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m
+node_modules/eslint-plugin-jsdoc[22m
   [34mdev[39m eslint-plugin-jsdoc@"^22.1.0" from the root project
 
 Could not resolve dependency:
-[95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m[22m
-[2mnode_modules/eslint-plugin-jsdoc[22m
+[95mpeer[39m eslint@"^6.0.0" from eslint-plugin-jsdoc@22.2.0[2m
+node_modules/eslint-plugin-jsdoc[22m
   [34mdev[39m eslint-plugin-jsdoc@"^22.1.0" from the root project
 
 Fix the upstream dependency conflict, or retry this command with --force or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.
@@ -537,15 +537,15 @@ Fix the upstream dependency conflict, or retry this command with --force or --le
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic withShrinkwrap > explain with color, depth of 2 1`] = `
 While resolving: @isaacs/peer-dep-cycle-b@1.0.0
-Found: @isaacs/peer-dep-cycle-c@2.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-c[22m
+Found: @isaacs/peer-dep-cycle-c@2.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-c[22m
   @isaacs/peer-dep-cycle-c@"2.x" from the root project
 
 Could not resolve dependency:
-[95mpeer[39m @isaacs/peer-dep-cycle-c@"1" from @isaacs/peer-dep-cycle-b@1.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-b[22m
-  [95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m[22m
-  [2mnode_modules/@isaacs/peer-dep-cycle-a[22m
+[95mpeer[39m @isaacs/peer-dep-cycle-c@"1" from @isaacs/peer-dep-cycle-b@1.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-b[22m
+  [95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m
+  node_modules/@isaacs/peer-dep-cycle-a[22m
 `
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic withShrinkwrap > explain with no color, depth of 6 1`] = `
@@ -582,15 +582,15 @@ Fix the upstream dependency conflict, or retry this command with --no-strict-pee
 
 exports[`test/lib/utils/explain-eresolve.js TAP basic withShrinkwrap > report with color 1`] = `
 While resolving: @isaacs/peer-dep-cycle-b@1.0.0
-Found: @isaacs/peer-dep-cycle-c@2.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-c[22m
+Found: @isaacs/peer-dep-cycle-c@2.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-c[22m
   @isaacs/peer-dep-cycle-c@"2.x" from the root project
 
 Could not resolve dependency:
-[95mpeer[39m @isaacs/peer-dep-cycle-c@"1" from @isaacs/peer-dep-cycle-b@1.0.0[2m[22m
-[2mnode_modules/@isaacs/peer-dep-cycle-b[22m
-  [95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m[22m
-  [2mnode_modules/@isaacs/peer-dep-cycle-a[22m
+[95mpeer[39m @isaacs/peer-dep-cycle-c@"1" from @isaacs/peer-dep-cycle-b@1.0.0[2m
+node_modules/@isaacs/peer-dep-cycle-b[22m
+  [95mpeer[39m @isaacs/peer-dep-cycle-b@"1" from @isaacs/peer-dep-cycle-a@1.0.0[2m
+  node_modules/@isaacs/peer-dep-cycle-a[22m
     @isaacs/peer-dep-cycle-a@"1.x" from the root project
 
 Fix the upstream dependency conflict, or retry this command with --no-strict-peer-deps, --force, or --legacy-peer-deps to accept an incorrect (and potentially broken) dependency resolution.

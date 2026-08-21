@@ -6,11 +6,11 @@
  */
 'use strict'
 exports[`test/run-script.js TAP colorized interactive mode msg > should print colorized output 1`] = `
-[0m[0m
-[0mEntering npm script environment[0m[0m at location:[0m
-[0m[2m/foo/[22m[0m[1m[22m
-[1mType 'exit' or ^D when finished[22m
-[1m[22m
+[0m
+Entering npm script environment[0m[0m at location:
+[2m/foo/[22m[0m[1m
+Type 'exit' or ^D when finished
+[22m
 `
 
 exports[`test/run-script.js TAP no color interactive mode msg > should print non-colorized output 1`] = `
