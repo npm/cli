@@ -196,6 +196,42 @@ t.test('local tarball key — npa parses *.tgz paths as type=file', t => {
   t.end()
 })
 
+t.test('local tarball key — Windows backslashes and file: prefix matching', t => {
+  const winTgzNode = node({
+    name: 'electron-winstaller',
+    packageName: 'electron-winstaller',
+    version: '5.3.0',
+    resolved: 'file:C:\\absolute\\path\\to\\electron-winstaller-5.3.0.tgz',
+  })
+
+  // Matches forward slash file: URI
+  t.equal(isScriptAllowed(winTgzNode, {
+    'file:C:/absolute/path/to/electron-winstaller-5.3.0.tgz': true,
+  }), true)
+
+  // Matches backslash file: URI
+  t.equal(isScriptAllowed(winTgzNode, {
+    'file:C:\\absolute\\path\\to\\electron-winstaller-5.3.0.tgz': true,
+  }), true)
+
+  // Matches absolute path without file: prefix
+  t.equal(isScriptAllowed(winTgzNode, {
+    'C:/absolute/path/to/electron-winstaller-5.3.0.tgz': true,
+  }), true)
+
+  // Deny wins
+  t.equal(isScriptAllowed(winTgzNode, {
+    'file:C:/absolute/path/to/electron-winstaller-5.3.0.tgz': false,
+  }), false)
+
+  // Unrelated path does not match
+  t.equal(isScriptAllowed(winTgzNode, {
+    'file:C:/other/path/to/pkg.tgz': true,
+  }), null)
+
+  t.end()
+})
+
 t.test('remote tarball — exact resolved match', t => {
   const remoteNode = node({
     name: 'pkg',

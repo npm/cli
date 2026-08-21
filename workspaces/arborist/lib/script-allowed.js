@@ -327,9 +327,25 @@ const matchGit = (node, parsed) => {
   return nodeCommittish.startsWith(keyCommittish)
 }
 
+const normalizeFileSpec = (spec) => {
+  if (typeof spec !== 'string' || spec === '') {
+    return ''
+  }
+  const withoutFile = spec.startsWith('file:') ? spec.slice(5) : spec
+  return withoutFile.replace(/\\/g, '/')
+}
+
 const matchFileOrDir = (node, parsed) => {
+  const normSave = normalizeFileSpec(parsed.saveSpec)
+  const normFetch = normalizeFileSpec(parsed.fetchSpec)
   return resolvedSourceSpecs(node)
-    .some(resolved => resolved === parsed.saveSpec || resolved === parsed.fetchSpec)
+    .some(resolved => {
+      const normResolved = normalizeFileSpec(resolved)
+      return (
+        (normSave !== '' && normResolved === normSave) ||
+        (normFetch !== '' && normResolved === normFetch)
+      )
+    })
 }
 
 const matchRemote = (node, parsed) => {
@@ -382,3 +398,4 @@ module.exports.isExactVersionDisjunction = isExactVersionDisjunction
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
 module.exports.resolvedSourceSpecs = resolvedSourceSpecs
 module.exports.trustedDisplay = trustedDisplay
+module.exports.normalizeFileSpec = normalizeFileSpec
