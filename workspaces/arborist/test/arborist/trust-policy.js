@@ -1,3 +1,4 @@
+
 const t = require('tap')
 const Arborist = require('../..')
 const MockRegistry = require('@npmcli/mock-registry')
@@ -26,12 +27,12 @@ const mockDowngradedPackage = async (t, { times = 1 } = {}) => {
   const registry = createRegistry(t)
   const manifest = registry.manifest({
     name: 'example-package',
-    packuments: registry.packuments(['1.0.0', '2.0.0'], 'example-package'),
+    packuments: registry.packuments(['2.0.0', '2.1.0'], 'example-package'),
   })
-  manifest.time['1.0.0'] = '2026-01-01T00:00:00.000Z'
-  manifest.time['2.0.0'] = '2026-02-01T00:00:00.000Z'
-  manifest.versions['1.0.0'].dist.attestations = {
-    provenance: { url: 'https://registry.example.test/attestations/1.0.0' },
+  manifest.time['2.0.0'] = '2026-01-01T00:00:00.000Z'
+  manifest.time['2.1.0'] = '2026-02-01T00:00:00.000Z'
+  manifest.versions['2.0.0'].dist.attestations = {
+    provenance: { url: 'https://registry.example.test/attestations/2.0.0' },
   }
   await registry.package({ manifest, times })
   return registry
@@ -42,7 +43,7 @@ t.test('buildIdealTree rejects a registry trust downgrade before reify', async t
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'root',
-      dependencies: { 'example-package': '2.0.0' },
+      dependencies: { 'example-package': '2.1.0' },
     }),
   })
 
@@ -52,7 +53,7 @@ t.test('buildIdealTree rejects a registry trust downgrade before reify', async t
   }), {
     code: 'ETRUSTDOWNGRADE',
     package: 'example-package',
-    version: '2.0.0',
+    version: '2.1.0',
     previousTrust: 'provenance',
     currentTrust: 'none',
   })
@@ -63,7 +64,7 @@ t.test('buildIdealTree honors trust policy from constructor options for ci-style
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'root',
-      dependencies: { 'example-package': '2.0.0' },
+      dependencies: { 'example-package': '2.1.0' },
     }),
   })
 
@@ -81,17 +82,17 @@ t.test('buildIdealTree honors trust policy from constructor options for ci-style
   })(), {
     code: 'ETRUSTDOWNGRADE',
     package: 'example-package',
-    version: '2.0.0',
+    version: '2.1.0',
   })
 })
 
 t.test('locked dependency is still checked for trust downgrade', async t => {
   const registry = await mockDowngradedPackage(t)
-  const tarball = registry.origin + '/example-package/-/example-package-2.0.0.tgz'
+  const tarball = registry.origin + '/example-package/-/example-package-2.1.0.tgz'
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'root',
-      dependencies: { 'example-package': '2.0.0' },
+      dependencies: { 'example-package': '2.1.0' },
     }),
     'package-lock.json': JSON.stringify({
       name: 'root',
@@ -99,10 +100,10 @@ t.test('locked dependency is still checked for trust downgrade', async t => {
       requires: true,
       packages: {
         '': {
-          dependencies: { 'example-package': '2.0.0' },
+          dependencies: { 'example-package': '2.1.0' },
         },
         'node_modules/example-package': {
-          version: '2.0.0',
+          version: '2.1.0',
           resolved: tarball,
         },
       },
@@ -122,6 +123,6 @@ t.test('locked dependency is still checked for trust downgrade', async t => {
   })(), {
     code: 'ETRUSTDOWNGRADE',
     package: 'example-package',
-    version: '2.0.0',
+    version: '2.1.0',
   })
 })
