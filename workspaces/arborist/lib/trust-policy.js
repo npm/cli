@@ -1,3 +1,4 @@
+
 const npa = require('npm-package-arg')
 const semver = require('semver')
 
@@ -90,7 +91,11 @@ const checkTrustDowngrade = (packument, version, {
 
   const current = packument.versions[version]
   const currentEvidence = getTrustEvidence(current)
-  const currentIsPrerelease = Boolean(semver.prerelease(version))
+  const currentSemver = semver.parse(version)
+  if (!currentSemver) {
+    throw metadataError(name, version, 'version is not valid semver')
+  }
+  const currentIsPrerelease = Boolean(currentSemver.prerelease.length)
   let strongestPriorEvidence = 'none'
 
   for (const [priorVersion, priorManifest] of Object.entries(packument.versions)) {
@@ -98,7 +103,12 @@ const checkTrustDowngrade = (packument, version, {
       continue
     }
 
-    if (!currentIsPrerelease && semver.prerelease(priorVersion)) {
+    const priorSemver = semver.parse(priorVersion)
+    if (!priorSemver || priorSemver.major !== currentSemver.major) {
+      continue
+    }
+
+    if (!currentIsPrerelease && priorSemver.prerelease.length) {
       continue
     }
 
