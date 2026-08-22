@@ -290,7 +290,7 @@ class Config {
     conf.reset()
     this.#unknownConfigs = this.#unknownConfigs.filter(entry => entry.where !== where)
     this.#flatOptions = null
-    await this.#loadFile(source, where, false)
+    await this.#loadFile(source, where)
   }
 
   loadDefaults () {
@@ -750,11 +750,9 @@ class Config {
     return parseField(f, key, this, listElement)
   }
 
-  async #loadFile (file, type, logLoad = true) {
+  async #loadFile (file, type) {
     // only catch the error from readFile, not from the loadObject call
-    if (logLoad) {
-      log.silly('config', `load:file:${file}`)
-    }
+    log.silly('config', `load:file:${file}`)
     await readFile(file, 'utf8').then(
       data => {
         const parsedConfig = ini.parse(data)
