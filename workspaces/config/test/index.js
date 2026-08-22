@@ -107,6 +107,9 @@ t.test('construct with no settings, get default values for stuff', t => {
     t.rejects(() => c.save('user'), {
       message: 'call config.load() before saving',
     })
+    t.rejects(() => c.reload('user'), {
+      message: 'call config.load() before reloading',
+    })
     t.throws(() => c.data.set('user', {}), {
       message: 'cannot change internal config data structure',
     })
@@ -1082,6 +1085,9 @@ t.test('reload user config', async t => {
   })
 
   await config.load()
+  await t.rejects(() => config.reload('env'), {
+    message: 'invalid config location param: env',
+  })
   const originalFlat = config.flat
   t.equal(config.getCredentialsByURI(registry).token, 'old-token')
   t.equal(config.get('foo'), 'from-env', 'environment config has higher priority')

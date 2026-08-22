@@ -276,6 +276,23 @@ class Config {
     this.setEnvs()
   }
 
+  async reload (where) {
+    if (!this.loaded) {
+      throw new Error('call config.load() before reloading')
+    }
+    if (!confFileTypes.has(where)) {
+      throw new Error('invalid config location param: ' + where)
+    }
+
+    const conf = this.data.get(where)
+    const source = conf.source
+    this.sources.delete(source)
+    conf.reset()
+    this.#unknownConfigs = this.#unknownConfigs.filter(entry => entry.where !== where)
+    this.#flatOptions = null
+    await this.#loadFile(source, where, false)
+  }
+
   loadDefaults () {
     this.loadGlobalPrefix()
     this.loadHome()
@@ -733,9 +750,11 @@ class Config {
     return parseField(f, key, this, listElement)
   }
 
-  async #loadFile (file, type) {
+  async #loadFile (file, type, logLoad = true) {
     // only catch the error from readFile, not from the loadObject call
-    log.silly('config', `load:file:${file}`)
+    if (logLoad) {
+      log.silly('config', `load:file:${file}`)
+    }
     await readFile(file, 'utf8').then(
       data => {
         const parsedConfig = ini.parse(data)
@@ -1093,6 +1112,16 @@ class ConfigData {
 
   get raw () {
     return this.#raw
+  }
+
+  reset () {
+    for (const key of Object.keys(this.#data)) {
+      delete this.#data[key]
+    }
+    this.#source = null
+    this.#raw = {}
+    this[_loadError] = null
+    this[_valid] = true
   }
 }
 
