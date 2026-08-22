@@ -1061,6 +1061,45 @@ t.test('setting basic auth creds and email', async t => {
   }, 'credentials saved and nerfed')
 })
 
+t.test('reload user config', async t => {
+  const registry = 'https://registry.example/'
+  const tokenKey = '//registry.example/:_authToken'
+  const path = t.testdir({
+    npm: { npmrc: '' },
+    project: { 'package.json': '{"name":"reload-user-config"}' },
+    user: { '.npmrc': `${tokenKey}=old-token\nfoo=from-user\n` },
+  })
+  const userconfig = join(path, 'user/.npmrc')
+  const config = new Config({
+    argv: ['node', __filename, `--userconfig=${userconfig}`],
+    cwd: join(path, 'project'),
+    definitions,
+    env: { HOME: join(path, 'user'), npm_config_foo: 'from-env' },
+    flatten,
+    nerfDarts,
+    npmPath: join(path, 'npm'),
+    shorthands,
+  })
+
+  await config.load()
+  const originalFlat = config.flat
+  t.equal(config.getCredentialsByURI(registry).token, 'old-token')
+  t.equal(config.get('foo'), 'from-env', 'environment config has higher priority')
+
+  fs.writeFileSync(userconfig, `${tokenKey}=new-token\nfoo=updated-user\n`)
+  await config.reload('user')
+
+  t.equal(config.getCredentialsByURI(registry).token, 'new-token')
+  t.equal(config.get('foo'), 'from-env', 'reload preserves higher-priority config')
+  t.not(config.flat, originalFlat, 'reload invalidates flattened options')
+  t.equal(config.flat[tokenKey], 'new-token', 'flattened credentials are refreshed')
+
+  fs.writeFileSync(userconfig, '')
+  await config.reload('user')
+  t.equal(config.getCredentialsByURI(registry).token, undefined, 'removed credentials are cleared')
+  t.equal(config.get('foo'), 'from-env', 'lower-priority removals do not affect environment config')
+})
+
 t.test('setting username/password/email individually', async t => {
   const registry = 'https://registry.npmjs.org/'
   const path = t.testdir()
