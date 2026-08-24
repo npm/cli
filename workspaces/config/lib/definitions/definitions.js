@@ -271,6 +271,7 @@ const definitions = {
     default: '',
     type: [String, Array],
     hint: '<package-list>',
+    envExport: false,
     description: `
       Comma-separated list of packages whose install-time lifecycle scripts
       (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for
