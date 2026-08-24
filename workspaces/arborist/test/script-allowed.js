@@ -256,7 +256,7 @@ t.test('local tarball key — Windows UNC key matches', {
   skip: process.platform !== 'win32',
 }, t => {
   const consistentResolve = require('../lib/consistent-resolve.js')
-  const key = 'file://server/share/local-pkg.tgz'
+  const key = 'file:////server/share/local-pkg.tgz'
   const tgzNode = node({
     name: 'local-pkg',
     packageName: 'local-pkg',

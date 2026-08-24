@@ -4,6 +4,7 @@ const isScriptAllowed = require('../../../workspaces/arborist/lib/script-allowed
 const {
   applyApprovalForPackage,
   applyDenyForPackage,
+  keyTargetsNode,
   nameKeyFor,
   versionedKeyFor,
   isSingleVersionPin,
@@ -540,6 +541,7 @@ t.test('applyApprovalForPackage — remote tarball deny blocks approval', async 
     { pin: true }
   )
   t.match(warning, /denied|versioned deny/)
+  t.equal(keyTargetsNode('https://example.com/other.tgz', remote), false)
 })
 
 t.test('applyApprovalForPackage — no-pin with no name produces no-op', async t => {
