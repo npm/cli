@@ -1,6 +1,6 @@
 const t = require('tap')
 const isScriptAllowed = require('../lib/script-allowed.js')
-const { trustedDisplay } = isScriptAllowed
+const { matchFileOrDir, trustedDisplay } = isScriptAllowed
 
 // Test nodes default to a consistent registry-tarball shape: the resolved
 // URL's name+version match the supplied name+version. Tests that need to
@@ -196,6 +196,90 @@ t.test('local tarball key — npa parses *.tgz paths as type=file', t => {
   t.end()
 })
 
+t.test('local tarball key — relative key resolves from the project root', t => {
+  const path = require('node:path')
+  const rootPath = path.resolve('project')
+  const tgzPath = path.resolve(rootPath, 'local-pkg.tgz')
+  const tgzNode = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+    resolved: `file:${tgzPath}`,
+    root: { path: rootPath },
+  })
+
+  t.equal(isScriptAllowed(tgzNode, { 'file:local-pkg.tgz': true }), true)
+  t.equal(isScriptAllowed(tgzNode, { 'file:other-pkg.tgz': true }), null)
+  t.end()
+})
+
+t.test('local tarball key — matches consistentResolve Windows representation', t => {
+  const resolved = String.raw`file:C:\absolute\path\local-pkg.tgz`
+  const parsed = {
+    saveSpec: 'file:C:/absolute/path/local-pkg.tgz',
+    fetchSpec: String.raw`C:\absolute\path\local-pkg.tgz`,
+  }
+
+  t.equal(matchFileOrDir({ resolved }, parsed), true)
+  t.equal(matchFileOrDir({ resolved }, {
+    saveSpec: 'file:C:/absolute/path/other-pkg.tgz',
+    fetchSpec: String.raw`C:\absolute\path\other-pkg.tgz`,
+  }), false)
+  t.end()
+})
+
+t.test('local tarball key — Windows absolute key forms match', {
+  skip: process.platform !== 'win32',
+}, t => {
+  const resolved = String.raw`file:C:\project\local-pkg.tgz`
+  const tgzNode = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+    resolved,
+    root: { path: String.raw`C:\project` },
+  })
+
+  t.equal(isScriptAllowed(tgzNode, {
+    [String.raw`file:C:\project\local-pkg.tgz`]: true,
+  }), true)
+  t.equal(isScriptAllowed(tgzNode, {
+    'file:C:/project/local-pkg.tgz': true,
+  }), true)
+  t.equal(isScriptAllowed(tgzNode, {
+    'file:C:/project/other-pkg.tgz': true,
+  }), null)
+  t.end()
+})
+
+t.test('local tarball key — Windows UNC key matches', {
+  skip: process.platform !== 'win32',
+}, t => {
+  const consistentResolve = require('../lib/consistent-resolve.js')
+  const key = 'file://server/share/local-pkg.tgz'
+  const tgzNode = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+    resolved: consistentResolve(key),
+    root: { path: String.raw`C:\project` },
+  })
+
+  t.equal(isScriptAllowed(tgzNode, { [key]: true }), true)
+  t.end()
+})
+
+t.test('file source matching keeps POSIX backslashes distinct', t => {
+  const resolved = String.raw`file:/tmp/local\pkg.tgz`
+  const parsed = {
+    saveSpec: 'file:/tmp/local/pkg.tgz',
+    fetchSpec: '/tmp/local/pkg.tgz',
+  }
+
+  t.equal(matchFileOrDir({ resolved }, parsed), false)
+  t.end()
+})
+
 t.test('remote tarball — exact resolved match', t => {
   const remoteNode = node({
     name: 'pkg',
@@ -205,6 +289,17 @@ t.test('remote tarball — exact resolved match', t => {
   })
   t.equal(isScriptAllowed(remoteNode, { 'https://example.com/pkg.tgz': true }), true)
   t.equal(isScriptAllowed(remoteNode, { 'https://example.com/other.tgz': true }), null)
+  t.end()
+})
+
+t.test('remote tarball key does not match a file source', t => {
+  const fileNode = node({
+    name: 'pkg',
+    packageName: 'pkg',
+    version: '1.0.0',
+    resolved: 'file:https://example.com/pkg.tgz',
+  })
+  t.equal(isScriptAllowed(fileNode, { 'https://example.com/pkg.tgz': true }), null)
   t.end()
 })
 

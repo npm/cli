@@ -1,5 +1,6 @@
 const t = require('tap')
 const path = require('node:path')
+const isScriptAllowed = require('../../../workspaces/arborist/lib/script-allowed.js')
 const {
   applyApprovalForPackage,
   applyDenyForPackage,
@@ -379,6 +380,21 @@ t.test('applyApprovalForPackage — file dep uses resolved as both keys', async 
   t.strictSame(allowScripts, { 'file:../local': true })
 })
 
+t.test('versionedKeyFor — local file key round-trips through policy matching', async t => {
+  const rootPath = path.resolve('project')
+  const local = {
+    name: 'local',
+    packageName: 'local',
+    version: '1.0.0',
+    resolved: `file:${path.resolve(rootPath, 'local.tgz')}`,
+    root: { path: rootPath },
+    isRegistryDependency: false,
+  }
+  const key = versionedKeyFor(local)
+
+  t.equal(isScriptAllowed(local, { [key]: true }), true)
+})
+
 t.test('applyApprovalForPackage — empty nodes returns unchanged', async t => {
   const { allowScripts, changes } = applyApprovalForPackage({ x: true }, [], { pin: true })
   t.strictSame(allowScripts, { x: true })
@@ -490,6 +506,29 @@ t.test('applyApprovalForPackage — file dep with deny entry blocks approval', a
     [node({ name: 'local', resolved: 'file:../local' })],
     { pin: true }
   )
+  t.match(warning, /denied|versioned deny/)
+})
+
+t.test('applyApprovalForPackage — relative file deny matches absolute resolved', async t => {
+  const rootPath = path.resolve('project')
+  const resolved = `file:${path.resolve(rootPath, 'local.tgz')}`
+  const local = {
+    name: 'local',
+    packageName: 'local',
+    version: '1.0.0',
+    resolved,
+    root: { path: rootPath },
+    isRegistryDependency: false,
+  }
+  const existing = { 'file:local.tgz': false }
+  const { allowScripts, changes, warning } = applyApprovalForPackage(
+    existing,
+    [local],
+    { pin: true }
+  )
+
+  t.strictSame(allowScripts, existing)
+  t.strictSame(changes, [])
   t.match(warning, /denied|versioned deny/)
 })
 
