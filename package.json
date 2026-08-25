@@ -1,5 +1,5 @@
 {
-  "version": "11.19.0",
+  "version": "11.19.1",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
@@ -81,7 +81,7 @@
     "libnpmexec": "^10.3.2",
     "libnpmfund": "^7.0.26",
     "libnpmorg": "^8.0.1",
-    "libnpmpack": "^9.1.12",
+    "libnpmpack": "^9.1.13",
     "libnpmpublish": "^11.2.0",
     "libnpmsearch": "^9.0.1",
     "libnpmteam": "^8.0.2",

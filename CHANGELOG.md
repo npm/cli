@@ -1,5 +1,15 @@
 # Changelog
 
+## [11.19.1](https://github.com/npm/cli/compare/v11.19.0...v11.19.1) (2026-08-25)
+### Bug Fixes
+* [`83b750d`](https://github.com/npm/cli/commit/83b750dbbc0b32f498da760396542f83d4069100) [#9916](https://github.com/npm/cli/pull/9916) exempt explicit pack targets from allow-directory (#9916) (@github-actions[bot], @ychampion, @ychampion)
+### Dependencies
+* [`4791b27`](https://github.com/npm/cli/commit/4791b27f15c81d474a68daabb10b3ba6d20a0e71) [#9872](https://github.com/npm/cli/pull/9872) `undici@6.28.0` (@martinrrm, @Copilot)
+* [`823d647`](https://github.com/npm/cli/commit/823d647e0d4b28b0a491db12b3b75b78103dc407) [#9872](https://github.com/npm/cli/pull/9872) `ip-address@10.5.0` (@martinrrm, @Copilot)
+* [`04f8efe`](https://github.com/npm/cli/commit/04f8efea927c7fea72652d81b3ebe1745fba74af) [#9872](https://github.com/npm/cli/pull/9872) `brace-expansion@5.0.9` (@martinrrm, @Copilot)
+* [`1610280`](https://github.com/npm/cli/commit/161028035ceb491138fe2727ab918f0275ba42c5) [#9842](https://github.com/npm/cli/pull/9842) `tar@7.5.22` (#9842) (@martinrrm, @Copilot)
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.1.13): `libnpmpack@9.1.13`
+
 ## [11.19.0](https://github.com/npm/cli/compare/v11.18.0...v11.19.0) (2026-07-28)
 ### Features
 * [`7d39aa6`](https://github.com/npm/cli/commit/7d39aa6956117ed2af95e8ecba3533f66c4bc050) [#9698](https://github.com/npm/cli/pull/9698) install-scripts: use install-scripts as the warning log title (@manzoorwanijk)
