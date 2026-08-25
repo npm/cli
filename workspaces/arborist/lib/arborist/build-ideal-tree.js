@@ -397,6 +397,22 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this[_updateNames] = update.names
 
     this[_updateAll] = update.all
+
+    // validates list of rm names, they must
+    // be dep names only, no semver ranges are supported
+    for (const name of options.rm || []) {
+      const spec = npa(name)
+      const validationError =
+        new TypeError(`Remove arguments must only contain package names, eg:
+    npm rm ${spec.name || '<pkg>'}`)
+      validationError.code = 'ERMARGS'
+
+      // If they gave us anything other than a bare package name
+      if (spec.raw !== spec.name) {
+        throw validationError
+      }
+    }
+
     // we prune by default unless explicitly set to boolean false
     this.#prune = options.prune !== false
 
