@@ -96,6 +96,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.1): `@npmcli/arborist@9.9.1`
 
+## [9.1.13](https://github.com/npm/cli/compare/libnpmpack-v9.1.12...libnpmpack-v9.1.13) (2026-08-25)
+### Bug Fixes
+* [`83b750d`](https://github.com/npm/cli/commit/83b750dbbc0b32f498da760396542f83d4069100) [#9916](https://github.com/npm/cli/pull/9916) exempt explicit pack targets from allow-directory (#9916) (@github-actions[bot], @ychampion, @ychampion)
+
 ## [9.1.10](https://github.com/npm/cli/compare/libnpmpack-v9.1.9...libnpmpack-v9.1.10) (2026-06-11)
 ### Bug Fixes
 * [`33d421a`](https://github.com/npm/cli/commit/33d421a6fd56fc549e68c6b91adb32e3bb6073f4) [#9468](https://github.com/npm/cli/pull/9468) flatten path separators in pack output filename (#9468) (@github-actions[bot], @rootvector2)
