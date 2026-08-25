@@ -28,6 +28,7 @@ const node = ({
   isWorkspace = false,
   isLink = false,
   inBundle = false,
+  inDepBundle = false,
   inert = false,
   resolved,
 } = {}) => ({
@@ -40,6 +41,7 @@ const node = ({
   isWorkspace,
   isLink,
   inBundle,
+  inDepBundle,
   inert,
   isRegistryDependency: true,
   package: { name, version, scripts },
@@ -71,17 +73,39 @@ t.test('collectUnreviewedScripts', async t => {
     t.strictSame(await collectUnreviewedScripts(), [])
   })
 
-  t.test('skips project root, workspace, linked, and bundled nodes', async t => {
+  t.test('skips project root, workspace, linked, and dep-bundled nodes', async t => {
     const result = await collectUnreviewedScripts({
       tree: tree([
         node({ name: 'root', scripts: { install: 'x' }, isProjectRoot: true }),
         node({ name: 'ws', scripts: { install: 'x' }, isWorkspace: true }),
         node({ name: 'linked', scripts: { install: 'x' }, isLink: true }),
-        node({ name: 'bundled', scripts: { install: 'x' }, inBundle: true }),
+        node({ name: 'bundled', scripts: { install: 'x' }, inDepBundle: true }),
       ]),
       policy: null,
     })
     t.strictSame(result, [])
+  })
+
+  t.test('root-bundled deps are still listed as pending (npm/cli#9679)', async t => {
+    // Deps listed in the root's bundleDependencies are fetched from the
+    // registry at install time, run their install scripts, and so must
+    // still surface in the unreviewed/pending list so the user can
+    // approve them. inBundle is true for these (any bundler), but
+    // inDepBundle is false (the bundler is the root project).
+    const result = await collectUnreviewedScripts({
+      tree: tree([
+        node({
+          name: 'root-bundled',
+          scripts: { install: 'build.js' },
+          inBundle: true,
+          inDepBundle: false,
+        }),
+      ]),
+      policy: null,
+    })
+    t.equal(result.length, 1, 'root-bundled dep with install script is pending')
+    t.equal(result[0].node.name, 'root-bundled')
+    t.match(result[0].scripts, { install: 'build.js' })
   })
 
   t.test('skips inert (platform/engine-incompatible) optional nodes', async t => {

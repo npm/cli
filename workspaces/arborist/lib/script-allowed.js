@@ -23,15 +23,72 @@ const versionFromTgz = require('./version-from-tgz.js')
 //   - git: match on hosted.ssh() plus a short-SHA prefix of the
 //     resolved committish
 
+// True when the node was bundled by some dependency (not by the root
+// project). The script-approval gate keys off this rather than
+// node.inBundle so the user can review and allow scripts in deps the
+// root explicitly bundles, while still blocking install scripts from
+// tarballs nested inside another package (where manifest-confusion makes
+// identity matching unsafe).
+//
+// Real Node (workspaces/arborist/lib/node.js): inDepBundle is a
+// getBundler() walk that excludes the root project, so it is the
+// trusted bit and we use it directly.
+//
+// IsolatedNode (workspaces/arborist/lib/isolated-classes.js): linked /
+// isolated mode constructs bundled IsolatedNodes by walking from a
+// bundle entry point and the class does not track root-vs-dep bundling,
+// so its inDepBundle always returns false. To preserve the existing
+// security gate (no manifest confusion via isolated bundled nodes), we
+// treat any inBundle IsolatedNode as dep-bundled. The discriminator
+// versus a real-Node root-bundled dep is getBundler(): real Nodes walk
+// up to the root and return it; IsolatedNode.getBundler returns null.
+const isBundledByDependency = (node) => {
+  if (!node) {
+    return false
+  }
+  if (node.inDepBundle) {
+    return true
+  }
+  if (!node.inBundle) {
+    return false
+  }
+  // inBundle is true and inDepBundle is false. For real Nodes this means
+  // root-bundled (allow review). For IsolatedNode it means "bundled in
+  // isolated mode, root/dep distinction not tracked" (must block). The
+  // discriminator is whether getBundler() can identify a real bundling
+  // parent; IsolatedNode.getBundler returns null.
+  if (typeof node.getBundler !== 'function') {
+    return false
+  }
+  return node.getBundler() === null
+}
+
 const isScriptAllowed = (node, policy) => {
-  // Bundled dependencies never run their install scripts and cannot be
-  // allowlisted. Matching by name@version from the bundled tarball would
-  // reintroduce manifest confusion (a bundled tarball can claim any name
-  // and version). Returning null marks them as not-allowed regardless of
-  // any policy entry, so their install scripts are blocked by the
-  // install-time gate. A package that needs a bundled dep's script must
-  // forward it as one of its own lifecycle scripts.
-  if (node.inBundle) {
+  // Dependencies bundled inside another package's tarball never run their
+  // install scripts and cannot be allowlisted. Matching by name@version
+  // from the bundled tarball would reintroduce manifest confusion (a
+  // bundled tarball can claim any name and version). Returning null marks
+  // them as not-allowed regardless of any policy entry, so their install
+  // scripts are blocked by the install-time gate. A package that needs a
+  // bundled dep's script must forward it as one of its own lifecycle
+  // scripts.
+  //
+  // Real Nodes: inDepBundle is the trusted bit. inBundle is also true
+  // when the root project itself bundles a dep, but root-bundled deps
+  // are still fetched from the registry at install time, have a trusted
+  // resolved URL, run their install scripts, and so must be reviewable
+  // (npm/cli#9679). Keying off inBundle would silently block them and
+  // hide them from the pending list.
+  //
+  // IsolatedNodes (linked/isolated mode): the class can't tell root-
+  // bundled from dep-bundled, so its inDepBundle getter always returns
+  // false. Anything an IsolatedNode reports as inBundle came through
+  // the isolated reifier's bundled tree and must keep being blocked, or
+  // a bundled tarball's identity match would bypass the gate. The
+  // getBundler()===null discriminator below catches that case without
+  // collapsing the root-bundled / dep-bundled distinction elsewhere
+  // (diff/reify/edge all key off inDepBundle in real-Node semantics).
+  if (isBundledByDependency(node)) {
     return null
   }
 
@@ -382,3 +439,4 @@ module.exports.isExactVersionDisjunction = isExactVersionDisjunction
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
 module.exports.resolvedSourceSpecs = resolvedSourceSpecs
 module.exports.trustedDisplay = trustedDisplay
+module.exports.isBundledByDependency = isBundledByDependency

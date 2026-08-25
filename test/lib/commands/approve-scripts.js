@@ -859,3 +859,73 @@ t.test('approve-scripts --all with only bundled deps has nothing to review', asy
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.notOk(pkg.allowScripts, 'no allowScripts written')
 })
+
+// Root-bundled deps (listed in the ROOT project's bundleDependencies) are
+// fetched from the registry at install time, run their install scripts, and
+// are reviewable — unlike deps bundled inside another package's tarball. The
+// command layer must approve them by name, mirroring the inDepBundle gate the
+// pending list / preflight use (npm/cli#9679). Before the fix, findNodesForArgs
+// filtered on node.inBundle (true for root-bundled deps too), so
+// `approve-scripts <name>` threw ENOMATCH even though `--all` and the pending
+// list surfaced the dep.
+const rootBundledFixture = () => ({
+  'package.json': JSON.stringify({
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { 'root-bundled-dep': '*' },
+    bundleDependencies: ['root-bundled-dep'],
+  }),
+  'package-lock.json': JSON.stringify({
+    name: 'host',
+    version: '1.0.0',
+    lockfileVersion: 3,
+    requires: true,
+    packages: {
+      '': {
+        name: 'host',
+        version: '1.0.0',
+        dependencies: { 'root-bundled-dep': '*' },
+        bundleDependencies: ['root-bundled-dep'],
+      },
+      'node_modules/root-bundled-dep': {
+        version: '1.0.0',
+        resolved: 'https://registry.npmjs.org/root-bundled-dep/-/root-bundled-dep-1.0.0.tgz',
+        hasInstallScript: true,
+      },
+    },
+  }),
+  node_modules: {
+    'root-bundled-dep': {
+      'package.json': JSON.stringify({
+        name: 'root-bundled-dep',
+        version: '1.0.0',
+        scripts: { install: 'echo install' },
+      }),
+    },
+  },
+})
+
+t.test('approve-scripts <root-bundled-dep> by name is approved (npm/cli#9679)', async t => {
+  const { npm, prefix } = await _mockNpm(t, {
+    prefixDir: rootBundledFixture(),
+  })
+  // The bug: this threw ENOMATCH because findNodesForArgs skipped the node
+  // on node.inBundle. It must now match and write the policy entry.
+  await npm.exec('approve-scripts', ['root-bundled-dep'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'root-bundled-dep@1.0.0': true },
+    'root-bundled dep is approved by name, not rejected with ENOMATCH')
+})
+
+t.test('approve-scripts --all approves a root-bundled dep (npm/cli#9679)', async t => {
+  const { npm, prefix } = await _mockNpm(t, {
+    prefixDir: rootBundledFixture(),
+    config: { all: true },
+  })
+  await npm.exec('approve-scripts', [])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'root-bundled-dep@1.0.0': true },
+    'root-bundled dep surfaces in --all and is approved')
+})
