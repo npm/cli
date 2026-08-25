@@ -1,4 +1,5 @@
 const t = require('tap')
+const { resolve } = require('node:path')
 const {
   collectUnreviewedScripts,
   strictAllowScriptsError,
@@ -129,22 +130,38 @@ t.test('collectUnreviewedScripts', async t => {
   })
 
   t.test('skips reviewed local directory link targets', async t => {
+    const rootPath = resolve('project')
+    const linkPath = resolve(rootPath, 'node_modules/local')
+    const root = {
+      path: rootPath,
+      meta: {
+        get: nodePath => nodePath === linkPath
+          ? { resolved: '../local', link: true }
+          : {},
+      },
+    }
     const target = node({ name: 'local', scripts: { install: 'x' } })
     target.resolved = null
     target.isRegistryDependency = false
-    target.path = require('node:path').resolve('local')
+    target.path = resolve(rootPath, '../local')
     target.realpath = target.path
-    target.linksIn = new Set([{ resolved: 'file:../local' }])
+    target.root = root
+    target.linksIn = new Set([{
+      path: linkPath,
+      resolved: 'file:../../local',
+      root,
+    }])
 
     t.strictSame(await collectUnreviewedScripts({
       tree: tree([target]),
       policy: { 'file:../local': false },
     }), [])
 
-    t.strictSame(await collectUnreviewedScripts({
+    const unreviewed = await collectUnreviewedScripts({
       tree: tree([target]),
       policy: { 'file:local': true },
-    }), [])
+    })
+    t.equal(unreviewed.length, 1)
   })
 
   t.test('detects synthetic node-gyp via binding.gyp runtime check', async t => {
