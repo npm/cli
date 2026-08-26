@@ -56,6 +56,11 @@ A couple of options of note:
   token for the registry. For other ways to pass in auth details, see the
   n-r-f docs.
 
+* `opts.forceAuth` - an object containing authentication credentials. Use this
+  when publishing with automation tokens or when `opts.token` alone doesn't work.
+  Example: `forceAuth: { token: 'your-token-here' }`. This is required in some
+  cases where the registry URL is not automatically detected.
+
 * `opts.provenance` - when running in a supported CI environment, will trigger
   the generation of a signed provenance statement to be published alongside
   the package. Mutually exclusive with the `provenanceFile` option.
@@ -110,6 +115,18 @@ await libpub.publish(manifest, tarData, {
   npmVersion: 'my-pub-script@1.0.2',
   token: 'my-auth-token-here'
 }, opts)
+// Package has been published to the npm registry.
+```
+
+**Note:** When using automation tokens or if the `token` option doesn't work, use `forceAuth` instead:
+
+```js
+await libpub.publish(manifest, tarData, {
+  npmVersion: 'my-pub-script@1.0.2',
+  forceAuth: {
+    token: 'my-automation-token-here'
+  }
+})
 // Package has been published to the npm registry.
 ```
 
