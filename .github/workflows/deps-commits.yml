@@ -20,7 +20,10 @@ jobs:
     name: Check Deps Commits
     # Skip bot-generated release PRs, which intentionally bump many
     # inter-workspace dependency versions inside a single `chore: release` commit.
-    if: ${{ !startsWith(github.head_ref, 'release/') }}
+    if: >-
+      github.event.pull_request.user.login != 'github-actions[bot]' ||
+      github.event.pull_request.head.repo.full_name != github.repository ||
+      !startsWith(github.head_ref, 'release-please--branches--')
     runs-on: ubuntu-latest
     defaults:
       run:

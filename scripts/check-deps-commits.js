@@ -38,25 +38,79 @@ const readJSONAtRef = (ref, file) => {
   }
 }
 
-// A first-party manifest is any package.json that is NOT inside a node_modules
-// directory. Bundled dependency manifests under node_modules churn as a
-// side-effect of lockfile/bundle regeneration and must be ignored.
-const isFirstPartyManifest = (file) =>
-  (file === 'package.json' || file.endsWith('/package.json')) &&
-  !file.startsWith('node_modules/') &&
-  !file.includes('/node_modules/')
+const workspacePatternsAtRef = (ref) => {
+  const manifest = readJSONAtRef(ref, 'package.json')
+  return Array.isArray(manifest?.workspaces) ? manifest.workspaces : []
+}
 
-// Does a commit message mention this dependency by name? Historical formats:
+// The repository's workspace patterns contain literal path segments and `*`
+// segments. Match the declared package roots without including nested fixtures.
+const matchesWorkspace = (directory, pattern) => {
+  const directoryParts = directory.split('/')
+  const patternParts = pattern.replace(/\/$/, '').split('/')
+  return directoryParts.length === patternParts.length &&
+    patternParts.every((part, index) =>
+      part === '*' || part === directoryParts[index])
+}
+
+const isFirstPartyManifest = (file, workspacePatterns) => {
+  if (file === 'package.json') {
+    return true
+  }
+  if (!file.endsWith('/package.json')) {
+    return false
+  }
+  const directory = file.slice(0, -'/package.json'.length)
+  return workspacePatterns.some((pattern) =>
+    matchesWorkspace(directory, pattern))
+}
+
+// Does a commit subject mention this dependency by name? Historical formats:
 //   deps: undici@6.27.0
 //   deps(arborist): validate-npm-package-name ^8.0.0
 //   deps!: bump sigstore from 2.x to 3.0.0
 //   deps: remove read-package-json-fast
 // The name appears as a standalone token, optionally followed by `@version`.
-const mentionsDep = (message, dep) => {
-  const tokens = message
+const mentionsDep = (subject, dep) => {
+  const tokens = subject
     .split(/\s+/)
     .map((t) => t.replace(/^[`'"([,]+/, '').replace(/[`'").,;:]+$/, ''))
   return tokens.some((t) => t === dep || t.startsWith(`${dep}@`))
+}
+
+const dependencyChanges = (from, to) => {
+  const workspacePatterns = [
+    ...new Set([
+      ...workspacePatternsAtRef(from),
+      ...workspacePatternsAtRef(to),
+    ]),
+  ]
+  const changedFiles = git('diff', '--name-only', from, to, '--', '*package.json')
+    .split('\n')
+    .map((f) => f.trim())
+    .filter(Boolean)
+    .filter((file) => isFirstPartyManifest(file, workspacePatterns))
+
+  const changes = new Map()
+  for (const file of changedFiles) {
+    const before = readJSONAtRef(from, file) || {}
+    const after = readJSONAtRef(to, file) || {}
+    for (const type of DEP_TYPES) {
+      const b = before[type] || {}
+      const a = after[type] || {}
+      for (const dep of new Set([...Object.keys(b), ...Object.keys(a)])) {
+        if (b[dep] !== a[dep]) {
+          changes.set(`${file}\0${dep}`, {
+            dep,
+            file,
+            from: b[dep],
+            to: a[dep],
+          })
+        }
+      }
+    }
+  }
+  return changes
 }
 
 const main = () => {
@@ -67,59 +121,95 @@ const main = () => {
     throw new Error('Usage: node scripts/check-deps-commits.js --from <base> [--to <head>]')
   }
 
-  // Net set of first-party package.json files changed by the PR.
-  const changedFiles = git('diff', '--name-only', `${from}...${to}`, '--', '*package.json')
-    .split('\n')
-    .map((f) => f.trim())
-    .filter(Boolean)
-    .filter(isFirstPartyManifest)
-
-  // Collect every production dependency whose presence or version range changed.
-  const changedDeps = new Map()
-  for (const file of changedFiles) {
-    const before = readJSONAtRef(from, file) || {}
-    const after = readJSONAtRef(to, file) || {}
-    for (const type of DEP_TYPES) {
-      const b = before[type] || {}
-      const a = after[type] || {}
-      for (const name of new Set([...Object.keys(b), ...Object.keys(a)])) {
-        if (b[name] !== a[name]) {
-          if (!changedDeps.has(name)) {
-            changedDeps.set(name, { files: new Set(), from: b[name], to: a[name] })
-          }
-          const entry = changedDeps.get(name)
-          entry.files.add(file)
-          entry.to = a[name] ?? entry.to
-        }
-      }
-    }
-  }
+  const mergeBase = git('merge-base', from, to).trim()
+  const changedDeps = dependencyChanges(mergeBase, to)
 
   if (!changedDeps.size) {
     process.stdout.write('OK: no production dependency changes detected.\n')
     return
   }
 
-  // Gather the `deps:` commits in the range. Records are separated by an ASCII
-  // record separator and fields by an ASCII unit separator so multi-line commit
-  // bodies are handled safely.
-  const commits = git('log', '--format=%H%x1f%B%x1e', `${from}..${to}`)
+  // The merge-base range excludes commits inherited from the base branch.
+  // Inspect every commit so dependency commits from a merged topic branch and
+  // changes introduced while resolving a merge are both validated.
+  const commits = git(
+    'log',
+    '--reverse',
+    '--topo-order',
+    '--format=%H%x1f%P%x1f%s%x1e',
+    `${mergeBase}..${to}`
+  )
     .split('\x1e')
     .map((c) => c.trim())
     .filter(Boolean)
     .map((c) => {
-      const sep = c.indexOf('\x1f')
-      return { hash: c.slice(0, sep), message: c.slice(sep + 1) }
+      const [hash, parents, subject] = c.split('\x1f')
+      return { hash, parents: parents.split(' ').filter(Boolean), subject }
     })
-  const depsCommits = commits.filter((c) => DEPS_SUBJECT.test(c.message.split('\n')[0].trim()))
 
-  const uncovered = []
-  for (const [dep, { files, to: version }] of changedDeps) {
-    if (!depsCommits.some((c) => mentionsDep(c.message, dep))) {
-      // `version` is undefined when the dependency was removed.
-      uncovered.push({ dep, files: [...files], version })
+  const initialState = new Map(
+    [...changedDeps].map(([key]) => [
+      key,
+      { covered: false, invalidCommits: [] },
+    ])
+  )
+  const stateByCommit = new Map([[mergeBase, initialState]])
+  for (const { hash, parents, subject } of commits) {
+    const state = new Map(stateByCommit.get(parents[0]))
+
+    if (parents.length > 1) {
+      for (const [key, { dep, file }] of changedDeps) {
+        const version = readJSONAtRef(hash, file)?.dependencies?.[dep]
+        const inheritedFrom = parents.find((parent) =>
+          readJSONAtRef(parent, file)?.dependencies?.[dep] === version)
+        if (inheritedFrom) {
+          state.set(key, stateByCommit.get(inheritedFrom).get(key))
+        } else {
+          const previous = state.get(key)
+          state.set(key, {
+            covered: previous.covered,
+            invalidCommits: [
+              ...previous.invalidCommits,
+              { hash, subject },
+            ],
+          })
+        }
+      }
+      stateByCommit.set(hash, state)
+      continue
     }
+
+    for (const [key, { dep }] of dependencyChanges(parents[0], hash)) {
+      if (!changedDeps.has(key)) {
+        continue
+      }
+      if (
+        DEPS_SUBJECT.test(subject) &&
+        mentionsDep(subject, dep)
+      ) {
+        state.set(key, { covered: true, invalidCommits: [] })
+      } else {
+        const previous = state.get(key)
+        state.set(key, {
+          covered: previous.covered,
+          invalidCommits: [
+            ...previous.invalidCommits,
+            { hash, subject },
+          ],
+        })
+      }
+    }
+    stateByCommit.set(hash, state)
   }
+
+  const toHash = git('rev-parse', `${to}^{commit}`).trim()
+  const finalState = stateByCommit.get(toHash)
+  const uncovered = [...changedDeps].filter(
+    ([key]) => {
+      const state = finalState.get(key)
+      return !state.covered || state.invalidCommits.length
+    }
+  )
 
   if (!uncovered.length) {
     process.stdout.write(
@@ -140,19 +230,25 @@ const main = () => {
 
   // One suggestion per (dependency, manifest) so each change is isolated into a
   // scoped `deps(<workspace>):` commit that names the exact dependency+version.
-  const suggestions = uncovered.flatMap(({ dep, files, version }) =>
-    files.map((file) => {
-      const scope = scopeOf(file)
-      const type = scope ? `deps(${scope})` : 'deps'
-      return version ? `  ${type}: ${dep}@${version}` : `  ${type}: remove ${dep}`
-    })
-  )
+  const suggestions = uncovered.map(([, { dep, file, to: version }]) => {
+    const scope = scopeOf(file)
+    const type = scope ? `deps(${scope})` : 'deps'
+    return version ? `  ${type}: ${dep}@${version}` : `  ${type}: remove ${dep}`
+  })
 
   const lines = [
     'Production dependency changes must each have a dedicated `deps:` commit that names the dependency.',
     '',
-    'The following production dependency changes are missing a matching deps: commit:',
-    ...uncovered.map(({ dep, files }) => `  - ${dep} (changed in: ${files.join(', ')})`),
+    'The following production dependency changes are not isolated in a matching deps: commit:',
+    ...uncovered.map(([key, { dep, file }]) => {
+      const invalidCommitEntries = finalState.get(key)?.invalidCommits
+      const details = invalidCommitEntries
+        ? `; also changed by ${invalidCommitEntries
+          .map(({ hash, subject }) => `${hash.slice(0, 7)} "${subject}"`)
+          .join(', ')}`
+        : ''
+      return `  - ${dep} (changed in: ${file}${details})`
+    }),
     '',
     'Add a separate commit for each, e.g.:',
     ...suggestions,
