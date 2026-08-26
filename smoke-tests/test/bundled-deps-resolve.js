@@ -1,5 +1,5 @@
 const t = require('tap')
-const { join } = require('node:path')
+const { isAbsolute, join, relative, sep } = require('node:path')
 const fs = require('node:fs')
 const { createRequire } = require('node:module')
 const setup = require('./fixtures/setup.js')
@@ -13,6 +13,7 @@ const setup = require('./fixtures/setup.js')
 // where `sigstore` went missing from the packed bundle.
 const findMissingDeps = (npmRoot) => {
   const req = createRequire(join(npmRoot, 'package.json'))
+  const bundleRoot = fs.realpathSync(npmRoot)
   const missing = []
   const seen = new Set()
   const stack = [npmRoot]
@@ -37,7 +38,15 @@ const findMissingDeps = (npmRoot) => {
         continue
       }
       try {
-        req.resolve(dep, { paths: [dir] })
+        const resolved = fs.realpathSync(req.resolve(dep, { paths: [dir] }))
+        const fromBundle = relative(bundleRoot, resolved)
+        if (
+          isAbsolute(fromBundle) ||
+          fromBundle === '..' ||
+          fromBundle.startsWith(`..${sep}`)
+        ) {
+          missing.push(`${pkg.name || dir} -> ${dep}`)
+        }
       } catch {
         missing.push(`${pkg.name || dir} -> ${dep}`)
       }
@@ -82,7 +91,7 @@ t.test('bundled production deps all resolve from the packed bundle', async t => 
   })
 
   const tarball = await npmLocalTarball()
-  await npm('install', tarball, '--global')
+  await npm('install', tarball, '--global', '--ignore-scripts')
 
   const npmRoot = join(globalNodeModules, 'npm')
   const missing = findMissingDeps(npmRoot)
