@@ -2048,11 +2048,21 @@ const definitions = {
   }),
   registry: new Definition('registry', {
     default: 'https://registry.npmjs.org/',
-    type: url,
+    type: [url, 'default'],
     description: `
       The base URL of the npm registry.
+
+      Can be set to \`"default"\` to use the default npm registry
+      (\`https://registry.npmjs.org/\`), which is useful when you have
+      a custom registry configured globally but want to temporarily
+      use the default one.
     `,
-    flatten,
+    flatten (key, obj, flatOptions) {
+      const val = obj[key]
+      flatOptions.registry = /^default$/i.test(val)
+        ? 'https://registry.npmjs.org/'
+        : val
+    },
   }),
   'replace-registry-host': new Definition('replace-registry-host', {
     default: 'npmjs',
