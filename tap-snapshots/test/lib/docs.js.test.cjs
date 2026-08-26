@@ -3204,10 +3204,10 @@ Options:
 [--json] [--otp <otp>] [--registry <registry>]
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
+    This is a one-time password from a two-factor authenticator.  It's needed when publishing or changing package permissions with \`npm access\`. If not set, and a registry response fails with a challenge for a one-time password, npm will prompt on the command line for one.
 
   --registry
     The base URL of the npm registry.
@@ -3244,16 +3244,16 @@ Options:
 [-a|--all] [--allow-scripts-pending] [--no-allow-scripts-pin] [--json]
 
   -a|--all
-    Show or act on all packages, not just the ones your project directly
+    Show or act on all packages, not just the ones your project directly depends on. For \`npm outdated\` and \`npm ls\` this lists every outdated or installed package. For \`npm approve-scripts\` and \`npm deny-scripts\` it selects every package with pending install scripts.
 
   --allow-scripts-pending
-    List packages with install scripts that are not yet covered by the
+    List packages with install scripts that are not yet covered by the \`allowScripts\` policy, without modifying \`package.json\`. Only meaningful for \`npm approve-scripts\`.
 
   --allow-scripts-pin
-    Write pinned (\`pkg@version\`) entries when approving install scripts.
+    Write pinned (\`pkg@version\`) entries when approving install scripts. Set to \`false\` to write name-only entries that allow any version. Has no effect on \`npm deny-scripts\`, which always writes name-only entries regardless of this setting.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
 
 Run "npm help approve-scripts" for more info
@@ -3288,49 +3288,49 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   --audit-level
-    The minimum level of vulnerability for \`npm audit\` to exit with
+    The minimum level of vulnerability for \`npm audit\` to exit with a non-zero exit code.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   -f|--force
-    Removes various protections against unfortunate side effects, common
+    Removes various protections against unfortunate side effects, common mistakes, unnecessary performance degradation, and malicious input. * Allow clobbering non-npm files in global installs. * Allow the \`npm version\` command to work on an unclean git repository. * Allow deleting the cache folder with \`npm cache clean\`. * Allow installing packages that have an \`engines\` declaration requiring a different version of npm. * Allow installing packages that have an \`engines\` declaration requiring a different version of \`node\`, even if \`--engine-strict\` is enabled. * Allow \`npm audit fix\` to install modules outside your stated dependency range (including SemVer-major changes). * Allow unpublishing all versions of a published package. * Allow conflicting peerDependencies to be installed in the root project. * Implicitly set \`--yes\` during \`npm init\`. * Allow clobbering existing values in \`npm pkg\` * Allow unpublishing of entire packages (not just a single version). If you don't have a clear idea of what you want to do, it is strongly recommended that you do not use this option!
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   --package-lock-only
-    If set to true, the current operation will only use the \`package-lock.json\`,
+    If set to true, the current operation will only use the \`package-lock.json\`, ignoring \`node_modules\`. For \`update\` this means only the \`package-lock.json\` will be updated, instead of checking \`node_modules\` and downloading dependencies. For \`list\` this means the output will be based on the tree described by the \`package-lock.json\`, rather than the contents of \`node_modules\`.
 
   --package-lock
-    If set to false, then ignore \`package-lock.json\` files when installing.
+    If set to false, then ignore \`package-lock.json\` files when installing. This will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --foreground-scripts
-    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`) scripts for installed packages in the foreground process, sharing standard input, output, and error with the main npm process. Note that this will generally make installs run slower, and be much noisier, but can be useful for debugging.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --include-attestations
-    When used with \`npm audit signatures --json\`, includes the full
+    When used with \`npm audit signatures --json\`, includes the full sigstore attestation bundles in the JSON output for each verified package. The bundles contain DSSE envelopes, verification material, and transparency log entries.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 Run "npm help audit" for more info
@@ -3368,19 +3368,19 @@ Options:
 [--workspaces] [--include-workspace-root]
 
   --browser
-    The browser that is called by npm commands to open websites.
+    The browser that is called by npm commands to open websites. Set to \`false\` to suppress browser behavior and instead print urls to terminal. Set to \`true\` to use default system URL opener.
 
   --registry
     The base URL of the npm registry.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
 
 alias: issues
@@ -3456,73 +3456,73 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   --install-strategy
-    Sets the strategy for installing packages in node_modules.
+    Sets the strategy for installing packages in node_modules. hoisted (default): Install non-duplicated in top-level, and duplicated as necessary within directory structure. nested: (formerly --legacy-bundling) install in place, no hoisting. shallow (formerly --global-style) only install direct deps at top-level. linked: install in node_modules/.store, link in place, unhoisted. We recommend that package authors use \`--install-strategy=linked\` during development to catch undeclared ("phantom") dependencies before publishing: the isolated layout only exposes a package's declared dependencies, so an \`import\` of a package that was never added to \`package.json\` can fail instead of resolving by accident and shipping broken. See [Catching undeclared ("phantom") dependencies](/using-npm/developers#catching-undeclared-phantom-dependencies).
 
   --legacy-bundling
-    Instead of hoisting package installs in \`node_modules\`, install packages
+    Instead of hoisting package installs in \`node_modules\`, install packages in the same manner that they are depended on. This may cause very deep directory structures and duplicate package installs as there is no de-duplicating. Sets \`--install-strategy=nested\`.
 
   --global-style
-    Only install direct dependencies in the top level \`node_modules\`,
+    Only install direct dependencies in the top level \`node_modules\`, but hoist on deeper dependencies. Sets \`--install-strategy=shallow\`.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --strict-peer-deps
-    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_ conflicting \`peerDependencies\` will be treated as an install failure, even if npm could reasonably guess the appropriate resolution based on non-peer dependency relationships. By default, conflicting \`peerDependencies\` deep in the dependency graph will be resolved using the nearest non-peer dependency specification, even if doing so will result in some packages receiving a peer dependency outside the range set in their package's \`peerDependencies\` object. When such an override is performed, a warning is printed, explaining the conflict and the packages involved.  If \`--strict-peer-deps\` is set, then this warning is treated as a failure.
 
   --foreground-scripts
-    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`) scripts for installed packages in the foreground process, sharing standard input, output, and error with the main npm process. Note that this will generally make installs run slower, and be much noisier, but can be useful for debugging.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --allow-directory
-    Limits the ability for npm to install dependencies from directories.
+    Limits the ability for npm to install dependencies from directories. That is, dependencies that point to a directory instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any directories to be installed. \`none\` prevents any directories from being installed. \`root\` only allows directories defined in your project's package.json to be installed.  Also allows directory dependencies to be used for other commands like \`npm view\`
 
   --allow-file
-    Limits the ability for npm to install dependencies from tarball files.
+    Limits the ability for npm to install dependencies from tarball files. That is, dependencies that point to a local tarball file instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any tarball file to be installed. \`none\` prevents any tarball file from being installed. \`root\` only allows tarball files defined in your project's package.json to be installed.  Also allows tarball file dependencies to be used for other commands like \`npm view\`
 
   --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
+    Limits the ability for npm to fetch dependencies from git references. That is, dependencies that point to a git repo instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Git dependencies run \`git\` against a remote repo and may install configuration the project does not control. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you need git deps. \`all\` allows any git dependencies to be fetched and installed. \`none\` prevents any git dependencies from being fetched and installed. \`root\` only allows git dependencies defined in your project's package.json to be fetched and installed.  Also allows git dependencies to be fetched for other commands like \`npm view\`
 
   --allow-remote
-    Limits the ability for npm to fetch dependencies from urls.
+    Limits the ability for npm to fetch dependencies from urls. That is, dependencies that point to a tarball url instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Tarballs that share a hostname with the configured registry (the typical case for the npm registry, GitHub Packages, and most private registries) are still installed normally. If your registry serves tarballs from a different host, set \`replace-registry-host\` or override this setting. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you intentionally install from a URL. \`all\` allows any url to be installed. \`none\` prevents any url from being installed. \`root\` only allows urls defined in your project's package.json to be installed.  Also allows url dependencies to be used for other commands like \`npm view\`
 
   --allow-scripts
-    Comma-separated list of packages whose install-time lifecycle scripts
+    Comma-separated list of packages whose install-time lifecycle scripts (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for non-registry dependencies) are allowed to run. This setting is intended for one-off and global contexts: \`npm exec\`, \`npx\`, and \`npm install -g\`, where no project \`package.json\` is involved. For team-wide policy in a project, use the \`allowScripts\` field in \`package.json\` (which also supports explicit denials), or configure it in \`.npmrc\`. Passing \`--allow-scripts\` on the command line during a project-scoped \`npm install\`, \`ci\`, \`update\`, or \`rebuild\` is an error. Each name is matched against a dependency's resolved identity, not against the package's self-reported name. \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting.
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a warning into a hard error: any dependency with install scripts that is not covered by \`allowScripts\` will fail the install instead of being blocked with a warning. Dependencies explicitly denied with \`false\` in \`allowScripts\` are always silently skipped; this setting only affects unreviewed entries (packages with install scripts that are neither approved nor denied). \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting. Optional dependencies that cannot be installed on the current platform or engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged, because their install scripts never run.
 
   --dangerously-allow-all-scripts
-    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every dependency install script regardless of whether it was approved or denied. Intended as a migration escape hatch only; its use is strongly discouraged. \`--ignore-scripts\` still takes precedence over this setting.
 
   --audit
-    When "true" submit audit reports alongside the current npm command to the
+    When "true" submit audit reports alongside the current npm command to the default registry and all registries configured for scopes.  See the documentation for [\`npm audit\`](/commands/npm-audit) for details on what is submitted.
 
   --bin-links
-    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package executables. Set to false to have it not do this.  This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems.
 
   --fund
-    When "true" displays the message at the end of each \`npm install\`
+    When "true" displays the message at the end of each \`npm install\` acknowledging the number of dependencies looking for funding. See [\`npm fund\`](/commands/npm-fund) for details.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 aliases: clean-install, ic, install-clean, isntall-clean
@@ -3596,16 +3596,16 @@ Options:
 [-l|--long]
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   --editor
     The command to run for \`npm edit\` and \`npm config edit\`.
 
   -L|--location
-    When passed to \`npm config\` this refers to which config file to use.
+    When passed to \`npm config\` this refers to which config file to use. When set to "global" mode, packages are installed into the \`prefix\` folder instead of the current working directory. See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
@@ -3654,64 +3654,64 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   --install-strategy
-    Sets the strategy for installing packages in node_modules.
+    Sets the strategy for installing packages in node_modules. hoisted (default): Install non-duplicated in top-level, and duplicated as necessary within directory structure. nested: (formerly --legacy-bundling) install in place, no hoisting. shallow (formerly --global-style) only install direct deps at top-level. linked: install in node_modules/.store, link in place, unhoisted. We recommend that package authors use \`--install-strategy=linked\` during development to catch undeclared ("phantom") dependencies before publishing: the isolated layout only exposes a package's declared dependencies, so an \`import\` of a package that was never added to \`package.json\` can fail instead of resolving by accident and shipping broken. See [Catching undeclared ("phantom") dependencies](/using-npm/developers#catching-undeclared-phantom-dependencies).
 
   --legacy-bundling
-    Instead of hoisting package installs in \`node_modules\`, install packages
+    Instead of hoisting package installs in \`node_modules\`, install packages in the same manner that they are depended on. This may cause very deep directory structures and duplicate package installs as there is no de-duplicating. Sets \`--install-strategy=nested\`.
 
   --global-style
-    Only install direct dependencies in the top level \`node_modules\`,
+    Only install direct dependencies in the top level \`node_modules\`, but hoist on deeper dependencies. Sets \`--install-strategy=shallow\`.
 
   --strict-peer-deps
-    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_ conflicting \`peerDependencies\` will be treated as an install failure, even if npm could reasonably guess the appropriate resolution based on non-peer dependency relationships. By default, conflicting \`peerDependencies\` deep in the dependency graph will be resolved using the nearest non-peer dependency specification, even if doing so will result in some packages receiving a peer dependency outside the range set in their package's \`peerDependencies\` object. When such an override is performed, a warning is printed, explaining the conflict and the packages involved.  If \`--strict-peer-deps\` is set, then this warning is treated as a failure.
 
   --package-lock
-    If set to false, then ignore \`package-lock.json\` files when installing.
+    If set to false, then ignore \`package-lock.json\` files when installing. This will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --allow-directory
-    Limits the ability for npm to install dependencies from directories.
+    Limits the ability for npm to install dependencies from directories. That is, dependencies that point to a directory instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any directories to be installed. \`none\` prevents any directories from being installed. \`root\` only allows directories defined in your project's package.json to be installed.  Also allows directory dependencies to be used for other commands like \`npm view\`
 
   --allow-file
-    Limits the ability for npm to install dependencies from tarball files.
+    Limits the ability for npm to install dependencies from tarball files. That is, dependencies that point to a local tarball file instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any tarball file to be installed. \`none\` prevents any tarball file from being installed. \`root\` only allows tarball files defined in your project's package.json to be installed.  Also allows tarball file dependencies to be used for other commands like \`npm view\`
 
   --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
+    Limits the ability for npm to fetch dependencies from git references. That is, dependencies that point to a git repo instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Git dependencies run \`git\` against a remote repo and may install configuration the project does not control. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you need git deps. \`all\` allows any git dependencies to be fetched and installed. \`none\` prevents any git dependencies from being fetched and installed. \`root\` only allows git dependencies defined in your project's package.json to be fetched and installed.  Also allows git dependencies to be fetched for other commands like \`npm view\`
 
   --allow-remote
-    Limits the ability for npm to fetch dependencies from urls.
+    Limits the ability for npm to fetch dependencies from urls. That is, dependencies that point to a tarball url instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Tarballs that share a hostname with the configured registry (the typical case for the npm registry, GitHub Packages, and most private registries) are still installed normally. If your registry serves tarballs from a different host, set \`replace-registry-host\` or override this setting. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you intentionally install from a URL. \`all\` allows any url to be installed. \`none\` prevents any url from being installed. \`root\` only allows urls defined in your project's package.json to be installed.  Also allows url dependencies to be used for other commands like \`npm view\`
 
   --audit
-    When "true" submit audit reports alongside the current npm command to the
+    When "true" submit audit reports alongside the current npm command to the default registry and all registries configured for scopes.  See the documentation for [\`npm audit\`](/commands/npm-audit) for details on what is submitted.
 
   --bin-links
-    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package executables. Set to false to have it not do this.  This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems.
 
   --fund
-    When "true" displays the message at the end of each \`npm install\`
+    When "true" displays the message at the end of each \`npm install\` acknowledging the number of dependencies looking for funding. See [\`npm fund\`](/commands/npm-fund) for details.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 alias: ddp
@@ -3757,16 +3757,16 @@ Options:
 [-a|--all] [--allow-scripts-pending] [--no-allow-scripts-pin] [--json]
 
   -a|--all
-    Show or act on all packages, not just the ones your project directly
+    Show or act on all packages, not just the ones your project directly depends on. For \`npm outdated\` and \`npm ls\` this lists every outdated or installed package. For \`npm approve-scripts\` and \`npm deny-scripts\` it selects every package with pending install scripts.
 
   --allow-scripts-pending
-    List packages with install scripts that are not yet covered by the
+    List packages with install scripts that are not yet covered by the \`allowScripts\` policy, without modifying \`package.json\`. Only meaningful for \`npm approve-scripts\`.
 
   --allow-scripts-pin
-    Write pinned (\`pkg@version\`) entries when approving install scripts.
+    Write pinned (\`pkg@version\`) entries when approving install scripts. Set to \`false\` to write name-only entries that allow any version. Has no effect on \`npm deny-scripts\`, which always writes name-only entries regardless of this setting.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
 
 Run "npm help deny-scripts" for more info
@@ -3797,10 +3797,10 @@ Options:
     The base URL of the npm registry.
 
   --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
+    This is a one-time password from a two-factor authenticator.  It's needed when publishing or changing package permissions with \`npm access\`. If not set, and a registry response fails with a challenge for a one-time password, npm will prompt on the command line for one.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
 
 Run "npm help deprecate" for more info
@@ -3843,7 +3843,7 @@ Options:
     Ignore whitespace when comparing lines in \`npm diff\`.
 
   --diff-no-prefix
-    Do not show any source or destination prefix in \`npm diff\` output.
+    Do not show any source or destination prefix in \`npm diff\` output. Note: this causes \`npm diff\` to ignore the \`--diff-src-prefix\` and \`--diff-dst-prefix\` configs.
 
   --diff-src-prefix
     Source prefix to be used in \`npm diff\` output.
@@ -3855,19 +3855,19 @@ Options:
     Treat all files as text in \`npm diff\`.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   --tag
-    If you ask npm to install a package and don't tell it a specific version,
+    If you ask npm to install a package and don't tell it a specific version, then it will install the specified tag. It is the tag added to the package@version specified in the \`npm dist-tag add\` command, if no explicit tag is given. When used by the \`npm diff\` command, this is the tag used to fetch the tarball that will be compared with the local files by default. If used in the \`npm publish\` command, this is the tag that will be added to the package submitted to the registry.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
 
 Run "npm help diff" for more info
@@ -3904,13 +3904,13 @@ Options:
 [--workspaces] [--include-workspace-root]
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
 
 alias: dist-tags
@@ -3942,19 +3942,19 @@ Options:
 [--workspaces] [--include-workspace-root]
 
   --browser
-    The browser that is called by npm commands to open websites.
+    The browser that is called by npm commands to open websites. Set to \`false\` to suppress browser behavior and instead print urls to terminal. Set to \`true\` to use default system URL opener.
 
   --registry
     The base URL of the npm registry.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
 
 alias: home
@@ -4042,25 +4042,25 @@ Options:
     The package or packages to install for [\`npm exec\`](/commands/npm-exec)
 
   -c|--call
-    Optional companion option for \`npm exec\`, \`npx\` that allows for
+    Optional companion option for \`npm exec\`, \`npx\` that allows for specifying a custom command to be run along with the installed packages. \`\`\`bash npm exec --package yo --package generator-node --call "yo node" \`\`\`
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --allow-scripts
-    Comma-separated list of packages whose install-time lifecycle scripts
+    Comma-separated list of packages whose install-time lifecycle scripts (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for non-registry dependencies) are allowed to run. This setting is intended for one-off and global contexts: \`npm exec\`, \`npx\`, and \`npm install -g\`, where no project \`package.json\` is involved. For team-wide policy in a project, use the \`allowScripts\` field in \`package.json\` (which also supports explicit denials), or configure it in \`.npmrc\`. Passing \`--allow-scripts\` on the command line during a project-scoped \`npm install\`, \`ci\`, \`update\`, or \`rebuild\` is an error. Each name is matched against a dependency's resolved identity, not against the package's self-reported name. \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting.
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a warning into a hard error: any dependency with install scripts that is not covered by \`allowScripts\` will fail the install instead of being blocked with a warning. Dependencies explicitly denied with \`false\` in \`allowScripts\` are always silently skipped; this setting only affects unreviewed entries (packages with install scripts that are neither approved nor denied). \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting. Optional dependencies that cannot be installed on the current platform or engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged, because their install scripts never run.
 
   --dangerously-allow-all-scripts
-    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every dependency install script regardless of whether it was approved or denied. Intended as a migration escape hatch only; its use is strongly discouraged. \`--ignore-scripts\` still takes precedence over this setting.
 
 
 alias: x
@@ -4096,10 +4096,10 @@ Options:
 [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
 
 alias: why
@@ -4156,49 +4156,49 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   --install-strategy
-    Sets the strategy for installing packages in node_modules.
+    Sets the strategy for installing packages in node_modules. hoisted (default): Install non-duplicated in top-level, and duplicated as necessary within directory structure. nested: (formerly --legacy-bundling) install in place, no hoisting. shallow (formerly --global-style) only install direct deps at top-level. linked: install in node_modules/.store, link in place, unhoisted. We recommend that package authors use \`--install-strategy=linked\` during development to catch undeclared ("phantom") dependencies before publishing: the isolated layout only exposes a package's declared dependencies, so an \`import\` of a package that was never added to \`package.json\` can fail instead of resolving by accident and shipping broken. See [Catching undeclared ("phantom") dependencies](/using-npm/developers#catching-undeclared-phantom-dependencies).
 
   --legacy-bundling
-    Instead of hoisting package installs in \`node_modules\`, install packages
+    Instead of hoisting package installs in \`node_modules\`, install packages in the same manner that they are depended on. This may cause very deep directory structures and duplicate package installs as there is no de-duplicating. Sets \`--install-strategy=nested\`.
 
   --global-style
-    Only install direct dependencies in the top level \`node_modules\`,
+    Only install direct dependencies in the top level \`node_modules\`, but hoist on deeper dependencies. Sets \`--install-strategy=shallow\`.
 
   --strict-peer-deps
-    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_ conflicting \`peerDependencies\` will be treated as an install failure, even if npm could reasonably guess the appropriate resolution based on non-peer dependency relationships. By default, conflicting \`peerDependencies\` deep in the dependency graph will be resolved using the nearest non-peer dependency specification, even if doing so will result in some packages receiving a peer dependency outside the range set in their package's \`peerDependencies\` object. When such an override is performed, a warning is printed, explaining the conflict and the packages involved.  If \`--strict-peer-deps\` is set, then this warning is treated as a failure.
 
   --package-lock
-    If set to false, then ignore \`package-lock.json\` files when installing.
+    If set to false, then ignore \`package-lock.json\` files when installing. This will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --audit
-    When "true" submit audit reports alongside the current npm command to the
+    When "true" submit audit reports alongside the current npm command to the default registry and all registries configured for scopes.  See the documentation for [\`npm audit\`](/commands/npm-audit) for details on what is submitted.
 
   --bin-links
-    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package executables. Set to false to have it not do this.  This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems.
 
   --fund
-    When "true" displays the message at the end of each \`npm install\`
+    When "true" displays the message at the end of each \`npm install\` acknowledging the number of dependencies looking for funding. See [\`npm fund\`](/commands/npm-fund) for details.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 Run "npm help find-dupes" for more info
@@ -4236,16 +4236,16 @@ Options:
 [--which <fundingSourceNumber>]
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   --browser
-    The browser that is called by npm commands to open websites.
+    The browser that is called by npm commands to open websites. Set to \`false\` to suppress browser behavior and instead print urls to terminal. Set to \`true\` to use default system URL opener.
 
   --unicode
-    When set to true, npm uses unicode characters in the tree output.  When
+    When set to true, npm uses unicode characters in the tree output.  When false, it uses ascii characters instead of unicode glyphs.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --which
     If there are multiple funding sources, which 1-indexed source URL to open.
@@ -4298,7 +4298,7 @@ Options:
 [--viewer <viewer>]
 
   --viewer
-    The program to use to view help content.
+    The program to use to view help content. Set to \`"browser"\` to view html help content in the default web browser.
 
 
 alias: hlep
@@ -4361,40 +4361,40 @@ Options:
     The value \`npm init\` should use by default for the package author's homepage.
 
   --init-license
-    The value \`npm init\` should use by default for the package license.
+    The value \`npm init\` should use by default for the package license. If not set, the license field will be omitted from new packages.
 
   --init-module
-    A module that will be loaded by the \`npm init\` command.  See the
+    A module that will be loaded by the \`npm init\` command.  See the documentation for the [init-package-json](https://github.com/npm/init-package-json) module for more information, or [npm init](/commands/npm-init).
 
   --init-type
     The value that \`npm init\` should use by default for the package.json type field.
 
   --init-version
-    The value that \`npm init\` should use by default for the package
+    The value that \`npm init\` should use by default for the package version number, if not already set in package.json.
 
   --init-private
     The value \`npm init\` should use by default for the package's private flag.
 
   -y|--yes
-    Automatically answer "yes" to any prompts that npm might print on
+    Automatically answer "yes" to any prompts that npm might print on the command line.
 
   -f|--force
-    Removes various protections against unfortunate side effects, common
+    Removes various protections against unfortunate side effects, common mistakes, unnecessary performance degradation, and malicious input. * Allow clobbering non-npm files in global installs. * Allow the \`npm version\` command to work on an unclean git repository. * Allow deleting the cache folder with \`npm cache clean\`. * Allow installing packages that have an \`engines\` declaration requiring a different version of npm. * Allow installing packages that have an \`engines\` declaration requiring a different version of \`node\`, even if \`--engine-strict\` is enabled. * Allow \`npm audit fix\` to install modules outside your stated dependency range (including SemVer-major changes). * Allow unpublishing all versions of a published package. * Allow conflicting peerDependencies to be installed in the root project. * Implicitly set \`--yes\` during \`npm init\`. * Allow clobbering existing values in \`npm pkg\` * Allow unpublishing of entire packages (not just a single version). If you don't have a clear idea of what you want to do, it is strongly recommended that you do not use this option!
 
   --scope
-    Associate an operation with a scope for a scoped registry.
+    Associate an operation with a scope for a scoped registry. Useful when logging in to or out of a private registry: \`\`\` # log in, linking the scope to the custom registry npm login --scope=@mycorp --registry=https://registry.mycorp.com # log out, removing the link and the auth token npm logout --scope=@mycorp \`\`\` This will cause \`@mycorp\` to be mapped to the registry for future installation of packages specified according to the pattern \`@mycorp/package\`. This will also cause \`npm init\` to create a scoped package. \`\`\` # accept all defaults, and create a package named "@foo/whatever", # instead of just named "whatever" npm init --scope=@foo --yes \`\`\`
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --workspaces-update
-    If set to true, the npm cli will run an update after operations that may
+    If set to true, the npm cli will run an update after operations that may possibly change the workspaces installed to the \`node_modules\` folder.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
 
 aliases: create, innit
@@ -4450,109 +4450,109 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -S|--save
-    Save installed packages to a \`package.json\` file as dependencies.
+    Save installed packages to a \`package.json\` file as dependencies. When used with the \`npm rm\` command, removes the dependency from \`package.json\`. Will also prevent writing to \`package-lock.json\` if set to \`false\`.
 
   -E|--save-exact
-    Dependencies saved to package.json will be configured with an exact
+    Dependencies saved to package.json will be configured with an exact version rather than using npm's default semver range operator.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   --install-strategy
-    Sets the strategy for installing packages in node_modules.
+    Sets the strategy for installing packages in node_modules. hoisted (default): Install non-duplicated in top-level, and duplicated as necessary within directory structure. nested: (formerly --legacy-bundling) install in place, no hoisting. shallow (formerly --global-style) only install direct deps at top-level. linked: install in node_modules/.store, link in place, unhoisted. We recommend that package authors use \`--install-strategy=linked\` during development to catch undeclared ("phantom") dependencies before publishing: the isolated layout only exposes a package's declared dependencies, so an \`import\` of a package that was never added to \`package.json\` can fail instead of resolving by accident and shipping broken. See [Catching undeclared ("phantom") dependencies](/using-npm/developers#catching-undeclared-phantom-dependencies).
 
   --legacy-bundling
-    Instead of hoisting package installs in \`node_modules\`, install packages
+    Instead of hoisting package installs in \`node_modules\`, install packages in the same manner that they are depended on. This may cause very deep directory structures and duplicate package installs as there is no de-duplicating. Sets \`--install-strategy=nested\`.
 
   --global-style
-    Only install direct dependencies in the top level \`node_modules\`,
+    Only install direct dependencies in the top level \`node_modules\`, but hoist on deeper dependencies. Sets \`--install-strategy=shallow\`.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --strict-peer-deps
-    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_ conflicting \`peerDependencies\` will be treated as an install failure, even if npm could reasonably guess the appropriate resolution based on non-peer dependency relationships. By default, conflicting \`peerDependencies\` deep in the dependency graph will be resolved using the nearest non-peer dependency specification, even if doing so will result in some packages receiving a peer dependency outside the range set in their package's \`peerDependencies\` object. When such an override is performed, a warning is printed, explaining the conflict and the packages involved.  If \`--strict-peer-deps\` is set, then this warning is treated as a failure.
 
   --prefer-dedupe
-    Prefer to deduplicate packages if possible, rather than
+    Prefer to deduplicate packages if possible, rather than choosing a newer version of a dependency.
 
   --package-lock
-    If set to false, then ignore \`package-lock.json\` files when installing.
+    If set to false, then ignore \`package-lock.json\` files when installing. This will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
 
   --package-lock-only
-    If set to true, the current operation will only use the \`package-lock.json\`,
+    If set to true, the current operation will only use the \`package-lock.json\`, ignoring \`node_modules\`. For \`update\` this means only the \`package-lock.json\` will be updated, instead of checking \`node_modules\` and downloading dependencies. For \`list\` this means the output will be based on the tree described by the \`package-lock.json\`, rather than the contents of \`node_modules\`.
 
   --foreground-scripts
-    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`) scripts for installed packages in the foreground process, sharing standard input, output, and error with the main npm process. Note that this will generally make installs run slower, and be much noisier, but can be useful for debugging.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --allow-directory
-    Limits the ability for npm to install dependencies from directories.
+    Limits the ability for npm to install dependencies from directories. That is, dependencies that point to a directory instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any directories to be installed. \`none\` prevents any directories from being installed. \`root\` only allows directories defined in your project's package.json to be installed.  Also allows directory dependencies to be used for other commands like \`npm view\`
 
   --allow-file
-    Limits the ability for npm to install dependencies from tarball files.
+    Limits the ability for npm to install dependencies from tarball files. That is, dependencies that point to a local tarball file instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any tarball file to be installed. \`none\` prevents any tarball file from being installed. \`root\` only allows tarball files defined in your project's package.json to be installed.  Also allows tarball file dependencies to be used for other commands like \`npm view\`
 
   --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
+    Limits the ability for npm to fetch dependencies from git references. That is, dependencies that point to a git repo instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Git dependencies run \`git\` against a remote repo and may install configuration the project does not control. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you need git deps. \`all\` allows any git dependencies to be fetched and installed. \`none\` prevents any git dependencies from being fetched and installed. \`root\` only allows git dependencies defined in your project's package.json to be fetched and installed.  Also allows git dependencies to be fetched for other commands like \`npm view\`
 
   --allow-remote
-    Limits the ability for npm to fetch dependencies from urls.
+    Limits the ability for npm to fetch dependencies from urls. That is, dependencies that point to a tarball url instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Tarballs that share a hostname with the configured registry (the typical case for the npm registry, GitHub Packages, and most private registries) are still installed normally. If your registry serves tarballs from a different host, set \`replace-registry-host\` or override this setting. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you intentionally install from a URL. \`all\` allows any url to be installed. \`none\` prevents any url from being installed. \`root\` only allows urls defined in your project's package.json to be installed.  Also allows url dependencies to be used for other commands like \`npm view\`
 
   --allow-scripts
-    Comma-separated list of packages whose install-time lifecycle scripts
+    Comma-separated list of packages whose install-time lifecycle scripts (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for non-registry dependencies) are allowed to run. This setting is intended for one-off and global contexts: \`npm exec\`, \`npx\`, and \`npm install -g\`, where no project \`package.json\` is involved. For team-wide policy in a project, use the \`allowScripts\` field in \`package.json\` (which also supports explicit denials), or configure it in \`.npmrc\`. Passing \`--allow-scripts\` on the command line during a project-scoped \`npm install\`, \`ci\`, \`update\`, or \`rebuild\` is an error. Each name is matched against a dependency's resolved identity, not against the package's self-reported name. \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting.
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a warning into a hard error: any dependency with install scripts that is not covered by \`allowScripts\` will fail the install instead of being blocked with a warning. Dependencies explicitly denied with \`false\` in \`allowScripts\` are always silently skipped; this setting only affects unreviewed entries (packages with install scripts that are neither approved nor denied). \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting. Optional dependencies that cannot be installed on the current platform or engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged, because their install scripts never run.
 
   --dangerously-allow-all-scripts
-    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every dependency install script regardless of whether it was approved or denied. Intended as a migration escape hatch only; its use is strongly discouraged. \`--ignore-scripts\` still takes precedence over this setting.
 
   --audit
-    When "true" submit audit reports alongside the current npm command to the
+    When "true" submit audit reports alongside the current npm command to the default registry and all registries configured for scopes.  See the documentation for [\`npm audit\`](/commands/npm-audit) for details on what is submitted.
 
   --before
-    If passed to \`npm install\`, will rebuild the npm tree such that only
+    If passed to \`npm install\`, will rebuild the npm tree such that only versions that were available **on or before** the given date are installed.  If there are no versions available for the current set of dependencies, the command will error. If the requested version is a \`dist-tag\` and the given tag does not pass the \`--before\` filter, the most recent version less than or equal to that tag will be used. For example, \`foo@latest\` might install \`foo@1.2\` even though \`latest\` is \`2.0\`. If \`before\` and \`min-release-age\` are both set in the same source, \`before\` wins (an explicit absolute date overrides a relative window). Across sources, the standard precedence applies (cli > env > project > user > global), so a higher-priority source can always relax or override a lower-priority one. As with \`min-release-age\`, when this cutoff blocks a fix that \`npm audit fix\` would install, npm keeps the vulnerable version, warns, and exits with a non-zero code. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age
-    If set, npm will build the npm tree such that only versions that were
+    If set, npm will build the npm tree such that only versions that were available more than the given number of days ago will be installed.  If there are no versions available for the current set of dependencies, the command will error. This flag is a complement to \`before\`, which accepts an exact date instead of a relative number of days. The two may coexist (e.g. \`min-release-age\` in your \`.npmrc\` is preserved when npm internally spawns a sub-process with \`--before\` while preparing a \`git:\` or \`github:\` dependency); when both apply, \`before\` wins within a single source and across sources the standard precedence rules apply. When this window stops \`npm audit fix\` from installing a patched version (because the fix was published too recently), npm keeps the package at its vulnerable version, warns that the fix was blocked, and exits with a non-zero code. To install the fix, add the package to \`min-release-age-exclude\`, or relax \`min-release-age\` or \`before\`. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age-exclude
-    A list of package names or \`minimatch\` glob patterns that are exempt
+    A list of package names or \`minimatch\` glob patterns that are exempt from the \`min-release-age\` (and \`before\`) filter. A matching package can always resolve to its newest version, even when a release-age window is set. For example, to apply a release-age window to third-party dependencies while letting internally maintained packages update immediately: \`\`\` min-release-age=7 min-release-age-exclude[]=@myorg/* min-release-age-exclude[]=my-internal-pkg \`\`\` Only the named package is exempt; its own dependencies still follow the release-age policy unless they also match a pattern. Patterns match against the package name, so \`@myorg/*\` matches \`@myorg/shared-utils\`. Excluding a package does not change which registry it is fetched from. You should own your private scope on the public registry so that nobody else can publish a package with the same name.
 
   --bin-links
-    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package executables. Set to false to have it not do this.  This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems.
 
   --fund
-    When "true" displays the message at the end of each \`npm install\`
+    When "true" displays the message at the end of each \`npm install\` acknowledging the number of dependencies looking for funding. See [\`npm fund\`](/commands/npm-fund) for details.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   --cpu
-    Override CPU architecture of native modules to install.
+    Override CPU architecture of native modules to install. Acceptable values are same as \`cpu\` field of package.json, which comes from \`process.arch\`.
 
   --os
-    Override OS of native modules to install.
+    Override OS of native modules to install. Acceptable values are same as \`os\` field of package.json, which comes from \`process.platform\`.
 
   --libc
-    Override libc of native modules to install.
+    Override libc of native modules to install. Acceptable values are same as \`libc\` field of package.json
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
@@ -4622,73 +4622,73 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   --install-strategy
-    Sets the strategy for installing packages in node_modules.
+    Sets the strategy for installing packages in node_modules. hoisted (default): Install non-duplicated in top-level, and duplicated as necessary within directory structure. nested: (formerly --legacy-bundling) install in place, no hoisting. shallow (formerly --global-style) only install direct deps at top-level. linked: install in node_modules/.store, link in place, unhoisted. We recommend that package authors use \`--install-strategy=linked\` during development to catch undeclared ("phantom") dependencies before publishing: the isolated layout only exposes a package's declared dependencies, so an \`import\` of a package that was never added to \`package.json\` can fail instead of resolving by accident and shipping broken. See [Catching undeclared ("phantom") dependencies](/using-npm/developers#catching-undeclared-phantom-dependencies).
 
   --legacy-bundling
-    Instead of hoisting package installs in \`node_modules\`, install packages
+    Instead of hoisting package installs in \`node_modules\`, install packages in the same manner that they are depended on. This may cause very deep directory structures and duplicate package installs as there is no de-duplicating. Sets \`--install-strategy=nested\`.
 
   --global-style
-    Only install direct dependencies in the top level \`node_modules\`,
+    Only install direct dependencies in the top level \`node_modules\`, but hoist on deeper dependencies. Sets \`--install-strategy=shallow\`.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --strict-peer-deps
-    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_ conflicting \`peerDependencies\` will be treated as an install failure, even if npm could reasonably guess the appropriate resolution based on non-peer dependency relationships. By default, conflicting \`peerDependencies\` deep in the dependency graph will be resolved using the nearest non-peer dependency specification, even if doing so will result in some packages receiving a peer dependency outside the range set in their package's \`peerDependencies\` object. When such an override is performed, a warning is printed, explaining the conflict and the packages involved.  If \`--strict-peer-deps\` is set, then this warning is treated as a failure.
 
   --foreground-scripts
-    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`) scripts for installed packages in the foreground process, sharing standard input, output, and error with the main npm process. Note that this will generally make installs run slower, and be much noisier, but can be useful for debugging.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --allow-directory
-    Limits the ability for npm to install dependencies from directories.
+    Limits the ability for npm to install dependencies from directories. That is, dependencies that point to a directory instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any directories to be installed. \`none\` prevents any directories from being installed. \`root\` only allows directories defined in your project's package.json to be installed.  Also allows directory dependencies to be used for other commands like \`npm view\`
 
   --allow-file
-    Limits the ability for npm to install dependencies from tarball files.
+    Limits the ability for npm to install dependencies from tarball files. That is, dependencies that point to a local tarball file instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any tarball file to be installed. \`none\` prevents any tarball file from being installed. \`root\` only allows tarball files defined in your project's package.json to be installed.  Also allows tarball file dependencies to be used for other commands like \`npm view\`
 
   --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
+    Limits the ability for npm to fetch dependencies from git references. That is, dependencies that point to a git repo instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Git dependencies run \`git\` against a remote repo and may install configuration the project does not control. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you need git deps. \`all\` allows any git dependencies to be fetched and installed. \`none\` prevents any git dependencies from being fetched and installed. \`root\` only allows git dependencies defined in your project's package.json to be fetched and installed.  Also allows git dependencies to be fetched for other commands like \`npm view\`
 
   --allow-remote
-    Limits the ability for npm to fetch dependencies from urls.
+    Limits the ability for npm to fetch dependencies from urls. That is, dependencies that point to a tarball url instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Tarballs that share a hostname with the configured registry (the typical case for the npm registry, GitHub Packages, and most private registries) are still installed normally. If your registry serves tarballs from a different host, set \`replace-registry-host\` or override this setting. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you intentionally install from a URL. \`all\` allows any url to be installed. \`none\` prevents any url from being installed. \`root\` only allows urls defined in your project's package.json to be installed.  Also allows url dependencies to be used for other commands like \`npm view\`
 
   --allow-scripts
-    Comma-separated list of packages whose install-time lifecycle scripts
+    Comma-separated list of packages whose install-time lifecycle scripts (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for non-registry dependencies) are allowed to run. This setting is intended for one-off and global contexts: \`npm exec\`, \`npx\`, and \`npm install -g\`, where no project \`package.json\` is involved. For team-wide policy in a project, use the \`allowScripts\` field in \`package.json\` (which also supports explicit denials), or configure it in \`.npmrc\`. Passing \`--allow-scripts\` on the command line during a project-scoped \`npm install\`, \`ci\`, \`update\`, or \`rebuild\` is an error. Each name is matched against a dependency's resolved identity, not against the package's self-reported name. \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting.
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a warning into a hard error: any dependency with install scripts that is not covered by \`allowScripts\` will fail the install instead of being blocked with a warning. Dependencies explicitly denied with \`false\` in \`allowScripts\` are always silently skipped; this setting only affects unreviewed entries (packages with install scripts that are neither approved nor denied). \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting. Optional dependencies that cannot be installed on the current platform or engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged, because their install scripts never run.
 
   --dangerously-allow-all-scripts
-    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every dependency install script regardless of whether it was approved or denied. Intended as a migration escape hatch only; its use is strongly discouraged. \`--ignore-scripts\` still takes precedence over this setting.
 
   --audit
-    When "true" submit audit reports alongside the current npm command to the
+    When "true" submit audit reports alongside the current npm command to the default registry and all registries configured for scopes.  See the documentation for [\`npm audit\`](/commands/npm-audit) for details on what is submitted.
 
   --bin-links
-    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package executables. Set to false to have it not do this.  This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems.
 
   --fund
-    When "true" displays the message at the end of each \`npm install\`
+    When "true" displays the message at the end of each \`npm install\` acknowledging the number of dependencies looking for funding. See [\`npm fund\`](/commands/npm-fund) for details.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 aliases: cit, clean-install-test, sit
@@ -4741,16 +4741,16 @@ Options:
 [-a|--all] [--no-allow-scripts-pin] [--dry-run] [--json]
 
   -a|--all
-    Show or act on all packages, not just the ones your project directly
+    Show or act on all packages, not just the ones your project directly depends on. For \`npm outdated\` and \`npm ls\` this lists every outdated or installed package. For \`npm approve-scripts\` and \`npm deny-scripts\` it selects every package with pending install scripts.
 
   --allow-scripts-pin
-    Write pinned (\`pkg@version\`) entries when approving install scripts.
+    Write pinned (\`pkg@version\`) entries when approving install scripts. Set to \`false\` to write name-only entries that allow any version. Has no effect on \`npm deny-scripts\`, which always writes name-only entries regardless of this setting.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
 
 Run "npm help install-scripts" for more info
@@ -4798,109 +4798,109 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -S|--save
-    Save installed packages to a \`package.json\` file as dependencies.
+    Save installed packages to a \`package.json\` file as dependencies. When used with the \`npm rm\` command, removes the dependency from \`package.json\`. Will also prevent writing to \`package-lock.json\` if set to \`false\`.
 
   -E|--save-exact
-    Dependencies saved to package.json will be configured with an exact
+    Dependencies saved to package.json will be configured with an exact version rather than using npm's default semver range operator.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   --install-strategy
-    Sets the strategy for installing packages in node_modules.
+    Sets the strategy for installing packages in node_modules. hoisted (default): Install non-duplicated in top-level, and duplicated as necessary within directory structure. nested: (formerly --legacy-bundling) install in place, no hoisting. shallow (formerly --global-style) only install direct deps at top-level. linked: install in node_modules/.store, link in place, unhoisted. We recommend that package authors use \`--install-strategy=linked\` during development to catch undeclared ("phantom") dependencies before publishing: the isolated layout only exposes a package's declared dependencies, so an \`import\` of a package that was never added to \`package.json\` can fail instead of resolving by accident and shipping broken. See [Catching undeclared ("phantom") dependencies](/using-npm/developers#catching-undeclared-phantom-dependencies).
 
   --legacy-bundling
-    Instead of hoisting package installs in \`node_modules\`, install packages
+    Instead of hoisting package installs in \`node_modules\`, install packages in the same manner that they are depended on. This may cause very deep directory structures and duplicate package installs as there is no de-duplicating. Sets \`--install-strategy=nested\`.
 
   --global-style
-    Only install direct dependencies in the top level \`node_modules\`,
+    Only install direct dependencies in the top level \`node_modules\`, but hoist on deeper dependencies. Sets \`--install-strategy=shallow\`.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --strict-peer-deps
-    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_ conflicting \`peerDependencies\` will be treated as an install failure, even if npm could reasonably guess the appropriate resolution based on non-peer dependency relationships. By default, conflicting \`peerDependencies\` deep in the dependency graph will be resolved using the nearest non-peer dependency specification, even if doing so will result in some packages receiving a peer dependency outside the range set in their package's \`peerDependencies\` object. When such an override is performed, a warning is printed, explaining the conflict and the packages involved.  If \`--strict-peer-deps\` is set, then this warning is treated as a failure.
 
   --prefer-dedupe
-    Prefer to deduplicate packages if possible, rather than
+    Prefer to deduplicate packages if possible, rather than choosing a newer version of a dependency.
 
   --package-lock
-    If set to false, then ignore \`package-lock.json\` files when installing.
+    If set to false, then ignore \`package-lock.json\` files when installing. This will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
 
   --package-lock-only
-    If set to true, the current operation will only use the \`package-lock.json\`,
+    If set to true, the current operation will only use the \`package-lock.json\`, ignoring \`node_modules\`. For \`update\` this means only the \`package-lock.json\` will be updated, instead of checking \`node_modules\` and downloading dependencies. For \`list\` this means the output will be based on the tree described by the \`package-lock.json\`, rather than the contents of \`node_modules\`.
 
   --foreground-scripts
-    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`) scripts for installed packages in the foreground process, sharing standard input, output, and error with the main npm process. Note that this will generally make installs run slower, and be much noisier, but can be useful for debugging.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --allow-directory
-    Limits the ability for npm to install dependencies from directories.
+    Limits the ability for npm to install dependencies from directories. That is, dependencies that point to a directory instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any directories to be installed. \`none\` prevents any directories from being installed. \`root\` only allows directories defined in your project's package.json to be installed.  Also allows directory dependencies to be used for other commands like \`npm view\`
 
   --allow-file
-    Limits the ability for npm to install dependencies from tarball files.
+    Limits the ability for npm to install dependencies from tarball files. That is, dependencies that point to a local tarball file instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any tarball file to be installed. \`none\` prevents any tarball file from being installed. \`root\` only allows tarball files defined in your project's package.json to be installed.  Also allows tarball file dependencies to be used for other commands like \`npm view\`
 
   --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
+    Limits the ability for npm to fetch dependencies from git references. That is, dependencies that point to a git repo instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Git dependencies run \`git\` against a remote repo and may install configuration the project does not control. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you need git deps. \`all\` allows any git dependencies to be fetched and installed. \`none\` prevents any git dependencies from being fetched and installed. \`root\` only allows git dependencies defined in your project's package.json to be fetched and installed.  Also allows git dependencies to be fetched for other commands like \`npm view\`
 
   --allow-remote
-    Limits the ability for npm to fetch dependencies from urls.
+    Limits the ability for npm to fetch dependencies from urls. That is, dependencies that point to a tarball url instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Tarballs that share a hostname with the configured registry (the typical case for the npm registry, GitHub Packages, and most private registries) are still installed normally. If your registry serves tarballs from a different host, set \`replace-registry-host\` or override this setting. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you intentionally install from a URL. \`all\` allows any url to be installed. \`none\` prevents any url from being installed. \`root\` only allows urls defined in your project's package.json to be installed.  Also allows url dependencies to be used for other commands like \`npm view\`
 
   --allow-scripts
-    Comma-separated list of packages whose install-time lifecycle scripts
+    Comma-separated list of packages whose install-time lifecycle scripts (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for non-registry dependencies) are allowed to run. This setting is intended for one-off and global contexts: \`npm exec\`, \`npx\`, and \`npm install -g\`, where no project \`package.json\` is involved. For team-wide policy in a project, use the \`allowScripts\` field in \`package.json\` (which also supports explicit denials), or configure it in \`.npmrc\`. Passing \`--allow-scripts\` on the command line during a project-scoped \`npm install\`, \`ci\`, \`update\`, or \`rebuild\` is an error. Each name is matched against a dependency's resolved identity, not against the package's self-reported name. \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting.
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a warning into a hard error: any dependency with install scripts that is not covered by \`allowScripts\` will fail the install instead of being blocked with a warning. Dependencies explicitly denied with \`false\` in \`allowScripts\` are always silently skipped; this setting only affects unreviewed entries (packages with install scripts that are neither approved nor denied). \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting. Optional dependencies that cannot be installed on the current platform or engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged, because their install scripts never run.
 
   --dangerously-allow-all-scripts
-    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every dependency install script regardless of whether it was approved or denied. Intended as a migration escape hatch only; its use is strongly discouraged. \`--ignore-scripts\` still takes precedence over this setting.
 
   --audit
-    When "true" submit audit reports alongside the current npm command to the
+    When "true" submit audit reports alongside the current npm command to the default registry and all registries configured for scopes.  See the documentation for [\`npm audit\`](/commands/npm-audit) for details on what is submitted.
 
   --before
-    If passed to \`npm install\`, will rebuild the npm tree such that only
+    If passed to \`npm install\`, will rebuild the npm tree such that only versions that were available **on or before** the given date are installed.  If there are no versions available for the current set of dependencies, the command will error. If the requested version is a \`dist-tag\` and the given tag does not pass the \`--before\` filter, the most recent version less than or equal to that tag will be used. For example, \`foo@latest\` might install \`foo@1.2\` even though \`latest\` is \`2.0\`. If \`before\` and \`min-release-age\` are both set in the same source, \`before\` wins (an explicit absolute date overrides a relative window). Across sources, the standard precedence applies (cli > env > project > user > global), so a higher-priority source can always relax or override a lower-priority one. As with \`min-release-age\`, when this cutoff blocks a fix that \`npm audit fix\` would install, npm keeps the vulnerable version, warns, and exits with a non-zero code. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age
-    If set, npm will build the npm tree such that only versions that were
+    If set, npm will build the npm tree such that only versions that were available more than the given number of days ago will be installed.  If there are no versions available for the current set of dependencies, the command will error. This flag is a complement to \`before\`, which accepts an exact date instead of a relative number of days. The two may coexist (e.g. \`min-release-age\` in your \`.npmrc\` is preserved when npm internally spawns a sub-process with \`--before\` while preparing a \`git:\` or \`github:\` dependency); when both apply, \`before\` wins within a single source and across sources the standard precedence rules apply. When this window stops \`npm audit fix\` from installing a patched version (because the fix was published too recently), npm keeps the package at its vulnerable version, warns that the fix was blocked, and exits with a non-zero code. To install the fix, add the package to \`min-release-age-exclude\`, or relax \`min-release-age\` or \`before\`. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age-exclude
-    A list of package names or \`minimatch\` glob patterns that are exempt
+    A list of package names or \`minimatch\` glob patterns that are exempt from the \`min-release-age\` (and \`before\`) filter. A matching package can always resolve to its newest version, even when a release-age window is set. For example, to apply a release-age window to third-party dependencies while letting internally maintained packages update immediately: \`\`\` min-release-age=7 min-release-age-exclude[]=@myorg/* min-release-age-exclude[]=my-internal-pkg \`\`\` Only the named package is exempt; its own dependencies still follow the release-age policy unless they also match a pattern. Patterns match against the package name, so \`@myorg/*\` matches \`@myorg/shared-utils\`. Excluding a package does not change which registry it is fetched from. You should own your private scope on the public registry so that nobody else can publish a package with the same name.
 
   --bin-links
-    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package executables. Set to false to have it not do this.  This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems.
 
   --fund
-    When "true" displays the message at the end of each \`npm install\`
+    When "true" displays the message at the end of each \`npm install\` acknowledging the number of dependencies looking for funding. See [\`npm fund\`](/commands/npm-fund) for details.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   --cpu
-    Override CPU architecture of native modules to install.
+    Override CPU architecture of native modules to install. Acceptable values are same as \`cpu\` field of package.json, which comes from \`process.arch\`.
 
   --os
-    Override OS of native modules to install.
+    Override OS of native modules to install. Acceptable values are same as \`os\` field of package.json, which comes from \`process.platform\`.
 
   --libc
-    Override libc of native modules to install.
+    Override libc of native modules to install. Acceptable values are same as \`libc\` field of package.json
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 alias: it
@@ -4971,73 +4971,73 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -S|--save
-    Save installed packages to a \`package.json\` file as dependencies.
+    Save installed packages to a \`package.json\` file as dependencies. When used with the \`npm rm\` command, removes the dependency from \`package.json\`. Will also prevent writing to \`package-lock.json\` if set to \`false\`.
 
   -E|--save-exact
-    Dependencies saved to package.json will be configured with an exact
+    Dependencies saved to package.json will be configured with an exact version rather than using npm's default semver range operator.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   --install-strategy
-    Sets the strategy for installing packages in node_modules.
+    Sets the strategy for installing packages in node_modules. hoisted (default): Install non-duplicated in top-level, and duplicated as necessary within directory structure. nested: (formerly --legacy-bundling) install in place, no hoisting. shallow (formerly --global-style) only install direct deps at top-level. linked: install in node_modules/.store, link in place, unhoisted. We recommend that package authors use \`--install-strategy=linked\` during development to catch undeclared ("phantom") dependencies before publishing: the isolated layout only exposes a package's declared dependencies, so an \`import\` of a package that was never added to \`package.json\` can fail instead of resolving by accident and shipping broken. See [Catching undeclared ("phantom") dependencies](/using-npm/developers#catching-undeclared-phantom-dependencies).
 
   --legacy-bundling
-    Instead of hoisting package installs in \`node_modules\`, install packages
+    Instead of hoisting package installs in \`node_modules\`, install packages in the same manner that they are depended on. This may cause very deep directory structures and duplicate package installs as there is no de-duplicating. Sets \`--install-strategy=nested\`.
 
   --global-style
-    Only install direct dependencies in the top level \`node_modules\`,
+    Only install direct dependencies in the top level \`node_modules\`, but hoist on deeper dependencies. Sets \`--install-strategy=shallow\`.
 
   --strict-peer-deps
-    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_ conflicting \`peerDependencies\` will be treated as an install failure, even if npm could reasonably guess the appropriate resolution based on non-peer dependency relationships. By default, conflicting \`peerDependencies\` deep in the dependency graph will be resolved using the nearest non-peer dependency specification, even if doing so will result in some packages receiving a peer dependency outside the range set in their package's \`peerDependencies\` object. When such an override is performed, a warning is printed, explaining the conflict and the packages involved.  If \`--strict-peer-deps\` is set, then this warning is treated as a failure.
 
   --package-lock
-    If set to false, then ignore \`package-lock.json\` files when installing.
+    If set to false, then ignore \`package-lock.json\` files when installing. This will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --allow-directory
-    Limits the ability for npm to install dependencies from directories.
+    Limits the ability for npm to install dependencies from directories. That is, dependencies that point to a directory instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any directories to be installed. \`none\` prevents any directories from being installed. \`root\` only allows directories defined in your project's package.json to be installed.  Also allows directory dependencies to be used for other commands like \`npm view\`
 
   --allow-file
-    Limits the ability for npm to install dependencies from tarball files.
+    Limits the ability for npm to install dependencies from tarball files. That is, dependencies that point to a local tarball file instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. \`all\` allows any tarball file to be installed. \`none\` prevents any tarball file from being installed. \`root\` only allows tarball files defined in your project's package.json to be installed.  Also allows tarball file dependencies to be used for other commands like \`npm view\`
 
   --allow-git
-    Limits the ability for npm to fetch dependencies from git references.
+    Limits the ability for npm to fetch dependencies from git references. That is, dependencies that point to a git repo instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Git dependencies run \`git\` against a remote repo and may install configuration the project does not control. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you need git deps. \`all\` allows any git dependencies to be fetched and installed. \`none\` prevents any git dependencies from being fetched and installed. \`root\` only allows git dependencies defined in your project's package.json to be fetched and installed.  Also allows git dependencies to be fetched for other commands like \`npm view\`
 
   --allow-remote
-    Limits the ability for npm to fetch dependencies from urls.
+    Limits the ability for npm to fetch dependencies from urls. That is, dependencies that point to a tarball url instead of a version or semver range. Please note that this could leave your tree incomplete and some packages may not function as intended or designed. Changing this setting will not remove dependencies that are already installed. As of npm 12 the default is \`none\`. Tarballs that share a hostname with the configured registry (the typical case for the npm registry, GitHub Packages, and most private registries) are still installed normally. If your registry serves tarballs from a different host, set \`replace-registry-host\` or override this setting. Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when you intentionally install from a URL. \`all\` allows any url to be installed. \`none\` prevents any url from being installed. \`root\` only allows urls defined in your project's package.json to be installed.  Also allows url dependencies to be used for other commands like \`npm view\`
 
   --audit
-    When "true" submit audit reports alongside the current npm command to the
+    When "true" submit audit reports alongside the current npm command to the default registry and all registries configured for scopes.  See the documentation for [\`npm audit\`](/commands/npm-audit) for details on what is submitted.
 
   --bin-links
-    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package executables. Set to false to have it not do this.  This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems.
 
   --fund
-    When "true" displays the message at the end of each \`npm install\`
+    When "true" displays the message at the end of each \`npm install\` acknowledging the number of dependencies looking for funding. See [\`npm fund\`](/commands/npm-fund) for details.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 alias: ln
@@ -5090,49 +5090,49 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -a|--all
-    Show or act on all packages, not just the ones your project directly
+    Show or act on all packages, not just the ones your project directly depends on. For \`npm outdated\` and \`npm ls\` this lists every outdated or installed package. For \`npm approve-scripts\` and \`npm deny-scripts\` it selects every package with pending install scripts.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 
   -p|--parseable
-    Output parseable results from commands that write to standard output. For
+    Output parseable results from commands that write to standard output. For \`npm search\`, this will be tab-separated table format.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   --depth
-    The depth to go when recursing packages for \`npm ls\`.
+    The depth to go when recursing packages for \`npm ls\`. If not set, \`npm ls\` will show only the immediate dependencies of the root project.  If \`--all\` is set, then npm will show all dependencies by default.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --link
-    Used with \`npm ls\`, limiting output to only those packages that are
+    Used with \`npm ls\`, limiting output to only those packages that are linked.
 
   --package-lock-only
-    If set to true, the current operation will only use the \`package-lock.json\`,
+    If set to true, the current operation will only use the \`package-lock.json\`, ignoring \`node_modules\`. For \`update\` this means only the \`package-lock.json\` will be updated, instead of checking \`node_modules\` and downloading dependencies. For \`list\` this means the output will be based on the tree described by the \`package-lock.json\`, rather than the contents of \`node_modules\`.
 
   --unicode
-    When set to true, npm uses unicode characters in the tree output.  When
+    When set to true, npm uses unicode characters in the tree output.  When false, it uses ascii characters instead of unicode glyphs.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 alias: la
@@ -5175,10 +5175,10 @@ Options:
     The base URL of the npm registry.
 
   --scope
-    Associate an operation with a scope for a scoped registry.
+    Associate an operation with a scope for a scoped registry. Useful when logging in to or out of a private registry: \`\`\` # log in, linking the scope to the custom registry npm login --scope=@mycorp --registry=https://registry.mycorp.com # log out, removing the link and the auth token npm logout --scope=@mycorp \`\`\` This will cause \`@mycorp\` to be mapped to the registry for future installation of packages specified according to the pattern \`@mycorp/package\`. This will also cause \`npm init\` to create a scoped package. \`\`\` # accept all defaults, and create a package named "@foo/whatever", # instead of just named "whatever" npm init --scope=@foo --yes \`\`\`
 
   --auth-type
-    What authentication strategy to use with \`login\`.
+    What authentication strategy to use with \`login\`. Note that if an \`otp\` config is given, this value will always be set to \`legacy\`.
 
 
 Run "npm help login" for more info
@@ -5207,7 +5207,7 @@ Options:
     The base URL of the npm registry.
 
   --scope
-    Associate an operation with a scope for a scoped registry.
+    Associate an operation with a scope for a scoped registry. Useful when logging in to or out of a private registry: \`\`\` # log in, linking the scope to the custom registry npm login --scope=@mycorp --registry=https://registry.mycorp.com # log out, removing the link and the auth token npm logout --scope=@mycorp \`\`\` This will cause \`@mycorp\` to be mapped to the registry for future installation of packages specified according to the pattern \`@mycorp/package\`. This will also cause \`npm init\` to create a scoped package. \`\`\` # accept all defaults, and create a package named "@foo/whatever", # instead of just named "whatever" npm init --scope=@foo --yes \`\`\`
 
 
 Run "npm help logout" for more info
@@ -5237,49 +5237,49 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -a|--all
-    Show or act on all packages, not just the ones your project directly
+    Show or act on all packages, not just the ones your project directly depends on. For \`npm outdated\` and \`npm ls\` this lists every outdated or installed package. For \`npm approve-scripts\` and \`npm deny-scripts\` it selects every package with pending install scripts.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 
   -p|--parseable
-    Output parseable results from commands that write to standard output. For
+    Output parseable results from commands that write to standard output. For \`npm search\`, this will be tab-separated table format.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   --depth
-    The depth to go when recursing packages for \`npm ls\`.
+    The depth to go when recursing packages for \`npm ls\`. If not set, \`npm ls\` will show only the immediate dependencies of the root project.  If \`--all\` is set, then npm will show all dependencies by default.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --link
-    Used with \`npm ls\`, limiting output to only those packages that are
+    Used with \`npm ls\`, limiting output to only those packages that are linked.
 
   --package-lock-only
-    If set to true, the current operation will only use the \`package-lock.json\`,
+    If set to true, the current operation will only use the \`package-lock.json\`, ignoring \`node_modules\`. For \`update\` this means only the \`package-lock.json\` will be updated, instead of checking \`node_modules\` and downloading dependencies. For \`list\` this means the output will be based on the tree described by the \`package-lock.json\`, rather than the contents of \`node_modules\`.
 
   --unicode
-    When set to true, npm uses unicode characters in the tree output.  When
+    When set to true, npm uses unicode characters in the tree output.  When false, it uses ascii characters instead of unicode glyphs.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 alias: list
@@ -5345,13 +5345,13 @@ Options:
     The base URL of the npm registry.
 
   --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
+    This is a one-time password from a two-factor authenticator.  It's needed when publishing or changing package permissions with \`npm access\`. If not set, and a registry response fails with a challenge for a one-time password, npm will prompt on the command line for one.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   -p|--parseable
-    Output parseable results from commands that write to standard output. For
+    Output parseable results from commands that write to standard output. For \`npm search\`, this will be tab-separated table format.
 
 
 alias: ogr
@@ -5387,31 +5387,31 @@ Options:
 [--min-release-age-exclude <pkg|glob> [--min-release-age-exclude <pkg|glob> ...]]
 
   -a|--all
-    Show or act on all packages, not just the ones your project directly
+    Show or act on all packages, not just the ones your project directly depends on. For \`npm outdated\` and \`npm ls\` this lists every outdated or installed package. For \`npm approve-scripts\` and \`npm deny-scripts\` it selects every package with pending install scripts.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   -l|--long
     Show extended information in \`ls\`, \`search\`, and \`help-search\`.
 
   -p|--parseable
-    Output parseable results from commands that write to standard output. For
+    Output parseable results from commands that write to standard output. For \`npm search\`, this will be tab-separated table format.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --before
-    If passed to \`npm install\`, will rebuild the npm tree such that only
+    If passed to \`npm install\`, will rebuild the npm tree such that only versions that were available **on or before** the given date are installed.  If there are no versions available for the current set of dependencies, the command will error. If the requested version is a \`dist-tag\` and the given tag does not pass the \`--before\` filter, the most recent version less than or equal to that tag will be used. For example, \`foo@latest\` might install \`foo@1.2\` even though \`latest\` is \`2.0\`. If \`before\` and \`min-release-age\` are both set in the same source, \`before\` wins (an explicit absolute date overrides a relative window). Across sources, the standard precedence applies (cli > env > project > user > global), so a higher-priority source can always relax or override a lower-priority one. As with \`min-release-age\`, when this cutoff blocks a fix that \`npm audit fix\` would install, npm keeps the vulnerable version, warns, and exits with a non-zero code. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age
-    If set, npm will build the npm tree such that only versions that were
+    If set, npm will build the npm tree such that only versions that were available more than the given number of days ago will be installed.  If there are no versions available for the current set of dependencies, the command will error. This flag is a complement to \`before\`, which accepts an exact date instead of a relative number of days. The two may coexist (e.g. \`min-release-age\` in your \`.npmrc\` is preserved when npm internally spawns a sub-process with \`--before\` while preparing a \`git:\` or \`github:\` dependency); when both apply, \`before\` wins within a single source and across sources the standard precedence rules apply. When this window stops \`npm audit fix\` from installing a patched version (because the fix was published too recently), npm keeps the package at its vulnerable version, warns that the fix was blocked, and exits with a non-zero code. To install the fix, add the package to \`min-release-age-exclude\`, or relax \`min-release-age\` or \`before\`. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age-exclude
-    A list of package names or \`minimatch\` glob patterns that are exempt
+    A list of package names or \`minimatch\` glob patterns that are exempt from the \`min-release-age\` (and \`before\`) filter. A matching package can always resolve to its newest version, even when a release-age window is set. For example, to apply a release-age window to third-party dependencies while letting internally maintained packages update immediately: \`\`\` min-release-age=7 min-release-age-exclude[]=@myorg/* min-release-age-exclude[]=my-internal-pkg \`\`\` Only the named package is exempt; its own dependencies still follow the release-age policy unless they also match a pattern. Patterns match against the package name, so \`@myorg/*\` matches \`@myorg/shared-utils\`. Excluding a package does not change which registry it is fetched from. You should own your private scope on the public registry so that nobody else can publish a package with the same name.
 
 
 Run "npm help outdated" for more info
@@ -5448,13 +5448,13 @@ Options:
     The base URL of the npm registry.
 
   --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
+    This is a one-time password from a two-factor authenticator.  It's needed when publishing or changing package permissions with \`npm access\`. If not set, and a registry response fails with a challenge for a one-time password, npm will prompt on the command line for one.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
 
 alias: author
@@ -5487,25 +5487,25 @@ Options:
 [--workspaces] [--include-workspace-root] [--ignore-scripts]
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   --pack-destination
     Directory in which \`npm pack\` will save tarballs.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
 
 Run "npm help pack" for more info
@@ -5540,25 +5540,25 @@ Options:
 [--registry <registry>]
 
   --patches-dir
-    The directory, relative to the project root, where \`npm patch commit\`
+    The directory, relative to the project root, where \`npm patch commit\` writes patch files for \`patchedDependencies\`.
 
   --allow-unused-patches
-    Install even when a registered patch in \`patchedDependencies\` matches no
+    Install even when a registered patch in \`patchedDependencies\` matches no installed package. Does not silence patch apply failures. This flag is only honored when passed on the command line; it is ignored in \`.npmrc\` and environment variables, and rejected by \`npm ci\`.
 
   --ignore-patch-failures
-    Install even when a registered patch fails to apply, with a warning per
+    Install even when a registered patch fails to apply, with a warning per failure. Intended for incident response only. This flag is only honored when passed on the command line; it is ignored in \`.npmrc\` and environment variables, and rejected by \`npm ci\`.
 
   --edit-dir
-    Override the temporary directory used by \`npm patch add\` to prepare a
+    Override the temporary directory used by \`npm patch add\` to prepare a package for editing.
 
   --ignore-existing
-    With \`npm patch add\`, discard a previous unfinished edit directory and
+    With \`npm patch add\`, discard a previous unfinished edit directory and start fresh.
 
   --keep-edit-dir
-    With \`npm patch commit\`, do not remove the edit directory after
+    With \`npm patch commit\`, do not remove the edit directory after committing the patch.
 
   --to
-    Used by \`npm patch update\` to set the version to rebase a patch onto
+    Used by \`npm patch update\` to set the version to rebase a patch onto when it cannot be read from \`package-lock.json\` — for example an exact-version selector, or a version that has not been installed yet.
 
   --registry
     The base URL of the npm registry.
@@ -5628,16 +5628,16 @@ Options:
 [--workspaces]
 
   -f|--force
-    Removes various protections against unfortunate side effects, common
+    Removes various protections against unfortunate side effects, common mistakes, unnecessary performance degradation, and malicious input. * Allow clobbering non-npm files in global installs. * Allow the \`npm version\` command to work on an unclean git repository. * Allow deleting the cache folder with \`npm cache clean\`. * Allow installing packages that have an \`engines\` declaration requiring a different version of npm. * Allow installing packages that have an \`engines\` declaration requiring a different version of \`node\`, even if \`--engine-strict\` is enabled. * Allow \`npm audit fix\` to install modules outside your stated dependency range (including SemVer-major changes). * Allow unpublishing all versions of a published package. * Allow conflicting peerDependencies to be installed in the root project. * Implicitly set \`--yes\` during \`npm init\`. * Allow clobbering existing values in \`npm pkg\` * Allow unpublishing of entire packages (not just a single version). If you don't have a clear idea of what you want to do, it is strongly recommended that you do not use this option!
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
 
 Run "npm help pkg" for more info
@@ -5667,7 +5667,7 @@ Options:
 [-g|--global]
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
 
 Run "npm help prefix" for more info
@@ -5697,13 +5697,13 @@ Options:
     The base URL of the npm registry.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   -p|--parseable
-    Output parseable results from commands that write to standard output. For
+    Output parseable results from commands that write to standard output. For \`npm search\`, this will be tab-separated table format.
 
   --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
+    This is a one-time password from a two-factor authenticator.  It's needed when publishing or changing package permissions with \`npm access\`. If not set, and a registry response fails with a challenge for a one-time password, npm will prompt on the command line for one.
 
 
 Run "npm help profile" for more info
@@ -5737,34 +5737,34 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   --foreground-scripts
-    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`) scripts for installed packages in the foreground process, sharing standard input, output, and error with the main npm process. Note that this will generally make installs run slower, and be much noisier, but can be useful for debugging.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 Run "npm help prune" for more info
@@ -5797,28 +5797,28 @@ Options:
 [--workspaces] [--include-workspace-root] [--provenance|--provenance-file <file>]
 
   --tag
-    If you ask npm to install a package and don't tell it a specific version,
+    If you ask npm to install a package and don't tell it a specific version, then it will install the specified tag. It is the tag added to the package@version specified in the \`npm dist-tag add\` command, if no explicit tag is given. When used by the \`npm diff\` command, this is the tag used to fetch the tarball that will be compared with the local files by default. If used in the \`npm publish\` command, this is the tag that will be added to the package submitted to the registry.
 
   --access
-    If you do not want your scoped package to be publicly viewable (and
+    If you do not want your scoped package to be publicly viewable (and installable) set \`--access=restricted\`. Unscoped packages cannot be set to \`restricted\`. Note: This defaults to not changing the current access level for existing packages.  Specifying a value of \`restricted\` or \`public\` during publish will change the access for an existing package the same way that \`npm access set status\` would. The value \`private\` is an alias for \`restricted\`.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
+    This is a one-time password from a two-factor authenticator.  It's needed when publishing or changing package permissions with \`npm access\`. If not set, and a registry response fails with a challenge for a one-time password, npm will prompt on the command line for one.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --provenance
-    When publishing from a supported cloud CI/CD system, the package will be
+    When publishing from a supported cloud CI/CD system, the package will be publicly linked to where it was built and published from.
 
 
 Run "npm help publish" for more info
@@ -5853,31 +5853,31 @@ Options:
 [--min-release-age-exclude <pkg|glob> [--min-release-age-exclude <pkg|glob> ...]]
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --package-lock-only
-    If set to true, the current operation will only use the \`package-lock.json\`,
+    If set to true, the current operation will only use the \`package-lock.json\`, ignoring \`node_modules\`. For \`update\` this means only the \`package-lock.json\` will be updated, instead of checking \`node_modules\` and downloading dependencies. For \`list\` this means the output will be based on the tree described by the \`package-lock.json\`, rather than the contents of \`node_modules\`.
 
   --expect-results
-    Tells npm whether or not to expect results from the command.
+    Tells npm whether or not to expect results from the command. Can be either true (expect some results) or false (expect no results).
 
   --before
-    If passed to \`npm install\`, will rebuild the npm tree such that only
+    If passed to \`npm install\`, will rebuild the npm tree such that only versions that were available **on or before** the given date are installed.  If there are no versions available for the current set of dependencies, the command will error. If the requested version is a \`dist-tag\` and the given tag does not pass the \`--before\` filter, the most recent version less than or equal to that tag will be used. For example, \`foo@latest\` might install \`foo@1.2\` even though \`latest\` is \`2.0\`. If \`before\` and \`min-release-age\` are both set in the same source, \`before\` wins (an explicit absolute date overrides a relative window). Across sources, the standard precedence applies (cli > env > project > user > global), so a higher-priority source can always relax or override a lower-priority one. As with \`min-release-age\`, when this cutoff blocks a fix that \`npm audit fix\` would install, npm keeps the vulnerable version, warns, and exits with a non-zero code. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age
-    If set, npm will build the npm tree such that only versions that were
+    If set, npm will build the npm tree such that only versions that were available more than the given number of days ago will be installed.  If there are no versions available for the current set of dependencies, the command will error. This flag is a complement to \`before\`, which accepts an exact date instead of a relative number of days. The two may coexist (e.g. \`min-release-age\` in your \`.npmrc\` is preserved when npm internally spawns a sub-process with \`--before\` while preparing a \`git:\` or \`github:\` dependency); when both apply, \`before\` wins within a single source and across sources the standard precedence rules apply. When this window stops \`npm audit fix\` from installing a patched version (because the fix was published too recently), npm keeps the package at its vulnerable version, warns that the fix was blocked, and exits with a non-zero code. To install the fix, add the package to \`min-release-age-exclude\`, or relax \`min-release-age\` or \`before\`. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age-exclude
-    A list of package names or \`minimatch\` glob patterns that are exempt
+    A list of package names or \`minimatch\` glob patterns that are exempt from the \`min-release-age\` (and \`before\`) filter. A matching package can always resolve to its newest version, even when a release-age window is set. For example, to apply a release-age window to third-party dependencies while letting internally maintained packages update immediately: \`\`\` min-release-age=7 min-release-age-exclude[]=@myorg/* min-release-age-exclude[]=my-internal-pkg \`\`\` Only the named package is exempt; its own dependencies still follow the release-age policy unless they also match a pattern. Patterns match against the package name, so \`@myorg/*\` matches \`@myorg/shared-utils\`. Excluding a package does not change which registry it is fetched from. You should own your private scope on the public registry so that nobody else can publish a package with the same name.
 
 
 Run "npm help query" for more info
@@ -5912,37 +5912,37 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   --bin-links
-    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package executables. Set to false to have it not do this.  This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems.
 
   --foreground-scripts
-    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`) scripts for installed packages in the foreground process, sharing standard input, output, and error with the main npm process. Note that this will generally make installs run slower, and be much noisier, but can be useful for debugging.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --allow-scripts
-    Comma-separated list of packages whose install-time lifecycle scripts
+    Comma-separated list of packages whose install-time lifecycle scripts (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for non-registry dependencies) are allowed to run. This setting is intended for one-off and global contexts: \`npm exec\`, \`npx\`, and \`npm install -g\`, where no project \`package.json\` is involved. For team-wide policy in a project, use the \`allowScripts\` field in \`package.json\` (which also supports explicit denials), or configure it in \`.npmrc\`. Passing \`--allow-scripts\` on the command line during a project-scoped \`npm install\`, \`ci\`, \`update\`, or \`rebuild\` is an error. Each name is matched against a dependency's resolved identity, not against the package's self-reported name. \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting.
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a warning into a hard error: any dependency with install scripts that is not covered by \`allowScripts\` will fail the install instead of being blocked with a warning. Dependencies explicitly denied with \`false\` in \`allowScripts\` are always silently skipped; this setting only affects unreviewed entries (packages with install scripts that are neither approved nor denied). \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting. Optional dependencies that cannot be installed on the current platform or engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged, because their install scripts never run.
 
   --dangerously-allow-all-scripts
-    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every dependency install script regardless of whether it was approved or denied. Intended as a migration escape hatch only; its use is strongly discouraged. \`--ignore-scripts\` still takes precedence over this setting.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 alias: rb
@@ -5980,19 +5980,19 @@ Options:
 [--workspaces] [--include-workspace-root]
 
   --browser
-    The browser that is called by npm commands to open websites.
+    The browser that is called by npm commands to open websites. Set to \`false\` to suppress browser behavior and instead print urls to terminal. Set to \`true\` to use default system URL opener.
 
   --registry
     The base URL of the npm registry.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
 
 Run "npm help repo" for more info
@@ -6018,10 +6018,10 @@ Options:
 [--ignore-scripts] [--script-shell <script-shell>]
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --script-shell
-    The shell to use for scripts run with the \`npm exec\`,
+    The shell to use for scripts run with the \`npm exec\`, \`npm run\` and \`npm init <package-spec>\` commands.
 
 
 Run "npm help restart" for more info
@@ -6044,7 +6044,7 @@ Options:
 [-g|--global]
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
 
 Run "npm help root" for more info
@@ -6070,25 +6070,25 @@ Options:
 [--foreground-scripts] [--script-shell <script-shell>]
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --if-present
-    If true, npm will not exit with an error code when \`run\` is
+    If true, npm will not exit with an error code when \`run\` is invoked for a script that isn't defined in the \`scripts\` section of \`package.json\`. This option can be used when it's desirable to optionally run a script when it's present and fail if the script fails. This is useful, for example, when running scripts that may only apply for some builds in an otherwise generic CI setup.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --foreground-scripts
-    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`) scripts for installed packages in the foreground process, sharing standard input, output, and error with the main npm process. Note that this will generally make installs run slower, and be much noisier, but can be useful for debugging.
 
   --script-shell
-    The shell to use for scripts run with the \`npm exec\`,
+    The shell to use for scripts run with the \`npm exec\`, \`npm run\` and \`npm init <package-spec>\` commands.
 
 
 aliases: run-script, rum, urn
@@ -6124,22 +6124,22 @@ Options:
 [--workspaces]
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --package-lock-only
-    If set to true, the current operation will only use the \`package-lock.json\`,
+    If set to true, the current operation will only use the \`package-lock.json\`, ignoring \`node_modules\`. For \`update\` this means only the \`package-lock.json\` will be updated, instead of checking \`node_modules\` and downloading dependencies. For \`list\` this means the output will be based on the tree described by the \`package-lock.json\`, rather than the contents of \`node_modules\`.
 
   --sbom-format
     SBOM format to use when generating SBOMs.
 
   --sbom-type
-    The type of package described by the generated SBOM. For SPDX, this is the
+    The type of package described by the generated SBOM. For SPDX, this is the value for the \`primaryPackagePurpose\` field. For CycloneDX, this is the value for the \`type\` field.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
 
 Run "npm help sbom" for more info
@@ -6169,19 +6169,19 @@ Options:
 [--prefer-offline] [--offline]
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   --color
-    If false, never shows colors.  If \`"always"\` then always shows colors.
+    If false, never shows colors.  If \`"always"\` then always shows colors. If true, then only prints color codes for tty file descriptors.
 
   -p|--parseable
-    Output parseable results from commands that write to standard output. For
+    Output parseable results from commands that write to standard output. For \`npm search\`, this will be tab-separated table format.
 
   --description
     Show the description in \`npm search\`
 
   --searchlimit
-    Number of items to limit search results to. Will not apply at all to
+    Number of items to limit search results to. Will not apply at all to legacy searches.
 
   --searchopts
     Space-separated options that are always passed to search.
@@ -6193,13 +6193,13 @@ Options:
     The base URL of the npm registry.
 
   --prefer-online
-    If true, staleness checks for cached data will be forced, making the CLI
+    If true, staleness checks for cached data will be forced, making the CLI look for updates immediately even for fresh package data.
 
   --prefer-offline
-    If true, staleness checks for cached data will be bypassed, but missing
+    If true, staleness checks for cached data will be bypassed, but missing data will be requested from the server. To force full offline mode, use \`--offline\`.
 
   --offline
-    Force offline mode: no network requests will be done during install. To allow
+    Force offline mode: no network requests will be done during install. To allow the CLI to fill in missing cache data, see \`--prefer-offline\`.
 
 
 aliases: find, s, se
@@ -6237,10 +6237,10 @@ Options:
 [-g|--global] [-L|--location <global|user|project>]
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   -L|--location
-    When passed to \`npm config\` this refers to which config file to use.
+    When passed to \`npm config\` this refers to which config file to use. When set to "global" mode, packages are installed into the \`prefix\` folder instead of the current working directory. See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
 
 Run "npm help set" for more info
@@ -6320,10 +6320,10 @@ Options:
 [--ignore-scripts] [--script-shell <script-shell>]
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --script-shell
-    The shell to use for scripts run with the \`npm exec\`,
+    The shell to use for scripts run with the \`npm exec\`, \`npm run\` and \`npm init <package-spec>\` commands.
 
 
 Run "npm help start" for more info
@@ -6346,10 +6346,10 @@ Options:
 [--ignore-scripts] [--script-shell <script-shell>]
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --script-shell
-    The shell to use for scripts run with the \`npm exec\`,
+    The shell to use for scripts run with the \`npm exec\`, \`npm run\` and \`npm init <package-spec>\` commands.
 
 
 Run "npm help stop" for more info
@@ -6379,13 +6379,13 @@ Options:
     The base URL of the npm registry.
 
   --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
+    This is a one-time password from a two-factor authenticator.  It's needed when publishing or changing package permissions with \`npm access\`. If not set, and a registry response fails with a challenge for a one-time password, npm will prompt on the command line for one.
 
   -p|--parseable
-    Output parseable results from commands that write to standard output. For
+    Output parseable results from commands that write to standard output. For \`npm search\`, this will be tab-separated table format.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
 
 Run "npm help team" for more info
@@ -6416,10 +6416,10 @@ Options:
 [--ignore-scripts] [--script-shell <script-shell>]
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --script-shell
-    The shell to use for scripts run with the \`npm exec\`,
+    The shell to use for scripts run with the \`npm exec\`, \`npm run\` and \`npm init <package-spec>\` commands.
 
 
 aliases: tst, t
@@ -6454,49 +6454,49 @@ Options:
 [--registry <registry>] [--otp <otp>] [--read-only]
 
   --name
-    When creating a Granular Access Token with \`npm token create\`,
+    When creating a Granular Access Token with \`npm token create\`, this sets the name/description for the token.
 
   --token-description
     Description text for the token when using \`npm token create\`.
 
   --expires
-    When creating a Granular Access Token with \`npm token create\`,
+    When creating a Granular Access Token with \`npm token create\`, this sets the expiration in days. If not specified, the server will determine the default expiration.
 
   --packages
-    When creating a Granular Access Token with \`npm token create\`,
+    When creating a Granular Access Token with \`npm token create\`, this limits the token access to specific packages.
 
   --packages-all
-    When creating a Granular Access Token with \`npm token create\`,
+    When creating a Granular Access Token with \`npm token create\`, grants the token access to all packages instead of limiting to specific packages.
 
   --scopes
-    When creating a Granular Access Token with \`npm token create\`,
+    When creating a Granular Access Token with \`npm token create\`, this limits the token access to specific scopes. Provide a scope name (with or without @ prefix).
 
   --orgs
-    When creating a Granular Access Token with \`npm token create\`,
+    When creating a Granular Access Token with \`npm token create\`, this limits the token access to specific organizations.
 
   --packages-and-scopes-permission
-    When creating a Granular Access Token with \`npm token create\`,
+    When creating a Granular Access Token with \`npm token create\`, sets the permission level for packages and scopes. Options are "read-only", "read-write", or "no-access".
 
   --orgs-permission
-    When creating a Granular Access Token with \`npm token create\`,
+    When creating a Granular Access Token with \`npm token create\`, sets the permission level for organizations. Options are "read-only", "read-write", or "no-access".
 
   --cidr
-    This is a list of CIDR address to be used when configuring limited access
+    This is a list of CIDR address to be used when configuring limited access tokens with the \`npm token create\` command.
 
   --bypass-2fa
-    When creating a Granular Access Token with \`npm token create\`,
+    When creating a Granular Access Token with \`npm token create\`, setting this to true will allow the token to bypass two-factor authentication. This is useful for automation and CI/CD workflows.
 
   --password
-    Password for authentication. Can be provided via command line when
+    Password for authentication. Can be provided via command line when creating tokens, though it's generally safer to be prompted for it.
 
   --registry
     The base URL of the npm registry.
 
   --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
+    This is a one-time password from a two-factor authenticator.  It's needed when publishing or changing package permissions with \`npm access\`. If not set, and a registry response fails with a challenge for a one-time password, npm will prompt on the command line for one.
 
   --read-only
-    This is used to mark a token as unable to publish when configuring
+    This is used to mark a token as unable to publish when configuring limited access tokens with the \`npm token create\` command.
 
 
 Run "npm help token" for more info
@@ -6583,10 +6583,10 @@ Options:
     The base URL of the npm registry.
 
   --otp
-    This is a one-time password from a two-factor authenticator.  It's needed
+    This is a one-time password from a two-factor authenticator.  It's needed when publishing or changing package permissions with \`npm access\`. If not set, and a registry response fails with a challenge for a one-time password, npm will prompt on the command line for one.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
 
 Run "npm help undeprecate" for more info
@@ -6615,22 +6615,22 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -S|--save
-    Save installed packages to a \`package.json\` file as dependencies.
+    Save installed packages to a \`package.json\` file as dependencies. When used with the \`npm rm\` command, removes the dependency from \`package.json\`. Will also prevent writing to \`package-lock.json\` if set to \`false\`.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 aliases: unlink, remove, rm, r, un
@@ -6663,16 +6663,16 @@ Options:
 [--workspaces]
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   -f|--force
-    Removes various protections against unfortunate side effects, common
+    Removes various protections against unfortunate side effects, common mistakes, unnecessary performance degradation, and malicious input. * Allow clobbering non-npm files in global installs. * Allow the \`npm version\` command to work on an unclean git repository. * Allow deleting the cache folder with \`npm cache clean\`. * Allow installing packages that have an \`engines\` declaration requiring a different version of npm. * Allow installing packages that have an \`engines\` declaration requiring a different version of \`node\`, even if \`--engine-strict\` is enabled. * Allow \`npm audit fix\` to install modules outside your stated dependency range (including SemVer-major changes). * Allow unpublishing all versions of a published package. * Allow conflicting peerDependencies to be installed in the root project. * Implicitly set \`--yes\` during \`npm init\`. * Allow clobbering existing values in \`npm pkg\` * Allow unpublishing of entire packages (not just a single version). If you don't have a clear idea of what you want to do, it is strongly recommended that you do not use this option!
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
 
 Run "npm help unpublish" for more info
@@ -6710,79 +6710,79 @@ Options:
 [--workspaces] [--include-workspace-root] [--install-links]
 
   -S|--save
-    Save installed packages to a \`package.json\` file as dependencies.
+    Save installed packages to a \`package.json\` file as dependencies. When used with the \`npm rm\` command, removes the dependency from \`package.json\`. Will also prevent writing to \`package-lock.json\` if set to \`false\`.
 
   -g|--global
-    Operates in "global" mode, so that packages are installed into the
+    Operates in "global" mode, so that packages are installed into the \`prefix\` folder instead of the current working directory.  See [folders](/configuring-npm/folders) for more on the differences in behavior. * packages are installed into the \`{prefix}/lib/node_modules\` folder, instead of the current working directory. * bin files are linked to \`{prefix}/bin\` * man pages are linked to \`{prefix}/share/man\`
 
   --install-strategy
-    Sets the strategy for installing packages in node_modules.
+    Sets the strategy for installing packages in node_modules. hoisted (default): Install non-duplicated in top-level, and duplicated as necessary within directory structure. nested: (formerly --legacy-bundling) install in place, no hoisting. shallow (formerly --global-style) only install direct deps at top-level. linked: install in node_modules/.store, link in place, unhoisted. We recommend that package authors use \`--install-strategy=linked\` during development to catch undeclared ("phantom") dependencies before publishing: the isolated layout only exposes a package's declared dependencies, so an \`import\` of a package that was never added to \`package.json\` can fail instead of resolving by accident and shipping broken. See [Catching undeclared ("phantom") dependencies](/using-npm/developers#catching-undeclared-phantom-dependencies).
 
   --legacy-bundling
-    Instead of hoisting package installs in \`node_modules\`, install packages
+    Instead of hoisting package installs in \`node_modules\`, install packages in the same manner that they are depended on. This may cause very deep directory structures and duplicate package installs as there is no de-duplicating. Sets \`--install-strategy=nested\`.
 
   --global-style
-    Only install direct dependencies in the top level \`node_modules\`,
+    Only install direct dependencies in the top level \`node_modules\`, but hoist on deeper dependencies. Sets \`--install-strategy=shallow\`.
 
   --omit
-    Dependency types to omit from the installation tree on disk.
+    Dependency types to omit from the installation tree on disk. Note that these dependencies _are_ still resolved and added to the \`package-lock.json\` file.  They are just not physically installed on disk. If a package type appears in both the \`--include\` and \`--omit\` lists, then it will be included. If the resulting omit list includes \`'dev'\`, then the \`NODE_ENV\` environment variable will be set to \`'production'\` for all lifecycle scripts.
 
   --include
-    Option that allows for defining which types of dependencies to install.
+    Option that allows for defining which types of dependencies to install. This is the inverse of \`--omit=<type>\`. Dependency types specified in \`--include\` will not be omitted, regardless of the order in which omit/include are specified on the command-line.
 
   --strict-peer-deps
-    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_ conflicting \`peerDependencies\` will be treated as an install failure, even if npm could reasonably guess the appropriate resolution based on non-peer dependency relationships. By default, conflicting \`peerDependencies\` deep in the dependency graph will be resolved using the nearest non-peer dependency specification, even if doing so will result in some packages receiving a peer dependency outside the range set in their package's \`peerDependencies\` object. When such an override is performed, a warning is printed, explaining the conflict and the packages involved.  If \`--strict-peer-deps\` is set, then this warning is treated as a failure.
 
   --package-lock
-    If set to false, then ignore \`package-lock.json\` files when installing.
+    If set to false, then ignore \`package-lock.json\` files when installing. This will also prevent _writing_ \`package-lock.json\` if \`save\` is true.
 
   --foreground-scripts
-    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`) scripts for installed packages in the foreground process, sharing standard input, output, and error with the main npm process. Note that this will generally make installs run slower, and be much noisier, but can be useful for debugging.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
   --allow-scripts
-    Comma-separated list of packages whose install-time lifecycle scripts
+    Comma-separated list of packages whose install-time lifecycle scripts (\`preinstall\`, \`install\`, \`postinstall\`, and \`prepare\` for non-registry dependencies) are allowed to run. This setting is intended for one-off and global contexts: \`npm exec\`, \`npx\`, and \`npm install -g\`, where no project \`package.json\` is involved. For team-wide policy in a project, use the \`allowScripts\` field in \`package.json\` (which also supports explicit denials), or configure it in \`.npmrc\`. Passing \`--allow-scripts\` on the command line during a project-scoped \`npm install\`, \`ci\`, \`update\`, or \`rebuild\` is an error. Each name is matched against a dependency's resolved identity, not against the package's self-reported name. \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting.
 
   --strict-allow-scripts
-    If \`true\`, turn the install-script policy from a warning into a hard
+    If \`true\`, turn the install-script policy from a warning into a hard error: any dependency with install scripts that is not covered by \`allowScripts\` will fail the install instead of being blocked with a warning. Dependencies explicitly denied with \`false\` in \`allowScripts\` are always silently skipped; this setting only affects unreviewed entries (packages with install scripts that are neither approved nor denied). \`--ignore-scripts\` and \`--dangerously-allow-all-scripts\` both override this setting. Optional dependencies that cannot be installed on the current platform or engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged, because their install scripts never run.
 
   --dangerously-allow-all-scripts
-    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every dependency install script regardless of whether it was approved or denied. Intended as a migration escape hatch only; its use is strongly discouraged. \`--ignore-scripts\` still takes precedence over this setting.
 
   --audit
-    When "true" submit audit reports alongside the current npm command to the
+    When "true" submit audit reports alongside the current npm command to the default registry and all registries configured for scopes.  See the documentation for [\`npm audit\`](/commands/npm-audit) for details on what is submitted.
 
   --before
-    If passed to \`npm install\`, will rebuild the npm tree such that only
+    If passed to \`npm install\`, will rebuild the npm tree such that only versions that were available **on or before** the given date are installed.  If there are no versions available for the current set of dependencies, the command will error. If the requested version is a \`dist-tag\` and the given tag does not pass the \`--before\` filter, the most recent version less than or equal to that tag will be used. For example, \`foo@latest\` might install \`foo@1.2\` even though \`latest\` is \`2.0\`. If \`before\` and \`min-release-age\` are both set in the same source, \`before\` wins (an explicit absolute date overrides a relative window). Across sources, the standard precedence applies (cli > env > project > user > global), so a higher-priority source can always relax or override a lower-priority one. As with \`min-release-age\`, when this cutoff blocks a fix that \`npm audit fix\` would install, npm keeps the vulnerable version, warns, and exits with a non-zero code. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age
-    If set, npm will build the npm tree such that only versions that were
+    If set, npm will build the npm tree such that only versions that were available more than the given number of days ago will be installed.  If there are no versions available for the current set of dependencies, the command will error. This flag is a complement to \`before\`, which accepts an exact date instead of a relative number of days. The two may coexist (e.g. \`min-release-age\` in your \`.npmrc\` is preserved when npm internally spawns a sub-process with \`--before\` while preparing a \`git:\` or \`github:\` dependency); when both apply, \`before\` wins within a single source and across sources the standard precedence rules apply. When this window stops \`npm audit fix\` from installing a patched version (because the fix was published too recently), npm keeps the package at its vulnerable version, warns that the fix was blocked, and exits with a non-zero code. To install the fix, add the package to \`min-release-age-exclude\`, or relax \`min-release-age\` or \`before\`. Packages whose names match \`min-release-age-exclude\` are exempt from this filter.
 
   --min-release-age-exclude
-    A list of package names or \`minimatch\` glob patterns that are exempt
+    A list of package names or \`minimatch\` glob patterns that are exempt from the \`min-release-age\` (and \`before\`) filter. A matching package can always resolve to its newest version, even when a release-age window is set. For example, to apply a release-age window to third-party dependencies while letting internally maintained packages update immediately: \`\`\` min-release-age=7 min-release-age-exclude[]=@myorg/* min-release-age-exclude[]=my-internal-pkg \`\`\` Only the named package is exempt; its own dependencies still follow the release-age policy unless they also match a pattern. Patterns match against the package name, so \`@myorg/*\` matches \`@myorg/shared-utils\`. Excluding a package does not change which registry it is fetched from. You should own your private scope on the public registry so that nobody else can publish a package with the same name.
 
   --bin-links
-    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package executables. Set to false to have it not do this.  This can be used to work around the fact that some file systems don't support symlinks, even on ostensibly Unix systems.
 
   --fund
-    When "true" displays the message at the end of each \`npm install\`
+    When "true" displays the message at the end of each \`npm install\` acknowledging the number of dependencies looking for funding. See [\`npm fund\`](/commands/npm-fund) for details.
 
   --dry-run
-    Indicates that you don't want npm to make any changes and that it should
+    Indicates that you don't want npm to make any changes and that it should only report what it would have done.  This can be passed into any of the commands that modify your local installation, eg, \`install\`, \`update\`, \`dedupe\`, \`uninstall\`, as well as \`pack\` and \`publish\`. Note: This is NOT honored by other network related commands, eg \`dist-tags\`, \`owner\`, etc.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --install-links
-    When set file: protocol dependencies will be packed and installed as
+    When set file: protocol dependencies will be packed and installed as regular dependencies instead of creating a symlink. This option has no effect on workspaces.
 
 
 aliases: u, up, upgrade, udpate
@@ -6837,40 +6837,40 @@ Options:
 [--ignore-scripts]
 
   --allow-same-version
-    Prevents throwing an error when \`npm version\` is used to set the new
+    Prevents throwing an error when \`npm version\` is used to set the new version to the same value as the current version.
 
   --commit-hooks
     Run git commit hooks when using the \`npm version\` command.
 
   --git-tag-version
-    Tag the commit when using the \`npm version\` command.  Setting this to
+    Tag the commit when using the \`npm version\` command.  Setting this to false results in no commit being made at all.
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   --preid
-    The "prerelease identifier" to use as a prefix for the "prerelease" part
+    The "prerelease identifier" to use as a prefix for the "prerelease" part of a semver. Like the \`rc\` in \`1.2.0-rc.8\`.
 
   --sign-git-tag
-    If set to true, then the \`npm version\` command will tag the version
+    If set to true, then the \`npm version\` command will tag the version using \`-s\` to add a signature. Note that git requires you to have set up GPG keys in your git configs for this to work properly.
 
   -S|--save
-    Save installed packages to a \`package.json\` file as dependencies.
+    Save installed packages to a \`package.json\` file as dependencies. When used with the \`npm rm\` command, removes the dependency from \`package.json\`. Will also prevent writing to \`package-lock.json\` if set to \`false\`.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --workspaces-update
-    If set to true, the npm cli will run an update after operations that may
+    If set to true, the npm cli will run an update after operations that may possibly change the workspaces installed to the \`node_modules\` folder.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
   --ignore-scripts
-    If true, npm does not run scripts specified in package.json files.
+    If true, npm does not run scripts specified in package.json files. Note that commands explicitly intended to run a particular script, such as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm run\` will still run their intended script if \`ignore-scripts\` is set, but they will *not* run any pre- or post-scripts. Setting \`ignore-scripts\` also disables \`.npm-extension\` execution, as if \`ignore-extension\` were set.
 
 
 alias: verison
@@ -6908,16 +6908,16 @@ Options:
 [--workspaces] [--include-workspace-root]
 
   --json
-    Whether or not to output JSON data, rather than the normal output.
+    Whether or not to output JSON data, rather than the normal output. * In \`npm pkg set\` it enables parsing set values with JSON.parse() before saving them to your \`package.json\`. Not supported by all npm commands.
 
   -w|--workspace
-    Enable running a command in the context of the configured workspaces of the
+    Enable running a command in the context of the configured workspaces of the current project while filtering by running only the workspaces defined by this configuration option. Valid values for the \`workspace\` config are either: * Workspace names * Path to a workspace directory * Path to a parent workspace directory (will result in selecting all workspaces within that folder) When set for the \`npm init\` command, this may be set to the folder of a workspace which does not yet exist, to create the folder and set it up as a brand new workspace within the project.
 
   --workspaces
-    Set to true to run the command in the context of **all** configured
+    Set to true to run the command in the context of **all** configured workspaces. Explicitly setting this to false will cause commands like \`install\` to ignore workspaces altogether. When not set explicitly: - Commands that operate on the \`node_modules\` tree (install, update, etc.) will link workspaces into the \`node_modules\` folder. - Commands that do other things (test, exec, publish, etc.) will operate on the root project, _unless_ one or more workspaces are specified in the \`workspace\` config.
 
   --include-workspace-root
-    Include the workspace root when workspaces are enabled for a command.
+    Include the workspace root when workspaces are enabled for a command. When false, specifying individual workspaces via the \`workspace\` config, or all workspaces via the \`workspaces\` flag, will cause npm to operate only on the specified workspaces, and not on the root project.
 
 
 aliases: info, show, v
