@@ -571,6 +571,38 @@ t.test('noProxy - string', t => {
   t.end()
 })
 
+t.test('ignore-proxy - https-proxy is nullified when ignore-proxy is true', t => {
+  const obj = { 'https-proxy': 'https://proxy.example.com', 'ignore-proxy': true }
+  const flat = {}
+  mockDefs()['https-proxy'].flatten('https-proxy', obj, flat)
+  t.strictSame(flat, { httpsProxy: null })
+  t.end()
+})
+
+t.test('ignore-proxy - https-proxy is preserved when ignore-proxy is false', t => {
+  const obj = { 'https-proxy': 'https://proxy.example.com', 'ignore-proxy': false }
+  const flat = {}
+  mockDefs()['https-proxy'].flatten('https-proxy', obj, flat)
+  t.strictSame(flat, { httpsProxy: 'https://proxy.example.com' })
+  t.end()
+})
+
+t.test('ignore-proxy - proxy is nullified when ignore-proxy is true', t => {
+  const obj = { proxy: 'http://proxy.example.com', 'ignore-proxy': true }
+  const flat = {}
+  mockDefs().proxy.flatten('proxy', obj, flat)
+  t.strictSame(flat, { proxy: null })
+  t.end()
+})
+
+t.test('ignore-proxy - proxy is preserved when ignore-proxy is false', t => {
+  const obj = { proxy: 'http://proxy.example.com', 'ignore-proxy': false }
+  const flat = {}
+  mockDefs().proxy.flatten('proxy', obj, flat)
+  t.strictSame(flat, { proxy: 'http://proxy.example.com' })
+  t.end()
+})
+
 t.test('maxSockets', t => {
   const obj = { maxsockets: 123 }
   const flat = {}
