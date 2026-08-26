@@ -2054,6 +2054,17 @@ const definitions = {
     `,
     flatten,
   }),
+  '@jsr:registry': new Definition('@jsr:registry', {
+    default: 'https://npm.jsr.io/',
+    type: url,
+    description: `
+      The base URL of the JSR (JavaScript Registry) npm-compatible layer.
+      Used when installing packages with the jsr: protocol.
+    `,
+    flatten: (key, obj, flatOptions) => {
+      flatOptions[key] = obj[key]
+    },
+  }),
   'replace-registry-host': new Definition('replace-registry-host', {
     default: 'npmjs',
     hint: '<npmjs|never|always> | hostname | url',
