@@ -404,6 +404,23 @@ config is given, this value will always be set to \`legacy\`.
 
 
 
+#### \`bail\`
+
+* Default: false
+* Type: Boolean
+
+Designed to be used with the \`--workspaces\` or multiple \`--workspace\`
+option.
+
+If true, when executing commands with the \`run\` command across a workspace. Rather
+than the default behavior of running the command in all packages in the
+workspace and logging the failure, on the first failing package, exit with
+the error code of the failing command. This is helpful if packages have
+relationship and the work should not continue if the previous package
+failed.
+
+
+
 #### \`before\`
 
 * Default: null
@@ -2608,6 +2625,7 @@ Array [
   "audit",
   "audit-level",
   "auth-type",
+  "bail",
   "before",
   "bin-links",
   "browser",
@@ -2951,6 +2969,7 @@ Array [
 
 exports[`test/lib/docs.js TAP config > keys that are not flattened 1`] = `
 Array [
+  "bail",
   "expect-result-count",
   "expect-results",
   "init-author-email",
@@ -6067,7 +6086,7 @@ npm run <command> [-- <args>]
 Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--if-present] [--ignore-scripts]
-[--foreground-scripts] [--script-shell <script-shell>]
+[--foreground-scripts] [--script-shell <script-shell>] [--bail]
 
   -w|--workspace
     Enable running a command in the context of the configured workspaces of the
@@ -6108,6 +6127,7 @@ aliases: run-script, rum, urn
 #### \`ignore-scripts\`
 #### \`foreground-scripts\`
 #### \`script-shell\`
+#### \`bail\`
 `
 
 exports[`test/lib/docs.js TAP usage sbom > must match snapshot 1`] = `

@@ -27,6 +27,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "audit": true,
   "audit-level": null,
   "auth-type": "web",
+  "bail": false,
   "before": null,
   "bin-links": true,
   "browser": null,
@@ -223,6 +224,7 @@ also = null
 audit = true
 audit-level = null
 auth-type = "web"
+bail = false
 before = null
 bin-links = true
 browser = null
