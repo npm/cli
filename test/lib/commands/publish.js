@@ -1151,6 +1151,31 @@ t.test('oidc token exchange - no provenance', t => {
     ],
   }))
 
+  t.test('token exchange 500 with fallback at default loglevel', oidcPublishTest({
+    oidcOptions: { github: true },
+    config: {
+      loglevel: 'notice',
+      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+    },
+    mockGithubOidcOptions: {
+      audience: 'npm:registry.npmjs.org',
+      idToken: githubPrivateIdToken,
+    },
+    mockOidcTokenExchangeOptions: {
+      statusCode: 500,
+      idToken: githubPrivateIdToken,
+      body: {
+        message: 'oidc token exchange failed',
+      },
+    },
+    publishOptions: {
+      token: 'existing-fallback-token',
+    },
+    logsContain: [
+      'warn oidc Failed token exchange request with body message: oidc token exchange failed',
+    ],
+  }))
+
   t.test('token exchange 500 with no body message with fallback', oidcPublishTest({
     oidcOptions: { github: true },
     config: {
