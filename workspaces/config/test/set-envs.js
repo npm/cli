@@ -267,5 +267,13 @@ t.test('does not export persistent allow-scripts config', t => {
     undefined,
     'persistent policy is reloaded instead of exported to lifecycle scripts'
   )
+  envConf['allow-scripts'] = 'sharp'
+  env.npm_config_allow_scripts = 'sharp'
+  setEnvs(config)
+  t.equal(
+    env.npm_config_allow_scripts,
+    'sharp',
+    'an explicit environment policy remains inherited'
+  )
   t.end()
 })
