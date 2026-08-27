@@ -3999,7 +3999,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
           name: 'abbrev',
           version: '1.1.1',
           dist: {
-            tarball: 'https://registry.example.com/evil/abbrev-1.1.1.tgz',
+            tarball: 'https://registry.example.com/download/abbrev-1.1.1.tgz',
           },
         },
       },
@@ -4022,7 +4022,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
       .reply(200, abbrevPackument5)
 
     tnock(t, 'https://registry.example.com')
-      .get('/evil/abbrev-1.1.1.tgz')
+      .get('/download/abbrev-1.1.1.tgz')
       .reply(200, abbrevTGZ)
 
     const arb = new Arborist({
