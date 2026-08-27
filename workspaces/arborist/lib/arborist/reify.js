@@ -27,6 +27,7 @@ const relpath = require('../relpath.js')
 const { applyPatchToDir, patchIntegrity } = require('../patch.js')
 const { readFile } = require('node:fs/promises')
 const retirePath = require('../retire-path.js')
+const { getRegistryPackageName } = require('../registry-package-name.js')
 const treeCheck = require('../tree-check.js')
 const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
@@ -697,6 +698,11 @@ module.exports = cls => class Reifier extends cls {
     await this.#validateNodeModules(nm)
 
     if (!node.isLink) {
+      const isRoot = node.isRootDependency || [...node.edgesIn].some(e =>
+        e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
+      )
+      const allowRemote = this.options.allowRemote ?? 'all'
+      const remoteAllowed = allowRemote === 'all' || (allowRemote !== 'none' && isRoot)
       // in normal cases, node.resolved should *always* be set by now.
       // however, it is possible when a lockfile is damaged, or very old,
       // or in some other race condition bugs in npm v6, that a previously
@@ -705,10 +711,15 @@ module.exports = cls => class Reifier extends cls {
       // Do the best with what we have, or else remove it from the tree
       // entirely, since we can't possibly reify it.
       let res = null
+      let registryTarballExemption = false
       if (node.resolved) {
         const registryResolved = this.#registryResolved(node.resolved)
         if (registryResolved) {
-          res = `${node.name}@${registryResolved}`
+          const registryPackageName = !remoteAllowed && getRegistryPackageName(node)
+          registryTarballExemption = !!registryPackageName &&
+            await this.#isRegistryResolvedTarball(node, registryPackageName)
+          const packageName = registryTarballExemption ? registryPackageName : node.name
+          res = `${packageName}@${registryResolved}`
         }
       } else if (node.package.name && node.version) {
         res = `${node.package.name}@${node.version}`
@@ -744,12 +755,10 @@ module.exports = cls => class Reifier extends cls {
         // A node counts as "root" for allow-* enforcement if it satisfies at least one valid dependency edge declared by the project root or a workspace.
         // node.parent is unsafe here: after hoisting, transitive packages can have the project root as their tree parent.
         // In the linked strategy the store node has no edgesIn, so isolated-reifier precomputes isRootDependency from the source node's edges.
-        _isRoot: node.isRootDependency || [...node.edgesIn].some(e =>
-          e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
-        ),
+        _isRoot: isRoot,
         // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.
         // Override only when we can prove the URL is registry-mediated; see #isRegistryResolvedTarball.
-        ...(this.#isRegistryResolvedTarball(node) ? { allowRemote: 'all' } : {}),
+        ...(registryTarballExemption ? { allowRemote: 'all' } : {}),
       })
       // store nodes don't use Node class so node.package doesn't get updated
       if (node.isInStore) {
@@ -985,20 +994,50 @@ module.exports = cls => class Reifier extends cls {
   // When extracting a registry-resolved package, the spec we hand to pacote is name@URL.
   // pacote re-parses that with npa and gets spec.type === 'remote', so without an override the allow-remote gate would fire on every registry tarball (both =none and =root mis-fire).
   // Returns true only when we are confident this is a registry-mediated install.
-  #isRegistryResolvedTarball (node) {
-    if (!node.resolved || !node.isRegistryDependency) {
+  async #isRegistryResolvedTarball (node, packageName) {
+    if (!node.resolved || !node.isRegistryDependency || !packageName) {
       return false
     }
+
+    let resolvedURL
+    let registry
     try {
       // Match the effective fetch URL, not the raw lockfile value.
       // #registryResolved applies replace-registry-host, rewriting a public-registry pin to the configured proxy/mirror so it matches.
-      const resolvedURL = new URL(this.#registryResolved(node.resolved))
-      // pickRegistry only consults spec.scope, so a bare-name (tag) parse is sufficient and avoids a node.version dependency.
-      const registry = new URL(pickRegistry(npa(node.name), this.options))
-      const registryPath = registry.pathname.replace(/\/?$/, '/')
-      return resolvedURL.origin === registry.origin &&
-        (registryPath === '/' || resolvedURL.pathname.startsWith(registryPath))
+      resolvedURL = new URL(this.#registryResolved(node.resolved))
+      registry = new URL(pickRegistry(npa(packageName), this.options))
     } catch {
+      return false
+    }
+
+    if (resolvedURL.origin !== registry.origin) {
+      return false
+    }
+
+    const registryPath = registry.pathname.replace(/\/?$/, '/')
+    if (registryPath === '/' || resolvedURL.pathname.startsWith(registryPath)) {
+      return true
+    }
+
+    if (!node.version) {
+      return false
+    }
+
+    // Some registries advertise tarballs from a sibling path on the same
+    // origin. Verify those URLs against registry metadata rather than
+    // widening the configured registry path boundary.
+    try {
+      const manifest = await pacote.manifest(npa.resolve(packageName, node.version), {
+        ...this.options,
+        before: null,
+        fullMetadata: true,
+      })
+      const advertisedURL = new URL(this.#registryResolved(manifest._resolved))
+      advertisedURL.hash = ''
+      resolvedURL.hash = ''
+      return advertisedURL.href === resolvedURL.href
+    } catch (error) {
+      log.verbose('reify', 'unable to verify registry tarball metadata', error)
       return false
     }
   }
