@@ -4143,6 +4143,107 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     )
   })
 
+  t.test('allowRemote=none fails closed for unverifiable registry tarball shapes', async t => {
+    const cases = [
+      {
+        label: 'non-registry provenance',
+        edgeSpec: '1.1.1',
+        invalidEdgeSpec: 'https://example.com/other-abbrev.tgz',
+        resolved: 'https://registry.example.com/download/abbrev-1.1.1.tgz',
+      },
+      {
+        label: 'invalid target registry URL',
+        nodeName: 'alias',
+        packageName: '@scope/pkg',
+        edgeSpec: 'npm:@scope/pkg@1.0.0',
+        resolved: 'https://registry.example.com/download/pkg-1.0.0.tgz',
+        version: '1.0.0',
+        options: { '@scope:registry': 'not a registry URL' },
+      },
+      {
+        label: 'cross-origin tarball URL',
+        edgeSpec: '1.1.1',
+        resolved: 'https://cdn.example.com/abbrev-1.1.1.tgz',
+      },
+      {
+        label: 'missing package version',
+        edgeSpec: '*',
+        resolved: 'https://registry.example.com/download/abbrev-1.1.1.tgz',
+        version: null,
+      },
+    ]
+
+    for (const testCase of cases) {
+      await t.test(testCase.label, async t => {
+        let extractOptions
+        let manifestCalls = 0
+        const pacote = {
+          extract: async (spec, path, options) => {
+            extractOptions = options
+          },
+          manifest: async () => {
+            manifestCalls++
+            throw new Error('unexpected manifest request')
+          },
+        }
+        const ArboristMock = t.mock('../../lib/arborist', {
+          ...mocks,
+          pacote,
+        })
+        const path = t.testdir()
+        const nodeName = testCase.nodeName || 'abbrev'
+        const packageName = testCase.packageName || nodeName
+        const version = testCase.version === undefined ? '1.1.1' : testCase.version
+        const root = new Node({
+          path,
+          pkg: {
+            name: 'project',
+            version: '1.0.0',
+            dependencies: {
+              [nodeName]: testCase.edgeSpec,
+              ...(testCase.invalidEdgeSpec ? { consumer: '1.0.0' } : {}),
+            },
+          },
+        })
+        const node = new Node({
+          name: nodeName,
+          resolved: testCase.resolved,
+          pkg: {
+            name: packageName,
+            ...(version ? { version } : {}),
+          },
+          parent: root,
+        })
+        if (testCase.invalidEdgeSpec) {
+          new Node({
+            name: 'consumer',
+            pkg: {
+              name: 'consumer',
+              version: '1.0.0',
+              dependencies: { [nodeName]: testCase.invalidEdgeSpec },
+            },
+            parent: root,
+          })
+        }
+
+        const arb = new ArboristMock({
+          audit: false,
+          path,
+          cache: path,
+          registry: 'https://registry.example.com/npm/',
+          allowRemote: 'none',
+          ...testCase.options,
+        })
+        arb.addTracker('reify')
+        arb.idealTree = root
+
+        await arb[Symbol.for('reifyNode')](node)
+        t.equal(extractOptions.allowRemote, 'none', 'does not widen the remote policy')
+        t.equal(manifestCalls, 0, 'does not request metadata for an unverifiable shape')
+      })
+    }
+  })
+
   for (const { label, allowRemote } of [
     { label: 'implicit all' },
     { label: 'all', allowRemote: 'all' },

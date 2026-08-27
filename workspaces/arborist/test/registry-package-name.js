@@ -43,6 +43,36 @@ t.equal(
   'rejects non-registry dependency specs'
 )
 
+t.equal(
+  getRegistryPackageName(node(edge('pkg', 'npm:'))),
+  null,
+  'rejects invalid dependency specs'
+)
+
+t.equal(
+  getRegistryPackageName(node(edge(undefined, '1.0.0'))),
+  null,
+  'rejects registry specs without a package name'
+)
+
+t.equal(
+  getRegistryPackageName({}),
+  null,
+  'rejects nodes without inbound edges'
+)
+
+t.equal(
+  getRegistryPackageName({ edgesIn: {} }),
+  null,
+  'rejects nodes whose inbound edges are not iterable'
+)
+
+t.equal(
+  getRegistryPackageName(node()),
+  null,
+  'rejects nodes without a valid inbound identity'
+)
+
 const source = node(edge('hoek', 'npm:@npm/hoek@6.1.4'))
 const isolated = node()
 carryRegistryPackageName(source, isolated)

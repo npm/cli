@@ -995,7 +995,9 @@ module.exports = cls => class Reifier extends cls {
   // pacote re-parses that with npa and gets spec.type === 'remote', so without an override the allow-remote gate would fire on every registry tarball (both =none and =root mis-fire).
   // Returns true only when we are confident this is a registry-mediated install.
   async #isRegistryResolvedTarball (node, packageName) {
-    if (!node.resolved || !node.isRegistryDependency || !packageName) {
+    // The caller only invokes this with a resolved URL and a trusted package
+    // name, but linked nodes retain an independent registry provenance flag.
+    if (!node.isRegistryDependency) {
       return false
     }
 
