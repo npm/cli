@@ -1473,6 +1473,16 @@ This is a one-time fix-up, please be patient...
 
       if (!edge.to) {
         if (!parentEdge) {
+          // the peer is missing from the virtual root; check the real tree before skipping.
+          // we can avoid a fetch for an optional peer, or a compatible provider, though
+          // an incompatible provider still has to be resolved here so that the
+          // optional peer set nests instead of displacing required peers.
+          if (edge.type === 'peerOptional') {
+            const current = node.parent.sourceReference.resolve(edge.name)
+            if (!current || current.satisfies(edge)) {
+              continue
+            }
+          }
           // easy, just put the thing there
           await this.#nodeFromEdge(edge, node.parent, null, required)
           continue
