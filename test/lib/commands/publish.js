@@ -1106,7 +1106,7 @@ t.test('oidc token exchange - no provenance', t => {
       token: 'existing-fallback-token',
     },
     logsContain: [
-      'verbose oidc Failed to fetch id_token from GitHub: received an invalid response',
+      'warn oidc Failed to fetch id_token from GitHub: received an invalid response',
     ],
   }))
 
@@ -1123,7 +1123,7 @@ t.test('oidc token exchange - no provenance', t => {
       token: 'existing-fallback-token',
     },
     logsContain: [
-      'verbose oidc Failed to fetch id_token from GitHub: missing value',
+      'warn oidc Failed to fetch id_token from GitHub: missing value',
     ],
   }))
 
@@ -1147,7 +1147,7 @@ t.test('oidc token exchange - no provenance', t => {
       token: 'existing-fallback-token',
     },
     logsContain: [
-      'verbose oidc Failed token exchange request with body message: oidc token exchange failed',
+      'warn oidc Failed token exchange request with body message: oidc token exchange failed',
     ],
   }))
 
@@ -1169,7 +1169,7 @@ t.test('oidc token exchange - no provenance', t => {
       token: 'existing-fallback-token',
     },
     logsContain: [
-      'verbose oidc Failed token exchange request with body message: Unknown error',
+      'warn oidc Failed token exchange request with body message: Unknown error',
     ],
   }))
 
@@ -1192,7 +1192,7 @@ t.test('oidc token exchange - no provenance', t => {
       token: 'existing-fallback-token',
     },
     logsContain: [
-      'verbose oidc Failed because token exchange was missing the token in the response body',
+      'warn oidc Failed because token exchange was missing the token in the response body',
     ],
   }))
 
@@ -1267,7 +1267,7 @@ t.test('oidc token exchange - no provenance', t => {
       token: 'existing-fallback-token',
     },
     logsContain: [
-      'verbose oidc Failure with message: Invalid URL',
+      'warn oidc Failure with message: Invalid URL',
     ],
   }))
 
@@ -1300,7 +1300,7 @@ t.test('oidc token exchange - no provenance', t => {
 
     await npm.exec('publish', [])
     t.match(joinedOutput(), '+ @npmcli/test-package@1.0.0')
-    t.ok(logs.includes('verbose oidc Failure with message: Unknown error'))
+    t.ok(logs.includes('warn oidc Failure with message: Unknown error'))
   })
 
   t.test('default registry success gitlab', oidcPublishTest({
@@ -1603,7 +1603,7 @@ t.test('oidc token exchange - provenance', (t) => {
       token: 'existing-fallback-token',
     },
     logsContain: [
-      'verbose oidc Failed token exchange request with body message: oidc token exchange failed',
+      'warn oidc Failed token exchange request with body message: oidc token exchange failed',
     ],
     provenance: false,
   }))
@@ -1654,10 +1654,10 @@ t.test('oidc token exchange - provenance', (t) => {
 
   const provenanceFailures = [[
     new Error('Valid error'),
-    'verbose oidc Failed to set provenance with message: Valid error',
+    'warn oidc Failed to set provenance with message: Valid error',
   ], [
     'Valid error',
-    'verbose oidc Failed to set provenance with message: Unknown error',
+    'warn oidc Failed to set provenance with message: Unknown error',
   ]]
 
   provenanceFailures.forEach(([error, logMessage], index) => {
