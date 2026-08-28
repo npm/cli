@@ -407,7 +407,8 @@ jobs:
         working-directory: ${{ steps.download.outputs.target }}
         run: |
           set +e
-          npm install --nodedir="${{steps.install.outputs.nodedir }}" ${{ matrix.install_flags }}
+          export npm_package_config_node_gyp_nodedir="${{ steps.install.outputs.nodedir }}"
+          npm install ${{ matrix.install_flags }}
           exitcode=$?
           if [[ $exitcode -ne 0 && "${{ matrix.knownFailure }}" == "true" ]]; then
             echo "::warning ::npm install failed, exit $exitcode"
@@ -445,7 +446,7 @@ jobs:
           FINALEXIT=0
           STEPEXIT=0
 
-          export npm_config_nodedir="${{ steps.install.outputs.nodedir }}"
+          export npm_package_config_node_gyp_nodedir="${{ steps.install.outputs.nodedir }}"
 
           # inlining some patches to make tests run
           if [[ "${{ matrix.package }}" == "undici" ]]; then
