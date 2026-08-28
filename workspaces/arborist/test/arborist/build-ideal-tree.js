@@ -2389,6 +2389,47 @@ t.test('remove deps when initializing tree from actual tree', async t => {
   t.equal(tree.children.get('foo'), undefined, 'removed foo child')
 })
 
+t.test('remove deps with a version spec', async t => {
+  const path = t.testdir({
+    node_modules: {
+      foo: {
+        'package.json': JSON.stringify({
+          name: 'foo',
+          version: '1.2.3',
+        }),
+      },
+    },
+  })
+
+  createRegistry(t, false)
+  const invalidArgs = [
+    'foo@1.2.3',
+    'foo@next',
+    'foo@^1.0.0',
+    'foo@>=2.0.0',
+    'foo@2',
+  ]
+  for (const rmName of invalidArgs) {
+    await t.rejects(
+      buildIdeal(path, { rm: [rmName] }),
+      { code: 'ERMARGS', message: /npm rm foo/ },
+      'should throw an error when the package name has a version'
+    )
+  }
+
+  await t.rejects(
+    buildIdeal(path, { rm: ['@scope/foo@1.2.3'] }),
+    { code: 'ERMARGS', message: /npm rm @scope\/foo/ },
+    'should throw an error when a scoped package name has a version'
+  )
+
+  await t.rejects(
+    buildIdeal(path, { rm: ['./foo'] }),
+    { code: 'ERMARGS', message: /npm rm <pkg>/ },
+    'should throw an error when the package is a path'
+  )
+})
+
 t.test('detect conflicts in transitive peerOptional deps', async t => {
   const base = resolve(fixtures, 'test-conflicted-optional-peer-dep')
 
