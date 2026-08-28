@@ -128,6 +128,35 @@ t.test('no message when funding config is false', async t => {
   t.notMatch(out, 'looking for funding', 'should not print funding info')
 })
 
+t.test('no message when installing globally', async t => {
+  const out = await mockReify(t, {
+    actualTree: {
+      name: 'foo',
+      package: {
+        name: 'foo',
+        version: '1.0.0',
+      },
+      edgesOut: new Map([
+        ['bar', {
+          to: {
+            name: 'bar',
+            package: {
+              name: 'bar',
+              version: '1.0.0',
+              funding: { type: 'foo', url: 'http://example.com' },
+            },
+          },
+        }],
+      ]),
+    },
+    diff: {
+      children: [],
+    },
+  }, { global: true })
+
+  t.notMatch(out, 'looking for funding', 'should not print funding info')
+})
+
 t.test('print appropriate message for many packages', async t => {
   const out = await mockReify(t, {
     actualTree: {
