@@ -898,8 +898,8 @@ t.test('provenance and provenanceFile together throws', async t => {
       provenanceFile: './test/fixtures/valid-bundle.json',
     }),
     {
-      code: 'EPROVENANCECONFLICT',
-      message: /mutually exclusive/,
+      code: 'EUSAGE',
+      message: /cannot be used together/,
     }
   )
 })

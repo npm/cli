@@ -146,8 +146,8 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
   let transparencyLogUrl
   if (provenance === true && provenanceFile) {
     throw Object.assign(
-      new Error('provenance and provenanceFile are mutually exclusive'),
-      { code: 'EPROVENANCECONFLICT' }
+      new Error('provenance and provenanceFile cannot be used together'),
+      { code: 'EUSAGE' }
     )
   }
   if (provenance === true || provenanceFile) {
