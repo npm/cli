@@ -155,6 +155,48 @@ t.test('sbom', async t => {
     t.matchSnapshot(result())
   })
 
+  t.test('--omit dev keeps production dependencies also referenced as dev', async t => {
+    const config = {
+      'sbom-format': 'spdx',
+      omit: ['dev'],
+    }
+    const { result, sbom } = await mockSbom(t, {
+      config,
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: 'test-npm-sbom',
+          version: '1.0.0',
+          dependencies: {
+            foo: '^1.0.0',
+          },
+          devDependencies: {
+            chai: '^1.0.0',
+          },
+        }),
+        node_modules: {
+          foo: {
+            'package.json': JSON.stringify({
+              name: 'foo',
+              version: '1.0.0',
+              dependencies: {
+                chai: '^1.0.0',
+              },
+            }),
+          },
+          chai: {
+            'package.json': JSON.stringify({
+              name: 'chai',
+              version: '1.0.0',
+            }),
+          },
+        },
+      },
+    })
+    await sbom.exec([])
+    const packages = JSON.parse(result()).packages.map(pkg => pkg.name)
+    t.strictSame(packages, ['test-npm-sbom', 'chai', 'foo'])
+  })
+
   t.test('--omit optional', async t => {
     const config = {
       'sbom-format': 'spdx',
