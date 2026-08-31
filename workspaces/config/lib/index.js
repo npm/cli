@@ -35,6 +35,17 @@ const hasOwnProperty = (obj, key) =>
 
 const typeDefs = require('./type-defs.js')
 const nerfDart = require('./nerf-dart.js')
+// Ensure the URL ends with / so nerfDart treats the last path component as a directory,
+// not a file. Without this, e.g. 'https://host/npm' resolves to '//host/' instead of
+// '//host/npm/', because URL resolution of '.' against a non-trailing-slash path
+// discards the last segment.
+const nerfDartURI = (uri) => {
+  const parsed = new URL(uri)
+  if (!parsed.pathname.endsWith('/')) {
+    parsed.pathname += '/'
+  }
+  return nerfDart(parsed.href)
+}
 const envReplace = require('./env-replace.js')
 const parseField = require('./parse-field.js')
 const setEnvs = require('./set-envs.js')
@@ -437,7 +448,7 @@ class Config {
           // NOTE we pull registry without restricting to the current 'where' because we want to
           // suggest scoping things to the registry they would be applied to, which is the default
           // regardless of where it was defined
-          const nerfedReg = nerfDart(this.get('registry'))
+          const nerfedReg = nerfDartURI(this.get('registry'))
           // keys that should be nerfed but currently are not
           for (const key of ['_auth', '_authToken', 'username', '_password']) {
             if (this.get(key, entryWhere)) {
@@ -895,8 +906,8 @@ class Config {
   }
 
   clearCredentialsByURI (uri, level = 'user') {
-    const nerfed = nerfDart(uri)
-    const def = nerfDart(this.get('registry'))
+    const nerfed = nerfDartURI(uri)
+    const def = nerfDartURI(this.get('registry'))
     if (def === nerfed) {
       this.delete(`-authtoken`, level)
       this.delete(`_authToken`, level)
@@ -916,7 +927,7 @@ class Config {
   }
 
   setCredentialsByURI (uri, { token, username, password, certfile, keyfile }) {
-    const nerfed = nerfDart(uri)
+    const nerfed = nerfDartURI(uri)
 
     // field that hasn't been used as documented for a LONG time,
     // and as of npm 7.10.0, isn't used at all.  We just always
@@ -955,7 +966,7 @@ class Config {
 
   // this has to be a bit more complicated to support legacy data of all forms
   getCredentialsByURI (uri) {
-    const nerfed = nerfDart(uri)
+    const nerfed = nerfDartURI(uri)
     const creds = {}
 
     // email is handled differently, it used to always be nerfed and now it never should be.
@@ -974,34 +985,67 @@ class Config {
       // cert/key may be used in conjunction with other credentials, thus no `return`
     }
 
-    const tokenReg = this.get(`${nerfed}:_authToken`)
-    if (tokenReg) {
-      creds.token = tokenReg
-      return creds
-    }
+    // Auth is looked up via #findAuthNerf, which walks up the nerf dart path so
+    // credentials stored under a less specific key are still located. This
+    // matters now that registry URLs are normalized with a trailing slash:
+    // tokens written at //host/ (by pre-normalization npm, for a registry
+    // configured as https://host/npm) would otherwise be missed when reading
+    // https://host/npm, which nerfs to //host/npm/. Mirrors the backtracking
+    // npm-registry-fetch performs in regFromURI.
+    const authKey = this.#findAuthNerf(nerfed)
+    if (authKey) {
+      const tokenReg = this.get(`${authKey}:_authToken`)
+      if (tokenReg) {
+        creds.token = tokenReg
+        return creds
+      }
 
-    const userReg = this.get(`${nerfed}:username`)
-    const passReg = this.get(`${nerfed}:_password`)
-    if (userReg && passReg) {
-      creds.username = userReg
-      creds.password = Buffer.from(passReg, 'base64').toString('utf8')
-      const auth = `${creds.username}:${creds.password}`
-      creds.auth = Buffer.from(auth, 'utf8').toString('base64')
-      return creds
-    }
+      const userReg = this.get(`${authKey}:username`)
+      const passReg = this.get(`${authKey}:_password`)
+      if (userReg && passReg) {
+        creds.username = userReg
+        creds.password = Buffer.from(passReg, 'base64').toString('utf8')
+        const auth = `${creds.username}:${creds.password}`
+        creds.auth = Buffer.from(auth, 'utf8').toString('base64')
+        return creds
+      }
 
-    const authReg = this.get(`${nerfed}:_auth`)
-    if (authReg) {
-      const authDecode = Buffer.from(authReg, 'base64').toString('utf8')
-      const authSplit = authDecode.split(':')
-      creds.username = authSplit.shift()
-      creds.password = authSplit.join(':')
-      creds.auth = authReg
-      return creds
+      const authReg = this.get(`${authKey}:_auth`)
+      if (authReg) {
+        const authDecode = Buffer.from(authReg, 'base64').toString('utf8')
+        const authSplit = authDecode.split(':')
+        creds.username = authSplit.shift()
+        creds.password = authSplit.join(':')
+        creds.auth = authReg
+        return creds
+      }
     }
 
     // at this point, nothing else is usable so just return what we do have
     return creds
+  }
+
+  // Returns the deepest nerf dart key at or above `nerfed` that has any usable
+  // auth (token, username+_password, or _auth), or null if none is found. Walks
+  // up the path one segment at a time, stopping once only //host remains. This
+  // matches the path-walking backtracking npm-registry-fetch performs in
+  // regFromURI, so legacy credentials stored under a less specific key are still
+  // resolved after registry trailing-slash normalization.
+  #findAuthNerf (nerfed) {
+    let regKey = nerfed
+    while (regKey.length > '//'.length) {
+      if (
+        this.get(`${regKey}:_authToken`) ||
+        (this.get(`${regKey}:username`) && this.get(`${regKey}:_password`)) ||
+        this.get(`${regKey}:_auth`)
+      ) {
+        return regKey
+      }
+      // drop EITHER the trailing segment or the trailing slash, so both
+      // //host/path/ and //host/path collapse to //host/ on the next pass
+      regKey = regKey.replace(/([^/]+|\/)$/, '')
+    }
+    return null
   }
 
   // set up the environment object we have with npm_config_* environs
@@ -1114,3 +1158,4 @@ const getTypesFromDefinitions = (definitions) => {
 
 module.exports = Config
 module.exports.getTypesFromDefinitions = getTypesFromDefinitions
+module.exports.nerfDartURI = nerfDartURI
