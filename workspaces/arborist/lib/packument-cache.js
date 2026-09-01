@@ -7,7 +7,10 @@ const { log } = require('proc-log')
 // of the same packument to bypass disk reads.  The tradeoff here is memory
 // usage for disk reads.
 class PackumentCache extends LRUCache {
-  static #heapLimit = Math.floor(getHeapStatistics().heap_size_limit)
+  static #heapLimit = Math.min(
+    Math.floor(getHeapStatistics().heap_size_limit),
+    16 * 1024 * 1024 * 1024 // 16GB
+  )
 
   #sizeKey
   #disposed = new Set()
