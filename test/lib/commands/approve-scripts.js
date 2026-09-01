@@ -859,3 +859,131 @@ t.test('approve-scripts --all with only bundled deps has nothing to review', asy
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.notOk(pkg.allowScripts, 'no allowScripts written')
 })
+
+// Layout produced by install-strategy=linked: the real package lives in the store, node_modules holds a symlink to it, and the hidden lockfile records that isolated layout (npm/cli#9939).
+const setupLinkedProject = (t, { allowScripts, noResolved = false } = {}) => {
+  const storeDir = 'canvas@1.0.0-c2FsdHNhbHRzYWx0c2FsdA'
+  const storeLoc = `node_modules/.store/${storeDir}/node_modules/canvas`
+  const tarUrl = noResolved
+    ? undefined
+    : 'https://registry.npmjs.org/canvas/-/canvas-1.0.0.tgz'
+  const pkg = {
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { canvas: '^1.0.0' },
+  }
+  if (allowScripts !== undefined) {
+    pkg.allowScripts = allowScripts
+  }
+  return {
+    'package.json': JSON.stringify(pkg, null, 2),
+    'package-lock.json': JSON.stringify({
+      name: pkg.name,
+      version: pkg.version,
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': pkg,
+        'node_modules/canvas': {
+          version: '1.0.0',
+          resolved: tarUrl,
+          hasInstallScript: true,
+        },
+      },
+    }),
+    node_modules: {
+      '.package-lock.json': JSON.stringify({
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          [`node_modules/.store/${storeDir}`]: {},
+          [storeLoc]: {
+            version: '1.0.0',
+            resolved: tarUrl,
+            hasInstallScript: true,
+          },
+          'node_modules/canvas': {
+            resolved: storeLoc,
+            link: true,
+          },
+        },
+      }),
+      '.store': {
+        [storeDir]: {
+          node_modules: {
+            canvas: {
+              'package.json': JSON.stringify({
+                name: 'canvas',
+                version: '1.0.0',
+                scripts: { install: 'echo install' },
+              }),
+            },
+          },
+        },
+      },
+      canvas: t.fixture('symlink', `.store/${storeDir}/node_modules/canvas`),
+    },
+  }
+}
+
+// loadActual only trusts the hidden lockfile when it is newer than every dir under node_modules (assertNoNewer allows 10ms), and fixture creation order makes that racy, so bump its mtime past the fixture writes.
+const trustHiddenLockfile = (prefix) => {
+  const future = new Date(Date.now() + 60_000)
+  fs.utimesSync(resolve(prefix, 'node_modules', '.package-lock.json'), future, future)
+}
+
+t.test('approve-scripts <pkg> under linked strategy writes a registry pin, not store paths', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupLinkedProject(t),
+  })
+  trustHiddenLockfile(prefix)
+  await npm.exec('approve-scripts', ['canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'canvas@1.0.0': true })
+})
+
+t.test('approve-scripts --all under linked strategy writes a registry pin, not store paths', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupLinkedProject(t),
+    config: { all: true },
+  })
+  trustHiddenLockfile(prefix)
+  await npm.exec('approve-scripts', [])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'canvas@1.0.0': true })
+})
+
+t.test('approve-scripts --pending is empty when the registry pin covers a linked store package', async t => {
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupLinkedProject(t, { allowScripts: { 'canvas@1.0.0': true } }),
+    config: { 'allow-scripts-pending': true },
+  })
+  trustHiddenLockfile(prefix)
+  await npm.exec('approve-scripts', [])
+  t.match(joinedOutput(), /No packages with unreviewed install scripts/)
+})
+
+t.test('deny-scripts under linked strategy writes a name-only deny', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupLinkedProject(t),
+  })
+  trustHiddenLockfile(prefix)
+  await npm.exec('deny-scripts', ['canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { canvas: false })
+})
+
+t.test('approve-scripts <pkg> under linked strategy without resolved URLs approves by name', async t => {
+  // omit-lockfile-registry-resolved: the store package has no resolved URL, so it cannot be pinned but must still be approved by name via the incoming Link's edge.
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupLinkedProject(t, { noResolved: true }),
+  })
+  trustHiddenLockfile(prefix)
+  await npm.exec('approve-scripts', ['canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { canvas: true })
+})

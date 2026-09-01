@@ -1,3 +1,4 @@
+const { sep } = require('node:path')
 const npa = require('npm-package-arg')
 const semver = require('semver')
 const versionFromTgz = require('./version-from-tgz.js')
@@ -99,6 +100,15 @@ const matches = (node, key, failClosed) => {
   }
 }
 
+// True when the node lives in the linked install strategy's `node_modules/.store` directory; such registry-managed packages must never derive identity from the store's internal `file:` link specs.
+const isStoreBacked = (node) => {
+  if (node?.isInStore) {
+    return true
+  }
+  const real = node?.realpath || node?.path
+  return typeof real === 'string' && real.includes(`${sep}node_modules${sep}.store${sep}`)
+}
+
 const resolvedSourceSpecs = (node) => {
   const specs = []
   const seen = new Set()
@@ -112,7 +122,8 @@ const resolvedSourceSpecs = (node) => {
 
   add(node?.resolved)
 
-  if (!node?.resolved && node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+  if (!node?.resolved && !isStoreBacked(node) &&
+      node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
     let hasIncomingLink = false
     for (const link of node.linksIn) {
       hasIncomingLink = true
@@ -235,10 +246,32 @@ const getTrustedRegistryIdentity = (node) => {
 }
 
 const nameFromEdges = (node) => {
-  if (!node.edgesIn || typeof node.edgesIn[Symbol.iterator] !== 'function') {
+  const name = nameFromEdgeSet(node?.edgesIn)
+  if (name) {
+    return name
+  }
+  // A link target carries no edges of its own; they land on the incoming Links (e.g. the linked strategy's store packages), so consult their edges too, failing closed when the Links disagree on the registry name rather than trusting insertion order.
+  let linkName = null
+  if (node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+    for (const link of node.linksIn) {
+      const name = nameFromEdgeSet(link.edgesIn)
+      if (!name) {
+        continue
+      }
+      if (linkName && linkName !== name) {
+        return null
+      }
+      linkName = name
+    }
+  }
+  return linkName
+}
+
+const nameFromEdgeSet = (edgesIn) => {
+  if (!edgesIn || typeof edgesIn[Symbol.iterator] !== 'function') {
     return null
   }
-  for (const edge of node.edgesIn) {
+  for (const edge of edgesIn) {
     let parsed
     try {
       parsed = npa.resolve(edge.name, edge.spec)
@@ -350,7 +383,14 @@ const isRegistryNode = (node) => {
   // edge resolves to a registry spec, which is much harder to spoof than
   // the URL.
   if (typeof node.isRegistryDependency === 'boolean') {
-    return node.isRegistryDependency
+    if (node.isRegistryDependency) {
+      return true
+    }
+    // A link target carries no edges of its own; they land on the incoming Links (e.g. the linked strategy's store packages, npm/cli#9939), so delegate the edge-based check to them.
+    if (node.edgesIn?.size === 0 && node.linksIn?.size > 0) {
+      return [...node.linksIn].every(link => link.isRegistryDependency)
+    }
+    return false
   }
   // Fall back to URL parsing for nodes without the arborist getter
   // (e.g. test fixtures, lockfiles with omit-lockfile-registry-resolved).
