@@ -117,11 +117,12 @@ const mockOidc = async (t, {
   })
 
   if (mockGithubOidcOptions) {
-    const { idToken, audience, statusCode = 200 } = mockGithubOidcOptions
+    const { idToken, audience, statusCode = 200, times = 1 } = mockGithubOidcOptions
     const url = new URL(ACTIONS_ID_TOKEN_REQUEST_URL)
     nock(url.origin)
       .get(url.pathname)
       .query({ audience })
+      .times(times)
       .matchHeader('authorization', `Bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}`)
       .matchHeader('accept', 'application/json')
       .reply(statusCode, statusCode !== 500 ? { value: idToken } : { message: 'Internal Server Error' })

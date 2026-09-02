@@ -1685,6 +1685,106 @@ t.test('oidc token exchange - provenance', (t) => {
     })
   }
 
+  t.test('automatic provenance does not leak between workspace publishes', async t => {
+    const provenanceBundlePath = path.join(t.testdir(), 'provenance-bundle.json')
+    const autoPackage = 'workspace-auto-provenance'
+    const filePackage = 'workspace-file-provenance'
+    const publishCalls = []
+    const prefixDir = {
+      'package.json': JSON.stringify({
+        name: 'workspace-root',
+        version: '1.0.0',
+        workspaces: [autoPackage, filePackage],
+      }),
+      [autoPackage]: {
+        'package.json': JSON.stringify({
+          name: autoPackage,
+          version: '1.0.0',
+        }),
+      },
+      [filePackage]: {
+        'package.json': JSON.stringify({
+          name: filePackage,
+          version: '1.0.0',
+          publishConfig: {
+            'provenance-file': provenanceBundlePath,
+          },
+        }),
+      },
+    }
+
+    const { npm, registry } = await mockOidc(t, {
+      oidcOptions: { github: true },
+      packageName: autoPackage,
+      config: {
+        '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+        workspaces: true,
+      },
+      mockGithubOidcOptions: {
+        audience: 'npm:registry.npmjs.org',
+        idToken: githubPublicIdToken,
+        times: 2,
+      },
+      mockOidcTokenExchangeOptions: {
+        idToken: githubPublicIdToken,
+        body: {
+          token: 'exchange-token',
+        },
+      },
+      publishOptions: {
+        noPut: true,
+      },
+      load: {
+        prefixDir,
+        mocks: {
+          libnpmaccess: {
+            getVisibility: async () => ({ public: true }),
+          },
+          // mocked as a plain module so the publish options each workspace
+          // receives can be recorded verbatim
+          libnpmpublish: {
+            publish: async (manifest, _tarballData, opts) => {
+              publishCalls.push({
+                name: manifest.name,
+                provenance: opts.provenance,
+                provenanceFile: opts.provenanceFile,
+              })
+            },
+          },
+        },
+      },
+    })
+
+    registry.mockOidcTokenExchange({
+      packageName: filePackage,
+      idToken: githubPublicIdToken,
+      body: {
+        token: 'exchange-token',
+      },
+    })
+    registry.publish(filePackage, { noPut: true })
+
+    await npm.exec('publish', [])
+
+    t.strictSame(publishCalls, [
+      {
+        name: autoPackage,
+        provenance: true,
+        provenanceFile: null,
+      },
+      {
+        name: filePackage,
+        provenance: false,
+        provenanceFile: provenanceBundlePath,
+      },
+    ])
+    t.equal(
+      npm.config.isDefault('provenance'),
+      true,
+      'automatic provenance does not mutate shared config'
+    )
+  })
+
   const brokenJwts = [
     'x.invalid-jwt.x',
     'x.invalid-jwt.',
