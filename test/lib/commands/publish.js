@@ -5,7 +5,14 @@ const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
-const { circleciIdToken, githubIdToken, gitlabIdToken, oidcPublishTest, mockOidc } = require('../../fixtures/mock-oidc')
+const {
+  buildkiteIdToken,
+  circleciIdToken,
+  githubIdToken,
+  gitlabIdToken,
+  oidcPublishTest,
+  mockOidc,
+} = require('../../fixtures/mock-oidc')
 const { sigstoreIdToken } = require('@npmcli/mock-registry/lib/provenance')
 const mockGlobals = require('@npmcli/mock-globals')
 
@@ -1339,6 +1346,60 @@ t.test('oidc token exchange - no provenance', t => {
     },
     mockOidcTokenExchangeOptions: {
       idToken: circleciIdToken(),
+      body: {
+        token: 'exchange-token',
+      },
+    },
+    publishOptions: {
+      token: 'exchange-token',
+    },
+  }))
+
+  t.test('buildkite missing OIDC token', oidcPublishTest({
+    oidcOptions: { buildkite: true },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+    },
+    mockBuildkiteOidcOptions: {
+      audience: 'npm:registry.npmjs.org',
+    },
+    publishOptions: {
+      token: 'existing-fallback-token',
+    },
+    logsContain: [
+      'silly oidc Skipped because no id_token available',
+    ],
+  }))
+
+  t.test('buildkite OIDC request failure with fallback', oidcPublishTest({
+    oidcOptions: { buildkite: true },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+    },
+    mockBuildkiteOidcOptions: {
+      audience: 'npm:registry.npmjs.org',
+      error: new Error('command failed'),
+    },
+    publishOptions: {
+      token: 'existing-fallback-token',
+    },
+    logsContain: [
+      'verbose oidc Failed to fetch id_token from Buildkite',
+    ],
+  }))
+
+  const buildkiteToken = buildkiteIdToken()
+  t.test('default registry success buildkite', oidcPublishTest({
+    oidcOptions: { buildkite: true },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+    },
+    mockBuildkiteOidcOptions: {
+      audience: 'npm:registry.npmjs.org',
+      idToken: buildkiteToken,
+    },
+    mockOidcTokenExchangeOptions: {
+      idToken: buildkiteToken,
       body: {
         token: 'exchange-token',
       },

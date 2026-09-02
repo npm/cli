@@ -259,6 +259,39 @@ t.test('list with circleci trust type', async t => {
   await npm.exec('trust', ['list', packageName])
 })
 
+t.test('list with buildkite trust type', async t => {
+  const { npm } = await loadMockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: packageName,
+        version: '1.0.0',
+      }),
+    },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'test-auth-token',
+    },
+  })
+
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: 'test-auth-token',
+  })
+  registry.trustList({
+    packageName,
+    body: [{
+      id: 'test-id-1',
+      type: 'buildkite',
+      claims: {
+        organization_slug: 'npm',
+        pipeline_slug: 'cli',
+      },
+    }],
+  })
+
+  await npm.exec('trust', ['list', packageName])
+})
+
 t.test('list with unknown trust type', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
