@@ -1799,6 +1799,16 @@ This is a one-time fix-up, please be patient...
     // the dep flags will be all set to true.
     if (!metaFromDisk || mutateTree) {
       calcDepFlags(this.idealTree)
+      if (this.options.save === false) {
+        // Optional peers are normally left extraneous so that merely declaring
+        // one does not keep it installed. An explicit no-save add makes the peer
+        // and its dependency graph required for this reification.
+        for (const edge of this.#explicitRequests) {
+          if (edge.type === 'peerOptional') {
+            calcDepFlags(edge.to)
+          }
+        }
+      }
     } else {
       // otherwise just unset all the flags on the root node
       // since they will sometimes have the default value

@@ -2064,6 +2064,64 @@ t.test('peerOptionals that are devDeps or explicit request', async t => {
   }), 'should install the wrappy dep, and not remove from peerDeps')
 })
 
+t.test('explicit peerOptional request with save=false (#9024)', async t => {
+  const registry = createRegistry(t, false)
+  const pluginPack = registry.packument({
+    name: 'plugin',
+    version: '1.0.0',
+    dependencies: { helper: '1.0.0' },
+  })
+  const pluginManifest = registry.manifest({ name: 'plugin', packuments: [pluginPack] })
+  await registry.package({ manifest: pluginManifest })
+  const helperPack = registry.packument({ name: 'helper', version: '1.0.0' })
+  const helperManifest = registry.manifest({ name: 'helper', packuments: [helperPack] })
+  await registry.package({ manifest: helperManifest })
+  const standalonePack = registry.packument({ name: 'standalone', version: '1.0.0' })
+  const standaloneManifest = registry.manifest({
+    name: 'standalone',
+    packuments: [standalonePack],
+  })
+  await registry.package({ manifest: standaloneManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-explicit-peer-optional',
+      version: '1.0.0',
+      dependencies: { host: '1.0.0' },
+      peerDependencies: { plugin: '1.0.0' },
+      peerDependenciesMeta: { plugin: { optional: true } },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'test-explicit-peer-optional',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'test-explicit-peer-optional',
+          version: '1.0.0',
+          dependencies: { host: '1.0.0' },
+          peerDependencies: { plugin: '1.0.0' },
+          peerDependenciesMeta: { plugin: { optional: true } },
+        },
+        'node_modules/host': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/host/-/host-1.0.0.tgz',
+        },
+      },
+    }),
+  })
+  const arb = newArb(path, { save: false })
+  const tree = await arb.buildIdealTree({ add: ['plugin', 'standalone'] })
+
+  t.equal(tree.children.get('plugin').version, '1.0.0',
+    'should install the explicitly requested peerOptional dep')
+  t.equal(tree.children.get('helper').version, '1.0.0',
+    'should retain dependencies of the explicitly requested peerOptional dep')
+  t.equal(tree.children.get('standalone').version, '1.0.0',
+    'should still install a regular explicit dependency')
+})
+
 t.test('weird thing when theres a link to ..', async t => {
   // don't set the fsParent of x to y, that's just not how trees work.
   const path = t.testdir({
