@@ -5,6 +5,7 @@ const crypto = require('node:crypto')
 const { mkdir } = require('node:fs/promises')
 const Arborist = require('@npmcli/arborist')
 const strictAllowScriptsPreflight = require('./strict-allow-scripts-preflight.js')
+const { isReleaseAgeExcluded, trustedSpecName } = require('@npmcli/arborist/lib/release-age-exclude.js')
 const ciInfo = require('ci-info')
 const { log, input } = require('proc-log')
 const npa = require('npm-package-arg')
@@ -23,10 +24,22 @@ const withLock = require('./with-lock.js')
 // spec.raw so we don't have to fetch again when we check npxCache
 const manifests = new Map()
 
+// The effective `before` filter for a spec, honoring `min-release-age-exclude`
+// the same way arborist does for installs. libnpmexec resolves the requested
+// spec with pacote directly, so without this an exempted package would still
+// be rejected by the `min-release-age` cutoff with ETARGET.
+const releaseAgeBefore = (spec, { before, minReleaseAgeExclude }) => {
+  if (!before) {
+    return before
+  }
+  return isReleaseAgeExcluded(trustedSpecName(spec), minReleaseAgeExclude) ? null : before
+}
+
 const getManifest = async (spec, flatOptions) => {
   if (!manifests.has(spec.raw)) {
     const manifest = await pacote.manifest(spec, {
       ...flatOptions,
+      before: releaseAgeBefore(spec, flatOptions),
       preferOnline: true,
       Arborist,
       _isRoot: true,
