@@ -1,5 +1,10 @@
 # Changelog
 
+## [11.0.2](https://github.com/npm/cli/compare/config-v11.0.1...config-v11.0.2) (2026-09-03)
+### Bug Fixes
+* [`c9876d7`](https://github.com/npm/cli/commit/c9876d7ea7150b0702e4151210b9fa1a8dbc7fbf) [#9882](https://github.com/npm/cli/pull/9882) provenance-file takes precedence over OIDC auto-generated provenance (#9882) (@yunseo-kim)
+* [`b016aa2`](https://github.com/npm/cli/commit/b016aa287d01fcd688d6704222f193ce5c04bfb7) [#9913](https://github.com/npm/cli/pull/9913) config: avoid exporting persistent allow-scripts (#9913) (@Fnine59)
+
 ## [11.0.1](https://github.com/npm/cli/compare/config-v11.0.0...config-v11.0.1) (2026-07-27)
 ### Documentation
 * [`9e17dc0`](https://github.com/npm/cli/commit/9e17dc064782ca1a1fd7f549e5a2fc7903f7fe51) [#9805](https://github.com/npm/cli/pull/9805) clarify npm 12 unknown-config breaking change in changelogs (#9805) (@Hashim1999164)

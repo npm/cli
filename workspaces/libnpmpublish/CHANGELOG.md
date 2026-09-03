@@ -1,5 +1,9 @@
 # Changelog
 
+## [12.0.1](https://github.com/npm/cli/compare/libnpmpublish-v12.0.0...libnpmpublish-v12.0.1) (2026-09-03)
+### Bug Fixes
+* [`c9876d7`](https://github.com/npm/cli/commit/c9876d7ea7150b0702e4151210b9fa1a8dbc7fbf) [#9882](https://github.com/npm/cli/pull/9882) provenance-file takes precedence over OIDC auto-generated provenance (#9882) (@yunseo-kim)
+
 ## [12.0.0](https://github.com/npm/cli/compare/libnpmpublish-v12.0.0-pre.0...libnpmpublish-v12.0.0) (2026-07-08)
 ### ⚠️ BREAKING CHANGES
 * `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
