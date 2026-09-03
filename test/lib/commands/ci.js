@@ -193,7 +193,7 @@ t.test('allow-remote=none blocks same-host tarball outside registry path', async
   lock.packages['node_modules/abbrev'].resolved = evilTarball
   lock.dependencies.abbrev.resolved = evilTarball
 
-  const { npm } = await loadMockNpm(t, {
+  const { npm, registry } = await loadMockNpm(t, {
     config: {
       audit: false,
       'allow-remote': 'none',
@@ -206,6 +206,8 @@ t.test('allow-remote=none blocks same-host tarball outside registry path', async
       'package-lock.json': JSON.stringify(lock),
     },
   })
+  const manifest = registry.manifest({ name: 'abbrev' })
+  await registry.package({ manifest })
 
   await t.rejects(
     npm.exec('ci', []),

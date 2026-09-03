@@ -3988,7 +3988,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     await t.resolves(arb.reify(), 'registry tarball under configured path is allowed')
   })
 
-  t.test('allowRemote=none blocks same-origin tarball outside registry path', async t => {
+  t.test('allowRemote=none allows registry-advertised tarball outside registry path', async t => {
     const abbrevPackument5 = JSON.stringify({
       _id: 'abbrev',
       _rev: 'lkjadflkjasdf',
@@ -3999,7 +3999,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
           name: 'abbrev',
           version: '1.1.1',
           dist: {
-            tarball: 'https://registry.example.com/evil/abbrev-1.1.1.tgz',
+            tarball: 'https://registry.example.com/download/abbrev-1.1.1.tgz',
           },
         },
       },
@@ -4021,6 +4021,67 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
       .get('/npm/abbrev')
       .reply(200, abbrevPackument5)
 
+    tnock(t, 'https://registry.example.com')
+      .get('/download/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com/npm/',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+      packumentCache: new Map(),
+    })
+
+    await t.resolves(arb.reify(), 'registry-advertised sibling-path tarball is allowed')
+  })
+
+  t.test('allowRemote=none verifies against dependency identity, not lockfile name', async t => {
+    const registryTarball = 'https://registry.example.com/npm/abbrev/-/abbrev-1.1.1.tgz'
+    const lockfileTarball = 'https://registry.example.com/evil/abbrev-1.1.1.tgz'
+    const packument = JSON.stringify({
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: { tarball: registryTarball },
+        },
+      },
+    })
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: { abbrev: '1.1.1' },
+        }),
+        'package-lock.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            '': {
+              name: 'myproject',
+              version: '1.0.0',
+              dependencies: { abbrev: '1.1.1' },
+            },
+            'node_modules/abbrev': {
+              name: 'lockfile-controlled-name',
+              version: '1.1.1',
+              resolved: lockfileTarball,
+            },
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev')
+      .reply(200, packument)
+
     const arb = new Arborist({
       path: resolve(testdir, 'project'),
       registry: 'https://registry.example.com/npm/',
@@ -4028,7 +4089,371 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
       allowRemote: 'none',
     })
 
-    await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' }, 'sibling path tarball is blocked')
+    await t.rejects(
+      arb.reify(),
+      { code: 'EALLOWREMOTE' },
+      'lockfile-only sibling-path tarball is blocked'
+    )
+  })
+
+  t.test('allowRemote=none reports EALLOWREMOTE when registry metadata is unavailable', async t => {
+    const tarballURL = 'https://registry.example.com/evil/abbrev-1.1.1.tgz'
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: { abbrev: '1.1.1' },
+        }),
+        'package-lock.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            '': {
+              name: 'myproject',
+              version: '1.0.0',
+              dependencies: { abbrev: '1.1.1' },
+            },
+            'node_modules/abbrev': {
+              version: '1.1.1',
+              resolved: tarballURL,
+            },
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/abbrev')
+      .reply(404, { error: 'metadata unavailable' })
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.example.com/npm/',
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+    })
+
+    await t.rejects(
+      arb.reify(),
+      { code: 'EALLOWREMOTE' },
+      'failed verification falls back to the configured remote policy'
+    )
+  })
+
+  t.test('allowRemote=none fails closed for unverifiable registry tarball shapes', async t => {
+    const cases = [
+      {
+        label: 'non-registry provenance',
+        edgeSpec: '1.1.1',
+        invalidEdgeSpec: 'https://example.com/other-abbrev.tgz',
+        resolved: 'https://registry.example.com/download/abbrev-1.1.1.tgz',
+      },
+      {
+        label: 'invalid target registry URL',
+        nodeName: 'alias',
+        packageName: '@scope/pkg',
+        edgeSpec: 'npm:@scope/pkg@1.0.0',
+        resolved: 'https://registry.example.com/download/pkg-1.0.0.tgz',
+        version: '1.0.0',
+        options: { '@scope:registry': 'not a registry URL' },
+      },
+      {
+        label: 'cross-origin tarball URL',
+        edgeSpec: '1.1.1',
+        resolved: 'https://cdn.example.com/abbrev-1.1.1.tgz',
+      },
+      {
+        label: 'missing package version',
+        edgeSpec: '*',
+        resolved: 'https://registry.example.com/download/abbrev-1.1.1.tgz',
+        version: null,
+      },
+    ]
+
+    for (const testCase of cases) {
+      await t.test(testCase.label, async t => {
+        let extractOptions
+        let manifestCalls = 0
+        const pacote = {
+          extract: async (spec, path, options) => {
+            extractOptions = options
+          },
+          manifest: async () => {
+            manifestCalls++
+            throw new Error('unexpected manifest request')
+          },
+        }
+        const ArboristMock = t.mock('../../lib/arborist', {
+          ...mocks,
+          pacote,
+        })
+        const path = t.testdir()
+        const nodeName = testCase.nodeName || 'abbrev'
+        const packageName = testCase.packageName || nodeName
+        const version = testCase.version === undefined ? '1.1.1' : testCase.version
+        const root = new Node({
+          path,
+          pkg: {
+            name: 'project',
+            version: '1.0.0',
+            dependencies: {
+              [nodeName]: testCase.edgeSpec,
+              ...(testCase.invalidEdgeSpec ? { consumer: '1.0.0' } : {}),
+            },
+          },
+        })
+        const node = new Node({
+          name: nodeName,
+          resolved: testCase.resolved,
+          pkg: {
+            name: packageName,
+            ...(version ? { version } : {}),
+          },
+          parent: root,
+        })
+        if (testCase.invalidEdgeSpec) {
+          new Node({
+            name: 'consumer',
+            pkg: {
+              name: 'consumer',
+              version: '1.0.0',
+              dependencies: { [nodeName]: testCase.invalidEdgeSpec },
+            },
+            parent: root,
+          })
+        }
+
+        const arb = new ArboristMock({
+          audit: false,
+          path,
+          cache: path,
+          registry: 'https://registry.example.com/npm/',
+          allowRemote: 'none',
+          ...testCase.options,
+        })
+        arb.addTracker('reify')
+        arb.idealTree = root
+
+        await arb[Symbol.for('reifyNode')](node)
+        t.equal(extractOptions.allowRemote, 'none', 'does not widen the remote policy')
+        t.equal(manifestCalls, 0, 'does not request metadata for an unverifiable shape')
+      })
+    }
+  })
+
+  for (const { label, allowRemote } of [
+    { label: 'implicit all' },
+    { label: 'all', allowRemote: 'all' },
+    { label: 'root for a root dependency', allowRemote: 'root' },
+  ]) {
+    t.test(`allowRemote=${label} does not verify an already-permitted registry tarball`, async t => {
+      const registryHost = `https://${label.replaceAll(' ', '-')}.example.com`
+      const tarballURL = `${registryHost}/evil/abbrev-1.1.1.tgz`
+      const testdir = t.testdir({
+        project: {
+          'package.json': JSON.stringify({
+            name: 'myproject',
+            version: '1.0.0',
+            dependencies: { abbrev: '1.1.1' },
+          }),
+          'package-lock.json': JSON.stringify({
+            name: 'myproject',
+            version: '1.0.0',
+            lockfileVersion: 3,
+            requires: true,
+            packages: {
+              '': {
+                name: 'myproject',
+                version: '1.0.0',
+                dependencies: { abbrev: '1.1.1' },
+              },
+              'node_modules/abbrev': {
+                version: '1.1.1',
+                resolved: tarballURL,
+              },
+            },
+          }),
+        },
+      })
+      const packumentCache = new Map()
+      const cacheHas = packumentCache.has.bind(packumentCache)
+      let packumentChecks = 0
+      packumentCache.has = key => {
+        packumentChecks++
+        return cacheHas(key)
+      }
+
+      tnock(t, registryHost)
+        .get('/evil/abbrev-1.1.1.tgz')
+        .reply(200, abbrevTGZ)
+
+      const arb = new Arborist({
+        path: resolve(testdir, 'project'),
+        registry: `${registryHost}/npm/`,
+        cache: resolve(testdir, 'cache'),
+        packumentCache,
+        ...(allowRemote ? { allowRemote } : {}),
+      })
+
+      await t.resolves(arb.reify(), 'permitted tarball installs without registry metadata')
+      t.equal(packumentChecks, 0, 'does not consult the packument cache')
+    })
+  }
+
+  t.test('allowRemote=none uses the target scope for an aliased registry tarball', async t => {
+    const aliasName = '@alias/code-frame'
+    const packageName = '@babel/code-frame'
+    const version = '7.5.5'
+    const targetToken = 'target-token'
+    const aliasToken = 'alias-token'
+    const tarballURL = `https://registry.example.com/download/${packageName}/-/code-frame-${version}.tgz`
+    const packument = JSON.stringify({
+      name: packageName,
+      'dist-tags': { latest: version },
+      versions: {
+        [version]: {
+          name: packageName,
+          version,
+          dist: { tarball: tarballURL },
+        },
+      },
+    })
+    const scopedTGZ = fs.readFileSync(resolve(
+      __dirname,
+      `../fixtures/registry-mocks/content/babel/code-frame/-/code-frame-${version}.tgz`
+    ))
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            [aliasName]: `npm:${packageName}@${version}`,
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.example.com')
+      .get('/npm/@babel%2fcode-frame')
+      .matchHeader('authorization', `Bearer ${targetToken}`)
+      .reply(200, packument)
+
+    tnock(t, 'https://registry.example.com')
+      .get(`/download/${packageName}/-/code-frame-${version}.tgz`)
+      .matchHeader('authorization', `Bearer ${targetToken}`)
+      .reply(200, scopedTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.npmjs.org/',
+      '@babel:registry': 'https://registry.example.com/npm/',
+      '@alias:registry': 'https://registry.example.com/alias/',
+      '//registry.example.com/npm/:_authToken': targetToken,
+      '//registry.example.com/alias/:_authToken': aliasToken,
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'none',
+      packumentCache: new Map(),
+    })
+
+    await t.resolves(arb.reify(), 'aliased scoped registry tarball is allowed')
+    const installed = JSON.parse(fs.readFileSync(
+      resolve(testdir, 'project/node_modules', aliasName, 'package.json'),
+      'utf8'
+    ))
+    t.equal(installed.name, packageName, 'target package is installed in the alias slot')
+  })
+
+  t.test('allowRemote=root verifies a locked transitive alias using its target scope', async t => {
+    const packageName = '@babel/code-frame'
+    const version = '7.5.5'
+    const token = 'target-token'
+    const registryHost = 'https://registry.example.com'
+    const abbrevTarball = `${registryHost}/npm/abbrev/-/abbrev-1.1.1.tgz`
+    const advertisedAliasTarball = `${registryHost}/download/${packageName}/-/code-frame-${version}.tgz`
+    const lockedAliasTarball = `${advertisedAliasTarball}#lockfile-integrity`
+    const packument = JSON.stringify({
+      name: packageName,
+      'dist-tags': { latest: version },
+      versions: {
+        [version]: {
+          name: packageName,
+          version,
+          dist: { tarball: advertisedAliasTarball },
+        },
+      },
+    })
+    const scopedTGZ = fs.readFileSync(resolve(
+      __dirname,
+      `../fixtures/registry-mocks/content/babel/code-frame/-/code-frame-${version}.tgz`
+    ))
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: { abbrev: '1.1.1' },
+        }),
+        'package-lock.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            '': {
+              name: 'myproject',
+              version: '1.0.0',
+              dependencies: { abbrev: '1.1.1' },
+            },
+            'node_modules/abbrev': {
+              version: '1.1.1',
+              resolved: abbrevTarball,
+              dependencies: {
+                hoek: `npm:${packageName}@${version}`,
+              },
+            },
+            'node_modules/hoek': {
+              name: packageName,
+              version,
+              resolved: lockedAliasTarball,
+            },
+          },
+        }),
+      },
+    })
+
+    tnock(t, registryHost)
+      .get('/npm/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    tnock(t, registryHost)
+      .get('/scoped/@babel%2fcode-frame')
+      .matchHeader('authorization', `Bearer ${token}`)
+      .reply(200, packument)
+
+    tnock(t, registryHost)
+      .get(`/download/${packageName}/-/code-frame-${version}.tgz`)
+      .matchHeader('authorization', `Bearer ${token}`)
+      .reply(200, scopedTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: `${registryHost}/npm/`,
+      '@babel:registry': `${registryHost}/scoped/`,
+      '//registry.example.com/scoped/:_authToken': token,
+      cache: resolve(testdir, 'cache'),
+      allowRemote: 'root',
+    })
+
+    await t.resolves(arb.reify(), 'transitive registry alias is exempted rather than treated as root')
+    const installed = JSON.parse(fs.readFileSync(
+      resolve(testdir, 'project/node_modules/hoek/package.json'),
+      'utf8'
+    ))
+    t.equal(installed.name, packageName, 'locked alias retains its target package identity')
   })
 
   t.test('allowRemote=none allows same-origin tarball for root registry path', async t => {
@@ -4178,7 +4603,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     await t.resolves(arb.reify(), 'registry tarball routed through the configured registry is allowed')
   })
 
-  t.test('allowRemote=none allows registry tarball under linked install strategy', async t => {
+  t.test('allowRemote=none allows registry-advertised tarball under linked strategy', async t => {
     // The linked strategy extracts store nodes as IsolatedNode, which has no edges to recompute isRegistryDependency from.
     // The flag must be carried from the source tree node so the registry-tarball allow-remote exemption still applies.
     const abbrevPackument5 = JSON.stringify({
@@ -4191,7 +4616,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
           name: 'abbrev',
           version: '1.1.1',
           dist: {
-            tarball: 'https://registry.example.com/npm/abbrev/-/abbrev-1.1.1.tgz',
+            tarball: 'https://registry.example.com/download/abbrev-1.1.1.tgz',
           },
         },
       },
@@ -4214,7 +4639,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
       .reply(200, abbrevPackument5)
 
     tnock(t, 'https://registry.example.com')
-      .get('/npm/abbrev/-/abbrev-1.1.1.tgz')
+      .get('/download/abbrev-1.1.1.tgz')
       .reply(200, abbrevTGZ)
 
     const arb = new Arborist({
@@ -4223,9 +4648,10 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
       cache: resolve(testdir, 'cache'),
       allowRemote: 'none',
       installStrategy: 'linked',
+      packumentCache: new Map(),
     })
 
-    await t.resolves(arb.reify(), 'registry tarball is allowed under linked strategy')
+    await t.resolves(arb.reify(), 'verified sibling-path tarball is allowed under linked strategy')
   })
 
   t.test('allowRemote=root allows root-direct remote tarball under linked install strategy', async t => {
