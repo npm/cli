@@ -1638,11 +1638,14 @@ token access to all packages instead of limiting to specific packages.
 #### \`packages-and-scopes-permission\`
 
 * Default: null
-* Type: null, "read-only", "read-write", or "no-access"
+* Type: null, "read-only", "read-write", "read-write-stage-only", or
+  "no-access"
 
 When creating a Granular Access Token with \`npm token create\`, sets the
 permission level for packages and scopes. Options are "read-only",
-"read-write", or "no-access".
+"read-write", "read-write-stage-only", or "no-access".
+"read-write-stage-only" grants publish access that stages releases instead
+of publishing them directly.
 
 
 
@@ -6454,7 +6457,7 @@ Options:
 [--name <name>] [--token-description <token-description>] [--expires <expires>]
 [--packages <packages> [--packages <packages> ...]] [--packages-all]
 [--scopes <scopes> [--scopes <scopes> ...]] [--orgs <orgs> [--orgs <orgs> ...]]
-[--packages-and-scopes-permission <read-only|read-write|no-access>]
+[--packages-and-scopes-permission <read-only|read-write|read-write-stage-only|no-access>]
 [--orgs-permission <read-only|read-write|no-access>]
 [--cidr <cidr> [--cidr <cidr> ...]] [--bypass-2fa] [--password <password>]
 [--registry <registry>] [--otp <otp>] [--read-only]
