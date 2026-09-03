@@ -1,15 +1,15 @@
 {
-  ".": "11.19.1",
-  "workspaces/arborist": "9.9.1",
+  ".": "11.20.0",
+  "workspaces/arborist": "9.9.2",
   "workspaces/libnpmaccess": "10.0.3",
-  "workspaces/libnpmdiff": "8.1.12",
-  "workspaces/libnpmexec": "10.3.2",
-  "workspaces/libnpmfund": "7.0.26",
+  "workspaces/libnpmdiff": "8.1.13",
+  "workspaces/libnpmexec": "10.3.3",
+  "workspaces/libnpmfund": "7.0.27",
   "workspaces/libnpmorg": "8.0.1",
-  "workspaces/libnpmpack": "9.1.13",
-  "workspaces/libnpmpublish": "11.2.0",
+  "workspaces/libnpmpack": "9.1.14",
+  "workspaces/libnpmpublish": "11.2.1",
   "workspaces/libnpmsearch": "9.0.1",
   "workspaces/libnpmteam": "8.0.2",
   "workspaces/libnpmversion": "8.0.4",
-  "workspaces/config": "10.12.0"
+  "workspaces/config": "10.12.1"
 }
