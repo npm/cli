@@ -259,6 +259,33 @@ t.test('exec commands', async t => {
     )
   })
 
+  // Regression test: a reify that throws rolls its tree back, so the blocked scripts have to be read off the ideal tree to still be reported.
+  await t.test('a failing reify still reports blocked install scripts', async t => {
+    const { npm, registry, logs } = await loadMockNpm(t, {
+      config: { audit: false },
+      prefixDir: {
+        'package.json': JSON.stringify(packageJson),
+        abbrev,
+      },
+      mocks: {
+        '@npmcli/run-script': async () => {},
+      },
+    })
+    const manifest = registry.manifest({
+      name: 'abbrev',
+      packuments: [{ version: '1.0.0', scripts: { postinstall: 'echo postinstall' } }],
+    })
+    await registry.package({ manifest })
+    registry.nock.get('/abbrev/-/abbrev-1.0.0.tgz').reply(404)
+
+    await t.rejects(npm.exec('install'), 'install rejects when a dependency cannot be fetched')
+    t.match(
+      logs.warn.byTitle('install-scripts').join('\n'),
+      /1 package had install scripts blocked/,
+      'blocked install scripts are reported before the failure'
+    )
+  })
+
   await t.test('should ignore scripts with --ignore-scripts', async t => {
     const { npm, registry } = await loadMockNpm(t, {
       config: {
