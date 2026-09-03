@@ -298,41 +298,49 @@ class PlaceDep {
     // because we're copying rather than moving them out of the virtual root,
     // otherwise they'd be gone and the peer set would change throughout
     // this loop.
-    for (const peerEdge of this.placed.edgesOut.values()) {
-      if (peerEdge.valid || !peerEdge.peer || peerEdge.peerConflicted) {
-        continue
+    // The dep we're placing may have been evicted from its virtual root while
+    // a later peer edge was being resolved (a recursive #loadPeerSet can
+    // detach the original node when a newer copy takes its place in the
+    // virtual root's inventory).  In that case there is no sibling peer set
+    // left to place here; the placed node's unmet peers are re-resolved when
+    // it is processed from the deps queue.
+    if (virtualRoot) {
+      for (const peerEdge of this.placed.edgesOut.values()) {
+        if (peerEdge.valid || !peerEdge.peer || peerEdge.peerConflicted) {
+          continue
+        }
+
+        const peer = virtualRoot.children.get(peerEdge.name)
+
+        // Note: if the virtualRoot *doesn't* have the peer, then that means
+        // it's an optional peer dep.  If it's not being properly met (ie,
+        // peerEdge.valid is false), then this is likely heading for an
+        // ERESOLVE error, unless it can walk further up the tree.
+        if (!peer) {
+          continue
+        }
+
+        // peerConflicted peerEdge, just accept what's there already
+        if (!peer.satisfies(peerEdge)) {
+          continue
+        }
+
+        this.children.push(new PlaceDep({
+          auditReport: this.auditReport,
+          explicitRequest: this.explicitRequest,
+          force: this.force,
+          installLinks: this.installLinks,
+          installStrategy: this.installStrategy,
+          legacyPeerDeps: this.legacyPeerDeps,
+          preferDedupe: this.preferDedupe,
+          strictPeerDeps: this.strictPeerDeps,
+          updateNames: this.updateName,
+          parent: this,
+          dep: peer,
+          node: this.placed,
+          edge: peerEdge,
+        }))
       }
-
-      const peer = virtualRoot.children.get(peerEdge.name)
-
-      // Note: if the virtualRoot *doesn't* have the peer, then that means
-      // it's an optional peer dep.  If it's not being properly met (ie,
-      // peerEdge.valid is false), then this is likely heading for an
-      // ERESOLVE error, unless it can walk further up the tree.
-      if (!peer) {
-        continue
-      }
-
-      // peerConflicted peerEdge, just accept what's there already
-      if (!peer.satisfies(peerEdge)) {
-        continue
-      }
-
-      this.children.push(new PlaceDep({
-        auditReport: this.auditReport,
-        explicitRequest: this.explicitRequest,
-        force: this.force,
-        installLinks: this.installLinks,
-        installStrategy: this.installStrategy,
-        legacyPeerDeps: this.legacyPeerDeps,
-        preferDedupe: this.preferDedupe,
-        strictPeerDeps: this.strictPeerDeps,
-        updateNames: this.updateName,
-        parent: this,
-        dep: peer,
-        node: this.placed,
-        edge: peerEdge,
-      }))
     }
   }
 
