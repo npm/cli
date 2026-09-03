@@ -1,5 +1,13 @@
 # Changelog
 
+## [9.9.2](https://github.com/npm/cli/compare/arborist-v9.9.1...arborist-v9.9.2) (2026-09-03)
+### Bug Fixes
+* [`70317da`](https://github.com/npm/cli/commit/70317da6328fb19e662f13427be09d9c5e2d344f) [#9930](https://github.com/npm/cli/pull/9930) arborist: reject uninstall args that carry a version (#9930) (@github-actions[bot], @lazerg)
+* [`55ae484`](https://github.com/npm/cli/commit/55ae4844e2cee4c293939ecdb6010dc6d779e009) [#9929](https://github.com/npm/cli/pull/9929) arborist: match allowScripts keys for local paths (#9929) (@github-actions[bot], @martinrrm, @Copilot)
+* [`7e0d7e2`](https://github.com/npm/cli/commit/7e0d7e265321b109c21a41a75711dd2e20d0e918) [#9903](https://github.com/npm/cli/pull/9903) arborist: don't fetch packuments for uninstallable optional peer deps (#9903) (@github-actions[bot], @danielroe)
+### Chores
+* [`7b8a6f1`](https://github.com/npm/cli/commit/7b8a6f1ba5c0c37cb326ae110071acfe1071903e) [#9926](https://github.com/npm/cli/pull/9926) arborist: add missing registry mock in bin links reify test (#9926) (@github-actions[bot], @reggi, @Copilot)
+
 ## [9.9.1](https://github.com/npm/cli/compare/arborist-v9.9.0...arborist-v9.9.1) (2026-07-28)
 ### Bug Fixes
 * [`aea0c6e`](https://github.com/npm/cli/commit/aea0c6e13c9160327659b809d5b9f7369f093ea0) [#9808](https://github.com/npm/cli/pull/9808) arborist: avoid crash when peer back-off detaches a node (#9808) (@github-actions[bot], @manzoorwanijk)

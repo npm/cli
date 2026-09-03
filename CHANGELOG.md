@@ -1,5 +1,31 @@
 # Changelog
 
+## [11.20.0](https://github.com/npm/cli/compare/v11.19.1...v11.20.0) (2026-09-03)
+### Features
+* [`b872816`](https://github.com/npm/cli/commit/b872816e657fef0cc4235626916724b1a9bcb40a) [#9920](https://github.com/npm/cli/pull/9920) stage: display staged package status (#9920) (@github-actions[bot], @joelverhagen)
+### Bug Fixes
+* [`ddbadfc`](https://github.com/npm/cli/commit/ddbadfcf02f156fe98d5c3ccc8cdc28c61ab1de4) [#9947](https://github.com/npm/cli/pull/9947) provenance-file takes precedence over OIDC auto-generated provenance (#9947) (@github-actions[bot], @yunseo-kim)
+* [`64d4b4b`](https://github.com/npm/cli/commit/64d4b4be3f2bc49bddaa085467f1bc18912c0182) [#9937](https://github.com/npm/cli/pull/9937) config: avoid exporting persistent allow-scripts (#9937) (@github-actions[bot], @Fnine59)
+* [`70317da`](https://github.com/npm/cli/commit/70317da6328fb19e662f13427be09d9c5e2d344f) [#9930](https://github.com/npm/cli/pull/9930) arborist: reject uninstall args that carry a version (#9930) (@github-actions[bot], @lazerg)
+* [`55ae484`](https://github.com/npm/cli/commit/55ae4844e2cee4c293939ecdb6010dc6d779e009) [#9929](https://github.com/npm/cli/pull/9929) arborist: match allowScripts keys for local paths (#9929) (@github-actions[bot], @martinrrm, @Copilot)
+* [`7f1f2b7`](https://github.com/npm/cli/commit/7f1f2b77f5aa9f3dfe3f649cf2df0b02f6423c13) [#9928](https://github.com/npm/cli/pull/9928) keep dry-run output valid json (#9928) (@github-actions[bot], @martinrrm)
+* [`f28cca9`](https://github.com/npm/cli/commit/f28cca95d46668837d2cf9df2754b2a550c57dfb) [#9927](https://github.com/npm/cli/pull/9927) don't print the funding message for global installs (#9927) (@github-actions[bot], @lazerg)
+### Chores
+* [`afdc5bd`](https://github.com/npm/cli/commit/afdc5bd5884b8ee97f5245f680e5a7cfc1b0e579) [#9932](https://github.com/npm/cli/pull/9932) pass nodedir to node-gyp via npm_package_config env in node integration (#9932) (@reggi)
+* [`83f95ff`](https://github.com/npm/cli/commit/83f95ff69e69500c854c371dc7065a413caec907) [#9931](https://github.com/npm/cli/pull/9931) update `node-integration` workflow template to latest actions (#9931) (@reggi)
+* [`f020fba`](https://github.com/npm/cli/commit/f020fba35b368ffc20352cd8d5e73058f4267c84) [#9925](https://github.com/npm/cli/pull/9925) recognize prefixed Node.js PR titles (#9925) (@github-actions[bot], @reggi)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.2): `@npmcli/arborist@9.9.2`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v10.12.1): `@npmcli/config@10.12.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.1.13): `libnpmdiff@8.1.13`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.3.3): `libnpmexec@10.3.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.27): `libnpmfund@7.0.27`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.1.14): `libnpmpack@9.1.14`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v11.2.1): `libnpmpublish@11.2.1`
+
 ## [11.19.1](https://github.com/npm/cli/compare/v11.19.0...v11.19.1) (2026-08-25)
 ### Bug Fixes
 * [`83b750d`](https://github.com/npm/cli/commit/83b750dbbc0b32f498da760396542f83d4069100) [#9916](https://github.com/npm/cli/pull/9916) exempt explicit pack targets from allow-directory (#9916) (@github-actions[bot], @ychampion, @ychampion)

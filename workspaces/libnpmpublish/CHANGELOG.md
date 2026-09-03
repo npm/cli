@@ -1,5 +1,9 @@
 # Changelog
 
+## [11.2.1](https://github.com/npm/cli/compare/libnpmpublish-v11.2.0...libnpmpublish-v11.2.1) (2026-09-03)
+### Bug Fixes
+* [`ddbadfc`](https://github.com/npm/cli/commit/ddbadfcf02f156fe98d5c3ccc8cdc28c61ab1de4) [#9947](https://github.com/npm/cli/pull/9947) provenance-file takes precedence over OIDC auto-generated provenance (#9947) (@github-actions[bot], @yunseo-kim)
+
 ## [11.2.0](https://github.com/npm/cli/compare/libnpmpublish-v11.1.3...libnpmpublish-v11.2.0) (2026-05-20)
 ### Features
 * [`0d5d899`](https://github.com/npm/cli/commit/0d5d899ea8a6981a2a1d3c724384d12fd1908a90) [#9379](https://github.com/npm/cli/pull/9379) npm stage (@reggi, @Copilot)
