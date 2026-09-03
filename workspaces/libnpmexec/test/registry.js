@@ -340,9 +340,8 @@ t.test('min-release-age-exclude exempts spec from before cutoff', async t => {
 
   await package({ registry, path })
 
-  // the mock registry stamps every version with a publish time of "now", so
-  // a `before` cutoff in the past blocks all versions unless the exclude
-  // pattern exempts the package
+  // the mock registry stamps every version as published "now", so a past
+  // `before` cutoff blocks everything unless the exclude pattern applies
   await exec({
     args: ['@npmcli/create-index'],
     globalPath: resolve(path, 'global'),

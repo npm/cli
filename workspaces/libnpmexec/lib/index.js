@@ -24,10 +24,8 @@ const withLock = require('./with-lock.js')
 // spec.raw so we don't have to fetch again when we check npxCache
 const manifests = new Map()
 
-// The effective `before` filter for a spec, honoring `min-release-age-exclude`
-// the same way arborist does for installs. libnpmexec resolves the requested
-// spec with pacote directly, so without this an exempted package would still
-// be rejected by the `min-release-age` cutoff with ETARGET.
+// Apply `min-release-age-exclude` the same way arborist does for installs:
+// drop the `before` cutoff (set by `min-release-age`) for exempted specs.
 const releaseAgeBefore = (spec, { before, minReleaseAgeExclude }) => {
   if (!before) {
     return before
