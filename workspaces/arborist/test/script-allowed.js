@@ -865,3 +865,127 @@ t.test('trustedDisplay falls back to node.name/version when URL has no identity'
   t.strictSame(trustedDisplay(n), { name: 'bar', version: '1.2.3' })
   t.end()
 })
+
+t.test('registry — link target delegates edge check to incoming links (linked strategy)', t => {
+  // Under install-strategy=linked, the store package carries no edges of its own; they land on the incoming Link nodes (npm/cli#9939).
+  const target = node({
+    name: 'canvas',
+    version: '1.0.0',
+    location: 'node_modules/.store/canvas@1.0.0-hash/node_modules/canvas',
+  })
+  target.isRegistryDependency = false
+  target.edgesIn = new Set()
+  target.linksIn = new Set([{ isRegistryDependency: true }])
+
+  t.equal(isScriptAllowed(target, { 'canvas@1.0.0': true }), true)
+  t.equal(isScriptAllowed(target, { canvas: true }), true)
+  t.equal(isScriptAllowed(target, { canvas: false }), false)
+  t.equal(isScriptAllowed(target, { 'canvas@2.0.0': true }), null)
+  t.end()
+})
+
+t.test('registry — link target refuses when an incoming link is not a registry dep', t => {
+  const target = node({ name: 'canvas', version: '1.0.0' })
+  target.isRegistryDependency = false
+  target.edgesIn = new Set()
+  target.linksIn = new Set([{ isRegistryDependency: true }, { isRegistryDependency: false }])
+
+  t.equal(isScriptAllowed(target, { 'canvas@1.0.0': true }), null)
+  t.end()
+})
+
+t.test('registry — direct non-registry edges refuse regardless of links', t => {
+  const target = node({ name: 'canvas', version: '1.0.0' })
+  target.isRegistryDependency = false
+  target.edgesIn = new Set([{ spec: 'file:../canvas' }])
+  target.linksIn = new Set([{ isRegistryDependency: true }])
+
+  t.equal(isScriptAllowed(target, { 'canvas@1.0.0': true }), null)
+  t.end()
+})
+
+t.test('store-backed link target never matches store file specs', t => {
+  // A store package whose resolved is unknown (fs-scan fallback) must not take identity from the store's internal file: link specs (npm/cli#9939).
+  const real = require('node:path').resolve('node_modules/.store/canvas@1.0.0-hash/node_modules/canvas')
+  const target = node({ name: 'canvas', version: '1.0.0' })
+  target.resolved = null
+  target.path = real
+  target.realpath = real
+  target.linksIn = new Set([{ resolved: 'file:.store/canvas@1.0.0-hash/node_modules/canvas' }])
+
+  t.equal(isScriptAllowed(target, { 'file:.store/canvas@1.0.0-hash/node_modules/canvas': true }), null)
+  t.end()
+})
+
+t.test('isInStore link target never matches store file specs', t => {
+  const target = node({ name: 'canvas', version: '1.0.0' })
+  target.resolved = null
+  target.isInStore = true
+  target.linksIn = new Set([{ resolved: 'file:.store/canvas@1.0.0-hash/node_modules/canvas' }])
+
+  t.equal(isScriptAllowed(target, { 'file:.store/canvas@1.0.0-hash/node_modules/canvas': true }), null)
+  t.end()
+})
+
+t.test('registry — link target without resolved takes trusted name from link edges', t => {
+  // omit-lockfile-registry-resolved under install-strategy=linked: the store package has no resolved URL and no edges; the name comes from the incoming Link's consumer-written edge.
+  const target = node({ name: 'canvas', version: '1.0.0' })
+  target.resolved = null
+  target.isRegistryDependency = false
+  target.edgesIn = new Set()
+  target.linksIn = new Set([{
+    isRegistryDependency: true,
+    edgesIn: new Set([{ name: 'canvas', spec: '^1.0.0' }]),
+  }])
+
+  t.equal(isScriptAllowed(target, { canvas: true }), true)
+  t.equal(isScriptAllowed(target, { canvas: false }), false)
+  t.equal(isScriptAllowed(target, { other: true }), null)
+  // With no verifiable version, an exact pin is refused but a deny still blocks.
+  t.equal(isScriptAllowed(target, { 'canvas@1.0.0': true }), null)
+  t.equal(isScriptAllowed(target, { 'canvas@1.0.0': false }), false)
+  t.end()
+})
+
+t.test('registry — link target with no registry name on any link edge stays untrusted', t => {
+  const target = node({ name: 'canvas', version: '1.0.0' })
+  target.resolved = null
+  target.isRegistryDependency = false
+  target.edgesIn = new Set()
+  target.linksIn = new Set([{
+    isRegistryDependency: true,
+    edgesIn: new Set([{ name: 'canvas', spec: 'file:../canvas' }]),
+  }])
+
+  t.equal(isScriptAllowed(target, { canvas: true }), null)
+  t.end()
+})
+
+t.test('registry — link target with agreeing links keeps the trusted name', t => {
+  const target = node({ name: 'canvas', version: '1.0.0' })
+  target.resolved = null
+  target.isRegistryDependency = false
+  target.edgesIn = new Set()
+  target.linksIn = new Set([
+    { isRegistryDependency: true, edgesIn: new Set([{ name: 'canvas', spec: '^1.0.0' }]) },
+    { isRegistryDependency: true, edgesIn: new Set([{ name: 'canvas', spec: '~1.0.0' }]) },
+  ])
+
+  t.equal(isScriptAllowed(target, { canvas: true }), true)
+  t.end()
+})
+
+t.test('registry — link target with disagreeing link names fails closed', t => {
+  const target = node({ name: 'canvas', version: '1.0.0' })
+  target.resolved = null
+  target.isRegistryDependency = false
+  target.edgesIn = new Set()
+  target.linksIn = new Set([
+    { isRegistryDependency: true, edgesIn: new Set([{ name: 'canvas', spec: '^1.0.0' }]) },
+    { isRegistryDependency: true, edgesIn: new Set([{ name: 'sharp', spec: '^1.0.0' }]) },
+  ])
+
+  t.equal(isScriptAllowed(target, { canvas: true }), null)
+  t.equal(isScriptAllowed(target, { sharp: true }), null)
+  t.end()
+})
