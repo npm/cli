@@ -475,3 +475,30 @@ t.test('token create invalid cidr', async t => {
     message: 'CIDR whitelist contains invalid CIDR entry: apple/cider',
   })
 })
+
+t.test('token create stage-only produces stage-only policy and no warning', async t => {
+  const { npm, outputs, logs } = await loadMockNpm(t, {
+    config: {
+      ...auth,
+      name: 'stage-only-token',
+      password: 'test-password',
+      'packages-and-scopes-permission': 'read-write-stage-only',
+    },
+  })
+
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: authToken,
+  })
+
+  registry.createToken({
+    name: 'stage-only-token',
+    password: 'test-password',
+    packages_and_scopes_permission: 'read-write-stage-only',
+  })
+
+  await npm.exec('token', ['create'])
+  t.match(outputs, ['Created token n3wt0k3n'])
+  t.strictSame(logs.warn, [], 'no deprecation warning for stage-only tokens')
+})
