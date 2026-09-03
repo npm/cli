@@ -1,5 +1,35 @@
 # Changelog
 
+## [12.1.0](https://github.com/npm/cli/compare/v12.0.2...v12.1.0) (2026-09-03)
+### Features
+* [`8723f53`](https://github.com/npm/cli/commit/8723f539061eb8034a690f412ec8ccaa1529febc) [#9898](https://github.com/npm/cli/pull/9898) stage: display staged package status (#9898) (@joelverhagen)
+### Bug Fixes
+* [`c9876d7`](https://github.com/npm/cli/commit/c9876d7ea7150b0702e4151210b9fa1a8dbc7fbf) [#9882](https://github.com/npm/cli/pull/9882) provenance-file takes precedence over OIDC auto-generated provenance (#9882) (@yunseo-kim)
+* [`b016aa2`](https://github.com/npm/cli/commit/b016aa287d01fcd688d6704222f193ce5c04bfb7) [#9913](https://github.com/npm/cli/pull/9913) config: avoid exporting persistent allow-scripts (#9913) (@Fnine59)
+* [`d6c6122`](https://github.com/npm/cli/commit/d6c612258c571c71a00f496c1f8980ed13b8a4d9) [#9914](https://github.com/npm/cli/pull/9914) arborist: match allowScripts keys for local paths (#9914) (@martinrrm, @Copilot)
+* [`a8c9b2f`](https://github.com/npm/cli/commit/a8c9b2fe25342967be48eba3f792218c6becca8a) [#9823](https://github.com/npm/cli/pull/9823) keep dry-run output valid json (#9823) (@martinrrm)
+* [`da50c34`](https://github.com/npm/cli/commit/da50c3479b556da74f88ff0b579d5191a7db0a24) [#9881](https://github.com/npm/cli/pull/9881) arborist: reject uninstall args that carry a version (#9881) (@lazerg)
+* [`71915e8`](https://github.com/npm/cli/commit/71915e8e7d6ac57f60c827274a95db786802e410) [#9756](https://github.com/npm/cli/pull/9756) exempt explicit pack targets from allow-directory (#9756) (@ychampion, @ychampion)
+* [`51c2bf8`](https://github.com/npm/cli/commit/51c2bf81fa2c31547d0fec44fff2aaac3d9a9862) [#9864](https://github.com/npm/cli/pull/9864) don't print the funding message for global installs (#9864) (@lazerg)
+### Documentation
+* [`bea9066`](https://github.com/npm/cli/commit/bea9066c7d1fe09d6475bbe391f28116aa6a83a6) [#9838](https://github.com/npm/cli/pull/9838) document npm 12 install script blocking (#9838) (@reggi)
+### Dependencies
+* [`6e40f73`](https://github.com/npm/cli/commit/6e40f7399cebd4f699ce5988c10b935f08f747ff) [#9871](https://github.com/npm/cli/pull/9871) `undici@6.28.0` (@martinrrm, @Copilot)
+* [`05bd2a4`](https://github.com/npm/cli/commit/05bd2a49fc89ca5a4dcf8c15e69ebfbdffd32dd9) [#9871](https://github.com/npm/cli/pull/9871) `ip-address@10.5.0` (@martinrrm, @Copilot)
+* [`b7c490d`](https://github.com/npm/cli/commit/b7c490d19299f15101f41a86667bd34b14717eb0) [#9871](https://github.com/npm/cli/pull/9871) `brace-expansion@5.0.9` (@martinrrm, @Copilot)
+* [`75a943d`](https://github.com/npm/cli/commit/75a943ded97e8d00a484d3d64cadc9aa013bd268) [#9843](https://github.com/npm/cli/pull/9843) `tar@7.5.22` (#9843) (@martinrrm, @Copilot)
+### Chores
+* [`81a901c`](https://github.com/npm/cli/commit/81a901c9a5913f9bd8104e6196af3580eafa13cb) [#9915](https://github.com/npm/cli/pull/9915) recognize prefixed Node.js PR titles (#9915) (@reggi)
+* [`4cdccea`](https://github.com/npm/cli/commit/4cdcceac047f82571d0ec734e18b87d1d130e042) [#9836](https://github.com/npm/cli/pull/9836) update `node-integration` workflow template to latest actions (#9836) (@MikeMcC399)
+* [`278df04`](https://github.com/npm/cli/commit/278df04d3f25d391af3213a243bb9f89e1d11899) [#9822](https://github.com/npm/cli/pull/9822) pass nodedir to node-gyp via npm_package_config env in node integration (#9822) (@reggi, @Copilot)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.3): `@npmcli/arborist@10.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v11.0.2): `@npmcli/config@11.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v9.0.3): `libnpmdiff@9.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v11.0.3): `libnpmexec@11.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v8.0.3): `libnpmfund@8.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v10.0.3): `libnpmpack@10.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v12.0.1): `libnpmpublish@12.0.1`
+
 ## [12.0.2](https://github.com/npm/cli/compare/v12.0.1...v12.0.2) (2026-07-27)
 ### Bug Fixes
 * [`834408e`](https://github.com/npm/cli/commit/834408e8f0f2295d02205d8ff5d011c859835225) [#9760](https://github.com/npm/cli/pull/9760) pack: honor min-release-age-exclude (#9760) (@martinrrm, @Copilot)
