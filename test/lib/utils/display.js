@@ -300,6 +300,36 @@ t.test('json output redacts by default', async t => {
     'inline redact: false preserves uuid values')
 })
 
+t.test('json output with a url inside a value stays valid json', async t => {
+  const { META } = require('proc-log')
+  const { output, outputs } = await mockDisplay(t)
+
+  output.buffer({
+    dependencies: {
+      '@esbuild-kit/esm-loader': {
+        deprecated: 'Merged into tsx: https://tsx.hirok.io',
+        dev: true,
+        _id: '@esbuild-kit/esm-loader@2.6.5',
+      },
+    },
+    registry: 'https://user:hunter2@registry.npmjs.org/',
+    versions: ['2.6.5'],
+    before: new Date('2024-01-01'),
+  })
+  output.flush({ [META]: true, json: true })
+
+  t.equal(outputs.length, 1, 'one output')
+  const parsed = JSON.parse(outputs[0])
+  const dep = parsed.dependencies['@esbuild-kit/esm-loader']
+  t.equal(dep.deprecated, 'Merged into tsx: https://tsx.hirok.io',
+    'a url in one value does not swallow the values after it')
+  t.equal(dep._id, '@esbuild-kit/esm-loader@2.6.5', 'the following values are intact')
+  t.strictSame(parsed.versions, ['2.6.5'], 'arrays are walked too')
+  t.equal(parsed.registry, 'https://user:***@registry.npmjs.org/',
+    'url passwords are still redacted')
+  t.equal(parsed.before, '2024-01-01T00:00:00.000Z', 'toJSON values are still serialized')
+})
+
 t.test('prompt functionality', async t => {
   t.test('regular prompt completion works', async t => {
     const { input } = await mockDisplay(t)
