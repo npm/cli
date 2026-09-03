@@ -57,6 +57,11 @@ const collectUnreviewedScripts = async ({
       // must not be flagged (npm/cli#9562).
       continue
     }
+    if (node.extraneous) {
+      // Extraneous nodes are orphans pruned before reify runs any install script, so their scripts never execute.
+      // buildIdealTree drops top-level orphans but can retain one nested in a workspace's node_modules, so this gate must skip them (npm/cli#9680).
+      continue
+    }
 
     const verdict = isScriptAllowed(node, resolvedPolicy)
     if (verdict === true || verdict === false) {

@@ -9,6 +9,7 @@ const node = ({
   name = 'pkg',
   version = '1.0.0',
   scripts = { install: 'node-gyp rebuild' },
+  extraneous = false,
 } = {}) => ({
   name,
   resolved: `https://registry.npmjs.org/${name}/-/${name}-${version}.tgz`,
@@ -17,6 +18,7 @@ const node = ({
   isProjectRoot: false,
   isWorkspace: false,
   isLink: false,
+  extraneous,
   package: { name, version, scripts },
 })
 
@@ -87,6 +89,20 @@ t.test('passes when the only unreviewed node is inert (platform-incompatible opt
     idealTreeOpts: {},
   })
   t.pass('no error thrown for inert node')
+})
+
+t.test('passes when the only unreviewed node is an extraneous orphan', async t => {
+  // Lockfile-only workspace orphans are pruned before scripts run and must not
+  // make the command-level strict preflight reject an install (npm/cli#9680).
+  const orphan = node({ name: 'core-js', extraneous: true })
+  orphan.isRegistryDependency = false
+  const arb = makeArb({ ideal: tree([orphan]) })
+  await preflight({
+    arb,
+    npm: { flatOptions: { strictAllowScripts: true } },
+    idealTreeOpts: {},
+  })
+  t.pass('no error thrown for extraneous orphan')
 })
 
 t.test('passes when all install-script nodes are explicitly approved', async t => {
