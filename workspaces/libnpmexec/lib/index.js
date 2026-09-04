@@ -264,6 +264,7 @@ const exec = async (opts) => {
     const npxArb = new Arborist({
       ...flatOptions,
       path: installDir,
+      global: false,
     })
     const lockPath = join(installDir, 'concurrency.lock')
     const npxTree = await withLock(lockPath, () => npxArb.loadActual())

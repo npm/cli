@@ -328,3 +328,34 @@ t.test('override save to true when installing to npx cache', async t => {
     value: 'packages-2.0.0',
   })
 })
+
+t.test('ignore inherited global config when installing to npx cache', async t => {
+  const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
+
+  const hash = crypto.createHash('sha512')
+    .update('@npmcli/create-index')
+    .digest('hex')
+    .slice(0, 16)
+
+  const { exec, path, registry, readOutput } = setup(t, {
+    testdir: merge(fixtures, {
+      global: {},
+    }),
+  })
+
+  await package({ registry, path })
+
+  await exec({
+    args: ['@npmcli/create-index'],
+    globalPath: resolve(path, 'global'),
+    global: true,
+  })
+
+  const binPath = resolve(path, 'npxCache', hash, 'node_modules', '.bin')
+  t.ok(existsSync(binPath), 'bins should be linked at npxCache')
+  t.notOk(existsSync(resolve(path, 'npxCache', 'bin')), 'bins should not be linked globally')
+
+  t.match(await readOutput('@npmcli-create-index'), {
+    value: 'packages-2.0.0',
+  })
+})
