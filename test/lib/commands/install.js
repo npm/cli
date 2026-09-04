@@ -144,6 +144,40 @@ t.test('exec commands', async t => {
     t.equal(post.depInstalled, true, 'postinstall runs after dependencies are installed')
   })
 
+  await t.test('preinstall can refresh user registry credentials', async t => {
+    const tokenKey = '//registry.example/:_authToken'
+    let reifyToken
+    const { npm, home } = await loadMockNpm(t, {
+      config: { audit: false },
+      homeDir: {
+        '.npmrc': `${tokenKey}=expired-token`,
+      },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: '@npmcli/test-package',
+          version: '1.0.0',
+          scripts: { preinstall: 'refresh credentials' },
+        }),
+      },
+      mocks: {
+        '@npmcli/run-script': async (opts) => {
+          if (opts.path === npm.prefix && opts.event === 'preinstall') {
+            fs.writeFileSync(path.join(home, '.npmrc'), `${tokenKey}=fresh-token`)
+          }
+        },
+        '@npmcli/arborist': function () {
+          this.reify = async opts => {
+            reifyToken = opts[tokenKey]
+          }
+        },
+        '{LIB}/utils/reify-finish.js': async () => {},
+      },
+    })
+
+    await npm.exec('install')
+    t.equal(reifyToken, 'fresh-token', 'reify uses credentials written by preinstall')
+  })
+
   await t.test('without args, --ignore-scripts skips preinstall entirely', async t => {
     const events = []
     const { npm, registry } = await loadMockNpm(t, {
