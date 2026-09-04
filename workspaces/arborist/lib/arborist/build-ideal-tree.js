@@ -13,6 +13,7 @@ const { lstat, readlink } = require('node:fs/promises')
 const { depth } = require('treeverse')
 const { log, time } = require('proc-log')
 const { redact } = require('@npmcli/redact')
+const { isRegistryResolvedTarball } = require('../registry-resolved-tarball.js')
 
 const {
   OK,
@@ -1044,6 +1045,9 @@ This is a one-time fix-up, please be patient...
           Arborist,
           resolved: node.resolved,
           integrity: node.integrity,
+          // pacote's npa re-parses node.resolved as type=remote, so allowRemote would mis-fire on registry tarballs.
+          // Override only when we can prove the URL is registry-mediated; see isRegistryResolvedTarball.
+          ...(isRegistryResolvedTarball(node, this) ? { allowRemote: 'all' } : {}),
         })
 
         await new Arborist({ ...this.options, path })
