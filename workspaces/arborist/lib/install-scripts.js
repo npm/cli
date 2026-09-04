@@ -1,5 +1,6 @@
 const { isNodeGypPackage } = require('@npmcli/node-gyp')
 const PackageJson = require('@npmcli/package-json')
+const { hasVerifiedGypfileOptOut } = require('./gypfile.js')
 
 // Returns the install-relevant lifecycle scripts that would run for a
 // given arborist Node, or `{}` if there are none.
@@ -65,8 +66,8 @@ const getInstallScripts = async (node) => {
   const hasExplicitGypGate = !!(collected.preinstall || collected.install)
   if (
     !hasExplicitGypGate &&
-    pkg.gypfile !== false &&
-    await isNodeGypPackage(node.path).catch(() => false)
+    await isNodeGypPackage(node.path).catch(() => false) &&
+    !await hasVerifiedGypfileOptOut(node)
   ) {
     collected.install = 'node-gyp rebuild'
   }
