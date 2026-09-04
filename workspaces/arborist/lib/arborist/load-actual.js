@@ -1,6 +1,7 @@
 // mix-in implementing the loadActual method
 
 const { dirname, join, normalize, relative, resolve, sep } = require('node:path')
+const { readFile } = require('node:fs/promises')
 
 const PackageJson = require('@npmcli/package-json')
 const { readdirScoped } = require('@npmcli/fs')
@@ -160,6 +161,7 @@ module.exports = cls => class ActualLoader extends cls {
     }
 
     await this.#loadFSTree(this.#actualTree)
+    await this.#recoverHiddenLockfile(this.#actualTree)
     await this[_setWorkspaces](this.#actualTree)
 
     // if there are workspace targets without Link nodes created, load
@@ -555,4 +557,24 @@ module.exports = cls => class ActualLoader extends cls {
       await Promise.all(depPromises)
     }
   }
+
+
+  async #recoverHiddenLockfile(tree) {
+    if (tree.meta?.loadedFromDisk) return
+    const hiddenLockfile = resolve(this.path, 'node_modules/.package-lock.json')
+    try {
+      const data = JSON.parse(await readFile(hiddenLockfile, 'utf8'))
+      if (!data.packages) return
+      for (const [loc, pkg] of Object.entries(data.packages)) {
+        if (!loc || (!pkg.resolved && !pkg.integrity)) continue
+        const nodePath = resolve(this.path, loc)
+        const node = this.#cache.get(nodePath)
+        if (node) {
+          if (pkg.resolved && !node.resolved) node.resolved = pkg.resolved
+          if (pkg.integrity && !node.integrity) node.integrity = pkg.integrity
+        }
+      }
+    } catch {}
+  }
+
 }
