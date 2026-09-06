@@ -1222,6 +1222,28 @@ class Shrinkwrap {
 
     // This must be called before the lockfile conversion check below since it sets properties as part of `commit()`
     const json = this.toString(options)
+    if (!this.hiddenLockfile && this.tree) {
+      let missingProvenance = 0
+      for (const node of this.tree.root.inventory.values()) {
+        if (node.isProjectRoot || node.isLink || node.inBundle ||
+            !node.isRegistryDependency) {
+          continue
+        }
+        const meta = this.data.packages[relpath(this.path, node.path)]
+        if (meta && (!meta.integrity ||
+            (!this.resolveOptions.omitLockfileRegistryResolved && !meta.resolved))) {
+          missingProvenance++
+        }
+      }
+      if (missingProvenance) {
+        log.warn(
+          'shrinkwrap',
+          `Missing resolved or integrity metadata for ${missingProvenance} non-bundled registry ` +
+          `${missingProvenance === 1 ? 'dependency' : 'dependencies'}. ` +
+          'Review the lockfile before relying on it for reproducible installs.'
+        )
+      }
+    }
     if (
       !this.hiddenLockfile
       && this.originalLockfileVersion !== undefined
