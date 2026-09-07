@@ -1,4 +1,4 @@
-const { sep } = require('node:path')
+const { resolve, sep } = require('node:path')
 const npa = require('npm-package-arg')
 const semver = require('semver')
 const versionFromTgz = require('./version-from-tgz.js')
@@ -105,8 +105,16 @@ const isStoreBacked = (node) => {
   if (node?.isInStore) {
     return true
   }
-  const real = node?.realpath || node?.path
-  return typeof real === 'string' && real.includes(`${sep}node_modules${sep}.store${sep}`)
+  // Nodes loaded from the hidden lockfile do not retain isInStore, so fall back to the path, anchored to this tree's own store so an unrelated project's `.store` never qualifies.
+  const paths = [node?.path, node?.realpath].filter(p => typeof p === 'string')
+  const roots = [node?.root?.path, node?.root?.realpath].filter(p => typeof p === 'string')
+  for (const root of roots) {
+    const store = resolve(root, 'node_modules', '.store')
+    if (paths.some(path => path.startsWith(`${store}${sep}`))) {
+      return true
+    }
+  }
+  return false
 }
 
 const resolvedSourceSpecs = (node) => {
@@ -247,18 +255,18 @@ const getTrustedRegistryIdentity = (node) => {
 
 const nameFromEdges = (node) => {
   const name = nameFromEdgeSet(node?.edgesIn)
-  if (name) {
+  if (name || !isStoreBacked(node) || node?.edgesIn?.size !== 0) {
     return name
   }
-  // A link target carries no edges of its own; they land on the incoming Links (e.g. the linked strategy's store packages), so consult their edges too, failing closed when the Links disagree on the registry name rather than trusting insertion order.
+  // A store-backed link target carries no edges of its own; they land on the incoming Links, so consult their edges instead, refusing when a Link is non-registry, unidentified, or disagrees with another Link.
   let linkName = null
   if (node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
     for (const link of node.linksIn) {
-      const name = nameFromEdgeSet(link.edgesIn)
-      if (!name) {
-        continue
+      if (!link.isRegistryDependency) {
+        return null
       }
-      if (linkName && linkName !== name) {
+      const name = nameFromEdgeSet(link.edgesIn)
+      if (!name || (linkName && linkName !== name)) {
         return null
       }
       linkName = name
@@ -386,8 +394,8 @@ const isRegistryNode = (node) => {
     if (node.isRegistryDependency) {
       return true
     }
-    // A link target carries no edges of its own; they land on the incoming Links (e.g. the linked strategy's store packages, npm/cli#9939), so delegate the edge-based check to them.
-    if (node.edgesIn?.size === 0 && node.linksIn?.size > 0) {
+    // A store-backed link target carries no edges of its own; they land on the incoming Links (npm/cli#9939), so delegate the edge-based check to them, but never for ordinary local symlink targets that share the same topology.
+    if (isStoreBacked(node) && node.edgesIn?.size === 0 && node.linksIn?.size > 0) {
       return [...node.linksIn].every(link => link.isRegistryDependency)
     }
     return false

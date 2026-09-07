@@ -976,6 +976,66 @@ t.test('deny-scripts under linked strategy writes a name-only deny', async t => 
   t.strictSame(pkg.allowScripts, { canvas: false })
 })
 
+const setupLocalFileDepProject = (t) => {
+  const pkg = {
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { foo: 'file:./local-foo' },
+  }
+  return {
+    'package.json': JSON.stringify(pkg, null, 2),
+    'package-lock.json': JSON.stringify({
+      name: 'host',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': pkg,
+        'local-foo': {
+          name: 'local-foo',
+          version: '1.0.0',
+          hasInstallScript: true,
+        },
+        'node_modules/foo': {
+          resolved: 'local-foo',
+          link: true,
+        },
+      },
+    }),
+    'local-foo': {
+      'package.json': JSON.stringify({
+        name: 'local-foo',
+        version: '1.0.0',
+        scripts: { install: 'echo install' },
+      }),
+    },
+    node_modules: {
+      foo: t.fixture('symlink', '../local-foo'),
+    },
+  }
+}
+
+t.test('approve-scripts <name> finds a local file: dep through its link', async t => {
+  // The Link is named `foo` while its target is named `local-foo`; positional matching must dereference the Link instead of skipping it (npm/cli#9939 review).
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupLocalFileDepProject(t),
+  })
+  await npm.exec('approve-scripts', ['foo'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'file:../local-foo': true })
+})
+
+t.test('deny-scripts <name> finds a local file: dep through its link', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupLocalFileDepProject(t),
+  })
+  await npm.exec('deny-scripts', ['foo'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'file:../local-foo': false })
+})
+
 t.test('approve-scripts <pkg> under linked strategy without resolved URLs approves by name', async t => {
   // omit-lockfile-registry-resolved: the store package has no resolved URL, so it cannot be pinned but must still be approved by name via the incoming Link's edge.
   const { npm, prefix } = await mockNpm(t, {
