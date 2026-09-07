@@ -2007,6 +2007,10 @@ const definitions = {
     description: `
       When publishing from a supported cloud CI/CD system, the package will be
       publicly linked to where it was built and published from.
+
+      When the \`provenance-file\` config is set, it takes precedence and
+      automatic provenance generation (including via trusted publishing/OIDC)
+      is skipped.
     `,
     flatten,
   }),
@@ -2017,6 +2021,9 @@ const definitions = {
     exclusive: ['provenance'],
     description: `
       When publishing, the provenance bundle at the given path will be used.
+
+      This takes precedence over automatic provenance generation in trusted
+      publishing flows.
     `,
     flatten,
   }),
