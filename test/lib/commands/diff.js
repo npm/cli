@@ -85,6 +85,27 @@ const mockDiff = async (t, {
   return { npm, registry, ...res }
 }
 
+t.test('does not run lifecycle scripts while creating a diff', async t => {
+  let options
+  const { npm } = await mockDiff(t, {
+    prefixDir: {
+      'package.json': {
+        name: 'local-package',
+        version: '1.0.0',
+      },
+    },
+    mocks: {
+      libnpmdiff: async (_specs, opts) => {
+        options = opts
+        return ''
+      },
+    },
+  })
+
+  await npm.exec('diff', [])
+  t.equal(options.ignoreScripts, true)
+})
+
 // a more specific helper to call diff against a local package and a registry package
 // and assert the diff output contains the matching strings
 const assertFoo = async (t, arg) => {
