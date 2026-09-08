@@ -610,9 +610,101 @@ t.test('global install suggests --allow-scripts, not approve-scripts', async t =
   const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
   t.match(warn, /2 packages had install scripts blocked because they are not covered by allowScripts/)
   t.match(warn, /canvas@2\.11\.0 \(install: node-gyp rebuild\)/)
-  t.match(warn, /npm install -g --allow-scripts=canvas,sharp/)
-  t.match(warn, /npm config set allow-scripts=canvas,sharp/)
+  t.match(warn, /Re-run your install with `--allow-scripts=canvas,sharp`/)
+  t.match(warn, /npm config set allow-scripts=canvas,sharp --location=user/)
   t.notMatch(warn, /approve-scripts/)
+})
+
+// A copy-pasteable `npm install -g --allow-scripts=<names>` has no specs, so
+// it installs the current directory and fails with ENOENT reading
+// package.json. The command cannot be reconstructed safely either: npm.argv
+// carries positionals only, so flags like --registry would be silently
+// dropped from a suggestion that also allows scripts to run.
+t.test('global remediation never suggests a spec-less install command', async t => {
+  const mock = await mockNpm(t, {
+    command: 'install',
+    argv: ['esbuild'],
+    config: { global: true, registry: 'https://internal.example.com/' },
+  })
+
+  reifyOutput(mock.npm, {
+    actualTree: { name: 'host', inventory: { has: () => false } },
+    diff: { children: [] },
+  }, {
+    unreviewedScripts: [{
+      node: { packageName: 'esbuild', name: 'esbuild', version: '0.28.1', path: '/x/esbuild' },
+      scripts: { postinstall: 'node install.js' },
+    }],
+  })
+  mock.npm.finish()
+
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
+  t.notMatch(warn, /npm install -g --allow-scripts=/)
+  t.notMatch(warn, /npm install -g esbuild/)
+  t.match(warn, /Re-run your install with `--allow-scripts=esbuild`/)
+})
+
+// Package names are only valid policy keys for registry deps. git, file and
+// remote deps are matched by their resolved source, so a suggestion built
+// from the display name would leave their scripts blocked.
+t.test('global remediation uses resolved sources as policy keys', async t => {
+  const mock = await mockNpm(t, { command: 'install', config: { global: true } })
+
+  reifyOutput(mock.npm, {
+    actualTree: { name: 'host', inventory: { has: () => false } },
+    diff: { children: [] },
+  }, {
+    unreviewedScripts: [
+      {
+        node: {
+          name: 'tool',
+          version: '1.0.0',
+          path: '/x/tool',
+          resolved: 'https://example.com/tool.tgz',
+        },
+        scripts: { postinstall: 'node install.js' },
+      },
+      {
+        node: {
+          name: 'local',
+          version: '2.0.0',
+          path: '/x/local',
+          resolved: 'file:../local',
+        },
+        scripts: { install: 'make' },
+      },
+    ],
+  })
+  mock.npm.finish()
+
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
+  t.match(warn, /allow-scripts=https:\/\/example\.com\/tool\.tgz,file:\.\.\/local/)
+})
+
+// Resolved sources contain characters the shell treats specially — `#` in a
+// git committish starts a comment — so the suggested value has to be quoted.
+t.test('global remediation quotes shell-unsafe policy keys', async t => {
+  const mock = await mockNpm(t, { command: 'install', config: { global: true } })
+  const sha = 'a'.repeat(40)
+
+  reifyOutput(mock.npm, {
+    actualTree: { name: 'host', inventory: { has: () => false } },
+    diff: { children: [] },
+  }, {
+    unreviewedScripts: [{
+      node: {
+        name: 'forked',
+        version: '1.0.0',
+        path: '/x/forked',
+        resolved: `git+ssh://git@github.com/o/r.git#${sha}`,
+      },
+      scripts: { postinstall: 'node install.js' },
+    }],
+  })
+  mock.npm.finish()
+
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
+  t.match(warn, new RegExp(`allow-scripts='git\\+ssh://git@github\\.com/o/r\\.git#${sha}'`))
 })
 
 t.test('single unreviewed script uses singular wording', async t => {
