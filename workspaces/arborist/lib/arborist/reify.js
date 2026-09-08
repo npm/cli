@@ -28,6 +28,7 @@ const { applyPatchToDir, patchIntegrity } = require('../patch.js')
 const { readFile } = require('node:fs/promises')
 const retirePath = require('../retire-path.js')
 const { getRegistryPackageName } = require('../registry-package-name.js')
+const { getRegistryTarball } = require('../registry-tarball.js')
 const treeCheck = require('../tree-check.js')
 const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
@@ -715,10 +716,10 @@ module.exports = cls => class Reifier extends cls {
       if (node.resolved) {
         const registryResolved = this.#registryResolved(node.resolved)
         if (registryResolved) {
-          const registryPackageName = !remoteAllowed && getRegistryPackageName(node)
-          registryTarballExemption = !!registryPackageName &&
+          const registryPackageName = getRegistryPackageName(node)
+          registryTarballExemption = !remoteAllowed && !!registryPackageName &&
             await this.#isRegistryResolvedTarball(node, registryPackageName)
-          const packageName = registryTarballExemption ? registryPackageName : node.name
+          const packageName = registryPackageName || node.name
           res = `${packageName}@${registryResolved}`
         }
       } else if (node.package.name && node.version) {
@@ -1029,12 +1030,11 @@ module.exports = cls => class Reifier extends cls {
     // origin. Verify those URLs against registry metadata rather than
     // widening the configured registry path boundary.
     try {
-      const manifest = await pacote.manifest(npa.resolve(packageName, node.version), {
-        ...this.options,
-        before: null,
-        fullMetadata: true,
-      })
-      const advertisedURL = new URL(this.#registryResolved(manifest._resolved))
+      const tarball = await getRegistryTarball(this, packageName, node.version)
+      if (!tarball) {
+        return false
+      }
+      const advertisedURL = new URL(this.#registryResolved(tarball))
       advertisedURL.hash = ''
       resolvedURL.hash = ''
       return advertisedURL.href === resolvedURL.href

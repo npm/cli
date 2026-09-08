@@ -4738,6 +4738,533 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
   })
 })
 
+t.test('allowRemote registry evidence integration', async t => {
+  const pacote = require('pacote')
+  const registryHost = 'https://registry.example.com'
+  const registry = `${registryHost}/npm/`
+  const tarballURL = `${registryHost}/download/abbrev-1.1.1.tgz`
+  const corgi = 'application/vnd.npm.install-v1+json'
+  const abbrevTGZ = fs.readFileSync(resolve(__dirname,
+    '../fixtures/registry-mocks/content/abbrev/-/abbrev-1.1.1.tgz'))
+  const packument = (changes = {}) => ({
+    name: 'abbrev',
+    'dist-tags': { latest: '1.1.1' },
+    versions: {
+      '1.1.1': {
+        name: 'abbrev',
+        version: '1.1.1',
+        dist: { tarball: tarballURL },
+        ...changes,
+      },
+    },
+  })
+  const setup = (t, { version = '1.1.1', resolved = tarballURL,
+    locked = true, options = {} } = {}) => {
+    const root = {
+      name: 'project',
+      version: '1.0.0',
+      dependencies: { abbrev: '*' },
+    }
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify(root),
+        ...(locked ? {
+          'package-lock.json': JSON.stringify({
+            lockfileVersion: 3,
+            requires: true,
+            packages: {
+              '': root,
+              'node_modules/abbrev': { version, resolved },
+            },
+          }),
+        } : {}),
+      },
+    })
+    const arb = new Arborist({
+      audit: false,
+      ignoreScripts: true,
+      fetchRetries: 0,
+      path: resolve(testdir, 'project'),
+      cache: resolve(testdir, 'cache'),
+      registry,
+      allowRemote: 'none',
+      ...options,
+    })
+    const server = MockRegistry.tnock(t, registryHost, {}, { strict: true })
+    return { arb, server, testdir }
+  }
+  const installedVersion = (testdir, name = 'abbrev') => JSON.parse(fs.readFileSync(
+    resolve(testdir, 'project/node_modules', name, 'package.json'), 'utf8'
+  )).version
+
+  for (const version of [
+    'npm:other-package@1.0.0',
+    'latest',
+    '^1.1.0',
+    '*',
+    'https://registry.example.com/other-package.tgz',
+    'file:../other-package.tgz',
+    'git+https://github.com/example/other-package.git',
+  ]) {
+    await t.test(`rejects locked dependency spec ${version} without requests`, async t => {
+      const { arb, testdir } = setup(t, { version })
+      const virtual = await arb.loadVirtual()
+      t.ok(virtual.edgesOut.get('abbrev').valid, 'wildcard accepts the locked node')
+      const ideal = await arb.buildIdealTree()
+      t.equal(ideal.children.get('abbrev').version, version, 'locked value reaches reification')
+      await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' },
+        'a locked spec is not registry evidence')
+      t.notOk(fs.existsSync(resolve(testdir, 'project/node_modules/abbrev/package.json')),
+        'does not install the tarball')
+    })
+  }
+
+  for (const { label, metadata, allowed } of [
+    { label: 'exact name and version', metadata: packument(), allowed: true },
+    { label: 'different package name', metadata: packument({ name: 'other-package' }) },
+    { label: 'different manifest version', metadata: packument({ version: '1.1.2' }) },
+    { label: 'missing locked version', metadata: { name: 'abbrev', versions: {} } },
+    {
+      label: 'different tarball query',
+      metadata: packument({ dist: { tarball: `${tarballURL}?different=1` } }),
+    },
+  ]) {
+    await t.test(`cold locked verification with ${label}`, async t => {
+      const { arb, server, testdir } = setup(t)
+      server.get('/npm/abbrev')
+        .matchHeader('accept', value => value.includes(corgi))
+        .reply(200, metadata)
+      if (allowed) {
+        server.get('/download/abbrev-1.1.1.tgz').reply(200, abbrevTGZ)
+        await t.resolves(arb.reify(), 'exact registry evidence authorizes extraction')
+        t.equal(installedVersion(testdir), '1.1.1')
+      } else {
+        await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' },
+          'metadata cannot authorize a different package, version or URL')
+      }
+    })
+  }
+
+  for (const format of ['full', 'corgi']) {
+    await t.test(`locked verification reuses the ${format} packument cache`, async t => {
+      const packumentCache = new Map([[`${format}:${registry}abbrev`, packument()]])
+      const { arb, server, testdir } = setup(t, { options: { packumentCache } })
+      server.get('/download/abbrev-1.1.1.tgz').reply(200, abbrevTGZ)
+      await t.resolves(arb.reify(), 'does not request metadata already in memory')
+      t.equal(installedVersion(testdir), '1.1.1')
+    })
+  }
+
+  await t.test('old-lock abbreviated evidence cannot bypass attestation verification', async t => {
+    const integrity = require('ssri').fromData(abbrevTGZ).toString()
+    const root = {
+      name: 'project',
+      version: '1.0.0',
+      dependencies: { abbrev: '1.1.1' },
+    }
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify(root),
+        'package-lock.json': JSON.stringify({
+          name: root.name,
+          version: root.version,
+          lockfileVersion: 1,
+          requires: true,
+          dependencies: {
+            abbrev: { version: '1.1.1', resolved: tarballURL, integrity },
+          },
+        }),
+      },
+    })
+    const attestationsPath = '/-/npm/v1/attestations/abbrev@1.1.1'
+    const fullMetadata = packument({
+      dist: {
+        tarball: tarballURL,
+        integrity,
+        attestations: { url: `${registryHost}${attestationsPath}` },
+      },
+    })
+    const server = MockRegistry.tnock(t, registryHost, {}, { strict: true })
+    server.get('/npm/abbrev')
+      .matchHeader('accept', value => value.includes(corgi))
+      .reply(200, packument({ dist: { tarball: tarballURL, integrity } }), { vary: 'accept' })
+    server.get('/npm/abbrev')
+      .matchHeader('accept', 'application/json')
+      .reply(200, fullMetadata, { vary: 'accept' })
+    server.get(attestationsPath).reply(404, { error: 'attestation unavailable' })
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      cache: resolve(testdir, 'cache'),
+      registry,
+      audit: false,
+      allowRemote: 'none',
+      verifyAttestations: true,
+      fetchRetries: 0,
+    })
+    await arb.buildIdealTree()
+    t.equal(arb.idealTree.children.get('abbrev').version, '1.1.1',
+      'old-lock hydration succeeds with abbreviated metadata')
+    await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' },
+      'missing attestations fail closed after dedicated full-metadata verification')
+    t.notOk(fs.existsSync(resolve(testdir, 'project/node_modules/abbrev/package.json')),
+      'URL-only evidence never authorizes an unverified tarball')
+  })
+
+  for (const oversized of [false, true]) {
+    await t.test(`fresh resolution retains evidence with ${
+      oversized ? 'an oversized response' : 'no content-length'
+    }`, async t => {
+      const { arb, server, testdir } = setup(t, { locked: false })
+      const metadata = packument()
+      if (oversized) {
+        metadata.readme = 'x'.repeat(1_000_000)
+      }
+      const body = JSON.stringify(metadata)
+      server.get('/npm/abbrev').reply(200, body, oversized ? {
+        'content-length': Buffer.byteLength(body),
+      } : {})
+      server.get('/download/abbrev-1.1.1.tgz').reply(200, abbrevTGZ)
+      t.equal(arb.options.packumentCache.constructor.name, 'PackumentCache',
+        'uses the production memory cache')
+      await t.resolves(arb.reify(), 'one manifest request supplies extraction evidence')
+      t.equal(arb.options.packumentCache.size, 0, 'the packument is not retained')
+      t.equal(installedVersion(testdir), '1.1.1')
+    })
+  }
+
+  for (const { label, format, mismatch } of [
+    { label: 'tarball only' },
+    { label: 'tarball and full metadata', format: 'full' },
+    { label: 'tarball and abbreviated metadata', format: 'corgi' },
+    { label: 'tarball and mismatched metadata', format: 'corgi', mismatch: true },
+  ]) {
+    await t.test(`offline locked verification with ${label}`, async t => {
+      const { arb, server, testdir } = setup(t, { options: { offline: true } })
+      const seedOptions = {
+        cache: arb.options.cache,
+        registry,
+        fetchRetries: 0,
+      }
+      server.get('/download/abbrev-1.1.1.tgz').reply(200, abbrevTGZ)
+      await pacote.tarball(tarballURL, seedOptions)
+      if (format) {
+        const metadata = mismatch ? packument({
+          dist: { tarball: `${registryHost}/download/not-abbrev.tgz` },
+        }) : packument()
+        server.get('/npm/abbrev')
+          .matchHeader('accept', value => format === 'full'
+            ? value === 'application/json' : value.includes(corgi))
+          .reply(200, metadata, { vary: 'accept' })
+        await pacote.packument('abbrev', { ...seedOptions, fullMetadata: format === 'full' })
+      }
+      if (format === 'full') {
+        await t.rejects(pacote.packument('abbrev', {
+          ...seedOptions,
+          offline: true,
+          fullMetadata: false,
+        }), { code: 'ENOTCACHED' }, 'the abbreviated Accept variant is not cached')
+      }
+      const offlineArb = new Arborist({ ...arb.options, packumentCache: undefined })
+      t.not(offlineArb.options.packumentCache, arb.options.packumentCache,
+        'a fresh Arborist does not share the seeding memory cache')
+      if (format && !mismatch) {
+        await t.resolves(offlineArb.reify(), 'cached metadata and tarball suffice without network')
+        t.equal(installedVersion(testdir), '1.1.1')
+      } else {
+        await t.rejects(offlineArb.reify(), { code: 'EALLOWREMOTE' },
+          'cached tarball bytes do not establish registry provenance')
+      }
+    })
+  }
+
+  await t.test('concurrent versions share one abbreviated verification request', async t => {
+    const root = {
+      name: 'project',
+      version: '1.0.0',
+      dependencies: { abbrev: '1.1.1', widget: '1.0.0' },
+    }
+    const widget = {
+      name: 'widget',
+      version: '1.0.0',
+      dependencies: { abbrev: '2.0.0' },
+    }
+    const otherVersion = { name: 'abbrev', version: '2.0.0' }
+    const otherTarball = `${registryHost}/download/abbrev-2.0.0.tgz`
+    const widgetTarball = `${registry}widget/-/widget-1.0.0.tgz`
+    const testdir = t.testdir({
+      widget: { 'package.json': JSON.stringify(widget) },
+      other: { 'package.json': JSON.stringify(otherVersion) },
+      project: {
+        'package.json': JSON.stringify(root),
+        'package-lock.json': JSON.stringify({
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            '': root,
+            'node_modules/abbrev': { version: '1.1.1', resolved: tarballURL },
+            'node_modules/widget': { ...widget, resolved: widgetTarball },
+            'node_modules/widget/node_modules/abbrev': {
+              version: '2.0.0',
+              resolved: otherTarball,
+            },
+          },
+        }),
+      },
+    })
+    const cache = resolve(testdir, 'cache')
+    const widgetTGZ = await pacote.tarball(resolve(testdir, 'widget'), { Arborist, cache })
+    const otherTGZ = await pacote.tarball(resolve(testdir, 'other'), { Arborist, cache })
+    const metadata = packument()
+    metadata.versions['2.0.0'] = { ...otherVersion, dist: { tarball: otherTarball } }
+    const server = MockRegistry.tnock(t, registryHost, {}, { strict: true })
+    server.get('/npm/abbrev')
+      .matchHeader('accept', value => value.includes(corgi))
+      .delay(50)
+      .reply(200, metadata)
+    server.get('/download/abbrev-1.1.1.tgz').reply(200, abbrevTGZ)
+    server.get('/download/abbrev-2.0.0.tgz').reply(200, otherTGZ)
+    server.get('/npm/widget/-/widget-1.0.0.tgz').reply(200, widgetTGZ)
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      cache,
+      registry,
+      audit: false,
+      allowRemote: 'none',
+      fetchRetries: 0,
+    })
+    await t.resolves(arb.reify(), 'one packument authorizes both exact versions')
+    t.equal(installedVersion(testdir), '1.1.1')
+    t.equal(installedVersion(testdir, 'widget/node_modules/abbrev'), '2.0.0')
+    t.equal(arb.options.packumentCache.size, 0, 'does not depend on a retained full packument')
+  })
+
+  const aliasName = '@alias/code-frame'
+  const targetName = '@babel/code-frame'
+  const targetVersion = '7.5.5'
+  const targetToken = 'target-registry-token'
+  const targetTGZ = fs.readFileSync(resolve(__dirname,
+    '../fixtures/registry-mocks/content/babel/code-frame/-/code-frame-7.5.5.tgz'))
+  const aliasOptions = {
+    registry,
+    '@babel:registry': `${registryHost}/scoped/`,
+    '@alias:registry': `${registryHost}/alias/`,
+    '//registry.example.com/scoped/:_authToken': targetToken,
+    '//registry.example.com/alias/:_authToken': 'wrong-alias-token',
+    audit: false,
+    ignoreScripts: true,
+    fetchRetries: 0,
+  }
+  for (const allowRemote of [undefined, 'all', 'root', 'none']) {
+    await t.test(`locked alias keeps target authentication with allowRemote=${
+      allowRemote || 'omitted'
+    } without metadata`, async t => {
+      const root = {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: { [aliasName]: `npm:${targetName}@${targetVersion}` },
+      }
+      const pathname = `${allowRemote === 'none' ? '/scoped' : '/download'}/code-frame.tgz`
+      const testdir = t.testdir({
+        project: {
+          'package.json': JSON.stringify(root),
+          'package-lock.json': JSON.stringify({
+            lockfileVersion: 3,
+            requires: true,
+            packages: {
+              '': root,
+              [`node_modules/${aliasName}`]: {
+                name: targetName,
+                version: targetVersion,
+                resolved: `${registryHost}${pathname}`,
+              },
+            },
+          }),
+        },
+      })
+      MockRegistry.tnock(t, registryHost, {}, { strict: true })
+        .get(pathname)
+        .matchHeader('authorization', `Bearer ${targetToken}`)
+        .reply(200, targetTGZ)
+      const arb = new Arborist({
+        ...aliasOptions,
+        path: resolve(testdir, 'project'),
+        cache: resolve(testdir, 'cache'),
+        ...(allowRemote ? { allowRemote } : {}),
+      })
+      await t.resolves(arb.reify(), 'permission mode does not change the authentication identity')
+      t.equal(installedVersion(testdir, aliasName), targetVersion)
+    })
+  }
+
+  for (const { installStrategy, optional, transitive, dependency, sibling } of [
+    { installStrategy: 'hoisted' },
+    { installStrategy: 'linked' },
+    { installStrategy: 'hoisted', optional: true },
+    { installStrategy: 'linked', transitive: true },
+    { installStrategy: 'hoisted', dependency: true },
+    { installStrategy: 'linked', dependency: true },
+    { installStrategy: 'hoisted', dependency: true, sibling: true },
+    { installStrategy: 'linked', dependency: true, sibling: true },
+  ]) {
+    const consumerType = dependency ? 'dependency' : 'peer'
+    await t.test(`alias and ordinary ${optional ? 'optional ' : ''}${consumerType} install with ${
+      installStrategy
+    } strategy${transitive ? ' transitively under root policy' : ''}${
+      sibling ? ' using a sibling tarball' : ''
+    }`, async t => {
+      const dependencies = {
+        [aliasName]: `npm:${targetName}@${targetVersion}`,
+        widget: '1.0.0',
+      }
+      const widget = {
+        name: 'widget',
+        version: '1.0.0',
+        [dependency ? 'dependencies' : 'peerDependencies']: { [aliasName]: '^7.0.0' },
+        ...(optional ? { peerDependenciesMeta: { [aliasName]: { optional: true } } } : {}),
+      }
+      const container = { name: 'container', version: '1.0.0', dependencies }
+      const root = {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: transitive ? { container: '1.0.0' } : dependencies,
+      }
+      const pathname = `${optional || transitive || sibling ? '/download' : '/scoped'}/code-frame.tgz`
+      const testdir = t.testdir({
+        project: { 'package.json': JSON.stringify(root) },
+        widget: { 'package.json': JSON.stringify(widget) },
+        container: { 'package.json': JSON.stringify(container) },
+      })
+      const cache = resolve(testdir, 'cache')
+      const server = MockRegistry.tnock(t, registryHost, {}, { strict: true })
+      for (const manifest of transitive ? [container, widget] : [widget]) {
+        const tarball = await pacote.tarball(resolve(testdir, manifest.name), { Arborist, cache })
+        server.get(`/npm/${manifest.name}`).reply(200, {
+          name: manifest.name,
+          'dist-tags': { latest: manifest.version },
+          versions: {
+            [manifest.version]: {
+              ...manifest,
+              dist: { tarball: `${registry}${manifest.name}.tgz` },
+            },
+          },
+        })
+        server.get(`/npm/${manifest.name}.tgz`).reply(200, tarball)
+      }
+      server.get('/scoped/@babel%2fcode-frame')
+        .matchHeader('authorization', `Bearer ${targetToken}`)
+        .reply(200, {
+          name: targetName,
+          'dist-tags': { latest: targetVersion },
+          versions: {
+            [targetVersion]: {
+              name: targetName,
+              version: targetVersion,
+              dist: { tarball: `${registryHost}${pathname}` },
+            },
+          },
+        })
+      server.get(pathname)
+        .matchHeader('authorization', `Bearer ${targetToken}`)
+        .reply(200, targetTGZ)
+      const arb = new Arborist({
+        ...aliasOptions,
+        path: resolve(testdir, 'project'),
+        cache,
+        installStrategy,
+        allowRemote: transitive ? 'root' : 'none',
+      })
+      const ideal = await arb.buildIdealTree()
+      const target = [...ideal.inventory.values()].find(node => node.name === aliasName)
+      t.ok(target, 'alias target is present in the actual ideal tree')
+      t.same([...target.edgesIn].map(edge => edge.valid), [true, true],
+        `the selecting dependency and ordinary ${consumerType} are both valid`)
+      t.equal([...target.edgesIn].filter(edge => edge.peer).length, dependency ? 0 : 1,
+        'the consumer has the requested edge type')
+      await t.resolves(arb.reify(),
+        `an ordinary ${consumerType} does not conflict with the selected alias`)
+      const installed = JSON.parse(fs.readFileSync(
+        require.resolve(`${aliasName}/package.json`, {
+          paths: [fs.realpathSync(resolve(testdir, 'project/node_modules',
+            transitive ? 'container' : 'widget'))],
+        }),
+        'utf8'
+      ))
+      t.equal(installed.name, targetName, 'installs the authenticated target in the alias slot')
+    })
+  }
+
+  for (const { label, rootSpec, transitiveSpec } of [
+    {
+      label: 'conflicting explicit aliases',
+      rootSpec: `npm:${targetName}@${targetVersion}`,
+      transitiveSpec: `npm:@other/code-frame@${targetVersion}`,
+    },
+    {
+      label: 'a plain root dependency and a transitive alias',
+      rootSpec: targetVersion,
+      transitiveSpec: `npm:${targetName}@${targetVersion}`,
+    },
+  ]) {
+    await t.test(`${label} in a locked graph cannot select a tarball`, async t => {
+      const root = {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: {
+          [aliasName]: rootSpec,
+          widget: '1.0.0',
+        },
+      }
+      const widget = {
+        name: 'widget',
+        version: '1.0.0',
+        dependencies: { [aliasName]: transitiveSpec },
+      }
+      const testdir = t.testdir({
+        widget: { 'package.json': JSON.stringify(widget) },
+        project: {
+          'package.json': JSON.stringify(root),
+          'package-lock.json': JSON.stringify({
+            lockfileVersion: 3,
+            requires: true,
+            packages: {
+              '': root,
+              [`node_modules/${aliasName}`]: {
+                name: targetName,
+                version: targetVersion,
+                resolved: `${registryHost}/download/code-frame.tgz`,
+              },
+              'node_modules/widget': {
+                ...widget,
+                resolved: `${registry}widget.tgz`,
+              },
+            },
+          }),
+        },
+      })
+      const cache = resolve(testdir, 'cache')
+      const widgetTGZ = await pacote.tarball(resolve(testdir, 'widget'), { Arborist, cache })
+      MockRegistry.tnock(t, registryHost, {}, { strict: true })
+        .get('/npm/widget.tgz')
+        .reply(200, widgetTGZ)
+      const arb = new Arborist({
+        ...aliasOptions,
+        '@other:registry': `${registryHost}/other/`,
+        path: resolve(testdir, 'project'),
+        cache,
+        allowRemote: 'none',
+      })
+      const ideal = await arb.buildIdealTree()
+      const target = ideal.children.get(aliasName)
+      t.same([...target.edgesIn].map(edge => edge.valid), [true, true],
+        'both selections are semver-valid despite selecting different packages')
+      await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' },
+        'a transitive alias cannot replace the selected root identity')
+      t.notOk(fs.existsSync(resolve(testdir, 'project/node_modules', aliasName, 'package.json')),
+        'does not fetch or install the ambiguous alias tarball')
+    })
+  }
+})
+
 t.test('install strategy linked', async (t) => {
   const Arborist = require('../../lib/index.js')
   const abbrev = resolve(__dirname,

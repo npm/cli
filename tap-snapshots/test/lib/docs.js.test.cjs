@@ -292,10 +292,13 @@ will not remove dependencies that are already installed.
 
 As of npm 12 the default is \`none\`. Tarballs under the configured registry
 path are installed normally. npm also permits same-origin tarballs when it
-can verify their exact URL against registry metadata. If your registry
-serves tarballs from a different host, set \`replace-registry-host\` or
-override this setting. Opt in explicitly per project (in \`.npmrc\`) or per
-command (on the CLI) when you intentionally install from a URL.
+can verify their exact URL against registry metadata. For these sibling-path
+tarballs, npm reuses metadata from resolution or cache when available;
+otherwise it requests package metadata. Offline installation requires cached
+registry metadata as well as the tarball. If your registry serves tarballs
+from a different host, set \`replace-registry-host\` or override this setting.
+Opt in explicitly per project (in \`.npmrc\`) or per command (on the CLI) when
+you intentionally install from a URL.
 
 \`all\` allows any url to be installed. \`none\` prevents any url from being
 installed. \`root\` only allows urls defined in your project's package.json to

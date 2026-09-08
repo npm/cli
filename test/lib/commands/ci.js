@@ -218,6 +218,49 @@ t.test('allow-remote=none blocks same-host tarball outside registry path', async
   t.equal(fs.existsSync(nmAbbrev), false, 'does not install tarball outside configured registry path')
 })
 
+t.test('allow-remote=none rejects an alias injected into a wildcard lockfile version', async t => {
+  const root = {
+    name: 'test-package',
+    version: '1.0.0',
+    dependencies: { expected: '*' },
+  }
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      audit: false,
+      'allow-remote': 'none',
+      'fetch-retries': 0,
+      registry: 'https://registry.example.com/npm/',
+      '//registry.example.com/npm/:_authToken': 'registry-only-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify(root),
+      'package-lock.json': JSON.stringify({
+        ...root,
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': root,
+          'node_modules/expected': {
+            version: 'npm:other-package@1.0.0',
+            resolved: 'https://registry.example.com/download/other-package.tgz',
+          },
+        },
+      }),
+    },
+  })
+  const nock = require('nock')
+  const requests = []
+  const unexpectedRequest = req => requests.push(req.path)
+  nock.emitter.on('no match', unexpectedRequest)
+  t.teardown(() => nock.emitter.off('no match', unexpectedRequest))
+
+  await t.rejects(npm.exec('ci', []), { code: 'EALLOWREMOTE' },
+    'a wildcard cannot authorize another package through the locked version')
+  t.same(requests, [], 'does not request metadata or the attacker-controlled tarball')
+  t.equal(fs.existsSync(path.join(npm.prefix, 'node_modules/expected/package.json')), false,
+    'does not install the substituted package')
+})
+
 t.test('lifecycle scripts', async t => {
   const scripts = []
   const { npm, registry } = await loadMockNpm(t, {
