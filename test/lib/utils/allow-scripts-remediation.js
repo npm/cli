@@ -79,3 +79,86 @@ t.test('shell-unsafe keys are quoted', async t => {
 t.test('single quotes in a key are escaped', async t => {
   t.equal(allowScriptsFlag(["file:../it's"]), `--allow-scripts='file:../it'\\''s'`)
 })
+
+// Test for issue: URLs with query parameters containing tokens should not be exposed
+t.test('URLs with auth tokens are not used as policy keys', async t => {
+  const node = {
+    name: 'private-pkg',
+    version: '1.0.0',
+    resolved: 'https://registry.npmjs.org/private-pkg/-/private-pkg-1.0.0.tgz?npm_token=secret123',
+  }
+  // Should use package name instead of URL with token
+  t.equal(policyKeyFor(node), 'private-pkg')
+})
+
+// Test for issue: URLs with commas should not break round-trip
+t.test('URLs with commas are handled safely', async t => {
+  // When a URL contains a comma, it should either be rejected or encoded
+  // The parser splits on commas, so we need to ensure the round-trip works.
+  // For non-registry deps, we return null to avoid breaking the comma-separated list.
+  const parseAllowScriptsList = require('@npmcli/config/lib/parse-allow-scripts-list.js')
+  const node = {
+    name: 'tool',
+    version: '1.0.0',
+    resolved: 'https://example.com/tool,prod.tgz',
+  }
+  const key = policyKeyFor(node)
+  
+  // For non-registry deps with commas, we return null to avoid breaking the parser
+  t.equal(key, null, 'should return null for non-registry URLs with commas')
+  
+  // Verify that null keys are filtered out in config generation
+  const cmd = configSetAllowScripts([key, 'safe-pkg'])
+  t.ok(cmd, 'should generate a command even with null keys')
+  // The command should not include the null key
+  t.equal(cmd.includes('safe-pkg'), true, 'should include safe keys')
+  t.equal(cmd.includes('tool,prod'), false, 'should not include unsafe keys')
+})
+
+// Test for issue: Shell unsafe characters (like &) should be handled for Windows
+t.test('shell unsafe characters like & are escaped or avoided', async t => {
+  const node = {
+    name: 'pkg',
+    version: '1.0.0',
+    resolved: 'https://example.com/pkg.tgz?x=1&whoami',
+  }
+  const key = policyKeyFor(node)
+  // For non-registry deps with unsafe URLs (&, |, >, <), we return null
+  // to avoid suggesting commands that could execute arbitrary code on Windows
+  t.equal(key, null, 'should return null for non-registry URLs with &')
+})
+
+// Round-trip test: parser and matcher should handle the generated keys correctly
+// Note: shell quoting is for the command line only. When the user pastes the command,
+// the shell removes the quotes before passing to npm config set, which stores the unquoted value.
+t.test('round-trip: generated config should parse back to original keys', async t => {
+  const parseAllowScriptsList = require('@npmcli/config/lib/parse-allow-scripts-list.js')
+  const keys = ['canvas', 'sharp']
+  const cmd = configSetAllowScripts(keys)
+  // Extract the allow-scripts value from the command
+  const match = cmd.match(/allow-scripts=([^\s]+)/)
+  t.ok(match, 'should have allow-scripts value')
+  let value = match[1]
+  // Simulate shell unquoting: remove outer single quotes if present
+  if (value.startsWith("'") && value.endsWith("'")) {
+    value = value.slice(1, -1)
+  }
+  const parsed = parseAllowScriptsList(value)
+  t.same(parsed, keys, 'parsed keys should match original')
+})
+
+// Round-trip test with special characters
+t.test('round-trip: keys with shell-unsafe characters should parse correctly', async t => {
+  const parseAllowScriptsList = require('@npmcli/config/lib/parse-allow-scripts-list.js')
+  const key = `git+ssh://git@github.com/o/r.git#${'a'.repeat(40)}`
+  const cmd = configSetAllowScripts([key])
+  const match = cmd.match(/allow-scripts=([^\s]+)/)
+  t.ok(match, 'should have allow-scripts value')
+  let value = match[1]
+  // Simulate shell unquoting: remove outer single quotes if present
+  if (value.startsWith("'") && value.endsWith("'")) {
+    value = value.slice(1, -1)
+  }
+  const parsed = parseAllowScriptsList(value)
+  t.same(parsed, [key], 'parsed keys should match original')
+})
