@@ -1047,3 +1047,62 @@ t.test('approve-scripts <pkg> under linked strategy without resolved URLs approv
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.strictSame(pkg.allowScripts, { canvas: true })
 })
+
+for (const state of ['missing', 'stale']) {
+  t.test(`prune keeps denies with a ${state} hidden lockfile`, async t => {
+    // With no trusted version, the versioned deny still blocks at runtime, so prune must fail closed and keep it instead of flipping the effective policy to allowed (npm/cli#9941 review).
+    const Arborist = require('@npmcli/arborist')
+    const isScriptAllowed = require('@npmcli/arborist/lib/script-allowed.js')
+    const allowScripts = {
+      canvas: true,
+      'canvas@1.0.0': false,
+    }
+
+    const { npm, prefix } = await mockNpm(t, {
+      prefixDir: setupLinkedProject(t, { allowScripts }),
+      config: { 'install-strategy': 'linked' },
+    })
+
+    const hidden = resolve(prefix, 'node_modules', '.package-lock.json')
+    if (state === 'missing') {
+      fs.unlinkSync(hidden)
+    } else {
+      fs.utimesSync(hidden, new Date(0), new Date(0))
+    }
+
+    t.equal(npm.config.get('omit-lockfile-registry-resolved'), false)
+
+    const arb = new Arborist({ ...npm.flatOptions, path: prefix })
+    const tree = await arb.loadActual()
+    const target = [...tree.inventory.values()]
+      .find(node => !node.isLink && node.name === 'canvas')
+
+    t.ok(target, 'finds the installed target')
+    t.strictSame(
+      isScriptAllowed.getTrustedRegistryIdentity(target),
+      { name: 'canvas', version: null },
+      'recovers the registry name without inventing a trusted version'
+    )
+    t.equal(
+      isScriptAllowed(target, allowScripts),
+      false,
+      'the versioned deny blocks the package before pruning'
+    )
+
+    await npm.exec('install-scripts', ['prune'])
+
+    const pkg = JSON.parse(
+      fs.readFileSync(resolve(prefix, 'package.json'), 'utf8')
+    )
+    t.strictSame(
+      pkg.allowScripts,
+      allowScripts,
+      'pruning preserves both the allow and its active deny exception'
+    )
+    t.equal(
+      isScriptAllowed(target, pkg.allowScripts),
+      false,
+      'the package remains denied after pruning'
+    )
+  })
+}
