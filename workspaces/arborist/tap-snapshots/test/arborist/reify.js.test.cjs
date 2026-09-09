@@ -17228,6 +17228,10 @@ exports[`test/arborist/reify.js TAP packageLockOnly can add deps > must match sn
 
 `
 
+exports[`test/arborist/reify.js TAP preserves bundleDependencies: true when saving package.json > must match snapshot 1`] = `
+{"dependencies":{"abbrev":"*","wrappy":"^1.0.2"},"bundleDependencies":true}
+`
+
 exports[`test/arborist/reify.js TAP project with bundled deps and a link dep on itself > result 1`] = `
 ArboristNode {
   "bundleDependencies": Array [

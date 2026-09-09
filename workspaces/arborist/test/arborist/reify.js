@@ -2181,6 +2181,19 @@ t.test('saveBundle', async t => {
   t.matchSnapshot(fs.readFileSync(path + '/package.json', 'utf8'))
 })
 
+t.test('preserves bundleDependencies: true when saving package.json', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { abbrev: '*' },
+      bundleDependencies: true,
+    }),
+  })
+  createRegistry(t, true)
+  const arb = newArb({ path })
+  await arb.reify({ add: ['wrappy'], saveType: 'prod' })
+  t.matchSnapshot(fs.readFileSync(path + '/package.json', 'utf8'))
+})
+
 t.test('no saveType: dev w/ compatible peer', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({

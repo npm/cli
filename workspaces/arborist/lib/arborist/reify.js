@@ -1992,7 +1992,7 @@ module.exports = cls => class Reifier extends cls {
         // refresh the edges so they have the correct specs
         tree.package = tree.package
         const pkgJson = await PackageJson.load(tree.path, { create: true })
-        const {
+        let {
           dependencies = {},
           devDependencies = {},
           optionalDependencies = {},
@@ -2005,6 +2005,13 @@ module.exports = cls => class Reifier extends cls {
           // resolvePatchedDependencies drops entries orphaned by uninstall; persist that removal
           patchedDependencies,
         } = tree.package
+
+        // If the original package.json used bundleDependencies: true, preserve
+        // the boolean rather than overwriting it with the normalized list of
+        // packages.
+        if (pkgJson.content.bundleDependencies === true) {
+          bundleDependencies = true
+        }
 
         pkgJson.update({
           dependencies,
