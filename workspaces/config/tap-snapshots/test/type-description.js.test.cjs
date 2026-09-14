@@ -539,6 +539,7 @@ Object {
   ],
   "registry": Array [
     "full url with \\"http://\\"",
+    "default",
   ],
   "replace-registry-host": Array [
     "npmjs",
