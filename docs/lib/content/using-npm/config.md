@@ -13,12 +13,21 @@ npm gets its configuration values from the following sources, sorted by priority
 
 #### Command Line Flags
 
-Putting `--foo bar` on the command line sets the `foo` configuration parameter to `"bar"`.
-A `--` argument tells the cli parser to stop reading flags.
-Using `--flag` without specifying any value will set the value to `true`.
+A flag, also known as a switch or command-line option, is a parameter provided to the CLI to act upon.
 
-Example: `--flag1 --flag2` will set both configuration parameters to `true`, while `--flag1 --flag2 bar` will set `flag1` to `true`, and `flag2` to `bar`.
-Finally, `--flag1 --flag2 -- bar` will set both configuration parameters to `true`, and the `bar` is taken as a command argument.
+_**Note:** In this document `foo` and `bar` are used as placeholders to represent generic examples of parameter names and values. They are not literal parameters._
+
+Using `--` by itself tells the CLI parser to stop interpreting further arguments (such as `foo`) as flags.
+
+Instead, using `--foo` without any further value will set the value of `foo` to `true`.
+
+Alternatively, using `--foo bar` with `bar` as the supplied value will set the value of `--foo` to `bar`.
+
+**Example:**
+
+- Using `--flag1 --flag2` will set both configuration parameters `flag1` and `flag2` to `true` as no further value is provided for either.
+- Using `--flag1 --flag2 bar` will set the value of `flag1` to `true`, and the value of `flag2` to `bar`.
+- Using `--flag1 --flag2 -- bar` will set the values of both `flag1` and `flag2` to `true`, while `bar` is treated as a regular command argument.
 
 **Common examples:**
 
@@ -45,10 +54,10 @@ Notice that you need to use underscores instead of dashes, so `--allow-same-vers
 
 The four relevant files are:
 
-* per-project configuration file (`/path/to/my/project/.npmrc`)
-* per-user configuration file (defaults to `$HOME/.npmrc`; configurable via CLI option `--userconfig` or environment variable `$NPM_CONFIG_USERCONFIG`)
-* global configuration file (defaults to `$PREFIX/etc/npmrc`; configurable via CLI option `--globalconfig` or environment variable `$NPM_CONFIG_GLOBALCONFIG`)
-* npm's built-in configuration file (`/path/to/npm/npmrc`)
+- per-project configuration file (`/path/to/my/project/.npmrc`)
+- per-user configuration file (defaults to `$HOME/.npmrc`; configurable via CLI option `--userconfig` or environment variable `$NPM_CONFIG_USERCONFIG`)
+- global configuration file (defaults to `$PREFIX/etc/npmrc`; configurable via CLI option `--globalconfig` or environment variable `$NPM_CONFIG_GLOBALCONFIG`)
+- npm's built-in configuration file (`/path/to/npm/npmrc`)
 
 See [npmrc](/configuring-npm/npmrc) for more details.
 
@@ -86,8 +95,8 @@ npm ls --global --parseable --long --loglevel info
 
 ### See also
 
-* [npm config](/commands/npm-config)
-* [npmrc](/configuring-npm/npmrc)
-* [npm scripts](/using-npm/scripts)
-* [npm folders](/configuring-npm/folders)
-* [npm](/commands/npm)
+- [npm config](/commands/npm-config)
+- [npmrc](/configuring-npm/npmrc)
+- [npm scripts](/using-npm/scripts)
+- [npm folders](/configuring-npm/folders)
+- [npm](/commands/npm)
