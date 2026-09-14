@@ -1988,7 +1988,7 @@ prefix).
 #### \`script-shell\`
 
 * Default: '/bin/sh' on POSIX systems, 'cmd.exe' on Windows
-* Type: null or String
+* Type: null, String, or Path relative to the workspace root
 
 The shell to use for scripts run with the \`npm exec\`, \`npm run\` and \`npm
 init <package-spec>\` commands.

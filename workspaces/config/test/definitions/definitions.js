@@ -2,6 +2,8 @@ const t = require('tap')
 const { resolve } = require('node:path')
 const mockGlobals = require('@npmcli/mock-globals')
 const Module = require('node:module')
+const parseField = require('../../lib/parse-field.js')
+const typeDefs = require('../../lib/type-defs.js')
 
 // have to fake the node version, or else it'll only pass on this one
 mockGlobals(t, { 'process.version': 'v14.8.0', 'process.env.NODE_ENV': undefined })
@@ -629,6 +631,21 @@ t.test('scriptShell', t => {
   mockDefs()['script-shell'].flatten('script-shell', obj, flat)
   t.strictSame(flat, { scriptShell: 'asdf' }, 'sets if not falsey')
 
+  t.end()
+})
+
+t.test('scriptShell resolves relative paths from localPrefix', t => {
+  const types = { 'script-shell': [null, String, typeDefs.relativePathMaybe.type] }
+  const opts = {
+    env: {},
+    home: '/home/test',
+    localPrefix: '/project',
+    platform: process.platform,
+    types,
+  }
+
+  t.equal(parseField('./shell.js', 'script-shell', opts), resolve('/project/shell.js'))
+  t.equal(parseField('node', 'script-shell', opts), 'node')
   t.end()
 })
 
