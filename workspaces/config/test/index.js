@@ -900,6 +900,67 @@ always-auth = true`,
   t.end()
 })
 
+t.test('nerfDartURI normalizes a trailing slash', t => {
+  const { nerfDartURI } = Config
+  // without normalization 'https://host/npm' nerfs to //host/ (the trailing
+  // path segment is treated as a filename and dropped); nerfDartURI keeps it
+  const cases = [
+    ['https://registry.example/', '//registry.example/'],
+    ['https://registry.example', '//registry.example/'],
+    ['https://host/npm', '//host/npm/'],
+    ['https://host/npm/', '//host/npm/'],
+    ['https://host/a/b/c', '//host/a/b/c/'],
+    ['https://host/a/b/c/', '//host/a/b/c/'],
+    ['https://host:8080/path', '//host:8080/path/'],
+  ]
+  t.plan(cases.length)
+  for (const [input, expected] of cases) {
+    t.equal(nerfDartURI(input), expected, input)
+  }
+})
+
+t.test('getCredentialsByURI backtracks up the nerf dart path', async t => {
+  // Registry is configured WITHOUT a trailing slash. Pre-normalization npm
+  // nerfed it to //host/ and wrote the token there; nerfDartURI now nerfs it
+  // to //host/path/, so getCredentialsByURI must walk back up to //host/ to
+  // find the legacy token instead of returning empty creds.
+  const path = t.testdir({
+    '.npmrc': `//host/:_authToken = legacy-token
+//host/path/:_authToken = scoped-token
+//deep/a/b/:_authToken = deep-token
+`,
+  })
+  const c = new Config({
+    npmPath: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+    env: { HOME: path },
+    argv: ['node', 'file', '--registry', 'https://host/path/'],
+  })
+  await c.load()
+
+  // exact key wins
+  t.equal(c.getCredentialsByURI('https://host/path').token, 'scoped-token',
+    'exact path key wins over legacy parent')
+
+  // legacy token at //host/ found via backtracking for a deeper uri
+  t.equal(c.getCredentialsByURI('https://host/path/sub').token, 'scoped-token',
+    'scoped token found by walking up one level')
+
+  // registry with no path resolves to the //host/ legacy token
+  t.equal(c.getCredentialsByURI('https://host/other').token, 'legacy-token',
+    'legacy //host/ token found by walking back to host root')
+
+  // deep path: //deep/a/b/ token found when querying a child of it
+  t.equal(c.getCredentialsByURI('https://deep/a/b/c/d').token, 'deep-token',
+    'deep token found by walking up multiple levels')
+
+  // nothing stored under this host at all -> empty creds
+  t.strictSame(c.getCredentialsByURI('https://nowhere/'), {}, 'no creds returns empty')
+  t.end()
+})
+
 t.test('finding the global prefix', t => {
   const npmPath = __dirname
   t.test('load from PREFIX env', t => {
