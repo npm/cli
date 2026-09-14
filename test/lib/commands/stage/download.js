@@ -1,10 +1,12 @@
 const t = require('tap')
 const fs = require('node:fs')
+const os = require('node:os')
 const path = require('node:path')
 const { load: loadMockNpm } = require('../../../fixtures/mock-npm.js')
 const MockRegistry = require('@npmcli/mock-registry')
 const mockGlobals = require('@npmcli/mock-globals')
 const libpack = require('libnpmpack')
+const tar = require('tar')
 
 const token = 'test-auth-token'
 const authConfig = { '//registry.npmjs.org/:_authToken': token }
@@ -136,4 +138,46 @@ t.test('throws when tarball has no package.json', async t => {
   await t.rejects(npm.exec('stage', ['download', stageId]), {
     message: /Could not read package.json from tarball/,
   })
+})
+
+t.test('keeps the written tarball inside cwd for a crafted version', async t => {
+  const { npm, prefix } = await loadMockNpm(t, {
+    config: authConfig,
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
+    },
+  })
+
+  // Build a staged tarball whose package.json version tries to walk out of cwd.
+  // Use an os tempdir here (not t.testdir) so we don't clobber mock-npm's prefix.
+  const tarDir = fs.mkdtempSync(path.join(os.tmpdir(), 'stage-download-'))
+  t.teardown(() => fs.rmSync(tarDir, { recursive: true, force: true }))
+  fs.mkdirSync(path.join(tarDir, 'package'))
+  fs.writeFileSync(path.join(tarDir, 'package', 'package.json'),
+    JSON.stringify({ name: 'evil', version: '../evil-marker' }))
+  const chunks = []
+  await new Promise((res, rej) => {
+    tar.c({ cwd: tarDir, gzip: false }, ['package'])
+      .on('data', c => chunks.push(c))
+      .on('end', res)
+      .on('error', rej)
+  })
+  const tarballData = Buffer.concat(chunks)
+
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: token,
+  })
+  registry.nock.get(`/-/stage/${stageId}/tarball`)
+    .reply(200, tarballData, { 'content-type': 'application/octet-stream' })
+
+  mockGlobals(t, { 'process.cwd': () => prefix })
+
+  await npm.exec('stage', ['download', stageId])
+
+  // separators are stripped, so the file lands inside the prefix...
+  t.ok(fs.existsSync(path.join(prefix, `evil-..-evil-marker-${stageId}.tgz`)))
+  // ...and nothing is written to the parent directory.
+  t.notOk(fs.existsSync(path.join(prefix, '..', `evil-marker-${stageId}.tgz`)))
 })
