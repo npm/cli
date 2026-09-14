@@ -251,6 +251,65 @@ t.test('sha-1 and sha-256', t => {
     },
   }, 'npm/repo#9e3a9b3579ab330238c06b761e7f1b5dc5b4ac6e5a96da4dd2fb3b7411009df8', null, emptyRequestor), 'git url with full sha-256 hash mismatch')
 
+  const sameResolvedGit = npa('git+https://github.com/foo/bar.git#0d7bd85a85fa2571fa532d2fc842ed099b236ad2')
+  const sameCommitRequest = {
+    type: 'git',
+    fetchSpec: 'https://github.com/foo/bar.git',
+    gitCommittish: '0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    hosted: {
+      ssh: (nc) => sameResolvedGit.hosted.ssh(nc),
+    },
+  }
+  t.ok(depValid({
+    name: 'foo',
+    resolved: 'git+https://github.com/foo/bar.git#0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, sameCommitRequest, null, emptyRequestor), 'explicit gitCommittish with same resolved sha is valid')
+
+  const differentCommitRequest = {
+    type: 'git',
+    fetchSpec: 'https://github.com/foo/bar.git',
+    gitCommittish: '1d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    hosted: {
+      ssh: (nc) => sameResolvedGit.hosted.ssh(nc),
+    },
+  }
+  t.notOk(depValid({
+    name: 'foo',
+    resolved: 'git+https://github.com/foo/bar.git#0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, differentCommitRequest, null, emptyRequestor), 'explicit gitCommittish with different resolved sha is invalid')
+
+  const missingResolvedGit = npa('git+https://github.com/foo/bar.git')
+  const missingResolvedCommitRequest = {
+    type: 'git',
+    fetchSpec: 'https://github.com/foo/bar.git',
+    gitCommittish: '0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    hosted: {
+      ssh: (nc) => missingResolvedGit.hosted.ssh(nc),
+    },
+  }
+  t.ok(depValid({
+    name: 'foo',
+    resolved: 'git+https://github.com/foo/bar.git',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, missingResolvedCommitRequest, null, emptyRequestor), 'requested gitCommittish without a resolved commit still passes the reqCommit guard')
+
   t.notOk(depValid({
     name: 'foo',
     resolved: 'git+file:///tmp/repo#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
