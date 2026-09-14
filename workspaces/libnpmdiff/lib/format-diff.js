@@ -19,15 +19,22 @@ const color = (colorStr, colorId) => {
   return colorStr.replace(/[^\n\r]+/g, open + '$&' + close)
 }
 
+// tarball entry names and non-registry manifest versions are attacker
+// controlled; drop control characters so a name/version containing a newline
+// can't forge extra `diff --git`/`---`/`+++` header lines in the output
+// eslint-disable-next-line no-control-regex
+const cleanHeader = str => String(str).replace(/[\u0000-\u001f\u007f-\u009f]/g, '')
+
 const formatDiff = async ({ files, opts = {}, refs, versions }) => {
   let res = ''
   const srcPrefix = opts.diffNoPrefix ? '' : opts.diffSrcPrefix || 'a/'
   const dstPrefix = opts.diffNoPrefix ? '' : opts.diffDstPrefix || 'b/'
 
   for (const filename of files.values()) {
+    const safeName = cleanHeader(filename)
     const names = {
-      a: `${srcPrefix}${filename}`,
-      b: `${dstPrefix}${filename}`,
+      a: `${srcPrefix}${safeName}`,
+      b: `${dstPrefix}${safeName}`,
     }
 
     let fileMode = ''
@@ -49,7 +56,7 @@ const formatDiff = async ({ files, opts = {}, refs, versions }) => {
     }
 
     if (opts.diffNameOnly) {
-      res += `${filename}\n`
+      res += `${safeName}\n`
       continue
     }
 
@@ -74,8 +81,10 @@ const formatDiff = async ({ files, opts = {}, refs, versions }) => {
         header(`new mode ${modes.b}`)
       }
     }
-    /* eslint-disable-next-line max-len */
-    header(`index ${opts.tagVersionPrefix || 'v'}${versions.a}..${opts.tagVersionPrefix || 'v'}${versions.b} ${fileMode}`)
+    const prefix = opts.tagVersionPrefix || 'v'
+    const va = cleanHeader(versions.a)
+    const vb = cleanHeader(versions.b)
+    header(`index ${prefix}${va}..${prefix}${vb} ${fileMode}`)
 
     if (await shouldPrintPatch(filename)) {
       patch += jsDiff.createTwoFilesPatch(
