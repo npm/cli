@@ -105,6 +105,31 @@ t.test('logged argv is sanitized with equals', async t => {
   t.match(logs.verbose.byTitle('argv'), ['argv "version" "--registry" "https://u:***@npmjs.org"'])
 })
 
+t.test('logged argv redacts protected config values', async t => {
+  const { logs, cli } = await cliMock(t, {
+    globals: {
+      'process.argv': [
+        'node',
+        'npm',
+        'version',
+        '--//registry.npmjs.org/:_authToken=plain-secret',
+        '--_password',
+        'hunter2',
+        '--otp=123456',
+      ],
+    },
+  })
+  await cli(process)
+
+  const argv = logs.verbose.byTitle('argv')[0]
+  t.notMatch(argv, 'plain-secret')
+  t.notMatch(argv, 'hunter2')
+  t.notMatch(argv, '123456')
+  t.match(argv, '"--//registry.npmjs.org/:_authToken" "***"')
+  t.match(argv, '"--_password" "***"')
+  t.match(argv, '"--otp" "***"')
+})
+
 t.test('print usage if no params provided', async t => {
   const { cli, outputs, exitHandlerCalled, exitHandlerNpm } = await cliMock(t, {
     globals: {
