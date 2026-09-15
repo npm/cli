@@ -25,6 +25,7 @@ const _trashList = Symbol.for('trashList')
 
 module.exports = cls => class Builder extends cls {
   #doHandleOptionalFailure
+  #sharedLinks = new WeakMap()
   #oldMeta = null
   #queues = {
     preinstall: [],
@@ -194,6 +195,18 @@ module.exports = cls => class Builder extends cls {
     // there's no particular reason for doing it in this order rather
     // than another, but sorting *somehow* makes it consistent.
     const queue = [...set].sort(sortNodes)
+    // Links in this pass sharing a target run its scripts once, through a required link if any so a failure is not swallowed as optional.
+    const linksByTarget = new Map()
+    for (const node of queue.filter(n => n.isLink)) {
+      const links = linksByTarget.get(node.target) ?? []
+      linksByTarget.set(node.target, [...links, node])
+    }
+    const scriptLinks = new Set()
+    for (const links of linksByTarget.values()) {
+      const picked = links.find(l => !l.optional) ?? links[0]
+      scriptLinks.add(picked)
+      this.#sharedLinks.set(picked, links)
+    }
 
     for (const node of queue) {
       const { package: { bin, scripts = {} } } = node.target
@@ -211,13 +224,14 @@ module.exports = cls => class Builder extends cls {
       // For non-links node.target === node, so registry deps are unaffected.
       const scriptsAllowed =
         this.options.dangerouslyAllowAllScripts ||
-        node.isWorkspace ||
+        node.target.isWorkspace ||
         isScriptAllowed(node.target, this.options.allowScripts) === true
+      const runScripts = scriptsAllowed && (!node.isLink || scriptLinks.has(node))
       for (const [key, has] of Object.entries(tests)) {
         if (!has) {
           continue
         }
-        if (key !== 'bin' && !scriptsAllowed) {
+        if (key !== 'bin' && !runScripts) {
           continue
         }
         this.#queues[key].push(node)
@@ -366,8 +380,10 @@ module.exports = cls => class Builder extends cls {
         log.info('run', pkg._id, event, { code, signal })
       })
 
+      // A failure applies to every link that skipped the script in favor of this one.
+      const links = this.#sharedLinks.get(node) ?? [node]
       await (this.#doHandleOptionalFailure
-        ? this[_handleOptionalFailure](node, p)
+        ? Promise.all(links.map(link => this[_handleOptionalFailure](link, p)))
         : p)
 
       timeEndLocation()
