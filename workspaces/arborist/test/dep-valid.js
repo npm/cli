@@ -313,3 +313,38 @@ t.test('git tag/branch change detected via lockfile committish', t => {
 
   t.end()
 })
+
+t.test('linked store links use the store package for source checks', t => {
+  const resolved = 'git+ssh://git@github.com/npm/repo.git#0d7bd85a85fa2571fa532d2fc842ed099b236ad2'
+  const storeLink = (target) => ({
+    isLink: true,
+    name: 'alias',
+    resolved: 'file:.store/real-name@1.0.0/node_modules/real-name',
+    package: target.package,
+    get version () {
+      return this.package.version
+    },
+    target: {
+      location: 'node_modules/.store/real-name@1.0.0/node_modules/real-name',
+      name: 'real-name',
+      package: { version: '1.0.0' },
+      ...target,
+    },
+  })
+  const requestor = {
+    errors: [],
+    edgesOut: new Map(),
+    realpath: resolve('/some/path'),
+    location: '',
+    root: { meta: { data: { packages: { '': { dependencies: { alias: 'npm/repo#main' } } } } } },
+  }
+
+  t.ok(depValid(storeLink({ resolved: 'https://registry.npmjs.org/real-name/-/real-name-1.0.0.tgz' }), 'latest', null, requestor), 'dist-tag uses the store package resolved')
+  t.ok(depValid(storeLink({ resolved }), 'npm/repo#main', null, requestor), 'git spec uses the store package resolved')
+  t.notOk(depValid(storeLink({ resolved }), 'npm/repo#other', null, requestor), 'changed git ref is looked up by the logical dependency name')
+
+  const dir = resolve('/some/path/node_modules/.store/local')
+  const dirLink = { isLink: true, name: 'local', realpath: dir, target: { location: 'node_modules/.store/local' } }
+  t.ok(depValid(dirLink, normalizePaths(npa(`file:${dir}`)), null, requestor), 'directory link into a .store path is still validated as a link')
+  t.end()
+})
