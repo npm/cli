@@ -48,6 +48,51 @@ some-dep@"1.x" from parent-pkg@2.0.0
 node_modules/parent-pkg
 `
 
+exports[`test/lib/utils/explain-dep.js TAP basic > shared dependents are expanded once when deep 1`] = `
+w0@1.0.0
+node_modules/w0
+  w0@"1.0.0" from w1@1.0.0
+  node_modules/w1
+    w1@"1.0.0" from w2@1.0.0
+    node_modules/w2
+      w2@"1.0.0" from w3@1.0.0
+      node_modules/w3
+        w3@"1.0.0" from w4@1.0.0
+        node_modules/w4
+      w2@"1.0.0" from w4@1.0.0 deduped
+      node_modules/w4
+    w1@"1.0.0" from w3@1.0.0 deduped
+    node_modules/w3
+  w0@"1.0.0" from w2@1.0.0 deduped
+  node_modules/w2
+`
+
+exports[`test/lib/utils/explain-dep.js TAP basic > shared dependents are not deduped when shallow 1`] = `
+w0@1.0.0
+node_modules/w0
+  w0@"1.0.0" from w1@1.0.0
+  node_modules/w1
+    w1@"1.0.0" from w2@1.0.0
+    node_modules/w2
+      w2@"1.0.0" from w3@1.0.0
+      node_modules/w3
+        w3@"1.0.0" from w4@1.0.0
+        node_modules/w4
+      1 more (w4)
+    w1@"1.0.0" from w3@1.0.0
+    node_modules/w3
+      w3@"1.0.0" from w4@1.0.0
+      node_modules/w4
+  w0@"1.0.0" from w2@1.0.0
+  node_modules/w2
+    w2@"1.0.0" from w3@1.0.0
+    node_modules/w3
+      w3@"1.0.0" from w4@1.0.0
+      node_modules/w4
+    w2@"1.0.0" from w4@1.0.0
+    node_modules/w4
+`
+
 exports[`test/lib/utils/explain-dep.js TAP basic bundled > explain color deep 1`] = `
 bundle-of-joy@1.0.0 [4m[36mbundled[39m[24m[2m[22m
 [2mnode_modules/bundle-of-joy[22m
