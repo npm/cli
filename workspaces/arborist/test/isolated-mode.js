@@ -1509,6 +1509,36 @@ tap.test('postinstall scripts run once for store packages', async t => {
   t.equal(count, 1, 'postinstall ran exactly once')
 })
 
+tap.test('workspace lifecycle scripts run once without allowScripts approval', async t => {
+  // Workspaces are exempt from allowScripts; a workspace linked into several dependents still runs each script once.
+  const log = event => `node -e "fs.appendFileSync('runs.log', '${event}\\n')"`
+  const scripts = Object.fromEntries(['preinstall', 'install', 'postinstall', 'prepare'].map(e => [e, log(e)]))
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', scripts: { postinstall: log('postinstall') } },
+    ],
+    root: {
+      name: 'foo', version: '1.2.3', dependencies: { bar: '*', which: '1.0.0' },
+    },
+    workspaces: [
+      { name: 'bar', version: '1.0.0', scripts },
+      { name: 'baz', version: '1.0.0', dependencies: { bar: '*' }, scripts: { postinstall: log('postinstall') } },
+      { name: 'qux', version: '1.0.0', dependencies: { bar: '*' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const runs = ws => fs.readFileSync(path.join(dir, 'packages', ws, 'runs.log'), 'utf8')
+  t.equal(runs('bar'), 'preinstall\nprepare\ninstall\npostinstall\n', 'declared workspace with dependents runs each script once')
+  t.equal(runs('baz'), 'postinstall\n', 'undeclared workspace runs its script')
+  t.notOk(pathExists(`${setupRequire(dir)('which')}/runs.log`), 'unapproved registry dependency script is blocked')
+})
+
 tap.test('workspace-filtered install with linked strategy', async t => {
   // Two workspaces sharing the same dependency must not crash when installing with --workspace + --install-strategy=linked.
   const graph = {
