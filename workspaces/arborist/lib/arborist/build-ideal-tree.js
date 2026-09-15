@@ -3,6 +3,7 @@ const localeCompare = require('@isaacs/string-locale-compare')('en')
 const PackageJson = require('@npmcli/package-json')
 const npa = require('npm-package-arg')
 const pacote = require('pacote')
+const semver = require('semver')
 const cacache = require('cacache')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const realpath = require('../../lib/realpath.js')
@@ -95,6 +96,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   #depsQueue = new DepsQueue()
   #depsSeen = new Set()
   #explicitRequests = new Set()
+  // locked nodes detached by an extension hash change, by name
+  #extensionLockedNodes = new Map()
   #follow
   #installStrategy
   #linkNodes = new Set()
@@ -263,13 +266,50 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         const affected = node.packageExtensionsApplied ||
           this.#packageExtensions.wouldMatch(node.packageName, node.version)
         if (affected) {
-          for (const edge of node.edgesIn) {
-            this.#depsQueue.push(edge.from)
-          }
-          node.parent = null
+          this.#detachForExtensionRefresh(node)
         }
       }
     }
+  }
+
+  // Detach a node with a stale extended manifest and requeue its dependents so they rebuild it.
+  // The locked registry versions in the detached subtree are remembered so the rebuild refetches them instead of the newest match.
+  #detachForExtensionRefresh (node) {
+    for (const edge of node.edgesIn) {
+      this.#depsQueue.push(edge.from)
+    }
+    const stack = [node]
+    while (stack.length) {
+      const locked = stack.pop()
+      stack.push(...locked.children.values(), ...locked.fsChildren)
+      if (locked.inBundle || !locked.isRegistryDependency) {
+        continue
+      }
+      if (!this.#extensionLockedNodes.has(locked.name)) {
+        this.#extensionLockedNodes.set(locked.name, new Set())
+      }
+      this.#extensionLockedNodes.get(locked.name).add(locked)
+    }
+    node.parent = null
+  }
+
+  // Returns an exact registry spec for the newest locked node detached by an extension refresh that still satisfies the edge.
+  // Explicit update, install, and audit requests re-resolve from the edge spec as usual.
+  #lockedExtensionSpec (spec, edge) {
+    const locked = spec.registry && this.#extensionLockedNodes.get(edge.name)
+    if (!locked || this[_updateNames].includes(edge.name) || this.#explicitRequests.has(edge)) {
+      return null
+    }
+    const target = spec.subSpec || spec
+    const [best] = [...locked]
+      .filter(node => node.packageName === target.name && node.satisfies(edge) &&
+        !this.auditReport?.isVulnerable(node))
+      .sort((a, b) => semver.rcompare(a.version, b.version))
+    if (!best) {
+      return null
+    }
+    const { packageName, version } = best
+    return npa.resolve(edge.name, spec.subSpec ? `npm:${packageName}@${version}` : version)
   }
 
   // Apply a matching root packageExtension to a copy of a candidate manifest.
@@ -316,10 +356,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         // The locked manifest carries every resolution-relevant field (name, version, dependencies, peer metadata); a transform that newly targets a node by a field not persisted in the lockfile is the documented edge that may need a manual re-lock.
         const affected = node.npmExtensionApplied || ext.apply(node.package, { memoize: false })
         if (affected) {
-          for (const edge of node.edgesIn) {
-            this.#depsQueue.push(edge.from)
-          }
-          node.parent = null
+          this.#detachForExtensionRefresh(node)
         }
       }
     }
@@ -1552,7 +1589,17 @@ This is a one-time fix-up, please be patient...
 
     // spec isn't a directory, and either isn't a workspace or the workspace we have
     // doesn't satisfy the edge. try to fetch a manifest and build a node from that.
-    return this.#fetchManifest(spec, parent, edge)
+    // A locked version that is no longer available falls back to the edge spec; any other failure surfaces.
+    const lockedSpec = this.#lockedExtensionSpec(spec, edge)
+    const manifest = lockedSpec
+      ? this.#fetchManifest(lockedSpec, parent, edge).catch(error => {
+        if (error.code !== 'ETARGET') {
+          throw error
+        }
+        return this.#fetchManifest(spec, parent, edge)
+      })
+      : this.#fetchManifest(spec, parent, edge)
+    return manifest
       .then(
         pkg => {
           // When a proxy/upstream registry returns an incomplete manifest
