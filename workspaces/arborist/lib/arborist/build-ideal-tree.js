@@ -490,12 +490,17 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       .then(tree => {
         // search the virtual tree for missing/invalid edges, if any are found add their source to
         // the depsQueue so that we'll fix it later
+        // Links have no edgesOut, so start at the root target and walk into link targets inside it (e.g. workspaces), like #resolveLinks.
         depth({
-          tree,
+          tree: tree.target,
           getChildren: (node) => {
             const children = []
-            for (const edge of node.edgesOut.values()) {
-              children.push(edge.to)
+            for (const { to } of node.edgesOut.values()) {
+              if (to?.isLink && (this.#follow || to.target.isDescendantOf(tree.target))) {
+                children.push(to.target)
+              } else {
+                children.push(to)
+              }
             }
             return children
           },
