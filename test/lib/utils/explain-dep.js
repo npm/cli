@@ -330,6 +330,25 @@ t.test('basic', async t => {
   t.matchSnapshot(explainNode(cycleA, Infinity, noColor), 'circular dependency does not recurse infinitely')
   t.matchSnapshot(explainNode(cycleB, Infinity, noColor), 'circular dependency from other side')
 
+  // Each node is a dependency of the next two, so shared ancestors are reachable through many paths (#9978).
+  const sharedDependents = (count) => {
+    const nodes = []
+    for (let i = count - 1; i >= 0; i--) {
+      nodes[i] = {
+        name: `w${i}`,
+        version: '1.0.0',
+        location: `node_modules/w${i}`,
+        dependents: [i + 1, i + 2]
+          .filter(n => nodes[n])
+          .map(n => ({ type: 'prod', name: `w${i}`, spec: '1.0.0', from: nodes[n] })),
+      }
+    }
+    return nodes[0]
+  }
+  t.matchSnapshot(explainNode(sharedDependents(5), Infinity, noColor), 'shared dependents are expanded once when deep')
+  t.matchSnapshot(explainNode(sharedDependents(5), 4, noColor), 'shared dependents are not deduped when shallow')
+  t.ok(explainNode(sharedDependents(100), Infinity, noColor).split('\n').length < 1000, 'deep report grows linearly with shared dependents')
+
   // explainEdge called without seen parameter (covers default seen = new Set() branch on explainEdge and explainFrom)
   t.matchSnapshot(explainEdge({
     type: 'prod',
