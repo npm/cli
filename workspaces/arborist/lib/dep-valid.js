@@ -77,7 +77,8 @@ const depValid = (child, requested, requestor) => {
       return semver.satisfies(child.version, requested.fetchSpec, true)
 
     case 'directory':
-      return linkValid(child, requested, requestor)
+      // installLinks puts the directory's package in the store, so the store Link must not count as a link.
+      return linkValid(requestor.installLinks ? source : child, requested, requestor)
 
     case 'file':
       return tarballValid(source, requested, requestor)
