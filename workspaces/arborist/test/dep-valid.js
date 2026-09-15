@@ -346,5 +346,9 @@ t.test('linked store links use the store package for source checks', t => {
   const dir = resolve('/some/path/node_modules/.store/local')
   const dirLink = { isLink: true, name: 'local', realpath: dir, target: { location: 'node_modules/.store/local' } }
   t.ok(depValid(dirLink, normalizePaths(npa(`file:${dir}`)), null, requestor), 'directory link into a .store path is still validated as a link')
+
+  const installLinksRequestor = { ...requestor, installLinks: true }
+  t.ok(depValid(storeLink({}), normalizePaths(npa('file:/other/pkg')), null, installLinksRequestor), 'installLinks directory dep in the store is valid')
+  t.notOk(depValid({ ...dirLink, target: {} }, normalizePaths(npa(`file:${dir}`)), null, installLinksRequestor), 'installLinks still rejects a plain directory link')
   t.end()
 })
