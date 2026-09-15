@@ -111,6 +111,18 @@ const calcDepFlags = (tree, resetRoot = true) => {
     }
   }
 
+  // The linked strategy gives each dependent its own Link to an optional peer, so keep that Link when its target is kept.
+  for (const node of seen) {
+    if (node.extraneous) {
+      continue
+    }
+    for (const { peer, optional, to } of node.edgesOut.values()) {
+      if (peer && optional && to?.isLink && to.extraneous && to.target && !to.target.extraneous) {
+        to.extraneous = false
+      }
+    }
+  }
+
   // Remove incorrect devOptional flags now that we have walked all deps.
   seen.delete(tree)
   for (const node of seen.values()) {
