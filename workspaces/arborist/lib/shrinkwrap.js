@@ -624,7 +624,7 @@ class Shrinkwrap {
   // Match a store package to a lockfile entry by name and version, ignoring ambiguous matches since a store key can't be mapped back to one entry.
   #storeMeta (node) {
     const { packages } = this.data
-    if (this.#storeMetaPackages !== packages) {
+    if (!this.#storeMetaIndex || this.#storeMetaPackages !== packages) {
       this.#storeMetaPackages = packages
       this.#storeMetaIndex = new Map()
       for (const [loc, meta] of Object.entries(packages)) {
@@ -690,6 +690,7 @@ class Shrinkwrap {
     }
     const location = this.#pathToLoc(nodePath)
     this.#awaitingUpdate.delete(location)
+    this.#storeMetaIndex = null
 
     delete this.data.packages[location]
     const path = location.split(/(?:^|\/)node_modules\//)
@@ -962,6 +963,7 @@ class Shrinkwrap {
   #updateWaitingNode (loc) {
     const node = this.#awaitingUpdate.get(loc)
     this.#awaitingUpdate.delete(loc)
+    this.#storeMetaIndex = null
     this.data.packages[loc] = Shrinkwrap.metaFromNode(
       node,
       this.path,
