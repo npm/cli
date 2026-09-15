@@ -63,6 +63,11 @@ const depValid = (child, requested, requestor) => {
     return false
   }
 
+  // Under the linked strategy the edge points at a Link whose resolved is always file:, so validate the store package it links to.
+  if (child.isLink && /(^|\/)node_modules\/\.store\//.test(child.target?.location)) {
+    child = child.target
+  }
+
   switch (requested.type) {
     case 'range':
       if (requested.fetchSpec === '*') {
