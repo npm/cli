@@ -215,3 +215,157 @@ t.test('records the canonical hash on the lockfile meta', async t => {
   const tree = await buildIdeal(path)
   t.equal(tree.meta.packageExtensionsHash, canonicalHash(packageExtensions), 'hash stashed on meta')
 })
+
+const optionalPeer = { peerDependencies: { x: '*' }, peerDependenciesMeta: { x: { optional: true } } }
+
+// Serve packuments for any number of fetches; each must still be fetched at least once.
+const mockPackuments = (t, packuments) => {
+  const registry = createRegistry(t)
+  for (const [name, versions] of Object.entries(packuments)) {
+    registry.nock = registry.nock.get(`/${name}`).reply(200, registry.manifest({ name, packuments: versions })).persist()
+  }
+  return registry
+}
+
+// A lockfile written without packageExtensions, so its hash differs from the current rules.
+const lockedProject = (t, { dependencies, packages, packageExtensions = { foo: optionalPeer } }) => t.testdir({
+  'package.json': JSON.stringify({ name: 'root', dependencies, packageExtensions }),
+  'package-lock.json': JSON.stringify({
+    name: 'root',
+    lockfileVersion: 3,
+    requires: true,
+    packages: { '': { name: 'root', dependencies }, ...packages },
+  }),
+})
+
+const locked = (version, { name = 'foo', ...extra } = {}) =>
+  ({ version, resolved: `https://registry.npmjs.org/${name}/-/${name}-${version}.tgz`, ...extra })
+const fooVersions = ['1.0.0', '1.0.1', '1.1.0', '1.2.0']
+const versionAt = (tree, location) => tree.inventory.get(location)?.version
+
+t.test('keeps locked versions when the extension rules change', async t => {
+  mockPackuments(t, { foo: fooVersions })
+  const path = lockedProject(t, {
+    dependencies: { foo: '^1.0.0', aliased: 'npm:foo@^1.0.0', qux: '1.0.0' },
+    packages: {
+      'node_modules/foo': locked('1.1.0'),
+      'node_modules/aliased': { ...locked('1.0.0'), name: 'foo' },
+      'node_modules/qux': locked('1.0.0', { name: 'qux', dependencies: { foo: '~1.0.0' } }),
+      'node_modules/qux/node_modules/foo': locked('1.0.0'),
+    },
+  })
+  const tree = await buildIdeal(path, { cache: resolve(path, 'cache') })
+  t.equal(versionAt(tree, 'node_modules/foo'), '1.1.0', 'root dep keeps the newest locked version it accepts')
+  t.ok(tree.inventory.get('node_modules/foo').packageExtensionsApplied, 'the kept node is extended')
+  t.equal(versionAt(tree, 'node_modules/aliased'), '1.0.0', 'alias keeps its locked version')
+  t.equal(tree.inventory.get('node_modules/aliased').packageName, 'foo', 'alias still targets foo')
+  t.equal(versionAt(tree, 'node_modules/qux/node_modules/foo'), '1.0.0', 'nested dep keeps its locked version')
+})
+
+t.test('only reuses locked registry versions', async t => {
+  mockPackuments(t, { foo: fooVersions })
+  const dependencies = { foo: '^1.0.0', qux: '1.0.0', quux: '1.0.0' }
+  const path = lockedProject(t, {
+    dependencies,
+    packages: {
+      'node_modules/foo': locked('1.0.0'),
+      'node_modules/qux': locked('1.0.0', { name: 'qux', dependencies: { foo: 'file:../../local-foo' } }),
+      'node_modules/qux/node_modules/foo': { resolved: 'local-foo', link: true },
+      'local-foo': { name: 'foo', version: '1.2.0' },
+      'node_modules/quux': locked('1.0.0', { name: 'quux', bundleDependencies: ['foo'], dependencies: { foo: '^1.0.0' } }),
+      'node_modules/quux/node_modules/foo': { version: '1.1.0', inBundle: true },
+    },
+  })
+  const tree = await buildIdeal(path, { cache: resolve(path, 'cache') })
+  t.equal(versionAt(tree, 'node_modules/foo'), '1.0.0', 'linked and bundled versions are not fetched from the registry')
+})
+
+t.test('re-resolves a locked alias to another package', async t => {
+  mockPackuments(t, { foo: fooVersions })
+  const path = lockedProject(t, {
+    dependencies: { foo: '^1.0.0' },
+    packageExtensions: { bar: optionalPeer },
+    packages: { 'node_modules/foo': { ...locked('1.0.0', { name: 'bar' }), name: 'bar' } },
+  })
+  const tree = await buildIdeal(path, { cache: resolve(path, 'cache') })
+  const foo = tree.inventory.get('node_modules/foo')
+  t.equal(foo.packageName, 'foo', 'the locked alias is not reused')
+  t.equal(foo.version, '1.2.0', 'resolved from the edge spec')
+})
+
+t.test('falls back to the edge spec when the locked version cannot be fetched', async t => {
+  mockPackuments(t, { foo: ['1.1.0'] })
+  const path = lockedProject(t, {
+    dependencies: { foo: '^1.0.0' },
+    packages: { 'node_modules/foo': locked('1.0.0') },
+  })
+  const tree = await buildIdeal(path, { cache: resolve(path, 'cache') })
+  t.equal(versionAt(tree, 'node_modules/foo'), '1.1.0', 'resolved from the edge spec')
+})
+
+t.test('surfaces a locked version fetch failure other than an unavailable version', async t => {
+  const registry = createRegistry(t)
+  registry.nock = registry.nock.get('/foo').reply(500)
+  mockPackuments(t, { foo: fooVersions })
+  const path = lockedProject(t, {
+    dependencies: { foo: '^1.0.0' },
+    packages: { 'node_modules/foo': locked('1.0.0') },
+  })
+  await t.rejects(buildIdeal(path, { cache: resolve(path, 'cache'), fetchRetries: 0 }), { statusCode: 500 },
+    'the failure is not replaced by a newer version')
+})
+
+t.test('keeps locked versions under a file link inside a detached package', async t => {
+  mockPackuments(t, {
+    foo: fooVersions,
+    qux: [{ version: '1.0.0', dependencies: { sub: 'file:./sub' } }],
+  })
+  const dependencies = { qux: '1.0.0' }
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', dependencies, packageExtensions: { qux: optionalPeer } }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root', dependencies },
+        'node_modules/qux': locked('1.0.0', { name: 'qux', dependencies: { sub: 'file:./sub' } }),
+        'node_modules/qux/node_modules/sub': { resolved: 'node_modules/qux/sub', link: true },
+        'node_modules/qux/sub': { name: 'sub', version: '1.0.0', dependencies: { foo: '^1.0.0' } },
+        'node_modules/qux/sub/node_modules/foo': locked('1.0.0'),
+      },
+    }),
+    node_modules: { qux: { sub: { 'package.json': JSON.stringify({ name: 'sub', version: '1.0.0', dependencies: { foo: '^1.0.0' } }) } } },
+  })
+  const tree = await buildIdeal(path, { cache: resolve(path, 'cache') })
+  const foo = [...tree.inventory.values()].find(n => n.name === 'foo')
+  t.equal(foo?.version, '1.0.0', 'the link target dependency keeps its locked version')
+})
+
+const upgradeRequests = {
+  'npm update': { update: ['foo'] },
+  'an explicit install': { add: ['foo@^1.0.0'] },
+}
+for (const [label, opt] of Object.entries(upgradeRequests)) {
+  t.test(`${label} still upgrades a locked version`, async t => {
+    mockPackuments(t, { foo: fooVersions })
+    const path = lockedProject(t, {
+      dependencies: { foo: '^1.0.0' },
+      packages: { 'node_modules/foo': locked('1.0.0') },
+    })
+    const tree = await buildIdeal(path, { cache: resolve(path, 'cache'), ...opt })
+    t.equal(versionAt(tree, 'node_modules/foo'), '1.2.0', 'resolved from the edge spec')
+  })
+}
+
+t.test('does not keep a vulnerable locked version', async t => {
+  mockPackuments(t, { foo: fooVersions })
+  const path = lockedProject(t, {
+    dependencies: { foo: '^1.0.0' },
+    packages: { 'node_modules/foo': locked('1.0.0') },
+  })
+  const arb = newArb(path, { cache: resolve(path, 'cache') })
+  arb.auditReport = { size: 0, get: () => null, isVulnerable: node => node.version === '1.0.0' }
+  const tree = await arb.buildIdealTree()
+  t.equal(versionAt(tree, 'node_modules/foo'), '1.2.0', 'resolved from the edge spec')
+})
