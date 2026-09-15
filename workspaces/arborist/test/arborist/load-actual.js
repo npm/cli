@@ -934,3 +934,98 @@ t.test('a project located under a .store path still loads its own devDependencie
   t.equal(tree.isInStore, false, 'loaded root is not flagged isInStore')
   t.ok(tree.edgesOut.get('a-dev-dep'), 'root devDependency is a required edge')
 })
+
+t.test('linked store deps with dist-tag and remote specs are valid', async t => {
+  const reg = 'https://registry.npmjs.org'
+  const remote = 'https://example.com/r-1.0.0.tgz'
+  const storePkg = (name, deps) => ({
+    'package.json': JSON.stringify({ name, version: '1.0.0', dependencies: deps }),
+  })
+  const fixture = (lock) => ({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { a: 'latest', r: remote },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root', version: '1.0.0', dependencies: { a: 'latest', r: remote } },
+        'node_modules/a': { version: '1.0.0', resolved: `${reg}/a/-/a-1.0.0.tgz`, dependencies: { b: 'latest' } },
+        'node_modules/b': { version: '1.0.0', resolved: `${reg}/b/-/b-1.0.0.tgz` },
+        'node_modules/r': { version: '1.0.0', resolved: remote },
+        ...lock,
+      },
+    }),
+    node_modules: {
+      a: t.fixture('symlink', '.store/a@1.0.0/node_modules/a'),
+      r: t.fixture('symlink', '.store/r@1.0.0/node_modules/r'),
+      '.store': {
+        'a@1.0.0': {
+          node_modules: {
+            a: storePkg('a', { b: 'latest' }),
+            b: t.fixture('symlink', '../../b@1.0.0/node_modules/b'),
+          },
+        },
+        'b@1.0.0': { node_modules: { b: storePkg('b') } },
+        'r@1.0.0': { node_modules: { r: storePkg('r') } },
+      },
+    },
+  })
+  const edges = tree => {
+    const a = tree.edgesOut.get('a')
+    return { a, r: tree.edgesOut.get('r'), b: a.to.target.edgesOut.get('b') }
+  }
+
+  t.test('filesystem scan', async t => {
+    const tree = await loadActual(t.testdir(fixture()))
+    const { a, r, b } = edges(tree)
+    t.equal(a.to.target.resolved, `${reg}/a/-/a-1.0.0.tgz`, 'store node resolved comes from the logical lockfile entry')
+    t.ok(a.valid, 'root dist-tag dep is valid')
+    t.ok(b.valid, 'transitive dist-tag dep is valid')
+    t.ok(r.valid, 'root remote dep is valid')
+  })
+
+  t.test('hidden lockfile', async t => {
+    const path = t.testdir(fixture())
+    fs.writeFileSync(resolve(path, 'node_modules/.package-lock.json'), JSON.stringify({
+      name: 'root',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        'node_modules/a': { resolved: 'node_modules/.store/a@1.0.0/node_modules/a', link: true },
+        'node_modules/r': { resolved: 'node_modules/.store/r@1.0.0/node_modules/r', link: true },
+        'node_modules/.store/a@1.0.0': {},
+        'node_modules/.store/a@1.0.0/node_modules/a': { version: '1.0.0', resolved: `${reg}/a/-/a-1.0.0.tgz`, dependencies: { b: 'latest' } },
+        'node_modules/.store/a@1.0.0/node_modules/b': { resolved: 'node_modules/.store/b@1.0.0/node_modules/b', link: true },
+        'node_modules/.store/b@1.0.0': {},
+        'node_modules/.store/b@1.0.0/node_modules/b': { version: '1.0.0', resolved: `${reg}/b/-/b-1.0.0.tgz` },
+        'node_modules/.store/r@1.0.0': {},
+        'node_modules/.store/r@1.0.0/node_modules/r': { version: '1.0.0', resolved: remote },
+      },
+    }))
+    const then = Date.now() + 10000
+    fs.utimesSync(resolve(path, 'node_modules/.package-lock.json'), new Date(then), new Date(then))
+
+    const tree = await loadActual(path)
+    t.ok(tree.meta.hiddenLockfile, 'loaded from the hidden lockfile')
+    const { a, r, b } = edges(tree)
+    t.ok(a.valid, 'root dist-tag dep is valid')
+    t.ok(b.valid, 'transitive dist-tag dep is valid')
+    t.ok(r.valid, 'root remote dep is valid')
+  })
+
+  t.test('ambiguous lockfile entries leave the store node unresolved', async t => {
+    const tree = await loadActual(t.testdir(fixture({
+      'node_modules/a/node_modules/b': { version: '1.0.0', resolved: 'https://example.com/b-1.0.0.tgz' },
+      'node_modules/r/node_modules/b': { version: '1.0.0', resolved: 'https://example.org/b-1.0.0.tgz' },
+      'node_modules/r/node_modules/a': { version: '1.0.0', resolved: `${reg}/a/-/a-1.0.0.tgz` },
+    })))
+    const { a, b } = edges(tree)
+    t.ok(a.valid, 'store node matching agreeing entries is still valid')
+    t.equal(b.to.target.resolved, null, 'store node matching conflicting entries has no resolved')
+    t.notOk(b.valid, 'dist-tag dep without a resolution is invalid')
+  })
+})
