@@ -486,6 +486,7 @@ Object {
     null,
     "read-only",
     "read-write",
+    "read-write-stage-only",
     "no-access",
   ],
   "parseable": Array [
