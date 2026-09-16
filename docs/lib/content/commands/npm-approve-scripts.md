@@ -25,8 +25,8 @@ it with `--global` (`-g`) fails with an `EGLOBAL` error, since global
 installs (`npm install -g`) and one-off executions (`npm exec` / `npx`) have
 no project `package.json` to write to. To allow install scripts in those
 contexts, use the `--allow-scripts` flag at install time (for example
-`npm install -g --allow-scripts=canvas,sharp`) or persist the setting with
-`npm config set allow-scripts=canvas,sharp --location=user`.
+`npm install -g canvas sharp --allow-scripts=canvas,sharp`) or persist the
+setting with `npm config set allow-scripts=canvas,sharp --location=user`.
 
 There are three modes:
 
