@@ -52,6 +52,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.1): `@npmcli/arborist@9.9.1`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.2): `@npmcli/arborist@9.9.2`
+
 ## [10.3.1](https://github.com/npm/cli/compare/libnpmexec-v10.3.0...libnpmexec-v10.3.1) (2026-06-29)
 ### Bug Fixes
 * [`f3f2465`](https://github.com/npm/cli/commit/f3f246580c8fa136ec90c5b7d96b940a6f6a90b0) [#9692](https://github.com/npm/cli/pull/9692) exec: prevent shared binPaths pollution across workspace runs (#9692) (@github-actions[bot], @arjun-vegeta)

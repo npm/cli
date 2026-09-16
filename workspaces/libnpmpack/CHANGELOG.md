@@ -96,6 +96,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.1): `@npmcli/arborist@9.9.1`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.2): `@npmcli/arborist@9.9.2`
+
 ## [9.1.13](https://github.com/npm/cli/compare/libnpmpack-v9.1.12...libnpmpack-v9.1.13) (2026-08-25)
 ### Bug Fixes
 * [`83b750d`](https://github.com/npm/cli/commit/83b750dbbc0b32f498da760396542f83d4069100) [#9916](https://github.com/npm/cli/pull/9916) exempt explicit pack targets from allow-directory (#9916) (@github-actions[bot], @ychampion, @ychampion)
