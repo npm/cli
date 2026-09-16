@@ -1320,6 +1320,11 @@ class Node {
       this[_changePath](newPath)
     }
 
+    // Apply workspace overrides to packages
+    if (parent.overrides) {
+      this.overrides = parent.overrides.getNodeRule(this)
+    }
+
     // clobbers anything at that path, resets all appropriate references
     this.root = parent.root
   }
