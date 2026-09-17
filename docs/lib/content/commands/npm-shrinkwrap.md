@@ -23,3 +23,5 @@ For a detailed explanation of the design and purpose of package locks in npm, se
 * [package-lock.json](/configuring-npm/package-lock-json)
 * [npm-shrinkwrap.json](/configuring-npm/npm-shrinkwrap-json)
 * [npm ls](/commands/npm-ls)
+* npm shrinkwrap
+* lockfileVersion:2
