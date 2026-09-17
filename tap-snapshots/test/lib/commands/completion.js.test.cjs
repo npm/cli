@@ -151,6 +151,7 @@ Array [
     github
     gitlab
     circleci
+    buildkite
     list
     revoke
   ),
