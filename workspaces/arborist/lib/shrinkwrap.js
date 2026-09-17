@@ -312,6 +312,8 @@ class Shrinkwrap {
   }
 
   #awaitingUpdate = new Map()
+  #storeMetaIndex = null
+  #storeMetaPackages = null
 
   constructor (options = {}) {
     const {
@@ -619,6 +621,29 @@ class Shrinkwrap {
     }
   }
 
+  // Match a store package to a lockfile entry by name and version, ignoring ambiguous matches since a store key can't be mapped back to one entry.
+  #storeMeta (node) {
+    const { packages } = this.data
+    if (!this.#storeMetaIndex || this.#storeMetaPackages !== packages) {
+      this.#storeMetaPackages = packages
+      this.#storeMetaIndex = new Map()
+      for (const [loc, meta] of Object.entries(packages)) {
+        const i = loc.lastIndexOf('node_modules/')
+        if (i === -1 || meta.link || !meta.version) {
+          continue
+        }
+        const key = `${meta.name || loc.slice(i + 'node_modules/'.length)}@${meta.version}`
+        const seen = this.#storeMetaIndex.get(key)
+        if (seen === undefined) {
+          this.#storeMetaIndex.set(key, meta)
+        } else if (seen && (seen.resolved !== meta.resolved || seen.integrity !== meta.integrity)) {
+          this.#storeMetaIndex.set(key, null)
+        }
+      }
+    }
+    return this.#storeMetaIndex.get(`${node.packageName}@${node.version}`) || {}
+  }
+
   #resolveMetaNode (loc, name) {
     for (let path = loc; true; path = path.replace(/(^|\/)[^/]*$/, '')) {
       const check = `${path}${path ? '/' : ''}node_modules/${name}`
@@ -665,6 +690,7 @@ class Shrinkwrap {
     }
     const location = this.#pathToLoc(nodePath)
     this.#awaitingUpdate.delete(location)
+    this.#storeMetaIndex = null
 
     delete this.data.packages[location]
     const path = location.split(/(?:^|\/)node_modules\//)
@@ -838,11 +864,16 @@ class Shrinkwrap {
     // if we have metadata about this node, and it's a match, then
     // try to decorate it.
     if (node.resolved === null || node.integrity === null) {
+      let meta = this.get(node.path)
+      // package-lock.json has no entry at a linked store location, so use the logical entry for the same package.
+      if (node.isInStore && !meta.resolved && !meta.integrity) {
+        meta = this.#storeMeta(node)
+      }
       const {
         resolved,
         integrity,
         version,
-      } = this.get(node.path)
+      } = meta
 
       let pathFixed = null
       if (resolved) {
@@ -932,6 +963,7 @@ class Shrinkwrap {
   #updateWaitingNode (loc) {
     const node = this.#awaitingUpdate.get(loc)
     this.#awaitingUpdate.delete(loc)
+    this.#storeMetaIndex = null
     this.data.packages[loc] = Shrinkwrap.metaFromNode(
       node,
       this.path,
