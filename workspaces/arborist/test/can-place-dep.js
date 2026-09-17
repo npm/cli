@@ -37,6 +37,8 @@ t.test('basic placement check tests', t => {
     explicitRequest,
     // an audit report, telling us which nodes are vulnerable
     auditReport,
+    // upper bound for the number of peer placement checks
+    maxChecks,
   }) => {
     const target = tree.inventory.get(targetLoc)
     const node = tree.inventory.get(nodeLoc)
@@ -86,6 +88,9 @@ t.test('basic placement check tests', t => {
       }
       if (expectSelf) {
         t.equal(cpd.canPlaceSelf, expectSelf, msg)
+      }
+      if (maxChecks) {
+        t.ok(cpd.allChildren.length <= maxChecks, 'avoids duplicate peer placement checks')
       }
       t.equal(cpd.description, cpd.canPlace.description || cpd.canPlace)
       t.matchSnapshot([...cpd.conflictChildren].map(c => ({
@@ -619,6 +624,31 @@ t.test('basic placement check tests', t => {
       { pkg: { name: 'c', version: '1.2.3', peerDependencies: { d: '1' } } },
       { pkg: { name: 'd', version: '1.2.3', peerDependencies: { b: '1' } } },
     ],
+  })
+
+  const densePeerNames = Array.from({ length: 8 }, (_, index) => `peer-${index}`)
+  const densePeerPackage = name => ({
+    name,
+    version: '1.0.0',
+    peerDependencies: Object.fromEntries(
+      densePeerNames.filter(peer => peer !== name).map(peer => [peer, '1'])
+    ),
+  })
+  runTest('dense peer graph', {
+    tree: new Node({
+      path,
+      pkg: {
+        name: 'project',
+        version: '1.2.3',
+        dependencies: { [densePeerNames[0]]: '1' },
+      },
+    }),
+    targetLoc: '',
+    nodeLoc: '',
+    dep: new Node({ pkg: densePeerPackage(densePeerNames[0]) }),
+    expect: OK,
+    peerSet: densePeerNames.slice(1).map(name => ({ pkg: densePeerPackage(name) })),
+    maxChecks: densePeerNames.length ** 2,
   })
 
   runTest('peers with peerConflicted edges in peerSet', {
