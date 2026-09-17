@@ -276,6 +276,23 @@ class Config {
     this.setEnvs()
   }
 
+  async reload (where) {
+    if (!this.loaded) {
+      throw new Error('call config.load() before reloading')
+    }
+    if (!confFileTypes.has(where)) {
+      throw new Error('invalid config location param: ' + where)
+    }
+
+    const conf = this.data.get(where)
+    const source = conf.source
+    this.sources.delete(source)
+    conf.reset()
+    this.#unknownConfigs = this.#unknownConfigs.filter(entry => entry.where !== where)
+    this.#flatOptions = null
+    await this.#loadFile(source, where)
+  }
+
   loadDefaults () {
     this.loadGlobalPrefix()
     this.loadHome()
@@ -1093,6 +1110,16 @@ class ConfigData {
 
   get raw () {
     return this.#raw
+  }
+
+  reset () {
+    for (const key of Object.keys(this.#data)) {
+      delete this.#data[key]
+    }
+    this.#source = null
+    this.#raw = {}
+    this[_loadError] = null
+    this[_valid] = true
   }
 }
 
