@@ -334,6 +334,16 @@ t.test('node - with duplicate edges to same dep', t => {
   t.end()
 })
 
+t.test('single node - normalizes scp-style repository url', t => {
+  const pkg = { ...rootPkg, repository: { url: 'git@github.com:pkgjs/parseargs.git' } }
+  const node = { ...root, package: pkg }
+  const res = cyclonedxOutput({ npm, nodes: [node] })
+  const repository = res.metadata.component.externalReferences
+    .find(reference => reference.type === 'vcs')
+  t.equal(repository.url, 'git+ssh://git@github.com/pkgjs/parseargs.git')
+  t.end()
+})
+
 // Check that all of the generated test snapshots validate against the CycloneDX schema
 t.test('schema validation', t => {
   // Load schemas
