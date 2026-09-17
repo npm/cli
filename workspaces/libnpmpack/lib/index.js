@@ -5,7 +5,7 @@ const npa = require('npm-package-arg')
 const runScript = require('@npmcli/run-script')
 const path = require('node:path')
 const Arborist = require('@npmcli/arborist')
-const { writeFile } = require('node:fs/promises')
+const { writeFile, mkdir, symlink, unlink } = require('node:fs/promises')
 
 module.exports = pack
 async function pack (spec = 'file:.', opts = {}) {
@@ -68,6 +68,37 @@ async function pack (spec = 'file:.', opts = {}) {
     })
   }
 
+  // When packing a workspace directory, hoisted bundled dependencies need to
+  // appear inside the workspace's node_modules so that packlist includes them
+  // with correct paths (node_modules/<dep>/file, not ../../node_modules/...).
+  // Create temporary symlinks before tar, clean up after.
+  const cleanupSymlinks = []
+  const wsNmDir = spec.type === 'directory' ? path.join(spec.fetchSpec, 'node_modules') : null
+  if (wsNmDir && opts.prefix && spec.fetchSpec !== opts.prefix) {
+    const rootArb = new Arborist({ path: opts.prefix })
+    const fullTree = await rootArb.loadActual()
+    for (const node of fullTree.inventory.values()) {
+      if (node.path === spec.fetchSpec) {
+        node.root = node
+        const toBundle = node.package.bundleDependencies || []
+        for (const dep of toBundle) {
+          const edge = node.edgesOut.get(dep)
+          if (!edge || edge.peer || edge.dev) continue
+          const depNode = node.edgesOut.get(dep).to
+          if (!depNode) continue
+          const depRealPath = depNode.realpath
+          const linkPath = path.join(wsNmDir, dep)
+          try {
+            await mkdir(wsNmDir, { recursive: true })
+            await symlink(path.relative(path.dirname(linkPath), depRealPath), linkPath)
+            cleanupSymlinks.push(linkPath)
+          } catch {}
+        }
+        break
+      }
+    }
+  }
+
   // packs tarball
   const tarballOpts = {
     ...opts,
@@ -88,6 +119,11 @@ async function pack (spec = 'file:.', opts = {}) {
       .replace(/^@/, '').replace(/[/\\]/g, '-')
     const destination = path.resolve(opts.packDestination, filename)
     await writeFile(destination, tarball)
+  }
+
+  // Clean up temporary symlinks
+  for (const link of cleanupSymlinks) {
+    try { await unlink(link) } catch {}
   }
 
   if (spec.type === 'directory' && !opts.ignoreScripts) {
