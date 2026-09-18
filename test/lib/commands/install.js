@@ -213,6 +213,79 @@ t.test('exec commands', async t => {
     )
   })
 
+  // Regression test: the blocked-scripts warning is printed by reifyFinish, which a failing root post-reify script would otherwise skip past, hiding the very thing that most likely broke the build.
+  await t.test('a failing root prepare still reports blocked install scripts', async t => {
+    const { npm, registry, logs } = await loadMockNpm(t, {
+      config: { audit: false },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          ...packageJson,
+          scripts: {
+            prepare: 'exit 1',
+          },
+        }),
+        abbrev: {
+          ...abbrev,
+          'package.json': JSON.stringify({
+            name: 'abbrev',
+            version: '1.0.0',
+            scripts: { postinstall: 'echo postinstall' },
+          }),
+        },
+      },
+      mocks: {
+        '@npmcli/run-script': async (opts) => {
+          if (opts.path === npm.prefix && opts.event === 'prepare') {
+            throw Object.assign(new Error('prepare failed'), { code: 'ELIFECYCLE' })
+          }
+        },
+      },
+    })
+    const manifest = registry.manifest({
+      name: 'abbrev',
+      packuments: [{ version: '1.0.0', scripts: { postinstall: 'echo postinstall' } }],
+    })
+    await registry.package({ manifest })
+    await registry.tarball({
+      manifest: manifest.versions['1.0.0'],
+      tarball: path.join(npm.prefix, 'abbrev'),
+    })
+
+    await t.rejects(npm.exec('install'), /prepare failed/, 'install rejects when prepare fails')
+    t.match(
+      logs.warn.byTitle('install-scripts').join('\n'),
+      /1 package had install scripts blocked/,
+      'blocked install scripts are reported before the failure'
+    )
+  })
+
+  // Regression test: a reify that throws rolls its tree back, so the blocked scripts have to be read off the ideal tree to still be reported.
+  await t.test('a failing reify still reports blocked install scripts', async t => {
+    const { npm, registry, logs } = await loadMockNpm(t, {
+      config: { audit: false },
+      prefixDir: {
+        'package.json': JSON.stringify(packageJson),
+        abbrev,
+      },
+      mocks: {
+        '@npmcli/run-script': async () => {},
+      },
+    })
+    const manifest = registry.manifest({
+      name: 'abbrev',
+      packuments: [{ version: '1.0.0', scripts: { postinstall: 'echo postinstall' } }],
+    })
+    await registry.package({ manifest })
+    registry.nock.get('/abbrev/-/abbrev-1.0.0.tgz').reply(404)
+
+    await t.rejects(npm.exec('install'), 'install rejects when a dependency cannot be fetched')
+    t.match(
+      logs.warn.byTitle('install-scripts').join('\n'),
+      /1 package had install scripts blocked/,
+      'blocked install scripts are reported before the failure'
+    )
+  })
+
   await t.test('should ignore scripts with --ignore-scripts', async t => {
     const { npm, registry } = await loadMockNpm(t, {
       config: {
