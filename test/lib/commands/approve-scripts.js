@@ -53,6 +53,92 @@ const setupProject = ({ allowScripts, withScripts = ['canvas'], noResolved = [] 
   }
 }
 
+// Mirrors the on-disk shape of an install-strategy=linked tree: real packages
+// live in node_modules/.store/<name>@<version>-<hash>/node_modules/<name> and
+// every consumer reaches them through a symlink, so canvas is reachable both
+// from the root and from inside dep's store entry.
+const setupLinkedProject = (t) => ({
+  'package.json': JSON.stringify({
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { canvas: '*', dep: '*' },
+  }, null, 2),
+  node_modules: {
+    '.package-lock.json': JSON.stringify({
+      name: 'host',
+      lockfileVersion: 3,
+      packages: {
+        'node_modules/.store/canvas@1.0.0-aaa/node_modules/canvas': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/canvas/-/canvas-1.0.0.tgz',
+          hasInstallScript: true,
+        },
+        'node_modules/.store/dep@1.0.0-bbb/node_modules/dep': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/dep/-/dep-1.0.0.tgz',
+        },
+        'node_modules/.store/dep@1.0.0-bbb/node_modules/canvas': {
+          resolved: 'node_modules/.store/canvas@1.0.0-aaa/node_modules/canvas',
+          link: true,
+        },
+        'node_modules/canvas': {
+          resolved: 'node_modules/.store/canvas@1.0.0-aaa/node_modules/canvas',
+          link: true,
+        },
+        'node_modules/dep': {
+          resolved: 'node_modules/.store/dep@1.0.0-bbb/node_modules/dep',
+          link: true,
+        },
+      },
+    }),
+    '.store': {
+      'canvas@1.0.0-aaa': {
+        node_modules: {
+          canvas: {
+            'package.json': JSON.stringify({
+              name: 'canvas',
+              version: '1.0.0',
+              scripts: { install: 'echo install' },
+            }),
+          },
+        },
+      },
+      'dep@1.0.0-bbb': {
+        node_modules: {
+          dep: {
+            'package.json': JSON.stringify({
+              name: 'dep',
+              version: '1.0.0',
+              dependencies: { canvas: '*' },
+            }),
+          },
+          canvas: t.fixture('symlink', '../../canvas@1.0.0-aaa/node_modules/canvas'),
+        },
+      },
+    },
+    canvas: t.fixture('symlink', '.store/canvas@1.0.0-aaa/node_modules/canvas'),
+    dep: t.fixture('symlink', '.store/dep@1.0.0-bbb/node_modules/dep'),
+  },
+})
+
+const setupLocalProject = (t) => ({
+  'package.json': JSON.stringify({
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { local: 'file:./local' },
+  }, null, 2),
+  local: {
+    'package.json': JSON.stringify({
+      name: 'local',
+      version: '1.0.0',
+      scripts: { install: 'echo install' },
+    }),
+  },
+  node_modules: {
+    local: t.fixture('symlink', '../local'),
+  },
+})
+
 t.test('approve-scripts --pending lists unreviewed packages', async t => {
   const { npm, joinedOutput } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas', 'sharp'] }),
@@ -97,6 +183,26 @@ t.test('approve-scripts <pkg> writes pinned entry by default', async t => {
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.strictSame(pkg.allowScripts, { 'canvas@1.0.0': true })
+})
+
+t.test('approve-scripts <pkg> writes one entry per package under install-strategy=linked', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupLinkedProject(t),
+  })
+  await npm.exec('approve-scripts', ['canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'canvas@1.0.0': true })
+})
+
+t.test('approve-scripts <pkg> writes the file: entry for a local dependency', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupLocalProject(t),
+  })
+  await npm.exec('approve-scripts', ['local'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'file:../local': true })
 })
 
 t.test('approve-scripts <pkg> --no-pin writes name-only entry', async t => {
