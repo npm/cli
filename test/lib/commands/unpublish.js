@@ -590,6 +590,23 @@ t.test('completion', async t => {
     })
   })
 
+  t.test('no matching packages', async t => {
+    const registry = new MockRegistry({
+      tap: t,
+      registry: npm.config.get('registry'),
+      authorization: 'test-auth-token',
+    })
+    registry.whoami({ username: user })
+    registry.getPackages({ team: user, packages: { [pkg]: 'write' } })
+
+    await testComp(t, {
+      argv: ['npm', 'unpublish'],
+      partialWord: 'other-package',
+      expect: [],
+      title: 'should not fetch versions when no package names match',
+    })
+  })
+
   t.test('no packages retrieved', async t => {
     const registry = new MockRegistry({
       tap: t,
