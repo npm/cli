@@ -1430,13 +1430,17 @@ t.test('add: the real name of an installed alias points at the alias', async t =
 })
 
 t.test('add: a reused edit dir drops a stale alias marker', async t => {
-  const editDir = t.testdir({ '.npm-patch-alias.json': JSON.stringify({ name: ALIAS, source: DEP_NAME }) })
   const { npm, registry } = await loadMockNpm(t, {
-    config: { 'ignore-scripts': true, audit: false, 'edit-dir': editDir },
+    config: { 'ignore-scripts': true, audit: false },
     strictRegistryNock: false,
-    prefixDir: basePrefix(),
+    prefixDir: {
+      ...basePrefix(),
+      edit: { '.npm-patch-alias.json': JSON.stringify({ name: ALIAS, source: DEP_NAME }) },
+    },
   })
   await setupDep(npm, registry)
+  const editDir = path.join(npm.prefix, 'edit')
+  npm.config.set('edit-dir', editDir)
   await npm.exec('patch', ['add', `${DEP_NAME}@${DEP_VERSION}`])
   t.notOk(fs.existsSync(path.join(editDir, '.npm-patch-alias.json')), 'stale marker removed')
 })
