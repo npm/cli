@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.13.0](https://github.com/npm/cli/compare/config-v10.12.0...config-v10.13.0) (2026-09-21)
+### Features
+* [`0b3c699`](https://github.com/npm/cli/commit/0b3c699b120b262931542b685424eab971917a48) [#9994](https://github.com/npm/cli/pull/9994) token: support read-write-stage-only granular access tokens (#9994) (@github-actions[bot], @Tayvon, @Copilot)
+### Bug Fixes
+* [`ddbadfc`](https://github.com/npm/cli/commit/ddbadfcf02f156fe98d5c3ccc8cdc28c61ab1de4) [#9947](https://github.com/npm/cli/pull/9947) provenance-file takes precedence over OIDC auto-generated provenance (#9947) (@github-actions[bot], @yunseo-kim)
+* [`64d4b4b`](https://github.com/npm/cli/commit/64d4b4be3f2bc49bddaa085467f1bc18912c0182) [#9937](https://github.com/npm/cli/pull/9937) config: avoid exporting persistent allow-scripts (#9937) (@github-actions[bot], @Fnine59)
+
 ## [10.12.0](https://github.com/npm/cli/compare/config-v10.11.0...config-v10.12.0) (2026-06-29)
 ### Features
 * [`3021ad6`](https://github.com/npm/cli/commit/3021ad60d9a381ac8c64617843de661b2a0d4620) [#9694](https://github.com/npm/cli/pull/9694) arborist: extend replace-registry-host with URL prefix matching (#6110) (#9694) (@github-actions[bot], @u2mejc)
