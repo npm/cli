@@ -33,6 +33,11 @@ package literally named like a subcommand must use the explicit form, e.g.
     If more than one version of `<pkg>` is installed, re-run with an exact
     selector such as `npm patch add lodash@4.17.21`.
 
+    For an `npm:` alias, pass the alias name, e.g. `npm patch add my-lodash`
+    for `"my-lodash": "npm:lodash@^4"`, or the full alias spec
+    `npm patch add my-lodash@npm:lodash@4.17.21`. npm extracts the real
+    package, and `commit` keys the selector and patch file on the alias name.
+
 * `npm patch commit <edit-dir>`
 
     Diffs the edited directory against a clean copy of the original tarball,
