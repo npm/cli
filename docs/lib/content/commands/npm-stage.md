@@ -46,8 +46,9 @@ Before using `npm stage` commands, ensure the following requirements are met:
 
 * **Write permissions on the package:** You must have write access to the
   package you're configuring.
-* **Package must exist:** The package you're configuring must already exist
-  on the npm registry.
+* **New or existing packages:** The package you're staging does not need to
+  already exist on the npm registry. You can stage a brand-new package, and
+  approving the staged version creates it.
 * **2FA enabled on your account:** Commands that require 2FA will prompt you
   to authenticate. If you don't already have 2FA enabled on your account,
   you must enable it before using these commands.
