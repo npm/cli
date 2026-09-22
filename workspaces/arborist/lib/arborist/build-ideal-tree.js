@@ -497,6 +497,15 @@ module.exports = cls => class IdealTreeBuilder extends cls {
             for (const edge of node.edgesOut.values()) {
               children.push(edge.to)
             }
+            // An unlinked workspace is unreachable from the root, so walk into what it has installed; walking the workspace itself would queue it ahead of the root, bypassing the workspaces filter.
+            if (node === tree.target && node.workspaces) {
+              for (const path of node.workspaces.values()) {
+                const ws = node.inventory.get(relpath(node.realpath, path))
+                for (const { to } of ws?.edgesOut.values() ?? []) {
+                  children.push(to)
+                }
+              }
+            }
             return children
           },
           filter: node => node,
