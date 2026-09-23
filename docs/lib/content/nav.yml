@@ -234,7 +234,7 @@
   children:
   - title: Install
     url: /configuring-npm/install
-    description: Download and install node and npm
+    description: Download and install Node and npm
   - title: Folders
     url: /configuring-npm/folders
     description: Folder structures used by npm
