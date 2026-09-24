@@ -229,3 +229,67 @@ t.test('filter out all files', async t => {
   t.equal(files.size, 0, 'should have no files')
   t.equal(refs.size, 0, 'should have no refs')
 })
+
+t.test('compiles each glob pattern only once', async t => {
+  const realMinimatch = require('minimatch')
+  const mockUntar = () => {
+    const compiled = []
+    const untarWithSpy = t.mock('../lib/untar.js', {
+      minimatch: {
+        ...realMinimatch,
+        Minimatch: function (pattern, opts) {
+          compiled.push(pattern)
+          return new realMinimatch.Minimatch(pattern, opts)
+        },
+      },
+    })
+    return { compiled, untar: untarWithSpy }
+  }
+  const tarballs = async () => [
+    { item: await pacote.tarball(resolve('./test/fixtures/archive.tgz')), prefix: 'a/' },
+    { item: await pacote.tarball(resolve('./test/fixtures/archive.tgz')), prefix: 'b/' },
+  ]
+
+  t.test('with filters', async t => {
+    const { compiled, untar: untarWithSpy } = mockUntar()
+    const { files, refs } = await untarWithSpy(await tarballs(), {
+      diffFiles: ['*.json', 'lib/**/*.js'],
+    })
+
+    t.same(compiled, [
+      '{package/,}*.json',
+      '{package/,}lib/**/*.js',
+    ], 'should compile each pattern once across all tarballs and files')
+    t.same([...files], [
+      'lib/index.js',
+      'lib/utils/b.js',
+      'package-lock.json',
+      'package.json',
+    ], 'should return list of matched filenames')
+    t.same([...refs.keys()], [
+      'a/lib/index.js',
+      'a/lib/utils/b.js',
+      'a/package-lock.json',
+      'a/package.json',
+      'b/lib/index.js',
+      'b/lib/utils/b.js',
+      'b/package-lock.json',
+      'b/package.json',
+    ], 'should read matched files from both tarballs')
+  })
+
+  t.test('without filters', async t => {
+    const { compiled, untar: untarWithSpy } = mockUntar()
+    const { files } = await untarWithSpy(await tarballs())
+
+    t.same(compiled, [], 'should not compile any pattern')
+    t.same([...files], [
+      'lib/index.js',
+      'lib/utils/b.js',
+      'package-lock.json',
+      'package.json',
+      'test/index.js',
+      'test/utils/b.js',
+    ], 'should return all filenames')
+  })
+})
