@@ -107,6 +107,22 @@ t.test('404 considered a success', async t => {
   t.ok(ret, '@npmcli/npm-unpublish-test was unpublished')
 })
 
+t.test('404 from whole-package delete is not considered a success', async t => {
+  const registry = new MockRegistry({
+    tap: t,
+    registry: opts.registry,
+  })
+  const manifest = registry.manifest({ name: '@npmcli/npm-unpublish-test' })
+  const spec = npa(manifest.name)
+  registry.package({ manifest, query: { write: true } })
+  registry.nock.delete(`/${spec.escapedName}/-rev/${manifest._rev}`).reply(404)
+  await t.rejects(
+    unpublish('@npmcli/npm-unpublish-test', opts),
+    { code: 'E404' },
+    'surfaces a failed full-package delete'
+  )
+})
+
 t.test('non-404 errors', async t => {
   const registry = new MockRegistry({
     tap: t,
