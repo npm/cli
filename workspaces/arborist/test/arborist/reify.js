@@ -2156,6 +2156,54 @@ t.test('running lifecycle scripts of unchanged link nodes on reify', async t => 
     'should run postinstall lifecycle scripts for links directly linked to the tree')
 })
 
+t.test('allowScripts gates the scripts pacote runs while extracting', async t => {
+  const Pacote = require('pacote')
+
+  // pacote runs `prepare` for git and directory deps as part of extract, so the
+  // policy has to reach it through ignoreScripts rather than the rebuild queues.
+  const extractIgnoreScripts = async (t, opt) => {
+    const seen = []
+    const MockedArborist = t.mock('../../lib/arborist', {
+      pacote: {
+        ...Pacote,
+        extract: async (spec, dest, extractOpt) => {
+          seen.push(extractOpt.ignoreScripts)
+          return Pacote.extract(spec, dest, extractOpt)
+        },
+      },
+    })
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        dependencies: { abbrev: '1.1.1' },
+      }),
+    })
+    createRegistry(t, true)
+    await new MockedArborist({ audit: false, cache: path, path, ...opt }).reify()
+    return seen
+  }
+
+  t.test('unreviewed dep extracts with scripts off', async t => {
+    t.strictSame(await extractIgnoreScripts(t, { allowScripts: {} }), [true])
+  })
+
+  t.test('approved dep extracts with scripts on', async t => {
+    t.strictSame(await extractIgnoreScripts(t, { allowScripts: { abbrev: true } }), [false])
+  })
+
+  t.test('dangerouslyAllowAllScripts extracts with scripts on', async t => {
+    t.strictSame(await extractIgnoreScripts(t, { dangerouslyAllowAllScripts: true }), [false])
+  })
+
+  t.test('ignoreScripts still wins', async t => {
+    t.strictSame(await extractIgnoreScripts(t, {
+      ignoreScripts: true,
+      dangerouslyAllowAllScripts: true,
+    }), [true])
+  })
+})
+
 t.test('save-prod, with optional', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
