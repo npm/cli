@@ -250,6 +250,87 @@ t.test('json audit reports fixBlockedByReleaseAge when a fix is too new', async 
     'json output flags the fix that min-release-age blocked')
 })
 
+t.test('audit fix - no spurious update when fix requires semver-major bump', async t => {
+  const semverMajorTree = {
+    'package.json': JSON.stringify({
+      name: 'test-dep',
+      version: '1.0.0',
+      dependencies: {
+        'test-dep-a': '^2.0.0',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'test-dep',
+      version: '1.0.0',
+      lockfileVersion: 2,
+      requires: true,
+      packages: {
+        '': {
+          name: 'test-dep',
+          version: '1.0.0',
+          dependencies: {
+            'test-dep-a': '^2.0.0',
+          },
+          devDependencies: {},
+        },
+        'node_modules/test-dep-a': {
+          name: 'test-dep-a',
+          version: '2.0.0',
+        },
+      },
+      dependencies: {
+        'test-dep-a': {
+          version: '2.0.0',
+        },
+      },
+    }),
+    node_modules: {
+      'test-dep-a': {
+        'package.json': JSON.stringify({
+          name: 'test-dep-a',
+          version: '2.0.0',
+        }),
+      },
+    },
+  }
+
+  const { npm } = await loadMockNpm(t, {
+    prefixDir: semverMajorTree,
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+  })
+  const manifest = registry.manifest({
+    name: 'test-dep-a',
+    packuments: [{ version: '2.0.0' }, { version: '2.0.1' }, { version: '3.0.0' }],
+  })
+  await registry.package({ manifest, times: 2 })
+  // All 2.x versions are vulnerable; fix requires major bump to 3.0.0
+  const advisory = registry.advisory({ id: 101, vulnerable_versions: '<3.0.0' })
+  registry.nock
+    .post('/-/npm/v1/security/advisories/bulk', body => {
+      const unzipped = JSON.parse(gunzip(Buffer.from(body, 'hex')))
+      return t.same(unzipped, { 'test-dep-a': ['2.0.0'] })
+    })
+    .reply(200, {
+      'test-dep-a': [advisory],
+    })
+    .post('/-/npm/v1/security/advisories/bulk', () => true)
+    .reply(200, {
+      'test-dep-a': [advisory],
+    })
+  await npm.exec('audit', ['fix'])
+  const lockfile = JSON.parse(
+    fs.readFileSync(path.join(npm.prefix, 'package-lock.json'), 'utf8')
+  )
+  t.equal(
+    lockfile.packages['node_modules/test-dep-a'].version,
+    '2.0.0',
+    'lockfile unchanged - no spurious minor update when fix requires semver-major bump'
+  )
+})
+
 t.test('audit fix no package lock', async t => {
   const { npm } = await loadMockNpm(t, {
     config: {
