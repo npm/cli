@@ -92,7 +92,7 @@ The `:outdated` pseudo selector retrieves data from the registry and returns inf
 The type parameter may be one of the following:
 
 - `any` (default) a version exists that is greater than the current one
-- `in-range` a version exists that is greater than the current one, and satisfies at least one if its parent's dependencies
+- `in-range` a version exists that is greater than the current one, and satisfies at least one of its parent's dependencies
 - `out-of-range` a version exists that is greater than the current one, does not satisfy at least one of its parent's dependencies
 - `major` a version exists that is a semver major greater than the current one
 - `minor` a version exists that is a semver minor greater than the current one
@@ -128,7 +128,7 @@ Some examples:
 
 - `:root > .prod:vuln` returns direct production dependencies with any known vulnerability
 - `:vuln([severity=high])` returns only dependencies with a vulnerability with a `high` severity.
-- `:vuln([severity=high],[severity=moderate])` returns only dependencies with a vulnerability with a `high`  or `moderate` severity.
+- `:vuln([severity=high],[severity=moderate])` returns only dependencies with a vulnerability with a `high` or `moderate` severity.
 - `:vuln([cwe=1333])` returns only dependencies with a vulnerability that includes CWE-1333 (ReDoS)
 
 #### [Attribute Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
