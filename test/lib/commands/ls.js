@@ -818,6 +818,42 @@ t.test('ls', async t => {
     t.matchSnapshot(cleanCwd(result()), 'should output tree containing production deps')
   })
 
+  t.test('--omit=optional filters nested optional dependencies', async t => {
+    const { result, ls } = await mockLs(t, {
+      config: { omit: ['optional'] },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: 'test-npm-ls',
+          version: '1.0.0',
+          dependencies: {
+            'prod-dep': '^1.0.0',
+          },
+        }),
+        node_modules: {
+          'prod-dep': {
+            'package.json': JSON.stringify({
+              name: 'prod-dep',
+              version: '1.0.0',
+              optionalDependencies: {
+                'nested-optional-dep': '^1.0.0',
+              },
+            }),
+          },
+          'nested-optional-dep': {
+            'package.json': JSON.stringify({
+              name: 'nested-optional-dep',
+              version: '1.0.0',
+            }),
+          },
+        },
+      },
+    })
+    await ls.exec([])
+    const output = cleanCwd(result())
+    t.match(output, /prod-dep@1\.0\.0/)
+    t.notMatch(output, /nested-optional-dep/)
+  })
+
   t.test('--long', async t => {
     const config = {
       long: true,
