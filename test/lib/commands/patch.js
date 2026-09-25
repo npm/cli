@@ -1326,3 +1326,269 @@ t.test('install honors --allow-unused-patches only from the cli', async t => {
     await t.rejects(npm.exec('install', []), { code: 'EPATCHUNUSED' })
   })
 })
+
+// Root project depending on the patchable dep through an npm: alias.
+const ALIAS = 'aliased'
+const aliasPrefix = () => ({
+  'dep-tarball': depTarball,
+  'package.json': JSON.stringify({
+    name: 'root-project', version: '1.0.0', dependencies: { [ALIAS]: `npm:${DEP_NAME}@^${DEP_VERSION}` },
+  }),
+})
+
+t.test('add + commit an npm: alias keys the selector on the alias name', async t => {
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: aliasPrefix(),
+  })
+  await setupDep(npm, registry)
+  await npm.exec('install', [])
+
+  outputs.length = 0
+  await npm.exec('patch', ['add', ALIAS])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  t.equal(readJson(path.join(editDir, 'package.json')).name, DEP_NAME, 'extracted the real package')
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'module.exports = "patched"\n')
+  await npm.exec('patch', ['commit', editDir])
+
+  const key = `${ALIAS}@${DEP_VERSION}`
+  const patchFile = path.join(npm.prefix, 'patches', `${key}.patch`)
+  t.same(readJson(path.join(npm.prefix, 'package.json')).patchedDependencies,
+    { [key]: `patches/${key}.patch` }, 'selector uses the alias name')
+  t.notMatch(fs.readFileSync(patchFile, 'utf8'), '.npm-patch-alias.json', 'marker is not part of the patch')
+  t.equal(fs.readFileSync(path.join(npm.prefix, 'node_modules', ALIAS, 'index.js'), 'utf8'),
+    'module.exports = "patched"\n', 'installed alias is patched')
+  t.ok(readJson(path.join(npm.prefix, 'package-lock.json')).packages[`node_modules/${ALIAS}`].patched,
+    'lockfile records the patch on the alias node')
+})
+
+t.test('add: an explicit npm: alias spec extracts the real package without install', async t => {
+  const { npm, joinedOutput, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: basePrefix(),
+  })
+  await setupDep(npm, registry)
+  await npm.exec('patch', ['add', `${ALIAS}@npm:${DEP_NAME}@${DEP_VERSION}`])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  t.equal(readJson(path.join(editDir, 'package.json')).name, DEP_NAME, 'extracted the real package')
+  t.same(readJson(path.join(editDir, '.npm-patch-alias.json')), { name: ALIAS, source: DEP_NAME },
+    'alias marker written')
+})
+
+t.test('add: a declared but uninstalled alias range resolves against the real package', async t => {
+  const { npm, joinedOutput, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: aliasPrefix(),
+  })
+  await setupDep(npm, registry)
+  await npm.exec('patch', ['add', `${ALIAS}@^1.0.0`])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  t.equal(readJson(path.join(editDir, 'package.json')).name, DEP_NAME, 'extracted the real package')
+})
+
+t.test('add: an explicit alias that disagrees with the installed package rejects', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'root-project', version: '1.0.0' }),
+      node_modules: { [ALIAS]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }) } },
+    },
+  })
+  await t.rejects(npm.exec('patch', ['add', `${ALIAS}@npm:other@${DEP_VERSION}`]), { code: 'EPATCHALIAS' })
+})
+
+t.test('add: one name installed as two packages at the same version is ambiguous', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'root-project', version: '1.0.0' }),
+      node_modules: {
+        [ALIAS]: { 'package.json': JSON.stringify({ name: ALIAS, version: DEP_VERSION }) },
+        host: {
+          'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
+          node_modules: { [ALIAS]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }) } },
+        },
+      },
+    },
+  })
+  await t.rejects(npm.exec('patch', ['add', ALIAS]), { code: 'EPATCHAMBIGUOUS', message: /more than one package/ })
+})
+
+t.test('add: the real name of an installed alias points at the alias', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'root-project', version: '1.0.0' }),
+      node_modules: { [ALIAS]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }) } },
+    },
+  })
+  await t.rejects(npm.exec('patch', ['add', DEP_NAME]),
+    { code: 'EPATCHNOTINSTALLED', message: new RegExp(`installed as "${ALIAS}"`) })
+})
+
+t.test('add: a reused edit dir drops a stale alias marker', async t => {
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: {
+      ...basePrefix(),
+      edit: { '.npm-patch-alias.json': JSON.stringify({ name: ALIAS, source: DEP_NAME }) },
+    },
+  })
+  await setupDep(npm, registry)
+  const editDir = path.join(npm.prefix, 'edit')
+  npm.config.set('edit-dir', editDir)
+  await npm.exec('patch', ['add', `${DEP_NAME}@${DEP_VERSION}`])
+  t.notOk(fs.existsSync(path.join(editDir, '.npm-patch-alias.json')), 'stale marker removed')
+})
+
+t.test('commit: an alias marker for another package rejects with EPATCHBADMARKER', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'root-project', version: '1.0.0' }),
+      edit: {
+        'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }),
+        '.npm-patch-alias.json': JSON.stringify({ name: ALIAS, source: 'other' }),
+      },
+    },
+  })
+  await t.rejects(npm.exec('patch', ['commit', path.join(npm.prefix, 'edit')]), { code: 'EPATCHBADMARKER' })
+})
+
+t.test('commit: an alias marker naming a path rejects with EPATCHBADMARKER', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'root-project', version: '1.0.0' }),
+      edit: {
+        'package.json': JSON.stringify({ name: DEP_NAME, version: DEP_VERSION }),
+        '.npm-patch-alias.json': JSON.stringify({ name: '../escape', source: DEP_NAME }),
+      },
+    },
+  })
+  await t.rejects(npm.exec('patch', ['commit', path.join(npm.prefix, 'edit')]), { code: 'EPATCHBADMARKER' })
+})
+
+t.test('update rebases an npm: alias patch onto the real package', async t => {
+  const real = 'upd-alias-real'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [ALIAS]: `npm:${real}@^1.0.0` }),
+  })
+  await setupVersions(npm, registry, real, { '1.0.0': 'a\nb\nc\n', '2.0.0': 'a\nb\nCC\n' })
+  await npm.exec('install', [])
+  outputs.length = 0
+  await npm.exec('patch', ['add', ALIAS])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'AA\nb\nc\n')
+  await npm.exec('patch', ['commit', editDir])
+
+  npm.config.set('to', '2.0.0')
+  await npm.exec('patch', ['update', ALIAS])
+  t.same(readJson(path.join(npm.prefix, 'package.json')).patchedDependencies,
+    { [`${ALIAS}@2.0.0`]: `patches/${ALIAS}@2.0.0.patch` }, 'alias selector renamed to the new version')
+  t.match(fs.readFileSync(path.join(npm.prefix, 'patches', `${ALIAS}@2.0.0.patch`), 'utf8'), /\+AA/,
+    'rebased patch keeps the edit')
+})
+
+t.test('update conflict on an npm: alias keeps the alias through the resolving commit', async t => {
+  const real = 'upd-alias-conflict'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [ALIAS]: `npm:${real}@^1.0.0` }),
+  })
+  await setupVersions(npm, registry, real, { '1.0.0': 'a\nb\nc\n', '2.0.0': 'a\nBB\nc\n' })
+  await npm.exec('install', [])
+  outputs.length = 0
+  await npm.exec('patch', ['add', ALIAS])
+  const addDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(addDir, 'index.js'), 'a\nMINE\nc\n')
+  await npm.exec('patch', ['commit', addDir])
+
+  npm.config.set('to', '2.0.0')
+  outputs.length = 0
+  await npm.exec('patch', ['update', ALIAS])
+  const editDir = joinedOutput().match(/Resolve the conflicts in: (.+)/)[1].trim()
+  t.same(readJson(path.join(editDir, '.npm-patch-alias.json')), { name: ALIAS, source: real },
+    'alias marker written for the conflict')
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'a\nMINE\nc\n')
+  await npm.exec('patch', ['commit', editDir])
+  t.same(readJson(path.join(npm.prefix, 'package.json')).patchedDependencies,
+    { [`${ALIAS}@2.0.0`]: `patches/${ALIAS}@2.0.0.patch` }, 'renamed on the alias after the resolving commit')
+})
+
+t.test('update: a name locked as two packages rejects with EPATCHAMBIGUOUS', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        dependencies: { [ALIAS]: `npm:${DEP_NAME}@1.0.0`, host: '1.0.0' },
+        patchedDependencies: { [`${ALIAS}@1.0.0`]: `patches/${ALIAS}@1.0.0.patch` },
+      }),
+      patches: { [`${ALIAS}@1.0.0.patch`]: '' },
+      'package-lock.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': { name: 'root-project', version: '1.0.0', dependencies: { [ALIAS]: `npm:${DEP_NAME}@1.0.0`, host: '1.0.0' } },
+          [`node_modules/${ALIAS}`]: { name: DEP_NAME, version: '1.0.0' },
+          'node_modules/host': { version: '1.0.0', dependencies: { [ALIAS]: '1.0.0' } },
+          [`node_modules/host/node_modules/${ALIAS}`]: { version: '1.0.0' },
+        },
+      }),
+    },
+  })
+  npm.config.set('to', '2.0.0')
+  await t.rejects(npm.exec('patch', ['update', ALIAS]), { code: 'EPATCHAMBIGUOUS', message: /more than one package/ })
+})
+
+t.test('add: an installed node without a package name falls back to its folder name', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'root-project', version: '1.0.0' }),
+      node_modules: { [ALIAS]: { 'package.json': JSON.stringify({ version: DEP_VERSION }) } },
+    },
+  })
+  await t.rejects(npm.exec('patch', ['add', `${ALIAS}@npm:other@${DEP_VERSION}`]),
+    { code: 'EPATCHALIAS', message: new RegExp(`installed as "${ALIAS}"`) })
+})
+
+t.test('update: an alias missing from the lockfile rebases the declared package', async t => {
+  const real = 'upd-alias-unlocked'
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        dependencies: { [ALIAS]: `npm:${real}@^2.0.0` },
+        patchedDependencies: { [`${ALIAS}@1.0.0`]: `patches/${ALIAS}@1.0.0.patch` },
+      }),
+      patches: { [`${ALIAS}@1.0.0.patch`]: '--- /dev/null\t\n+++ b/EXTRA.txt\t\n@@ -0,0 +1 @@\n+extra\n' },
+      'package-lock.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: { '': { name: 'root-project', version: '1.0.0', dependencies: { [ALIAS]: `npm:${real}@^2.0.0` } } },
+      }),
+    },
+  })
+  await setupVersions(npm, registry, real, { '1.0.0': 'x\n', '2.0.0': 'x\n' })
+  npm.config.set('to', '2.0.0')
+  await npm.exec('patch', ['update', ALIAS])
+  t.match(fs.readFileSync(path.join(npm.prefix, 'patches', `${ALIAS}@2.0.0.patch`), 'utf8'), /\+extra/,
+    'rebased against the declared alias target')
+})
