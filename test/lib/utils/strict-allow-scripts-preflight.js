@@ -232,3 +232,22 @@ t.test('global error points at --allow-scripts, not approve-scripts', async t =>
     }
   )
 })
+
+// A bare name is only a valid policy key for a registry dep. A tarball dep
+// is matched by its resolved URL, so suggesting its name would leave the
+// scripts blocked after the user followed the advice.
+t.test('global error suggests the resolved source for a tarball dep', async t => {
+  const tarball = {
+    ...node({ name: 'tool' }),
+    resolved: 'https://example.com/tool.tgz',
+  }
+  const arb = makeArb({ ideal: tree([tarball]) })
+  await t.rejects(
+    preflight({
+      arb,
+      npm: { global: true, flatOptions: { strictAllowScripts: true } },
+      idealTreeOpts: {},
+    }),
+    { message: /npm config set allow-scripts=https:\/\/example\.com\/tool\.tgz/ }
+  )
+})
