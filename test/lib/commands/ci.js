@@ -413,6 +413,45 @@ t.test('should throw error when ideal inventory mismatches virtual', async t => 
   t.equal(fs.existsSync(nmTestFile), true, 'does not remove node_modules')
 })
 
+t.test('accepts a lock file with an unavailable optional dependency', async t => {
+  const missingOptional = 'missing-optional'
+  const { npm, registry } = await loadMockNpm(t, {
+    config: {
+      audit: false,
+      'dry-run': true,
+      'ignore-scripts': true,
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'test-package',
+        version: '1.0.0',
+        dependencies: { 'optional-parent': '1.0.0' },
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'test-package',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            name: 'test-package',
+            version: '1.0.0',
+            dependencies: { 'optional-parent': '1.0.0' },
+          },
+          'node_modules/optional-parent': {
+            version: '1.0.0',
+            resolved: 'https://registry.npmjs.org/optional-parent/-/optional-parent-1.0.0.tgz',
+            optionalDependencies: { [missingOptional]: '1.0.0' },
+          },
+        },
+      }),
+    },
+  })
+  registry.nock.get(`/${missingOptional}`).reply(404, { error: 'Not found' })
+
+  await npm.exec('ci', [])
+})
+
 t.test('should remove dirty node_modules with unhoisted workspace module', async t => {
   const { npm, registry, assert } = await loadMockNpm(t, {
     prefixDir: workspaceMock(t, {
