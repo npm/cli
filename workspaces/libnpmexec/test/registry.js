@@ -328,3 +328,37 @@ t.test('override save to true when installing to npx cache', async t => {
     value: 'packages-2.0.0',
   })
 })
+
+t.test('npx cache install ignores inherited global mode', async t => {
+  const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
+
+  const hash = crypto.createHash('sha512')
+    .update('@npmcli/create-index')
+    .digest('hex')
+    .slice(0, 16)
+
+  const { exec, path, registry, readOutput } = setup(t, {
+    testdir: merge(fixtures, {
+      global: {},
+    }),
+  })
+
+  await package({ registry, path })
+
+  // simulates npx spawned from a global install's lifecycle script, where
+  // npm_config_global=true leaks in through the environment
+  await exec({
+    args: ['@npmcli/create-index'],
+    global: true,
+  })
+
+  // the bin must run, so it has to be linked under the cache dir's
+  // node_modules/.bin, not the global-style <npxCache>/bin target
+  t.match(await readOutput('@npmcli-create-index'), {
+    value: 'packages-2.0.0',
+  })
+  t.notOk(existsSync(resolve(path, 'npxCache', 'bin')),
+    'bins are not linked to the global bin dir')
+  t.ok(existsSync(resolve(path, 'npxCache', hash, 'node_modules', '.bin')),
+    'bins are linked inside the npx cache dir')
+})

@@ -19,8 +19,6 @@ const runScript = require('./run-script.js')
 const isWindows = require('./is-windows.js')
 const withLock = require('./with-lock.js')
 
-const binPaths = []
-
 // when checking the local tree we look up manifests, cache those results by
 // spec.raw so we don't have to fetch again when we check npxCache
 const manifests = new Map()
@@ -113,6 +111,8 @@ const exec = async (opts) => {
     ...flatOptions
   } = opts
 
+  const binPaths = []
+
   let pkgPaths = opts.pkgPath
   if (typeof pkgPaths === 'string') {
     pkgPaths = [pkgPaths]
@@ -196,7 +196,11 @@ const exec = async (opts) => {
   let commandManifest
   await Promise.all(packages.map(async (pkg, i) => {
     const spec = npa(pkg, path)
-    const { manifest, node } = await missingFromTree({ spec, tree: localTree, flatOptions })
+    const { manifest, node } = await missingFromTree({
+      spec,
+      tree: localTree,
+      flatOptions,
+    })
     if (manifest) {
       // Package does not exist in the local tree
       needInstall.push({ spec, manifest })
@@ -257,8 +261,14 @@ const exec = async (opts) => {
       .slice(0, 16)
     const installDir = resolve(npxCache, hash)
     await mkdir(installDir, { recursive: true })
+    // The npx cache is never a global install, even when npx inherits
+    // global:true from the environment of a global install's lifecycle
+    // script. Letting it through makes arborist link bins to the global
+    // bin dir instead of the cache's node_modules/.bin, which the lookup
+    // below does not expect.
     const npxArb = new Arborist({
       ...flatOptions,
+      global: false,
       path: installDir,
     })
     const lockPath = join(installDir, 'concurrency.lock')
