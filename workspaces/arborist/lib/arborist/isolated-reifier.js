@@ -145,6 +145,8 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.localLocation = node.location
     result.localPath = node.path
     result.isWorkspace = true
+    // isWorkspace above marks every local proxy, file: deps included; this is only the project's workspaces.
+    result.isProjectWorkspace = node.isWorkspace
     result.resolved = node.resolved
     await this.#assignCommonProperties(node, result)
     return result
@@ -325,6 +327,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         package: c.package,
         path: c.localPath,
         resolved: c.resolved,
+        isWorkspace: c.isProjectWorkspace,
       })
       root.fsChildren.add(workspace)
       root.inventory.set(workspace.location, workspace)
@@ -450,7 +453,8 @@ module.exports = cls => class IsolatedReifier extends cls {
       version: dep.package.version,
     }
     const link = new IsolatedLink({
-      isStoreLink: true,
+      // Links to local targets (workspaces, file: deps) must take the links build pass so their prepare scripts run.
+      isStoreLink: external,
       location: join(nmFolder, dep.name),
       name: toKey,
       optional,
