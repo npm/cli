@@ -1,4 +1,8 @@
 const t = require('tap')
+const { existsSync } = require('node:fs')
+const { resolve } = require('node:path')
+const PackageJson = require('@npmcli/package-json')
+const realRunScript = require('@npmcli/run-script')
 
 const mockRunScript = async (t, mocks, { level = 0 } = {}) => {
   const mockedRunScript = t.mock('../lib/run-script.js', mocks)
@@ -156,4 +160,136 @@ t.test('isNotWindows', async t => {
   await runScript({ args: ['test'] })
   // need both arguments and no arguments for code coverage
   await runScript()
+})
+
+t.test('escapes cmd.exe executable tokens', async t => {
+  for (const scriptShell of ['cmd', 'CMD.EXE', 'C:\\Windows\\System32\\cmd.exe']) {
+    const { runScript } = await mockRunScript(t, {
+      '@npmcli/run-script': async ({ pkg, args }) => {
+        t.equal(pkg.scripts.npx, '^"bin^&echo^ injected^"')
+        t.same(args, ['an argument', 'literal&argument'])
+      },
+      '../lib/is-windows.js': false,
+    })
+    await runScript({
+      args: ['bin&echo injected', 'an argument', 'literal&argument'],
+      scriptShell,
+    })
+  }
+})
+
+t.test('cmd.exe quoting preserves paths and literal metacharacters', async t => {
+  const cases = [
+    ['if', '^"if^"'],
+    ['two words', '^"two^ words^"'],
+    ['C:\\Program Files\\bin.cmd', '^"C:\\Program^ Files\\bin.cmd^"'],
+    ["bin'name", '^"bin\'name^"'],
+    ['bin(^);,=@', '^"bin^(^^^)^;^,^=^@^"'],
+  ]
+  let script
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': async ({ pkg }) => {
+      script = pkg.scripts.npx
+    },
+  })
+  for (const [command, expected] of cases) {
+    await runScript({ args: [command], scriptShell: 'cmd.exe' })
+    t.equal(script, expected, command)
+  }
+})
+
+t.test('rejects cmd.exe executable tokens that cannot be quoted safely', async t => {
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': async () => t.fail('must not spawn'),
+  })
+  for (const command of [
+    'bin%PATH%',
+    'bin!PATH!',
+    'bin" & echo injected',
+    'bin\necho injected',
+    'bin\recho injected',
+    'bin\0name',
+    'bin\tname',
+  ]) {
+    await t.rejects(runScript({ args: [command], scriptShell: 'cmd.exe' }), {
+      code: 'EINVALIDCOMMAND',
+      message: `Invalid executable name for cmd.exe: ${JSON.stringify(command)}`,
+    })
+  }
+})
+
+t.test('uses POSIX escaping for a POSIX shell on Windows', async t => {
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': async ({ pkg }) => {
+      t.equal(pkg.scripts.npx, '\'bin$(echo injected)\'\\\'\'name\'')
+    },
+    '../lib/is-windows.js': true,
+  })
+  await runScript({ args: ["bin$(echo injected)'name"], scriptShell: 'bash' })
+})
+
+t.test('call remains a shell script and its arguments are not executable tokens', async t => {
+  for (const scriptShell of ['sh', 'cmd.exe']) {
+    const { runScript } = await mockRunScript(t, {
+      '@npmcli/run-script': async ({ pkg, args }) => {
+        t.equal(pkg.scripts.npx, 'echo first && echo second')
+        t.same(args, ['an argument', '%literal%'])
+      },
+    })
+    await runScript({
+      call: 'echo first && echo second',
+      args: ['an argument', '%literal%'],
+      scriptShell,
+    })
+  }
+})
+
+t.test('normalized missing executable is not a shell script', async t => {
+  const path = t.testdir()
+  const windows = process.platform === 'win32'
+  const commands = windows ? [
+    'missing&echo injected>cli170-marker',
+    'missing|echo injected>cli170-marker',
+    'echo injected>cli170-marker',
+  ] : [
+    'missing$(echo injected>cli170-marker)',
+    'missing`echo injected>cli170-marker`',
+    "missing';echo injected>cli170-marker;#",
+  ]
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': opts => realRunScript({ ...opts, stdio: 'pipe' }),
+  })
+  if (windows) {
+    commands.push('%COMSPEC%', '!COMSPEC!')
+  }
+  for (const command of commands) {
+    const pkg = await new PackageJson().fromContent({
+      name: 'test',
+      version: '1.0.0',
+      bin: { [command]: 'bin.js' },
+    }).normalize()
+    t.same(Object.keys(pkg.content.bin), [command], 'payload survives normalization')
+    await t.rejects(runScript({
+      args: [command],
+      path,
+      runPath: path,
+      scriptShell: windows ? 'cmd.exe' : 'sh',
+    }), { code: /[%!]/.test(command) ? 'EINVALIDCOMMAND' : windows ? 1 : 127 })
+    t.notOk(existsSync(resolve(path, 'cli170-marker')), 'no injected command ran')
+  }
+})
+
+t.test('native executables receive literal arguments', async t => {
+  const path = t.testdir()
+  const args = ['two words', 'literal&argument', 'literal^argument', '"quoted"', "single'quote"]
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': opts => realRunScript({ ...opts, stdio: 'pipe' }),
+  })
+  const result = await runScript({
+    args: [process.execPath, '-e', 'console.log(JSON.stringify(process.argv.slice(1)))', ...args],
+    path,
+    runPath: path,
+    scriptShell: process.platform === 'win32' ? 'cmd.exe' : 'sh',
+  })
+  t.same(JSON.parse(result.stdout), args)
 })

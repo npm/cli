@@ -3,6 +3,7 @@ const t = require('tap')
 const { setup, createPkg, merge } = require('./fixtures/setup.js')
 const crypto = require('node:crypto')
 const { existsSync } = require('node:fs')
+const PackageJson = require('@npmcli/package-json')
 
 t.test('run from registry - no local packages', async t => {
   const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
@@ -125,6 +126,81 @@ t.test('avoid install when exec from registry an available pkg', async t => {
     value: 'packages-2.0.0',
   })
 })
+
+const binNames = [
+  'two words',
+  'bin&echo cli170-injected',
+  'bin^name',
+  'bin(name)',
+  "bin'name",
+  'bin;name',
+  'bin=name',
+  'if',
+]
+const posixBinNames = [
+  'bin!name',
+  'bin$(echo injected>cli170-marker)',
+  'bin`echo injected>cli170-marker`',
+  "bin';echo injected>cli170-marker;#",
+]
+
+for (const binName of [...binNames, ...posixBinNames]) {
+  t.test(`executes normalized bin name literally: ${binName}`, {
+    skip: process.platform === 'win32' && posixBinNames.includes(binName),
+  }, async t => {
+    const { pkg, fixtures, package: mockPackage } = createPkg({
+      versions: ['1.0.0'],
+      bin: { [binName]: 'bin-file.js' },
+    })
+    const normalized = await new PackageJson().fromContent(pkg).normalize()
+    t.same(Object.keys(normalized.content.bin), [binName], 'payload survives normalization')
+
+    const { exec, path, registry, readOutput } = setup(t, { testdir: fixtures })
+    await mockPackage({ registry, path })
+    const args = ['an argument', 'literal&argument', 'literal^argument', '"quoted"']
+    await exec({ args: ['@npmcli/create-index', ...args] })
+    t.match(await readOutput('@npmcli-create-index'), { value: 'packages-1.0.0', args })
+    t.notOk(existsSync(resolve(path, 'cli170-marker')), 'no injected command ran')
+  })
+}
+
+for (const binName of [
+  'renamed-bin',
+  'create-index&echo injected>cli170-marker',
+  'create-index$(echo injected>cli170-marker)',
+  'create-index%CLI170_COMMAND%',
+]) {
+  t.test(`cache hit ignores registry bin metadata: ${binName}`, async t => {
+    const { pkg, fixtures, package: mockPackage } = createPkg({ versions: ['1.0.0'] })
+    const { exec, path, registry, readOutput, rmOutput } = setup(t, { testdir: fixtures })
+    await mockPackage({ registry, path })
+    await exec({ args: ['@npmcli/create-index'] })
+    await rmOutput('@npmcli-create-index')
+
+    const altered = await new PackageJson().fromContent({
+      ...pkg,
+      bin: { [binName]: 'bin-file.js' },
+    }).normalize()
+    t.same(Object.keys(altered.content.bin), [binName], 'payload survives normalization')
+    await mockPackage({
+      registry,
+      path,
+      tarballs: [],
+      times: 1,
+      manifest: registry.manifest({
+        name: pkg.name,
+        packuments: [altered.content],
+      }),
+    })
+
+    await exec({ args: ['@npmcli/create-index', 'cached argument'] })
+    t.match(await readOutput('@npmcli-create-index'), {
+      value: 'packages-1.0.0',
+      args: ['cached argument'],
+    })
+    t.notOk(existsSync(resolve(path, 'cli170-marker')), 'no injected command ran')
+  })
+}
 
 t.test('run multiple from registry', async t => {
   const indexPkg = createPkg({
