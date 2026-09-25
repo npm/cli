@@ -1012,6 +1012,47 @@ t.test('skip inert nodes in commit', async t => {
   )
 })
 
+t.test('drop a stale root version from the lockfile', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'no-version' }),
+  })
+
+  const commit = ({ lockfileVersion, pkg }) => {
+    const sw = new Shrinkwrap({ path, lockfileVersion })
+    sw.data = {
+      name: 'no-version',
+      version: '1.0.1',
+      lockfileVersion,
+      requires: true,
+      packages: { '': { name: 'no-version', version: '1.0.1' } },
+    }
+    sw.tree = new Node({ pkg, path, realpath: path })
+    return sw.commit()
+  }
+
+  // A root without a version must not keep the version recorded by the
+  // previous lockfile. This has to hold on the version 4 path too, which
+  // skips the legacy lockfile builder that clears it for versions 1 to 3.
+  for (const lockfileVersion of [3, 4]) {
+    const committed = commit({ lockfileVersion, pkg: { name: 'no-version' } })
+    t.notOk('version' in committed, `v${lockfileVersion}: stale root version is dropped`)
+    t.equal(committed.lockfileVersion, lockfileVersion, `v${lockfileVersion}: lockfileVersion is preserved`)
+    t.equal(committed.name, 'no-version', `v${lockfileVersion}: name is preserved`)
+    t.notOk('version' in committed.packages[''], `v${lockfileVersion}: root packages entry has no version`)
+  }
+
+  // An existing root version is still recorded.
+  const withVersion = commit({ lockfileVersion: 3, pkg: { name: 'no-version', version: '2.5.0' } })
+  t.equal(withVersion.version, '2.5.0', 'root version is recorded when present')
+
+  // No other root field changes.
+  const committed = commit({ lockfileVersion: 3, pkg: { name: 'no-version' } })
+  t.equal(committed.requires, true, 'requires is preserved')
+  t.equal(committed.packages[''].name, 'no-version', 'root packages entry keeps its name')
+
+  t.end()
+})
+
 t.test('load a fresh hidden lockfile', async t => {
   const sw = await Shrinkwrap.reset({
     path: hiddenLockfileFixture,
