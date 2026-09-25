@@ -23,6 +23,24 @@ const run = async ({
       // literally; double quotes still expand $(), backticks, $var and "
       args[0] = `'${args[0].replace(/'/g, `'\\''`)}'`
     }
+  } else {
+    if (args.length > 0) {
+      // On Windows, cmd.exe interprets metacharacters (&, |, <, >, ^, (, ), @, !)
+      // and uses spaces/tabs as token delimiters. Unlike on POSIX where single-quoting
+      // the entire name makes it an opaque filename, on Windows there is no escaping
+      // strategy that reliably prevents cmd.exe from splitting on spaces and executing
+      // the first token as a command. Therefore, reject any bin name containing
+      // characters that cannot be safely neutralized:
+      // - spaces/tabs: always split into multiple tokens regardless of ^ or quoting
+      // - % : cmd.exe expands environment variables (%VAR%) before ^ processing
+      // - newlines/carriage returns: act as command separators
+      if (/[%\r\n\t ]/.test(args[0])) {
+        throw new Error(
+          `Cannot execute bin name containing unsafe characters on Windows: ${args[0]}`
+        )
+      }
+      args[0] = args[0].replace(/([&|<>^()@!"])/g, '^$1')
+    }
   }
 
   // turn list of args into command string

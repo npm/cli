@@ -144,6 +144,111 @@ t.test('escapes executable name to neutralize shell metacharacters', async t => 
   t.equal(pkg.scripts.npx, `'evil'\\''; touch pwned #'`)
 })
 
+t.test('escapes Windows cmd.exe metacharacters in executable name', async t => {
+  let pkg
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async (opts) => {
+      pkg = opts.pkg
+    },
+    '../lib/is-windows.js': true,
+  })
+
+  await runScript({ args: ['hello&calc&echo'] })
+  t.equal(pkg.scripts.npx, 'hello^&calc^&echo',
+    'ampersands escaped with caret to prevent cmd.exe command splitting')
+})
+
+t.test('escapes all Windows cmd.exe metacharacters', async t => {
+  let pkg
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async (opts) => {
+      pkg = opts.pkg
+    },
+    '../lib/is-windows.js': true,
+  })
+
+  await runScript({ args: ['a&b|c<d>e^f(g)h@i!j'] })
+  t.equal(pkg.scripts.npx, 'a^&b^|c^<d^>e^^f^(g^)h^@i^!j',
+    'all cmd.exe metacharacters are escaped with caret')
+})
+
+t.test('escapes spaces in Windows bin names to prevent multi-token injection', async t => {
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async () => {
+      throw new Error('should not call run-script')
+    },
+    '../lib/is-windows.js': true,
+  })
+
+  await t.rejects(runScript({ args: ['powershell -c calc'] }), {
+    message: /Cannot execute bin name containing unsafe characters on Windows/,
+  }, 'rejects bin names with spaces to prevent cmd.exe token splitting')
+})
+
+t.test('escapes double quotes in Windows bin names', async t => {
+  let pkg
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async (opts) => {
+      pkg = opts.pkg
+    },
+    '../lib/is-windows.js': true,
+  })
+
+  await runScript({ args: ['evil"&calc"'] })
+  t.equal(pkg.scripts.npx, 'evil^"^&calc^"',
+    'double quotes escaped to prevent opening quoted regions in cmd.exe')
+})
+
+t.test('escapes tabs in Windows bin names', async t => {
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async () => {
+      throw new Error('should not call run-script')
+    },
+    '../lib/is-windows.js': true,
+  })
+
+  await t.rejects(runScript({ args: ['evil\tcalc'] }), {
+    message: /Cannot execute bin name containing unsafe characters on Windows/,
+  }, 'rejects bin names with tabs to prevent cmd.exe token splitting')
+})
+
+t.test('rejects Windows bin names containing percent sign', async t => {
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async () => {
+      throw new Error('should not call run-script')
+    },
+    '../lib/is-windows.js': true,
+  })
+
+  await t.rejects(runScript({ args: ['%COMSPEC%'] }), {
+    message: /Cannot execute bin name containing unsafe characters on Windows/,
+  }, 'rejects bin names with % to prevent env var expansion in cmd.exe')
+})
+
+t.test('rejects Windows bin names containing newlines', async t => {
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async () => {
+      throw new Error('should not call run-script')
+    },
+    '../lib/is-windows.js': true,
+  })
+
+  await t.rejects(runScript({ args: ['evil\ncalc'] }), {
+    message: /Cannot execute bin name containing unsafe characters on Windows/,
+  }, 'rejects bin names with newline to prevent command splitting in cmd.exe')
+
+  await t.rejects(runScript({ args: ['evil\rcalc'] }), {
+    message: /Cannot execute bin name containing unsafe characters on Windows/,
+  }, 'rejects bin names with carriage return')
+})
+
 t.test('isNotWindows', async t => {
   const { runScript } = await mockRunScript(t, {
     'ci-info': { isCI: true },
