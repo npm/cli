@@ -328,3 +328,47 @@ t.test('override save to true when installing to npx cache', async t => {
     value: 'packages-2.0.0',
   })
 })
+
+t.test('min-release-age-exclude exempts spec from before cutoff', async t => {
+  const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
+
+  const { exec, path, registry, readOutput } = setup(t, {
+    testdir: merge(fixtures, {
+      global: {},
+    }),
+  })
+
+  await package({ registry, path })
+
+  // the mock registry stamps every version as published "now", so a past
+  // `before` cutoff blocks everything unless the exclude pattern applies
+  await exec({
+    args: ['@npmcli/create-index'],
+    globalPath: resolve(path, 'global'),
+    before: new Date(Date.now() - 1000 * 60 * 60 * 24),
+    minReleaseAgeExclude: ['@npmcli/*'],
+  })
+
+  t.match(await readOutput('@npmcli-create-index'), {
+    value: 'packages-2.0.0',
+  })
+})
+
+t.test('min-release-age still blocks specs that match no exclude pattern', async t => {
+  const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
+
+  const { exec, path, registry } = setup(t, {
+    testdir: merge(fixtures, {
+      global: {},
+    }),
+  })
+
+  await package({ registry, path, times: 1, tarballs: [] })
+
+  await t.rejects(exec({
+    args: ['@npmcli/create-index'],
+    globalPath: resolve(path, 'global'),
+    before: new Date(Date.now() - 1000 * 60 * 60 * 24),
+    minReleaseAgeExclude: ['@other-scope/*'],
+  }), { code: 'ENOVERSIONS' })
+})
