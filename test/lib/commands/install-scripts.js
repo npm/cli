@@ -95,6 +95,47 @@ t.test('install-scripts approve --all approves every unreviewed package', async 
   })
 })
 
+t.test('install-scripts approve <pkg> --dry-run reports without writing', async t => {
+  const allowScripts = { 'canvas@1.0.0': true }
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas', 'sharp'], allowScripts }),
+    config: { 'dry-run': true },
+  })
+  await npm.exec('install-scripts', ['approve', 'sharp'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, allowScripts, 'package.json is unchanged')
+  t.match(joinedOutput(), /Would approve sharp:/)
+})
+
+t.test('install-scripts approve --all --dry-run reports without writing', async t => {
+  const allowScripts = { 'canvas@1.0.0': true }
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas', 'sharp'], allowScripts }),
+    config: { all: true, 'dry-run': true },
+  })
+  await npm.exec('install-scripts', ['approve'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, allowScripts, 'package.json is unchanged')
+  t.match(joinedOutput(), /Would approve sharp:/)
+})
+
+t.test('install-scripts approve --dry-run --json flags the summary as a preview', async t => {
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+    config: { 'dry-run': true, json: true },
+  })
+  await npm.exec('install-scripts', ['approve', 'canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg, 'package.json is unchanged')
+  t.strictSame(JSON.parse(joinedOutput()), {
+    allowScripts: [{ name: 'canvas', changes: [{ key: 'canvas@1.0.0', change: 'added' }] }],
+    dryRun: true,
+  })
+})
+
 t.test('install-scripts deny <pkg> writes a name-only false entry', async t => {
   const { npm, prefix } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas'] }),
@@ -114,6 +155,19 @@ t.test('install-scripts deny --all denies every unreviewed package', async t => 
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.strictSame(pkg.allowScripts, { canvas: false, sharp: false })
+})
+
+t.test('install-scripts deny <pkg> --dry-run reports without writing', async t => {
+  const allowScripts = { 'canvas@1.0.0': true }
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'], allowScripts }),
+    config: { 'dry-run': true },
+  })
+  await npm.exec('install-scripts', ['deny', 'canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, allowScripts, 'package.json is unchanged')
+  t.match(joinedOutput(), /Would deny canvas:/)
 })
 
 t.test('install-scripts ignores allow-scripts-pending and still writes', async t => {
