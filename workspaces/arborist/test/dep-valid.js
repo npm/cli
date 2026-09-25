@@ -251,12 +251,82 @@ t.test('sha-1 and sha-256', t => {
     },
   }, 'npm/repo#9e3a9b3579ab330238c06b761e7f1b5dc5b4ac6e5a96da4dd2fb3b7411009df8', null, emptyRequestor), 'git url with full sha-256 hash mismatch')
 
+  const sameResolvedGit = npa('git+https://github.com/foo/bar.git#0d7bd85a85fa2571fa532d2fc842ed099b236ad2')
+  const sameCommitRequest = {
+    type: 'git',
+    fetchSpec: 'https://github.com/foo/bar.git',
+    gitCommittish: '0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    hosted: {
+      ssh: (nc) => sameResolvedGit.hosted.ssh(nc),
+    },
+  }
+  t.ok(depValid({
+    name: 'foo',
+    resolved: 'git+https://github.com/foo/bar.git#0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, sameCommitRequest, null, emptyRequestor), 'explicit gitCommittish with same resolved sha is valid')
+
+  const differentCommitRequest = {
+    type: 'git',
+    fetchSpec: 'https://github.com/foo/bar.git',
+    gitCommittish: '1d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    hosted: {
+      ssh: (nc) => sameResolvedGit.hosted.ssh(nc),
+    },
+  }
+  t.notOk(depValid({
+    name: 'foo',
+    resolved: 'git+https://github.com/foo/bar.git#0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, differentCommitRequest, null, emptyRequestor), 'explicit gitCommittish with different resolved sha is invalid')
+
+  const missingResolvedGit = npa('git+https://github.com/foo/bar.git')
+  const missingResolvedCommitRequest = {
+    type: 'git',
+    fetchSpec: 'https://github.com/foo/bar.git',
+    gitCommittish: '0d7bd85a85fa2571fa532d2fc842ed099b236ad2',
+    hosted: {
+      ssh: (nc) => missingResolvedGit.hosted.ssh(nc),
+    },
+  }
+  t.ok(depValid({
+    name: 'foo',
+    resolved: 'git+https://github.com/foo/bar.git',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, missingResolvedCommitRequest, null, emptyRequestor), 'requested gitCommittish without a resolved commit still passes the reqCommit guard')
+
+  t.notOk(depValid({
+    name: 'foo',
+    resolved: 'git+file:///tmp/repo#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    package: {
+      version: '1.2.3',
+    },
+    get version () {
+      return this.package.version
+    },
+  }, 'git+file:///tmp/repo#bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', null, emptyRequestor), 'file git url with different full sha mismatch')
+
   t.end()
 })
 
-t.test('git tag/branch change detected via lockfile committish', t => {
-  // a named ref points at a commit hash, so the recorded committish tells us
-  // whether the spec changed
+t.test('git named refs are always re-resolved to the latest commit', t => {
+  // Named refs (tags or branches) can move; even if the lockfile says the same
+  // ref, we still have to re-check the remote so we do not keep a stale commit.
   const mkRequestor = (recorded) => ({
     errors: [],
     edgesOut: new Map(),
@@ -276,9 +346,9 @@ t.test('git tag/branch change detected via lockfile committish', t => {
     },
   }
 
-  t.ok(depValid(child, 'npm/repo#v1.0.0', null,
+  t.notOk(depValid(child, 'npm/repo#v1.0.0', null,
     mkRequestor({ dependencies: { repo: 'npm/repo#v1.0.0' } })),
-  'unchanged tag is valid')
+  'unchanged tag must still re-resolve to fetch the latest commit')
 
   t.notOk(depValid(child, 'npm/repo#v2.0.0', null,
     mkRequestor({ dependencies: { repo: 'npm/repo#v1.0.0' } })),
@@ -300,16 +370,16 @@ t.test('git tag/branch change detected via lockfile committish', t => {
     mkRequestor({ dependencies: { repo: 'npm/repo' } })),
   'lockfile git spec without a committish differs from a named ref')
 
-  t.ok(depValid(child, 'npm/repo#v2.0.0', null,
+  t.notOk(depValid(child, 'npm/repo#v2.0.0', null,
     mkRequestor({ dependencies: { repo: '^1.0.0' } })),
-  'non-git lockfile spec is ignored, falling back to the repo-only check')
+  'non-git lockfile spec is ignored and the named ref still re-resolves')
 
-  t.ok(depValid(child, 'npm/repo#v2.0.0', null, emptyRequestor),
-    'without lockfile data, fall back to the repo-only check')
+  t.notOk(depValid(child, 'npm/repo#v2.0.0', null, emptyRequestor),
+    'without lockfile data, named refs still re-resolve')
 
-  t.ok(depValid(child, 'npm/repo#v2.0.0', null,
+  t.notOk(depValid(child, 'npm/repo#v2.0.0', null,
     mkRequestor({ dependencies: { repo: 'invalid spec with spaces' } })),
-  'unparseable lockfile spec is ignored, falling back to the repo-only check')
+  'unparseable lockfile spec still re-resolves the named ref')
 
   t.end()
 })
