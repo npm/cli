@@ -510,8 +510,21 @@ class Node {
     const { top } = this
 
     // if the top is not the root or workspace then we do not want to omit it
+    // unless we landed in a linked-in package: the link target is its own
+    // fs root (so it's neither `isProjectRoot` nor `isWorkspace`), but the
+    // node's `.root` still resolves to the consuming project, and its
+    // `.dev`/`.optional`/`.peer` flags were already computed relative to
+    // that consuming project. Honor the omit flags in that case so that
+    // e.g. `npm audit --omit=dev` does not surface a linked dependency's
+    // own devDependencies.
     if (!top.isProjectRoot && !top.isWorkspace) {
-      return false
+      const { root } = this
+      if (!root || (!root.isProjectRoot && !root.isWorkspace)) {
+        return false
+      }
+      if (!top.linksIn || top.linksIn.size === 0) {
+        return false
+      }
     }
 
     // omit node if the dep type matches any omit flags that were set
