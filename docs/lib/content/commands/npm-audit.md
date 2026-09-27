@@ -39,6 +39,11 @@ $ npm audit signatures
 ```
 
 The `audit signatures` command will also verify the provenance attestations of downloaded packages.
+When an installed package comes from a registry without signing keys, its
+registry signature cannot be checked. If other packages can be checked, the
+output reports how many signature checks were skipped for each such registry.
+With `--json`, the `skipped` array contains each registry and its skipped count.
+Skipped checks alone do not change the command's exit code.
 Because provenance attestations are such a new feature, security features may be added to (or changed in) the attestation format over time.
 To ensure that you're always able to verify attestation signatures check that you're running the latest version of the npm CLI. Please note this often means updating npm beyond the version that ships with Node.js.
 
