@@ -222,7 +222,21 @@ const setupMockNpm = async (t, {
       return acc
     }, { argv: [...rawArgv], env: {}, config: {} })
 
+  // Isolate from any npm_config_* env vars inherited from the host machine
+  // (eg a developer's real NPM_CONFIG_PREFIX/NPM_CONFIG_CACHE). npm ingests
+  // every `process.env` key matching /^npm_config_/i into its highest-priority
+  // `env` config layer, which would otherwise outrank this sandbox and let
+  // tests read or write real files. Setting each to undefined deletes it for
+  // the duration of the test (mock-globals restores them on teardown).
+  const scrubbedNpmConfigEnv = Object.keys(process.env)
+    .filter(k => /^npm_config_/i.test(k))
+    .reduce((acc, k) => {
+      acc[`process.env.${k}`] = undefined
+      return acc
+    }, {})
+
   const mockedGlobals = mockGlobals(t, {
+    ...scrubbedNpmConfigEnv,
     'process.env.HOME': dirs.home,
     // global prefix cannot be (easily) set via argv so this is the easiest way
     // to set it that also closely mimics the behavior a user would see since it
