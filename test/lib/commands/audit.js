@@ -1059,7 +1059,7 @@ t.test('audit signatures', async t => {
 
     t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), /audited 1 package/)
-    t.match(logs.warn, ['Fetching verification keys using TUF failed.  Fetching directly from https://registry.npmjs.org/.'])
+    t.match(logs.warn, ['Fetching verification keys using TUF failed.  Fetching directly from https://registry.npmjs.org.'])
     t.matchSnapshot(joinedOutput())
   })
 
@@ -1748,8 +1748,9 @@ t.test('audit signatures', async t => {
 
   for (const json of [false, true]) {
     t.test(`mixed registries report signature checks skipped without keys${json ? ' (json)' : ''}`, async t => {
-      const registryUrl = 'https://verdaccio-clone.org'
-      const { npm, joinedOutput } = await loadMockNpm(t, {
+      const registryOrigin = 'https://verdaccio-clone.org'
+      const registryUrl = `${registryOrigin}/private-registry-token/`
+      const { logs, npm, joinedOutput } = await loadMockNpm(t, {
         prefixDir: {
           ...installWithMultipleRegistries,
           '.npmrc': `@npmcli:registry=${registryUrl}\n`,
@@ -1773,7 +1774,7 @@ t.test('audit signatures', async t => {
         }),
       })
       mockTUF({ npm, target: TUF_VALID_KEYS_TARGET })
-      thirdPartyRegistry.nock.get('/-/npm/v1/keys').reply(404)
+      thirdPartyRegistry.nock.get(thirdPartyRegistry.fullPath('/-/npm/v1/keys')).reply(404)
 
       await npm.exec('audit', ['signatures'])
 
@@ -1782,13 +1783,15 @@ t.test('audit signatures', async t => {
         t.match(JSON.parse(joinedOutput()), {
           invalid: [],
           missing: [],
-          skipped: [{ registry: registryUrl, count: 1 }],
+          skipped: [{ registry: registryOrigin, count: 1 }],
         })
       } else {
         t.match(joinedOutput(), /audited 1 package/)
         t.match(joinedOutput(), /1 package skipped registry signature checks/)
         t.match(joinedOutput(), /1 from https:\/\/verdaccio-clone\.org/)
       }
+      t.notMatch(joinedOutput(), /private-registry-token/, 'registry URL credentials are not printed')
+      t.notMatch(logs.warn.join('\n'), /private-registry-token/, 'warnings omit registry URL credentials')
     })
   }
 
