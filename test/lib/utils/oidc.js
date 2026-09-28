@@ -1,5 +1,6 @@
 const t = require('tap')
 const { readFile } = require('node:fs/promises')
+const { join } = require('node:path')
 const mockGlobals = require('@npmcli/mock-globals')
 const mockNpm = require('../../fixtures/mock-npm')
 const tmock = require('../../fixtures/tmock')
@@ -10,7 +11,24 @@ const fallbackToken = 'fallback-token'
 const exchangeToken = 'exchange-token'
 
 const setup = async t => {
-  const { npm } = await mockNpm(t)
+  const { npm } = await mockNpm(t, {
+    config: ({ globalPrefix, home, prefix }) => ({
+      globalconfig: join(globalPrefix, 'etc', 'npmrc'),
+      prefix,
+      userconfig: join(home, '.npmrc'),
+    }),
+    globals: ({ globalPrefix, home, prefix }) => ({
+      'process.env.NPM_CONFIG_GLOBALCONFIG': join(globalPrefix, 'etc', 'npmrc'),
+      'process.env.NPM_CONFIG_PREFIX': prefix,
+      'process.env.NPM_CONFIG_USERCONFIG': join(home, '.npmrc'),
+    }),
+    npm: ({ other }) => ({
+      npmRoot: join(other, 'node'),
+    }),
+    otherDirs: {
+      node: { npmrc: '' },
+    },
+  })
   mockGlobals(t, {
     'process.env.NPM_ID_TOKEN': 'identity-token',
     'process.env.ACTIONS_ID_TOKEN_REQUEST_URL': 'https://github.com/actions/id-token',
