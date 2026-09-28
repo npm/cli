@@ -474,6 +474,64 @@ t.test('complete build extracts from a rewritten registry URL', async t => {
   }))
 })
 
+t.test('complete build does not exempt remote tarballs', async t => {
+  const name = 'remote-bundle'
+  const resolved = 'https://remote.example.com/remote-bundle-1.0.0.tgz'
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { [name]: '1.0.0' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'root',
+          version: '1.0.0',
+          dependencies: { [name]: '1.0.0' },
+        },
+        [`node_modules/${name}`]: {
+          version: '1.0.0',
+          resolved,
+          integrity: 'sha512-test',
+          dependencies: { bundled: '1.0.0' },
+          bundleDependencies: ['bundled'],
+        },
+      },
+    }),
+  })
+
+  const extract = pacote.extract
+  t.teardown(() => {
+    pacote.extract = extract
+  })
+  pacote.extract = (uri, dir, options) => {
+    t.equal(uri, resolved, 'keeps remote tarball URL unchanged')
+    t.equal(options.allowRemote, 'none', 'does not grant registry exemption')
+    pacote.extract = extract
+    fs.mkdirSync(resolve(dir, 'node_modules/bundled'), { recursive: true })
+    fs.writeFileSync(resolve(dir, 'package.json'), JSON.stringify({
+      name,
+      version: '1.0.0',
+      dependencies: { bundled: '1.0.0' },
+      bundleDependencies: ['bundled'],
+    }))
+    fs.writeFileSync(resolve(dir, 'node_modules/bundled/package.json'), JSON.stringify({
+      name: 'bundled',
+      version: '1.0.0',
+    }))
+  }
+
+  await t.resolves(buildIdeal(path, {
+    complete: true,
+    allowRemote: 'none',
+  }))
+})
+
 t.test('bundle deps example 2', async t => {
   // bundled deps at the root level are NOT ignored when building ideal trees
   const path = resolve(fixtures, 'testing-bundledeps-2')

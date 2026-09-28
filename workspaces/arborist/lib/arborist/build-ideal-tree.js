@@ -1028,8 +1028,7 @@ This is a one-time fix-up, please be patient...
       const opt = { ...this.options }
       await cacache.tmp.withTmp(this.cache, opt, async path => {
         const isRegistry = isRegistryResolvedTarball(node, this.options)
-        const resolved =
-          registryResolved(node.resolved, this.options) || node.resolved
+        const resolved = registryResolved(node.resolved, this.options)
 
         await pacote.extract(resolved, path, {
           ...opt,

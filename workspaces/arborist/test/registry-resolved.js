@@ -50,6 +50,17 @@ t.test('preserves a configured registry path with default host replacement', t =
   t.end()
 })
 
+t.test('returns the original URL when replacement does not apply', t => {
+  const resolved = 'https://remote.example.com/example-1.0.0.tgz'
+  const options = {
+    registry: 'https://mirror.example.com/npm/a',
+    replaceRegistryHost: 'https://other.example.com/npm/b',
+  }
+
+  t.equal(registryResolved(resolved, options), resolved)
+  t.end()
+})
+
 t.test('rewrites but does not exempt non-registry remote dependencies', t => {
   const node = {
     name: 'example',
