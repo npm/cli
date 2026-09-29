@@ -325,6 +325,24 @@ const definitions = {
     `,
     flatten,
   }),
+  'auto-install-peers': new Definition('auto-install-peers', {
+    default: true,
+    type: Boolean,
+    description: `
+      When set to \`false\`, npm does not add packages to the tree only to
+      satisfy a required \`peerDependencies\` entry of a dependency.
+      Instead, it warns about every package that depends on a package with a
+      required peer without declaring that peer itself.
+
+      With \`--strict-peer-deps\`, such a warning for the project root or a
+      workspace fails the install.
+
+      This setting changes the tree and is not recorded in the lockfile, so
+      set it in the project \`.npmrc\`.  Ignored when \`--legacy-peer-deps\`
+      is set.
+    `,
+    flatten,
+  }),
   'auth-type': new Definition('auth-type', {
     default: 'web',
     type: ['legacy', 'web'],
@@ -2491,6 +2509,10 @@ const definitions = {
       When such an override is performed, a warning is printed, explaining the
       conflict and the packages involved.  If \`--strict-peer-deps\` is set,
       then this warning is treated as a failure.
+
+      With \`--auto-install-peers=false\`, it also fails the install when the
+      project root or a workspace does not declare a peer that one of its
+      dependencies requires.
     `,
     flatten,
   }),
