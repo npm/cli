@@ -31,8 +31,10 @@ const autoInstalledPeerNodes = tree => {
   return [...reachable(tree, () => true)].filter(node => !kept.has(node))
 }
 
-const declares = (pkg, name, fields) => fields.some(field =>
-  Object.hasOwn(pkg[field] || {}, name) &&
+const declares = (pkg, name, fields) => fields.some(field => Object.hasOwn(pkg[field] || {}, name))
+
+// An optional peer does not make the dependent's consumers provide it.
+const declaresRequired = (pkg, name, fields) => fields.some(field => declares(pkg, name, [field]) &&
   (field !== 'peerDependencies' || !pkg.peerDependenciesMeta?.[name]?.optional))
 
 // Every package that depends on a package with a required peer without declaring that peer itself, once per package and peer.
@@ -57,7 +59,7 @@ const undeclaredPeers = tree => {
       const dep = edge.to.target
       for (const peer of dep.edgesOut.values()) {
         if (peer.type !== 'peer' || seen.has(peer.name) || peer.name === pkg.name ||
-          declares(pkg, peer.name, fields)) {
+          declaresRequired(pkg, peer.name, fields)) {
           continue
         }
         seen.add(peer.name)
