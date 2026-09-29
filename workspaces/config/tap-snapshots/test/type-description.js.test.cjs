@@ -77,6 +77,9 @@ Object {
     "legacy",
     "web",
   ],
+  "auto-install-peers": Array [
+    "boolean value (true or false)",
+  ],
   "before": Array [
     null,
     "valid Date string",

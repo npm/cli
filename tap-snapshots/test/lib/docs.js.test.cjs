@@ -404,6 +404,24 @@ config is given, this value will always be set to \`legacy\`.
 
 
 
+#### \`auto-install-peers\`
+
+* Default: true
+* Type: Boolean
+
+When set to \`false\`, npm does not add packages to the tree only to satisfy a
+required \`peerDependencies\` entry of a dependency. Instead, it warns about
+every package that depends on a package with a required peer without
+declaring that peer itself.
+
+With \`--strict-peer-deps\`, such a warning for the project root or a
+workspace fails the install.
+
+This setting changes the tree and is not recorded in the lockfile, so set it
+in the project \`.npmrc\`. Ignored when \`--legacy-peer-deps\` is set.
+
+
+
 #### \`before\`
 
 * Default: null
@@ -2130,6 +2148,10 @@ When such an override is performed, a warning is printed, explaining the
 conflict and the packages involved. If \`--strict-peer-deps\` is set, then
 this warning is treated as a failure.
 
+With \`--auto-install-peers=false\`, it also fails the install when the
+project root or a workspace does not declare a peer that one of its
+dependencies requires.
+
 
 
 #### \`strict-ssl\`
@@ -2621,6 +2643,7 @@ Array [
   "also",
   "audit",
   "audit-level",
+  "auto-install-peers",
   "auth-type",
   "before",
   "bin-links",
@@ -2817,6 +2840,7 @@ Array [
   "also",
   "audit",
   "audit-level",
+  "auto-install-peers",
   "auth-type",
   "before",
   "bin-links",
@@ -3020,6 +3044,7 @@ Object {
   "audit": true,
   "auditLevel": null,
   "authType": "web",
+  "autoInstallPeers": true,
   "before": null,
   "binLinks": true,
   "browser": null,
@@ -3460,9 +3485,10 @@ Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
-[--allow-directory <all|none|root>] [--allow-file <all|none|root>]
-[--allow-git <all|none|root>] [--allow-remote <all|none|root>]
+[--strict-peer-deps] [--no-auto-install-peers] [--foreground-scripts]
+[--ignore-scripts] [--allow-directory <all|none|root>]
+[--allow-file <all|none|root>] [--allow-git <all|none|root>]
+[--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
@@ -3486,6 +3512,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --auto-install-peers
+    When set to \`false\`, npm does not add packages to the tree only to
 
   --foreground-scripts
     Run all build scripts (ie, \`preinstall\`, \`install\`, and
@@ -3555,6 +3584,7 @@ aliases: clean-install, ic, install-clean, isntall-clean
 #### \`omit\`
 #### \`include\`
 #### \`strict-peer-deps\`
+#### \`auto-install-peers\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`allow-directory\`
@@ -3657,8 +3687,8 @@ npm dedupe
 
 Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
-[--global-style] [--strict-peer-deps] [--no-package-lock]
-[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--global-style] [--strict-peer-deps] [--no-auto-install-peers]
+[--no-package-lock] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--ignore-scripts] [--allow-directory <all|none|root>]
 [--allow-file <all|none|root>] [--allow-git <all|none|root>]
@@ -3678,6 +3708,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --auto-install-peers
+    When set to \`false\`, npm does not add packages to the tree only to
 
   --package-lock
     If set to false, then ignore \`package-lock.json\` files when installing.
@@ -3742,6 +3775,7 @@ alias: ddp
 #### \`legacy-bundling\`
 #### \`global-style\`
 #### \`strict-peer-deps\`
+#### \`auto-install-peers\`
 #### \`package-lock\`
 #### \`omit\`
 #### \`include\`
@@ -4162,8 +4196,8 @@ npm find-dupes
 
 Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
-[--global-style] [--strict-peer-deps] [--no-package-lock]
-[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--global-style] [--strict-peer-deps] [--no-auto-install-peers]
+[--no-package-lock] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
@@ -4180,6 +4214,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --auto-install-peers
+    When set to \`false\`, npm does not add packages to the tree only to
 
   --package-lock
     If set to false, then ignore \`package-lock.json\` files when installing.
@@ -4225,6 +4262,7 @@ npm find-dupes
 #### \`legacy-bundling\`
 #### \`global-style\`
 #### \`strict-peer-deps\`
+#### \`auto-install-peers\`
 #### \`package-lock\`
 #### \`omit\`
 #### \`include\`
@@ -4450,8 +4488,9 @@ Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
-[--foreground-scripts] [--ignore-scripts] [--allow-directory <all|none|root>]
+[--strict-peer-deps] [--no-auto-install-peers] [--prefer-dedupe]
+[--no-package-lock] [--package-lock-only] [--foreground-scripts]
+[--ignore-scripts] [--allow-directory <all|none|root>]
 [--allow-file <all|none|root>] [--allow-git <all|none|root>]
 [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
@@ -4489,6 +4528,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --auto-install-peers
+    When set to \`false\`, npm does not add packages to the tree only to
 
   --prefer-dedupe
     Prefer to deduplicate packages if possible, rather than
@@ -4588,6 +4630,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`omit\`
 #### \`include\`
 #### \`strict-peer-deps\`
+#### \`auto-install-peers\`
 #### \`prefer-dedupe\`
 #### \`package-lock\`
 #### \`package-lock-only\`
@@ -4626,9 +4669,10 @@ Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
-[--allow-directory <all|none|root>] [--allow-file <all|none|root>]
-[--allow-git <all|none|root>] [--allow-remote <all|none|root>]
+[--strict-peer-deps] [--no-auto-install-peers] [--foreground-scripts]
+[--ignore-scripts] [--allow-directory <all|none|root>]
+[--allow-file <all|none|root>] [--allow-git <all|none|root>]
+[--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
@@ -4652,6 +4696,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --auto-install-peers
+    When set to \`false\`, npm does not add packages to the tree only to
 
   --foreground-scripts
     Run all build scripts (ie, \`preinstall\`, \`install\`, and
@@ -4721,6 +4768,7 @@ aliases: cit, clean-install-test, sit
 #### \`omit\`
 #### \`include\`
 #### \`strict-peer-deps\`
+#### \`auto-install-peers\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`allow-directory\`
@@ -4798,8 +4846,9 @@ Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
-[--foreground-scripts] [--ignore-scripts] [--allow-directory <all|none|root>]
+[--strict-peer-deps] [--no-auto-install-peers] [--prefer-dedupe]
+[--no-package-lock] [--package-lock-only] [--foreground-scripts]
+[--ignore-scripts] [--allow-directory <all|none|root>]
 [--allow-file <all|none|root>] [--allow-git <all|none|root>]
 [--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
@@ -4837,6 +4886,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --auto-install-peers
+    When set to \`false\`, npm does not add packages to the tree only to
 
   --prefer-dedupe
     Prefer to deduplicate packages if possible, rather than
@@ -4936,6 +4988,7 @@ alias: it
 #### \`omit\`
 #### \`include\`
 #### \`strict-peer-deps\`
+#### \`auto-install-peers\`
 #### \`prefer-dedupe\`
 #### \`package-lock\`
 #### \`package-lock-only\`
@@ -4974,8 +5027,8 @@ Options:
 [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
 [-E|--save-exact] [-g|--global]
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
-[--global-style] [--strict-peer-deps] [--no-package-lock]
-[--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--global-style] [--strict-peer-deps] [--no-auto-install-peers]
+[--no-package-lock] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--ignore-scripts] [--allow-directory <all|none|root>]
 [--allow-file <all|none|root>] [--allow-git <all|none|root>]
@@ -5004,6 +5057,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --auto-install-peers
+    When set to \`false\`, npm does not add packages to the tree only to
 
   --package-lock
     If set to false, then ignore \`package-lock.json\` files when installing.
@@ -5071,6 +5127,7 @@ alias: ln
 #### \`legacy-bundling\`
 #### \`global-style\`
 #### \`strict-peer-deps\`
+#### \`auto-install-peers\`
 #### \`package-lock\`
 #### \`omit\`
 #### \`include\`
@@ -6713,8 +6770,8 @@ Options:
 [--legacy-bundling] [--global-style]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
-[--ignore-scripts]
+[--strict-peer-deps] [--no-auto-install-peers] [--no-package-lock]
+[--foreground-scripts] [--ignore-scripts]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--before <date>] [--min-release-age <days>]
@@ -6746,6 +6803,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --auto-install-peers
+    When set to \`false\`, npm does not add packages to the tree only to
 
   --package-lock
     If set to false, then ignore \`package-lock.json\` files when installing.
@@ -6817,6 +6877,7 @@ aliases: u, up, upgrade, udpate
 #### \`omit\`
 #### \`include\`
 #### \`strict-peer-deps\`
+#### \`auto-install-peers\`
 #### \`package-lock\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
