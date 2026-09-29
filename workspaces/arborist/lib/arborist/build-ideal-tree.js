@@ -26,6 +26,7 @@ const fromPath = require('../from-path.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const { isReleaseAgeExcluded, trustedSpecName } = require('../release-age-exclude.js')
 const { resolvePatchedDependencies } = require('../patched-dependencies.js')
+const { autoInstalledPeerNodes, isAutoInstalledPeer, isMine, undeclaredPeers } = require('../peer-declarations.js')
 const PackageExtensions = require('../package-extensions.js')
 const NpmExtension = require('../npm-extension.js')
 const { hasExtensionFile } = require('../npm-extension.js')
@@ -90,6 +91,7 @@ class DepsQueue {
 }
 
 module.exports = cls => class IdealTreeBuilder extends cls {
+  #autoInstallPeers
   #complete
   #currentDep = null
   #depsQueue = new DepsQueue()
@@ -117,6 +119,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     super(options)
 
     const {
+      autoInstallPeers = true,
       follow = false,
       installStrategy = 'hoisted',
       strictPeerDeps = false,
@@ -124,6 +127,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     } = options
 
     this.#strictPeerDeps = !!strictPeerDeps
+    // legacy-peer-deps creates no peer edges, so there is nothing to skip or check
+    this.#autoInstallPeers = autoInstallPeers !== false || this.legacyPeerDeps
 
     this.#installStrategy = global ? 'shallow' : installStrategy
     this.#follow = !!follow
@@ -186,9 +191,11 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       await this.#inflateAncientLockfile()
       await this.#applyUserRequests(options)
       await this.#buildDeps()
+      this.#pruneAutoInstalledPeers()
       await this.#fixDepFlags()
       await this.#pruneFailedOptional()
       await this.#checkEngineAndPlatform()
+      this.#checkPeerDeclarations()
       await resolvePatchedDependencies(this.idealTree, {
         path: this.path,
         allowUnusedPatches: this.options.allowUnusedPatches,
@@ -378,6 +385,10 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     }
 
     this.#complete = !!options.complete
+
+    if (options.autoInstallPeers === false && this.legacyPeerDeps) {
+      log.warn('config', '`auto-install-peers` has no effect when `legacy-peer-deps` is set')
+    }
     this.#preferDedupe = !!options.preferDedupe
 
     // validates list of update names, they must
@@ -1404,8 +1415,8 @@ This is a one-time fix-up, please be patient...
       // If the edge has no destination, that's a problem, unless
       // if it's peerOptional and not explicitly requested.
       if (!edge.to) {
-        if (edge.type !== 'peerOptional' ||
-          this.#explicitRequests.has(edge)) {
+        if ((edge.type !== 'peerOptional' || this.#explicitRequests.has(edge)) &&
+          !this.#skipPeer(edge, edge)) {
           problems.push(edge)
         }
         continue
@@ -1622,6 +1633,10 @@ This is a one-time fix-up, please be patient...
       const conflictOK = this.options.force || !isMine && !this.#strictPeerDeps
 
       if (!edge.to) {
+        // leave a peer that the dependent does not provide to the declaration check
+        if (this.#skipPeer(edge, node.parent.sourceReference.edgesOut.get(edge.name))) {
+          continue
+        }
         if (!parentEdge) {
           // the peer is missing from the virtual root; check the real tree before skipping.
           // we can avoid a fetch for an optional peer, or a compatible provider, though
@@ -1702,6 +1717,41 @@ This is a one-time fix-up, please be patient...
       this.#failPeerConflict(edge, parentEdge)
     }
     return node
+  }
+
+  // With `auto-install-peers=false`, whether to leave the required peer `edge` unplaced.
+  #skipPeer (edge, declaring) {
+    return !this.#autoInstallPeers && isAutoInstalledPeer(edge, declaring)
+  }
+
+  #pruneAutoInstalledPeers () {
+    if (this.#autoInstallPeers) {
+      return
+    }
+    for (const node of autoInstalledPeerNodes(this.idealTree)) {
+      node.parent = null
+      this.#mutateTree = true
+    }
+  }
+
+  #checkPeerDeclarations () {
+    if (this.#autoInstallPeers) {
+      return
+    }
+    const errors = []
+    for (const { node, dep, peer } of undeclaredPeers(this.idealTree)) {
+      const name = node.packageName || node.name
+      const msg = `${name} depends on ${dep.packageName}, which requires peer ${peer.name}@${peer.spec}\n` +
+        `Add ${peer.name} to ${name}'s dependencies or peerDependencies`
+      if (this.#strictPeerDeps && !this.options.force && isMine(node)) {
+        errors.push(msg)
+      } else {
+        log.warn('EPEERUNDECLARED', msg)
+      }
+    }
+    if (errors.length) {
+      throw Object.assign(new Error(errors.join('\n')), { code: 'EPEERUNDECLARED' })
+    }
   }
 
   #failPeerConflict (edge, currentEdge) {
