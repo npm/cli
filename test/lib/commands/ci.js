@@ -139,6 +139,28 @@ t.test('fails when packageExtensions are out of sync with the lock file', async 
   )
 })
 
+t.test('auto-install-peers=false fails on a lock file with an auto-installed peer', async t => {
+  const lock = structuredClone(packageLock)
+  lock.packages['node_modules/abbrev'].peerDependencies = { peer: '1' }
+  lock.packages['node_modules/peer'] = {
+    version: '1.0.0',
+    resolved: 'https://registry.npmjs.org/peer/-/peer-1.0.0.tgz',
+    peer: true,
+  }
+  const { npm } = await loadMockNpm(t, {
+    config: { audit: false, 'auto-install-peers': false },
+    prefixDir: {
+      abbrev,
+      'package.json': JSON.stringify(packageJson),
+      'package-lock.json': JSON.stringify(lock),
+    },
+  })
+  await t.rejects(
+    npm.exec('ci', []),
+    /Invalid: lock file's peer@1.0.0 is only an auto-installed peer dependency/
+  )
+})
+
 t.test('fails when both .npm-extension files are present', async t => {
   const { npm } = await loadMockNpm(t, {
     config: { audit: false },
