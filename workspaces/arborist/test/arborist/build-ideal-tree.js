@@ -5600,6 +5600,40 @@ t.test('autoInstallPeers: false', async t => {
     t.ok(tree.children.get('dom'))
   })
 
+  t.test('an explicitly declared workspace is checked', async t => {
+    await mock(t, { react: {} })
+    const warnings = warningTracker(t)
+    const path = project(t, { workspaces: ['p'], dependencies: { p: 'file:p' } }, {
+      p: { 'package.json': JSON.stringify({ name: 'p', version: '1.0.0', peerDependencies: { react: '1' } }) },
+    })
+    await buildIdeal(path, opts)
+    t.match(undeclared(warnings), [/^root depends on p, which requires peer react@1\n/])
+  })
+
+  t.test('an optional peer of the root does not install a required peer', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1' } } })
+    const warnings = warningTracker(t)
+    const tree = await buildIdeal(project(t, {
+      dependencies: { dom: '1' },
+      peerDependencies: { react: '1' },
+      peerDependenciesMeta: { react: { optional: true } },
+    }), opts)
+    t.notOk(tree.children.get('react'))
+    t.match(undeclared(warnings), [/^root depends on dom, which requires peer react@1\n/])
+  })
+
+  t.test('prunes an auto-installed peer link', async t => {
+    const path = project(t, { dependencies: { local: 'file:local' } }, {
+      local: { 'package.json': JSON.stringify({ name: 'local', version: '1.0.0', peerDependencies: { x: 'file:../x' } }) },
+      x: { 'package.json': JSON.stringify({ name: 'x', version: '1.0.0' }) },
+    })
+    await newArb(path).reify()
+    const kept = await buildIdeal(path)
+    t.equal(kept.children.get('x')?.isLink, true, 'linked by default')
+    const tree = await buildIdeal(path, opts)
+    t.notOk(tree.children.get('x'), 'link pruned')
+  })
+
   t.test('has no effect with legacy-peer-deps', async t => {
     await mock(t, { dom: { peerDependencies: { react: '1' } } })
     const warnings = warningTracker(t)
