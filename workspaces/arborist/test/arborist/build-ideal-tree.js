@@ -5634,6 +5634,23 @@ t.test('autoInstallPeers: false', async t => {
     t.notOk(tree.children.get('x'), 'link pruned')
   })
 
+  t.test('an optional peer that is present is checked', async t => {
+    await mock(t, {
+      lib: { dependencies: { dom: '1' } },
+      dom: { peerDependencies: { react: '1' } },
+    })
+    const warnings = warningTracker(t)
+    await buildIdeal(project(t, {
+      dependencies: { lib: '1' },
+      peerDependencies: { dom: '1' },
+      peerDependenciesMeta: { dom: { optional: true } },
+    }), opts)
+    t.match(undeclared(warnings), [
+      /^root depends on dom, which requires peer react@1\n/,
+      /^lib depends on dom, which requires peer react@1\n/,
+    ])
+  })
+
   t.test('has no effect with legacy-peer-deps', async t => {
     await mock(t, { dom: { peerDependencies: { react: '1' } } })
     const warnings = warningTracker(t)
