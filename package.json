@@ -1,5 +1,5 @@
 {
-  "version": "11.20.0",
+  "version": "11.21.0",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
@@ -53,7 +53,7 @@
   "dependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/arborist": "^9.9.2",
-    "@npmcli/config": "^10.13.0",
+    "@npmcli/config": "^10.14.0",
     "@npmcli/fs": "^5.0.0",
     "@npmcli/map-workspaces": "^5.0.3",
     "@npmcli/metavuln-calculator": "^9.0.3",
