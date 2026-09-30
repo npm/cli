@@ -1151,6 +1151,10 @@ t.test('oidc token exchange - no provenance', t => {
     logsContain: [
       'verbose oidc Failed token exchange request with body message: oidc token exchange failed',
     ],
+    logsNotContain: [
+      'notice oidc',
+      'warn oidc',
+    ],
   }))
 
   t.test('token exchange 500 with no body message with fallback', oidcPublishTest({
@@ -1170,6 +1174,10 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsNotContain: [
+      'notice oidc',
+      'warn oidc',
+    ],
     logsContain: [
       'verbose oidc Failed token exchange request with body message: Unknown error',
     ],
@@ -1193,6 +1201,10 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsNotContain: [
+      'notice oidc',
+      'warn oidc',
+    ],
     logsContain: [
       'verbose oidc Failed because token exchange was missing the token in the response body',
     ],
@@ -1206,8 +1218,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
-    logsContain: [
-      'silly oidc Skipped because incorrect permissions for id-token within GitHub workflow',
+    logsNotContain: [
+      'notice oidc',
+      'warn oidc',
     ],
   }))
 
@@ -1219,8 +1232,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
-    logsContain: [
-      'silly oidc Skipped because no id_token available',
+    logsNotContain: [
+      'notice oidc',
+      'warn oidc',
     ],
   }))
 
@@ -1232,6 +1246,10 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsNotContain: [
+      'notice oidc',
+      'warn oidc',
+    ],
   }))
 
   // default registry success
@@ -1254,6 +1272,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'exchange-token',
     },
+    logsContain: [
+      'notice oidc Successfully retrieved and set token',
+    ],
   }))
 
   t.test('global try-catch failure via malformed url', oidcPublishTest({
@@ -1269,7 +1290,7 @@ t.test('oidc token exchange - no provenance', t => {
       token: 'existing-fallback-token',
     },
     logsContain: [
-      'verbose oidc Failure with message: Invalid URL',
+      'verbose oidc Failure before successful token exchange: Invalid URL',
     ],
   }))
 
@@ -1302,7 +1323,7 @@ t.test('oidc token exchange - no provenance', t => {
 
     await npm.exec('publish', [])
     t.match(joinedOutput(), '+ @npmcli/test-package@1.0.0')
-    t.ok(logs.includes('verbose oidc Failure with message: Unknown error'))
+    t.ok(logs.includes('verbose oidc Failure before successful token exchange: Unknown error'))
   })
 
   t.test('default registry success gitlab', oidcPublishTest({
@@ -1329,8 +1350,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
-    logsContain: [
-      'silly oidc Skipped because no id_token available',
+    logsNotContain: [
+      'notice oidc',
+      'warn oidc',
     ],
   }))
 
@@ -1587,6 +1609,10 @@ t.test('oidc token exchange - provenance', (t) => {
     },
     provenance: true,
     oidcVisibilityOptions: { public: true },
+    logsContain: [
+      'notice oidc Successfully retrieved and set token',
+      'notice oidc Enabling provenance',
+    ],
   }))
 
   t.test('default registry success gitlab', oidcPublishTest({
@@ -2023,10 +2049,10 @@ t.test('oidc token exchange - provenance', (t) => {
 
   const provenanceFailures = [[
     new Error('Valid error'),
-    'verbose oidc Failed to set provenance with message: Valid error',
+    'warn oidc Failed to set provenance with message: Valid error',
   ], [
     'Valid error',
-    'verbose oidc Failed to set provenance with message: Unknown error',
+    'warn oidc Failed to set provenance with message: Unknown error',
   ]]
 
   provenanceFailures.forEach(([error, logMessage], index) => {

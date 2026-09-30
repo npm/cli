@@ -11,7 +11,7 @@ const fallbackToken = 'fallback-token'
 const exchangeToken = 'exchange-token'
 
 const setup = async t => {
-  const { npm } = await mockNpm(t, {
+  const { npm, logs } = await mockNpm(t, {
     config: ({ globalPrefix, home, prefix }) => ({
       globalconfig: join(globalPrefix, 'etc', 'npmrc'),
       prefix,
@@ -60,8 +60,70 @@ const setup = async t => {
     await oidc({ packageName: 'test-package', registry: registryUrl, opts, config: npm.config })
     return opts
   }
-  return { npm, ci, responses, run, oidc }
+  return { npm, logs, ci, responses, run, oidc }
 }
+
+t.test('logs explicit NPM_ID_TOKEN exchange success', async t => {
+  const { logs, run } = await setup(t)
+  await run()
+  t.strictSame(logs.notice.byTitle('oidc'), [
+    'oidc Using NPM_ID_TOKEN for authentication',
+    'oidc Successfully retrieved and set token',
+  ])
+  t.strictSame(logs.warn.byTitle('oidc'), [])
+})
+
+t.test('logs explicit NPM_ID_TOKEN exchange failure', async t => {
+  const { logs, responses, run } = await setup(t)
+  responses[0] = Object.assign(new Error('exchange failed'), {
+    body: { message: 'OIDC token exchange failed' },
+  })
+  await run()
+  t.strictSame(logs.notice.byTitle('oidc'), [
+    'oidc Using NPM_ID_TOKEN for authentication',
+  ])
+  t.strictSame(logs.warn.byTitle('oidc'), [
+    'oidc Failed token exchange request with body message: OIDC token exchange failed',
+  ])
+})
+
+t.test('logs explicit NPM_ID_TOKEN setup failure', async t => {
+  const { logs, run } = await setup(t)
+  await run({}, 'invalid-registry')
+  t.strictSame(logs.warn.byTitle('oidc'), [
+    'oidc Failure before successful token exchange: Invalid URL',
+  ])
+})
+
+t.test('logs a warning when applying an exchanged token fails', async t => {
+  const { logs, oidc } = await setup(t)
+  await oidc({
+    packageName: 'test-package',
+    registry,
+    opts: {},
+    config: {
+      get: () => {
+        throw new Error('config read failed')
+      },
+    },
+  })
+  t.strictSame(logs.warn.byTitle('oidc'), [
+    'oidc Failure after successful token exchange: config read failed',
+  ])
+  t.notOk(logs.notice.byTitle('oidc').includes('oidc Successfully retrieved and set token'))
+})
+
+t.test('logs explicit NPM_ID_TOKEN exchange response without a token', async t => {
+  const { logs, responses, run } = await setup(t)
+  responses[0] = {}
+  await run()
+  t.strictSame(logs.notice.byTitle('oidc'), [
+    'oidc Using NPM_ID_TOKEN for authentication',
+  ])
+  t.strictSame(logs.warn.byTitle('oidc'), [
+    'oidc Failed because token exchange was missing the token in the response body',
+  ])
+})
 
 for (const failure of [
   'exchange failure',
