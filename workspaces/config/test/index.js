@@ -149,6 +149,27 @@ t.test('construct with no settings, get default values for stuff', t => {
   t.end()
 })
 
+t.test('deleting config invalidates flattened options', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: path,
+    cwd: path,
+    env: {},
+    argv: [],
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  config.set('tag', 'fallback', 'user')
+  config.set('tag', 'temporary', 'cli')
+  const before = config.flat
+  t.equal(before.defaultTag, 'temporary')
+  config.delete('tag', 'cli')
+  t.equal(config.flat.defaultTag, 'fallback')
+  t.not(config.flat, before)
+})
+
 t.test('load from files and environment variables', t => {
   // need to get the dir because we reference it in the contents
   const path = t.testdir()
