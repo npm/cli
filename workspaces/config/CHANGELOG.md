@@ -1,5 +1,11 @@
 # Changelog
 
+## [11.2.0](https://github.com/npm/cli/compare/config-v11.1.0...config-v11.2.0) (2026-09-30)
+### Features
+* [`9741b64`](https://github.com/npm/cli/commit/9741b645b011ae83c9dda66c9b0d5fe0dce9c766) [#10038](https://github.com/npm/cli/pull/10038) dist-tag: support OIDC authentication (#10038) (@reggi, @Copilot)
+### Chores
+* [`e1581be`](https://github.com/npm/cli/commit/e1581be90119391cc1093db8a301439bf0e7808f) [#10015](https://github.com/npm/cli/pull/10015) config: isolate tests from host npmrc files (#10015) (@reggi)
+
 ## [11.1.0](https://github.com/npm/cli/compare/config-v11.0.1...config-v11.1.0) (2026-09-21)
 ### Features
 * [`6400533`](https://github.com/npm/cli/commit/6400533ab3d830716964bcf0def42b6c47f3fd70) [#9948](https://github.com/npm/cli/pull/9948) token: support read-write-stage-only granular access tokens (#9948) (@Tayvon, @Copilot)

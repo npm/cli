@@ -1,5 +1,16 @@
 # Changelog
 
+## [12.2.0](https://github.com/npm/cli/compare/v12.1.0...v12.2.0) (2026-09-30)
+### Features
+* [`9741b64`](https://github.com/npm/cli/commit/9741b645b011ae83c9dda66c9b0d5fe0dce9c766) [#10038](https://github.com/npm/cli/pull/10038) dist-tag: support OIDC authentication (#10038) (@reggi, @Copilot)
+### Documentation
+* [`0c3b82a`](https://github.com/npm/cli/commit/0c3b82a9a612c3f9399d35c28c86708b1f8ea7d4) [#10017](https://github.com/npm/cli/pull/10017) update npm stage docs to reflect that it can create new packages (#10017) (@shmam, @Copilot)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/config-v11.2.0): `@npmcli/config@11.2.0`
+
 ## [12.1.0](https://github.com/npm/cli/compare/v12.0.2...v12.1.0) (2026-09-21)
 ### Features
 * [`6400533`](https://github.com/npm/cli/commit/6400533ab3d830716964bcf0def42b6c47f3fd70) [#9948](https://github.com/npm/cli/pull/9948) token: support read-write-stage-only granular access tokens (#9948) (@Tayvon, @Copilot)
