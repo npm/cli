@@ -2312,6 +2312,27 @@ t.test('peer dep that needs to be replaced', async t => {
   t.matchSnapshot(await printIdeal(path))
 })
 
+t.test('no lockfile or root node_modules, but packages installed under a workspace', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', workspaces: ['packages/a'] }),
+    packages: {
+      a: {
+        'package.json': JSON.stringify({ name: 'a', version: '1.0.0', dependencies: { foo: '1.0.0' } }),
+        node_modules: {
+          foo: {
+            'package.json': JSON.stringify({ name: 'foo', version: '1.0.0', dependencies: { baz: '1.0.0' } }),
+          },
+        },
+      },
+    },
+  })
+  const registry = createRegistry(t, false)
+  const bazPackuments = registry.packuments(['1.0.0'], 'baz')
+  await registry.package({ manifest: registry.manifest({ name: 'baz', packuments: bazPackuments }) })
+  const tree = await buildIdeal(path)
+  t.equal(tree.children.get('baz')?.version, '1.0.0', 'dep of the package under the workspace is added')
+})
+
 t.test('transitive conflicted peer dependency', async t => {
   // see test/fixtures/testing-transitive-conflicted-peer/README.md
   // for a thorough explanation.
