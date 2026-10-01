@@ -1869,18 +1869,23 @@ t.test('umask', async t => {
 
 t.test('catch project config prefix error', async t => {
   const path = t.testdir()
+  const defaultPrefix = resolve(path, 'default-prefix')
+  const projectPrefix = "$(throw 'project prefix evaluated')"
   t.testdir({
     project: {
       node_modules: {},
       '.npmrc': `
       project-config = true
       foo = from-project-config
-      prefix=./lib
+      prefix=${projectPrefix}
       `,
     },
   })
   const config = new Config({
     npmPath: `${path}/npm`,
+    env: {
+      PREFIX: defaultPrefix,
+    },
     argv: [process.execPath, __filename],
     cwd: join(`${path}/project`),
     shorthands,
@@ -1898,6 +1903,9 @@ t.test('catch project config prefix error', async t => {
   t.match(filtered, [[
     'error', 'config', `prefix cannot be changed from project config: ${path}`,
   ]], 'Expected error logged')
+  t.equal(config.get('prefix', 'project'), undefined, 'project prefix is ignored')
+  t.equal(config.find('prefix'), 'default', 'project prefix does not win config precedence')
+  t.equal(config.globalPrefix, defaultPrefix, 'project prefix is not effective')
 })
 
 t.test('invalid single hyphen errors', async t => {

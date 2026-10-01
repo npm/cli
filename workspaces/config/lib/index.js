@@ -741,10 +741,11 @@ class Config {
     await readFile(file, 'utf8').then(
       data => {
         const parsedConfig = ini.parse(data)
-        if (type === 'project' && parsedConfig.prefix) {
+        if (type === 'project' && hasOwnProperty(parsedConfig, 'prefix')) {
           // Log error if prefix is mentioned in project .npmrc
           /* eslint-disable-next-line max-len */
           log.error('config', `prefix cannot be changed from project config: ${file}.`)
+          delete parsedConfig.prefix
         }
         return this.#loadObject(parsedConfig, type, file)
       },
