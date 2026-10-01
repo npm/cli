@@ -52,6 +52,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.3): `@npmcli/arborist@10.0.3`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.4): `@npmcli/arborist@10.0.4`
+
 ## [11.0.0](https://github.com/npm/cli/compare/libnpmexec-v11.0.0-pre.1...libnpmexec-v11.0.0) (2026-07-08)
 ### ⚠️ BREAKING CHANGES
 * `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
