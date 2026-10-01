@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.0.4](https://github.com/npm/cli/compare/arborist-v10.0.3...arborist-v10.0.4) (2026-10-01)
+### Bug Fixes
+* [`b317f16`](https://github.com/npm/cli/commit/b317f16c80df02ea3628cfa77170d5ae9b59720c) [#9941](https://github.com/npm/cli/pull/9941) write registry allowScripts keys under install-strategy=linked (#9941) (@manzoorwanijk)
+
 ## [10.0.3](https://github.com/npm/cli/compare/arborist-v10.0.2...arborist-v10.0.3) (2026-09-21)
 ### Bug Fixes
 * [`d6c6122`](https://github.com/npm/cli/commit/d6c612258c571c71a00f496c1f8980ed13b8a4d9) [#9914](https://github.com/npm/cli/pull/9914) arborist: match allowScripts keys for local paths (#9914) (@martinrrm, @Copilot)
