@@ -178,6 +178,26 @@ t.test('escapes cmd.exe executable tokens', async t => {
   }
 })
 
+t.test('defaults to cmd when ComSpec is unavailable on Windows', async t => {
+  const comSpec = process.env.ComSpec
+  delete process.env.ComSpec
+  t.teardown(() => {
+    if (comSpec === undefined) {
+      delete process.env.ComSpec
+    } else {
+      process.env.ComSpec = comSpec
+    }
+  })
+
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': async ({ pkg }) => {
+      t.equal(pkg.scripts.npx, '^"if^"')
+    },
+    '../lib/is-windows.js': true,
+  })
+  await runScript({ args: ['if'] })
+})
+
 t.test('cmd.exe quoting preserves paths and literal metacharacters', async t => {
   const cases = [
     ['if', '^"if^"'],
