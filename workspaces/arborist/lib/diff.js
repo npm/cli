@@ -72,12 +72,19 @@ class Diff {
           const orig = node
           node = node.target
           const loc = node.location
+          // An optional peer edge does not require its provider. If an
+          // in-scope node provides the peer, its own dependency edge will
+          // include the provider in the filtered tree.
           const idealNode = ideal.inventory.get(loc)
           const ideals = !idealNode ? []
-            : [...idealNode.edgesOut.values()].filter(e => e.to).map(e => e.to)
+            : [...idealNode.edgesOut.values()]
+              .filter(e => e.to && e.type !== 'peerOptional')
+              .map(e => e.to)
           const actualNode = actual.inventory.get(loc)
           const actuals = !actualNode ? []
-            : [...actualNode.edgesOut.values()].filter(e => e.to).map(e => e.to)
+            : [...actualNode.edgesOut.values()]
+              .filter(e => e.to && e.type !== 'peerOptional')
+              .map(e => e.to)
           if (actualNode) {
             for (const child of actualNode.children.values()) {
               if (child.extraneous) {
