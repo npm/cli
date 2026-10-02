@@ -494,6 +494,31 @@ t.test('commit: only package.json changed warns and writes no patch', async t =>
   t.match(logs.warn.join('\n'), /only package.json changed/, 'warns package.json is not patchable')
 })
 
+t.test('commit: a changed binary file rejects with EPATCHBINARY and writes no patch', async t => {
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: basePrefix(),
+  })
+  await setupDep(npm, registry)
+  await npm.exec('install', [])
+
+  const editDir = path.join(npm.prefix, 'clean-edit')
+  await pacote.extract(`${DEP_NAME}@${DEP_VERSION}`, editDir, npm.flatOptions)
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'module.exports = () => "patched"\n')
+  fs.writeFileSync(path.join(editDir, 'logo.png'), Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x00]))
+
+  await t.rejects(
+    npm.exec('patch', ['commit', editDir]),
+    { code: 'EPATCHBINARY', files: ['logo.png'] }
+  )
+  t.notOk(
+    fs.existsSync(path.join(npm.prefix, 'patches', `${DEP_NAME}@${DEP_VERSION}.patch`)),
+    'no patch file written'
+  )
+  t.notOk(readJson(path.join(npm.prefix, 'package.json')).patchedDependencies, 'no patchedDependencies added')
+})
+
 t.test('commit: package.json change alongside code is dropped with a warning', async t => {
   const { npm, logs, registry } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },
