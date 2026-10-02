@@ -3,6 +3,9 @@
 
 const PackageJson = require('@npmcli/package-json')
 const binLinks = require('bin-links')
+const isWindows = require('bin-links/lib/is-windows.js')
+/* istanbul ignore next */
+const linkBin = isWindows ? require('bin-links/lib/shim-bin.js') : require('bin-links/lib/link-bin.js')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const promiseAllRejectLate = require('promise-all-reject-late')
 const runScript = require('@npmcli/run-script')
@@ -11,7 +14,7 @@ const { depth: dfwalk } = require('treeverse')
 const { isNodeGypPackage, defaultGypInstallScript } = require('@npmcli/node-gyp')
 const { promiseRetry } = require('@gar/promise-retry')
 const { log, time } = require('proc-log')
-const { resolve, delimiter } = require('node:path')
+const { resolve, delimiter, dirname, relative, sep } = require('node:path')
 const { isScriptAllowed } = require('../script-allowed.js')
 
 const boolEnv = b => b ? '1' : ''
@@ -73,7 +76,66 @@ module.exports = cls => class Builder extends cls {
       await this.#build(linkNodes, { type: 'links' })
     }
 
+    if (this.options.binLinks) {
+      await this.#reconcileWorkspaceBins(linkNodes)
+    }
+
     timeEnd()
+  }
+
+  async #reconcileWorkspaceBins (rebuiltNodes) {
+    const queue = []
+
+    binLinks.resetSeen()
+
+    for (const node of rebuiltNodes) {
+      if (!node.isWorkspace || !node.isLink) {
+        continue
+      }
+
+      const wsTarget = node.target
+
+      for (const edge of wsTarget.edgesOut.values()) {
+        if (edge.type === 'workspace' || !edge.to) {
+          continue
+        }
+
+        const depNode = edge.to
+
+        // Skip deps physically nested inside the workspace —
+        // #linkAllBins already created correct shims for these.
+        if (depNode.path.startsWith(wsTarget.path + sep)) {
+          continue
+        }
+
+        const pkg = depNode.package
+        /* istanbul ignore next - PackageJson.normalize converts strings to objects, this is defensive */
+        const bins = typeof pkg.bin === 'string'
+          ? { [pkg.name]: pkg.bin }
+          : pkg.bin
+
+        if (!bins || typeof bins !== 'object' || Array.isArray(bins)) {
+          continue
+        }
+
+        for (const [binName, binScript] of Object.entries(bins)) {
+          queue.push(async () => {
+            const to = resolve(wsTarget.path, 'node_modules', '.bin', binName)
+            const absFrom = resolve(depNode.path, binScript)
+            const from = relative(dirname(to), absFrom)
+            await linkBin({ path: depNode.path, from, to, absFrom, force: true })
+          })
+        }
+      }
+    }
+
+    if (queue.length) {
+      const timeEnd = time.start('build:reconcileWorkspaceBins')
+      await promiseCallLimit(queue, {
+        limit: this.options.foregroundScripts ? 1 : undefined,
+      })
+      timeEnd()
+    }
   }
 
   // if we don't have a set of nodes, then just rebuild
