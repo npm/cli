@@ -2749,6 +2749,11 @@ t.test('ignore missing optional deps', async t => {
     const result = await mock(t)
     t.matchSnapshot(result, 'ls result')
   })
+
+  t.test('--long human output', async t => {
+    const result = await mock(t, { long: true })
+    t.matchSnapshot(result, 'ls --long result')
+  })
 })
 
 t.test('ls --json', async t => {
