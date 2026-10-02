@@ -52,15 +52,17 @@ const undeclaredPeers = tree => {
         continue
       }
       // Implicit workspace edges are not declarations, and devDependencies are only installed for the project root and workspaces.
+      const mine = isMine(node)
       const runtime = declares(pkg, edge.name, RUNTIME_FIELDS)
-      const peerOnly = !runtime && declares(pkg, edge.name, ['peerDependencies'])
-      const dev = isMine(node) && declares(pkg, edge.name, ['devDependencies'])
-      if (!runtime && !peerOnly && !dev) {
+      const peer = declares(pkg, edge.name, ['peerDependencies'])
+      const dev = mine && declares(pkg, edge.name, ['devDependencies'])
+      if (!runtime && !peer && !dev) {
         continue
       }
-      const fields = runtime || !dev ? DECLARING_FIELDS : DEV_DECLARING_FIELDS
-      // The consumer that provides a peer-only dependency must provide its peers too, so any declaration forwards the obligation.
-      const satisfied = peerOnly ? declares : declaresRequired
+      const fields = runtime || !mine ? DECLARING_FIELDS : DEV_DECLARING_FIELDS
+      // A peer the dependent does not install is provided by its consumer, which must provide its peers too, so any declaration forwards them.
+      const installs = runtime || dev || mine && declaresRequired(pkg, edge.name, ['peerDependencies'])
+      const satisfied = installs ? declaresRequired : declares
       const dep = edge.to.target
       for (const peer of dep.edgesOut.values()) {
         if (peer.type !== 'peer' || seen.has(peer.name) || peer.name === pkg.name ||

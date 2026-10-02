@@ -5669,6 +5669,21 @@ t.test('autoInstallPeers: false', async t => {
     t.strictSame(undeclared(warnings), [])
   })
 
+  t.test('a required peer of the root needs its own peers installed', async t => {
+    await mock(t, { p: { peerDependencies: { x: '1' } }, x: {} })
+    let warnings = warningTracker(t)
+    await buildIdeal(project(t, {
+      peerDependencies: { p: '1', x: '1' },
+      peerDependenciesMeta: { x: { optional: true } },
+    }), opts)
+    t.match(undeclared(warnings), [/^root depends on p, which requires peer x@1\n/], 'optional peer does not install it')
+
+    await mock(t, { p: { peerDependencies: { x: '1' } }, x: {} })
+    warnings = warningTracker(t)
+    await buildIdeal(project(t, { peerDependencies: { p: '1' }, devDependencies: { x: '1' } }), opts)
+    t.strictSame(undeclared(warnings), [], 'devDependency installs it')
+  })
+
   t.test('has no effect with legacy-peer-deps', async t => {
     await mock(t, { dom: { peerDependencies: { react: '1' } } })
     const warnings = warningTracker(t)
