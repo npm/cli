@@ -470,6 +470,42 @@ for (const allowDirectory of ['none', 'root']) {
   })
 }
 
+t.test('local package bin changes reinstall the npx cache entry', async t => {
+  const { pkg, fixtures } = createPkg({
+    version: '1.0.0',
+    name: '@npmcli/local-pkg-bin-change-test',
+    bin: {
+      a: 'a.js',
+    },
+    files: {
+      'a.js': { key: 'local-bin-a', value: 'A' },
+    },
+  })
+
+  const { exec, chmod, readOutput, path } = setup(t, {
+    pkg,
+    testdir: fixtures.packages['@npmcli-local-pkg-bin-change-test-1.0.0'],
+  })
+
+  await chmod('a.js')
+  await exec({ args: ['a'] })
+  t.match(await readOutput('local-bin-a'), {
+    value: 'A',
+  })
+
+  await fs.writeFile(resolve(path, 'b.js'), '#!/usr/bin/env node\nrequire("fs").writeFileSync("output-local-bin-b", JSON.stringify({ value: "B", args: process.argv.slice(2) }))')
+  await chmod('b.js')
+  const packageJson = JSON.parse(await fs.readFile(resolve(path, 'package.json'), 'utf8'))
+  packageJson.bin.b = 'b.js'
+  await fs.writeFile(resolve(path, 'package.json'), JSON.stringify(packageJson, null, 2))
+
+  await exec({ args: ['b', 'argument-b'] })
+  t.match(await readOutput('local-bin-b'), {
+    value: 'B',
+    args: ['argument-b'],
+  })
+})
+
 t.test('npm exec sequential workspace runs with same-named local bins', async t => {
   t.plan(2)
   const { path, readOutput, rmOutput, registry } = setup(t, {
