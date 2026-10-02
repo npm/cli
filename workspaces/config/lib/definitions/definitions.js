@@ -334,6 +334,12 @@ const definitions = {
       Instead, it warns about every package that depends on a package with a
       required peer without declaring that peer itself.
 
+      Each package must declare the peer itself: a provider elsewhere in the
+      tree, such as the project root for a workspace, does not count.  A
+      \`devDependencies\` entry only counts when the package that requires
+      the peer is itself a \`devDependencies\` or \`peerDependencies\` entry
+      of the project root or a workspace.
+
       With \`--strict-peer-deps\`, such a warning for the project root or a
       workspace fails the install.
 

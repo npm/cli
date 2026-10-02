@@ -5651,6 +5651,24 @@ t.test('autoInstallPeers: false', async t => {
     ])
   })
 
+  t.test('a peer reached through a peer can be declared as an optional peer or a devDependency', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1' } }, react: {} })
+    const warnings = warningTracker(t)
+    const path = project(t, { workspaces: ['a'] }, {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+          peerDependencies: { dom: '1', react: '1' },
+          peerDependenciesMeta: { dom: { optional: true }, react: { optional: true } },
+          devDependencies: { dom: '1', react: '1' },
+        }),
+      },
+    })
+    await buildIdeal(path, { ...opts, strictPeerDeps: true })
+    t.strictSame(undeclared(warnings), [])
+  })
+
   t.test('has no effect with legacy-peer-deps', async t => {
     await mock(t, { dom: { peerDependencies: { react: '1' } } })
     const warnings = warningTracker(t)
