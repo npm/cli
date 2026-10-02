@@ -583,6 +583,43 @@ t.test('findSpecificOverrideSet returns undefined for truly conflicting siblings
   t.equal(result, undefined, 'truly conflicting siblings should return undefined')
 })
 
+t.test('override conflict detection ignores rules outside the target closure', async t => {
+  const root = new OverrideSet({
+    overrides: {
+      'js-yaml': '5.3.0',
+      '@babel/core': '^7.29.7',
+      'http-proxy-agent': {
+        'js-yaml': '4.3.2',
+      },
+    },
+  })
+
+  const babelRule = root.getEdgeRule({ name: '@babel/core', spec: '^7.29.7' })
+  const proxyRule = root.getEdgeRule({ name: 'http-proxy-agent', spec: '^7.0.0' })
+  const debug = {
+    name: 'debug',
+    packageName: 'debug',
+    edgesOut: new Map([
+      ['ms', { name: 'ms' }],
+    ]),
+  }
+
+  t.ok(
+    OverrideSet.doOverrideSetsConflict(proxyRule, babelRule),
+    'unfiltered sibling rules still conflict on js-yaml'
+  )
+  t.notOk(
+    OverrideSet.doOverrideSetsConflict(proxyRule, babelRule, debug),
+    'js-yaml does not invalidate debug when it is outside debug dependency closure'
+  )
+
+  debug.edgesOut.set('js-yaml', { name: 'js-yaml' })
+  t.ok(
+    OverrideSet.doOverrideSetsConflict(proxyRule, babelRule, debug),
+    'the conflict is retained when the differing rule can affect the target closure'
+  )
+})
+
 t.test('coverage for isEqual edge cases', async t => {
   t.test('isEqual with null/undefined other', async t => {
     const overrides = new OverrideSet({ overrides: { foo: '1.0.0' } })
