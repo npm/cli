@@ -525,6 +525,34 @@ t.test('package with --json and no versions', async t => {
   t.equal(joinedOutput(), '', 'no info to display')
 })
 
+t.test('crafted version field does not pollute Object.prototype', async t => {
+  // A malicious registry can serve a manifest whose own `version` field
+  // differs from the (valid semver) versions map key. cleanData keys its
+  // accumulator by that version field, so a value of `__proto__` used to
+  // walk up to Object.prototype through acc[k][t].
+  t.teardown(() => {
+    delete Object.prototype.polluted
+  })
+  const evilPackument = () => ({
+    _id: 'evil@1.0.0',
+    name: 'evil',
+    'dist-tags': { latest: '1.0.0' },
+    versions: {
+      '1.0.0': {
+        name: 'evil',
+        version: '__proto__',
+        polluted: 'HACKED',
+        dist: { shasum: '123', tarball: 'http://hm.evil.com/1.0.0.tgz', fileCount: 1 },
+      },
+    },
+  })
+  const { view } = await loadMockNpm(t, {
+    mocks: { pacote: { packument: evilPackument } },
+  })
+  await view.exec(['evil', 'polluted'])
+  t.equal({}.polluted, undefined, 'Object.prototype is not polluted')
+})
+
 t.test('package with --json and single string arg', async t => {
   const { view, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
   await view.exec(['blue', 'dist-tags.latest'])
