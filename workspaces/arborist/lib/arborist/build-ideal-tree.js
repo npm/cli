@@ -1535,7 +1535,8 @@ This is a one-time fix-up, please be patient...
 
     // if the spec matches a workspace name, then see if the workspace node will satisfy the edge. if it does, we return the workspace node to make sure it takes priority.
     if (isWorkspace) {
-      const existingNode = this.idealTree.edgesOut.get(spec.name).to
+      const existingEdge = this.idealTree.edgesOut.get(spec.name)
+      const existingNode = existingEdge && existingEdge.to
       if (existingNode && existingNode.isWorkspace && existingNode.satisfies(edge)) {
         return existingNode
       }

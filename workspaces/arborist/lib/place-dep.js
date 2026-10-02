@@ -292,6 +292,20 @@ class PlaceDep {
       }
     }
 
+    // the new placement may also shadow same-name nodes higher up the tree
+    // (npm/cli#9135): a package hoisted near the root for one edge can be
+    // superseded by a closer placement for a node deeper in the tree, leaving
+    // the hoisted node with no edgesIn.  If left behind, it is written to the
+    // lockfile as extraneous and its dependency versions keep winning dedupe
+    // decisions.  Remove such orphans, and re-evaluate anything outside of
+    // them that still pointed into them.
+    for (let p = this.placed.resolveParent; p; p = p.resolveParent) {
+      const shadowed = p.children.get(this.name)
+      if (shadowed && shadowed !== this.placed && !shadowed.isWorkspace && !shadowed.isLink) {
+        this.pruneOrphan(shadowed)
+      }
+    }
+
     // also place its unmet or invalid peer deps at this location
     // loop through any peer deps from the thing we just placed, and place
     // those ones as well.  it's safe to do this with the virtual nodes,
@@ -455,6 +469,45 @@ class PlaceDep {
         const children = [...topNode.children.values()].sort(nodeSort)
         for (const child of children) {
           this.pruneDedupable(child)
+        }
+      }
+    }
+  }
+
+  // Remove a same-name node that lost all of its dependents to a new, closer
+  // placement (see npm/cli#9135).  The node and its exclusive subtree are
+  // detached from the tree.  Anything outside the subtree that still pointed
+  // into it has its edge reloaded, turning it into a missing edge, and is
+  // added to needEvaluation so the build loop re-resolves and re-places it.
+  pruneOrphan (node) {
+    // still referenced - not an orphan, leave it alone
+    if (node.edgesIn.size !== 0) {
+      return
+    }
+
+    const members = new Set([node])
+    for (const member of members) {
+      for (const kid of member.children.values()) {
+        members.add(kid)
+      }
+      for (const kid of member.fsChildren) {
+        members.add(kid)
+      }
+    }
+
+    // edges from outside the removed subtree have to be re-resolved so they
+    // do not keep pointing at a node that is no longer in the tree.  Detach
+    // the subtree first: otherwise from.resolve(name) still finds the node
+    // that is about to be removed and the reload is a no-op.
+    for (const member of members) {
+      member.root = null
+    }
+
+    for (const member of members) {
+      for (const edge of [...member.edgesIn]) {
+        if (!members.has(edge.from)) {
+          edge.reload()
+          this.needEvaluation.add(edge.from)
         }
       }
     }
