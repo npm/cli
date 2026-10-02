@@ -228,6 +228,30 @@ t.test('unpublish <pkg> --force no version set', async t => {
   t.equal(joinedOutput(), '- test-package')
 })
 
+t.test('unpublish <pkg> surfaces a failed whole-package delete', async t => {
+  const { joinedOutput, npm } = await loadMockNpm(t, {
+    config: {
+      force: true,
+      ...auth,
+    },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: 'test-auth-token',
+  })
+  const manifest = registry.manifest({ name: pkg })
+  await registry.package({ manifest, query: { write: true }, times: 2 })
+  registry.nock.delete(`/${pkg}/-rev/${manifest._rev}`).reply(404)
+
+  await t.rejects(
+    npm.exec('unpublish', ['test-package']),
+    { code: 'E404' },
+    'should reject when the registry delete fails'
+  )
+  t.equal(joinedOutput(), '')
+})
+
 t.test('silent', async t => {
   const { joinedOutput, npm } = await loadMockNpm(t, {
     config: {
