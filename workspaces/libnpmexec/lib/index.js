@@ -261,8 +261,14 @@ const exec = async (opts) => {
       .slice(0, 16)
     const installDir = resolve(npxCache, hash)
     await mkdir(installDir, { recursive: true })
+    // The npx cache is never a global install, even when npx inherits
+    // global:true from the environment of a global install's lifecycle
+    // script. Letting it through makes arborist link bins to the global
+    // bin dir instead of the cache's node_modules/.bin, which the lookup
+    // below does not expect.
     const npxArb = new Arborist({
       ...flatOptions,
+      global: false,
       path: installDir,
     })
     const lockPath = join(installDir, 'concurrency.lock')
