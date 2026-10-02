@@ -148,6 +148,52 @@ t.test('install-scripts ls with no unreviewed says so', async t => {
   t.match(joinedOutput(), /No packages with unreviewed install scripts/)
 })
 
+t.test('install-scripts respects gypfile:false through the hidden lockfile', async t => {
+  for (const hasInstallScript of [false, true]) {
+    for (const command of ['ls', 'approve', 'prune']) {
+      await t.test(`${command}, hasInstallScript=${hasInstallScript}`, async t => {
+        const fixture = setupProject({
+          withScripts: [],
+          noScripts: ['native-pkg'],
+          allowScripts: command === 'prune' ? { 'native-pkg': true } : undefined,
+        })
+        fixture.node_modules['native-pkg'] = {
+          'package.json': JSON.stringify({
+            name: 'native-pkg',
+            version: '1.0.0',
+            gypfile: false,
+          }),
+          'binding.gyp': '',
+        }
+        const lock = JSON.parse(fixture['package-lock.json'])
+        if (hasInstallScript) {
+          lock.packages['node_modules/native-pkg'].hasInstallScript = true
+        }
+        fixture['package-lock.json'] = JSON.stringify(lock)
+        fixture.node_modules['.package-lock.json'] = JSON.stringify(lock)
+        const { npm, prefix, joinedOutput } = await mockNpm(t, {
+          prefixDir: fixture,
+          config: { all: command === 'approve' },
+        })
+        const Arborist = require('@npmcli/arborist')
+        const tree = await new Arborist({ path: prefix }).loadActual()
+        t.equal(tree.meta.hiddenLockfile, true, 'uses the hidden lockfile')
+        t.equal(tree.children.get('native-pkg').package.gypfile, undefined,
+          'tree metadata omits the opt-out')
+
+        await npm.exec('install-scripts', [command])
+
+        if (command === 'ls') {
+          t.match(joinedOutput(), /No packages with unreviewed install scripts/)
+        } else {
+          const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+          t.notOk(pkg.allowScripts, 'does not retain an unnecessary approval')
+        }
+      })
+    }
+  }
+})
+
 t.test('install-scripts ls rejects positional args', async t => {
   const { npm } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas'] }),

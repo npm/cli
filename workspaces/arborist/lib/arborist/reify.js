@@ -755,6 +755,7 @@ module.exports = cls => class Reifier extends cls {
       if (node.isInStore) {
         const { content: pkg } = await PackageJson.normalize(node.path)
         node.package.scripts = pkg.scripts
+        node.package.gypfile = pkg.gypfile
       }
       await this.#applyPatch(node)
       return
