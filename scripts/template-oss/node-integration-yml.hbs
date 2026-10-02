@@ -57,28 +57,33 @@ jobs:
           sourceDir="${RUNNER_TEMP}/src"
           targetDir="${RUNNER_TEMP}/build"
           npmFile="${RUNNER_TEMP}/npm.tgz"
+          nodeSourceFile="${RUNNER_TEMP}/node-source.tgz"
           sourceFile="${RUNNER_TEMP}/source.tgz"
           targetFile="${RUNNER_TEMP}/build.tgz"
+          curlArgs=(--fail --show-error --silent --location --retry 5 --retry-all-errors --retry-delay 5)
           echo "::endgroup::"
 
           echo "::group::finding nodejs version matching $\{{ inputs.nodeVersion }}"
           if [[ "$\{{ inputs.nodeVersion }}" == "nightly" ]]; then
-            nodeVersion=$(curl -sSL https://nodejs.org/download/nightly/index.json | jq -r .[0].version)
+            nodeIndex=$(curl "${curlArgs[@]}" https://nodejs.org/download/nightly/index.json)
+            nodeVersion=$(jq -r 'map(select(.files | index("src")))[0].version // empty' <<< "$nodeIndex")
             nodeUrl="https://nodejs.org/download/nightly/${nodeVersion}/node-${nodeVersion}.tar.gz"
           else
-            nodeVersion=$(curl -sSL https://nodejs.org/download/release/index.json | jq -r 'map(select(.version | test("^v$\{{ inputs.nodeVersion }}"))) | .[0].version')
-            if [[ -z "$nodeVersion" ]]; then
-              echo "::error ::unable to find released nodejs version matching: $\{{ inputs.nodeVersion }}"
-              exit 1
-            fi
+            nodeIndex=$(curl "${curlArgs[@]}" https://nodejs.org/download/release/index.json)
+            nodeVersion=$(jq -r 'map(select((.version | test("^v$\{{ inputs.nodeVersion }}")) and (.files | index("src"))))[0].version // empty' <<< "$nodeIndex")
             nodeUrl="https://nodejs.org/download/release/${nodeVersion}/node-${nodeVersion}.tar.gz"
+          fi
+          if [[ -z "$nodeVersion" ]]; then
+            echo "::error ::unable to find nodejs version with source matching: $\{{ inputs.nodeVersion }}"
+            exit 1
           fi
           echo "nodeVersion=${nodeVersion}" >> $GITHUB_OUTPUT
           echo "::endgroup::"
 
           echo "::group::extracting source from $nodeUrl"
           mkdir -p "$sourceDir"
-          curl -sSL "$nodeUrl" | tar xz -C "$sourceDir" --strip=1
+          curl "${curlArgs[@]}" "$nodeUrl" --output "$nodeSourceFile"
+          tar xzf "$nodeSourceFile" -C "$sourceDir" --strip=1
           echo "::endgroup::"
 
           echo "::group::cloning npm"
