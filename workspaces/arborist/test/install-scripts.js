@@ -1,4 +1,5 @@
 const t = require('tap')
+const PackageJson = require('@npmcli/package-json')
 
 const mockGetInstallScripts = (t, isNodeGypResult = () => false) =>
   t.mock('../lib/install-scripts.js', {
@@ -51,6 +52,13 @@ t.test('ignores unrelated scripts', async t => {
   )
 })
 
+t.test('missing or null scripts are empty', async t => {
+  const getInstallScripts = mockGetInstallScripts(t)
+  for (const scripts of [undefined, null]) {
+    t.strictSame(await getInstallScripts(node({ scripts })), {})
+  }
+})
+
 t.test('prepare only counts for non-registry sources', async t => {
   const getInstallScripts = mockGetInstallScripts(t)
   // registry: prepare ignored
@@ -93,6 +101,138 @@ t.test('synthetic node-gyp suppressed when gypfile: false', async t => {
     await getInstallScripts(node({ gypfile: false })),
     {}
   )
+})
+
+t.test('native packages recover installed scripts and gypfile before enumeration', async t => {
+  const cases = [
+    { name: 'opt-out', gypfile: false, scripts: {}, expected: {} },
+    {
+      name: 'preinstall',
+      gypfile: false,
+      scripts: { preinstall: 'echo preinstall' },
+      expected: { preinstall: 'echo preinstall' },
+    },
+    {
+      name: 'install',
+      gypfile: false,
+      scripts: { install: 'echo install' },
+      expected: { install: 'echo install' },
+    },
+    {
+      name: 'postinstall',
+      gypfile: false,
+      scripts: { postinstall: 'echo postinstall' },
+      expected: { postinstall: 'echo postinstall' },
+    },
+    {
+      name: 'known postinstall',
+      gypfile: false,
+      scripts: { postinstall: 'echo postinstall' },
+      knownScripts: { postinstall: 'echo postinstall' },
+      expected: { postinstall: 'echo postinstall' },
+    },
+    {
+      name: 'registry prepare',
+      gypfile: false,
+      scripts: { prepare: 'echo prepare' },
+      expected: {},
+    },
+    {
+      name: 'non-registry prepare',
+      gypfile: false,
+      scripts: { prepare: 'echo prepare' },
+      isRegistryDependency: false,
+      expected: { prepare: 'echo prepare' },
+    },
+    {
+      name: 'default native build',
+      scripts: {},
+      expected: { install: 'node-gyp rebuild' },
+    },
+    {
+      name: 'native build and postinstall',
+      gypfile: true,
+      scripts: { postinstall: 'echo postinstall' },
+      expected: { install: 'node-gyp rebuild', postinstall: 'echo postinstall' },
+    },
+  ]
+
+  for (const hasInstallScript of [undefined, false, true]) {
+    for (const testCase of cases) {
+      const {
+        name, gypfile, scripts, knownScripts = {}, isRegistryDependency = true, expected,
+      } = testCase
+      await t.test(`${name}, hasInstallScript=${hasInstallScript}`, async t => {
+        const path = t.testdir({
+          'package.json': JSON.stringify({ name: 'pkg', version: '1.0.0', gypfile, scripts }),
+          'binding.gyp': '',
+        })
+        let reads = 0
+        const getInstallScripts = t.mock('../lib/install-scripts.js', {
+          '@npmcli/package-json': {
+            normalize: async path => {
+              reads++
+              return PackageJson.normalize(path)
+            },
+          },
+        })
+        const pkg = Object.freeze({
+          name: 'pkg',
+          version: '1.0.0',
+          scripts: Object.freeze(knownScripts),
+        })
+        const lockfileNode = {
+          path,
+          isRegistryDependency,
+          hasInstallScript,
+          package: pkg,
+        }
+
+        t.strictSame(await getInstallScripts(lockfileNode), expected)
+        t.equal(reads, 1, 'reads installed metadata once')
+        t.equal(lockfileNode.package, pkg, 'keeps the package object')
+        t.strictSame(pkg, { name: 'pkg', version: '1.0.0', scripts: knownScripts },
+          'does not modify package data')
+      })
+    }
+  }
+})
+
+t.test('a confirmed opt-out clears a stale presence flag without binding.gyp', async t => {
+  const getInstallScripts = require('../lib/install-scripts.js')
+  const pkg = { name: 'pkg', version: '1.0.0', gypfile: false }
+  const path = t.testdir({ 'package.json': JSON.stringify(pkg) })
+  t.strictSame(await getInstallScripts({
+    path,
+    package: pkg,
+    hasInstallScript: true,
+  }), {})
+})
+
+t.test('unavailable or mismatched metadata cannot clear a script-presence flag', async t => {
+  const getInstallScripts = require('../lib/install-scripts.js')
+  const cases = [
+    ['missing', undefined],
+    ['malformed', '{'],
+    ['different version', { name: 'pkg', version: '0.9.0', gypfile: false }],
+    ['different name', { name: 'other', version: '1.0.0', gypfile: false }],
+    ['missing identity', { gypfile: false }],
+  ]
+  for (const [name, content] of cases) {
+    await t.test(name, async t => {
+      const path = t.testdir({
+        'binding.gyp': '',
+        ...(content === undefined ? {} : {
+          'package.json': typeof content === 'string' ? content : JSON.stringify(content),
+        }),
+      })
+      t.strictSame(await getInstallScripts({
+        path,
+        package: { name: 'pkg', version: '1.0.0' },
+        hasInstallScript: true,
+      }), { install: '(install scripts present)' })
+    })
+  }
 })
 
 t.test('synthetic node-gyp suppressed when explicit install is present', async t => {
