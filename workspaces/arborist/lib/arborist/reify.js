@@ -32,6 +32,7 @@ const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
 const { saveTypeMap, hasSubKey } = require('../add-rm-pkg-deps.js')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
+const { isReleaseAgeExcluded } = require('../release-age-exclude.js')
 
 // Part of steps (steps need refactoring before we can do anything about these)
 const _retireShallowNodes = Symbol.for('retireShallowNodes')
@@ -737,8 +738,20 @@ module.exports = cls => class Reifier extends cls {
           })
         }
       })
+      // When node.resolved is missing (e.g. a lockfile written with
+      // omit-lockfile-registry-resolved) `res` above is a bare `name@version`
+      // spec, so pacote has to hit the registry and re-run version-picking
+      // (including the `min-release-age`/`before` cutoff) to find the tarball.
+      // That re-resolution must honor `min-release-age-exclude` the same way
+      // build-ideal-tree's #releaseAgeBefore does, or a package that was
+      // correctly exempted while building the ideal tree can still get
+      // rejected here with ETARGET.
+      const before = isReleaseAgeExcluded(node.name, this.options.minReleaseAgeExclude)
+        ? null
+        : this.options.before
       await pacote.extract(res, node.path, {
         ...this.options,
+        before,
         resolved: node.resolved,
         integrity: node.integrity,
         // A node counts as "root" for allow-* enforcement if it satisfies at least one valid dependency edge declared by the project root or a workspace.

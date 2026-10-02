@@ -167,6 +167,56 @@ t.test('weirdly broken lockfile without resolved value', async t => {
   await t.resolveMatchSnapshot(printReified(fixture(t, 'dep-missing-resolved')))
 })
 
+t.test('min-release-age-exclude applies when reify re-resolves a node with no resolved value', async t => {
+  // minimist@1.2.5 was published 2020-03-12T22:16:19.463Z (see
+  // ../fixtures/registry-mocks/content/minimist.json). A lockfile entry
+  // missing `resolved` (e.g. written with omit-lockfile-registry-resolved)
+  // forces reify's #extractOrLink to re-resolve `minimist@1.2.5` against the
+  // registry instead of extracting directly from a known tarball URL. That
+  // re-resolution must still honor min-release-age-exclude the same way
+  // build-ideal-tree's manifest fetches do.
+  const before = new Date('2020-01-01T00:00:00.000Z')
+
+  const mkPath = t => t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { minimist: '1.2.5' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 2,
+      requires: true,
+      packages: {
+        '': {
+          name: 'root',
+          version: '1.0.0',
+          dependencies: { minimist: '1.2.5' },
+        },
+        'node_modules/minimist': {
+          version: '1.2.5',
+        },
+      },
+    }, null, 2),
+  })
+
+  await t.test('without exclude, before still applies and fails', async t => {
+    createRegistry(t, true)
+    await t.rejects(
+      reify(mkPath(t), { before }),
+      { code: 'ETARGET' },
+      'the already-locked version is rejected by the release-age filter'
+    )
+  })
+
+  await t.test('with exclude, the already-locked version installs', async t => {
+    createRegistry(t, true)
+    const tree = await reify(mkPath(t), { before, minReleaseAgeExclude: ['minimist'] })
+    t.equal(tree.children.get('minimist').version, '1.2.5', 'excluded package still installs')
+  })
+})
+
 t.test('testing-peer-deps package', async t => {
   createRegistry(t, true)
   await t.resolveMatchSnapshot(printReified(fixture(t, 'testing-peer-deps')))
