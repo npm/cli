@@ -33,6 +33,8 @@ Sets each of the config keys to the value provided.
 Modifies the user configuration file unless [`location`](/commands/npm-config#location) is passed.
 
 If value is omitted, the key will be removed from your config file entirely.
+An explicitly empty value (`npm config set key ""` or `npm config set key=`) sets a string-valued option to the empty string without removing it.
+For any other option an empty value removes the key, since an empty string is not a value those options can hold.
 
 Note: for backwards compatibility, `npm config set key value` is supported as an alias for `npm config set key=value`.
 
