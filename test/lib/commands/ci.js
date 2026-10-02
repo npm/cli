@@ -357,6 +357,61 @@ t.test('a failing preinstall prevents reify for npm ci', async t => {
   )
 })
 
+// Regression test: symmetric to the install-side guarantee — the blocked-scripts warning is printed by reifyFinish, which a failing root post-reify script would otherwise skip past.
+t.test('a failing root prepare still reports blocked install scripts for npm ci', async t => {
+  const { npm, registry, logs } = await loadMockNpm(t, {
+    config: { audit: false },
+    prefixDir: {
+      abbrev: {
+        ...abbrev,
+        'package.json': JSON.stringify({
+          name: 'abbrev',
+          version: '1.0.0',
+          scripts: { postinstall: 'echo postinstall' },
+        }),
+      },
+      'package.json': JSON.stringify({
+        ...packageJson,
+        scripts: {
+          prepare: 'exit 1',
+        },
+      }),
+      'package-lock.json': JSON.stringify({
+        ...packageLock,
+        packages: {
+          ...packageLock.packages,
+          'node_modules/abbrev': {
+            ...packageLock.packages['node_modules/abbrev'],
+            hasInstallScript: true,
+          },
+        },
+      }),
+    },
+    mocks: {
+      '@npmcli/run-script': async (opts) => {
+        if (opts.path === npm.prefix && opts.event === 'prepare') {
+          throw Object.assign(new Error('prepare failed'), { code: 'ELIFECYCLE' })
+        }
+      },
+    },
+  })
+  const manifest = registry.manifest({
+    name: 'abbrev',
+    packuments: [{ version: '1.0.0', scripts: { postinstall: 'echo postinstall' } }],
+  })
+  await registry.tarball({
+    manifest: manifest.versions['1.0.0'],
+    tarball: path.join(npm.prefix, 'abbrev'),
+  })
+
+  await t.rejects(npm.exec('ci', []), /prepare failed/, 'ci rejects when prepare fails')
+  t.match(
+    logs.warn.byTitle('install-scripts').join('\n'),
+    /1 package had install scripts blocked/,
+    'blocked install scripts are reported before the failure'
+  )
+})
+
 t.test('should throw if package-lock.json is missing', async t => {
   const { npm } = await loadMockNpm(t, {
     prefixDir: {
