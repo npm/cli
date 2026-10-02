@@ -5435,3 +5435,259 @@ t.test('incomplete manifest from proxy registry prunes optional dep (#9342)', as
   t.equal(aixNode.errors[0].code, 'EINCOMPLETEMANIFEST',
     'node has EINCOMPLETEMANIFEST error')
 })
+
+t.test('autoInstallPeers: false', async t => {
+  // strict registry mocks fail on any fetch of a skipped peer
+  const mock = async (t, pkgs, times = 1) => {
+    const registry = createRegistry(t, false)
+    for (const [name, pkg] of Object.entries(pkgs)) {
+      const manifest = registry.manifest({ name, packuments: [{ version: '1.0.0', ...pkg }] })
+      await registry.package({ manifest, times })
+    }
+  }
+  const project = (t, pkg, extra = {}) => t.testdir({
+    'package.json': JSON.stringify({ name: 'root', version: '1.0.0', ...pkg }),
+    ...extra,
+  })
+  const undeclared = warnings => warnings.filter(w => w[1] === 'EPEERUNDECLARED').map(w => w[2])
+  const opts = { autoInstallPeers: false }
+
+  t.test('does not install a peer the root does not declare', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1' } } })
+    const warnings = warningTracker(t)
+    const tree = await buildIdeal(project(t, { dependencies: { dom: '1' } }), opts)
+    t.notOk(tree.children.get('react'), 'react is not placed')
+    t.equal(tree.children.get('dom').edgesOut.get('react').missing, true)
+    t.strictSame(undeclared(warnings), [
+      'root depends on dom, which requires peer react@1\nAdd react to root\'s dependencies or peerDependencies',
+    ])
+  })
+
+  t.test('strict-peer-deps fails for the root, force downgrades to a warning', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1' } } }, 2)
+    const path = project(t, { name: undefined, dependencies: { dom: '1' } })
+    await t.rejects(buildIdeal(path, { ...opts, strictPeerDeps: true }), {
+      code: 'EPEERUNDECLARED',
+      message: `${basename(path)} depends on dom, which requires peer react@1\nAdd react to ${basename(path)}'s dependencies or peerDependencies`,
+    }, 'names a nameless root by its folder')
+    const warnings = warningTracker(t)
+    await buildIdeal(path, { ...opts, strictPeerDeps: true, force: true })
+    t.equal(undeclared(warnings).length, 1)
+  })
+
+  t.test('third-party dependents only warn under strict-peer-deps', async t => {
+    await mock(t, {
+      lib: { dependencies: { dom: '1' } },
+      dom: { peerDependencies: { react: '1' } },
+    })
+    const warnings = warningTracker(t)
+    const tree = await buildIdeal(project(t, { dependencies: { lib: '1' } }), { ...opts, strictPeerDeps: true })
+    t.notOk(tree.children.get('react'))
+    t.match(undeclared(warnings), [/^lib depends on dom, which requires peer react@1\n/])
+  })
+
+  t.test('a peer declared by a dependency must be declared by its dependent', async t => {
+    await mock(t, {
+      lib: { dependencies: { dom: '1' }, peerDependencies: { react: '1' } },
+      dom: { peerDependencies: { react: '1' } },
+    })
+    const warnings = warningTracker(t)
+    const tree = await buildIdeal(project(t, { dependencies: { lib: '1' } }), opts)
+    t.notOk(tree.children.get('react'))
+    t.match(undeclared(warnings), [/^root depends on lib, which requires peer react@1\n/])
+  })
+
+  t.test('installs peers declared by the root or provided by a dependency', async t => {
+    await mock(t, {
+      lib: { dependencies: { dom: '1', react: '1' } },
+      dom: { peerDependencies: { react: '1' } },
+      react: {},
+    })
+    const warnings = warningTracker(t)
+    const tree = await buildIdeal(project(t, {
+      dependencies: { lib: '1', dom: '1' },
+      peerDependencies: { react: '1' },
+    }), { ...opts, strictPeerDeps: true })
+    t.equal(tree.children.get('react').version, '1.0.0')
+    t.equal(tree.children.get('dom').edgesOut.get('react').valid, true)
+    t.strictSame(undeclared(warnings), [])
+  })
+
+  t.test('devDependencies satisfy only a dev-only dependent', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1' } }, react: {} })
+    let warnings = warningTracker(t)
+    await buildIdeal(project(t, { devDependencies: { dom: '1', react: '1' } }), opts)
+    t.strictSame(undeclared(warnings), [], 'dev dependent, dev peer')
+
+    await mock(t, { dom: { peerDependencies: { react: '1' } }, react: {} })
+    warnings = warningTracker(t)
+    await buildIdeal(project(t, { dependencies: { dom: '1' }, devDependencies: { react: '1' } }), opts)
+    t.equal(undeclared(warnings).length, 1, 'prod dependent, dev peer')
+  })
+
+  t.test('optional peers, self peers, and bundled dependents are not checked', async t => {
+    await mock(t, {
+      dom: {
+        peerDependencies: { react: '1', root: '1' },
+        peerDependenciesMeta: { react: { optional: true } },
+      },
+    })
+    const warnings = warningTracker(t)
+    const tree = await buildIdeal(project(t, { dependencies: { dom: '1' } }), opts)
+    t.notOk(tree.children.get('react'))
+    t.strictSame(undeclared(warnings), [])
+  })
+
+  t.test('a root declaration does not satisfy a workspace', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1', vue: '1' } }, react: {} })
+    const warnings = warningTracker(t)
+    const path = project(t, { workspaces: ['a'], dependencies: { dom: '1', react: '1' } }, {
+      a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0', dependencies: { dom: '1' } }) },
+    })
+    const tree = await buildIdeal(path, opts)
+    t.equal(tree.children.get('dom').edgesOut.get('react').valid, true, 'resolves from the root')
+    t.match(undeclared(warnings), [
+      /^root depends on dom, which requires peer vue@1\n/,
+      /^a depends on dom, which requires peer react@1\n/,
+      /^a depends on dom, which requires peer vue@1\n/,
+    ])
+  })
+
+  t.test('devDependencies of a linked dependency are not checked', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1' } } })
+    const warnings = warningTracker(t)
+    const path = project(t, { name: undefined, dependencies: { local: 'file:local' } }, {
+      local: { 'package.json': JSON.stringify({ name: 'local', version: '1.0.0', devDependencies: { dom: '1' } }) },
+    })
+    const tree = await buildIdeal(path, opts)
+    t.ok(tree.children.get('dom'), 'dev dependency of the link is installed')
+    t.strictSame(undeclared(warnings), [])
+  })
+
+  t.test('prunes auto-installed peers loaded from a lockfile', async t => {
+    const path = project(t, { dependencies: { dom: '1' } }, {
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': { name: 'root', version: '1.0.0', dependencies: { dom: '1' } },
+          'node_modules/dom': {
+            version: '1.0.0',
+            resolved: 'https://registry.npmjs.org/dom/-/dom-1.0.0.tgz',
+            peerDependencies: { react: '1' },
+          },
+          'node_modules/react': {
+            version: '1.0.0',
+            resolved: 'https://registry.npmjs.org/react/-/react-1.0.0.tgz',
+            dependencies: { tokens: '1' },
+            peer: true,
+          },
+          'node_modules/tokens': {
+            version: '1.0.0',
+            resolved: 'https://registry.npmjs.org/tokens/-/tokens-1.0.0.tgz',
+            peer: true,
+          },
+        },
+      }),
+    })
+    const kept = await buildIdeal(path)
+    t.ok(kept.children.get('react'), 'kept by default')
+    const tree = await buildIdeal(path, opts)
+    t.notOk(tree.children.get('react'), 'peer pruned')
+    t.notOk(tree.children.get('tokens'), 'its dependencies pruned')
+    t.ok(tree.children.get('dom'))
+  })
+
+  t.test('an explicitly declared workspace is checked', async t => {
+    await mock(t, { react: {} })
+    const warnings = warningTracker(t)
+    const path = project(t, { workspaces: ['p'], dependencies: { p: 'file:p' } }, {
+      p: { 'package.json': JSON.stringify({ name: 'p', version: '1.0.0', peerDependencies: { react: '1' } }) },
+    })
+    await buildIdeal(path, opts)
+    t.match(undeclared(warnings), [/^root depends on p, which requires peer react@1\n/])
+  })
+
+  t.test('an optional peer of the root does not install a required peer', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1' } } })
+    const warnings = warningTracker(t)
+    const tree = await buildIdeal(project(t, {
+      dependencies: { dom: '1' },
+      peerDependencies: { react: '1' },
+      peerDependenciesMeta: { react: { optional: true } },
+    }), opts)
+    t.notOk(tree.children.get('react'))
+    t.match(undeclared(warnings), [/^root depends on dom, which requires peer react@1\n/])
+  })
+
+  t.test('prunes an auto-installed peer link', async t => {
+    const path = project(t, { dependencies: { local: 'file:local' } }, {
+      local: { 'package.json': JSON.stringify({ name: 'local', version: '1.0.0', peerDependencies: { x: 'file:../x' } }) },
+      x: { 'package.json': JSON.stringify({ name: 'x', version: '1.0.0' }) },
+    })
+    await newArb(path).reify()
+    const kept = await buildIdeal(path)
+    t.equal(kept.children.get('x')?.isLink, true, 'linked by default')
+    const tree = await buildIdeal(path, opts)
+    t.notOk(tree.children.get('x'), 'link pruned')
+  })
+
+  t.test('an optional peer that is present is checked', async t => {
+    await mock(t, {
+      lib: { dependencies: { dom: '1' } },
+      dom: { peerDependencies: { react: '1' } },
+    })
+    const warnings = warningTracker(t)
+    await buildIdeal(project(t, {
+      dependencies: { lib: '1' },
+      peerDependencies: { dom: '1' },
+      peerDependenciesMeta: { dom: { optional: true } },
+    }), opts)
+    t.match(undeclared(warnings), [
+      /^root depends on dom, which requires peer react@1\n/,
+      /^lib depends on dom, which requires peer react@1\n/,
+    ])
+  })
+
+  t.test('a peer reached through a peer can be declared as an optional peer or a devDependency', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1' } }, react: {} })
+    const warnings = warningTracker(t)
+    const path = project(t, { workspaces: ['a'] }, {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+          peerDependencies: { dom: '1', react: '1' },
+          peerDependenciesMeta: { dom: { optional: true }, react: { optional: true } },
+          devDependencies: { dom: '1', react: '1' },
+        }),
+      },
+    })
+    await buildIdeal(path, { ...opts, strictPeerDeps: true })
+    t.strictSame(undeclared(warnings), [])
+  })
+
+  t.test('a required peer of the root needs its own peers installed', async t => {
+    await mock(t, { p: { peerDependencies: { x: '1' } }, x: {} })
+    let warnings = warningTracker(t)
+    await buildIdeal(project(t, {
+      peerDependencies: { p: '1', x: '1' },
+      peerDependenciesMeta: { x: { optional: true } },
+    }), opts)
+    t.match(undeclared(warnings), [/^root depends on p, which requires peer x@1\n/], 'optional peer does not install it')
+
+    await mock(t, { p: { peerDependencies: { x: '1' } }, x: {} })
+    warnings = warningTracker(t)
+    await buildIdeal(project(t, { peerDependencies: { p: '1' }, devDependencies: { x: '1' } }), opts)
+    t.strictSame(undeclared(warnings), [], 'devDependency installs it')
+  })
+
+  t.test('has no effect with legacy-peer-deps', async t => {
+    await mock(t, { dom: { peerDependencies: { react: '1' } } })
+    const warnings = warningTracker(t)
+    await buildIdeal(project(t, { dependencies: { dom: '1' } }), { ...opts, legacyPeerDeps: true })
+    t.strictSame(warnings, [['warn', 'config', '`auto-install-peers` has no effect when `legacy-peer-deps` is set']])
+  })
+})
