@@ -8591,6 +8591,240 @@ exports[`test/place-dep.js TAP placement tests prune competing peerSet that can 
 Array []
 `
 
+exports[`test/place-dep.js TAP placement tests prune shadowed hoisted dep at an ancestor location, with its fsChildren > changes to tree 1`] = `
+--- expected
++++ actual
+@@ -30,8 +30,7 @@
+           "type": "prod",
+           "name": "pc",
+           "spec": "1.0.0",
+-          "to": "node_modules/pc",
+-          "error": "INVALID",
++          "to": "node_modules/a/node_modules/pc",
+         },
+       },
+       "edgesIn": Set {
+@@ -42,35 +41,24 @@
+           "from": "",
+         },
+       },
+-    },
+-    "pc" => ArboristNode {
+-      "name": "pc",
+-      "version": "1.0.1",
+-      "location": "node_modules/pc",
+-      "path": "/some/path/node_modules/pc",
+-      "extraneous": true,
+-      "dev": true,
+-      "optional": true,
+-      "peer": true,
+-      "edgesIn": Set {
+-        EdgeIn {
+-          "type": "prod",
++      "children": Map {
++        "pc" => ArboristNode {
+           "name": "pc",
+-          "spec": "1.0.0",
+-          "error": "INVALID",
+-          "from": "node_modules/a",
+-        },
+-      },
+-      "fsChildren": Set {
+-        ArboristNode {
+-          "name": "sub",
+           "version": "1.0.0",
+-          "location": "node_modules/pc/sub",
+-          "path": "/some/path/node_modules/pc/sub",
++          "location": "node_modules/a/node_modules/pc",
++          "path": "/some/path/node_modules/a/node_modules/pc",
+           "extraneous": true,
+           "dev": true,
+           "optional": true,
+           "peer": true,
++          "edgesIn": Set {
++            EdgeIn {
++              "type": "prod",
++              "name": "pc",
++              "spec": "1.0.0",
++              "from": "node_modules/a",
++            },
++          },
+         },
+       },
+     },
+
+`
+
+exports[`test/place-dep.js TAP placement tests prune shadowed hoisted dep at an ancestor location, with its fsChildren > placements 1`] = `
+Array [
+  Object {
+    "canPlace": Symbol(OK),
+    "canPlaceSelf": Symbol(OK),
+    "checks": Map {
+      "node_modules/a" => Array [
+        Symbol(OK),
+        Symbol(OK),
+      ],
+      "" => Array [
+        Symbol(CONFLICT),
+        Symbol(CONFLICT),
+      ],
+    },
+    "dep": "pc@1.0.0",
+    "edge": "{ node_modules/a prod pc@1.0.0 }",
+    "placed": "node_modules/a/node_modules/pc",
+  },
+]
+`
+
+exports[`test/place-dep.js TAP placement tests prune shadowed hoisted dep at an ancestor location, with its fsChildren > warnings 1`] = `
+Array []
+`
+
+exports[`test/place-dep.js TAP placement tests reload outside edges pointing into a pruned subtree > changes to tree 1`] = `
+--- expected
++++ actual
+@@ -36,8 +36,7 @@
+           "type": "prod",
+           "name": "pc",
+           "spec": "1.0.0",
+-          "to": "node_modules/pc",
+-          "error": "INVALID",
++          "to": "node_modules/a/node_modules/pc",
+         },
+       },
+       "edgesIn": Set {
+@@ -48,6 +47,26 @@
+           "from": "",
+         },
+       },
++      "children": Map {
++        "pc" => ArboristNode {
++          "name": "pc",
++          "version": "1.0.0",
++          "location": "node_modules/a/node_modules/pc",
++          "path": "/some/path/node_modules/a/node_modules/pc",
++          "extraneous": true,
++          "dev": true,
++          "optional": true,
++          "peer": true,
++          "edgesIn": Set {
++            EdgeIn {
++              "type": "prod",
++              "name": "pc",
++              "spec": "1.0.0",
++              "from": "node_modules/a",
++            },
++          },
++        },
++      },
+     },
+     "x" => ArboristNode {
+       "name": "x",
+@@ -63,7 +82,8 @@
+           "type": "prod",
+           "name": "zed",
+           "spec": "1.0.0",
+-          "to": "node_modules/pc/node_modules/zed",
++          "error": "MISSING",
++          "to": null,
+         },
+       },
+       "edgesIn": Set {
+@@ -75,58 +95,5 @@
+         },
+       },
+     },
+-    "pc" => ArboristNode {
+-      "name": "pc",
+-      "version": "1.0.1",
+-      "location": "node_modules/pc",
+-      "path": "/some/path/node_modules/pc",
+-      "extraneous": true,
+-      "dev": true,
+-      "optional": true,
+-      "peer": true,
+-      "edgesOut": Map {
+-        "zed" => EdgeOut {
+-          "type": "prod",
+-          "name": "zed",
+-          "spec": "1.0.0",
+-          "to": "node_modules/pc/node_modules/zed",
+-        },
+-      },
+-      "edgesIn": Set {
+-        EdgeIn {
+-          "type": "prod",
+-          "name": "pc",
+-          "spec": "1.0.0",
+-          "error": "INVALID",
+-          "from": "node_modules/a",
+-        },
+-      },
+-      "children": Map {
+-        "zed" => ArboristNode {
+-          "name": "zed",
+-          "version": "1.0.0",
+-          "location": "node_modules/pc/node_modules/zed",
+-          "path": "/some/path/node_modules/pc/node_modules/zed",
+-          "extraneous": true,
+-          "dev": true,
+-          "optional": true,
+-          "peer": true,
+-          "edgesIn": Set {
+-            EdgeIn {
+-              "type": "prod",
+-              "name": "zed",
+-              "spec": "1.0.0",
+-              "from": "node_modules/pc",
+-            },
+-            EdgeIn {
+-              "type": "prod",
+-              "name": "zed",
+-              "spec": "1.0.0",
+-              "from": "node_modules/x",
+-            },
+-          },
+-        },
+-      },
+-    },
+   },
+ }
+
+`
+
+exports[`test/place-dep.js TAP placement tests reload outside edges pointing into a pruned subtree > must match snapshot 1`] = `
+Array [
+  "node_modules/x 1.0.0",
+]
+`
+
+exports[`test/place-dep.js TAP placement tests reload outside edges pointing into a pruned subtree > placements 1`] = `
+Array [
+  Object {
+    "canPlace": Symbol(OK),
+    "canPlaceSelf": Symbol(OK),
+    "checks": Map {
+      "node_modules/a" => Array [
+        Symbol(OK),
+        Symbol(OK),
+      ],
+      "" => Array [
+        Symbol(CONFLICT),
+        Symbol(CONFLICT),
+      ],
+    },
+    "dep": "pc@1.0.0",
+    "edge": "{ node_modules/a prod pc@1.0.0 }",
+    "placed": "node_modules/a/node_modules/pc",
+  },
+]
+`
+
+exports[`test/place-dep.js TAP placement tests reload outside edges pointing into a pruned subtree > warnings 1`] = `
+Array []
+`
+
 exports[`test/place-dep.js TAP placement tests replace higher up, and dedupe descendants > changes to tree 1`] = `
 --- expected
 +++ actual
