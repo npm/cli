@@ -4,6 +4,7 @@ const { validate: validateUmask } = require('./umask.js')
 
 class Umask {}
 class Semver {}
+class RelativePathMaybe {}
 const semverValid = require('semver/functions/valid')
 const validateSemver = (data, k, val) => {
   const valid = semverValid(val)
@@ -42,6 +43,11 @@ module.exports = {
     ...nopt.typeDefs.path,
     validate: validatePath,
     description: 'valid filesystem path',
+  },
+  relativePathMaybe: {
+    type: RelativePathMaybe,
+    validate: validatePath,
+    description: 'optionally a filesystem path relative to workspace root',
   },
   Number: {
     ...nopt.typeDefs.Number,

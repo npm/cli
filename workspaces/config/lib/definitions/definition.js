@@ -31,6 +31,7 @@ const {
   Umask: { type: Umask },
   url: { type: url },
   path: { type: path },
+  relativePathMaybe: { type: relativePathMaybe },
 } = require('../type-defs.js')
 
 class Definition {
@@ -193,6 +194,8 @@ const describeType = type => {
       return 'Date'
     case path:
       return 'Path'
+    case relativePathMaybe:
+      return 'Path relative to the workspace root'
     case semver:
       return 'SemVer string'
     case url:
