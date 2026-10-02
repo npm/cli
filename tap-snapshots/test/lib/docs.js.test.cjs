@@ -417,8 +417,8 @@ declaring that peer itself.
 Each package must declare the peer itself: a provider elsewhere in the tree,
 such as the project root for a workspace, does not count. A
 \`devDependencies\` entry only counts when the package that requires the peer
-is itself a \`devDependencies\` or \`peerDependencies\` entry of the project
-root or a workspace.
+is a \`devDependencies\` or \`peerDependencies\` entry of the project root or a
+workspace, and not also one of its \`dependencies\` or \`optionalDependencies\`.
 
 With \`--strict-peer-deps\`, such a warning for the project root or a
 workspace fails the install.
