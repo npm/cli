@@ -13,8 +13,25 @@ const unreviewedTree = {
   ]),
 }
 
-const fakeArb = (idealTree) => {
+const orphanTree = {
+  inventory: new Map([
+    ['node_modules/orphan', {
+      name: 'orphan',
+      location: 'node_modules/orphan',
+      resolved: 'https://registry.npmjs.org/orphan/-/orphan-1.0.0.tgz',
+      extraneous: true,
+      isRegistryDependency: false,
+      edgesIn: new Set(),
+      parent: null,
+      linksIn: new Set(),
+      package: { scripts: { install: 'node-gyp rebuild' } },
+    }],
+  ]),
+}
+
+const fakeArb = (idealTree, options = {}) => {
   const arb = {
+    options,
     idealTree,
     buildIdealTreeCalled: false,
     async buildIdealTree () {
@@ -62,6 +79,64 @@ t.test('throws when unreviewed scripts are present', async t => {
     { code: 'ESTRICTALLOWSCRIPTS' },
     'throws with the strict-allow-scripts error'
   )
+})
+
+t.test('only skips extraneous nodes when pruning is enabled', async t => {
+  const cases = [
+    ['default pruning', {}, {}, true],
+    ['constructor disables pruning', { prune: false }, {}, false],
+    ['call disables pruning', {}, { prune: false }, false],
+    ['call overrides enabled pruning', { prune: true }, { prune: false }, false],
+    ['call overrides disabled pruning', { prune: false }, { prune: true }, true],
+    ['explicit undefined restores the default', { prune: false }, { prune: undefined }, true],
+  ]
+  for (const [name, options, opts, skips] of cases) {
+    await t.test(name, async t => {
+      const arb = fakeArb(orphanTree, options)
+      const result = strictAllowScriptsPreflight(arb, {
+        strictAllowScripts: true,
+        allowScripts: { orphan: false },
+        ...opts,
+      })
+      if (skips) {
+        await t.resolves(result)
+      } else {
+        await t.rejects(result, { code: 'ESTRICTALLOWSCRIPTS', message: /orphan/ })
+      }
+      t.notOk(arb.buildIdealTreeCalled, 'reuses the ideal tree')
+    })
+  }
+})
+
+t.test('skips orphans in a newly built ideal tree', async t => {
+  const arb = fakeArb(null)
+  arb.buildIdealTree = async () => {
+    arb.idealTree = orphanTree
+  }
+  await t.resolves(strictAllowScriptsPreflight(arb, { strictAllowScripts: true }))
+  t.equal(arb.idealTree, orphanTree, 'built the ideal tree')
+})
+
+t.test('does not skip an extraneous target with an incoming link', async t => {
+  const target = {
+    ...orphanTree.inventory.get('node_modules/orphan'),
+    linksIn: new Set([{}]),
+  }
+  const arb = fakeArb({ inventory: new Map([['node_modules/orphan', target]]) })
+  await t.rejects(strictAllowScriptsPreflight(arb, {
+    strictAllowScripts: true,
+    allowScripts: { orphan: false },
+  }), { code: 'ESTRICTALLOWSCRIPTS', message: /orphan/ })
+})
+
+t.test('skipping an orphan does not skip a required unreviewed package', async t => {
+  const arb = fakeArb({
+    inventory: new Map([...orphanTree.inventory, ...unreviewedTree.inventory]),
+  })
+  await t.rejects(strictAllowScriptsPreflight(arb, { strictAllowScripts: true }), {
+    code: 'ESTRICTALLOWSCRIPTS',
+    message: /1 package\(s\) have install scripts not covered by allowScripts:\n {2}has-scripts/,
+  })
 })
 
 t.test('resolves when the only unreviewed node is inert', async t => {
