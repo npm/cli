@@ -562,6 +562,26 @@ t.test('inBundle: false does not affect normal matching', async t => {
   t.equal(isScriptAllowed(normal, { 'pkg@1.0.0': true }), true)
 })
 
+t.test('isolated dependency bundle retains its unapprovable owner', async t => {
+  const Node = require('../lib/node.js')
+  const { IsolatedNode } = require('../lib/isolated-classes.js')
+  const root = new Node({ path: '/project', pkg: { name: 'root' } })
+  const publisher = new Node({ parent: root, pkg: { name: 'publisher', version: '1.0.0' } })
+  const bundled = new IsolatedNode({
+    bundleOwner: publisher,
+    inBundle: true,
+    isRegistryDependency: true,
+    location: 'node_modules/publisher/node_modules/pkg',
+    path: '/project/node_modules/publisher/node_modules/pkg',
+    name: 'pkg',
+    package: { name: 'pkg', version: '1.0.0' },
+    resolved: 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
+  })
+  t.equal(bundled.getBundler(), publisher, 'original bundle owner is retained')
+  t.equal(isScriptAllowed(bundled, { 'pkg@1.0.0': true }), null,
+    'a registry-shaped identity cannot approve a dependency-owned bundle')
+})
+
 t.test('isolated mode (linked): bundled IsolatedNode is blocked', async t => {
   // Regression guard: in isolated/linked mode the gate runs against
   // IsolatedNode instances, not real Nodes. A bundled IsolatedNode must
