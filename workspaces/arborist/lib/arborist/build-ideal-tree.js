@@ -1157,6 +1157,7 @@ This is a one-time fix-up, please be patient...
     const placeDeps = tasks.sort((a, b) => localeCompare(a.edge.name, b.edge.name))
 
     const promises = []
+    const prefetched = new Set()
     for (const { edge, dep } of placeDeps) {
       const pd = new PlaceDep({
         edge,
@@ -1189,6 +1190,15 @@ This is a one-time fix-up, please be patient...
             this.#loadFailures.add(placed)
           }
           this.#mutateTree = true
+          // links (eg workspaces) are resolved last: #resolveLinks queues
+          // their targets once the rest of the tree is built, so the
+          // project tree's own deps claim placement slots first and the
+          // resolved tree is the same whether or not a previous install
+          // left a workspace node_modules behind.
+          // See npm/cli#10067.
+          if (placed.isLink) {
+            return
+          }
           if (cpd.canPlaceSelf === OK) {
             for (const edgeIn of placed.edgesIn) {
               if (edgeIn === edge) {
@@ -1257,11 +1267,19 @@ This is a one-time fix-up, please be patient...
           // if it fails at this point, though, don't worry because it may well be an optional dep that has gone missing
           // it'll fail later anyway
           for (const e of this.#problemEdges(placed)) {
+            // dedupe concurrent prefetches of the same manifest: the
+            // prefetches run in parallel below and would otherwise race the
+            // manifest cache and fetch the same packument twice
+            const spec = npa.resolve(e.name, e.spec, fromPath(placed, e))
+            if (prefetched.has(spec.raw)) {
+              continue
+            }
+            prefetched.add(spec.raw)
             // XXX This is somehow load bearing.  This makes tests that print the ideal tree of a tree with tarball dependencies fail
             // This can't be changed or removed till we figure out why
             // The test is named "tarball deps with transitive tarball deps"
             promises.push(() =>
-              this.#fetchManifest(npa.resolve(e.name, e.spec, fromPath(placed, e)), parent, e)
+              this.#fetchManifest(spec, parent, e)
                 .catch(() => null)
             )
           }
