@@ -4,6 +4,8 @@ const { join } = require('node:path')
 const { cleanNewlines } = require('../../fixtures/clean-snapshot')
 const tmock = require('../../fixtures/tmock')
 const mockNpm = require('../../fixtures/mock-npm')
+const Arborist = require('@npmcli/arborist')
+const MockRegistry = require('@npmcli/mock-registry')
 
 // windowwwwwwssss!!!!!
 const readRc = async (dir) => {
@@ -107,7 +109,7 @@ t.test('should write if everything above passes', async t => {
   t.equal(mock.builtinRc.raw, newFile)
 })
 
-t.test('unreviewedScripts filtered to nodes touched by this reify (npm/cli#9797)', async t => {
+t.test('pending approvals remain visible for untouched installed nodes (npm/cli#9797)', async t => {
   const captured = []
   const touched = { location: 'node_modules/touched', name: 'touched' }
   const untouched = { location: 'node_modules/untouched', name: 'untouched' }
@@ -123,8 +125,8 @@ t.test('unreviewedScripts filtered to nodes touched by this reify (npm/cli#9797)
     captureReifyOutput: (_npm, _arb, extras) => captured.push(extras),
   })
   t.equal(captured.length, 1)
-  t.equal(captured[0].unreviewedScripts.length, 1,
-    'untouched package is filtered out; only touched package is warned about')
+  t.equal(captured[0].unreviewedScripts.length, 2,
+    'both installed packages have pending approvals')
   t.equal(captured[0].unreviewedScripts[0].node.name, 'touched')
 })
 
@@ -139,7 +141,7 @@ t.test('unreviewedScripts pass through when there is no diff (defensive)', async
   t.equal(captured[0].unreviewedScripts.length, 1)
 })
 
-t.test('diff walker handles CHANGE, nested children, and nullish diff entries', async t => {
+t.test('pending approvals do not depend on diff shape', async t => {
   const captured = []
   const changed = { location: 'node_modules/changed', name: 'changed' }
   const nested = { location: 'node_modules/nested', name: 'nested' }
@@ -163,7 +165,7 @@ t.test('diff walker handles CHANGE, nested children, and nullish diff entries', 
     captureReifyOutput: (_npm, _arb, extras) => captured.push(extras),
   })
   const names = captured[0].unreviewedScripts.map(u => u.node.name).sort()
-  t.strictSame(names, ['changed', 'nested'])
+  t.strictSame(names, ['changed', 'nested', 'untouched'])
 })
 
 t.test('build candidates include link targets and directly managed unchanged links', async t => {
@@ -188,5 +190,75 @@ t.test('build candidates include link targets and directly managed unchanged lin
     captureReifyOutput: (_npm, _arb, extras) => captured.push(extras),
   })
   const names = captured[0].unreviewedScripts.map(u => u.node.name).sort()
-  t.strictSame(names, ['bar-target', 'foo-target'])
+  t.strictSame(names, ['bar-target', 'foo-target', 'untouched'])
+})
+
+const capturePending = (t) => {
+  const captured = []
+  const finish = tmock(t, '{LIB}/utils/reify-finish.js', {
+    '{LIB}/utils/reify-output.js': (_npm, _arb, extras) => captured.push(extras.unreviewedScripts),
+  })
+  return { finish, captured }
+}
+
+t.test('real file dependency remains pending on added and unchanged installs', async t => {
+  const mock = await mockNpm(t, {
+    prefixDir: { 'package.json': JSON.stringify({
+      name: 'project', dependencies: { local: 'file:../other/local' },
+    }) },
+    otherDirs: { local: { 'package.json': JSON.stringify({
+      name: 'local', version: '1.0.0', scripts: { install: 'echo local' },
+    }) } },
+  })
+  const { finish, captured } = capturePending(t)
+  for (let i = 0; i < 2; i++) {
+    const arb = new Arborist({ path: mock.prefix, cache: mock.cache, audit: false })
+    await arb.reify()
+    await finish(mock.npm, arb)
+    t.same(captured[i].map(({ node }) => node.name), ['local'])
+  }
+})
+
+t.test('real linked install retains transitive pending approvals', async t => {
+  const packages = [
+    { name: 'parent', version: '1.0.0', dependencies: { child: '1.0.0' } },
+    { name: 'child', version: '1.0.0', scripts: { install: 'echo child' } },
+  ]
+  const mock = await mockNpm(t, {
+    prefixDir: { 'package.json': JSON.stringify({ name: 'project', dependencies: { parent: '1.0.0' } }) },
+    otherDirs: Object.fromEntries(packages.map(pkg => [pkg.name, { 'package.json': JSON.stringify(pkg) }])),
+  })
+  const registry = new MockRegistry({ tap: t, registry: 'https://registry.npmjs.org', strict: true })
+  for (const pkg of packages) {
+    const manifest = registry.manifest({ name: pkg.name, packuments: [pkg] })
+    await registry.package({ manifest, tarballs: { '1.0.0': join(mock.other, pkg.name) } })
+  }
+  const arb = new Arborist({ path: mock.prefix, cache: mock.cache, audit: false })
+  await arb.reify({ installStrategy: 'linked' })
+  const { finish, captured } = capturePending(t)
+  await finish(mock.npm, arb)
+  t.same(captured[0].map(({ node }) => node.name), ['child'])
+})
+
+t.test('normal empty-diff install reports approvals pending from an ignored install', async t => {
+  const pkg = { name: 'child', version: '1.0.0', scripts: { install: 'echo child' } }
+  const mock = await mockNpm(t, {
+    prefixDir: { 'package.json': JSON.stringify({ name: 'project', dependencies: { child: '1.0.0' } }) },
+    otherDirs: { child: { 'package.json': JSON.stringify(pkg) } },
+  })
+  const registry = new MockRegistry({ tap: t, registry: 'https://registry.npmjs.org', strict: true })
+  const manifest = registry.manifest({ name: pkg.name, packuments: [pkg] })
+  await registry.package({ manifest, tarballs: { '1.0.0': join(mock.other, 'child') } })
+  const { finish, captured } = capturePending(t)
+  const ignored = new Arborist({
+    path: mock.prefix, cache: mock.cache, audit: false, ignoreScripts: true,
+  })
+  await ignored.reify()
+  await finish(mock.npm, ignored)
+  t.same(captured[0], [], 'ignored install suppresses the advisory')
+  const normal = new Arborist({ path: mock.prefix, cache: mock.cache, audit: false })
+  await normal.reify()
+  t.same(normal.diff.children, [], 'second install has no added or changed packages')
+  await finish(mock.npm, normal)
+  t.same(captured[1].map(({ node }) => node.name), ['child'])
 })
