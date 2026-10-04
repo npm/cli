@@ -105,6 +105,48 @@ If the credential is meant for any request to a registry on a single host, the s
 If it must be scoped to a specific path on the host that path may also be provided, such as
 `//my-custom-registry.org/unique/path:`.
 
+#### The scope must match the registry URI exactly
+
+npm looks credentials up by the registry URI, and that lookup is an exact string match.
+The scope in front of `_authToken` therefore has to be the same URI as `registry` (or a
+`@scope:registry`) character for character, including any trailing slash. A host-level
+scope does *not* act as a fallback for a request to a path on that host: if the registry
+URL is `https://acme.com/api/v4/projects/123/packages/npm/`, then `//acme.com/:_authToken`
+and `//acme.com/api/v4/projects/123/packages/npm:_authToken` (missing the final slash) are
+both different keys and neither will be used.
+
+The scope and the registry URL are independent settings, so a typo in either one can break
+authentication on its own. When they disagree, npm reports no credentials at all rather
+than a partially matching token, and commands that need to log in fail with
+`ENEEDAUTH` and the message "This command requires you to be logged in". That message is
+the same one you get when no credentials have ever been configured, so it is misleading
+in this case: the token is present, it is just keyed to a URI that does not match the
+registry being written to. Check both settings before running `npm adduser`.
+
+To see which key npm actually resolved, ask for it by the registry URI:
+
+```bash
+npm config get //acme.com/api/v4/projects/123/packages/npm/:_authToken
+```
+
+An empty result means no credential is keyed to that exact URI. `npm config ls -l` prints
+the full list of keys as npm parsed them, which is the quickest way to spot a missing
+slash or a different port.
+
+```ini
+; the registry and the credential key disagree, so nothing is sent
+@acme:registry=https://acme.com/projects/123/packages/npm/
+//acme.com/projects/123/packages/npm:_authToken=TOKEN
+
+; both URIs are identical, including the trailing slash
+@acme:registry=https://acme.com/projects/123/packages/npm/
+//acme.com/projects/123/packages/npm/:_authToken=TOKEN
+```
+
+Note that the port is part of the key. A registry URL and a credential scope built from
+different hostnames, or one built with `${CI_API_V4_URL}` and the other with
+`${CI_REGISTRY}`, will not match even though both reach the same server.
+
 ### Unsupported Custom Configuration Keys
 
 Starting in npm v11.2.0, npm warns when unknown configuration keys are defined in `.npmrc`. In a future major version of npm, these unknown keys may no longer be accepted.
