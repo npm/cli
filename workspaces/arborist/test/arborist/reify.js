@@ -1324,6 +1324,25 @@ t.test('global', async t => {
       .then(() => t.throws(() => fs.statSync(semverBin)))
       .then(() => t.strictSame(fs.readdirSync(nm), ['rimraf']))
   })
+
+  await t.test('bare dot spec with no package name', async t => {
+    // `npm i -g` with no positional args feeds a synthetic `.` spec to
+    // arborist.  When the cwd package.json has no name, that spec resolves
+    // to `undefined`, which has no edge in the global tree, so it must not
+    // land in explicitRequests and blow up diffTrees.
+    const cwd = process.cwd()
+    t.teardown(() => process.chdir(cwd))
+    const path = t.testdir({
+      'package.json': JSON.stringify({ version: '1.0.0' }),
+      lib: {},
+    })
+    process.chdir(path)
+
+    const arb = newArb({ path: resolve(path, 'lib'), global: true })
+    await t.resolves(arb.reify({ add: ['.'], global: true }), 'global install does not crash')
+    t.strictSame([...arb.explicitRequests].filter(e => e === undefined), [],
+      'no undefined entry in explicitRequests')
+  })
 })
 
 t.test('workspaces', async t => {
