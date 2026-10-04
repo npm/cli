@@ -76,6 +76,46 @@ t.test('throws usageError without stage-id', async t => {
   })
 })
 
+t.test('writes inside cwd when the staged manifest carries path separators', async t => {
+  // the staged tarball is registry controlled, so its manifest name and
+  // version cannot be trusted to be safe filename components
+  const maliciousDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'evil',
+      version: '../../../outside',
+    }),
+    'index.js': 'module.exports = 42',
+  })
+  const tarballData = await libpack(maliciousDir)
+  const { npm, joinedOutput, prefix } = await loadMockNpm(t, {
+    config: authConfig,
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'innocent',
+        version: '1.0.0',
+      }),
+    },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: token,
+  })
+  registry.nock.get(`/-/stage/${stageId}/tarball`)
+    .reply(200, tarballData, { 'content-type': 'application/octet-stream' })
+
+  mockGlobals(t, { 'process.cwd': () => prefix })
+
+  await npm.exec('stage', ['download', stageId])
+  const sanitized = `evil-..-..-..-outside-${stageId}.tgz`
+  t.match(joinedOutput(), sanitized)
+  t.ok(fs.existsSync(path.join(prefix, sanitized)), 'tarball is written inside the cwd')
+  t.notOk(
+    fs.existsSync(path.resolve(prefix, `../outside-${stageId}.tgz`)),
+    'tarball does not escape the cwd'
+  )
+})
+
 t.test('throws on invalid uuid', async t => {
   const { npm } = await loadMockNpm(t, {
     config: authConfig,
