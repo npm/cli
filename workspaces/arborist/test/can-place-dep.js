@@ -35,6 +35,8 @@ t.test('basic placement check tests', t => {
     peerSet,
     // is this dep the thing that the user is explicitly installing?
     explicitRequest,
+    // an audit report, telling us which nodes are vulnerable
+    auditReport,
   }) => {
     const target = tree.inventory.get(targetLoc)
     const node = tree.inventory.get(nodeLoc)
@@ -74,6 +76,7 @@ t.test('basic placement check tests', t => {
         dep,
         preferDedupe,
         explicitRequest,
+        auditReport,
       })
       // dump a comment if the assertion fails.
       // would put it in the diags, but yaml stringifies Set objects
@@ -300,6 +303,95 @@ t.test('basic placement check tests', t => {
     nodeLoc: 'node_modules/c',
     dep: new Node({ pkg: { name: 'b', version: '2.0.0' } }),
     expect: REPLACE,
+    preferDedupe: true,
+  })
+
+  runTest('replace a vulnerable dep with an older safe audit candidate', {
+    tree: new Node({
+      path,
+      pkg: {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: { a: '^1.0.0' },
+      },
+      children: [{ pkg: { name: 'a', version: '1.2.0' } }],
+    }),
+    targetLoc: '',
+    nodeLoc: '',
+    dep: new Node({ pkg: { name: 'a', version: '1.1.0' } }),
+    auditReport: {
+      isVulnerable: node => node.name === 'a' && node.version === '1.2.0',
+    },
+    expect: REPLACE,
+  })
+
+  runTest('keep a newer dep when an older candidate is not an audit remediation', {
+    tree: new Node({
+      path,
+      pkg: {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: { a: '^1.0.0' },
+      },
+      children: [{ pkg: { name: 'a', version: '1.2.0' } }],
+    }),
+    targetLoc: '',
+    nodeLoc: '',
+    dep: new Node({ pkg: { name: 'a', version: '1.1.0' } }),
+    expect: KEEP,
+  })
+
+  runTest('keep a vulnerable dep when the older audit candidate is also vulnerable', {
+    tree: new Node({
+      path,
+      pkg: {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: { a: '^1.0.0' },
+      },
+      children: [{ pkg: { name: 'a', version: '1.2.0' } }],
+    }),
+    targetLoc: '',
+    nodeLoc: '',
+    dep: new Node({ pkg: { name: 'a', version: '1.1.0' } }),
+    auditReport: {
+      isVulnerable: node =>
+        node.name === 'a' && (node.version === '1.2.0' || node.version === '1.1.0'),
+    },
+    expect: KEEP,
+  })
+
+  runTest('audit downgrade still respects peer conflicts', {
+    tree: new Node({
+      path,
+      pkg: {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: { a: '1', c: '2.0.0' },
+      },
+      children: [
+        { pkg: { name: 'b', version: '2.3.4' } },
+        { pkg: { name: 'c', version: '2.0.0', dependencies: { b: '2.0.0' } } },
+        { pkg: { name: 'a', version: '1.2.3', dependencies: { b: '2' } } },
+      ],
+    }),
+    targetLoc: '',
+    nodeLoc: 'node_modules/c',
+    dep: new Node({
+      pkg: {
+        name: 'b',
+        version: '2.0.0',
+        peerDependencies: { a: '3' },
+      },
+    }),
+    peerSet: [
+      { pkg: { name: 'a', version: '3.0.0' } },
+    ],
+    auditReport: {
+      isVulnerable: node => node.name === 'b' && node.version === '2.3.4',
+    },
+    expect: CONFLICT,
+    expectSelf: REPLACE,
     preferDedupe: true,
   })
 

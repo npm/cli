@@ -486,6 +486,7 @@ Object {
     null,
     "read-only",
     "read-write",
+    "read-write-stage-only",
     "no-access",
   ],
   "parseable": Array [
@@ -613,6 +614,9 @@ Object {
     "boolean value (true or false)",
   ],
   "strict-allow-scripts": Array [
+    "boolean value (true or false)",
+  ],
+  "strict-npmrc": Array [
     "boolean value (true or false)",
   ],
   "strict-peer-deps": Array [

@@ -2347,6 +2347,47 @@ t.test('remove deps when initializing tree from actual tree', async t => {
   t.equal(tree.children.get('foo'), undefined, 'removed foo child')
 })
 
+t.test('remove deps with a version spec', async t => {
+  const path = t.testdir({
+    node_modules: {
+      foo: {
+        'package.json': JSON.stringify({
+          name: 'foo',
+          version: '1.2.3',
+        }),
+      },
+    },
+  })
+
+  createRegistry(t, false)
+  const invalidArgs = [
+    'foo@1.2.3',
+    'foo@next',
+    'foo@^1.0.0',
+    'foo@>=2.0.0',
+    'foo@2',
+  ]
+  for (const rmName of invalidArgs) {
+    await t.rejects(
+      buildIdeal(path, { rm: [rmName] }),
+      { code: 'ERMARGS', message: /npm rm foo/ },
+      'should throw an error when the package name has a version'
+    )
+  }
+
+  await t.rejects(
+    buildIdeal(path, { rm: ['@scope/foo@1.2.3'] }),
+    { code: 'ERMARGS', message: /npm rm @scope\/foo/ },
+    'should throw an error when a scoped package name has a version'
+  )
+
+  await t.rejects(
+    buildIdeal(path, { rm: ['./foo'] }),
+    { code: 'ERMARGS', message: /npm rm <pkg>/ },
+    'should throw an error when the package is a path'
+  )
+})
+
 t.test('detect conflicts in transitive peerOptional deps', async t => {
   const base = resolve(fixtures, 'test-conflicted-optional-peer-dep')
 
@@ -2355,9 +2396,42 @@ t.test('detect conflicts in transitive peerOptional deps', async t => {
     createRegistry(t, true)
     const tree = await buildIdeal(path)
     t.matchSnapshot(printTree(tree))
-    const name = '@isaacs/test-conflicted-optional-peer-dep-peer'
-    const peers = tree.inventory.query('name', name)
+    const peerName = '@isaacs/test-conflicted-optional-peer-dep-peer'
+    const requiredHostName = '@isaacs/test-conflicted-optional-peer-dep-has-peer'
+    const optionalHostName = '@isaacs/test-conflicted-optional-peer-dep-has-peer-optional'
+    const optionalMetaName = '@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional'
+
+    const peers = tree.inventory.query('name', peerName)
     t.equal(peers.size, 2, 'installed the peer dep twice to avoid conflict')
+
+    const rootPeer = tree.children.get(peerName)
+    const requiredHost = tree.children.get(requiredHostName)
+    const optionalMeta = tree.children.get(optionalMetaName)
+    const optionalHost = optionalMeta?.children.get(optionalHostName)
+    const nestedPeer = optionalMeta?.children.get(peerName)
+
+    t.equal(rootPeer?.version, '1.0.0', 'required peer retains the root slot')
+    t.equal(
+      requiredHost?.edgesOut.get(peerName)?.to,
+      rootPeer,
+      'required peer edge resolves to the root provider'
+    )
+
+    t.notOk(
+      tree.children.get(optionalHostName),
+      'optional peer dependent is not hoisted to the root'
+    )
+    t.ok(optionalHost, 'optional peer dependent is nested under its branch')
+    t.equal(
+      nestedPeer?.version,
+      '2.0.0',
+      'compatible optional peer is nested with its dependent'
+    )
+    t.equal(
+      optionalHost?.edgesOut.get(peerName)?.to,
+      nestedPeer,
+      'optional peer edge resolves to its nested provider'
+    )
   })
 
   await t.test('omit peerOptionals when not needed for conflicts', async t => {
@@ -4838,6 +4912,166 @@ t.test('add does not leave invalid peerOptional edges when save=false', async t 
   }, 'lockfile-mutating add should reject instead of keeping an invalid peerOptional edge')
 })
 
+t.test('circular peer back-off does not crash when node is detached mid-resolution (#5222)', async t => {
+  // host (installed) has optional peer plugin@^1.0.0. Adding plugin resolves plugin@2.0.0,
+  // whose peer set replaces it with plugin@1.0.0 to satisfy host, detaching plugin@2 mid-loop.
+  // Previously the invalid edge then crashed #explainPeerConflict on the detached node.
+  const registry = createRegistry(t, false)
+
+  const hostPack = registry.packument({
+    name: 'host',
+    version: '1.0.0',
+    peerDependencies: { plugin: '^1.0.0' },
+    peerDependenciesMeta: { plugin: { optional: true } },
+  })
+  const hostManifest = registry.manifest({ name: 'host', packuments: [hostPack] })
+  await registry.package({ manifest: hostManifest, times: 2 })
+
+  const pluginPacks = [
+    registry.packument({ name: 'plugin', version: '1.0.0', peerDependencies: { host: '*' } }),
+    registry.packument({ name: 'plugin', version: '2.0.0', peerDependencies: { host: '*' } }),
+  ]
+  const pluginManifest = registry.manifest({ name: 'plugin', packuments: pluginPacks })
+  await registry.package({ manifest: pluginManifest, times: 2 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-5222',
+      version: '1.0.0',
+      devDependencies: { host: '^1.0.0' },
+    }),
+    node_modules: {
+      host: {
+        'package.json': JSON.stringify({
+          name: 'host',
+          version: '1.0.0',
+          peerDependencies: { plugin: '^1.0.0' },
+          peerDependenciesMeta: { plugin: { optional: true } },
+        }),
+      },
+    },
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree({ add: ['plugin'], saveType: 'dev' })
+
+  t.equal(tree.children.get('plugin').version, '1.0.0',
+    'backs off to plugin@1.0.0 to satisfy the optional peer instead of crashing')
+})
+
+t.test('does not fetch packuments for peerOptional deps that will not be installed', async t => {
+  const registry = createRegistry(t, false)
+
+  const hostPack = registry.packument({
+    name: 'host',
+    version: '1.0.0',
+    peerDependencies: { plugin: '^1.0.0' },
+    peerDependenciesMeta: { plugin: { optional: true } },
+  })
+  const hostManifest = registry.manifest({ name: 'host', packuments: [hostPack] })
+  await registry.package({ manifest: hostManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { host: '^1.0.0' },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree()
+
+  t.equal(tree.children.get('host').version, '1.0.0', 'installed host')
+  t.equal(tree.children.get('plugin'), undefined, 'did not install the optional peer')
+  const edge = tree.children.get('host').edgesOut.get('plugin')
+  t.equal(edge.type, 'peerOptional')
+  t.equal(edge.to, null, 'peerOptional edge left unresolved')
+  t.ok(edge.valid, 'missing peerOptional edge is valid')
+})
+
+t.test('resolves peerOptional deps installed by another dependent', async t => {
+  const registry = createRegistry(t, false)
+
+  const hostPack = registry.packument({
+    name: 'host',
+    version: '1.0.0',
+    peerDependencies: { plugin: '^1.0.0' },
+    peerDependenciesMeta: { plugin: { optional: true } },
+  })
+  const hostManifest = registry.manifest({ name: 'host', packuments: [hostPack] })
+  await registry.package({ manifest: hostManifest })
+
+  const otherPack = registry.packument({
+    name: 'other',
+    version: '1.0.0',
+    dependencies: { plugin: '^1.0.0' },
+  })
+  const otherManifest = registry.manifest({ name: 'other', packuments: [otherPack] })
+  await registry.package({ manifest: otherManifest })
+
+  const pluginManifest = registry.manifest({ name: 'plugin' })
+  await registry.package({ manifest: pluginManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { host: '^1.0.0', other: '^1.0.0' },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree()
+
+  const plugin = tree.children.get('plugin')
+  t.ok(plugin, 'installed the plugin for the dependent that requires it')
+  const edge = tree.children.get('host').edgesOut.get('plugin')
+  t.equal(edge.type, 'peerOptional')
+  t.equal(edge.to, plugin, 'peerOptional edge resolved to the installed plugin')
+  t.ok(edge.valid, 'peerOptional edge is valid')
+})
+
+t.test('does not fetch packuments for peerOptional deps satisfied by the actual tree', async t => {
+  const registry = createRegistry(t, false)
+
+  const hostPack = registry.packument({
+    name: 'host',
+    version: '1.0.0',
+    peerDependencies: { plugin: '^1.0.0' },
+    peerDependenciesMeta: { plugin: { optional: true } },
+  })
+  const hostManifest = registry.manifest({ name: 'host', packuments: [hostPack] })
+  await registry.package({ manifest: hostManifest })
+
+  const path = t.testdir({
+    node_modules: {
+      other: {
+        'package.json': JSON.stringify({
+          name: 'other',
+          version: '1.0.0',
+          dependencies: { plugin: '^1.0.0' },
+        }),
+      },
+      plugin: {
+        'package.json': JSON.stringify({
+          name: 'plugin',
+          version: '1.0.0',
+        }),
+      },
+    },
+    'package.json': JSON.stringify({
+      dependencies: { other: '^1.0.0' },
+    }),
+  })
+
+  const arb = newArb(path)
+  const tree = await arb.buildIdealTree({ add: ['host@^1.0.0'] })
+
+  const plugin = tree.children.get('plugin')
+  t.equal(plugin.version, '1.0.0', 'kept the already installed plugin')
+  const edge = tree.children.get('host').edgesOut.get('plugin')
+  t.equal(edge.type, 'peerOptional')
+  t.equal(edge.to, plugin, 'peerOptional edge resolved to the existing plugin')
+  t.ok(edge.valid, 'peerOptional edge is valid')
+})
+
 t.test('peerOptional prefers existing tree node over registry fetch (#9249)', async t => {
   // Reproduction: ts-jest has peerOptional jest-util@"^29||^30".
   // @types/jest@28 → expect@28 → jest-util@28 placed at root first.
@@ -4883,7 +5117,7 @@ t.test('peerOptional prefers existing tree node over registry fetch (#9249)', as
   // Only publish 28, 29, and 30.
   const jestUtilPacks = registry.packuments(['28.0.0', '29.0.0', '30.0.0'], 'jest-util')
   const jestUtilManifest = registry.manifest({ name: 'jest-util', packuments: jestUtilPacks })
-  await registry.package({ manifest: jestUtilManifest, times: 3 })
+  await registry.package({ manifest: jestUtilManifest, times: 2 })
 
   const path = t.testdir({
     'package.json': JSON.stringify({

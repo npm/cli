@@ -469,3 +469,66 @@ for (const allowDirectory of ['none', 'root']) {
     })
   })
 }
+
+t.test('npm exec sequential workspace runs with same-named local bins', async t => {
+  t.plan(2)
+  const { path, readOutput, rmOutput, registry } = setup(t, {
+    testdir: {
+      packages: {
+        a: {
+          'package.json': {
+            name: 'workspace-a',
+            version: '1.0.0',
+            bin: { 'shared-bin': 'cli.js' },
+          },
+          'cli.js': { key: 'shared-bin', value: 'A' },
+        },
+        b: {
+          'package.json': {
+            name: 'workspace-b',
+            version: '1.0.0',
+            bin: { 'shared-bin': 'cli.js' },
+          },
+          'cli.js': { key: 'shared-bin', value: 'B' },
+        },
+      },
+    },
+  })
+
+  // We mock the module exactly once. This simulates two sequential calls
+  // hitting the same module instance, allowing us to prove that state
+  // (like binPaths) is correctly cleared between runs and NOT preserved.
+  const libnpmexec = t.mock('../lib/index.js')
+
+  const baseOpts = {
+    path,
+    runPath: path,
+    npxCache: resolve(path, 'npxCache'),
+    registry: registry.origin + '/',
+    localBin: resolve(path, 'node_modules', '.bin'),
+    call: '',
+    scriptShell: 'sh',
+    yes: true, // skip interactive prompt for npxCache install
+  }
+
+  // Workspace A
+  await libnpmexec({
+    ...baseOpts,
+    pkgPath: resolve(path, 'packages/a'),
+    args: ['shared-bin'],
+  })
+
+  const outputA = await readOutput('shared-bin')
+  t.equal(outputA.value, 'A', 'should run workspace A bin')
+  await rmOutput('shared-bin')
+
+  // Workspace B
+  await libnpmexec({
+    ...baseOpts,
+    pkgPath: resolve(path, 'packages/b'),
+    args: ['shared-bin'],
+  })
+
+  const outputB = await readOutput('shared-bin')
+  t.equal(outputB.value, 'B', 'should run workspace B bin, not cached workspace A bin')
+})

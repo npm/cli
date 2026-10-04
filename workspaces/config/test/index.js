@@ -2,6 +2,8 @@ const t = require('tap')
 
 const fs = require('node:fs')
 const { readFileSync } = fs
+const { homedir } = require('node:os')
+const { resolve, join, dirname } = require('node:path')
 
 // when running with `npm test` it adds environment variables that
 // mess with the things we expect here, so delete all of those.
@@ -16,11 +18,28 @@ const createDef = (key, value) => ({ [key]: new Definition(key, { key, ...value 
 
 const typeDefs = require('../lib/type-defs.js')
 
-const { resolve, join, dirname } = require('node:path')
+const nodePrefix = process.platform === 'win32'
+  ? dirname(process.execPath)
+  : dirname(dirname(process.execPath))
+const externalNpmrcs = new Set([
+  resolve('/etc/npmrc'),
+  resolve(nodePrefix, 'etc/npmrc'),
+  resolve(homedir(), '.npmrc'),
+])
+const throwIfExternalNpmrc = path => {
+  if (typeof path === 'string' && externalNpmrcs.has(resolve(path))) {
+    throw Object.assign(new Error(`ENOENT: no such file or directory, open '${path}'`), {
+      code: 'ENOENT',
+      path,
+      syscall: 'open',
+    })
+  }
+}
 
 const mockFs = {
   ...fs,
   readFileSync: (path, ...args) => {
+    throwIfExternalNpmrc(path)
     if (path.includes('WEIRD-ERROR')) {
       throw Object.assign(new Error('weird error'), { code: 'EWEIRD' })
     }
@@ -32,6 +51,7 @@ const mockFs = {
 const mockFsPromises = {
   ...fs.promises,
   readFile: async (path, ...args) => {
+    throwIfExternalNpmrc(path)
     if (path.includes('WEIRD-ERROR')) {
       throw Object.assign(new Error('weird error'), { code: 'EWEIRD' })
     }
@@ -127,6 +147,27 @@ t.test('construct with no settings, get default values for stuff', t => {
   })
 
   t.end()
+})
+
+t.test('deleting config invalidates flattened options', async t => {
+  const path = t.testdir()
+  const config = new Config({
+    npmPath: path,
+    cwd: path,
+    env: {},
+    argv: [],
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  config.set('tag', 'fallback', 'user')
+  config.set('tag', 'temporary', 'cli')
+  const before = config.flat
+  t.equal(before.defaultTag, 'temporary')
+  config.delete('tag', 'cli')
+  t.equal(config.flat.defaultTag, 'fallback')
+  t.not(config.flat, before)
 })
 
 t.test('load from files and environment variables', t => {

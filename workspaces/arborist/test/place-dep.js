@@ -484,6 +484,27 @@ t.test('placement tests', t => {
     },
   })
 
+  runTest('audit fix replaces a vulnerable dep with an older safe version', {
+    tree: new Node({
+      path,
+      pkg: {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: { a: '^1.0.0' },
+      },
+      children: [{ pkg: { name: 'a', version: '1.2.0' } }],
+    }),
+    nodeLoc: '',
+    dep: new Node({ pkg: { name: 'a', version: '1.1.0' } }),
+    auditReport: {
+      isVulnerable: node => node.name === 'a' && node.version === '1.2.0',
+    },
+    test: (t, tree) => {
+      t.equal(tree.children.get('a').version, '1.1.0',
+        'installed the older non-vulnerable candidate')
+    },
+  })
+
   // root -> (a@1, b)
   // +-- a@1.0.0
   // +-- b -> (c@link:c, a@1.1)

@@ -5,6 +5,25 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
+exports[`test/can-place-dep.js TAP basic placement check tests audit downgrade still respects peer conflicts > conflict children 1`] = `
+Array [
+  Object {
+    "canPlace": Symbol(CONFLICT),
+    "canPlaceSelf": Symbol(CONFLICT),
+    "dep": Array [
+      "a",
+      "3.0.0",
+    ],
+    "edge": Array [
+      "node_modules/b",
+      "peer",
+      "a",
+      "3",
+    ],
+  },
+]
+`
+
 exports[`test/can-place-dep.js TAP basic placement check tests basic placement of a dep, no conflicts or issues > conflict children 1`] = `
 Array []
 `
@@ -166,6 +185,14 @@ exports[`test/can-place-dep.js TAP basic placement check tests invalid shadowing
 Array []
 `
 
+exports[`test/can-place-dep.js TAP basic placement check tests keep a newer dep when an older candidate is not an audit remediation > conflict children 1`] = `
+Array []
+`
+
+exports[`test/can-place-dep.js TAP basic placement check tests keep a vulnerable dep when the older audit candidate is also vulnerable > conflict children 1`] = `
+Array []
+`
+
 exports[`test/can-place-dep.js TAP basic placement check tests keep an existing dep that could dedupe, explicit request, preferDedupe > conflict children 1`] = `
 Array []
 `
@@ -257,6 +284,10 @@ Array [
     ],
   },
 ]
+`
+
+exports[`test/can-place-dep.js TAP basic placement check tests replace a vulnerable dep with an older safe audit candidate > conflict children 1`] = `
+Array []
 `
 
 exports[`test/can-place-dep.js TAP basic placement check tests replace an existing dep > conflict children 1`] = `

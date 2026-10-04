@@ -146,7 +146,7 @@ t.test('flags() throws error for unknown flags', async t => {
     command.exec(),
     {
       code: 'EUNKNOWNCONFIG',
-      message: /Unknown cli config:[\s\S]*--unknown-flag/,
+      message: /Unknown cli flag:[\s\S]*--unknown-flag/,
     },
     'throws EUNKNOWNCONFIG for unknown flag'
   )
@@ -448,9 +448,9 @@ t.test('flags() throws error for multiple unknown flags with pluralization', asy
     command.exec(),
     {
       code: 'EUNKNOWNCONFIG',
-      message: /Unknown cli configs:[\s\S]*--unknown-one[\s\S]*--unknown-two/,
+      message: /Unknown cli flags:[\s\S]*--unknown-one[\s\S]*--unknown-two/,
     },
-    'throws EUNKNOWNCONFIG with pluralized "configs" for multiple unknown flags'
+    'throws EUNKNOWNCONFIG with pluralized "flags" for multiple unknown flags'
   )
 })
 
@@ -685,8 +685,8 @@ t.test('flags() does not throw when positionals is null (unlimited)', async t =>
   t.equal(flags.id, null, 'id flag uses default')
 })
 
-t.test('validateCli throws aggregated error for unknown file configs', async t => {
-  const { npm } = await loadMockNpm(t, {
+t.test('validateCli warns (does not throw) for unknown file configs', async t => {
+  const { npm, logs } = await loadMockNpm(t, {
     homeDir: {
       '.npmrc': [
         'bogus-user-key=yes',
@@ -701,21 +701,43 @@ t.test('validateCli throws aggregated error for unknown file configs', async t =
   }
 
   const command = new TestCommand(npm)
-  await t.rejects(
-    (async () => command.validateCli())(),
-    {
-      code: 'EUNKNOWNCONFIG',
-      message: /Unknown npm configuration keys:[\s\S]*bogus-user-key[\s\S]*bogus-scoped[\s\S]*npm help npmrc/,
-    },
-    'throws EUNKNOWNCONFIG aggregating plain and scoped keys'
-  )
+  t.doesNotThrow(() => command.validateCli(), 'unknown file configs do not throw')
+
+  const warningLogs = logs.warn
+  t.ok(warningLogs.some(msg => msg.includes('bogus-user-key') && msg.includes('npm help npmrc')),
+    'warns about plain unknown key')
+  t.ok(warningLogs.some(msg => msg.includes('bogus-scoped')),
+    'warns about scoped unknown key')
 })
 
-t.test('validateCli uses singular "key" when only one unknown file config', async t => {
+t.test('validateCli unknown file config warning respects loglevel suppression', async t => {
+  const { npm, logs } = await loadMockNpm(t, {
+    homeDir: {
+      '.npmrc': 'bogus-user-key=yes',
+    },
+    config: { loglevel: 'error' },
+  })
+
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command'
+  }
+
+  const command = new TestCommand(npm)
+  t.doesNotThrow(() => command.validateCli(), 'still does not throw')
+  t.notOk(logs.warn.some(msg => msg.includes('bogus-user-key')),
+    'unknown file config warning is suppressed at loglevel=error')
+})
+
+t.test('validateCli errors on unknown file configs when strict-npmrc is set', async t => {
   const { npm } = await loadMockNpm(t, {
     homeDir: {
-      '.npmrc': 'only-one-bad-key=yes',
+      '.npmrc': [
+        'bogus-user-key=yes',
+        '@scope:bogus-scoped=no',
+      ].join('\n'),
     },
+    config: { 'strict-npmrc': true },
   })
 
   class TestCommand extends BaseCommand {
@@ -728,10 +750,48 @@ t.test('validateCli uses singular "key" when only one unknown file config', asyn
     (async () => command.validateCli())(),
     {
       code: 'EUNKNOWNCONFIG',
-      message: /Unknown npm configuration key:\n/,
+      message: /Unknown npm configuration keys:[\s\S]*bogus-user-key[\s\S]*bogus-scoped[\s\S]*npm help npmrc/,
     },
-    'singular phrasing when only one unknown key'
+    'throws EUNKNOWNCONFIG aggregating plain and scoped keys under strict-npmrc'
   )
+})
+
+t.test('validateCli combines cli and file unknowns under strict-npmrc', async t => {
+  const { npm } = await loadMockNpm(t, {
+    homeDir: {
+      '.npmrc': [
+        'strict-npmrc=true',
+        'bogus-user-key=yes',
+      ].join('\n'),
+    },
+    npm: { argv: ['test-command', '--unknown-cli'] },
+  })
+
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command'
+    async exec () {
+      return this.flags()
+    }
+  }
+
+  const command = new TestCommand(npm)
+  let err
+  try {
+    command.validateCli()
+    t.fail('expected throw')
+  } catch (e) {
+    err = e
+  }
+  t.equal(err.code, 'EUNKNOWNCONFIG')
+  t.match(err.message, /Unknown cli flag:[\s\S]*--unknown-cli/,
+    'message contains the cli section')
+  t.match(err.message, /Unknown npm configuration key:[\s\S]*bogus-user-key/,
+    'message contains the singular file section')
+  t.match(err.unknownConfigs, [
+    { where: 'cli', key: 'unknown-cli' },
+    { where: 'user', key: 'bogus-user-key' },
+  ], 'structured payload contains both cli and file entries')
 })
 
 t.test('validateCli bypasses checks when skipConfigValidation is set', async t => {
@@ -751,8 +811,8 @@ t.test('validateCli bypasses checks when skipConfigValidation is set', async t =
   t.doesNotThrow(() => command.validateCli(), 'skipConfigValidation bypasses unknown-file-config check')
 })
 
-t.test('validateCli combines cli and file unknowns into a single error', async t => {
-  const { npm } = await loadMockNpm(t, {
+t.test('validateCli throws only on cli unknowns while warning on file unknowns', async t => {
+  const { npm, logs } = await loadMockNpm(t, {
     homeDir: {
       '.npmrc': 'bogus-user-key=yes',
     },
@@ -776,14 +836,15 @@ t.test('validateCli combines cli and file unknowns into a single error', async t
     err = e
   }
   t.equal(err.code, 'EUNKNOWNCONFIG')
-  t.match(err.message, /Unknown cli config:[\s\S]*--unknown-cli/,
+  t.match(err.message, /Unknown cli flag:[\s\S]*--unknown-cli/,
     'message contains the cli section')
-  t.match(err.message, /Unknown npm configuration key:[\s\S]*bogus-user-key/,
-    'message contains the file section')
+  t.notMatch(err.message, /bogus-user-key/,
+    'error message does not contain the file config')
   t.match(err.unknownConfigs, [
     { where: 'cli', key: 'unknown-cli' },
-    { where: 'user', key: 'bogus-user-key' },
-  ], 'structured payload contains both cli and file entries')
+  ], 'structured payload contains only cli entries')
+  t.ok(logs.warn.some(msg => msg.includes('bogus-user-key')),
+    'file unknown is warned, not thrown')
 })
 
 t.test('validateCli does not throw on unknown env (npm_config_*) configs', async t => {
@@ -830,7 +891,7 @@ t.test('flags() throws with scoped (nerfdart) display for unknown cli config', a
     command.exec(),
     {
       code: 'EUNKNOWNCONFIG',
-      message: /Unknown cli config:[\s\S]*--bogus \(@scope:bogus\)/,
+      message: /Unknown cli flag:[\s\S]*--bogus \(@scope:bogus\)/,
     },
     'scoped display form uses baseKey (key) layout, throws EUNKNOWNCONFIG'
   )

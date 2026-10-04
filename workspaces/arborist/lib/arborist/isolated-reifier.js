@@ -291,7 +291,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       }
       processed.add(key)
       const from = nextEdge.from
-      if (!from.isRoot && !from.isWorkspace) {
+      if (!from.isRoot && !from.isWorkspace && !nodes.has(from.location)) {
         nodes.set(from.location, { isRegistryDependency: from.isRegistryDependency, bundleOwner: from.getBundler(), location: from.location, resolved: from.resolved, name: from.name, optional: from.optional, pkg: { ...from.package, bundleDependencies: undefined } })
       }
       const to = nextEdge.to

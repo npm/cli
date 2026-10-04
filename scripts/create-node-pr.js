@@ -238,9 +238,13 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
 
   let existingPr = null
   const closePrs = []
+  const npmMessagePrefix = npmMessage('')
 
   for (const pr of npmPrs) {
-    const prVersion = pr.title.replace(npmMessage(''), '').trim()
+    const npmMessageIndex = pr.title.indexOf(npmMessagePrefix)
+    const prVersion = npmMessageIndex === -1
+      ? null
+      : pr.title.slice(npmMessageIndex + npmMessagePrefix.length).trim()
     log.silly('checking existing PR', prVersion, pr)
 
     if (!existingPr && prVersion === npmVersion.toString()) {
@@ -259,7 +263,7 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
     nodePrArgs,
     (existingPr ? ['edit', existingPr.number] : ['create', '-H', `${npmHost.user}:${npmBranch}`]),
     '-B', nodeBranch,
-    '-t', npmMessage(),
+    (existingPr ? [] : ['-t', npmMessage()]),
   ].flat()
 
   if (dryRun) {

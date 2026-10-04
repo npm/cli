@@ -72,6 +72,40 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.4.2): `@npmcli/arborist@9.4.2`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0-pre.2): `@npmcli/arborist@10.0.0-pre.2`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.1): `@npmcli/arborist@10.0.1`
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.2): `@npmcli/arborist@10.0.2`
+
+## [10.0.3](https://github.com/npm/cli/compare/libnpmpack-v10.0.2...libnpmpack-v10.0.3) (2026-09-21)
+### Bug Fixes
+* [`71915e8`](https://github.com/npm/cli/commit/71915e8e7d6ac57f60c827274a95db786802e410) [#9756](https://github.com/npm/cli/pull/9756) exempt explicit pack targets from allow-directory (#9756) (@ychampion, @ychampion)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.3): `@npmcli/arborist@10.0.3`
+
+## [10.0.0](https://github.com/npm/cli/compare/libnpmpack-v10.0.0-pre.2...libnpmpack-v10.0.0) (2026-07-08)
+### ⚠️ BREAKING CHANGES
+* npm pack and npm publish now error when a package's overrides apply to one or more of its bundled packages (bundledDependencies / bundleDependencies). Defining both fields is still allowed as long as no override actually targets a bundled package. To resolve the error, remove the affected entries from either overrides or the bundle.
+* `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`
+* allow-git and allow-remote now default to "none"; set them to "all" (or "root") to install git or user-supplied tarball-URL dependencies.
+### Features
+* [`5b83698`](https://github.com/npm/cli/commit/5b83698a4f76e3f2962b9954dddb180fa85d4c77) [#9737](https://github.com/npm/cli/pull/9737) trigger release process (#9737) (@reggi)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.0): `@npmcli/arborist@10.0.0`
+
 ## [10.0.0-pre.1](https://github.com/npm/cli/compare/libnpmpack-v10.0.0-pre.0...libnpmpack-v10.0.0-pre.1) (2026-06-19)
 ### ⚠️ BREAKING CHANGES
 * `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`

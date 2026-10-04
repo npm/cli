@@ -1014,36 +1014,42 @@ module.exports = cls => class Reifier extends cls {
     // the default reg as the magical animal that it has been.
     try {
       const resolvedURL = hgi.parseUrl(resolved)
+      const registryURL = new URL(this.registry)
+      const registryPath = registryURL.pathname.replace(/\/$/, '')
 
-      if ((this.options.replaceRegistryHost === resolvedURL.hostname) ||
-           this.options.replaceRegistryHost === 'always') {
-        const registryURL = new URL(this.registry)
-
-        // Replace the host with the registry host while keeping the path intact
-        resolvedURL.hostname = registryURL.hostname
-        resolvedURL.port = registryURL.port
-        resolvedURL.protocol = registryURL.protocol
-
-        // Make sure we don't double-include the path if it's already there
-        const registryPath = registryURL.pathname.replace(/\/$/, '')
-
-        if (registryPath && registryPath !== '/') {
-          // Check if the resolved pathname already starts with the registry path
-          // We need to ensure it's a proper path prefix, not just a string prefix
-          // e.g., registry path '/npm' should not match '/npm-run-path'
-          const hasRegistryPath = resolvedURL.pathname === registryPath ||
-                                  resolvedURL.pathname.startsWith(registryPath + '/')
-
-          if (!hasRegistryPath) {
-            // Since hostname is changed, we need to ensure the registry path is included
-            resolvedURL.pathname = registryPath + resolvedURL.pathname
-          }
-        }
-
-        return resolvedURL.toString()
+      let matchURL = null
+      try {
+        matchURL = new URL(this.options.replaceRegistryHost)
+      } catch {
+        // keep matchURL null
       }
-      return resolved
-    } catch (e) {
+
+      const matchHost = matchURL?.hostname ?? this.options.replaceRegistryHost
+      const matchPath = matchURL?.pathname.replace(/\/$/, '') ?? null
+      const hasPathPrefix = (pathname, prefix) =>
+        pathname === prefix || pathname.startsWith(`${prefix}/`)
+
+      const hostMatches = this.options.replaceRegistryHost === 'always' || matchHost === resolvedURL.hostname
+      const pathMatches = !matchPath || hasPathPrefix(resolvedURL.pathname, matchPath)
+
+      if (!hostMatches || !pathMatches) {
+        return resolved
+      }
+
+      resolvedURL.protocol = registryURL.protocol
+      resolvedURL.hostname = registryURL.hostname
+      resolvedURL.port = registryURL.port
+
+      if (matchPath) {
+        // full-URL prefix: swap old path prefix for the registry path
+        resolvedURL.pathname = registryPath + resolvedURL.pathname.slice(matchPath.length)
+      } else if (registryPath && !hasPathPrefix(resolvedURL.pathname, registryPath)) {
+        // host-only: prepend registry path if not already present
+        resolvedURL.pathname = registryPath + resolvedURL.pathname
+      }
+
+      return resolvedURL.toString()
+    } catch {
       // if we could not parse the url at all then returning nothing
       // here means it will get removed from the tree in the next step
       return undefined

@@ -128,6 +128,35 @@ t.test('no message when funding config is false', async t => {
   t.notMatch(out, 'looking for funding', 'should not print funding info')
 })
 
+t.test('no message when installing globally', async t => {
+  const out = await mockReify(t, {
+    actualTree: {
+      name: 'foo',
+      package: {
+        name: 'foo',
+        version: '1.0.0',
+      },
+      edgesOut: new Map([
+        ['bar', {
+          to: {
+            name: 'bar',
+            package: {
+              name: 'bar',
+              version: '1.0.0',
+              funding: { type: 'foo', url: 'http://example.com' },
+            },
+          },
+        }],
+      ]),
+    },
+    diff: {
+      children: [],
+    },
+  }, { global: true })
+
+  t.notMatch(out, 'looking for funding', 'should not print funding info')
+})
+
 t.test('print appropriate message for many packages', async t => {
   const out = await mockReify(t, {
     actualTree: {
@@ -440,6 +469,53 @@ t.test('prints dedupe difference on dry-run', async t => {
   t.matchSnapshot(out, 'diff table')
 })
 
+t.test('prints only json for dry-run and long', async t => {
+  for (const flag of ['dry-run', 'long']) {
+    await t.test(flag, async t => {
+      const out = await mockReify(t, {
+        actualTree: {
+          inventory: {
+            has: () => true,
+          },
+          children: [],
+        },
+        diff: {
+          children: [
+            {
+              action: 'ADD',
+              ideal: {
+                path: 'test/foo',
+                name: 'foo',
+                package: { version: '1.0.0' },
+              },
+            },
+          ],
+        },
+      }, {
+        [flag]: true,
+        json: true,
+      })
+
+      t.strictSame(JSON.parse(out), {
+        add: [
+          {
+            name: 'foo',
+            version: '1.0.0',
+            path: 'test/foo',
+          },
+        ],
+        added: 1,
+        audited: 0,
+        change: [],
+        changed: 0,
+        funding: 0,
+        remove: [],
+        removed: 0,
+      })
+    })
+  }
+})
+
 t.test('prints dedupe difference on long', async t => {
   const mock = {
     actualTree: {
@@ -499,7 +575,7 @@ t.test('prints unreviewed install scripts summary', async t => {
   ]
 
   const mock = await mockReifyWithExtras(t, baseReify, { unreviewedScripts })
-  const warn = mock.logs.warn.byTitle('allow-scripts').join('\n')
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
   t.match(warn, /2 packages had install scripts blocked because they are not covered by allowScripts/)
   t.match(warn, /canvas@2\.11\.0 \(install: node-gyp rebuild\)/)
   t.match(warn, /sharp@0\.33\.2 \(preinstall: pre; postinstall: post\)/)
@@ -531,7 +607,7 @@ t.test('global install suggests --allow-scripts, not approve-scripts', async t =
   ]
 
   const mock = await mockReifyWithExtras(t, baseReify, { unreviewedScripts }, { global: true })
-  const warn = mock.logs.warn.byTitle('allow-scripts').join('\n')
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
   t.match(warn, /2 packages had install scripts blocked because they are not covered by allowScripts/)
   t.match(warn, /canvas@2\.11\.0 \(install: node-gyp rebuild\)/)
   t.match(warn, /npm install -g --allow-scripts=canvas,sharp/)
@@ -557,7 +633,7 @@ t.test('single unreviewed script uses singular wording', async t => {
       }],
     }
   )
-  t.match(mock.logs.warn.byTitle('allow-scripts').join('\n'), /1 package had install scripts blocked/)
+  t.match(mock.logs.warn.byTitle('install-scripts').join('\n'), /1 package had install scripts blocked/)
 })
 
 t.test('optional dep with blocked scripts appears in the summary', async t => {
@@ -579,7 +655,7 @@ t.test('optional dep with blocked scripts appears in the summary', async t => {
     }],
   })
   mock.npm.finish()
-  const warn = mock.logs.warn.byTitle('allow-scripts').join('\n')
+  const warn = mock.logs.warn.byTitle('install-scripts').join('\n')
   t.match(warn, /1 package had install scripts blocked/)
   t.match(warn, /opt@1\.0\.0 \(install: cmd\)/)
 })
@@ -617,7 +693,7 @@ t.test('unreviewed script with node.name only (no packageName) still renders', a
     }],
   })
   mock.npm.finish()
-  t.match(mock.logs.warn.byTitle('allow-scripts').join('\n'), / fallback \(install: cmd\)/)
+  t.match(mock.logs.warn.byTitle('install-scripts').join('\n'), / fallback \(install: cmd\)/)
 })
 
 t.test('json output includes node.name when packageName is missing', async t => {

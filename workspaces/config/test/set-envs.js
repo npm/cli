@@ -241,3 +241,39 @@ t.test('dont set configs marked as envExport:false', t => {
   t.strictSame(env, { ...extras }, 'not exported, because envExport=false')
   t.end()
 })
+
+t.test('does not export persistent allow-scripts config', t => {
+  const { definitions, defaults } = mockDefinitions(t)
+  const userConf = Object.create(defaults)
+  userConf['allow-scripts'] = 'canvas'
+  const envConf = Object.create(userConf)
+  const cliConf = Object.create(envConf)
+  const env = {}
+  const config = {
+    list: [cliConf, envConf],
+    env,
+    defaults,
+    definitions,
+    execPath,
+    globalPrefix,
+    localPrefix,
+    npmPath,
+    npmBin,
+  }
+
+  setEnvs(config)
+  t.equal(
+    env.npm_config_allow_scripts,
+    undefined,
+    'persistent policy is reloaded instead of exported to lifecycle scripts'
+  )
+  envConf['allow-scripts'] = 'sharp'
+  env.npm_config_allow_scripts = 'sharp'
+  setEnvs(config)
+  t.equal(
+    env.npm_config_allow_scripts,
+    'sharp',
+    'an explicit environment policy remains inherited'
+  )
+  t.end()
+})
