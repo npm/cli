@@ -94,3 +94,20 @@ t.test('open bugs urls & emails', async t => {
     t.equal(opened['https://example.com'], 1, 'opened expected url', { opened })
   })
 })
+
+t.test('open a mailto url through the real url validation', async t => {
+  let openerUrl = null
+  const { npm } = await loadMockNpm(t, {
+    mocks: {
+      pacote,
+      '@npmcli/promise-spawn': {
+        open: async (url) => {
+          openerUrl = url
+        },
+      },
+    },
+  })
+
+  await npm.exec('bugs', ['mailtest'])
+  t.equal(openerUrl, 'mailto:hello@example.com', 'passed the mailto url to the opener')
+})
