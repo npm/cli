@@ -248,3 +248,19 @@ t.test('global error points at --allow-scripts, not approve-scripts', async t =>
     }
   )
 })
+
+t.test('rebuild reviews extraneous actual-tree nodes', async t => {
+  const arb = makeArb({ actual: tree([node({ name: 'orphan', extraneous: true })]) })
+  await t.rejects(preflight({ arb, npm: { flatOptions: { strictAllowScripts: true } } }), {
+    code: 'ESTRICTALLOWSCRIPTS',
+    message: /orphan@1\.0\.0/,
+  })
+})
+
+t.test('reify without pruning reviews extraneous nodes', async t => {
+  const arb = makeArb({ ideal: tree([node({ name: 'orphan', extraneous: true })]) })
+  arb.options.prune = false
+  await t.rejects(preflight({
+    arb, npm: { flatOptions: { strictAllowScripts: true } }, idealTreeOpts: {},
+  }), { code: 'ESTRICTALLOWSCRIPTS' })
+})

@@ -18,6 +18,7 @@ const collectUnreviewedScripts = async ({
   ignoreScripts = false,
   dangerouslyAllowAllScripts = false,
   includeWhenIgnored = false,
+  pruneExtraneous = false,
 } = {}) => {
   // With ignore-scripts set, no scripts run, so execution callers bail out
   // here. approve/deny pass includeWhenIgnored so they keep listing
@@ -57,9 +58,9 @@ const collectUnreviewedScripts = async ({
       // must not be flagged (npm/cli#9562).
       continue
     }
-    if (node.extraneous) {
-      // Extraneous nodes are orphans pruned before reify runs any install script, so their scripts never execute.
-      // buildIdealTree drops top-level orphans but can retain one nested in a workspace's node_modules, so this gate must skip them (npm/cli#9680).
+    if (pruneExtraneous && node.extraneous) {
+      // Only a pruning reify removes orphans before scripts run. Actual-tree
+      // listing and rebuild must still review their scripts (npm/cli#9680).
       continue
     }
 

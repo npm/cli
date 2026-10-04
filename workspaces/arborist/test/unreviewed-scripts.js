@@ -94,12 +94,13 @@ t.test('collectUnreviewedScripts', async t => {
     t.strictSame(result, [])
   })
 
-  t.test('skips extraneous (orphan) registry nodes', async t => {
+  t.test('skips extraneous (orphan) registry nodes when pruning', async t => {
     // An extraneous orphan is pruned before reify runs any install script, so it must not gate the install even when the policy neither allows nor denies it (npm/cli#9680).
     const result = await collectUnreviewedScripts({
       tree: tree([
         node({ name: 'orphan', scripts: { install: 'x' }, extraneous: true }),
       ]),
+      pruneExtraneous: true,
       policy: null,
     })
     t.strictSame(result, [])
@@ -114,8 +115,16 @@ t.test('collectUnreviewedScripts', async t => {
     const result = await collectUnreviewedScripts({
       tree: tree([orphan]),
       policy: { esbuild: false },
+      pruneExtraneous: true,
     })
     t.strictSame(result, [])
+  })
+
+  t.test('reviews extraneous nodes in the actual tree', async t => {
+    const orphan = node({ name: 'orphan', scripts: { install: 'x' }, extraneous: true })
+    t.strictSame(await collectUnreviewedScripts({ tree: tree([orphan]) }), [
+      { node: orphan, scripts: { install: 'x' } },
+    ])
   })
 
   t.test('skips nodes with no install-relevant scripts', async t => {
