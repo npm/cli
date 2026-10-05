@@ -147,3 +147,46 @@ t.test('round-trip: applying the diff reproduces the edited tree', async t => {
   t.equal(read(orig, 'lib', 'deep', 'x.js'), 'after\n', 'nested file matches edit')
   t.notOk(existsSync(resolve(orig, 'del.js')), 'deleted file was removed')
 })
+
+t.test('changed binary files are rejected with EPATCHBINARY', async t => {
+  const dir = t.testdir({
+    orig: {
+      'mod.bin': Buffer.from([0x00, 0x01, 0x02]),
+      'latin1.txt': Buffer.from([0x63, 0x61, 0x66, 0xe9]),
+      'same.bin': Buffer.from([0x00, 0xff]),
+      'text.js': 'a\n',
+    },
+    edit: {
+      'mod.bin': Buffer.from([0x00, 0x01, 0x03]),
+      'latin1.txt': Buffer.from([0x63, 0x61, 0x66, 0xe8]),
+      'add.wasm': Buffer.from([0x00, 0x61, 0x73, 0x6d]),
+      'same.bin': Buffer.from([0x00, 0xff]),
+      'text.js': 'b\n',
+    },
+  })
+  await t.rejects(
+    diffDirs(resolve(dir, 'orig'), resolve(dir, 'edit')),
+    { code: 'EPATCHBINARY', files: ['add.wasm', 'latin1.txt', 'mod.bin'] }
+  )
+})
+
+t.test('deleting a binary file is rejected with EPATCHBINARY', async t => {
+  const dir = t.testdir({
+    orig: { 'gone.png': Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x00]) },
+    edit: {},
+  })
+  await t.rejects(
+    diffDirs(resolve(dir, 'orig'), resolve(dir, 'edit')),
+    { code: 'EPATCHBINARY', files: ['gone.png'], message: /gone\.png/ }
+  )
+})
+
+t.test('unchanged binary files do not block a text diff', async t => {
+  const dir = t.testdir({
+    orig: { 'img.png': Buffer.from([0x89, 0x00]), 'index.js': 'a\n' },
+    edit: { 'img.png': Buffer.from([0x89, 0x00]), 'index.js': 'b\n' },
+  })
+  const { diff } = await diffDirs(resolve(dir, 'orig'), resolve(dir, 'edit'))
+  t.match(diff, 'a/index.js', 'text change is captured')
+  t.notMatch(diff, 'img.png', 'unchanged binary is not in the diff')
+})
