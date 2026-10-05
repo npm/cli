@@ -2,25 +2,15 @@
 // This is a single-use bin to help windows discover the proper prefix for npm
 // without having to load all of npm first
 // It does not accept argv params
+// The Windows shims now make this decision in-process via npm-shim.js; this
+// is still used by bin/npm and bin/npx outside Git Bash and Cygwin (WSL).
 
-const path = require('node:path')
-const Config = require('@npmcli/config')
-const { definitions, flatten, shorthands } = require('@npmcli/config/lib/definitions')
-const config = new Config({
-  npmPath: path.dirname(__dirname),
-  // argv is explicitly not looked at since prefix is not something that can be changed via argv
-  argv: [],
-  definitions,
-  flatten,
-  shorthands,
-  excludeNpmCwd: false,
-})
+const globalPrefix = require('../lib/cli/global-prefix.js')
 
 async function main () {
   try {
-    await config.load()
     // eslint-disable-next-line no-console
-    console.log(config.globalPrefix)
+    console.log(await globalPrefix())
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error(err)
