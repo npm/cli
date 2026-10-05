@@ -106,10 +106,11 @@ module.exports = cls => class IsolatedReifier extends cls {
     this.counter = 0
 
     // Skip extraneous fsChildren: workspaces removed from the root manifest can linger in fsChildren via the lockfile, and re-materializing them here would re-create a directory the user just deleted.
-    const fsChildren = Array.from(idealTree.fsChildren.values()).filter(w => !w.extraneous)
+    // Include nested fsChildren, such as a workspace inside another workspace.
+    const fsChildren = [...idealTree.inventory.values()].filter(w => w.fsParent && !w.extraneous)
     this.idealGraph.workspaces = await Promise.all(fsChildren.map(w => this.#workspaceProxy(w)))
     const processed = new Set()
-    const queue = [idealTree, ...idealTree.fsChildren]
+    const queue = [idealTree, ...fsChildren]
     while (queue.length !== 0) {
       const next = queue.pop()
       if (processed.has(next.location)) {

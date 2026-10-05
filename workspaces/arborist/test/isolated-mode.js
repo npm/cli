@@ -1509,6 +1509,50 @@ tap.test('postinstall scripts run once for store packages', async t => {
   t.equal(count, 1, 'postinstall ran exactly once')
 })
 
+tap.test('nested workspaces can resolve their dependencies with linked strategy', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myroot',
+      version: '1.0.0',
+      workspaces: ['packages/outer', 'packages/outer/src/*'],
+    },
+    workspaces: [
+      { name: 'outer', version: '1.0.0' },
+      { name: 'inner', version: '1.0.0', dependencies: { which: '1.0.0' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const innerPath = path.join(dir, 'packages', 'outer', 'src', 'inner')
+  fs.mkdirSync(path.dirname(innerPath), { recursive: true })
+  fs.renameSync(path.join(dir, 'packages', 'inner'), innerPath)
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const whichPath = require.resolve('which/package.json', { paths: [innerPath] })
+  t.equal(JSON.parse(fs.readFileSync(whichPath)).version, '1.0.0',
+    'the nested workspace can resolve its dependency')
+  const isexePath = require.resolve('isexe/package.json', { paths: [path.dirname(whichPath)] })
+  t.equal(JSON.parse(fs.readFileSync(isexePath)).version, '1.0.0',
+    'the nested workspace dependency can resolve its transitive dependency')
+
+  const options = { path: dir, installStrategy: 'linked' }
+  const fromLockfile = await new Arborist(options).loadActual()
+  t.ok(fromLockfile.edgesOut.get('inner').valid,
+    'the nested workspace is not missing when loading the hidden lockfile')
+
+  fs.unlinkSync(path.join(dir, 'node_modules', '.package-lock.json'))
+  const fromFilesystem = await new Arborist(options).loadActual()
+  t.ok(fromFilesystem.edgesOut.get('inner').valid,
+    'the nested workspace is not missing when scanning the filesystem')
+})
+
 tap.test('workspace-filtered install with linked strategy', async t => {
   // Two workspaces sharing the same dependency must not crash when installing with --workspace + --install-strategy=linked.
   const graph = {
