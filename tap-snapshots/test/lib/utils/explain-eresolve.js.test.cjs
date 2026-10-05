@@ -231,9 +231,8 @@ node_modules/eslint
   peer eslint@"^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0" from eslint-plugin-import@2.23.4
   node_modules/eslint-plugin-import
     dev eslint-plugin-import@"^2.23.4" from the root project
-    peer eslint-plugin-import@"^2.22.1" from eslint-config-airbnb-base@14.2.1
+    peer eslint-plugin-import@"^2.22.1" from eslint-config-airbnb-base@14.2.1 deduped
     node_modules/eslint-config-airbnb-base
-      dev eslint-config-airbnb-base@"^14.2.1" from the root project
 
 Could not resolve dependency:
 dev eslint-plugin-eslint-plugin@"^3.1.0" from the root project
