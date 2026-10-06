@@ -108,6 +108,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     // Skip extraneous fsChildren: workspaces removed from the root manifest can linger in fsChildren via the lockfile, and re-materializing them here would re-create a directory the user just deleted.
     // Include nested fsChildren, such as a workspace inside another workspace.
     const fsChildren = [...idealTree.inventory.values()].filter(w => w.fsParent && !w.extraneous)
+    const fsChildSet = new Set(fsChildren)
     this.idealGraph.workspaces = await Promise.all(fsChildren.map(w => this.#workspaceProxy(w)))
     const processed = new Set()
     const queue = [idealTree, ...fsChildren]
@@ -126,9 +127,9 @@ module.exports = cls => class IsolatedReifier extends cls {
       // they are already handled as workspace-like proxies above and should not go through the external/store extraction path.
       // Links with file: resolved paths (from `npm link`) should also be treated as local dependencies and symlinked directly instead of being extracted into the store.
       const isLocalFileDep = next.isLink && next.resolved?.startsWith('file:')
-      if (isLocalFileDep && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
+      if (isLocalFileDep && !fsChildSet.has(next) && !fsChildSet.has(next.target)) {
         this.idealGraph.workspaces.push(await this.#workspaceProxy(next.target))
-      } else if (!next.isProjectRoot && !next.isWorkspace && !next.inert && !idealTree.fsChildren.has(next) && !idealTree.fsChildren.has(next.target)) {
+      } else if (!next.isProjectRoot && !next.isWorkspace && !next.inert && !fsChildSet.has(next) && !fsChildSet.has(next.target)) {
         this.idealGraph.external.push(await this.#externalProxy(next))
       }
     }

@@ -1535,6 +1535,10 @@ tap.test('nested workspaces can resolve their dependencies with linked strategy'
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ installStrategy: 'linked' })
 
+  t.same(arborist.idealGraph.workspaces.map(w => w.localLocation).sort(),
+    ['packages/outer', 'packages/outer/src/inner'],
+    'each nested workspace is included only once in the isolated graph')
+
   const whichPath = require.resolve('which/package.json', { paths: [innerPath] })
   t.equal(JSON.parse(fs.readFileSync(whichPath)).version, '1.0.0',
     'the nested workspace can resolve its dependency')
@@ -1551,6 +1555,53 @@ tap.test('nested workspaces can resolve their dependencies with linked strategy'
   const fromFilesystem = await new Arborist(options).loadActual()
   t.ok(fromFilesystem.edgesOut.get('inner').valid,
     'the nested workspace is not missing when scanning the filesystem')
+})
+
+tap.test('nested non-workspace file: dependency with linked strategy', async t => {
+  const graph = {
+    registry: [
+      { name: 'helper', version: '2.0.0' },
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: { name: 'myroot', version: '1.0.0' },
+    workspaces: [
+      { name: 'outer', version: '1.0.0', dependencies: { helper: 'file:./helper' } },
+    ],
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const outerPath = path.join(dir, 'packages', 'outer')
+  const helperPath = path.join(outerPath, 'helper')
+  fs.mkdirSync(helperPath)
+  fs.writeFileSync(path.join(helperPath, 'package.json'), JSON.stringify({
+    name: 'helper',
+    version: '1.0.0',
+    dependencies: { which: '1.0.0' },
+  }))
+  fs.writeFileSync(path.join(helperPath, 'index.js'), "module.exports = 'local helper'")
+
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
+  await arborist.reify({ installStrategy: 'linked' })
+
+  const helperLink = path.join(outerPath, 'node_modules', 'helper')
+  t.ok(fs.lstatSync(helperLink).isSymbolicLink(), 'the local helper is symlinked')
+  t.equal(fs.realpathSync(helperLink), fs.realpathSync(helperPath),
+    'the helper resolves to the local directory, not the registry package')
+  t.equal(require(require.resolve('helper', { paths: [outerPath] })), 'local helper',
+    'the workspace can load the local helper')
+  const whichPath = require.resolve('which/package.json', { paths: [helperPath] })
+  t.equal(JSON.parse(fs.readFileSync(whichPath)).version, '1.0.0',
+    'the local helper can resolve its dependency')
+  const isexePath = require.resolve('isexe/package.json', { paths: [path.dirname(whichPath)] })
+  t.equal(JSON.parse(fs.readFileSync(isexePath)).version, '1.0.0',
+    'the local helper dependency can resolve its transitive dependency')
+  t.notOk(fs.readdirSync(path.join(dir, 'node_modules', '.store'))
+    .some(entry => entry.startsWith('helper@')), 'the local helper is not extracted into the store')
+  t.same(arborist.idealGraph.workspaces.map(w => w.localLocation).sort(),
+    ['packages/outer', 'packages/outer/helper'],
+    'each local filesystem child is included only once in the isolated graph')
 })
 
 tap.test('workspace-filtered install with linked strategy', async t => {
