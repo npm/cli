@@ -3,12 +3,9 @@
 const { dirname, join, resolve } = require('node:path')
 const crypto = require('node:crypto')
 const { mkdir } = require('node:fs/promises')
-const Arborist = require('@npmcli/arborist')
-const strictAllowScriptsPreflight = require('./strict-allow-scripts-preflight.js')
 const ciInfo = require('ci-info')
 const { log, input } = require('proc-log')
 const npa = require('npm-package-arg')
-const pacote = require('pacote')
 const { read } = require('read')
 const semver = require('semver')
 const PackageJson = require('@npmcli/package-json')
@@ -19,16 +16,25 @@ const runScript = require('./run-script.js')
 const isWindows = require('./is-windows.js')
 const withLock = require('./with-lock.js')
 
+// Arborist and pacote (with everything they load: fetchers, cacache,
+// make-fetch-happen, sigstore, tar...) are several hundred modules. They are
+// only needed when the command is not already a local or global bin, so load
+// them on first use.
+let Arborist
+const getArborist = () => (Arborist ??= require('@npmcli/arborist'))
+let pacote
+const getPacote = () => (pacote ??= require('pacote'))
+
 // when checking the local tree we look up manifests, cache those results by
 // spec.raw so we don't have to fetch again when we check npxCache
 const manifests = new Map()
 
 const getManifest = async (spec, flatOptions) => {
   if (!manifests.has(spec.raw)) {
-    const manifest = await pacote.manifest(spec, {
+    const manifest = await getPacote().manifest(spec, {
       ...flatOptions,
       preferOnline: true,
-      Arborist,
+      Arborist: getArborist(),
       _isRoot: true,
     })
     manifests.set(spec.raw, manifest)
@@ -89,11 +95,11 @@ const missingFromTree = async ({ spec, tree, flatOptions, isNpxTree, shallow }) 
 // ./strict-allow-scripts-preflight.js
 
 // see if the package.json at `path` has an entry that matches `cmd`
-// the path is a known-local directory, not a user-supplied dep, so
-// allow-directory must not gate this introspection
-const hasPkgBin = (path, cmd, flatOptions) =>
-  pacote.manifest(path, { ...flatOptions, allowDirectory: 'all' })
-    .then(manifest => manifest?.bin?.[cmd]).catch(() => null)
+// the path is a known-local directory, not a user-supplied dep, so read it
+// the way pacote's DirFetcher does, without loading pacote
+const hasPkgBin = (path, cmd) =>
+  PackageJson.normalize(resolve(path))
+    .then(({ content }) => content?.bin?.[cmd]).catch(() => null)
 
 const exec = async (opts) => {
   const {
@@ -149,7 +155,7 @@ const exec = async (opts) => {
   if (needPackageCommandSwap) {
     // Local packages and local tree
     for (const p of pkgPaths) {
-      if (await hasPkgBin(p, args[0], flatOptions)) {
+      if (await hasPkgBin(p, args[0])) {
         // we have to install the local package into the npx cache so that its
         // bin links get set up
         flatOptions.installLinks = false
@@ -188,7 +194,13 @@ const exec = async (opts) => {
     }
   }
 
-  const localArb = new Arborist({ ...flatOptions, path })
+  // `--call` without `--package`: there is nothing to look up or install, so
+  // there is no need to read the local tree
+  if (!packages.length) {
+    return await run()
+  }
+
+  const localArb = new (getArborist())({ ...flatOptions, path })
   const localTree = await localArb.loadActual()
 
   // Find anything that isn't installed locally
@@ -224,7 +236,7 @@ const exec = async (opts) => {
 
     if (needInstall.length > 0 && globalPath) {
       // See if the package is installed globally. If it is, run the translated bin
-      const globalArb = new Arborist({ ...flatOptions, path: globalPath, global: true })
+      const globalArb = new (getArborist())({ ...flatOptions, path: globalPath, global: true })
       const globalTree = await globalArb.loadActual().catch(() => {
         log.verbose(`Could not read global path ${globalPath}, ignoring`)
         return null
@@ -261,7 +273,7 @@ const exec = async (opts) => {
       .slice(0, 16)
     const installDir = resolve(npxCache, hash)
     await mkdir(installDir, { recursive: true })
-    const npxArb = new Arborist({
+    const npxArb = new (getArborist())({
       ...flatOptions,
       path: installDir,
     })
@@ -312,7 +324,7 @@ const exec = async (opts) => {
       await withLock(lockPath, async () => {
         // Hard-fail before reify if --strict-allow-scripts is set and
         // any node has install scripts not covered by allowScripts.
-        await strictAllowScriptsPreflight(npxArb, { ...flatOptions, add })
+        await require('./strict-allow-scripts-preflight.js')(npxArb, { ...flatOptions, add })
         await npxArb.reify({
           ...flatOptions,
           save: true,
