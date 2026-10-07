@@ -80,8 +80,9 @@ const depValid = (child, requested, requestor) => {
       return tarballValid(child, requested, requestor)
 
     case 'alias':
-      // check that the alias target is valid
-      return depValid(child, requested.subSpec, requestor)
+      // An explicit alias must match its target's identity as well as its version.
+      return child.package?.name === requested.subSpec.name &&
+        depValid(child, requested.subSpec, requestor)
 
     case 'tag':
       // if it's a tag, we just verify that it has a tarball resolution
