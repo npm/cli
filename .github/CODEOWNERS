@@ -1,3 +1,42 @@
 # This file is automatically added by @npmcli/template-oss. Do not edit.
 
 * @npm/cli-team @npm/cli-triage
+## Qué hay que hacer
+
+Describa la tarea de manera clara, precisa y con el nivel de detalle necesario para entender su alcance.
+
+### Contexto
+Explique el problema, necesidad, caso de uso o situación que motiva esta tarea, así como el impacto funcional o de negocio que tiene.
+
+### Objetivo
+Indique qué se espera lograr con esta actividad y qué resultado debe alcanzarse al finalizarla.
+
+### Resultado esperado
+Describa el comportamiento, entregable o estado final deseado de la solución una vez concluida la tarea.
+
+### Criterios de aceptación
+- [ ] Se cumple el objetivo principal.
+- [ ] La solución funciona en el escenario previsto.
+- [ ] Se valida el comportamiento esperado y/o la experiencia de usuario.
+- [ ] Se documentan los cambios relevantes, si procede.
+- [ ] No se introducen regresiones significativas en el flujo afectado.
+
+### Subtareas
+- [ ] Análisis del alcance y requisitos
+- [ ] Implementación del cambio
+- [ ] Pruebas funcionales o de validación
+- [ ] Revisión de impacto y documentación
+
+### Dependencias
+Indique si esta tarea depende de otra tarea, servicio, diseño, API, revisión técnica o cualquier otro requisito previo.
+
+### Bloqueadores o riesgos
+Enumere impedimentos, dudas, riesgos o factores que puedan afectar la entrega o la calidad del resultado.
+
+### Prioridad
+- [ ] Baja
+- [ ] Media
+- [ ] Alta
+
+### Información adicional
+Añada enlaces, capturas, mockups, referencias técnicas o cualquier dato adicional que resulte útil para la ejecución y revisión.
