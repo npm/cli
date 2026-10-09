@@ -46,7 +46,7 @@ during `npm publish` and `npm pack`
 * Runs AFTER `prepublishOnly` and `prepack`, but BEFORE `postpack`
 * Runs for a package if it's being installed as a link through `npm install <folder>`
 
-* NOTE: If a package being installed through git contains a `prepare` script, its `dependencies` and `devDependencies` will be installed, and the prepare script will be run, before the package is packaged and installed.
+* NOTE: If a package being installed through git contains a `prepare` or `prepack` script, its `dependencies` and `devDependencies` will be installed, and the prepare script will be run, before the package is packaged and installed. See [A Note on Git Dependencies](#a-note-on-git-dependencies) for more details.
 
 * As of `npm@7` these scripts run in the background.
   To see the output, run with: `--foreground-scripts`.
@@ -213,6 +213,15 @@ If there is a `server.js` file in the root of your package, then npm will defaul
 * `preversion`
 * `version`
 * `postversion`
+#### A Note on Git Dependencies
+
+When installing a package through the git protocol (e.g., `npm install <git-url>`), the process differs from installing a published package from the registry. npm (via `pacote`) clones the repository and runs a local `npm install` inside the cloned directory to prepare the environment.
+
+This local installation will install **both `dependencies` and `devDependencies`**. This happens regardless of the scripts present, because npm needs the full dependency tree—including build tools defined in `devDependencies`—to successfully run the package's lifecycle scripts.
+
+After this full installation, npm triggers the `prepack` and `prepare` lifecycle scripts to build the package. Once the scripts complete, npm packs the built result into a tarball and installs it into your project's `node_modules` directory.
+
+
 
 #### A Note on a lack of [`npm uninstall`](/commands/npm-uninstall) scripts
 
