@@ -409,6 +409,23 @@ t.test('update notification - hidden with silent', async (t) => {
   t.equal(notificationShown, false)
 })
 
+t.test('update notification - logs verbose if onShown throws', async (t) => {
+  const { exitHandler, logs, npm } = await mockExitHandler(t, {
+    config: { loglevel: 'verbose' },
+  })
+  npm.updateNotification = {
+    message: 'you should update npm!',
+    onShown: () => {
+      throw new Error('could not write sentinel')
+    },
+  }
+
+  await exitHandler()
+
+  t.match(logs.notice, ['you should update npm!'])
+  t.match(logs.verbose.byTitle('update-notifier'), [/could not record notification timestamp/])
+})
+
 t.test('npm.config not ready', async (t) => {
   const { exitHandler, logs, errors } = await mockExitHandler(t, {
     load: false,
