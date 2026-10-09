@@ -23,6 +23,32 @@ t.test('npx foo -> npm exec -- foo', async t => {
   t.strictSame(argv, ['node', npm, 'exec', '--', 'foo'])
 })
 
+t.test('npx does not compute lazily typed definitions', async t => {
+  let reads = 0
+  const realDefs = require('@npmcli/config/lib/definitions')
+  mockGlobals(t, {
+    'process.argv': ['node', npx, '--lazy', 'x', '--yes', 'foo'],
+  })
+  tmock(t, '{BIN}/npx-cli.js', {
+    '{LIB}/cli.js': () => {},
+    '@npmcli/config/lib/definitions': {
+      ...realDefs,
+      definitions: {
+        ...realDefs.definitions,
+        lazy: Object.defineProperty({ key: 'lazy' }, 'type', {
+          enumerable: true,
+          get: () => {
+            reads++
+            return [null, 'x']
+          },
+        }),
+      },
+    },
+  })
+  t.strictSame(process.argv, ['node', npm, 'exec', '--lazy', 'x', '--yes', '--', 'foo'])
+  t.equal(reads, 0, 'the lazy type is not read')
+})
+
 t.test('npx -- foo -> npm exec -- foo', async t => {
   const { argv } = mockNpx(t, ['node', npx, '--', 'foo'])
   t.strictSame(argv, ['node', npm, 'exec', '--', 'foo'])

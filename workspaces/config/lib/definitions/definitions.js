@@ -63,14 +63,22 @@ const shell = isWindows ? process.env.ComSpec || 'cmd'
   : process.env.SHELL || 'sh'
 
 const { networkInterfaces } = require('node:os')
+// Listing the network interfaces can take several milliseconds, and the list
+// is only needed to validate a local-address value. So `type` below is a
+// getter, and the list is built on first use.
+let localAddresses
 const getLocalAddresses = () => {
+  if (localAddresses) {
+    return localAddresses
+  }
   try {
-    return Object.values(networkInterfaces()).map(
+    localAddresses = Object.values(networkInterfaces()).map(
       int => int.map(({ address }) => address)
     ).reduce((set, addrs) => set.concat(addrs), [null])
   } catch (e) {
-    return [null]
+    localAddresses = [null]
   }
+  return localAddresses
 }
 
 const unicode = /UTF-?8$/i.test(
@@ -1385,8 +1393,13 @@ const definitions = {
   }),
   'local-address': new Definition('local-address', {
     default: null,
-    type: getLocalAddresses(),
+    get type () {
+      return getLocalAddresses()
+    },
     typeDescription: 'IP Address',
+    // given here so that Definition does not derive them from `type`
+    hint: '<local-address>',
+    usage: '--local-address <local-address>',
     description: `
       The IP address of the local interface to use when making connections to
       the npm registry.  Must be IPv4 in versions of Node prior to 0.12.
