@@ -1,5 +1,18 @@
 # Changelog
 
+## [12.2.1](https://github.com/npm/cli/compare/v12.2.0...v12.2.1) (2026-10-09)
+### Bug Fixes
+* [`b317f16`](https://github.com/npm/cli/commit/b317f16c80df02ea3628cfa77170d5ae9b59720c) [#9941](https://github.com/npm/cli/pull/9941) write registry allowScripts keys under install-strategy=linked (#9941) (@manzoorwanijk)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.4): `@npmcli/arborist@10.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v9.0.4): `libnpmdiff@9.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v11.0.4): `libnpmexec@11.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v8.0.4): `libnpmfund@8.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v10.0.4): `libnpmpack@10.0.4`
+
 ## [12.2.0](https://github.com/npm/cli/compare/v12.1.0...v12.2.0) (2026-09-30)
 ### Features
 * [`9741b64`](https://github.com/npm/cli/commit/9741b645b011ae83c9dda66c9b0d5fe0dce9c766) [#10038](https://github.com/npm/cli/pull/10038) dist-tag: support OIDC authentication (#10038) (@reggi, @Copilot)
