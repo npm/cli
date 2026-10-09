@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+### Bug Fixes
+* Require matching canonical package identities when validating explicit npm aliases, so ordinary packages or different alias targets with the same installation name and version are not incorrectly deduplicated.
+
 ## [10.0.3](https://github.com/npm/cli/compare/arborist-v10.0.2...arborist-v10.0.3) (2026-09-21)
 ### Bug Fixes
 * [`d6c6122`](https://github.com/npm/cli/commit/d6c612258c571c71a00f496c1f8980ed13b8a4d9) [#9914](https://github.com/npm/cli/pull/9914) arborist: match allowScripts keys for local paths (#9914) (@martinrrm, @Copilot)

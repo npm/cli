@@ -140,6 +140,59 @@ t.test('basic', t => {
   t.end()
 })
 
+t.test('explicit aliases require the canonical package identity', t => {
+  for (const name of ['ms', '@scope/ms']) {
+    for (const target of ['is-odd', '@scope/is-odd']) {
+      for (const spec of ['2.0.0', '^2.0.0', '*', 'latest']) {
+        const child = {
+          name,
+          version: '2.0.0',
+          package: { name, version: '2.0.0' },
+          resolved: 'https://registry.npmjs.org/package.tgz',
+        }
+        t.ok(depValid(child, spec, null, emptyRequestor), 'ordinary identity matches')
+        t.notOk(depValid(child, `npm:${target}@${spec}`, null, emptyRequestor),
+          'an ordinary namesake cannot satisfy an alias')
+        child.package.name = target
+        t.ok(depValid(child, `npm:${target}@${spec}`, null, emptyRequestor),
+          'alias target identity matches')
+        t.ok(depValid(child, spec, null, emptyRequestor),
+          'ordinary specs retain existing alias remapping semantics')
+        t.notOk(depValid(child, 'npm:another-package@*', null, emptyRequestor),
+          'an alias cannot satisfy a different target')
+        t.notOk(depValid(child, `npm:${target}@3.0.0`, null, emptyRequestor),
+          'matching identity must still satisfy the requested version')
+      }
+    }
+  }
+  t.notOk(depValid({ name: 'ms', version: '2.0.0' },
+    'npm:is-odd@*', null, emptyRequestor),
+  'a missing canonical identity cannot satisfy an explicit alias')
+  t.end()
+})
+
+t.test('non-registry requests may use a different installation name', t => {
+  for (const spec of [
+    'file:/some/path',
+    'file:/some/package.tgz',
+    'https://example.com/package.tgz',
+    'git+https://example.com/package.git#abcdef',
+  ]) {
+    const requested = normalizePaths(npa.resolve('alias', spec))
+    const child = {
+      name: 'alias',
+      package: { name: 'canonical', version: '2.0.0' },
+      version: '2.0.0',
+      isLink: requested.type === 'directory',
+      realpath: requested.fetchSpec,
+      resolved: requested.type === 'file'
+        ? `file:${requested.fetchSpec}` : spec,
+    }
+    t.ok(depValid(child, requested, null, emptyRequestor), spec)
+  }
+  t.end()
+})
+
 t.test('unsupported dependency type', t => {
   const requestor = { errors: [], edgesOut: new Map() }
   const child = { name: 'kid' }
