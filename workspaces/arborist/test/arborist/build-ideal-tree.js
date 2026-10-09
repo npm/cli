@@ -5435,3 +5435,74 @@ t.test('incomplete manifest from proxy registry prunes optional dep (#9342)', as
   t.equal(aixNode.errors[0].code, 'EINCOMPLETEMANIFEST',
     'node has EINCOMPLETEMANIFEST error')
 })
+
+t.test('unresolvable dep that is also a peer target reports the load failure, not ERESOLVE', async t => {
+  const registry = createRegistry(t, false)
+
+  const reactManifest = registry.manifest({ name: 'react', versions: ['18.2.0'] })
+  await registry.package({ manifest: reactManifest, times: 3 })
+
+  const reactDomManifest = registry.manifest({
+    name: 'react-dom',
+    packuments: [{ version: '18.2.0', peerDependencies: { react: '^18.2.0' } }],
+  })
+  await registry.package({ manifest: reactDomManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { react: '^99.0.0', 'react-dom': '18.2.0' },
+    }),
+  })
+
+  await t.rejects(buildIdeal(path), { code: 'ETARGET' })
+})
+
+t.test('unresolvable dep already placed in a peer set reports the load failure, not ERESOLVE', async t => {
+  const registry = createRegistry(t, false)
+
+  const aManifest = registry.manifest({
+    name: 'a',
+    packuments: [{ version: '1.0.0', peerDependencies: { b: '^1.0.0', x: '^1.0.0' } }],
+  })
+  await registry.package({ manifest: aManifest })
+
+  const bManifest = registry.manifest({
+    name: 'b',
+    packuments: [{ version: '1.0.0', peerDependencies: { x: '^1.0.0' } }],
+  })
+  await registry.package({ manifest: bManifest })
+
+  const xManifest = registry.manifest({ name: 'x' })
+  await registry.package({ manifest: xManifest, times: 3 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { a: '1.0.0', x: '^99.0.0' },
+    }),
+  })
+
+  await t.rejects(buildIdeal(path), { code: 'ETARGET' })
+})
+
+t.test('unresolvable optional dep drops its optional peer dependent instead of ERESOLVE', async t => {
+  const registry = createRegistry(t, false)
+
+  const reactManifest = registry.manifest({ name: 'react', versions: ['18.2.0'] })
+  await registry.package({ manifest: reactManifest, times: 3 })
+
+  const reactDomManifest = registry.manifest({
+    name: 'react-dom',
+    packuments: [{ version: '18.2.0', peerDependencies: { react: '^18.2.0' } }],
+  })
+  await registry.package({ manifest: reactDomManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      optionalDependencies: { react: '^99.0.0', 'react-dom': '18.2.0' },
+    }),
+  })
+
+  const tree = await buildIdeal(path)
+  t.ok(tree.children.get('react').inert, 'failed react is inert')
+  t.ok(tree.children.get('react-dom').inert, 'react-dom is inert with its missing peer')
+})
