@@ -63,6 +63,7 @@ class CanPlaceDep {
       preferDedupe,
       parent = null,
       peerPath = [],
+      peerChecks = new Map(),
       explicitRequest = false,
       auditReport = null,
     } = options
@@ -99,6 +100,7 @@ class CanPlaceDep {
 
     // preventing cycles when we check peer sets
     this.peerPath = peerPath
+    this.peerChecks = peerChecks
     // we always prefer to dedupe peers, because they are trying
     // a bit harder to be singletons.
     this.preferDedupe = !!preferDedupe || edge.peer
@@ -387,12 +389,30 @@ class CanPlaceDep {
       // of that dep needs to be placed shallower, because the target has
       // a peer dep on the peer as well.
       const target = deepestNestingTarget(this.target, peer.name)
+      const deepestTarget = deepestNestingTarget(this.deepestNestingTarget, peer.name)
+      // Dense peer graphs can reach the same placement through many paths.
+      // Each edge only needs one check for a given pair of placement targets.
+      let targetChecks = this.peerChecks.get(peerEdge)
+      if (!targetChecks) {
+        targetChecks = new Map()
+        this.peerChecks.set(peerEdge, targetChecks)
+      }
+      let deepestChecks = targetChecks.get(target)
+      if (!deepestChecks) {
+        deepestChecks = new Set()
+        targetChecks.set(target, deepestChecks)
+      }
+      if (deepestChecks.has(deepestTarget)) {
+        continue
+      }
+      deepestChecks.add(deepestTarget)
       const cpp = new CanPlaceDep({
         dep: peer,
         target,
         parent: this,
         edge: peerEdge,
         peerPath,
+        peerChecks: this.peerChecks,
         auditReport: this.auditReport,
         // always place peers in preferDedupe mode
         preferDedupe: true,
