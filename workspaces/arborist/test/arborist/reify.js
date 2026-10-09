@@ -4971,3 +4971,306 @@ t.test('externalOptionalDependencies excludes inert optional node with installSt
 
   t.end()
 })
+
+// npm/cli#9135: a workspace whose name collides with one of its own
+// dependencies, plus a shared exact-pinned transitive dep, used to leave the
+// hoisted copy of the dep behind in the lockfile marked "extraneous" once a
+// closer placement shadowed it.
+const pkg9135 = (name, version, dependencies = {}) => JSON.stringify({
+  name,
+  version,
+  ...(Object.keys(dependencies).length ? { dependencies } : {}),
+})
+
+// Mocks every package the 9135 fixture needs. `times` on each packument must
+// match the number of distinct spec.raw strings Arborist resolves that name
+// through (the manifest cache is keyed by raw spec, so the exact pin and the
+// range for the same name each trigger their own packument GET). Tarballs are
+// only mocked for versions that actually get installed - strict mode fails on
+// both unmatched and never-consumed mocks.
+const mock9135Registry = async (t, dir, { pcTarballs = ['1.0.0'], zedTarballTimes = 1, lodaTarballs = ['1.0.0'], lodaTarballTimes = 1, mid = false } = {}) => {
+  const registry = createRegistry(t, false)
+  const tar = (name, version) => join(dir, 'src', name, version)
+  // registry package with the same name as the workspace (newman analog);
+  // exact-pins pc@1.0.0, which cannot hoist over the workspace's ~1.0.0 pick
+  const aPackuments = registry.packuments([
+    { version: '2.0.0', dependencies: { pc: '1.0.0' } },
+  ], 'a')
+  await registry.package({
+    manifest: registry.manifest({ name: 'a', packuments: aPackuments }),
+    times: 1,
+    tarballs: { '2.0.0': tar('a', '2.0.0') },
+  })
+  // exact-pins an old loda (postman-collection/lodash analog); resolved both
+  // through the workspace's ~1.0.0 edge and a@2.0.0's exact 1.0.0 pin
+  const pcPackuments = registry.packuments([
+    { version: '1.0.0', dependencies: { loda: '1.0.0', zed: '1.0.0' } },
+    { version: '1.0.1', dependencies: { loda: '1.0.0', zed: '1.0.0' } },
+  ], 'pc')
+  await registry.package({
+    manifest: registry.manifest({ name: 'pc', packuments: pcPackuments }),
+    times: 2,
+    tarballs: Object.fromEntries(pcTarballs.map(v => [v, tar('pc', v)])),
+  })
+  // newer version exists but the exact pin forces 1.0.0; resolved through the
+  // exact pin and simple's range
+  const lodaPackuments = registry.packuments(['1.0.0', '1.1.0'], 'loda')
+  const lodaManifest = registry.manifest({ name: 'loda', packuments: lodaPackuments })
+  await registry.package({
+    manifest: lodaManifest,
+    times: 2,
+    tarballs: Object.fromEntries(lodaTarballs.map(v => [v, tar('loda', v)])),
+  })
+  // when the workspace's pc@1.0.0 and the hoisted pc@1.0.1 each nest their own
+  // loda@1.0.0 (the root slot taken by the fresh 1.1.0), both nodes fetch it
+  for (let i = 1; i < lodaTarballTimes; i++) {
+    await registry.tarball({ manifest: lodaManifest.versions['1.0.0'], tarball: tar('loda', '1.0.0') })
+  }
+  // second prod consumer of loda through the same range, used to cover the
+  // keep-existing shortcut when the fresh resolution matches what is placed
+  if (mid) {
+    const midPackuments = registry.packuments([
+      { version: '1.0.0', dependencies: { loda: '^1.0.0' } },
+    ], 'mid')
+    await registry.package({
+      manifest: registry.manifest({ name: 'mid', packuments: midPackuments }),
+      times: 1,
+      tarballs: { '1.0.0': tar('mid', '1.0.0') },
+    })
+  }
+  // root wants ^2.0.0 while pc exact-pins 1.0.0, so zed@1.0.0 nests
+  const zedPackuments = registry.packuments(['1.0.0', '2.0.0'], 'zed')
+  const zedManifest = registry.manifest({ name: 'zed', packuments: zedPackuments })
+  await registry.package({
+    manifest: zedManifest,
+    times: 2,
+    tarballs: { '1.0.0': tar('zed', '1.0.0'), '2.0.0': tar('zed', '2.0.0') },
+  })
+  // when both the kept hoisted pc@1.0.1 and the workspace pc@1.0.0 nest their
+  // own zed@1.0.0, both nodes fetch the tarball
+  for (let i = 1; i < zedTarballTimes; i++) {
+    await registry.tarball({ manifest: zedManifest.versions['1.0.0'], tarball: tar('zed', '1.0.0') })
+  }
+  // prod consumer of loda through a range (simplebar analog)
+  const simplePackuments = registry.packuments([
+    { version: '1.0.0', dependencies: { loda: '^1.0.0' } },
+  ], 'simple')
+  await registry.package({
+    manifest: registry.manifest({ name: 'simple', packuments: simplePackuments }),
+    times: 1,
+    tarballs: { '1.0.0': tar('simple', '1.0.0') },
+  })
+  return registry
+}
+
+const fixture9135 = (t, rootDeps = {}, extraWorkspaces = {}) => t.testdir({
+  'package.json': JSON.stringify({
+    name: 'root',
+    version: '1.0.0',
+    private: true,
+    workspaces: ['ws-a', ...Object.keys(extraWorkspaces)],
+    dependencies: { simple: '^1.0.0', zed: '^2.0.0', ...rootDeps },
+  }),
+  'ws-a': {
+    'package.json': JSON.stringify({
+      name: 'a',
+      version: '1.0.0',
+      private: true,
+      devDependencies: { a: '~2.0.0', pc: '~1.0.0' },
+    }),
+  },
+  ...extraWorkspaces,
+  // tarball sources for the registry mocks
+  src: {
+    a: { '2.0.0': { 'package.json': pkg9135('a', '2.0.0', { pc: '1.0.0' }) } },
+    pc: {
+      '1.0.0': { 'package.json': pkg9135('pc', '1.0.0', { loda: '1.0.0', zed: '1.0.0' }) },
+      '1.0.1': { 'package.json': pkg9135('pc', '1.0.1', { loda: '1.0.0', zed: '1.0.0' }) },
+    },
+    loda: {
+      '1.0.0': { 'package.json': pkg9135('loda', '1.0.0') },
+      '1.1.0': { 'package.json': pkg9135('loda', '1.1.0') },
+    },
+    zed: {
+      '1.0.0': { 'package.json': pkg9135('zed', '1.0.0') },
+      '2.0.0': { 'package.json': pkg9135('zed', '2.0.0') },
+    },
+    simple: { '1.0.0': { 'package.json': pkg9135('simple', '1.0.0', { loda: '^1.0.0' }) } },
+    mid: { '1.0.0': { 'package.json': pkg9135('mid', '1.0.0', { loda: '^1.0.0' }) } },
+  },
+})
+
+const assertHealthyTree = (t, tree, msg = '') => {
+  const extraneous = [...tree.inventory.values()]
+    .filter(n => n.extraneous)
+    .map(n => n.location)
+  t.same(extraneous, [], `no extraneous nodes ${msg}`.trim())
+  const invalid = []
+  for (const node of tree.inventory.values()) {
+    for (const edge of node.edgesOut.values()) {
+      if (edge.error) {
+        invalid.push(`${node.location || '.'} -> ${edge.name}: ${edge.error}`)
+      }
+    }
+  }
+  t.same(invalid, [], `no invalid edges ${msg}`.trim())
+}
+
+t.test('workspace named like its own dependency', async t => {
+  await t.test('does not leave the shadowed hoisted dep extraneous', async t => {
+    const path = fixture9135(t)
+    await mock9135Registry(t, path, { lodaTarballs: ['1.0.0', '1.1.0'] })
+    const tree = await reify(path, {})
+
+    assertHealthyTree(t, tree, 'after first reify')
+
+    // the workspace link survived the placement of registry a@2.0.0
+    const wsLink = tree.children.get('a')
+    t.ok(wsLink && wsLink.isWorkspace, 'workspace link is still in place')
+    t.equal(wsLink.target.children.get('a').version, '2.0.0',
+      'registry a@2.0.0 nested in the workspace')
+    t.equal(wsLink.target.children.get('pc').version, '1.0.0',
+      'pc@1.0.0 (exact pin) nested in the workspace')
+
+    // the hoisted pc@1.0.1 was shadowed by the closer pc@1.0.0 placement and
+    // must have been pruned along with its exclusively-owned nested zed@1.0.0
+    t.notOk(tree.children.get('pc'), 'shadowed hoisted pc was pruned from the root')
+    t.notOk([...tree.inventory.values()].some(n => n.name === 'pc' && n.version === '1.0.1'),
+      'no pc@1.0.1 left anywhere in the tree')
+    t.equal(tree.children.get('zed') && tree.children.get('zed').version, '2.0.0',
+      'root zed is the max-satisfying 2.0.0, not the nested 1.0.0')
+    t.ok([...tree.inventory.values()].some(n => n.name === 'loda'),
+      'loda is still installed for its consumers')
+
+    // reifying again from the written state changes nothing
+    const tree2 = await reify(path, {})
+    assertHealthyTree(t, tree2, 'after second reify')
+    t.same(printTree(tree2), printTree(tree), 'second reify is a no-op')
+  })
+
+  await t.test('keeps the hoisted dep when the root still depends on it', async t => {
+    // the root's own pc edge keeps the hoisted pc@1.0.1 alive even after the
+    // workspace's a@2.0.0 exact pin places a closer pc@1.0.0 - the prune must
+    // be a no-op while any valid edgesIn remain
+    const path = fixture9135(t, { pc: '~1.0.0' })
+    await mock9135Registry(t, path, { pcTarballs: ['1.0.0', '1.0.1'], zedTarballTimes: 2, lodaTarballs: ['1.0.0'] })
+    const tree = await reify(path, {})
+
+    assertHealthyTree(t, tree, 'with root pc dep')
+
+    const rootPc = tree.children.get('pc')
+    t.ok(rootPc, 'root pc was not pruned')
+    t.equal(rootPc.version, '1.0.1', 'root pc is the newest ~1.0.0')
+    t.equal(rootPc.edgesIn.size >= 1, true, 'root pc still has edges in')
+    t.equal(rootPc.extraneous, false, 'root pc is not extraneous')
+  })
+
+  await t.test('a second workspace depending on the hoisted dep keeps it alive', async t => {
+    // ws-a drives the #9135 scenario (registry a@2.0.0 exact-pins pc@1.0.0,
+    // shadowing the hoisted root pc@1.0.1).  ws-b's own pc edge still resolves
+    // to the hoisted root copy, so the shadow walk finds it but the prune
+    // must be a no-op - a dependent outside the shadowed node's own workspace
+    // is enough to keep it.
+    const path = fixture9135(t, {}, {
+      'ws-b': {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          private: true,
+          devDependencies: { pc: '~1.0.0' },
+        }),
+      },
+    })
+    await mock9135Registry(t, path, { pcTarballs: ['1.0.0', '1.0.1'], zedTarballTimes: 2, lodaTarballs: ['1.0.0', '1.1.0'], lodaTarballTimes: 2 })
+    const tree = await reify(path, {})
+
+    assertHealthyTree(t, tree, 'with two workspaces')
+
+    const rootPc = tree.children.get('pc')
+    t.ok(rootPc, 'root pc was not pruned')
+    t.equal(rootPc.version, '1.0.1', 'root pc is the newest ~1.0.0')
+    t.equal(rootPc.edgesIn.size, 1, 'only ws-b depends on the hoisted root pc')
+    t.equal(rootPc.extraneous, false, 'root pc is not extraneous')
+
+    const wsA = tree.children.get('a').target
+    t.equal(wsA.children.get('a').version, '2.0.0',
+      'registry a@2.0.0 nested in ws-a')
+    t.equal(wsA.children.get('pc').version, '1.0.0',
+      'pc@1.0.0 (exact pin) nested in ws-a')
+    t.equal(tree.children.get('b').isWorkspace, true, 'ws-b link is in place')
+  })
+
+  await t.test('resolves the prod range fresh instead of deduping onto a stale exact pin', async t => {
+    // npm/cli#10067: the workspace's exact-pin chain (a@2.0.0 -> pc@1.0.0 ->
+    // loda@1.0.0) used to be processed before the project tree's prod range
+    // (simple -> loda ^1.0.0), letting the stale pinned copy claim the root
+    // slot and lock the prod edge into it - fixing itself only on a second
+    // install.  Workspace deps are now resolved last, so the prod range
+    // resolves fresh and wins the root slot.
+    const path = fixture9135(t)
+    await mock9135Registry(t, path, { lodaTarballs: ['1.0.0', '1.1.0'] })
+    const tree = await reify(path, {})
+
+    assertHealthyTree(t, tree)
+
+    const rootLoda = tree.children.get('loda')
+    t.ok(rootLoda, 'root loda is the fresh prod resolution')
+    t.equal(rootLoda.version, '1.1.0', 'the prod range resolved fresh to the newest version')
+    t.equal(rootLoda.dev, false, 'root loda is claimed by a prod edge')
+
+    const wsA = tree.children.get('a').target
+    t.equal(wsA.children.get('loda').version, '1.0.0',
+      'the exact-pinned loda@1.0.0 nested in the workspace for the dev chain')
+
+    // reifying again from the written state changes nothing
+    const tree2 = await reify(path, {})
+    assertHealthyTree(t, tree2, 'after second reify')
+    t.same(printTree(tree2), printTree(tree), 'second reify is a no-op')
+  })
+
+  await t.test('keeps the existing node when the fresh range resolution matches it', async t => {
+    // mid's loda range re-resolves fresh like every prod range on a
+    // lockfile-less build, but the root loda@1.1.0 placed for the first
+    // consumer already satisfies it - no duplicate is placed
+    const path = fixture9135(t, { mid: '^1.0.0' })
+    await mock9135Registry(t, path, { lodaTarballs: ['1.0.0', '1.1.0'], mid: true })
+    const tree = await reify(path, {})
+
+    assertHealthyTree(t, tree)
+
+    t.equal(tree.children.get('loda').version, '1.1.0',
+      'root loda is the fresh 1.1.0 resolution')
+    t.notOk(tree.children.get('mid').children.get('loda'),
+      'mid dedupes onto the identical fresh root loda')
+    t.notOk(tree.children.get('simple').children.get('loda'),
+      'simple dedupes onto the identical fresh root loda too')
+
+    const tree2 = await reify(path, {})
+    t.same(printTree(tree2), printTree(tree), 'second reify is a no-op')
+  })
+
+  await t.test('workspace link satisfies a wildcard edge on its own name', async t => {
+    // no registry mocks: the workspace link satisfies the edge, nothing is fetched
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        private: true,
+        workspaces: ['ws-a'],
+        dependencies: { a: '*' },
+      }),
+      'ws-a': {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+          private: true,
+        }),
+      },
+    })
+    const tree = await reify(path, {})
+    const link = tree.children.get('a')
+    t.ok(link && link.isWorkspace, 'edge resolved to the workspace link')
+    t.equal(link.target.version, '1.0.0', 'workspace link target is intact')
+    assertHealthyTree(t, tree, 'with wildcard workspace dep')
+  })
+})
