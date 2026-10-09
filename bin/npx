@@ -3,6 +3,25 @@
 # This is used by the Node.js installer, which expects the cygwin/mingw
 # shell script to already be present in the npm dependency folder.
 
+# Git Bash (msys) and Cygwin: start node once. npm-shim.js picks this npm or
+# the one in the global prefix in the same node process, and msys converts the
+# script path for node.exe, so this needs no subshells (Cygwin: one cygpath).
+case "$OSTYPE" in
+  msys*|cygwin*)
+    set -o igncr 2>/dev/null # cygwin encoding fix
+    basedir=${0%/*}
+    [ "$basedir" = "$0" ] && basedir=.
+    case "$OSTYPE" in cygwin*) basedir=$(cygpath -w "$basedir");; esac
+    NODE_EXE="$basedir/node.exe"
+    [ -x "$NODE_EXE" ] || NODE_EXE="$basedir/node"
+    [ -x "$NODE_EXE" ] || NODE_EXE=node
+    "$NODE_EXE" "$basedir/node_modules/npm/bin/npm-shim.js" npx "$@"
+    exit $?
+    ;;
+esac
+
+# Everything else, e.g. WSL running the Windows install: find the prefix first.
+
 (set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
 
 basedir=`dirname "$0"`
