@@ -23,6 +23,10 @@ const run = async ({
       // literally; double quotes still expand $(), backticks, $var and "
       args[0] = `'${args[0].replace(/'/g, `'\\''`)}'`
     }
+  } else if (args.length > 0) {
+    // cmd.exe: double-quote so & | < > ^ are taken literally; %VAR% still
+    // expands inside quotes, so double %; "" is cmd's quoted literal for ".
+    args[0] = `"${args[0].replace(/%/g, '%%').replace(/"/g, '""')}"`
   }
 
   // turn list of args into command string
