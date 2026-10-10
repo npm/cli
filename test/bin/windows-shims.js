@@ -58,6 +58,10 @@ t.test('shim contents', t => {
     const { diff, letters } = diffFiles(SHIMS['npm.ps1'], SHIMS['npx.ps1'])
     t.strictSame(diff, [])
     t.strictSame([...letters], ['M', 'X'], 'all other changes are m->x')
+    t.notMatch(SHIMS['npm.ps1'], /Invoke-Expression/, 'does not evaluate commands')
+    t.notMatch(SHIMS['npx.ps1'], /Invoke-Expression/, 'does not evaluate commands')
+    t.match(SHIMS['npm.ps1'], /ProcessStartInfo/, 'starts node without reparsing the command')
+    t.match(SHIMS['npx.ps1'], /ProcessStartInfo/, 'starts node without reparsing the command')
     t.end()
   })
 })
@@ -78,43 +82,45 @@ t.test('node-gyp', t => {
 })
 
 t.test('run shims', t => {
-  const path = t.testdir({
-    ...SHIMS,
-    'node.exe': readFileSync(process.execPath),
-    // simulate the state where one version of npm is installed
-    // with node, but we should load the globally installed one
-    'global-prefix': {
+  const path = join(t.testdir({
+    "$(throw 'shim path evaluated')": {
+      ...SHIMS,
+      'node.exe': readFileSync(process.execPath),
+      // simulate the state where one version of npm is installed
+      // with node, but we should load the globally installed one
+      'global-prefix': {
+        node_modules: {
+          npm: t.fixture('symlink', ROOT),
+        },
+      },
+      // put in a shim that ONLY prints the intended global prefix,
+      // and should not be used for anything else.
       node_modules: {
-        npm: t.fixture('symlink', ROOT),
-      },
-    },
-    // put in a shim that ONLY prints the intended global prefix,
-    // and should not be used for anything else.
-    node_modules: {
-      npm: {
-        bin: {
-          'npm-prefix.js': `
-            const { resolve } = require('path')
-            console.log(resolve(__dirname, '../../../global-prefix'))
-          `,
-          'npx-cli.js': `throw new Error('local npx should not be called')`,
-          'npm-cli.js': `throw new Error('local npm should not be called')`,
+        npm: {
+          bin: {
+            'npm-prefix.js': `
+              const { resolve } = require('path')
+              console.log(resolve(__dirname, '../../../global-prefix'))
+            `,
+            'npx-cli.js': `throw new Error('local npx should not be called')`,
+            'npm-cli.js': `throw new Error('local npm should not be called')`,
+          },
         },
       },
+      // test script returning all command line arguments
+      [SCRIPT_NAME]: `#!/usr/bin/env node\n\nprocess.argv.slice(2).forEach((arg) => console.log(arg))`,
+      // package.json for the test script
+      'package.json': `
+        {
+          "name": "${PACKAGE_NAME}",
+          "version": "${PACKAGE_VERSION}",
+          "scripts": {
+            "test": "node ${SCRIPT_NAME}"
+          },
+          "bin": "${SCRIPT_NAME}"
+        }`,
     },
-    // test script returning all command line arguments
-    [SCRIPT_NAME]: `#!/usr/bin/env node\n\nprocess.argv.slice(2).forEach((arg) => console.log(arg))`,
-    // package.json for the test script
-    'package.json': `
-      {
-        "name": "${PACKAGE_NAME}",
-        "version": "${PACKAGE_VERSION}",
-        "scripts": {
-          "test": "node ${SCRIPT_NAME}"
-        },
-        "bin": "${SCRIPT_NAME}"
-      }`,
-  })
+  }), "$(throw 'shim path evaluated')")
 
   // The removal of this fixture causes this test to fail when done with
   // the default tap removal. Using rimraf's `moveRemove` seems to make this
