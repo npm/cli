@@ -138,6 +138,220 @@ t.test('a workspace with a conflicted nested duplicated dep', async t => {
   t.matchSnapshot(await printIdeal(resolve(fixtures, 'workspace4')))
 })
 
+t.test('named updates respect workspace dependency graphs', async t => {
+  const cases = [
+    ['one workspace', { workspaces: ['a'] }, ['3.0.0', '1.1.0', '2.0.0', '4.1.0']],
+    ['including root', { workspaces: ['a'], includeWorkspaceRoot: true }, ['3.1.0', '1.1.0', '2.0.0', '4.1.0']],
+    ['all workspaces', { workspaces: ['a', 'b'] }, ['3.0.0', '1.1.0', '2.1.0', '4.1.0']],
+    ['workspaces disabled', { workspacesEnabled: false }, ['3.1.0', '1.0.0', '2.0.0', '4.0.0']],
+    ['unfiltered', {}, ['3.1.0', '1.1.0', '2.1.0', '4.1.0']],
+    ['replaced parent', { workspaces: ['a'], update: ['leaf', 'bridge'] }, ['3.0.0', '1.1.0', '2.0.0', '4.1.0']],
+    ['repair invalid root', { workspaces: ['a'] }, ['3.1.0', '1.1.0', '2.0.0', '4.1.0'], '^3.1.0'],
+  ]
+
+  for (const [name, options, expected, rootRange = '^3.0.0'] of cases) {
+    await t.test(name, async t => {
+      const registry = createRegistry(t)
+      registry.nock.persist()
+      const packuments = registry.packuments([
+        '1.0.0', '1.1.0', '2.0.0', '2.1.0', '3.0.0', '3.1.0', '4.0.0', '4.1.0',
+      ], 'leaf')
+      const manifest = registry.manifest({ name: 'leaf', packuments })
+      await registry.package({ manifest })
+      if (options.update) {
+        const bridgeVersions = registry.packuments([
+          { version: '1.0.0', dependencies: { leaf: '^4.0.0' } },
+          { version: '1.1.0', dependencies: { leaf: '^4.0.0' } },
+        ], 'bridge')
+        await registry.package({ manifest: registry.manifest({ name: 'bridge', packuments: bridgeVersions }) })
+      }
+
+      const root = { name: 'root', workspaces: ['a', 'b'], dependencies: { leaf: rootRange } }
+      const a = { name: 'a', version: '1.0.0', dependencies: { leaf: '^1.0.0', bridge: '^1.0.0' } }
+      const b = { name: 'b', version: '1.0.0', dependencies: { leaf: '^2.0.0' } }
+      const lockedLeaf = version => ({ version, resolved: manifest.versions[version].dist.tarball })
+      const path = t.testdir({
+        'package.json': JSON.stringify(root),
+        a: { 'package.json': JSON.stringify(a) },
+        b: { 'package.json': JSON.stringify(b) },
+        'package-lock.json': JSON.stringify({
+          lockfileVersion: 3,
+          packages: {
+            '': root,
+            a,
+            b,
+            'node_modules/a': { link: true, resolved: 'a' },
+            'node_modules/b': { link: true, resolved: 'b' },
+            'node_modules/leaf': lockedLeaf('3.0.0'),
+            'a/node_modules/leaf': lockedLeaf('1.0.0'),
+            'b/node_modules/leaf': lockedLeaf('2.0.0'),
+            'node_modules/bridge': {
+              version: '1.0.0',
+              dependencies: { leaf: '^4.0.0' },
+            },
+            'node_modules/bridge/node_modules/leaf': lockedLeaf('4.0.0'),
+          },
+        }),
+      })
+      const tree = await buildIdeal(path, { update: ['leaf'], ...options })
+      const workspaceA = tree.edgesOut.get('a').to.target
+      const workspaceB = tree.edgesOut.get('b').to.target
+      const bridge = workspaceA.edgesOut.get('bridge').to
+      t.same([
+        tree.edgesOut.get('leaf').to.version,
+        workspaceA.edgesOut.get('leaf').to.version,
+        workspaceB.edgesOut.get('leaf').to.version,
+        bridge.edgesOut.get('leaf').to.version,
+      ], expected, 'updates only the requested dependency graph, including transitive dependencies')
+      if (options.update) {
+        t.equal(bridge.version, '1.1.0', 'the replacement remains in the selected update graph')
+      }
+    })
+  }
+})
+
+t.test('named updates reach existing dependencies adopted by a replacement', async t => {
+  for (const linked of [false, true]) {
+    await t.test(linked ? 'local link with a cycle' : 'registry dependency with a cycle', async t => {
+      const registry = createRegistry(t)
+      registry.nock.persist()
+      const leafVersions = registry.packuments(['1.0.0', '1.1.0', '2.0.0', '2.1.0'], 'leaf')
+      const leafManifest = registry.manifest({ name: 'leaf', packuments: leafVersions })
+      await registry.package({ manifest: leafManifest })
+      const parentVersions = registry.packuments([
+        { version: '1.0.0', dependencies: { leaf: '^1.0.0' } },
+        { version: '1.1.0', dependencies: { bridge: '1.0.0' } },
+      ], 'parent')
+      await registry.package({ manifest: registry.manifest({ name: 'parent', packuments: parentVersions }) })
+      const root = { name: 'root', workspaces: ['a'], dependencies: { bridge: linked ? 'file:bridge' : '1.0.0' } }
+      const a = { name: 'a', version: '1.0.0', dependencies: { parent: '^1.0.0' } }
+      const bridge = {
+        name: 'bridge',
+        version: '1.0.0',
+        dependencies: { leaf: '^2.0.0', cycle: '1.0.0' },
+        peerDependencies: { 'absent-peer': '*' },
+        peerDependenciesMeta: { 'absent-peer': { optional: true } },
+      }
+      const lockedLeaf = version => ({ version, resolved: leafManifest.versions[version].dist.tarball })
+      const path = t.testdir({
+        'package.json': JSON.stringify(root),
+        a: { 'package.json': JSON.stringify(a) },
+        ...(linked ? { bridge: { 'package.json': JSON.stringify(bridge) } } : {}),
+        'package-lock.json': JSON.stringify({
+          lockfileVersion: 3,
+          packages: {
+            '': root,
+            a,
+            'node_modules/a': { link: true, resolved: 'a' },
+            'node_modules/parent': { version: '1.0.0', dependencies: { leaf: '^1.0.0' } },
+            'node_modules/parent/node_modules/leaf': lockedLeaf('1.0.0'),
+            'node_modules/bridge': linked ? { link: true, resolved: 'bridge' } : bridge,
+            ...(linked ? { bridge } : {}),
+            'node_modules/cycle': { version: '1.0.0', dependencies: { bridge: '1.0.0' } },
+            'node_modules/leaf': lockedLeaf('2.0.0'),
+          },
+        }),
+      })
+      const tree = await buildIdeal(path, { update: ['parent', 'leaf'], workspaces: ['a'] })
+      const parent = tree.edgesOut.get('a').to.target.edgesOut.get('parent').to
+      const adopted = parent.edgesOut.get('bridge').to.target
+      t.equal(parent.version, '1.1.0')
+      t.equal(adopted.edgesOut.get('leaf').to.version, '2.1.0',
+        'updates a named transitive dependency reached through a reused parent')
+      t.equal(adopted.edgesOut.get('cycle').to.edgesOut.get('bridge').to.target, adopted,
+        'preserves the dependency cycle')
+      t.equal(adopted.edgesOut.get('absent-peer').to, null, 'does not install an absent optional peer')
+    })
+  }
+})
+
+t.test('named root updates stop at disabled workspaces in an adopted graph', async t => {
+  const registry = createRegistry(t)
+  registry.nock.persist()
+  const leafVersions = registry.packuments(['1.0.0', '1.1.0', '2.0.0', '2.1.0', '3.0.0', '3.1.0'], 'leaf')
+  const leafManifest = registry.manifest({ name: 'leaf', packuments: leafVersions })
+  await registry.package({ manifest: leafManifest })
+  const parentVersions = registry.packuments([
+    { version: '1.0.0', dependencies: { leaf: '^1.0.0' } },
+    { version: '1.1.0', dependencies: { bridge: '1.0.0' } },
+  ], 'parent')
+  await registry.package({ manifest: registry.manifest({ name: 'parent', packuments: parentVersions }) })
+  const root = { name: 'root', workspaces: ['a'], dependencies: { parent: '^1.0.0' } }
+  const a = { name: 'a', version: '1.0.0', dependencies: { bridge: '1.0.0', leaf: '^3.0.0' } }
+  const lockedLeaf = version => ({ version, resolved: leafManifest.versions[version].dist.tarball })
+  const path = t.testdir({
+    'package.json': JSON.stringify(root),
+    a: { 'package.json': JSON.stringify(a) },
+    'package-lock.json': JSON.stringify({
+      lockfileVersion: 3,
+      packages: {
+        '': root,
+        a,
+        'node_modules/a': { link: true, resolved: 'a' },
+        'node_modules/parent': { version: '1.0.0', dependencies: { leaf: '^1.0.0' } },
+        'node_modules/parent/node_modules/leaf': lockedLeaf('1.0.0'),
+        'node_modules/bridge': { version: '1.0.0', dependencies: { leaf: '^2.0.0', a: '1.0.0' } },
+        'node_modules/leaf': lockedLeaf('2.0.0'),
+        'a/node_modules/leaf': lockedLeaf('3.0.0'),
+      },
+    }),
+  })
+  const tree = await buildIdeal(path, { update: ['parent', 'leaf'], workspacesEnabled: false })
+  const parent = tree.edgesOut.get('parent').to
+  const bridge = parent.edgesOut.get('bridge').to
+  t.equal(parent.version, '1.1.0')
+  t.equal(bridge.edgesOut.get('leaf').to.version, '2.1.0', 'updates the newly adopted root dependency')
+  t.equal(bridge.edgesOut.get('a').to.target.edgesOut.get('leaf').to.version, '3.0.0',
+    'does not eagerly update the disabled workspace even when reachable through the adopted graph')
+})
+
+t.test('named updates follow local link targets', async t => {
+  for (const add of [false, true]) {
+    await t.test(add ? 'new workspace link' : 'root link with workspaces disabled', async t => {
+      const registry = createRegistry(t)
+      registry.nock.persist()
+      const packuments = registry.packuments(['1.0.0', '1.1.0', '2.0.0', '2.1.0'], 'leaf')
+      const manifest = registry.manifest({ name: 'leaf', packuments })
+      await registry.package({ manifest })
+      const root = { name: 'root', workspaces: ['a', 'b'], dependencies: { 'local-parent': 'file:local-parent' } }
+      const a = { name: 'a', version: '1.0.0' }
+      const b = { name: 'b', version: '1.0.0', dependencies: { leaf: '^2.0.0' } }
+      const local = { name: 'local-parent', version: '1.0.0', dependencies: { leaf: '^1.0.0' } }
+      const lockedLeaf = version => ({ version, resolved: manifest.versions[version].dist.tarball })
+      const path = t.testdir({
+        'package.json': JSON.stringify(root),
+        a: { 'package.json': JSON.stringify(a) },
+        b: { 'package.json': JSON.stringify(b) },
+        'local-parent': { 'package.json': JSON.stringify(local) },
+        'package-lock.json': JSON.stringify({
+          lockfileVersion: 3,
+          packages: {
+            '': root,
+            a,
+            b,
+            'local-parent': local,
+            'node_modules/a': { link: true, resolved: 'a' },
+            'node_modules/b': { link: true, resolved: 'b' },
+            'node_modules/local-parent': { link: true, resolved: 'local-parent' },
+            'node_modules/leaf': lockedLeaf('1.0.0'),
+            'b/node_modules/leaf': lockedLeaf('2.0.0'),
+          },
+        }),
+      })
+      const options = add
+        ? { workspaces: ['a'], add: [`selected-local@file:${resolve(path, 'local-parent')}`] }
+        : { workspacesEnabled: false }
+      const tree = await buildIdeal(path, { update: ['leaf'], ...options })
+      const parent = add
+        ? tree.edgesOut.get('a').to.target.edgesOut.get('selected-local').to.target
+        : tree.edgesOut.get('local-parent').to.target
+      t.equal(parent.edgesOut.get('leaf').to.version, '1.1.0', 'updates the linked transitive dependency')
+      t.equal(tree.edgesOut.get('b').to.target.edgesOut.get('leaf').to.version, '2.0.0',
+        'keeps the independent unselected workspace locked')
+    })
+  }
+})
+
 t.test('a tree with an outdated dep, missing dep, no lockfile', async t => {
   const path = resolve(fixtures, 'outdated-no-lockfile')
   createRegistry(t, true)
