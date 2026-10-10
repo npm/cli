@@ -1075,6 +1075,54 @@ t.test('bin paths', t => {
   t.end()
 })
 
+t.test('bin paths normalize traversal-bearing names', t => {
+  const bin = {
+    '../../../sentinel': 'bin/traversal.js',
+    '/tmp/absolute': 'bin/absolute.js',
+    '..\\..\\windows': 'bin/windows.js',
+    'C:\\outside\\drive': 'bin/drive.js',
+    invalid: 123,
+  }
+  const root = new Node({
+    path: '/a/b/c',
+    children: [
+      { pkg: { name: 'evil', bin } },
+    ],
+  })
+  const { resolve: r } = require('node:path')
+
+  t.strictSame(root.children.get('evil').binPaths, [
+    r('/a/b/c/node_modules/.bin/sentinel'),
+    ...(process.platform !== 'win32' ? [] : [
+      r('/a/b/c/node_modules/.bin/sentinel.cmd'),
+      r('/a/b/c/node_modules/.bin/sentinel.ps1'),
+    ]),
+    r('/a/b/c/node_modules/.bin/absolute'),
+    ...(process.platform !== 'win32' ? [] : [
+      r('/a/b/c/node_modules/.bin/absolute.cmd'),
+      r('/a/b/c/node_modules/.bin/absolute.ps1'),
+    ]),
+    r('/a/b/c/node_modules/.bin/windows'),
+    ...(process.platform !== 'win32' ? [] : [
+      r('/a/b/c/node_modules/.bin/windows.cmd'),
+      r('/a/b/c/node_modules/.bin/windows.ps1'),
+    ]),
+    r('/a/b/c/node_modules/.bin/drive'),
+    ...(process.platform !== 'win32' ? [] : [
+      r('/a/b/c/node_modules/.bin/drive.cmd'),
+      r('/a/b/c/node_modules/.bin/drive.ps1'),
+    ]),
+  ])
+  t.strictSame(bin, {
+    '../../../sentinel': 'bin/traversal.js',
+    '/tmp/absolute': 'bin/absolute.js',
+    '..\\..\\windows': 'bin/windows.js',
+    'C:\\outside\\drive': 'bin/drive.js',
+    invalid: 123,
+  }, 'does not mutate package metadata')
+  t.end()
+})
+
 t.test('binPaths, but global', t => {
   const root = new Node({
     global: true,
