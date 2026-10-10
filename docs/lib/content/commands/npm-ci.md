@@ -21,6 +21,9 @@ The main differences between using `npm install` and `npm ci` are:
 * If a `node_modules` is already present, it will be automatically removed before `npm ci` begins its install.
 * It will never write to `package.json` or `package-lock.json`:
   installs are essentially frozen.
+* `--before` and `--min-release-age` do not affect `npm ci`, which installs
+  the versions recorded in the lockfile without resolving versions or checking
+  release dates.
 
 NOTE: If you create your `package-lock.json` file by running `npm install` with flags that can affect the shape of your dependency tree, such as
 `--legacy-peer-deps` or `--install-links`, you _must_ provide the same flags to `npm ci` or you are likely to encounter errors.
