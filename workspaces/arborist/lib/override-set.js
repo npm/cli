@@ -183,7 +183,7 @@ class OverrideSet {
     return ruleset
   }
 
-  static findSpecificOverrideSet (first, second) {
+  static findSpecificOverrideSet (first, second, node) {
     for (let overrideSet = second; overrideSet; overrideSet = overrideSet.parent) {
       if (overrideSet.isEqual(first)) {
         return second
@@ -196,7 +196,7 @@ class OverrideSet {
     }
 
     // The override sets are incomparable (e.g. siblings like the "react" and "react-dom" children of the root override set). Check if they have semantically conflicting rules before treating this as an error.
-    if (this.haveConflictingRules(first, second)) {
+    if (this.haveConflictingRules(first, second, node)) {
       log.silly('Conflicting override sets', first, second)
       return undefined
     }
@@ -220,10 +220,10 @@ class OverrideSet {
     return null
   }
 
-  static doOverrideSetsConflict (first, second) {
+  static doOverrideSetsConflict (first, second, node) {
     // If override sets contain one another then we can try to use the more specific one.
     // If neither one is more specific, check for semantic conflicts.
-    const specificSet = this.findSpecificOverrideSet(first, second)
+    const specificSet = this.findSpecificOverrideSet(first, second, node)
     if (specificSet !== undefined) {
       // One contains the other, so no conflict
       return false
@@ -232,16 +232,57 @@ class OverrideSet {
     // The override sets are structurally incomparable, but this doesn't necessarily
     // mean they conflict. We need to check if they have conflicting version requirements
     // for any package that appears in both rulesets.
-    return this.haveConflictingRules(first, second)
+    return this.haveConflictingRules(first, second, node)
   }
 
-  static haveConflictingRules (first, second) {
+  static relevantRuleNames (node) {
+    if (!node) {
+      return null
+    }
+
+    const names = new Set()
+    const seen = new Set()
+    const queue = [node]
+
+    while (queue.length) {
+      const current = queue.shift()
+      if (!current || seen.has(current)) {
+        continue
+      }
+      seen.add(current)
+
+      if (current.name) {
+        names.add(current.name)
+      }
+      if (current.packageName) {
+        names.add(current.packageName)
+      }
+
+      for (const edge of current.edgesOut?.values() || []) {
+        if (edge.name) {
+          names.add(edge.name)
+        }
+        if (edge.to) {
+          queue.push(edge.to)
+        }
+      }
+    }
+
+    return names
+  }
+
+  static haveConflictingRules (first, second, node) {
     // Get all rules from both override sets
     const firstRules = first.ruleset
     const secondRules = second.ruleset
+    const relevantNames = this.relevantRuleNames(node)
 
     // Check each package that appears in both rulesets
     for (const [key, firstRule] of firstRules) {
+      if (relevantNames && !relevantNames.has(firstRule.name)) {
+        continue
+      }
+
       const secondRule = secondRules.get(key)
       if (!secondRule) {
         // Package only appears in one ruleset, no conflict
