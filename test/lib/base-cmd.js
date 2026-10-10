@@ -263,6 +263,35 @@ t.test('getUsage() with both params and definitions', async t => {
   t.ok(usage.includes('--river'), 'includes river flag')
 })
 
+t.test('getUsage() with multi-line wrapped flag descriptions', async t => {
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command description'
+    static params = ['mountain']
+
+    static definitions = [
+      new Definition('mountain', {
+        type: String,
+        default: 'everest',
+        description: `
+          If you ask for a mountain and do not specify height,
+          then the default mountain will be returned.
+
+          See mountain guide for more information.
+        `,
+        usage: '--mountain=<mountain>',
+      }),
+    ]
+  }
+
+  const usage = TestCommand.describeUsage
+
+  t.ok(
+    usage.includes('If you ask for a mountain and do not specify height, then the default mountain will be returned.'),
+    'includes full joined first paragraph of description without truncation'
+  )
+})
+
 t.test('getUsage() with subcommand without description', async t => {
   class SubCommandWithDesc extends BaseCommand {
     static name = 'with-desc'
