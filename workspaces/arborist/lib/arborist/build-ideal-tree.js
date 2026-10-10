@@ -4,6 +4,10 @@ const PackageJson = require('@npmcli/package-json')
 const npa = require('npm-package-arg')
 const pacote = require('pacote')
 const cacache = require('cacache')
+const {
+  isRegistryResolvedTarball,
+  registryResolved,
+} = require('../registry-resolved.js')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const realpath = require('../../lib/realpath.js')
 const { resolve, dirname, sep } = require('node:path')
@@ -1039,11 +1043,15 @@ This is a one-time fix-up, please be patient...
       const Arborist = this.constructor
       const opt = { ...this.options }
       await cacache.tmp.withTmp(this.cache, opt, async path => {
-        await pacote.extract(node.resolved, path, {
+        const isRegistry = isRegistryResolvedTarball(node, this.options)
+        const resolved = registryResolved(node.resolved, this.options)
+
+        await pacote.extract(resolved, path, {
           ...opt,
           Arborist,
-          resolved: node.resolved,
+          resolved,
           integrity: node.integrity,
+          ...(isRegistry ? { allowRemote: 'all' } : {}),
         })
 
         await new Arborist({ ...this.options, path })
