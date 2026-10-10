@@ -395,6 +395,22 @@ t.test('bundle deps example 1, complete:true', async t => {
   }), 'no missing deps, because complete: true, add dep, save bundled')
 })
 
+t.test('complete:true cracks open a registry-hosted bundle tarball under allowRemote=none', async t => {
+  // complete:true is what buildIdealTree runs under for --dry-run and
+  // --package-lock-only (see reify.js, `complete: this.options.packageLockOnly || this.options.dryRun`).
+  // The tarball URL handed to pacote.extract here is registry-hosted, but pacote's
+  // npa re-parses a bare URL as spec.type === 'remote', so without the same
+  // allowRemote override reify.js applies for its own extract call, this
+  // mis-fired EALLOWREMOTE on ordinary registry installs (npm/cli#9800).
+  const path = resolve(fixtures, 'testing-bundledeps-empty')
+  createRegistry(t, true)
+
+  await t.resolves(buildIdeal(path, {
+    complete: true,
+    allowRemote: 'none',
+  }), 'registry-hosted bundle tarball is allowed under allowRemote=none')
+})
+
 t.test('bundle deps example 2', async t => {
   // bundled deps at the root level are NOT ignored when building ideal trees
   const path = resolve(fixtures, 'testing-bundledeps-2')
