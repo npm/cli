@@ -29,11 +29,11 @@ When the default registry is used in a package-lock it has the special meaning o
 
 A **packument** is the JSON document a registry returns for a package *name* rather than for a
 specific version. It is the registry's metadata record for the package: its name, description,
-maintainers, licence and dist-tags, plus every published version with that version's `dist`
+maintainers, license and dist-tags, plus every published version with that version's `dist`
 object (tarball URL, integrity hash and, where the registry provides them, signatures).
 
 When npm resolves `foo@^1.2.0` it fetches the packument for `foo` and picks a version out of
-it, so an out-of-date or mismatched packument is a common cause of resolution errors.
+it.
 
 You can fetch a packument for any package yourself:
 
