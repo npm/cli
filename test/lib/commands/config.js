@@ -617,6 +617,43 @@ t.test('config edit - editor exits non-0', async t => {
   )
 })
 
+t.test('config edit - editor path with spaces', async t => {
+  const EDITOR = 'C:\\Program Files\\Test Editor\\editor.exe'
+  const editor = spawk.spawn(EDITOR).exit(0)
+
+  const { npm, home } = await loadMockNpm(t, {
+    homeDir: {
+      '.npmrc': 'foo=bar\n',
+    },
+    npm: { argv: ['config', 'edit', '--editor=' + EDITOR] },
+  })
+
+  await npm.exec('config', ['edit'])
+
+  t.ok(editor.called, 'editor was spawned')
+  t.same(editor.calledWith.args, [join(home, '.npmrc')],
+    'editor path with spaces was kept as one executable')
+})
+
+t.test('config edit - quoted editor path with arguments', async t => {
+  const EDITOR = 'C:\\Program Files\\Test Editor\\editor.exe'
+  const editorConfig = `"${EDITOR}" --wait`
+  const editor = spawk.spawn(EDITOR, args => args[0] === '--wait' && args.length === 2).exit(0)
+
+  const { npm, home } = await loadMockNpm(t, {
+    homeDir: {
+      '.npmrc': 'foo=bar\n',
+    },
+    npm: { argv: ['config', 'edit', '--editor=' + editorConfig] },
+  })
+
+  await npm.exec('config', ['edit'])
+
+  t.ok(editor.called, 'editor was spawned')
+  t.same(editor.calledWith.args, ['--wait', join(home, '.npmrc')],
+    'quoted editor path and arguments were preserved')
+})
+
 t.test('config fix', (t) => {
   t.test('no problems', async (t) => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
