@@ -2,6 +2,8 @@ const t = require('tap')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const AuditReport = require('../lib/audit-report.js')
 const Node = require('../lib/node.js')
+const Link = require('../lib/link.js')
+const calcDepFlags = require('../lib/calc-dep-flags.js')
 const Arborist = require('../')
 const MockRegistry = require('@npmcli/mock-registry')
 
@@ -635,4 +637,71 @@ t.test('determinism: multiple metavulns with identical range but different depen
   t.ok(viaNames.includes('C'), 'A via list includes C')
   t.ok(BEffects.includes('A'), 'B effects includes A')
   t.ok(CEffects.includes('A'), 'C effects includes A')
+})
+
+t.test('omit=dev skips devDependencies of a linked-in package (#9624)', async t => {
+  // Repro for npm/cli#9624: `npm audit --production` (== omit=dev) was
+  // surfacing the dev deps of `npm link`-ed packages because the omit gate
+  // in Node#shouldOmit bailed out when the node's `top` was not the
+  // project root or a workspace. For nodes that live inside a linked-in
+  // package, `top` is the link target (its own fs root) - but its `.root`
+  // still resolves to the consuming project, so the omit flags should apply.
+  const root = new Node({
+    path: '/proj',
+    realpath: '/proj',
+    pkg: {
+      name: 'proj',
+      version: '1.0.0',
+      dependencies: { foo: 'file:../foo' },
+    },
+  })
+
+  const fooTarget = new Node({
+    path: '/foo',
+    realpath: '/foo',
+    pkg: {
+      name: 'foo',
+      version: '1.0.0',
+      dependencies: { proddep: '1.0.0' },
+      devDependencies: { devdep: '1.0.0' },
+    },
+  })
+
+  // eslint-disable-next-line no-new
+  new Link({
+    name: 'foo',
+    realpath: '/foo',
+    parent: root,
+    target: fooTarget,
+    pkg: fooTarget.package,
+  })
+
+  const proddep = new Node({
+    pkg: { name: 'proddep', version: '1.0.0' },
+    parent: fooTarget,
+  })
+
+  const devdep = new Node({
+    pkg: { name: 'devdep', version: '1.0.0' },
+    parent: fooTarget,
+  })
+
+  calcDepFlags(root)
+
+  // Sanity: calcDepFlags already classifies the linked package's deps from
+  // the consuming project's POV, so devdep is `dev` and proddep is not.
+  t.equal(proddep.dev, false, 'linked package\'s prod dep is not dev')
+  t.equal(devdep.dev, true, 'linked package\'s dev dep is dev')
+
+  const noOmit = new AuditReport(root, {})
+  const allPayload = noOmit.prepareBulkData()
+  t.ok(allPayload.proddep, 'prod dep is audited with no omit')
+  t.ok(allPayload.devdep, 'dev dep is audited with no omit')
+
+  const omitDev = new AuditReport(root, { omit: ['dev'] })
+  const prodPayload = omitDev.prepareBulkData()
+  t.ok(prodPayload.proddep,
+    'linked package\'s prod dep is still audited under omit=dev')
+  t.notOk(prodPayload.devdep,
+    'linked package\'s dev dep is omitted under omit=dev')
 })
