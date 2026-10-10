@@ -1,4 +1,4 @@
-const isScriptAllowed = require('./script-allowed.js')
+const { isScriptAllowed, isBundledByDependency } = require('./script-allowed.js')
 const getInstallScripts = require('./install-scripts.js')
 
 // Shared allowScripts walk used by both the npm CLI
@@ -42,12 +42,18 @@ const collectUnreviewedScripts = async ({
       // Linked workspace dependencies are managed by the workspace owner.
       continue
     }
-    if (node.inBundle) {
-      // Bundled dependencies never run their install scripts and cannot be
-      // allowlisted, so they are never "pending". Skipping them keeps them
-      // out of the advisory warning and out of strict-allow-scripts. A
-      // package that needs a bundled dep's script must forward it as one of
-      // its own lifecycle scripts.
+    if (isBundledByDependency(node)) {
+      // Dependencies bundled inside another package's tarball never run
+      // their install scripts and cannot be allowlisted, so they are never
+      // "pending". Skipping them keeps them out of the advisory warning
+      // and out of strict-allow-scripts. A package that needs a bundled
+      // dep's script must forward it as one of its own lifecycle scripts.
+      //
+      // Uses isBundledByDependency (not node.inBundle): the root
+      // project's bundleDependencies list only controls what ships in
+      // the root's published tarball; at install time those deps come
+      // from the registry like any other direct dep, so their install
+      // scripts must still surface as pending review (npm/cli#9679).
       continue
     }
     if (node.inert) {

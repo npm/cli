@@ -47,6 +47,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     const newChild = new IsolatedNode({
       isInStore,
       inBundle,
+      bundleOwner: node.bundleOwner,
       isRegistryDependency: node.isRegistryDependency,
       isRootDependency: node.isRootDependency,
       location,
@@ -266,13 +267,13 @@ module.exports = cls => class IsolatedReifier extends cls {
 
     for (const [, edge] of idealTree.edgesOut) {
       if (edge.to && (idealTree.package.bundleDependencies || idealTree.package.bundledDependencies || []).includes(edge.to.name)) {
-        queue.push({ from: idealTree, to: edge.to })
+        queue.push({ from: idealTree, to: edge.to, bundleOwner: idealTree })
       }
     }
     for (const child of idealTree.fsChildren) {
       for (const [, edge] of child.edgesOut) {
         if (edge.to && (child.package.bundleDependencies || child.package.bundledDependencies || []).includes(edge.to.name)) {
-          queue.push({ from: child, to: edge.to })
+          queue.push({ from: child, to: edge.to, bundleOwner: child })
         }
       }
     }
@@ -290,18 +291,20 @@ module.exports = cls => class IsolatedReifier extends cls {
       }
       processed.add(key)
       const from = nextEdge.from
-      if (!from.isRoot && !from.isWorkspace) {
-        nodes.set(from.location, { location: from.location, resolved: from.resolved, name: from.name, optional: from.optional, pkg: { ...from.package, bundleDependencies: undefined } })
+      if (!from.isRoot && !from.isWorkspace && !nodes.has(from.location)) {
+        nodes.set(from.location, { isRegistryDependency: from.isRegistryDependency, bundleOwner: from.getBundler(), location: from.location, resolved: from.resolved, name: from.name, optional: from.optional, pkg: { ...from.package, bundleDependencies: undefined } })
       }
       const to = nextEdge.to
-      nodes.set(to.location, { location: to.location, resolved: to.resolved, name: to.name, optional: to.optional, pkg: { ...to.package, bundleDependencies: undefined } })
+      const bundleOwner = (from.package.bundleDependencies || []).includes(to.name)
+        ? from : nextEdge.bundleOwner
+      nodes.set(to.location, { isRegistryDependency: to.isRegistryDependency, bundleOwner, location: to.location, resolved: to.resolved, name: to.name, optional: to.optional, pkg: { ...to.package, bundleDependencies: undefined } })
       edges.push({ from: from.isRoot ? 'root' : from.location, to: to.location })
 
       to.edgesOut.forEach(edge => {
         // an edge out should always have a to
         /* istanbul ignore else */
         if (edge.to) {
-          queue.push({ from: edge.from, to: edge.to })
+          queue.push({ from: edge.from, to: edge.to, bundleOwner })
         }
       })
     }
