@@ -33,6 +33,53 @@ const packageJson = {
   },
 }
 
+t.test('gypfile:false survives fresh, lockfile, and repeated installs', async t => {
+  const cases = [
+    { name: 'default policy' },
+    { name: 'approved', allowScripts: { 'abbrev@1.0.0': true } },
+    { name: 'bypass', config: { 'dangerously-allow-all-scripts': true } },
+    { name: 'ignored', config: { 'ignore-scripts': true } },
+    { name: 'strict', config: { 'strict-allow-scripts': true } },
+  ]
+  for (const { name, config, allowScripts } of cases) {
+    await t.test(name, async t => {
+      const { npm, registry, logs } = await loadMockNpm(t, {
+        config: { audit: false, ...config },
+        prefixDir: {
+          'package.json': JSON.stringify({ ...packageJson, allowScripts }),
+          abbrev: {
+            'package.json': JSON.stringify({ name: 'abbrev', version: '1.0.0', gypfile: false }),
+            'binding.gyp': '',
+          },
+        },
+      })
+      const manifest = registry.manifest({ name: 'abbrev' })
+      await registry.package({ manifest })
+
+      for (const phase of ['fresh', 'lockfile', 'repeated']) {
+        if (phase === 'lockfile') {
+          fs.rmSync(path.join(npm.prefix, 'node_modules'), { recursive: true, force: true })
+          fs.rmSync(path.join(npm.config.get('cache'), '_cacache'), { recursive: true, force: true })
+        }
+        if (phase !== 'repeated') {
+          await registry.tarball({
+            manifest: manifest.versions['1.0.0'],
+            tarball: path.join(npm.prefix, 'abbrev'),
+          })
+        }
+        await npm.exec('install', [])
+
+        const lock = JSON.parse(fs.readFileSync(path.join(npm.prefix, 'package-lock.json'), 'utf8'))
+        t.notOk(lock.packages['node_modules/abbrev'].hasInstallScript,
+          `${phase}: no false script-presence flag`)
+        t.notOk('gypfile' in lock.packages['node_modules/abbrev'],
+          `${phase}: lockfile format is unchanged`)
+        t.strictSame(logs.warn.byTitle('install-scripts'), [], `${phase}: no blocked-script warning`)
+      }
+    })
+  }
+})
+
 t.test('exec commands', async t => {
   await t.test('with args does not run lifecycle scripts', async t => {
     const { npm, registry } = await loadMockNpm(t, {

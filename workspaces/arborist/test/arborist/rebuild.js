@@ -603,6 +603,180 @@ t.test('do not rebuild node-gyp dependencies with gypfile:false', async t => {
   await arb.rebuild()
 })
 
+t.test('lockfile-backed native packages recover the installed build metadata', async t => {
+  const cases = [
+    { name: 'opt-out', gypfile: false, expected: {} },
+    { name: 'opt-out with null scripts', gypfile: false, scripts: null, expected: {} },
+    {
+      name: 'ignored opt-out with null scripts',
+      gypfile: false,
+      scripts: null,
+      ignoreScripts: true,
+      expected: {},
+    },
+    { name: 'stale presence flag', gypfile: false, hasInstallScript: true, expected: {} },
+    {
+      name: 'preinstall',
+      gypfile: false,
+      hasInstallScript: true,
+      scripts: { preinstall: 'echo preinstall' },
+      expected: { preinstall: 'echo preinstall' },
+    },
+    {
+      name: 'install',
+      gypfile: false,
+      hasInstallScript: true,
+      scripts: { install: 'echo install' },
+      expected: { install: 'echo install' },
+    },
+    {
+      name: 'postinstall',
+      gypfile: false,
+      hasInstallScript: true,
+      scripts: { postinstall: 'echo postinstall' },
+      expected: { postinstall: 'echo postinstall' },
+    },
+    {
+      name: 'known postinstall',
+      gypfile: false,
+      scripts: { postinstall: 'echo postinstall' },
+      knownScripts: { postinstall: 'echo postinstall' },
+      expected: { postinstall: 'echo postinstall' },
+    },
+    {
+      name: 'known registry prepare',
+      gypfile: false,
+      scripts: { prepare: 'echo prepare' },
+      knownScripts: { prepare: 'echo prepare' },
+      expected: { prepare: 'echo prepare' },
+      expectedRuns: {},
+    },
+    {
+      name: 'unreadable manifest preserves known scripts',
+      invalidManifest: true,
+      knownScripts: { postinstall: 'echo postinstall' },
+      expected: { install: 'node-gyp rebuild', postinstall: 'echo postinstall' },
+    },
+    {
+      name: 'default native build',
+      expected: { install: 'node-gyp rebuild' },
+    },
+    {
+      name: 'default native build with null scripts',
+      scripts: null,
+      expected: { install: 'node-gyp rebuild' },
+    },
+    {
+      name: 'ignored native build with null scripts',
+      scripts: null,
+      ignoreScripts: true,
+      expected: { install: 'node-gyp rebuild' },
+      expectedRuns: {},
+    },
+    {
+      name: 'native build and postinstall',
+      gypfile: true,
+      hasInstallScript: true,
+      scripts: { postinstall: 'echo postinstall' },
+      expected: { install: 'node-gyp rebuild', postinstall: 'echo postinstall' },
+    },
+  ]
+
+  for (const lockfileVersion of [2, 3]) {
+    for (const testCase of cases) {
+      await t.test(`v${lockfileVersion}: ${testCase.name}`, async t => {
+        const {
+          gypfile, scripts, knownScripts, hasInstallScript, invalidManifest, expected,
+          ignoreScripts = false, expectedRuns = expected,
+        } = testCase
+        const runs = []
+        const Arborist = t.mock('../../lib/arborist/index.js', {
+          '@npmcli/run-script': async opts => {
+            runs.push([opts.event, opts.pkg.scripts[opts.event]])
+            return { code: 0, signal: null }
+          },
+        })
+        const pkg = { name: 'project', version: '1.0.0', dependencies: { dep: '1.0.0' } }
+        const path = t.testdir({
+          'package.json': JSON.stringify(pkg),
+          'package-lock.json': JSON.stringify({
+            name: pkg.name,
+            version: pkg.version,
+            lockfileVersion,
+            packages: {
+              '': pkg,
+              'node_modules/dep': {
+                version: '1.0.0',
+                resolved: 'https://registry.npmjs.org/dep/-/dep-1.0.0.tgz',
+                hasInstallScript,
+              },
+            },
+          }),
+          node_modules: {
+            dep: {
+              'package.json': invalidManifest ? '{'
+              : JSON.stringify({ name: 'dep', version: '1.0.0', gypfile, scripts }),
+              'binding.gyp': '',
+            },
+          },
+        })
+        const arb = new Arborist({ path, dangerouslyAllowAllScripts: true, ignoreScripts })
+        const tree = await arb.loadVirtual()
+        const dep = tree.children.get('dep')
+        if (knownScripts) {
+          dep.package.scripts = { ...knownScripts }
+        }
+        await arb.rebuild({ nodes: [dep] })
+
+        t.strictSame(runs, Object.entries(expectedRuns), 'runs only the expected scripts')
+        t.strictSame(dep.package.scripts, expected, 'retains the correct scripts')
+        t.equal(dep.package.gypfile, gypfile, 'retains the installed gypfile value')
+        const meta = require('../../lib/shrinkwrap.js').metaFromNode(dep, path)
+        t.equal(!!meta.hasInstallScript, !!(expected.preinstall || expected.install || expected.postinstall),
+          'does not persist a false script-presence flag')
+      })
+    }
+  }
+})
+
+t.test('does not queue an opted-out bundled package twice', async t => {
+  const runs = []
+  const Arborist = t.mock('../../lib/arborist/index.js', {
+    '@npmcli/run-script': async ({ event, pkg }) => {
+      runs.push([event, pkg.name])
+      return { code: 0, signal: null }
+    },
+  })
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'project', dependencies: { parent: '1.0.0' } }),
+    node_modules: {
+      parent: {
+        'package.json': JSON.stringify({
+          name: 'parent',
+          version: '1.0.0',
+          dependencies: { dep: '1.0.0' },
+          bundleDependencies: ['dep'],
+        }),
+        node_modules: {
+          dep: {
+            'package.json': JSON.stringify({
+              name: 'dep',
+              version: '1.0.0',
+              gypfile: false,
+              scripts: { preinstall: 'echo preinstall' },
+            }),
+            'binding.gyp': '',
+          },
+        },
+      },
+    },
+  })
+  // The bundle is visited through both its parent and the tree inventory.
+  const arb = new Arborist({ path, dangerouslyAllowAllScripts: true })
+  await arb.rebuild()
+  t.strictSame(runs, [['preinstall', 'dep']])
+})
+
 // ref: https://github.com/npm/cli/issues/2905
 t.test('do not run lifecycle scripts of linked deps twice', async t => {
   const testdir = t.testdir({
