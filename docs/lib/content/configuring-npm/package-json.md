@@ -542,6 +542,32 @@ The key is the lifecycle event, and the value is the command to run at that poin
 
 See [`scripts`](/using-npm/scripts) to find out more about writing package scripts.
 
+### allowScripts
+
+The `allowScripts` field records which dependencies are permitted to run their `preinstall`, `install`, and `postinstall` scripts (and `prepare` for non-registry sources).
+It is maintained with [`npm approve-scripts`](/commands/npm-approve-scripts) and [`npm deny-scripts`](/commands/npm-deny-scripts) rather than edited by hand.
+
+Dependency install scripts are blocked by default.
+Install commands silently skip lifecycle scripts for any dependency that does not have a matching entry in `allowScripts`, and end with a list of the packages whose scripts were skipped so you can review them.
+
+Each entry can be either version-pinned or name-only:
+
+```json
+{
+  "allowScripts": {
+    "foo@1.2.3": true,
+    "baz": true,
+    "bar": false
+  }
+}
+```
+
+* A version-pinned entry, e.g. `"pkg@1.2.3": true`, only applies to that specific version.
+  This is the default when approving a package with `npm approve-scripts`.
+* A name-only entry, e.g. `"pkg": true`, applies to all current and future versions of that package.
+  Use the `--no-allow-scripts-pin` flag with `npm approve-scripts` to record an entry this way.
+* `false` denies the package's scripts and always wins: re-approving a package does not silently override an existing denial, and denied packages are always recorded by name only, regardless of pinning.
+
 ### gypfile
 
 If you have a binding.gyp file in the root of your package and you have not defined your own `install` or `preinstall` scripts, npm will default to building your module using node-gyp.
