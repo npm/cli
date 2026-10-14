@@ -1,5 +1,20 @@
 # Changelog
 
+## [11.21.1](https://github.com/npm/cli/compare/v11.21.0...v11.21.1) (2026-10-14)
+### Bug Fixes
+* [`1c7b661`](https://github.com/npm/cli/commit/1c7b6618d003eaa272aca7ac7f306ab252564697) [#10059](https://github.com/npm/cli/pull/10059) write registry allowScripts keys under install-strategy=linked (#10059) (@github-actions[bot], @manzoorwanijk)
+### Dependencies
+* [`8cec7c9`](https://github.com/npm/cli/commit/8cec7c97a16639d3a816b9741ff376c58a16b4f1) [#10089](https://github.com/npm/cli/pull/10089) `http-cache-semantics@4.3.0` (@reggi)
+* [`fd105c7`](https://github.com/npm/cli/commit/fd105c783dbd92b62a8c15febe028353cf64321c) [#10089](https://github.com/npm/cli/pull/10089) `undici@6.29.0` (@reggi)
+* [`fc2a0dd`](https://github.com/npm/cli/commit/fc2a0dd3477213871b6245b6be7e9d16bd6da3f1) [#10089](https://github.com/npm/cli/pull/10089) `postcss-selector-parser@7.1.6` (@reggi)
+* [`bae8cd7`](https://github.com/npm/cli/commit/bae8cd7719f855d7dd4ec70e14f13ea4af8677c1) [#10089](https://github.com/npm/cli/pull/10089) `ip-address@10.7.2` (@reggi)
+* [`4a9d14d`](https://github.com/npm/cli/commit/4a9d14d386895f699dafb2e01d874f4196ab0083) [#10089](https://github.com/npm/cli/pull/10089) `brace-expansion@5.0.12` (@reggi)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.3): `@npmcli/arborist@9.9.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.1.14): `libnpmdiff@8.1.14`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.3.4): `libnpmexec@10.3.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.28): `libnpmfund@7.0.28`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.1.15): `libnpmpack@9.1.15`
+
 ## [11.21.0](https://github.com/npm/cli/compare/v11.20.0...v11.21.0) (2026-09-30)
 ### Features
 * [`1f38f64`](https://github.com/npm/cli/commit/1f38f649d79dec546a240af9ee707b4f32597ba2) [#10056](https://github.com/npm/cli/pull/10056) dist-tag: support OIDC authentication (#10056) (@github-actions[bot], @reggi, @Copilot)
