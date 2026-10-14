@@ -1,5 +1,20 @@
 # Changelog
 
+## [12.2.1](https://github.com/npm/cli/compare/v12.2.0...v12.2.1) (2026-10-14)
+### Bug Fixes
+* [`b317f16`](https://github.com/npm/cli/commit/b317f16c80df02ea3628cfa77170d5ae9b59720c) [#9941](https://github.com/npm/cli/pull/9941) write registry allowScripts keys under install-strategy=linked (#9941) (@manzoorwanijk)
+### Dependencies
+* [`7b0c2e8`](https://github.com/npm/cli/commit/7b0c2e8f7fe6dd9f28237d8d50690eb8ebc33743) [#10088](https://github.com/npm/cli/pull/10088) `http-cache-semantics@4.3.0` (@reggi)
+* [`e9e99b4`](https://github.com/npm/cli/commit/e9e99b41b6bc73a0024a820640074a46887bf41a) [#10088](https://github.com/npm/cli/pull/10088) `undici@6.29.0` (@reggi)
+* [`857d7df`](https://github.com/npm/cli/commit/857d7df459d668b6a85eda842457cde667097656) [#10088](https://github.com/npm/cli/pull/10088) `postcss-selector-parser@7.1.6` (@reggi)
+* [`bc7bb3a`](https://github.com/npm/cli/commit/bc7bb3aed84e381893f4e4c4d7e7ccb4f2d1b4d5) [#10088](https://github.com/npm/cli/pull/10088) `ip-address@10.7.2` (@reggi)
+* [`7614360`](https://github.com/npm/cli/commit/761436020d63ee47adeff1aa365a498e917b9ddc) [#10088](https://github.com/npm/cli/pull/10088) `brace-expansion@5.0.12` (@reggi)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.4): `@npmcli/arborist@10.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v9.0.4): `libnpmdiff@9.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v11.0.4): `libnpmexec@11.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v8.0.4): `libnpmfund@8.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v10.0.4): `libnpmpack@10.0.4`
+
 ## [12.2.0](https://github.com/npm/cli/compare/v12.1.0...v12.2.0) (2026-09-30)
 ### Features
 * [`9741b64`](https://github.com/npm/cli/commit/9741b645b011ae83c9dda66c9b0d5fe0dce9c766) [#10038](https://github.com/npm/cli/pull/10038) dist-tag: support OIDC authentication (#10038) (@reggi, @Copilot)
