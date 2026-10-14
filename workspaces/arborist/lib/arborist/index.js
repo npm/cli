@@ -217,12 +217,15 @@ class Arborist extends Base {
     depth({
       tree,
       visit: node => {
+        if (node.isLink && rootDepSet.has(node)) {
+          rootDepSet.add(node.target)
+        }
         for (const { to } of node.edgesOut.values()) {
           if (!to || to.isWorkspace) {
             continue
           }
           for (const edgeIn of to.edgesIn.values()) {
-            if (edgeIn.from.isRoot || rootDepSet.has(edgeIn.from)) {
+            if (edgeIn.from.isProjectRoot || rootDepSet.has(edgeIn.from)) {
               rootDepSet.add(to)
             }
           }
@@ -230,8 +233,9 @@ class Arborist extends Base {
         return node
       },
       filter: node => node,
-      getChildren: (node, tree) =>
-        [...tree.edgesOut.values()].map(edge => edge.to),
+      getChildren: node => node.isLink && !node.isWorkspace
+        ? [node.target]
+        : [...node.edgesOut.values()].map(edge => edge.to),
     })
     return rootDepSet
   }

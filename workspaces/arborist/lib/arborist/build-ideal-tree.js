@@ -111,6 +111,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   #preferDedupe = false
   #prune
   #strictPeerDeps
+  #updateScope = null
   #virtualRoots = new Map()
 
   constructor (options) {
@@ -597,17 +598,14 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       await Promise.all(appliedRequests)
     }
 
-    timeEnd()
-  }
-
-  async #applyUserRequestsToNode (tree, options) {
-    // If we have a list of package names to update, and we know it's
-    // going to update them wherever they are, add any paths into those
-    // named nodes to the buildIdealTree queue.
     if (!this.options.global && this[_updateNames].length) {
       this.#queueNamedUpdates()
     }
 
+    timeEnd()
+  }
+
+  async #applyUserRequestsToNode (tree, options) {
     // global updates only update the globalTop nodes, but we need to know
     // that they're there, and not reinstall the world unnecessarily.
     const globalExplicitUpdateNames = []
@@ -873,7 +871,49 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     return n
   }
 
+  #isNamedUpdate (edge) {
+    return this[_updateNames].includes(edge.name) &&
+      (!this.#updateScope || this.#updateScope.has(edge.from))
+  }
+
+  #extendUpdateScope (node) {
+    const queue = [node]
+    for (const node of queue) {
+      if (!node || this.#updateScope.has(node) ||
+          (!this.options.workspacesEnabled && node.isWorkspace)) {
+        continue
+      }
+      this.#updateScope.add(node)
+      if (node.isLink) {
+        queue.push(node.target)
+      }
+      for (const { to } of node.edgesOut.values()) {
+        if (to) {
+          queue.push(to)
+        }
+      }
+      // This node may have been visited before entering the selected graph.
+      this.#depsSeen.delete(node)
+      this.addTracker('idealTree', node.name, node.location)
+      this.#depsQueue.push(node)
+    }
+  }
+
   #queueNamedUpdates () {
+    if (!this.options.workspacesEnabled) {
+      this.#updateScope = this.excludeWorkspacesDependencySet(this.idealTree)
+      this.#updateScope.add(this.idealTree.target)
+    } else if (this.options.workspaces.length) {
+      this.#updateScope = this.workspaceDependencySet(
+        this.idealTree,
+        this.options.workspaces,
+        this.options.includeWorkspaceRoot
+      )
+      if (this.options.includeWorkspaceRoot) {
+        this.#updateScope.add(this.idealTree.target)
+      }
+    }
+
     // ignore top nodes, since they are not loaded the same way, and
     // probably have their own project associated with them.
 
@@ -889,6 +929,9 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       if (this[_updateNames].includes(node.name) &&
         !node.isTop && !node.inDepBundle) {
         for (const edge of node.edgesIn) {
+          if (this.#updateScope && !this.#updateScope.has(edge.from)) {
+            continue
+          }
           this.addTracker('idealTree', edge.from.name, edge.from.location)
           this.#depsQueue.push(edge.from)
         }
@@ -1132,7 +1175,7 @@ This is a one-time fix-up, please be patient...
 
       // A peerOptional conflict can be resolved by finding an existing node in the tree that satisfies the edge, avoiding a registry fetch that may introduce an extraneous package. See npm/cli#9249.
       // Skip the shortcut when the user has signaled an explicit re-fetch intent (npm update by name, explicit request, or audit fix), so we honor those signals rather than silently keeping the existing node.
-      const skipExistingShortcut = this[_updateNames].includes(edge.name)
+      const skipExistingShortcut = this.#isNamedUpdate(edge)
         || this.#explicitRequests.has(edge)
         || (edge.to && this.auditReport?.isVulnerable(edge.to))
       if (!dep && edge.type === 'peerOptional' && !skipExistingShortcut) {
@@ -1170,7 +1213,7 @@ This is a one-time fix-up, please be patient...
         legacyPeerDeps: this.legacyPeerDeps,
         preferDedupe: this.#preferDedupe,
         strictPeerDeps: this.#strictPeerDeps,
-        updateNames: this[_updateNames],
+        updateNames: this.#updateScope && !this.#updateScope.has(node) ? [] : this[_updateNames],
       })
       // placing a dep is actually a tree of placing the dep itself
       // and all of its peer group that aren't already met by the tree
@@ -1182,6 +1225,12 @@ This is a one-time fix-up, please be patient...
           // if we didn't place anything, nothing to do here
           if (!placed) {
             return
+          }
+          if (this.#updateScope?.has(node)) {
+            this.#updateScope.add(placed)
+            if (placed.isLink) {
+              this.#updateScope.add(placed.target)
+            }
           }
 
           // we placed something, that means we changed the tree
@@ -1426,13 +1475,19 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
+      // A replacement can adopt dependencies outside the initial workspace graph.
+      if (edge.type !== 'workspace' && this.#updateScope?.has(node) &&
+          !this.#updateScope.has(edge.to)) {
+        this.#extendUpdateScope(edge.to)
+      }
+
       // If the edge is a workspace, and it's valid, leave it alone
       if (edge.to.isWorkspace) {
         continue
       }
 
       // user explicitly asked to update this package by name, problem
-      if (this[_updateNames].includes(edge.name)) {
+      if (this.#isNamedUpdate(edge)) {
         problems.push(edge)
         continue
       }

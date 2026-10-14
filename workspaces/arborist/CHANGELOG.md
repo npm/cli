@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Bug Fixes
+
+* Limit named dependency updates to the selected workspace dependency graphs, including root and disabled-workspace settings, without eagerly updating independent dependencies outside that selection.
+
 ## [10.0.3](https://github.com/npm/cli/compare/arborist-v10.0.2...arborist-v10.0.3) (2026-09-21)
 ### Bug Fixes
 * [`d6c6122`](https://github.com/npm/cli/commit/d6c612258c571c71a00f496c1f8980ed13b8a4d9) [#9914](https://github.com/npm/cli/pull/9914) arborist: match allowScripts keys for local paths (#9914) (@martinrrm, @Copilot)
