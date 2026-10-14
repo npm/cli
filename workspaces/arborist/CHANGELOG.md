@@ -1,5 +1,10 @@
 # Changelog
 
+## [9.9.3](https://github.com/npm/cli/compare/arborist-v9.9.2...arborist-v9.9.3) (2026-10-14)
+### Bug Fixes
+* [`1c7b661`](https://github.com/npm/cli/commit/1c7b6618d003eaa272aca7ac7f306ab252564697) [#10059](https://github.com/npm/cli/pull/10059) write registry allowScripts keys under install-strategy=linked (#10059) (@github-actions[bot], @manzoorwanijk)
+* [`21fe6b8`](https://github.com/npm/cli/commit/21fe6b88f418c6ce930e84ee744b410c01cc3651) [#10118](https://github.com/npm/cli/pull/10118) arborist: report ETARGET instead of ERESOLVE for unresolvable peer targets (#10118) (@github-actions[bot], @manzoorwanijk)
+
 ## [9.9.2](https://github.com/npm/cli/compare/arborist-v9.9.1...arborist-v9.9.2) (2026-09-21)
 ### Bug Fixes
 * [`70317da`](https://github.com/npm/cli/commit/70317da6328fb19e662f13427be09d9c5e2d344f) [#9930](https://github.com/npm/cli/pull/9930) arborist: reject uninstall args that carry a version (#9930) (@github-actions[bot], @lazerg)
