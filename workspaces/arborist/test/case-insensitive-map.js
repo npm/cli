@@ -45,3 +45,39 @@ t.test('do not get confused with undefined or weird values', t => {
   ])
   t.end()
 })
+
+t.test('preserves case folding and Unicode normalization', t => {
+  for (const [key, equivalent] of [
+    ['@scope/package-name_1.0', '@SCOPE/PACKAGE-NAME_1.0'],
+    ['caf\u00e9', 'cafe\u0301'],
+    ['\u212a', 'k'],
+    ['\ufb03', 'ffi'],
+    ['\uff21', 'a'],
+    ['\ud835\udc00', 'a'],
+    ['\u0130', 'i\u0307'],
+  ]) {
+    const cmap = new CMap([[key, 1]])
+    t.equal(cmap.get(equivalent), 1)
+    t.equal(cmap.has(equivalent), true)
+    cmap.set(equivalent, 2)
+    t.equal(cmap.size, 1)
+    t.equal(cmap.get(key), 2)
+    t.strictSame([...cmap.keys()], [equivalent])
+    t.equal(cmap.delete(key), true)
+    t.equal(cmap.has(equivalent), false)
+  }
+  t.end()
+})
+
+t.test('preserves empty, undefined-valued, and non-string keys', t => {
+  const object = {}
+  const symbol = Symbol('key')
+  for (const key of ['', '\u0000', undefined, null, NaN, 0, object, symbol]) {
+    const cmap = new CMap([[key, undefined]])
+    t.equal(cmap.has(key), true)
+    t.equal(cmap.get(key), undefined)
+    t.equal(cmap.delete(key), true)
+    t.equal(cmap.has(key), false)
+  }
+  t.end()
+})
