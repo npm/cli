@@ -25,6 +25,25 @@ See [Auth Related Configuration](/configuring-npm/npmrc#auth-related-configurati
 
 When the default registry is used in a package-lock it has the special meaning of "the currently configured registry". If you create a lock file while using the default registry you can switch to another registry and npm will install packages from the new registry, but if you create a lock file while using a custom registry packages will be installed from that registry even after you change to another registry.
 
+### Packuments
+
+A **packument** is the JSON document a registry returns for a package *name* rather than for a
+specific version. It is the registry's metadata record for the package: its name, description,
+maintainers, license and dist-tags, plus every published version with that version's `dist`
+object (tarball URL, integrity hash and, where the registry provides them, signatures).
+
+When npm resolves `foo@^1.2.0` it fetches the packument for `foo` and picks a version out of
+it.
+
+You can fetch a packument for any package yourself:
+
+```
+npx pacote packument <package-name> [--registry=<registry-url>]
+```
+
+That is the quickest way to check what a registry actually knows about a package, and it works
+against a private registry as well, for example `--registry=http://localhost:4873`.
+
 ### Does npm send any information about me back to the registry?
 
 Yes.
