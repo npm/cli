@@ -1190,7 +1190,16 @@ class Node {
 
     // if they're links, they match if the targets match
     if (this.isLink) {
-      return node.isLink && this.target.matches(node.target)
+      if (!node.isLink) {
+        return false
+      }
+      // reassigning a target's root clears `target` on every link pointing at
+      // it, but the link still knows the realpath it pointed at, so fall back
+      // to that rather than dereferencing null.
+      if (!this.target || !node.target) {
+        return !!this.realpath && this.realpath === node.realpath
+      }
+      return this.target.matches(node.target)
     }
 
     // if they're two project root nodes, they're different if the paths differ
