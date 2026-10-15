@@ -328,3 +328,29 @@ t.test('override save to true when installing to npx cache', async t => {
     value: 'packages-2.0.0',
   })
 })
+
+t.test('install to npx cache when dryRun or packageLockOnly is set', async t => {
+  for (const flag of ['dryRun', 'packageLockOnly']) {
+    t.test(flag, async t => {
+      const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
+
+      const { exec, path, registry, readOutput } = setup(t, {
+        testdir: merge(fixtures, {
+          global: {},
+        }),
+      })
+
+      await package({ registry, path })
+
+      await exec({
+        args: ['@npmcli/create-index'],
+        globalPath: resolve(path, 'global'),
+        [flag]: true,
+      })
+
+      t.match(await readOutput('@npmcli-create-index'), {
+        value: 'packages-2.0.0',
+      }, 'package was installed and its bin ran')
+    })
+  }
+})
