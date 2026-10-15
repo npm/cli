@@ -4,6 +4,54 @@ const { setup, createPkg, merge } = require('./fixtures/setup.js')
 const crypto = require('node:crypto')
 const { existsSync } = require('node:fs')
 
+t.test('release-age exclusions do not leak across exec calls', async t => {
+  const name = '@npmcli/create-index'
+  const { fixtures, pkgs } = createPkg({ name, versions: ['1.0.0', '2.0.0'] })
+  const { path, registry, readOutput, rmOutput } = setup(t, { testdir: fixtures })
+  const manifest = registry.manifest({ name, packuments: Object.values(pkgs) })
+  manifest.time['1.0.0'] = '2025-01-01T00:00:00.000Z'
+  manifest.time['2.0.0'] = '2026-02-01T00:00:00.000Z'
+  await registry.package({
+    manifest,
+    times: 4,
+    tarballs: {
+      '1.0.0': resolve(path, 'packages', '@npmcli-create-index-1.0.0'),
+      '2.0.0': resolve(path, 'packages', '@npmcli-create-index-2.0.0'),
+    },
+  })
+  // Reuse one module instance: re-mocking between calls would reset a
+  // module-scoped cache and hide the regression.
+  const exec = t.mock('../lib/index.js')
+  const options = {
+    packages: [`${name}@latest`],
+    path,
+    runPath: path,
+    cache: resolve(path, 'cache'),
+    npxCache: resolve(path, 'npxCache'),
+    registry: registry.origin + '/',
+    audit: false,
+    yes: true,
+    before: new Date('2026-01-01T00:00:00.000Z'),
+  }
+  await exec({
+    ...options,
+    args: ['create-index'],
+    minReleaseAgeExclude: [name],
+    npxCache: resolve(path, 'npxCache', 'excluded'),
+  })
+  t.match(await readOutput('@npmcli-create-index'), { value: 'packages-2.0.0' },
+    'excluded call executes the newer release')
+  await rmOutput('@npmcli-create-index')
+  await exec({
+    ...options,
+    args: ['create-index'],
+    minReleaseAgeExclude: [],
+    npxCache: resolve(path, 'npxCache', 'restricted'),
+  })
+  t.match(await readOutput('@npmcli-create-index'), { value: 'packages-1.0.0' },
+    'next call executes the cutoff-eligible release')
+})
+
 t.test('run from registry - no local packages', async t => {
   const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
 
