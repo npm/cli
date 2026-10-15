@@ -5,7 +5,7 @@ const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
 const tmock = require('../../fixtures/tmock.js')
 const validateEngines = require('../../../lib/cli/validate-engines.js')
 
-const cliMock = async (t, opts) => {
+const cliMock = async (t, { updateNotifier, ...opts } = {}) => {
   let exitHandlerArgs = null
   let npm = null
 
@@ -24,6 +24,7 @@ const cliMock = async (t, opts) => {
         npm = _npm
       }
     },
+    ...(updateNotifier ? { '{LIB}/cli/update-notifier.js': updateNotifier } : {}),
   })
 
   return {
@@ -172,4 +173,31 @@ t.test('exit early for --version', async t => {
   await cli(process)
   t.strictSame(readdirSync(cache), [], 'nothing created in cache')
   t.equal(outputs[0], Npm.version)
+})
+
+t.test('sets npm.updateNotification when the notifier finds one', async t => {
+  const notification = { message: 'you should update npm!', onShown: () => {} }
+  const { cli, exitHandlerNpm } = await cliMock(t, {
+    globals: {
+      'process.argv': ['node', 'npm', 'root'],
+    },
+    updateNotifier: async () => notification,
+  })
+  await cli(process)
+  // the notifier is intentionally not awaited by entry.js, so flush the
+  // microtask/macrotask queues to let its fire-and-forget `.then()` settle
+  await new Promise((resolve) => setImmediate(resolve))
+  t.equal(exitHandlerNpm().updateNotification, notification)
+})
+
+t.test('does not set npm.updateNotification when the notifier finds nothing', async t => {
+  const { cli, exitHandlerNpm } = await cliMock(t, {
+    globals: {
+      'process.argv': ['node', 'npm', 'root'],
+    },
+    updateNotifier: async () => null,
+  })
+  await cli(process)
+  await new Promise((resolve) => setImmediate(resolve))
+  t.equal(exitHandlerNpm().updateNotification, null)
 })
