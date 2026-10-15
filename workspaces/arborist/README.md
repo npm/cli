@@ -11,6 +11,18 @@ Inspect and manage `node_modules` trees.
 There's more documentation [in the docs
 folder](https://github.com/npm/cli/tree/latest/workspaces/arborist/docs).
 
+## SUPPORTED LOCKFILES
+
+Arborist's primary lockfile is `package-lock.json`, which it reads and writes
+as it builds and saves a tree.
+
+A `yarn.lock` file is also read and written, but only as a source of metadata
+rather than a full description of the tree. See
+[lockfiles.md](docs/lockfiles.md) for the level of support and its caveats.
+
+`pnpm-lock.yaml` is neither read nor written, and there is no other pnpm
+integration.
+
 ## USAGE
 
 ```js
