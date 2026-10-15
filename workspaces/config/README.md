@@ -160,6 +160,14 @@ Load configuration from the various sources of information.
 
 Returns a `Promise` that resolves when configuration is loaded, and fails if a fatal error is encountered.
 
+### `config.reload(where)`
+
+Reload an already-loaded `project`, `user`, or `global` configuration layer from its original file.
+Values removed from the file are cleared, higher-priority layers keep their precedence, and the flattened options cache is invalidated.
+
+Returns a `Promise` that resolves when the selected layer has been reloaded.
+The initial `config.load()` must complete first.
+
 ### `config.find(key)`
 
 Find the effective place in the configuration levels a given key is set.
