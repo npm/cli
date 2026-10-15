@@ -1,5 +1,5 @@
 const t = require('tap')
-const { readFileSync, existsSync } = require('node:fs')
+const { readFileSync, existsSync, symlinkSync } = require('node:fs')
 const { resolve } = require('node:path')
 const { createTwoFilesPatch } = require('diff')
 const { applyPatchToDir, patchIntegrity } = require('../lib/patch.js')
@@ -77,6 +77,32 @@ t.test('refuses to delete outside the package directory', async t => {
     applyPatchToDir({ patch: filePatch('../escape.js', 'secret\n', ''), cwd: dir }),
     { code: 'EPATCHUNSAFE' }
   )
+})
+
+t.test('refuses to write through a symlink that escapes the package', async t => {
+  const dir = t.testdir({
+    pkg: { 'index.js': 'x\n' },
+    outside: {},
+  })
+  symlinkSync(resolve(dir, 'outside'), resolve(dir, 'pkg', 'evil'))
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('evil/pwned.js', '', 'pwned\n'), cwd: resolve(dir, 'pkg') }),
+    { code: 'EPATCHUNSAFE' }
+  )
+  t.notOk(existsSync(resolve(dir, 'outside', 'pwned.js')), 'nothing written outside')
+})
+
+t.test('refuses to delete through a symlink that escapes the package', async t => {
+  const dir = t.testdir({
+    pkg: { 'index.js': 'x\n' },
+    outside: { 'secret.js': 'secret\n' },
+  })
+  symlinkSync(resolve(dir, 'outside'), resolve(dir, 'pkg', 'evil'))
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('evil/secret.js', 'secret\n', ''), cwd: resolve(dir, 'pkg') }),
+    { code: 'EPATCHUNSAFE' }
+  )
+  t.ok(existsSync(resolve(dir, 'outside', 'secret.js')), 'outside file untouched')
 })
 
 t.test('delete fails when the file drifted from the diff', async t => {
