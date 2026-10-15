@@ -22,6 +22,8 @@ See [package-lock.json](/configuring-npm/package-lock-json).
 
 When you run `npm install` without arguments, npm compares `package.json` and `package-lock.json`:
 
+This behavior applies to npm v7 and later. The lockfile format that npm writes may differ by major version; see [package-lock.json](/configuring-npm/package-lock-json#lockfileversion) for those version-specific details.
+
 * **If the lockfile's resolved versions satisfy the `package.json` ranges:** npm uses the exact versions from `package-lock.json` to ensure reproducible builds across environments.
 
 * **If the ranges don't match:** npm resolves new versions that satisfy the `package.json` ranges and updates `package-lock.json` accordingly. This happens when you modify version ranges in `package.json` (e.g., changing `^7.0.0` to `^8.0.0`). Note that changing a range within the same major version (e.g., `^7.0.0` to `^7.1.0`) will only update the metadata in the lockfile if the currently installed version still satisfies the new range.
