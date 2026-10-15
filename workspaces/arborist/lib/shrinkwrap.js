@@ -1173,6 +1173,12 @@ class Shrinkwrap {
       }
     }
 
+    // v3 still needs the root metadata above, but not legacy descendants.
+    if (node === this.tree && this.lockfileVersion === 3) {
+      delete lock.dependencies
+      return lock
+    }
+
     // now we walk the children, putting them in the 'dependencies' object
     const { children } = node.target
     if (!children.size) {
