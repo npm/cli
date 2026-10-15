@@ -118,6 +118,49 @@ t.test('non-registry sources and bundled packages are excluded', async t => {
   }
 })
 
+t.test('registry version resolving to Git has no registry tarball warning', async t => {
+  const gitResolved = 'git+ssh://git@customgit.com:a/b/c.git#lkjadflkjasdf'
+  const { sw, dep } = await makeTree(t, {
+    spec: '1.0.0',
+    resolved: gitResolved,
+  })
+  t.equal(dep.isRegistryDependency, true, 'incoming version spec uses a registry')
+  await sw.save()
+  t.equal(sw.data.packages['node_modules/dep'].resolved, gitResolved)
+  t.notOk(sw.data.packages['node_modules/dep'].integrity,
+    'Git artifact has no registry tarball integrity')
+  t.same(getWarnings(), [], 'Git artifact is excluded from registry tarball warning')
+})
+
+t.test('registry version resolving to unpinned Git warns', async t => {
+  const gitResolved = 'git+ssh://git@customgit.com:a/b/c.git'
+  const { sw, dep } = await makeTree(t, {
+    spec: '1.0.0',
+    resolved: gitResolved,
+  })
+  t.equal(dep.isRegistryDependency, true, 'incoming version spec uses a registry')
+  await sw.save()
+  t.equal(sw.data.packages['node_modules/dep'].resolved, gitResolved)
+  t.notOk(sw.data.packages['node_modules/dep'].integrity,
+    'integrity is absent')
+  assertWarning(t)
+})
+
+t.test('registry version resolving to Git warns when serialized provenance is omitted', async t => {
+  const { sw, dep } = await makeTree(t, {
+    spec: '1.0.0',
+    resolved: 'git+ssh://git@customgit.com:a/b/c.git#lkjadflkjasdf',
+    omitResolved: true,
+  })
+  t.equal(dep.isRegistryDependency, true, 'incoming version spec uses a registry')
+  await sw.save()
+  t.notOk(sw.data.packages['node_modules/dep'].resolved,
+    'resolved source is omitted from serialized lockfile')
+  t.notOk(sw.data.packages['node_modules/dep'].integrity,
+    'integrity is also absent')
+  assertWarning(t)
+})
+
 t.test('workspace links and their targets are excluded', async t => {
   const { sw, root, dep } = await makeTree(t)
   dep.parent = null

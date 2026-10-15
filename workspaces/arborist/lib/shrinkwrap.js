@@ -1230,6 +1230,12 @@ class Shrinkwrap {
           continue
         }
         const meta = this.data.packages[relpath(this.path, node.path)]
+        // A registry version may resolve to a Git artifact named in its packument.
+        // Git sources do not carry registry tarball integrity metadata.
+        const resolvedSpec = meta?.resolved ? specFromResolved(meta.resolved) : null
+        if (resolvedSpec?.type === 'git' && resolvedSpec.gitCommittish) {
+          continue
+        }
         if (meta && (!meta.integrity ||
             (!this.resolveOptions.omitLockfileRegistryResolved && !meta.resolved))) {
           missingProvenance++
