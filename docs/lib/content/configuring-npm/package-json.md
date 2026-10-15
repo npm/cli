@@ -554,6 +554,9 @@ To prevent npm from automatically building your module with node-gyp, set `gypfi
 }
 ```
 
+This setting disables only the automatic `node-gyp rebuild` script.
+It does not disable explicit lifecycle scripts in `package.json`.
+
 This is useful for packages that include native addons but want to handle the build process differently, or packages that have a binding.gyp file but should not be built as a native addon.
 
 ### config
@@ -1262,7 +1265,8 @@ npm will default some values based on package contents.
 
 * `"scripts":{"install": "node-gyp rebuild"}`
 
-  If there is a `binding.gyp` file in the root of your package and you have not defined an `install` or `preinstall` script, npm will default the `install` command to compile using node-gyp.
+  If your package contains `binding.gyp`, npm uses `node-gyp rebuild` as the default `install` script.
+  An explicit `install` or `preinstall` script, or `"gypfile": false`, disables this default.
 
 * `"contributors": [...]`
 

@@ -145,6 +145,8 @@ Because `preinstall` runs before reify, scripts cannot rely on packages from `no
 
 If there is a `binding.gyp` file in the root of your package and you haven't defined your own `install` or `preinstall` scripts, npm will default the `install` command to compile using node-gyp via `node-gyp rebuild`
 
+Setting `"gypfile": false` disables this default and leaves explicit lifecycle scripts unchanged.
+
 These are run from the scripts of `<pkg-name>`
 
 #### [`npm pack`](/commands/npm-pack)

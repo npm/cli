@@ -4700,6 +4700,63 @@ t.test('global install ignores a per-call linked strategy', async t => {
   t.strictSame(fs.readdirSync(nm), ['abbrev'], 'global package retained, no .store created')
 })
 
+t.test('linked native packages retain gypfile:false during extraction', async t => {
+  for (const scripts of [{}, { postinstall: 'echo postinstall' }]) {
+    await t.test(Object.keys(scripts).join(', ') || 'no scripts', async t => {
+      const runs = []
+      const Arborist = t.mock('../../lib/index.js', {
+        '@npmcli/run-script': async opts => {
+          runs.push([opts.event, opts.pkg.scripts[opts.event]])
+          t.equal(opts.pkg.gypfile, false, 'retains the opt-out alongside explicit scripts')
+          return { code: 0, signal: null }
+        },
+      })
+      const root = t.testdir({
+        src: {
+          'package.json': JSON.stringify({
+            name: 'native-pkg',
+            version: '1.0.0',
+            gypfile: false,
+            scripts,
+          }),
+          'binding.gyp': '',
+        },
+        project: {
+          'package.json': JSON.stringify({
+            name: 'project',
+            version: '1.0.0',
+            dependencies: { 'native-pkg': '1.0.0' },
+          }),
+        },
+      })
+      const registry = createRegistry(t)
+      const manifest = registry.manifest({
+        name: 'native-pkg',
+        packuments: [{ version: '1.0.0', hasInstallScript: !!scripts.postinstall }],
+      })
+      await registry.package({ manifest })
+      await registry.tarball({
+        manifest: manifest.versions['1.0.0'],
+        tarball: resolve(root, 'src'),
+      })
+      const arb = new Arborist({
+        path: resolve(root, 'project'),
+        cache: resolve(root, 'cache'),
+        registry: 'https://registry.npmjs.org',
+        audit: false,
+        installStrategy: 'linked',
+        dangerouslyAllowAllScripts: true,
+      })
+      await arb.reify()
+
+      t.strictSame(runs, Object.entries(scripts), 'does not inject a native-build script')
+      const installed = fs.realpathSync(resolve(root, 'project/node_modules/native-pkg'))
+      t.match(installed, /[\\/]\.store[\\/]/, 'installs into the linked store')
+      t.ok(fs.existsSync(resolve(installed, 'binding.gyp')), 'installs binding.gyp')
+    })
+  }
+})
+
 t.test('linked strategy exposes store node_modules via NODE_PATH for lifecycle scripts', async t => {
   // Regression for #9549. In the linked strategy a store package's deps are symlinked siblings in its store node_modules.
   // A separate bin invoked by the script (e.g. napi-postinstall) resolves modules from its own store realpath and cannot see them, so npm exposes them via NODE_PATH.
