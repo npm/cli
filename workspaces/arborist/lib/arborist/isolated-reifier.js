@@ -164,9 +164,9 @@ module.exports = cls => class IsolatedReifier extends cls {
     // Carry the source node's registry-dependency flag so the store node retains it.
     // IsolatedNode has no edges to recompute it from, and reify's registry-tarball allow-remote exemption depends on it.
     result.isRegistryDependency = node.isRegistryDependency
-    // Same reasoning for allow-remote=root: the store node has no edgesIn, so capture from the source node whether it satisfies a valid edge from the project root or a workspace.
+    // Same reasoning for allow-remote=root: the store node has no edgesIn, so capture from the source node whether it satisfies a valid edge from the project root or a workspace, or an edge whose spec a root override replaced.
     result.isRootDependency = [...node.edgesIn].some(e =>
-      e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
+      e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace || e.spec !== e.rawSpec)
     )
     return result
   }
