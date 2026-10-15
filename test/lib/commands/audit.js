@@ -1059,7 +1059,7 @@ t.test('audit signatures', async t => {
 
     t.notOk(process.exitCode, 'should exit successfully')
     t.match(joinedOutput(), /audited 1 package/)
-    t.match(logs.warn, ['Fetching verification keys using TUF failed.  Fetching directly from https://registry.npmjs.org/.'])
+    t.match(logs.warn, ['Fetching verification keys using TUF failed.  Fetching directly from https://registry.npmjs.org.'])
     t.matchSnapshot(joinedOutput())
   })
 
@@ -1745,6 +1745,55 @@ t.test('audit signatures', async t => {
     t.match(joinedOutput(), /audited 2 packages/)
     t.matchSnapshot(joinedOutput())
   })
+
+  for (const json of [false, true]) {
+    t.test(`mixed registries report signature checks skipped without keys${json ? ' (json)' : ''}`, async t => {
+      const registryOrigin = 'https://verdaccio-clone.org'
+      const registryUrl = `${registryOrigin}/private-registry-token/`
+      const { logs, npm, joinedOutput } = await loadMockNpm(t, {
+        prefixDir: {
+          ...installWithMultipleRegistries,
+          '.npmrc': `@npmcli:registry=${registryUrl}\n`,
+        },
+        config: { json },
+      })
+      const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
+      const thirdPartyRegistry = new MockRegistry({ tap: t, registry: registryUrl })
+      await manifestWithValidSigs({ registry })
+      await thirdPartyRegistry.package({
+        manifest: thirdPartyRegistry.manifest({
+          name: '@npmcli/arborist',
+          packuments: [{
+            version: '1.0.14',
+            dist: {
+              tarball: 'https://verdaccio-clone.org/@npmcli/arborist/-/arborist-1.0.14.tgz',
+              integrity: 'sha512-caa8hv5rW9VpQKk6tyNRvSaVDySVjo9GkI7Wj/wcsFyxPm3tYrE' +
+                'sFyTjSnJH8HCIfEGVQNjqqKXaXLFVp7UBag==',
+            },
+          }],
+        }),
+      })
+      mockTUF({ npm, target: TUF_VALID_KEYS_TARGET })
+      thirdPartyRegistry.nock.get(thirdPartyRegistry.fullPath('/-/npm/v1/keys')).reply(404)
+
+      await npm.exec('audit', ['signatures'])
+
+      t.notOk(process.exitCode, 'packages without keys do not change the exit status')
+      if (json) {
+        t.match(JSON.parse(joinedOutput()), {
+          invalid: [],
+          missing: [],
+          skipped: [{ registry: registryOrigin, count: 1 }],
+        })
+      } else {
+        t.match(joinedOutput(), /audited 1 package/)
+        t.match(joinedOutput(), /1 package skipped registry signature checks/)
+        t.match(joinedOutput(), /1 from https:\/\/verdaccio-clone\.org/)
+      }
+      t.notMatch(joinedOutput(), /private-registry-token/, 'registry URL credentials are not printed')
+      t.notMatch(logs.warn.join('\n'), /private-registry-token/, 'warnings omit registry URL credentials')
+    })
+  }
 
   t.test('errors with an empty install', async t => {
     const { npm } = await loadMockNpm(t, {
