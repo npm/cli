@@ -361,5 +361,94 @@ t.test('empty versions', async t => {
         'should not have a lockfile since have not reified'
       )
     })
+
+    t.test('implicit workspace from cwd does not read sibling workspaces', async t => {
+      const libnpmversionCalls = []
+      const { version, outputs, prefix } = await mockNpm(t, {
+        prefixDir: {
+          'package.json': JSON.stringify({
+            name: 'workspaces-test',
+            version: '1.0.0',
+            workspaces: ['workspace-a', 'workspace-b'],
+          }),
+          'workspace-a': {
+            'package.json': JSON.stringify({
+              name: 'workspace-a',
+              version: '1.0.0',
+            }),
+          },
+          'workspace-b': {
+            'package.json': JSON.stringify({
+              name: 'workspace-b',
+              version: '1.0.0',
+            }),
+          },
+        },
+        chdir: (dirs) => resolve(dirs.prefix, 'workspace-a'),
+        mocks: {
+          libnpmversion: (arg, opts) => {
+            libnpmversionCalls.push(opts)
+            return '1.0.1'
+          },
+        },
+      })
+
+      await version.exec(['patch'])
+
+      t.same(
+        outputs,
+        ['workspace-a', 'v1.0.1'],
+        'outputs only the implicitly selected workspace'
+      )
+      t.equal(libnpmversionCalls.length, 1, 'bumped a single workspace')
+      t.equal(
+        libnpmversionCalls[0].path,
+        resolve(prefix, 'workspace-a'),
+        'bumped the workspace the command was run from'
+      )
+      t.equal(
+        libnpmversionCalls[0]['git-tag-version'],
+        false,
+        'does not git tag from a workspace'
+      )
+      t.throws(
+        () => statSync(resolve(prefix, 'package-lock.json')),
+        'should not have a lockfile since have not reified'
+      )
+    })
+
+    t.test('implicit workspace works while a sibling package.json is invalid', async t => {
+      const { version, outputs } = await mockNpm(t, {
+        prefixDir: {
+          'package.json': JSON.stringify({
+            name: 'workspaces-test',
+            version: '1.0.0',
+            workspaces: ['workspace-a', 'workspace-b'],
+          }),
+          'workspace-a': {
+            'package.json': JSON.stringify({
+              name: 'workspace-a',
+              version: '1.0.0',
+            }),
+          },
+          'workspace-b': {
+            // simulates another process writing this file concurrently
+            'package.json': '',
+          },
+        },
+        chdir: (dirs) => resolve(dirs.prefix, 'workspace-a'),
+        mocks: {
+          libnpmversion: () => '1.0.1',
+        },
+      })
+
+      await version.exec(['patch'])
+
+      t.same(
+        outputs,
+        ['v1.0.1'],
+        'falls back to standalone behavior and still bumps the version'
+      )
+    })
   })
 })
