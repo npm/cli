@@ -239,7 +239,7 @@ module.exports = cls => class ActualLoader extends cls {
     )))
     // index loaded workspace targets by both path and realpath, so a workspace reached through a symlinked dir still matches
     const byLoc = new Map()
-    for (const node of root.fsChildren) {
+    for (const node of [...root.inventory.values()].filter(n => n.fsParent)) {
       byLoc.set(node.path, node)
       byLoc.set(node.realpath, node)
     }
