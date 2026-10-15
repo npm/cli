@@ -934,3 +934,37 @@ t.test('a project located under a .store path still loads its own devDependencie
   t.equal(tree.isInStore, false, 'loaded root is not flagged isInStore')
   t.ok(tree.edgesOut.get('a-dev-dep'), 'root devDependency is a required edge')
 })
+
+t.test('links that spell one target with different drive-letter case share it', {
+  skip: process.platform !== 'win32' && 'drive letters are Windows-only',
+}, async t => {
+  // Windows junctions keep the target spelling they were created with (npm/cli#9079).
+  const path = t.testdir({
+    pkg: { 'package.json': JSON.stringify({ name: 'pkg', version: '1.0.0' }) },
+    app: {
+      'package.json': JSON.stringify({
+        name: 'app',
+        version: '1.0.0',
+        dependencies: { a: 'file:../pkg', b: 'file:../pkg', c: 'file:../pkg' },
+      }),
+      node_modules: {},
+    },
+  })
+  const pkg = resolve(path, 'pkg')
+  const flipped = pkg[0] === pkg[0].toUpperCase()
+    ? pkg[0].toLowerCase() + pkg.slice(1)
+    : pkg[0].toUpperCase() + pkg.slice(1)
+  for (const [name, target] of [['a', pkg], ['b', flipped], ['c', pkg]]) {
+    fs.symlinkSync(target, resolve(path, 'app/node_modules', name), 'junction')
+  }
+
+  const tree = await loadActual(resolve(path, 'app'))
+  const links = ['a', 'b', 'c'].map(name => tree.children.get(name))
+  const [target] = links.map(link => link.target)
+  t.ok(target, 'links have a target')
+  t.equal(target.root, tree, 'the target is in the tree')
+  for (const link of links) {
+    t.equal(link.target, target, `${link.name} shares the target`)
+  }
+  t.equal(target.linksIn.size, 3, 'the target knows all three links')
+})
