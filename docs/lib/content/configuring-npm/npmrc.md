@@ -105,6 +105,28 @@ If the credential is meant for any request to a registry on a single host, the s
 If it must be scoped to a specific path on the host that path may also be provided, such as
 `//my-custom-registry.org/unique/path:`.
 
+#### How npm matches a credential to a registry
+
+npm looks credentials up from the registry URL it is about to use (the `registry`
+setting, or the matching `@scope:registry`). It starts from `//<host>[:<port>]<path>`
+and walks up the path one segment (or trailing slash) at a time until it finds a key
+with credentials, stopping at `//<host>[:<port>]`. So for the registry
+`https://acme.com/api/v4/projects/123/packages/npm/`, a credential keyed to
+`//acme.com/api/v4/projects/123/packages/npm/:_authToken`, to a shorter path on the
+same host, or to `//acme.com/:_authToken` is used, and the longest match wins.
+
+The host, including the port, has to match. A credential keyed to a different
+hostname or port than the registry URL, for example one built from
+`${CI_REGISTRY}` while the registry is built from `${CI_API_V4_URL}`, is never sent,
+even if both names reach the same server. A path that is not a prefix of the
+registry path does not match either.
+
+When no credential matches, commands that need to log in fail with `ENEEDAUTH` and a
+"This command requires you to be logged in" message. That is the same error you get
+when no credentials are configured at all, so if you have set a token and still see
+it, compare the credential key with the registry URL. `npm config ls -l` prints every
+key as npm parsed it.
+
 ### Unsupported Custom Configuration Keys
 
 Starting in npm v11.2.0, npm warns when unknown configuration keys are defined in `.npmrc`. In a future major version of npm, these unknown keys may no longer be accepted.
