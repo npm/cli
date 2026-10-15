@@ -49,6 +49,8 @@ Even if you never publish your package, you can still get a lot of benefits of u
 
     In global mode (ie, with `-g` or `--global` appended to the command), it installs the current package context (ie, the current working directory) as a global package.
 
+    > NOTE: Global mode installs the current package *context*, not its local `node_modules`. No `node_modules` folder is created in the current directory, so the package's own `dependencies` are not installed alongside it. If you need the same package usable locally as well, run a separate `npm install` in that directory.
+
     By default, `npm install` will install all modules listed as dependencies in [`package.json`](/configuring-npm/package-json).
 
     With the `--production` flag (or when the `NODE_ENV` environment variable is set to `production`), npm will not install modules listed in `devDependencies`.
