@@ -2,8 +2,9 @@ const t = require('tap')
 const procLog = require('proc-log')
 const Node = require('../lib/node.js')
 const Link = require('../lib/link.js')
+const Arborist = require('../lib/index.js')
 const calcDepFlags = require('../lib/calc-dep-flags.js')
-const { readFile, mkdir } = require('node:fs/promises')
+const { readFile, writeFile, mkdir } = require('node:fs/promises')
 const { resolve } = require('node:path')
 
 const warnings = []
@@ -181,4 +182,46 @@ t.test('save errors are preserved', async t => {
   sw.filename = resolve(sw.path, 'missing/package-lock.json')
   await t.rejects(sw.save(), { code: 'ENOENT' })
   assertWarning(t)
+})
+
+t.test('reify warns when rebuilding a lockfile from an installed tree', async t => {
+  const dir = t.testdir()
+  const project = resolve(dir, 'project')
+  await mkdir(resolve(project, 'node_modules/dep'), { recursive: true })
+  await writeFile(resolve(project, 'package.json'), JSON.stringify({
+    name: 'root',
+    version: '1.0.0',
+    dependencies: { dep: '1.0.0' },
+  }))
+  await writeFile(resolve(project, 'node_modules/dep/package.json'), JSON.stringify({
+    name: 'dep',
+    version: '1.0.0',
+  }))
+
+  const seen = []
+  const onlog = (...args) => args[0] === 'warn' && seen.push(args)
+  process.on('log', onlog)
+  try {
+    await new Arborist({
+      path: project,
+      cache: resolve(dir, 'cache'),
+      offline: true,
+      ignoreScripts: true,
+      audit: false,
+      fund: false,
+    }).reify()
+  } finally {
+    process.removeListener('log', onlog)
+  }
+
+  const lock = JSON.parse(await readFile(resolve(project, 'package-lock.json'), 'utf8'))
+  const dep = lock.packages['node_modules/dep']
+  t.ok(dep, 'the installed dependency is saved to the public lockfile')
+  t.equal(dep.resolved, undefined, 'the original source URL remains unknown')
+  t.equal(dep.integrity, undefined, 'the original integrity remains unknown')
+  t.equal(seen.length, 1, 'one aggregate warning reaches the reify caller')
+  if (seen[0]) {
+    t.same(seen[0].slice(0, 2), ['warn', 'shrinkwrap'])
+    t.match(seen[0][2], /Missing resolved or integrity metadata for 1 non-bundled registry dependency/)
+  }
 })
