@@ -147,6 +147,7 @@ Array [
   "restart",
   "root",
   "run",
+  "safeinstall",
   "sbom",
   "search",
   "set",
@@ -532,6 +533,26 @@ custom command to be run along with the installed packages.
 \`\`\`bash
 npm exec --package yo --package generator-node --call "yo node"
 \`\`\`
+
+
+
+#### \`check-privileges\`
+
+* Default: false
+* Type: Boolean
+
+If \`true\`, \`npm safeinstall\` reads the \`package.json\` of each package being
+installed and lists the \`preinstall\`, \`install\`, and \`postinstall\` scripts
+it declares before anything is installed. The install is cancelled unless
+you answer \`y\` at the prompt.
+
+The manifest is fetched from the registry and no tarball is downloaded for a
+package you go on to reject. Only the requested packages are checked, not
+their transitive dependencies, so use [\`npm
+approve-scripts\`](/commands/npm-approve-scripts) to review a dependency you
+already have in the tree.
+
+This has no effect on \`npm install\` or on any other command.
 
 
 
@@ -2628,6 +2649,7 @@ Array [
   "cafile",
   "call",
   "cert",
+  "check-privileges",
   "cidr",
   "color",
   "commit-hooks",
@@ -2960,6 +2982,7 @@ Array [
 
 exports[`test/lib/docs.js TAP config > keys that are not flattened 1`] = `
 Array [
+  "check-privileges",
   "expect-result-count",
   "expect-results",
   "init-author-email",
@@ -6117,6 +6140,185 @@ aliases: run-script, rum, urn
 #### \`ignore-scripts\`
 #### \`foreground-scripts\`
 #### \`script-shell\`
+`
+
+exports[`test/lib/docs.js TAP usage safeinstall > must match snapshot 1`] = `
+Install a package, confirming names and install scripts first
+
+Usage:
+npm safeinstall [<package-spec> ...]
+
+Options:
+[--check-privileges]
+[-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
+[-E|--save-exact] [-g|--global]
+[--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+[--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+[--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+[--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
+[--foreground-scripts] [--ignore-scripts] [--allow-directory <all|none|root>]
+[--allow-file <all|none|root>] [--allow-git <all|none|root>]
+[--allow-remote <all|none|root>]
+[--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
+[--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
+[--before <date>] [--min-release-age <days>]
+[--min-release-age-exclude <pkg|glob> [--min-release-age-exclude <pkg|glob> ...]]
+[--no-bin-links] [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--libc <libc>]
+[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[--workspaces] [--include-workspace-root] [--install-links]
+
+  --check-privileges
+    If \`true\`, \`npm safeinstall\` reads the \`package.json\` of each package
+
+  -S|--save
+    Save installed packages to a \`package.json\` file as dependencies.
+
+  -E|--save-exact
+    Dependencies saved to package.json will be configured with an exact
+
+  -g|--global
+    Operates in "global" mode, so that packages are installed into the
+
+  --install-strategy
+    Sets the strategy for installing packages in node_modules.
+
+  --legacy-bundling
+    Instead of hoisting package installs in \`node_modules\`, install packages
+
+  --global-style
+    Only install direct dependencies in the top level \`node_modules\`,
+
+  --omit
+    Dependency types to omit from the installation tree on disk.
+
+  --include
+    Option that allows for defining which types of dependencies to install.
+
+  --strict-peer-deps
+    If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --prefer-dedupe
+    Prefer to deduplicate packages if possible, rather than
+
+  --package-lock
+    If set to false, then ignore \`package-lock.json\` files when installing.
+
+  --package-lock-only
+    If set to true, the current operation will only use the \`package-lock.json\`,
+
+  --foreground-scripts
+    Run all build scripts (ie, \`preinstall\`, \`install\`, and
+
+  --ignore-scripts
+    If true, npm does not run scripts specified in package.json files.
+
+  --allow-directory
+    Limits the ability for npm to install dependencies from directories.
+
+  --allow-file
+    Limits the ability for npm to install dependencies from tarball files.
+
+  --allow-git
+    Limits the ability for npm to fetch dependencies from git references.
+
+  --allow-remote
+    Limits the ability for npm to fetch dependencies from urls.
+
+  --allow-scripts
+    Comma-separated list of packages whose install-time lifecycle scripts
+
+  --strict-allow-scripts
+    If \`true\`, turn the install-script policy from a warning into a hard
+
+  --dangerously-allow-all-scripts
+    If \`true\`, bypass the \`allowScripts\` policy entirely and run every
+
+  --audit
+    When "true" submit audit reports alongside the current npm command to the
+
+  --before
+    If passed to \`npm install\`, will rebuild the npm tree such that only
+
+  --min-release-age
+    If set, npm will build the npm tree such that only versions that were
+
+  --min-release-age-exclude
+    A list of package names or \`minimatch\` glob patterns that are exempt
+
+  --bin-links
+    Tells npm to create symlinks (or \`.cmd\` shims on Windows) for package
+
+  --fund
+    When "true" displays the message at the end of each \`npm install\`
+
+  --dry-run
+    Indicates that you don't want npm to make any changes and that it should
+
+  --cpu
+    Override CPU architecture of native modules to install.
+
+  --os
+    Override OS of native modules to install.
+
+  --libc
+    Override libc of native modules to install.
+
+  -w|--workspace
+    Enable running a command in the context of the configured workspaces of the
+
+  --workspaces
+    Set to true to run the command in the context of **all** configured
+
+  --include-workspace-root
+    Include the workspace root when workspaces are enabled for a command.
+
+  --install-links
+    When set file: protocol dependencies will be packed and installed as
+
+
+Run "npm help safeinstall" for more info
+
+\`\`\`bash
+npm safeinstall [<package-spec> ...]
+\`\`\`
+
+#### \`check-privileges\`
+#### \`save\`
+#### \`save-exact\`
+#### \`global\`
+#### \`install-strategy\`
+#### \`legacy-bundling\`
+#### \`global-style\`
+#### \`omit\`
+#### \`include\`
+#### \`strict-peer-deps\`
+#### \`prefer-dedupe\`
+#### \`package-lock\`
+#### \`package-lock-only\`
+#### \`foreground-scripts\`
+#### \`ignore-scripts\`
+#### \`allow-directory\`
+#### \`allow-file\`
+#### \`allow-git\`
+#### \`allow-remote\`
+#### \`allow-scripts\`
+#### \`strict-allow-scripts\`
+#### \`dangerously-allow-all-scripts\`
+#### \`audit\`
+#### \`before\`
+#### \`min-release-age\`
+#### \`min-release-age-exclude\`
+#### \`bin-links\`
+#### \`fund\`
+#### \`dry-run\`
+#### \`cpu\`
+#### \`os\`
+#### \`libc\`
+#### \`workspace\`
+#### \`workspaces\`
+#### \`include-workspace-root\`
+#### \`install-links\`
 `
 
 exports[`test/lib/docs.js TAP usage sbom > must match snapshot 1`] = `
