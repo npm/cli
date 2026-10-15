@@ -519,6 +519,71 @@ t.test('package with _npmUser.trustedPublisher shows cleaned up property with --
   t.match(joinedOutput(), /claudia <claudia@cyan.com>/, 'uses oidc trustedPublisher info for _npmUser')
 })
 
+t.test('publisher actor metadata preserves person formatting', async t => {
+  const publisher = {
+    name: 'claudia',
+    email: 'claudia@cyan.com',
+    actor: { name: 'automation', email: 'automation@cyan.com', type: 'user' },
+  }
+  for (const json of [true, false]) {
+    for (const fields of [['_npmUser'], ['maintainers']]) {
+      await t.test(`${json ? 'json' : 'text'} ${fields[0]}`, async t => {
+        const { view, joinedOutput } = await loadMockNpm(t, {
+          config: { json },
+          mocks: {
+            pacote: {
+              packument: async () => ({
+                _id: 'cyan',
+                name: 'cyan',
+                'dist-tags': { latest: '1.0.0' },
+                versions: {
+                  '1.0.0': {
+                    name: 'cyan',
+                    version: '1.0.0',
+                    _npmUser: publisher,
+                    maintainers: [publisher],
+                  },
+                },
+              }),
+            },
+          },
+        })
+        await view.exec(['cyan', ...fields])
+        if (json) {
+          t.strictSame(JSON.parse(joinedOutput()), ['claudia <claudia@cyan.com>'])
+        } else {
+          t.equal(joinedOutput(), 'claudia <claudia@cyan.com>')
+        }
+      })
+    }
+  }
+})
+
+t.test('publisher actor cleanup retains unrelated metadata', async t => {
+  const actor = { name: 'automation', email: 'automation@cyan.com', type: 'user' }
+  const extended = { name: 'claudia', email: 'claudia@cyan.com', actor, extra: true }
+  const { view, joinedOutput } = await loadMockNpm(t, {
+    config: { json: true },
+    mocks: {
+      pacote: {
+        packument: async () => ({
+          _id: 'cyan',
+          'dist-tags': { latest: '1.0.0' },
+          versions: {
+            '1.0.0': {
+              name: 'cyan',
+              version: '1.0.0',
+              _npmUser: extended,
+            },
+          },
+        }),
+      },
+    },
+  })
+  await view.exec(['cyan', '_npmUser'])
+  t.strictSame(JSON.parse(joinedOutput()), [extended], 'does not discard additional fields')
+})
+
 t.test('package with --json and no versions', async t => {
   const { view, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
   await view.exec(['brown'])
