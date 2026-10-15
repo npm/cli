@@ -395,6 +395,143 @@ t.test('bundle deps example 1, complete:true', async t => {
   }), 'no missing deps, because complete: true, add dep, save bundled')
 })
 
+t.test('complete build allows registry tarballs with allowRemote=none', async t => {
+  const path = resolve(fixtures, 'testing-bundledeps-empty')
+  createRegistry(t, true)
+
+  await t.resolves(buildIdeal(path, {
+    complete: true,
+    allowRemote: 'none',
+  }))
+})
+
+t.test('complete build extracts from a rewritten registry URL', async t => {
+  const name = '@isaacs/testing-bundledeps'
+  const originalResolved =
+    'https://registry.npmjs.org/npm/b/@isaacs/testing-bundledeps/-/testing-bundledeps-1.0.0.tgz'
+  const rewrittenResolved =
+    'https://mirror.example.com/npm/a/@isaacs/testing-bundledeps/-/testing-bundledeps-1.0.0.tgz'
+  const integrity =
+    'sha512-P8AF2FoTfHOPGY6W53FHVg9mza6ipzkppAwnbnNNkPaLQIEFTpx3U95ir1AKqmub7nTi115Qi6zHiqJzGe5Cqg=='
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { [name]: '1.0.0' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'root',
+          version: '1.0.0',
+          dependencies: { [name]: '1.0.0' },
+        },
+        [`node_modules/${name}`]: {
+          version: '1.0.0',
+          resolved: originalResolved,
+          integrity,
+          dependencies: {
+            bundled: '1.0.0',
+          },
+          bundleDependencies: [
+            'bundled',
+          ],
+        },
+      },
+    }),
+  })
+
+  const extract = pacote.extract
+  t.teardown(() => {
+    pacote.extract = extract
+  })
+  pacote.extract = (uri, dir, options) => {
+    t.equal(uri, rewrittenResolved, 'extracts from the configured mirror')
+    t.equal(options.resolved, rewrittenResolved, 'passes the rewritten resolved option')
+    pacote.extract = extract
+    fs.mkdirSync(resolve(dir, 'node_modules/bundled'), { recursive: true })
+    fs.writeFileSync(resolve(dir, 'package.json'), JSON.stringify({
+      name,
+      version: '1.0.0',
+      dependencies: { bundled: '1.0.0' },
+      bundleDependencies: ['bundled'],
+    }))
+    fs.writeFileSync(resolve(dir, 'node_modules/bundled/package.json'), JSON.stringify({
+      name: 'bundled',
+      version: '1.0.0',
+    }))
+  }
+
+  await t.resolves(buildIdeal(path, {
+    complete: true,
+    allowRemote: 'none',
+    registry: 'https://mirror.example.com/npm/a',
+    replaceRegistryHost: 'https://registry.npmjs.org/npm/b',
+  }))
+})
+
+t.test('complete build does not exempt remote tarballs', async t => {
+  const name = 'remote-bundle'
+  const resolved = 'https://remote.example.com/remote-bundle-1.0.0.tgz'
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { [name]: '1.0.0' },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'root',
+          version: '1.0.0',
+          dependencies: { [name]: '1.0.0' },
+        },
+        [`node_modules/${name}`]: {
+          version: '1.0.0',
+          resolved,
+          integrity: 'sha512-test',
+          dependencies: { bundled: '1.0.0' },
+          bundleDependencies: ['bundled'],
+        },
+      },
+    }),
+  })
+
+  const extract = pacote.extract
+  t.teardown(() => {
+    pacote.extract = extract
+  })
+  pacote.extract = (uri, dir, options) => {
+    t.equal(uri, resolved, 'keeps remote tarball URL unchanged')
+    t.equal(options.allowRemote, 'none', 'does not grant registry exemption')
+    pacote.extract = extract
+    fs.mkdirSync(resolve(dir, 'node_modules/bundled'), { recursive: true })
+    fs.writeFileSync(resolve(dir, 'package.json'), JSON.stringify({
+      name,
+      version: '1.0.0',
+      dependencies: { bundled: '1.0.0' },
+      bundleDependencies: ['bundled'],
+    }))
+    fs.writeFileSync(resolve(dir, 'node_modules/bundled/package.json'), JSON.stringify({
+      name: 'bundled',
+      version: '1.0.0',
+    }))
+  }
+
+  await t.resolves(buildIdeal(path, {
+    complete: true,
+    allowRemote: 'none',
+  }))
+})
+
 t.test('bundle deps example 2', async t => {
   // bundled deps at the root level are NOT ignored when building ideal trees
   const path = resolve(fixtures, 'testing-bundledeps-2')
