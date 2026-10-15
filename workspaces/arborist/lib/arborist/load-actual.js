@@ -13,6 +13,7 @@ const calcDepFlags = require('../calc-dep-flags.js')
 const Node = require('../node.js')
 const Link = require('../link.js')
 const realpath = require('../realpath.js')
+const relpath = require('../relpath.js')
 const PackageExtensions = require('../package-extensions.js')
 const NpmExtension = require('../npm-extension.js')
 
@@ -361,8 +362,13 @@ module.exports = cls => class ActualLoader extends cls {
   async #newLink (options) {
     const { realpath } = options
     this.#topNodes.add(realpath)
-    const target = this.#cache.get(realpath)
-    const link = new Link({ ...options, target })
+    // On Windows, links can spell one target differently (e.g. `D:\pkg` and `d:\pkg`).
+    // Those spellings share an inventory location, so a second target node there would evict
+    // the first and leave its links without a target. Reuse the node already at that location.
+    const root = options.root || options.parent?.root
+    const target = root?.inventory.get(relpath(root.realpath, realpath)) ||
+      this.#cache.get(realpath)
+    const link = new Link({ ...options, realpath: target?.path || realpath, target })
 
     if (!target) {
       // Link set its target itself in this case
