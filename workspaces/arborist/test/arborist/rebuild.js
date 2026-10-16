@@ -553,7 +553,8 @@ t.test('rebuild node-gyp dependencies lacking both preinstall and install script
       },
     }),
   })
-  const arb = new Arborist({ path, dangerouslyAllowAllScripts: true })
+  const nodeGyp = '/test/node-gyp.js'
+  const arb = new Arborist({ path, dangerouslyAllowAllScripts: true, nodeGyp })
   await arb.rebuild()
   t.match(RUNS, [
     {
@@ -569,6 +570,7 @@ t.test('rebuild node-gyp dependencies lacking both preinstall and install script
         npm_package_peer: '',
         npm_package_dev_optional: '',
       },
+      nodeGyp,
       scriptShell: undefined,
     },
   ])
