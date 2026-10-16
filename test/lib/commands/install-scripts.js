@@ -148,6 +148,47 @@ t.test('install-scripts ls with no unreviewed says so', async t => {
   t.match(joinedOutput(), /No packages with unreviewed install scripts/)
 })
 
+for (const owner of ['root', 'workspace']) {
+  t.test(`install-scripts lists, approves and retains ${owner} bundles`, async t => {
+    const prefixDir = setupProject({ withScripts: ['canvas'] })
+    const pkg = JSON.parse(prefixDir['package.json'])
+    const lock = JSON.parse(prefixDir['package-lock.json'])
+    if (owner === 'root') {
+      pkg.bundleDependencies = ['canvas']
+    } else {
+      const workspace = {
+        name: 'ws',
+        version: '1.0.0',
+        dependencies: { canvas: '*' },
+        bundleDependencies: ['canvas'],
+      }
+      pkg.dependencies = { ws: '*' }
+      pkg.workspaces = ['packages/*']
+      prefixDir.packages = { ws: {
+        'package.json': JSON.stringify(workspace),
+        node_modules: { canvas: prefixDir.node_modules.canvas },
+      } }
+      delete prefixDir.node_modules.canvas
+      prefixDir.node_modules.ws = t.fixture('symlink', '../packages/ws')
+      lock.packages['packages/ws'] = workspace
+      lock.packages['node_modules/ws'] = { resolved: 'packages/ws', link: true }
+      lock.packages['packages/ws/node_modules/canvas'] = lock.packages['node_modules/canvas']
+      delete lock.packages['node_modules/canvas']
+    }
+    prefixDir['package.json'] = JSON.stringify(pkg)
+    lock.packages[''] = pkg
+    prefixDir['package-lock.json'] = JSON.stringify(lock)
+    const { npm, prefix, joinedOutput } = await mockNpm(t, { prefixDir })
+    await npm.exec('install-scripts', ['ls'])
+    t.match(joinedOutput(), /canvas@1\.0\.0/, 'bundle is pending')
+    await npm.exec('install-scripts', ['approve', 'canvas'])
+    const policy = () => JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8')).allowScripts
+    t.same(policy(), { 'canvas@1.0.0': true }, 'named approval succeeds')
+    await npm.exec('install-scripts', ['prune'])
+    t.same(policy(), { 'canvas@1.0.0': true }, 'prune retains the approval')
+  })
+}
+
 t.test('install-scripts ls rejects positional args', async t => {
   const { npm } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas'] }),
