@@ -803,3 +803,59 @@ t.test('min-release-age-exclude', async t => {
     t.match(joinedOutput(), '2.0.0', 'glob-excluded package shows newer version')
   })
 })
+
+t.test('global alias packages report alias spec, not aliased package version', async t => {
+  // Regression test for https://github.com/npm/cli/issues/9706
+  // When a package is installed globally via an alias spec
+  // (e.g. `npm install -g cowsay@npm:dog@1.0.1`), `npm outdated -g` was
+  // resolving the wrapper directory name against the registry instead of
+  // the aliased package, so the `Current` column showed the aliased
+  // package version while `Wanted`/`Latest` came from a totally
+  // different packument.
+  const globalAliasFixture = {
+    node_modules: {
+      cat: {
+        'package.json': JSON.stringify({
+          name: 'dog',
+          version: '1.0.1',
+          _from: 'cat@npm:dog@1.0.1',
+          _requested: {
+            type: 'alias',
+            name: 'cat',
+            escapedName: 'cat',
+            rawSpec: 'npm:dog@1.0.1',
+            saveSpec: 'npm:dog@1.0.1',
+            fetchSpec: 'latest',
+            subSpec: {
+              type: 'version',
+              registry: true,
+              name: 'dog',
+              escapedName: 'dog',
+              rawSpec: '1.0.1',
+              saveSpec: null,
+              fetchSpec: '1.0.1',
+            },
+          },
+        }, null, 2),
+      },
+    },
+  }
+
+  const { outdated, joinedOutput } = await mockNpm(t, {
+    globalPrefixDir: globalAliasFixture,
+    config: { global: true },
+  })
+  await outdated.exec([])
+
+  const out = joinedOutput()
+  // The row must describe the alias (`cat@npm:dog`) so users can tell
+  // which package on disk is being reported, and the Latest column must
+  // come from the aliased package's packument (`dog`@2.0.0), not from
+  // the wrapper name (`cat` would resolve to its own 1.0.1 latest).
+  t.match(out, /cat@npm:dog/,
+    'output identifies the row by its alias spec')
+  t.match(out, /npm:dog@1\.0\.1/,
+    'Current column reflects the aliased package version with alias prefix')
+  t.match(out, /\b2\.0\.0\b/,
+    'Latest column comes from the aliased package\'s packument (dog@2.0.0)')
+})
