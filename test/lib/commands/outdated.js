@@ -57,6 +57,11 @@ const packument = spec => {
         },
       },
     },
+    unpublished: {
+      name: 'unpublished',
+      'dist-tags': {},
+      versions: {},
+    },
     timed: {
       name: 'timed',
       'dist-tags': {
@@ -620,6 +625,43 @@ t.test('workspaces', async t => {
 
   await t.test('should display missing deps when filtering by ws', t =>
     mockWorkspaces(t, { workspace: 'c', exitCode: 1 }))
+
+  await t.test('should ignore ws dep sharing a name with an unpublished package', async t => {
+    const testDir = {
+      'package.json': JSON.stringify({
+        name: 'workspaces-project',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }),
+      node_modules: {
+        a: t.fixture('symlink', '../packages/a'),
+        unpublished: t.fixture('symlink', '../packages/unpublished'),
+      },
+      packages: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+            dependencies: {
+              unpublished: '^1.0.0',
+            },
+          }),
+        },
+        unpublished: {
+          'package.json': JSON.stringify({
+            name: 'unpublished',
+            version: '1.0.0',
+          }),
+        },
+      },
+    }
+
+    const { outdated, joinedOutput } = await mockNpm(t, {
+      prefixDir: testDir,
+    })
+    await outdated.exec([])
+    t.equal(joinedOutput(), '', 'no logs')
+  })
 })
 
 t.test('aliases', async t => {
