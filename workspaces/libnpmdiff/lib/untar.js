@@ -1,36 +1,40 @@
 const tar = require('tar')
-const { minimatch } = require('minimatch')
+const { Minimatch } = require('minimatch')
 
 const normalizeMatch = str => str
   .replace(/\\+/g, '/')
   .replace(/^\.\/|^\./, '')
 
+// returns a predicate telling whether a tarball path is included by the
+// user-provided filters, compiling each glob only once
+const buildFilter = (diffFiles) => {
+  if (!diffFiles.length) {
+    return () => true
+  }
+
+  const filters = diffFiles.map(normalizeMatch)
+  const matchers = filters.map(pattern =>
+    new Minimatch(
+      `{package/,}${pattern}`,
+      { matchBase: pattern.startsWith('*') }
+    ))
+
+  return path => {
+    const normalizedPath = normalizeMatch(path)
+    return matchers.some(m => m.match(normalizedPath)) ||
+      // expands usage of simple path filters, e.g: lib or src/
+      filters.some(f =>
+        normalizedPath.startsWith(f) ||
+        normalizedPath.startsWith(`package/${f}`))
+  }
+}
+
 // files and refs are mutating params
-// filterFiles, item, prefix and opts are read-only options
-const untar = ({ files, refs }, { filterFiles, item, prefix }) => {
+// isIncluded, item and prefix are read-only options
+const untar = ({ files, refs }, { isIncluded, item, prefix }) => {
   tar.list({
     filter: (path, entry) => {
-      const fileMatch = () =>
-        (!filterFiles.length ||
-          filterFiles.some(f => {
-            const pattern = normalizeMatch(f)
-            return minimatch(
-              normalizeMatch(path),
-              `{package/,}${pattern}`,
-              { matchBase: pattern.startsWith('*') }
-            )
-          }))
-
-      // expands usage of simple path filters, e.g: lib or src/
-      const folderMatch = () =>
-        filterFiles.some(f =>
-          normalizeMatch(path).startsWith(normalizeMatch(f)) ||
-          normalizeMatch(path).startsWith(`package/${normalizeMatch(f)}`))
-
-      if (
-        entry.type === 'File' &&
-        (fileMatch() || folderMatch())
-      ) {
+      if (entry.type === 'File' && isIncluded(path)) {
         const key = path.replace(/^[^/]+\/?/, '')
         files.add(key)
 
@@ -65,7 +69,7 @@ const readTarballs = async (tarballs, opts = {}) => {
   const refs = new Map()
   const arr = [].concat(tarballs)
 
-  const filterFiles = opts.diffFiles || []
+  const isIncluded = buildFilter(opts.diffFiles || [])
 
   for (const i of arr) {
     untar({
@@ -74,7 +78,7 @@ const readTarballs = async (tarballs, opts = {}) => {
     }, {
       item: i.item,
       prefix: i.prefix,
-      filterFiles,
+      isIncluded,
     })
   }
 
