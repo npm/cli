@@ -537,6 +537,47 @@ t.test('findSpecificOverrideSet returns common ancestor for compatible siblings'
   t.ok(reverse.isEqual(root), 'reverse order should also return the root')
 })
 
+t.test('findSpecificOverrideSet keeps the same rule written in two scopes', async (t) => {
+  // Regression test for https://github.com/npm/cli/issues/10137
+  // A hoisted minimatch is reached through the top-level `minimatch` rule and through `tshy > glob > minimatch`.
+  // Both say the same thing about brace-expansion, so the node must keep that rule instead of falling back to the root, which has none.
+  const root = new OverrideSet({
+    overrides: {
+      minimatch: { 'brace-expansion': '^5.0.12' },
+      tshy: { glob: { minimatch: { 'brace-expansion': '^5.0.12' } } },
+    },
+  })
+
+  const topLevel = root.children.get('minimatch')
+  const scoped = root.children.get('tshy').children.get('glob').children.get('minimatch')
+
+  t.equal(OverrideSet.findSpecificOverrideSet(topLevel, scoped), topLevel, 'keeps the top-level rule')
+  t.equal(OverrideSet.findSpecificOverrideSet(scoped, topLevel), topLevel, 'keeps the top-level rule in either order')
+
+  const edge = { name: 'brace-expansion', rawSpec: '^5.0.0', spec: '^5.0.0' }
+  t.equal(OverrideSet.findSpecificOverrideSet(scoped, topLevel).getEdgeRule(edge).value, '^5.0.12', 'brace-expansion is still overridden')
+})
+
+t.test('findSpecificOverrideSet falls back to the ancestor when two scopes differ', async (t) => {
+  const root = new OverrideSet({
+    overrides: {
+      minimatch: { 'brace-expansion': '^5.0.12' },
+      tshy: { glob: { minimatch: { 'brace-expansion': '^5.0.12', other: '1.0.0' } } },
+      a: { minimatch: { 'brace-expansion': '^5.0.12' } },
+      b: { minimatch: { 'brace-expansion': '^5.0.12' } },
+    },
+  })
+
+  const topLevel = root.children.get('minimatch')
+  const scoped = root.children.get('tshy').children.get('glob').children.get('minimatch')
+  t.equal(OverrideSet.findSpecificOverrideSet(topLevel, scoped), root, 'different nested rules use the common ancestor')
+
+  // the same rule in two scopes, neither of them directly under the common ancestor
+  const underA = root.children.get('a').children.get('minimatch')
+  const underB = root.children.get('b').children.get('minimatch')
+  t.equal(OverrideSet.findSpecificOverrideSet(underA, underB), root, 'scoped copies of a rule do not leak their scope')
+})
+
 t.test('findCommonAncestor', async (t) => {
   const root = new OverrideSet({
     overrides: {
