@@ -1871,3 +1871,29 @@ t.test('setting lockfileVersion from the file contents', async t => {
       }
     })
 })
+
+t.test('store nodes borrow the logical lockfile entry by name and version', async t => {
+  const resolved = 'https://registry.npmjs.org/abbrev/-/abbrev-1.0.0.tgz'
+  const path = t.testdir({
+    'package-lock.json': JSON.stringify({
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root' },
+        'node_modules/abbrev': { version: '1.0.0', resolved },
+      },
+    }),
+  })
+  const meta = await Shrinkwrap.load({ path })
+  const root = new Node({ path, meta, pkg: { name: 'root' } })
+  const storeNode = key => new Node({
+    root,
+    isInStore: true,
+    path: resolve(path, `node_modules/.store/${key}/node_modules/abbrev`),
+    pkg: { name: 'abbrev', version: '1.0.0' },
+  })
+
+  t.equal(storeNode('abbrev@1.0.0-a').resolved, resolved, 'store node gets the logical entry resolved')
+  meta.delete(resolve(path, 'node_modules/abbrev'))
+  t.equal(storeNode('abbrev@1.0.0-b').resolved, null, 'deleted entry is no longer used')
+})

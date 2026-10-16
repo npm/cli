@@ -63,6 +63,9 @@ const depValid = (child, requested, requestor) => {
     return false
   }
 
+  // Under the linked strategy the edge points at a Link whose resolved is always file:, so source checks must use the store package it links to.
+  const source = child.isLink && /(^|\/)node_modules\/\.store\//.test(child.target?.location) ? child.target : child
+
   switch (requested.type) {
     case 'range':
       if (requested.fetchSpec === '*') {
@@ -74,10 +77,11 @@ const depValid = (child, requested, requestor) => {
       return semver.satisfies(child.version, requested.fetchSpec, true)
 
     case 'directory':
-      return linkValid(child, requested, requestor)
+      // installLinks puts the directory's package in the store, so the store Link must not count as a link.
+      return linkValid(requestor.installLinks ? source : child, requested, requestor)
 
     case 'file':
-      return tarballValid(child, requested, requestor)
+      return tarballValid(source, requested, requestor)
 
     case 'alias':
       // check that the alias target is valid
@@ -86,11 +90,11 @@ const depValid = (child, requested, requestor) => {
     case 'tag':
       // if it's a tag, we just verify that it has a tarball resolution
       // presumably, it came from the registry and was tagged at some point
-      return child.resolved && npa(child.resolved).type === 'remote'
+      return source.resolved && npa(source.resolved).type === 'remote'
 
     case 'remote':
       // verify that we got it from the desired location
-      return child.resolved === requested.fetchSpec
+      return source.resolved === requested.fetchSpec
 
     case 'git': {
       // if it's a git type, verify that they're the same repo
@@ -100,7 +104,7 @@ const depValid = (child, requested, requestor) => {
       //
       // if it has a #semver:<range> specifier, verify that the
       // version in the package is in the semver range
-      const resRepo = npa(child.resolved || '')
+      const resRepo = npa(source.resolved || '')
       const resHost = resRepo.hosted
       const reqHost = requested.hosted
       const reqCommit = /^[a-fA-F0-9]{40,64}$/.test(requested.gitCommittish || '')
