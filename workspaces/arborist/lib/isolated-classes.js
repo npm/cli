@@ -15,6 +15,7 @@ class IsolatedNode {
   inBundle = false
   isRegistryDependency = false
   isRootDependency = false
+  isWorkspace = false
   linksIn = new Set()
   meta = { loadedFromDisk: false }
   optional = false
@@ -51,6 +52,9 @@ class IsolatedNode {
     }
     if (options.isRootDependency) {
       this.isRootDependency = true
+    }
+    if (options.isWorkspace) {
+      this.isWorkspace = true
     }
     if (options.optional) {
       this.optional = true
