@@ -1,4 +1,8 @@
 const t = require('tap')
+const { join } = require('node:path')
+const Arborist = require('@npmcli/arborist')
+const { loadNpmWithRegistry } = require('../../fixtures/mock-npm.js')
+const orphanFixture = require('../../fixtures/allow-scripts-orphan.js')
 
 const preflight = require('../../../lib/utils/strict-allow-scripts-preflight.js')
 
@@ -98,32 +102,45 @@ t.test('passes when the only unreviewed node is inert (platform-incompatible opt
   t.pass('no error thrown for inert node')
 })
 
-t.test('only skips extraneous nodes for pruning installations', async t => {
-  const cases = [
-    ['default pruning', {}, {}, true],
-    ['constructor disables pruning', { prune: false }, {}, false],
-    ['call disables pruning', {}, { prune: false }, false],
-    ['call overrides enabled pruning', { prune: true }, { prune: false }, false],
-    ['call overrides disabled pruning', { prune: false }, { prune: true }, true],
-    ['explicit undefined restores the default', { prune: false }, { prune: undefined }, true],
-  ]
-  for (const [name, options, idealTreeOpts, skips] of cases) {
-    await t.test(name, async t => {
-      const arb = makeArb({
-        ideal: tree([orphan()]),
+t.test('skips disconnected orphans when pruning is disabled', async t => {
+  for (const installStrategy of ['hoisted', 'linked']) {
+    await t.test(installStrategy, async t => {
+      const { npm, prefix, registry, assert } = await loadNpmWithRegistry(t, {
+        config: {
+          audit: false,
+          'strict-allow-scripts': true,
+          'install-strategy': installStrategy,
+        },
+        prefixDir: orphanFixture(t, { allowScripts: { orphan: false } }),
+      })
+      const opts = {
+        ...npm.flatOptions,
+        path: prefix,
+        prune: false,
         allowScripts: { orphan: false },
-        options,
-      })
-      const result = preflight({
-        arb,
-        npm: { flatOptions: { strictAllowScripts: true } },
-        idealTreeOpts,
-      })
-      if (skips) {
-        await t.resolves(result)
-      } else {
-        await t.rejects(result, { code: 'ESTRICTALLOWSCRIPTS', message: /orphan@1\.0\.0/ })
       }
+      const arb = new Arborist(opts)
+      await arb.buildIdealTree(opts)
+      const location = 'app/node_modules/abbrev/node_modules/orphan'
+      const unused = arb.idealTree.inventory.get(location)
+      t.match(unused, { extraneous: true, parent: null })
+      t.equal(unused.linksIn.size, 0, 'the orphan has no incoming links')
+
+      await preflight({ arb, npm, idealTreeOpts: opts })
+
+      const manifest = registry.manifest({ name: 'abbrev' })
+      await registry.tarball({
+        manifest: manifest.versions['1.0.0'],
+        tarball: join(prefix, 'tarballs/abbrev@1.0.0'),
+      })
+      await arb.reify(opts)
+      const installedPath = installStrategy === 'linked' ? 'app/node_modules' : 'node_modules'
+      assert.packageInstalled(`${installedPath}/abbrev@1.0.0`)
+      assert.fileShouldNotExist(location)
+      t.equal(arb.scriptsRun.size, 0, 'no install scripts ran')
+      const actual = await new Arborist(opts).loadActual()
+      t.notOk([...actual.inventory.values()].some(n => n.name === 'orphan'),
+        'the installed tree has no orphan')
     })
   }
 })
@@ -143,11 +160,15 @@ t.test('skips orphans in a newly built ideal tree', async t => {
 
 t.test('does not skip an extraneous target with an incoming link', async t => {
   const target = { ...orphan(), linksIn: new Set([{}]) }
-  const arb = makeArb({ ideal: tree([target]), allowScripts: { orphan: false } })
+  const arb = makeArb({
+    ideal: tree([target]),
+    allowScripts: { orphan: false },
+    options: { prune: false },
+  })
   await t.rejects(preflight({
     arb,
     npm: { flatOptions: { strictAllowScripts: true } },
-    idealTreeOpts: {},
+    idealTreeOpts: { prune: false },
   }), { code: 'ESTRICTALLOWSCRIPTS', message: /orphan@1\.0\.0/ })
 })
 
@@ -163,11 +184,10 @@ t.test('skipping an orphan does not skip a required unreviewed package', async t
   })
 })
 
-t.test('does not skip actual-tree orphans even with an ideal tree and pruning enabled', async t => {
+t.test('does not skip actual-tree orphans even with an ideal tree', async t => {
   const arb = makeArb({
     ideal: tree([]),
     actual: tree([orphan()]),
-    options: { prune: true },
   })
   await t.rejects(preflight({
     arb,

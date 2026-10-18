@@ -81,31 +81,14 @@ t.test('throws when unreviewed scripts are present', async t => {
   )
 })
 
-t.test('only skips extraneous nodes when pruning is enabled', async t => {
-  const cases = [
-    ['default pruning', {}, {}, true],
-    ['constructor disables pruning', { prune: false }, {}, false],
-    ['call disables pruning', {}, { prune: false }, false],
-    ['call overrides enabled pruning', { prune: true }, { prune: false }, false],
-    ['call overrides disabled pruning', { prune: false }, { prune: true }, true],
-    ['explicit undefined restores the default', { prune: false }, { prune: undefined }, true],
-  ]
-  for (const [name, options, opts, skips] of cases) {
-    await t.test(name, async t => {
-      const arb = fakeArb(orphanTree, options)
-      const result = strictAllowScriptsPreflight(arb, {
-        strictAllowScripts: true,
-        allowScripts: { orphan: false },
-        ...opts,
-      })
-      if (skips) {
-        await t.resolves(result)
-      } else {
-        await t.rejects(result, { code: 'ESTRICTALLOWSCRIPTS', message: /orphan/ })
-      }
-      t.notOk(arb.buildIdealTreeCalled, 'reuses the ideal tree')
-    })
-  }
+t.test('skips disconnected orphans when pruning is disabled', async t => {
+  const arb = fakeArb(orphanTree, { prune: false })
+  await t.resolves(strictAllowScriptsPreflight(arb, {
+    strictAllowScripts: true,
+    allowScripts: { orphan: false },
+    prune: false,
+  }))
+  t.notOk(arb.buildIdealTreeCalled, 'reuses the ideal tree')
 })
 
 t.test('skips orphans in a newly built ideal tree', async t => {
@@ -122,10 +105,11 @@ t.test('does not skip an extraneous target with an incoming link', async t => {
     ...orphanTree.inventory.get('node_modules/orphan'),
     linksIn: new Set([{}]),
   }
-  const arb = fakeArb({ inventory: new Map([['node_modules/orphan', target]]) })
+  const arb = fakeArb({ inventory: new Map([['node_modules/orphan', target]]) }, { prune: false })
   await t.rejects(strictAllowScriptsPreflight(arb, {
     strictAllowScripts: true,
     allowScripts: { orphan: false },
+    prune: false,
   }), { code: 'ESTRICTALLOWSCRIPTS', message: /orphan/ })
 })
 

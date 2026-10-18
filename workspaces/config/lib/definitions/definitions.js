@@ -2513,10 +2513,10 @@ const definitions = {
       or engine (a non-matching \`os\`, \`cpu\`, or \`libc\`) are not flagged,
       because their install scripts never run.
 
-      With pruning enabled, installation checks skip unused entries with no
-      package parent or incoming links. Local link targets that installation
-      can still rebuild remain subject to this check. \`npm rebuild\` and
-      \`npm install-scripts ls\` still check unused packages on disk.
+      Installation checks skip unused entries with no package parent or
+      incoming links. Local link targets that installation can still rebuild
+      remain subject to this check. \`npm rebuild\` and \`npm install-scripts ls\`
+      still check unused packages on disk.
     `,
     flatten,
   }),

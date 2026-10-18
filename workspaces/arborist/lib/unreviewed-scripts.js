@@ -59,7 +59,7 @@ const collectUnreviewedScripts = async ({
       continue
     }
     if (skipExtraneous && node.extraneous && !node.parent && node.linksIn?.size === 0) {
-      // Unchanged local links can still rebuild their targets, even when those targets are extraneous.
+      // Reify never installs disconnected extraneous nodes, so their scripts cannot run.
       continue
     }
 
