@@ -41,7 +41,7 @@ const hasNonRegistryShape = (node) => {
   return !/^https?:\/\/[^/]+\/.+\/-\/[^/]+-\d/.test(node.resolved)
 }
 
-const getInstallScripts = async (node) => {
+const getInstallScripts = async (node, { readFromDisk = true } = {}) => {
   /* istanbul ignore next: arborist Nodes always carry a `package` object;
      defensive fallbacks for non-arborist callers. */
   const pkg = node.package || {}
@@ -50,20 +50,19 @@ const getInstallScripts = async (node) => {
   const includePrepare = hasNonRegistryShape(node)
   const anyScript = scripts.preinstall || scripts.install || scripts.postinstall ||
     (includePrepare && scripts.prepare)
-  let isGyp = !scripts.preinstall && !scripts.install && gypfile !== false &&
+  let isGyp = readFromDisk && !scripts.preinstall && !scripts.install && gypfile !== false &&
     await isNodeGypPackage(node.path).catch(() => false)
   let recoveredOptOut = false
 
-  // Lockfiles omit scripts and gypfile. Recover both before inferring a
-  // native build, including packages without a script-presence flag.
-  if (isGyp || !anyScript && node.hasInstallScript === true) {
+  // Preflight cannot trust an older package at this path, even if its
+  // name and version match. Only installed-tree callers recover metadata.
+  if (readFromDisk && (isGyp || !anyScript && node.hasInstallScript === true)) {
     const { content } = await PackageJson.normalize(node.path)
       .catch(() => ({ content: null }))
-    // Before extraction, this path can still contain an older package.
     const matchesPackage = content && pkg.name && pkg.version &&
       content.name === pkg.name && content.version === pkg.version
     if (matchesPackage) {
-      scripts = content.scripts || {}
+      scripts = { ...content.scripts, ...scripts }
       gypfile = content.gypfile
       recoveredOptOut = gypfile === false
     } else if (node.hasInstallScript === true) {

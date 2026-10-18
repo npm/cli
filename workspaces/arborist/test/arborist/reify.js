@@ -4753,6 +4753,10 @@ t.test('linked native packages retain gypfile:false during extraction', async t 
       const installed = fs.realpathSync(resolve(root, 'project/node_modules/native-pkg'))
       t.match(installed, /[\\/]\.store[\\/]/, 'installs into the linked store')
       t.ok(fs.existsSync(resolve(installed, 'binding.gyp')), 'installs binding.gyp')
+
+      await arb.reify({ rm: ['native-pkg'] })
+      t.notOk(fs.existsSync(resolve(root, 'project/node_modules/native-pkg')),
+        'reusing Arborist does not restore metadata for a removed package')
     })
   }
 })

@@ -209,6 +209,41 @@ t.test('a confirmed opt-out clears a stale presence flag without binding.gyp', a
   }), {})
 })
 
+t.test('disk recovery does not replace known script bodies', async t => {
+  const getInstallScripts = require('../lib/install-scripts.js')
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'pkg',
+      version: '1.0.0',
+      gypfile: false,
+      scripts: { postinstall: 'old postinstall' },
+    }),
+    'binding.gyp': '',
+  })
+  const pkg = Object.freeze({
+    name: 'pkg',
+    version: '1.0.0',
+    scripts: Object.freeze({ postinstall: 'incoming postinstall' }),
+  })
+  t.strictSame(await getInstallScripts({
+    path,
+    package: pkg,
+    hasInstallScript: true,
+  }), { postinstall: 'incoming postinstall' })
+})
+
+t.test('preflight does not recover an opt-out from an older installed package', async t => {
+  const getInstallScripts = require('../lib/install-scripts.js')
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'pkg', version: '1.0.0', gypfile: false }),
+  })
+  t.strictSame(await getInstallScripts({
+    path,
+    package: { name: 'pkg', version: '1.0.0' },
+    hasInstallScript: true,
+  }, { readFromDisk: false }), { install: '(install scripts present)' })
+})
+
 t.test('unavailable or mismatched metadata cannot clear a script-presence flag', async t => {
   const getInstallScripts = require('../lib/install-scripts.js')
   const cases = [

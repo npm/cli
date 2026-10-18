@@ -80,6 +80,126 @@ t.test('gypfile:false survives fresh, lockfile, and repeated installs', async t 
   }
 })
 
+t.test('transitive native opt-outs clear stale flags in both install strategies', async t => {
+  for (const installStrategy of ['hoisted', 'linked']) {
+    await t.test(installStrategy, async t => {
+      const { npm, registry, logs } = await loadMockNpm(t, {
+        config: { audit: false, 'install-strategy': installStrategy },
+        prefixDir: {
+          'package.json': JSON.stringify({
+            name: 'host',
+            version: '1.0.0',
+            dependencies: { 'parent-pkg': '1.0.0' },
+          }),
+          parent: {
+            'package.json': JSON.stringify({
+              name: 'parent-pkg',
+              version: '1.0.0',
+              dependencies: { 'native-pkg': '1.0.0' },
+            }),
+          },
+          native: {
+            'package.json': JSON.stringify({ name: 'native-pkg', version: '1.0.0', gypfile: false }),
+            'binding.gyp': '',
+          },
+        },
+      })
+      const parent = registry.manifest({
+        name: 'parent-pkg',
+        packuments: [{ version: '1.0.0', dependencies: { 'native-pkg': '1.0.0' } }],
+      })
+      const native = registry.manifest({
+        name: 'native-pkg',
+        packuments: [{ version: '1.0.0', hasInstallScript: true }],
+      })
+      await registry.package({ manifest: parent })
+      await registry.package({ manifest: native })
+      const lockPath = path.join(npm.prefix, 'package-lock.json')
+
+      for (const phase of ['fresh', 'clean-lockfile', 'repeat']) {
+        if (phase === 'clean-lockfile') {
+          const staleLock = JSON.parse(fs.readFileSync(lockPath, 'utf8'))
+          staleLock.packages['node_modules/native-pkg'].hasInstallScript = true
+          fs.writeFileSync(lockPath, JSON.stringify(staleLock))
+        }
+        if (phase === 'clean-lockfile') {
+          fs.rmSync(path.join(npm.prefix, 'node_modules'), { recursive: true, force: true })
+          fs.rmSync(path.join(npm.config.get('cache'), '_cacache'), { recursive: true, force: true })
+        }
+        if (phase !== 'repeat') {
+          await registry.tarball({
+            manifest: parent.versions['1.0.0'],
+            tarball: path.join(npm.prefix, 'parent'),
+          })
+          await registry.tarball({
+            manifest: native.versions['1.0.0'],
+            tarball: path.join(npm.prefix, 'native'),
+          })
+        }
+        await npm.exec('install', [])
+
+        const lock = JSON.parse(fs.readFileSync(lockPath, 'utf8'))
+        t.notOk(lock.packages['node_modules/native-pkg'].hasInstallScript,
+          `${phase}: clears the stale project-lockfile flag`)
+        t.strictSame(logs.warn.byTitle('install-scripts'), [], `${phase}: no false warning`)
+        const parentPath = fs.realpathSync(path.join(npm.prefix, 'node_modules/parent-pkg/package.json'))
+        const nativePath = require('node:module').createRequire(parentPath).resolve('native-pkg/package.json')
+        t.equal(JSON.parse(fs.readFileSync(nativePath, 'utf8')).gypfile, false,
+          `${phase}: the transitive opted-out package is installed`)
+      }
+    })
+  }
+})
+
+t.test('strict preflight rejects same-version replacements before changing installed files', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: { audit: false, 'allow-file': 'all', 'strict-allow-scripts': true },
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
+      old: {
+        'package.json': JSON.stringify({ name: 'native-pkg', version: '1.0.0', gypfile: false }),
+        'binding.gyp': '',
+        'contents.txt': 'old',
+      },
+      incoming: {
+        'package.json': JSON.stringify({
+          name: 'native-pkg',
+          version: '1.0.0',
+          scripts: { postinstall: 'echo incoming' },
+        }),
+        'binding.gyp': '',
+        'contents.txt': 'incoming',
+      },
+    },
+  })
+  for (const source of ['old', 'incoming']) {
+    await require('tar').c({
+      cwd: path.join(npm.prefix, source),
+      prefix: 'package',
+      gzip: true,
+      file: path.join(npm.prefix, `${source}.tgz`),
+    }, ['package.json', 'binding.gyp', 'contents.txt'])
+  }
+  await npm.exec('install', ['./old.tgz'])
+  const files = [
+    'package.json',
+    'package-lock.json',
+    'node_modules/native-pkg/package.json',
+    'node_modules/native-pkg/contents.txt',
+  ]
+  const before = files.map(file => fs.readFileSync(path.join(npm.prefix, file), 'utf8'))
+
+  await t.rejects(npm.exec('install', ['./incoming.tgz']), {
+    code: 'ESTRICTALLOWSCRIPTS',
+    message: /postinstall: echo incoming/,
+  })
+  t.strictSame(
+    files.map(file => fs.readFileSync(path.join(npm.prefix, file), 'utf8')),
+    before,
+    'strict rejection leaves installed contents and project manifests unchanged'
+  )
+})
+
 t.test('exec commands', async t => {
   await t.test('with args does not run lifecycle scripts', async t => {
     const { npm, registry } = await loadMockNpm(t, {
