@@ -105,6 +105,19 @@ t.test('refuses to delete through a symlink that escapes the package', async t =
   t.ok(existsSync(resolve(dir, 'outside', 'secret.js')), 'outside file untouched')
 })
 
+t.test('refuses a target that is itself a symlink out of the package', async t => {
+  const dir = t.testdir({
+    pkg: { 'index.js': 'x\n' },
+    outside: { 'secret.js': 'const v = 1\n' },
+  })
+  symlinkSync(resolve(dir, 'outside', 'secret.js'), resolve(dir, 'pkg', 'link.js'))
+  await t.rejects(
+    applyPatchToDir({ patch: filePatch('link.js', 'const v = 1\n', 'const v = 2\n'), cwd: resolve(dir, 'pkg') }),
+    { code: 'EPATCHUNSAFE' }
+  )
+  t.equal(readFileSync(resolve(dir, 'outside', 'secret.js'), 'utf8'), 'const v = 1\n', 'outside file untouched')
+})
+
 t.test('delete fails when the file drifted from the diff', async t => {
   const dir = t.testdir({ 'gone.js': 'different content\n' })
   await t.rejects(
