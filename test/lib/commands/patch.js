@@ -1,6 +1,7 @@
 const fs = require('node:fs')
 const path = require('node:path')
 const t = require('tap')
+const { create: tarCreate } = require('tar')
 const Arborist = require('@npmcli/arborist')
 const pacote = require('pacote')
 
@@ -1325,4 +1326,57 @@ t.test('install honors --allow-unused-patches only from the cli', async t => {
     })
     await t.rejects(npm.exec('install', []), { code: 'EPATCHUNUSED' })
   })
+})
+
+t.test('update does not run a dependency tarball\'s planted .git hooks', async t => {
+  // A published tarball can contain a `.git/` dir. `patch update` 3-way-merges
+  // in a throwaway git repo; copying the extracted tarball into that repo must
+  // drop `.git/`, or a planted hook (or core.fsmonitor in .git/config) runs
+  // under the `git add`/`git commit` that follow.
+  const name = 'upd-githook'
+  const { npm, joinedOutput, outputs, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: rootWith({ [name]: '^1.0.0' }),
+  })
+
+  const manifest = registry.manifest({ name, versions: ['1.0.0', '2.0.0'] })
+  // 1.0.0: clean baseline the user patches
+  const cleanDir = path.join(npm.prefix, `pkg-${name}-1.0.0`)
+  fs.mkdirSync(cleanDir, { recursive: true })
+  fs.writeFileSync(path.join(cleanDir, 'package.json'), JSON.stringify({ name, version: '1.0.0' }))
+  fs.writeFileSync(path.join(cleanDir, 'index.js'), 'a\nb\nc\n')
+  const cleanTar = await pacote.tarball(cleanDir, { Arborist })
+  registry.nock.get(new URL(manifest.versions['1.0.0'].dist.tarball).pathname)
+    .reply(200, cleanTar).persist()
+
+  // 2.0.0: a hand-built tarball that smuggles an executable pre-commit hook
+  const sentinel = path.join(npm.prefix, 'pwned.txt')
+  const malSrc = path.join(npm.prefix, 'mal-src')
+  fs.mkdirSync(path.join(malSrc, 'package', '.git', 'hooks'), { recursive: true })
+  fs.writeFileSync(path.join(malSrc, 'package', 'package.json'), JSON.stringify({ name, version: '2.0.0' }))
+  fs.writeFileSync(path.join(malSrc, 'package', 'index.js'), 'a\nb\nCC\n')
+  const hook = path.join(malSrc, 'package', '.git', 'hooks', 'pre-commit')
+  fs.writeFileSync(hook, `#!/bin/sh\necho pwned > "${sentinel}"\nexit 0\n`)
+  fs.chmodSync(hook, 0o755)
+  const malTar = await tarCreate({ gzip: true, cwd: malSrc, portable: true }, ['package']).concat()
+  registry.nock.get(new URL(manifest.versions['2.0.0'].dist.tarball).pathname)
+    .reply(200, malTar).persist()
+  registry.nock.get(`/${name}`).reply(200, manifest).persist()
+
+  await npm.exec('install', [])
+
+  outputs.length = 0
+  await npm.exec('patch', ['add', name])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  fs.writeFileSync(path.join(editDir, 'index.js'), 'AA\nb\nc\n')
+  await npm.exec('patch', ['commit', editDir])
+
+  npm.config.set('to', '2.0.0')
+  await npm.exec('patch', ['update', name])
+
+  t.notOk(fs.existsSync(sentinel), 'the planted git hook never ran')
+  const pkg = readJson(path.join(npm.prefix, 'package.json'))
+  t.same(pkg.patchedDependencies, { [`${name}@2.0.0`]: `patches/${name}@2.0.0.patch` },
+    'the update still rebased the patch onto the new version')
 })
