@@ -55,7 +55,7 @@
     "@npmcli/map-workspaces": "^6.0.0",
     "@npmcli/metavuln-calculator": "^10.0.0",
     "@npmcli/package-json": "^8.0.0",
-    "@npmcli/promise-spawn": "^10.0.0",
+    "@npmcli/promise-spawn": "^10.0.1",
     "@npmcli/redact": "^5.0.0",
     "@npmcli/run-script": "^11.0.0",
     "@sigstore/tuf": "^5.0.0",
