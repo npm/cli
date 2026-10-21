@@ -5457,6 +5457,60 @@ t.test('unresolvable dep that is also a peer target reports the load failure, no
   await t.rejects(buildIdeal(path), { code: 'ETARGET' })
 })
 
+t.test('unresolvable dep with multiple peer dependents reports the load failure without looping', async t => {
+  for (const field of ['dependencies', 'optionalDependencies']) {
+    for (const options of [{}, { strictPeerDeps: true }, { force: true }]) {
+      await t.test(`${field} ${JSON.stringify(options)}`, async t => {
+        const registry = createRegistry(t, false)
+        const reactManifest = registry.manifest({ name: 'react', versions: ['18.2.0', '18.3.1'] })
+        registry.nock.get('/react').reply(200, reactManifest).persist()
+
+        for (const name of ['react-dom', 'react-test-renderer']) {
+          const manifest = registry.manifest({
+            name,
+            packuments: [{
+              version: '18.2.0',
+              peerDependencies: { react: '^18.2.0' },
+              dependencies: name === 'react-test-renderer'
+                ? { 'react-shallow-renderer': '^16.15.0' } : {},
+            }],
+          })
+          await registry.package({ manifest })
+        }
+
+        await registry.package({
+          manifest: registry.manifest({
+            name: 'react-shallow-renderer',
+            packuments: [{
+              version: '16.15.0',
+              peerDependencies: { react: '^16.0.0 || ^17.0.0 || ^18.0.0' },
+            }],
+          }),
+        })
+
+        const path = t.testdir({
+          'package.json': JSON.stringify({
+            [field]: {
+              react: '^999.0.0',
+              'react-dom': '18.2.0',
+              'react-test-renderer': '18.2.0',
+            },
+          }),
+        })
+
+        if (field === 'dependencies') {
+          await t.rejects(buildIdeal(path, options), { code: 'ETARGET' })
+        } else {
+          const tree = await buildIdeal(path, options)
+          for (const name of ['react', 'react-dom', 'react-test-renderer', 'react-shallow-renderer']) {
+            t.ok(tree.children.get(name).inert, `${name} is inert`)
+          }
+        }
+      })
+    }
+  }
+})
+
 t.test('unresolvable dep already placed in a peer set reports the load failure, not ERESOLVE', async t => {
   const registry = createRegistry(t, false)
 

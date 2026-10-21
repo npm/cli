@@ -1616,6 +1616,14 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
+      // Keep failed targets in the real tree until optional pruning reports or
+      // drops them. Resolving a replacement peer here can repeatedly displace
+      // the failed node and cause its original dependency to be loaded again.
+      const existing = node.parent.sourceReference.resolve(edge.name)
+      if (this.#loadFailures.has(existing)) {
+        continue
+      }
+
       const parentEdge = node.parent.edgesOut.get(edge.name)
       const { isProjectRoot, isWorkspace } = node.parent.sourceReference
       const isMine = isProjectRoot || isWorkspace
