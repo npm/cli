@@ -666,17 +666,11 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     for (const spec of this[_resolvedAdd]) {
       if (spec.tree === tree) {
-        const edge = tree.edgesOut.get(spec.name)
-        if (edge) {
-          this.#explicitRequests.add(edge)
-        }
+        this.#explicitRequests.add(tree.edgesOut.get(spec.name))
       }
     }
     for (const name of globalExplicitUpdateNames) {
-      const edge = tree.edgesOut.get(name)
-      if (edge) {
-        this.#explicitRequests.add(edge)
-      }
+      this.#explicitRequests.add(tree.edgesOut.get(name))
     }
 
     this.#depsQueue.push(tree)
