@@ -666,11 +666,17 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     for (const spec of this[_resolvedAdd]) {
       if (spec.tree === tree) {
-        this.#explicitRequests.add(tree.edgesOut.get(spec.name))
+        const edge = tree.edgesOut.get(spec.name)
+        if (edge) {
+          this.#explicitRequests.add(edge)
+        }
       }
     }
     for (const name of globalExplicitUpdateNames) {
-      this.#explicitRequests.add(tree.edgesOut.get(name))
+      const edge = tree.edgesOut.get(name)
+      if (edge) {
+        this.#explicitRequests.add(edge)
+      }
     }
 
     this.#depsQueue.push(tree)
@@ -699,6 +705,15 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           _isRoot,
           before: this.#releaseAgeBefore(spec),
         })
+        // Specs that arrived without a name take it from the manifest.
+        // A missing name would be stored as the key "undefined", and
+        // edgesOut.get(undefined) would then throw on edge.spec.
+        if (!spec.name && (typeof mani.name !== 'string' || mani.name === '')) {
+          throw Object.assign(
+            new Error('Invalid package ' + rawSpec + ': package.json is missing a name'),
+            { code: 'EMISSINAME', spec: rawSpec }
+          )
+        }
         if (isTag) {
           // translate tag to a version
           spec = npa(`${mani.name}@${mani.version}`)

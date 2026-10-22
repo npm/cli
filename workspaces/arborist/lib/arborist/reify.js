@@ -1801,6 +1801,11 @@ module.exports = cls => class Reifier extends cls {
       for (const { name, tree: addTree } of nodes) {
         // addTree either the root, or a workspace
         const edge = addTree.edgesOut.get(name)
+        // A missing edge is the same skip as a missing edge.to below.
+        // Nameless adds never create this edge; do not read edge.spec.
+        if (!edge) {
+          continue
+        }
         const pkg = addTree.package
         const req = npa.resolve(name, edge.spec, addTree.realpath)
         const { rawSpec, subSpec } = req
