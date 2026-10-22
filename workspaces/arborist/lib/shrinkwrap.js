@@ -1173,8 +1173,8 @@ class Shrinkwrap {
       }
     }
 
-    // v3 still needs the root metadata above, but not legacy descendants.
-    if (node === this.tree && this.lockfileVersion === 3) {
+    // v3+ still needs the root metadata above, but not legacy descendants.
+    if (node === this.tree && this.lockfileVersion >= 3) {
       delete lock.dependencies
       return lock
     }
