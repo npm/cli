@@ -75,7 +75,7 @@
     "postpublish": "bash postpublish.sh",
     "www:build": "cd docs; npm ci; npm run build",
     "www:develop": "cd docs; npm run develop",
-    "start": "npm run www:develop",
+    "start": "node api.js && npm run www:develop",
     "www:serve": "cd docs; npm run serve"
   },
   "tap": {
