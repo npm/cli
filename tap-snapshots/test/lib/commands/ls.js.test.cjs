@@ -549,6 +549,12 @@ test-npm-ls@1.0.0 {CWD}/prefix
   \`-- dog@1.0.0
 `
 
+exports[`test/lib/commands/ls.js TAP ls no workspaces and missing optional dep > should omit missing optional dep and workspaces 1`] = `
+root@ {CWD}/prefix
++-- UNMET OPTIONAL DEPENDENCY bar@^1.0.0
+\`-- foo@1.0.0
+`
+
 exports[`test/lib/commands/ls.js TAP ls overridden dep > should contain overridden output 1`] = `
 test-overridden@1.0.0 {CWD}/prefix
 \`-- foo@1.0.0
