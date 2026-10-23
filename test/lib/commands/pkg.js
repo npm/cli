@@ -494,6 +494,10 @@ t.test('delete', t => {
         }),
       },
     })
+    const before = readPackageJson(npm.prefix)
+    await npm.exec('pkg', ['delete', 'info.foo.bar.missing'])
+    t.strictSame(readPackageJson(npm.prefix), before,
+      'should leave array items unchanged when deleting a missing property')
     await npm.exec('pkg', ['delete', 'info.foo.bar[0].baz'])
     t.matchSnapshot(
       readPackageJson(npm.prefix),
