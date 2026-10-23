@@ -666,11 +666,19 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     for (const spec of this[_resolvedAdd]) {
       if (spec.tree === tree) {
-        this.#explicitRequests.add(tree.edgesOut.get(spec.name))
+        // a spec with no name (e.g. a bare directory with no name in its
+        // package.json) gets no edge, so there's nothing to request
+        const edge = tree.edgesOut.get(spec.name)
+        if (edge) {
+          this.#explicitRequests.add(edge)
+        }
       }
     }
     for (const name of globalExplicitUpdateNames) {
-      this.#explicitRequests.add(tree.edgesOut.get(name))
+      const edge = tree.edgesOut.get(name)
+      if (edge) {
+        this.#explicitRequests.add(edge)
+      }
     }
 
     this.#depsQueue.push(tree)
