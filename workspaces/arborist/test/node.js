@@ -1332,6 +1332,46 @@ t.test('reparenting keeps children in root inventory', async t => {
   t.equal(root.inventory.has(fsNested), true)
 })
 
+t.test('reloading named edges skips empty leaves without caching their state', t => {
+  const root = new Node({ path: '/some/path' })
+  const leaf = new Node({ parent: root, pkg: { name: 'leaf' } })
+  const lookups = []
+  const get = leaf.edgesOut.get
+  leaf.edgesOut.get = function (name) {
+    lookups.push(name)
+    return get.call(this, name)
+  }
+
+  const foo = new Node({ parent: root, pkg: { name: 'foo', version: '1.0.0' } })
+  t.same(lookups, [], 'no lookup in an empty leaf during the refresh')
+  delete leaf.edgesOut.get
+
+  leaf.package = { name: 'leaf', dependencies: { foo: '1' } }
+  t.equal(leaf.edgesOut.get('foo').to, foo)
+  foo.parent = null
+  t.equal(leaf.edgesOut.get('foo').to, null, 'the newly added edge still refreshes')
+  t.end()
+})
+
+t.test('reloading traverses dependency-free parents with children', t => {
+  for (const kind of ['parent', 'fsParent']) {
+    const root = new Node({ path: '/some/path' })
+    const parent = new Node({ parent: root, pkg: { name: 'parent' } })
+    const child = new Node({
+      [kind]: parent,
+      path: kind === 'fsParent' ? `${parent.path}/child` : undefined,
+      pkg: { name: 'child', dependencies: { foo: '1' } },
+    })
+    t.equal(parent.edgesOut.size, 0)
+    t.equal(child.edgesOut.get('foo').to, null)
+    const foo = new Node({ parent: root, pkg: { name: 'foo', version: '1.0.0' } })
+    t.equal(child.edgesOut.get('foo').to, foo, `${kind} descendants are refreshed`)
+    foo.parent = null
+    t.equal(child.edgesOut.get('foo').to, null, `${kind} descendants track removals`)
+  }
+  t.end()
+})
+
 t.test('reloading named edges should refresh edgesIn', t => {
   // pathological dep nesting scenario:
   //

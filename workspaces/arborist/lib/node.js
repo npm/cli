@@ -1505,6 +1505,10 @@ class Node {
   }
 
   [_reloadNamedEdges] (name, rootLoc = this.location) {
+    if (!this.edgesOut.size && !this.children.size && !this.fsChildren.size) {
+      return
+    }
+
     const edge = this.edgesOut.get(name)
     // if we don't have an edge, do nothing, but keep descending
     const rootLocResolved = edge && edge.to &&
