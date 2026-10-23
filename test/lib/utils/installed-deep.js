@@ -190,6 +190,28 @@ t.test('limit depth', async t => {
   )
 })
 
+t.test('does not execute .npm-extension during completion inventory', async t => {
+  const mock = await mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'ext-poc',
+        version: '1.0.0',
+      }),
+      '.npm-extension.mjs': [
+        "throw new Error('npm-extension should not run during completion')",
+        'export const transformManifest = (pkg) => pkg',
+      ].join('\n'),
+    },
+    globalPrefixDir: globalFixture,
+    config: {
+      depth: Infinity,
+    },
+  })
+
+  const res = await installedDeep(mock.npm)
+  t.ok(Array.isArray(res), 'inventory still returns a list')
+})
+
 t.test('limit depth as global', async t => {
   const res = await mockDeep(t, { depth: 0, global: true })
   t.same(
