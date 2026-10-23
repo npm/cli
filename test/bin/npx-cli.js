@@ -38,6 +38,53 @@ t.test('npx --x=y --no-install foo -z -> npm exec --x=y -- foo -z', async t => {
   t.strictSame(argv, ['node', npm, 'exec', '--x=y', '--yes=false', '--', 'foo', '-z'])
 })
 
+t.test('npx --no foo -z -> npm exec --no-yes -- foo -z', async t => {
+  const { argv } = mockNpx(t, ['node', npx, '--no', 'foo', '-z'])
+  t.strictSame(argv, ['node', npm, 'exec', '--no-yes', '--', 'foo', '-z'])
+})
+
+t.test('negated switches do not take the command as a value', async t => {
+  const { argv } = mockNpx(t, ['node', npx, '--no-color', '--local', 'foo', '--version'])
+  t.strictSame(argv, ['node', npm, 'exec', '--no-color', '--no-global', '--', 'foo', '--version'])
+})
+
+t.test('negated switches keep values that npm reads for them', async t => {
+  const { argv } = mockNpx(t, [
+    'node',
+    npx,
+    '--no=false',
+    '--no-color',
+    'always',
+    '--no-workspaces',
+    'null',
+    '--no-browser',
+    'firefox',
+    'foo',
+    '-z',
+  ])
+  t.strictSame(argv, [
+    'node',
+    npm,
+    'exec',
+    '--no-yes',
+    'false',
+    '--no-color',
+    'always',
+    '--no-workspaces',
+    'null',
+    '--no-browser',
+    'firefox',
+    '--',
+    'foo',
+    '-z',
+  ])
+})
+
+t.test('npx --no -> npm exec --no-yes', async t => {
+  const { argv } = mockNpx(t, ['node', npx, '--no'])
+  t.strictSame(argv, ['node', npm, 'exec', '--no-yes'])
+})
+
 t.test('transform renamed options into proper values', async t => {
   const { argv } = mockNpx(t, ['node', npx, '-y', '--shell=bash', '-p', 'foo', '-c', 'asdf'])
   t.strictSame(argv, [
