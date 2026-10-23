@@ -381,6 +381,25 @@ module.exports = cls => class IsolatedReifier extends cls {
     return root
   }
 
+  syncIsolatedScriptMetadata () {
+    // Rebuild updates the store package copies. Preserve those updates on
+    // the logical nodes used for reporting and the project lockfile.
+    for (const [node, proxy] of this.#externalProxies) {
+      const location = join('node_modules', '.store', getKey(proxy), 'node_modules', proxy.packageName)
+      const installed = this.idealTree.inventory.get(location)
+      if (!installed) {
+        continue
+      }
+      node.package.scripts = installed.package.scripts
+      node.package.gypfile = installed.package.gypfile
+      if (installed.hasInstallScript) {
+        node.package.hasInstallScript = true
+      } else {
+        delete node.package.hasInstallScript
+      }
+    }
+  }
+
   #processEdges (node, externalEdge, root) {
     const key = getKey(node)
     if (this.#processedEdges.has(key)) {

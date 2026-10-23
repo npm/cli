@@ -250,37 +250,41 @@ module.exports = cls => class Builder extends cls {
         !(meta.originalLockfileVersion >= 2)
     }
 
-    const { package: pkg, hasInstallScript } = node.target
+    const { target } = node
+    const { package: pkg, hasInstallScript } = target
     const { gypfile, bin, scripts = {} } = pkg
 
     const { preinstall, install, postinstall, prepare } = scripts
     const anyScript = preinstall || install || postinstall || prepare
-    if (!refreshed && !anyScript && (hasInstallScript || this.#oldMeta)) {
-      // we either have an old metadata (and thus might have scripts)
-      // or we have an indication that there's install scripts (but
-      // don't yet know what they are) so we have to load the package.json
-      // from disk to see what the deal is.  Failure here just means
-      // no scripts to add, probably borked package.json.
-      // add to the set then remove while we're reading the pj, so we
-      // don't accidentally hit it multiple times.
-      set.add(node)
-      const { content: pkg } = await PackageJson.normalize(node.path).catch(() => {
-        return { content: {} }
-      })
-      set.delete(node)
-
-      const { scripts = {} } = pkg
-      node.package.scripts = scripts
-      return this.#addToBuildSet(node, set, true)
-    }
-
-    // Rebuild node-gyp dependencies lacking an install or preinstall script
-    // note that 'scripts' might be missing entirely, and the package may
-    // set gypfile:false to avoid this automatic detection.
     const isGyp = gypfile !== false &&
       !install &&
       !preinstall &&
-      await isNodeGypPackage(node.path)
+      await isNodeGypPackage(target.path)
+
+    if (!refreshed && (isGyp || !anyScript && (hasInstallScript || this.#oldMeta))) {
+      // Lockfiles omit scripts and gypfile. Native candidates need a disk
+      // read even without hasInstallScript, so an opt-out is not lost.
+      if (set.has(node)) {
+        return
+      }
+      // add to the set then remove while we're reading the pj, so we
+      // don't accidentally hit it multiple times.
+      set.add(node)
+      const { content: pkg } = await PackageJson.normalize(target.path).catch(() => {
+        return { content: null }
+      })
+      set.delete(node)
+
+      if (pkg) {
+        const scripts = pkg.scripts || {}
+        target.package.scripts = scripts
+        target.package.gypfile = pkg.gypfile
+        if (pkg.gypfile === false && !scripts.preinstall && !scripts.install && !scripts.postinstall) {
+          delete target.package.hasInstallScript
+        }
+      }
+      return this.#addToBuildSet(node, set, true)
+    }
 
     if (bin || preinstall || install || postinstall || prepare || isGyp) {
       if (bin) {
@@ -288,7 +292,7 @@ module.exports = cls => class Builder extends cls {
       }
       if (isGyp) {
         scripts.install = defaultGypInstallScript
-        node.package.scripts = scripts
+        target.package.scripts = scripts
       }
       set.add(node)
     }

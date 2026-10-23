@@ -142,6 +142,7 @@ module.exports = cls => class Reifier extends cls {
         // The sweep itself scopes to in-filter workspaces when a filter is active, so it's safe to run for filtered installs too.
         if (!this.options.dryRun && !this.options.packageLockOnly) {
           await this.#cleanOrphanedStoreEntries()
+          this.syncIsolatedScriptMetadata()
         }
       } else if (!this.options.dryRun && !this.options.packageLockOnly) {
         // The .store directory is exclusively a linked-strategy artifact, and load-actual ignores dot-directories, so the diff never sees it.
@@ -755,6 +756,7 @@ module.exports = cls => class Reifier extends cls {
       if (node.isInStore) {
         const { content: pkg } = await PackageJson.normalize(node.path)
         node.package.scripts = pkg.scripts
+        node.package.gypfile = pkg.gypfile
       }
       await this.#applyPatch(node)
       return
