@@ -241,7 +241,7 @@ t.test('ls', async t => {
     })
 
     await ls.exec([])
-    t.matchSnapshot(cleanCwd(result()), 'should omit missing optional dep and workspaces')
+    t.matchSnapshot(cleanCwd(result()), 'should list missing optional dep and omit workspaces')
   })
 
   t.test('extraneous deps', async t => {
