@@ -27,13 +27,10 @@ When the default registry is used in a package-lock it has the special meaning o
 
 ### Packuments
 
-A **packument** is the JSON document a registry returns for a package *name* rather than for a
-specific version. It is the registry's metadata record for the package: its name, description,
-maintainers, license and dist-tags, plus every published version with that version's `dist`
-object (tarball URL, integrity hash and, where the registry provides them, signatures).
+A **packument** is the JSON document a registry returns for a package *name* rather than for a specific version.
+It is the registry's metadata record for the package: its name, description, maintainers, license and dist-tags, plus every published version with that version's `dist` object (tarball URL, integrity hash and, where the registry provides them, signatures).
 
-When npm resolves `foo@^1.2.0` it fetches the packument for `foo` and picks a version out of
-it.
+When npm resolves `foo@^1.2.0` it fetches the packument for `foo` and picks a version out of it.
 
 You can fetch a packument for any package yourself:
 
@@ -41,8 +38,7 @@ You can fetch a packument for any package yourself:
 npx pacote packument <package-name> [--registry=<registry-url>]
 ```
 
-That is the quickest way to check what a registry actually knows about a package, and it works
-against a private registry as well, for example `--registry=http://localhost:4873`.
+That is the quickest way to check what a registry actually knows about a package, and it works against a private registry as well, for example `--registry=http://localhost:4873`.
 
 ### Does npm send any information about me back to the registry?
 
