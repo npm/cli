@@ -172,6 +172,54 @@ for (const allowDirectory of ['none', 'root']) {
   })
 }
 
+t.test('dry-run with publishConfig.tag', async t => {
+  const packageJson = {
+    ...pkgJson,
+    publishConfig: { tag: 'next' },
+  }
+  const { joinedOutput, npm, logs, registry } = await loadNpmWithRegistry(t, {
+    config: {
+      'dry-run': true,
+      ...auth,
+    },
+    prefixDir: {
+      'package.json': JSON.stringify(packageJson, null, 2),
+    },
+    authorization: token,
+  })
+  registry.publish(pkg, { noPut: true })
+  await npm.exec('publish', [])
+  t.equal(joinedOutput(), `+ ${pkg}@1.0.0`)
+  t.ok(
+    logs.notice.includes('Publishing to https://registry.npmjs.org/ with tag next and default access (dry-run)'),
+    'notice reports the publishConfig tag'
+  )
+})
+
+t.test('CLI --tag overrides publishConfig.tag in notice', async t => {
+  const packageJson = {
+    ...pkgJson,
+    publishConfig: { tag: 'next' },
+  }
+  const { npm, logs, registry } = await loadNpmWithRegistry(t, {
+    config: {
+      'dry-run': true,
+      ...auth,
+    },
+    argv: ['--tag', 'beta'],
+    prefixDir: {
+      'package.json': JSON.stringify(packageJson, null, 2),
+    },
+    authorization: token,
+  })
+  registry.publish(pkg, { noPut: true })
+  await npm.exec('publish', [])
+  t.ok(
+    logs.notice.includes('Publishing to https://registry.npmjs.org/ with tag beta and default access (dry-run)'),
+    'notice reports the CLI tag'
+  )
+})
+
 t.test('foreground-scripts defaults to true', async t => {
   const { outputs, npm, logs, registry } = await loadNpmWithRegistry(t, {
     config: {
