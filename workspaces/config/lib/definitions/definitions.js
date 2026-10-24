@@ -93,6 +93,7 @@ const {
   Umask: { type: Umask },
   url: { type: url },
   path: { type: path },
+  relativePathMaybe: { type: relativePathMaybe },
 } = require('../type-defs.js')
 
 // basic flattening function, just copy it over camelCase
@@ -2384,7 +2385,7 @@ const definitions = {
     defaultDescription: `
       '/bin/sh' on POSIX systems, 'cmd.exe' on Windows
     `,
-    type: [null, String],
+    type: [null, String, relativePathMaybe],
     description: `
       The shell to use for scripts run with the \`npm exec\`,
       \`npm run\` and \`npm init <package-spec>\` commands.
