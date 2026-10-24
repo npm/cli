@@ -1,5 +1,6 @@
 const t = require('tap')
-const { basename } = require('node:path')
+const { existsSync } = require('node:fs')
+const { basename, join, resolve } = require('node:path')
 const tmock = require('../../fixtures/tmock')
 const mockNpm = require('../../fixtures/mock-npm')
 const MockRegistry = require('@npmcli/mock-registry')
@@ -52,7 +53,6 @@ const packumentResponse = {
 
 const runUpdateNotifier = async (t, {
   STAT_ERROR,
-  WRITE_ERROR,
   PACOTE_ERROR,
   PACOTE_MOCK_REQ_COUNT = 1,
   STAT_MTIME = 0,
@@ -61,9 +61,9 @@ const runUpdateNotifier = async (t, {
   prefixDir,
   version = CURRENT_VERSION,
   argv = [],
-  wroteFile = false,
   ...config
 } = {}) => {
+  const cache = join(t.testdir(), '.npm')
   const mockFs = {
     ...require('node:fs/promises'),
     stat: async (path) => {
@@ -75,17 +75,8 @@ const runUpdateNotifier = async (t, {
       }
       return { mtime: new Date(STAT_MTIME) }
     },
-    writeFile: async (path, content) => {
-      wroteFile = true
-      if (content !== '') {
-        t.fail('no write file content allowed')
-      }
-      if (basename(path) !== '_update-notifier-last-checked') {
-        t.fail('no writefile allowed for non update notifier files')
-      }
-      if (WRITE_ERROR) {
-        throw WRITE_ERROR
-      }
+    writeFile: async () => {
+      t.fail('sentinel must not be written before a notification is shown')
     },
   }
 
@@ -99,7 +90,7 @@ const runUpdateNotifier = async (t, {
   const mock = await mockNpm(t, {
     command,
     mocks,
-    config,
+    config: { cache, ...config },
     exec: true,
     prefixDir,
     argv,
@@ -116,16 +107,18 @@ const runUpdateNotifier = async (t, {
   const updateNotifier = tmock(t, '{LIB}/cli/update-notifier.js', mocks)
 
   const result = await updateNotifier(mock.npm)
+  const sentinelPath = resolve(mock.npm.flatOptions.cache, '../_update-notifier-last-checked')
 
   return {
-    wroteFile,
+    wroteFile: existsSync(sentinelPath),
+    sentinelPath,
     result,
   }
 }
 
 t.test('duration has elapsed, no updates', async t => {
   const { wroteFile, result } = await runUpdateNotifier(t)
-  t.equal(wroteFile, true)
+  t.equal(wroteFile, false)
   t.not(result)
 })
 
@@ -165,19 +158,13 @@ t.test('situations in which we do not notify', t => {
 
   t.test('do not update if same as latest', async t => {
     const { wroteFile, result } = await runUpdateNotifier(t)
-    t.equal(wroteFile, true)
+    t.equal(wroteFile, false)
     t.equal(result, null)
   })
   t.test('check if stat errors (here for coverage)', async t => {
     const STAT_ERROR = new Error('blorg')
     const { wroteFile, result } = await runUpdateNotifier(t, { STAT_ERROR })
-    t.equal(wroteFile, true)
-    t.equal(result, null)
-  })
-  t.test('ok if write errors (here for coverage)', async t => {
-    const WRITE_ERROR = new Error('grolb')
-    const { wroteFile, result } = await runUpdateNotifier(t, { WRITE_ERROR })
-    t.equal(wroteFile, true)
+    t.equal(wroteFile, false)
     t.equal(result, null)
   })
   t.test('ignore pacote failures (here for coverage)', async t => {
@@ -186,7 +173,7 @@ t.test('situations in which we do not notify', t => {
       PACOTE_ERROR, PACOTE_MOCK_REQ_COUNT: 0,
     })
     t.equal(result, null)
-    t.equal(wroteFile, true)
+    t.equal(wroteFile, false)
   })
   t.test('do not update if newer than latest, but same as next', async t => {
     const {
@@ -194,7 +181,7 @@ t.test('situations in which we do not notify', t => {
       result,
     } = await runUpdateNotifier(t, { version: NEXT_VERSION })
     t.equal(result, null)
-    t.equal(wroteFile, true)
+    t.equal(wroteFile, false)
   })
   t.test('do not update if on the latest beta', async t => {
     const {
@@ -202,7 +189,7 @@ t.test('situations in which we do not notify', t => {
       result,
     } = await runUpdateNotifier(t, { version: CURRENT_BETA })
     t.equal(result, null)
-    t.equal(wroteFile, true)
+    t.equal(wroteFile, false)
   })
 
   t.test('do not update in CI', async t => {
@@ -214,9 +201,9 @@ t.test('situations in which we do not notify', t => {
     t.equal(result, null)
   })
 
-  t.test('only check weekly for GA releases', async t => {
-    // One week (plus five minutes to account for test environment fuzziness)
-    const STAT_MTIME = Date.now() - 1000 * 60 * 60 * 24 * 7 + 1000 * 60 * 5
+  t.test('only check daily for GA releases', async t => {
+    // One day minus five minutes to account for test environment fuzziness
+    const STAT_MTIME = Date.now() - 1000 * 60 * 60 * 24 + 1000 * 60 * 5
     const { wroteFile, result } = await runUpdateNotifier(t, {
       STAT_MTIME,
       PACOTE_MOCK_REQ_COUNT: 0,
@@ -225,7 +212,18 @@ t.test('situations in which we do not notify', t => {
     t.equal(result, null)
   })
 
-  t.test('only check daily for betas', async t => {
+  t.test('check GA releases after one day', async t => {
+    // One day plus five minutes to account for test environment fuzziness
+    const STAT_MTIME = Date.now() - 1000 * 60 * 60 * 24 - 1000 * 60 * 5
+    const { wroteFile, result } = await runUpdateNotifier(t, {
+      STAT_MTIME,
+      PACOTE_MOCK_REQ_COUNT: 1,
+    })
+    t.equal(wroteFile, false)
+    t.equal(result, null)
+  })
+
+  t.test('only check daily for prereleases', async t => {
     // One day (plus five minutes to account for test environment fuzziness)
     const STAT_MTIME = Date.now() - 1000 * 60 * 60 * 24 + 1000 * 60 * 5
     const {
@@ -245,13 +243,16 @@ t.test('notification situation with engine compatibility', async t => {
 
   const {
     wroteFile,
+    sentinelPath,
     result,
   } = await runUpdateNotifier(t, {
     version: NEXT_VERSION_ENGINE_COMPATIBLE_MINOR,
     PACOTE_MOCK_REQ_COUNT: 1 })
 
-  t.matchSnapshot(result)
-  t.equal(wroteFile, true)
+  t.matchSnapshot(result.message)
+  t.equal(wroteFile, false)
+  result.onShown()
+  t.equal(existsSync(sentinelPath), true)
 })
 
 t.test('notification situations', async t => {
@@ -271,8 +272,8 @@ t.test('notification situations', async t => {
           wroteFile,
           result,
         } = await runUpdateNotifier(t, { version, color, PACOTE_MOCK_REQ_COUNT: requestCount })
-        t.matchSnapshot(result)
-        t.equal(wroteFile, true)
+        t.matchSnapshot(result.message)
+        t.equal(wroteFile, false)
       })
     }
   }
