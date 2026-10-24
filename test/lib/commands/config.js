@@ -386,6 +386,69 @@ t.test('config set key', async t => {
   await t.rejects(fs.stat(join(home, '.npmrc'), { encoding: 'utf8' }), 'removed empty config')
 })
 
+for (const [name, args] of [
+  ['config set key empty value', ['set', 'tag-version-prefix', '']],
+  ['config set key empty value with equals', ['set', 'tag-version-prefix=']],
+]) {
+  t.test(name, async t => {
+    const { npm, home } = await loadMockNpm(t, {
+      homeDir: {
+        '.npmrc': 'tag-version-prefix=v',
+      },
+    })
+
+    await npm.exec('config', args)
+
+    t.equal(npm.config.get('tag-version-prefix'), '', 'set the value to the empty string')
+
+    const contents = await fs.readFile(join(home, '.npmrc'), { encoding: 'utf8' })
+    const rc = ini.parse(contents)
+    t.equal(rc['tag-version-prefix'], '', 'tag-version-prefix is set to the empty string')
+  })
+}
+
+t.test('config set key empty value with omitted key', async t => {
+  const { npm, home } = await loadMockNpm(t, {
+    homeDir: {
+      '.npmrc': 'tag-version-prefix=v\naccess=public',
+    },
+  })
+
+  await npm.exec('config', ['set', 'tag-version-prefix', '', 'access'])
+  t.equal(npm.config.get('tag-version-prefix'), '', 'the empty value was set')
+  t.equal(npm.config.get('access'), null, 'the omitted value was removed')
+
+  const contents = await fs.readFile(join(home, '.npmrc'), { encoding: 'utf8' })
+  const rc = ini.parse(contents)
+  t.equal(rc['tag-version-prefix'], '', 'tag-version-prefix is set to the empty string')
+  t.equal(rc.access, undefined, 'access is removed')
+})
+
+for (const [name, key, seeded, expected] of [
+  ['boolean', 'save-exact', 'save-exact=false', false],
+  ['number', 'fetch-retries', 'fetch-retries=5', 2],
+  ['url', 'registry', 'registry=https://registry.npmjs.org/', 'https://registry.npmjs.org/'],
+  ['enum', 'access', 'access=public', null],
+]) {
+  t.test(`config set key empty value on a ${name} option removes the key`, async t => {
+    const { npm, home } = await loadMockNpm(t, {
+      homeDir: {
+        '.npmrc': seeded,
+      },
+    })
+
+    await npm.exec('config', ['set', key, ''])
+
+    t.equal(npm.config.get(key), expected, `${key} falls back to its default`)
+
+    // the key is the only entry, so removing it empties (and removes) the file
+    const contents = await fs.readFile(join(home, '.npmrc'), { encoding: 'utf8' })
+      .catch(() => '')
+    const rc = ini.parse(contents)
+    t.equal(rc[key], undefined, `${key} is removed from the config file`)
+  })
+}
+
 t.test('config set key value', async t => {
   const { npm, home } = await loadMockNpm(t, {
     homeDir: {
