@@ -5369,6 +5369,32 @@ t.test('allow-directory=root soft-skips a transitive optional directory dependen
   t.equal(optChild.inert, true, 'blocked optional transitive is marked inert (will not be reified)')
 })
 
+t.test('allow-directory=root permits a transitive directory dependency set by a root override', async t => {
+  const path = t.testdir({
+    parent: {
+      'package.json': JSON.stringify({
+        name: 'parent',
+        version: '1.0.0',
+        dependencies: { child: '1.0.0' },
+      }),
+    },
+    child: {
+      'package.json': JSON.stringify({ name: 'child', version: '1.0.0' }),
+    },
+  })
+  fs.writeFileSync(join(path, 'package.json'), JSON.stringify({
+    name: 'root-pkg',
+    version: '1.0.0',
+    dependencies: { parent: 'file:./parent' },
+    overrides: { child: `file:${join(path, 'child')}` },
+  }))
+  const tree = await buildIdeal(path, { allowDirectory: 'root' })
+  const child = tree.children.get('child')
+  t.ok(child, 'overridden transitive directory dep is in the tree')
+  t.equal(child.isLink, true, 'overridden transitive directory dep is a Link node')
+  t.equal(child.edgesIn.values().next().value.valid, true, 'edge from parent is valid')
+})
+
 t.test('incomplete manifest from proxy registry prunes optional dep (#9342)', async t => {
   // When a proxy/upstream registry returns an
   // incomplete manifest for a platform-specific optional dep it hasn't
