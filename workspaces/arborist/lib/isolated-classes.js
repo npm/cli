@@ -4,6 +4,7 @@ const { resolve } = require('node:path')
 
 // fake lib/node.js
 class IsolatedNode {
+  bundleOwner = null
   binPaths = []
   children = new CaseInsensitiveMap()
   edgesIn = new Set()
@@ -25,6 +26,7 @@ class IsolatedNode {
   workspaces = new Map()
 
   constructor (options) {
+    this.bundleOwner = options.bundleOwner || null
     this.location = options.location
     this.name = options.name
     this.package = options.package
@@ -100,9 +102,8 @@ class IsolatedNode {
     return this
   }
 
-  /* istanbul ignore next -- emulate lib/node.js */
   getBundler () {
-    return null
+    return this.bundleOwner
   }
 
   /* istanbul ignore next -- emulate lib/node.js */
