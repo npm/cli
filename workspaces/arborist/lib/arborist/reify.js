@@ -1036,6 +1036,8 @@ module.exports = cls => class Reifier extends cls {
         return resolved
       }
 
+      // the public registry never serves under a path, so a leading /<registryPath> there is the package name
+      const fromPublicRegistry = resolvedURL.hostname === 'registry.npmjs.org'
       resolvedURL.protocol = registryURL.protocol
       resolvedURL.hostname = registryURL.hostname
       resolvedURL.port = registryURL.port
@@ -1043,7 +1045,7 @@ module.exports = cls => class Reifier extends cls {
       if (matchPath) {
         // full-URL prefix: swap old path prefix for the registry path
         resolvedURL.pathname = registryPath + resolvedURL.pathname.slice(matchPath.length)
-      } else if (registryPath && !hasPathPrefix(resolvedURL.pathname, registryPath)) {
+      } else if (registryPath && (fromPublicRegistry || !hasPathPrefix(resolvedURL.pathname, registryPath))) {
         // host-only: prepend registry path if not already present
         resolvedURL.pathname = registryPath + resolvedURL.pathname
       }

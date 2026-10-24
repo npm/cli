@@ -3793,6 +3793,58 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     await t.resolves(arb.reify(), 'reify should complete successfully')
   })
 
+  t.test('registry path prepending with registry path being the package name', async t => {
+    const abbrevPackument4 = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            // Note: This URL starts with /abbrev, but it comes from the public registry, not from our registry path
+            tarball: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    const registryHost = 'https://registry.example.com'
+    // Note: This path is the same as the package name 'abbrev'
+    const registryPath = '/abbrev'
+    const registry = `${registryHost}${registryPath}`
+
+    tnock(t, registryHost)
+      .get(`${registryPath}/abbrev`)
+      .reply(200, abbrevPackument4)
+
+    tnock(t, registryHost)
+      .get(`${registryPath}/abbrev/-/abbrev-1.1.1.tgz`)
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry,
+      cache: resolve(testdir, 'cache'),
+    })
+
+    await t.resolves(arb.reify(), 'reify should complete successfully')
+  })
+
   // Validates both URL-prefix matching modes for replace-registry-host:
   //   A) full URL with path  → entire prefix (host + old path) is replaced with registry URL
   //   B) host-only URL       → only the host is swapped, resolved path is left unchanged
