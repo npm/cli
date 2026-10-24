@@ -1450,6 +1450,34 @@ t.test('detect that two nodes are the same thing', async t => {
   }
 
   {
+    const root = new Node({ path: '/root', pkg: { name: 'root', version: '1.0.0' } })
+    const target = new Node({ root, path: '/root/packages/x', pkg: { name: 'x', version: '1.2.3' } })
+    const a = new Link({ root, parent: root, name: 'x', target })
+    const b = new Node({ root, parent: root, name: 'b', pkg: { name: 'b', version: '1.0.0' } })
+    // Nested link to the same target
+    const bx = new Link({ root, parent: b, name: 'x', target })
+    target.root = new Node({ path: '/other-root' })
+    t.equal(a.target, null, 'target was cleared')
+    t.equal(bx.target, null, 'nested link target was cleared')
+    check(a, bx, true, 'links with cleared targets match on realpath')
+  }
+
+  {
+    const root = new Node({ path: '/root', pkg: { name: 'root', version: '1.0.0' } })
+    const x = new Node({ root, path: '/root/packages/x', pkg: { name: 'x', version: '1.2.3' } })
+    const y = new Node({ root, path: '/root/packages/y', pkg: { name: 'x', version: '1.2.3' } })
+    const a = new Link({ root, parent: root, name: 'x', target: x })
+    const b = new Node({ root, parent: root, name: 'b', pkg: { name: 'b', version: '1.0.0' } })
+    // Nested link to a different target of the same name
+    const by = new Link({ root, parent: b, name: 'x', target: y })
+    x.root = new Node({ path: '/other-root' })
+    y.root = new Node({ path: '/another-root' })
+    t.equal(a.target, null, 'target was cleared')
+    t.equal(by.target, null, 'nested link target was cleared')
+    check(a, by, false, 'cleared links with different realpaths do not match')
+  }
+
+  {
     const a = new Node({ path: '/foo', pkg: { name: 'x', version: '1.2.3' } })
     const b = new Node({ path: '/foo', pkg: { name: 'x', version: '1.2.3' } })
     check(a, b, true, 'root nodes match if paths patch')
