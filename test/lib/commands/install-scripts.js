@@ -148,6 +148,19 @@ t.test('install-scripts ls with no unreviewed says so', async t => {
   t.match(joinedOutput(), /No packages with unreviewed install scripts/)
 })
 
+t.test('install-scripts ls includes extraneous actual-tree packages', async t => {
+  const prefixDir = setupProject({ withScripts: ['orphan'] })
+  const pkg = JSON.parse(prefixDir['package.json'])
+  pkg.dependencies = {}
+  prefixDir['package.json'] = JSON.stringify(pkg)
+  const lock = JSON.parse(prefixDir['package-lock.json'])
+  lock.packages[''] = pkg
+  prefixDir['package-lock.json'] = JSON.stringify(lock)
+  const { npm, joinedOutput } = await mockNpm(t, { prefixDir })
+  await npm.exec('install-scripts', ['ls'])
+  t.match(joinedOutput(), /orphan@1\.0\.0/)
+})
+
 t.test('install-scripts ls rejects positional args', async t => {
   const { npm } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas'] }),
