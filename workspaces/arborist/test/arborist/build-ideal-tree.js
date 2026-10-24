@@ -5220,7 +5220,9 @@ t.test('overrides with bundledDependencies', async t => {
     const barPacks = registry.packuments(['1.0.0', '2.0.0'], 'bar')
     await registry.package({ manifest: registry.manifest({ name: 'b', packuments: bPacks }) })
     await registry.package({ manifest: registry.manifest({ name: 'c', packuments: cPacks }) })
-    await registry.package({ manifest: registry.manifest({ name: 'bar', packuments: barPacks }), times: 2 })
+    // concurrent prefetches of the same overridden bar spec are deduped, so
+    // the packument is only fetched once even though both b and c need it
+    await registry.package({ manifest: registry.manifest({ name: 'bar', packuments: barPacks }), times: 1 })
 
     const path = t.testdir({
       'package.json': JSON.stringify({
