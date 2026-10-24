@@ -24,14 +24,19 @@ const withLock = require('./with-lock.js')
 const manifests = new Map()
 
 const getManifest = async (spec, flatOptions) => {
+  const loadManifest = () => pacote.manifest(spec, {
+    ...flatOptions,
+    preferOnline: true,
+    Arborist,
+    _isRoot: true,
+  })
+
+  if (spec.type === 'directory') {
+    return loadManifest()
+  }
+
   if (!manifests.has(spec.raw)) {
-    const manifest = await pacote.manifest(spec, {
-      ...flatOptions,
-      preferOnline: true,
-      Arborist,
-      _isRoot: true,
-    })
-    manifests.set(spec.raw, manifest)
+    manifests.set(spec.raw, await loadManifest())
   }
   return manifests.get(spec.raw)
 }
@@ -247,16 +252,19 @@ const exec = async (opts) => {
     if (!npxCache) {
       throw new Error('Must provide a valid npxCache path')
     }
+    const npxCacheKeyPackages = await Promise.all(packages.map(async p => {
+      // Keeps the npx directory unique to the resolved directory, not the
+      // potentially relative one (i.e. "npx ."). Directory specs also include
+      // their bin map so newly added local bins do not reuse stale shims.
+      const spec = npa(p)
+      if (spec.type === 'directory') {
+        const manifest = await getManifest(spec, flatOptions)
+        return `${spec.fetchSpec}\n${JSON.stringify(manifest.bin)}`
+      }
+      return p
+    }))
     const hash = crypto.createHash('sha512')
-      .update(packages.map(p => {
-        // Keeps the npx directory unique to the resolved directory, not the
-        // potentially relative one (i.e. "npx .")
-        const spec = npa(p)
-        if (spec.type === 'directory') {
-          return spec.fetchSpec
-        }
-        return p
-      }).sort((a, b) => a.localeCompare(b, 'en')).join('\n'))
+      .update(npxCacheKeyPackages.sort((a, b) => a.localeCompare(b, 'en')).join('\n'))
       .digest('hex')
       .slice(0, 16)
     const installDir = resolve(npxCache, hash)
