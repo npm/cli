@@ -1798,7 +1798,8 @@ module.exports = cls => class Reifier extends cls {
 
     const updatedTrees = new Set()
     const updateNodes = nodes => {
-      for (const { name, tree: addTree } of nodes) {
+      for (const node of nodes) {
+        const { name, tree: addTree } = node
         // addTree either the root, or a workspace
         const edge = addTree.edgesOut.get(name)
         const pkg = addTree.package
@@ -1874,14 +1875,24 @@ module.exports = cls => class Reifier extends cls {
           newSpec = req.saveSpec
         }
 
+        // delete optional dep from prod if installation doesn't fail
+        const shouldDeleteFromProd = pkg.optionalDependencies && pkg.optionalDependencies[name] && pkg.dependencies
+          && !this[_trashList].has(addTree.children.get(name).path)
+
         if (options.saveType) {
           const depType = saveTypeMap.get(options.saveType)
           pkg[depType][name] = newSpec
           // PackageJson.normalize will have moved it here if it was in both, if it is empty it will be deleted later
           if (options.saveType === 'prod' && pkg.optionalDependencies) {
             delete pkg.optionalDependencies[name]
+          } else if (options.saveType === 'optional' && shouldDeleteFromProd) {
+            delete pkg.dependencies[name]
           }
         } else {
+          if (shouldDeleteFromProd) {
+            delete pkg.dependencies[name]
+          }
+
           if (hasSubKey(pkg, 'dependencies', name)) {
             pkg.dependencies[name] = newSpec
           }
