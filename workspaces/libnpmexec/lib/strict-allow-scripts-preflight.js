@@ -21,6 +21,7 @@ const strictAllowScriptsPreflight = async (arb, opts) => {
 
   const unreviewed = await collectUnreviewedScripts({
     tree: arb.idealTree,
+    pruneExtraneous: opts.prune !== false,
     policy: opts.allowScripts || null,
     ignoreScripts: opts.ignoreScripts,
     dangerouslyAllowAllScripts: opts.dangerouslyAllowAllScripts,
