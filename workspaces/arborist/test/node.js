@@ -3521,5 +3521,30 @@ t.test('shouldOmit method', t => {
     t.end()
   })
 
+  t.test('node not under the project root or a workspace', t => {
+    const root = new Node({
+      pkg: { name: 'root', dependencies: { foo: 'file:../foo' } },
+      path: '/project/root',
+    })
+    const target = new Node({
+      pkg: { name: 'foo', devDependencies: { devdep: '1.0.0' } },
+      path: '/project/foo',
+      root,
+      children: [{ pkg: { name: 'devdep', version: '1.0.0' } }],
+    })
+    new Link({
+      name: 'foo',
+      parent: root,
+      realpath: target.path,
+      target,
+    })
+    const devdep = target.children.get('devdep')
+    devdep.dev = true
+    t.equal(devdep.top, target, 'top is the link target')
+    t.equal(devdep.shouldOmit(new Set(['dev'])), false, 'shouldOmit does not omit deps outside the project')
+    t.equal(devdep.hasOmittedDepType(new Set(['dev'])), true, 'hasOmittedDepType still matches the dep flags')
+    t.end()
+  })
+
   t.end()
 })
