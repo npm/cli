@@ -10,11 +10,13 @@ const parseField = (f, key, opts, listElement = false) => {
     return f
   }
 
-  const { platform, types, home, env } = opts
+  const { platform, types, home, env, localPrefix } = opts
 
   // type can be array or a single thing.  coerce to array.
   const typeList = new Set([].concat(types[key]))
   const isPath = typeList.has(typeDefs.path.type)
+  const isRelativePath = typeList.has(typeDefs.relativePathMaybe.type) ||
+    [...typeList].some(type => type?.name === typeDefs.relativePathMaybe.type.name)
   const isBool = typeList.has(typeDefs.Boolean.type)
   const isString = isPath || typeList.has(typeDefs.String.type)
   const isUmask = typeList.has(typeDefs.Umask.type)
@@ -65,6 +67,10 @@ const parseField = (f, key, opts, listElement = false) => {
     } else {
       f = resolve(f)
     }
+  }
+
+  if (isRelativePath && localPrefix && f.startsWith('./')) {
+    f = resolve(localPrefix, f)
   }
 
   if (isUmask) {
