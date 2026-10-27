@@ -210,6 +210,14 @@ t.test('open url', async t => {
     t.same(joinedOutput(), '', 'printed no output')
   })
 
+  t.test('opens a mailto url', async t => {
+    const { openerUrl, openerOpts, joinedOutput } = await mockOpenUrl(t,
+      ['mailto:someone@example.com', 'npm bugs'])
+    t.equal(openerUrl(), 'mailto:someone@example.com', 'opened the given url')
+    t.same(openerOpts(), { command: null }, 'passed command as null (the default)')
+    t.same(joinedOutput(), '', 'printed no output')
+  })
+
   t.test('returns error for non-https url', async t => {
     const { openUrl, openerUrl, openerOpts, joinedOutput } = await mockOpenUrl(t)
     await t.rejects(
