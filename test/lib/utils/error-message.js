@@ -173,6 +173,22 @@ t.test('args are cleaned', async t => {
   })))
 })
 
+t.test('cause, stdout and stderr are cleaned', async t => {
+  const { errorMessage } = await loadMockNpm(t)
+  const { detail } = errorMessage(Object.assign(new Error('cmd err'), {
+    cmd: 'some command',
+    signal: 'SIGYOLO',
+    args: ['a', 'r', 'g', 's'],
+    cause: new Error('fetch failed for https://user:sekrit@registry.example.com/foo'),
+    stdout: 'log line with a token npm_0123456789abcdef0123456789abcdef0123\n',
+    stderr: 'git error for https://user:sekrit@github.com/foo/bar.git\n',
+  }))
+  const flat = JSON.stringify(detail)
+  t.notMatch(flat, /sekrit/)
+  t.notMatch(flat, /npm_0123456789/)
+  t.match(flat, /registry\.example\.com/, 'cause keeps the non secret part of the url')
+})
+
 t.test('eacces/eperm', async t => {
   const runTest = (windows, loaded, cachePath, cacheDest) => async t => {
     const { errorMessage, logs, cache } = await loadMockNpm(t, {
