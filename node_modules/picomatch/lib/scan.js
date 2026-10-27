@@ -50,7 +50,7 @@ const scan = (input, options) => {
   const opts = options || {};
 
   const length = input.length - 1;
-  const scanToEnd = opts.parts === true || opts.scanToEnd === true;
+  const scanToEnd = opts.parts === true || opts.tokens === true || opts.scanToEnd === true;
   const slashes = [];
   const tokens = [];
   const parts = [];
@@ -184,15 +184,21 @@ const scan = (input, options) => {
         }
 
         if (scanToEnd === true) {
+          let parens = 0;
+
           while (eos() !== true && (code = advance())) {
             if (code === CHAR_BACKWARD_SLASH) {
               backslashes = token.backslashes = true;
-              code = advance();
+              advance();
               continue;
             }
 
-            if (code === CHAR_RIGHT_PARENTHESES) {
-              isGlob = token.isGlob = true;
+            if (code === CHAR_LEFT_PARENTHESES) {
+              parens++;
+              continue;
+            }
+
+            if (code === CHAR_RIGHT_PARENTHESES && --parens === 0) {
               finished = true;
               break;
             }
@@ -257,14 +263,21 @@ const scan = (input, options) => {
       isGlob = token.isGlob = true;
 
       if (scanToEnd === true) {
+        let parens = 1;
+
         while (eos() !== true && (code = advance())) {
-          if (code === CHAR_LEFT_PARENTHESES) {
+          if (code === CHAR_BACKWARD_SLASH) {
             backslashes = token.backslashes = true;
-            code = advance();
+            advance();
             continue;
           }
 
-          if (code === CHAR_RIGHT_PARENTHESES) {
+          if (code === CHAR_LEFT_PARENTHESES) {
+            parens++;
+            continue;
+          }
+
+          if (code === CHAR_RIGHT_PARENTHESES && --parens === 0) {
             finished = true;
             break;
           }
@@ -351,7 +364,7 @@ const scan = (input, options) => {
     let prevIndex;
 
     for (let idx = 0; idx < slashes.length; idx++) {
-      const n = prevIndex ? prevIndex + 1 : start;
+      const n = prevIndex !== undefined ? prevIndex + 1 : start;
       const i = slashes[idx];
       const value = input.slice(n, i);
       if (opts.tokens) {
@@ -364,21 +377,20 @@ const scan = (input, options) => {
         depth(tokens[idx]);
         state.maxDepth += tokens[idx].depth;
       }
-      if (idx !== 0 || value !== '') {
+      if (i >= start) {
         parts.push(value);
+        prevIndex = i;
       }
-      prevIndex = i;
     }
 
-    if (prevIndex && prevIndex + 1 < input.length) {
-      const value = input.slice(prevIndex + 1);
-      parts.push(value);
+    const n = prevIndex !== undefined ? prevIndex + 1 : start;
+    const value = input.slice(n);
+    parts.push(value);
 
-      if (opts.tokens) {
-        tokens[tokens.length - 1].value = value;
-        depth(tokens[tokens.length - 1]);
-        state.maxDepth += tokens[tokens.length - 1].depth;
-      }
+    if (opts.tokens && prevIndex && prevIndex + 1 < input.length) {
+      tokens[tokens.length - 1].value = value;
+      depth(tokens[tokens.length - 1]);
+      state.maxDepth += tokens[tokens.length - 1].depth;
     }
 
     state.slashes = slashes;
