@@ -379,6 +379,50 @@ t.test('a patched optional dependency still fails loudly on patch problems', asy
     'optional patch failure is not swallowed by optional handling')
 })
 
+t.test('reify refuses a lockfile patch path that escapes the project', async t => {
+  // node.patched.path is read verbatim from the lockfile. On a pre-built ideal
+  // tree (loadVirtual, not buildIdealTree) resolvePatchedDependencies is skipped,
+  // so a crafted lockfile path reaches #applyPatch unvalidated. reify must apply
+  // the same containment check readPatch does, or the read escapes the project.
+  const registry = createRegistry(t)
+  const src = t.testdir({
+    'package.json': JSON.stringify({ name: PKG_NAME, version: PKG_VERSION }),
+    'index.js': ORIGINAL,
+  })
+  const manifest = registry.manifest({ name: PKG_NAME, packuments: [{ version: PKG_VERSION }] })
+  await registry.tarball({ manifest: manifest.versions[PKG_VERSION], tarball: src })
+  const integrity = manifest.versions[PKG_VERSION].dist.integrity
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { [PKG_NAME]: `^${PKG_VERSION}` },
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      lockfileVersion: 4,
+      requires: true,
+      packages: {
+        '': { name: 'root', version: '1.0.0', dependencies: { [PKG_NAME]: `^${PKG_VERSION}` } },
+        [`node_modules/${PKG_NAME}`]: {
+          version: PKG_VERSION,
+          resolved: `https://registry.npmjs.org/${PKG_NAME}/-/${PKG_NAME}-${PKG_VERSION}.tgz`,
+          integrity,
+          patched: { path: '../../escape.patch', integrity: 'sha512-x' },
+        },
+      },
+    }),
+  })
+
+  const arb = newArb({ path })
+  // build the ideal tree straight from the lockfile so resolvePatchedDependencies is skipped
+  arb.idealTree = await arb.loadVirtual()
+  await t.rejects(arb.reify(), { code: 'EPATCHUNSAFE' },
+    'a lockfile patch path outside the project is refused before it is read')
+})
+
 t.test('restores node.patched from an existing v4 lockfile', async t => {
   const patchRel = `patches/${PKG_NAME}@${PKG_VERSION}.patch`
   const path = makeProject(t, {
