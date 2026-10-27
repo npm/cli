@@ -150,6 +150,19 @@ t.test('unsupported node version', async t => {
   )
 })
 
+t.test('Node.js Alpha of a supported major is accepted', async t => {
+  // #10169: engines ranges like >=26.0.0 reject 27.0.0-alpha without a
+  // same-tuple prerelease comparator or includePrerelease.
+  const { cli, logs } = await cliMock(t, {
+    globals: {
+      'process.version': '27.0.0-alpha.0.0.0',
+    },
+  })
+  await cli(process)
+  const unsupported = (logs.warn || []).filter((l) => /does not support Node/.test(l))
+  t.same(unsupported, [], 'no engines warning for Node Alpha')
+})
+
 t.test('non-ascii dash', async t => {
   const { cli, logs } = await cliMock(t, {
     globals: {
