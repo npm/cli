@@ -1,3 +1,4 @@
+const { resolve } = require('node:path')
 const t = require('tap')
 
 const mockRunScript = async (t, mocks, { level = 0 } = {}) => {
@@ -128,6 +129,35 @@ t.test('isWindows', async t => {
   await runScript({ args: ['test'] })
   // need both arguments and no arguments for code coverage
   await runScript()
+})
+
+t.test('isWindows runs the .cmd shim of a bin with a dot in its name', async t => {
+  const dir = t.testdir({
+    global: { 'dot.bin.cmd': '' },
+    project: {
+      node_modules: { '.bin': { 'local.bin.cmd': '' } },
+      nested: {},
+    },
+  })
+  let pkg
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async (opts) => {
+      pkg = opts.pkg
+    },
+    '../lib/is-windows.js': true,
+  })
+  const binPaths = [resolve(dir, 'global')]
+  const runPath = resolve(dir, 'project', 'nested')
+
+  await runScript({ args: ['dot.bin', 'arg'], binPaths, runPath })
+  t.equal(pkg.scripts.npx, 'dot.bin.cmd', 'shim found in binPaths')
+
+  await runScript({ args: ['local.bin'], binPaths, runPath })
+  t.equal(pkg.scripts.npx, 'local.bin.cmd', 'shim found in a node_modules/.bin above runPath')
+
+  await runScript({ args: ['no.shim'], binPaths, runPath })
+  t.equal(pkg.scripts.npx, 'no.shim', 'left alone without a .cmd shim')
 })
 
 t.test('escapes executable name to neutralize shell metacharacters', async t => {

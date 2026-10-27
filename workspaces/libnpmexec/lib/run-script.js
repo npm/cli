@@ -1,9 +1,26 @@
+const { extname, resolve } = require('node:path')
 const ciInfo = require('ci-info')
 const runScript = require('@npmcli/run-script')
 const pkgJson = require('@npmcli/package-json')
 const { log, output } = require('proc-log')
 const noTTY = require('./no-tty.js')
 const isWindowsShell = require('./is-windows.js')
+const { fileExists, localFileExists } = require('./file-exists.js')
+
+// cmd.exe looks up a command that already has an extension by its exact name
+// before it tries PATHEXT. For a bin with a dot in its name that finds the
+// extensionless sh shim, and Windows opens it with whatever program is
+// registered for that "extension" instead of running it. Point cmd.exe at the
+// .cmd shim next to it instead.
+const hasCmdShim = async (bin, binPaths, runPath) => {
+  const shim = `${bin}.cmd`
+  for (const binPath of binPaths) {
+    if (await fileExists(resolve(binPath, shim))) {
+      return true
+    }
+  }
+  return !!(await localFileExists(resolve(runPath), shim, '/'))
+}
 
 const run = async ({
   args,
@@ -23,6 +40,9 @@ const run = async ({
       // literally; double quotes still expand $(), backticks, $var and "
       args[0] = `'${args[0].replace(/'/g, `'\\''`)}'`
     }
+  } else if (args.length > 0 && extname(args[0]) &&
+    await hasCmdShim(args[0], binPaths, runPath)) {
+    args[0] = `${args[0]}.cmd`
   }
 
   // turn list of args into command string
