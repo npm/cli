@@ -8,6 +8,14 @@
 * [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v6.0.5): `libnpmfund@6.0.5`
 * [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v8.0.5): `libnpmpack@8.0.5`
 
+## [10.9.10](https://github.com/npm/cli/compare/v10.9.9...v10.9.10) (2026-10-28)
+### Dependencies
+* [`12d88e1`](https://github.com/npm/cli/commit/12d88e16c685a87d9f51943629af02e03ba76b00) [#10177](https://github.com/npm/cli/pull/10177) `pacote@19.0.3` (@martinrrm, @Copilot)
+* [`bed6b92`](https://github.com/npm/cli/commit/bed6b92e252b8809afaeb7d95ede377957c0202a) [#10177](https://github.com/npm/cli/pull/10177) `promise-spawn@8.0.4` (@martinrrm)
+* [`0616c2e`](https://github.com/npm/cli/commit/0616c2eca2cb3918ede08c8c1a653964086837f7) [#10177](https://github.com/npm/cli/pull/10177) `bin-links@5.0.1` (@martinrrm)
+### Chores
+* [`db2d9b8`](https://github.com/npm/cli/commit/db2d9b82c6824cb2dd9dcf2b03b9ed5ea9a4f4ce) [#10009](https://github.com/npm/cli/pull/10009) pack: select workspace through config (#10009) (@github-actions[bot], @reggi)
+
 ## [10.9.9](https://github.com/npm/cli/compare/v10.9.8...v10.9.9) (2026-07-28)
 ### Dependencies
 * [`5e9f451`](https://github.com/npm/cli/commit/5e9f45190223b143f3ff891dc9cb99fc606bb909) [#9814](https://github.com/npm/cli/pull/9814) `tar@7.5.22` (#9814) (@martinrrm, @Copilot)
