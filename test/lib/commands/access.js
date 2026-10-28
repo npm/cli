@@ -13,7 +13,7 @@ t.test('completion', async t => {
     t.strictSame(res, expect, argv.join(' '))
   }
 
-  await testComp(['npm', 'access'], ['list', 'get', 'set', 'grant', 'revoke'])
+  await testComp(['npm', 'access'], ['get', 'grant', 'list', 'revoke', 'set'])
   await testComp(['npm', 'access', 'list'], ['packages', 'collaborators'])
   await testComp(['npm', 'access', 'ls'], ['packages', 'collaborators'])
   await testComp(['npm', 'access', 'get'], ['status'])
