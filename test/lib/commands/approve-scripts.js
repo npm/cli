@@ -1034,7 +1034,7 @@ t.test('approve-scripts <name> finds a local file: dep through its link', async 
   await npm.exec('approve-scripts', ['foo'])
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
-  t.strictSame(pkg.allowScripts, { 'file:../local-foo': true })
+  t.strictSame(pkg.allowScripts, { 'file:local-foo': true })
 })
 
 t.test('deny-scripts <name> finds a local file: dep through its link', async t => {
@@ -1044,7 +1044,7 @@ t.test('deny-scripts <name> finds a local file: dep through its link', async t =
   await npm.exec('deny-scripts', ['foo'])
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
-  t.strictSame(pkg.allowScripts, { 'file:../local-foo': false })
+  t.strictSame(pkg.allowScripts, { 'file:local-foo': false })
 })
 
 t.test('approve-scripts <pkg> under linked strategy without resolved URLs approves by name', async t => {

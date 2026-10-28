@@ -202,7 +202,7 @@ t.test('allowScripts gates local file: dep scripts (npm/cli#9498)', async t => {
     t.throws(() => fs.statSync(aPostinstall(path)), 'postinstall did not run')
   })
 
-  t.test('path-equivalent allow entry does not authorize the target', async t => {
+  t.test('path-equivalent allow entry authorizes the target', async t => {
     const path = fixture(t, 'link-dep-lifecycle-scripts')
     const arb = newArb({
       path,
@@ -210,8 +210,8 @@ t.test('allowScripts gates local file: dep scripts (npm/cli#9498)', async t => {
       dangerouslyAllowAllScripts: false,
     })
     await arb.rebuild()
-    t.throws(() => fs.statSync(aPrepare(path)), 'prepare did not run')
-    t.throws(() => fs.statSync(aPostinstall(path)), 'postinstall did not run')
+    t.equal(fs.statSync(aPrepare(path)).isFile(), true, 'prepare ran')
+    t.equal(fs.statSync(aPostinstall(path)).isFile(), true, 'postinstall ran')
   })
 
   t.test('absent: default-deny blocks the scripts', async t => {

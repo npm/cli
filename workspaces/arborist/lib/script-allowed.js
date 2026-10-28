@@ -119,8 +119,35 @@ const isStoreBacked = (node) => {
 }
 
 const resolvedSourceSpecs = (node) => {
-  const resolved = node?.resolved
-  return typeof resolved === 'string' && resolved !== '' ? [resolved] : []
+  const specs = []
+  const seen = new Set()
+  const add = (spec) => {
+    if (typeof spec !== 'string' || spec === '' || seen.has(spec)) {
+      return
+    }
+    seen.add(spec)
+    specs.push(spec)
+  }
+
+  add(node?.resolved)
+
+  if (!node?.resolved && !isStoreBacked(node) &&
+      node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+    let hasIncomingLink = false
+    let hasFileLink = false
+    for (const link of node.linksIn) {
+      hasIncomingLink = true
+      add(link.resolved)
+      hasFileLink ||= isFileSpec(link.resolved, node?.root?.path || process.cwd())
+    }
+
+    if (hasIncomingLink && hasFileLink) {
+      add(node.realpath)
+      add(node.path)
+    }
+  }
+
+  return specs
 }
 
 const isFileSpec = (spec, where) => {
@@ -409,20 +436,47 @@ const matchGit = (node, parsed) => {
 }
 
 const matchFileOrDir = (node, parsed) => {
-  // consistentResolve stores local sources as `file:` plus npa's absolute,
-  // platform-native fetchSpec.
-  const absoluteFileSpec = parsed.fetchSpec && `file:${parsed.fetchSpec}`
-  return resolvedSourceSpecs(node)
-    .some(resolved =>
-      resolved === parsed.saveSpec ||
-      resolved === parsed.fetchSpec ||
-      resolved === absoluteFileSpec
-    )
+  const identities = filePolicyIdentities(node)
+  if (identities.includes(parsed.raw)) {
+    return true
+  }
+
+  const where = node?.root?.path || process.cwd()
+  const sources = resolvedSourceSpecs(node)
+  const paths = new Set()
+  let hasFileSource = false
+  for (const source of sources) {
+    try {
+      const sourceParsed = npa(source, where)
+      if (sourceParsed.type === 'file' || sourceParsed.type === 'directory') {
+        hasFileSource = true
+        if (source === parsed.raw ||
+            source === parsed.saveSpec ||
+            source === parsed.fetchSpec ||
+            source === `file:${parsed.fetchSpec}`) {
+          return true
+        }
+        paths.add(sourceParsed.fetchSpec)
+      }
+    } catch {
+      continue
+    }
+  }
+  if (identities.length > 0) {
+    for (const path of [node?.path, node?.realpath]) {
+      if (path) {
+        paths.add(path)
+      }
+    }
+  }
+  if (!hasFileSource && identities.length === 0) {
+    return false
+  }
+  return paths.has(parsed.fetchSpec)
 }
 
 const matchRemote = (node, parsed) => {
-  return resolvedSourceSpecs(node)
-    .some(resolved => resolved === parsed.fetchSpec || resolved === parsed.saveSpec)
+  return node?.resolved === parsed.fetchSpec || node?.resolved === parsed.saveSpec
 }
 
 const isRegistryNode = (node) => {

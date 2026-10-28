@@ -132,7 +132,7 @@ t.test('file path — exact resolved match', t => {
   t.end()
 })
 
-t.test('file path — ordinary nodes prefer exact lockfile identities', t => {
+t.test('file path — ordinary nodes accept exact and path-equivalent identities', t => {
   const rootPath = path.resolve('project')
   const nodePath = path.resolve(rootPath, 'node_modules/local-pkg')
   const root = lockfileRoot(rootPath, {
@@ -149,7 +149,7 @@ t.test('file path — ordinary nodes prefer exact lockfile identities', t => {
 
   t.strictSame(filePolicyIdentities(fileNode), ['file:../local-pkg'])
   t.equal(isScriptAllowed(fileNode, { 'file:../local-pkg': true }), true)
-  t.equal(isScriptAllowed(fileNode, { [fileNode.resolved]: true }), null)
+  t.equal(isScriptAllowed(fileNode, { [fileNode.resolved]: true }), true)
   t.end()
 })
 
@@ -212,7 +212,7 @@ t.test('file path — link target matches exact lockfile source', t => {
   t.equal(filePolicyIdentity(target), 'file:../local-pkg')
   t.equal(isScriptAllowed(target, { 'file:../local-pkg': true }), true)
   t.equal(isScriptAllowed(target, { 'file:local-pkg': true }), null)
-  t.equal(isScriptAllowed(target, { [npa(targetPath).saveSpec]: true }), null)
+  t.equal(isScriptAllowed(target, { [npa(targetPath).saveSpec]: true }), true)
   t.equal(isScriptAllowed(target, { 'file:../local-pkg': false }), false)
   t.equal(isScriptAllowed(target, { 'file:../other': true }), null)
   t.end()

@@ -15,14 +15,16 @@ const node = (overrides = {}) => {
   const packageName = overrides.packageName ?? name
   const version = overrides.version ?? '1.0.0'
   const urlPkg = packageName
+  const resolved = overrides.resolved
+    ?? `https://registry.npmjs.org/${urlPkg}/-/${urlPkg}-${version}.tgz`
   return {
     name,
     packageName,
     version,
-    resolved: overrides.resolved
-      ?? `https://registry.npmjs.org/${urlPkg}/-/${urlPkg}-${version}.tgz`,
+    resolved,
     location: overrides.location ?? `node_modules/${name}`,
-    isRegistryDependency: overrides.isRegistryDependency ?? true,
+    isRegistryDependency: overrides.isRegistryDependency ??
+      resolved.startsWith('https://registry.npmjs.org/'),
   }
 }
 
@@ -882,7 +884,7 @@ t.test('keyTargetsNode handles file-type tarball key matching saveSpec', async t
   t.equal(allowScripts['file:pkg.tgz'], false)
 })
 
-t.test('keyTargetsNode does not match path-equivalent file keys', async t => {
+t.test('keyTargetsNode matches path-equivalent file keys', async t => {
   const absTgz = path.resolve('pkg.tgz')
   const tarballNode = {
     name: 'pkg',
@@ -896,8 +898,8 @@ t.test('keyTargetsNode does not match path-equivalent file keys', async t => {
     { pin: true }
   )
   t.equal(allowScripts['./pkg.tgz'], false)
-  t.equal(allowScripts[absTgz], true)
-  t.equal(warning, undefined)
+  t.notOk(allowScripts[absTgz])
+  t.match(warning, /denied/)
 })
 
 t.test('versionedKeyFor — git node without committish', async t => {
