@@ -2,24 +2,24 @@ const t = require('tap')
 const shouldPrintPatch = require('../lib/should-print-patch.js')
 
 t.test('valid filenames', async t => {
-  await t.resolves(shouldPrintPatch('LICENSE'), true)
-  await t.resolves(shouldPrintPatch('.gitignore'), true)
-  await t.resolves(shouldPrintPatch('foo.md'), true)
-  await t.resolves(shouldPrintPatch('./bar.txt'), true)
-  await t.resolves(shouldPrintPatch('/a/b/c/bar.html'), true)
+  t.equal(await shouldPrintPatch('LICENSE'), true)
+  t.equal(await shouldPrintPatch('.gitignore'), true)
+  t.equal(await shouldPrintPatch('foo.md'), true)
+  t.equal(await shouldPrintPatch('./bar.txt'), true)
+  t.equal(await shouldPrintPatch('/a/b/c/bar.html'), true)
 })
 
 t.test('invalid filenames', async t => {
-  await t.resolves(shouldPrintPatch('foo.exe'), false)
-  await t.resolves(shouldPrintPatch('./foo.jpg'), false)
-  await t.resolves(shouldPrintPatch('/a/b/c/bar.bin'), false)
+  t.equal(await shouldPrintPatch('foo.exe'), false)
+  t.equal(await shouldPrintPatch('./foo.jpg'), false)
+  t.equal(await shouldPrintPatch('/a/b/c/bar.bin'), false)
 })
 
 t.test('using --text/-a option', async t => {
   const opts = {
     diffText: true,
   }
-  await t.resolves(shouldPrintPatch('foo.exe', opts), true)
-  await t.resolves(shouldPrintPatch('./foo.jpg', opts), true)
-  await t.resolves(shouldPrintPatch('/a/b/c/bar.bin', opts), true)
+  t.equal(await shouldPrintPatch('foo.exe', opts), true)
+  t.equal(await shouldPrintPatch('./foo.jpg', opts), true)
+  t.equal(await shouldPrintPatch('/a/b/c/bar.bin', opts), true)
 })
