@@ -381,3 +381,27 @@ t.test('disk hydration does not mutate node.package', async t => {
   t.strictSame(pkg, { name: 'pkg', version: '1.0.0' }, 'node.package untouched')
   t.notOk(pkg.scripts, 'no scripts written back onto node.package')
 })
+
+
+t.test('prepare-only git dep hydrates prepare from disk without hasInstallScript', async t => {
+  // Regression for npm/cli#10182: hidden lockfiles leave scripts empty and
+  // often omit hasInstallScript for prepare-only git deps.
+  const getInstallScripts = mockGetInstallScripts(t)
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'git-dep',
+      version: '1.0.0',
+      scripts: { prepare: 'tsc -p tsconfig.npm.json' },
+    }),
+  })
+  const gitNode = {
+    resolved: 'git+ssh://git@github.com/npm/git-dep.git#deadbeef',
+    path,
+    isRegistryDependency: false,
+    package: { name: 'git-dep', version: '1.0.0' },
+  }
+  t.strictSame(
+    await getInstallScripts(gitNode),
+    { prepare: 'tsc -p tsconfig.npm.json' }
+  )
+})

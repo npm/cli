@@ -74,11 +74,16 @@ const getInstallScripts = async (node) => {
   // Lockfile-only nodes carry `hasInstallScript: true` but no enumerated
   // scripts: the lockfile records the presence flag, not the script bodies,
   // so `node.package.scripts` is empty on a lockfile-driven install (`npm ci`,
-  // a repeat `npm install`). Before giving up, read the installed
+  // a repeat `npm install`). Hidden lockfiles also omit script bodies for git
+  // deps whose only install-relevant script is `prepare`, and they often omit
+  // `hasInstallScript` too (npm/cli#10182). Before giving up, read the installed
   // package.json from disk to recover the real script bodies. Builder#addToBuildSet
   // does the same disk read to decide what to run, but unlike that path this
   // one is read-only: we never mutate `node.package`.
-  if (Object.keys(collected).length === 0 && node.hasInstallScript === true) {
+  if (
+    Object.keys(collected).length === 0 &&
+    (node.hasInstallScript === true || hasNonRegistryShape(node))
+  ) {
     const { content } = await PackageJson.normalize(node.path)
       .catch(() => ({ content: {} }))
     /* istanbul ignore next: normalize resolves to an object with a scripts
