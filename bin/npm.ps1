@@ -42,7 +42,7 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
   $NPM_ARGS = ($NPM_COMMAND_ARRAY | Select-Object -Skip 1) -join ' '
 
   $NPM_COMMAND = [ScriptBlock]::Create("& `$NODE_EXE `$NPM_CLI_JS $NPM_ARGS")
-  & $NPM_COMMAND
+  . $NPM_COMMAND
 }
 
 exit $LASTEXITCODE

@@ -42,7 +42,7 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
   $NPX_ARGS = ($NPX_COMMAND_ARRAY | Select-Object -Skip 1) -join ' '
 
   $NPX_COMMAND = [ScriptBlock]::Create("& `$NODE_EXE `$NPX_CLI_JS $NPX_ARGS")
-  & $NPX_COMMAND
+  . $NPX_COMMAND
 }
 
 exit $LASTEXITCODE
