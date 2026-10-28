@@ -379,6 +379,17 @@ t.test('applyApprovalForPackage — already-allowed exact version is a no-op', a
   t.strictSame(changes, [])
 })
 
+t.test('applyApprovalForPackage — already-allowed explicit source is a no-op', async t => {
+  const { allowScripts, changes } = applyApprovalForPackage(
+    { [registryShapedRemoteUrl]: true },
+    [registryShapedRemoteNode()],
+    { pin: true, policyKey: registryShapedRemoteUrl }
+  )
+
+  t.strictSame(allowScripts, { [registryShapedRemoteUrl]: true })
+  t.strictSame(changes, [])
+})
+
 t.test('applyApprovalForPackage — existing deny wins, returns warning', async t => {
   const { allowScripts, changes, warning } = applyApprovalForPackage(
     { canvas: false },
