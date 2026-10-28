@@ -248,6 +248,44 @@ t.test('uses POSIX escaping for a POSIX shell on Windows', async t => {
   await runScript({ args: ["bin$(echo injected)'name"], scriptShell: 'bash' })
 })
 
+t.test('uses PowerShell invocation for PowerShell shells', async t => {
+  for (const scriptShell of [
+    'powershell',
+    'pwsh.exe',
+    'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe',
+    'C:/Program Files/PowerShell/7/pwsh.exe',
+  ]) {
+    const { runScript } = await mockRunScript(t, {
+      '@npmcli/run-script': async ({ pkg, args }) => {
+        t.equal(pkg.scripts.npx, "& 'bin''name; Write-Output injected'")
+        t.same(args, ['literal argument'])
+      },
+    })
+    await runScript({
+      args: ["bin'name; Write-Output injected", 'literal argument'],
+      scriptShell,
+    })
+  }
+})
+
+t.test('PowerShell executes inferred commands', {
+  skip: process.platform !== 'win32' && 'Windows only',
+}, async t => {
+  const path = t.testdir()
+  const args = ['two words', 'literal&argument']
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': opts => realRunScript({ ...opts, stdio: 'pipe' }),
+  })
+  const result = await runScript({
+    args: [process.execPath, '-e', 'console.log(JSON.stringify(process.argv.slice(1)))', ...args],
+    path,
+    runPath: path,
+    scriptShell: 'powershell.exe',
+  })
+
+  t.same(JSON.parse(result.stdout), args)
+})
+
 t.test('call remains a shell script and its arguments are not executable tokens', async t => {
   for (const scriptShell of ['sh', 'cmd.exe']) {
     const { runScript } = await mockRunScript(t, {

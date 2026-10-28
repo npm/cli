@@ -42,10 +42,10 @@ await libexec({
   - `yes`: Should skip download confirmation prompt when fetching missing packages from the registry? **Boolean**
   - `registry`, `cache`, and more options that are forwarded to [@npmcli/arborist](https://github.com/npm/cli/blob/latest/workspaces/arborist/README.md) and [pacote](https://github.com/npm/pacote/#options) **Object**
 
-  Executable names are escaped for the selected shell, including POSIX shells used
-  on Windows. With `cmd.exe`, executable names containing double quotes, percent
-  signs, exclamation marks, or control characters are rejected with
-  `EINVALIDCOMMAND`. Use a bin name without these characters. On a matching
+  Executable names are escaped for the selected shell, including POSIX shells and
+  PowerShell used on Windows. With `cmd.exe`, executable names containing double
+  quotes, percent signs, exclamation marks, or control characters are rejected
+  with `EINVALIDCOMMAND`. Use a bin name without these characters. On a matching
   npx-cache hit, command selection uses the installed package's `bin` rather than
   the registry's bin metadata.
 
