@@ -58,6 +58,10 @@ t.test('shim contents', t => {
     const { diff, letters } = diffFiles(SHIMS['npm.ps1'], SHIMS['npx.ps1'])
     t.strictSame(diff, [])
     t.strictSame([...letters], ['M', 'X'], 'all other changes are m->x')
+    t.notMatch(SHIMS['npm.ps1'], /Invoke-Expression/, 'does not evaluate commands')
+    t.notMatch(SHIMS['npx.ps1'], /Invoke-Expression/, 'does not evaluate commands')
+    t.match(SHIMS['npm.ps1'], /\[ScriptBlock\]::Create/, 'evaluates arguments without interpolating paths')
+    t.match(SHIMS['npx.ps1'], /\[ScriptBlock\]::Create/, 'evaluates arguments without interpolating paths')
     t.end()
   })
 })
@@ -78,43 +82,56 @@ t.test('node-gyp', t => {
 })
 
 t.test('run shims', t => {
-  const path = t.testdir({
-    ...SHIMS,
-    'node.exe': readFileSync(process.execPath),
-    // simulate the state where one version of npm is installed
-    // with node, but we should load the globally installed one
-    'global-prefix': {
+  const path = join(t.testdir({
+    "$(throw 'shim path evaluated')": {
+      ...SHIMS,
+      'node.exe': readFileSync(process.execPath),
+      // simulate the state where one version of npm is installed
+      // with node, but we should load the globally installed one
+      'global-prefix': {
+        node_modules: {
+          npm: t.fixture('symlink', ROOT),
+        },
+      },
+      // put in a shim that ONLY prints the intended global prefix,
+      // and should not be used for anything else.
       node_modules: {
-        npm: t.fixture('symlink', ROOT),
-      },
-    },
-    // put in a shim that ONLY prints the intended global prefix,
-    // and should not be used for anything else.
-    node_modules: {
-      npm: {
-        bin: {
-          'npm-prefix.js': `
-            const { resolve } = require('path')
-            console.log(resolve(__dirname, '../../../global-prefix'))
-          `,
-          'npx-cli.js': `throw new Error('local npx should not be called')`,
-          'npm-cli.js': `throw new Error('local npm should not be called')`,
+        npm: {
+          bin: {
+            'npm-prefix.js': `
+              const { resolve } = require('path')
+              console.log(resolve(__dirname, '../../../global-prefix'))
+            `,
+            'npx-cli.js': `throw new Error('local npx should not be called')`,
+            'npm-cli.js': `throw new Error('local npm should not be called')`,
+          },
         },
       },
+      // test script returning all command line arguments
+      [SCRIPT_NAME]: `#!/usr/bin/env node
+
+        if (process.argv[2] === 'exit-7') {
+          console.error('shim failure')
+          process.exit(7)
+        }
+        process.argv.slice(2).forEach((arg) => console.log(arg))
+      `,
+      'stderr.js': `console.error('shim stderr')`,
+      'fail.js': `console.error('shim failure')\nprocess.exit(7)`,
+      // package.json for the test script
+      'package.json': `
+        {
+          "name": "${PACKAGE_NAME}",
+          "version": "${PACKAGE_VERSION}",
+          "scripts": {
+            "test": "node ${SCRIPT_NAME}",
+            "stderr": "node stderr.js",
+            "fail": "node fail.js"
+          },
+          "bin": "${SCRIPT_NAME}"
+        }`,
     },
-    // test script returning all command line arguments
-    [SCRIPT_NAME]: `#!/usr/bin/env node\n\nprocess.argv.slice(2).forEach((arg) => console.log(arg))`,
-    // package.json for the test script
-    'package.json': `
-      {
-        "name": "${PACKAGE_NAME}",
-        "version": "${PACKAGE_VERSION}",
-        "scripts": {
-          "test": "node ${SCRIPT_NAME}"
-        },
-        "bin": "${SCRIPT_NAME}"
-      }`,
-  })
+  }), "$(throw 'shim path evaluated')")
 
   // The removal of this fixture causes this test to fail when done with
   // the default tap removal. Using rimraf's `moveRemove` seems to make this
@@ -127,18 +144,18 @@ t.test('run shims', t => {
       // only cygwin *requires* the -l, but the others are ok with it
       args.unshift('-l')
     }
-    if (cmd.toLowerCase().endsWith('powershell.exe') || cmd.toLowerCase().endsWith('pwsh.exe')) {
+    const isPowerShell = cmd.toLowerCase().endsWith('powershell.exe') ||
+      cmd.toLowerCase().endsWith('pwsh.exe')
+    if (isPowerShell) {
       // pwsh *requires* the -Command, Windows PowerShell defaults to it
-      args.unshift('-Command')
-      // powershell requires escaping double-quotes for this test
-      args = args.map(elem => elem.replaceAll('"', '\\"'))
+      args = ['-Command', args.join(' ')]
     }
-    const result = spawnSync(`"${cmd}"`, args, {
+    const result = spawnSync(isPowerShell ? cmd : `"${cmd}"`, args, {
       // don't hit the registry for the update check
-      env: { PATH: path, npm_config_update_notifier: 'false' },
+      env: { PATH: path, npm_config_update_notifier: 'false', NPM_SHIM_ARG: 'expanded value' },
       cwd: path,
       windowsHide: true,
-      shell: true,
+      shell: !isPowerShell,
       ...opts,
     })
     if (stdioString) {
@@ -238,7 +255,7 @@ t.test('run shims', t => {
     }
   })
 
-  const matchCmd = (t, cmd, bin, match, params, expected) => {
+  const matchCmd = (t, cmd, bin, match, params, expected, resultMatch = {}) => {
     const args = []
     const opts = {}
 
@@ -276,6 +293,7 @@ t.test('run shims', t => {
       stderr: '',
       stdout: expected,
       ...match,
+      ...resultMatch,
     }, `${cmd} ${bin} ${params[0]}`)
   }
 
@@ -287,6 +305,13 @@ t.test('run shims', t => {
     { bin: 'npm', params: [`test -- hello -p1 world -p2 "hello world" --q1=hello world --q2="hello world"`], expected: `hello\n-p1\nworld\n-p2\nhello world\n--q1=hello\nworld\n--q2=hello world` },
     { bin: 'npm', params: ['test -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
     { bin: 'npx', params: ['. -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
+    { bin: 'npm', params: [`test -- 'hello world'`], expected: 'hello world', powershellOnly: true },
+    { bin: 'npm', params: ['test -- $env:NPM_SHIM_ARG'], expected: 'expanded value', powershellOnly: true },
+    { bin: 'npm', params: ['test -- hello` world'], expected: 'hello world', powershellOnly: true },
+    { bin: 'npm', params: ['--version | ForEach-Object { "version=$_" }'], expected: `version=${version}`, powershellOnly: true },
+    { bin: 'npm', params: ['run stderr 2> shim-error.txt; Get-Content shim-error.txt | Where-Object { $_ -eq "shim stderr" }'], expected: 'shim stderr', powershellOnly: true },
+    { bin: 'npm', params: ['run fail'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, powershellOnly: true },
+    { bin: 'npx', params: ['. -- exit-7'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, powershellOnly: true },
   ]
 
   // ensure that all tests are either run or skipped
@@ -302,15 +327,16 @@ t.test('run shims', t => {
         }
         return t.end()
       }
-      t.plan(tests.length)
-      for (const { bin, params, expected } of tests) {
+      const shellTests = tests.filter(test => !test.powershellOnly || name === 'powershell' || name === 'pwsh')
+      t.plan(shellTests.length)
+      for (const { bin, params, expected, resultMatch } of shellTests) {
         if (name === 'cygwin bash' && (
           (bin === 'npm' && params[0].startsWith('test')) ||
           (bin === 'npx' && params[0].startsWith('.'))
         )) {
           t.skip("`cygwin bash` doesn't respect option `{ cwd: path }` when calling `spawnSync`")
         } else {
-          matchCmd(t, cmd, bin, match, params, expected)
+          matchCmd(t, cmd, bin, match, params, expected, resultMatch)
         }
       }
     })
