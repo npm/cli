@@ -8,16 +8,16 @@ const auth = { '//registry.npmjs.org/:_authToken': 'test-auth-token' }
 
 t.test('completion', async t => {
   const { access } = await loadMockNpm(t, { command: 'access' })
-  const testComp = (argv, expect) => {
-    const res = access.completion({ conf: { argv: { remain: argv } } })
-    t.resolves(res, expect, argv.join(' '))
+  const testComp = async (argv, expect) => {
+    const res = await access.completion({ conf: { argv: { remain: argv } } })
+    t.strictSame(res, expect, argv.join(' '))
   }
 
-  testComp(['npm', 'access'], ['list', 'get', 'set', 'grant', 'revoke'])
-  testComp(['npm', 'access', 'list'], ['packages', 'collaborators'])
-  testComp(['npm', 'access', 'ls'], ['packages', 'collaborators'])
-  testComp(['npm', 'access', 'get'], ['status'])
-  testComp(['npm', 'access', 'set'], [
+  await testComp(['npm', 'access'], ['list', 'get', 'set', 'grant', 'revoke'])
+  await testComp(['npm', 'access', 'list'], ['packages', 'collaborators'])
+  await testComp(['npm', 'access', 'ls'], ['packages', 'collaborators'])
+  await testComp(['npm', 'access', 'get'], ['status'])
+  await testComp(['npm', 'access', 'set'], [
     'status=public',
     'status=private',
     'mfa=none',
@@ -27,9 +27,9 @@ t.test('completion', async t => {
     '2fa=publish',
     '2fa=automation',
   ])
-  testComp(['npm', 'access', 'grant'], ['read-only', 'read-write'])
-  testComp(['npm', 'access', 'revoke'], [])
-  testComp(['npm', 'access', 'grant', ''], [])
+  await testComp(['npm', 'access', 'grant'], ['read-only', 'read-write'])
+  await testComp(['npm', 'access', 'revoke'], [])
+  await testComp(['npm', 'access', 'grant', ''], [])
 
   await t.rejects(
     access.completion({ conf: { argv: { remain: ['npm', 'access', 'foobar'] } } }),
