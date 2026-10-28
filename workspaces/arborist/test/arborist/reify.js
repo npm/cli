@@ -719,7 +719,7 @@ t.test('linked ideal tree normalizes traversal bin paths', async t => {
 
   await arb.buildIdealTree()
   const isolatedTree = await arb.createIsolatedTree()
-  const target = isolatedTree.children.get('node_modules/abbrev').target
+  const target = isolatedTree.children.get(join('node_modules', 'abbrev')).target
   const binPath = resolve(path, 'node_modules/.bin/sentinel')
 
   t.strictSame(target.binPaths, [
