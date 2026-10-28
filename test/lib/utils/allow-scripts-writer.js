@@ -390,6 +390,30 @@ t.test('applyApprovalForPackage — existing deny wins, returns warning', async 
   t.match(warning, /canvas is denied/)
 })
 
+t.test('applyApprovalForPackage — linked-store registry deny wins', async t => {
+  const linkedStoreNode = {
+    name: 'canvas',
+    version: '1.0.0',
+    resolved: null,
+    isRegistryDependency: false,
+    isInStore: true,
+    edgesIn: new Set(),
+    linksIn: new Set([{
+      isRegistryDependency: true,
+      edgesIn: new Set([{ name: 'canvas', spec: '1.0.0' }]),
+    }]),
+  }
+  const { allowScripts, changes, warning } = applyApprovalForPackage(
+    { canvas: false },
+    [linkedStoreNode],
+    { pin: true }
+  )
+
+  t.strictSame(allowScripts, { canvas: false })
+  t.strictSame(changes, [])
+  t.match(warning, /canvas is denied/)
+})
+
 t.test('applyApprovalForPackage — versioned deny wins too', async t => {
   const { changes, warning } = applyApprovalForPackage(
     { 'canvas@2.11.0': false },

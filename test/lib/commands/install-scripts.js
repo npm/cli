@@ -442,6 +442,20 @@ t.test('install-scripts approve allows multiple commits from one hosted reposito
   t.strictSame(pkg.allowScripts, { [firstCommit]: true, [secondCommit]: true })
 })
 
+t.test('install-scripts exact git selector approves only the selected commit', async t => {
+  const firstCommit = 'github:example/tool#deadbeef'
+  const secondCommit = 'github:example/tool#cafebabe'
+  const { npm, prefix } = await mockProjectWithInventory(t, {
+    firstCommit: toolSourceNode(firstCommit),
+    secondCommit: toolSourceNode(secondCommit),
+  })
+
+  await npm.exec('install-scripts', ['approve', firstCommit])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [firstCommit]: true })
+})
+
 t.test('install-scripts approve rejects same-name dependencies from different git repositories', async t => {
   const firstRepositoryCommit = 'github:example/tool#deadbeef'
   const secondRepositoryCommit = 'github:attacker/tool#cafebabe'
@@ -516,6 +530,43 @@ t.test('install-scripts exact resolver identity disambiguates linked targets', a
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.strictSame(pkg.allowScripts, { [exactSource]: true })
+})
+
+t.test('install-scripts exact resolver identity approves a multi-link target', async t => {
+  const rootPath = resolve('project')
+  const targetPath = resolve(rootPath, '../shared')
+  const firstLinkPath = resolve(rootPath, 'node_modules/first')
+  const secondLinkPath = resolve(rootPath, 'node_modules/second')
+  const firstSource = 'file:../shared'
+  const secondSource = 'file:vendor/shared'
+  const root = {
+    path: rootPath,
+    meta: {
+      get: nodePath => ({
+        [firstLinkPath]: { resolved: firstSource, link: true },
+        [secondLinkPath]: { resolved: secondSource, link: true },
+      })[nodePath] || {},
+    },
+  }
+  const target = {
+    name: 'shared',
+    version: '1.0.0',
+    resolved: null,
+    isRegistryDependency: false,
+    path: targetPath,
+    realpath: targetPath,
+    root,
+    linksIn: new Set([
+      { path: firstLinkPath, resolved: firstSource, root },
+      { path: secondLinkPath, resolved: secondSource, root },
+    ]),
+  }
+  const { npm, prefix } = await mockProjectWithInventory(t, { target })
+
+  await npm.exec('install-scripts', ['approve', firstSource])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [firstSource]: true })
 })
 
 t.test('install-scripts deny <pkg> writes a name-only false entry', async t => {

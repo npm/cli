@@ -473,6 +473,13 @@ t.test('file source matching keeps POSIX backslashes distinct', t => {
   t.end()
 })
 
+t.test('file source matching fails closed for malformed resolver sources', t => {
+  const parsed = npa('file:/tmp/local-pkg.tgz')
+
+  t.equal(matchFileOrDir({ resolved: 'git+' }, parsed), false)
+  t.end()
+})
+
 t.test('remote tarball — exact resolved match', t => {
   const remoteNode = node({
     name: 'pkg',
