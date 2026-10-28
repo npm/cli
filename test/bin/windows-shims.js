@@ -108,7 +108,14 @@ t.test('run shims', t => {
         },
       },
       // test script returning all command line arguments
-      [SCRIPT_NAME]: `#!/usr/bin/env node\n\nprocess.argv.slice(2).forEach((arg) => console.log(arg))`,
+      [SCRIPT_NAME]: `#!/usr/bin/env node
+
+        if (process.argv[2] === 'exit-7') {
+          console.error('shim failure')
+          process.exit(7)
+        }
+        process.argv.slice(2).forEach((arg) => console.log(arg))
+      `,
       'stderr.js': `console.error('shim stderr')`,
       'fail.js': `console.error('shim failure')\nprocess.exit(7)`,
       // package.json for the test script
@@ -137,18 +144,18 @@ t.test('run shims', t => {
       // only cygwin *requires* the -l, but the others are ok with it
       args.unshift('-l')
     }
-    if (cmd.toLowerCase().endsWith('powershell.exe') || cmd.toLowerCase().endsWith('pwsh.exe')) {
+    const isPowerShell = cmd.toLowerCase().endsWith('powershell.exe') ||
+      cmd.toLowerCase().endsWith('pwsh.exe')
+    if (isPowerShell) {
       // pwsh *requires* the -Command, Windows PowerShell defaults to it
-      args.unshift('-Command')
-      // powershell requires escaping double-quotes for this test
-      args = args.map(elem => elem.replaceAll('"', '\\"'))
+      args = ['-Command', args.join(' ')]
     }
-    const result = spawnSync(`"${cmd}"`, args, {
+    const result = spawnSync(isPowerShell ? cmd : `"${cmd}"`, args, {
       // don't hit the registry for the update check
       env: { PATH: path, npm_config_update_notifier: 'false', NPM_SHIM_ARG: 'expanded value' },
       cwd: path,
       windowsHide: true,
-      shell: true,
+      shell: !isPowerShell,
       ...opts,
     })
     if (stdioString) {
@@ -304,6 +311,7 @@ t.test('run shims', t => {
     { bin: 'npm', params: ['--version | ForEach-Object { "version=$_" }'], expected: `version=${version}`, powershellOnly: true },
     { bin: 'npm', params: ['run stderr 2> shim-error.txt; Get-Content shim-error.txt | Where-Object { $_ -eq "shim stderr" }'], expected: 'shim stderr', powershellOnly: true },
     { bin: 'npm', params: ['run fail'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, powershellOnly: true },
+    { bin: 'npx', params: ['. -- exit-7'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, powershellOnly: true },
   ]
 
   // ensure that all tests are either run or skipped
