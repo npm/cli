@@ -41,16 +41,8 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
     EndBlock.Statements.PipelineElements.CommandElements.Extent.Text
   $NPX_ARGS = ($NPX_COMMAND_ARRAY | Select-Object -Skip 1) -join ' '
 
-  $NPX_PROCESS = New-Object System.Diagnostics.Process
-  $NPX_PROCESS.StartInfo = New-Object System.Diagnostics.ProcessStartInfo
-  $NPX_PROCESS.StartInfo.FileName = $NODE_EXE
-  $NPX_PROCESS.StartInfo.UseShellExecute = $false
-  $NPX_PROCESS.StartInfo.Arguments = "`"$NPX_CLI_JS`" $NPX_ARGS"
-  $NPX_PROCESS.Start() | Out-Null
-  $NPX_PROCESS.WaitForExit()
-  $NPX_EXIT_CODE = $NPX_PROCESS.ExitCode
-  $NPX_PROCESS.Dispose()
-  exit $NPX_EXIT_CODE
+  $NPX_COMMAND = [ScriptBlock]::Create("& `$NODE_EXE `$NPX_CLI_JS $NPX_ARGS")
+  & $NPX_COMMAND
 }
 
 exit $LASTEXITCODE

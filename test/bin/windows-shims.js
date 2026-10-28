@@ -60,8 +60,8 @@ t.test('shim contents', t => {
     t.strictSame([...letters], ['M', 'X'], 'all other changes are m->x')
     t.notMatch(SHIMS['npm.ps1'], /Invoke-Expression/, 'does not evaluate commands')
     t.notMatch(SHIMS['npx.ps1'], /Invoke-Expression/, 'does not evaluate commands')
-    t.match(SHIMS['npm.ps1'], /ProcessStartInfo/, 'starts node without reparsing the command')
-    t.match(SHIMS['npx.ps1'], /ProcessStartInfo/, 'starts node without reparsing the command')
+    t.match(SHIMS['npm.ps1'], /\[ScriptBlock\]::Create/, 'evaluates arguments without interpolating paths')
+    t.match(SHIMS['npx.ps1'], /\[ScriptBlock\]::Create/, 'evaluates arguments without interpolating paths')
     t.end()
   })
 })
@@ -109,13 +109,17 @@ t.test('run shims', t => {
       },
       // test script returning all command line arguments
       [SCRIPT_NAME]: `#!/usr/bin/env node\n\nprocess.argv.slice(2).forEach((arg) => console.log(arg))`,
+      'stderr.js': `console.error('shim stderr')`,
+      'fail.js': `console.error('shim failure')\nprocess.exit(7)`,
       // package.json for the test script
       'package.json': `
         {
           "name": "${PACKAGE_NAME}",
           "version": "${PACKAGE_VERSION}",
           "scripts": {
-            "test": "node ${SCRIPT_NAME}"
+            "test": "node ${SCRIPT_NAME}",
+            "stderr": "node stderr.js",
+            "fail": "node fail.js"
           },
           "bin": "${SCRIPT_NAME}"
         }`,
@@ -141,7 +145,7 @@ t.test('run shims', t => {
     }
     const result = spawnSync(`"${cmd}"`, args, {
       // don't hit the registry for the update check
-      env: { PATH: path, npm_config_update_notifier: 'false' },
+      env: { PATH: path, npm_config_update_notifier: 'false', NPM_SHIM_ARG: 'expanded value' },
       cwd: path,
       windowsHide: true,
       shell: true,
@@ -244,7 +248,7 @@ t.test('run shims', t => {
     }
   })
 
-  const matchCmd = (t, cmd, bin, match, params, expected) => {
+  const matchCmd = (t, cmd, bin, match, params, expected, resultMatch = {}) => {
     const args = []
     const opts = {}
 
@@ -282,6 +286,7 @@ t.test('run shims', t => {
       stderr: '',
       stdout: expected,
       ...match,
+      ...resultMatch,
     }, `${cmd} ${bin} ${params[0]}`)
   }
 
@@ -293,6 +298,12 @@ t.test('run shims', t => {
     { bin: 'npm', params: [`test -- hello -p1 world -p2 "hello world" --q1=hello world --q2="hello world"`], expected: `hello\n-p1\nworld\n-p2\nhello world\n--q1=hello\nworld\n--q2=hello world` },
     { bin: 'npm', params: ['test -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
     { bin: 'npx', params: ['. -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
+    { bin: 'npm', params: [`test -- 'hello world'`], expected: 'hello world', powershellOnly: true },
+    { bin: 'npm', params: ['test -- $env:NPM_SHIM_ARG'], expected: 'expanded value', powershellOnly: true },
+    { bin: 'npm', params: ['test -- hello` world'], expected: 'hello world', powershellOnly: true },
+    { bin: 'npm', params: ['--version | ForEach-Object { "version=$_" }'], expected: `version=${version}`, powershellOnly: true },
+    { bin: 'npm', params: ['run stderr 2> shim-error.txt; Get-Content shim-error.txt | Where-Object { $_ -eq "shim stderr" }'], expected: 'shim stderr', powershellOnly: true },
+    { bin: 'npm', params: ['run fail'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, powershellOnly: true },
   ]
 
   // ensure that all tests are either run or skipped
@@ -308,15 +319,16 @@ t.test('run shims', t => {
         }
         return t.end()
       }
-      t.plan(tests.length)
-      for (const { bin, params, expected } of tests) {
+      const shellTests = tests.filter(test => !test.powershellOnly || name === 'powershell' || name === 'pwsh')
+      t.plan(shellTests.length)
+      for (const { bin, params, expected, resultMatch } of shellTests) {
         if (name === 'cygwin bash' && (
           (bin === 'npm' && params[0].startsWith('test')) ||
           (bin === 'npx' && params[0].startsWith('.'))
         )) {
           t.skip("`cygwin bash` doesn't respect option `{ cwd: path }` when calling `spawnSync`")
         } else {
-          matchCmd(t, cmd, bin, match, params, expected)
+          matchCmd(t, cmd, bin, match, params, expected, resultMatch)
         }
       }
     })
