@@ -77,7 +77,7 @@ const formatDiff = async ({ files, opts = {}, refs, versions }) => {
     /* eslint-disable-next-line max-len */
     header(`index ${opts.tagVersionPrefix || 'v'}${versions.a}..${opts.tagVersionPrefix || 'v'}${versions.b} ${fileMode}`)
 
-    if (await shouldPrintPatch(filename)) {
+    if (await shouldPrintPatch(filename, opts)) {
       patch += jsDiff.createTwoFilesPatch(
         names.a,
         names.b,
