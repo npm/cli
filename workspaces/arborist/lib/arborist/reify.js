@@ -26,6 +26,7 @@ const optionalSet = require('../optional-set.js')
 const relpath = require('../relpath.js')
 const { applyPatchToDir, patchIntegrity } = require('../patch.js')
 const { readFile } = require('node:fs/promises')
+const { isReleaseAgeExcluded } = require('../release-age-exclude.js')
 const retirePath = require('../retire-path.js')
 const treeCheck = require('../tree-check.js')
 const Shrinkwrap = require('../shrinkwrap.js')
@@ -705,6 +706,15 @@ module.exports = cls => class Reifier extends cls {
       // Do the best with what we have, or else remove it from the tree
       // entirely, since we can't possibly reify it.
       let res = null
+      // Fallback path: rebuild the pacote spec from the lockfile identity
+      // (e.g. omit-lockfile-registry-resolved wrote no `resolved` URL, so we
+      // must re-resolve via the registry). This spec is a name@version, so
+      // pacote will call pickManifest which honors `before` and can throw
+      // ETARGET even for the pinned version if it was published after the
+      // release-age cutoff. Mirror #releaseAgeBefore in build-ideal-tree and
+      // drop `before` when the package matches `min-release-age-exclude` so
+      // the exemption applies to the reify fallback too (npm/cli#9715).
+      let releaseAgeExcluded = false
       if (node.resolved) {
         const registryResolved = this.#registryResolved(node.resolved)
         if (registryResolved) {
@@ -712,6 +722,8 @@ module.exports = cls => class Reifier extends cls {
         }
       } else if (node.package.name && node.version) {
         res = `${node.package.name}@${node.version}`
+        releaseAgeExcluded = !!this.options.before &&
+          isReleaseAgeExcluded(node.package.name, this.options.minReleaseAgeExclude)
       }
 
       // no idea what this thing is.  remove it from the tree.
@@ -750,6 +762,9 @@ module.exports = cls => class Reifier extends cls {
         // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.
         // Override only when we can prove the URL is registry-mediated; see #isRegistryResolvedTarball.
         ...(this.#isRegistryResolvedTarball(node) ? { allowRemote: 'all' } : {}),
+        // Drop `before` for packages exempted by min-release-age-exclude when
+        // we fall back to a name@version registry spec (npm/cli#9715).
+        ...(releaseAgeExcluded ? { before: null } : {}),
       })
       // store nodes don't use Node class so node.package doesn't get updated
       if (node.isInStore) {
