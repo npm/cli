@@ -37,7 +37,7 @@ t.test('returns function results on otp success', async (t) => {
   const result = await setupOtplease(t, {
     globals: {
       'process.stdin': { isTTY: true },
-      'process.stdout': { isTTY: true },
+      'process.stderr': { isTTY: true },
     },
   }, fn)
 
@@ -59,7 +59,7 @@ t.test('prompts for otp for EOTP', async (t) => {
     otp: { some: 'prop' },
     globals: {
       'process.stdin': { isTTY: true },
-      'process.stdout': { isTTY: true },
+      'process.stderr': { isTTY: true },
     },
   }, fn)
 
@@ -84,7 +84,7 @@ t.test('returns function results on webauth success', async (t) => {
     config: { browser: 'firefox' },
     globals: {
       'process.stdin': { isTTY: true },
-      'process.stdout': { isTTY: true },
+      'process.stderr': { isTTY: true },
     },
   }, fn)
 
@@ -109,7 +109,7 @@ t.test('prompts for otp for 401', async (t) => {
   const result = await setupOtplease(t, {
     globals: {
       'process.stdin': { isTTY: true },
-      'process.stdout': { isTTY: true },
+      'process.stderr': { isTTY: true },
     },
   }, fn)
 
@@ -124,12 +124,12 @@ t.test('does not prompt for non-otp errors', async (t) => {
   await t.rejects(setupOtplease(t, {
     globals: {
       'process.stdin': { isTTY: true },
-      'process.stdout': { isTTY: true },
+      'process.stderr': { isTTY: true },
     },
   }, fn), { message: 'nope' }, 'rejects with the original error')
 })
 
-t.test('does not prompt if stdin or stdout is not a tty', async (t) => {
+t.test('does not prompt if stdin or stderr is not a tty', async (t) => {
   const fn = async () => {
     throw Object.assign(new Error('nope'), { code: 'EOTP' })
   }
@@ -137,7 +137,30 @@ t.test('does not prompt if stdin or stdout is not a tty', async (t) => {
   await t.rejects(setupOtplease(t, {
     globals: {
       'process.stdin': { isTTY: false },
-      'process.stdout': { isTTY: false },
+      'process.stderr': { isTTY: false },
     },
   }, fn), { message: 'nope' }, 'rejects with the original error')
+})
+
+t.test('prompts when stdin and stderr are TTYs even if stdout is not', async (t) => {
+  let called = false
+
+  const fn = async (opts) => {
+    if (!called) {
+      called = true
+      throw Object.assign(new Error('nope'), { code: 'EOTP' })
+    }
+    return opts
+  }
+
+  const result = await setupOtplease(t, {
+    otp: { some: 'prop' },
+    globals: {
+      'process.stdin': { isTTY: true },
+      'process.stdout': { isTTY: false },
+      'process.stderr': { isTTY: true },
+    },
+  }, fn)
+
+  t.strictSame(result, { some: 'prop', otp: '1234' })
 })
