@@ -1719,6 +1719,7 @@ t.test('ls', async t => {
       workspaces: false,
     }))
 
+
     // --all
     t.test('should list --all workspaces properly', t => mockWorkspaces(t))
 
@@ -5566,4 +5567,40 @@ t.test('patched dependency annotation', async t => {
     await ls.exec([])
     t.equal(JSON.parse(result()).dependencies.foo.patched, 'patches/foo@1.0.0.patch')
   })
+})
+
+t.test('ls --workspaces=false with unmet root dep (issue 10157)', async t => {
+  const { ls, result } = await mockLs(t, {
+    config: {
+      depth: 0,
+      workspaces: false,
+      omit: ['dev'],
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/a'],
+        dependencies: { 'is-odd': '3.0.1' },
+        devDependencies: { 'is-even': '1.0.0' },
+      }),
+      packages: {
+        a: {
+          'package.json': JSON.stringify({
+            name: 'a',
+            version: '1.0.0',
+          }),
+        },
+      },
+      node_modules: {
+        a: t.fixture('symlink', '../packages/a'),
+        // is-odd intentionally missing (unmet prod dep)
+      },
+    },
+  })
+  // Prod unmet -> ELSPROBLEMS, but must not throw TypeError on null edge.to
+  await t.rejects(ls.exec([]), { code: 'ELSPROBLEMS' })
+  const output = cleanCwd(result())
+  t.notMatch(output, /Cannot read properties of null/, 'no null isWorkspace crash')
+  t.match(output, /UNMET DEPENDENCY is-odd@|missing: is-odd/)
 })
