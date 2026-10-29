@@ -1719,7 +1719,6 @@ t.test('ls', async t => {
       workspaces: false,
     }))
 
-
     // --all
     t.test('should list --all workspaces properly', t => mockWorkspaces(t))
 
