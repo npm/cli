@@ -2329,6 +2329,94 @@ t.test('transitive conflicted peer dependency', async t => {
   await t.rejects(printIdeal(path, { strictPeerDeps: true }), { code: 'ERESOLVE' })
 })
 
+t.test('validate lockfile edges behind a workspace link', async t => {
+  const lockedWorkspace = (packages) => t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      workspaces: ['packages/a'],
+      dependencies: { bar: '2.0.0' },
+    }),
+    packages: {
+      a: {
+        'package.json': JSON.stringify({ name: 'a', version: '1.0.0', dependencies: { foo: '1.0.0' } }),
+      },
+    },
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root', workspaces: ['packages/a'], dependencies: { bar: '2.0.0' } },
+        'node_modules/a': { resolved: 'packages/a', link: true },
+        'packages/a': { name: 'a', version: '1.0.0', dependencies: { foo: '1.0.0' } },
+        'node_modules/bar': {
+          version: '2.0.0',
+          resolved: 'https://registry.npmjs.org/bar/-/bar-2.0.0.tgz',
+        },
+        ...packages,
+      },
+    }),
+  })
+
+  t.test('invalid peer fails like a root dep', async t => {
+    const path = lockedWorkspace({
+      'node_modules/foo': {
+        version: '1.0.0',
+        resolved: 'https://registry.npmjs.org/foo/-/foo-1.0.0.tgz',
+        peerDependencies: { bar: '1' },
+      },
+    })
+    const registry = createRegistry(t, false)
+    const barPackuments = registry.packuments(['1.0.0', '2.0.0'], 'bar')
+    await registry.package({ manifest: registry.manifest({ name: 'bar', packuments: barPackuments }), times: 2 })
+    await t.rejects(buildIdeal(path, { strictPeerDeps: true }), { code: 'ERESOLVE' })
+    await t.rejects(buildIdeal(path), { code: 'ERESOLVE' })
+  })
+
+  t.test('missing dep is added', async t => {
+    const path = lockedWorkspace({
+      'node_modules/foo': {
+        version: '1.0.0',
+        resolved: 'https://registry.npmjs.org/foo/-/foo-1.0.0.tgz',
+        dependencies: { baz: '1.0.0' },
+      },
+    })
+    const registry = createRegistry(t, false)
+    const bazPackuments = registry.packuments(['1.0.0'], 'baz')
+    await registry.package({ manifest: registry.manifest({ name: 'baz', packuments: bazPackuments }) })
+    const tree = await buildIdeal(path)
+    t.equal(tree.children.get('baz')?.version, '1.0.0')
+  })
+})
+
+t.test('validate lockfile edges when the project root is a symlink', async t => {
+  const dir = t.testdir({
+    real: {
+      'package.json': JSON.stringify({ name: 'root', dependencies: { foo: '1.0.0' } }),
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': { name: 'root', dependencies: { foo: '1.0.0' } },
+          'node_modules/foo': {
+            version: '1.0.0',
+            resolved: 'https://registry.npmjs.org/foo/-/foo-1.0.0.tgz',
+            dependencies: { baz: '1.0.0' },
+          },
+        },
+      }),
+    },
+    link: t.fixture('symlink', 'real'),
+  })
+  const registry = createRegistry(t, false)
+  const bazPackuments = registry.packuments(['1.0.0'], 'baz')
+  await registry.package({ manifest: registry.manifest({ name: 'baz', packuments: bazPackuments }) })
+  const tree = await buildIdeal(join(dir, 'link'))
+  t.ok(tree.isLink, 'root is a link')
+  t.equal(tree.target.children.get('baz')?.version, '1.0.0')
+})
+
 t.test('remove deps when initializing tree from actual tree', async t => {
   const path = t.testdir({
     node_modules: {
