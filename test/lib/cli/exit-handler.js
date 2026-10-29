@@ -63,6 +63,7 @@ const mockExitHandler = async (t, {
   files,
   error,
   command,
+  getError,
   ...opts
 } = {}) => {
   const errors = []
@@ -73,10 +74,10 @@ const mockExitHandler = async (t, {
       ...errorMessage.errorMessage(err),
       ...(files ? { files } : {}),
     }),
-    getError: (...args) => ({
+    getError: getError ?? ((...args) => ({
       ...errorMessage.getError(...args),
       ...(files ? { files } : {}),
-    }),
+    })),
   }
 
   if (error) {
@@ -524,6 +525,53 @@ t.test('files from error message with error', async (t) => {
   await exitHandler()
 
   t.match(logs.warn[0], /Could not write error message to.*error-file\.txt.*err/)
+})
+
+t.test('prints the original error when the error formatter throws', async (t) => {
+  const getError = () => {
+    throw new RangeError('Invalid string length')
+  }
+
+  t.test('with a code', async (t) => {
+    const { exitHandler, logs } = await mockExitHandler(t, {
+      config: { loglevel: 'verbose' },
+      error: err('unable to resolve dependency tree', 'ERESOLVE'),
+      getError,
+    })
+
+    await exitHandler()
+
+    t.equal(process.exitCode, 1)
+    t.match(logs.error, ['code ERESOLVE', 'unable to resolve dependency tree'])
+    t.ok(logs.verbose.some(l => l.startsWith('error-message RangeError: Invalid string length')))
+  })
+
+  t.test('without a code', async (t) => {
+    const { exitHandler, logs } = await mockExitHandler(t, {
+      error: err('something broke'),
+      getError,
+    })
+
+    await exitHandler()
+
+    t.equal(process.exitCode, 1)
+    t.equal(logs.error[0], 'something broke')
+  })
+
+  t.test('with an errno and --json', async (t) => {
+    const { exitHandler, outputs } = await mockExitHandler(t, {
+      config: { json: true },
+      error: err('unable to resolve dependency tree', { code: 'ERESOLVE', errno: 127 }),
+      getError,
+    })
+
+    await exitHandler()
+
+    t.equal(process.exitCode, 127)
+    t.same(JSON.parse(outputs[0]), {
+      error: { code: 'ERESOLVE', summary: 'unable to resolve dependency tree', detail: '' },
+    })
+  })
 })
 
 t.test('timing with no error', async (t) => {
