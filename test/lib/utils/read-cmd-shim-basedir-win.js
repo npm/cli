@@ -1,7 +1,13 @@
 const t = require('tap')
 const { join } = require('node:path')
 const { writeFileSync } = require('node:fs')
-const readCmdShim = require('read-cmd-shim')
+const { createRequire } = require('node:module')
+
+// read-cmd-shim is a transitive dep of bin-links (not a root dependency).
+// Resolve it through bin-links so eslint import/no-extraneous-dependencies
+// stays happy while still exercising the hoisted 7.0.1 parser.
+const requireFromBinLinks = createRequire(require.resolve('bin-links/package.json'))
+const readCmdShim = requireFromBinLinks('read-cmd-shim')
 
 // Regression for https://github.com/npm/cli/issues/10140:
 // cmd-shim@9 writes "$basedir_win/..." in the sh shim; read-cmd-shim@7.0.0
