@@ -373,15 +373,25 @@ class PlaceDep {
         // satisfied by the new dep being placed.
         continue
       }
-      for (const entryEdge of peerEntrySets(edge.from).keys()) {
+      const entrySets = peerEntrySets(edge.from)
+      const rootPeers = new Set()
+      for (const [entryEdge, peers] of entrySets) {
+        if (entryEdge.from.isProjectRoot || entryEdge.from.isWorkspace) {
+          for (const peer of peers) {
+            rootPeers.add(peer)
+          }
+        }
+      }
+      for (const entryEdge of entrySets.keys()) {
         // either this one needs to be pruned and re-evaluated, or marked
         // as peerConflicted and warned about.  If the entryEdge comes in from
         // the root or a workspace, then we have to leave it alone, and in that
         // case, it will have already warned or crashed by getting to this point
         const entryNode = entryEdge.to
         const deepestTarget = deepestNestingTarget(entryNode)
-        if (deepestTarget !== target &&
-            !(entryEdge.from.isProjectRoot || entryEdge.from.isWorkspace)) {
+        // A transitive entry may share its node with a project/workspace
+        // dependency, including one reached through another peer set.
+        if (deepestTarget !== target && !rootPeers.has(entryNode)) {
           prunePeerSets.push(...gatherDepSet([entryNode], e => {
             return e.to !== entryNode && !e.peerConflicted
           }))
