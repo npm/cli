@@ -41,6 +41,17 @@ const hasNonRegistryShape = (node) => {
   return !/^https?:\/\/[^/]+\/.+\/-\/[^/]+-\d/.test(node.resolved)
 }
 
+// Resolved-URL-only non-registry check for disk script recovery.
+// Unlike hasNonRegistryShape, this ignores the isRegistryDependency
+// boolean so linked-store nodes (boolean false by default) do not
+// spuriously enter recovery.
+const hasNonRegistryResolved = (node) => {
+  if (!node.resolved) {
+    return false
+  }
+  return !/^https?:\/\/[^/]+\/.+\/-\/[^/]+-\d/.test(node.resolved)
+}
+
 const getInstallScripts = async (node) => {
   /* istanbul ignore next: arborist Nodes always carry a `package` object;
      defensive fallbacks for non-arborist callers. */
@@ -80,9 +91,15 @@ const getInstallScripts = async (node) => {
   // package.json from disk to recover the real script bodies. Builder#addToBuildSet
   // does the same disk read to decide what to run, but unlike that path this
   // one is read-only: we never mutate `node.package`.
+  //
+  // Gate disk recovery on the resolved URL (not `hasNonRegistryShape` /
+  // `isRegistryDependency`): linked-store Node subclasses always expose
+  // `isRegistryDependency` as a boolean `false` by default, which would
+  // over-trigger recovery — and the hasInstallScript sentinel below — for
+  // empty store-root inventory entries.
   if (
     Object.keys(collected).length === 0 &&
-    (node.hasInstallScript === true || hasNonRegistryShape(node))
+    (node.hasInstallScript === true || hasNonRegistryResolved(node))
   ) {
     const { content } = await PackageJson.normalize(node.path)
       .catch(() => ({ content: {} }))
@@ -104,10 +121,10 @@ const getInstallScripts = async (node) => {
     }
 
     // Still nothing. The package isn't on disk yet (e.g. `npm ci` before
-    // reify) or its package.json is unreadable. Emit a sentinel so the
-    // advisory and the strict-allow-scripts preflight still surface that
-    // install scripts are present.
-    if (Object.keys(collected).length === 0) {
+    // reify) or its package.json is unreadable. Emit a sentinel ONLY when
+    // the lockfile asserted install scripts — never for resolved-shape
+    // guesses that simply found no scripts on disk.
+    if (Object.keys(collected).length === 0 && node.hasInstallScript === true) {
       collected.install = '(install scripts present)'
     }
   }

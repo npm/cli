@@ -382,7 +382,6 @@ t.test('disk hydration does not mutate node.package', async t => {
   t.notOk(pkg.scripts, 'no scripts written back onto node.package')
 })
 
-
 t.test('prepare-only git dep hydrates prepare from disk without hasInstallScript', async t => {
   // Regression for npm/cli#10182: hidden lockfiles leave scripts empty and
   // often omit hasInstallScript for prepare-only git deps.
@@ -404,4 +403,19 @@ t.test('prepare-only git dep hydrates prepare from disk without hasInstallScript
     await getInstallScripts(gitNode),
     { prepare: 'tsc -p tsconfig.npm.json' }
   )
+})
+
+t.test('empty store-root node does not invent install scripts', async t => {
+  // Linked-store Node subclasses expose isRegistryDependency as a boolean
+  // false by default. Disk recovery must not treat that as a non-registry
+  // signal and must not emit the hasInstallScript sentinel for empty roots.
+  const getInstallScripts = mockGetInstallScripts(t)
+  const path = t.testdir({})
+  const storeRoot = {
+    // no resolved — inventory entry for node_modules/.store/<dir>
+    path,
+    isRegistryDependency: false,
+    package: {},
+  }
+  t.strictSame(await getInstallScripts(storeRoot), {})
 })

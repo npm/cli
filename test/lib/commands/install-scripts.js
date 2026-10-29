@@ -396,7 +396,6 @@ t.test('install-scripts prune under linked strategy keeps the registry pin, drop
   t.match(joinedOutput(), /file:\.store.*\(package not installed\)/)
 })
 
-
 t.test('install-scripts prune keeps a git prepare entry when the hidden lockfile omits scripts', async t => {
   // Regression for npm/cli#10182: hidden lockfiles leave package.scripts empty
   // and often omit hasInstallScript for prepare-only git deps, so prune used to
