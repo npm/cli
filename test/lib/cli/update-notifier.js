@@ -76,7 +76,7 @@ const runUpdateNotifier = async (t, {
       return { mtime: new Date(STAT_MTIME) }
     },
     writeFile: async () => {
-      t.fail('sentinel must not be written before a notification is shown')
+      t.fail('sentinel must not be written before a notification is handled at exit')
     },
   }
 

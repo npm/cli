@@ -441,6 +441,38 @@ t.test('update notification - drains stderr before recording it as shown', async
   t.equal(notificationShown, true, 'recorded after the notice and flush complete')
 })
 
+t.test('update notification - does not record it when stderr fails', async (t) => {
+  const writeError = Object.assign(new Error('broken pipe'), { code: 'EPIPE' })
+  const stderr = new Writable({
+    write (chunk, encoding, callback) {
+      callback(writeError)
+    },
+  })
+  const stderrFailure = new Promise(res => stderr.once('error', res))
+  t.teardown(() => stderr.destroy())
+
+  const { exitHandler, npm } = await mockExitHandler(t, {
+    config: { loglevel: 'error', progress: false },
+    npm: { stderr },
+  })
+  mockGlobals(t, {
+    'process.stderr': stderr,
+    'process.exitCode': 7,
+  }, { replace: true })
+
+  let notificationRecorded = false
+  npm.updateNotification = {
+    message: 'you should update npm!',
+    onShown: () => {
+      notificationRecorded = true
+    },
+  }
+
+  t.equal(await exitHandler(), 7, 'existing exit code is preserved')
+  t.equal(await stderrFailure, writeError, 'stderr failed with EPIPE')
+  t.equal(notificationRecorded, false, 'failed output does not consume the throttle')
+})
+
 t.test('update notification - does not record a notification arriving during the flush', async (t) => {
   const { exitHandler, logs, npm } = await mockExitHandler(t)
   let notificationShown = false
@@ -464,22 +496,22 @@ t.test('update notification - does not record a notification arriving during the
   t.equal(notificationShown, false, 'late notice is not recorded as shown')
 })
 
-t.test('update notification - hidden with silent', async (t) => {
+t.test('update notification - silent intentionally consumes the throttle', async (t) => {
   const { exitHandler, logs, npm } = await mockExitHandler(t, {
     config: { loglevel: 'silent' },
   })
-  let notificationShown = false
+  let notificationRecorded = false
   npm.updateNotification = {
     message: 'you should update npm!',
     onShown: () => {
-      notificationShown = true
+      notificationRecorded = true
     },
   }
 
   await exitHandler()
 
   t.strictSame(logs.notice, [])
-  t.equal(notificationShown, false)
+  t.equal(notificationRecorded, true, 'silent is an explicit opt-out, not a deferred notice')
 })
 
 t.test('update notification - logs verbose if onShown throws', async (t) => {
