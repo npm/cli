@@ -300,6 +300,36 @@ t.test('json output redacts by default', async t => {
     'inline redact: false preserves uuid values')
 })
 
+t.test('json output with a url inside a value stays valid json', async t => {
+  const { META } = require('proc-log')
+  const { output, outputs } = await mockDisplay(t)
+
+  output.buffer({
+    dependencies: {
+      '@scope/dep-a': {
+        deprecated: 'Merged into tsx: https://tsx.hirok.io',
+        dev: true,
+        _id: '@scope/dep-a@1.0.0',
+      },
+    },
+    registry: 'https://user:hunter2@registry.npmjs.org/',
+    versions: ['1.0.0'],
+    released: new Date('2024-01-01'),
+  })
+  output.flush({ [META]: true, json: true })
+
+  t.equal(outputs.length, 1, 'one output')
+  const parsed = JSON.parse(outputs[0])
+  const dep = parsed.dependencies['@scope/dep-a']
+  t.equal(dep.deprecated, 'Merged into tsx: https://tsx.hirok.io',
+    'a url in one value does not swallow the values after it')
+  t.equal(dep._id, '@scope/dep-a@1.0.0', 'later values are intact')
+  t.strictSame(parsed.versions, ['1.0.0'], 'arrays are walked too')
+  t.equal(parsed.registry, 'https://user:***@registry.npmjs.org/',
+    'url passwords are still redacted')
+  t.equal(parsed.released, '2024-01-01T00:00:00.000Z', 'toJSON values survive the round trip')
+})
+
 t.test('prompt functionality', async t => {
   t.test('regular prompt completion works', async t => {
     const { input } = await mockDisplay(t)
