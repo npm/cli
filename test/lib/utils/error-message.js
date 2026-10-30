@@ -315,6 +315,45 @@ t.test('eotp/e401', async t => {
   })
 })
 
+t.test('401 basic, custom registry points at the registry root', async t => {
+  const { errorMessage } = await loadMockNpm(t, {
+    config: {
+      registry: 'https://artifactory.mydomain.com/artifactory/api/npm/my-npm-mirror/',
+    },
+  })
+  const er = Object.assign(new Error('challenge!'), {
+    headers: {
+      'www-authenticate': ['Basic realm=by'],
+    },
+    code: 'E401',
+  })
+  const { detail } = errorMessage(er)
+  const message = detail[0][1]
+  t.ok(
+    message.includes(
+      'recover your password at:\n  https://artifactory.mydomain.com/artifactory/api/npm/my-npm-mirror\n'
+    ),
+    'points at the configured registry root'
+  )
+  t.notOk(message.includes('npmjs.com/forgot'))
+  t.end()
+})
+
+t.test('401 basic, npm not loaded falls back to npmjs.com', t => {
+  const { errorMessage } = require('../../../lib/utils/error-message.js')
+  const er = Object.assign(new Error('challenge!'), {
+    headers: {
+      'www-authenticate': ['Basic realm=by'],
+    },
+    code: 'E401',
+  })
+  // The error handler can render before npm/config is loaded, so it must
+  // not throw and must keep the default npmjs.com URL.
+  const { detail } = errorMessage(er, { loaded: false })
+  t.match(detail, [['', /npmjs\.com\/forgot/]])
+  t.end()
+})
+
 t.test('404', async t => {
   const { errorMessage } = await loadMockNpm(t)
 

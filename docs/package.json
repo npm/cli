@@ -12,7 +12,7 @@
     "snap": "tap",
     "test": "tap",
     "posttest": "npm run lint",
-    "build": "node bin/build.js",
+    "build": "node init && node bin/build.js",
     "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
   },
   "repository": {
