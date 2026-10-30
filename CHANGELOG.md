@@ -1,5 +1,15 @@
 # Changelog
 
+## [11.21.2](https://github.com/npm/cli/compare/v11.21.1...v11.21.2) (2026-10-30)
+### Bug Fixes
+* [`9433b48`](https://github.com/npm/cli/commit/9433b48e3c6bf8ee18c563c0514cf6f6feb04618) [#10195](https://github.com/npm/cli/pull/10195) accept supported Node.js prereleases at startup (#10195) (@github-actions[bot], @reggi, @Copilot)
+### Dependencies
+* [`9c0af6b`](https://github.com/npm/cli/commit/9c0af6bf26c4956e9c053183aa2f138531087960) [#10172](https://github.com/npm/cli/pull/10172) `ip-address@10.7.5`
+* [`f3707dc`](https://github.com/npm/cli/commit/f3707dc809613e44b09a717659661967e4d18734) [#10172](https://github.com/npm/cli/pull/10172) `undici@6.29.1`
+* [`484a19d`](https://github.com/npm/cli/commit/484a19d4e022ff741ddc820c197cde3336bce379) [#10176](https://github.com/npm/cli/pull/10176) `pacote@21.5.2` (@martinrrm, @Copilot)
+* [`bfae5d0`](https://github.com/npm/cli/commit/bfae5d0686b3726be7203ff572a8e81c9b0b769f) [#10176](https://github.com/npm/cli/pull/10176) `promise-spawn@9.0.2` (@martinrrm)
+* [`2ef644b`](https://github.com/npm/cli/commit/2ef644b47bb7bb362f28522341bebb2a2bec7c1b) [#10176](https://github.com/npm/cli/pull/10176) `bin-links@6.0.3` (@martinrrm)
+
 ## [11.21.1](https://github.com/npm/cli/compare/v11.21.0...v11.21.1) (2026-10-14)
 ### Bug Fixes
 * [`1c7b661`](https://github.com/npm/cli/commit/1c7b6618d003eaa272aca7ac7f306ab252564697) [#10059](https://github.com/npm/cli/pull/10059) write registry allowScripts keys under install-strategy=linked (#10059) (@github-actions[bot], @manzoorwanijk)
