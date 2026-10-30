@@ -638,6 +638,99 @@ t.test('optional dependency failures', async t => {
   }
 })
 
+for (const installStrategy of ['hoisted', 'linked']) {
+  t.test(`${installStrategy} optional extraction failure keeps traversal bin paths inside the project`, async t => {
+    const sentinelName = `arborist-bin-path-sentinel-${installStrategy}`
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        optionalDependencies: {
+          abbrev: '1.1.1',
+        },
+      }),
+      'package-lock.json': JSON.stringify({
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            optionalDependencies: {
+              abbrev: '1.1.1',
+            },
+          },
+          'node_modules/abbrev': {
+            version: '1.1.1',
+            resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+            integrity: 'sha512-invalid',
+            optional: true,
+            bin: {
+              [`../../../${sentinelName}`]: 'bin/abbrev.js',
+            },
+          },
+        },
+      }),
+    })
+    const sentinel = resolve(path, '..', sentinelName)
+    fs.mkdirSync(sentinel)
+    fs.writeFileSync(resolve(sentinel, 'keep'), 'keep')
+    t.teardown(() => fsp.rm(sentinel, { recursive: true, force: true }))
+    createRegistry(t, true)
+
+    await reify(path, {
+      ignoreScripts: true,
+      installStrategy,
+    })
+
+    t.equal(fs.readFileSync(resolve(sentinel, 'keep'), 'utf8'), 'keep',
+      'optional dependency cleanup does not remove the external sentinel')
+  })
+}
+
+t.test('linked ideal tree normalizes traversal bin paths', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: {
+        abbrev: '1.1.1',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        },
+        'node_modules/abbrev': {
+          version: '1.1.1',
+          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
+          bin: {
+            '../../../sentinel': 'bin/abbrev.js',
+          },
+        },
+      },
+    }),
+  })
+  const arb = newArb({
+    path,
+    installStrategy: 'linked',
+    packageLockOnly: true,
+  })
+
+  await arb.buildIdealTree()
+  const isolatedTree = await arb.createIsolatedTree()
+  const target = isolatedTree.children.get(join('node_modules', 'abbrev')).target
+  const binPath = resolve(path, 'node_modules/.bin/sentinel')
+
+  t.strictSame(target.binPaths, [
+    binPath,
+    ...(process.platform !== 'win32' ? [] : [
+      `${binPath}.cmd`,
+      `${binPath}.ps1`,
+    ]),
+  ])
+})
+
 t.test('failure to fetch prod dep is failure', async t => {
   createRegistry(t, true)
   t.rejects(printReified(fixture(t, 'prod-dep-tgz-missing')))
