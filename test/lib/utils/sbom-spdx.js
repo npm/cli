@@ -241,6 +241,35 @@ t.test('single node - linked', t => {
   t.end()
 })
 
+t.test('scoped and dotted unscoped deps get distinct SPDXIDs', t => {
+  // `@a/b` and `a.b` are different packages but both used to map to
+  // SPDXRef-Package-a.b-1.0.0, so the second collided with the first and was
+  // dropped from the document during component dedup.
+  const scoped = {
+    packageName: '@a/b',
+    version: '1.0.0',
+    pkgid: '@a/b@1.0.0',
+    package: {},
+    location: 'node_modules/@a/b',
+    edgesOut: [],
+  }
+  const dotted = {
+    packageName: 'a.b',
+    version: '1.0.0',
+    pkgid: 'a.b@1.0.0',
+    package: {},
+    location: 'node_modules/a.b',
+    edgesOut: [],
+  }
+  const node = { ...root, edgesOut: [{ to: scoped }, { to: dotted }] }
+  const res = spdxOutput({ npm, nodes: [node, scoped, dotted] })
+  const ids = res.packages.map(p => p.SPDXID)
+  t.equal(res.packages.length, 3, 'both deps and the root are present')
+  t.equal(new Set(ids).size, ids.length, 'every package has a unique SPDXID')
+  t.equal(ids.filter(id => id === 'SPDXRef-Package-a.b-1.0.0').length, 1)
+  t.end()
+})
+
 t.test('node - with deps', t => {
   const node = { ...root,
     edgesOut: [
