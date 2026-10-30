@@ -4,7 +4,7 @@ const fs = require('node:fs')
 const { createRequire } = require('node:module')
 const setup = require('./fixtures/setup.js')
 
-// Walk an installed package tree and assert that every non-optional
+// Walk an extracted package tree and assert that every non-optional
 // production dependency of every bundled package resolves from that
 // package's own directory. This catches deps that were dropped from the
 // hoisted bundle at pack time (e.g. a dev-only copy shadowing the real
@@ -79,21 +79,15 @@ const findMissingDeps = (npmRoot) => {
 
 t.test('bundled production deps all resolve from the packed bundle', async t => {
   const {
-    npm,
+    spawn,
     npmLocalTarball,
-    paths: { globalNodeModules },
-  } = await setup(t, {
-    testdir: {
-      project: {
-        'package.json': { name: 'npm', version: '999.999.999' },
-      },
-    },
-  })
+    paths: { root },
+  } = await setup(t)
 
   const tarball = await npmLocalTarball()
-  await npm('install', tarball, '--global', '--ignore-scripts')
+  await spawn('tar', ['-xzf', tarball, '-C', root])
 
-  const npmRoot = join(globalNodeModules, 'npm')
+  const npmRoot = join(root, 'package')
   const missing = findMissingDeps(npmRoot)
 
   t.strictSame(
