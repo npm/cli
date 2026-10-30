@@ -22,6 +22,7 @@ warn EBADDEVENGINES {
 warn EBADDEVENGINES   current: { name: 'node', version: 'v1337.0.0' },
 warn EBADDEVENGINES   required: { name: 'node', version: '0.0.1', onFail: 'warn' }
 warn EBADDEVENGINES }
+silly config load:file:{CWD}/home/.npmrc
 silly packumentCache heap:{heap} maxSize:{maxSize} maxEntrySize:{maxEntrySize}
 silly idealTree buildDeps
 silly reify moves {}
@@ -170,6 +171,7 @@ warn EBADDEVENGINES {
 warn EBADDEVENGINES   current: { name: 'x86' },
 warn EBADDEVENGINES   required: { name: 'risv', onFail: 'warn' }
 warn EBADDEVENGINES }
+silly config load:file:{CWD}/home/.npmrc
 silly packumentCache heap:{heap} maxSize:{maxSize} maxEntrySize:{maxEntrySize}
 silly idealTree buildDeps
 silly reify moves {}
@@ -256,6 +258,7 @@ warn EBADDEVENGINES {
 warn EBADDEVENGINES   current: { name: 'node', version: 'v1337.0.0' },
 warn EBADDEVENGINES   required: { name: 'nondescript' }
 warn EBADDEVENGINES }
+silly config load:file:{CWD}/home/.npmrc
 silly packumentCache heap:{heap} maxSize:{maxSize} maxEntrySize:{maxEntrySize}
 silly idealTree buildDeps
 silly reify moves {}
@@ -275,6 +278,7 @@ verbose argv "--fetch-retries" "0" "--cache" "{CWD}/cache" "--loglevel" "silly" 
 verbose logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
 verbose logfile {CWD}/cache/_logs/{DATE}-debug-0.log
 silly logfile done cleaning log files
+silly config load:file:{CWD}/home/.npmrc
 silly packumentCache heap:{heap} maxSize:{maxSize} maxEntrySize:{maxEntrySize}
 silly idealTree buildDeps
 silly reify moves {}
@@ -294,6 +298,7 @@ verbose argv "--fetch-retries" "0" "--cache" "{CWD}/cache" "--loglevel" "silly" 
 verbose logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
 verbose logfile {CWD}/cache/_logs/{DATE}-debug-0.log
 silly logfile done cleaning log files
+silly config load:file:{CWD}/home/.npmrc
 silly packumentCache heap:{heap} maxSize:{maxSize} maxEntrySize:{maxEntrySize}
 silly idealTree buildDeps
 warn EBADENGINE Unsupported engine {
