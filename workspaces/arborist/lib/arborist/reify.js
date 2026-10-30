@@ -1,10 +1,8 @@
 // mixin implementing the reify method
 const PackageJson = require('@npmcli/package-json')
-const hgi = require('hosted-git-info')
 const npa = require('npm-package-arg')
 const packageContents = require('@npmcli/installed-package-contents')
 const pacote = require('pacote')
-const { pickRegistry } = require('npm-registry-fetch')
 const promiseAllRejectLate = require('promise-all-reject-late')
 const runScript = require('@npmcli/run-script')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
@@ -32,6 +30,10 @@ const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
 const { saveTypeMap, hasSubKey } = require('../add-rm-pkg-deps.js')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
+const {
+  registryResolved: getRegistryResolved,
+  isRegistryResolvedTarball,
+} = require('../registry-resolved-tarball.js')
 
 // Part of steps (steps need refactoring before we can do anything about these)
 const _retireShallowNodes = Symbol.for('retireShallowNodes')
@@ -706,9 +708,9 @@ module.exports = cls => class Reifier extends cls {
       // entirely, since we can't possibly reify it.
       let res = null
       if (node.resolved) {
-        const registryResolved = this.#registryResolved(node.resolved)
-        if (registryResolved) {
-          res = `${node.name}@${registryResolved}`
+        const resolved = getRegistryResolved(node.resolved, this)
+        if (resolved) {
+          res = `${node.name}@${resolved}`
         }
       } else if (node.package.name && node.version) {
         res = `${node.package.name}@${node.version}`
@@ -748,8 +750,8 @@ module.exports = cls => class Reifier extends cls {
           e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)
         ),
         // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.
-        // Override only when we can prove the URL is registry-mediated; see #isRegistryResolvedTarball.
-        ...(this.#isRegistryResolvedTarball(node) ? { allowRemote: 'all' } : {}),
+        // Override only when we can prove the URL is registry-mediated; see isRegistryResolvedTarball.
+        ...(isRegistryResolvedTarball(node, this) ? { allowRemote: 'all' } : {}),
       })
       // store nodes don't use Node class so node.package doesn't get updated
       if (node.isInStore) {
@@ -980,80 +982,6 @@ module.exports = cls => class Reifier extends cls {
   // The caller only invokes this once both paths exist, so realpathSync won't throw.
   #linkTargetMismatch (child) {
     return realpathSync(child.path) !== realpathSync(child.realpath)
-  }
-
-  // When extracting a registry-resolved package, the spec we hand to pacote is name@URL.
-  // pacote re-parses that with npa and gets spec.type === 'remote', so without an override the allow-remote gate would fire on every registry tarball (both =none and =root mis-fire).
-  // Returns true only when we are confident this is a registry-mediated install.
-  #isRegistryResolvedTarball (node) {
-    if (!node.resolved || !node.isRegistryDependency) {
-      return false
-    }
-    try {
-      // Match the effective fetch URL, not the raw lockfile value.
-      // #registryResolved applies replace-registry-host, rewriting a public-registry pin to the configured proxy/mirror so it matches.
-      const resolvedURL = new URL(this.#registryResolved(node.resolved))
-      // pickRegistry only consults spec.scope, so a bare-name (tag) parse is sufficient and avoids a node.version dependency.
-      const registry = new URL(pickRegistry(npa(node.name), this.options))
-      const registryPath = registry.pathname.replace(/\/?$/, '/')
-      return resolvedURL.origin === registry.origin &&
-        (registryPath === '/' || resolvedURL.pathname.startsWith(registryPath))
-    } catch {
-      return false
-    }
-  }
-
-  #registryResolved (resolved) {
-    // the default registry url is a magic value meaning "the currently
-    // configured registry".
-    // `resolved` must never be falsey.
-    //
-    // XXX: use a magic string that isn't also a valid value, like
-    // ${REGISTRY} or something.  This has to be threaded through the
-    // Shrinkwrap and Node classes carefully, so for now, just treat
-    // the default reg as the magical animal that it has been.
-    try {
-      const resolvedURL = hgi.parseUrl(resolved)
-      const registryURL = new URL(this.registry)
-      const registryPath = registryURL.pathname.replace(/\/$/, '')
-
-      let matchURL = null
-      try {
-        matchURL = new URL(this.options.replaceRegistryHost)
-      } catch {
-        // keep matchURL null
-      }
-
-      const matchHost = matchURL?.hostname ?? this.options.replaceRegistryHost
-      const matchPath = matchURL?.pathname.replace(/\/$/, '') ?? null
-      const hasPathPrefix = (pathname, prefix) =>
-        pathname === prefix || pathname.startsWith(`${prefix}/`)
-
-      const hostMatches = this.options.replaceRegistryHost === 'always' || matchHost === resolvedURL.hostname
-      const pathMatches = !matchPath || hasPathPrefix(resolvedURL.pathname, matchPath)
-
-      if (!hostMatches || !pathMatches) {
-        return resolved
-      }
-
-      resolvedURL.protocol = registryURL.protocol
-      resolvedURL.hostname = registryURL.hostname
-      resolvedURL.port = registryURL.port
-
-      if (matchPath) {
-        // full-URL prefix: swap old path prefix for the registry path
-        resolvedURL.pathname = registryPath + resolvedURL.pathname.slice(matchPath.length)
-      } else if (registryPath && !hasPathPrefix(resolvedURL.pathname, registryPath)) {
-        // host-only: prepend registry path if not already present
-        resolvedURL.pathname = registryPath + resolvedURL.pathname
-      }
-
-      return resolvedURL.toString()
-    } catch {
-      // if we could not parse the url at all then returning nothing
-      // here means it will get removed from the tree in the next step
-      return undefined
-    }
   }
 
   // bundles are *sort of* like shrinkwraps, in that the branch is defined
