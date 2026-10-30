@@ -66,6 +66,7 @@ const printIdeal = (path, opt) => buildIdeal(path, opt).then(printTree)
 
 t.test('fail on mismatched engine when engineStrict is set', async t => {
   const path = resolve(fixtures, 'engine-specification')
+  createRegistry(t, true)
 
   await t.rejects(buildIdeal(path, {
     nodeVersion: '12.18.4',
