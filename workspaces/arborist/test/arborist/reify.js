@@ -2107,6 +2107,75 @@ t.test('nested file: dep keeps extraneous fsChild in package-lock.json', async t
   t.same(missing, [], 'lockfile is in sync with package.json, so npm ci would succeed')
 })
 
+// Regression for https://github.com/npm/cli/issues/4907: when a changed node
+// and an unchanged node link the same bin, retiring the changed node moves
+// that bin aside. Loading a changed bundler re-diffs the trees, the unchanged
+// node's bin is now missing, and it turns into a CHANGE that was never
+// retired. Its unchanged children must stay where they are.
+t.test('unretired node turned CHANGE by a bundler re-diff', async t => {
+  const pacote = require('pacote')
+  const manifest = (name, version, extra = {}) =>
+    JSON.stringify({ name, version, ...extra })
+  const binPkg = (name, version, extra) => ({
+    'package.json': manifest(name, version, { bin: { 'shared-bin': 'cli.js' }, ...extra }),
+    'cli.js': '#!/usr/bin/env node\n',
+  })
+  const bundlerPkg = version => ({
+    'package.json': manifest('bundler', version, {
+      dependencies: { inner: '1.0.0' },
+      bundleDependencies: ['inner'],
+    }),
+    node_modules: { inner: { 'package.json': manifest('inner', '1.0.0') } },
+  })
+
+  const dir = t.testdir({
+    src: {
+      'changes-bin-1': binPkg('changes-bin', '1.0.0'),
+      'changes-bin-2': binPkg('changes-bin', '2.0.0'),
+      'bundler-1': bundlerPkg('1.0.0'),
+      'bundler-2': bundlerPkg('2.0.0'),
+      'nested-1': { 'package.json': manifest('nested', '1.0.0') },
+      'nested-2': { 'package.json': manifest('nested', '2.0.0') },
+    },
+    tgz: {},
+    project: {},
+  })
+  const tgz = name => resolve(dir, 'tgz', `${name}.tgz`)
+  const pack = name => pacote.tarball.file(`file:${resolve(dir, 'src', name)}`, tgz(name), { Arborist })
+
+  await Promise.all(['changes-bin-1', 'changes-bin-2', 'bundler-1', 'bundler-2', 'nested-1', 'nested-2'].map(pack))
+  // keeps-bin needs nested@1 while the root has nested@2, so it gets its own node_modules
+  fs.mkdirSync(resolve(dir, 'src', 'keeps-bin-1'))
+  for (const [file, content] of Object.entries(binPkg('keeps-bin', '1.0.0', {
+    dependencies: { nested: `file:${tgz('nested-1')}` },
+  }))) {
+    fs.writeFileSync(resolve(dir, 'src', 'keeps-bin-1', file), content)
+  }
+  await pack('keeps-bin-1')
+
+  const path = resolve(dir, 'project')
+  const writeManifest = version => fs.writeFileSync(resolve(path, 'package.json'), manifest('project', '1.0.0', {
+    dependencies: {
+      'changes-bin': `file:${tgz(`changes-bin-${version}`)}`,
+      bundler: `file:${tgz(`bundler-${version}`)}`,
+      'keeps-bin': `file:${tgz('keeps-bin-1')}`,
+      nested: `file:${tgz('nested-2')}`,
+    },
+  }))
+
+  writeManifest(1)
+  await reify(path)
+  writeManifest(2)
+  await reify(path)
+
+  const version = loc => JSON.parse(fs.readFileSync(resolve(path, loc, 'package.json'), 'utf8')).version
+  t.equal(version('node_modules/changes-bin'), '2.0.0', 'changed node is updated')
+  t.equal(version('node_modules/bundler'), '2.0.0', 'bundler is updated')
+  t.equal(version('node_modules/keeps-bin'), '1.0.0', 'unchanged node is kept')
+  t.equal(version('node_modules/keeps-bin/node_modules/nested'), '1.0.0',
+    'unchanged node keeps its unchanged children')
+})
+
 t.test('project with bundled deps and a link dep on itself', async t => {
   const pkg = {
     name: '@isaacs/testing-bundle-self-link',
