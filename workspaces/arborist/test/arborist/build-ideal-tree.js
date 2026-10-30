@@ -395,6 +395,54 @@ t.test('bundle deps example 1, complete:true', async t => {
   }), 'no missing deps, because complete: true, add dep, save bundled')
 })
 
+t.test('allowScripts gates the prepare pacote runs when cracking open a bundle dep', async t => {
+  // Building a complete ideal tree (e.g. --package-lock-only) cracks open a dep
+  // that carries bundleDependencies by extracting it into a temp dir, and pacote
+  // runs its `prepare` during that extract, before the node ever reaches the
+  // rebuild queues where the allowScripts gate normally lives. So the policy has
+  // to reach this call site too, through the ignoreScripts option. The crack-open
+  // is the only pacote.extract build-ideal-tree makes, so spying the option here
+  // covers the second production call site the fix touches.
+  const path = resolve(fixtures, 'testing-bundledeps-empty')
+
+  const crackOpenIgnoreScripts = async (t, opt) => {
+    createRegistry(t, true)
+    const _extract = pacote.extract
+    t.teardown(() => {
+      pacote.extract = _extract
+    })
+    const seen = []
+    pacote.extract = (uri, dir, opts) => {
+      seen.push(opts.ignoreScripts)
+      return _extract(uri, dir, opts)
+    }
+    await buildIdeal(path, { complete: true, ...opt })
+    pacote.extract = _extract
+    return seen
+  }
+
+  t.test('unreviewed dep cracks open with scripts off', async t => {
+    const seen = await crackOpenIgnoreScripts(t, { allowScripts: {} })
+    t.ok(seen.length, 'the bundle dep was cracked open')
+    t.ok(seen.every(v => v === true), 'ignoreScripts is true for the unreviewed dep')
+  })
+
+  t.test('dangerouslyAllowAllScripts cracks open with scripts on', async t => {
+    const seen = await crackOpenIgnoreScripts(t, { dangerouslyAllowAllScripts: true })
+    t.ok(seen.length, 'the bundle dep was cracked open')
+    t.ok(seen.every(v => v === false), 'ignoreScripts is false when all scripts are allowed')
+  })
+
+  t.test('ignoreScripts still wins', async t => {
+    const seen = await crackOpenIgnoreScripts(t, {
+      ignoreScripts: true,
+      dangerouslyAllowAllScripts: true,
+    })
+    t.ok(seen.length, 'the bundle dep was cracked open')
+    t.ok(seen.every(v => v === true), 'ignoreScripts stays true')
+  })
+})
+
 t.test('bundle deps example 2', async t => {
   // bundled deps at the root level are NOT ignored when building ideal trees
   const path = resolve(fixtures, 'testing-bundledeps-2')
