@@ -395,3 +395,88 @@ t.test('install-scripts prune under linked strategy keeps the registry pin, drop
   t.strictSame(updated.allowScripts, { 'canvas@1.0.0': true })
   t.match(joinedOutput(), /file:\.store.*\(package not installed\)/)
 })
+
+t.test('install-scripts prune keeps a git prepare entry when the hidden lockfile omits scripts', async t => {
+  // Regression for npm/cli#10182: hidden lockfiles leave package.scripts empty
+  // and often omit hasInstallScript for prepare-only git deps, so prune used to
+  // treat them as no-scripts. Disk-read recovery must still see prepare.
+  const gitResolved = 'git+ssh://git@github.com/npm/git-dep.git#deadbeefcafebabe1234567890abcdef12345678'
+  const allowKey = 'github:npm/git-dep#deadbeefcafebabe1234567890abcdef12345678'
+  const pkg = {
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { 'git-dep': gitResolved },
+    allowScripts: { [allowKey]: true },
+  }
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify(pkg, null, 2),
+      node_modules: {
+        '.package-lock.json': JSON.stringify({
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            'node_modules/git-dep': {
+              version: '1.0.0',
+              resolved: gitResolved,
+            },
+          },
+        }),
+        'git-dep': {
+          'package.json': JSON.stringify({
+            name: 'git-dep',
+            version: '1.0.0',
+            scripts: { prepare: 'tsc -p tsconfig.npm.json' },
+          }),
+        },
+      },
+    },
+  })
+  const future = new Date(Date.now() + 60_000)
+  fs.utimesSync(resolve(prefix, 'node_modules', '.package-lock.json'), future, future)
+
+  await npm.exec('install-scripts', ['prune'])
+
+  const updated = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(updated.allowScripts, { [allowKey]: true })
+  t.match(joinedOutput(), /No unused allowScripts entries\./)
+})
+
+t.test('install-scripts ls lists a git prepare dep when the hidden lockfile omits scripts', async t => {
+  // Same root cause as prune (#10182).
+  const gitResolved = 'git+ssh://git@github.com/npm/git-dep.git#deadbeefcafebabe1234567890abcdef12345678'
+  const pkg = {
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { 'git-dep': gitResolved },
+  }
+  const { npm, joinedOutput, prefix } = await mockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify(pkg, null, 2),
+      node_modules: {
+        '.package-lock.json': JSON.stringify({
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            'node_modules/git-dep': {
+              version: '1.0.0',
+              resolved: gitResolved,
+            },
+          },
+        }),
+        'git-dep': {
+          'package.json': JSON.stringify({
+            name: 'git-dep',
+            version: '1.0.0',
+            scripts: { prepare: 'tsc -p tsconfig.npm.json' },
+          }),
+        },
+      },
+    },
+  })
+  const future = new Date(Date.now() + 60_000)
+  fs.utimesSync(resolve(prefix, 'node_modules', '.package-lock.json'), future, future)
+
+  await npm.exec('install-scripts', ['ls'])
+  t.match(joinedOutput(), /git-dep|github:npm\/git-dep/)
+})
