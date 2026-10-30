@@ -2,6 +2,7 @@ const t = require('tap')
 const { isAbsolute, join, relative, sep } = require('node:path')
 const fs = require('node:fs')
 const { createRequire } = require('node:module')
+const pacote = require('pacote')
 const setup = require('./fixtures/setup.js')
 
 // Walk an extracted package tree and assert that every non-optional
@@ -79,15 +80,14 @@ const findMissingDeps = (npmRoot) => {
 
 t.test('bundled production deps all resolve from the packed bundle', async t => {
   const {
-    spawn,
     npmLocalTarball,
-    paths: { root },
+    paths: { root, cache },
   } = await setup(t)
 
   const tarball = await npmLocalTarball()
-  await spawn('tar', ['-xzf', tarball, '-C', root])
-
   const npmRoot = join(root, 'package')
+  await pacote.extract(tarball, npmRoot, { cache })
+
   const missing = findMissingDeps(npmRoot)
 
   t.strictSame(
