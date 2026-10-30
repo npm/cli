@@ -52,6 +52,137 @@ t.test('load and change lockfileVersion', async t => {
   t.equal(v3Data.dependencies, undefined, 'v3 data does not have dependencies')
 })
 
+t.test('v3 skips legacy descendants while v1 and v2 retain them', async t => {
+  const path = t.testdir({})
+  const results = new Map()
+  for (const lockfileVersion of [1, 2, 3]) {
+    const meta = await Shrinkwrap.reset({ path, lockfileVersion })
+    const root = new Node({
+      path,
+      meta,
+      pkg: { name: 'root', version: '1.0.0', dependencies: { child: '1.0.0' } },
+    })
+    const child = new Node({
+      parent: root,
+      pkg: { name: 'child', version: '1.0.0' },
+    })
+    let legacyBundleChecks = 0
+    Object.defineProperty(child, 'inDepBundle', {
+      get: () => {
+        legacyBundleChecks++
+        return false
+      },
+    })
+
+    const result = meta.commit()
+    results.set(lockfileVersion, result)
+    t.equal(legacyBundleChecks === 0, lockfileVersion === 3,
+      `v${lockfileVersion} only generates legacy descendants when needed`)
+    t.match(result, { name: 'root', version: '1.0.0', requires: true, lockfileVersion })
+  }
+  t.strictSame(results.get(2), {
+    ...results.get(1),
+    ...results.get(3),
+    lockfileVersion: 2,
+  }, 'v2 retains exactly the combined v1 and v3 output')
+  t.equal(results.get(3).dependencies, undefined, 'v3 omits legacy dependencies')
+})
+
+t.test('v3 discards stale legacy metadata after updating a v2 tree', async t => {
+  const pkg = { name: 'root', version: '1.0.0', dependencies: { foo: '^1.0.0' } }
+  const oldFoo = {
+    version: '1.0.0',
+    resolved: 'https://registry.npmjs.org/foo/-/foo-1.0.0.tgz',
+  }
+  const path = t.testdir({
+    'package.json': JSON.stringify(pkg),
+    'package-lock.json': JSON.stringify({
+      ...pkg,
+      lockfileVersion: 2,
+      requires: true,
+      packages: { '': pkg, 'node_modules/foo': oldFoo },
+      dependencies: { foo: oldFoo },
+    }),
+  })
+  const tree = await new Arborist({ path, lockfileVersion: 3 }).loadVirtual()
+  const meta = tree.meta
+  meta.add(tree)
+  const foo = tree.children.get('foo')
+  foo.package = { ...foo.package, version: '1.1.0' }
+  foo.resolved = 'https://registry.npmjs.org/foo/-/foo-1.1.0.tgz'
+  t.equal(meta.data.dependencies.foo.version, '1.0.0', 'input has the old legacy entry')
+
+  const result = meta.commit()
+  t.equal(result.packages['node_modules/foo'].version, '1.1.0')
+  t.equal(meta.data.dependencies, undefined, 'obsolete legacy data is discarded')
+  t.equal(meta.get(foo.path).version, '1.1.0', 'modern metadata remains available')
+  delete meta.data.packages[foo.location]
+  t.strictSame(meta.get(foo.path), {}, 'missing modern metadata cannot resurrect the old version')
+})
+
+t.test('legacy output still terminates at cyclic links', async t => {
+  const path = t.testdir({})
+  const meta = await Shrinkwrap.reset({ path, lockfileVersion: 2 })
+  const root = new Node({
+    path,
+    meta,
+    pkg: { name: 'root', dependencies: { loop: 'file:.' } },
+  })
+  new Link({ name: 'loop', parent: root, target: root })
+
+  const result = meta.commit()
+  t.equal(result.dependencies.loop.version, 'file:')
+  t.equal(result.dependencies.loop.dependencies, undefined, 'cycle is not traversed again')
+})
+
+t.test('v3 conversion retains legacy input metadata before committing a tree', async t => {
+  for (const lockfileVersion of [1, 2]) {
+    await t.test(`v${lockfileVersion} input`, async t => {
+      const foo = {
+        version: '1.0.0',
+        resolved: 'https://registry.npmjs.org/foo/-/foo-1.0.0.tgz',
+      }
+      const path = t.testdir({
+        'package.json': JSON.stringify({ name: 'root', dependencies: { foo: '^1.0.0' } }),
+        'package-lock.json': JSON.stringify({
+          lockfileVersion,
+          requires: true,
+          ...(lockfileVersion === 2 ? { packages: {} } : {}),
+          dependencies: { foo },
+        }),
+      })
+      const meta = await Shrinkwrap.load({ path, lockfileVersion: 3 })
+      t.equal(meta.get('node_modules/foo').version, '1.0.0')
+      t.equal(meta.get('node_modules/foo').resolved, foo.resolved)
+      t.strictSame(meta.data.dependencies.foo, foo, 'legacy input remains available')
+    })
+  }
+})
+
+t.test('v3 does not recover omitted inert nodes from legacy metadata', async t => {
+  const path = t.testdir({})
+  const meta = await Shrinkwrap.reset({ path, lockfileVersion: 3 })
+  const root = new Node({
+    path,
+    meta,
+    pkg: { name: 'root', optionalDependencies: { foo: '*' } },
+  })
+  const foo = new Node({
+    parent: root,
+    pkg: { name: 'foo', version: '1.0.0' },
+    resolved: 'https://registry.npmjs.org/foo/-/foo-1.0.0.tgz',
+  })
+  meta.commit()
+  meta.get(foo.path)
+  foo.package = { name: 'foo' }
+  foo.inert = true
+  meta.get(foo.path)
+
+  const result = meta.commit()
+  t.equal(result.packages[foo.location], undefined, 'inert node is omitted')
+  t.strictSame(meta.get(foo.path), {}, 'legacy data cannot restore the omitted metadata')
+})
+
 t.test('load and then reset gets empty lockfile', async t => {
   const sw = await Shrinkwrap.load({ path: fixture })
   sw.reset()
@@ -573,6 +704,18 @@ t.test('construct metadata from node and package data', t => {
   t.matchSnapshot(meta.get(peer.location), 'a peer dep')
   t.matchSnapshot(meta.get(peerdep.location), 'a peer meta-dep')
   t.matchSnapshot(meta.commit(), 'data calculated from nodes themselves')
+  for (const lockfileVersion of [1, 2]) {
+    meta.lockfileVersion = lockfileVersion
+    const { dependencies } = meta.commit()
+    t.match(dependencies.d.dependencies['git-dep'], {
+      version: git.resolved,
+      from: 'git-dep@github:foo/bar',
+    }, `v${lockfileVersion} preserves git metadata`)
+    t.equal(dependencies.d.dependencies.bundled.version, 'npm:not-bundled-tho@1.2.3',
+      `v${lockfileVersion} preserves aliases`)
+    t.match(dependencies.devo, { version: '1.2.3', devOptional: true },
+      `v${lockfileVersion} preserves mixed dependency flags`)
+  }
   t.end()
 })
 
