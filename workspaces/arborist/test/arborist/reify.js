@@ -1868,6 +1868,91 @@ t.test('saving should not replace file: dep with version', async t => {
     'still a file: spec after a bare name install')
 })
 
+t.test('file dependency may omit version when the manifest has a name', async t => {
+  const cwd = process.cwd()
+  t.teardown(() => process.chdir(cwd))
+  const path = t.testdir({
+    'named-only': {
+      'package.json': JSON.stringify({
+        name: 'named-only',
+      }),
+    },
+    'package.json': JSON.stringify({}),
+  })
+  createRegistry(t, false)
+  process.chdir(path)
+
+  await newArb({ path, save: true }).reify({ add: ['file:named-only'] })
+  const pj = JSON.parse(fs.readFileSync(resolve(path, 'package.json'), 'utf8'))
+  t.equal(pj.dependencies['named-only'], 'file:named-only',
+    'saved as a file: spec under the manifest name')
+})
+
+t.test('reject added package whose manifest has no name', async t => {
+  const cwd = process.cwd()
+  t.teardown(() => process.chdir(cwd))
+  const path = t.testdir({
+    noname: {
+      'package.json': JSON.stringify({}),
+    },
+    'package.json': JSON.stringify({}),
+  })
+  createRegistry(t, false)
+  process.chdir(path)
+
+  const pj = resolve(path, 'package.json')
+  let err
+  try {
+    await newArb({ path, save: true }).reify({ add: ['file:noname'] })
+  } catch (er) {
+    err = er
+  }
+  t.match(err, {
+    code: 'EMISSINAME',
+    spec: 'file:noname',
+    message: /missing a name/,
+  })
+  t.notMatch(err && err.message, /reading 'spec'/)
+  const saved = JSON.parse(fs.readFileSync(pj, 'utf8'))
+  t.equal(saved.dependencies, undefined, 'parent package.json gains no dependency')
+})
+
+t.test('nameless file dep fails the whole add', async t => {
+  const cwd = process.cwd()
+  t.teardown(() => process.chdir(cwd))
+  const path = t.testdir({
+    named: {
+      'package.json': JSON.stringify({
+        name: 'named',
+        version: '1.0.0',
+      }),
+    },
+    noname: {
+      'package.json': JSON.stringify({ version: '1.2.3' }),
+    },
+    'package.json': JSON.stringify({}),
+  })
+  createRegistry(t, false)
+  process.chdir(path)
+
+  const pj = resolve(path, 'package.json')
+  let err
+  try {
+    await newArb({ path, save: true }).reify({ add: ['file:named', 'file:noname'] })
+  } catch (er) {
+    err = er
+  }
+  t.match(err, {
+    code: 'EMISSINAME',
+    spec: 'file:noname',
+    message: /missing a name/,
+  })
+  t.notMatch(err && err.message, /reading 'spec'/)
+  const saved = JSON.parse(fs.readFileSync(pj, 'utf8'))
+  t.equal(Object.prototype.hasOwnProperty.call(saved.dependencies || {}, 'undefined'), false,
+    'no undefined dependency key')
+})
+
 t.test('filtered reification in workspaces', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
