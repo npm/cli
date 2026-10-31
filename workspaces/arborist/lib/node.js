@@ -950,7 +950,8 @@ class Node {
     for (const [name, spec] of Object.entries(deps || {})) {
       const current = this.edgesOut.get(name)
       if (!current || current.type !== 'workspace') {
-        new Edge({ from: this, name, spec, accept: ad[name], type })
+        // a dependency can be named like an Object.prototype member (e.g. `constructor`, `toString`), so only trust own entries
+        new Edge({ from: this, name, spec, accept: Object.hasOwn(ad, name) ? ad[name] : undefined, type })
       }
     }
   }
