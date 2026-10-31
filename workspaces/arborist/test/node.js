@@ -1187,6 +1187,35 @@ t.test('legacy peer dependencies', t => {
   t.end()
 })
 
+t.test('dependency names that collide with Object.prototype members', t => {
+  const path = '/home/user/projects/root'
+  const names = {
+    dependencies: 'constructor',
+    optionalDependencies: 'toString',
+    peerDependencies: 'valueOf',
+    devDependencies: 'hasOwnProperty',
+  }
+  const pkg = { name: 'root', version: '1.0.0' }
+  for (const [field, name] of Object.entries(names)) {
+    pkg[field] = { [name]: '1.0.0' }
+  }
+
+  const root = new Node({ pkg, path, realpath: path })
+  for (const name of Object.values(names)) {
+    const edge = root.edgesOut.get(name)
+    t.ok(edge, `${name} gets an edge`)
+    t.equal(edge.accept, undefined, `${name} does not inherit an accept value`)
+  }
+
+  const accepting = new Node({
+    pkg: { ...pkg, acceptDependencies: { constructor: '2.x' } },
+    path,
+    realpath: path,
+  })
+  t.equal(accepting.edgesOut.get('constructor').accept, '2.x', 'own acceptDependencies entry is still honored')
+  t.end()
+})
+
 t.test('set workspaces', t => {
   const root = new Node({
     pkg: { name: 'workspaces_root' },
