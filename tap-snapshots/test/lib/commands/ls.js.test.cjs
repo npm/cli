@@ -409,8 +409,9 @@ test-npm-ls@1.0.0 {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP ls global > should print tree and not mark top-level items extraneous 1`] = `
 {CWD}/global
 +-- a@1.0.0
-\`-- b@1.0.0
-  \`-- c@1.0.0
++-- b@1.0.0
+| \`-- c@1.0.0
+\`-- linked@1.0.0 -> {CWD}/prefix
 `
 
 exports[`test/lib/commands/ls.js TAP ls invalid deduped dep > should output tree signaling mismatching peer dep in problems 1`] = `
