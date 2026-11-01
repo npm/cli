@@ -42,7 +42,7 @@ const mockLink = async (t, { globalPrefixDir, ...opts } = {}) => {
 }
 
 t.test('link to globalDir when in current working dir of pkg and no args', async t => {
-  const { link, printLinks } = await mockLink(t, {
+  const { link, printLinks, joinedOutput, npm, prefix } = await mockLink(t, {
     globalPrefixDir: {
       node_modules: {
         a: {
@@ -63,6 +63,26 @@ t.test('link to globalDir when in current working dir of pkg and no args', async
 
   await link.exec()
   t.matchSnapshot(await printLinks({ global: true }), 'should create a global link to current pkg')
+  t.equal(
+    joinedOutput(),
+    `${join(npm.globalDir, 'test-pkg-link')} -> ${fs.realpathSync(prefix)}`,
+    'should output the created link'
+  )
+})
+
+t.test('link to globalDir with --json does not output plain link', async t => {
+  const { link, joinedOutput } = await mockLink(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'test-pkg-link',
+        version: '1.0.0',
+      }),
+    },
+    config: { json: true },
+  })
+
+  await link.exec()
+  t.equal(joinedOutput(), '', 'should not output the created link')
 })
 
 t.test('link ws to globalDir when workspace specified and no args', async t => {
