@@ -1201,6 +1201,38 @@ t.test('store-backed link target never matches store file specs', t => {
   t.end()
 })
 
+t.test('store-backed file target keeps its own lockfile source identity', t => {
+  const rootPath = path.resolve('project')
+  const targetPath = path.resolve(
+    rootPath,
+    'node_modules/.store/local@1.0.0-hash/node_modules/local'
+  )
+  const linkPath = path.resolve(rootPath, 'node_modules/local')
+  const root = lockfileRoot(rootPath, {
+    [targetPath]: { resolved: 'file:local.tgz' },
+    [linkPath]: {
+      resolved: 'node_modules/.store/local@1.0.0-hash/node_modules/local',
+      link: true,
+    },
+  })
+  const target = node({
+    name: 'local',
+    resolved: null,
+    isInStore: true,
+    path: targetPath,
+    realpath: targetPath,
+    root,
+    linksIn: new Set([{ path: linkPath, root }]),
+  })
+
+  t.strictSame(filePolicyIdentities(target), ['file:local.tgz'])
+  t.equal(isScriptAllowed(target, { 'file:local.tgz': true }), true)
+  t.equal(isScriptAllowed(target, {
+    'file:node_modules/.store/local@1.0.0-hash/node_modules/local': true,
+  }), null)
+  t.end()
+})
+
 t.test('store path fallback is anchored to the current root', t => {
   // isStoreBacked has no isInStore on hidden-lockfile loads; the path fallback must only trust this tree's own `.store` (npm/cli#9939 review).
   const { resolve } = require('node:path')

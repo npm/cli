@@ -937,6 +937,66 @@ const setupLinkedProject = (t, { allowScripts, noResolved = false } = {}) => {
   }
 }
 
+const setupLinkedFileProject = (t) => {
+  const storeDir = 'local@1.0.0-bG9jYWxmaWxl'
+  const storeLoc = `node_modules/.store/${storeDir}/node_modules/local`
+  const source = 'file:local.tgz'
+  const pkg = {
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { local: source },
+  }
+  return {
+    'package.json': JSON.stringify(pkg, null, 2),
+    'package-lock.json': JSON.stringify({
+      name: pkg.name,
+      version: pkg.version,
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': pkg,
+        'node_modules/local': {
+          version: '1.0.0',
+          resolved: source,
+          hasInstallScript: true,
+        },
+      },
+    }),
+    node_modules: {
+      '.package-lock.json': JSON.stringify({
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          [`node_modules/.store/${storeDir}`]: {},
+          [storeLoc]: {
+            version: '1.0.0',
+            resolved: source,
+            hasInstallScript: true,
+          },
+          'node_modules/local': {
+            resolved: storeLoc,
+            link: true,
+          },
+        },
+      }),
+      '.store': {
+        [storeDir]: {
+          node_modules: {
+            local: {
+              'package.json': JSON.stringify({
+                name: 'local',
+                version: '1.0.0',
+                scripts: { install: 'echo install' },
+              }),
+            },
+          },
+        },
+      },
+      local: t.fixture('symlink', `.store/${storeDir}/node_modules/local`),
+    },
+  }
+}
+
 // loadActual only trusts the hidden lockfile when it is newer than every dir under node_modules (assertNoNewer allows 10ms), and fixture creation order makes that racy, so bump its mtime past the fixture writes.
 const trustHiddenLockfile = (prefix) => {
   const future = new Date(Date.now() + 60_000)
@@ -986,6 +1046,25 @@ t.test('deny-scripts under linked strategy writes a name-only deny', async t => 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.strictSame(pkg.allowScripts, { canvas: false })
 })
+
+for (const { command, args, config, value } of [
+  { command: 'approve-scripts', args: ['local'], config: {}, value: true },
+  { command: 'approve-scripts', args: [], config: { all: true }, value: true },
+  { command: 'deny-scripts', args: ['local'], config: {}, value: false },
+]) {
+  t.test(`${command} keeps a linked file target's source identity`, async t => {
+    const { npm, prefix } = await mockNpm(t, {
+      prefixDir: setupLinkedFileProject(t),
+      config,
+    })
+    trustHiddenLockfile(prefix)
+
+    await npm.exec(command, args)
+
+    const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+    t.strictSame(pkg.allowScripts, { 'file:local.tgz': value })
+  })
+}
 
 const setupLocalFileDepProject = (t) => {
   const pkg = {

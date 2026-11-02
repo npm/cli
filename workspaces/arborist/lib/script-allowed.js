@@ -180,15 +180,15 @@ const filePolicyIdentities = (node) => {
     }
   }
 
-  if (!isStoreBacked(node)) {
-    const ownEntry = lockfileEntry(node)
-    if (ownEntry?.resolved !== undefined) {
-      add(ownEntry.resolved, ownEntry.link)
-    } else if (!node?.isLink) {
-      // Plain fixtures and callers without Arborist lockfile metadata still
-      // carry the resolver identity directly on ordinary Nodes.
-      add(node?.resolved)
-    }
+  const ownEntry = lockfileEntry(node)
+  if (ownEntry?.resolved !== undefined) {
+    add(ownEntry.resolved, ownEntry.link)
+  } else if (!node?.isLink && !isStoreBacked(node)) {
+    // Plain fixtures and callers without Arborist lockfile metadata still
+    // carry the resolver identity directly on ordinary Nodes. Store-backed
+    // nodes cannot use this fallback because their resolved value may be an
+    // internal `.store` link rather than the package's source.
+    add(node?.resolved)
   }
 
   if (!node?.resolved && !isStoreBacked(node) &&
