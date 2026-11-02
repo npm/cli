@@ -4,6 +4,14 @@ const path = require('node:path')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
 const MockRegistry = require('@npmcli/mock-registry')
 
+// npm exec replaces its own process with the command when it can, which would
+// replace this test runner, so force the spawn path here.
+const { execve } = process
+process.execve = undefined
+t.teardown(() => {
+  process.execve = execve
+})
+
 t.test('call with args', async t => {
   const { npm } = await loadMockNpm(t, {
     config: {
@@ -403,4 +411,38 @@ t.test('exec reads .npmrc policy even when project package.json has a different 
   })
   await npm.exec('exec', ['some-pkg'])
   t.strictSame(capturedOpts.allowScripts, { canvas: true })
+})
+
+t.test('replaces the npm process for a single command', async t => {
+  let capturedOpts
+  const { npm } = await loadMockNpm(t, {
+    mocks: {
+      libnpmexec: async (opts) => {
+        capturedOpts = opts
+      },
+    },
+  })
+  await npm.exec('exec', ['some-pkg'])
+  t.equal(capturedOpts.replaceProcess, true)
+})
+
+t.test('keeps the npm process when running in workspaces', async t => {
+  const captured = []
+  const { npm } = await loadMockNpm(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'root', workspaces: ['packages/*'] }),
+      packages: {
+        a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+        b: { 'package.json': JSON.stringify({ name: 'b', version: '1.0.0' }) },
+      },
+    },
+    config: { workspaces: true },
+    mocks: {
+      libnpmexec: async (opts) => {
+        captured.push(opts.replaceProcess)
+      },
+    },
+  })
+  await npm.exec('exec', ['some-pkg'])
+  t.strictSame(captured, [false, false])
 })

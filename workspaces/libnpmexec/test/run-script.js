@@ -157,3 +157,57 @@ t.test('isNotWindows', async t => {
   // need both arguments and no arguments for code coverage
   await runScript()
 })
+
+t.test('replaceProcess', async t => {
+  const runWith = async (t, opts) => {
+    let received
+    const runScript = t.mock('../lib/run-script.js', {
+      'ci-info': { isCI: true },
+      '@npmcli/run-script': async (o) => {
+        received = o
+      },
+      '../lib/is-windows.js': false,
+    })
+    await runScript({
+      args: [],
+      call: '',
+      path: '',
+      runPath: '',
+      scriptShell: 'sh',
+      ...opts,
+      flatOptions: { replaceProcess: true, ...opts.flatOptions },
+    })
+    return received
+  }
+
+  t.test('execs the bin through the shell', async t => {
+    const o = await runWith(t, { args: ['foo', 'bar'] })
+    t.equal(o.replaceProcess, true)
+    t.equal(o.pkg.scripts.npx, `exec 'foo'`)
+    t.strictSame(o.args, ['bar'])
+  })
+
+  t.test('keeps --call scripts as they are', async t => {
+    const o = await runWith(t, { call: 'foo && bar' })
+    t.equal(o.replaceProcess, true)
+    t.equal(o.pkg.scripts.npx, 'foo && bar')
+  })
+
+  t.test('does not prefix exec for a custom script-shell', async t => {
+    const o = await runWith(t, { args: ['foo'], scriptShell: 'bash' })
+    t.equal(o.replaceProcess, true)
+    t.equal(o.pkg.scripts.npx, `'foo'`)
+  })
+
+  t.test('never replaces the process in interactive mode', async t => {
+    const o = await runWith(t, {})
+    t.equal(o.replaceProcess, false)
+    t.equal(o.pkg.scripts.npx, 'sh')
+  })
+
+  t.test('is off unless requested', async t => {
+    const o = await runWith(t, { args: ['foo'], flatOptions: { replaceProcess: false } })
+    t.equal(o.replaceProcess, false)
+    t.equal(o.pkg.scripts.npx, `'foo'`)
+  })
+})
