@@ -240,12 +240,13 @@ t.test('rejects cmd.exe executable tokens that cannot be quoted safely', async t
 
 t.test('uses POSIX escaping for a POSIX shell on Windows', async t => {
   const { runScript } = await mockRunScript(t, {
-    '@npmcli/run-script': async ({ pkg }) => {
+    '@npmcli/run-script': async ({ pkg, args }) => {
       t.equal(pkg.scripts.npx, '\'bin$(echo injected)\'\\\'\'name\'')
+      t.same(args, ["O'Brien"])
     },
     '../lib/is-windows.js': true,
   })
-  await runScript({ args: ["bin$(echo injected)'name"], scriptShell: 'bash' })
+  await runScript({ args: ["bin$(echo injected)'name", "O'Brien"], scriptShell: 'bash' })
 })
 
 t.test('uses PowerShell invocation for PowerShell shells', async t => {
@@ -257,8 +258,8 @@ t.test('uses PowerShell invocation for PowerShell shells', async t => {
   ]) {
     const { runScript } = await mockRunScript(t, {
       '@npmcli/run-script': async ({ pkg, args }) => {
-        t.equal(pkg.scripts.npx, "& 'bin''name; Write-Output injected'")
-        t.same(args, ['literal argument'])
+        t.equal(pkg.scripts.npx, "& 'bin''name; Write-Output injected' 'literal argument'")
+        t.same(args, [], 'arguments must not receive POSIX escaping')
       },
     })
     await runScript({
@@ -268,11 +269,64 @@ t.test('uses PowerShell invocation for PowerShell shells', async t => {
   }
 })
 
+t.test('escapes Unicode PowerShell quote delimiters in normalized executable names', async t => {
+  let script
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': async ({ pkg }) => {
+      script = pkg.scripts.npx
+    },
+  })
+  for (const quote of ['\u2018', '\u2019', '\u201a', '\u201b']) {
+    const command = `bin${quote}; Write-Output unexpected; #`
+    const pkg = await new PackageJson().fromContent({
+      name: 'test',
+      version: '1.0.0',
+      bin: { [command]: 'bin.js' },
+    }).normalize()
+    t.same(Object.keys(pkg.content.bin), [command], 'name survives normalization')
+    await runScript({ args: [command], scriptShell: 'pwsh' })
+    t.equal(script, `& 'bin${quote}${quote}; Write-Output unexpected; #'`)
+  }
+})
+
+t.test('uses PowerShell escaping for forwarded arguments', async t => {
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': async ({ pkg, args }) => {
+      t.equal(pkg.scripts.npx, [
+        "& 'tool'",
+        "'O''Brien'",
+        "'left\u2018\u2018quote'",
+        "'right\u2019\u2019quote'",
+        "'low\u201a\u201aquote'",
+        "'reversed\u201b\u201bquote'",
+        "''",
+        "'literal$argument; & ` \"'",
+        "'C:\\trailing\\'",
+      ].join(' '))
+      t.same(args, [], 'arguments must not receive POSIX escaping')
+    },
+  })
+  await runScript({
+    args: [
+      'tool',
+      "O'Brien",
+      'left\u2018quote',
+      'right\u2019quote',
+      'low\u201aquote',
+      'reversed\u201bquote',
+      '',
+      'literal$argument; & ` "',
+      'C:\\trailing\\',
+    ],
+    scriptShell: 'powershell.exe',
+  })
+})
+
 t.test('PowerShell executes inferred commands', {
   skip: process.platform !== 'win32' && 'Windows only',
 }, async t => {
   const path = t.testdir()
-  const args = ['two words', 'literal&argument']
+  const args = ['two words', 'literal&argument', "O'Brien"]
   const { runScript } = await mockRunScript(t, {
     '@npmcli/run-script': opts => realRunScript({ ...opts, stdio: 'pipe' }),
   })
@@ -287,7 +341,7 @@ t.test('PowerShell executes inferred commands', {
 })
 
 t.test('call remains a shell script and its arguments are not executable tokens', async t => {
-  for (const scriptShell of ['sh', 'cmd.exe']) {
+  for (const scriptShell of ['sh', 'cmd.exe', 'powershell', 'pwsh.exe']) {
     const { runScript } = await mockRunScript(t, {
       '@npmcli/run-script': async ({ pkg, args }) => {
         t.equal(pkg.scripts.npx, 'echo first && echo second')

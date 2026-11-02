@@ -32,7 +32,9 @@ const run = async ({
       // Protect both cmd.exe's metacharacter parsing and executable-name parsing.
       args[0] = `"${args[0]}"`.replace(/[ ^&()<>|";,*?=@]/g, '^$&')
     } else if (isPowerShell(shell)) {
-      args[0] = `& '${args[0].replace(/'/g, "''")}'`
+      // Encode the whole invocation to avoid promise-spawn's POSIX argument escaping.
+      const quotedArgs = args.map(arg => `'${arg.replace(/['\u2018-\u201b]/g, '$&$&')}'`)
+      args = [`& ${quotedArgs.join(' ')}`]
     } else {
       // single-quote so shell metacharacters in the executable name are taken
       // literally; double quotes still expand $(), backticks, $var and "
