@@ -254,6 +254,22 @@ t.test('nameKeyFor / versionedKeyFor — linked file targets use exact resolver 
   t.strictSame(targets.map(versionedKeyFor), keys)
 })
 
+t.test('nameKeyFor / versionedKeyFor — file source takes precedence over registry edges', async t => {
+  const n = {
+    name: 'local',
+    packageName: 'local',
+    version: '1.0.0',
+    resolved: 'file:../local.tgz',
+    isRegistryDependency: true,
+    edgesIn: new Set([{ name: 'local', spec: '^1.0.0' }]),
+  }
+
+  t.equal(nameKeyFor(n), 'file:../local.tgz')
+  t.equal(versionedKeyFor(n), 'file:../local.tgz')
+  t.equal(isScriptAllowed(n, { local: true }), null)
+  t.equal(isScriptAllowed(n, { 'file:../local.tgz': true }), true)
+})
+
 t.test('nameKeyFor / versionedKeyFor — unresolved non-file link targets fail closed', async t => {
   const n = linkedCypressNode(registryShapedRemoteUrl)
   n.resolved = null

@@ -6,6 +6,7 @@ const {
   filePolicyIdentities,
   filePolicyIdentity,
   matchFileOrDir,
+  resolvedSourceSpecs,
   trustedDisplay,
 } = isScriptAllowed
 
@@ -276,6 +277,49 @@ t.test('file path — unresolved non-file link targets fail closed', t => {
   t.end()
 })
 
+t.test('file path — link sources resolve relative to the link parent', t => {
+  const rootPath = path.resolve('/project')
+  const targetPath = path.resolve(rootPath, 'shared')
+  const target = node({
+    name: 'shared',
+    resolved: null,
+    path: targetPath,
+    realpath: targetPath,
+    root: { path: rootPath },
+    linksIn: new Set([{
+      path: path.resolve(rootPath, 'node_modules/nested/link'),
+      resolved: 'file:../../shared',
+    }]),
+  })
+
+  t.equal(isScriptAllowed(target, { 'file:shared': true }), true)
+  t.equal(isScriptAllowed(target, { 'file:../shared': true }), null)
+  t.end()
+})
+
+t.test('file path — link source context and partial target paths fall back safely', t => {
+  const rootPath = path.resolve('project')
+  const targetPath = path.resolve(rootPath, 'shared')
+  const target = node({
+    name: 'shared',
+    resolved: null,
+    path: targetPath,
+    realpath: null,
+    root: { path: rootPath },
+    linksIn: new Set([
+      { resolved: 'file:shared' },
+      {
+        path: path.resolve(rootPath, 'node_modules/link'),
+        resolved: 'file:../shared',
+      },
+    ]),
+  })
+
+  t.strictSame(resolvedSourceSpecs(target), ['file:shared', 'file:../shared'])
+  t.equal(isScriptAllowed(target, { [npa(targetPath).saveSpec]: true }), true)
+  t.end()
+})
+
 t.test('file path — multiple exact link identities are matchable but not writable', t => {
   const rootPath = path.resolve('project')
   const targetPath = path.resolve(rootPath, '../shared')
@@ -403,6 +447,23 @@ t.test('local tarball key — relative key resolves from the project root', t =>
 
   t.equal(isScriptAllowed(tgzNode, { 'file:local-pkg.tgz': true }), true)
   t.equal(isScriptAllowed(tgzNode, { 'file:other-pkg.tgz': true }), null)
+  t.end()
+})
+
+t.test('local tarball key — install path is not a source identity', t => {
+  const rootPath = path.resolve('project')
+  const sourcePath = path.resolve('sources/local-pkg.tgz')
+  const installPath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const tgzNode = node({
+    name: 'local-pkg',
+    resolved: npa(sourcePath).saveSpec,
+    path: installPath,
+    realpath: installPath,
+    root: { path: rootPath },
+  })
+
+  t.equal(isScriptAllowed(tgzNode, { [npa(sourcePath).saveSpec]: true }), true)
+  t.equal(isScriptAllowed(tgzNode, { [npa(installPath).saveSpec]: true }), null)
   t.end()
 })
 
@@ -1268,5 +1329,18 @@ t.test('registry — link target with disagreeing link names fails closed', t =>
 
   t.equal(isScriptAllowed(target, { canvas: true }), null)
   t.equal(isScriptAllowed(target, { sharp: true }), null)
+  t.end()
+})
+
+t.test('file source takes precedence over registry-looking edges', t => {
+  const target = node({
+    name: 'local',
+    resolved: 'file:../local.tgz',
+    isRegistryDependency: true,
+    edgesIn: new Set([{ name: 'local', spec: '^1.0.0' }]),
+  })
+
+  t.equal(isScriptAllowed(target, { local: true }), null)
+  t.equal(isScriptAllowed(target, { 'file:../local.tgz': true }), true)
   t.end()
 })

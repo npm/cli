@@ -456,6 +456,24 @@ t.test('install-scripts exact git selector approves only the selected commit', a
   t.strictSame(pkg.allowScripts, { [firstCommit]: true })
 })
 
+t.test('install-scripts exact git selector replaces a broad repository approval', async t => {
+  const commit = 'github:example/tool#deadbeef'
+  const repository = 'github:example/tool'
+  const { npm, prefix } = await mockProjectWithInventory(t, {
+    commit: toolSourceNode(commit),
+  })
+  fs.writeFileSync(resolve(prefix, 'package.json'), JSON.stringify({
+    name: 'host',
+    version: '1.0.0',
+    allowScripts: { [repository]: true },
+  }))
+
+  await npm.exec('install-scripts', ['approve', commit])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [commit]: true })
+})
+
 t.test('install-scripts approve rejects same-name dependencies from different git repositories', async t => {
   const firstRepositoryCommit = 'github:example/tool#deadbeef'
   const secondRepositoryCommit = 'github:attacker/tool#cafebabe'
@@ -567,6 +585,31 @@ t.test('install-scripts exact resolver identity approves a multi-link target', a
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.strictSame(pkg.allowScripts, { [firstSource]: true })
+})
+
+t.test('install-scripts non-bare selectors do not select local links by link name', async t => {
+  const target = {
+    ...linkedFileNode('file:../local-tool', 'node_modules/foo'),
+    name: 'local-tool',
+  }
+  const inventory = {
+    link: {
+      isLink: true,
+      name: 'foo',
+      target,
+    },
+  }
+  const { npm, prefix } = await mockProjectWithInventory(t, inventory)
+
+  for (const selector of ['foo@*', 'foo@latest', 'foo@npm:bar@1.0.0']) {
+    await t.rejects(
+      npm.exec('install-scripts', ['approve', selector]),
+      { code: 'ENOMATCH' }
+    )
+  }
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg)
 })
 
 t.test('install-scripts deny <pkg> writes a name-only false entry', async t => {

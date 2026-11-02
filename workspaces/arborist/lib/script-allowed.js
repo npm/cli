@@ -1,4 +1,4 @@
-const { resolve, sep } = require('node:path')
+const { dirname, resolve, sep } = require('node:path')
 const npa = require('npm-package-arg')
 const semver = require('semver')
 const versionFromTgz = require('./version-from-tgz.js')
@@ -118,37 +118,30 @@ const isStoreBacked = (node) => {
   return false
 }
 
-const resolvedSourceSpecs = (node) => {
-  const specs = []
-  const seen = new Set()
-  const add = (spec) => {
-    if (typeof spec !== 'string' || spec === '' || seen.has(spec)) {
+const resolvedSourceEntries = (node) => {
+  const entries = new Map()
+  const add = (spec, where) => {
+    if (typeof spec !== 'string' || spec === '') {
       return
     }
-    seen.add(spec)
-    specs.push(spec)
+    const key = `${where}\0${spec}`
+    entries.set(key, { spec, where })
   }
 
-  add(node?.resolved)
+  const root = node?.root?.path || process.cwd()
+  add(node?.resolved, root)
 
   if (!node?.resolved && !isStoreBacked(node) &&
       node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
-    let hasIncomingLink = false
-    let hasFileLink = false
     for (const link of node.linksIn) {
-      hasIncomingLink = true
-      add(link.resolved)
-      hasFileLink ||= isFileSpec(link.resolved, node?.root?.path || process.cwd())
-    }
-
-    if (hasIncomingLink && hasFileLink) {
-      add(node.realpath)
-      add(node.path)
+      add(link.resolved, typeof link?.path === 'string' ? dirname(link.path) : root)
     }
   }
 
-  return specs
+  return [...entries.values()]
 }
+
+const resolvedSourceSpecs = (node) => resolvedSourceEntries(node).map(({ spec }) => spec)
 
 const isFileSpec = (spec, where) => {
   /* istanbul ignore if: filePolicyIdentities filters these values before calling */
@@ -187,13 +180,15 @@ const filePolicyIdentities = (node) => {
     }
   }
 
-  const ownEntry = lockfileEntry(node)
-  if (ownEntry?.resolved !== undefined) {
-    add(ownEntry.resolved, ownEntry.link)
-  } else if (!node?.isLink) {
-    // Plain fixtures and callers without Arborist lockfile metadata still
-    // carry the resolver identity directly on ordinary Nodes.
-    add(node?.resolved)
+  if (!isStoreBacked(node)) {
+    const ownEntry = lockfileEntry(node)
+    if (ownEntry?.resolved !== undefined) {
+      add(ownEntry.resolved, ownEntry.link)
+    } else if (!node?.isLink) {
+      // Plain fixtures and callers without Arborist lockfile metadata still
+      // carry the resolver identity directly on ordinary Nodes.
+      add(node?.resolved)
+    }
   }
 
   if (!node?.resolved && !isStoreBacked(node) &&
@@ -442,14 +437,19 @@ const matchFileOrDir = (node, parsed) => {
   }
 
   const where = node?.root?.path || process.cwd()
-  const sources = resolvedSourceSpecs(node)
+  const sources = resolvedSourceEntries(node)
   const paths = new Set()
   let hasFileSource = false
-  for (const source of sources) {
+  let hasDirectoryLinkSource = false
+  for (const identity of identities) {
+    paths.add(npa(identity, where).fetchSpec)
+  }
+  for (const { spec: source, where: sourceWhere } of sources) {
     try {
-      const sourceParsed = npa(source, where)
+      const sourceParsed = npa(source, sourceWhere)
       if (sourceParsed.type === 'file' || sourceParsed.type === 'directory') {
         hasFileSource = true
+        hasDirectoryLinkSource ||= sourceParsed.type === 'directory' && sourceWhere !== where
         if (source === parsed.raw ||
             source === parsed.saveSpec ||
             source === parsed.fetchSpec ||
@@ -462,7 +462,7 @@ const matchFileOrDir = (node, parsed) => {
       continue
     }
   }
-  if (identities.length > 0) {
+  if (!node?.resolved && hasDirectoryLinkSource) {
     for (const path of [node?.path, node?.realpath]) {
       if (path) {
         paths.add(path)
@@ -480,6 +480,9 @@ const matchRemote = (node, parsed) => {
 }
 
 const isRegistryNode = (node) => {
+  if (filePolicyIdentities(node).length > 0) {
+    return false
+  }
   // Prefer arborist's edge-based check when available (real Node objects).
   // It inspects the incoming edges' specs and only returns true if every
   // edge resolves to a registry spec, which is much harder to spoof than
