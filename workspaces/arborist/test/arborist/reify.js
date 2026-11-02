@@ -659,7 +659,6 @@ for (const installStrategy of ['hoisted', 'linked']) {
           'node_modules/abbrev': {
             version: '1.1.1',
             resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
-            integrity: 'sha512-invalid',
             optional: true,
             bin: {
               [`../../../${sentinelName}`]: 'bin/abbrev.js',
@@ -672,13 +671,16 @@ for (const installStrategy of ['hoisted', 'linked']) {
     fs.mkdirSync(sentinel)
     fs.writeFileSync(resolve(sentinel, 'keep'), 'keep')
     t.teardown(() => fsp.rm(sentinel, { recursive: true, force: true }))
-    createRegistry(t, true)
+    const registry = createRegistry(t)
+    registry.nock.get('/abbrev/-/abbrev-1.1.1.tgz').reply(404, { error: 'not found' })
 
     await reify(path, {
       ignoreScripts: true,
       installStrategy,
     })
 
+    t.throws(() => fs.lstatSync(resolve(path, 'node_modules/abbrev')),
+      { code: 'ENOENT' }, 'failed optional dependency is not installed')
     t.equal(fs.readFileSync(resolve(sentinel, 'keep'), 'utf8'), 'keep',
       'optional dependency cleanup does not remove the external sentinel')
   })
