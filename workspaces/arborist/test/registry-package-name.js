@@ -263,3 +263,34 @@ t.test('accepted version ranges preserve the registry identity', t => {
   t.equal(getRegistryPackageName(target), 'abbrev')
   t.end()
 })
+
+t.test('a conditional alias override preserves the identity of its raw-spec fallback', t => {
+  const root = new Node({
+    path: t.testdirName,
+    loadOverrides: true,
+    pkg: {
+      dependencies: { widget: '1.0.0' },
+      overrides: { 'foo@1.2.3': 'npm:@scope/foo@9.0.0' },
+    },
+  })
+  const consumer = new Node({
+    name: 'widget',
+    parent: root,
+    pkg: {
+      name: 'widget',
+      version: '1.0.0',
+      dependencies: { foo: '^1.0.0' },
+    },
+  })
+  const target = new Node({
+    name: 'foo',
+    parent: root,
+    pkg: { name: 'foo', version: '1.2.4' },
+  })
+  const dependency = consumer.edgesOut.get('foo')
+  t.equal(dependency.spec, 'npm:@scope/foo@9.0.0')
+  t.equal(dependency.rawSpec, '^1.0.0')
+  t.ok(dependency.valid, 'the original range, not the conditional override, satisfies this edge')
+  t.equal(getRegistryPackageName(target), 'foo', 'does not select the override target registry')
+  t.end()
+})

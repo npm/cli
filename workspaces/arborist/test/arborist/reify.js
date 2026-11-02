@@ -4758,7 +4758,7 @@ t.test('allowRemote registry evidence integration', async t => {
       },
     },
   })
-  const setup = (t, { version = '1.1.1', resolved = tarballURL,
+  const setup = (t, { version = '1.1.1', resolved = tarballURL, integrity,
     locked = true, options = {} } = {}) => {
     const root = {
       name: 'project',
@@ -4774,7 +4774,7 @@ t.test('allowRemote registry evidence integration', async t => {
             requires: true,
             packages: {
               '': root,
-              'node_modules/abbrev': { version, resolved },
+              'node_modules/abbrev': { version, resolved, integrity },
             },
           }),
         } : {}),
@@ -4909,6 +4909,66 @@ t.test('allowRemote registry evidence integration', async t => {
     t.notOk(fs.existsSync(resolve(testdir, 'project/node_modules/abbrev/package.json')),
       'URL-only evidence never authorizes an unverified tarball')
   })
+
+  for (const flag of ['verifySignatures', 'verifyAttestations']) {
+    for (const locked of ['matching', 'different', 'cached-different', 'missing']) {
+      await t.test(`${flag} binds ${locked} locked integrity to verified bytes`, async t => {
+        const RealArborist = require('../../lib/arborist')
+        const { generateKeyPairSync, sign } = require('node:crypto')
+        const ssri = require('ssri')
+        const { publicKey, privateKey } = generateKeyPairSync('ec', { namedCurve: 'prime256v1' })
+        const cachedIntegrity = ssri.fromData(abbrevTGZ).toString()
+        const mismatch = locked.endsWith('different')
+        const verifiedIntegrity = mismatch
+          ? ssri.fromData('different registry bytes').toString() : cachedIntegrity
+        const metadata = packument({
+          dist: {
+            tarball: tarballURL,
+            integrity: verifiedIntegrity,
+            signatures: [{
+              keyid: 'test-key',
+              sig: sign('sha256', Buffer.from(`abbrev@1.1.1:${verifiedIntegrity}`),
+                privateKey).toString('base64'),
+            }],
+          },
+        })
+        const { arb: fixtureArb, server, testdir } = setup(t, {
+          integrity: locked === 'missing' ? undefined : cachedIntegrity,
+          options: {
+            [flag]: true,
+            '//registry.example.com/npm/:_keys': [{
+              keyid: 'test-key',
+              pemkey: publicKey.export({ type: 'spki', format: 'pem' }),
+            }],
+          },
+        })
+        const arb = new RealArborist(fixtureArb.options)
+        server.get('/download/abbrev-1.1.1.tgz').reply(200, abbrevTGZ)
+        await pacote.tarball(tarballURL, { cache: arb.options.cache })
+        server.get('/npm/abbrev')
+          .matchHeader('accept', 'application/json')
+          .reply(200, metadata)
+
+        if (locked === 'cached-different') {
+          const { getRegistryTarball } = require('../../lib/registry-tarball.js')
+          await getRegistryTarball(arb, 'abbrev', '1.1.1')
+        }
+        if (mismatch) {
+          await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' },
+            'a verified registry digest cannot authorize different cached lockfile bytes')
+          t.notOk(fs.existsSync(resolve(testdir, 'project/node_modules/abbrev/package.json')),
+            'the mismatched cached tarball is not installed')
+        } else {
+          if (locked === 'missing') {
+            server.get('/download/abbrev-1.1.1.tgz').optionally().reply(200, abbrevTGZ)
+          }
+          const tree = await arb.reify()
+          t.equal(tree.children.get('abbrev').integrity, verifiedIntegrity,
+            'extraction retains the verified digest even when the lockfile omitted it')
+        }
+      })
+    }
+  }
 
   for (const oversized of [false, true]) {
     await t.test(`fresh resolution retains evidence with ${

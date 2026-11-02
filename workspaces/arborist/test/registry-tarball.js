@@ -30,8 +30,8 @@ t.test('preserves a snapshot of registry-sourced alias metadata', async t => {
   rememberRegistryTarball(tree, spec, metadata)
   metadata.dist.tarball = 'https://example.com/changed-after-resolution.tgz'
 
-  t.equal(await getRegistryTarball(tree, '@scope/pkg', '1.0.0'), url)
-  t.equal(await getRegistryTarball(tree, '@scope/pkg', 'v1.0.0'), url,
+  t.same(await getRegistryTarball(tree, '@scope/pkg', '1.0.0'), { tarball: url })
+  t.same(await getRegistryTarball(tree, '@scope/pkg', 'v1.0.0'), { tarball: url },
     'normalizes an exact version without reinterpreting it as a dependency spec')
 })
 
@@ -95,7 +95,7 @@ t.test('reuses full and abbreviated packuments, including pending cache entries'
         },
       })
       const tree = arb({ packumentCache: cache })
-      t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0'), url)
+      t.same(await getRegistryTarball(tree, 'pkg', '1.0.0'), { tarball: url })
       t.equal(await getRegistryTarball(tree, 'pkg', '2.0.0'), null,
         'does not select a different version when the locked version is absent')
     }
@@ -108,7 +108,7 @@ t.test('prefers existing full metadata without requesting a second format', asyn
     [`corgi:${registry}pkg`, packument(manifest('1.0.0', 'https://example.com/stale.tgz'))],
   ])
   const { getRegistryTarball } = require('../lib/registry-tarball.js')
-  t.equal(await getRegistryTarball(arb({ packumentCache: cache }), 'pkg', '1.0.0'), url)
+  t.same(await getRegistryTarball(arb({ packumentCache: cache }), 'pkg', '1.0.0'), { tarball: url })
 })
 
 t.test('an offline cache miss can reuse the full HTTP response variant', async t => {
@@ -125,7 +125,7 @@ t.test('an offline cache miss can reuse the full HTTP response variant', async t
       },
     },
   })
-  t.equal(await getRegistryTarball(arb({ offline: true }), 'pkg', '1.0.0'), url)
+  t.same(await getRegistryTarball(arb({ offline: true }), 'pkg', '1.0.0'), { tarball: url })
   t.same(requests, [false, true])
 })
 
@@ -181,9 +181,10 @@ t.test('coalesces versions and retains compact evidence rejected by the producti
     const duplicate = getRegistryTarball(tree, 'pkg', '1.0.0')
     t.equal(calls, 1, 'concurrent cache misses share a request')
     complete()
-    t.same(await Promise.all([first, second, duplicate]), [url, secondURL, url])
+    t.same(await Promise.all([first, second, duplicate]),
+      [{ tarball: url }, { tarball: secondURL }, { tarball: url }])
     t.notOk(cache.has(`corgi:${registry}pkg`), 'the production cache does not retain this response')
-    t.equal(await getRegistryTarball(tree, 'pkg', '2.0.0'), secondURL)
+    t.same(await getRegistryTarball(tree, 'pkg', '2.0.0'), { tarball: secondURL })
     t.equal(await getRegistryTarball(tree, 'pkg', '3.0.0'), null)
     t.equal(calls, 1, 'completed evidence and absent versions do not trigger another request')
   }
@@ -201,12 +202,12 @@ t.test('keeps registry endpoints and Arborist instances separate', async t => {
   })
   const tree = arb()
   rememberRegistryTarball(tree, npa('pkg'), manifest())
-  t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0'), url)
+  t.same(await getRegistryTarball(tree, 'pkg', '1.0.0'), { tarball: url })
   t.equal(await getRegistryTarball(arb(), 'pkg', '1.0.0'), null, 'another tree has no trusted evidence')
   tree.options.registry = 'https://registry.example.com/another-registry/'
   t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0'), null, 'a different registry path has no proof')
   tree.options.registry = registry
-  t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0'), url)
+  t.same(await getRegistryTarball(tree, 'pkg', '1.0.0'), { tarball: url })
   t.equal(calls, 2)
 })
 
@@ -221,10 +222,10 @@ t.test('selects scoped registry metadata', async t => {
       },
     },
   })
-  t.equal(await getRegistryTarball(arb({
+  t.same(await getRegistryTarball(arb({
     registry: 'https://registry.npmjs.org/',
     '@scope:registry': registry,
-  }), '@scope/pkg', '1.0.0'), url)
+  }), '@scope/pkg', '1.0.0'), { tarball: url })
 })
 
 t.test('malformed metadata cannot authorize another identity or version', async t => {
@@ -258,13 +259,52 @@ t.test('retains build metadata in exact-version evidence', async t => {
     },
   })
   const tree = arb()
-  t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0+one'), one)
-  t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0+two'), two)
+  t.same(await getRegistryTarball(tree, 'pkg', '1.0.0+one'), { tarball: one })
+  t.same(await getRegistryTarball(tree, 'pkg', '1.0.0+two'), { tarball: two })
   t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0'), null)
   const remembered = arb()
   rememberRegistryTarball(remembered, npa('pkg'), manifest('1.0.0+one', one))
-  t.equal(await getRegistryTarball(remembered, 'pkg', '1.0.0+one'), one)
-  t.equal(await getRegistryTarball(remembered, 'pkg', '1.0.0+two'), two)
+  t.same(await getRegistryTarball(remembered, 'pkg', '1.0.0+one'), { tarball: one })
+  t.same(await getRegistryTarball(remembered, 'pkg', '1.0.0+two'), { tarball: two })
+})
+
+t.test('real pacote verifies the exact build-qualified manifest', async t => {
+  const { generateKeyPairSync, sign } = require('node:crypto')
+  const ssri = require('ssri')
+  const { getRegistryTarball } = require('../lib/registry-tarball.js')
+  const { publicKey, privateKey } = generateKeyPairSync('ec', { namedCurve: 'prime256v1' })
+  const integrity = ssri.fromData('build one').toString()
+  const metadata = manifest('1.0.0+one')
+  metadata.dist.integrity = integrity
+  metadata.dist.signatures = [{
+    keyid: 'test-key',
+    sig: sign('sha256', Buffer.from(`pkg@1.0.0+one:${integrity}`), privateKey).toString('base64'),
+  }]
+  const original = packument(
+    manifest('1.0.0', 'https://registry.example.com/download/base.tgz'),
+    metadata,
+    manifest('1.0.0+two', 'https://registry.example.com/download/two.tgz')
+  )
+  const packumentCache = new Map([[`full:${registry}pkg`, original]])
+  const tree = arb({
+    packumentCache,
+    verifySignatures: true,
+    '//registry.example.com/npm/:_keys': [{
+      keyid: 'test-key',
+      pemkey: publicKey.export({ type: 'spki', format: 'pem' }),
+    }],
+  })
+  t.same(await getRegistryTarball(tree, 'pkg', '1.0.0+one'), { tarball: url, integrity },
+    'verifies the build-qualified signature instead of selecting the base version')
+  t.equal(original.versions['1.0.0'].dist.tarball,
+    'https://registry.example.com/download/base.tgz', 'does not rewrite the shared packument')
+  t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0+missing'), null,
+    'a missing build cannot fall back to the base manifest')
+  await t.rejects(getRegistryTarball(arb({
+    ...tree.options,
+    '//registry.example.com/npm/:_keys': [],
+  }), 'pkg', '1.0.0+one'), { code: 'EMISSINGSIGNATUREKEY' },
+  'build-qualified selection still performs signature verification')
 })
 
 t.test('shares failures without swallowing errors and permits a later retry', async t => {
@@ -295,7 +335,7 @@ t.test('shares failures without swallowing errors and permits a later retry', as
   fail(failure)
   await Promise.all(assertions)
   t.equal(calls, 1)
-  t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0'), url)
+  t.same(await getRegistryTarball(tree, 'pkg', '1.0.0'), { tarball: url })
   t.equal(calls, 2)
 })
 
@@ -325,12 +365,13 @@ t.test('does not substitute URL-only evidence for requested signature verificati
     t.same(await Promise.all([
       getRegistryTarball(tree, 'pkg', '1.0.0'),
       getRegistryTarball(tree, 'pkg', '1.0.0'),
-    ]), [url, url])
+    ]), [{ tarball: url, integrity: undefined }, { tarball: url, integrity: undefined }])
     t.equal(calls, 1, 'verification cannot reuse evidence recorded without the requested checks')
 
     const enabledBeforeCapture = arb({ [flag]: true })
     rememberRegistryTarball(enabledBeforeCapture, npa('pkg'), manifest())
-    t.equal(await getRegistryTarball(enabledBeforeCapture, 'pkg', '1.0.0'), url)
+    t.same(await getRegistryTarball(enabledBeforeCapture, 'pkg', '1.0.0'),
+      { tarball: url, integrity: undefined })
     t.equal(calls, 2,
       'flags at capture time do not prove that abbreviated metadata contained verification data')
   }
@@ -371,6 +412,6 @@ t.test('propagates signature verification errors and retries without accepting t
   })
   const tree = arb({ verifySignatures: true })
   await t.rejects(getRegistryTarball(tree, 'pkg', '1.0.0'), failure)
-  t.equal(await getRegistryTarball(tree, 'pkg', '1.0.0'), url)
+  t.same(await getRegistryTarball(tree, 'pkg', '1.0.0'), { tarball: url, integrity: undefined })
   t.equal(calls, 2)
 })

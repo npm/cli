@@ -29,6 +29,7 @@ const { readFile } = require('node:fs/promises')
 const retirePath = require('../retire-path.js')
 const { getRegistryPackageName } = require('../registry-package-name.js')
 const { getRegistryTarball } = require('../registry-tarball.js')
+const ssri = require('ssri')
 const treeCheck = require('../tree-check.js')
 const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
@@ -1030,14 +1031,25 @@ module.exports = cls => class Reifier extends cls {
     // origin. Verify those URLs against registry metadata rather than
     // widening the configured registry path boundary.
     try {
-      const tarball = await getRegistryTarball(this, packageName, node.version)
-      if (!tarball) {
+      const evidence = await getRegistryTarball(this, packageName, node.version)
+      if (!evidence) {
         return false
       }
-      const advertisedURL = new URL(this.#registryResolved(tarball))
+      const advertisedURL = new URL(this.#registryResolved(evidence.tarball))
       advertisedURL.hash = ''
       resolvedURL.hash = ''
-      return advertisedURL.href === resolvedURL.href
+      if (advertisedURL.href !== resolvedURL.href) {
+        return false
+      }
+      if (evidence.integrity) {
+        if (node.integrity && !ssri.parse(node.integrity)?.match(evidence.integrity)) {
+          throw Object.assign(new Error('Locked integrity does not match verified registry integrity'), {
+            code: 'EINTEGRITY',
+          })
+        }
+        node.integrity = evidence.integrity
+      }
+      return true
     } catch (error) {
       log.verbose('reify', 'unable to verify registry tarball metadata', error)
       return false

@@ -1,4 +1,5 @@
 const npa = require('npm-package-arg')
+const depValid = require('./dep-valid.js')
 const { trustedSpecName } = require('./release-age-exclude.js')
 
 const carriedNames = new WeakMap()
@@ -23,7 +24,9 @@ const getRegistryPackageName = (node) => {
     }
     let spec
     try {
-      spec = npa.resolve(edge.name, edge.spec)
+      const requested = node.inDepBundle || edge.overrides?.keySpec &&
+        !depValid(node, edge.spec, edge.accept, edge.from) ? edge.rawSpec : edge.spec
+      spec = npa.resolve(edge.name, requested)
     } catch {
       return null
     }

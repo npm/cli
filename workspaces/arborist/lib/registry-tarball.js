@@ -45,7 +45,7 @@ const rememberRegistryTarball = (arb, spec, manifest) => {
     // Resolution can use abbreviated metadata even with verifyAttestations.
     // Capture URL evidence only; explicit verification must use the full
     // metadata path below rather than inferring checks from Arborist options.
-    getCache(arb).manifests.set(manifestKey(url, version), tarball)
+    getCache(arb).manifests.set(manifestKey(url, version), { tarball })
   }
 }
 
@@ -75,6 +75,29 @@ const loadPackument = async (arb, spec, url) => {
   }
 }
 
+const loadVerifiedTarball = async (packageName, version, url, options) => {
+  if (parse(version).build.length) {
+    const packument = await pacote.packument(npa(packageName), options)
+    const manifest = packument.versions?.[version]
+    if (!tarballFromManifest(packageName, version, manifest)) {
+      return null
+    }
+    // npm-pick-manifest cleans exact versions, dropping build metadata.
+    // Give this verification its own lookup without changing shared metadata
+    // or the version used by pacote's signature/attestation checks.
+    options = {
+      ...options,
+      packumentCache: new Map([[`full:${url}`, {
+        ...packument,
+        versions: { [parse(version).version]: manifest },
+      }]]),
+    }
+  }
+  const manifest = await pacote.manifest(npa.resolve(packageName, version), options)
+  const tarball = tarballFromManifest(packageName, version, manifest)
+  return tarball ? { tarball, integrity: manifest._integrity } : null
+}
+
 const getRegistryTarball = async (arb, packageName, lockedVersion) => {
   // A lockfile version is not a dependency spec: aliases, tags and ranges
   // must not redirect this lookup to another package or version.
@@ -92,11 +115,11 @@ const getRegistryTarball = async (arb, packageName, lockedVersion) => {
   // Preserve explicit pacote verification options, which need more than
   // the abbreviated metadata used for URL verification alone.
   if (arb.options.verifySignatures || arb.options.verifyAttestations) {
-    const request = pacote.manifest(npa.resolve(packageName, version), {
+    const request = loadVerifiedTarball(packageName, version, url, {
       ...arb.options,
       before: null,
       fullMetadata: true,
-    }).then(manifest => tarballFromManifest(packageName, version, manifest)).catch(error => {
+    }).catch(error => {
       cache.manifests.delete(key)
       throw error
     })
@@ -125,7 +148,8 @@ const getRegistryTarball = async (arb, packageName, lockedVersion) => {
     cache.packuments.set(url, request)
   }
   const tarballs = await cache.packuments.get(url)
-  return tarballs.get(version) || null
+  const tarball = tarballs.get(version)
+  return tarball ? { tarball } : null
 }
 
 module.exports = { getRegistryTarball, rememberRegistryTarball }
