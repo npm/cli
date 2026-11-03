@@ -1870,22 +1870,19 @@ t.test('umask', async t => {
 t.test('catch project config prefix error', async t => {
   const path = t.testdir()
   const defaultPrefix = resolve(path, 'default-prefix')
-  const projectPrefix = "$(throw 'project prefix evaluated')"
   t.testdir({
     project: {
       node_modules: {},
       '.npmrc': `
       project-config = true
       foo = from-project-config
-      prefix=${projectPrefix}
+      prefix=$(throw 'project prefix evaluated')
       `,
     },
   })
   const config = new Config({
     npmPath: `${path}/npm`,
-    env: {
-      PREFIX: defaultPrefix,
-    },
+    env: { PREFIX: defaultPrefix },
     argv: [process.execPath, __filename],
     cwd: join(`${path}/project`),
     shorthands,
@@ -1906,6 +1903,85 @@ t.test('catch project config prefix error', async t => {
   t.equal(config.get('prefix', 'project'), undefined, 'project prefix is ignored')
   t.equal(config.find('prefix'), 'default', 'project prefix does not win config precedence')
   t.equal(config.globalPrefix, defaultPrefix, 'project prefix is not effective')
+})
+
+t.test('project prefix preserves supported prefix sources', async t => {
+  for (const { prefix, source, key = 'prefix' } of [
+    { prefix: '', source: 'default' },
+    { prefix: 'false', source: 'default' },
+    { prefix: './ignored', source: 'user' },
+    { prefix: './ignored', source: 'env' },
+    { prefix: './ignored', source: 'cli' },
+    { prefix: './ignored', source: 'default', key: 'pre${UNSET_VAR?}fix' },
+    { prefix: './ignored', source: 'default', key: '${PREFIX_KEY}' },
+  ]) {
+    await t.test(`${source} prefix with project ${key}=${prefix}`, async t => {
+      const path = t.testdir()
+      const defaultPrefix = resolve(path, 'default-prefix')
+      const configuredPrefix = source === 'default' ? defaultPrefix : resolve(path, 'configured-prefix')
+      const project = join(path, 'project')
+      t.testdir({
+        project: {
+          node_modules: {},
+          '.npmrc': `${key}=${prefix}\nfoo=from-project-config`,
+        },
+        'user.npmrc': source === 'user' ? `prefix=${configuredPrefix}` : '',
+      })
+      const config = new Config({
+        npmPath: join(path, 'npm'),
+        env: {
+          PREFIX: defaultPrefix,
+          PREFIX_KEY: 'prefix',
+          ...(source === 'env' ? { npm_config_prefix: configuredPrefix } : {}),
+        },
+        argv: [
+          process.execPath, __filename, '--userconfig', join(path, 'user.npmrc'),
+          ...(source === 'cli' ? ['--prefix', configuredPrefix] : []),
+        ],
+        cwd: project,
+        shorthands,
+        definitions,
+        nerfDarts,
+      })
+      await config.load()
+      t.equal(config.get('prefix', 'project'), undefined, 'project prefix is ignored')
+      t.equal(config.find('prefix'), source, 'supported prefix source retains precedence')
+      t.equal(config.globalPrefix, configuredPrefix, 'supported global prefix is unchanged')
+      t.equal(config.localPrefix, source === 'cli' ? configuredPrefix : project,
+        'local project selection is unchanged')
+      t.equal(config.get('foo', 'project'), source === 'cli' ? undefined : 'from-project-config',
+        'other project configuration follows local project selection')
+    })
+  }
+})
+
+t.test('ignored project prefix survives saving configuration', async t => {
+  for (const key of ['prefix', 'pre${UNSET_VAR?}fix']) {
+    await t.test(key, async t => {
+      const path = t.testdir({
+        node_modules: {},
+        '.npmrc': `${key}=./ignored\n`,
+      })
+      const config = new Config({
+        npmPath: join(path, 'npm'),
+        env: { PREFIX: join(path, 'default-prefix') },
+        argv: [process.execPath, __filename],
+        cwd: path,
+        shorthands,
+        definitions,
+        nerfDarts,
+      })
+      await config.load()
+      t.equal(config.get('prefix', 'project'), undefined, 'project prefix is not effective')
+      await config.save('project')
+      t.equal(readFileSync(join(path, '.npmrc'), 'utf8'), `${key}=./ignored\n`,
+        'saving a prefix-only config preserves the file')
+      config.set('foo', 'updated', 'project')
+      await config.save('project')
+      t.match(readFileSync(join(path, '.npmrc'), 'utf8'), `${key}=./ignored\n`,
+        'saving an unrelated setting retains the ignored raw prefix')
+    })
+  }
 })
 
 t.test('invalid single hyphen errors', async t => {

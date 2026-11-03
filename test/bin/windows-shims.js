@@ -114,6 +114,10 @@ t.test('run shims', t => {
           console.error('shim failure')
           process.exit(7)
         }
+        if (process.argv[2] === 'stdin') {
+          console.log(require('node:fs').readFileSync(0, 'utf8').trim())
+          process.exit(0)
+        }
         process.argv.slice(2).forEach((arg) => console.log(arg))
       `,
       'stderr.js': `console.error('shim stderr')`,
@@ -139,7 +143,7 @@ t.test('run shims', t => {
   // this test passes the full windows suite at least 3 consecutive times.
   t.teardown(() => moveRemove(join(path, 'node.exe')))
 
-  const spawnPath = (cmd, args, { log, stdioString = true, ...opts } = {}) => {
+  const spawnPath = (cmd, args, { log, stdioString = true, file = false, ...opts } = {}) => {
     if (cmd.endsWith('bash.exe')) {
       // only cygwin *requires* the -l, but the others are ok with it
       args.unshift('-l')
@@ -148,11 +152,21 @@ t.test('run shims', t => {
       cmd.toLowerCase().endsWith('pwsh.exe')
     if (isPowerShell) {
       // pwsh *requires* the -Command, Windows PowerShell defaults to it
-      args = ['-Command', args.join(' ')]
+      // Explicitly propagate the script's exit code instead of the host's success/failure status.
+      args = ['-NoProfile', ...(file ? ['-File', ...args]
+        : ['-Command', `${args.join(' ')}; exit $LASTEXITCODE`])]
     }
     const result = spawnSync(isPowerShell ? cmd : `"${cmd}"`, args, {
       // don't hit the registry for the update check
-      env: { PATH: path, npm_config_update_notifier: 'false', NPM_SHIM_ARG: 'expanded value' },
+      env: {
+        PATH: path,
+        PATHEXT: process.env.PATHEXT,
+        SystemRoot: process.env.SystemRoot,
+        ComSpec: process.env.ComSpec,
+        npm_config_update_notifier: 'false',
+        npm_config_cache: join(path, 'cache'),
+        NPM_SHIM_ARG: 'expanded value',
+      },
       cwd: path,
       windowsHide: true,
       shell: !isPowerShell,
@@ -255,9 +269,10 @@ t.test('run shims', t => {
     }
   })
 
-  const matchCmd = (t, cmd, bin, match, params, expected, resultMatch = {}) => {
+  const matchCmd = (t, cmd, bin, match, params, expected, resultMatch = {},
+    { file = false, pipelineInput } = {}) => {
     const args = []
-    const opts = {}
+    const opts = { file }
 
     switch (basename(cmd).toLowerCase()) {
       case 'cmd.exe':
@@ -268,6 +283,9 @@ t.test('run shims', t => {
         break
       case 'powershell.exe':
       case 'pwsh.exe':
+        if (pipelineInput) {
+          args.push(`'${pipelineInput}' |`)
+        }
         args.push(`${bin}.ps1`)
         break
       default:
@@ -306,12 +324,18 @@ t.test('run shims', t => {
     { bin: 'npm', params: ['test -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
     { bin: 'npx', params: ['. -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
     { bin: 'npm', params: [`test -- 'hello world'`], expected: 'hello world', powershellOnly: true },
+    { bin: 'npx', params: [`. -- 'hello world'`], expected: 'hello world', powershellOnly: true },
     { bin: 'npm', params: ['test -- $env:NPM_SHIM_ARG'], expected: 'expanded value', powershellOnly: true },
     { bin: 'npm', params: ['test -- hello` world'], expected: 'hello world', powershellOnly: true },
     { bin: 'npm', params: ['--version | ForEach-Object { "version=$_" }'], expected: `version=${version}`, powershellOnly: true },
     { bin: 'npm', params: ['run stderr 2> shim-error.txt; Get-Content shim-error.txt | Where-Object { $_ -eq "shim stderr" }'], expected: 'shim stderr', powershellOnly: true },
     { bin: 'npm', params: ['run fail'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, powershellOnly: true },
-    { bin: 'npx', params: ['. -- exit-7'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, powershellOnly: true },
+    { bin: 'npx', params: ['. exit-7'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, powershellOnly: true },
+    { bin: 'npm', params: ['test', '--', 'hello world'], expected: 'hello world', spawnOpts: { file: true }, powershellOnly: true },
+    { bin: 'npm', params: ['run', 'fail'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, spawnOpts: { file: true }, powershellOnly: true },
+    { bin: 'npx', params: ['.', 'exit-7'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, spawnOpts: { file: true }, powershellOnly: true },
+    { bin: 'npm', params: ['test -- stdin'], expected: 'shim input', spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
+    { bin: 'npx', params: ['. -- stdin'], expected: 'shim input', spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
   ]
 
   // ensure that all tests are either run or skipped
@@ -329,14 +353,14 @@ t.test('run shims', t => {
       }
       const shellTests = tests.filter(test => !test.powershellOnly || name === 'powershell' || name === 'pwsh')
       t.plan(shellTests.length)
-      for (const { bin, params, expected, resultMatch } of shellTests) {
+      for (const { bin, params, expected, resultMatch, spawnOpts } of shellTests) {
         if (name === 'cygwin bash' && (
           (bin === 'npm' && params[0].startsWith('test')) ||
           (bin === 'npx' && params[0].startsWith('.'))
         )) {
           t.skip("`cygwin bash` doesn't respect option `{ cwd: path }` when calling `spawnSync`")
         } else {
-          matchCmd(t, cmd, bin, match, params, expected, resultMatch)
+          matchCmd(t, cmd, bin, match, params, expected, resultMatch, spawnOpts)
         }
       }
     })

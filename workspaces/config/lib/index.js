@@ -645,6 +645,10 @@ class Config {
       conf.raw = obj
       outer: for (const [key, value] of Object.entries(obj)) {
         const k = envReplace(key, this.env)
+        if (where === 'project' && k === 'prefix') {
+          log.error('config', `prefix cannot be changed from project config: ${source}.`)
+          continue
+        }
         const v = this.parseField(value, k)
         if (where !== 'default') {
           this.#checkDeprecated(k)
@@ -741,12 +745,6 @@ class Config {
     await readFile(file, 'utf8').then(
       data => {
         const parsedConfig = ini.parse(data)
-        if (type === 'project' && hasOwnProperty(parsedConfig, 'prefix')) {
-          // Log error if prefix is mentioned in project .npmrc
-          /* eslint-disable-next-line max-len */
-          log.error('config', `prefix cannot be changed from project config: ${file}.`)
-          delete parsedConfig.prefix
-        }
         return this.#loadObject(parsedConfig, type, file)
       },
       er => this.#loadObject(null, type, file, er)
