@@ -247,6 +247,22 @@ t.test('malformed metadata cannot authorize another identity or version', async 
   }
 })
 
+t.test('verified metadata must still identify the exact package and tarball', async t => {
+  for (const flag of ['verifySignatures', 'verifyAttestations']) {
+    for (const metadata of [
+      manifest('1.0.0', url, 'other-package'),
+      manifest('2.0.0'),
+      { name: 'pkg', version: '1.0.0' },
+    ]) {
+      const { getRegistryTarball } = t.mock('../lib/registry-tarball.js', {
+        pacote: { manifest: async () => metadata },
+      })
+      t.equal(await getRegistryTarball(arb({ [flag]: true }), 'pkg', '1.0.0'), null,
+        'verification flags cannot authorize mismatched or incomplete URL evidence')
+    }
+  }
+})
+
 t.test('retains build metadata in exact-version evidence', async t => {
   const one = 'https://registry.example.com/download/one.tgz'
   const two = 'https://registry.example.com/download/two.tgz'

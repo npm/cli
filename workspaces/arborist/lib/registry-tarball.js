@@ -82,14 +82,15 @@ const loadVerifiedTarball = async (packageName, version, url, options) => {
     if (!tarballFromManifest(packageName, version, manifest)) {
       return null
     }
-    // npm-pick-manifest cleans exact versions, dropping build metadata.
-    // Give this verification its own lookup without changing shared metadata
-    // or the version used by pacote's signature/attestation checks.
+    // Keep the published key visible to pacote's identity checks. Only the
+    // lookup for npm-pick-manifest's cleaned version is non-enumerable.
+    const versions = { [version]: manifest }
+    Object.defineProperty(versions, parse(version).version, { value: manifest })
     options = {
       ...options,
       packumentCache: new Map([[`full:${url}`, {
         ...packument,
-        versions: { [parse(version).version]: manifest },
+        versions,
       }]]),
     }
   }
