@@ -23,14 +23,19 @@ const SHIM_EXTS = [...new Set(Object.keys(SHIMS).map(p => extname(p)))]
 const PACKAGE_NAME = 'test'
 const PACKAGE_VERSION = '1.0.0'
 const SCRIPT_NAME = 'args.js'
+const STDIN_INPUT = 'shim input\r\nsecond line  '
 const STDIN_CLI = `
   setTimeout(() => {
     console.error('stdin fixture timed out')
     process.exit(1)
   }, 30_000).unref()
-  require('node:readline').createInterface({ input: process.stdin }).once('line', input => {
-    console.log(JSON.stringify({ args: process.argv.slice(2), input }))
-    process.exit(0)
+  let input = ''
+  process.stdin.setEncoding('utf8')
+  process.stdin.on('data', chunk => {
+    input += chunk
+  })
+  process.stdin.on('end', () => {
+    console.log(JSON.stringify({ args: process.argv.slice(2), input: input.replace(/\\r?\\n$/, '') }))
   })
 `
 
@@ -293,7 +298,12 @@ t.test('run shims', t => {
     const args = []
     const opts = {
       file,
-      ...(pipelineInput ? { timeout: 60_000, prefix: join(path, 'stdin-prefix') } : {}),
+      ...(pipelineInput ? {
+        timeout: 60_000,
+        prefix: join(path, 'stdin-prefix'),
+        // Input comes from the -Command pipeline, not the host's stdin.
+        stdio: ['ignore', 'pipe', 'pipe'],
+      } : {}),
     }
 
     switch (basename(cmd).toLowerCase()) {
@@ -356,8 +366,8 @@ t.test('run shims', t => {
     { bin: 'npm', params: ['test', '--', 'hello world'], expected: 'hello world', spawnOpts: { file: true }, powershellOnly: true },
     { bin: 'npm', params: ['run', 'fail'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, spawnOpts: { file: true }, powershellOnly: true },
     { bin: 'npx', params: ['.', 'exit-7'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, spawnOpts: { file: true }, powershellOnly: true },
-    { bin: 'npm', params: ['stdin'], expected: JSON.stringify({ args: ['stdin'], input: 'shim input' }), spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
-    { bin: 'npx', params: ['stdin'], expected: JSON.stringify({ args: ['stdin'], input: 'shim input' }), spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
+    { bin: 'npm', params: ['stdin'], expected: JSON.stringify({ args: ['stdin'], input: STDIN_INPUT }), spawnOpts: { pipelineInput: STDIN_INPUT }, powershellOnly: true },
+    { bin: 'npx', params: ['stdin'], expected: JSON.stringify({ args: ['stdin'], input: STDIN_INPUT }), spawnOpts: { pipelineInput: STDIN_INPUT }, powershellOnly: true },
   ]
 
   // ensure that all tests are either run or skipped
