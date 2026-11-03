@@ -258,6 +258,50 @@ t.test('empty versions', async t => {
       t.matchSnapshot(readFileSync(resolve(prefix, 'package-lock.json'), 'utf8'))
     })
 
+    t.test('with one arg, implicit workspace', async t => {
+      let versionPath
+      const { npm, version, outputs, prefix } = await mockNpm(t, {
+        prefixDir: {
+          'package.json': JSON.stringify({
+            name: 'workspaces-test',
+            version: '1.0.0',
+            workspaces: ['workspace-a', 'workspace-b'],
+          }),
+          'workspace-a': {
+            'package.json': JSON.stringify({
+              name: 'workspace-a',
+              version: '1.0.0',
+            }),
+          },
+          'workspace-b': {
+            'package.json': JSON.stringify({
+              name: 'workspace-b',
+              version: '1.0.0',
+            }),
+          },
+        },
+        mocks: {
+          libnpmversion: (_spec, options) => {
+            versionPath = options.path
+            return '2.0.0'
+          },
+        },
+      })
+
+      npm.config.set('workspaces', true)
+      npm.config.set('workspace', [resolve(prefix, 'workspace-a')], 'default')
+      await version.exec(['major'])
+      t.equal(versionPath, resolve(prefix, 'workspace-a'), 'changes only the current workspace')
+      t.same(outputs, ['v2.0.0'], 'does not try to discover other workspaces')
+
+      await version.exec([])
+      t.same(
+        outputs[1],
+        "{ 'workspace-a': '1.0.0', npm: '1.0.0' }",
+        'lists only the current workspace'
+      )
+    })
+
     t.test('with one arg, all workspaces, saves package.json', async t => {
       const { version, outputs, prefix } = await mockNpm(t, {
         prefixDir: {
