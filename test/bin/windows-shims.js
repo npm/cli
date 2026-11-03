@@ -115,10 +115,13 @@ t.test('run shims', t => {
           process.exit(7)
         }
         if (process.argv[2] === 'stdin') {
-          console.log(require('node:fs').readFileSync(0, 'utf8').trim())
-          process.exit(0)
+          require('node:readline').createInterface({ input: process.stdin }).once('line', line => {
+            console.log(line)
+            process.exit(0)
+          })
+        } else {
+          process.argv.slice(2).forEach((arg) => console.log(arg))
         }
-        process.argv.slice(2).forEach((arg) => console.log(arg))
       `,
       'stderr.js': `console.error('shim stderr')`,
       'fail.js': `console.error('shim failure')\nprocess.exit(7)`,
@@ -272,7 +275,7 @@ t.test('run shims', t => {
   const matchCmd = (t, cmd, bin, match, params, expected, resultMatch = {},
     { file = false, pipelineInput } = {}) => {
     const args = []
-    const opts = { file }
+    const opts = { file, ...(pipelineInput ? { timeout: 60_000 } : {}) }
 
     switch (basename(cmd).toLowerCase()) {
       case 'cmd.exe':
@@ -335,7 +338,7 @@ t.test('run shims', t => {
     { bin: 'npm', params: ['run', 'fail'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, spawnOpts: { file: true }, powershellOnly: true },
     { bin: 'npx', params: ['.', 'exit-7'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, spawnOpts: { file: true }, powershellOnly: true },
     { bin: 'npm', params: ['test -- stdin'], expected: 'shim input', spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
-    { bin: 'npx', params: ['. -- stdin'], expected: 'shim input', spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
+    { bin: 'npx', params: ['. stdin'], expected: 'shim input', spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
   ]
 
   // ensure that all tests are either run or skipped

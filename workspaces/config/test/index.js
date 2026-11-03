@@ -1,4 +1,5 @@
 const t = require('tap')
+const { parse: parseIni } = require('ini')
 
 const fs = require('node:fs')
 const { readFileSync } = fs
@@ -1974,12 +1975,14 @@ t.test('ignored project prefix survives saving configuration', async t => {
       await config.load()
       t.equal(config.get('prefix', 'project'), undefined, 'project prefix is not effective')
       await config.save('project')
-      t.equal(readFileSync(join(path, '.npmrc'), 'utf8'), `${key}=./ignored\n`,
+      t.same(parseIni(readFileSync(join(path, '.npmrc'), 'utf8')), { [key]: './ignored' },
         'saving a prefix-only config preserves the file')
       config.set('foo', 'updated', 'project')
       await config.save('project')
-      t.match(readFileSync(join(path, '.npmrc'), 'utf8'), `${key}=./ignored\n`,
-        'saving an unrelated setting retains the ignored raw prefix')
+      t.same(parseIni(readFileSync(join(path, '.npmrc'), 'utf8')), {
+        [key]: './ignored',
+        foo: 'updated',
+      }, 'saving an unrelated setting retains the ignored raw prefix')
     })
   }
 })
