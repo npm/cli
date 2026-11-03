@@ -1381,6 +1381,36 @@ t.test('ls', async t => {
     t.matchSnapshot(cleanCwd(result()), 'should output tree containing aliases')
   })
 
+  t.test('filtering by real name of aliased package', async t => {
+    const { result, ls } = await mockLs(t, {
+      config: {},
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: 'test-npm-ls',
+          version: '1.0.0',
+          dependencies: {
+            a: 'npm:b@1.0.0',
+          },
+        }),
+        node_modules: {
+          a: {
+            'package.json': JSON.stringify({
+              name: 'b',
+              version: '1.0.0',
+            }),
+          },
+        },
+      },
+    })
+    await ls.exec(['b'])
+    t.match(result(), 'a@npm:b@1.0.0', 'should list aliased package')
+    await ls.exec(['b@1'])
+    t.match(result(), 'a@npm:b@1.0.0', 'should list aliased package with range')
+    t.notOk(process.exitCode, 'should not set exit code')
+    await ls.exec(['b@2'])
+    t.equal(process.exitCode, 1, 'should exit with error code 1 on non-matching range')
+  })
+
   t.test('resolved points to git ref', async t => {
     const { npm, result, ls } = await mockLs(t, {
       config: {},
