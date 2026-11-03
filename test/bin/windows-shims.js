@@ -176,7 +176,7 @@ t.test('run shims', t => {
     if (isPowerShell) {
       // pwsh *requires* the -Command, Windows PowerShell defaults to it
       // Explicitly propagate the script's exit code instead of the host's success/failure status.
-      args = ['-NoProfile', ...(file ? ['-File', ...args]
+      args = ['-NoProfile', '-NonInteractive', ...(file ? ['-File', ...args]
         : ['-Command', `${args.join(' ')}; exit $LASTEXITCODE`])]
     }
     const result = spawnSync(isPowerShell ? cmd : `"${cmd}"`, args, {
@@ -194,6 +194,8 @@ t.test('run shims', t => {
       cwd: path,
       windowsHide: true,
       shell: !isPowerShell,
+      // Input is supplied inside -Command, not through the host's stdin.
+      ...(isPowerShell ? { stdio: ['ignore', 'pipe', 'pipe'] } : {}),
       ...opts,
     })
     if (stdioString) {
@@ -301,8 +303,6 @@ t.test('run shims', t => {
       ...(pipelineInput ? {
         timeout: 60_000,
         prefix: join(path, 'stdin-prefix'),
-        // Input comes from the -Command pipeline, not the host's stdin.
-        stdio: ['ignore', 'pipe', 'pipe'],
       } : {}),
     }
 
@@ -324,7 +324,9 @@ t.test('run shims', t => {
         throw new Error('unknown shell')
     }
 
+    const start = Date.now()
     const result = spawnPath(cmd, [...args, ...params], opts)
+    const elapsed = Date.now() - start
 
     // run-script@11 emits its run banners as notice logs on stderr, e.g.
     // "npm notice run test@1.0.0 test". Strip them so we can assert on the
@@ -344,7 +346,7 @@ t.test('run shims', t => {
       stdout: expected,
       ...match,
       ...resultMatch,
-    }, `${cmd} ${bin} ${params[0]}`)
+    }, `${cmd} ${bin} ${params[0]} (${elapsed}ms)`)
   }
 
   // Array with command line parameters and expected output
