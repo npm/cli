@@ -1616,11 +1616,14 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
-      // Keep failed targets in the real tree until optional pruning reports or
-      // drops them. Resolving a replacement peer here can repeatedly displace
-      // the failed node and cause its original dependency to be loaded again.
-      const existing = node.parent.sourceReference.resolve(edge.name)
-      if (this.#loadFailures.has(existing)) {
+      // Keep a failed target if it occupies this scope or is already used by
+      // the peer set's source. Replacing it can make its original dependency
+      // load again indefinitely. An otherwise unrelated ancestor doesn't
+      // prevent a complete peer set from nesting below it.
+      const source = node.parent.sourceReference
+      const existing = source.resolve(edge.name)
+      if (this.#loadFailures.has(existing) &&
+          (existing.parent === source || source.edgesOut.get(edge.name)?.to === existing)) {
         continue
       }
 

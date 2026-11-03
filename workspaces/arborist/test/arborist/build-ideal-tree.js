@@ -5511,6 +5511,41 @@ t.test('unresolvable dep with multiple peer dependents reports the load failure 
   }
 })
 
+t.test('nests a required peer set below a failed optional ancestor', async t => {
+  for (const options of [{}, { strictPeerDeps: true }, { force: true }]) {
+    await t.test(JSON.stringify(options), async t => {
+      const registry = createRegistry(t, false)
+      const manifest = registry.manifest({ name: 'x', versions: ['1.0.0'] })
+      registry.nock.get('/x').reply(200, manifest).persist()
+      await registry.package({
+        manifest: registry.manifest({
+          name: 'a',
+          packuments: [{ version: '1.0.0', peerDependencies: { x: '1.0.0' } }],
+        }),
+      })
+      await registry.package({
+        manifest: registry.manifest({
+          name: 'z-wrapper',
+          packuments: [{ version: '1.0.0', dependencies: { a: '1.0.0' } }],
+        }),
+      })
+      const path = t.testdir({
+        'package.json': JSON.stringify({
+          dependencies: { 'z-wrapper': '1.0.0' },
+          optionalDependencies: { x: '999.0.0' },
+        }),
+      })
+      const tree = await buildIdeal(path, options)
+      const wrapper = tree.children.get('z-wrapper')
+      const nestedPeer = wrapper.children.get('x')
+      t.equal(nestedPeer.version, '1.0.0')
+      t.notOk(nestedPeer.inert)
+      t.equal(wrapper.children.get('a').edgesOut.get('x').to, nestedPeer)
+      t.ok(tree.children.get('x').inert)
+    })
+  }
+})
+
 t.test('unresolvable dep already placed in a peer set reports the load failure, not ERESOLVE', async t => {
   const registry = createRegistry(t, false)
 
