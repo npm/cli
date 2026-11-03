@@ -195,7 +195,7 @@ t.test('run shims', t => {
       windowsHide: true,
       shell: !isPowerShell,
       // Input is supplied inside -Command, not through the host's stdin.
-      ...(isPowerShell ? { stdio: ['ignore', 'pipe', 'pipe'] } : {}),
+      ...(isPowerShell ? { stdio: ['ignore', 'pipe', 'pipe'], timeout: 120_000 } : {}),
       ...opts,
     })
     if (stdioString) {
