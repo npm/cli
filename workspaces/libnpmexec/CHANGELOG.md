@@ -60,6 +60,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.3): `@npmcli/arborist@9.9.3`
 
+## [10.3.5](https://github.com/npm/cli/compare/libnpmexec-v10.3.4...libnpmexec-v10.3.5) (2026-11-03)
+### Bug Fixes
+* [`be744f4`](https://github.com/npm/cli/commit/be744f46408a9c881e1204f2aeaca118ddaf1886) [#10217](https://github.com/npm/cli/pull/10217) libnpmexec: escape inferred executable names for selected shell (#10217) (@github-actions[bot], @martinrrm, @Copilot)
+
 ## [10.3.1](https://github.com/npm/cli/compare/libnpmexec-v10.3.0...libnpmexec-v10.3.1) (2026-06-29)
 ### Bug Fixes
 * [`f3f2465`](https://github.com/npm/cli/commit/f3f246580c8fa136ec90c5b7d96b940a6f6a90b0) [#9692](https://github.com/npm/cli/pull/9692) exec: prevent shared binPaths pollution across workspace runs (#9692) (@github-actions[bot], @arjun-vegeta)

@@ -1,6 +1,6 @@
 {
   "name": "libnpmexec",
-  "version": "10.3.4",
+  "version": "10.3.5",
   "files": [
     "bin/",
     "lib/"
