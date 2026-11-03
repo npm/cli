@@ -23,6 +23,16 @@ const SHIM_EXTS = [...new Set(Object.keys(SHIMS).map(p => extname(p)))]
 const PACKAGE_NAME = 'test'
 const PACKAGE_VERSION = '1.0.0'
 const SCRIPT_NAME = 'args.js'
+const STDIN_CLI = `
+  setTimeout(() => {
+    console.error('stdin fixture timed out')
+    process.exit(1)
+  }, 30_000).unref()
+  require('node:readline').createInterface({ input: process.stdin }).once('line', input => {
+    console.log(JSON.stringify({ args: process.argv.slice(2), input }))
+    process.exit(0)
+  })
+`
 
 t.test('shim contents', t => {
   // these scripts should be kept in sync so this tests the contents of each
@@ -100,10 +110,21 @@ t.test('run shims', t => {
           bin: {
             'npm-prefix.js': `
               const { resolve } = require('path')
-              console.log(resolve(__dirname, '../../../global-prefix'))
+              console.log(process.env.NPM_SHIM_PREFIX || resolve(__dirname, '../../../global-prefix'))
             `,
             'npx-cli.js': `throw new Error('local npx should not be called')`,
             'npm-cli.js': `throw new Error('local npm should not be called')`,
+          },
+        },
+      },
+      // Test shim forwarding without run-script or npm exec consuming stdin.
+      'stdin-prefix': {
+        node_modules: {
+          npm: {
+            bin: {
+              'npm-cli.js': STDIN_CLI,
+              'npx-cli.js': STDIN_CLI,
+            },
           },
         },
       },
@@ -114,14 +135,7 @@ t.test('run shims', t => {
           console.error('shim failure')
           process.exit(7)
         }
-        if (process.argv[2] === 'stdin') {
-          require('node:readline').createInterface({ input: process.stdin }).once('line', line => {
-            console.log(line)
-            process.exit(0)
-          })
-        } else {
-          process.argv.slice(2).forEach((arg) => console.log(arg))
-        }
+        process.argv.slice(2).forEach((arg) => console.log(arg))
       `,
       'stderr.js': `console.error('shim stderr')`,
       'fail.js': `console.error('shim failure')\nprocess.exit(7)`,
@@ -146,7 +160,8 @@ t.test('run shims', t => {
   // this test passes the full windows suite at least 3 consecutive times.
   t.teardown(() => moveRemove(join(path, 'node.exe')))
 
-  const spawnPath = (cmd, args, { log, stdioString = true, file = false, ...opts } = {}) => {
+  const spawnPath = (cmd, args,
+    { log, stdioString = true, file = false, prefix, ...opts } = {}) => {
     if (cmd.endsWith('bash.exe')) {
       // only cygwin *requires* the -l, but the others are ok with it
       args.unshift('-l')
@@ -169,6 +184,7 @@ t.test('run shims', t => {
         npm_config_update_notifier: 'false',
         npm_config_cache: join(path, 'cache'),
         NPM_SHIM_ARG: 'expanded value',
+        NPM_SHIM_PREFIX: prefix,
       },
       cwd: path,
       windowsHide: true,
@@ -275,7 +291,10 @@ t.test('run shims', t => {
   const matchCmd = (t, cmd, bin, match, params, expected, resultMatch = {},
     { file = false, pipelineInput } = {}) => {
     const args = []
-    const opts = { file, ...(pipelineInput ? { timeout: 60_000 } : {}) }
+    const opts = {
+      file,
+      ...(pipelineInput ? { timeout: 60_000, prefix: join(path, 'stdin-prefix') } : {}),
+    }
 
     switch (basename(cmd).toLowerCase()) {
       case 'cmd.exe':
@@ -337,8 +356,8 @@ t.test('run shims', t => {
     { bin: 'npm', params: ['test', '--', 'hello world'], expected: 'hello world', spawnOpts: { file: true }, powershellOnly: true },
     { bin: 'npm', params: ['run', 'fail'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, spawnOpts: { file: true }, powershellOnly: true },
     { bin: 'npx', params: ['.', 'exit-7'], expected: '', resultMatch: { status: 7, stderr: /shim failure/ }, spawnOpts: { file: true }, powershellOnly: true },
-    { bin: 'npm', params: ['test -- stdin'], expected: 'shim input', spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
-    { bin: 'npx', params: ['. stdin'], expected: 'shim input', spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
+    { bin: 'npm', params: ['stdin'], expected: JSON.stringify({ args: ['stdin'], input: 'shim input' }), spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
+    { bin: 'npx', params: ['stdin'], expected: JSON.stringify({ args: ['stdin'], input: 'shim input' }), spawnOpts: { pipelineInput: 'shim input' }, powershellOnly: true },
   ]
 
   // ensure that all tests are either run or skipped
