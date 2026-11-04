@@ -5,7 +5,7 @@ const { Writable } = require('node:stream')
 const os = require('node:os')
 const t = require('tap')
 const fsMiniPass = require('fs-minipass')
-const { output, time } = require('proc-log')
+const { input, output, time } = require('proc-log')
 const errorMessage = require('../../../lib/utils/error-message.js')
 const ExecCommand = require('../../../lib/commands/exec.js')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
@@ -390,6 +390,28 @@ t.test('update notification - shows even with loglevel error', async (t) => {
 
   t.match(logs.notice, ['you should update npm!'])
   t.equal(notificationShown, true)
+})
+
+t.test('update notification - resumes paused logging on an uncaught error', async (t) => {
+  const { logs, npm } = await mockExitHandler(t, {
+    config: { loglevel: 'error', progress: false },
+  })
+  let notificationShown = false
+  npm.updateNotification = {
+    message: 'you should update npm!',
+    onShown: () => {
+      t.match(logs.notice, ['you should update npm!'], 'notice is emitted before recording it')
+      notificationShown = true
+    },
+  }
+
+  const exiting = new Promise(res => process.once('exit', res))
+  input.start()
+  process.emit('uncaughtException', err('editor could not start', 'ENOENT'))
+  await exiting
+
+  t.equal(notificationShown, true)
+  t.equal(process.exitCode, 1, 'uncaught error still causes a failing exit')
 })
 
 t.test('update notification - drains stderr before recording it as shown', async (t) => {
