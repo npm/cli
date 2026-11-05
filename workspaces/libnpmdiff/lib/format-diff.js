@@ -112,7 +112,7 @@ const formatDiff = async ({ files, opts = {}, refs, versions }) => {
     }
   }
 
-  return res.trim()
+  return res.replace(/\n$/, '')
 }
 
 module.exports = formatDiff
