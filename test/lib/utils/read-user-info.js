@@ -150,3 +150,29 @@ t.test('silent metadata is passed correctly by read-user-info', async (t) => {
   await readUserInfo.password('Password: ')
   t.equal(readOpts?.silent, true, 'password prompt should set silent: true')
 })
+
+t.test('redirected stderr keeps terminal mode from stdin', async (t) => {
+  t.teardown(() => {
+    readResult = null
+    readOpts = null
+  })
+
+  const prevStdin = Object.getOwnPropertyDescriptor(process.stdin, 'isTTY')
+  Object.defineProperty(process.stdin, 'isTTY', { configurable: true, value: true })
+  t.teardown(() => {
+    if (prevStdin) {
+      Object.defineProperty(process.stdin, 'isTTY', prevStdin)
+    } else {
+      delete process.stdin.isTTY
+    }
+  })
+
+  readResult = 'secret-password'
+  const password = await readUserInfo.password('Password: ')
+  t.equal(password, 'secret-password', 'should return password')
+  t.match(readOpts, {
+    silent: true,
+    output: process.stderr,
+    terminal: true,
+  }, 'terminal mode follows stdin even when output is stderr')
+})

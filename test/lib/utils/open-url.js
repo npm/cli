@@ -153,6 +153,18 @@ t.test('open url prompt', async t => {
     t.strictSame(outputErrors, [], 'nothing written to stderr')
   })
 
+  t.test('repeats the url on stderr in json mode when stdout is piped', async t => {
+    const { OUTPUT, outputErrors, openerUrl, readlineOutput } = await mockOpenUrlPrompt(t, {
+      browser: false,
+      json: true,
+      stdoutTTY: false,
+    })
+    t.equal(readlineOutput, null, 'browser disabled so no prompt')
+    t.equal(openerUrl, null, 'did not open')
+    t.match(OUTPUT, 'https://www.npmjs.com', 'url still buffered as json on stdout')
+    t.match(outputErrors.join('\n'), 'npm home:\nhttps://www.npmjs.com', 'url visible on stderr in json mode')
+  })
+
   t.test('does not prompt when stderr is not a TTY', async t => {
     const { openerUrl, openerOpts, readlineOutput } = await mockOpenUrlPrompt(t, {
       browser: true,
