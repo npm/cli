@@ -36,15 +36,44 @@ npm approve-scripts --all
 npm approve-scripts --allow-scripts-pending
 ```
 
-`<pkg>` matches every installed version of that package. By default the
-command writes pinned entries (`pkg@1.2.3`), which keep their approval
-narrowed to the specific version you reviewed. Pass `--no-allow-scripts-pin` to write
-name-only entries that allow any future version.
+For registry dependencies, `<pkg>` matches every installed version and
+`<pkg@range>` can narrow the selection. By default the command writes pinned
+entries (`pkg@1.2.3`), which keep their approval narrowed to the specific
+version you reviewed. Pass `--no-allow-scripts-pin` to write name-only entries
+that allow any future version.
 
-`--all` approves every package with unreviewed install scripts in one go.
+Non-registry package names and versions are not trusted policy identities.
+A bare installed name can select non-registry dependencies only when every
+match shares one trust anchor. Different remote URLs, file sources, or hosted
+repositories are separate trust anchors, while multiple commits from one
+hosted repository share an anchor. If a name is ambiguous, approval fails and
+lists exact source selectors. Re-run with one of those selectors, also shown
+by `--allow-scripts-pending`. Version and range selectors do not select
+non-registry dependencies.
+
+For a direct remote tarball, approval writes the exact `resolved` URL from
+`package-lock.json`, not the package name inside the tarball. For example,
+approving a dependency installed from `https://example.com/tool.tgz` writes
+`"https://example.com/tool.tgz": true`. The URL remains exact even with
+`--no-allow-scripts-pin`.
+
+For file tarballs and linked directories, approval writes the exact resolved
+file spec from `package-lock.json` (for example,
+`"file:../packages/logger": true`). File identities stay exact with
+`--no-allow-scripts-pin`.
+
+For a hosted git dependency, approval writes the hosted repository shortcut
+with the resolved committish (for example, `github:org/repo#abc1234`).
+With `--no-allow-scripts-pin`, npm drops the committish and broadens approval
+to the hosted repository (`github:org/repo`).
+
+`--all` explicitly approves every package with unreviewed install scripts,
+including distinct sources that share an installed name.
 
 `--allow-scripts-pending` is read-only: it lists every package whose install scripts
 are not yet covered by `allowScripts`, without modifying `package.json`.
+Non-registry entries show the installed name followed by the exact source
+selector in brackets.
 
 `approve-scripts` honours the asymmetric pin rule: if you re-approve a
 package whose installed version has changed, the existing pin is rewritten
@@ -85,6 +114,7 @@ npm approve-scripts --allow-scripts-pending
 ### See Also
 
 * [npm deny-scripts](/commands/npm-deny-scripts)
+* [npm install-scripts](/commands/npm-install-scripts)
 * [npm install](/commands/npm-install)
 * [npm rebuild](/commands/npm-rebuild)
 * [package.json](/configuring-npm/package-json)

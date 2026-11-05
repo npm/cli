@@ -1,4 +1,4 @@
-const { resolve, sep } = require('node:path')
+const { dirname, resolve, sep } = require('node:path')
 const npa = require('npm-package-arg')
 const semver = require('semver')
 const versionFromTgz = require('./version-from-tgz.js')
@@ -20,7 +20,8 @@ const versionFromTgz = require('./version-from-tgz.js')
 //     come from the tarball's own package.json and are therefore
 //     attacker-controlled. A package can publish a tarball claiming any
 //     name; the only trusted name is the one baked into the registry URL.
-//   - tarball / file / link / remote: exact match on node.resolved
+//   - tarball / file / link / remote: exact resolver identity from
+//     package-lock.json
 //   - git: match on hosted.ssh() plus a short-SHA prefix of the
 //     resolved committish
 
@@ -117,40 +118,101 @@ const isStoreBacked = (node) => {
   return false
 }
 
-const resolvedSourceSpecs = (node) => {
-  const specs = []
-  const seen = new Set()
-  const add = (spec) => {
-    if (typeof spec !== 'string' || spec === '' || seen.has(spec)) {
+const resolvedSourceEntries = (node) => {
+  const entries = new Map()
+  const add = (spec, where) => {
+    if (typeof spec !== 'string' || spec === '') {
       return
     }
-    seen.add(spec)
-    specs.push(spec)
+    const key = `${where}\0${spec}`
+    entries.set(key, { spec, where })
   }
 
-  add(node?.resolved)
+  const root = node?.root?.path || process.cwd()
+  add(node?.resolved, root)
 
   if (!node?.resolved && !isStoreBacked(node) &&
       node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
-    let hasIncomingLink = false
     for (const link of node.linksIn) {
-      hasIncomingLink = true
-      add(link.resolved)
-    }
-
-    if (hasIncomingLink) {
-      // Link targets for local directory deps are separate inventory nodes
-      // whose own `resolved` is null. The incoming Link carries the saved spec
-      // (for example `file:../pkg`, relative to node_modules), while policy
-      // entries written by hand often use the dependency spec from package.json
-      // (for example `file:pkg`, resolved by npa to this target path). Include
-      // the real target paths so both forms can match the same local dep.
-      add(node.realpath)
-      add(node.path)
+      add(link.resolved, typeof link?.path === 'string' ? dirname(link.path) : root)
     }
   }
 
-  return specs
+  return [...entries.values()]
+}
+
+const resolvedSourceSpecs = (node) => resolvedSourceEntries(node).map(({ spec }) => spec)
+
+const isFileSpec = (spec, where) => {
+  /* istanbul ignore if: filePolicyIdentities filters these values before calling */
+  if (typeof spec !== 'string' || spec === '') {
+    return false
+  }
+  try {
+    const parsed = npa(spec, where)
+    return parsed.type === 'file' || parsed.type === 'directory'
+  } catch {
+    return false
+  }
+}
+
+const lockfileEntry = (node) => {
+  const meta = node?.root?.meta
+  if (!node?.path || typeof meta?.get !== 'function') {
+    return undefined
+  }
+  return meta.get(node.path)
+}
+
+// Return exact file identities from package-lock metadata. Arborist's
+// Link.resolved is synthesized relative to node_modules, so Link targets must
+// read each incoming Link's lockfile entry instead.
+const filePolicyIdentities = (node) => {
+  const identities = new Set()
+  const where = node?.root?.path || process.cwd()
+  const add = (spec, link = false) => {
+    if (typeof spec !== 'string' || spec === '') {
+      return
+    }
+    const identity = link && !spec.startsWith('file:') ? `file:${spec}` : spec
+    if (isFileSpec(identity, where)) {
+      identities.add(identity)
+    }
+  }
+
+  const ownEntry = lockfileEntry(node)
+  if (ownEntry?.resolved !== undefined) {
+    add(ownEntry.resolved, ownEntry.link)
+  } else if (!node?.isLink && !isStoreBacked(node)) {
+    // Plain fixtures and callers without Arborist lockfile metadata still
+    // carry the resolver identity directly on ordinary Nodes. Store-backed
+    // nodes cannot use this fallback because their resolved value may be an
+    // internal `.store` link rather than the package's source.
+    add(node?.resolved)
+  }
+
+  if (!node?.resolved && !isStoreBacked(node) &&
+      node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+    for (const link of node.linksIn) {
+      const entry = lockfileEntry(link)
+      add(entry?.resolved, entry?.link)
+    }
+  }
+
+  return [...identities]
+}
+
+// `undefined` means no file identity exists. `null` means multiple exact
+// resolver identities reach one target, so writers must not choose one.
+const filePolicyIdentity = (node) => {
+  const identities = filePolicyIdentities(node)
+  if (identities.length === 0) {
+    return undefined
+  }
+  if (identities.length === 1) {
+    return identities[0]
+  }
+  return null
 }
 
 const matchRegistry = (node, parsed, failClosed) => {
@@ -369,23 +431,58 @@ const matchGit = (node, parsed) => {
 }
 
 const matchFileOrDir = (node, parsed) => {
-  // consistentResolve stores local sources as `file:` plus npa's absolute,
-  // platform-native fetchSpec.
-  const absoluteFileSpec = parsed.fetchSpec && `file:${parsed.fetchSpec}`
-  return resolvedSourceSpecs(node)
-    .some(resolved =>
-      resolved === parsed.saveSpec ||
-      resolved === parsed.fetchSpec ||
-      resolved === absoluteFileSpec
-    )
+  const identities = filePolicyIdentities(node)
+  if (identities.includes(parsed.raw)) {
+    return true
+  }
+
+  const where = node?.root?.path || process.cwd()
+  const sources = resolvedSourceEntries(node)
+  const paths = new Set()
+  let hasFileSource = false
+  let hasDirectoryLinkSource = false
+  for (const identity of identities) {
+    paths.add(npa(identity, where).fetchSpec)
+  }
+  for (const { spec: source, where: sourceWhere } of sources) {
+    try {
+      const sourceParsed = npa(source, sourceWhere)
+      if (sourceParsed.type === 'file' || sourceParsed.type === 'directory') {
+        hasFileSource = true
+        hasDirectoryLinkSource ||= sourceParsed.type === 'directory' && sourceWhere !== where
+        if (source === parsed.raw ||
+            source === parsed.saveSpec ||
+            source === parsed.fetchSpec ||
+            source === `file:${parsed.fetchSpec}`) {
+          return true
+        }
+        paths.add(sourceParsed.fetchSpec)
+      }
+    } catch {
+      continue
+    }
+  }
+  if (!node?.resolved && hasDirectoryLinkSource) {
+    for (const path of [node?.path, node?.realpath]) {
+      if (path) {
+        paths.add(path)
+      }
+    }
+  }
+  if (!hasFileSource && identities.length === 0) {
+    return false
+  }
+  return paths.has(parsed.fetchSpec)
 }
 
 const matchRemote = (node, parsed) => {
-  return resolvedSourceSpecs(node)
-    .some(resolved => resolved === parsed.fetchSpec || resolved === parsed.saveSpec)
+  return node?.resolved === parsed.fetchSpec || node?.resolved === parsed.saveSpec
 }
 
 const isRegistryNode = (node) => {
+  if (filePolicyIdentities(node).length > 0) {
+    return false
+  }
   // Prefer arborist's edge-based check when available (real Node objects).
   // It inspects the incoming edges' specs and only returns true if every
   // edge resolves to a registry spec, which is much harder to spoof than
@@ -434,6 +531,8 @@ module.exports = isScriptAllowed
 module.exports.isScriptAllowed = isScriptAllowed
 module.exports.matches = matches
 module.exports.isExactVersionDisjunction = isExactVersionDisjunction
+module.exports.filePolicyIdentities = filePolicyIdentities
+module.exports.filePolicyIdentity = filePolicyIdentity
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
 module.exports.resolvedSourceSpecs = resolvedSourceSpecs
 module.exports.matchFileOrDir = matchFileOrDir

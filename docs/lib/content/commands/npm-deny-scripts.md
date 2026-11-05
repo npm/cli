@@ -25,16 +25,29 @@ npm deny-scripts <pkg> [<pkg> ...]
 npm deny-scripts --all
 ```
 
-`<pkg>` matches every installed version of that package. Denies are always
-written name-only (`"pkg": false`), regardless of `--allow-scripts-pin`. Pinning a deny
-to a specific version would silently re-allow scripts for any other version
-of the same package, which defeats the purpose; the command picks the
-safer default for you.
+`<pkg>` selects installed dependencies by their displayed package name.
+Registry-package denials are written name-only (`"pkg": false`), regardless
+of `--allow-scripts-pin`, so a future registry version does not silently
+regain script permission. Direct remote tarballs are denied by their exact
+`resolved` URL (for example, `"https://registry.example/pkg.tgz": false`),
+file dependencies by their resolved file spec (for example,
+`"file:../packages/logger": false`), and hosted git dependencies by the hosted
+repository shortcut without a committish (for example,
+`"github:org/repo": false`). Tarball-reported package names are never used
+as policy identities. Linked directories use the exact resolved file spec
+from `package-lock.json`.
+
+A bare installed name denies every matching non-registry source. To select
+only one source when several share a name, pass its exact selector from
+`npm install-scripts ls`. Remote and file denials stay exact; a selected
+hosted-git dependency is denied at the repository level. Non-registry version
+and range selectors are not supported because those versions come from the
+dependency itself.
 
 `--all` denies every package with unreviewed install scripts.
 
 If a `true` (pinned or name-only) entry exists for a package and you then
-deny it, the existing allow entries are removed so the name-only deny is
+deny it, the existing allow entries are removed so the denial entry is
 unambiguous.
 
 ### Examples
@@ -54,5 +67,6 @@ npm deny-scripts --all
 ### See Also
 
 * [npm approve-scripts](/commands/npm-approve-scripts)
+* [npm install-scripts](/commands/npm-install-scripts)
 * [npm install](/commands/npm-install)
 * [package.json](/configuring-npm/package-json)
