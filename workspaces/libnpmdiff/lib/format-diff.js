@@ -112,7 +112,9 @@ const formatDiff = async ({ files, opts = {}, refs, versions }) => {
     }
   }
 
-  return res.trim()
+  // Drop only the patch's final newline. String#trim also removes a trailing
+  // blank context line (a single space), which corrupts the last hunk counts.
+  return res.replace(/\n$/, '')
 }
 
 module.exports = formatDiff
