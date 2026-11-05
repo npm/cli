@@ -300,7 +300,6 @@ t.test('json output redacts by default', async t => {
     'inline redact: false preserves uuid values')
 })
 
-
 t.test('split-stream silent prompt newline goes to stderr', async t => {
   const { input, outputs, outputErrors, clearOutput, META } = await mockDisplay(t)
 
