@@ -620,4 +620,3 @@ t.test('global mode is rejected before serialization', async t => {
     })
   }
 })
-
