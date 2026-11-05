@@ -300,6 +300,42 @@ t.test('json output redacts by default', async t => {
     'inline redact: false preserves uuid values')
 })
 
+
+t.test('split-stream silent prompt newline goes to stderr', async t => {
+  const { input, outputs, outputErrors, clearOutput, META } = await mockDisplay(t)
+
+  clearOutput()
+  // Simulate a password prompt while stdout is being captured separately.
+  // META is required so Display's withMeta treats `silent` as event metadata
+  // (same shape read-user-info uses).
+  const result = await input.read(
+    () => Promise.resolve('secret-password'),
+    { [META]: true, silent: true }
+  )
+  t.equal(result, 'secret-password')
+  t.strictSame(outputs, [], 'silent completion must not write a newline to stdout')
+  // mock-logs trims the trailing newline, so a bare newline becomes ''.
+  t.ok(
+    outputErrors.includes(''),
+    `silent completion writes a terminating newline to stderr; got ${JSON.stringify(outputErrors)}`
+  )
+})
+
+t.test('split-stream cancelled prompt newline goes to stderr', async t => {
+  const { input, outputs, outputErrors, clearOutput } = await mockDisplay(t)
+
+  clearOutput()
+  await t.rejects(
+    input.read(() => Promise.reject(new Error('SIGINT'))),
+    { message: 'SIGINT' }
+  )
+  t.strictSame(outputs, [], 'cancel must not write a newline to stdout')
+  t.ok(
+    outputErrors.includes(''),
+    `cancel writes a terminating newline to stderr; got ${JSON.stringify(outputErrors)}`
+  )
+})
+
 t.test('prompt functionality', async t => {
   t.test('regular prompt completion works', async t => {
     const { input } = await mockDisplay(t)
