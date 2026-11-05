@@ -46,6 +46,10 @@ jobs:
     outputs:
       nodeVersion: ${{ steps.build-nodejs.outputs.nodeVersion }}
     steps:
+      - name: setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
       - name: setup ccache
         uses: Chocobo1/setup-ccache-action@v1
         with:
@@ -59,28 +63,33 @@ jobs:
           sourceDir="${RUNNER_TEMP}/src"
           targetDir="${RUNNER_TEMP}/build"
           npmFile="${RUNNER_TEMP}/npm.tgz"
+          nodeSourceFile="${RUNNER_TEMP}/node-source.tgz"
           sourceFile="${RUNNER_TEMP}/source.tgz"
           targetFile="${RUNNER_TEMP}/build.tgz"
+          curlArgs=(--fail --show-error --silent --location --retry 5 --retry-all-errors --retry-delay 5)
           echo "::endgroup::"
 
           echo "::group::finding nodejs version matching ${{ inputs.nodeVersion }}"
           if [[ "${{ inputs.nodeVersion }}" == "nightly" ]]; then
-            nodeVersion=$(curl -sSL https://nodejs.org/download/nightly/index.json | jq -r .[0].version)
+            nodeIndex=$(curl "${curlArgs[@]}" https://nodejs.org/download/nightly/index.json)
+            nodeVersion=$(jq -r 'map(select(.files | index("src")))[0].version // empty' <<< "$nodeIndex")
             nodeUrl="https://nodejs.org/download/nightly/${nodeVersion}/node-${nodeVersion}.tar.gz"
           else
-            nodeVersion=$(curl -sSL https://nodejs.org/download/release/index.json | jq -r 'map(select(.version | test("^v${{ inputs.nodeVersion }}"))) | .[0].version')
-            if [[ -z "$nodeVersion" ]]; then
-              echo "::error ::unable to find released nodejs version matching: ${{ inputs.nodeVersion }}"
-              exit 1
-            fi
+            nodeIndex=$(curl "${curlArgs[@]}" https://nodejs.org/download/release/index.json)
+            nodeVersion=$(jq -r 'map(select((.version | test("^v${{ inputs.nodeVersion }}")) and (.files | index("src"))))[0].version // empty' <<< "$nodeIndex")
             nodeUrl="https://nodejs.org/download/release/${nodeVersion}/node-${nodeVersion}.tar.gz"
+          fi
+          if [[ -z "$nodeVersion" ]]; then
+            echo "::error ::unable to find nodejs version with source matching: ${{ inputs.nodeVersion }}"
+            exit 1
           fi
           echo "nodeVersion=${nodeVersion}" >> $GITHUB_OUTPUT
           echo "::endgroup::"
 
           echo "::group::extracting source from $nodeUrl"
           mkdir -p "$sourceDir"
-          curl -sSL "$nodeUrl" | tar xz -C "$sourceDir" --strip=1
+          curl "${curlArgs[@]}" "$nodeUrl" --output "$nodeSourceFile"
+          tar xzf "$nodeSourceFile" -C "$sourceDir" --strip=1
           echo "::endgroup::"
 
           echo "::group::cloning npm"
@@ -127,7 +136,7 @@ jobs:
           echo "::group::building nodejs"
           mkdir -p "$targetDir"
           pushd "$sourceDir" >/dev/null
-          ./configure --prefix="$targetDir"
+          python3 ./configure --prefix="$targetDir"
           make -j4 install
           popd >/dev/null
           echo "::endgroup::"
@@ -151,6 +160,10 @@ jobs:
     needs:
       - build-nodejs
     steps:
+      - name: setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
       - name: setup ccache
         uses: Chocobo1/setup-ccache-action@v1
         with:
@@ -163,8 +176,18 @@ jobs:
         run: |
           set -e
           tar xf source.tgz
-          ./configure
-          make -j4 test-only
+          python3 ./configure
+          # Node tests can make inherited stdout nonblocking, breaking Python header installs.
+          exitcode=0
+          make -j4 test-only > "${RUNNER_TEMP}/nodejs-test.log" 2>&1 || exitcode=$?
+          cat "${RUNNER_TEMP}/nodejs-test.log"
+          exit "$exitcode"
+      - name: upload Node.js test log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: nodejs-test-${{ needs.build-nodejs.outputs.nodeVersion }}
+          path: ${{ runner.temp }}/nodejs-test.log
 
   test-npm:
     name: test npm
@@ -211,6 +234,9 @@ jobs:
           node . link
           echo "::endgroup::"
 
+          workspaces=$(npm query .workspace)
+          workspaces=$(jq -r '.[].name' <<< "$workspaces")
+
           STEPEXIT=0
           FINALEXIT=0
 
@@ -220,17 +246,17 @@ jobs:
           STEPEXIT=$?
           if [[ $STEPEXIT -ne 0 ]]; then
             echo "::warning ::npm test failed, exit: $STEPEXIT"
-            FINALEXIT=STEPEXIT
+            FINALEXIT=$STEPEXIT
           fi
           echo "::endgroup::"
 
-          for workspace in $(npm query .workspace | jq -r .[].name); do
+          for workspace in $workspaces; do
             echo "::group::npm test -w $workspace"
             node . test -w $workspace --if-present --ignore-scripts
             STEPEXIT=$?
             if [[ $STEPEXIT -ne 0 ]]; then
               echo "::warning ::npm test -w $workspace failed, exit: $STEPEXIT"
-              FINALEXIT=STEPEXIT
+              FINALEXIT=$STEPEXIT
             fi
             echo "::endgroup::"
           done
@@ -246,6 +272,7 @@ jobs:
       - name: install dependencies
         run: |
           npm install --no-save --no-audit --no-fund citgm npm-package-arg
+          node -p '"citgm@" + require("citgm/package.json").version'
       - name: generate matrix
         id: generate-matrix
         uses: actions/github-script@v9
@@ -340,6 +367,7 @@ jobs:
                 package,
                 version: context.version,
                 env,
+                native: [].concat(meta.tags || []).includes('native'),
                 install_flags: install_flags.join(' '),
                 commands: [...test],
                 flaky: matchesKeyword(meta.flaky) || supplementalFlaky.includes(package),
@@ -395,7 +423,10 @@ jobs:
             export GIT_SSH_COMMAND="ssh -oBatchMode=yes"
             git clone --recurse-submodules "${{ matrix.repo }}" "$TARGET_DIR"
           elif [[ -n "${{ matrix.url }}" ]]; then
-            curl -sSL "${{ matrix.url }}" | tar xz -C "$TARGET_DIR" --strip=1
+            SOURCE_FILE="${RUNNER_TEMP}/citgm-source.tgz"
+            curl --fail --show-error --silent --location --retry 5 --retry-delay 5 \
+              --write-out 'HTTP %{http_code}\n' --output "$SOURCE_FILE" "${{ matrix.url }}"
+            tar xzf "$SOURCE_FILE" -C "$TARGET_DIR" --strip=1
           fi
 
           if [[ -f "${TARGET_DIR}/package-lock.json" ]]; then
@@ -404,10 +435,15 @@ jobs:
           fi
       - name: npm install ${{ matrix.install_flags }}
         id: npm-install
+        env: ${{ matrix.env }}
         working-directory: ${{ steps.download.outputs.target }}
         run: |
           set +e
           export npm_package_config_node_gyp_nodedir="${{ steps.install.outputs.nodedir }}"
+          if [[ "${{ matrix.native }}" == "true" ]]; then
+            # Older fixture node-gyp versions only read npm_config_nodedir.
+            export npm_config_nodedir="$npm_package_config_node_gyp_nodedir"
+          fi
           npm install ${{ matrix.install_flags }}
           exitcode=$?
           if [[ $exitcode -ne 0 && "${{ matrix.knownFailure }}" == "true" ]]; then
@@ -447,6 +483,9 @@ jobs:
           STEPEXIT=0
 
           export npm_package_config_node_gyp_nodedir="${{ steps.install.outputs.nodedir }}"
+          if [[ "${{ matrix.native }}" == "true" ]]; then
+            export npm_config_nodedir="$npm_package_config_node_gyp_nodedir"
+          fi
 
           # inlining some patches to make tests run
           if [[ "${{ matrix.package }}" == "undici" ]]; then
