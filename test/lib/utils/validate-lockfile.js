@@ -131,6 +131,19 @@ t.test('extra inventory items on idealTree', async t => {
   )
 })
 
+t.test('inert items on idealTree missing from virtualTree', async t => {
+  const errors = validateLockfile(
+    new Map([
+      ['foo', { name: 'foo', version: '1.0.0' }],
+    ]),
+    new Map([
+      ['foo', { name: 'foo', version: '1.0.0' }],
+      ['bar', { name: 'bar', version: '', inert: true }],
+    ])
+  )
+  t.strictSame(errors, [], 'failed optional deps are not reported as missing')
+})
+
 t.test('extra inventory items on virtualTree', async t => {
   t.matchSnapshot(
     validateLockfile(
