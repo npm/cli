@@ -164,6 +164,27 @@ t.test('uses actualTree when idealTreeOpts is not provided (rebuild path)', asyn
   )
 })
 
+t.test('only rebuild preflight can recover a stale script flag from installed metadata', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'pkg', version: '1.0.0', gypfile: false }),
+  })
+  const pending = tree([{
+    ...node({ scripts: {} }),
+    path,
+    hasInstallScript: true,
+  }])
+  const npm = { flatOptions: { strictAllowScripts: true } }
+  await t.rejects(preflight({
+    arb: makeArb({ ideal: pending }),
+    npm,
+    idealTreeOpts: {},
+  }), { code: 'ESTRICTALLOWSCRIPTS' }, 'incoming metadata remains unreviewed')
+  await t.resolves(preflight({
+    arb: makeArb({ actual: pending }),
+    npm,
+  }), 'rebuild can inspect the installed package')
+})
+
 t.test('error message includes script bodies', async t => {
   const arb = makeArb({
     ideal: tree([node({ name: 'canvas', version: '2.11.0', scripts: { install: 'node-gyp rebuild' } })]),

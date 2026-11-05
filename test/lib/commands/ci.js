@@ -49,6 +49,66 @@ const abbrev = {
   test: 'test file',
 }
 
+t.test('ci respects gypfile:false in installed package data', async t => {
+  require('../../fixtures/tspawk')(t)
+  const cases = [
+    { name: 'default policy' },
+    { name: 'stale presence flag', hasInstallScript: true },
+    { name: 'approved', allowScripts: { 'abbrev@1.0.0': true } },
+    { name: 'bypass', config: { 'dangerously-allow-all-scripts': true } },
+    { name: 'ignored', config: { 'ignore-scripts': true } },
+    { name: 'strict', config: { 'strict-allow-scripts': true } },
+  ]
+  for (const lockfileVersion of [2, 3]) {
+    for (const { name, config, allowScripts, hasInstallScript } of cases) {
+      await t.test(`v${lockfileVersion}: ${name}`, async t => {
+        const lock = {
+          ...packageLock,
+          lockfileVersion,
+          packages: {
+            ...packageLock.packages,
+            'node_modules/abbrev': {
+              ...packageLock.packages['node_modules/abbrev'],
+              ...(hasInstallScript ? { hasInstallScript } : {}),
+            },
+          },
+        }
+        if (lockfileVersion === 3) {
+          delete lock.dependencies
+        }
+        const { npm, registry, logs } = await loadMockNpm(t, {
+          config: { audit: false, ...config },
+          prefixDir: {
+            'package.json': JSON.stringify({ ...packageJson, allowScripts }),
+            'package-lock.json': JSON.stringify(lock),
+            node_modules: { stale: 'removed by ci' },
+            abbrev: {
+              'package.json': JSON.stringify({ name: 'abbrev', version: '1.0.0', gypfile: false }),
+              'binding.gyp': '',
+            },
+          },
+        })
+        const manifest = registry.manifest({ name: 'abbrev' })
+        await registry.tarball({
+          manifest: manifest.versions['1.0.0'],
+          tarball: path.join(npm.prefix, 'abbrev'),
+        })
+        await npm.exec('ci', [])
+
+        t.ok(fs.existsSync(path.join(npm.prefix, 'node_modules/abbrev/binding.gyp')),
+          'installs the native package')
+        t.notOk(fs.existsSync(path.join(npm.prefix, 'node_modules/stale')), 'cleans node_modules')
+        t.strictSame(logs.warn.byTitle('install-scripts'), [], 'no blocked-script warning')
+        t.strictSame(
+          JSON.parse(fs.readFileSync(path.join(npm.prefix, 'package-lock.json'), 'utf8')),
+          lock,
+          'ci does not rewrite the project lockfile'
+        )
+      })
+    }
+  }
+})
+
 t.test('reifies, but doesn\'t remove node_modules because --dry-run', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: {

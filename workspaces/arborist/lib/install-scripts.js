@@ -41,12 +41,35 @@ const hasNonRegistryShape = (node) => {
   return !/^https?:\/\/[^/]+\/.+\/-\/[^/]+-\d/.test(node.resolved)
 }
 
-const getInstallScripts = async (node) => {
+const getInstallScripts = async (node, { readFromDisk = true } = {}) => {
   /* istanbul ignore next: arborist Nodes always carry a `package` object;
      defensive fallbacks for non-arborist callers. */
   const pkg = node.package || {}
-  /* istanbul ignore next */
-  const scripts = pkg.scripts || {}
+  let scripts = pkg.scripts || {}
+  let { gypfile } = pkg
+  const includePrepare = hasNonRegistryShape(node)
+  const anyScript = scripts.preinstall || scripts.install || scripts.postinstall ||
+    (includePrepare && scripts.prepare)
+  let isGyp = readFromDisk && !scripts.preinstall && !scripts.install && gypfile !== false &&
+    await isNodeGypPackage(node.path).catch(() => false)
+  let recoveredOptOut = false
+
+  // Preflight cannot trust an older package at this path, even if its
+  // name and version match. Only installed-tree callers recover metadata.
+  if (readFromDisk && (isGyp || !anyScript && node.hasInstallScript === true)) {
+    const { content } = await PackageJson.normalize(node.path)
+      .catch(() => ({ content: null }))
+    const matchesPackage = content && pkg.name && pkg.version &&
+      content.name === pkg.name && content.version === pkg.version
+    if (matchesPackage) {
+      scripts = { ...content.scripts, ...scripts }
+      gypfile = content.gypfile
+      recoveredOptOut = gypfile === false
+    } else if (node.hasInstallScript === true) {
+      isGyp = false
+    }
+  }
+
   const collected = {}
 
   if (scripts.preinstall) {
@@ -58,53 +81,18 @@ const getInstallScripts = async (node) => {
   if (scripts.postinstall) {
     collected.postinstall = scripts.postinstall
   }
-  if (scripts.prepare && hasNonRegistryShape(node)) {
+  if (scripts.prepare && includePrepare) {
     collected.prepare = scripts.prepare
   }
 
-  const hasExplicitGypGate = !!(collected.preinstall || collected.install)
-  if (
-    !hasExplicitGypGate &&
-    pkg.gypfile !== false &&
-    await isNodeGypPackage(node.path).catch(() => false)
-  ) {
+  if (isGyp && gypfile !== false && !scripts.preinstall && !scripts.install) {
     collected.install = 'node-gyp rebuild'
   }
 
-  // Lockfile-only nodes carry `hasInstallScript: true` but no enumerated
-  // scripts: the lockfile records the presence flag, not the script bodies,
-  // so `node.package.scripts` is empty on a lockfile-driven install (`npm ci`,
-  // a repeat `npm install`). Before giving up, read the installed
-  // package.json from disk to recover the real script bodies. Builder#addToBuildSet
-  // does the same disk read to decide what to run, but unlike that path this
-  // one is read-only: we never mutate `node.package`.
-  if (Object.keys(collected).length === 0 && node.hasInstallScript === true) {
-    const { content } = await PackageJson.normalize(node.path)
-      .catch(() => ({ content: {} }))
-    /* istanbul ignore next: normalize resolves to an object with a scripts
-       object, or our catch fallback returns {}; defensive guard only. */
-    const diskScripts = content?.scripts || {}
-
-    if (diskScripts.preinstall) {
-      collected.preinstall = diskScripts.preinstall
-    }
-    if (diskScripts.install) {
-      collected.install = diskScripts.install
-    }
-    if (diskScripts.postinstall) {
-      collected.postinstall = diskScripts.postinstall
-    }
-    if (diskScripts.prepare && hasNonRegistryShape(node)) {
-      collected.prepare = diskScripts.prepare
-    }
-
-    // Still nothing. The package isn't on disk yet (e.g. `npm ci` before
-    // reify) or its package.json is unreadable. Emit a sentinel so the
-    // advisory and the strict-allow-scripts preflight still surface that
-    // install scripts are present.
-    if (Object.keys(collected).length === 0) {
-      collected.install = '(install scripts present)'
-    }
+  // A confirmed opt-out can disprove a stale flag left by native-build
+  // detection. Otherwise keep the flag visible, including before extraction.
+  if (Object.keys(collected).length === 0 && node.hasInstallScript === true && !recoveredOptOut) {
+    collected.install = '(install scripts present)'
   }
 
   return collected

@@ -64,6 +64,31 @@ t.test('throws when unreviewed scripts are present', async t => {
   )
 })
 
+t.test('does not trust an installed opt-out for an incoming package with the same identity', async t => {
+  for (const scripts of [{ postinstall: 'incoming script' }, {}]) {
+    await t.test(Object.keys(scripts).join(', ') || 'presence flag only', async t => {
+      const path = t.testdir({
+        'package.json': JSON.stringify({ name: 'pkg', version: '1.0.0', gypfile: false }),
+        'binding.gyp': '',
+      })
+      const arb = fakeArb({
+        inventory: new Map([['node_modules/pkg', {
+          name: 'pkg',
+          location: 'node_modules/pkg',
+          path,
+          resolved: 'file:incoming.tgz',
+          package: { name: 'pkg', version: '1.0.0', scripts },
+          hasInstallScript: true,
+        }]]),
+      })
+      await t.rejects(
+        strictAllowScriptsPreflight(arb, { strictAllowScripts: true }),
+        { code: 'ESTRICTALLOWSCRIPTS' }
+      )
+    })
+  }
+})
+
 t.test('resolves when the only unreviewed node is inert', async t => {
   // Inert deps (platform/engine-incompatible) are removed before any script
   // runs, so strict mode must not reject them (npm/cli#9562).

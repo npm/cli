@@ -18,6 +18,7 @@ const collectUnreviewedScripts = async ({
   ignoreScripts = false,
   dangerouslyAllowAllScripts = false,
   includeWhenIgnored = false,
+  readFromDisk = true,
 } = {}) => {
   // With ignore-scripts set, no scripts run, so execution callers bail out
   // here. approve/deny pass includeWhenIgnored so they keep listing
@@ -63,7 +64,7 @@ const collectUnreviewedScripts = async ({
       continue
     }
 
-    const scripts = await getInstallScripts(node)
+    const scripts = await getInstallScripts(node, { readFromDisk })
     if (Object.keys(scripts).length === 0) {
       continue
     }
