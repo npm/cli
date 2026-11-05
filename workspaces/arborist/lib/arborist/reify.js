@@ -707,8 +707,9 @@ module.exports = cls => class Reifier extends cls {
       // Do the best with what we have, or else remove it from the tree
       // entirely, since we can't possibly reify it.
       let res = null
+      let resolved = node.resolved
       if (node.resolved) {
-        const resolved = registryResolved(node.resolved, this.options)
+        resolved = registryResolved(node.resolved, this.options)
         if (resolved) {
           res = `${node.name}@${resolved}`
         }
@@ -741,7 +742,7 @@ module.exports = cls => class Reifier extends cls {
       })
       await pacote.extract(res, node.path, {
         ...this.options,
-        resolved: node.resolved,
+        resolved,
         integrity: node.integrity,
         // A node counts as "root" for allow-* enforcement if it satisfies at least one valid dependency edge declared by the project root or a workspace.
         // node.parent is unsafe here: after hoisting, transitive packages can have the project root as their tree parent.
@@ -751,7 +752,9 @@ module.exports = cls => class Reifier extends cls {
         ),
         // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.
         // Override only when we can prove the URL is registry-mediated; see isRegistryResolvedTarball.
-        ...(isRegistryResolvedTarball(node, this.options) ? { allowRemote: 'all' } : {}),
+        // Do not let pacote replace the checked URL again.
+        ...(isRegistryResolvedTarball(node, this.options)
+          ? { allowRemote: 'all', replaceRegistryHost: 'never' } : {}),
       })
       // store nodes don't use Node class so node.package doesn't get updated
       if (node.isInStore) {

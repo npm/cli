@@ -6,6 +6,7 @@ if (process.platform === 'win32') {
 
 const { join, basename, resolve, relative } = require('node:path')
 const pacote = require('pacote')
+const { get: getFetcher } = require('pacote/lib/fetcher.js')
 const t = require('tap')
 const Arborist = require('../..')
 const fixtures = resolve(__dirname, '../fixtures')
@@ -530,6 +531,131 @@ t.test('complete build does not exempt remote tarballs', async t => {
     complete: true,
     allowRemote: 'none',
   }))
+})
+
+t.test('complete builds preserve source and registry policy boundaries', async t => {
+  const privateRegistry = {
+    registry: 'https://default.example.com/',
+    '@private:registry': 'https://private.example.com/',
+    replaceRegistryHost: 'never',
+    allowRemote: 'none',
+  }
+  const file = `file:${resolve(__dirname, 'local-bundle.tgz').replace(/\\/g, '/')}`
+  const git = 'git+https://git.example.com/local-bundle.git#0123456789012345678901234567890123456789'
+  const cases = [
+    {
+      title: 'scoped registry URL is not rewritten again by pacote',
+      name: '@scope/pkg',
+      spec: '1.0.0',
+      resolved: 'https://scope.example.com:8443/pkg-1.0.0.tgz',
+      options: {
+        registry: 'https://default.example.com/',
+        '@scope:registry': 'https://scope.example.com:8443/',
+        replaceRegistryHost: 'scope.example.com:8443',
+        allowRemote: 'none',
+      },
+      allowRemote: 'all',
+    },
+    {
+      title: 'scoped alias is allowed from its target registry',
+      name: 'alias',
+      packageName: '@private/pkg',
+      spec: 'npm:@private/pkg@1',
+      resolved: 'https://private.example.com/pkg-1.0.0.tgz',
+      options: privateRegistry,
+      allowRemote: 'all',
+    },
+    {
+      title: 'scoped alias cannot exempt a default-registry URL',
+      name: 'alias',
+      packageName: '@private/pkg',
+      spec: 'npm:@private/pkg@1',
+      resolved: 'https://default.example.com/pkg-1.0.0.tgz',
+      options: privateRegistry,
+      allowRemote: 'none',
+      error: 'EALLOWREMOTE',
+    },
+    ...[
+      { title: 'local file source is not rewritten', resolved: file },
+      { title: 'Git repository source is not rewritten', resolved: git },
+    ].map(source => ({
+      ...source,
+      name: 'local-bundle',
+      spec: source.resolved,
+      options: {
+        registry: 'https://mirror.example.com/npm/',
+        replaceRegistryHost: 'always',
+        allowRemote: 'none',
+      },
+      allowRemote: 'none',
+    })),
+    {
+      title: 'full-URL replacement leaves another port unchanged',
+      name: 'pkg',
+      spec: '1.0.0',
+      resolved: 'https://old.example.com:9443/npm/pkg-1.0.0.tgz',
+      options: {
+        registry: 'https://mirror.example.com/npm/',
+        replaceRegistryHost: 'https://old.example.com:8443/npm',
+        allowRemote: 'all',
+      },
+      allowRemote: 'all',
+    },
+  ]
+  for (const { title, name, packageName = name, spec, resolved, options, allowRemote, error } of cases) {
+    await t.test(title, async t => {
+      new MockRegistry({ tap: t, registry: options.registry, strict: true })
+      const pkg = {
+        name: packageName,
+        version: '1.0.0',
+        dependencies: { bundled: '1.0.0' },
+        bundleDependencies: ['bundled'],
+      }
+      const root = {
+        name: 'root',
+        version: '1.0.0',
+        dependencies: { [name]: spec },
+      }
+      const path = t.testdir({
+        'package.json': JSON.stringify(root),
+        'package-lock.json': JSON.stringify({
+          name: root.name,
+          version: root.version,
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            '': root,
+            [`node_modules/${name}`]: { ...pkg, resolved },
+          },
+        }),
+      })
+      const extract = pacote.extract
+      t.teardown(() => {
+        pacote.extract = extract
+      })
+      pacote.extract = async (uri, dir, opts) => {
+        t.equal(uri, resolved, 'extracts the intended source')
+        t.equal(opts.resolved, resolved, 'passes the same resolved URL')
+        t.equal(opts.allowRemote, allowRemote, 'preserves the source policy')
+        const fetcher = getFetcher(uri, opts)
+        if (npa(resolved).type === 'remote') {
+          t.equal(fetcher.resolved, resolved, 'pacote fetches the checked URL')
+        }
+        fs.mkdirSync(resolve(dir, 'node_modules/bundled'), { recursive: true })
+        fs.writeFileSync(resolve(dir, 'package.json'), JSON.stringify(pkg))
+        fs.writeFileSync(resolve(dir, 'node_modules/bundled/package.json'), JSON.stringify({
+          name: 'bundled',
+          version: '1.0.0',
+        }))
+      }
+      const build = buildIdeal(path, { complete: true, ...options })
+      if (error) {
+        await t.rejects(build, { code: error })
+      } else {
+        await t.resolves(build)
+      }
+    })
+  }
 })
 
 t.test('bundle deps example 2', async t => {

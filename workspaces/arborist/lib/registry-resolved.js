@@ -1,10 +1,17 @@
 const hgi = require('hosted-git-info')
 const npa = require('npm-package-arg')
 const { pickRegistry } = require('npm-registry-fetch')
+const { getRegistryPackageName } = require('./registry-package-name.js')
 
-// Rewrite lockfile tarball URLs according to replace-registry-host.
+// Normalize a node's resolved tarball URL to the configured registry, honoring replace-registry-host.
+// File/directory and Git sources are not registry tarball URLs and must stay unchanged.
+// Return the input unchanged when replacement does not match, or undefined if the tarball or
+// registry URL cannot be parsed.
 const registryResolved = (resolved, options) => {
   try {
+    if (['file', 'directory', 'git'].includes(npa(resolved).type)) {
+      return resolved
+    }
     const resolvedURL = hgi.parseUrl(resolved)
     const registryURL = new URL(options.registry)
     const registryPath = registryURL.pathname.replace(/\/$/, '')
@@ -16,13 +23,13 @@ const registryResolved = (resolved, options) => {
       // keep matchURL null
     }
 
-    const matchHost = matchURL?.hostname ?? options.replaceRegistryHost
+    const matchHost = matchURL?.host ?? options.replaceRegistryHost
     const matchPath = matchURL?.pathname.replace(/\/$/, '') ?? null
     const hasPathPrefix = (pathname, prefix) =>
       pathname === prefix || pathname.startsWith(`${prefix}/`)
 
     const hostMatches = options.replaceRegistryHost === 'always' ||
-      matchHost === resolvedURL.hostname
+      matchHost === (matchURL ? resolvedURL.host : resolvedURL.hostname)
     const pathMatches = !matchPath ||
       hasPathPrefix(resolvedURL.pathname, matchPath)
 
@@ -50,12 +57,16 @@ const registryResolved = (resolved, options) => {
 
 // Only bypass allow-remote when the effective URL is inside the registry path.
 const isRegistryResolvedTarball = (node, options) => {
-  if (!node.resolved || !node.isRegistryDependency) {
+  if (!node.resolved) {
+    return false
+  }
+  const name = getRegistryPackageName(node)
+  if (!name) {
     return false
   }
   try {
     const resolvedURL = new URL(registryResolved(node.resolved, options))
-    const registry = new URL(pickRegistry(npa(node.name), options))
+    const registry = new URL(pickRegistry(npa(name), options))
     const registryPath = registry.pathname.replace(/\/?$/, '/')
     return resolvedURL.origin === registry.origin &&
       (registryPath === '/' ||

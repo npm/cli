@@ -1035,7 +1035,10 @@ This is a one-time fix-up, please be patient...
           Arborist,
           resolved,
           integrity: node.integrity,
-          ...(isRegistry ? { allowRemote: 'all' } : {}),
+          // pacote treats tarball URLs as remote, so allowRemote can reject registry tarballs.
+          // Override only when isRegistryResolvedTarball proves the effective URL is registry-mediated.
+          // Do not let pacote replace the checked URL again.
+          ...(isRegistry ? { allowRemote: 'all', replaceRegistryHost: 'never' } : {}),
         })
 
         await new Arborist({ ...this.options, path })
