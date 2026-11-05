@@ -46,6 +46,10 @@ jobs:
     outputs:
       nodeVersion: ${{ steps.build-nodejs.outputs.nodeVersion }}
     steps:
+      - name: setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
       - name: setup ccache
         uses: Chocobo1/setup-ccache-action@v1
         with:
@@ -127,7 +131,7 @@ jobs:
           echo "::group::building nodejs"
           mkdir -p "$targetDir"
           pushd "$sourceDir" >/dev/null
-          ./configure --prefix="$targetDir"
+          python3 ./configure --prefix="$targetDir"
           make -j4 install
           popd >/dev/null
           echo "::endgroup::"
@@ -151,6 +155,10 @@ jobs:
     needs:
       - build-nodejs
     steps:
+      - name: setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
       - name: setup ccache
         uses: Chocobo1/setup-ccache-action@v1
         with:
@@ -163,8 +171,18 @@ jobs:
         run: |
           set -e
           tar xf source.tgz
-          ./configure
-          make -j4 test-only
+          python3 ./configure
+          # Node tests can make inherited stdout nonblocking, breaking Python header installs.
+          exitcode=0
+          make -j4 test-only > "${RUNNER_TEMP}/nodejs-test.log" 2>&1 || exitcode=$?
+          cat "${RUNNER_TEMP}/nodejs-test.log"
+          exit "$exitcode"
+      - name: upload Node.js test log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nodejs-test-${{ needs.build-nodejs.outputs.nodeVersion }}
+          path: ${{ runner.temp }}/nodejs-test.log
 
   test-npm:
     name: test npm
@@ -211,6 +229,9 @@ jobs:
           node . link
           echo "::endgroup::"
 
+          workspaces=$(npm query .workspace)
+          workspaces=$(jq -r '.[].name' <<< "$workspaces")
+
           STEPEXIT=0
           FINALEXIT=0
 
@@ -220,17 +241,17 @@ jobs:
           STEPEXIT=$?
           if [[ $STEPEXIT -ne 0 ]]; then
             echo "::warning ::npm test failed, exit: $STEPEXIT"
-            FINALEXIT=STEPEXIT
+            FINALEXIT=$STEPEXIT
           fi
           echo "::endgroup::"
 
-          for workspace in $(npm query .workspace | jq -r .[].name); do
+          for workspace in $workspaces; do
             echo "::group::npm test -w $workspace"
             node . test -w $workspace --if-present --ignore-scripts
             STEPEXIT=$?
             if [[ $STEPEXIT -ne 0 ]]; then
               echo "::warning ::npm test -w $workspace failed, exit: $STEPEXIT"
-              FINALEXIT=STEPEXIT
+              FINALEXIT=$STEPEXIT
             fi
             echo "::endgroup::"
           done
