@@ -18,6 +18,7 @@ const collectUnreviewedScripts = async ({
   ignoreScripts = false,
   dangerouslyAllowAllScripts = false,
   includeWhenIgnored = false,
+  pruneExtraneous = false,
 } = {}) => {
   // With ignore-scripts set, no scripts run, so execution callers bail out
   // here. approve/deny pass includeWhenIgnored so they keep listing
@@ -55,6 +56,11 @@ const collectUnreviewedScripts = async ({
       // os/cpu/libc or engine check, or failed to load). reify drops it
       // before any script runs, so its install scripts never execute and it
       // must not be flagged (npm/cli#9562).
+      continue
+    }
+    if (pruneExtraneous && node.extraneous) {
+      // Only a pruning reify removes orphans before scripts run. Actual-tree
+      // listing and rebuild must still review their scripts (npm/cli#9680).
       continue
     }
 

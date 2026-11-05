@@ -29,6 +29,7 @@ const node = ({
   isLink = false,
   inBundle = false,
   inert = false,
+  extraneous = false,
   resolved,
 } = {}) => ({
   name,
@@ -41,6 +42,7 @@ const node = ({
   isLink,
   inBundle,
   inert,
+  extraneous,
   isRegistryDependency: true,
   package: { name, version, scripts },
 })
@@ -90,6 +92,39 @@ t.test('collectUnreviewedScripts', async t => {
       policy: null,
     })
     t.strictSame(result, [])
+  })
+
+  t.test('skips extraneous (orphan) registry nodes when pruning', async t => {
+    // An extraneous orphan is pruned before reify runs any install script, so it must not gate the install even when the policy neither allows nor denies it (npm/cli#9680).
+    const result = await collectUnreviewedScripts({
+      tree: tree([
+        node({ name: 'orphan', scripts: { install: 'x' }, extraneous: true }),
+      ]),
+      pruneExtraneous: true,
+      policy: null,
+    })
+    t.strictSame(result, [])
+  })
+
+  t.test('skips extraneous nodes even when policy denies by name', async t => {
+    // Same orphan, but with a name-only deny entry.
+    // An extraneous registry node usually has no resolved URL for the matcher to verify, so the deny misses and it falls through to "unreviewed".
+    // It still must not gate the install (npm/cli#9680).
+    const orphan = node({ name: 'esbuild', scripts: { install: 'x' }, extraneous: true })
+    orphan.isRegistryDependency = false
+    const result = await collectUnreviewedScripts({
+      tree: tree([orphan]),
+      policy: { esbuild: false },
+      pruneExtraneous: true,
+    })
+    t.strictSame(result, [])
+  })
+
+  t.test('reviews extraneous nodes in the actual tree', async t => {
+    const orphan = node({ name: 'orphan', scripts: { install: 'x' }, extraneous: true })
+    t.strictSame(await collectUnreviewedScripts({ tree: tree([orphan]) }), [
+      { node: orphan, scripts: { install: 'x' } },
+    ])
   })
 
   t.test('skips nodes with no install-relevant scripts', async t => {
