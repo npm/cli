@@ -168,6 +168,10 @@ to a package folder, which may have children in `node_modules`.
   `integrity` values for all modules in this tree.  Only relevant on `root`
   nodes.
 
+    Use `node.meta.commit()` or `node.meta.toJSON()` to obtain lockfile data
+    in the selected lockfile format. Version 3 output contains `packages`
+    rather than the legacy `dependencies` representation.
+
 * `node.children` Map of packages located in the node's `node_modules`
   folder.
 * `node.package` The contents of this node's `package.json` file.
