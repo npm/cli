@@ -88,17 +88,27 @@ t.test('run shims', t => {
         npm: t.fixture('symlink', ROOT),
       },
     },
-    // put in a shim that ONLY prints the intended global prefix,
-    // and should not be used for anything else.
+    // the real entry point of the shims, and a fake of the helper it uses to
+    // find the global prefix: it ONLY returns the intended global prefix.
+    // npm-prefix.js is the same, for the WSL path of the bash shims.
     node_modules: {
       npm: {
         bin: {
+          'npm-shim.js': readFileSync(join(BIN, 'npm-shim.js'), 'utf-8'),
           'npm-prefix.js': `
             const { resolve } = require('path')
             console.log(resolve(__dirname, '../../../global-prefix'))
           `,
           'npx-cli.js': `throw new Error('local npx should not be called')`,
           'npm-cli.js': `throw new Error('local npm should not be called')`,
+        },
+        lib: {
+          cli: {
+            'global-prefix.js': `
+              const { resolve } = require('path')
+              module.exports = async () => resolve(__dirname, '../../../../global-prefix')
+            `,
+          },
         },
       },
     },
