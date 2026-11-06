@@ -1552,7 +1552,14 @@ t.test('ls', async t => {
               },
             },
           },
+          linked: t.fixture('symlink', '../../prefix'),
         },
+      },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: 'linked',
+          version: '1.0.0',
+        }),
       },
     })
 
