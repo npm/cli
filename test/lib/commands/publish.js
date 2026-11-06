@@ -89,6 +89,28 @@ t.test('re-loads publishConfig.registry if added during script process', async t
   t.matchSnapshot(joinedOutput(), 'new package version')
 })
 
+t.test('reports the version bumped by prepublishOnly', async t => {
+  const { npm, joinedOutput, registry } = await loadNpmWithRegistry(t, {
+    config: { ...auth, 'foreground-scripts': false },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        ...pkgJson,
+        scripts: { prepublishOnly: 'node bump.js' },
+      }, null, 2),
+      'bump.js': [
+        "const fs = require('fs')",
+        "const p = JSON.parse(fs.readFileSync('package.json'))",
+        "p.version = '1.0.1'",
+        "fs.writeFileSync('package.json', JSON.stringify(p))",
+      ].join('\n'),
+    },
+    authorization: token,
+  })
+  registry.publish(pkg, { packageJson: { ...pkgJson, version: '1.0.1' } })
+  await npm.exec('publish', [])
+  t.match(joinedOutput(), `+ ${pkg}@1.0.1`)
+})
+
 t.test('prioritize CLI flags over publishConfig', async t => {
   const initPackageJson = {
     ...pkgJson,
