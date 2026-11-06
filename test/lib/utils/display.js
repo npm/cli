@@ -300,39 +300,79 @@ t.test('json output redacts by default', async t => {
     'inline redact: false preserves uuid values')
 })
 
-t.test('split-stream silent prompt newline goes to stderr', async t => {
-  const { input, outputs, outputErrors, clearOutput, META } = await mockDisplay(t)
+// mock-logs trims the trailing newline, so a bare newline becomes ''.
+const assertPromptNewline = (t, { outputs, outputErrors, stream }) => {
+  if (stream === 'stderr') {
+    t.strictSame(outputs, [], 'newline must not go to stdout')
+    t.strictSame(outputErrors, [''], 'newline goes to stderr')
+  } else {
+    t.strictSame(outputs, [''], 'newline goes to stdout')
+    t.strictSame(outputErrors, [], 'newline must not go to stderr')
+  }
+}
 
-  clearOutput()
-  // Simulate a password prompt while stdout is being captured separately.
-  // META is required so Display's withMeta treats `silent` as event metadata
-  // (same shape read-user-info uses).
-  const result = await input.read(
-    () => Promise.resolve('secret-password'),
-    { [META]: true, silent: true }
-  )
-  t.equal(result, 'secret-password')
-  t.strictSame(outputs, [], 'silent completion must not write a newline to stdout')
-  // mock-logs trims the trailing newline, so a bare newline becomes ''.
-  t.ok(
-    outputErrors.includes(''),
-    `silent completion writes a terminating newline to stderr; got ${JSON.stringify(outputErrors)}`
-  )
+t.test('silent prompt completion newline follows the prompt stream', async t => {
+  t.test('stderr', async t => {
+    const { input, outputs, outputErrors, clearOutput, META } = await mockDisplay(t)
+
+    clearOutput()
+    const result = await input.read(
+      () => Promise.resolve('secret-password'),
+      { [META]: true, silent: true, stream: 'stderr' }
+    )
+    t.equal(result, 'secret-password')
+    assertPromptNewline(t, { outputs, outputErrors, stream: 'stderr' })
+  })
+
+  t.test('stdout', async t => {
+    const { input, outputs, outputErrors, clearOutput, META } = await mockDisplay(t)
+
+    clearOutput()
+    // Explicit stdout, and the default when stream is omitted, stay on stdout
+    // so existing callers (npm init, trust confirm) are unchanged.
+    const result = await input.read(
+      () => Promise.resolve('secret-password'),
+      { [META]: true, silent: true, stream: 'stdout' }
+    )
+    t.equal(result, 'secret-password')
+    assertPromptNewline(t, { outputs, outputErrors, stream: 'stdout' })
+
+    clearOutput()
+    const omitted = await input.read(
+      () => Promise.resolve('secret-password'),
+      { [META]: true, silent: true }
+    )
+    t.equal(omitted, 'secret-password')
+    assertPromptNewline(t, { outputs, outputErrors, stream: 'stdout' })
+  })
 })
 
-t.test('split-stream cancelled prompt newline goes to stderr', async t => {
-  const { input, outputs, outputErrors, clearOutput } = await mockDisplay(t)
+t.test('cancelled prompt newline follows the prompt stream', async t => {
+  t.test('stderr', async t => {
+    const { input, outputs, outputErrors, clearOutput, META } = await mockDisplay(t)
 
-  clearOutput()
-  await t.rejects(
-    input.read(() => Promise.reject(new Error('SIGINT'))),
-    { message: 'SIGINT' }
-  )
-  t.strictSame(outputs, [], 'cancel must not write a newline to stdout')
-  t.ok(
-    outputErrors.includes(''),
-    `cancel writes a terminating newline to stderr; got ${JSON.stringify(outputErrors)}`
-  )
+    clearOutput()
+    await t.rejects(
+      input.read(
+        () => Promise.reject(new Error('SIGINT')),
+        { [META]: true, stream: 'stderr' }
+      ),
+      { message: 'SIGINT' }
+    )
+    assertPromptNewline(t, { outputs, outputErrors, stream: 'stderr' })
+  })
+
+  t.test('stdout', async t => {
+    const { input, outputs, outputErrors, clearOutput } = await mockDisplay(t)
+
+    clearOutput()
+    // No stream metadata: trust confirm and npm init write prompts to stdout.
+    await t.rejects(
+      input.read(() => Promise.reject(new Error('SIGINT'))),
+      { message: 'SIGINT' }
+    )
+    assertPromptNewline(t, { outputs, outputErrors, stream: 'stdout' })
+  })
 })
 
 t.test('prompt functionality', async t => {

@@ -5,6 +5,7 @@ const tmock = require('../../fixtures/tmock')
 let readOpts = null
 let readResult = null
 let logMsg = null
+let inputMeta = null
 
 const readUserInfo = tmock(t, '{LIB}/utils/read-user-info.js', {
   read: {
@@ -21,7 +22,10 @@ const readUserInfo = tmock(t, '{LIB}/utils/read-user-info.js', {
     },
     input: {
       ...procLog.input,
-      read: (fn) => fn(),
+      read: (fn, meta) => {
+        inputMeta = meta
+        return fn()
+      },
     },
   },
   'npm-user-validate': {
@@ -44,6 +48,7 @@ const readUserInfo = tmock(t, '{LIB}/utils/read-user-info.js', {
 
 t.beforeEach(() => {
   logMsg = null
+  inputMeta = null
 })
 
 t.test('otp', async (t) => {
@@ -134,6 +139,28 @@ t.test('read-user-info integration works', async (t) => {
   const password = await readUserInfo.password('Password: ')
   t.equal(password, 'secret-password', 'should return password from silent prompt')
   t.match(readOpts, { silent: true }, 'password prompt should set silent: true')
+})
+
+t.test('auth prompts record stderr for completion and cancel newlines', async (t) => {
+  t.teardown(() => {
+    readResult = null
+    readOpts = null
+  })
+
+  readResult = '1234'
+  await readUserInfo.otp()
+  t.equal(inputMeta[procLog.META], true, 'otp metadata is visible to Display')
+  t.equal(inputMeta.stream, 'stderr', 'otp prompt newlines go to stderr')
+
+  readResult = 'password'
+  await readUserInfo.password()
+  t.equal(inputMeta.stream, 'stderr', 'password prompt newlines go to stderr')
+  t.equal(inputMeta.silent, true, 'password prompt stays silent')
+
+  readResult = 'username'
+  await readUserInfo.username()
+  t.equal(inputMeta.stream, 'stderr', 'username prompt newlines go to stderr')
+  t.notOk(inputMeta.silent, 'username prompt is not silent')
 })
 
 t.test('silent metadata is passed correctly by read-user-info', async (t) => {
