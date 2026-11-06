@@ -29,6 +29,7 @@ const node = ({
   isLink = false,
   inBundle = false,
   inert = false,
+  extraneous = false,
   resolved,
 } = {}) => ({
   name,
@@ -41,6 +42,7 @@ const node = ({
   isLink,
   inBundle,
   inert,
+  extraneous,
   isRegistryDependency: true,
   package: { name, version, scripts },
 })
@@ -90,6 +92,44 @@ t.test('collectUnreviewedScripts', async t => {
       policy: null,
     })
     t.strictSame(result, [])
+  })
+
+  t.test('only skips disconnected extraneous nodes when requested', async t => {
+    const candidate = (name, properties = {}) => ({
+      ...node({ name, scripts: { install: 'x' }, extraneous: true }),
+      isRegistryDependency: false,
+      edgesIn: new Set(),
+      parent: null,
+      linksIn: new Set(),
+      ...properties,
+    })
+    const orphan = candidate('orphan')
+    const attached = candidate('attached', { parent: {} })
+    const linked = candidate('linked', { linksIn: new Set([{}]) })
+    const required = candidate('required', { extraneous: false })
+    const unknown = candidate('unknown', { linksIn: undefined })
+    const retained = [attached, linked, required, unknown]
+
+    for (const skipExtraneous of [undefined, false, true]) {
+      for (const policy of [null, { orphan: false }]) {
+        const result = await collectUnreviewedScripts({
+          tree: tree([orphan, ...retained]),
+          policy,
+          skipExtraneous,
+        })
+        t.strictSame(
+          result.map(({ node }) => node),
+          skipExtraneous ? retained : [orphan, ...retained],
+          `skipExtraneous=${skipExtraneous}, policy=${JSON.stringify(policy)}`
+        )
+      }
+    }
+
+    linked.linksIn.clear()
+    t.strictSame(await collectUnreviewedScripts({
+      tree: tree([linked]),
+      skipExtraneous: true,
+    }), [], 'skips the target after its incoming link is removed')
   })
 
   t.test('skips nodes with no install-relevant scripts', async t => {
