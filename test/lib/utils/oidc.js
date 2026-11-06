@@ -4,13 +4,15 @@ const { join } = require('node:path')
 const mockGlobals = require('@npmcli/mock-globals')
 const mockNpm = require('../../fixtures/mock-npm')
 const tmock = require('../../fixtures/tmock')
+const nock = require('nock')
+const fetch = require('make-fetch-happen')
 
 const registry = 'https://registry.npmjs.org/'
 const authTokenKey = '//registry.npmjs.org/:_authToken'
 const fallbackToken = 'fallback-token'
 const exchangeToken = 'exchange-token'
 
-const setup = async t => {
+const setup = async (t, mocks = {}) => {
   const { npm } = await mockNpm(t, {
     config: ({ globalPrefix, home, prefix }) => ({
       globalconfig: join(globalPrefix, 'etc', 'npmrc'),
@@ -55,12 +57,195 @@ const setup = async t => {
       status: 500,
       json: async () => ({}),
     }),
+    ...mocks,
   })
   const run = async (opts = { ...npm.flatOptions }, registryUrl = registry) => {
     await oidc({ packageName: 'test-package', registry: registryUrl, opts, config: npm.config })
     return opts
   }
   return { npm, ci, responses, run, oidc }
+}
+
+const setupAzure = async (t, mocks = {}, clientId) => {
+  mockGlobals(t, { 'process.env.FPA_CLIENT_ID': clientId })
+  const result = await setup(t, { 'make-fetch-happen': fetch, ...mocks })
+  result.ci.GITLAB = false
+  result.ci.AZURE_PIPELINES = true
+  mockGlobals(t, {
+    'process.env.NPM_ID_TOKEN': undefined,
+    'process.env.SYSTEM_ACCESSTOKEN': 'system-token',
+    'process.env.SYSTEM_COLLECTIONURI': 'https://dev.azure.com/test-org/',
+    'process.env.SYSTEM_TEAMPROJECTID': 'project-id',
+    'process.env.SYSTEM_HOSTTYPE': 'build',
+    'process.env.SYSTEM_PLANID': 'plan-id',
+    'process.env.SYSTEM_JOBID': 'job-id',
+  })
+  const request = (requestClientId = '') => {
+    const scope = nock('https://dev.azure.com', {
+      reqheaders: {
+        authorization: 'Bearer system-token',
+        'content-type': 'application/json',
+      },
+    })
+      .post(`/test-org/project-id/_apis/distributedtask/hubs/build/plans/plan-id/jobs/job-id/app/${requestClientId}/accesstoken`, {})
+      .query({ 'api-version': '7.2-preview.1' })
+    return scope
+  }
+  t.teardown(() => nock.cleanAll())
+  return { ...result, request }
+}
+
+t.test('Azure Pipelines retrieves and exchanges an attributed token', async t => {
+  const { npm, responses, oidc, request } = await setupAzure(t)
+  const scope = request().reply(200, { accessToken: 'azure-token' })
+  responses[0] = opts => {
+    t.equal(opts[authTokenKey], 'azure-token', 'exchanges the Azure token')
+    return { token: exchangeToken }
+  }
+  const opts = { ...npm.flatOptions }
+  await oidc({
+    packageName: 'test-package',
+    registry,
+    opts,
+    config: npm.config,
+    enableProvenanceAutoConfiguration: true,
+  })
+  t.ok(scope.isDone(), 'requests the attributed token')
+  t.equal(opts[authTokenKey], exchangeToken)
+  t.equal(npm.config.get(authTokenKey, 'cli'), exchangeToken)
+  t.notOk(opts.provenance, 'does not automatically enable unsupported provenance')
+})
+
+t.test('Azure Pipelines supports a collection URI without a trailing slash', async t => {
+  const { run, request } = await setupAzure(t)
+  process.env.SYSTEM_COLLECTIONURI = 'https://dev.azure.com/test-org'
+  const scope = request().reply(200, { accessToken: 'azure-token' })
+  const opts = await run()
+  t.ok(scope.isDone())
+  t.equal(opts[authTokenKey], exchangeToken)
+})
+
+t.test('Azure Pipelines supports a temporary FPA_CLIENT_ID override for the official registry', async t => {
+  const { run, request } = await setupAzure(t, {}, 'test-client-id')
+  const scope = request('test-client-id').reply(200, { accessToken: 'azure-token' })
+  const opts = await run()
+  t.ok(scope.isDone(), 'requests the token for the supplied application client ID')
+  t.equal(opts[authTokenKey], exchangeToken)
+})
+
+t.test('Azure Pipelines prefers NPM_ID_TOKEN without requesting an attributed token', async t => {
+  const { responses, run } = await setupAzure(t, {
+    'make-fetch-happen': async () => {
+      t.fail('must not request an Azure token')
+    },
+  })
+  process.env.NPM_ID_TOKEN = 'provided-token'
+  delete process.env.SYSTEM_ACCESSTOKEN
+  responses[0] = opts => {
+    t.equal(opts[authTokenKey], 'provided-token')
+    return { token: exchangeToken }
+  }
+  const opts = await run()
+  t.equal(opts[authTokenKey], exchangeToken)
+})
+
+t.test('Azure Pipelines exchanges NPM_ID_TOKEN for a registry without a configured application client ID', async t => {
+  const registryUrl = 'https://other.registry.npmjs.org/'
+  const tokenKey = '//other.registry.npmjs.org/:_authToken'
+  const { run } = await setupAzure(t, {
+    'make-fetch-happen': async () => {
+      t.fail('must not request an Azure token')
+    },
+    'npm-registry-fetch': {
+      json: async (url, opts) => {
+        t.equal(url.href, `${registryUrl}-/npm/v1/oidc/token/exchange/package/test-package`)
+        t.equal(opts[tokenKey], 'provided-token')
+        return { token: exchangeToken }
+      },
+    },
+  })
+  process.env.NPM_ID_TOKEN = 'provided-token'
+  const opts = await run(undefined, registryUrl)
+  t.equal(opts[tokenKey], exchangeToken)
+})
+
+t.test('Azure Pipelines does not enable provenance when GitHub Actions is also detected', async t => {
+  const { npm, ci, oidc } = await setupAzure(t, {
+    libnpmaccess: {
+      getVisibility: async () => {
+        t.fail('must not check package visibility for unsupported provenance')
+        return { public: true }
+      },
+    },
+  })
+  ci.GITHUB_ACTIONS = true
+  const payload = Buffer.from(JSON.stringify({ repository_visibility: 'public' })).toString('base64')
+  process.env.NPM_ID_TOKEN = `header.${payload}.signature`
+  const opts = { ...npm.flatOptions }
+  await oidc({
+    packageName: 'test-package',
+    registry,
+    opts,
+    config: npm.config,
+    enableProvenanceAutoConfiguration: true,
+  })
+  t.equal(opts[authTokenKey], exchangeToken, 'still exchanges the supplied token')
+  t.notOk(opts.provenance, 'does not enable provenance')
+})
+
+for (const registryUrl of [
+  'https://other.registry.npmjs.org/',
+  'http://registry.npmjs.org/',
+  'https://registry.npmjs.org/custom/',
+  'https://registry.npmjs.org:8443/',
+]) {
+  t.test(`Azure Pipelines skips token retrieval without a configured application client ID for ${registryUrl}`, async t => {
+    const { responses, run } = await setupAzure(t, {
+      'make-fetch-happen': async () => {
+        t.fail('must not request an Azure token')
+      },
+    })
+    await run(undefined, registryUrl)
+    t.equal(responses.length, 1, 'does not attempt an exchange')
+  })
+}
+
+for (const name of [
+  'SYSTEM_ACCESSTOKEN',
+  'SYSTEM_COLLECTIONURI',
+  'SYSTEM_TEAMPROJECTID',
+  'SYSTEM_HOSTTYPE',
+  'SYSTEM_PLANID',
+  'SYSTEM_JOBID',
+]) {
+  t.test(`Azure Pipelines skips token retrieval without ${name}`, async t => {
+    const { npm, responses, run } = await setupAzure(t)
+    delete process.env[name]
+    npm.config.set(authTokenKey, fallbackToken, 'user')
+    const opts = await run()
+    t.equal(opts[authTokenKey], fallbackToken)
+    t.equal(responses.length, 1, 'does not attempt an exchange')
+  })
+}
+
+for (const [label, status, body] of [
+  ['HTTP failure', 403, { message: 'Forbidden' }],
+  ['missing token', 200, {}],
+  ['empty token', 200, { accessToken: '' }],
+  ['invalid token', 200, { accessToken: 123 }],
+  ['invalid JSON', 200, 'not json'],
+  ['redirect', 302, {}],
+]) {
+  t.test(`Azure Pipelines preserves fallback credentials after ${label}`, async t => {
+    const { npm, responses, run, request } = await setupAzure(t)
+    const scope = request().reply(status, body, { location: 'https://other.example/token' })
+    npm.config.set(authTokenKey, fallbackToken, 'user')
+    const opts = await run()
+    t.ok(scope.isDone())
+    t.equal(opts[authTokenKey], fallbackToken)
+    t.equal(npm.config.get(authTokenKey), fallbackToken)
+    t.equal(responses.length, 1, 'does not attempt an exchange')
+  })
 }
 
 for (const failure of [
