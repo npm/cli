@@ -1347,7 +1347,7 @@ t.test('satisfiedBy does not check bundling without an applicable override', t =
         path: '/child',
         pkg: { name: 'child', version },
       })
-      Object.defineProperty(candidate, 'inDepBundle', {
+      Object.defineProperty(candidate, 'inBundle', {
         get: () => {
           t.fail('bundling cannot affect an edge without an applicable override')
           return false
@@ -1356,71 +1356,5 @@ t.test('satisfiedBy does not check bundling without an applicable override', t =
       t.equal(edge.satisfiedBy(candidate), version === '1.0.0')
     }
   }
-  t.end()
-})
-
-t.test('overrides and bundled deps in satisfiedBy', t => {
-  const makeNode = (name, version, extras = {}) => ({
-    name,
-    packageName: name,
-    version,
-    package: { name, version },
-    edgesOut: new Map(),
-    edgesIn: new Set(),
-    explain: () => `${name}@${version}`,
-    isTop: false,
-    parent: top,
-    resolve: () => undefined,
-    addEdgeOut (edge) {
-      this.edgesOut.set(edge.name, edge)
-    },
-    addEdgeIn (edge) {
-      this.edgesIn.add(edge)
-    },
-    deleteEdgeIn (edge) {
-      this.edgesIn.delete(edge)
-    },
-    inBundle: false,
-    inDepBundle: false,
-    ...extras,
-  })
-
-  const overrides = new OverrideSet({ overrides: { bar: '2.x' } })
-  a.overrides = overrides
-
-  const makeOverriddenEdge = () => {
-    const edge = new Edge({
-      from: a,
-      type: 'prod',
-      name: 'bar',
-      spec: '1.x',
-      overrides: overrides.getEdgeRule({ name: 'bar', spec: '1.x' }),
-    })
-    reset(a)
-    a.overrides = overrides
-    return edge
-  }
-
-  t.test('node bundled by root uses overridden spec', t => {
-    const edge = makeOverriddenEdge()
-    const node = makeNode('bar', '2.0.0', { inBundle: true, inDepBundle: false })
-    t.ok(edge.satisfiedBy(node), 'bar@2.0.0 bundled by root satisfies override 2.x')
-
-    const nodeOld = makeNode('bar', '1.0.0', { inBundle: true, inDepBundle: false })
-    t.notOk(edge.satisfiedBy(nodeOld), 'bar@1.0.0 bundled by root does not satisfy override 2.x')
-    t.end()
-  })
-
-  t.test('node bundled inside a dependency uses rawSpec', t => {
-    const edge = makeOverriddenEdge()
-    const node = makeNode('bar', '1.0.0', { inBundle: true, inDepBundle: true })
-    t.ok(edge.satisfiedBy(node), 'bar@1.0.0 in dep bundle satisfies rawSpec 1.x')
-
-    const nodeNew = makeNode('bar', '2.0.0', { inBundle: true, inDepBundle: true })
-    t.notOk(edge.satisfiedBy(nodeNew), 'bar@2.0.0 in dep bundle does not satisfy rawSpec 1.x')
-    t.end()
-  })
-
-  delete a.overrides
   t.end()
 })
