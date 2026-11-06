@@ -313,3 +313,50 @@ t.test('git tag/branch change detected via lockfile committish', t => {
 
   t.end()
 })
+
+t.test('non-hosted git commit pins must match the resolved commit', t => {
+  // hosted repos compare via hosted.ssh({ noCommittish: !reqCommit }), but
+  // non-hosted only compared fetchSpec, which drops the hash (#10249).
+  const A = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+  const B = 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
+  const child = (resolved) => ({
+    name: 'core',
+    resolved,
+    package: { version: '1.0.0' },
+    get version () {
+      return this.package.version
+    },
+  })
+
+  t.notOk(depValid(
+    child(`git+https://git.example.com/o/r.git#${A}`),
+    `git+https://git.example.com/o/r.git#${B}`,
+    null,
+    emptyRequestor), 'self-hosted https commit mismatch')
+
+  t.ok(depValid(
+    child(`git+https://git.example.com/o/r.git#${A}`),
+    `git+https://git.example.com/o/r.git#${A}`,
+    null,
+    emptyRequestor), 'self-hosted https commit match')
+
+  t.notOk(depValid(
+    child(`git://127.0.0.1:1/repo.git#${A}`),
+    `git://127.0.0.1:1/repo.git#${B}`,
+    null,
+    emptyRequestor), 'non-hosted git:// commit mismatch')
+
+  t.ok(depValid(
+    child(`github:o/r#${A}`),
+    `github:o/r#${A}`,
+    null,
+    emptyRequestor), 'hosted commit match still works')
+
+  t.notOk(depValid(
+    child(`github:o/r#${A}`),
+    `github:o/r#${B}`,
+    null,
+    emptyRequestor), 'hosted commit mismatch still works')
+
+  t.end()
+})
