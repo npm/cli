@@ -592,3 +592,31 @@ t.test('sbom', async t => {
     }))
   })
 })
+
+t.test('global mode is rejected before serialization', async t => {
+  for (const format of ['cyclonedx', 'spdx']) {
+    await t.test(format, async t => {
+      const { sbom } = await mockSbom(t, {
+        config: {
+          global: true,
+          'sbom-format': format,
+        },
+        globalPrefixDir: {
+          node_modules: {
+            'example-package': {
+              'package.json': JSON.stringify({
+                name: 'example-package',
+                version: '1.0.0',
+              }),
+            },
+          },
+        },
+      })
+      await t.rejects(
+        sbom.exec([]),
+        { code: 'EUSAGE', message: /does not support `--global`/ },
+        'rejects global mode with an actionable usage error'
+      )
+    })
+  }
+})
