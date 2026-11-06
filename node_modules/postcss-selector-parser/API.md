@@ -91,6 +91,10 @@ Notes:
   named combinators like `/deep/` and `/for/` are parsed as combinators. The
   `node.value` is name after being unescaped and normalized as lowercase. The
   original value for the combinator name is stored in `node.raws.value`.
+* Assigning `node.value` replaces its raw spelling, including whitespace or
+  comments stored in `node.raws.value`. Comments and spacing stored separately
+  in `node.spaces` or `node.raws.spaces` are preserved. Raw values supplied to
+  the constructor are preserved until a later value assignment.
 
 
 ### `parser.comment([props])`
