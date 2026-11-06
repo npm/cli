@@ -5,6 +5,7 @@ const { load: loadMockNpm } = require('../../../fixtures/mock-npm.js')
 const MockRegistry = require('@npmcli/mock-registry')
 const mockGlobals = require('@npmcli/mock-globals')
 const libpack = require('libnpmpack')
+const tar = require('tar')
 
 const token = 'test-auth-token'
 const authConfig = { '//registry.npmjs.org/:_authToken': token }
@@ -115,6 +116,79 @@ t.test('throws on 403 (not an owner)', async t => {
   await t.rejects(npm.exec('stage', ['download', stageId]), {
     statusCode: 403,
   })
+})
+
+t.test('rejects a staged tarball with an invalid package name', async t => {
+  const { npm, prefix } = await loadMockNpm(t, {
+    config: authConfig,
+    prefixDir: {
+      staged: {
+        package: {
+          'package.json': JSON.stringify({
+            name: '@a/b/../../../../escape',
+            version: '1.0.0',
+          }),
+        },
+      },
+    },
+  })
+  const chunks = []
+  for await (const chunk of tar.c({ gzip: true, cwd: path.join(prefix, 'staged') }, ['package'])) {
+    chunks.push(chunk)
+  }
+  const tarballData = Buffer.concat(chunks)
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: token,
+  })
+  registry.nock.get(`/-/stage/${stageId}/tarball`)
+    .reply(200, tarballData, { 'content-type': 'application/octet-stream' })
+
+  mockGlobals(t, { 'process.cwd': () => prefix })
+
+  await t.rejects(npm.exec('stage', ['download', stageId]), {
+    message: /invalid package name in staged tarball/,
+  })
+  // the unsanitized name would have resolved outside the cwd
+  const escaped = path.resolve(prefix, `a-b/../../../../escape-1.0.0-${stageId}.tgz`)
+  t.ok(!fs.existsSync(escaped), 'no file written outside the cwd')
+})
+
+t.test('rejects a staged tarball with an invalid package version', async t => {
+  const { npm, prefix } = await loadMockNpm(t, {
+    config: authConfig,
+    prefixDir: {
+      staged: {
+        package: {
+          'package.json': JSON.stringify({
+            name: 'escape-pkg',
+            version: '1.0.0/../../../v',
+          }),
+        },
+      },
+    },
+  })
+  const chunks = []
+  for await (const chunk of tar.c({ gzip: true, cwd: path.join(prefix, 'staged') }, ['package'])) {
+    chunks.push(chunk)
+  }
+  const tarballData = Buffer.concat(chunks)
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: token,
+  })
+  registry.nock.get(`/-/stage/${stageId}/tarball`)
+    .reply(200, tarballData, { 'content-type': 'application/octet-stream' })
+
+  mockGlobals(t, { 'process.cwd': () => prefix })
+
+  await t.rejects(npm.exec('stage', ['download', stageId]), {
+    message: /invalid package version in staged tarball/,
+  })
+  const escaped = path.resolve(prefix, `escape-pkg-1.0.0/../../../v-${stageId}.tgz`)
+  t.ok(!fs.existsSync(escaped), 'no file written outside the cwd')
 })
 
 t.test('throws when tarball has no package.json', async t => {
