@@ -2768,6 +2768,88 @@ t.test('includeWorkspaceRoot in addition to workspace', async t => {
   t.equal(tree.inventory.query('name', 'once').size, 1)
 })
 
+const reifyWorkspaceWithOptionalPeer = async (t, { providePeer }) => {
+  const sources = t.testdir({
+    host: {
+      'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
+    },
+    ...(providePeer ? {
+      peer: {
+        'package.json': JSON.stringify({ name: 'peer', version: '1.0.0' }),
+      },
+    } : {}),
+  })
+  const registry = createRegistry(t)
+  const hostManifest = registry.manifest({
+    name: 'host',
+    packuments: [{
+      version: '1.0.0',
+      peerDependencies: { peer: '*' },
+      peerDependenciesMeta: { peer: { optional: true } },
+    }],
+  })
+  const peerManifest = registry.manifest({
+    name: 'peer',
+    packuments: [{ version: '1.0.0' }],
+  })
+  await registry.package({
+    manifest: hostManifest,
+    tarballs: { '1.0.0': resolve(sources, 'host') },
+  })
+  await registry.package({
+    manifest: peerManifest,
+    tarballs: providePeer ? { '1.0.0': resolve(sources, 'peer') } : undefined,
+    times: 2,
+  })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { host: '1.0.0' },
+      workspaces: ['packages/*'],
+    }),
+    packages: {
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          version: '1.0.0',
+          devDependencies: { peer: '1.0.0' },
+        }),
+      },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          version: '1.0.0',
+          ...(providePeer ? { devDependencies: { peer: '1.0.0' } } : {}),
+        }),
+      },
+    },
+  })
+
+  await reify(path, { packageLockOnly: true })
+  await reify(path, {
+    includeWorkspaceRoot: true,
+    save: false,
+    workspaces: ['b'],
+  })
+
+  const message = providePeer
+    ? 'selected workspace peer is installed'
+    : 'out-of-scope workspace optional peer is not installed'
+  t.equal(fs.existsSync(resolve(path, 'node_modules/peer')), providePeer, message)
+}
+
+t.test('workspace filter handles optional peers from workspace dependencies', async t => {
+  await t.test('excludes provider only used by out-of-scope workspace', async t => {
+    await reifyWorkspaceWithOptionalPeer(t, { providePeer: false })
+  })
+
+  await t.test('retains provider required by selected workspace', async t => {
+    await reifyWorkspaceWithOptionalPeer(t, { providePeer: true })
+  })
+})
+
 t.test('no workspace', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
