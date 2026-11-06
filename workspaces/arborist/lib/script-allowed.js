@@ -24,15 +24,37 @@ const versionFromTgz = require('./version-from-tgz.js')
 //   - git: match on hosted.ssh() plus a short-SHA prefix of the
 //     resolved committish
 
+// Bundles owned by the local project or a workspace remain reviewable.
+// Dependencies shipped inside another dependency's tarball cannot be matched
+// safely by their self-reported identity. Unknown isolated bundle owners also
+// stay blocked.
+const isBundledByDependency = (node) => {
+  if (!node) {
+    return false
+  }
+  const bundler = node.getBundler?.()
+  if (bundler) {
+    return !bundler.isProjectRoot && !bundler.isWorkspace
+  }
+  if (node.inDepBundle) {
+    return true
+  }
+  return !!node.inBundle && typeof node.getBundler === 'function'
+}
+
 const isScriptAllowed = (node, policy) => {
-  // Bundled dependencies never run their install scripts and cannot be
-  // allowlisted. Matching by name@version from the bundled tarball would
-  // reintroduce manifest confusion (a bundled tarball can claim any name
-  // and version). Returning null marks them as not-allowed regardless of
-  // any policy entry, so their install scripts are blocked by the
-  // install-time gate. A package that needs a bundled dep's script must
-  // forward it as one of its own lifecycle scripts.
-  if (node.inBundle) {
+  // Dependencies bundled inside another package's tarball never run their
+  // install scripts and cannot be allowlisted. Matching by name@version
+  // from the bundled tarball would reintroduce manifest confusion (a
+  // bundled tarball can claim any name and version). Returning null marks
+  // them as not-allowed regardless of any policy entry, so their install
+  // scripts are blocked by the install-time gate. A package that needs a
+  // bundled dep's script must forward it as one of its own lifecycle
+  // scripts.
+  //
+  // The isolated tree preserves the original bundle owner, so the same
+  // project/workspace distinction applies to hoisted and linked installs.
+  if (isBundledByDependency(node)) {
     return null
   }
 
@@ -438,3 +460,4 @@ module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
 module.exports.resolvedSourceSpecs = resolvedSourceSpecs
 module.exports.matchFileOrDir = matchFileOrDir
 module.exports.trustedDisplay = trustedDisplay
+module.exports.isBundledByDependency = isBundledByDependency
