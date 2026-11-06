@@ -8,6 +8,14 @@
 * [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v6.0.5): `libnpmfund@6.0.5`
 * [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v8.0.5): `libnpmpack@8.0.5`
 
+## [10.9.11](https://github.com/npm/cli/compare/v10.9.10...v10.9.11) (2026-11-06)
+### Bug Fixes
+* [`fb8c1d3`](https://github.com/npm/cli/commit/fb8c1d3536e4235a5472489ea5b676ccfeccd41d) [#10236](https://github.com/npm/cli/pull/10236) accept supported Node.js prereleases at startup (v10 backport) (@reggi, @Copilot)
+### Chores
+* [`790ebfa`](https://github.com/npm/cli/commit/790ebfab0da4cd09da7d8624674ce0c99a9749de) [#10237](https://github.com/npm/cli/pull/10237) restore release integration (v10) (@reggi, @Copilot)
+* [`71bedcf`](https://github.com/npm/cli/commit/71bedcfcdde110c5fe9a393ee0300e77200fa6ab) [#10243](https://github.com/npm/cli/pull/10243) migrate Cygwin installer (v10 backport) (@reggi, @Copilot)
+* [`46d9226`](https://github.com/npm/cli/commit/46d9226a518d111ecf98d7c603de066dffa65fe8) [#10227](https://github.com/npm/cli/pull/10227) drop clinic and weak from node-integration knownFailures (v10 backport) (#10227) (@nkolev92)
+
 ## [10.9.10](https://github.com/npm/cli/compare/v10.9.9...v10.9.10) (2026-11-02)
 ### Dependencies
 * [`a880419`](https://github.com/npm/cli/commit/a8804198f147914cab2fc25f6d48535f13621b9a) [#10205](https://github.com/npm/cli/pull/10205) `semver@7.8.6` (@reggi, @Copilot)
