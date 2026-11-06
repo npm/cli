@@ -13,6 +13,7 @@
     "@npmcli/arborist"
   ],
   [
+    "@npmcli/smoke-tests",
     "@npmcli/metavuln-calculator"
   ],
   [
@@ -40,7 +41,6 @@
     "make-fetch-happen"
   ],
   [
-    "@npmcli/smoke-tests",
     "@npmcli/installed-package-contents",
     "npm-pick-manifest",
     "cacache",
