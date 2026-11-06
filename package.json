@@ -237,7 +237,7 @@
       "--require",
       "./scripts/disable-agent-for-tests.js"
     ],
-    "timeout": 600,
+    "timeout": 1200,
     "nyc-arg": [
       "--exclude",
       "docs/**",

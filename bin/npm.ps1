@@ -37,14 +37,12 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
     ).GetValue($MyInvocation).Text
   }
 
-  $NODE_EXE = $NODE_EXE.Replace("``", "````")
-  $NPM_CLI_JS = $NPM_CLI_JS.Replace("``", "````")
-
   $NPM_COMMAND_ARRAY = [Management.Automation.Language.Parser]::ParseInput($NPM_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
     EndBlock.Statements.PipelineElements.CommandElements.Extent.Text
   $NPM_ARGS = ($NPM_COMMAND_ARRAY | Select-Object -Skip 1) -join ' '
 
-  Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
+  $NPM_COMMAND = [ScriptBlock]::Create("& `$NODE_EXE `$NPM_CLI_JS $NPM_ARGS")
+  . $NPM_COMMAND
 }
 
 exit $LASTEXITCODE
