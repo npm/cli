@@ -1332,8 +1332,6 @@ t.test('edge with overrides should not crash when target has no overrides', t =>
   t.ok(edge.valid, 'edge should be valid')
   t.end()
 })
-<<<<<<< HEAD
-=======
 
 t.test('satisfiedBy does not check bundling without an applicable override', t => {
   const Node = require('../lib/node.js')
@@ -1426,4 +1424,3 @@ t.test('overrides and bundled deps in satisfiedBy', t => {
   delete a.overrides
   t.end()
 })
->>>>>>> f2dea936c (fix(arborist): skip bundle checks without an applicable override (#10128))
