@@ -247,3 +247,51 @@ t.test('npmExtension: provenance without a root hash and no file fails', async t
   t.match(errors[0], /records \.npm-extension state but no \.npm-extension file is present/,
     'per-node provenance counts as extension state even without a root hash')
 })
+
+t.test('optional unresolved placeholder missing from lock is ignored', async t => {
+  // mirrors buildIdealTree placeholders for unpublished optional deps (npm/cli#10193)
+  const virtual = new Map([
+    ['', { name: 'root', version: '1.0.0' }],
+  ])
+  const ideal = new Map([
+    ['', { name: 'root', version: '1.0.0' }],
+    ['node_modules/missing-opt', {
+      name: 'missing-opt',
+      version: '',
+      optional: true,
+    }],
+  ])
+  t.strictSame(validateLockfile(virtual, ideal), [], 'empty-version optional placeholder is not a sync error')
+})
+
+t.test('optional resolved package missing from lock is still an error', async t => {
+  const virtual = new Map([
+    ['', { name: 'root', version: '1.0.0' }],
+  ])
+  const ideal = new Map([
+    ['', { name: 'root', version: '1.0.0' }],
+    ['node_modules/opt', {
+      name: 'opt',
+      version: '1.2.3',
+      optional: true,
+    }],
+  ])
+  const errors = validateLockfile(virtual, ideal)
+  t.match(errors[0], /Missing: opt@1\.2\.3 from lock file/, 'resolved optional still requires a lock entry')
+})
+
+t.test('required package with empty version missing from lock is still an error', async t => {
+  const virtual = new Map([
+    ['', { name: 'root', version: '1.0.0' }],
+  ])
+  const ideal = new Map([
+    ['', { name: 'root', version: '1.0.0' }],
+    ['node_modules/req', {
+      name: 'req',
+      version: '',
+      optional: false,
+    }],
+  ])
+  const errors = validateLockfile(virtual, ideal)
+  t.match(errors[0], /Missing: req@ from lock file/, 'non-optional empty version still errors')
+})

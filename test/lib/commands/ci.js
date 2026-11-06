@@ -633,3 +633,43 @@ t.test('issue-8726: npm ci with optional peerDep causing lockfile version mismat
     'installed the locked fetcher version, not the peer dep version'
   )
 })
+
+t.test('issue-10193: npm ci accepts lockfile that omitted an unpublished optional dep', async t => {
+  // npm install skips a 404 optionalDependency and writes a lock without it;
+  // buildIdealTree still keeps an empty-version placeholder. npm ci must not
+  // treat that placeholder as lockfile drift.
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { audit: false },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'test-package',
+        version: '1.0.0',
+        optionalDependencies: {
+          'missing-optional': '^1.0.0',
+        },
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'test-package',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            name: 'test-package',
+            version: '1.0.0',
+            optionalDependencies: {
+              'missing-optional': '^1.0.0',
+            },
+          },
+        },
+      }),
+    },
+  })
+  // pacote may probe the missing package more than once while building the ideal tree
+  registry.getPackage('missing-optional', { times: 1, code: 404 })
+  await npm.exec('ci', [])
+  t.notOk(
+    fs.existsSync(path.join(npm.prefix, 'node_modules', 'missing-optional')),
+    'unpublished optional dep is not installed'
+  )
+})
