@@ -4855,6 +4855,128 @@ t.test('allowRemote registry evidence integration', async t => {
     })
   }
 
+  await t.test('host replacement preserves the query of an exempted fetch URL', async t => {
+    const { arb, server, testdir } = setup(t, {
+      resolved: `${tarballURL}?token=download-token`,
+      options: { replaceRegistryHost: 'always' },
+    })
+    server.get('/npm/download/abbrev-1.1.1.tgz')
+      .query({ token: 'download-token' })
+      .reply(200, abbrevTGZ)
+    await t.resolves(arb.reify(), 'fetches the normalized URL without rewriting it again')
+    t.equal(installedVersion(testdir), '1.1.1')
+  })
+
+  await t.test('linked locked siblings cannot share another package identity', async t => {
+    const root = { name: 'project', version: '1.0.0', dependencies: { a: '1.1.1', b: '1.1.1' } }
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify(root),
+        'package-lock.json': JSON.stringify({
+          lockfileVersion: 3,
+          packages: {
+            '': root,
+            'node_modules/a': { name: 'abbrev', version: '1.1.1', resolved: tarballURL },
+            'node_modules/b': { name: 'abbrev', version: '1.1.1', resolved: tarballURL },
+          },
+        }),
+      },
+    })
+    const seen = new Set()
+    const server = MockRegistry.tnock(t, registryHost, {}, { strict: true })
+    for (const name of ['a', 'b']) {
+      server.get(`/npm/${name}`).optionally().reply(() => {
+        seen.add(name)
+        const tarball = seen.size === 1 ? tarballURL : `${registryHost}/download/other.tgz`
+        return [200, {
+          name,
+          versions: { '1.1.1': { name, version: '1.1.1', dist: { tarball } } },
+        }]
+      })
+    }
+    server.get('/download/abbrev-1.1.1.tgz').optionally().reply(200, abbrevTGZ)
+    const arb = new Arborist({
+      audit: false,
+      ignoreScripts: true,
+      fetchRetries: 0,
+      path: resolve(testdir, 'project'),
+      cache: resolve(testdir, 'cache'),
+      registry,
+      allowRemote: 'none',
+      installStrategy: 'linked',
+    })
+    await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' },
+      'one registry identity cannot authorize both locked siblings')
+    t.same(seen, new Set(['a', 'b']), 'checks each independently trusted identity')
+  })
+
+  await t.test('linked store keys include dependency identities', async t => {
+    const path = t.testdir()
+    const root = new Node({
+      path,
+      pkg: { name: 'project', dependencies: { left: '1.0.0', right: '1.0.0' } },
+    })
+    for (const [name, dependency] of [['left', 'a'], ['right', 'b']]) {
+      const consumer = new Node({
+        name,
+        parent: root,
+        resolved: `${registry}${name}.tgz`,
+        pkg: { name, version: '1.0.0', dependencies: { parent: '1.0.0' } },
+      })
+      const parent = new Node({
+        name: 'parent',
+        parent: consumer,
+        resolved: `${registry}parent.tgz`,
+        pkg: { name: 'parent', version: '1.0.0', dependencies: { [dependency]: '1.1.1' } },
+      })
+      new Node({
+        name: dependency,
+        parent,
+        resolved: tarballURL,
+        pkg: { name: 'abbrev', version: '1.1.1' },
+      })
+    }
+    const arb = newArb({ path, installStrategy: 'linked' })
+    arb.idealTree = root
+    const isolated = await arb.createIsolatedTree()
+    const parents = [...isolated.inventory.values()]
+      .filter(node => node.isInStore && node.packageName === 'parent')
+    t.equal(parents.length, 2, 'different dependency identities keep their parent stores separate')
+    t.same(new Set(parents.flatMap(node => [...node.edgesOut.keys()])), new Set(['a', 'b']),
+      'each parent keeps its own dependency branch')
+  })
+
+  await t.test('linked store keys preserve distinct locked integrity values', async t => {
+    const ssri = require('ssri')
+    const path = t.testdir()
+    const root = new Node({
+      path,
+      pkg: {
+        name: 'project',
+        dependencies: { a: 'npm:abbrev@1.1.1', b: 'npm:abbrev@1.1.1' },
+      },
+    })
+    const integrities = new Set()
+    for (const name of ['a', 'b']) {
+      const integrity = ssri.fromData(name).toString()
+      integrities.add(integrity)
+      new Node({
+        name,
+        parent: root,
+        integrity,
+        resolved: tarballURL,
+        pkg: { name: 'abbrev', version: '1.1.1' },
+      })
+    }
+    const arb = newArb({ path, installStrategy: 'linked' })
+    arb.idealTree = root
+    const isolated = await arb.createIsolatedTree()
+    const stores = [...isolated.inventory.values()].filter(node => node.isInStore)
+    t.equal(stores.length, 2, 'one locked digest cannot stand in for the other')
+    t.same(new Set(stores.map(node => node.integrity)), integrities,
+      'both locked values survive the proxy and store-node transformations')
+  })
+
   await t.test('old-lock abbreviated evidence cannot bypass attestation verification', async t => {
     const integrity = require('ssri').fromData(abbrevTGZ).toString()
     const root = {
@@ -4911,13 +5033,14 @@ t.test('allowRemote registry evidence integration', async t => {
   })
 
   for (const flag of ['verifySignatures', 'verifyAttestations']) {
-    for (const locked of ['matching', 'different', 'cached-different', 'missing']) {
+    for (const locked of ['matching', 'different', 'cached-different', 'invalid-different', 'missing']) {
       await t.test(`${flag} binds ${locked} locked integrity to verified bytes`, async t => {
         const RealArborist = require('../../lib/arborist')
         const { generateKeyPairSync, sign } = require('node:crypto')
         const ssri = require('ssri')
         const { publicKey, privateKey } = generateKeyPairSync('ec', { namedCurve: 'prime256v1' })
-        const cachedIntegrity = ssri.fromData(abbrevTGZ).toString()
+        const cachedIntegrity = locked === 'invalid-different'
+          ? 'invalid-integrity' : ssri.fromData(abbrevTGZ).toString()
         const mismatch = locked.endsWith('different')
         const verifiedIntegrity = mismatch
           ? ssri.fromData('different registry bytes').toString() : cachedIntegrity
@@ -4968,6 +5091,52 @@ t.test('allowRemote registry evidence integration', async t => {
         }
       })
     }
+  }
+
+  for (const {
+    lockedAlgorithm, registryAlgorithm, mismatch, installStrategy = 'hoisted', offline = false,
+  } of [
+      { lockedAlgorithm: 'sha1', registryAlgorithm: 'sha512', offline: true },
+      { lockedAlgorithm: 'sha512', registryAlgorithm: 'sha1' },
+      { lockedAlgorithm: 'sha1', registryAlgorithm: 'sha512', mismatch: 'locked' },
+      { lockedAlgorithm: 'sha512', registryAlgorithm: 'sha1', mismatch: 'registry' },
+      { lockedAlgorithm: 'sha1', registryAlgorithm: 'sha512', installStrategy: 'linked' },
+      {
+        lockedAlgorithm: 'sha1',
+        registryAlgorithm: 'sha512',
+        installStrategy: 'linked',
+        mismatch: 'locked',
+      },
+    ]) {
+    await t.test(`${installStrategy} ${lockedAlgorithm} lock / ${registryAlgorithm} registry ${
+      mismatch ? `${mismatch} mismatch` : offline ? 'offline' : 'matching bytes'
+    }`, async t => {
+      const ssri = require('ssri')
+      const lockedIntegrity = ssri.fromData(mismatch === 'locked' ? 'wrong locked bytes' : abbrevTGZ,
+        { algorithms: [lockedAlgorithm] }).toString()
+      const verifiedIntegrity = ssri.fromData(mismatch === 'registry' ? 'wrong registry bytes' : abbrevTGZ,
+        { algorithms: [registryAlgorithm] }).toString()
+      const metadata = packument({ dist: { tarball: tarballURL, integrity: verifiedIntegrity } })
+      const { arb, testdir } = setup(t, {
+        integrity: lockedIntegrity,
+        options: {
+          verifyAttestations: true,
+          installStrategy,
+          offline,
+          packumentCache: new Map([[`full:${registry}abbrev`, metadata]]),
+        },
+      })
+      const downloads = MockRegistry.tnock(t, registryHost, {}, { strict: true })
+      downloads.persist().get('/download/abbrev-1.1.1.tgz').reply(200, abbrevTGZ)
+      await pacote.tarball(tarballURL, { cache: arb.options.cache })
+      if (mismatch) {
+        await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' },
+          'different algorithms do not permit either integrity check to be bypassed')
+      } else {
+        await t.resolves(arb.reify(), 'validates the bytes against both algorithms')
+        t.equal(installedVersion(testdir), '1.1.1')
+      }
+    })
   }
 
   for (const oversized of [false, true]) {

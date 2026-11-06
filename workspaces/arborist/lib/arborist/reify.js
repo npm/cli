@@ -760,7 +760,7 @@ module.exports = cls => class Reifier extends cls {
         _isRoot: isRoot,
         // pacote's npa re-parses our `name@URL` spec as type=remote, so allowRemote would mis-fire on registry tarballs.
         // Override only when we can prove the URL is registry-mediated; see #isRegistryResolvedTarball.
-        ...(registryTarballExemption ? { allowRemote: 'all' } : {}),
+        ...(registryTarballExemption ? { allowRemote: 'all', replaceRegistryHost: 'never' } : {}),
       })
       // store nodes don't use Node class so node.package doesn't get updated
       if (node.isInStore) {
@@ -1042,12 +1042,28 @@ module.exports = cls => class Reifier extends cls {
         return false
       }
       if (evidence.integrity) {
-        if (node.integrity && !ssri.parse(node.integrity)?.match(evidence.integrity)) {
-          throw Object.assign(new Error('Locked integrity does not match verified registry integrity'), {
-            code: 'EINTEGRITY',
-          })
+        let integrity = evidence.integrity
+        const lockedIntegrity = ssri.parse(node.integrity)
+        if (node.integrity && !lockedIntegrity?.match(evidence.integrity)) {
+          const verifiedIntegrity = ssri.parse(evidence.integrity)
+          if (!lockedIntegrity ||
+              Object.keys(lockedIntegrity).some(algorithm => verifiedIntegrity[algorithm])) {
+            throw Object.assign(new Error('Locked integrity does not match verified registry integrity'), {
+              code: 'EINTEGRITY',
+            })
+          }
+          // SRI checks only the strongest algorithm. Prove both before
+          // using their combined integrity for extraction.
+          await pacote.tarball.stream(`${packageName}@${resolvedURL.href}`,
+            stream => ssri.checkStream(stream, lockedIntegrity), {
+              ...this.options,
+              integrity: evidence.integrity,
+              allowRemote: 'all',
+              replaceRegistryHost: 'never',
+            })
+          integrity = lockedIntegrity.concat(evidence.integrity).toString()
         }
-        node.integrity = evidence.integrity
+        node.integrity = integrity
       }
       return true
     } catch (error) {

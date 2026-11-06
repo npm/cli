@@ -294,3 +294,68 @@ t.test('a conditional alias override preserves the identity of its raw-spec fall
   t.equal(getRegistryPackageName(target), 'foo', 'does not select the override target registry')
   t.end()
 })
+
+t.test('a dependency bundle retains its original identity despite an alias override', t => {
+  const root = new Node({
+    path: t.testdirName,
+    loadOverrides: true,
+    pkg: {
+      dependencies: { widget: '1.0.0' },
+      overrides: { foo: 'npm:@scope/foo@9.0.0' },
+    },
+  })
+  const consumer = new Node({
+    name: 'widget',
+    parent: root,
+    pkg: {
+      name: 'widget',
+      version: '1.0.0',
+      dependencies: { foo: '^1.0.0' },
+      bundleDependencies: ['foo'],
+    },
+  })
+  const target = new Node({
+    name: 'foo',
+    parent: consumer,
+    pkg: { name: 'foo', version: '1.2.4' },
+  })
+  t.ok(target.inDepBundle)
+  t.equal(consumer.edgesOut.get('foo').spec, 'npm:@scope/foo@9.0.0')
+  t.ok(consumer.edgesOut.get('foo').valid, 'bundled dependencies ignore the override')
+  t.equal(getRegistryPackageName(target), 'foo')
+  t.end()
+})
+
+for (const [accepted, expected] of [
+  ['^2.0.0', 'foo'],
+  ['npm:@accepted/foo@^2.0.0', '@accepted/foo'],
+]) {
+  t.test(`an accept-only conditional override uses ${expected}'s identity`, t => {
+    const root = new Node({
+      path: t.testdirName,
+      loadOverrides: true,
+      pkg: {
+        dependencies: { widget: '1.0.0' },
+        overrides: { 'foo@1.2.3': 'npm:@scope/foo@9.0.0' },
+      },
+    })
+    const consumer = new Node({
+      name: 'widget',
+      parent: root,
+      pkg: {
+        name: 'widget',
+        version: '1.0.0',
+        dependencies: { foo: '^1.0.0' },
+        acceptDependencies: { foo: accepted },
+      },
+    })
+    const target = new Node({
+      name: 'foo',
+      parent: root,
+      pkg: { name: expected, version: '2.0.0' },
+    })
+    t.ok(consumer.edgesOut.get('foo').valid, 'only the accepted requirement satisfies the node')
+    t.equal(getRegistryPackageName(target), expected, 'does not use the unmatched override target')
+    t.end()
+  })
+}

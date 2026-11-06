@@ -24,8 +24,11 @@ const getRegistryPackageName = (node) => {
     }
     let spec
     try {
-      const requested = node.inDepBundle || edge.overrides?.keySpec &&
-        !depValid(node, edge.spec, edge.accept, edge.from) ? edge.rawSpec : edge.spec
+      let requested = node.inDepBundle ? edge.rawSpec : edge.spec
+      if ((edge.overrides?.keySpec || edge.accept) &&
+          !depValid(node, requested, null, edge.from)) {
+        requested = depValid(node, edge.rawSpec, null, edge.from) ? edge.rawSpec : edge.accept
+      }
       spec = npa.resolve(edge.name, requested)
     } catch {
       return null

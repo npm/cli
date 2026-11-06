@@ -3,7 +3,7 @@ const { depth } = require('treeverse')
 const crypto = require('node:crypto')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
 const nameFromFolder = require('@npmcli/name-from-folder')
-const { carryRegistryPackageName } = require('../registry-package-name.js')
+const { carryRegistryPackageName, getRegistryPackageName } = require('../registry-package-name.js')
 
 // generate short hash key based on the dependency tree starting at this node
 const getKey = (startNode) => {
@@ -13,7 +13,10 @@ const getKey = (startNode) => {
     tree: startNode,
     getChildren: node => node.dependencies,
     visit: node => {
-      branch.push(`${node.packageName}@${node.version}`)
+      const registry = node.isRegistryDependency
+        ? `::registry:${JSON.stringify([getRegistryPackageName(node), node.integrity])}`
+        : ''
+      branch.push(`${node.packageName}@${node.version}${registry}`)
       // a patch changes the materialized contents, so it must change the store key.
       // the patch segment is only appended when present, so unpatched keys are unchanged.
       const patch = node.patched ? `::patch:${node.patched.integrity}` : ''
@@ -60,6 +63,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       resolved: node.resolved,
       root,
     })
+    newChild.integrity = node.integrity
     carryRegistryPackageName(node, newChild)
     // XXX top is from place-dep not lib/node.js
     newChild.top = { path: this.idealGraph.localPath }
@@ -163,6 +167,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.optional = node.optional
     result.resolved = node.resolved
     result.version = node.version
+    result.integrity = node.integrity
     // Carry the source node's registry-dependency flag so the store node retains it.
     // IsolatedNode has no edges to recompute it from, and reify's registry-tarball allow-remote exemption depends on it.
     result.isRegistryDependency = node.isRegistryDependency
