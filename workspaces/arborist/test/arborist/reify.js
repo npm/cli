@@ -2156,6 +2156,67 @@ t.test('running lifecycle scripts of unchanged link nodes on reify', async t => 
     'should run postinstall lifecycle scripts for links directly linked to the tree')
 })
 
+t.test('allowScripts gates the prepare pacote runs while extracting a directory dep', async t => {
+  // pacote runs `prepare` for git and directory deps during extract (here via
+  // DirFetcher#prepareDir), before the node reaches the rebuild queues where the
+  // allowScripts gate normally lives, so the policy has to reach it through the
+  // ignoreScripts option. Install-links forces the file: dep to be extracted
+  // rather than symlinked, which is what takes it down the prepare path.
+  // prepare writes a marker into the source dir, so its presence proves whether
+  // the script actually ran, rather than only inspecting the option we passed.
+  const runPrepare = async (t, opt) => {
+    const dir = t.testdir({
+      proj: {
+        'package.json': JSON.stringify({
+          name: 'root',
+          version: '1.0.0',
+          dependencies: { 'prepare-fixture': `file:${resolve(t.testdirName, 'dep')}` },
+        }),
+      },
+      dep: {
+        'package.json': JSON.stringify({
+          name: 'prepare-fixture',
+          version: '1.0.0',
+          scripts: { prepare: 'node prepare.js' },
+        }),
+        // Node rather than a shell redirect so the side effect is cross-platform.
+        'prepare.js': `require('node:fs').writeFileSync('prepare-ran', '')`,
+      },
+    })
+    const path = resolve(dir, 'proj')
+    const dep = resolve(dir, 'dep')
+    await new Arborist({
+      audit: false,
+      cache: resolve(dir, 'cache'),
+      path,
+      installLinks: true,
+      ...opt,
+    }).reify()
+    return fs.existsSync(resolve(dep, 'prepare-ran'))
+  }
+
+  t.test('unreviewed dep is blocked', async t => {
+    t.notOk(await runPrepare(t, { allowScripts: {} }), 'prepare did not run')
+  })
+
+  t.test('explicitly approved dep is allowed', async t => {
+    t.ok(await runPrepare(t, {
+      allowScripts: { [`file:${resolve(t.testdirName, 'dep')}`]: true },
+    }), 'prepare ran')
+  })
+
+  t.test('dangerouslyAllowAllScripts is allowed', async t => {
+    t.ok(await runPrepare(t, { dangerouslyAllowAllScripts: true }), 'prepare ran')
+  })
+
+  t.test('ignoreScripts still wins', async t => {
+    t.notOk(await runPrepare(t, {
+      ignoreScripts: true,
+      dangerouslyAllowAllScripts: true,
+    }), 'prepare did not run')
+  })
+})
+
 t.test('save-prod, with optional', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
