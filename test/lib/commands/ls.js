@@ -205,6 +205,45 @@ t.test('ls', async t => {
     t.matchSnapshot(cleanCwd(result()), 'should omit missing optional dep')
   })
 
+  t.test('no workspaces and missing optional dep', async t => {
+    const config = {
+      workspaces: false,
+    }
+    const { result, ls } = await mockLs(t, {
+      config,
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: 'root',
+          dependencies: {
+            foo: '^1.0.0',
+          },
+          optionalDependencies: {
+            bar: '^1.0.0',
+          },
+          workspaces: ['./baz'],
+        }),
+        baz: {
+          'package.json': JSON.stringify({
+            name: 'baz',
+            version: '1.0.0',
+          }),
+        },
+        node_modules: {
+          baz: t.fixture('symlink', '../baz'),
+          foo: {
+            'package.json': JSON.stringify({
+              name: 'foo',
+              version: '1.0.0',
+            }),
+          },
+        },
+      },
+    })
+
+    await ls.exec([])
+    t.matchSnapshot(cleanCwd(result()), 'should list missing optional dep and omit workspaces')
+  })
+
   t.test('extraneous deps', async t => {
     const { result, ls } = await mockLs(t, {
       config: {},
