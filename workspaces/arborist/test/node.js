@@ -3240,6 +3240,36 @@ t.test('should propagate the new override set to the target node', t => {
   t.end()
 })
 
+t.test('a hoisted dep reached through two scopes of the same override keeps it', t => {
+  // Regression test for https://github.com/npm/cli/issues/10137
+  const tree = new Node({
+    loadOverrides: true,
+    path: '/root',
+    pkg: {
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { tshy: '4.1.3' },
+      overrides: {
+        minimatch: { 'brace-expansion': '^5.0.12' },
+        tshy: { glob: { minimatch: { 'brace-expansion': '^5.0.12' } } },
+      },
+    },
+    children: [
+      { name: 'tshy', version: '4.1.3', pkg: { dependencies: { glob: '^13.0.0', minimatch: '^10.0.3' } } },
+      { name: 'glob', version: '13.0.0', pkg: { dependencies: { minimatch: '^10.2.2' } } },
+      { name: 'minimatch', version: '10.2.6', pkg: { dependencies: { 'brace-expansion': '^5.0.8' } } },
+      { name: 'brace-expansion', version: '5.0.9', pkg: {} },
+    ],
+  })
+
+  const minimatch = tree.children.get('minimatch')
+  t.equal(minimatch.edgesIn.size, 2, 'minimatch is reached from tshy and from glob')
+  const edge = minimatch.edgesOut.get('brace-expansion')
+  t.equal(edge.spec, '^5.0.12', 'the override still applies to brace-expansion')
+  t.notOk(edge.valid, 'brace-expansion@5.0.9 does not satisfy the override')
+  t.end()
+})
+
 t.test('override conflict detection with semantic comparison', t => {
   t.test('non-conflicting different override sets should be valid', t => {
     // Regression test for issue #8688
