@@ -13,7 +13,8 @@ module.exports = class CIMap extends Map {
   }
 
   #normKey (key) {
-    if (typeof key !== 'string') {
+    // ASCII keys without uppercase letters are already normalized.
+    if (typeof key !== 'string' || !/[A-Z\u0080-\uffff]/.test(key)) {
       return key
     }
     return key.normalize('NFKD').toLowerCase()
