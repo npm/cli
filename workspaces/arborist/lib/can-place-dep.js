@@ -242,6 +242,15 @@ class CanPlaceDep {
         continue
       }
 
+      // If the dependent bringing in this peer set is itself being replaced
+      // by a member of the new peer set, the current set will be pruned along
+      // with it, so it does not need to be kept.
+      const fromRep = dep.parent.children.get(entryEdge.from.name)
+      if (entryEdge.from.parent === target &&
+          fromRep?.canReplace(entryEdge.from, dep.parent.children.keys())) {
+        continue
+      }
+
       // First, see if it's ok to just replace the peerSet entirely.
       // we do this by walking out from the entryEdge, because in a case like
       // this:

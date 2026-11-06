@@ -3045,6 +3045,44 @@ t.test('fail to upgrade a partly overlapping peer set', async t => {
   }), { code: 'ERESOLVE' }, 'should not be able to upgrade dep')
 })
 
+t.test('upgrade a dep and its peer when a transitive dep shares the peer', async t => {
+  // https://github.com/npm/cli/issues/3782
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { foo: '1.0.0', bar: '1.0.0' },
+    }),
+  })
+  const registry = createRegistry(t, false)
+  const fooManifest = registry.manifest({ name: 'foo', packuments: ['1.0.0', '2.0.0'] })
+  const barManifest = registry.manifest({
+    name: 'bar',
+    packuments: [
+      { version: '1.0.0', dependencies: { baz: '1.0.0' }, peerDependencies: { foo: '1.0.0' } },
+      { version: '2.0.0', dependencies: { baz: '2.0.0' }, peerDependencies: { foo: '2.0.0' } },
+    ],
+  })
+  const bazManifest = registry.manifest({
+    name: 'baz',
+    packuments: [
+      { version: '1.0.0', peerDependencies: { foo: '1.0.0' } },
+      { version: '2.0.0', peerDependencies: { foo: '2.0.0' } },
+    ],
+  })
+  await registry.package({ manifest: fooManifest, times: 2 })
+  await registry.package({ manifest: barManifest, times: 2 })
+  await registry.package({ manifest: bazManifest, times: 2 })
+
+  const tree = await buildIdeal(path)
+  await tree.meta.save()
+  fs.writeFileSync(join(path, 'package.json'), JSON.stringify({
+    dependencies: { foo: '2.0.0', bar: '2.0.0' },
+  }))
+  const updated = await buildIdeal(path)
+  t.equal(updated.children.get('foo').version, '2.0.0')
+  t.equal(updated.children.get('bar').version, '2.0.0')
+  t.equal(updated.children.get('baz').version, '2.0.0')
+})
+
 t.test('add deps to workspaces', async t => {
   const fixtureDef = {
     'package.json': JSON.stringify({
