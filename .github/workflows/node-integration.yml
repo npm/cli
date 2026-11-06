@@ -275,14 +275,12 @@ jobs:
             // this is a manually updated list of packages that we know currently fail
             const knownFailures = [
               'body-parser', // json parsing error difference
-              'clinic', // unknown, lots of failures
               'ember-cli', // timeout in nodejs ci, one failing test for us that timed out
               'express', // body-parser is what actually fails, it's used in a test
               'https-proxy-agent', // looks ssl related
               'node-gyp', // one test consistently times out
               'resolve', // compares results to require.resolve and fails, also missing inspector/promises
               'uuid', // tests that crypto.getRandomValues throws but it doesn't
-              'weak', // doesn't seem to build in node >12
               'mkdirp', // failing actions in own repo
               'undici', // test failure in node >=18, unable to root cause
             ]
