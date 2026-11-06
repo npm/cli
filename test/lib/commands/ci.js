@@ -698,3 +698,53 @@ t.test('issue-8726: npm ci with optional peerDep causing lockfile version mismat
     'installed the locked fetcher version, not the peer dep version'
   )
 })
+
+t.test('issue-10193: npm ci skips an unpublished optional dependency missing from the lock file', async t => {
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { audit: false, 'ignore-scripts': true },
+    prefixDir: {
+      'sdk-tarball': {
+        'package.json': JSON.stringify({
+          name: 'sdk',
+          version: '1.0.0',
+          optionalDependencies: { unpublished: '^1.0.0' },
+        }),
+      },
+      'package.json': JSON.stringify({
+        name: 'test-package',
+        version: '1.0.0',
+        dependencies: { sdk: '1.0.0' },
+      }),
+      // what npm install writes when the optional dep 404s: the edge is recorded, the package is not
+      'package-lock.json': JSON.stringify({
+        name: 'test-package',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            name: 'test-package',
+            version: '1.0.0',
+            dependencies: { sdk: '1.0.0' },
+          },
+          'node_modules/sdk': {
+            version: '1.0.0',
+            resolved: 'https://registry.npmjs.org/sdk/-/sdk-1.0.0.tgz',
+            optionalDependencies: { unpublished: '^1.0.0' },
+          },
+        },
+      }),
+    },
+  })
+
+  registry.nock.get('/unpublished').reply(404)
+  const sdkManifest = registry.manifest({ name: 'sdk' })
+  await registry.tarball({
+    manifest: sdkManifest.versions['1.0.0'],
+    tarball: path.join(npm.prefix, 'sdk-tarball'),
+  })
+
+  await npm.exec('ci', [])
+  t.ok(fs.existsSync(path.join(npm.prefix, 'node_modules', 'sdk')), 'installs sdk')
+  t.notOk(fs.existsSync(path.join(npm.prefix, 'node_modules', 'unpublished')), 'skips the optional dep')
+})
