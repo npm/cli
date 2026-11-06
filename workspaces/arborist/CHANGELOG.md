@@ -1,5 +1,10 @@
 # Changelog
 
+## [10.0.5](https://github.com/npm/cli/compare/arborist-v10.0.4...arborist-v10.0.5) (2026-11-06)
+### Bug Fixes
+* [`a41b85a`](https://github.com/npm/cli/commit/a41b85aae6f044ef4fe582ce42e2755bbeed252f) [#10068](https://github.com/npm/cli/pull/10068) skip disconnected orphans in install script checks (#10068) (@JamieMagee)
+* [`f2dea93`](https://github.com/npm/cli/commit/f2dea936ca5cbedc53a7d4ae2bf09a9da5eb67a5) [#10128](https://github.com/npm/cli/pull/10128) arborist: skip bundle checks without an applicable override (#10128) (@jeffwidman, @Copilot)
+
 ## [10.0.4](https://github.com/npm/cli/compare/arborist-v10.0.3...arborist-v10.0.4) (2026-10-14)
 ### Bug Fixes
 * [`83ea1a1`](https://github.com/npm/cli/commit/83ea1a1c19648a6b4f5e52a498d8a6aaaf60e52b) [#9987](https://github.com/npm/cli/pull/9987) arborist: report ETARGET instead of ERESOLVE for unresolvable peer targets (#9987) (@manzoorwanijk)

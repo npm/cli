@@ -1,5 +1,9 @@
 # Changelog
 
+## [11.2.1](https://github.com/npm/cli/compare/config-v11.2.0...config-v11.2.1) (2026-11-06)
+### Bug Fixes
+* [`a41b85a`](https://github.com/npm/cli/commit/a41b85aae6f044ef4fe582ce42e2755bbeed252f) [#10068](https://github.com/npm/cli/pull/10068) skip disconnected orphans in install script checks (#10068) (@JamieMagee)
+
 ## [11.2.0](https://github.com/npm/cli/compare/config-v11.1.0...config-v11.2.0) (2026-09-30)
 ### Features
 * [`9741b64`](https://github.com/npm/cli/commit/9741b645b011ae83c9dda66c9b0d5fe0dce9c766) [#10038](https://github.com/npm/cli/pull/10038) dist-tag: support OIDC authentication (#10038) (@reggi, @Copilot)
