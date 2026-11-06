@@ -1,5 +1,24 @@
 # Changelog
 
+## [12.2.3](https://github.com/npm/cli/compare/v12.2.2...v12.2.3) (2026-11-06)
+### Bug Fixes
+* [`a41b85a`](https://github.com/npm/cli/commit/a41b85aae6f044ef4fe582ce42e2755bbeed252f) [#10068](https://github.com/npm/cli/pull/10068) skip disconnected orphans in install script checks (#10068) (@JamieMagee)
+* [`09a15bb`](https://github.com/npm/cli/commit/09a15bb6f6c3e1af26f687bd37ad47a6e5991682) [#10135](https://github.com/npm/cli/pull/10135) libnpmexec: install npx cache despite dryRun or packageLockOnly (#10135) (@ljharb)
+* [`be2acee`](https://github.com/npm/cli/commit/be2aceeb1596f62a78d777720afb4361cfe7328b) [#10191](https://github.com/npm/cli/pull/10191) treat UCRT64 Git Bash as a unix shell on Windows (#10191) (@ump45nose)
+### Chores
+* [`bd8b339`](https://github.com/npm/cli/commit/bd8b33909afb1eb968805151102c66f345fb7c1f) [#10234](https://github.com/npm/cli/pull/10234) restore release integration (@reggi, @Copilot)
+* [`e04a5f8`](https://github.com/npm/cli/commit/e04a5f83466da69e71f68b95819733dd84730a50) [#10241](https://github.com/npm/cli/pull/10241) migrate Cygwin installer (@reggi, @Copilot)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.5): `@npmcli/arborist@10.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v11.2.1): `@npmcli/config@11.2.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v9.0.5): `libnpmdiff@9.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v11.0.6): `libnpmexec@11.0.6`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v8.0.5): `libnpmfund@8.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v10.0.5): `libnpmpack@10.0.5`
+
 ## [12.2.2](https://github.com/npm/cli/compare/v12.2.1...v12.2.2) (2026-11-03)
 ### Bug Fixes
 * [`347dbb2`](https://github.com/npm/cli/commit/347dbb2e3588efcdabb7209df6821919be386477) [#10175](https://github.com/npm/cli/pull/10175) accept supported Node.js prereleases at startup (#10175) (@reggi, @Copilot)
