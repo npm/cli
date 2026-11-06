@@ -1616,6 +1616,17 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
+      // Keep a failed target if it occupies this scope or is already used by
+      // the peer set's source. Replacing it can make its original dependency
+      // load again indefinitely. An otherwise unrelated ancestor doesn't
+      // prevent a complete peer set from nesting below it.
+      const source = node.parent.sourceReference
+      const existing = source.resolve(edge.name)
+      if (this.#loadFailures.has(existing) &&
+          (existing.parent === source || source.edgesOut.get(edge.name)?.to === existing)) {
+        continue
+      }
+
       const parentEdge = node.parent.edgesOut.get(edge.name)
       const { isProjectRoot, isWorkspace } = node.parent.sourceReference
       const isMine = isProjectRoot || isWorkspace
