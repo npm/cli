@@ -22,6 +22,8 @@ const { onExit } = require('signal-exit')
 const touchInterval = 1_000
 // use a reasonably large threshold, in case stat calls take a while
 const staleThreshold = 60_000
+// how many times to retry a mkdir that fails with EBUSY/EPERM while no lock exists, before giving up
+const maxRetriesWithoutLock = 5
 
 // track current locks and their cleanup functions
 const currentLocks = new Map()
@@ -67,6 +69,7 @@ async function withLock (lockPath, cb) {
 }
 
 function acquireLock (lockPath) {
+  let retriesWithoutLock = 0
   return promiseRetry(async (retry) => {
     try {
       await fs.mkdir(lockPath)
@@ -79,6 +82,13 @@ function acquireLock (lockPath) {
 
       if (status === 'locked') {
         // let's see if we can acquire it on the next attempt 🤞
+        return retry(err)
+      }
+      if (status === 'unlocked' && err.code !== 'EEXIST') {
+        // no lock exists, so a lock is not what made mkdir fail; on windows this can be transient, but it can also persist (e.g. a sandbox or a read-only directory), so back off and eventually give up instead of retrying immediately forever
+        if (++retriesWithoutLock > maxRetriesWithoutLock) {
+          throw err
+        }
         return retry(err)
       }
       if (status === 'stale') {
