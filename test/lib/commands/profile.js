@@ -32,6 +32,8 @@ const mockProfile = async (t, {
     globals: {
       'process.stdin.isTTY': isTTY,
       'process.stdout.isTTY': isTTY,
+      // OTP prompts go to stderr; gate matches auth.js (stdin+stderr TTYs).
+      'process.stderr.isTTY': isTTY,
     },
     mocks: {
       ...mocks,
