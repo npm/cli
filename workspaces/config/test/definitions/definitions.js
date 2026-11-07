@@ -592,6 +592,28 @@ t.test('scope', t => {
   t.end()
 })
 
+t.test('registry - "default" maps to default registry URL', t => {
+  const defs = mockDefs()
+
+  const flat1 = {}
+  defs.registry.flatten('registry', { registry: 'default' }, flat1)
+  t.equal(flat1.registry, 'https://registry.npmjs.org/', 'lowercase default')
+
+  const flat2 = {}
+  defs.registry.flatten('registry', { registry: 'DEFAULT' }, flat2)
+  t.equal(flat2.registry, 'https://registry.npmjs.org/', 'uppercase DEFAULT')
+
+  const flat3 = {}
+  defs.registry.flatten('registry', { registry: 'Default' }, flat3)
+  t.equal(flat3.registry, 'https://registry.npmjs.org/', 'mixed case Default')
+
+  const flat4 = {}
+  defs.registry.flatten('registry', { registry: 'https://custom.registry.com/' }, flat4)
+  t.equal(flat4.registry, 'https://custom.registry.com/', 'custom URL passes through')
+
+  t.end()
+})
+
 t.test('strictSSL', t => {
   const obj = { 'strict-ssl': false }
   const flat = {}
