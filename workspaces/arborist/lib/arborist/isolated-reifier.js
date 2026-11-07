@@ -3,6 +3,7 @@ const { depth } = require('treeverse')
 const crypto = require('node:crypto')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
 const nameFromFolder = require('@npmcli/name-from-folder')
+const { carryRegistryPackageNames } = require('../registry-package-name.js')
 
 // generate short hash key based on the dependency tree starting at this node
 const getKey = (startNode) => {
@@ -59,6 +60,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       resolved: node.resolved,
       root,
     })
+    carryRegistryPackageNames(node, newChild)
     // XXX top is from place-dep not lib/node.js
     newChild.top = { path: this.idealGraph.localPath }
     root.children.set(newChild.location, newChild)
@@ -161,9 +163,9 @@ module.exports = cls => class IsolatedReifier extends cls {
     result.optional = node.optional
     result.resolved = node.resolved
     result.version = node.version
-    // Carry the source node's registry-dependency flag so the store node retains it.
-    // IsolatedNode has no edges to recompute it from, and reify's registry-tarball allow-remote exemption depends on it.
+    // Store nodes cannot recompute registry metadata from their synthetic edges.
     result.isRegistryDependency = node.isRegistryDependency
+    carryRegistryPackageNames(node, result)
     // Same reasoning for allow-remote=root: the store node has no edgesIn, so capture from the source node whether it satisfies a valid edge from the project root or a workspace.
     result.isRootDependency = [...node.edgesIn].some(e =>
       e.valid && (e.from?.isProjectRoot || e.from?.isWorkspace)

@@ -4228,6 +4228,117 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     await t.resolves(arb.reify(), 'registry tarball is allowed under linked strategy')
   })
 
+  t.test('reify preserves checked scoped URLs and alias identity', async t => {
+    const pacote = require('pacote')
+    const { get: getFetcher } = require('pacote/lib/fetcher.js')
+    const options = {
+      registry: 'https://default.example.com/',
+      '@private:registry': 'https://private.example.com/',
+      replaceRegistryHost: 'never',
+      allowRemote: 'none',
+    }
+    for (const entry of [
+      {
+        title: 'scoped URL is not replaced again',
+        name: '@scope/pkg',
+        spec: '1.0.0',
+        resolved: 'https://scope.example.com:8443/pkg-1.0.0.tgz',
+        options: {
+          registry: 'https://default.example.com/',
+          '@scope:registry': 'https://scope.example.com:8443/',
+          replaceRegistryHost: 'scope.example.com:8443',
+          allowRemote: 'none',
+        },
+      },
+      ...['hoisted', 'linked'].map(installStrategy => ({
+        title: `private alias under ${installStrategy}`,
+        name: 'alias',
+        packageName: '@private/pkg',
+        spec: 'npm:@private/pkg@1',
+        resolved: 'https://private.example.com/pkg-1.0.0.tgz',
+        options: { ...options, installStrategy },
+      })),
+      ...['hoisted', 'linked'].flatMap(installStrategy => [
+        {
+          title: `transitive shared alias under ${installStrategy}`,
+          name: 'alias',
+          packageName: 'target',
+          resolved: 'https://default.example.com/target-1.0.0.tgz',
+          dependencies: { a: '1', b: '1' },
+          consumers: { a: { alias: 'npm:target@1' }, b: { alias: '*' } },
+          options: { ...options, installStrategy },
+        },
+        {
+          title: `root ordinary declaration with transitive alias under ${installStrategy}`,
+          name: 'alias',
+          packageName: 'target',
+          resolved: 'https://default.example.com/target-1.0.0.tgz',
+          dependencies: { alias: '*', a: '1' },
+          consumers: { a: { alias: 'npm:target@1' } },
+          options: { ...options, installStrategy },
+        },
+      ]),
+    ]) {
+      await t.test(entry.title, async t => {
+        new MockRegistry({ tap: t, registry: entry.options.registry, strict: true })
+        const pkg = { name: entry.packageName || entry.name, version: '1.0.0' }
+        const root = {
+          name: 'root',
+          version: '1.0.0',
+          dependencies: entry.dependencies || { [entry.name]: entry.spec },
+        }
+        const packages = {
+          '': root,
+          [`node_modules/${entry.name}`]: { ...pkg, resolved: entry.resolved },
+        }
+        const packagesByURL = new Map([[entry.resolved, pkg]])
+        for (const [name, dependencies] of Object.entries(entry.consumers || {})) {
+          const consumer = { name, version: '1.0.0', dependencies }
+          const resolved = `${entry.options.registry}${name}-1.0.0.tgz`
+          packages[`node_modules/${name}`] = { ...consumer, resolved }
+          packagesByURL.set(resolved, consumer)
+        }
+        const path = t.testdir({
+          'package.json': JSON.stringify(root),
+          'package-lock.json': JSON.stringify({
+            name: root.name,
+            version: root.version,
+            lockfileVersion: 3,
+            requires: true,
+            packages,
+          }),
+        })
+        let extractions = 0
+        const CaseArborist = t.mock('../..', {
+          ...mocks,
+          '../../lib/debug.js': mockDebug,
+          pacote: {
+            ...pacote,
+            extract: async (uri, dir, opts) => {
+              extractions++
+              const fetcher = getFetcher(uri, opts)
+              t.ok(packagesByURL.has(fetcher.resolved), 'fetches an approved registry URL')
+              t.equal(opts.resolved, fetcher.resolved, 'passes the same effective resolved URL')
+              fs.mkdirSync(dir, { recursive: true })
+              fs.writeFileSync(
+                resolve(dir, 'package.json'),
+                JSON.stringify(packagesByURL.get(fetcher.resolved))
+              )
+            },
+          },
+        })
+        await t.resolves(new CaseArborist({
+          path,
+          cache: resolve(path, 'cache'),
+          audit: false,
+          ignoreScripts: true,
+          ...entry.options,
+        }).reify())
+        t.equal(extractions, packagesByURL.size, 'extracts each registry package once')
+      })
+    }
+  })
+
   t.test('allowRemote=root allows root-direct remote tarball under linked install strategy', async t => {
     // The linked strategy extracts store nodes as IsolatedNode, which has no edgesIn to recompute root-ness from.
     // isRootDependency must be carried from the source tree node, otherwise allow-remote=root mis-fires on a genuine remote tarball that is a direct dep of the project root.
