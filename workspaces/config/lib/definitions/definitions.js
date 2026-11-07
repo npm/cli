@@ -538,6 +538,24 @@ const definitions = {
     `,
     flatten,
   }),
+  'check-privileges': new Definition('check-privileges', {
+    default: false,
+    type: Boolean,
+    description: `
+      If \`true\`, \`npm safeinstall\` reads the \`package.json\` of each package
+      being installed and lists the \`preinstall\`, \`install\`, and
+      \`postinstall\` scripts it declares before anything is installed. The
+      install is cancelled unless you answer \`y\` at the prompt.
+
+      The manifest is fetched from the registry and no tarball is downloaded
+      for a package you go on to reject. Only the requested packages are
+      checked, not their transitive dependencies, so use
+      [\`npm approve-scripts\`](/commands/npm-approve-scripts) to review a
+      dependency you already have in the tree.
+
+      This has no effect on \`npm install\` or on any other command.
+    `,
+  }),
   cidr: new Definition('cidr', {
     default: null,
     type: [null, String, Array],
