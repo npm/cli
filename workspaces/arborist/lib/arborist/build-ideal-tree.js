@@ -42,6 +42,9 @@ const ALLOW_OPTION_FOR_TYPE = {
   file: 'allowFile',
   directory: 'allowDirectory',
 }
+// An edge counts as "root" for allow-* enforcement if the project root or a workspace declares it, or if a root override replaced its spec.
+// Overrides are only read from the root package.json, so an overridden spec is one the project itself wrote.
+const isRootEdge = (edge) => !!(edge?.from?.isProjectRoot || edge?.from?.isWorkspace || edge?.spec !== edge?.rawSpec)
 const addRmPkgDeps = require('../add-rm-pkg-deps.js')
 const optionalSet = require('../optional-set.js')
 const { checkEngine, checkPlatform } = require('npm-install-checks')
@@ -846,7 +849,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     if (allow === 'all') {
       return
     }
-    const isRoot = !!(edge?.from?.isProjectRoot || edge?.from?.isWorkspace)
+    const isRoot = isRootEdge(edge)
     if (allow !== 'none' && isRoot) {
       return
     }
@@ -1473,7 +1476,7 @@ This is a one-time fix-up, please be patient...
       avoid: this.#avoidRange(spec.name),
       fullMetadata: true,
       before: this.#releaseAgeBefore(spec),
-      _isRoot: !!(edge?.from?.isProjectRoot || edge?.from?.isWorkspace),
+      _isRoot: isRootEdge(edge),
     }
     // get the intended spec and stored metadata from yarn.lock file,
     // if available and valid.

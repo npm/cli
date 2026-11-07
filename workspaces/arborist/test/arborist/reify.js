@@ -4258,6 +4258,46 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     await t.resolves(arb.reify(), 'root-direct remote tarball is allowed under linked strategy with allow-remote=root')
   })
 
+  for (const installStrategy of ['hoisted', 'linked']) {
+    t.test(`allowFile=root allows a transitive tarball set by a root override under ${installStrategy} install strategy`, async t => {
+      // Overrides are only read from the root package.json, so a spec replaced by an override counts as root-defined.
+      const testdir = t.testdir({
+        project: {
+          'abbrev-1.1.1.tgz': abbrevTGZ,
+          parent: {
+            'package.json': JSON.stringify({
+              name: 'parent',
+              version: '1.0.0',
+              dependencies: { abbrev: '1.1.1' },
+            }),
+          },
+        },
+      })
+      fs.writeFileSync(resolve(testdir, 'project', 'package.json'), JSON.stringify({
+        name: 'myproject',
+        version: '1.0.0',
+        dependencies: {
+          parent: 'file:./parent',
+        },
+        overrides: {
+          abbrev: `file:${resolve(testdir, 'project', 'abbrev-1.1.1.tgz')}`,
+        },
+      }))
+
+      const arb = new Arborist({
+        path: resolve(testdir, 'project'),
+        registry: 'https://registry.example.com',
+        cache: resolve(testdir, 'cache'),
+        allowFile: 'root',
+        installStrategy,
+      })
+
+      await t.resolves(arb.reify(), 'overridden transitive tarball is allowed with allow-file=root')
+      const installed = [...arb.actualTree.inventory.values()].find(n => n.name === 'abbrev')
+      t.equal(installed?.version, '1.1.1', 'abbrev is installed from the override tarball')
+    })
+  }
+
   t.test('registry with different protocol should swap protocol', async (t) => {
     const abbrevPackument4 = JSON.stringify({
       _id: 'abbrev',
