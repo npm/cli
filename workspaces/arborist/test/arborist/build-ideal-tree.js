@@ -540,7 +540,7 @@ t.test('complete builds preserve source and registry policy boundaries', async t
     replaceRegistryHost: 'never',
     allowRemote: 'none',
   }
-  const file = `file:${resolve(__dirname, 'local-bundle.tgz').replace(/\\/g, '/')}`
+  const file = `file:${resolve(__dirname, 'local-bundle.tgz')}`
   const git = 'git+https://git.example.com/local-bundle.git#0123456789012345678901234567890123456789'
   const cases = [
     {
