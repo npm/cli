@@ -4258,6 +4258,26 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
         resolved: 'https://private.example.com/pkg-1.0.0.tgz',
         options: { ...options, installStrategy },
       })),
+      ...['hoisted', 'linked'].flatMap(installStrategy => [
+        {
+          title: `transitive shared alias under ${installStrategy}`,
+          name: 'alias',
+          packageName: 'target',
+          resolved: 'https://default.example.com/target-1.0.0.tgz',
+          dependencies: { a: '1', b: '1' },
+          consumers: { a: { alias: 'npm:target@1' }, b: { alias: '*' } },
+          options: { ...options, installStrategy },
+        },
+        {
+          title: `root ordinary declaration with transitive alias under ${installStrategy}`,
+          name: 'alias',
+          packageName: 'target',
+          resolved: 'https://default.example.com/target-1.0.0.tgz',
+          dependencies: { alias: '*', a: '1' },
+          consumers: { a: { alias: 'npm:target@1' } },
+          options: { ...options, installStrategy },
+        },
+      ]),
     ]) {
       await t.test(entry.title, async t => {
         new MockRegistry({ tap: t, registry: entry.options.registry, strict: true })
@@ -4265,7 +4285,18 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
         const root = {
           name: 'root',
           version: '1.0.0',
-          dependencies: { [entry.name]: entry.spec },
+          dependencies: entry.dependencies || { [entry.name]: entry.spec },
+        }
+        const packages = {
+          '': root,
+          [`node_modules/${entry.name}`]: { ...pkg, resolved: entry.resolved },
+        }
+        const packagesByURL = new Map([[entry.resolved, pkg]])
+        for (const [name, dependencies] of Object.entries(entry.consumers || {})) {
+          const consumer = { name, version: '1.0.0', dependencies }
+          const resolved = `${entry.options.registry}${name}-1.0.0.tgz`
+          packages[`node_modules/${name}`] = { ...consumer, resolved }
+          packagesByURL.set(resolved, consumer)
         }
         const path = t.testdir({
           'package.json': JSON.stringify(root),
@@ -4274,10 +4305,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
             version: root.version,
             lockfileVersion: 3,
             requires: true,
-            packages: {
-              '': root,
-              [`node_modules/${entry.name}`]: { ...pkg, resolved: entry.resolved },
-            },
+            packages,
           }),
         })
         let extractions = 0
@@ -4289,10 +4317,13 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
             extract: async (uri, dir, opts) => {
               extractions++
               const fetcher = getFetcher(uri, opts)
-              t.equal(fetcher.resolved, entry.resolved, 'fetches the approved registry URL')
-              t.equal(opts.resolved, entry.resolved, 'passes the same effective resolved URL')
+              t.ok(packagesByURL.has(fetcher.resolved), 'fetches an approved registry URL')
+              t.equal(opts.resolved, fetcher.resolved, 'passes the same effective resolved URL')
               fs.mkdirSync(dir, { recursive: true })
-              fs.writeFileSync(resolve(dir, 'package.json'), JSON.stringify(pkg))
+              fs.writeFileSync(
+                resolve(dir, 'package.json'),
+                JSON.stringify(packagesByURL.get(fetcher.resolved))
+              )
             },
           },
         })
@@ -4303,7 +4334,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
           ignoreScripts: true,
           ...entry.options,
         }).reify())
-        t.equal(extractions, 1, 'extracts the registry package once')
+        t.equal(extractions, packagesByURL.size, 'extracts each registry package once')
       })
     }
   })

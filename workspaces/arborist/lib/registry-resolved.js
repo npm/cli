@@ -1,7 +1,7 @@
 const hgi = require('hosted-git-info')
 const npa = require('npm-package-arg')
 const { pickRegistry } = require('npm-registry-fetch')
-const { getRegistryPackageName } = require('./registry-package-name.js')
+const { getRegistryPackageNames } = require('./registry-package-name.js')
 
 // Normalize a node's resolved tarball URL to the configured registry, honoring replace-registry-host.
 // File/directory and Git sources are not registry tarball URLs and must stay unchanged.
@@ -60,15 +60,20 @@ const isRegistryResolvedTarball = (node, options) => {
   if (!node.resolved) {
     return false
   }
-  const name = getRegistryPackageName(node)
-  if (!name) {
+  const names = getRegistryPackageNames(node)
+  if (!names) {
     return false
   }
   try {
     const resolvedURL = new URL(registryResolved(node.resolved, options))
-    const registry = new URL(pickRegistry(npa(name), options))
+    const registries = [...names].map(name => new URL(pickRegistry(npa(name), options)))
+    const registry = registries[0]
     const registryPath = registry.pathname.replace(/\/?$/, '/')
-    return resolvedURL.origin === registry.origin &&
+    return registries.every(candidate =>
+      candidate.origin === registry.origin &&
+      candidate.pathname.replace(/\/?$/, '/') === registryPath
+    ) &&
+      resolvedURL.origin === registry.origin &&
       (registryPath === '/' ||
         resolvedURL.pathname.startsWith(registryPath))
   } catch {

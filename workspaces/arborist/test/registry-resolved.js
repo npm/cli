@@ -1,7 +1,7 @@
 const t = require('tap')
 const { resolve } = require('node:path')
 const Node = require('../lib/node.js')
-const { carryRegistryPackageName } = require('../lib/registry-package-name.js')
+const { carryRegistryPackageNames } = require('../lib/registry-package-name.js')
 
 const {
   isRegistryResolvedTarball,
@@ -194,8 +194,98 @@ t.test('ordinary consumers and peers do not redefine a root-selected alias', t =
   t.end()
 })
 
+t.test('shared alias slots require compatible registry selections', t => {
+  for (const rootDirect of [false, true]) {
+    const root = new Node({
+      path: resolve(__dirname, 'shared-alias-root'),
+      pkg: {
+        name: 'root',
+        version: '1.0.0',
+        dependencies: rootDirect ? { alias: '*', a: '1' } : { a: '1', b: '1' },
+      },
+    })
+    const node = new Node({
+      name: 'alias',
+      parent: root,
+      resolved: 'https://registry.example.com/npm/pkg-1.0.0.tgz',
+      pkg: { name: '@private/pkg', version: '1.0.0' },
+    })
+    new Node({
+      name: 'a',
+      parent: root,
+      pkg: { name: 'a', version: '1.0.0', dependencies: { alias: 'npm:@private/pkg@1' } },
+    })
+    if (!rootDirect) {
+      new Node({
+        name: 'b',
+        parent: root,
+        pkg: { name: 'b', version: '1.0.0', dependencies: { alias: '*' } },
+      })
+    }
+    t.ok([...node.edgesIn].every(edge => edge.valid), 'both incoming declarations are valid')
+
+    const options = {
+      registry: 'https://registry.example.com/npm',
+      '@private:registry': 'https://registry.example.com/npm/',
+      replaceRegistryHost: 'never',
+    }
+    t.equal(isRegistryResolvedTarball(node, options), true, 'compatible names share a registry')
+
+    const proxy = {}
+    const store = { resolved: node.resolved, edgesIn: new Set() }
+    carryRegistryPackageNames(node, proxy)
+    carryRegistryPackageNames(proxy, store)
+    t.equal(isRegistryResolvedTarball(store, options), true, 'linked nodes retain both declarations')
+
+    for (const candidate of [node, store]) {
+      t.equal(
+        isRegistryResolvedTarball(candidate, {
+          ...options,
+          '@private:registry': 'https://private.example.com/npm/',
+        }),
+        false,
+        'different registry origins cannot share an exemption'
+      )
+      t.equal(
+        isRegistryResolvedTarball(candidate, {
+          ...options,
+          registry: 'https://registry.example.com/',
+        }),
+        false,
+        'different registry paths cannot share an exemption even when both contain the URL'
+      )
+    }
+  }
+  t.end()
+})
+
+t.test('bundle status is checked once per registry lookup', t => {
+  const node = registryNode('https://default.example.com/example-1.0.0.tgz')
+  for (const name of ['a', 'b']) {
+    new Node({
+      name,
+      parent: node.root,
+      pkg: { name, version: '1.0.0', dependencies: { example: '*' } },
+    })
+  }
+  t.ok([...node.edgesIn].every(edge => edge.valid), 'warm the valid incoming declarations')
+
+  let lookups = 0
+  Object.defineProperty(node, 'inDepBundle', {
+    get () {
+      lookups++
+      return false
+    },
+  })
+  for (const expected of [1, 2]) {
+    t.equal(isRegistryResolvedTarball(node, aliasOptions), true)
+    t.equal(lookups, expected, 'one bundle lookup per invocation, not per incoming edge')
+  }
+  t.end()
+})
+
 t.test('conflicting alias declarations cannot grant an exemption', t => {
-  const node = registryNode('https://default.example.com/pkg-1.0.0.tgz', {
+  const node = registryNode('https://private.example.com/pkg-1.0.0.tgz', {
     name: 'alias',
     spec: 'npm:@private/pkg@1',
     packageName: '@private/pkg',
@@ -205,7 +295,11 @@ t.test('conflicting alias declarations cannot grant an exemption', t => {
     name: 'consumer',
     pkg: { name: 'consumer', version: '1.0.0', dependencies: { alias: 'npm:@other/pkg@1' } },
   })
-  t.equal(isRegistryResolvedTarball(node, aliasOptions), false)
+  t.ok([...node.edgesIn].every(edge => edge.valid), 'both explicit alias declarations are valid')
+  t.equal(isRegistryResolvedTarball(node, {
+    ...aliasOptions,
+    '@other:registry': aliasOptions['@private:registry'],
+  }), false, 'conflicting explicit alias targets remain blocked even on the same registry')
   t.end()
 })
 
@@ -301,8 +395,8 @@ t.test('linked transformations carry trusted identity without trusting copied me
     resolved: source.resolved,
     edgesIn: new Set(),
   }
-  carryRegistryPackageName(source, proxy)
-  carryRegistryPackageName(proxy, store)
+  carryRegistryPackageNames(source, proxy)
+  carryRegistryPackageNames(proxy, store)
   t.equal(isRegistryResolvedTarball(store, aliasOptions), true)
   store.resolved = 'https://default.example.com/pkg-1.0.0.tgz'
   t.equal(isRegistryResolvedTarball(store, aliasOptions), false)
@@ -324,7 +418,7 @@ t.test('unverifiable or malformed identity cannot be carried into an exemption',
       edgesIn,
     }
     const store = { ...source, edgesIn: new Set() }
-    carryRegistryPackageName(source, store)
+    carryRegistryPackageNames(source, store)
     t.equal(isRegistryResolvedTarball(store, aliasOptions), false)
   }
   t.end()

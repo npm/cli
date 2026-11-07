@@ -4,9 +4,9 @@ const { trustedSpecName } = require('./release-age-exclude.js')
 
 const carriedNames = new WeakMap()
 
-// Registry tarball exemptions widen fetch policy, so derive their package
-// identity from valid dependency specs rather than package metadata.
-const getRegistryPackageName = (node) => {
+// Registry tarball exemptions widen fetch policy, so derive trusted names
+// from valid dependency specs rather than package metadata.
+const getRegistryPackageNames = (node) => {
   if (carriedNames.has(node)) {
     return carriedNames.get(node)
   }
@@ -18,13 +18,14 @@ const getRegistryPackageName = (node) => {
   const peerNames = new Set()
   const rootNames = new Set()
   const aliases = new Set()
+  const inDepBundle = node.inDepBundle
   for (const edge of node.edgesIn) {
     if (!edge.valid) {
       continue
     }
     let spec
     try {
-      const requested = node.inDepBundle || edge.overrides?.keySpec &&
+      const requested = inDepBundle || edge.overrides?.keySpec &&
         !depValid(node, edge.spec, edge.accept, edge.from) ? edge.rawSpec : edge.spec
       spec = npa.resolve(edge.name, requested)
     } catch {
@@ -52,18 +53,18 @@ const getRegistryPackageName = (node) => {
     }
   }
 
-  // A project/workspace can select a fork for an installed slot also used
-  // by ordinary transitive requirements. Explicit alias targets must agree.
-  const identities = rootNames.size ? rootNames : names.size ? names : peerNames
-  if (identities.size !== 1) {
+  // Root/workspace selections take precedence over ordinary transitive
+  // requirements. Explicit aliases must agree; the caller checks whether
+  // different selected names share a registry under the current options.
+  const selectedNames = rootNames.size ? rootNames : names.size ? names : peerNames
+  if (!selectedNames.size || aliases.size > 1) {
     return null
   }
-  const name = identities.values().next().value
-  return [...aliases].every(alias => alias === name) ? name : null
+  return new Set([...selectedNames, ...aliases])
 }
 
-const carryRegistryPackageName = (from, to) => {
-  carriedNames.set(to, getRegistryPackageName(from))
+const carryRegistryPackageNames = (from, to) => {
+  carriedNames.set(to, getRegistryPackageNames(from))
 }
 
-module.exports = { carryRegistryPackageName, getRegistryPackageName }
+module.exports = { carryRegistryPackageNames, getRegistryPackageNames }
