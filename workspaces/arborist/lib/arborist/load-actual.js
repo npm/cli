@@ -318,6 +318,8 @@ module.exports = cls => class ActualLoader extends cls {
         // A package physically located in the linked strategy's store is a transitive dependency, not a real tree top, so it must not load its devDependencies.
         // Never flag the loaded root itself, even if its own path happens to sit under a .store directory.
         isInStore: path !== this.path && real.includes(`${sep}node_modules${sep}.store${sep}`),
+        // pnpm's store also makes dependencies look like tree tops, but it is not npm's linked-install store.
+        isInPnpmStore: path !== this.path && real.includes(`${sep}node_modules${sep}.pnpm${sep}`),
       }
 
       try {
