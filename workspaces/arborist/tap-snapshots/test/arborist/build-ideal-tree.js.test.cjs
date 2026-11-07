@@ -16835,7 +16835,6 @@ ArboristNode {
               "type": "peerOptional",
             },
           },
-          "extraneous": true,
           "location": "node_modules/@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional/node_modules/@isaacs/test-conflicted-optional-peer-dep-peer",
           "name": "@isaacs/test-conflicted-optional-peer-dep-peer",
           "optional": true,
