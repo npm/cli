@@ -6,6 +6,7 @@ const { join, resolve } = require('node:path')
 const Node = require('../../lib/node.js')
 const Shrinkwrap = require('../../lib/shrinkwrap.js')
 const fs = require('node:fs')
+const PackageJson = require('@npmcli/package-json')
 
 const {
   fixtures,
@@ -933,4 +934,36 @@ t.test('a project located under a .store path still loads its own devDependencie
   const tree = await loadActual(root)
   t.equal(tree.isInStore, false, 'loaded root is not flagged isInStore')
   t.ok(tree.edgesOut.get('a-dev-dep'), 'root devDependency is a required edge')
+})
+
+t.test('package.json reads in a node_modules folder are bounded', async t => {
+  const names = Array.from({ length: 50 }, (_, i) => `dep-${i}`)
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', version: '1.0.0' }),
+    node_modules: Object.fromEntries(names.map(name => [name, {
+      'package.json': JSON.stringify({ name, version: '1.0.0' }),
+    }])),
+  })
+
+  let inflight = 0
+  let peak = 0
+  const Arb = t.mock('../../lib/arborist', {
+    '@npmcli/package-json': class extends PackageJson {
+      static async normalize (...args) {
+        peak = Math.max(peak, ++inflight)
+        // yield so the reads overlap and the peak is observable
+        await new Promise(res => setImmediate(res))
+        try {
+          return await super.normalize(...args)
+        } finally {
+          inflight--
+        }
+      }
+    },
+  })
+
+  const tree = await new Arb({ path }).loadActual()
+  t.equal(tree.children.size, names.length, 'every package was loaded')
+  t.ok(peak > 1, `reads overlap (peak ${peak})`)
+  t.ok(peak < names.length, `reads are bounded (peak ${peak} of ${names.length})`)
 })
