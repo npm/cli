@@ -122,6 +122,79 @@ t.test('install-scripts deny --all denies every unreviewed package', async t => 
   t.strictSame(pkg.allowScripts, { canvas: false, sharp: false })
 })
 
+t.test('install-scripts approve --dry-run reports without writing', async t => {
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+    config: { 'dry-run': true },
+  })
+  await npm.exec('install-scripts', ['approve', 'canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg, 'package.json is unchanged')
+  t.match(joinedOutput(), /Would approve canvas:/)
+  t.match(joinedOutput(), /added canvas@1\.0\.0/)
+})
+
+t.test('install-scripts deny --dry-run reports without writing', async t => {
+  const allowScripts = { 'canvas@1.0.0': true }
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'], allowScripts }),
+    config: { 'dry-run': true },
+  })
+  await npm.exec('install-scripts', ['deny', 'canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, allowScripts, 'package.json is unchanged')
+  t.match(joinedOutput(), /Would deny canvas:/)
+})
+
+t.test('install-scripts approve --all --dry-run reports without writing', async t => {
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas', 'sharp'] }),
+    config: { all: true, 'dry-run': true },
+  })
+  await npm.exec('install-scripts', ['approve'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg, 'package.json is unchanged')
+  t.match(joinedOutput(), /Would approve canvas:/)
+  t.match(joinedOutput(), /Would approve sharp:/)
+})
+
+t.test('install-scripts approve --dry-run --json reports the pending change', async t => {
+  const { npm, prefix, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+    config: { 'dry-run': true, json: true },
+  })
+  await npm.exec('install-scripts', ['approve', 'canvas'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg, 'package.json is unchanged')
+  t.strictSame(JSON.parse(joinedOutput()), {
+    allowScripts: [{
+      name: 'canvas',
+      changes: [{ key: 'canvas@1.0.0', change: 'added' }],
+    }],
+    dryRun: true,
+  })
+})
+
+t.test('install-scripts approve --json marks a real write as not a dry run', async t => {
+  const { npm, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({ withScripts: ['canvas'] }),
+    config: { json: true },
+  })
+  await npm.exec('install-scripts', ['approve', 'canvas'])
+
+  t.strictSame(JSON.parse(joinedOutput()), {
+    allowScripts: [{
+      name: 'canvas',
+      changes: [{ key: 'canvas@1.0.0', change: 'added' }],
+    }],
+    dryRun: false,
+  })
+})
+
 t.test('install-scripts ignores allow-scripts-pending and still writes', async t => {
   // The namespace exposes listing through `ls`, so a stray
   // `allow-scripts-pending` config must not divert approve into list mode.
