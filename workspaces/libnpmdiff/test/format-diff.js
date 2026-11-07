@@ -467,3 +467,36 @@ t.test('format multiple files patch', async t => {
     'should output expected result for multiple files'
   )
 })
+
+t.test('control chars in a tarball entry name cannot forge diff headers', async t => {
+  // tar entry paths are attacker controlled and may contain a newline
+  const filename = 'a.js\ndiff --git a/HIDDEN b/HIDDEN\n--- a/HIDDEN\n+++ b/HIDDEN'
+  const files = new Set([filename])
+  const refs = new Map(Object.entries({
+    [`a/${filename}`]: { content: 'one\n', mode: '100644' },
+    [`b/${filename}`]: { content: 'two\n', mode: '100644' },
+  }))
+  const res = await formatDiff({
+    files,
+    refs,
+    versions: { a: '1.0.0', b: '2.0.0' },
+  })
+  t.notMatch(res, /^diff --git a\/HIDDEN b\/HIDDEN$/m, 'no forged diff --git line')
+  t.notMatch(res, /^--- a\/HIDDEN$/m, 'no forged --- line')
+  t.notMatch(res, /^\+\+\+ b\/HIDDEN$/m, 'no forged +++ line')
+})
+
+t.test('control chars in a manifest version cannot forge diff lines', async t => {
+  const files = new Set(['foo.js'])
+  const refs = new Map(Object.entries({
+    'a/foo.js': { content: 'one\n', mode: '100644' },
+    'b/foo.js': { content: 'two\n', mode: '100644' },
+  }))
+  const res = await formatDiff({
+    files,
+    refs,
+    // a git/file spec's version is read verbatim from package.json
+    versions: { a: '1.0.0\n+forged version line', b: '2.0.0' },
+  })
+  t.notMatch(res, /^\+forged version line$/m, 'version newline does not inject a line')
+})
