@@ -50,6 +50,22 @@ for (const allowDirectory of ['none', 'root']) {
   })
 }
 
+for (const allowFile of ['none', 'root']) {
+  t.test(`packs an explicit local tarball with allow-file=${allowFile}`, async t => {
+    const testDir = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'my-cool-pkg',
+        version: '1.0.0',
+      }, null, 2),
+    })
+    const tarFilename = path.join(testDir, 'my-cool-pkg-1.0.0.tgz')
+    fs.writeFileSync(tarFilename, await pack(testDir))
+
+    const tarball = await pack(tarFilename, { allowFile })
+    t.ok(tarball)
+  })
+}
+
 t.test('flattens path separators in name so tarball stays in packDestination', async t => {
   const testDir = t.testdir({
     src: {
