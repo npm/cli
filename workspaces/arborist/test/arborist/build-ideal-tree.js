@@ -4959,6 +4959,62 @@ t.test('circular peer back-off does not crash when node is detached mid-resoluti
     'backs off to plugin@1.0.0 to satisfy the optional peer instead of crashing')
 })
 
+t.test('peer task dep evicted from its virtual root by a later peer edge does not crash (#9911)', async t => {
+  // A global install queues tui's peer edges as problem edges resolved one at
+  // a time.  Resolving the @t/agent edge places agent@2.0.0 into the virtual
+  // root, then resolving @t/y's peer set replaces it with agent@1.0.0 in the
+  // same virtual root (the canReplace path in #loadPeerSet), detaching the
+  // node the agent task still holds.  Building that task's PlaceDep used to
+  // dereference the now-null virtual root while trying to place agent's
+  // invalid peer edge llm@^2.0.0, crashing with "Cannot read properties of
+  // null (reading 'children')".  The unmet peers are instead re-resolved from
+  // the deps queue, so the tree backs off to the versions the peer set wants.
+  const registry = createRegistry(t, false)
+
+  const tuiPack = registry.packument({
+    name: '@t/tui',
+    version: '1.0.0',
+    peerDependencies: { '@t/agent': '*', '@t/y': '1.0.0' },
+  })
+  const tuiManifest = registry.manifest({ name: '@t/tui', packuments: [tuiPack] })
+  await registry.package({ manifest: tuiManifest })
+
+  const agentPacks = [
+    registry.packument({ name: '@t/agent', version: '1.0.0', peerDependencies: { '@t/llm': '^1.0.0' } }),
+    registry.packument({ name: '@t/agent', version: '2.0.0', peerDependencies: { '@t/llm': '^2.0.0' } }),
+  ]
+  const agentManifest = registry.manifest({ name: '@t/agent', packuments: agentPacks })
+  await registry.package({ manifest: agentManifest, times: 2 })
+
+  const yPack = registry.packument({
+    name: '@t/y',
+    version: '1.0.0',
+    peerDependencies: { '@t/agent': '^1.0.0', '@t/llm': '^1.0.0' },
+  })
+  const yManifest = registry.manifest({ name: '@t/y', packuments: [yPack] })
+  await registry.package({ manifest: yManifest })
+
+  const llmPacks = [
+    registry.packument({ name: '@t/llm', version: '1.0.0' }),
+    registry.packument({ name: '@t/llm', version: '2.0.0' }),
+  ]
+  const llmManifest = registry.manifest({ name: '@t/llm', packuments: llmPacks })
+  await registry.package({ manifest: llmManifest, times: 2 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'test-9911' }),
+  })
+  const arb = newArb(path, { global: true })
+  const tree = await arb.buildIdealTree({ add: ['@t/tui@1.0.0'] })
+
+  const tui = tree.children.get('@t/tui')
+  t.ok(tui, 'tui is installed at top level')
+  t.equal(tui.children.get('@t/agent').version, '1.0.0',
+    'backs off to agent@1.0.0 to satisfy the peer set instead of crashing')
+  t.equal(tui.children.get('@t/llm').version, '1.0.0',
+    'llm backs off to the version the peer set can satisfy')
+})
+
 t.test('does not fetch packuments for peerOptional deps that will not be installed', async t => {
   const registry = createRegistry(t, false)
 
