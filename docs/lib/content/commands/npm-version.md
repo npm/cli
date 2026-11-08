@@ -87,6 +87,43 @@ This runs all your tests and proceeds only if they pass.
 Then runs your `build` script, and adds everything in the `dist` directory to the commit.
 After the commit, it pushes the new commit and tag up to the server, and deletes the `build/temp` directory.
 
+#### Workspaces and Inter-Dependencies
+
+When using `npm workspaces`, you might have multiple packages that depend on one another. For example:
+
+```json
+// package-a/package.json
+{
+  "name": "package-a",
+  "version": "1.0.2"
+}
+
+// package-b/package.json
+{
+  "name": "package-b",
+  "version": "1.0.2",
+  "dependencies": {
+    "package-a": "^1.0.2"
+  }
+}
+```
+
+#### Changes When Running `npm version -ws --save`
+
+1. **Bump the versions in each workspace’s `package.json`.**
+2. **Attempt to update cross-dependencies** where the new version fits into the declared semver range.
+
+#### Note on `--save`
+By default, `npm version -ws` will bump the versions in each workspace without automatically 
+updating dependency references across workspaces. Including the `--save` flag ensures that dependency 
+references are updated when the sember range allows it.
+
+For example, if a dependency is declared as `^1.0.2`, a minor bump from `1.0.2` to `1.1.0` 
+is valid under the caret range, so npm updates the reference to `^1.1.0`. However, 
+moving from `1.x.x` to `2.x.x` is outside of the caret range. In that case, 
+you must broaden the range (e.g., `">=1.0.0 <3.0.0"`, `"^1.0.0 || ^2.0.0"`, etc.) or 
+manually update it to allow a major bump.
+
 ### See Also
 
 * [npm init](/commands/npm-init)
