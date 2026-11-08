@@ -5148,6 +5148,45 @@ t.test('peerOptional prefers existing tree node over registry fetch (#9249)', as
     'jest-util@28 nested under expect')
 })
 
+t.test('named update keeps a required workspace peer satisfied by a project pin', async t => {
+  const registry = createRegistry(t)
+  const peerDeps = { react: '^18.0.0 || ^19.0.0' }
+  const reactManifest = registry.manifest({ name: 'react', versions: ['18.3.1', '19.0.0'] })
+  registry.nock.get('/react').optionally().times(3).reply(200, reactManifest)
+  const root = {
+    name: 'root',
+    version: '1.0.0',
+    workspaces: ['app'],
+    dependencies: { react: '18.3.1', signals: '2.0.0' },
+  }
+  const app = {
+    name: 'app',
+    version: '1.0.0',
+    dependencies: { react: '^18.2.0', signals: '1.0.0' },
+  }
+  const path = t.testdir({
+    'package.json': JSON.stringify(root),
+    app: { 'package.json': JSON.stringify(app) },
+    'package-lock.json': JSON.stringify({
+      lockfileVersion: 3,
+      packages: {
+        '': root,
+        app,
+        'node_modules/app': { resolved: 'app', link: true },
+        'node_modules/react': { version: '18.3.1' },
+        'node_modules/signals': { version: '2.0.0', peerDependencies: peerDeps },
+        'app/node_modules/signals': { version: '1.0.0', peerDependencies: peerDeps },
+      },
+    }),
+  })
+
+  const tree = await buildIdeal(path, { update: { names: ['react'] } })
+  const react = tree.children.get('react')
+  const signals = tree.inventory.get('app/node_modules/signals')
+  t.equal(react.version, '18.3.1')
+  t.equal(signals.edgesOut.get('react').to, react)
+})
+
 t.test('peerOptional skips dedupe shortcut when update.names includes the dep', async t => {
   // Same scenario as above, but with update: { names: ['jest-util'] }.
   // skipExistingShortcut=true so #findHoistableNode is NOT called;
