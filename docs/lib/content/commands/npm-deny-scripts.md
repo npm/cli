@@ -44,6 +44,12 @@ hosted-git dependency is denied at the repository level. Non-registry version
 and range selectors are not supported because those versions come from the
 dependency itself.
 
+Relative file keys are resolved from the project root, not from `node_modules`.
+If one target has multiple file identities, `ls` shows every selector and
+denial requires an exact selector; `--all` skips it with a warning.
+Repository-level denials remove policy entries for every commit of that
+repository, including commits that are not currently installed.
+
 `--all` denies every package with unreviewed install scripts.
 
 If a `true` (pinned or name-only) entry exists for a package and you then

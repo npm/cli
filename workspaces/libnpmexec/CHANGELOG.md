@@ -56,6 +56,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.4): `@npmcli/arborist@10.0.4`
 
+## [11.0.5](https://github.com/npm/cli/compare/libnpmexec-v11.0.4...libnpmexec-v11.0.5) (2026-11-03)
+### Bug Fixes
+* [`10ffa9f`](https://github.com/npm/cli/commit/10ffa9f35c707fbf91733a07683a7ea96c38e416) [#10044](https://github.com/npm/cli/pull/10044) libnpmexec: escape inferred executable names for selected shell (#10044) (@martinrrm, @Copilot)
+
 ## [11.0.0](https://github.com/npm/cli/compare/libnpmexec-v11.0.0-pre.1...libnpmexec-v11.0.0) (2026-07-08)
 ### ⚠️ BREAKING CHANGES
 * `npm` now supports node `^22.22.2 || ^24.15.0 || >=26.0.0`

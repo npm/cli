@@ -2156,6 +2156,38 @@ t.test('running lifecycle scripts of unchanged link nodes on reify', async t => 
     'should run postinstall lifecycle scripts for links directly linked to the tree')
 })
 
+t.test('local file approvals survive linked reify', async t => {
+  for (const policy of [true, false, null]) {
+    await t.test(`approval ${policy}`, async t => {
+      const path = t.testdir({
+        'package.json': JSON.stringify({
+          name: 'host',
+          version: '1.0.0',
+          dependencies: { 'local-foo': 'file:local-foo' },
+        }),
+        'local-foo': {
+          'package.json': JSON.stringify({
+            name: 'local-foo',
+            version: '1.0.0',
+            scripts: {
+              postinstall: 'node -e "require(\'node:fs\').writeFileSync(\'built\', \'ok\')"',
+            },
+          }),
+        },
+      })
+      createRegistry(t, false)
+      const arb = newArb({
+        path,
+        installStrategy: 'linked',
+        allowScripts: policy === null ? {} : { 'file:local-foo': policy },
+        dangerouslyAllowAllScripts: false,
+      })
+      await arb.reify()
+      t.equal(fs.existsSync(resolve(path, 'local-foo/built')), policy === true)
+    })
+  }
+})
+
 t.test('save-prod, with optional', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({

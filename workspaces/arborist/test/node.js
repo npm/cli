@@ -838,6 +838,32 @@ t.test('bundled dependencies logic', t => {
   t.end()
 })
 
+t.test('getBundler preserves explicit array traversal state', t => {
+  const root = new Node({
+    path: '/path/to/root',
+    pkg: {
+      name: 'root',
+      dependencies: { a: '*' },
+      bundleDependencies: ['a'],
+    },
+  })
+  const a = new Node({
+    parent: root,
+    pkg: { name: 'a', version: '1.0.0' },
+  })
+  const visited = []
+  t.equal(a.getBundler(visited), root)
+  t.same(visited, [a, root], 'populates the caller-provided array')
+  t.equal(a.getBundler(visited), null, 'honors nodes already visited')
+  t.same(visited, [a, root], 'does not append already visited nodes')
+  t.equal(a.getBundler(), root, 'default calls have independent traversal state')
+
+  const duplicates = [root, root]
+  t.equal(a.getBundler(duplicates), root)
+  t.same(duplicates, [root, root, a], 'preserves existing array contents and order')
+  t.end()
+})
+
 t.test('move fsChildren when moving to a new fsParent in same root', t => {
   const root = new Node({
     path: '/path/to/root',

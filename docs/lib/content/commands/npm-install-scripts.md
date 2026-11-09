@@ -19,6 +19,9 @@ Dependency install scripts are blocked by default. Install commands
 silently skip lifecycle scripts for any dependency that does not have a
 matching entry in `allowScripts`, and end with a list of the packages
 whose scripts were skipped so you can review them here.
+These warnings omit disconnected unused entries that installation cannot
+build. Local link targets that can still be rebuilt remain subject to the
+policy.
 
 This command only works inside a project that has a `package.json`. Running
 it with `--global` (`-g`) fails with an `EGLOBAL` error, since global
@@ -66,6 +69,18 @@ spec. These identities remain exact with
 `--no-allow-scripts-pin`, because there is no trusted package-name form to
 broaden them to.
 
+Relative file policy keys are resolved from the project root, never from a
+link's `node_modules` directory. Legacy link-relative approvals and denials
+may no longer match the dependency. Review existing entries, then run `ls`
+and approve or deny the exact source shown there;
+for example, a dependency in `./local-foo` uses `file:local-foo`, not
+`file:../local-foo`.
+
+If a target has multiple file identities, `ls` shows every selector in text
+and JSON output. Bare-name approval or denial requires an exact selector
+instead of choosing an identity implicitly; `--all` skips such targets and
+warns with the available selectors.
+
 For hosted git dependencies, approval writes the hosted repository shortcut
 with the resolved committish (for example, `github:org/repo#abc1234`).
 With `--no-allow-scripts-pin`, npm drops the committish and broadens approval
@@ -82,11 +97,16 @@ non-registry source. To select one source when several share a name, pass its
 exact selector. Remote and file denials stay exact; hosted-git dependencies
 are denied at the repository level. `--all` denies every package with
 unreviewed install scripts.
+Repository-level denials remove existing policy entries for every commit
+of that repository, including commits that are not currently installed.
 
 `ls` is read-only: it lists every package whose install scripts are not yet
 covered by `allowScripts`, without modifying `package.json`. Non-registry
 entries show the installed name followed by the exact source selector in
 brackets.
+This includes unreviewed extraneous packages, which are installed but not
+required by any dependency. These packages can still cause
+`npm rebuild --strict-allow-scripts` to fail.
 
 `prune` removes `allowScripts` entries that no longer match an installed
 package with an install script, either because the package is no longer

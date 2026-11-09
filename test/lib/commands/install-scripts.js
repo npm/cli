@@ -22,11 +22,12 @@ const setupProject = ({
   withScripts = ['canvas'],
   noScripts = [],
   remoteUrls = {},
+  extraneous = false,
 } = {}) => {
   const pkg = {
     name: 'host',
     version: '1.0.0',
-    dependencies: Object.fromEntries(
+    dependencies: extraneous ? {} : Object.fromEntries(
       [...withScripts, ...noScripts].map((name) => [name, remoteUrls[name] ?? '*'])
     ),
   }
@@ -148,7 +149,7 @@ const toolSourceNode = (source, overrides = {}) => ({
   ...overrides,
 })
 
-const mockProjectWithInventory = (t, inventory) => {
+const mockProjectWithInventory = (t, inventory, { unreviewed = [], config = {} } = {}) => {
   const FakeArborist = function (options) {
     this.options = options
     this.actualTree = { inventory: new Map(Object.entries(inventory)) }
@@ -156,12 +157,13 @@ const mockProjectWithInventory = (t, inventory) => {
   FakeArborist.prototype.loadActual = async () => {}
 
   return mockNpm(t, {
+    config,
     prefixDir: {
       'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
     },
     mocks: {
       '@npmcli/arborist': FakeArborist,
-      '{LIB}/utils/check-allow-scripts.js': async () => [],
+      '{LIB}/utils/check-allow-scripts.js': async () => unreviewed,
     },
   })
 }
@@ -550,7 +552,7 @@ t.test('install-scripts exact resolver identity disambiguates linked targets', a
   t.strictSame(pkg.allowScripts, { [exactSource]: true })
 })
 
-t.test('install-scripts exact resolver identity approves a multi-link target', async t => {
+const multiLinkFileNode = () => {
   const rootPath = resolve('project')
   const targetPath = resolve(rootPath, '../shared')
   const firstLinkPath = resolve(rootPath, 'node_modules/first')
@@ -566,7 +568,7 @@ t.test('install-scripts exact resolver identity approves a multi-link target', a
       })[nodePath] || {},
     },
   }
-  const target = {
+  return {
     name: 'shared',
     version: '1.0.0',
     resolved: null,
@@ -579,12 +581,77 @@ t.test('install-scripts exact resolver identity approves a multi-link target', a
       { path: secondLinkPath, resolved: secondSource, root },
     ]),
   }
-  const { npm, prefix } = await mockProjectWithInventory(t, { target })
+}
 
+t.test('install-scripts exact resolver identity approves a multi-link target', async t => {
+  const target = multiLinkFileNode()
+  const firstSource = 'file:../shared'
+  const { npm, prefix } = await mockProjectWithInventory(t, { target })
   await npm.exec('install-scripts', ['approve', firstSource])
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.strictSame(pkg.allowScripts, { [firstSource]: true })
+})
+
+t.test('install-scripts exposes every identity for a multi-link target', async t => {
+  for (const json of [false, true]) {
+    await t.test(json ? 'json' : 'text', async t => {
+      const target = multiLinkFileNode()
+      const { npm, joinedOutput } = await mockProjectWithInventory(t, { target }, {
+        config: { json },
+        unreviewed: [{ node: target, scripts: { install: 'echo install' } }],
+      })
+      await npm.exec('install-scripts', ['ls'])
+      if (json) {
+        t.strictSame(JSON.parse(joinedOutput()), {
+          allowScripts: [{
+            name: 'shared',
+            changes: [
+              { key: 'file:../shared', change: 'pending' },
+              { key: 'file:vendor/shared', change: 'pending' },
+            ],
+          }],
+        })
+      } else {
+        t.match(joinedOutput(), /file:\.\.\/shared/)
+        t.match(joinedOutput(), /file:vendor\/shared/)
+        t.notMatch(joinedOutput(), /untrusted source/)
+      }
+    })
+  }
+  for (const verb of ['approve', 'deny']) {
+    await t.test(`${verb} requires an exact identity`, async t => {
+      const { npm } = await mockProjectWithInventory(t, { target: multiLinkFileNode() })
+      await t.rejects(npm.exec('install-scripts', [verb, 'shared']), {
+        code: 'EINSTALLSCRIPTSAMBIGUOUS',
+        message: /file:\.\.\/shared[\s\S]*file:vendor\/shared/,
+      })
+    })
+  }
+  const target = multiLinkFileNode()
+  const { npm, prefix, logs } = await mockProjectWithInventory(t, { target }, {
+    config: { all: true },
+    unreviewed: [{ node: target, scripts: { install: 'echo install' } }],
+  })
+  await npm.exec('install-scripts', ['approve'])
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk(pkg.allowScripts)
+  t.match(logs.warn.byTitle('install-scripts').join('\n'),
+    /exact source selector: file:\.\.\/shared, file:vendor\/shared/)
+})
+
+t.test('install-scripts exact file selectors do not cross path anchors', async t => {
+  const outside = linkedFileNode('file:../tool', 'node_modules/outside')
+  const inside = linkedFileNode('file:tool', 'node_modules/inside')
+  for (const link of inside.linksIn) {
+    link.resolved = 'file:../tool'
+  }
+  const { npm, prefix } = await mockProjectWithInventory(t, { outside, inside })
+  await npm.exec('install-scripts', ['approve', 'file:../tool'])
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  const isScriptAllowed = require('../../../workspaces/arborist/lib/script-allowed.js')
+  t.equal(isScriptAllowed(outside, pkg.allowScripts), true)
+  t.equal(isScriptAllowed(inside, pkg.allowScripts), null)
 })
 
 t.test('install-scripts non-bare selectors do not select local links by link name', async t => {
@@ -717,6 +784,29 @@ t.test('install-scripts ls --json exposes exact remote source selectors', async 
       changes: [{ key: registryShapedRemoteCypressUrl, change: 'pending' }],
     }],
   })
+})
+
+t.test('install-scripts ls lists extraneous packages on disk', async t => {
+  for (const json of [false, true]) {
+    await t.test(json ? 'json' : 'text', async t => {
+      const { npm, joinedOutput } = await mockNpm(t, {
+        prefixDir: setupProject({ extraneous: true }),
+        config: { json },
+      })
+      await npm.exec('install-scripts', ['ls'])
+      if (json) {
+        t.strictSame(JSON.parse(joinedOutput()), {
+          allowScripts: [{
+            name: 'canvas',
+            changes: [{ key: 'canvas@1.0.0', change: 'pending' }],
+          }],
+        })
+      } else {
+        t.match(joinedOutput(), /1 package has install scripts blocked/)
+        t.match(joinedOutput(), /canvas@1\.0\.0/)
+      }
+    })
+  }
 })
 
 t.test('install-scripts ls with no unreviewed says so', async t => {

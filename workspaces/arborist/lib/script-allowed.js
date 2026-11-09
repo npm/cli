@@ -119,6 +119,9 @@ const isStoreBacked = (node) => {
 }
 
 const resolvedSourceEntries = (node) => {
+  if (node?.scriptPolicySourceEntries) {
+    return node.scriptPolicySourceEntries
+  }
   const entries = new Map()
   const add = (spec, where) => {
     if (typeof spec !== 'string' || spec === '') {
@@ -168,6 +171,9 @@ const lockfileEntry = (node) => {
 // Link.resolved is synthesized relative to node_modules, so Link targets must
 // read each incoming Link's lockfile entry instead.
 const filePolicyIdentities = (node) => {
+  if (node?.scriptPolicyFileIdentities) {
+    return node.scriptPolicyFileIdentities
+  }
   const identities = new Set()
   const where = node?.root?.path || process.cwd()
   const add = (spec, link = false) => {
@@ -432,45 +438,26 @@ const matchGit = (node, parsed) => {
 
 const matchFileOrDir = (node, parsed) => {
   const identities = filePolicyIdentities(node)
-  if (identities.includes(parsed.raw)) {
-    return true
-  }
-
   const where = node?.root?.path || process.cwd()
   const sources = resolvedSourceEntries(node)
   const paths = new Set()
-  let hasFileSource = false
-  let hasDirectoryLinkSource = false
+  // npa's fetchSpec is absolute; relative Link spellings must keep their own anchor.
+  const absoluteFileSpec = `file:${parsed.fetchSpec}`
   for (const identity of identities) {
     paths.add(npa(identity, where).fetchSpec)
   }
   for (const { spec: source, where: sourceWhere } of sources) {
+    if (source === absoluteFileSpec) {
+      return true
+    }
     try {
       const sourceParsed = npa(source, sourceWhere)
       if (sourceParsed.type === 'file' || sourceParsed.type === 'directory') {
-        hasFileSource = true
-        hasDirectoryLinkSource ||= sourceParsed.type === 'directory' && sourceWhere !== where
-        if (source === parsed.raw ||
-            source === parsed.saveSpec ||
-            source === parsed.fetchSpec ||
-            source === `file:${parsed.fetchSpec}`) {
-          return true
-        }
         paths.add(sourceParsed.fetchSpec)
       }
     } catch {
       continue
     }
-  }
-  if (!node?.resolved && hasDirectoryLinkSource) {
-    for (const path of [node?.path, node?.realpath]) {
-      if (path) {
-        paths.add(path)
-      }
-    }
-  }
-  if (!hasFileSource && identities.length === 0) {
-    return false
   }
   return paths.has(parsed.fetchSpec)
 }
@@ -535,5 +522,6 @@ module.exports.filePolicyIdentities = filePolicyIdentities
 module.exports.filePolicyIdentity = filePolicyIdentity
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
 module.exports.resolvedSourceSpecs = resolvedSourceSpecs
+module.exports.resolvedSourceEntries = resolvedSourceEntries
 module.exports.matchFileOrDir = matchFileOrDir
 module.exports.trustedDisplay = trustedDisplay

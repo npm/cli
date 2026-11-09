@@ -360,6 +360,44 @@ t.test('applyApprovalForPackage — remote tarball writes exact URL with --no-pi
   t.strictSame(changes, [{ key: registryShapedRemoteUrl, change: 'added' }])
 })
 
+t.test('mixed remote and registry edges preserve separate policy identities', async t => {
+  for (const n of [
+    Object.assign(registryShapedRemoteNode(), {
+      edgesIn: new Set([
+        { name: 'cypress', spec: registryShapedRemoteUrl },
+        { name: 'cypress', spec: '^15.18.1' },
+      ]),
+    }),
+    linkedCypressNode('^15.18.1', registryShapedRemoteUrl),
+  ]) {
+    const existing = { cypress: false }
+    t.equal(keyTargetsNode('cypress', n), false)
+    t.strictSame(applyApprovalForPackage(existing, [n]).allowScripts, {
+      ...existing,
+      [registryShapedRemoteUrl]: true,
+    })
+    t.strictSame(applyDenyForPackage(existing, [n]).allowScripts, {
+      ...existing,
+      [registryShapedRemoteUrl]: false,
+    })
+  }
+})
+
+t.test('denying a hosted repository removes all its commit policies', async t => {
+  const first = node({ resolved: 'git+https://github.com/example/tool.git#deadbeef' })
+  const second = node({ resolved: 'git+ssh://git@github.com/example/tool.git#cafebabe' })
+  const { allowScripts } = applyDenyForPackage({
+    'github:example/tool#deadbeef': true,
+    'git+https://github.com/example/tool.git#cafebabe': true,
+    'github:example/tool#1234567': false,
+    'github:other/tool#cafebabe': true,
+  }, [first, second])
+  t.strictSame(allowScripts, {
+    'github:example/tool': false,
+    'github:other/tool#cafebabe': true,
+  })
+})
+
 t.test('applyApprovalForPackage — stale pin rewritten to new installed version', async t => {
   const { allowScripts, changes } = applyApprovalForPackage(
     { 'canvas@2.10.0': true },

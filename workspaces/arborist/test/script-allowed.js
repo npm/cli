@@ -297,6 +297,29 @@ t.test('file path — link sources resolve relative to the link parent', t => {
   t.end()
 })
 
+t.test('file path — identical spellings with different anchors do not share permission', t => {
+  const rootPath = path.resolve('project')
+  const makeTarget = (source, runtimeSpec, name) => {
+    const linkPath = path.resolve(rootPath, 'node_modules', name)
+    return node({
+      name,
+      resolved: null,
+      path: path.resolve(rootPath, source),
+      root: lockfileRoot(rootPath, {
+        [linkPath]: { resolved: source, link: true },
+      }),
+      linksIn: new Set([{ path: linkPath, resolved: runtimeSpec }]),
+    })
+  }
+  const outside = makeTarget('../tool', 'file:../../tool', 'outside')
+  const inside = makeTarget('tool', 'file:../tool', 'inside')
+  t.equal(isScriptAllowed(outside, { 'file:../tool': true }), true)
+  t.equal(isScriptAllowed(inside, { 'file:../tool': true }), null)
+  t.equal(isScriptAllowed(inside, { 'file:../tool': false }), null)
+  t.equal(isScriptAllowed(inside, { 'file:tool': true }), true)
+  t.end()
+})
+
 t.test('file path — link source context and partial target paths fall back safely', t => {
   const rootPath = path.resolve('project')
   const targetPath = path.resolve(rootPath, 'shared')

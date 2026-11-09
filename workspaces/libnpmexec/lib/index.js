@@ -263,12 +263,16 @@ const exec = async (opts) => {
     await mkdir(installDir, { recursive: true })
     const npxArb = new Arborist({
       ...flatOptions,
+      // a missing package must actually be installed to the npx cache, so it can be run,
+      // even when these are set: eg, a lifecycle script inherits npm_config_dry_run from `npm publish --dry-run`
+      dryRun: false,
+      packageLockOnly: false,
       path: installDir,
     })
     const lockPath = join(installDir, 'concurrency.lock')
     const npxTree = await withLock(lockPath, () => npxArb.loadActual())
-    await Promise.all(needInstall.map(async ({ spec }) => {
-      const { manifest } = await missingFromTree({
+    await Promise.all(needInstall.map(async ({ spec, manifest: requestedManifest }) => {
+      const { manifest, node } = await missingFromTree({
         spec,
         tree: npxTree,
         flatOptions,
@@ -281,6 +285,10 @@ const exec = async (opts) => {
         } else {
           add.push(manifest._id)
         }
+      } else if (needPackageCommandSwap && commandManifest === requestedManifest) {
+        // A cache hit must use the installed bin, not mutable registry metadata.
+        commandManifest = node.package
+        args[0] = getBinFromManifest(commandManifest)
       }
     }))
 

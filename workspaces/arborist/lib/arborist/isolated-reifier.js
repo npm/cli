@@ -2,6 +2,7 @@ const { join } = require('node:path')
 const { depth } = require('treeverse')
 const crypto = require('node:crypto')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
+const { filePolicyIdentities, resolvedSourceEntries } = require('../script-allowed.js')
 const nameFromFolder = require('@npmcli/name-from-folder')
 
 // generate short hash key based on the dependency tree starting at this node
@@ -57,6 +58,8 @@ module.exports = cls => class IsolatedReifier extends cls {
       patched: node.patched,
       path: join(this.idealGraph.localPath, location),
       resolved: node.resolved,
+      scriptPolicySourceEntries: node.scriptPolicySourceEntries,
+      scriptPolicyFileIdentities: node.scriptPolicyFileIdentities,
       root,
     })
     // XXX top is from place-dep not lib/node.js
@@ -173,6 +176,10 @@ module.exports = cls => class IsolatedReifier extends cls {
 
   async #assignCommonProperties (node, result) {
     result.root = this.idealGraph
+    // Isolated Links do not retain the logical tree's resolver and lockfile context.
+    const policyNode = node.target
+    result.scriptPolicySourceEntries = resolvedSourceEntries(policyNode)
+    result.scriptPolicyFileIdentities = filePolicyIdentities(policyNode)
     // XXX does anything need this?
     result.id = this.counter++
     /* istanbul ignore next - packageName is always set for real packages */
@@ -325,6 +332,9 @@ module.exports = cls => class IsolatedReifier extends cls {
         package: c.package,
         path: c.localPath,
         resolved: c.resolved,
+        scriptPolicySourceEntries: c.scriptPolicySourceEntries,
+        scriptPolicyFileIdentities: c.scriptPolicyFileIdentities,
+        root,
       })
       root.fsChildren.add(workspace)
       root.inventory.set(workspace.location, workspace)

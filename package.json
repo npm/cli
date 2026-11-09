@@ -1,5 +1,5 @@
 {
-  "version": "12.2.1",
+  "version": "12.2.2",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
@@ -77,7 +77,7 @@
     "json-parse-even-better-errors": "^6.0.0",
     "libnpmaccess": "^11.0.0",
     "libnpmdiff": "^9.0.4",
-    "libnpmexec": "^11.0.4",
+    "libnpmexec": "^11.0.5",
     "libnpmfund": "^8.0.4",
     "libnpmorg": "^9.0.0",
     "libnpmpack": "^10.0.4",
@@ -105,7 +105,7 @@
     "proc-log": "^7.0.0",
     "qrcode-terminal": "^0.12.0",
     "read": "^6.0.0",
-    "semver": "^7.8.5",
+    "semver": "^7.8.6",
     "spdx-expression-parse": "^4.0.0",
     "ssri": "^14.0.0",
     "supports-color": "^10.2.2",

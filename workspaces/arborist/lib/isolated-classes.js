@@ -28,6 +28,8 @@ class IsolatedNode {
     this.location = options.location
     this.name = options.name
     this.package = options.package
+    this.scriptPolicySourceEntries = options.scriptPolicySourceEntries
+    this.scriptPolicyFileIdentities = options.scriptPolicyFileIdentities
     this.path = options.path
     this.realpath = !this.isLink ? this.path : resolve(options.realpath)
 

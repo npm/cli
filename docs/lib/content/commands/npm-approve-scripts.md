@@ -61,6 +61,11 @@ For file tarballs and linked directories, approval writes the exact resolved
 file spec from `package-lock.json` (for example,
 `"file:../packages/logger": true`). File identities stay exact with
 `--no-allow-scripts-pin`.
+Relative keys are resolved from the project root, not from `node_modules`.
+Re-approve local dependencies whose legacy link-relative keys no longer match,
+using the exact selectors shown by `--allow-scripts-pending`. If one target
+has multiple file identities, the listing shows all of them and approval
+requires an exact selector; `--all` skips it with a warning.
 
 For a hosted git dependency, approval writes the hosted repository shortcut
 with the resolved committish (for example, `github:org/repo#abc1234`).

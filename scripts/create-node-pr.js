@@ -172,6 +172,8 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
 
   const nodeRemote = 'origin'
   const nodeBranch = /^\d+$/.test(branch) ? `v${branch}.x-staging` : branch
+  const stagingVersion = nodeBranch.match(/^(v\d+\.x)-staging$/)?.[1]
+  const nodePrTitle = `${stagingVersion ? `[${stagingVersion}] ` : ''}${npmMessage()}`
   const nodeHost = hgi.fromUrl(await gitNode('remote', 'get-url', nodeRemote, { out: true }))
   const nodePrArgs = ['pr', '-R', nodeHost.path()]
 
@@ -263,7 +265,7 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
     nodePrArgs,
     (existingPr ? ['edit', existingPr.number] : ['create', '-H', `${npmHost.user}:${npmBranch}`]),
     '-B', nodeBranch,
-    (existingPr ? [] : ['-t', npmMessage()]),
+    '-t', nodePrTitle,
   ].flat()
 
   if (dryRun) {
