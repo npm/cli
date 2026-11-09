@@ -5093,29 +5093,125 @@ t.test('allowRemote registry evidence integration', async t => {
     }
   }
 
-  for (const {
-    lockedAlgorithm, registryAlgorithm, mismatch, installStrategy = 'hoisted', offline = false,
-  } of [
-      { lockedAlgorithm: 'sha1', registryAlgorithm: 'sha512', offline: true },
-      { lockedAlgorithm: 'sha512', registryAlgorithm: 'sha1' },
-      { lockedAlgorithm: 'sha1', registryAlgorithm: 'sha512', mismatch: 'locked' },
-      { lockedAlgorithm: 'sha512', registryAlgorithm: 'sha1', mismatch: 'registry' },
-      { lockedAlgorithm: 'sha1', registryAlgorithm: 'sha512', installStrategy: 'linked' },
+  await t.test('signed digest alternatives retain both integrity constraints', async t => {
+    const { generateKeyPairSync, sign } = require('node:crypto')
+    const ssri = require('ssri')
+    const { publicKey, privateKey } = generateKeyPairSync('ec', { namedCurve: 'prime256v1' })
+    const actual = ssri.fromData(abbrevTGZ).toString()
+    const other = ssri.fromData('another tarball').toString()
+    const third = ssri.fromData('third tarball').toString()
+    for (const { label, locked, verified, allowed } of [
+      { label: 'registry cannot widen the lock', locked: [other], verified: [other, actual] },
       {
-        lockedAlgorithm: 'sha1',
-        registryAlgorithm: 'sha512',
+        label: 'all common alternatives remain usable',
+        locked: [other, actual],
+        verified: [other, actual],
+        allowed: true,
+      },
+      {
+        label: 'a shared alternative cannot authorize other bytes',
+        locked: [other, actual],
+        verified: [other, third],
+      },
+      {
+        label: 'registry may narrow the lock',
+        locked: [other, actual],
+        verified: [actual],
+        allowed: true,
+      },
+    ]) {
+      await t.test(label, async t => {
+        const integrity = verified.join(' ')
+        const metadata = packument({
+          dist: {
+            tarball: tarballURL,
+            integrity,
+            signatures: [{
+              keyid: 'test-key',
+              sig: sign('sha256', Buffer.from(`abbrev@1.1.1:${integrity}`),
+                privateKey).toString('base64'),
+            }],
+          },
+        })
+        const { arb, testdir } = setup(t, {
+          integrity: locked.join(' '),
+          options: {
+            verifySignatures: true,
+            packumentCache: new Map([[`full:${registry}abbrev`, metadata]]),
+            '//registry.example.com/npm/:_keys': [{
+              keyid: 'test-key',
+              pemkey: publicKey.export({ type: 'spki', format: 'pem' }),
+            }],
+          },
+        })
+        MockRegistry.tnock(t, registryHost, {}, { strict: true })
+          .persist().get('/download/abbrev-1.1.1.tgz').reply(200, abbrevTGZ)
+        await pacote.tarball(tarballURL, { cache: arb.options.cache })
+        if (allowed) {
+          await t.resolves(arb.reify(), 'extracts bytes permitted by both digest sets')
+          t.equal(installedVersion(testdir), '1.1.1')
+        } else {
+          await t.rejects(arb.reify(), { code: 'EINTEGRITY' },
+            'does not extract bytes outside the common digest set')
+        }
+      })
+    }
+  })
+
+  for (const {
+    lockedAlgorithms, registryAlgorithms, mismatch, weakerMismatch,
+    installStrategy = 'hoisted', offline = false,
+  } of [
+      { lockedAlgorithms: ['sha1'], registryAlgorithms: ['sha512'], offline: true },
+      { lockedAlgorithms: ['sha512'], registryAlgorithms: ['sha1'] },
+      { lockedAlgorithms: ['sha1'], registryAlgorithms: ['sha512'], mismatch: 'locked' },
+      { lockedAlgorithms: ['sha512'], registryAlgorithms: ['sha1'], mismatch: 'registry' },
+      { lockedAlgorithms: ['sha1'], registryAlgorithms: ['sha512'], installStrategy: 'linked' },
+      {
+        lockedAlgorithms: ['sha1'],
+        registryAlgorithms: ['sha512'],
         installStrategy: 'linked',
         mismatch: 'locked',
       },
+      { lockedAlgorithms: ['sha512', 'sha1'], registryAlgorithms: ['sha1'] },
+      { lockedAlgorithms: ['sha1'], registryAlgorithms: ['sha512', 'sha1'] },
+      { lockedAlgorithms: ['sha512', 'sha1'], registryAlgorithms: ['sha1'], mismatch: 'locked' },
+      { lockedAlgorithms: ['sha1'], registryAlgorithms: ['sha512', 'sha1'], mismatch: 'registry' },
+      {
+        lockedAlgorithms: ['sha512', 'sha1'],
+        registryAlgorithms: ['sha1'],
+        weakerMismatch: 'locked',
+      },
+      {
+        lockedAlgorithms: ['sha1'],
+        registryAlgorithms: ['sha512', 'sha1'],
+        weakerMismatch: 'registry',
+      },
+      {
+        lockedAlgorithms: ['sha512', 'sha1'],
+        registryAlgorithms: ['sha512', 'sha1'],
+        mismatch: 'locked',
+      },
+      {
+        lockedAlgorithms: ['sha512', 'sha1'],
+        registryAlgorithms: ['sha512', 'sha1'],
+        weakerMismatch: 'locked',
+      },
     ]) {
-    await t.test(`${installStrategy} ${lockedAlgorithm} lock / ${registryAlgorithm} registry ${
-      mismatch ? `${mismatch} mismatch` : offline ? 'offline' : 'matching bytes'
+    await t.test(`${installStrategy} ${lockedAlgorithms.join('+')} lock / ${
+      registryAlgorithms.join('+')} registry ${
+      mismatch ? `${mismatch} mismatch` : weakerMismatch
+        ? `${weakerMismatch} weaker mismatch` : offline ? 'offline' : 'matching bytes'
     }`, async t => {
       const ssri = require('ssri')
-      const lockedIntegrity = ssri.fromData(mismatch === 'locked' ? 'wrong locked bytes' : abbrevTGZ,
-        { algorithms: [lockedAlgorithm] }).toString()
-      const verifiedIntegrity = ssri.fromData(mismatch === 'registry' ? 'wrong registry bytes' : abbrevTGZ,
-        { algorithms: [registryAlgorithm] }).toString()
+      const integrityFor = (algorithms, source) => algorithms.map((algorithm, index) => {
+        const wrong = mismatch === source && index === 0 ||
+          weakerMismatch === source && index === algorithms.length - 1
+        return ssri.fromData(wrong ? `wrong ${source} bytes` : abbrevTGZ,
+          { algorithms: [algorithm] }).toString()
+      }).join(' ')
+      const lockedIntegrity = integrityFor(lockedAlgorithms, 'locked')
+      const verifiedIntegrity = integrityFor(registryAlgorithms, 'registry')
       const metadata = packument({ dist: { tarball: tarballURL, integrity: verifiedIntegrity } })
       const { arb, testdir } = setup(t, {
         integrity: lockedIntegrity,
@@ -5133,8 +5229,13 @@ t.test('allowRemote registry evidence integration', async t => {
         await t.rejects(arb.reify(), { code: 'EALLOWREMOTE' },
           'different algorithms do not permit either integrity check to be bypassed')
       } else {
-        await t.resolves(arb.reify(), 'validates the bytes against both algorithms')
+        const tree = await arb.reify()
         t.equal(installedVersion(testdir), '1.1.1')
+        if (installStrategy === 'hoisted' && lockedAlgorithms[0] !== registryAlgorithms[0]) {
+          t.same(ssri.parse(tree.children.get('abbrev').integrity),
+            ssri.fromData(abbrevTGZ, { algorithms: [lockedAlgorithms[0], registryAlgorithms[0]] }),
+            'extraction uses only digests of the bytes that passed both strongest checks')
+        }
       }
     })
   }
@@ -5549,6 +5650,75 @@ t.test('install strategy linked', async (t) => {
     const store = fs.lstatSync(resolve(path, 'node_modules', '.store'))
     t.ok(store.isDirectory(), 'abbrev got installed')
     t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
+  })
+
+  t.test('unchanged linked packages with integrity are not extracted or rebuilt again', async t => {
+    const pacote = require('pacote')
+    const scripts = []
+    let extractions = 0
+    const TestArborist = t.mock('../../lib/arborist', {
+      ...mocks,
+      pacote: {
+        ...pacote,
+        extract: async (...args) => {
+          extractions++
+          return pacote.extract(...args)
+        },
+      },
+      '@npmcli/run-script': Object.assign(async options => {
+        scripts.push(options.event)
+        return { args: [], code: 0, signal: null, stdout: '', stderr: '' }
+      }, runScript),
+    })
+    const pkg = {
+      name: 'linked-proof',
+      version: '1.0.0',
+      scripts: { install: 'echo install' },
+    }
+    const testdir = t.testdir({
+      package: { 'package.json': JSON.stringify(pkg) },
+      project: {
+        'package.json': JSON.stringify({
+          name: 'project',
+          version: '1.0.0',
+          dependencies: { 'linked-proof': '1.0.0' },
+        }),
+      },
+    })
+    const tarball = await pacote.tarball(resolve(testdir, 'package'), {
+      Arborist,
+      cache: resolve(testdir, 'packing-cache'),
+      ignoreScripts: true,
+    })
+    const integrity = require('ssri').fromData(tarball).toString()
+    const url = 'https://registry.npmjs.org/linked-proof/-/linked-proof-1.0.0.tgz'
+    tnock(t, 'https://registry.npmjs.org')
+      .get('/linked-proof')
+      .reply(200, {
+        name: pkg.name,
+        'dist-tags': { latest: pkg.version },
+        versions: { [pkg.version]: { ...pkg, dist: { tarball: url, integrity } } },
+      })
+      .get('/linked-proof/-/linked-proof-1.0.0.tgz')
+      .reply(200, tarball)
+    const options = {
+      path: resolve(testdir, 'project'),
+      cache: resolve(testdir, 'cache'),
+      registry: 'https://registry.npmjs.org',
+      audit: false,
+      installStrategy: 'linked',
+      ignoreScripts: false,
+      allowScripts: { 'linked-proof': true },
+    }
+    await new TestArborist(options).reify()
+    t.equal(extractions, 1, 'first install extracts the package')
+    t.same(scripts, ['install'], 'first install runs the dependency lifecycle')
+
+    extractions = 0
+    scripts.length = 0
+    await new TestArborist(options).reify()
+    t.equal(extractions, 0, 'unchanged store contents are not extracted again')
+    t.same(scripts, [], 'unchanged dependency lifecycle scripts do not run again')
   })
 
   t.test('hidden lockfile records the linked .store layout and round-trips', async t => {

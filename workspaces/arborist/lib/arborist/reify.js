@@ -954,6 +954,7 @@ module.exports = cls => class Reifier extends cls {
       } else {
         entry = new IsolatedNode(child)
       }
+      entry.integrity = child.integrity
       if (child.isLink && combined.has(child.realpath)) {
         entry.target = combined.get(child.realpath)
       }
@@ -1044,24 +1045,36 @@ module.exports = cls => class Reifier extends cls {
       if (evidence.integrity) {
         let integrity = evidence.integrity
         const lockedIntegrity = ssri.parse(node.integrity)
-        if (node.integrity && !lockedIntegrity?.match(evidence.integrity)) {
-          const verifiedIntegrity = ssri.parse(evidence.integrity)
-          if (!lockedIntegrity ||
-              Object.keys(lockedIntegrity).some(algorithm => verifiedIntegrity[algorithm])) {
-            throw Object.assign(new Error('Locked integrity does not match verified registry integrity'), {
-              code: 'EINTEGRITY',
-            })
-          }
-          // SRI checks only the strongest algorithm. Prove both before
-          // using their combined integrity for extraction.
-          await pacote.tarball.stream(`${packageName}@${resolvedURL.href}`,
-            stream => ssri.checkStream(stream, lockedIntegrity), {
+        const verifiedIntegrity = ssri.parse(evidence.integrity)
+        const lockedAlgorithm = lockedIntegrity?.pickAlgorithm()
+        const verifiedAlgorithm = verifiedIntegrity.pickAlgorithm()
+        const sameAlgorithm = lockedAlgorithm === verifiedAlgorithm
+        const commonDigests = sameAlgorithm
+          ? lockedIntegrity[lockedAlgorithm].filter(hash =>
+            verifiedIntegrity[verifiedAlgorithm].some(other => other.digest === hash.digest))
+          : []
+        if (node.integrity &&
+            (!lockedIntegrity || (sameAlgorithm && !commonDigests.length))) {
+          throw Object.assign(new Error('Locked integrity does not match verified registry integrity'), {
+            code: 'EINTEGRITY',
+          })
+        }
+        if (lockedIntegrity && sameAlgorithm) {
+          integrity = commonDigests.map(hash => hash.toString()).join(' ')
+        } else if (lockedIntegrity) {
+          // Bind extraction to the bytes checked against both strongest
+          // algorithms, not other alternatives in either integrity set.
+          const checkedIntegrity = await pacote.tarball.stream(`${packageName}@${resolvedURL.href}`,
+            stream => ssri.fromStream(stream, {
+              integrity: lockedIntegrity,
+              algorithms: [lockedAlgorithm, verifiedAlgorithm],
+            }), {
               ...this.options,
               integrity: evidence.integrity,
               allowRemote: 'all',
               replaceRegistryHost: 'never',
             })
-          integrity = lockedIntegrity.concat(evidence.integrity).toString()
+          integrity = checkedIntegrity.toString()
         }
         node.integrity = integrity
       }
