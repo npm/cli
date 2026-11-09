@@ -25,9 +25,12 @@ t.test('isReleaseAgeExcluded: hardened glob semantics', async t => {
   // `!foo` must NOT act as a negation exempting everything but foo.
   t.equal(isReleaseAgeExcluded('bar', ['!foo']), false,
     'leading ! stays literal and does not exempt unrelated names')
-  // `#foo` must NOT be treated as a comment (which would match nothing).
-  t.equal(isReleaseAgeExcluded('#foo', ['#foo']), true,
+  t.equal(isReleaseAgeExcluded('#foo', ['#f*']), true,
     'leading # is literal')
+  t.equal(isReleaseAgeExcluded('foobar', ['@(foo|bar)bar']), false,
+    'positive extglobs do not exempt matching names')
+  t.equal(isReleaseAgeExcluded('foobar', ['foo!(baz)']), false,
+    'negative extglobs do not exempt matching names')
 })
 
 t.test('trustedSpecName: registry, alias, and edge cases', async t => {
@@ -50,6 +53,21 @@ t.test('applyReleaseAgeExclude: not excluded => passthrough', async t => {
     'unrelated package keeps the before cutoff')
 })
 
+t.test('applyReleaseAgeExclude: non-registry specs keep the cutoff', async t => {
+  const opts = { before: new Date('2026-01-01'), minReleaseAgeExclude: ['@myorg/*'] }
+  for (const raw of [
+    '@myorg/tool@github:third-party/tool#0123456789abcdef0123456789abcdef01234567',
+    '@myorg/tool@https://example.test/tool.tgz',
+    '@myorg/tool@file:./tool.tgz',
+    '@myorg/tool@file:./tool',
+    '@myorg/tool@file:C:\\tool',
+  ]) {
+    const spec = npa(raw)
+    t.equal(trustedSpecName(spec), undefined, `${raw} has no trusted registry name`)
+    t.equal(applyReleaseAgeExclude(spec, opts), opts, `${raw} keeps the before cutoff`)
+  }
+})
+
 t.test('applyReleaseAgeExclude: excluded => before cleared, non-mutating', async t => {
   const before = new Date('2026-01-01')
   const opts = { before, minReleaseAgeExclude: ['@myorg/*'], other: 'x' }
@@ -69,6 +87,8 @@ t.test('applyReleaseAgeExclude: alias excluded by alias-target name', async t =>
   const out = applyReleaseAgeExclude(npa('foo@npm:@myorg/real@1'), opts)
   t.equal(out.before, null,
     'alias exemption keyed on underlying package name, not alias key')
+  t.equal(applyReleaseAgeExclude(npa('@myorg/real@npm:lodash@1'), opts), opts,
+    'matching alias key does not exempt the target')
 })
 
 t.test('applyReleaseAgeExclude: null / empty options', async t => {

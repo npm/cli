@@ -29,7 +29,7 @@ const isReleaseAgeExcluded = (name, patterns) => {
 
 // For `npm:` aliases the fetched package is the alias target, not the
 // alias key, so the exemption must be keyed on the underlying name.
-// Mirrors `trustedSpecName` in arborist's release-age-exclude.js.
+// Non-registry specs can carry an arbitrary name, so they are not trusted.
 const trustedSpecName = (spec) => {
   if (!spec) {
     return undefined
@@ -37,7 +37,7 @@ const trustedSpecName = (spec) => {
   if (spec.type === 'alias' && spec.subSpec && spec.subSpec.registry) {
     return spec.subSpec.name
   }
-  return spec.name
+  return spec.registry ? spec.name : undefined
 }
 
 // Return a shallow copy of `flatOptions` with `before` cleared when the
