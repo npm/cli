@@ -627,6 +627,22 @@ t.test('install-scripts file selectors write the matching lockfile identity', as
   }
 })
 
+t.test('install-scripts rejects file selectors without a trusted policy identity', async t => {
+  for (const verb of ['approve', 'deny']) {
+    await t.test(verb, async t => {
+      const target = linkedFileNode('file:../tool', 'node_modules/tool')
+      target.root.meta = { get: () => ({}) }
+      const { npm, prefix, logs } = await mockProjectWithInventory(t, { target })
+
+      await t.rejects(npm.exec('install-scripts', [verb, target.path]), { code: 'ENOMATCH' })
+
+      const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+      t.notOk(pkg.allowScripts)
+      t.match(logs.warn.byTitle('install-scripts').join('\n'), /no trusted identity for policy key/)
+    })
+  }
+})
+
 t.test('install-scripts exposes every identity for a multi-link target', async t => {
   for (const json of [false, true]) {
     await t.test(json ? 'json' : 'text', async t => {
