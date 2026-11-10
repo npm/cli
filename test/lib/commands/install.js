@@ -479,16 +479,18 @@ t.test('install with an extraneous local link', async t => {
     assert.fileShouldExist('node_modules/foo/package.json')
   })
 
-  await t.test('normal mode keeps the blocked-script warning', async t => {
+  await t.test('normal mode keeps the unreviewed-script warning', async t => {
     const { npm, logs } = await setup(t)
+    spawk.spawn(/.*/, args => args.includes('echo linked-install'))
     await npm.exec('install', [])
     const warnings = logs.warn.byTitle('install-scripts').join('\n')
-    t.match(warnings, /1 package had install scripts blocked/)
+    t.match(warnings, /1 package has install scripts not yet covered by allowScripts/)
     t.match(warnings, /foo@1\.0\.0/)
   })
 
-  await t.test('JSON keeps the blocked-script entry', async t => {
+  await t.test('JSON keeps the unreviewed-script entry', async t => {
     const { npm, joinedOutput } = await setup(t, { json: true })
+    spawk.spawn(/.*/, args => args.includes('echo linked-install'))
     await npm.exec('install', [])
     t.strictSame(JSON.parse(joinedOutput()).unreviewedScripts, [{
       name: 'foo',

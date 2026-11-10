@@ -162,7 +162,7 @@ t.test('install-scripts ls lists extraneous packages on disk', async t => {
           }],
         })
       } else {
-        t.match(joinedOutput(), /1 package has install scripts blocked/)
+        t.match(joinedOutput(), /1 package has install scripts not yet covered by allowScripts/)
         t.match(joinedOutput(), /canvas@1\.0\.0/)
       }
     })
