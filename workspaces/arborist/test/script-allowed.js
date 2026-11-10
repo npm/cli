@@ -315,7 +315,11 @@ t.test('file path — identical spellings with different anchors do not share pe
   const inside = makeTarget('tool', 'file:../tool', 'inside')
   t.equal(isScriptAllowed(outside, { 'file:../tool': true }), true)
   t.equal(isScriptAllowed(inside, { 'file:../tool': true }), null)
-  t.equal(isScriptAllowed(inside, { 'file:../tool': false }), null)
+  t.equal(isScriptAllowed(inside, { 'file:../tool': false }), false)
+  t.equal(isScriptAllowed(inside, {
+    'file:tool': true,
+    'file:../tool': false,
+  }), false, 'a legacy denial still overrides a root-relative approval')
   t.equal(isScriptAllowed(inside, { 'file:tool': true }), true)
   t.end()
 })

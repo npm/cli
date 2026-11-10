@@ -841,6 +841,27 @@ t.test('applyApprovalForPackage — relative file deny matches absolute resolved
   t.match(warning, /denied|versioned deny/)
 })
 
+t.test('applyDenyForPackage — file cleanup preserves other target identities', t => {
+  const rootPath = path.resolve('project')
+  const first = 'file:../shared'
+  const second = 'file:vendor/shared'
+  const target = {
+    name: 'shared',
+    resolved: null,
+    root: { path: rootPath },
+    scriptPolicyFileIdentities: [first, second],
+  }
+  const equivalent = `file:${path.resolve(rootPath, '../shared')}`
+  for (const value of [true, false]) {
+    const { allowScripts } = applyDenyForPackage({
+      [equivalent]: value,
+      [second]: false,
+    }, [target], { policyKey: first })
+    t.strictSame(allowScripts, { [first]: false, [second]: false })
+  }
+  t.end()
+})
+
 t.test('applyApprovalForPackage — remote tarball deny blocks approval', async t => {
   const remote = { name: 'pkg', packageName: 'pkg', version: '1.0.0', resolved: 'https://example.com/pkg.tgz' }
   const { warning } = applyApprovalForPackage(

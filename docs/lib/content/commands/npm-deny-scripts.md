@@ -45,8 +45,11 @@ and range selectors are not supported because those versions come from the
 dependency itself.
 
 Relative file keys are resolved from the project root, not from `node_modules`.
+Legacy link-relative denials remain effective, but legacy approvals do not grant permission.
 If one target has multiple file identities, `ls` shows every selector and
 denial requires an exact selector; `--all` skips it with a warning.
+File denials replace only path-equivalent entries, preserving policies for other
+file identities that currently share the target.
 Repository-level denials remove policy entries for every commit of that
 repository, including commits that are not currently installed.
 

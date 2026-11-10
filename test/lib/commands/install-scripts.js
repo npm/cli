@@ -593,6 +593,40 @@ t.test('install-scripts exact resolver identity approves a multi-link target', a
   t.strictSame(pkg.allowScripts, { [firstSource]: true })
 })
 
+t.test('install-scripts denies every selected identity of a multi-link target', async t => {
+  for (const sources of [
+    ['file:../shared', 'file:vendor/shared'],
+    ['file:vendor/shared', 'file:../shared'],
+  ]) {
+    await t.test(sources.join(' then '), async t => {
+      const { npm, prefix } = await mockProjectWithInventory(t, { target: multiLinkFileNode() })
+      await npm.exec('install-scripts', ['deny', ...sources])
+
+      const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+      t.strictSame(pkg.allowScripts, {
+        'file:../shared': false,
+        'file:vendor/shared': false,
+      })
+    })
+  }
+})
+
+t.test('install-scripts file selectors write the matching lockfile identity', async t => {
+  for (const source of ['file:../shared', 'file:vendor/shared']) {
+    for (const filePrefix of ['', 'file:']) {
+      await t.test(`${filePrefix || 'absolute path: '}${source}`, async t => {
+        const target = multiLinkFileNode()
+        const selector = `${filePrefix}${resolve(target.root.path, source.slice('file:'.length))}`
+        const { npm, prefix } = await mockProjectWithInventory(t, { target })
+        await npm.exec('install-scripts', ['approve', selector])
+
+        const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+        t.strictSame(pkg.allowScripts, { [source]: true })
+      })
+    }
+  }
+})
+
 t.test('install-scripts exposes every identity for a multi-link target', async t => {
   for (const json of [false, true]) {
     await t.test(json ? 'json' : 'text', async t => {

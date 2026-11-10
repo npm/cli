@@ -87,7 +87,7 @@ const matches = (node, key, failClosed) => {
       return matchGit(node, parsed)
     case 'file':
     case 'directory':
-      return matchFileOrDir(node, parsed)
+      return matchFileOrDir(node, parsed, failClosed)
     case 'remote':
       return matchRemote(node, parsed)
     case 'alias':
@@ -436,7 +436,7 @@ const matchGit = (node, parsed) => {
   return nodeCommittish.startsWith(keyCommittish)
 }
 
-const matchFileOrDir = (node, parsed) => {
+const matchFileOrDir = (node, parsed, failClosed = false) => {
   const identities = filePolicyIdentities(node)
   const where = node?.root?.path || process.cwd()
   const sources = resolvedSourceEntries(node)
@@ -453,6 +453,10 @@ const matchFileOrDir = (node, parsed) => {
     try {
       const sourceParsed = npa(source, sourceWhere)
       if (sourceParsed.type === 'file' || sourceParsed.type === 'directory') {
+        // Keep legacy link-relative denials without granting legacy approvals.
+        if (failClosed && sourceParsed.saveSpec === parsed.saveSpec) {
+          return true
+        }
         paths.add(sourceParsed.fetchSpec)
       }
     } catch {

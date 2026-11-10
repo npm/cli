@@ -70,11 +70,13 @@ spec. These identities remain exact with
 broaden them to.
 
 Relative file policy keys are resolved from the project root, never from a
-link's `node_modules` directory. Legacy link-relative approvals and denials
-may no longer match the dependency. Review existing entries, then run `ls`
-and approve or deny the exact source shown there;
+link's `node_modules` directory. Legacy link-relative denials remain effective,
+including during approval and pruning, but legacy approvals do not grant permission.
+Review existing approvals, then run `ls` and approve the exact source shown there;
 for example, a dependency in `./local-foo` uses `file:local-foo`, not
 `file:../local-foo`.
+Absolute file selectors are saved using the matching lockfile identity, so a
+relative source remains portable across checkouts.
 
 If a target has multiple file identities, `ls` shows every selector in text
 and JSON output. Bare-name approval or denial requires an exact selector
@@ -99,6 +101,8 @@ are denied at the repository level. `--all` denies every package with
 unreviewed install scripts.
 Repository-level denials remove existing policy entries for every commit
 of that repository, including commits that are not currently installed.
+File denials replace only path-equivalent policy entries, preserving entries for
+other file identities even when they currently share a target.
 
 `ls` is read-only: it lists every package whose install scripts are not yet
 covered by `allowScripts`, without modifying `package.json`. Non-registry
