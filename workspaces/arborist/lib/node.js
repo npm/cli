@@ -524,17 +524,12 @@ class Node {
   }
 
   getBundler (seen = new Set()) {
-    const isArray = Array.isArray(seen)
     // made a cycle, definitely not bundled!
-    if (isArray ? seen.includes(this) : seen.has(this)) {
+    if (seen.has(this)) {
       return null
     }
 
-    if (isArray) {
-      seen.push(this)
-    } else {
-      seen.add(this)
-    }
+    seen.add(this)
 
     const parent = this[_parent]
     if (!parent) {
