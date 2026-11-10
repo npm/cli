@@ -176,7 +176,7 @@ t.test('exit early for --version', async t => {
 })
 
 t.test('sets npm.updateNotification when the notifier finds one', async t => {
-  const notification = { message: 'you should update npm!', onShown: () => {} }
+  const notification = 'you should update npm!'
   const { cli, exitHandlerNpm } = await cliMock(t, {
     globals: {
       'process.argv': ['node', 'npm', 'root'],

@@ -375,46 +375,34 @@ t.test('throw a string error', async (t) => {
 })
 
 t.test('update notification - shows even with loglevel error', async (t) => {
-  const { exitHandler, logs, npm } = await mockExitHandler(t, {
+  const { exitHandler, logs, npm, cache } = await mockExitHandler(t, {
     config: { loglevel: 'error' },
   })
-  let notificationShown = false
-  npm.updateNotification = {
-    message: 'you should update npm!',
-    onShown: () => {
-      notificationShown = true
-    },
-  }
+  npm.updateNotification = 'you should update npm!'
 
   await exitHandler()
 
   t.match(logs.notice, ['you should update npm!'])
-  t.equal(notificationShown, true)
+  t.equal(fs.readFileSync(join(cache, '_update-notifier-last-checked'), 'utf8'), '')
 })
 
 t.test('update notification - resumes paused logging on an uncaught error', async (t) => {
-  const { logs, npm } = await mockExitHandler(t, {
+  const { logs, npm, cache } = await mockExitHandler(t, {
     config: { loglevel: 'error', progress: false },
   })
-  let notificationShown = false
-  npm.updateNotification = {
-    message: 'you should update npm!',
-    onShown: () => {
-      t.match(logs.notice, ['you should update npm!'], 'notice is emitted before recording it')
-      notificationShown = true
-    },
-  }
+  npm.updateNotification = 'you should update npm!'
 
   const exiting = new Promise(res => process.once('exit', res))
   input.start()
   process.emit('uncaughtException', err('editor could not start', 'ENOENT'))
   await exiting
 
-  t.equal(notificationShown, true)
+  t.match(logs.notice, ['you should update npm!'])
+  t.equal(fs.existsSync(join(cache, '_update-notifier-last-checked')), true)
   t.equal(process.exitCode, 1, 'uncaught error still causes a failing exit')
 })
 
-t.test('update notification - drains stderr before recording it as shown', async (t) => {
+t.test('update notification - drains stderr before recording it', async (t) => {
   const pendingWrites = []
   const written = []
   let onWrite
@@ -432,23 +420,17 @@ t.test('update notification - drains stderr before recording it as shown', async
   })
   t.teardown(() => stderr.destroy())
 
-  const { exitHandler, npm } = await mockExitHandler(t, {
+  const { exitHandler, npm, cache } = await mockExitHandler(t, {
     config: { loglevel: 'error', progress: false },
     npm: { stderr },
   })
   mockGlobals(t, { 'process.stderr': stderr }, { replace: true })
-
-  let notificationShown = false
-  npm.updateNotification = {
-    message: 'you should update npm!',
-    onShown: () => {
-      notificationShown = true
-    },
-  }
+  npm.updateNotification = 'you should update npm!'
+  const sentinelPath = join(cache, '_update-notifier-last-checked')
 
   const exiting = exitHandler()
   await firstWrite
-  t.equal(notificationShown, false, 'not recorded while stderr is blocked')
+  t.equal(fs.existsSync(sentinelPath), false, 'not recorded while stderr is blocked')
 
   const nextWrite = new Promise(res => {
     onWrite = res
@@ -456,11 +438,11 @@ t.test('update notification - drains stderr before recording it as shown', async
   pendingWrites.shift()()
   await nextWrite
   t.match(written.join(''), 'you should update npm!', 'notice precedes the final flush')
-  t.equal(notificationShown, false, 'not recorded before the flush callback')
+  t.equal(fs.existsSync(sentinelPath), false, 'not recorded before the flush callback')
 
   pendingWrites.shift()()
   await exiting
-  t.equal(notificationShown, true, 'recorded after the notice and flush complete')
+  t.equal(fs.existsSync(sentinelPath), true, 'recorded after the notice and flush complete')
 })
 
 t.test('update notification - does not record it when stderr fails', async (t) => {
@@ -473,7 +455,7 @@ t.test('update notification - does not record it when stderr fails', async (t) =
   const stderrFailure = new Promise(res => stderr.once('error', res))
   t.teardown(() => stderr.destroy())
 
-  const { exitHandler, npm } = await mockExitHandler(t, {
+  const { exitHandler, npm, cache } = await mockExitHandler(t, {
     config: { loglevel: 'error', progress: false },
     npm: { stderr },
   })
@@ -482,31 +464,20 @@ t.test('update notification - does not record it when stderr fails', async (t) =
     'process.exitCode': 7,
   }, { replace: true })
 
-  let notificationRecorded = false
-  npm.updateNotification = {
-    message: 'you should update npm!',
-    onShown: () => {
-      notificationRecorded = true
-    },
-  }
+  npm.updateNotification = 'you should update npm!'
 
   t.equal(await exitHandler(), 7, 'existing exit code is preserved')
   t.equal(await stderrFailure, writeError, 'stderr failed with EPIPE')
-  t.equal(notificationRecorded, false, 'failed output does not consume the throttle')
+  t.equal(fs.existsSync(join(cache, '_update-notifier-last-checked')), false,
+    'failed output does not consume the throttle')
 })
 
 t.test('update notification - does not record a notification arriving during the flush', async (t) => {
-  const { exitHandler, logs, npm } = await mockExitHandler(t)
-  let notificationShown = false
+  const { exitHandler, logs, npm, cache } = await mockExitHandler(t)
   mockGlobals(t, {
     'process.stderr': {
       write: (chunk, callback) => {
-        npm.updateNotification = {
-          message: 'you should update npm!',
-          onShown: () => {
-            notificationShown = true
-          },
-        }
+        npm.updateNotification = 'you should update npm!'
         callback()
       },
     },
@@ -515,37 +486,29 @@ t.test('update notification - does not record a notification arriving during the
   await exitHandler()
 
   t.strictSame(logs.notice, [], 'late notice is not emitted after the flush')
-  t.equal(notificationShown, false, 'late notice is not recorded as shown')
+  t.equal(fs.existsSync(join(cache, '_update-notifier-last-checked')), false,
+    'late notice is not recorded')
 })
 
 t.test('update notification - silent intentionally consumes the throttle', async (t) => {
-  const { exitHandler, logs, npm } = await mockExitHandler(t, {
+  const { exitHandler, logs, npm, cache } = await mockExitHandler(t, {
     config: { loglevel: 'silent' },
   })
-  let notificationRecorded = false
-  npm.updateNotification = {
-    message: 'you should update npm!',
-    onShown: () => {
-      notificationRecorded = true
-    },
-  }
+  npm.updateNotification = 'you should update npm!'
 
   await exitHandler()
 
   t.strictSame(logs.notice, [])
-  t.equal(notificationRecorded, true, 'silent is an explicit opt-out, not a deferred notice')
+  t.equal(fs.existsSync(join(cache, '_update-notifier-last-checked')), true,
+    'silent is an explicit opt-out, not a deferred notice')
 })
 
-t.test('update notification - logs verbose if onShown throws', async (t) => {
-  const { exitHandler, logs, npm } = await mockExitHandler(t, {
+t.test('update notification - logs verbose if recording the notification throws', async (t) => {
+  const { exitHandler, logs, npm, cache } = await mockExitHandler(t, {
     config: { loglevel: 'verbose' },
   })
-  npm.updateNotification = {
-    message: 'you should update npm!',
-    onShown: () => {
-      throw new Error('could not write sentinel')
-    },
-  }
+  fs.mkdirSync(join(cache, '_update-notifier-last-checked'))
+  npm.updateNotification = 'you should update npm!'
 
   await exitHandler()
 

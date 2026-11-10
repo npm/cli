@@ -111,7 +111,6 @@ const runUpdateNotifier = async (t, {
 
   return {
     wroteFile: existsSync(sentinelPath),
-    sentinelPath,
     result,
   }
 }
@@ -243,16 +242,13 @@ t.test('notification situation with engine compatibility', async t => {
 
   const {
     wroteFile,
-    sentinelPath,
     result,
   } = await runUpdateNotifier(t, {
     version: NEXT_VERSION_ENGINE_COMPATIBLE_MINOR,
     PACOTE_MOCK_REQ_COUNT: 1 })
 
-  t.matchSnapshot(result.message)
+  t.matchSnapshot(result)
   t.equal(wroteFile, false)
-  result.onShown()
-  t.equal(existsSync(sentinelPath), true)
 })
 
 t.test('notification situations', async t => {
@@ -272,7 +268,7 @@ t.test('notification situations', async t => {
           wroteFile,
           result,
         } = await runUpdateNotifier(t, { version, color, PACOTE_MOCK_REQ_COUNT: requestCount })
-        t.matchSnapshot(result.message)
+        t.matchSnapshot(result)
         t.equal(wroteFile, false)
       })
     }
