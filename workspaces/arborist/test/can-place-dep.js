@@ -1481,6 +1481,168 @@ t.test('basic placement check tests', t => {
   t.end()
 })
 
+t.test('hoisted peer replacement after workspace pins change', t => {
+  const cases = [
+    { name: 'all workspaces upgrade', expect: REPLACE },
+    { name: 'one workspace retains the old set', unchangedWorkspace: true, expect: CONFLICT },
+    {
+      name: 'root retains the old server',
+      pkg: { dependencies: { 'omega-server': '1.0.0' } },
+      expect: CONFLICT,
+    },
+    {
+      name: 'a top retains an optional peer constraint',
+      pkg: {
+        peerDependencies: { 'omega-server': '1.0.0' },
+        peerDependenciesMeta: { 'omega-server': { optional: true } },
+      },
+      expect: CONFLICT,
+    },
+    {
+      name: 'a live peer consumer retains its constraint',
+      pkg: { dependencies: { retained: '1.0.0' } },
+      consumers: [{
+        pkg: {
+          name: 'retained', version: '1.0.0', peerDependencies: { 'omega-server': '1.0.0' },
+        },
+      }],
+      expect: CONFLICT,
+    },
+    {
+      name: 'a bundled peer retains its constraint without a valid incoming edge',
+      pkg: { dependencies: { retained: '2.0.0' }, bundleDependencies: ['retained'] },
+      consumers: [{
+        pkg: {
+          name: 'retained', version: '1.0.0', peerDependencies: { 'omega-server': '1.0.0' },
+        },
+      }],
+      expect: CONFLICT,
+    },
+    ...[false, true].map(live => ({
+      name: `${live ? 'live' : 'obsolete'} cyclic peer consumers`,
+      pkg: live ? { dependencies: { bridge: '1.0.0' } } : {},
+      consumers: [
+        { pkg: { name: 'bridge', version: '1.0.0', peerDependencies: { retained: '1.0.0' } } },
+        {
+          pkg: {
+            name: 'retained',
+            version: '1.0.0',
+            peerDependencies: { bridge: '1.0.0', 'omega-server': '1.0.0' },
+          },
+        },
+      ],
+      expect: live ? CONFLICT : REPLACE,
+    })),
+    {
+      name: 'prefer dedupe permits a shared downgrade',
+      downgrade: true,
+      preferDedupe: true,
+      expect: REPLACE,
+    },
+    { name: 'plain install does not prefer a shared downgrade', downgrade: true, expect: CONFLICT },
+  ]
+  for (const { name, pkg, consumers = [], unchangedWorkspace, downgrade, preferDedupe, expect }
+    of cases) {
+    t.test(name, t => {
+      const path = '/some/path'
+      const oldVersion = downgrade ? '2.0.0' : '1.0.0'
+      const version = downgrade ? '1.0.0' : '2.0.0'
+      const dependencies = version => ({ 'alpha-client': version, 'omega-server': version })
+      const tree = new Node({
+        path,
+        pkg,
+        children: [
+          {
+            pkg: {
+              name: 'alpha-client',
+              version: oldVersion,
+              peerDependencies: { 'omega-server': oldVersion },
+            },
+          },
+          { pkg: { name: 'omega-server', version: oldVersion } },
+          ...consumers,
+        ],
+        fsChildren: ['a', 'b'].map(name => ({
+          path: `${path}/packages/${name}`,
+          pkg: {
+            name,
+            version: '1.0.0',
+            dependencies: dependencies(unchangedWorkspace && name === 'b' ? oldVersion : version),
+          },
+        })),
+      })
+      const workspace = [...tree.fsChildren][0]
+      const virtualRoot = new Node({
+        path: workspace.path,
+        sourceReference: workspace,
+        children: [
+          {
+            pkg: {
+              name: 'alpha-client',
+              version,
+              peerDependencies: { 'omega-server': version },
+            },
+          },
+          { pkg: { name: 'omega-server', version } },
+        ],
+      })
+      const placement = new CanPlaceDep({
+        dep: virtualRoot.children.get('alpha-client'),
+        edge: workspace.edgesOut.get('alpha-client'),
+        target: tree,
+        preferDedupe,
+      })
+      t.equal(placement.canPlace, expect)
+      t.end()
+    })
+  }
+  t.end()
+})
+
+t.test('an obsolete nested peer cannot hide a live sibling with the same name', t => {
+  const tree = new Node({
+    path: '/some/path',
+    pkg: { dependencies: { 'alpha-client': '1.0.0' } },
+    children: [
+      {
+        pkg: {
+          name: 'alpha-client',
+          version: '1.0.0',
+          peerDependencies: { 'omega-server': '1.0.0' },
+        },
+      },
+      { pkg: { name: 'omega-server', version: '1.0.0' } },
+      {
+        pkg: { name: 'unused', version: '1.0.0' },
+        children: [{
+          pkg: {
+            name: 'alpha-client',
+            version: '1.0.0',
+            peerDependencies: { 'omega-server': '*' },
+          },
+        }],
+      },
+    ],
+    fsChildren: [{
+      path: '/some/path/packages/a',
+      pkg: { name: 'a', dependencies: { 'omega-server': '2.0.0' } },
+    }],
+  })
+  const workspace = [...tree.fsChildren][0]
+  const virtualRoot = new Node({
+    path: workspace.path,
+    sourceReference: workspace,
+    children: [{ pkg: { name: 'omega-server', version: '2.0.0' } }],
+  })
+  const placement = new CanPlaceDep({
+    dep: virtualRoot.children.get('omega-server'),
+    edge: workspace.edgesOut.get('omega-server'),
+    target: tree,
+  })
+  t.equal(placement.canPlace, CONFLICT, 'preserve the live sibling peer constraint')
+  t.end()
+})
+
 t.test('constructor debug throws', t => {
   t.throws(() => new CanPlaceDep({}), {
     message: 'no dep provided to CanPlaceDep',

@@ -133,6 +133,63 @@ t.test('no options', async t => {
   )
 })
 
+t.test('workspace peer upgrades retain shared hoisted dependencies', async t => {
+  const registry = createRegistry(t)
+  for (const name of ['alpha-client', 'omega-server']) {
+    const manifest = registry.manifest({
+      name,
+      packuments: ['1.0.0', '2.0.0'].map(version => ({
+        version,
+        ...(name === 'alpha-client' ? { peerDependencies: { 'omega-server': version } } : {}),
+      })),
+    })
+    await registry.package({ manifest, times: 2 })
+  }
+  const workspacePackage = (name, version) => ({
+    name,
+    version: '1.0.0',
+    dependencies: { 'alpha-client': version, 'omega-server': version },
+  })
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', workspaces: ['packages/*'] }),
+    packages: Object.fromEntries(['a', 'b'].map(name => [name, {
+      'package.json': JSON.stringify(workspacePackage(name, '1.0.0')),
+    }])),
+  })
+  const assertShared = (tree, version) => {
+    for (const name of ['alpha-client', 'omega-server']) {
+      t.same([...tree.inventory.query('name', name)].map(node => [node.location, node.version]),
+        [[`node_modules/${name}`, version]], `${name}@${version} has one root copy`)
+      for (const workspace of ['a', 'b']) {
+        const edge = tree.children.get(workspace).target.edgesOut.get(name)
+        t.equal(edge.valid, true, `${workspace} resolves a satisfying ${name}`)
+        t.equal(edge.to, tree.children.get(name), `${workspace} shares the root ${name}`)
+      }
+    }
+    t.equal(tree.children.get('alpha-client')?.edgesOut.get('omega-server').valid, true,
+      'the shared client resolves a satisfying server peer')
+  }
+
+  const initial = await buildIdeal(path)
+  assertShared(initial, '1.0.0')
+  await initial.meta.save()
+  for (const name of ['a', 'b']) {
+    fs.writeFileSync(join(path, 'packages', name, 'package.json'),
+      JSON.stringify(workspacePackage(name, '2.0.0')))
+  }
+
+  // Keep the previous lockfile and use plain install, without add/update requests.
+  const upgraded = await buildIdeal(path)
+  assertShared(upgraded, '2.0.0')
+  await upgraded.meta.save()
+  const lock = fs.readFileSync(join(path, 'package-lock.json'), 'utf8')
+  const repeated = await buildIdeal(path)
+  assertShared(repeated, '2.0.0')
+  await repeated.meta.save()
+  t.equal(fs.readFileSync(join(path, 'package-lock.json'), 'utf8'), lock,
+    'a repeated install preserves the shared lockfile layout')
+})
+
 t.test('a workspace with a conflicted nested duplicated dep', async t => {
   createRegistry(t, true)
   t.matchSnapshot(await printIdeal(resolve(fixtures, 'workspace4')))

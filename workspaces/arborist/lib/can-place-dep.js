@@ -183,7 +183,7 @@ class CanPlaceDep {
       !this.auditReport.isVulnerable(dep)
     const tryReplace = curVer && newVer &&
       (semver.gte(newVer, curVer) || auditFixDowngrade)
-    if (tryReplace && dep.canReplace(current)) {
+    if (tryReplace && this.canReplaceCurrent()) {
       // It's extremely rare that a replaceable node would be a conflict, if
       // the current one wasn't a conflict, but it is theoretically possible
       // if peer deps are pinned.  In that case we treat it like any other
@@ -200,7 +200,7 @@ class CanPlaceDep {
     }
 
     // if we prefer deduping, then try replacing newer with older
-    if (preferDedupe && !tryReplace && dep.canReplace(current)) {
+    if (preferDedupe && !tryReplace && this.canReplaceCurrent()) {
       const cpp = this.canPlacePeers(REPLACE)
       if (cpp !== CONFLICT) {
         return cpp
@@ -325,6 +325,22 @@ class CanPlaceDep {
     }
 
     return CONFLICT
+  }
+
+  canReplaceCurrent () {
+    if (this.dep.canReplace(this.current)) {
+      return true
+    }
+    const ignorePeers = new Set()
+    for (const edge of this.current.edgesIn) {
+      // A peer constraint from an obsolete package must not prevent replacing
+      // its peer set at a shared ancestor rather than nesting new copies.
+      if (edge.peer && edge.from.parent === this.current.parent &&
+          !this.peerEntrySourceIsRequired(edge.from)) {
+        ignorePeers.add(edge.from.name)
+      }
+    }
+    return ignorePeers.size > 0 && this.dep.canReplace(this.current, ignorePeers)
   }
 
   peerEntrySourceIsRequired (source) {
