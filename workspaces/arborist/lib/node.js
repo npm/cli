@@ -955,7 +955,11 @@ class Node {
     for (const [name, spec] of Object.entries(deps || {})) {
       const current = this.edgesOut.get(name)
       if (!current || current.type !== 'workspace') {
-        new Edge({ from: this, name, spec, accept: ad[name], type })
+        const edge = new Edge({ from: this, name, spec, accept: ad[name], type })
+        const source = this.sourceReference?.edgesOut.get(name)
+        if (source?.resolvedVersion && source.type === edge.type && source.spec === edge.spec) {
+          edge.resolvedVersion = source.resolvedVersion
+        }
       }
     }
   }

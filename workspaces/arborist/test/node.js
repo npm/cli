@@ -3597,3 +3597,21 @@ t.test('shouldOmit method', t => {
 
   t.end()
 })
+
+t.test('virtual roots retain only matching tag selections', t => {
+  const source = new Node({ path: '/source', pkg: { dependencies: { tagged: 'experimental' } } })
+  source.edgesOut.get('tagged').resolvedVersion = '2.0.0'
+  for (const pkg of [
+    { dependencies: { tagged: 'experimental' } },
+    { dependencies: { tagged: 'latest' } },
+    { optionalDependencies: { tagged: 'experimental' } },
+  ]) {
+    const virtual = new Node({ path: '/virtual', sourceReference: source })
+    virtual.package = pkg
+    const edge = virtual.edgesOut.get('tagged')
+    const matches = edge.type === 'prod' && edge.spec === 'experimental'
+    t.equal(edge.resolvedVersion, matches ? '2.0.0' : null,
+      'copies a selection only for the same dependency type and effective spec')
+  }
+  t.end()
+})

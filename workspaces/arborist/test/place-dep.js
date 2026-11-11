@@ -2046,3 +2046,32 @@ t.test('placement tests', t => {
 
   t.end()
 })
+
+t.test('a placed peer set retains its selected tag', t => {
+  const root = new Node({ path: '/tag-root',
+    pkg: {
+      dependencies: { consumer: '1.0.0', tagged: '1.0.0' },
+    },
+    children: [
+      { pkg: { name: 'consumer', version: '1.0.0', dependencies: { wrapper: '1.0.0' } } },
+      { pkg: { name: 'tagged', version: '1.0.0' },
+        resolved: 'https://registry.npmjs.org/tagged/-/tagged-1.0.0.tgz' },
+    ] })
+  const consumer = root.children.get('consumer')
+  const virtual = new Node({ path: consumer.path, sourceReference: consumer, pkg: consumer.package })
+  const wrapper = new Node({ parent: virtual,
+    pkg: { name: 'wrapper',
+      version: '1.0.0',
+      peerDependencies: { tagged: 'experimental' } } })
+  new Node({ parent: virtual,
+    pkg: { name: 'tagged', version: '2.0.0' },
+    resolved: 'https://registry.npmjs.org/tagged/-/tagged-2.0.0.tgz' })
+  wrapper.edgesOut.get('tagged').resolvedVersion = '2.0.0'
+  const pd = new PlaceDep({ dep: wrapper, edge: consumer.edgesOut.get('wrapper'), updateNames: [] })
+  const peerEdge = pd.placed.edgesOut.get('tagged')
+  t.equal(pd.placed.parent, consumer, 'nests the incompatible peer set')
+  t.equal(peerEdge.to.version, '2.0.0', 'places the selected peer instead of accepting another remote tag')
+  t.ok(peerEdge.valid, 'the placed peer relationship remains valid')
+  t.equal(root.children.get('tagged').version, '1.0.0', 'retains the root version constraint')
+  t.end()
+})
