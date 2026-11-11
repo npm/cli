@@ -206,6 +206,57 @@ t.test('eacces/eperm', async t => {
   }
 })
 
+t.test('eacces path that only shares a string prefix with the cache', async t => {
+  const { errorMessage, home } = await loadMockNpm(t, {
+    config: (dirs) => ({ cache: resolve(dirs.home, '.npm') }),
+  })
+
+  const makeEr = (path, dest) => Object.assign(new Error('whoopsie'), {
+    code: 'EACCES',
+    path,
+    dest,
+    stack: 'dummy stack trace',
+  })
+
+  const text = (er) => {
+    const { summary, detail } = errorMessage(er)
+    return [...summary, ...detail].map(row => row.map(String).join(' ')).join('\n')
+  }
+
+  t.test('~/.npmrc is not inside ~/.npm', t => {
+    const out = text(makeEr(resolve(home, '.npmrc')))
+    t.notMatch(out, 'root-owned files')
+    t.match(out, 'The operation was rejected by your operating system.')
+    t.end()
+  })
+
+  t.test('~/.npm-global is not inside ~/.npm', t => {
+    const out = text(makeEr(resolve(home, '.npm-global')))
+    t.notMatch(out, 'root-owned files')
+    t.match(out, 'The operation was rejected by your operating system.')
+    t.end()
+  })
+
+  t.test('a file inside ~/.npm is still a cache path', t => {
+    const out = text(makeEr(resolve(home, '.npm', '_cacache')))
+    t.match(out, 'root-owned files')
+    t.end()
+  })
+
+  t.test('the cache directory itself is still a cache path', t => {
+    const out = text(makeEr(resolve(home, '.npm')))
+    t.match(out, 'root-owned files')
+    t.end()
+  })
+
+  t.test('dest ~/.npmrc is not inside ~/.npm', t => {
+    const out = text(makeEr(undefined, resolve(home, '.npmrc')))
+    t.notMatch(out, 'root-owned files')
+    t.match(out, 'The operation was rejected by your operating system.')
+    t.end()
+  })
+})
+
 t.test('json parse', t => {
   mockGlobals(t, { 'process.argv': ['arg', 'v'] })
 
