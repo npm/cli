@@ -132,6 +132,25 @@ t.test('local-address allowed types', t => {
     t.same(defs['local-address'].type, [null])
     t.end()
   })
+  t.test('only listed when the type is read, and only once', t => {
+    let calls = 0
+    const os = {
+      tmpdir: () => '/tmp',
+      networkInterfaces: () => {
+        calls++
+        return { eth0: [{ address: '10.0.0.1' }] }
+      },
+    }
+    const defs = mockDefs({ 'node:os': os })
+    t.equal(calls, 0, 'not listed when the definitions load')
+    t.equal(defs['local-address'].hint, '<local-address>')
+    t.equal(defs['local-address'].usage, '--local-address <local-address>')
+    t.equal(calls, 0, 'hint and usage do not read the type')
+    t.same(defs['local-address'].type, [null, '10.0.0.1'])
+    t.same(defs['local-address'].type, [null, '10.0.0.1'])
+    t.equal(calls, 1, 'listed once')
+    t.end()
+  })
   t.end()
 })
 
