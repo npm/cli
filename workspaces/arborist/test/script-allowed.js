@@ -1,6 +1,9 @@
 const t = require('tap')
 const path = require('node:path')
 const npa = require('npm-package-arg')
+const Node = require('../lib/node.js')
+const Link = require('../lib/link.js')
+const Arborist = require('../lib/arborist')
 const isScriptAllowed = require('../lib/script-allowed.js')
 const {
   filePolicyIdentities,
@@ -37,6 +40,219 @@ const lockfileRoot = (rootPath, entries) => ({
   meta: {
     get: nodePath => entries[nodePath] || {},
   },
+})
+
+const mixedSourceTree = (source, registrySpec = '^1.0.0') => {
+  const root = new Node({
+    path: path.resolve('mixed-project'),
+    pkg: {
+      name: 'host',
+      version: '1.0.0',
+      dependencies: { tool: registrySpec, parent: '1.0.0' },
+    },
+  })
+  const target = new Node({
+    parent: root,
+    name: 'tool',
+    resolved: source,
+    pkg: { name: 'tool', version: '1.0.0' },
+  })
+  const parent = new Node({
+    parent: root,
+    name: 'parent',
+    pkg: {
+      name: 'parent',
+      version: '1.0.0',
+      dependencies: { tool: source },
+    },
+  })
+  return { root, target, parent }
+}
+
+t.test('registry denials survive mixed non-registry requests', t => {
+  for (const source of [
+    'https://registry.npmjs.org/tool/-/tool-1.0.0.tgz',
+    'https://evil.example/tool/-/tool-1.9.9.tgz',
+    'https://evil.example/decoy/-/decoy-9.0.0.tgz',
+    'git+https://github.com/example/tool.git#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    `file:${path.resolve('tool.tgz')}`,
+  ]) {
+    const { root, target, parent } = mixedSourceTree(source)
+    t.ok(root.edgesOut.get('tool').valid)
+    t.ok(parent.edgesOut.get('tool').valid)
+    t.equal(parent.edgesOut.get('tool').to, target)
+    for (const key of ['tool', 'tool@1.0.0', 'tool@2.0.0', 'tool@1.0.0 || 2.0.0']) {
+      t.equal(isScriptAllowed(target, { [key]: false }), false, `${key} denies ${source}`)
+      t.equal(isScriptAllowed(target, { [key]: false, [source]: true }), false)
+    }
+    t.equal(isScriptAllowed(target, { tool: true }), null, 'registry allows remain refused')
+    t.equal(isScriptAllowed(target, { other: false, [source]: true }), true)
+    t.equal(isScriptAllowed(target, { 'tool@^1.0.0': false, [source]: true }), true)
+    root.package = {
+      name: 'host',
+      version: '1.0.0',
+      dependencies: { parent: '1.0.0' },
+    }
+    t.equal(isScriptAllowed(target, { tool: false, [source]: true }), true,
+      'a pure non-registry source does not acquire registry identity')
+  }
+  t.end()
+})
+
+t.test('mixed denials collect every registry and alias request identity', t => {
+  const source = 'https://example.test/tool.tgz'
+  for (const specs of [
+    ['1.0.0', 'npm:underlying@1.0.0'],
+    ['npm:underlying@1.0.0', '1.0.0'],
+  ]) {
+    const { root, target } = mixedSourceTree(source, specs[0])
+    const other = new Node({
+      parent: root,
+      name: 'other',
+      pkg: { name: 'other', version: '1.0.0', dependencies: { tool: specs[1] } },
+    })
+    t.ok(root.edgesOut.get('tool').valid)
+    t.ok(other.edgesOut.get('tool').valid)
+    for (const name of ['tool', 'underlying']) {
+      t.equal(isScriptAllowed(target, { [name]: false, [source]: true }), false)
+      t.equal(isScriptAllowed(target, { [name]: true }), null)
+    }
+  }
+  const { target } = mixedSourceTree(source, 'npm:underlying@1.0.0')
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), true,
+    'an alias does not contribute its installation name')
+  t.end()
+})
+
+t.test('ordinary directory links retain registry denials without gaining registry approvals', t => {
+  const root = new Node({
+    path: path.resolve('linked-project'),
+    pkg: { name: 'host', dependencies: { tool: '1.0.0', parent: '1.0.0' } },
+  })
+  const target = new Node({
+    path: path.resolve(root.path, 'vendor/tool'),
+    pkg: { name: 'tool', version: '1.0.0' },
+  })
+  const link = new Link({ parent: root, name: 'tool', target })
+  const source = `file:${target.path}`
+  const parent = new Node({
+    parent: root,
+    name: 'parent',
+    pkg: { name: 'parent', version: '1.0.0', dependencies: { tool: source } },
+  })
+  t.ok(root.edgesOut.get('tool').valid)
+  t.ok(parent.edgesOut.get('tool').valid)
+  t.equal(parent.edgesOut.get('tool').to, link)
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), false)
+  t.equal(isScriptAllowed(target, { tool: true }), null)
+  t.end()
+})
+
+t.test('incomplete edges do not manufacture registry denial identities', t => {
+  const source = 'https://example.test/tool.tgz'
+  const target = node({
+    resolved: source,
+    isRegistryDependency: false,
+    edgesIn: new Set([
+      null,
+      {},
+      { name: '', spec: '1.0.0' },
+      { name: 'tool', spec: null },
+      { name: 'tool', spec: '@@@invalid' },
+    ]),
+    linksIn: new Set(),
+  })
+  target.linksIn.add(target)
+  target.linksIn.add(null)
+  target.linksIn.add({ edgesIn: {}, linksIn: {} })
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), true)
+  target.edgesIn.add({ name: 'tool', spec: '' })
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), false,
+    'an explicit empty registry request is a wildcard, not missing provenance')
+
+  const error = new Error('unresolvable override')
+  target.edgesIn = new Set([{
+    name: 'tool',
+    get spec () {
+      throw error
+    },
+  }])
+  t.throws(() => isScriptAllowed(target, { tool: false }), error,
+    'request-resolution errors are surfaced instead of silently ignoring denials')
+  t.end()
+})
+
+t.test('isolated store nodes retain and union registry denial provenance', async t => {
+  const source = 'https://registry.npmjs.org/tool/-/tool-1.0.0.tgz'
+  for (const order of [
+    ['registry-parent', 'remote-parent'],
+    ['remote-parent', 'registry-parent'],
+  ]) {
+    const root = new Node({
+      path: path.resolve('isolated-project'),
+      pkg: {
+        name: 'host',
+        version: '1.0.0',
+        dependencies: Object.fromEntries(order.map(name => [name, '1.0.0'])),
+      },
+    })
+    for (const name of order) {
+      const parent = new Node({
+        parent: root,
+        name,
+        pkg: {
+          name,
+          version: '1.0.0',
+          dependencies: { tool: name === 'registry-parent' ? '1.0.0' : source },
+        },
+      })
+      new Node({
+        parent,
+        name: 'tool',
+        resolved: source,
+        pkg: { name: 'tool', version: '1.0.0' },
+      })
+      t.ok(parent.edgesOut.get('tool').valid)
+    }
+    const arb = new Arborist({ path: root.path })
+    arb.idealTree = root
+    const isolated = await arb.createIsolatedTree()
+    const targets = [...isolated.inventory.values()].filter(n =>
+      n.isInStore && n.package.name === 'tool'
+    )
+    t.equal(targets.length, 1, 'identical logical packages share a physical store target')
+    const [target] = targets
+    t.equal(isScriptAllowed(target, { tool: false, [source]: true }), false)
+    t.equal(isScriptAllowed(target, { 'tool@2.0.0': false, [source]: true }), false)
+    t.equal(isScriptAllowed(target, { tool: true }), null,
+      'coalescing does not promote a remote node to a registry approval')
+  }
+
+  const calls = []
+  const RebuildingArborist = t.mock('../lib/arborist', {
+    '@npmcli/run-script': async ({ event }) => {
+      calls.push(event)
+      return { code: 0, signal: null }
+    },
+  })
+  const { root, target: logicalTarget } = mixedSourceTree(source)
+  logicalTarget.package.scripts = { install: 'mocked-install' }
+  const arb = new RebuildingArborist({
+    path: root.path,
+    allowScripts: { tool: false, [source]: true },
+  })
+  arb.idealTree = root
+  const isolated = await arb.createIsolatedTree()
+  const target = [...isolated.inventory.values()].find(n =>
+    n.isInStore && n.package.name === 'tool'
+  )
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), false,
+    'a mixed logical node also retains its registry denial')
+  await arb.rebuild({ nodes: [target] })
+  t.same(calls, [], 'the isolated lifecycle gate skips the denied install script')
+  const allowed = new RebuildingArborist({ path: root.path, allowScripts: { [source]: true } })
+  await allowed.rebuild({ nodes: [target] })
+  t.same(calls, ['install'], 'the source approval still reaches the lifecycle runner without a deny')
 })
 
 t.test('returns null when no policy is set', t => {

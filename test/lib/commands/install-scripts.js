@@ -140,6 +140,91 @@ const setupDistinctRemoteSourcesProject = () => {
   }
 }
 
+const setupMixedSourceProject = (t, allowScripts, linked) => {
+  const source = 'https://evil.example/tool/-/tool-1.9.9.tgz'
+  const fixture = setupProject({
+    allowScripts,
+    withScripts: ['tool'],
+    noScripts: ['parent'],
+    remoteUrls: { tool: source },
+  })
+  const pkg = JSON.parse(fixture['package.json'])
+  pkg.dependencies.tool = '^1.0.0'
+  fixture['package.json'] = JSON.stringify(pkg)
+  const lock = JSON.parse(fixture['package-lock.json'])
+  lock.packages[''].dependencies.tool = '^1.0.0'
+  lock.packages['node_modules/parent'].dependencies = { tool: source }
+  fixture['package-lock.json'] = JSON.stringify(lock)
+  const parent = JSON.parse(fixture.node_modules.parent['package.json'])
+  parent.dependencies = { tool: source }
+  fixture.node_modules.parent['package.json'] = JSON.stringify(parent)
+  if (linked) {
+    const storeDir = 'tool@1.0.0-mixed'
+    const storeLoc = `node_modules/.store/${storeDir}/node_modules/tool`
+    const packages = { ...lock.packages }
+    delete packages['']
+    packages[`node_modules/.store/${storeDir}`] = {}
+    packages[storeLoc] = packages['node_modules/tool']
+    packages['node_modules/tool'] = { resolved: storeLoc, link: true }
+    fixture.node_modules['.package-lock.json'] = JSON.stringify({
+      lockfileVersion: 3,
+      requires: true,
+      packages,
+    })
+    fixture.node_modules['.store'] = {
+      [storeDir]: { node_modules: { tool: fixture.node_modules.tool } },
+    }
+    fixture.node_modules.tool = t.fixture('symlink', `.store/${storeDir}/node_modules/tool`)
+  }
+  return { fixture, source }
+}
+
+for (const linked of [false, true]) {
+  t.test(`mixed-source registry denials survive ${linked ? 'linked' : 'hoisted'} commands`, async t => {
+    for (const key of ['tool', 'tool@1.0.0']) {
+      for (const mode of ['approve', 'all', 'ls', 'prune']) {
+        await t.test(`${mode} with ${key}`, async t => {
+          const allowScripts = { [key]: false }
+          const { fixture, source } = setupMixedSourceProject(t, allowScripts, linked)
+          const { npm, prefix, logs, joinedOutput } = await mockNpm(t, {
+            prefixDir: fixture,
+            config: { all: mode === 'all' },
+          })
+          if (linked) {
+            const hidden = resolve(prefix, 'node_modules/.package-lock.json')
+            const future = new Date(Date.now() + 1000)
+            fs.utimesSync(hidden, future, future)
+          }
+          const Arborist = require('@npmcli/arborist')
+          const isScriptAllowed = require('@npmcli/arborist/lib/script-allowed.js')
+          const tree = await new Arborist({ path: prefix }).loadActual()
+          const target = tree.edgesOut.get('tool').to.target
+          t.ok(tree.edgesOut.get('tool').valid)
+          if (!linked) {
+            t.ok(tree.children.get('parent').edgesOut.get('tool').valid)
+          }
+          t.equal(tree.children.get('parent').edgesOut.get('tool').to.target, target)
+          t.equal(isScriptAllowed(target, { ...allowScripts, [source]: true }), false)
+
+          await npm.exec('install-scripts', mode === 'all'
+            ? ['approve']
+            : mode === 'approve' ? ['approve', source] : [mode])
+
+          const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+          t.strictSame(pkg.allowScripts, allowScripts)
+          if (mode === 'approve') {
+            const warning = logs.warn.byTitle('install-scripts').join('\n')
+            t.match(warning, /is denied; remove the entry/)
+            t.notMatch(warning, /widen/)
+          } else if (mode === 'ls') {
+            t.match(joinedOutput(), /No packages with unreviewed install scripts/)
+          }
+        })
+      }
+    }
+  })
+}
+
 const toolSourceNode = (source, overrides = {}) => ({
   name: 'tool',
   version: '1.0.0',

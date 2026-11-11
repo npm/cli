@@ -372,15 +372,75 @@ t.test('mixed remote and registry edges preserve separate policy identities', as
   ]) {
     const existing = { cypress: false }
     t.equal(keyTargetsNode('cypress', n), false)
-    t.strictSame(applyApprovalForPackage(existing, [n]).allowScripts, {
-      ...existing,
+    t.equal(keyTargetsNode('cypress', n, true), true)
+    const approval = applyApprovalForPackage(existing, [n])
+    t.strictSame(approval.allowScripts, existing)
+    t.match(approval.warning, /cypress is denied/)
+    t.strictSame(applyApprovalForPackage({}, [n]).allowScripts, {
       [registryShapedRemoteUrl]: true,
-    })
+    }, 'approval keys remain source-specific without a denial')
+    const pinned = { 'cypress@15.18.1': true }
+    t.strictSame(applyApprovalForPackage(pinned, [n]).allowScripts, {
+      ...pinned,
+      [registryShapedRemoteUrl]: true,
+    }, 'source approval does not clean up registry approvals')
     t.strictSame(applyDenyForPackage(existing, [n]).allowScripts, {
       ...existing,
       [registryShapedRemoteUrl]: false,
     })
+    const versioned = { 'cypress@15.18.1': false }
+    const blocked = applyApprovalForPackage(versioned, [n])
+    t.strictSame(blocked.allowScripts, versioned)
+    t.match(blocked.warning, /remove the entry/)
+    t.notMatch(blocked.warning, /widen/, 'a URL denial cannot widen a registry denial')
   }
+})
+
+t.test('mixed git and file approvals preserve registry denials and source-specific cleanup', t => {
+  for (const source of [
+    'git+https://github.com/example/tool.git#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    `file:${path.resolve('tool.tgz')}`,
+  ]) {
+    const n = {
+      ...node({ resolved: source, isRegistryDependency: false }),
+      edgesIn: new Set([
+        { name: 'pkg', spec: '1.0.0' },
+        { name: 'pkg', spec: source },
+      ]),
+    }
+    const existing = { pkg: false }
+    const blocked = applyApprovalForPackage(existing, [n])
+    t.strictSame(blocked.allowScripts, existing)
+    t.match(blocked.warning, /pkg is denied/)
+    t.strictSame(applyDenyForPackage(existing, [n]).allowScripts, {
+      ...existing,
+      [nameKeyFor(n)]: false,
+    })
+    const approved = { 'pkg@1.0.0': true }
+    t.strictSame(applyApprovalForPackage(approved, [n]).allowScripts, {
+      ...approved,
+      [versionedKeyFor(n)]: true,
+    })
+  }
+  t.end()
+})
+
+t.test('registry denial checks share every alias identity with runtime matching', t => {
+  const n = Object.assign(registryShapedRemoteNode(), {
+    edgesIn: new Set([
+      { name: 'cypress', spec: '^15.18.1' },
+      { name: 'cypress', spec: 'npm:underlying@15.18.1' },
+    ]),
+  })
+  for (const key of ['underlying', 'underlying@15.18.1']) {
+    const existing = { [key]: false }
+    t.equal(isScriptAllowed(n, existing), false)
+    const approval = applyApprovalForPackage(existing, [n])
+    t.strictSame(approval.allowScripts, existing)
+    t.match(approval.warning, /is denied; remove the entry/)
+    t.notMatch(approval.warning, /widen/)
+  }
+  t.end()
 })
 
 t.test('denying a hosted repository removes all its commit policies', async t => {

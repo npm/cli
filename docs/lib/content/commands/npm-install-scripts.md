@@ -104,6 +104,17 @@ of that repository, including commits that are not currently installed.
 File denials replace only path-equivalent policy entries, preserving entries for
 other file identities even when they currently share a target.
 
+One installed package can satisfy both registry and non-registry requests.
+In that case, denials for any incoming registry identity still block its scripts,
+even when its remote URL, git repository, or file source is approved separately.
+Registry identities come from dependency requests, including the underlying name
+of an npm alias, not from the installed package's manifest.
+Registry approvals do not gain this broader matching.
+For these mixed-source packages, npm cannot verify a registry version from a
+non-registry source, so versioned registry denials fail closed on the matching name.
+This can block a package whose reported version differs from the denied version.
+The same denial takes precedence during approval, pruning, and linked installs.
+
 `ls` is read-only: it lists every package whose install scripts are not yet
 covered by `allowScripts`, without modifying `package.json`. Non-registry
 entries show the installed name followed by the exact source selector in

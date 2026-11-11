@@ -75,6 +75,13 @@ to the hosted repository (`github:org/repo`).
 `--all` explicitly approves every package with unreviewed install scripts,
 including distinct sources that share an installed name.
 
+If one installed package also satisfies a registry dependency request, an
+existing denial for that registry identity blocks source-specific approval too.
+This includes registry requests through npm aliases and links.
+Versioned registry denials fail closed when a mixed-source package has no
+verifiable registry version, even if its reported version differs.
+Registry approvals remain source-specific and do not authorize a non-registry source.
+
 `--allow-scripts-pending` is read-only: it lists every package whose install scripts
 are not yet covered by `allowScripts`, without modifying `package.json`.
 Non-registry entries show the installed name followed by the exact source

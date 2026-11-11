@@ -221,19 +221,55 @@ const filePolicyIdentity = (node) => {
   return null
 }
 
-const matchRegistry = (node, parsed, failClosed) => {
-  // If this node is not a registry dep, refuse the match. A registry-style
-  // key (`pkg`, `pkg@1`, `pkg@1 || 2`) must not match a tarball or git node
-  // even if their names happen to coincide.
-  if (!isRegistryNode(node)) {
-    return false
+const incomingEdges = function * (node, seen = new Set()) {
+  if (!node || seen.has(node)) {
+    return
   }
+  seen.add(node)
 
-  // Derive the trusted name+version from the lockfile's resolved URL.
-  // Never use `node.packageName` / `node.version` here: those read from
-  // the tarball's own package.json and can be forged by a malicious
-  // publisher to bypass an allowScripts entry.
-  const trusted = getTrustedRegistryIdentity(node)
+  if (node.edgesIn && typeof node.edgesIn[Symbol.iterator] === 'function') {
+    yield * node.edgesIn
+  }
+  if (node.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+    for (const link of node.linksIn) {
+      yield * incomingEdges(link, seen)
+    }
+  }
+}
+
+// These request names authorize denials only, never source approvals or versions.
+const registryDenialNames = (node) => {
+  if (node?.scriptPolicyRegistryNames) {
+    return node.scriptPolicyRegistryNames
+  }
+  const names = new Set()
+  for (const edge of incomingEdges(node)) {
+    const name = edge?.name
+    const spec = edge?.spec
+    if (typeof name !== 'string' || name === '' || typeof spec !== 'string') {
+      continue
+    }
+    let parsed
+    try {
+      parsed = npa.resolve(name, spec)
+    } catch {
+      continue
+    }
+    const identity = parsed.type === 'alias' ? parsed.subSpec : parsed
+    if (identity.registry) {
+      names.add(identity.name)
+    }
+  }
+  return [...names]
+}
+
+const matchRegistry = (node, parsed, failClosed) => {
+  // Mixed sources retain registry denials, but cannot borrow registry approvals.
+  let trusted = isRegistryNode(node) ? getTrustedRegistryIdentity(node) : null
+  if (!trusted && failClosed && registryDenialNames(node).includes(parsed.name)) {
+    // Neither a remote URL's shape nor a tarball's manifest verifies its version.
+    trusted = { name: parsed.name, version: null }
+  }
   if (!trusted || trusted.name !== parsed.name) {
     return false
   }
@@ -524,6 +560,8 @@ module.exports.matches = matches
 module.exports.isExactVersionDisjunction = isExactVersionDisjunction
 module.exports.filePolicyIdentities = filePolicyIdentities
 module.exports.filePolicyIdentity = filePolicyIdentity
+module.exports.incomingEdges = incomingEdges
+module.exports.registryDenialNames = registryDenialNames
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
 module.exports.resolvedSourceSpecs = resolvedSourceSpecs
 module.exports.resolvedSourceEntries = resolvedSourceEntries

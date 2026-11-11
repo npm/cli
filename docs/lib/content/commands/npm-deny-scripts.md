@@ -53,6 +53,18 @@ file identities that currently share the target.
 Repository-level denials remove policy entries for every commit of that
 repository, including commits that are not currently installed.
 
+If one installed package satisfies both registry and non-registry requests,
+denials for any incoming registry identity still block its scripts.
+An approval for its remote URL, git repository, or file source cannot override
+that denial, including under the linked install strategy.
+Names come from the registry requests, including the underlying name of an npm
+alias, rather than the installed package's manifest.
+For mixed-source packages the registry version is unverifiable, so versioned
+registry denials fail closed on the matching name.
+This can block packages reporting a different version from the denied version.
+Pure non-registry dependencies do not acquire a registry identity from their
+manifest or URL.
+
 `--all` denies every package with unreviewed install scripts.
 
 If a `true` (pinned or name-only) entry exists for a package and you then
