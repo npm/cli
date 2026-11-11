@@ -1350,6 +1350,8 @@ t.test('reloading named edges skips empty leaves without caching their state', t
   t.equal(leaf.edgesOut.get('foo').to, foo)
   foo.parent = null
   t.equal(leaf.edgesOut.get('foo').to, null, 'the newly added edge still refreshes')
+  const replacement = new Node({ parent: root, pkg: { name: 'foo', version: '2.0.0' } })
+  t.equal(leaf.edgesOut.get('foo').to, replacement, 'the formerly empty leaf is revisited')
   t.end()
 })
 
