@@ -231,6 +231,36 @@ t.test('when a root is a link, traverse the target children', t => {
   }
 })
 
+t.test('an explicitly empty filter leaves every dependency untouched', t => {
+  const actual = new Node({
+    path: '/project',
+    children: [{ name: 'removed', pkg: { name: 'removed', version: '1.0.0' } }],
+  })
+  const ideal = new Node({
+    path: '/project',
+    children: [{ name: 'added', pkg: { name: 'added', version: '1.0.0' } }],
+  })
+  t.same(Diff.calculate({ actual, ideal }).children.map(d => d.action).sort(),
+    ['ADD', 'REMOVE'], 'omitting the filter still diffs all dependencies')
+
+  const linkedActual = new Link({ path: '/linked-project', realpath: actual.path })
+  linkedActual.target = new Node({
+    path: actual.path,
+    children: [{ name: 'removed', pkg: { name: 'removed', version: '1.0.0' } }],
+  })
+  for (const root of [actual, linkedActual]) {
+    const diff = Diff.calculate({ actual: root, ideal, filterNodes: [] })
+    t.equal(diff.action, null, 'root is unchanged')
+    t.equal(diff.children.length, 0, 'no dependency changes')
+    t.equal(diff.removed.length, 0, 'no removals')
+    t.same(diff.unchanged, [], 'excluded nodes are not selected for rebuilding')
+    t.ok(diff.filterSet.has(root), 'actual root remains in scope')
+    t.ok(diff.filterSet.has(root.target), 'actual root target remains in scope')
+    t.ok(diff.filterSet.has(ideal), 'ideal root remains in scope')
+  }
+  t.end()
+})
+
 t.test('filtered diff', async t => {
   const ideal = new Node({
     path: '/project/path',
