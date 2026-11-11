@@ -48,4 +48,11 @@ t.test('reify does not install dev dependencies from a pnpm store', async t => {
   t.ok(fs.existsSync(join(path, 'node_modules', 'abbrev')), 'requested package installed')
   t.notOk(fs.existsSync(join(path, 'node_modules', 'once')),
     'transitive pnpm package devDependency was not installed')
+
+  // A second install loads the generated lockfile instead of the pnpm layout
+  // on disk. Store packages must still not contribute devDependencies.
+  await new Arborist({ path, audit: false, registry: registryUrl })
+    .reify({ ignoreScripts: true })
+  t.notOk(fs.existsSync(join(path, 'node_modules', 'once')),
+    'transitive pnpm package devDependency was not installed from the lockfile')
 })
