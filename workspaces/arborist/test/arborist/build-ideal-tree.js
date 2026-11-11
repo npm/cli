@@ -5506,3 +5506,99 @@ t.test('unresolvable optional dep drops its optional peer dependent instead of E
   t.ok(tree.children.get('react').inert, 'failed react is inert')
   t.ok(tree.children.get('react-dom').inert, 'react-dom is inert with its missing peer')
 })
+
+// https://github.com/npm/cli/issues/9324
+t.test('simultaneous upgrades with nested peer dependents', async t => {
+  for (const { name, installed = false, nested = false, cycle = false,
+    keepWrapper = false, incompatible = false } of [
+      { name: 'installed tree', installed: true },
+      { name: 'lockfile only' },
+      { name: 'transitive wrapper', nested: true },
+      { name: 'cyclic outdated wrappers', nested: true, cycle: true },
+      { name: 'unchanged wrapper', keepWrapper: true },
+      { name: 'incompatible replacement', incompatible: true },
+    ]) {
+    await t.test(name, async t => {
+      const registry = createRegistry(t)
+      const packages = {
+        a: [
+          { version: '1.0.0' },
+          {
+            version: '2.0.0',
+            peerDependencies: { b: '^2.0.0' },
+            peerDependenciesMeta: { b: { optional: true } },
+          },
+        ],
+        b: [
+          { version: '1.0.0', dependencies: { a: '1.0.0' } },
+          { version: '2.0.0', dependencies: { a: '2.0.0' } },
+        ],
+        c: [
+          {
+            version: '1.0.0',
+            dependencies: nested ? { e: '1.0.0' } : { d: '1.0.0' },
+            peerDependencies: { b: '^1.0.0' },
+          },
+          {
+            version: '2.0.0',
+            dependencies: nested ? { e: '2.0.0' } : { d: incompatible ? '1.0.0' : '2.0.0' },
+            peerDependencies: { b: '^2.0.0' },
+          },
+        ],
+        d: [
+          { version: '1.0.0', peerDependencies: { b: '^1.0.0' } },
+          { version: '2.0.0', peerDependencies: { b: '^2.0.0' } },
+        ],
+      }
+      if (nested) {
+        packages.e = [
+          { version: '1.0.0',
+            dependencies: { d: '1.0.0', ...cycle ? { c: '1.0.0' } : {} },
+            peerDependencies: { b: '^1.0.0' } },
+          { version: '2.0.0',
+            dependencies: { d: '2.0.0', ...cycle ? { c: '2.0.0' } : {} },
+            peerDependencies: { b: '^2.0.0' } },
+        ]
+      }
+      for (const [name, packuments] of Object.entries(packages)) {
+        registry.nock.get(`/${name}`).optionally().times(10).reply(200,
+          registry.manifest({ name, packuments }))
+      }
+      const path = t.testdir({
+        'package.json': JSON.stringify({
+          devDependencies: { a: '1.0.0', b: '1.0.0', c: '1.0.0' },
+        }),
+      })
+      const initial = await buildIdeal(path)
+      await initial.meta.save()
+      if (installed) {
+        for (const node of initial.inventory.values()) {
+          if (!node.isRoot) {
+            fs.mkdirSync(node.path, { recursive: true })
+            fs.writeFileSync(join(node.path, 'package.json'), JSON.stringify(node.package))
+          }
+        }
+      }
+      const opts = {
+        add: ['a@2.0.0', 'b@2.0.0', ...keepWrapper ? [] : ['c@2.0.0']],
+        saveType: 'dev',
+        saveExact: true,
+        strictPeerDeps: true,
+      }
+      if (keepWrapper || incompatible) {
+        await t.rejects(buildIdeal(path, opts), { code: 'ERESOLVE' },
+          'rejects a peer conflict required by the target graph')
+      } else {
+        const tree = await buildIdeal(path, opts)
+        t.same([...tree.children].map(([name, node]) => [name, node.version])
+          .sort(([a], [b]) => a.localeCompare(b)), [
+          ['a', '2.0.0'], ['b', '2.0.0'], ['c', '2.0.0'], ['d', '2.0.0'],
+          ...nested ? [['e', '2.0.0']] : [],
+        ], 'updates the whole dependency and peer graph')
+        const invalid = [...tree.inventory.values()].flatMap(node =>
+          [...node.edgesOut.values()].filter(edge => !edge.valid))
+        t.same(invalid, [], 'all dependency and peer edges are valid')
+      }
+    })
+  }
+})

@@ -1501,3 +1501,124 @@ t.test('constructor debug throws', t => {
 
   t.end()
 })
+
+t.test('replacing peers of an outdated nested dependent', t => {
+  for (const { name, retained = false, direct = false, nested = false, cycle = false, expect } of [
+    { name: 'outdated wrapper', expect: REPLACE },
+    { name: 'outdated transitive wrapper', nested: true, expect: REPLACE },
+    { name: 'cycle of outdated wrappers', nested: true, cycle: true, expect: REPLACE },
+    { name: 'wrapper with a valid dependent', retained: true, expect: CONFLICT },
+    { name: 'direct dependency on the nested peer', direct: true, expect: CONFLICT },
+  ]) {
+    const tree = new Node({
+      path: '/some/path',
+      pkg: {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: { a: '2',
+          b: '2',
+          c: '2',
+          ...retained ? { v: '1' } : {},
+          ...direct ? { d: '1' } : {} },
+      },
+      children: [
+        { pkg: { name: 'a', version: '1.0.0' } },
+        { pkg: { name: 'b', version: '1.0.0', dependencies: { a: '1' } } },
+        {
+          pkg: { name: 'c',
+            version: '1.0.0',
+            dependencies: nested ? { e: '1' } : { d: '1' },
+            peerDependencies: { b: '1' } },
+        },
+        { pkg: { name: 'd', version: '1.0.0', peerDependencies: { b: '1' } } },
+        ...retained ? [{ pkg: { name: 'v', version: '1.0.0', dependencies: { c: '1' } } }] : [],
+        ...nested ? [{ pkg: {
+          name: 'e',
+          version: '1.0.0',
+          dependencies: { d: '1', ...cycle ? { c: '1' } : {} },
+          peerDependencies: { b: '1' },
+        } }] : [],
+      ],
+    })
+    const candidate = new Node({
+      path: tree.path,
+      sourceReference: tree,
+      pkg: tree.package,
+      children: [
+        {
+          pkg: { name: 'a',
+            version: '2.0.0',
+            peerDependencies: { b: '2' },
+            peerDependenciesMeta: { b: { optional: true } } },
+        },
+        { pkg: { name: 'b', version: '2.0.0', dependencies: { a: '2' } } },
+      ],
+    })
+    const placement = new CanPlaceDep({
+      dep: candidate.children.get('a'),
+      target: tree,
+      edge: tree.edgesOut.get('a'),
+      explicitRequest: true,
+    })
+    t.equal(placement.canPlace, expect, name)
+  }
+  t.end()
+})
+
+t.test('retains peer constraints of an invalid bundled dependent', t => {
+  for (const rootBundle of [false, true]) {
+    const root = new Node({
+      path: '/some/path',
+      pkg: {
+        name: 'project',
+        version: '1.0.0',
+        dependencies: { bundle: '1' },
+        ...rootBundle ? { bundleDependencies: ['bundle'] } : {},
+      },
+      children: [{
+        pkg: {
+          name: 'bundle',
+          version: '1.0.0',
+          dependencies: { a: '2', b: '2', c: '2' },
+          bundleDependencies: ['c'],
+        },
+        children: [
+          { pkg: { name: 'a', version: '1.0.0' } },
+          { pkg: { name: 'b', version: '1.0.0', dependencies: { a: '1' } } },
+          { pkg: {
+            name: 'c',
+            version: '1.0.0',
+            dependencies: { d: '1' },
+            peerDependencies: { b: '1' },
+          } },
+          { pkg: { name: 'd', version: '1.0.0', peerDependencies: { b: '1' } } },
+        ],
+      }],
+    })
+    const target = root.children.get('bundle')
+    const candidate = new Node({
+      path: target.path,
+      sourceReference: target,
+      pkg: target.package,
+      children: [
+        { pkg: {
+          name: 'a',
+          version: '2.0.0',
+          peerDependencies: { b: '2' },
+          peerDependenciesMeta: { b: { optional: true } },
+        } },
+        { pkg: { name: 'b', version: '2.0.0', dependencies: { a: '2' } } },
+      ],
+    })
+    t.notOk(target.edgesOut.get('c').valid, 'the bundled dependency does not satisfy its edge')
+    t.ok(target.children.get('c').inBundle, 'the dependent is retained in the bundle')
+    const placement = new CanPlaceDep({
+      dep: candidate.children.get('a'),
+      target,
+      edge: target.edgesOut.get('a'),
+      explicitRequest: true,
+    })
+    t.equal(placement.canPlace, CONFLICT, 'the retained bundle still protects its peer version')
+  }
+  t.end()
+})

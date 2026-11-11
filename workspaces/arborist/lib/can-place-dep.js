@@ -295,6 +295,11 @@ class CanPlaceDep {
         continue
       }
 
+      // Ignore peer sets reachable only through packages being replaced.
+      if (!this.peerEntrySourceIsRequired(entryEdge.from)) {
+        continue
+      }
+
       // ok, we can't replace, but maybe we can nest the current set deeper?
       let canNestCurrent = true
       for (const currentPeer of currentPeers) {
@@ -320,6 +325,23 @@ class CanPlaceDep {
     }
 
     return CONFLICT
+  }
+
+  peerEntrySourceIsRequired (source) {
+    const seen = new Set([source])
+    for (const node of seen) {
+      // Tops and bundled dependencies must retain their peer constraints even
+      // when no valid dependency edge reaches them.
+      if (node.isTop || node.inBundle) {
+        return true
+      }
+      for (const edge of node.edgesIn) {
+        if (edge.valid) {
+          seen.add(edge.from)
+        }
+      }
+    }
+    return false
   }
 
   checkCanPlaceNoCurrent () {
