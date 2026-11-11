@@ -1,4 +1,4 @@
-const { resolve, sep } = require('node:path')
+const { dirname, resolve, sep } = require('node:path')
 const npa = require('npm-package-arg')
 const semver = require('semver')
 const versionFromTgz = require('./version-from-tgz.js')
@@ -20,7 +20,8 @@ const versionFromTgz = require('./version-from-tgz.js')
 //     come from the tarball's own package.json and are therefore
 //     attacker-controlled. A package can publish a tarball claiming any
 //     name; the only trusted name is the one baked into the registry URL.
-//   - tarball / file / link / remote: exact match on node.resolved
+//   - tarball / file / link / remote: exact resolver identity from
+//     package-lock.json
 //   - git: match on hosted.ssh() plus a short-SHA prefix of the
 //     resolved committish
 
@@ -86,7 +87,7 @@ const matches = (node, key, failClosed) => {
       return matchGit(node, parsed)
     case 'file':
     case 'directory':
-      return matchFileOrDir(node, parsed)
+      return matchFileOrDir(node, parsed, failClosed)
     case 'remote':
       return matchRemote(node, parsed)
     case 'alias':
@@ -117,55 +118,158 @@ const isStoreBacked = (node) => {
   return false
 }
 
-const resolvedSourceSpecs = (node) => {
-  const specs = []
-  const seen = new Set()
-  const add = (spec) => {
-    if (typeof spec !== 'string' || spec === '' || seen.has(spec)) {
+const resolvedSourceEntries = (node) => {
+  if (node?.scriptPolicySourceEntries) {
+    return node.scriptPolicySourceEntries
+  }
+  const entries = new Map()
+  const add = (spec, where) => {
+    if (typeof spec !== 'string' || spec === '') {
       return
     }
-    seen.add(spec)
-    specs.push(spec)
+    const key = `${where}\0${spec}`
+    entries.set(key, { spec, where })
   }
 
-  add(node?.resolved)
+  const root = node?.root?.path || process.cwd()
+  add(node?.resolved, root)
 
   if (!node?.resolved && !isStoreBacked(node) &&
       node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
-    let hasIncomingLink = false
     for (const link of node.linksIn) {
-      hasIncomingLink = true
-      add(link.resolved)
-    }
-
-    if (hasIncomingLink) {
-      // Link targets for local directory deps are separate inventory nodes
-      // whose own `resolved` is null. The incoming Link carries the saved spec
-      // (for example `file:../pkg`, relative to node_modules), while policy
-      // entries written by hand often use the dependency spec from package.json
-      // (for example `file:pkg`, resolved by npa to this target path). Include
-      // the real target paths so both forms can match the same local dep.
-      add(node.realpath)
-      add(node.path)
+      add(link.resolved, typeof link?.path === 'string' ? dirname(link.path) : root)
     }
   }
 
-  return specs
+  return [...entries.values()]
+}
+
+const resolvedSourceSpecs = (node) => resolvedSourceEntries(node).map(({ spec }) => spec)
+
+const isFileSpec = (spec, where) => {
+  /* istanbul ignore if: filePolicyIdentities filters these values before calling */
+  if (typeof spec !== 'string' || spec === '') {
+    return false
+  }
+  try {
+    const parsed = npa(spec, where)
+    return parsed.type === 'file' || parsed.type === 'directory'
+  } catch {
+    return false
+  }
+}
+
+const lockfileEntry = (node) => {
+  const meta = node?.root?.meta
+  if (!node?.path || typeof meta?.get !== 'function') {
+    return undefined
+  }
+  return meta.get(node.path)
+}
+
+// Return exact file identities from package-lock metadata. Arborist's
+// Link.resolved is synthesized relative to node_modules, so Link targets must
+// read each incoming Link's lockfile entry instead.
+const filePolicyIdentities = (node) => {
+  if (node?.scriptPolicyFileIdentities) {
+    return node.scriptPolicyFileIdentities
+  }
+  const identities = new Set()
+  const where = node?.root?.path || process.cwd()
+  const add = (spec, link = false) => {
+    if (typeof spec !== 'string' || spec === '') {
+      return
+    }
+    const identity = link && !spec.startsWith('file:') ? `file:${spec}` : spec
+    if (isFileSpec(identity, where)) {
+      identities.add(identity)
+    }
+  }
+
+  const ownEntry = lockfileEntry(node)
+  if (ownEntry?.resolved !== undefined) {
+    add(ownEntry.resolved, ownEntry.link)
+  } else if (!node?.isLink && !isStoreBacked(node)) {
+    // Plain fixtures and callers without Arborist lockfile metadata still
+    // carry the resolver identity directly on ordinary Nodes. Store-backed
+    // nodes cannot use this fallback because their resolved value may be an
+    // internal `.store` link rather than the package's source.
+    add(node?.resolved)
+  }
+
+  if (!node?.resolved && !isStoreBacked(node) &&
+      node?.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+    for (const link of node.linksIn) {
+      const entry = lockfileEntry(link)
+      add(entry?.resolved, entry?.link)
+    }
+  }
+
+  return [...identities]
+}
+
+// `undefined` means no file identity exists. `null` means multiple exact
+// resolver identities reach one target, so writers must not choose one.
+const filePolicyIdentity = (node) => {
+  const identities = filePolicyIdentities(node)
+  if (identities.length === 0) {
+    return undefined
+  }
+  if (identities.length === 1) {
+    return identities[0]
+  }
+  return null
+}
+
+const incomingEdges = function * (node, seen = new Set()) {
+  if (!node || seen.has(node)) {
+    return
+  }
+  seen.add(node)
+
+  if (node.edgesIn && typeof node.edgesIn[Symbol.iterator] === 'function') {
+    yield * node.edgesIn
+  }
+  if (node.linksIn && typeof node.linksIn[Symbol.iterator] === 'function') {
+    for (const link of node.linksIn) {
+      yield * incomingEdges(link, seen)
+    }
+  }
+}
+
+// These request names authorize denials only, never source approvals or versions.
+const registryDenialNames = (node) => {
+  if (node?.scriptPolicyRegistryNames) {
+    return node.scriptPolicyRegistryNames
+  }
+  const names = new Set()
+  for (const edge of incomingEdges(node)) {
+    const name = edge?.name
+    const spec = edge?.spec
+    if (typeof name !== 'string' || name === '' || typeof spec !== 'string') {
+      continue
+    }
+    let parsed
+    try {
+      parsed = npa.resolve(name, spec)
+    } catch {
+      continue
+    }
+    const identity = parsed.type === 'alias' ? parsed.subSpec : parsed
+    if (identity.registry) {
+      names.add(identity.name)
+    }
+  }
+  return [...names]
 }
 
 const matchRegistry = (node, parsed, failClosed) => {
-  // If this node is not a registry dep, refuse the match. A registry-style
-  // key (`pkg`, `pkg@1`, `pkg@1 || 2`) must not match a tarball or git node
-  // even if their names happen to coincide.
-  if (!isRegistryNode(node)) {
-    return false
+  // Mixed sources retain registry denials, but cannot borrow registry approvals.
+  let trusted = isRegistryNode(node) ? getTrustedRegistryIdentity(node) : null
+  if (!trusted && failClosed && registryDenialNames(node).includes(parsed.name)) {
+    // Neither a remote URL's shape nor a tarball's manifest verifies its version.
+    trusted = { name: parsed.name, version: null }
   }
-
-  // Derive the trusted name+version from the lockfile's resolved URL.
-  // Never use `node.packageName` / `node.version` here: those read from
-  // the tarball's own package.json and can be forged by a malicious
-  // publisher to bypass an allowScripts entry.
-  const trusted = getTrustedRegistryIdentity(node)
   if (!trusted || trusted.name !== parsed.name) {
     return false
   }
@@ -368,24 +472,44 @@ const matchGit = (node, parsed) => {
   return nodeCommittish.startsWith(keyCommittish)
 }
 
-const matchFileOrDir = (node, parsed) => {
-  // consistentResolve stores local sources as `file:` plus npa's absolute,
-  // platform-native fetchSpec.
-  const absoluteFileSpec = parsed.fetchSpec && `file:${parsed.fetchSpec}`
-  return resolvedSourceSpecs(node)
-    .some(resolved =>
-      resolved === parsed.saveSpec ||
-      resolved === parsed.fetchSpec ||
-      resolved === absoluteFileSpec
-    )
+const matchFileOrDir = (node, parsed, failClosed = false) => {
+  const identities = filePolicyIdentities(node)
+  const where = node?.root?.path || process.cwd()
+  const sources = resolvedSourceEntries(node)
+  const paths = new Set()
+  // npa's fetchSpec is absolute; relative Link spellings must keep their own anchor.
+  const absoluteFileSpec = `file:${parsed.fetchSpec}`
+  for (const identity of identities) {
+    paths.add(npa(identity, where).fetchSpec)
+  }
+  for (const { spec: source, where: sourceWhere } of sources) {
+    if (source === absoluteFileSpec) {
+      return true
+    }
+    try {
+      const sourceParsed = npa(source, sourceWhere)
+      if (sourceParsed.type === 'file' || sourceParsed.type === 'directory') {
+        // Keep legacy link-relative denials without granting legacy approvals.
+        if (failClosed && sourceParsed.saveSpec === parsed.saveSpec) {
+          return true
+        }
+        paths.add(sourceParsed.fetchSpec)
+      }
+    } catch {
+      continue
+    }
+  }
+  return paths.has(parsed.fetchSpec)
 }
 
 const matchRemote = (node, parsed) => {
-  return resolvedSourceSpecs(node)
-    .some(resolved => resolved === parsed.fetchSpec || resolved === parsed.saveSpec)
+  return node?.resolved === parsed.fetchSpec || node?.resolved === parsed.saveSpec
 }
 
 const isRegistryNode = (node) => {
+  if (filePolicyIdentities(node).length > 0) {
+    return false
+  }
   // Prefer arborist's edge-based check when available (real Node objects).
   // It inspects the incoming edges' specs and only returns true if every
   // edge resolves to a registry spec, which is much harder to spoof than
@@ -434,7 +558,12 @@ module.exports = isScriptAllowed
 module.exports.isScriptAllowed = isScriptAllowed
 module.exports.matches = matches
 module.exports.isExactVersionDisjunction = isExactVersionDisjunction
+module.exports.filePolicyIdentities = filePolicyIdentities
+module.exports.filePolicyIdentity = filePolicyIdentity
+module.exports.incomingEdges = incomingEdges
+module.exports.registryDenialNames = registryDenialNames
 module.exports.getTrustedRegistryIdentity = getTrustedRegistryIdentity
 module.exports.resolvedSourceSpecs = resolvedSourceSpecs
+module.exports.resolvedSourceEntries = resolvedSourceEntries
 module.exports.matchFileOrDir = matchFileOrDir
 module.exports.trustedDisplay = trustedDisplay

@@ -449,7 +449,7 @@ const twoVersionFixture = {
   'package.json': JSON.stringify({
     name: 'host',
     version: '1.0.0',
-    dependencies: { 'top-of-tree': '*' },
+    dependencies: { lodash: '4.17.21', 'top-of-tree': '*' },
   }),
   'package-lock.json': JSON.stringify({
     name: 'host',
@@ -457,7 +457,11 @@ const twoVersionFixture = {
     lockfileVersion: 3,
     requires: true,
     packages: {
-      '': { name: 'host', version: '1.0.0', dependencies: { 'top-of-tree': '*' } },
+      '': {
+        name: 'host',
+        version: '1.0.0',
+        dependencies: { lodash: '4.17.21', 'top-of-tree': '*' },
+      },
       'node_modules/lodash': {
         version: '4.17.21',
         resolved: 'https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz',
@@ -484,7 +488,11 @@ const twoVersionFixture = {
       }),
     },
     'top-of-tree': {
-      'package.json': JSON.stringify({ name: 'top-of-tree', version: '1.0.0' }),
+      'package.json': JSON.stringify({
+        name: 'top-of-tree',
+        version: '1.0.0',
+        dependencies: { lodash: '3.10.1' },
+      }),
       node_modules: {
         lodash: {
           'package.json': JSON.stringify({
@@ -553,9 +561,9 @@ t.test('approve-scripts <pkg@range> pins only versions satisfying the range', as
   t.strictSame(pkg.allowScripts, { 'lodash@4.17.21': true })
 })
 
-t.test('approve-scripts --pending handles node with no version', async t => {
-  // Exercise the ternary's falsy branch in runPending: `node.version ? '@'... : ''`
-  // when the node has no version field.
+t.test('approve-scripts --pending handles node with no version or trusted source', async t => {
+  // A synthetic node without provenance must not expose its manifest version
+  // as a trusted selector.
   const mockSync = await _mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
@@ -578,13 +586,16 @@ t.test('approve-scripts --pending handles node with no version', async t => {
     },
   })
   await mockSync.npm.exec('approve-scripts', [])
-  // Output should mention the package without an @version suffix.
-  t.match(mockSync.joinedOutput(), / no-version-pkg \(install: do-stuff\)/)
+  // The installed name remains visible, but the source is explicitly untrusted.
+  t.match(
+    mockSync.joinedOutput(),
+    / no-version-pkg \[untrusted source\] \(install: do-stuff\)/
+  )
 })
 
 t.test('approve-scripts --pending --json handles node with no version', async t => {
-  // Exercise pendingSummary's `version ? ... : display` falsy branch: the
-  // key is the bare name when the node has no version field.
+  // Without a trusted source or registry version, JSON falls back to the
+  // installed name rather than composing a selector from manifest data.
   const { npm, joinedOutput } = await _mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
@@ -926,6 +937,66 @@ const setupLinkedProject = (t, { allowScripts, noResolved = false } = {}) => {
   }
 }
 
+const setupLinkedFileProject = (t) => {
+  const storeDir = 'local@1.0.0-bG9jYWxmaWxl'
+  const storeLoc = `node_modules/.store/${storeDir}/node_modules/local`
+  const source = 'file:local.tgz'
+  const pkg = {
+    name: 'host',
+    version: '1.0.0',
+    dependencies: { local: source },
+  }
+  return {
+    'package.json': JSON.stringify(pkg, null, 2),
+    'package-lock.json': JSON.stringify({
+      name: pkg.name,
+      version: pkg.version,
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': pkg,
+        'node_modules/local': {
+          version: '1.0.0',
+          resolved: source,
+          hasInstallScript: true,
+        },
+      },
+    }),
+    node_modules: {
+      '.package-lock.json': JSON.stringify({
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          [`node_modules/.store/${storeDir}`]: {},
+          [storeLoc]: {
+            version: '1.0.0',
+            resolved: source,
+            hasInstallScript: true,
+          },
+          'node_modules/local': {
+            resolved: storeLoc,
+            link: true,
+          },
+        },
+      }),
+      '.store': {
+        [storeDir]: {
+          node_modules: {
+            local: {
+              'package.json': JSON.stringify({
+                name: 'local',
+                version: '1.0.0',
+                scripts: { install: 'echo install' },
+              }),
+            },
+          },
+        },
+      },
+      local: t.fixture('symlink', `.store/${storeDir}/node_modules/local`),
+    },
+  }
+}
+
 // loadActual only trusts the hidden lockfile when it is newer than every dir under node_modules (assertNoNewer allows 10ms), and fixture creation order makes that racy, so bump its mtime past the fixture writes.
 const trustHiddenLockfile = (prefix) => {
   const future = new Date(Date.now() + 60_000)
@@ -976,6 +1047,25 @@ t.test('deny-scripts under linked strategy writes a name-only deny', async t => 
   t.strictSame(pkg.allowScripts, { canvas: false })
 })
 
+for (const { command, args, config, value } of [
+  { command: 'approve-scripts', args: ['local'], config: {}, value: true },
+  { command: 'approve-scripts', args: [], config: { all: true }, value: true },
+  { command: 'deny-scripts', args: ['local'], config: {}, value: false },
+]) {
+  t.test(`${command} keeps a linked file target's source identity`, async t => {
+    const { npm, prefix } = await mockNpm(t, {
+      prefixDir: setupLinkedFileProject(t),
+      config,
+    })
+    trustHiddenLockfile(prefix)
+
+    await npm.exec(command, args)
+
+    const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+    t.strictSame(pkg.allowScripts, { 'file:local.tgz': value })
+  })
+}
+
 const setupLocalFileDepProject = (t) => {
   const pkg = {
     name: 'host',
@@ -1023,7 +1113,7 @@ t.test('approve-scripts <name> finds a local file: dep through its link', async 
   await npm.exec('approve-scripts', ['foo'])
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
-  t.strictSame(pkg.allowScripts, { 'file:../local-foo': true })
+  t.strictSame(pkg.allowScripts, { 'file:local-foo': true })
 })
 
 t.test('deny-scripts <name> finds a local file: dep through its link', async t => {
@@ -1033,8 +1123,33 @@ t.test('deny-scripts <name> finds a local file: dep through its link', async t =
   await npm.exec('deny-scripts', ['foo'])
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
-  t.strictSame(pkg.allowScripts, { 'file:../local-foo': false })
+  t.strictSame(pkg.allowScripts, { 'file:local-foo': false })
 })
+
+for (const mode of ['positional', 'all', 'prune']) {
+  t.test(`${mode} preserves a legacy link-relative denial`, async t => {
+    const fixture = setupLocalFileDepProject(t)
+    const allowScripts = { 'file:../local-foo': false }
+    const content = JSON.parse(fixture['package.json'])
+    fixture['package.json'] = JSON.stringify({ ...content, allowScripts })
+    const { npm, prefix, logs } = await mockNpm(t, {
+      prefixDir: fixture,
+      config: { all: mode === 'all' },
+    })
+
+    if (mode === 'prune') {
+      await npm.exec('install-scripts', ['prune'])
+    } else {
+      await npm.exec('approve-scripts', mode === 'all' ? [] : ['foo'])
+      if (mode === 'positional') {
+        t.match(logs.warn.byTitle('approve-scripts').join('\n'), /file:\.\.\/local-foo is denied/)
+      }
+    }
+
+    const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+    t.strictSame(pkg.allowScripts, allowScripts)
+  })
+}
 
 t.test('approve-scripts <pkg> under linked strategy without resolved URLs approves by name', async t => {
   // omit-lockfile-registry-resolved: the store package has no resolved URL, so it cannot be pinned but must still be approved by name via the incoming Link's edge.

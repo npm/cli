@@ -1,6 +1,17 @@
 const t = require('tap')
+const path = require('node:path')
+const npa = require('npm-package-arg')
+const Node = require('../lib/node.js')
+const Link = require('../lib/link.js')
+const Arborist = require('../lib/arborist')
 const isScriptAllowed = require('../lib/script-allowed.js')
-const { matchFileOrDir, trustedDisplay } = isScriptAllowed
+const {
+  filePolicyIdentities,
+  filePolicyIdentity,
+  matchFileOrDir,
+  resolvedSourceSpecs,
+  trustedDisplay,
+} = isScriptAllowed
 
 // Test nodes default to a consistent registry-tarball shape: the resolved
 // URL's name+version match the supplied name+version. Tests that need to
@@ -23,6 +34,226 @@ const node = (overrides = {}) => {
     ...overrides,
   }
 }
+
+const lockfileRoot = (rootPath, entries) => ({
+  path: rootPath,
+  meta: {
+    get: nodePath => entries[nodePath] || {},
+  },
+})
+
+const mixedSourceTree = (source, registrySpec = '^1.0.0') => {
+  const root = new Node({
+    path: path.resolve('mixed-project'),
+    pkg: {
+      name: 'host',
+      version: '1.0.0',
+      dependencies: { tool: registrySpec, parent: '1.0.0' },
+    },
+  })
+  const target = new Node({
+    parent: root,
+    name: 'tool',
+    resolved: source,
+    pkg: { name: 'tool', version: '1.0.0' },
+  })
+  const parent = new Node({
+    parent: root,
+    name: 'parent',
+    pkg: {
+      name: 'parent',
+      version: '1.0.0',
+      dependencies: { tool: source },
+    },
+  })
+  return { root, target, parent }
+}
+
+t.test('registry denials survive mixed non-registry requests', t => {
+  for (const source of [
+    'https://registry.npmjs.org/tool/-/tool-1.0.0.tgz',
+    'https://evil.example/tool/-/tool-1.9.9.tgz',
+    'https://evil.example/decoy/-/decoy-9.0.0.tgz',
+    'git+https://github.com/example/tool.git#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    `file:${path.resolve('tool.tgz')}`,
+  ]) {
+    const { root, target, parent } = mixedSourceTree(source)
+    t.ok(root.edgesOut.get('tool').valid)
+    t.ok(parent.edgesOut.get('tool').valid)
+    t.equal(parent.edgesOut.get('tool').to, target)
+    for (const key of ['tool', 'tool@1.0.0', 'tool@2.0.0', 'tool@1.0.0 || 2.0.0']) {
+      t.equal(isScriptAllowed(target, { [key]: false }), false, `${key} denies ${source}`)
+      t.equal(isScriptAllowed(target, { [key]: false, [source]: true }), false)
+    }
+    t.equal(isScriptAllowed(target, { tool: true }), null, 'registry allows remain refused')
+    t.equal(isScriptAllowed(target, { other: false, [source]: true }), true)
+    t.equal(isScriptAllowed(target, { 'tool@^1.0.0': false, [source]: true }), true)
+    root.package = {
+      name: 'host',
+      version: '1.0.0',
+      dependencies: { parent: '1.0.0' },
+    }
+    t.equal(isScriptAllowed(target, { tool: false, [source]: true }), true,
+      'a pure non-registry source does not acquire registry identity')
+  }
+  t.end()
+})
+
+t.test('mixed denials collect every registry and alias request identity', t => {
+  const source = 'https://example.test/tool.tgz'
+  for (const specs of [
+    ['1.0.0', 'npm:underlying@1.0.0'],
+    ['npm:underlying@1.0.0', '1.0.0'],
+  ]) {
+    const { root, target } = mixedSourceTree(source, specs[0])
+    const other = new Node({
+      parent: root,
+      name: 'other',
+      pkg: { name: 'other', version: '1.0.0', dependencies: { tool: specs[1] } },
+    })
+    t.ok(root.edgesOut.get('tool').valid)
+    t.ok(other.edgesOut.get('tool').valid)
+    for (const name of ['tool', 'underlying']) {
+      t.equal(isScriptAllowed(target, { [name]: false, [source]: true }), false)
+      t.equal(isScriptAllowed(target, { [name]: true }), null)
+    }
+  }
+  const { target } = mixedSourceTree(source, 'npm:underlying@1.0.0')
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), true,
+    'an alias does not contribute its installation name')
+  t.end()
+})
+
+t.test('ordinary directory links retain registry denials without gaining registry approvals', t => {
+  const root = new Node({
+    path: path.resolve('linked-project'),
+    pkg: { name: 'host', dependencies: { tool: '1.0.0', parent: '1.0.0' } },
+  })
+  const target = new Node({
+    path: path.resolve(root.path, 'vendor/tool'),
+    pkg: { name: 'tool', version: '1.0.0' },
+  })
+  const link = new Link({ parent: root, name: 'tool', target })
+  const source = `file:${target.path}`
+  const parent = new Node({
+    parent: root,
+    name: 'parent',
+    pkg: { name: 'parent', version: '1.0.0', dependencies: { tool: source } },
+  })
+  t.ok(root.edgesOut.get('tool').valid)
+  t.ok(parent.edgesOut.get('tool').valid)
+  t.equal(parent.edgesOut.get('tool').to, link)
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), false)
+  t.equal(isScriptAllowed(target, { tool: true }), null)
+  t.end()
+})
+
+t.test('incomplete edges do not manufacture registry denial identities', t => {
+  const source = 'https://example.test/tool.tgz'
+  const target = node({
+    resolved: source,
+    isRegistryDependency: false,
+    edgesIn: new Set([
+      null,
+      {},
+      { name: '', spec: '1.0.0' },
+      { name: 'tool', spec: null },
+      { name: 'tool', spec: '@@@invalid' },
+    ]),
+    linksIn: new Set(),
+  })
+  target.linksIn.add(target)
+  target.linksIn.add(null)
+  target.linksIn.add({ edgesIn: {}, linksIn: {} })
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), true)
+  target.edgesIn.add({ name: 'tool', spec: '' })
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), false,
+    'an explicit empty registry request is a wildcard, not missing provenance')
+
+  const error = new Error('unresolvable override')
+  target.edgesIn = new Set([{
+    name: 'tool',
+    get spec () {
+      throw error
+    },
+  }])
+  t.throws(() => isScriptAllowed(target, { tool: false }), error,
+    'request-resolution errors are surfaced instead of silently ignoring denials')
+  t.end()
+})
+
+t.test('isolated store nodes retain and union registry denial provenance', async t => {
+  const source = 'https://registry.npmjs.org/tool/-/tool-1.0.0.tgz'
+  for (const order of [
+    ['registry-parent', 'remote-parent'],
+    ['remote-parent', 'registry-parent'],
+  ]) {
+    const root = new Node({
+      path: path.resolve('isolated-project'),
+      pkg: {
+        name: 'host',
+        version: '1.0.0',
+        dependencies: Object.fromEntries(order.map(name => [name, '1.0.0'])),
+      },
+    })
+    for (const name of order) {
+      const parent = new Node({
+        parent: root,
+        name,
+        pkg: {
+          name,
+          version: '1.0.0',
+          dependencies: { tool: name === 'registry-parent' ? '1.0.0' : source },
+        },
+      })
+      new Node({
+        parent,
+        name: 'tool',
+        resolved: source,
+        pkg: { name: 'tool', version: '1.0.0' },
+      })
+      t.ok(parent.edgesOut.get('tool').valid)
+    }
+    const arb = new Arborist({ path: root.path })
+    arb.idealTree = root
+    const isolated = await arb.createIsolatedTree()
+    const targets = [...isolated.inventory.values()].filter(n =>
+      n.isInStore && n.package.name === 'tool'
+    )
+    t.equal(targets.length, 1, 'identical logical packages share a physical store target')
+    const [target] = targets
+    t.equal(isScriptAllowed(target, { tool: false, [source]: true }), false)
+    t.equal(isScriptAllowed(target, { 'tool@2.0.0': false, [source]: true }), false)
+    t.equal(isScriptAllowed(target, { tool: true }), null,
+      'coalescing does not promote a remote node to a registry approval')
+  }
+
+  const calls = []
+  const RebuildingArborist = t.mock('../lib/arborist', {
+    '@npmcli/run-script': async ({ event }) => {
+      calls.push(event)
+      return { code: 0, signal: null }
+    },
+  })
+  const { root, target: logicalTarget } = mixedSourceTree(source)
+  logicalTarget.package.scripts = { install: 'mocked-install' }
+  const arb = new RebuildingArborist({
+    path: root.path,
+    allowScripts: { tool: false, [source]: true },
+  })
+  arb.idealTree = root
+  const isolated = await arb.createIsolatedTree()
+  const target = [...isolated.inventory.values()].find(n =>
+    n.isInStore && n.package.name === 'tool'
+  )
+  t.equal(isScriptAllowed(target, { tool: false, [source]: true }), false,
+    'a mixed logical node also retains its registry denial')
+  await arb.rebuild({ nodes: [target] })
+  t.same(calls, [], 'the isolated lifecycle gate skips the denied install script')
+  const allowed = new RebuildingArborist({ path: root.path, allowScripts: { [source]: true } })
+  await allowed.rebuild({ nodes: [target] })
+  t.same(calls, ['install'], 'the source approval still reaches the lifecycle runner without a deny')
+})
 
 t.test('returns null when no policy is set', t => {
   t.equal(isScriptAllowed(node(), null), null)
@@ -118,8 +349,72 @@ t.test('file path — exact resolved match', t => {
   t.end()
 })
 
-t.test('file path — link target matches incoming link source', t => {
-  const targetPath = require('node:path').resolve('local-pkg')
+t.test('file path — ordinary nodes accept exact and path-equivalent identities', t => {
+  const rootPath = path.resolve('project')
+  const nodePath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const root = lockfileRoot(rootPath, {
+    [nodePath]: { resolved: 'file:../local-pkg' },
+  })
+  const fileNode = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+    resolved: npa(path.resolve(rootPath, '../local-pkg')).saveSpec,
+    path: nodePath,
+    root,
+  })
+
+  t.strictSame(filePolicyIdentities(fileNode), ['file:../local-pkg'])
+  t.equal(isScriptAllowed(fileNode, { 'file:../local-pkg': true }), true)
+  t.equal(isScriptAllowed(fileNode, { [fileNode.resolved]: true }), true)
+  t.end()
+})
+
+t.test('file path — unparseable lockfile identities fail closed', t => {
+  const rootPath = path.resolve('project')
+  const nodePath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const root = lockfileRoot(rootPath, {
+    [nodePath]: { resolved: 'not valid' },
+  })
+  const fileNode = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    version: '1.0.0',
+    path: nodePath,
+    root,
+  })
+
+  t.strictSame(filePolicyIdentities(fileNode), [])
+  t.equal(filePolicyIdentity(fileNode), undefined)
+  t.equal(isScriptAllowed(fileNode, { 'file:../local-pkg': true }), null)
+  t.end()
+})
+
+t.test('file path — link nodes do not use transformed runtime identities', t => {
+  const rootPath = path.resolve('project')
+  const linkNode = {
+    isLink: true,
+    path: path.resolve(rootPath, 'node_modules/local-pkg'),
+    resolved: npa(path.resolve(rootPath, '../local-pkg')).saveSpec,
+    root: lockfileRoot(rootPath, {}),
+  }
+
+  t.strictSame(filePolicyIdentities(linkNode), [])
+  t.end()
+})
+
+t.test('file path — link target matches exact lockfile source', t => {
+  const rootPath = path.resolve('project')
+  const targetPath = path.resolve(rootPath, '../local-pkg')
+  const linkPath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const root = lockfileRoot(rootPath, {
+    [linkPath]: { resolved: '../local-pkg', link: true },
+  })
+  const link = {
+    path: linkPath,
+    resolved: 'file:../../local-pkg',
+    root,
+  }
   const target = node({
     name: 'local-pkg',
     packageName: 'local-pkg',
@@ -128,12 +423,176 @@ t.test('file path — link target matches incoming link source', t => {
   target.resolved = null
   target.path = targetPath
   target.realpath = targetPath
-  target.linksIn = new Set([{ resolved: 'file:../local-pkg' }])
+  target.root = root
+  target.linksIn = new Set([link])
 
+  t.equal(filePolicyIdentity(target), 'file:../local-pkg')
   t.equal(isScriptAllowed(target, { 'file:../local-pkg': true }), true)
-  t.equal(isScriptAllowed(target, { 'file:local-pkg': true }), true)
+  t.equal(isScriptAllowed(target, { 'file:local-pkg': true }), null)
+  t.equal(isScriptAllowed(target, { [npa(targetPath).saveSpec]: true }), true)
   t.equal(isScriptAllowed(target, { 'file:../local-pkg': false }), false)
   t.equal(isScriptAllowed(target, { 'file:../other': true }), null)
+  t.end()
+})
+
+t.test('file path — distinct lockfile sources are not conflated by target paths', t => {
+  const rootPath = path.resolve('project')
+  const linkedTarget = (name, resolved) => {
+    const targetPath = path.resolve(rootPath, '..', name)
+    const linkPath = path.resolve(rootPath, `node_modules/${name}`)
+    const root = lockfileRoot(rootPath, {
+      [linkPath]: { resolved, link: true },
+    })
+    const target = node({
+      name: 'tool',
+      packageName: 'tool',
+      version: '1.0.0',
+    })
+    target.resolved = null
+    target.path = targetPath
+    target.realpath = targetPath
+    target.root = root
+    target.linksIn = new Set([{
+      path: linkPath,
+      resolved: `file:../../${name}`,
+      root,
+    }])
+    return target
+  }
+
+  const approved = linkedTarget('good-tool', '../good-tool')
+  const attacker = linkedTarget('attacker-tool', '../attacker-tool')
+  const policy = { 'file:../good-tool': true }
+  t.equal(isScriptAllowed(approved, policy), true)
+  t.equal(isScriptAllowed(attacker, policy), null)
+  t.end()
+})
+
+t.test('file path — unresolved non-file link targets fail closed', t => {
+  const remoteUrl = 'https://example.com/remote-pkg.tgz'
+  const targetPath = path.resolve('remote-pkg')
+  const target = node({
+    name: 'remote-pkg',
+    packageName: 'remote-pkg',
+    version: '1.0.0',
+    resolved: null,
+    path: targetPath,
+    realpath: targetPath,
+    linksIn: new Set([{
+      path: `${targetPath}-link`,
+      root: {
+        path: path.dirname(targetPath),
+        meta: { get: () => ({ resolved: remoteUrl }) },
+      },
+    }]),
+  })
+
+  t.equal(filePolicyIdentity(target), undefined)
+  t.equal(isScriptAllowed(target, { [npa(targetPath).saveSpec]: true }), null)
+  t.equal(isScriptAllowed(target, { [remoteUrl]: true }), null)
+  t.end()
+})
+
+t.test('file path — link sources resolve relative to the link parent', t => {
+  const rootPath = path.resolve('/project')
+  const targetPath = path.resolve(rootPath, 'shared')
+  const target = node({
+    name: 'shared',
+    resolved: null,
+    path: targetPath,
+    realpath: targetPath,
+    root: { path: rootPath },
+    linksIn: new Set([{
+      path: path.resolve(rootPath, 'node_modules/nested/link'),
+      resolved: 'file:../../shared',
+    }]),
+  })
+
+  t.equal(isScriptAllowed(target, { 'file:shared': true }), true)
+  t.equal(isScriptAllowed(target, { 'file:../shared': true }), null)
+  t.end()
+})
+
+t.test('file path — identical spellings with different anchors do not share permission', t => {
+  const rootPath = path.resolve('project')
+  const makeTarget = (source, runtimeSpec, name) => {
+    const linkPath = path.resolve(rootPath, 'node_modules', name)
+    return node({
+      name,
+      resolved: null,
+      path: path.resolve(rootPath, source),
+      root: lockfileRoot(rootPath, {
+        [linkPath]: { resolved: source, link: true },
+      }),
+      linksIn: new Set([{ path: linkPath, resolved: runtimeSpec }]),
+    })
+  }
+  const outside = makeTarget('../tool', 'file:../../tool', 'outside')
+  const inside = makeTarget('tool', 'file:../tool', 'inside')
+  t.equal(isScriptAllowed(outside, { 'file:../tool': true }), true)
+  t.equal(isScriptAllowed(inside, { 'file:../tool': true }), null)
+  t.equal(isScriptAllowed(inside, { 'file:../tool': false }), false)
+  t.equal(isScriptAllowed(inside, {
+    'file:tool': true,
+    'file:../tool': false,
+  }), false, 'a legacy denial still overrides a root-relative approval')
+  t.equal(isScriptAllowed(inside, { 'file:tool': true }), true)
+  t.end()
+})
+
+t.test('file path — link source context and partial target paths fall back safely', t => {
+  const rootPath = path.resolve('project')
+  const targetPath = path.resolve(rootPath, 'shared')
+  const target = node({
+    name: 'shared',
+    resolved: null,
+    path: targetPath,
+    realpath: null,
+    root: { path: rootPath },
+    linksIn: new Set([
+      { resolved: 'file:shared' },
+      {
+        path: path.resolve(rootPath, 'node_modules/link'),
+        resolved: 'file:../shared',
+      },
+    ]),
+  })
+
+  t.strictSame(resolvedSourceSpecs(target), ['file:shared', 'file:../shared'])
+  t.equal(isScriptAllowed(target, { [npa(targetPath).saveSpec]: true }), true)
+  t.end()
+})
+
+t.test('file path — multiple exact link identities are matchable but not writable', t => {
+  const rootPath = path.resolve('project')
+  const targetPath = path.resolve(rootPath, '../shared')
+  const firstLinkPath = path.resolve(rootPath, 'first')
+  const secondLinkPath = path.resolve(rootPath, 'second')
+  const root = lockfileRoot(rootPath, {
+    [firstLinkPath]: { resolved: '../shared', link: true },
+    [secondLinkPath]: { resolved: 'vendor/shared', link: true },
+  })
+  const target = node({
+    name: 'shared',
+    packageName: 'shared',
+    version: '1.0.0',
+    resolved: null,
+    path: targetPath,
+    realpath: targetPath,
+    root,
+    linksIn: new Set([
+      { path: firstLinkPath, root },
+      { path: secondLinkPath, root },
+    ]),
+  })
+
+  t.strictSame(filePolicyIdentities(target), [
+    'file:../shared',
+    'file:vendor/shared',
+  ])
+  t.equal(filePolicyIdentity(target), null)
+  t.equal(isScriptAllowed(target, { 'file:../shared': true }), true)
+  t.equal(isScriptAllowed(target, { 'file:vendor/shared': false }), false)
   t.end()
 })
 
@@ -163,8 +622,29 @@ t.test('file path — empty link sets do not add install paths', t => {
   target.realpath = targetPath
   target.linksIn = new Set()
 
+  t.equal(filePolicyIdentity(target), undefined)
   t.equal(isScriptAllowed(target, { 'file:local-pkg': true }), null)
   t.equal(isScriptAllowed(target, { [targetPath]: true }), null)
+  t.end()
+})
+
+t.test('file path — incomplete link metadata does not create an identity', t => {
+  const rootPath = path.resolve('project')
+  const linkPath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const root = lockfileRoot(rootPath, {
+    [linkPath]: { link: true },
+  })
+  const target = node({
+    name: 'local-pkg',
+    packageName: 'local-pkg',
+    resolved: null,
+    path: path.resolve(rootPath, '../local-pkg'),
+    root,
+    linksIn: new Set([{ path: linkPath, root }]),
+  })
+
+  t.strictSame(filePolicyIdentities(target), [])
+  t.equal(filePolicyIdentity(target), undefined)
   t.end()
 })
 
@@ -210,6 +690,23 @@ t.test('local tarball key — relative key resolves from the project root', t =>
 
   t.equal(isScriptAllowed(tgzNode, { 'file:local-pkg.tgz': true }), true)
   t.equal(isScriptAllowed(tgzNode, { 'file:other-pkg.tgz': true }), null)
+  t.end()
+})
+
+t.test('local tarball key — install path is not a source identity', t => {
+  const rootPath = path.resolve('project')
+  const sourcePath = path.resolve('sources/local-pkg.tgz')
+  const installPath = path.resolve(rootPath, 'node_modules/local-pkg')
+  const tgzNode = node({
+    name: 'local-pkg',
+    resolved: npa(sourcePath).saveSpec,
+    path: installPath,
+    realpath: installPath,
+    root: { path: rootPath },
+  })
+
+  t.equal(isScriptAllowed(tgzNode, { [npa(sourcePath).saveSpec]: true }), true)
+  t.equal(isScriptAllowed(tgzNode, { [npa(installPath).saveSpec]: true }), null)
   t.end()
 })
 
@@ -277,6 +774,13 @@ t.test('file source matching keeps POSIX backslashes distinct', t => {
   }
 
   t.equal(matchFileOrDir({ resolved }, parsed), false)
+  t.end()
+})
+
+t.test('file source matching fails closed for malformed resolver sources', t => {
+  const parsed = npa('file:/tmp/local-pkg.tgz')
+
+  t.equal(matchFileOrDir({ resolved: 'git+' }, parsed), false)
   t.end()
 })
 
@@ -940,6 +1444,38 @@ t.test('store-backed link target never matches store file specs', t => {
   t.end()
 })
 
+t.test('store-backed file target keeps its own lockfile source identity', t => {
+  const rootPath = path.resolve('project')
+  const targetPath = path.resolve(
+    rootPath,
+    'node_modules/.store/local@1.0.0-hash/node_modules/local'
+  )
+  const linkPath = path.resolve(rootPath, 'node_modules/local')
+  const root = lockfileRoot(rootPath, {
+    [targetPath]: { resolved: 'file:local.tgz' },
+    [linkPath]: {
+      resolved: 'node_modules/.store/local@1.0.0-hash/node_modules/local',
+      link: true,
+    },
+  })
+  const target = node({
+    name: 'local',
+    resolved: null,
+    isInStore: true,
+    path: targetPath,
+    realpath: targetPath,
+    root,
+    linksIn: new Set([{ path: linkPath, root }]),
+  })
+
+  t.strictSame(filePolicyIdentities(target), ['file:local.tgz'])
+  t.equal(isScriptAllowed(target, { 'file:local.tgz': true }), true)
+  t.equal(isScriptAllowed(target, {
+    'file:node_modules/.store/local@1.0.0-hash/node_modules/local': true,
+  }), null)
+  t.end()
+})
+
 t.test('store path fallback is anchored to the current root', t => {
   // isStoreBacked has no isInStore on hidden-lockfile loads; the path fallback must only trust this tree's own `.store` (npm/cli#9939 review).
   const { resolve } = require('node:path')
@@ -1068,5 +1604,18 @@ t.test('registry — link target with disagreeing link names fails closed', t =>
 
   t.equal(isScriptAllowed(target, { canvas: true }), null)
   t.equal(isScriptAllowed(target, { sharp: true }), null)
+  t.end()
+})
+
+t.test('file source takes precedence over registry-looking edges', t => {
+  const target = node({
+    name: 'local',
+    resolved: 'file:../local.tgz',
+    isRegistryDependency: true,
+    edgesIn: new Set([{ name: 'local', spec: '^1.0.0' }]),
+  })
+
+  t.equal(isScriptAllowed(target, { local: true }), null)
+  t.equal(isScriptAllowed(target, { 'file:../local.tgz': true }), true)
   t.end()
 })

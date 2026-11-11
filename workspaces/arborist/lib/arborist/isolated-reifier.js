@@ -3,6 +3,11 @@ const { depth } = require('treeverse')
 const { getPaths: getBinPaths } = require('bin-links')
 const crypto = require('node:crypto')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
+const {
+  filePolicyIdentities,
+  registryDenialNames,
+  resolvedSourceEntries,
+} = require('../script-allowed.js')
 const nameFromFolder = require('@npmcli/name-from-folder')
 
 // generate short hash key based on the dependency tree starting at this node
@@ -58,12 +63,16 @@ module.exports = cls => class IsolatedReifier extends cls {
       patched: node.patched,
       path: join(this.idealGraph.localPath, location),
       resolved: node.resolved,
+      scriptPolicySourceEntries: node.scriptPolicySourceEntries,
+      scriptPolicyFileIdentities: node.scriptPolicyFileIdentities,
+      scriptPolicyRegistryNames: node.scriptPolicyRegistryNames,
       root,
     })
     // XXX top is from place-dep not lib/node.js
     newChild.top = { path: this.idealGraph.localPath }
     root.children.set(newChild.location, newChild)
     root.inventory.set(newChild.location, newChild)
+    return newChild
   }
 
   /**
@@ -174,6 +183,11 @@ module.exports = cls => class IsolatedReifier extends cls {
 
   async #assignCommonProperties (node, result) {
     result.root = this.idealGraph
+    // Isolated Links do not retain the logical tree's resolver and lockfile context.
+    const policyNode = node.target
+    result.scriptPolicySourceEntries = resolvedSourceEntries(policyNode)
+    result.scriptPolicyFileIdentities = filePolicyIdentities(policyNode)
+    result.scriptPolicyRegistryNames = registryDenialNames(policyNode)
     // XXX does anything need this?
     result.id = this.counter++
     /* istanbul ignore next - packageName is always set for real packages */
@@ -316,7 +330,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     const root = new IsolatedNode(this.idealGraph)
     root.root = root
     root.inventory.set('', root)
-    const processed = new Set()
+    const processed = new Map()
     for (const c of this.idealGraph.workspaces) {
       const wsName = c.packageName
       // XXX parent? root?
@@ -326,6 +340,10 @@ module.exports = cls => class IsolatedReifier extends cls {
         package: c.package,
         path: c.localPath,
         resolved: c.resolved,
+        scriptPolicySourceEntries: c.scriptPolicySourceEntries,
+        scriptPolicyFileIdentities: c.scriptPolicyFileIdentities,
+        scriptPolicyRegistryNames: c.scriptPolicyRegistryNames,
+        root,
       })
       root.fsChildren.add(workspace)
       root.inventory.set(workspace.location, workspace)
@@ -355,11 +373,16 @@ module.exports = cls => class IsolatedReifier extends cls {
     this.idealGraph.external.forEach(c => {
       const key = getKey(c)
       if (processed.has(key)) {
+        const target = processed.get(key)
+        target.scriptPolicyRegistryNames = [...new Set([
+          ...target.scriptPolicyRegistryNames,
+          ...c.scriptPolicyRegistryNames,
+        ])]
+        target.isRegistryDependency &&= c.isRegistryDependency
         return
       }
-      processed.add(key)
       const location = join('node_modules', '.store', key, 'node_modules', c.packageName)
-      this.#generateChild(c, location, c.package, true, root)
+      processed.set(key, this.#generateChild(c, location, c.package, true, root))
     })
 
     bundledTree.nodes.forEach(node => {

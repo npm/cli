@@ -42,20 +42,83 @@ npm install-scripts ls
 npm install-scripts prune
 ```
 
-`approve` allows install scripts for the named packages. `<pkg>` matches
-every installed version of that package. By default it writes pinned entries
-(`pkg@1.2.3`), which keep their approval narrowed to the specific version you
-reviewed. Pass `--no-allow-scripts-pin` to write name-only entries that allow
-any future version. `--all` approves every package with unreviewed install
-scripts in one go.
+`approve` allows install scripts for the named packages. For registry
+dependencies, `<pkg>` matches every installed version and `<pkg@range>` can
+narrow the selection. By default it writes pinned entries (`pkg@1.2.3`),
+which keep their approval narrowed to the specific version you reviewed.
+Pass `--no-allow-scripts-pin` to write name-only entries that allow any
+future version.
 
-`deny` records an explicit denial for the named packages (a name-only `false`
-entry), which survives `npm install-scripts approve --all` and excludes the
-package from any future blanket approval. `--all` denies every package with
+Non-registry package names and versions come from the installed dependency
+and are not trusted policy identities. A bare installed name can select
+non-registry dependencies only when every match shares one trust anchor.
+Different remote URLs, file sources, or hosted repositories are separate
+trust anchors, while multiple commits from one hosted repository share an
+anchor. If a name is ambiguous, approval fails and lists exact source
+selectors. Re-run with one shown by `ls` or the error. Version and range
+selectors do not select non-registry dependencies.
+
+`--all` explicitly approves every package with unreviewed install scripts,
+including distinct sources that share an installed name.
+
+For direct remote tarballs and file dependencies, npm records the trusted
+source identity instead of the package name reported by the dependency.
+Direct remote tarballs use the exact `resolved` URL from `package-lock.json`,
+while file tarballs and linked directories use their exact resolved file
+spec. These identities remain exact with
+`--no-allow-scripts-pin`, because there is no trusted package-name form to
+broaden them to.
+
+Relative file policy keys are resolved from the project root, never from a
+link's `node_modules` directory. Legacy link-relative denials remain effective,
+including during approval and pruning, but legacy approvals do not grant permission.
+Review existing approvals, then run `ls` and approve the exact source shown there;
+for example, a dependency in `./local-foo` uses `file:local-foo`, not
+`file:../local-foo`.
+Absolute file selectors are saved using the matching lockfile identity, so a
+relative source remains portable across checkouts.
+
+If a target has multiple file identities, `ls` shows every selector in text
+and JSON output. Bare-name approval or denial requires an exact selector
+instead of choosing an identity implicitly; `--all` skips such targets and
+warns with the available selectors.
+
+For hosted git dependencies, approval writes the hosted repository shortcut
+with the resolved committish (for example, `github:org/repo#abc1234`).
+With `--no-allow-scripts-pin`, npm drops the committish and broadens approval
+to the hosted repository (`github:org/repo`).
+
+`deny` records an explicit denial that survives
+`npm install-scripts approve --all` and excludes the dependency from any
+future blanket approval. Registry dependencies use a name-only `false` entry,
+direct remote tarballs use the exact resolved URL, file dependencies use the
+resolved file spec, and hosted git dependencies use the hosted repository
+shortcut without a committish. These denial identities are independent of
+`--allow-scripts-pin`. A bare installed name denies every matching
+non-registry source. To select one source when several share a name, pass its
+exact selector. Remote and file denials stay exact; hosted-git dependencies
+are denied at the repository level. `--all` denies every package with
 unreviewed install scripts.
+Repository-level denials remove existing policy entries for every commit
+of that repository, including commits that are not currently installed.
+File denials replace only path-equivalent policy entries, preserving entries for
+other file identities even when they currently share a target.
+
+One installed package can satisfy both registry and non-registry requests.
+In that case, denials for any incoming registry identity still block its scripts,
+even when its remote URL, git repository, or file source is approved separately.
+Registry identities come from dependency requests, including the underlying name
+of an npm alias, not from the installed package's manifest.
+Registry approvals do not gain this broader matching.
+For these mixed-source packages, npm cannot verify a registry version from a
+non-registry source, so versioned registry denials fail closed on the matching name.
+This can block a package whose reported version differs from the denied version.
+The same denial takes precedence during approval, pruning, and linked installs.
 
 `ls` is read-only: it lists every package whose install scripts are not yet
-covered by `allowScripts`, without modifying `package.json`.
+covered by `allowScripts`, without modifying `package.json`. Non-registry
+entries show the installed name followed by the exact source selector in
+brackets.
 This includes unreviewed extraneous packages, which are installed but not
 required by any dependency. These packages can still cause
 `npm rebuild --strict-allow-scripts` to fail.
