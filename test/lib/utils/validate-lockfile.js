@@ -210,6 +210,24 @@ t.test('missing virtualTree inventory', async t => {
   )
 })
 
+t.test('missing inert entry with no package version', async t => {
+  t.strictSame(
+    validateLockfile(
+      new Map(),
+      new Map([
+        ['node_modules/@example/native', {
+          name: '@example/native',
+          version: '',
+          inert: true,
+          package: { name: '@example/native' },
+        }],
+      ])
+    ),
+    [],
+    'omitted unresolved optional dep is not a lockfile error'
+  )
+})
+
 const { validateNpmExtension } = require('../../../lib/utils/validate-lockfile.js')
 
 // build a mock virtual tree with a root hash and optional provenance-bearing nodes
