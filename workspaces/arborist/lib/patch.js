@@ -29,6 +29,22 @@ const containedTarget = (cwd, file) => {
   if (!rel || rel.startsWith('..') || isAbsolute(rel)) {
     throw patchError(`patch path escapes the package directory: ${file}`, 'EPATCHUNSAFE', file)
   }
+  // Lexical containment is not enough: cwd holds a package extracted from a
+  // registry tarball, so a symlink the publisher planted there can redirect
+  // the write or delete outside the package even though rel looks contained.
+  // Reject a symlink at the target itself, and require the deepest existing
+  // ancestor's real path to stay inside the real package directory.
+  if (fs.lstatSync(target, { throwIfNoEntry: false })?.isSymbolicLink()) {
+    throw patchError(`patch path escapes the package directory: ${file}`, 'EPATCHUNSAFE', file)
+  }
+  let ancestor = dirname(target)
+  while (!fs.existsSync(ancestor)) {
+    ancestor = dirname(ancestor)
+  }
+  const realRel = relative(fs.realpathSync(cwd), fs.realpathSync(ancestor))
+  if (realRel.startsWith('..') || isAbsolute(realRel)) {
+    throw patchError(`patch path escapes the package directory: ${file}`, 'EPATCHUNSAFE', file)
+  }
   return target
 }
 
