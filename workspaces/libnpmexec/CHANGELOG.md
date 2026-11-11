@@ -56,6 +56,16 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.4): `@npmcli/arborist@10.0.4`
 
+## [11.0.6](https://github.com/npm/cli/compare/libnpmexec-v11.0.5...libnpmexec-v11.0.6) (2026-11-11)
+### Bug Fixes
+* [`a41b85a`](https://github.com/npm/cli/commit/a41b85aae6f044ef4fe582ce42e2755bbeed252f) [#10068](https://github.com/npm/cli/pull/10068) skip disconnected orphans in install script checks (#10068) (@JamieMagee)
+* [`09a15bb`](https://github.com/npm/cli/commit/09a15bb6f6c3e1af26f687bd37ad47a6e5991682) [#10135](https://github.com/npm/cli/pull/10135) libnpmexec: install npx cache despite dryRun or packageLockOnly (#10135) (@ljharb)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v10.0.5): `@npmcli/arborist@10.0.5`
+
 ## [11.0.5](https://github.com/npm/cli/compare/libnpmexec-v11.0.4...libnpmexec-v11.0.5) (2026-11-03)
 ### Bug Fixes
 * [`10ffa9f`](https://github.com/npm/cli/commit/10ffa9f35c707fbf91733a07683a7ea96c38e416) [#10044](https://github.com/npm/cli/pull/10044) libnpmexec: escape inferred executable names for selected shell (#10044) (@martinrrm, @Copilot)
