@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.14.1](https://github.com/npm/cli/compare/config-v10.14.0...config-v10.14.1) (2026-11-11)
+### Bug Fixes
+* [`aa678d1`](https://github.com/npm/cli/commit/aa678d1d231b0b89cd656ce962e9b31b33bef577) [#10245](https://github.com/npm/cli/pull/10245) skip disconnected orphans in install script checks (#10245) (@github-actions[bot], @JamieMagee, @nkolev92, @Copilot)
+
 ## [10.14.0](https://github.com/npm/cli/compare/config-v10.13.0...config-v10.14.0) (2026-09-30)
 ### Features
 * [`1f38f64`](https://github.com/npm/cli/commit/1f38f649d79dec546a240af9ee707b4f32597ba2) [#10056](https://github.com/npm/cli/pull/10056) dist-tag: support OIDC authentication (#10056) (@github-actions[bot], @reggi, @Copilot)

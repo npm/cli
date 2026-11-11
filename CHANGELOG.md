@@ -1,5 +1,23 @@
 # Changelog
 
+## [11.21.3](https://github.com/npm/cli/compare/v11.21.2...v11.21.3) (2026-11-11)
+### Bug Fixes
+* [`aa678d1`](https://github.com/npm/cli/commit/aa678d1d231b0b89cd656ce962e9b31b33bef577) [#10245](https://github.com/npm/cli/pull/10245) skip disconnected orphans in install script checks (#10245) (@github-actions[bot], @JamieMagee, @nkolev92, @Copilot)
+### Chores
+* [`fa3737d`](https://github.com/npm/cli/commit/fa3737d0427c2f12ba6313326217bd27f473d94b) [#10235](https://github.com/npm/cli/pull/10235) restore release integration (v11 backport) (@reggi, @Copilot)
+* [`35f7e6d`](https://github.com/npm/cli/commit/35f7e6d08ac4bb79803d063df0671f849dc0f8f3) [#10242](https://github.com/npm/cli/pull/10242) migrate Cygwin installer (v11 backport) (@reggi, @Copilot)
+* [`a9d3bdc`](https://github.com/npm/cli/commit/a9d3bdcf29efbd5f128096713d91bb326e04c3b0) [#10226](https://github.com/npm/cli/pull/10226) drop clinic and weak from node-integration knownFailures (v11 backport) (#10226) (@nkolev92)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.4): `@npmcli/arborist@9.9.4`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v10.14.1): `@npmcli/config@10.14.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.1.15): `libnpmdiff@8.1.15`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.3.6): `libnpmexec@10.3.6`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.29): `libnpmfund@7.0.29`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.1.16): `libnpmpack@9.1.16`
+
 ## [11.21.2](https://github.com/npm/cli/compare/v11.21.1...v11.21.2) (2026-11-03)
 ### Bug Fixes
 * [`9433b48`](https://github.com/npm/cli/commit/9433b48e3c6bf8ee18c563c0514cf6f6feb04618) [#10195](https://github.com/npm/cli/pull/10195) accept supported Node.js prereleases at startup (#10195) (@github-actions[bot], @reggi, @Copilot)

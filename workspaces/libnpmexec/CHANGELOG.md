@@ -60,6 +60,15 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.3): `@npmcli/arborist@9.9.3`
 
+## [10.3.6](https://github.com/npm/cli/compare/libnpmexec-v10.3.5...libnpmexec-v10.3.6) (2026-11-11)
+### Bug Fixes
+* [`aa678d1`](https://github.com/npm/cli/commit/aa678d1d231b0b89cd656ce962e9b31b33bef577) [#10245](https://github.com/npm/cli/pull/10245) skip disconnected orphans in install script checks (#10245) (@github-actions[bot], @JamieMagee, @nkolev92, @Copilot)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.9.4): `@npmcli/arborist@9.9.4`
+
 ## [10.3.5](https://github.com/npm/cli/compare/libnpmexec-v10.3.4...libnpmexec-v10.3.5) (2026-11-03)
 ### Bug Fixes
 * [`be744f4`](https://github.com/npm/cli/commit/be744f46408a9c881e1204f2aeaca118ddaf1886) [#10217](https://github.com/npm/cli/pull/10217) libnpmexec: escape inferred executable names for selected shell (#10217) (@github-actions[bot], @martinrrm, @Copilot)
