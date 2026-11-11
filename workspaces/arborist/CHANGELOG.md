@@ -1,5 +1,9 @@
 # Changelog
 
+## [9.9.4](https://github.com/npm/cli/compare/arborist-v9.9.3...arborist-v9.9.4) (2026-11-11)
+### Bug Fixes
+* [`aa678d1`](https://github.com/npm/cli/commit/aa678d1d231b0b89cd656ce962e9b31b33bef577) [#10245](https://github.com/npm/cli/pull/10245) skip disconnected orphans in install script checks (#10245) (@github-actions[bot], @JamieMagee, @nkolev92, @Copilot)
+
 ## [9.9.3](https://github.com/npm/cli/compare/arborist-v9.9.2...arborist-v9.9.3) (2026-10-14)
 ### Bug Fixes
 * [`1c7b661`](https://github.com/npm/cli/commit/1c7b6618d003eaa272aca7ac7f306ab252564697) [#10059](https://github.com/npm/cli/pull/10059) write registry allowScripts keys under install-strategy=linked (#10059) (@github-actions[bot], @manzoorwanijk)
