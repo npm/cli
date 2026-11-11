@@ -255,6 +255,37 @@ t.test('multiple local pkgs', async t => {
   })
 })
 
+t.test('call without packages does not load the local tree', async t => {
+  let loadActualCount = 0
+  const Arborist = require('@npmcli/arborist')
+  const { pkg, fixtures } = createPkg({
+    name: '@npmcli/create-index',
+    localVersion: '2.0.0',
+  })
+  const { chmod, binLinks, exec, readOutput } = setup(t, {
+    pkg,
+    testdir: fixtures,
+    mocks: {
+      '@npmcli/arborist': class extends Arborist {
+        async loadActual (...args) {
+          loadActualCount++
+          return super.loadActual(...args)
+        }
+      },
+    },
+  })
+
+  await chmod()
+  await binLinks()
+  await exec({ call: 'create-index arg' })
+
+  t.match(await readOutput(), {
+    value: 'local-2.0.0',
+    args: ['arg'],
+  })
+  t.equal(loadActualCount, 0, 'should not read the local tree')
+})
+
 t.test('no npxCache', async t => {
   const { chmod, exec, path } = setup(t, {
     testdir: {
