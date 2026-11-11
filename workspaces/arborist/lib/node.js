@@ -1506,6 +1506,7 @@ class Node {
 
   [_reloadNamedEdges] (name, rootLoc = this.location) {
     if (!this.edgesOut.size && !this.children.size && !this.fsChildren.size) {
+      // With no outgoing edges or descendants, there is nothing to refresh or traverse.
       return
     }
 
