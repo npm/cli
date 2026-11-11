@@ -1,4 +1,4 @@
-const { resolve } = require('node:path')
+const { resolve, sep } = require('node:path')
 // mixin providing the loadVirtual method
 const mapWorkspaces = require('@npmcli/map-workspaces')
 const PackageJson = require('@npmcli/package-json')
@@ -241,6 +241,10 @@ To fix:
       root: this.virtualTree,
       path,
       realpath: path,
+      // Like load-actual, don't treat a pnpm store target as a tree root.
+      // It is top-level in the lockfile but its dev dependencies belong to
+      // the package manager, not to the consuming project.
+      isInPnpmStore: path !== this.path && path.includes(`${sep}node_modules${sep}.pnpm${sep}`),
       integrity: sw.integrity,
       patched: sw.patched,
       packageExtensionsApplied: sw.packageExtensionsApplied,

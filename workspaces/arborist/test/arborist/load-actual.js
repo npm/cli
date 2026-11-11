@@ -872,6 +872,39 @@ t.test('store nodes do not load devDependencies as required edges', async t => {
   t.notOk(dep.edgesOut.get('a-dev-dep'), 'devDependency of a store node is not a required edge')
 })
 
+t.test('pnpm store nodes do not load devDependencies as required edges', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { dep: '1.0.0' },
+    }),
+    node_modules: {
+      dep: t.fixture('symlink', '.pnpm/dep@1.0.0/node_modules/dep'),
+      '.pnpm': {
+        'dep@1.0.0': {
+          node_modules: {
+            dep: {
+              'package.json': JSON.stringify({
+                name: 'dep',
+                version: '1.0.0',
+                dependencies: { 'a-prod-dep': '^1.0.0' },
+                devDependencies: { 'a-dev-dep': '^1.0.0' },
+              }),
+            },
+          },
+        },
+      },
+    },
+  })
+
+  const tree = await loadActual(path)
+  const dep = tree.children.get('dep').target
+  t.notOk(dep.edgesOut.get('a-dev-dep'), 'dependency development tools are not required')
+  t.ok(dep.edgesOut.get('a-prod-dep'), 'production dependencies remain required')
+  t.equal(dep.isInStore, false, 'pnpm store is not the npm linked-install store')
+})
+
 t.test('loads an installed transitive optional dep from the linked store', async t => {
   // A transitive optional dep lives as a store sibling, and its edge reports missing === false despite having no target.
   // #findMissingEdges must still walk it, or npm sbom/query omit the installed dep.
@@ -933,4 +966,28 @@ t.test('a project located under a .store path still loads its own devDependencie
   const tree = await loadActual(root)
   t.equal(tree.isInStore, false, 'loaded root is not flagged isInStore')
   t.ok(tree.edgesOut.get('a-dev-dep'), 'root devDependency is a required edge')
+})
+
+t.test('a project located under a .pnpm path still loads its own devDependencies', async t => {
+  const path = t.testdir({
+    node_modules: {
+      '.pnpm': {
+        'root@1.0.0': {
+          node_modules: {
+            root: {
+              'package.json': JSON.stringify({
+                name: 'root',
+                version: '1.0.0',
+                devDependencies: { 'a-dev-dep': '^1.0.0' },
+              }),
+            },
+          },
+        },
+      },
+    },
+  })
+  const root = join(path, 'node_modules/.pnpm/root@1.0.0/node_modules/root')
+
+  const tree = await loadActual(root)
+  t.ok(tree.edgesOut.get('a-dev-dep'), 'root devDependency remains required')
 })
