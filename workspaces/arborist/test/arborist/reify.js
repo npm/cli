@@ -2900,6 +2900,211 @@ t.test('no workspace', async t => {
   t.equal(tree.inventory.query('name', 'once').size, 1)
 })
 
+t.test('disabled workspaces with no root dependencies', async t => {
+  for (const [installStrategy, previousStrategy = installStrategy] of [
+    ['hoisted'], ['linked'], ['linked', 'hoisted'],
+  ]) {
+    await t.test(`${installStrategy} after ${previousStrategy}`, async t => {
+      const path = t.testdir({
+        'package.json': JSON.stringify({ name: 'root', workspaces: ['packages/*'] }),
+        packages: {
+          a: {
+            'package.json': JSON.stringify({
+              name: 'a',
+              version: '1.0.0',
+              dependencies: { semver: '6.3.0' },
+            }),
+          },
+        },
+      })
+      createRegistry(t, true)
+      const tree = await reify(path, { workspacesEnabled: false, installStrategy })
+      const nm = resolve(path, 'node_modules')
+      const wsNm = resolve(path, 'packages/a/node_modules')
+      t.notOk(fs.existsSync(resolve(nm, 'a')), 'workspace is not linked')
+      t.notOk(fs.existsSync(resolve(nm, 'semver')), 'workspace dependency is not hoisted')
+      t.notOk(fs.existsSync(resolve(wsNm, 'semver')), 'workspace dependency is not linked locally')
+      t.equal(tree.inventory.query('name', 'semver').size, 0, 'actual tree excludes uninstalled dep')
+      const hiddenPath = resolve(nm, '.package-lock.json')
+      const hidden = fs.existsSync(hiddenPath) ? JSON.parse(fs.readFileSync(hiddenPath)) : null
+      t.notOk(Object.values(hidden?.packages || {}).some(pkg => pkg.version === '6.3.0'),
+        'hidden lock excludes uninstalled dep')
+      const lock = JSON.parse(fs.readFileSync(resolve(path, 'package-lock.json')))
+      t.ok(lock.packages['packages/a'], 'full lock still records the workspace')
+
+      await reify(path, { installStrategy: previousStrategy })
+      const depDir = resolve(previousStrategy === 'hoisted' ? nm : wsNm, 'semver')
+      const bin = resolve(previousStrategy === 'hoisted' ? nm : wsNm, '.bin/semver')
+      const manifest = fs.readFileSync(resolve(depDir, 'package.json'), 'utf8')
+      const realpath = fs.realpathSync(depDir)
+      const binContents = fs.readFileSync(bin)
+      await reify(path, { workspacesEnabled: false, installStrategy })
+      t.equal(fs.realpathSync(depDir), realpath, 'installed excluded dependency is preserved')
+      t.equal(fs.readFileSync(resolve(depDir, 'package.json'), 'utf8'), manifest,
+        'excluded dependency contents are preserved')
+      t.same(fs.readFileSync(bin), binContents, 'excluded dependency bin is preserved')
+
+      const workspaceManifest = resolve(path, 'packages/a/package.json')
+      const workspace = JSON.parse(fs.readFileSync(workspaceManifest))
+      workspace.dependencies.semver = '7.3.2'
+      fs.writeFileSync(workspaceManifest, JSON.stringify(workspace))
+      const versions = tree => [...tree.inventory.query('name', 'semver')]
+        .filter(node => !node.isLink).map(node => node.version)
+      for (let repeat = 0; repeat < 2; repeat++) {
+        const actual = await reify(path, { workspacesEnabled: false, installStrategy })
+        t.same(versions(actual), ['6.3.0'], 'actual tree retains the installed excluded version')
+        t.ok(fs.existsSync(depDir), 'excluded dependency still resolves after its manifest changes')
+        t.ok(fs.existsSync(bin), 'excluded bin still resolves after its manifest changes')
+        if (fs.existsSync(depDir) && fs.existsSync(bin)) {
+          t.equal(fs.realpathSync(depDir), realpath, 'excluded dependency keeps its store target')
+          t.equal(fs.readFileSync(resolve(depDir, 'package.json'), 'utf8'), manifest,
+            'excluded dependency keeps its installed contents')
+          t.same(fs.readFileSync(bin), binContents, 'excluded bin keeps its installed contents')
+          const { execFileSync } = require('node:child_process')
+          t.equal(execFileSync(process.execPath, [
+            '-e', 'console.log(require(process.argv[1]).valid("1.2.3"))', depDir,
+          ], { encoding: 'utf8' }).trim(), '1.2.3', 'excluded module works in a fresh process')
+          t.equal(execFileSync(process.execPath, [resolve(depDir, 'bin/semver.js'), '1.2.3'], {
+            encoding: 'utf8',
+          }).trim(), '1.2.3', 'excluded executable still works')
+        }
+        const hidden = await Shrinkwrap.load({ path, hiddenLockfile: true })
+        t.equal(hidden.loadedFromDisk, true, 'hidden lock remains a valid cache of installed files', {
+          cause: hidden.loadingError,
+        })
+        const loaded = await newArb({ path, installStrategy }).loadActual()
+        t.same(versions(loaded), ['6.3.0'], 'loading actual retains the installed excluded version')
+        const fullLock = JSON.parse(fs.readFileSync(resolve(path, 'package-lock.json')))
+        t.equal(fullLock.packages['packages/a'].dependencies.semver, '7.3.2',
+          'full lock records the changed workspace requirement')
+        t.ok(Object.values(fullLock.packages).some(pkg => pkg.version === '7.3.2'),
+          'full lock still resolves the desired dependency version')
+      }
+      await reify(path, { installStrategy })
+      const updatedDir = resolve(installStrategy === 'hoisted' ? nm : wsNm, 'semver')
+      t.equal(JSON.parse(fs.readFileSync(resolve(updatedDir, 'package.json'))).version, '7.3.2',
+        'enabling workspaces applies the pending dependency update')
+    })
+  }
+})
+
+t.test('disabled workspaces without declared workspaces still prune extraneous packages', async t => {
+  for (const installStrategy of ['hoisted', 'linked']) {
+    await t.test(installStrategy, async t => {
+      const path = t.testdir({
+        'package.json': JSON.stringify({ name: 'root' }),
+        node_modules: {
+          extra: { 'package.json': JSON.stringify({ name: 'extra', version: '1.0.0' }) },
+        },
+      })
+      const tree = await reify(path, { workspacesEnabled: false, installStrategy })
+      t.notOk(fs.existsSync(resolve(path, 'node_modules/extra')), 'extraneous package is removed')
+      t.equal(tree.children.size, 0, 'actual tree is empty')
+    })
+  }
+})
+
+t.test('removing the last root dependency does not enable workspaces', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      workspaces: ['packages/*'],
+      dependencies: { once: '1.4.0' },
+    }),
+    packages: {
+      a: { 'package.json': JSON.stringify({ name: 'a', dependencies: { abbrev: '1.1.1' } }) },
+    },
+  })
+  createRegistry(t, true)
+  await reify(path, { workspacesEnabled: false })
+  await reify(path, { workspacesEnabled: false, rm: ['once'] })
+  const tree = await reify(path, { workspacesEnabled: false })
+  for (const name of ['once', 'wrappy', 'a', 'abbrev']) {
+    t.notOk(fs.existsSync(resolve(path, 'node_modules', name)), `${name} is not installed`)
+  }
+  t.equal(tree.children.size, 0, 'actual tree remains empty')
+})
+
+t.test('removing a missing root dependency with disabled linked workspaces', async t => {
+  // Use production debug behavior for physical root links: the test-only loader
+  // assertions reject root-link workspace trees before reify can process them.
+  const RootLinkArborist = t.mock('../..', {
+    ...mocks,
+    '../../lib/debug.js': Object.assign(() => {}, { log: () => {} }),
+  })
+  for (const rootName of ['project', 'linked-project']) {
+    await t.test(rootName, async t => {
+      const dir = t.testdir({
+        project: {
+          'package.json': JSON.stringify({
+            name: 'root',
+            workspaces: ['packages/*'],
+            dependencies: { gone: '1.0.0' },
+          }),
+          packages: {
+            a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+          },
+        },
+        'linked-project': t.fixture('symlink', 'project'),
+      })
+      const path = resolve(dir, rootName)
+      createRegistry(t, false)
+      const options = {
+        path,
+        cache: path,
+        audit: false,
+        workspacesEnabled: false,
+        installStrategy: 'linked',
+      }
+      const arb = rootName === 'project' ? newArb(options) : new RootLinkArborist(options)
+      const tree = await arb.reify({ rm: ['gone'] })
+      const saved = JSON.parse(fs.readFileSync(resolve(path, 'package.json')))
+      t.notOk(saved.dependencies?.gone, 'missing dependency is removed from the manifest')
+      t.notOk(tree.package.dependencies?.gone, 'returned root reflects the saved manifest')
+      t.notOk(tree.target.package.dependencies?.gone, 'root target reflects the saved manifest')
+      t.notOk(tree.target.edgesOut.has('gone'), 'root target no longer has the removed edge')
+    })
+  }
+})
+
+t.test('disabled workspaces preserve root dependency operations through a root link', async t => {
+  const RootLinkArborist = t.mock('../..', {
+    ...mocks,
+    '../../lib/debug.js': Object.assign(() => {}, { log: () => {} }),
+  })
+  for (const installStrategy of ['hoisted', 'linked']) {
+    await t.test(installStrategy, async t => {
+      const path = t.testdir({
+        project: {
+          'package.json': JSON.stringify({
+            name: 'root',
+            workspaces: ['packages/*'],
+            dependencies: { dep: 'file:../dep' },
+          }),
+          packages: {
+            a: { 'package.json': JSON.stringify({ name: 'a', version: '1.0.0' }) },
+          },
+          node_modules: { dep: t.fixture('symlink', '../../dep') },
+        },
+        dep: { 'package.json': JSON.stringify({ name: 'dep', version: '1.0.0' }) },
+        'linked-project': t.fixture('symlink', 'project'),
+      })
+      createRegistry(t, false)
+      const tree = await new RootLinkArborist({
+        path: resolve(path, 'linked-project'),
+        cache: path,
+        audit: false,
+        workspacesEnabled: false,
+        installStrategy,
+      }).reify({ rm: ['dep'] })
+      t.notOk(fs.existsSync(resolve(path, 'project/node_modules/dep')),
+        'resolved root dependency is removed')
+      t.notOk(tree.package.dependencies?.dep, 'returned root reflects the uninstall')
+      t.notOk(tree.target.edgesOut.has('dep'), 'root target no longer has the removed edge')
+    })
+  }
+})
+
 t.test('add local dep with existing dev + peer/optional', async t => {
   const path = t.testdir({
     project: {
