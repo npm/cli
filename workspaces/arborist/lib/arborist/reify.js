@@ -4,6 +4,7 @@ const hgi = require('hosted-git-info')
 const npa = require('npm-package-arg')
 const packageContents = require('@npmcli/installed-package-contents')
 const pacote = require('pacote')
+const binLinks = require('bin-links')
 const { pickRegistry } = require('npm-registry-fetch')
 const promiseAllRejectLate = require('promise-all-reject-late')
 const runScript = require('@npmcli/run-script')
@@ -1414,6 +1415,7 @@ module.exports = cls => class Reifier extends cls {
     // run in tip->root order, so as to be more likely to build a node's
     // deps before attempting to build it itself
     const nodes = []
+    const binNodes = new Map()
     dfwalk({
       tree: this.diff,
       leave: diff => {
@@ -1437,10 +1439,23 @@ module.exports = cls => class Reifier extends cls {
       const linkedFromRoot = (node.parent === tree && !node.inert) || node.target.fsTop === tree
       if (node.isLink && linkedFromRoot) {
         nodes.push(node)
+      } else if (!node.globalTop) {
+        // Retiring a package also retires any bins shared with unchanged
+        // packages. Restore only those commands, without rerunning scripts
+        // or changing the owners of this package's other bins.
+        const bin = Object.fromEntries(Object.entries(node.package.bin || {})
+          .filter(([name, target]) => binLinks.getPaths({
+            path: node.path,
+            pkg: { bin: { [name]: target } },
+            top: node.isTop,
+          }).some(path => this.#retiredPaths[path])))
+        if (Object.keys(bin).length) {
+          binNodes.set(node, { ...node.package, bin })
+        }
       }
     }
 
-    return this.rebuild({ nodes, handleOptionalFailure: true }).then(timeEnd)
+    return this.rebuild({ nodes, binNodes, handleOptionalFailure: true }).then(timeEnd)
   }
 
   // the tree is pretty much built now, so it's cleanup time.

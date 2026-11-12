@@ -34,7 +34,7 @@ module.exports = cls => class Builder extends cls {
     bin: [],
   }
 
-  async rebuild ({ nodes, handleOptionalFailure = false } = {}) {
+  async rebuild ({ nodes, binNodes = new Map(), handleOptionalFailure = false } = {}) {
     // nothing to do if we're not building anything!
     if (this.options.ignoreScripts && !this.options.binLinks) {
       return
@@ -59,7 +59,7 @@ module.exports = cls => class Builder extends cls {
     } = this.#retrieveNodesByType(nodes)
 
     // build regular deps
-    await this.#build(depNodes, {})
+    await this.#build(depNodes, { binNodes })
 
     // build link deps
     if (linkNodes.size) {
@@ -139,7 +139,7 @@ module.exports = cls => class Builder extends cls {
     }
   }
 
-  async #build (nodes, { type = 'deps' }) {
+  async #build (nodes, { type = 'deps', binNodes = new Map() }) {
     const timeEnd = time.start(`build:${type}`)
 
     await this.#buildQueues(nodes)
@@ -155,7 +155,7 @@ module.exports = cls => class Builder extends cls {
       }
     }
     if (this.options.binLinks) {
-      await this.#linkAllBins()
+      await this.#linkAllBins(binNodes)
     }
 
     if (!this.options.ignoreScripts) {
@@ -383,9 +383,14 @@ module.exports = cls => class Builder extends cls {
     timeEnd()
   }
 
-  async #linkAllBins () {
-    const queue = this.#queues.bin
-    if (!queue.length) {
+  async #linkAllBins (binNodes) {
+    // Reify can supply unchanged packages with just the bin entries that
+    // were retired by another package. Full rebuilds still link every bin.
+    const queue = new Map(binNodes)
+    for (const node of this.#queues.bin) {
+      queue.set(node, node.package)
+    }
+    if (!queue.size) {
       return
     }
 
@@ -393,16 +398,16 @@ module.exports = cls => class Builder extends cls {
     const promises = []
     // sort the queue by node path, so that the module-local collision
     // detector in bin-links will always resolve the same way.
-    for (const node of queue.sort(sortNodes)) {
+    for (const node of [...queue.keys()].sort(sortNodes)) {
       // TODO these run before they're awaited
-      promises.push(this.#createBinLinks(node))
+      promises.push(this.#createBinLinks(node, queue.get(node)))
     }
 
     await promiseAllRejectLate(promises)
     timeEnd()
   }
 
-  async #createBinLinks (node) {
+  async #createBinLinks (node, pkg) {
     if (this[_trashList].has(node.path)) {
       return
     }
@@ -411,7 +416,7 @@ module.exports = cls => class Builder extends cls {
 
     // On Windows, antivirus/indexer can transiently lock files, causing EPERM/EACCES/EBUSY on the rename inside write-file-atomic (used by bin-links/fix-bin.js), so, retry with backoff.
     const p = promiseRetry((retry) => binLinks({
-      pkg: node.package,
+      pkg,
       path: node.path,
       top: !!(node.isTop || node.globalTop),
       force: this.options.force,
