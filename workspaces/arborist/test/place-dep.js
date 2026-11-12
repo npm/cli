@@ -2046,3 +2046,89 @@ t.test('placement tests', t => {
 
   t.end()
 })
+
+t.test('forced peer replacement preserves shared peer set entries', t => {
+  for (const anchor of ['root', 'workspace', 'root peer', 'workspace peer', 'transitive', 'transitive peers']) {
+    t.test(anchor, t => {
+      const path = '/some/path'
+      const tree = new Node({
+        path,
+        pkg: { dependencies: { b: '1', x: '2' } },
+        children: [
+          { pkg: { name: 'a', version: '1.0.0', peerDependencies: { x: '1' } } },
+          { pkg: { name: 'b', version: '1.0.0', dependencies: { a: '1' } } },
+          { pkg: { name: 'x', version: '2.0.0' } },
+        ],
+      })
+      const a = tree.children.get('a')
+      const b = tree.children.get('b')
+      const transitive = anchor.startsWith('transitive')
+      let owner = tree
+      if (anchor.startsWith('workspace')) {
+        owner = new Node({
+          path: `${path}/workspace`,
+          fsParent: tree,
+          pkg: { name: 'workspace', version: '1.0.0' },
+        })
+        new Link({ parent: tree, target: owner })
+        tree.workspaces = new Map([['workspace', owner.path]])
+        t.ok(owner.isWorkspace, 'dependency belongs to a workspace')
+      }
+      if (anchor.endsWith('peer')) {
+        new Node({
+          parent: tree,
+          pkg: { name: 'host', version: '1.0.0', peerDependencies: { a: '1' } },
+        })
+      }
+      if (anchor === 'transitive peers') {
+        tree.package = { dependencies: { b: '1', c: '1', x: '2' } }
+        new Node({
+          parent: tree,
+          pkg: { name: 'c', version: '1.0.0', dependencies: { host: '1' } },
+        })
+        new Node({
+          parent: tree,
+          pkg: { name: 'host', version: '1.0.0', peerDependencies: { a: '1' } },
+        })
+      }
+      if (!transitive) {
+        const name = anchor.endsWith('peer') ? 'host' : 'a'
+        owner.package = {
+          ...owner.package,
+          dependencies: { ...owner.package.dependencies, [name]: '1' },
+        }
+      }
+
+      const virtualRoot = new Node({ path, sourceReference: tree })
+      const dep = new Node({
+        parent: virtualRoot,
+        pkg: { name: 'x', version: '2.0.1' },
+      })
+      const pd = new PlaceDep({
+        edge: tree.edgesOut.get('x'),
+        dep,
+        force: true,
+        explicitRequest: true,
+        updateNames: [],
+      })
+
+      t.equal(tree.children.get('x').version, '2.0.1', 'updated the requested dependency')
+      if (transitive) {
+        t.notOk(tree.children.has('a'), 'pruned a peer set that can be nested')
+        t.ok(pd.needEvaluation.has(b), 'will resolve the transitive dependency again')
+        if (anchor === 'transitive peers') {
+          t.notOk(tree.children.has('host'), 'pruned the movable peer dependent')
+          t.ok(pd.needEvaluation.has(tree.children.get('c')), 'will resolve the other peer set again')
+        }
+      } else {
+        t.equal(tree.children.get('a'), a, 'kept the shared peer set entry')
+        t.equal(b.edgesOut.get('a').to, a, 'kept the transitive dependency satisfied')
+        t.ok(a.edgesOut.get('x').peerConflicted, 'marked the forced peer conflict')
+        t.notOk(pd.needEvaluation.has(tree), 'does not requeue the project')
+        t.notOk(pd.needEvaluation.has(owner), 'does not requeue the dependency owner')
+      }
+      t.end()
+    })
+  }
+  t.end()
+})
