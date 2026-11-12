@@ -79,6 +79,10 @@ exports[`test/can-place-dep.js TAP basic placement check tests cycle of peers ha
 Array []
 `
 
+exports[`test/can-place-dep.js TAP basic placement check tests dense peer graph > conflict children 1`] = `
+Array []
+`
+
 exports[`test/can-place-dep.js TAP basic placement check tests do not keep existing dep that matches, but does not satisfy > conflict children 1`] = `
 Array []
 `
