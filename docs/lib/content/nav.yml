@@ -162,6 +162,9 @@
   - title: npm run
     url: /commands/npm-run
     description: Run arbitrary package scripts
+  - title: npm safeinstall
+    url: /commands/npm-safeinstall
+    description: Install a package, confirming names and install scripts first
   - title: npm sbom
     url: /commands/npm-sbom
     description: Generate a Software Bill of Materials (SBOM)
