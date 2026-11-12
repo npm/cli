@@ -202,7 +202,23 @@ class OverrideSet {
     }
 
     // The override sets are structurally incomparable but have compatible rules. Fall back to their nearest common ancestor so the node still has a valid override set.
-    return this.findCommonAncestor(first, second)
+    const ancestor = this.findCommonAncestor(first, second)
+
+    // When both sets are the same rule written in two scopes (e.g. `minimatch: { brace-expansion }` at the top level and again under `tshy > ... > glob`), the ancestor alone would drop that rule's nested overrides.
+    // Keep the one hung directly under the ancestor: it adds only the rules both paths agree on.
+    if (ancestor && first.isSameRule(second)) {
+      for (const candidate of [first, second]) {
+        if (ancestor.isEqual(candidate.parent)) {
+          return candidate
+        }
+      }
+    }
+
+    return ancestor
+  }
+
+  isSameRule (other) {
+    return this.key === other.key && this.value === other.value && this.childrenAreEqual(other)
   }
 
   static findCommonAncestor (first, second) {
