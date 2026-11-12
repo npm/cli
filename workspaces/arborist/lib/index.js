@@ -6,3 +6,4 @@ module.exports.Edge = require('./edge.js')
 module.exports.Shrinkwrap = require('./shrinkwrap.js')
 module.exports.PackageExtensions = require('./package-extensions.js')
 module.exports.NpmExtension = require('./npm-extension.js')
+module.exports.autoInstalledPeerNodes = require('./peer-declarations.js').autoInstalledPeerNodes
