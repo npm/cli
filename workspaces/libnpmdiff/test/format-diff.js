@@ -37,6 +37,34 @@ t.test('format simple diff', async t => {
   )
 })
 
+t.test('keep a blank context line that ends the diff', async t => {
+  const files = new Set([
+    'foo.js',
+  ])
+  const refs = new Map(Object.entries({
+    'a/foo.js': {
+      content: 'a\nb\n\n',
+      mode: '100644',
+    },
+    'b/foo.js': {
+      content: 'a\nc\n\n',
+      mode: '100644',
+    },
+  }))
+  const versions = {
+    a: '1.0.0',
+    b: '2.0.0',
+  }
+
+  const res = await formatDiff({
+    files,
+    refs,
+    versions,
+  })
+  t.match(res, /^@@ -1,3 \+1,3 @@$/m, 'should count the blank line in the hunk')
+  t.ok(res.endsWith('\n+c\n '), 'should end with the blank context line')
+})
+
 t.test('nothing to diff', async t => {
   const files = new Set([
     'foo.js',
