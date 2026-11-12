@@ -1,10 +1,11 @@
 const fs = require('node:fs')
 const { join, resolve } = require('node:path')
 const EventEmitter = require('node:events')
+const { Writable } = require('node:stream')
 const os = require('node:os')
 const t = require('tap')
 const fsMiniPass = require('fs-minipass')
-const { output, time } = require('proc-log')
+const { input, output, time } = require('proc-log')
 const errorMessage = require('../../../lib/utils/error-message.js')
 const ExecCommand = require('../../../lib/commands/exec.js')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
@@ -374,7 +375,7 @@ t.test('throw a string error', async (t) => {
 })
 
 t.test('update notification - shows even with loglevel error', async (t) => {
-  const { exitHandler, logs, npm } = await mockExitHandler(t, {
+  const { exitHandler, logs, npm, cache } = await mockExitHandler(t, {
     config: { loglevel: 'error' },
   })
   npm.updateNotification = 'you should update npm!'
@@ -382,10 +383,115 @@ t.test('update notification - shows even with loglevel error', async (t) => {
   await exitHandler()
 
   t.match(logs.notice, ['you should update npm!'])
+  t.equal(fs.readFileSync(join(cache, '_update-notifier-last-checked'), 'utf8'), '')
 })
 
-t.test('update notification - hidden with silent', async (t) => {
-  const { exitHandler, logs, npm } = await mockExitHandler(t, {
+t.test('update notification - resumes paused logging on an uncaught error', async (t) => {
+  const { logs, npm, cache } = await mockExitHandler(t, {
+    config: { loglevel: 'error', progress: false },
+  })
+  npm.updateNotification = 'you should update npm!'
+
+  const exiting = new Promise(res => process.once('exit', res))
+  input.start()
+  process.emit('uncaughtException', err('editor could not start', 'ENOENT'))
+  await exiting
+
+  t.match(logs.notice, ['you should update npm!'])
+  t.equal(fs.existsSync(join(cache, '_update-notifier-last-checked')), true)
+  t.equal(process.exitCode, 1, 'uncaught error still causes a failing exit')
+})
+
+t.test('update notification - drains stderr before recording it', async (t) => {
+  const pendingWrites = []
+  const written = []
+  let onWrite
+  const firstWrite = new Promise(res => {
+    onWrite = res
+  })
+  const stderr = new Writable({
+    write (chunk, encoding, callback) {
+      pendingWrites.push(() => {
+        written.push(chunk.toString())
+        callback()
+      })
+      onWrite()
+    },
+  })
+  t.teardown(() => stderr.destroy())
+
+  const { exitHandler, npm, cache } = await mockExitHandler(t, {
+    config: { loglevel: 'error', progress: false },
+    npm: { stderr },
+  })
+  mockGlobals(t, { 'process.stderr': stderr }, { replace: true })
+  npm.updateNotification = 'you should update npm!'
+  const sentinelPath = join(cache, '_update-notifier-last-checked')
+
+  const exiting = exitHandler()
+  await firstWrite
+  t.equal(fs.existsSync(sentinelPath), false, 'not recorded while stderr is blocked')
+
+  const nextWrite = new Promise(res => {
+    onWrite = res
+  })
+  pendingWrites.shift()()
+  await nextWrite
+  t.match(written.join(''), 'you should update npm!', 'notice precedes the final flush')
+  t.equal(fs.existsSync(sentinelPath), false, 'not recorded before the flush callback')
+
+  pendingWrites.shift()()
+  await exiting
+  t.equal(fs.existsSync(sentinelPath), true, 'recorded after the notice and flush complete')
+})
+
+t.test('update notification - does not record it when stderr fails', async (t) => {
+  const writeError = Object.assign(new Error('broken pipe'), { code: 'EPIPE' })
+  const stderr = new Writable({
+    write (chunk, encoding, callback) {
+      callback(writeError)
+    },
+  })
+  const stderrFailure = new Promise(res => stderr.once('error', res))
+  t.teardown(() => stderr.destroy())
+
+  const { exitHandler, npm, cache } = await mockExitHandler(t, {
+    config: { loglevel: 'error', progress: false },
+    npm: { stderr },
+  })
+  mockGlobals(t, {
+    'process.stderr': stderr,
+    'process.exitCode': 7,
+  }, { replace: true })
+
+  npm.updateNotification = 'you should update npm!'
+
+  t.equal(await exitHandler(), 7, 'existing exit code is preserved')
+  t.equal(await stderrFailure, writeError, 'stderr failed with EPIPE')
+  t.equal(fs.existsSync(join(cache, '_update-notifier-last-checked')), false,
+    'failed output does not consume the throttle')
+})
+
+t.test('update notification - does not record a notification arriving during the flush', async (t) => {
+  const { exitHandler, logs, npm, cache } = await mockExitHandler(t)
+  mockGlobals(t, {
+    'process.stderr': {
+      write: (chunk, callback) => {
+        npm.updateNotification = 'you should update npm!'
+        callback()
+      },
+    },
+  }, { replace: true })
+
+  await exitHandler()
+
+  t.strictSame(logs.notice, [], 'late notice is not emitted after the flush')
+  t.equal(fs.existsSync(join(cache, '_update-notifier-last-checked')), false,
+    'late notice is not recorded')
+})
+
+t.test('update notification - silent intentionally consumes the throttle', async (t) => {
+  const { exitHandler, logs, npm, cache } = await mockExitHandler(t, {
     config: { loglevel: 'silent' },
   })
   npm.updateNotification = 'you should update npm!'
@@ -393,6 +499,21 @@ t.test('update notification - hidden with silent', async (t) => {
   await exitHandler()
 
   t.strictSame(logs.notice, [])
+  t.equal(fs.existsSync(join(cache, '_update-notifier-last-checked')), true,
+    'silent is an explicit opt-out, not a deferred notice')
+})
+
+t.test('update notification - logs verbose if recording the notification throws', async (t) => {
+  const { exitHandler, logs, npm, cache } = await mockExitHandler(t, {
+    config: { loglevel: 'verbose' },
+  })
+  fs.mkdirSync(join(cache, '_update-notifier-last-checked'))
+  npm.updateNotification = 'you should update npm!'
+
+  await exitHandler()
+
+  t.match(logs.notice, ['you should update npm!'])
+  t.match(logs.verbose.byTitle('update-notifier'), [/could not record notification timestamp/])
 })
 
 t.test('npm.config not ready', async (t) => {
