@@ -1332,3 +1332,29 @@ t.test('edge with overrides should not crash when target has no overrides', t =>
   t.ok(edge.valid, 'edge should be valid')
   t.end()
 })
+
+t.test('satisfiedBy does not check bundling without an applicable override', t => {
+  const Node = require('../lib/node.js')
+  for (const overrides of [undefined, new OverrideSet({ overrides: { other: '2.x' } })]) {
+    const from = new Node({
+      path: '/root',
+      pkg: { name: 'root', dependencies: { child: '1.x' } },
+    })
+    const edge = from.edgesOut.get('child')
+    edge.overrides = overrides
+    for (const version of ['1.0.0', '2.0.0']) {
+      const candidate = new Node({
+        path: '/child',
+        pkg: { name: 'child', version },
+      })
+      Object.defineProperty(candidate, 'inBundle', {
+        get: () => {
+          t.fail('bundling cannot affect an edge without an applicable override')
+          return false
+        },
+      })
+      t.equal(edge.satisfiedBy(candidate), version === '1.0.0')
+    }
+  }
+  t.end()
+})
