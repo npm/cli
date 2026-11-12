@@ -142,6 +142,78 @@ t.test('config list with proxy environment variables', async t => {
   t.match(output, 'environment-related config')
 })
 
+t.test('config list redacts credentials in proxy environment variables', async t => {
+  const saved = {}
+  for (const key of ['HTTP_PROXY', 'HTTPS_PROXY', 'NO_PROXY']) {
+    saved[key] = process.env[key]
+    delete process.env[key]
+  }
+  t.teardown(() => {
+    for (const key of ['HTTP_PROXY', 'HTTPS_PROXY', 'NO_PROXY']) {
+      if (saved[key] !== undefined) {
+        process.env[key] = saved[key]
+      } else {
+        delete process.env[key]
+      }
+    }
+  })
+
+  // issue 9773: password in the proxy userinfo
+  process.env.HTTP_PROXY = 'http://proxy-user:proxy-password@proxy.example.com:80'
+  // token as the userinfo with an explicit empty password (CI proxy shape)
+  process.env.HTTPS_PROXY = 'https://ci-token:@secure-proxy.example.com:8443'
+  // control: no userinfo, must come through untouched
+  process.env.NO_PROXY = 'localhost,127.0.0.1'
+
+  const { npm, joinedOutput } = await loadMockNpm(t)
+  await npm.exec('config', ['list'])
+  const output = joinedOutput()
+
+  t.notMatch(output, 'proxy-password', 'password is not printed')
+  t.match(output, 'HTTP_PROXY = "http://proxy-user:***@proxy.example.com:80"')
+  t.notMatch(output, 'ci-token', 'empty-password userinfo token is not printed')
+  t.match(output, 'HTTPS_PROXY = "https://***@secure-proxy.example.com:8443"')
+  t.match(output, 'NO_PROXY = "localhost,127.0.0.1"')
+})
+
+t.test('config list redacts empty-password userinfo in config values', async t => {
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    prefixDir: {
+      '.npmrc': 'proxy=https://mytoken:@proxy.example.com\nhttps-proxy=https://secure-proxy.example.com:8443',
+    },
+  })
+
+  await npm.exec('config', ['list'])
+  const output = joinedOutput()
+
+  t.notMatch(output, 'mytoken', 'token-as-username is not printed')
+  t.match(output, 'proxy = "https://***@proxy.example.com"')
+  t.match(output, 'https-proxy = "https://secure-proxy.example.com:8443"', 'credential-less value unchanged')
+
+  await t.rejects(
+    npm.exec('config', ['get', 'proxy']),
+    /protected/,
+    'config get rejects the credential-bearing value like any other private value'
+  )
+})
+
+t.test('config list --json omits empty-password userinfo values', async t => {
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    prefixDir: {
+      '.npmrc': 'proxy=https://mytoken:@proxy.example.com\nhttps-proxy=https://secure-proxy.example.com:8443',
+    },
+    config: {
+      json: true,
+    },
+  })
+
+  await npm.exec('config', ['list'])
+  const output = joinedOutput()
+
+  t.notMatch(output, 'mytoken', 'token-as-username is not in the json output')
+  t.match(output, 'secure-proxy.example.com', 'credential-less value is still listed')
+})
+
 t.test('config list --long', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     prefixDir: {
