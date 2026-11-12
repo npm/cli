@@ -235,6 +235,7 @@ graph LR;
   npmcli-smoke-tests-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-smoke-tests-->pacote;
   npmcli-smoke-tests-->which;
   pacote-->cacache;
   pacote-->npm-package-arg;
@@ -658,6 +659,7 @@ graph LR;
   npmcli-smoke-tests-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-smoke-tests-->pacote;
   npmcli-smoke-tests-->proxy;
   npmcli-smoke-tests-->rimraf;
   npmcli-smoke-tests-->tap;
@@ -740,11 +742,11 @@ packages higher up the chain.
  - npm
  - @npmcli/mock-registry, libnpmdiff, libnpmexec, libnpmfund, libnpmpack
  - @npmcli/arborist
- - @npmcli/metavuln-calculator
+ - @npmcli/smoke-tests, @npmcli/metavuln-calculator
  - pacote, @npmcli/config, libnpmversion
  - @npmcli/map-workspaces, @npmcli/run-script, libnpmaccess, libnpmorg, libnpmpublish, libnpmsearch, libnpmteam, init-package-json, npm-profile
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
- - @npmcli/smoke-tests, @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
+ - @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
  - @npmcli/docs, @npmcli/fs, npm-bundled, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, npm-packlist, bin-links, nopt, parse-conflict-json, @npmcli/mock-globals, read
  - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, which, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, ssri, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate
