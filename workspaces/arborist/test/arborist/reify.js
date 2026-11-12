@@ -167,6 +167,77 @@ t.test('weirdly broken lockfile without resolved value', async t => {
   await t.resolveMatchSnapshot(printReified(fixture(t, 'dep-missing-resolved')))
 })
 
+t.test('min-release-age-exclude bypasses before filter when reifying from a lockfile with missing resolved (npm/cli#9715)', async t => {
+  // When `omit-lockfile-registry-resolved=true` strips the `resolved` URL,
+  // `npm ci` and subsequent `npm i` runs fall back to a `name@version` spec
+  // and pacote re-fetches the packument. If `before` (min-release-age) is set,
+  // pickManifest throws ETARGET even for the version pinned in the lockfile.
+  // `min-release-age-exclude` must exempt the package on the reify fallback too,
+  // mirroring what build-ideal-tree's #releaseAgeBefore already does.
+
+  // abbrev 1.1.1 was published 2017-09-28; a `before` in mid-2017 filters it out.
+  const pkg = 'abbrev'
+  const before = new Date('2017-06-01T00:00:00Z')
+  const integrity = 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=='
+
+  // A lockfile shaped the way omit-lockfile-registry-resolved writes it: the
+  // registry dep has integrity + version but no `resolved` URL.
+  const mkLockfile = () => JSON.stringify({
+    name: 'repro',
+    version: '1.0.0',
+    lockfileVersion: 3,
+    requires: true,
+    packages: {
+      '': {
+        name: 'repro',
+        version: '1.0.0',
+        dependencies: { [pkg]: '1.1.1' },
+      },
+      [`node_modules/${pkg}`]: { version: '1.1.1', integrity },
+    },
+  })
+
+  const mkPath = () => t.testdir({
+    'package.json': JSON.stringify({
+      name: 'repro',
+      version: '1.0.0',
+      dependencies: { [pkg]: '1.1.1' },
+    }),
+    'package-lock.json': mkLockfile(),
+  })
+
+  await t.test('baseline: before window without exclude throws ETARGET', async t => {
+    const path = mkPath()
+    createRegistry(t, true)
+    await t.rejects(reify(path, { before }), { code: 'ETARGET' },
+      'reify fallback re-resolves via packument and honors before')
+  })
+
+  await t.test('exact name in min-release-age-exclude installs pinned version', async t => {
+    const path = mkPath()
+    createRegistry(t, true)
+    const tree = await reify(path, { before, minReleaseAgeExclude: [pkg] })
+    t.equal(tree.children.get(pkg).version, '1.1.1',
+      'reified pinned version via the fallback spec with exclude bypass')
+  })
+
+  await t.test('glob min-release-age-exclude installs pinned version', async t => {
+    const path = mkPath()
+    createRegistry(t, true)
+    const tree = await reify(path, { before, minReleaseAgeExclude: ['abb*'] })
+    t.equal(tree.children.get(pkg).version, '1.1.1',
+      'glob pattern in exclude also bypasses the before filter')
+  })
+
+  await t.test('non-matching min-release-age-exclude leaves the filter in place', async t => {
+    const path = mkPath()
+    createRegistry(t, true)
+    await t.rejects(reify(path, { before, minReleaseAgeExclude: ['not-abbrev'] }),
+      { code: 'ETARGET' },
+      'exemption is scoped to matched names only')
+  })
+})
+
 t.test('testing-peer-deps package', async t => {
   createRegistry(t, true)
   await t.resolveMatchSnapshot(printReified(fixture(t, 'testing-peer-deps')))
