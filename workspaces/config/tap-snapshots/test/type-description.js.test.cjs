@@ -263,6 +263,9 @@ Object {
   "ignore-patch-failures": Array [
     "boolean value (true or false)",
   ],
+  "ignore-proxy": Array [
+    "boolean value (true or false)",
+  ],
   "ignore-scripts": Array [
     "boolean value (true or false)",
   ],
