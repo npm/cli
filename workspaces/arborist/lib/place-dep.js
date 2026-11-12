@@ -152,6 +152,19 @@ class PlaceDep {
     // if we can't find a target, that means that the last place checked,
     // and all the places before it, had a conflict.
     if (!this.canPlace) {
+      // A named update can find a newer peer that cannot replace the
+      // version pinned by the project. Keep the existing valid provider
+      // if no placement for the update was possible.
+      const root = this.edge.from.root
+      const direct = root.target.edgesOut.get(this.name)
+      if (!this.parent && this.updateNames.includes(this.name) &&
+          this.edge.type === 'peer' && this.edge.valid && this.current &&
+          !this.explicitRequest && !this.auditReport?.isVulnerable(this.current) &&
+          !this.dep.errors.length && direct?.to === this.current &&
+          !direct.peer && direct.spec === this.current.version) {
+        return
+      }
+
       // if not forced, and it's our dep, or strictPeerDeps is set, then
       // this is an ERESOLVE error.
       if (!this.force && (this.isMine || this.strictPeerDeps)) {
