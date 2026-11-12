@@ -917,7 +917,7 @@ class Node {
     // don't know their canonical location. We don't need their devDeps.
     const pd = this.package.peerDependencies
     const ad = this.package.acceptDependencies || {}
-    if (pd && typeof pd === 'object' && !this.legacyPeerDeps) {
+    if (this.#isDepObject(pd, 'peerDependencies') && !this.legacyPeerDeps) {
       const pm = this.package.peerDependenciesMeta || {}
       const peerDependencies = {}
       const peerOptional = {}
@@ -932,8 +932,8 @@ class Node {
       this.#loadDepType(peerOptional, 'peerOptional', ad)
     }
 
-    this.#loadDepType(this.package.dependencies, 'prod', ad)
-    this.#loadDepType(this.package.optionalDependencies, 'optional', ad)
+    this.#loadDepType(this.package.dependencies, 'prod', ad, 'dependencies')
+    this.#loadDepType(this.package.optionalDependencies, 'optional', ad, 'optionalDependencies')
 
     const { globalTop, isTop, path, sourceReference } = this
     const {
@@ -945,14 +945,41 @@ class Node {
     const thisDev = isTop && !globalTop && path && !this.isInStore
     const srcDev = !sourceReference || srcTop && !srcGlobalTop && srcPath
     if (thisDev && srcDev) {
-      this.#loadDepType(this.package.devDependencies, 'dev', ad)
+      this.#loadDepType(this.package.devDependencies, 'dev', ad, 'devDependencies')
     }
   }
 
-  #loadDepType (deps, type, ad) {
+  // keyed by package path and field, because the same package.json is loaded into several trees (actual, virtual, ideal)
+  static #warnedInvalidDeps = new Set()
+
+  // A dependency field must be an object of name: spec pairs. Strings and arrays would otherwise be read by
+  // Object.entries as index keys, turning them into dependencies on packages literally named "0", "1", ...
+  #isDepObject (deps, field) {
+    if (!deps) {
+      return false
+    }
+    if (typeof deps === 'object' && !Array.isArray(deps)) {
+      return true
+    }
+    const key = `${this.realpath}\0${field}`
+    if (!Node.#warnedInvalidDeps.has(key)) {
+      Node.#warnedInvalidDeps.add(key)
+      const where = this.location ? `${this.location}/package.json` : 'package.json'
+      log.warn('invalid dependencies',
+        `"${field}" in ${where} must be an object of name: version pairs, ` +
+        `but is ${Array.isArray(deps) ? 'an array' : `a ${typeof deps}`}; ignoring it. ` +
+        'Run `npm pkg fix` to convert it.')
+    }
+    return false
+  }
+
+  #loadDepType (deps, type, ad, field) {
+    if (field && !this.#isDepObject(deps, field)) {
+      return
+    }
     // Because of the order in which _loadDeps runs, we always want to
     // prioritize a new edge over an existing one
-    for (const [name, spec] of Object.entries(deps || {})) {
+    for (const [name, spec] of Object.entries(deps)) {
       const current = this.edgesOut.get(name)
       if (!current || current.type !== 'workspace') {
         new Edge({ from: this, name, spec, accept: ad[name], type })

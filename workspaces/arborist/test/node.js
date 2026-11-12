@@ -3639,3 +3639,43 @@ t.test('shouldOmit method', t => {
 
   t.end()
 })
+
+t.test('dependency fields that are not objects are ignored with a warning', t => {
+  const warnings = []
+  const onlog = (...msg) => msg[0] === 'warn' && warnings.push(msg)
+  process.on('log', onlog)
+  t.teardown(() => process.removeListener('log', onlog))
+
+  const node = new Node({
+    path: '/home/user/projects/root',
+    pkg: {
+      name: 'root',
+      version: '1.0.0',
+      dependencies: ['left-pad', 'latest'],
+      optionalDependencies: 'is-number',
+      devDependencies: { abbrev: '^1.0.0' },
+      peerDependencies: ['react'],
+    },
+  })
+
+  t.same([...node.edgesOut.keys()], ['abbrev'], 'only the valid object field becomes edges')
+  t.notOk(node.edgesOut.has('0'), 'no edge to a package named "0"')
+  t.match(warnings, [
+    ['warn', 'invalid dependencies', /"peerDependencies" in package\.json must be an object .* but is an array; ignoring it/],
+    ['warn', 'invalid dependencies', /"dependencies" in package\.json must be an object .* but is an array; ignoring it/],
+    ['warn', 'invalid dependencies', /"optionalDependencies" in package\.json must be an object .* but is a string; ignoring it/],
+  ])
+  t.equal(warnings.length, 3, 'one warning per invalid field')
+
+  // reloading the package does not repeat the warnings
+  node.package = { ...node.package }
+  t.equal(warnings.length, 3, 'warnings are not repeated when deps are reloaded')
+
+  const child = new Node({
+    pkg: { name: 'child', version: '1.0.0', dependencies: 'oops' },
+    parent: node,
+  })
+  t.equal(child.edgesOut.size, 0, 'child with a string dependencies field has no edges')
+  t.match(warnings.at(-1), ['warn', 'invalid dependencies', /"dependencies" in node_modules\/child\/package\.json/])
+  t.end()
+})
