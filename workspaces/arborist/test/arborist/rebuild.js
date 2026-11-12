@@ -257,6 +257,106 @@ t.test('workspaces bypass the allowScripts gate (owner-managed)', async t => {
   )
 })
 
+t.test('links sharing a target run its scripts once through a required link', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      optionalDependencies: { 'a-opt': 'file:./shared' },
+      dependencies: { 'b-req': 'file:./shared', 'c-req': 'file:./shared' },
+    }),
+    node_modules: {
+      'a-opt': t.fixture('symlink', '../shared'),
+      'b-req': t.fixture('symlink', '../shared'),
+      'c-req': t.fixture('symlink', '../shared'),
+    },
+    shared: {
+      'package.json': JSON.stringify({
+        name: 'shared',
+        version: '1.0.0',
+        scripts: { postinstall: 'exit 1' },
+      }),
+    },
+  })
+  const runs = []
+  const Arborist = t.mock('../../lib/arborist/index.js', {
+    '@npmcli/run-script': async ({ event }) => {
+      runs.push(event)
+      throw Object.assign(new Error('script failed'), { code: 1 })
+    },
+  })
+  const arb = new Arborist({ path, dangerouslyAllowAllScripts: true })
+  const tree = await arb.loadActual()
+  const nodes = ['a-opt', 'b-req', 'c-req'].map(name => tree.children.get(name))
+  t.equal(nodes[0].optional, true, 'first sorted link is optional')
+  await t.rejects(arb.rebuild({ nodes, handleOptionalFailure: true }), { message: 'script failed' })
+  t.same(runs, ['postinstall'], 'script ran once, and its failure was not swallowed')
+})
+
+t.test('failed script of a target shared by optional links removes every link', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      optionalDependencies: { 'a-opt': 'file:./shared', 'b-opt': 'file:./shared' },
+    }),
+    node_modules: {
+      'a-opt': t.fixture('symlink', '../shared'),
+      'b-opt': t.fixture('symlink', '../shared'),
+    },
+    shared: {
+      'package.json': JSON.stringify({
+        name: 'shared',
+        version: '1.0.0',
+        scripts: { postinstall: 'exit 1' },
+      }),
+    },
+  })
+  const runs = []
+  const Arborist = t.mock('../../lib/arborist/index.js', {
+    '@npmcli/run-script': async ({ event }) => {
+      runs.push(event)
+      throw Object.assign(new Error('script failed'), { code: 1 })
+    },
+  })
+  const arb = new Arborist({ path, dangerouslyAllowAllScripts: true })
+  const tree = await arb.loadActual()
+  const nodes = ['a-opt', 'b-opt'].map(name => tree.children.get(name))
+  await arb.rebuild({ nodes, handleOptionalFailure: true })
+  t.same(runs, ['postinstall'], 'script ran once')
+  t.ok(arb[_trashList].has(resolve(path, 'node_modules/a-opt')), 'link that ran the script is removed')
+  t.ok(arb[_trashList].has(resolve(path, 'node_modules/b-opt')), 'link that skipped the script is removed')
+})
+
+t.test('rebuilding shared links twice with one arborist does not throw', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      dependencies: { a: 'file:./shared', b: 'file:./shared' },
+    }),
+    node_modules: {
+      a: t.fixture('symlink', '../shared'),
+      b: t.fixture('symlink', '../shared'),
+    },
+    shared: {
+      'package.json': JSON.stringify({
+        name: 'shared',
+        version: '1.0.0',
+        scripts: { postinstall: 'exit 0' },
+      }),
+    },
+  })
+  const Arborist = t.mock('../../lib/arborist/index.js', {
+    '@npmcli/run-script': async () => ({ code: 0 }),
+  })
+  const arb = new Arborist({ path, dangerouslyAllowAllScripts: true })
+  const tree = await arb.loadActual()
+  const nodes = ['a', 'b'].map(name => tree.children.get(name))
+  await arb.rebuild({ nodes, handleOptionalFailure: true })
+  await t.resolves(arb.rebuild({ nodes, handleOptionalFailure: true }))
+})
+
 t.test('do nothing if ignoreScripts=true and binLinks=false', async t => {
   const path = fixture(t, 'testing-rebuild-bundle-reified')
   const file = resolve(path, 'node_modules/@isaacs/testing-rebuild-bundle-a/node_modules/@isaacs/testing-rebuild-bundle-b/cwd')
