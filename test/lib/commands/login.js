@@ -113,6 +113,45 @@ t.test('legacy', t => {
       '//diff-registry.npmjs.org/:_authToken': 'npm_test-token',
     }, 'should only have token and scope:registry')
   })
+
+  t.test('email username on a custom registry', async t => {
+    const { npm, registry, login, logs } = await mockLogin(t, {
+      stdin: ['a.b@org.com', 'test-password'],
+      registry: 'https://custom.registry.example/',
+      config: {
+        'auth-type': 'legacy',
+        registry: 'https://custom.registry.example/',
+      },
+    })
+    registry.nock.put(registry.fullPath('/-/user/org.couchdb.user:a.b%40org.com'), body => {
+      t.match(body, { name: 'a.b@org.com', password: 'test-password' })
+      return true
+    }).reply(201, { token: 'npm_test-token' })
+    await login.exec([])
+    t.same(npm.config.get('//custom.registry.example/:_authToken'), 'npm_test-token')
+    t.strictSame(logs.warn, [], 'did not warn about the username')
+  })
+
+  t.test('email username on the default registry is rejected', async t => {
+    const { npm, registry, login, logs } = await mockLogin(t, {
+      stdin: ['a.b@org.com', 'test-user', 'test-password'],
+      config: {
+        'auth-type': 'legacy',
+        scope: '@npmcli',
+      },
+      homeDir: {
+        '.npmrc': '@npmcli:registry=https://registry.npmjs.org',
+      },
+    })
+    registry.couchlogin({
+      username: 'test-user',
+      password: 'test-password',
+      token: 'npm_test-token',
+    })
+    await login.exec([])
+    t.same(npm.config.get('//registry.npmjs.org/:_authToken'), 'npm_test-token')
+    t.match(logs.warn, ['Name may not contain non-url-safe chars'])
+  })
   t.end()
 })
 
