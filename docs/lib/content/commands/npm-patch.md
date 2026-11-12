@@ -39,6 +39,12 @@ package literally named like a subcommand must use the explicit form, e.g.
     writes the unified diff to `<patches-dir>/<name>@<version>.patch`, adds the
     entry to `patchedDependencies`, and updates `package-lock.json`.
 
+    Patches are text diffs, so binary files (images, fonts, wasm, native
+    addons) cannot be patched. A file is treated as binary if it contains a
+    NUL byte or is not valid UTF-8, even if it is otherwise a text file.
+    If either the original or edited version of a changed file meets this
+    rule, the commit fails with `EPATCHBINARY` and lists the files to revert.
+
 * `npm patch ls`
 
     Lists registered patches and how many installed nodes each one matches.
