@@ -965,8 +965,30 @@ To override `@npm/foo` to `1.0.0`, but only when it's a child of `@npm/bar@2.0.0
 }
 ```
 
+Versioned override keys do not just limit when nested overrides apply.
+They also replace the matched package with that version or range.
+In this example, the parent key both matches and preserves `@npm/bar@2.0.0`
+while applying the nested `@npm/foo` override.
+
+If you want to keep the parent package on its existing spec while only
+overriding its children, set `"."` explicitly:
+
+```json
+{
+  "dependencies": {
+    "@npm/bar": "^2.0.0"
+  },
+  "overrides": {
+    "@npm/bar@2.0.0": {
+      ".": "$@npm/bar",
+      "@npm/foo": "1.0.0"
+    }
+  }
+}
+```
+
 You may not set an override for a package that you directly depend on unless both the dependency and the override itself share the exact same spec.
-To make this limitation easier to deal with, overrides may also be defined as a reference to a spec for a direct dependency by prefixing the name of the package you wish the version to match with a `$`.
+You can resolve a child override against a direct dependency by using a `$` prefix with the full package name (`$@scope/name`), so the overridden package inherits that direct spec:
 
 ```json
 {
@@ -974,14 +996,8 @@ To make this limitation easier to deal with, overrides may also be defined as a 
     "@npm/foo": "^1.0.0"
   },
   "overrides": {
-    // BAD, will throw an EOVERRIDE error
-    // "foo": "^2.0.0"
-    // GOOD, specs match so override is allowed
-    // "foo": "^1.0.0"
-    // BEST, the override is defined as a reference to the dependency
-    "@npm/foo": "$foo",
-    // the referenced package does not need to match the overridden one
-    "@npm/bar": "$foo"
+    "@npm/foo": "$@npm/foo",
+    "@npm/bar": "$@npm/foo"
   }
 }
 ```
