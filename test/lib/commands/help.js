@@ -111,6 +111,18 @@ t.test('npm help whoami', async t => {
   t.match(spawnArgs[0], /npm-whoami\.1$/)
 })
 
+t.test('npm help with custom viewer', async t => {
+  const { getArgs } = await mockHelp(t, {
+    exec: ['whoami'],
+    config: { viewer: 'batman' },
+  })
+
+  const [spawnBin, spawnArgs] = getArgs()
+  t.equal(spawnBin, 'batman', 'calls the configured viewer')
+  t.equal(spawnArgs.length, 1)
+  t.match(spawnArgs[0], /npm-whoami\.1$/)
+})
+
 t.test('npm help 1 install', async t => {
   const { getArgs } = await mockHelp(t, {
     exec: ['1', 'install'],
