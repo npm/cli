@@ -203,6 +203,18 @@ t.test('notice deduplication does not apply in verbose mode', async t => {
   ])
 })
 
+t.test('exec suppresses run-script notices', async t => {
+  const { log, logs } = await mockDisplay(t, {
+    load: { command: 'exec' },
+  })
+
+  log.notice('run', 'cypress@1.0.0 npx')
+  log.notice('run', 'cypress --version')
+  log.notice('', 'a regular notice')
+
+  t.strictSame(logs.notice, ['a regular notice'])
+})
+
 t.test('Display.clean', async (t) => {
   const { output, outputs, clearOutput } = await mockDisplay(t)
 
