@@ -311,6 +311,36 @@ t.test('throws when invalid tag is semver', async t => {
   )
 })
 
+t.test('throws when publishConfig.tag is semver', async t => {
+  const { npm } = await loadNpmWithRegistry(t, {
+    config: {
+      ...auth,
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({ ...pkgJson, publishConfig: { tag: '1.x' } }, null, 2),
+    },
+  })
+  await t.rejects(
+    npm.exec('publish', []),
+    { message: 'Tag name must not be a valid SemVer range: 1.x' }
+  )
+})
+
+t.test('reports the tag from publishConfig', async t => {
+  const { npm, logs, registry } = await loadNpmWithRegistry(t, {
+    config: {
+      ...auth,
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({ ...pkgJson, publishConfig: { tag: 'next' } }, null, 2),
+    },
+    authorization: token,
+  })
+  registry.publish(pkg)
+  await npm.exec('publish', [])
+  t.match(logs.notice.join('\n'), /Publishing to https:\/\/registry\.npmjs\.org\/ with tag next and default access/)
+})
+
 t.test('throws when invalid tag when not url encodable', async t => {
   const { npm } = await loadNpmWithRegistry(t, {
     config: {
