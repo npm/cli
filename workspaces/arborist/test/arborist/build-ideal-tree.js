@@ -55,6 +55,12 @@ This is a one-time fix-up, please be patient...
 `,
 ]
 
+const missingProvenanceWarning = [
+  'warn',
+  'shrinkwrap',
+  'Missing resolved or integrity metadata for 1 non-bundled registry dependency. Review the lockfile before relying on it for reproducible installs.',
+]
+
 const cwd = normalizePath(process.cwd())
 t.cleanSnapshot = s => s.split(cwd).join('{CWD}')
 
@@ -1248,7 +1254,7 @@ t.test('no old lockfile warning with no package-lock', async t => {
   const registry = createRegistry(t, false)
   registry.audit()
   await newArb(fixt).reify()
-  t.strictSame(warnings, [])
+  t.strictSame(warnings, [missingProvenanceWarning])
 })
 
 t.test('no old lockfile warning with a conflict package-lock', async t => {
@@ -1275,7 +1281,7 @@ t.test('no old lockfile warning with a conflict package-lock', async t => {
   const registry = createRegistry(t, false)
   registry.audit()
   await newArb(fixt).reify()
-  t.strictSame(warnings, [])
+  t.strictSame(warnings, [missingProvenanceWarning])
 })
 
 t.test('override a conflict with the root dep (with force)', async t => {
