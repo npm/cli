@@ -226,6 +226,53 @@ t.test('should getContents of a tarball with a node_modules directory included',
   t.end()
 })
 
+t.test('should getContents of a tarball with a malformed bundled entry name', async (t) => {
+  // tarballs on the registry or staging endpoint are not built by npm, so an
+  // entry under package/node_modules/ can carry a path the bundled name regex
+  // does not match. This helper writes raw tar entries because the filesystem
+  // collapses doubled separators and the tar package normalizes entry paths.
+  const craftEntry = (name, content) => {
+    const header = Buffer.alloc(512)
+    header.write(name.slice(0, 100), 0, 100, 'utf8')
+    header.write('0000644\0', 100, 8, 'ascii')
+    header.write('0000000\0', 108, 8, 'ascii')
+    header.write('0000000\0', 116, 8, 'ascii')
+    header.write(content.length.toString(8).padStart(7, '0') + '\0', 124, 8, 'ascii')
+    header.write('0000000\0', 136, 8, 'ascii')
+    header.write('        ', 148, 8, 'ascii')
+    header.write('0', 156, 1, 'ascii')
+    header.write('ustar\0', 257, 6, 'ascii')
+    header.write('00', 263, 2, 'ascii')
+    let sum = 0
+    for (const byte of header) {
+      sum += byte
+    }
+    header.write(sum.toString(8).padStart(6, '0') + '\0 ', 148, 8, 'ascii')
+    const data = Buffer.alloc(Math.ceil(content.length / 512) * 512)
+    data.write(content, 0, 'utf8')
+    return Buffer.concat([header, data])
+  }
+  const craftTarball = (entries) =>
+    Buffer.concat([...entries, Buffer.alloc(1024)])
+
+  const tarball = craftTarball([
+    craftEntry('package/package.json', '{"name":"evil","version":"1.0.0"}'),
+    craftEntry('package/node_modules//evil', 'abc'),
+  ])
+
+  const tarballContents = await getContents({
+    name: 'evil',
+    version: '1.0.0',
+  }, tarball)
+
+  t.strictSame(tarballContents.bundled, [], 'malformed bundled entry is skipped')
+  t.equal(tarballContents.entryCount, 2, 'both entries are counted')
+  t.strictSame(tarballContents.files.map(f => f.path), [
+    'node_modules//evil',
+    'package.json',
+  ])
+})
+
 t.test('should log byte sizes correctly', async (t) => {
   const cases = [
     [0, '0 B', '0B'],
