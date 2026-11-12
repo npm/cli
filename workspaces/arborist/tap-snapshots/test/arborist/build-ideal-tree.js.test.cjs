@@ -8241,6 +8241,7 @@ ArboristNode {
       "children": Map {
         "@isaacs/testing-bundledeps-a" => ArboristNode {
           "bundled": true,
+          "bundler": "",
           "edgesIn": Set {
             EdgeIn {
               "from": "node_modules/@isaacs/testing-bundledeps",
@@ -8253,13 +8254,29 @@ ArboristNode {
             "@isaacs/testing-bundledeps-b" => EdgeOut {
               "name": "@isaacs/testing-bundledeps-b",
               "spec": "*",
-              "to": "node_modules/@isaacs/testing-bundledeps-b",
+              "to": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
               "type": "prod",
             },
           },
           "location": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
           "name": "@isaacs/testing-bundledeps-a",
           "path": "{CWD}/test/fixtures/testing-bundledeps-empty/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
+          "version": "1.0.0",
+        },
+        "@isaacs/testing-bundledeps-b" => ArboristNode {
+          "bundled": true,
+          "bundler": "",
+          "edgesIn": Set {
+            EdgeIn {
+              "from": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
+              "name": "@isaacs/testing-bundledeps-b",
+              "spec": "*",
+              "type": "prod",
+            },
+          },
+          "location": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
+          "name": "@isaacs/testing-bundledeps-b",
+          "path": "{CWD}/test/fixtures/testing-bundledeps-empty/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
           "version": "1.0.0",
         },
       },
@@ -8296,12 +8313,6 @@ ArboristNode {
       "edgesIn": Set {
         EdgeIn {
           "from": "node_modules/@isaacs/testing-bundledeps-c",
-          "name": "@isaacs/testing-bundledeps-b",
-          "spec": "*",
-          "type": "prod",
-        },
-        EdgeIn {
-          "from": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
           "name": "@isaacs/testing-bundledeps-b",
           "spec": "*",
           "type": "prod",
@@ -8559,6 +8570,7 @@ ArboristNode {
       "children": Map {
         "@isaacs/testing-bundledeps-a" => ArboristNode {
           "bundled": true,
+          "bundler": "",
           "edgesIn": Set {
             EdgeIn {
               "from": "node_modules/@isaacs/testing-bundledeps",
@@ -8571,13 +8583,29 @@ ArboristNode {
             "@isaacs/testing-bundledeps-b" => EdgeOut {
               "name": "@isaacs/testing-bundledeps-b",
               "spec": "*",
-              "to": "node_modules/@isaacs/testing-bundledeps-b",
+              "to": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
               "type": "prod",
             },
           },
           "location": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
           "name": "@isaacs/testing-bundledeps-a",
           "path": "{CWD}/test/fixtures/testing-bundledeps/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
+          "version": "1.0.0",
+        },
+        "@isaacs/testing-bundledeps-b" => ArboristNode {
+          "bundled": true,
+          "bundler": "",
+          "edgesIn": Set {
+            EdgeIn {
+              "from": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
+              "name": "@isaacs/testing-bundledeps-b",
+              "spec": "*",
+              "type": "prod",
+            },
+          },
+          "location": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
+          "name": "@isaacs/testing-bundledeps-b",
+          "path": "{CWD}/test/fixtures/testing-bundledeps/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
           "version": "1.0.0",
         },
       },
@@ -8614,12 +8642,6 @@ ArboristNode {
       "edgesIn": Set {
         EdgeIn {
           "from": "node_modules/@isaacs/testing-bundledeps-c",
-          "name": "@isaacs/testing-bundledeps-b",
-          "spec": "*",
-          "type": "prod",
-        },
-        EdgeIn {
-          "from": "node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
           "name": "@isaacs/testing-bundledeps-b",
           "spec": "*",
           "type": "prod",
