@@ -2,6 +2,8 @@ const t = require('tap')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 const { cleanZlib } = require('../../fixtures/clean-snapshot')
 const MockRegistry = require('@npmcli/mock-registry')
+const pacote = require('pacote')
+const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
 
@@ -127,6 +129,27 @@ for (const allowDirectory of ['none', 'root']) {
       },
     })
     await npm.exec('pack', [])
+    t.strictSame(outputs, ['test-package-1.0.0.tgz'])
+  })
+}
+
+for (const allowFile of ['none', 'root']) {
+  t.test(`dry run of a tarball with allow-file=${allowFile}`, async t => {
+    const { npm, outputs, prefix } = await loadMockNpm(t, {
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: 'test-package',
+          version: '1.0.0',
+        }),
+      },
+      config: {
+        'allow-file': allowFile,
+        'dry-run': true,
+      },
+    })
+    const tarFilename = path.join(prefix, 'tarball.tgz')
+    fs.writeFileSync(tarFilename, await pacote.tarball(prefix, { Arborist }))
+    await npm.exec('pack', [tarFilename])
     t.strictSame(outputs, ['test-package-1.0.0.tgz'])
   })
 }
