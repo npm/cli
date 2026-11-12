@@ -1339,19 +1339,13 @@ module.exports = cls => class Reifier extends cls {
 
       const { path: realFolder } = diff.actual
       const retireFolder = moves[realFolder]
-      /* istanbul ignore next - should be impossible */
-      debug(() => {
-        if (!retireFolder) {
-          const er = new Error('trying to un-retire but not retired')
-          throw Object.assign(er, {
-            realFolder,
-            retireFolder,
-            actual: diff.actual,
-            ideal: diff.ideal,
-            action: diff.action,
-          })
-        }
-      })
+      // A node can become a CHANGE or REMOVE after the shallow nodes were
+      // retired: loading bundles or shrinkwraps re-diffs the trees, and by
+      // then a bin it shares with a retired node has been moved aside. It
+      // was never moved itself, so its unchanged children are still in place.
+      if (!retireFolder) {
+        return
+      }
 
       this.#retiredUnchanged[retireFolder] = []
       return promiseAllRejectLate(diff.unchanged.map(node => {
