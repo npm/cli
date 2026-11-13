@@ -49,7 +49,7 @@ const {
   writeFile,
 } = require('node:fs/promises')
 
-const { resolve, basename, relative } = require('node:path')
+const { resolve, basename, relative, isAbsolute, sep } = require('node:path')
 const specFromLock = require('./spec-from-lock.js')
 const versionFromTgz = require('./version-from-tgz.js')
 const npa = require('npm-package-arg')
@@ -68,6 +68,26 @@ const swKeyOrder = [
   'packages',
   'dependencies',
 ]
+
+const isPathInside = path => path === '' ||
+  (!isAbsolute(path) && path !== '..' && !path.startsWith(`..${sep}`))
+
+const pathToLoc = (path, realpath, nodePath) => {
+  const absolute = resolve(path, nodePath)
+  if (!isAbsolute(nodePath)) {
+    return relpath(path, absolute)
+  }
+
+  const logical = relative(path, absolute)
+  if (isPathInside(logical)) {
+    return relpath(path, absolute)
+  }
+
+  const real = relative(realpath, absolute)
+  return realpath !== path && isPathInside(real)
+    ? relpath(path, resolve(path, real))
+    : relpath(path, absolute)
+}
 
 // used to rewrite from yarn registry to npm registry
 const yarnRegRe = /^https?:\/\/registry\.yarnpkg\.com\//
@@ -248,10 +268,10 @@ class Shrinkwrap {
     return s
   }
 
-  static metaFromNode (node, path, options = {}) {
+  static metaFromNode (node, path, options = {}, realpath = path) {
     if (node.isLink) {
       return {
-        resolved: relpath(path, node.realpath),
+        resolved: pathToLoc(path, realpath, node.realpath),
         link: true,
       }
     }
@@ -282,7 +302,16 @@ class Shrinkwrap {
       }
     }
 
-    const resolved = consistentResolve(node.resolved, node.path, path, true)
+    let resolved = consistentResolve(node.resolved, node.path, path, true)
+    if (node.resolved &&
+        (node.resolved.startsWith('file:') || isAbsolute(node.resolved))) {
+      try {
+        const spec = npa(node.resolved, node.path)
+        resolved = `file:${pathToLoc(path, realpath, spec.fetchSpec)}`
+      } catch {
+        // consistentResolve already preserves invalid values unchanged
+      }
+    }
     // hide resolved from registry dependencies.
     if (!resolved) {
       // no-op
@@ -312,6 +341,7 @@ class Shrinkwrap {
   }
 
   #awaitingUpdate = new Map()
+  #realpath
 
   constructor (options = {}) {
     const {
@@ -333,6 +363,7 @@ class Shrinkwrap {
 
     this.tree = null
     this.path = resolve(path || '.')
+    this.#realpath = this.path
     this.filename = null
     this.data = null
     this.indent = indent
@@ -384,6 +415,7 @@ class Shrinkwrap {
   // still worth doing a load() first so we know which files to write.
   reset () {
     this.tree = null
+    this.#realpath = this.path
     this.#awaitingUpdate = new Map()
     this.packageExtensionsHash = null
     this.npmExtensionHash = null
@@ -656,7 +688,7 @@ class Shrinkwrap {
   // pass in a path relative to the root path, or an absolute path,
   // get back a /-normalized location based on root path.
   #pathToLoc (path) {
-    return relpath(this.path, resolve(this.path, path))
+    return pathToLoc(this.path, this.#realpath, path)
   }
 
   delete (nodePath) {
@@ -829,20 +861,24 @@ class Shrinkwrap {
       throw new Error('run load() before getting or setting data')
     }
 
-    // will be actually updated on read
-    const loc = relpath(this.path, node.path)
+    let metadataNode = node
     if (node.path === this.path) {
-      this.tree = node
+      metadataNode = node.target || node
+      this.tree = metadataNode
+      this.#realpath = metadataNode.realpath
     }
+
+    // will be actually updated on read
+    const loc = this.#pathToLoc(metadataNode.path)
 
     // if we have metadata about this node, and it's a match, then
     // try to decorate it.
-    if (node.resolved === null || node.integrity === null) {
+    if (metadataNode.resolved === null || metadataNode.integrity === null) {
       const {
         resolved,
         integrity,
         version,
-      } = this.get(node.path)
+      } = this.get(metadataNode.path)
 
       let pathFixed = null
       if (resolved) {
@@ -855,29 +891,33 @@ class Shrinkwrap {
 
       // if we have one, only set the other if it matches
       // otherwise it could be for a completely different thing.
-      const resolvedOk = !resolved || !node.resolved ||
-        node.resolved === pathFixed
-      const integrityOk = !integrity || !node.integrity ||
-        node.integrity === integrity
-      const versionOk = !version || !node.version || version === node.version
+      const resolvedOk = !resolved || !metadataNode.resolved ||
+        metadataNode.resolved === pathFixed
+      const integrityOk = !integrity || !metadataNode.integrity ||
+        metadataNode.integrity === integrity
+      const versionOk = !version || !metadataNode.version || version === metadataNode.version
 
       const allOk = (resolved || integrity || version) &&
         resolvedOk && integrityOk && versionOk
 
       if (allOk) {
-        node.resolved = node.resolved || pathFixed || null
-        node.integrity = node.integrity || integrity || null
+        metadataNode.resolved = metadataNode.resolved || pathFixed || null
+        metadataNode.integrity = metadataNode.integrity || integrity || null
       } else {
         // try to read off the package or node itself
         const {
           resolved,
           integrity,
-        } = Shrinkwrap.metaFromNode(node, this.path, this.resolveOptions)
-        node.resolved = node.resolved || resolved || null
-        node.integrity = node.integrity || integrity || null
+        } = Shrinkwrap.metaFromNode(
+          metadataNode,
+          this.path,
+          this.resolveOptions,
+          this.#realpath)
+        metadataNode.resolved = metadataNode.resolved || resolved || null
+        metadataNode.integrity = metadataNode.integrity || integrity || null
       }
     }
-    this.#awaitingUpdate.set(loc, node)
+    this.#awaitingUpdate.set(loc, metadataNode)
   }
 
   addEdge (edge) {
@@ -926,7 +966,7 @@ class Shrinkwrap {
     node.resolved = node.resolved ||
       consistentResolve(entry.resolved, this.path, node.path) || null
 
-    this.#awaitingUpdate.set(relpath(this.path, node.path), node)
+    this.#awaitingUpdate.set(this.#pathToLoc(node.path), node)
   }
 
   #updateWaitingNode (loc) {
@@ -935,7 +975,8 @@ class Shrinkwrap {
     this.data.packages[loc] = Shrinkwrap.metaFromNode(
       node,
       this.path,
-      this.resolveOptions)
+      this.resolveOptions,
+      this.#realpath)
   }
 
   commit () {
@@ -946,7 +987,8 @@ class Shrinkwrap {
       const root = Shrinkwrap.metaFromNode(
         this.tree.target,
         this.path,
-        this.resolveOptions)
+        this.resolveOptions,
+        this.#realpath)
       // record the canonical packageExtensions hash on the root entry so npm ci can detect stale extension state
       if (this.packageExtensionsHash) {
         root.packageExtensionsHash = this.packageExtensionsHash
@@ -964,7 +1006,7 @@ class Shrinkwrap {
         if (node === this.tree || node.isRoot || node.location === '') {
           continue
         }
-        const loc = relpath(this.path, node.path)
+        const loc = this.#pathToLoc(node.path)
         // Drop lockfile entries for extraneous nodes outside node_modules that
         // are direct fsChildren of the root (or detached link targets). These
         // are stale top-level entries: a workspace or file: dep removed from
@@ -978,7 +1020,8 @@ class Shrinkwrap {
         const meta = Shrinkwrap.metaFromNode(
           node,
           this.path,
-          this.resolveOptions)
+          this.resolveOptions,
+          this.#realpath)
         // Skip inert nodes — these are optional deps that failed to load
         // (e.g. 404 from a proxy registry that hasn't cached the package,
         // or incomplete manifest missing version field).
@@ -1084,7 +1127,7 @@ class Shrinkwrap {
     }
 
     if (node.isLink) {
-      lock.version = `file:${relpath(this.path, node.realpath)}`
+      lock.version = `file:${this.#pathToLoc(node.realpath)}`
     } else if (spec && (spec.type === 'file' || spec.type === 'remote')) {
       lock.version = spec.saveSpec
     } else if (spec && spec.type === 'git' || rSpec.type === 'git') {
@@ -1094,7 +1137,7 @@ class Shrinkwrap {
       if (spec.raw) {
         lock.from = spec.raw
       }
-    } else if (!node.isRoot &&
+    } else if (node !== this.tree &&
         node.package &&
         node.packageName &&
         node.packageName !== node.name) {
