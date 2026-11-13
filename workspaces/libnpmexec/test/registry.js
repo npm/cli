@@ -4,6 +4,7 @@ const { setup, createPkg, merge } = require('./fixtures/setup.js')
 const crypto = require('node:crypto')
 const { existsSync } = require('node:fs')
 const PackageJson = require('@npmcli/package-json')
+const pacote = require('pacote')
 
 t.test('run from registry - no local packages', async t => {
   const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
@@ -124,6 +125,103 @@ t.test('avoid install when exec from registry an available pkg', async t => {
   await exec({ args: ['@npmcli/create-index'] })
   t.match(await readOutput('@npmcli-create-index'), {
     value: 'packages-2.0.0',
+  })
+})
+
+t.test('reuse cached metadata for an exact version', async t => {
+  const { fixtures, package: mockPackage } = createPkg({ versions: ['1.0.0'] })
+  const { exec, path, registry, readOutput, rmOutput } = setup(t, { testdir: fixtures })
+
+  await mockPackage({ registry, path })
+  await exec({ args: ['@npmcli/create-index@1.0.0'] })
+  await rmOutput('@npmcli-create-index')
+
+  // A new exec call must use the cached packument and installed package,
+  // without another registry request.
+  await exec({ args: ['@npmcli/create-index@1.0.0'] })
+  t.match(await readOutput('@npmcli-create-index'), { value: 'packages-1.0.0' })
+
+  await rmOutput('@npmcli-create-index')
+  await exec({ args: ['@npmcli/create-index@1.0.0'], preferOffline: true })
+  t.match(await readOutput('@npmcli-create-index'), { value: 'packages-1.0.0' })
+})
+
+t.test('prefer-online revalidates an exact version', async t => {
+  const { fixtures, package: mockPackage } = createPkg({ versions: ['1.0.0'] })
+  const { exec, path, registry, readOutput, rmOutput } = setup(t, { testdir: fixtures })
+
+  await mockPackage({ registry, path })
+  await exec({ args: ['@npmcli/create-index@1.0.0'] })
+  await rmOutput('@npmcli-create-index')
+
+  await mockPackage({ registry, path, tarballs: [], times: 1 })
+  await exec({ args: ['@npmcli/create-index@1.0.0'], preferOnline: true })
+  t.match(await readOutput('@npmcli-create-index'), { value: 'packages-1.0.0' })
+})
+
+t.test('refresh cached metadata that lacks the exact version', async t => {
+  const { fixtures, pkgs, package: mockPackage } = createPkg({ versions: ['1.0.0', '2.0.0'] })
+  const { exec, path, registry, readOutput, rmOutput } = setup(t, { testdir: fixtures })
+
+  await mockPackage({
+    registry,
+    path,
+    manifest: registry.manifest({ name: '@npmcli/create-index', packuments: [pkgs['1.0.0']] }),
+    tarballs: ['1.0.0'],
+  })
+  await exec({ args: ['@npmcli/create-index@1.0.0'] })
+  await rmOutput('@npmcli-create-index')
+
+  await mockPackage({ registry, path, tarballs: ['2.0.0'] })
+  await exec({ args: ['@npmcli/create-index@2.0.0'] })
+  t.match(await readOutput('@npmcli-create-index'), { value: 'packages-2.0.0' })
+})
+
+t.test('offline does not refresh cached metadata that lacks the exact version', async t => {
+  const { fixtures, package: mockPackage } = createPkg({ versions: ['1.0.0'] })
+  const { exec, path, registry } = setup(t, { testdir: fixtures })
+
+  await mockPackage({ registry, path })
+  await exec({ args: ['@npmcli/create-index@1.0.0'] })
+  await t.rejects(exec({ args: ['@npmcli/create-index@2.0.0'], offline: true }), {
+    code: 'ETARGET',
+  })
+})
+
+for (const preferOnline of [false, true]) {
+  t.test(`registry errors are preserved, preferOnline=${preferOnline}`, async t => {
+    const { exec, registry } = setup(t)
+    registry.nock.get('/@npmcli%2fcreate-index').reply(500, { error: 'unavailable' })
+
+    await t.rejects(exec({
+      args: ['@npmcli/create-index@1.0.0'],
+      preferOnline,
+      fetchRetries: 0,
+    }), { code: 'E500' })
+  })
+}
+
+t.test('a missing exact version makes only one online lookup', async t => {
+  const { fixtures, package: mockPackage } = createPkg({ versions: ['1.0.0'] })
+  const { exec, path, registry } = setup(t, { testdir: fixtures })
+
+  await mockPackage({ registry, path, times: 1, tarballs: [] })
+  await t.rejects(exec({ args: ['@npmcli/create-index@2.0.0'] }), { code: 'ETARGET' })
+})
+
+t.test('a cached policy refusal is preserved without an online retry', async t => {
+  const { exec, path, registry } = setup(t)
+  const manifest = registry.manifest({ name: '@npmcli/create-index', versions: ['1.0.0'] })
+  manifest.policyRestrictions = { versions: { '1.0.0': true }, message: 'not allowed' }
+  registry.nock.get('/@npmcli%2fcreate-index').reply(200, manifest)
+  await pacote.packument('@npmcli/create-index', {
+    cache: resolve(path, 'cache'),
+    registry: registry.origin,
+  })
+
+  await t.rejects(exec({ args: ['@npmcli/create-index@1.0.0'] }), {
+    code: 'E403',
+    message: /not allowed/,
   })
 })
 
@@ -282,7 +380,6 @@ t.test('packages with different versions in the global tree', async t => {
   await binLinks()
 
   await pkgA2.package({ registry, path, times: 2, tarballs: ['2.0.0'] })
-  await pkgA1.package({ registry, path, times: 1, tarballs: [] })
 
   await exec({
     args: ['@npmcli/A@2.0.0'],
