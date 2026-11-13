@@ -103,6 +103,30 @@ t.test('replace message/stack sensitive info', async t => {
   t.matchSnapshot(errorMessage(er))
 })
 
+t.test('advisory mismatches show redacted expected and actual identities', async t => {
+  const { errorMessage } = await loadMockNpm(t, { command: 'audit' })
+  for (const code of ['ECACHEMISMATCH', 'EPACKUMENTMISMATCH']) {
+    const message = 'loading from incorrect advisory data'
+    const error = Object.assign(new Error(message), {
+      code,
+      expected: 'https://user:password@registry.example/expected',
+      actual: 'https://user:password@registry.example/actual',
+    })
+    const result = errorMessage(error)
+    t.same(result.summary, [['', message]], `${code} keeps the original message`)
+    t.same(result.detail, [
+      ['', 'Expected: https://user:***@registry.example/expected'],
+      ['', 'Actual: https://user:***@registry.example/actual'],
+    ], `${code} shows both identities without credentials`)
+
+    error.actual = undefined
+    t.same(errorMessage(error).detail, [
+      ['', 'Expected: https://user:***@registry.example/expected'],
+      ['', 'Actual: undefined'],
+    ], `${code} identifies a missing value`)
+  }
+})
+
 t.test('bad engine without config loaded', async t => {
   const { errorMessage } = await loadMockNpm(t, { load: false })
   const path = '/some/path'
