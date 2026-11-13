@@ -39,6 +39,14 @@ package literally named like a subcommand must use the explicit form, e.g.
     writes the unified diff to `<patches-dir>/<name>@<version>.patch`, adds the
     entry to `patchedDependencies`, and updates `package-lock.json`.
 
+* `npm patch update <pkg>[@<old-version>]`
+
+    Rebases an existing patch onto a new version of `<pkg>`.
+    The new version is the highest installed version that matches the patch's selector, or the one given with `--to <new-version>`.
+    If the patch applies cleanly, npm writes the new patch file, updates `patchedDependencies` and `package-lock.json`, and leaves `node_modules` untouched.
+    If it conflicts, npm prints a directory to resolve the conflicts in; run `npm patch commit <edit-dir>` on it when done.
+    This subcommand requires `git`.
+
 * `npm patch ls`
 
     Lists registered patches and how many installed nodes each one matches.
