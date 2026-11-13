@@ -1651,3 +1651,101 @@ t.test('update: an alias missing from the lockfile rebases the declared package'
   t.match(fs.readFileSync(path.join(npm.prefix, 'patches', `${ALIAS}@2.0.0.patch`), 'utf8'), /\+extra/,
     'rebased against the declared alias target')
 })
+
+t.test('add: an uppercase NPM: alias declaration resolves against the real package', async t => {
+  const { npm, joinedOutput, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: {
+      'dep-tarball': depTarball,
+      'package.json': JSON.stringify({
+        name: 'root-project', version: '1.0.0', dependencies: { [ALIAS]: `NPM:${DEP_NAME}@^${DEP_VERSION}` },
+      }),
+    },
+  })
+  await setupDep(npm, registry)
+  await npm.exec('patch', ['add', `${ALIAS}@^1.0.0`])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  t.equal(readJson(path.join(editDir, 'package.json')).name, DEP_NAME, 'extracted the real package')
+})
+
+t.test('add: an undeclared installed alias fetches another version from the real package', async t => {
+  const { npm, joinedOutput, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: {
+      'dep-tarball': depTarball,
+      'package.json': JSON.stringify({ name: 'root-project', version: '1.0.0' }),
+      node_modules: { [ALIAS]: { 'package.json': JSON.stringify({ name: DEP_NAME, version: '0.9.0' }) } },
+    },
+  })
+  await setupDep(npm, registry)
+  await npm.exec('patch', ['add', `${ALIAS}@${DEP_VERSION}`])
+  const editDir = joinedOutput().match(/directory: (.+)/)[1].trim()
+  t.equal(readJson(path.join(editDir, 'package.json')).name, DEP_NAME, 'extracted the real package')
+})
+
+t.test('update: an alias at an unrelated version does not block the rebase', async t => {
+  const name = 'upd-unrelated-alias'
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        dependencies: { [name]: '^1.0.0', host: '1.0.0' },
+        patchedDependencies: { [`${name}@1.0.0`]: `patches/${name}@1.0.0.patch` },
+      }),
+      patches: { [`${name}@1.0.0.patch`]: '--- /dev/null\t\n+++ b/EXTRA.txt\t\n@@ -0,0 +1 @@\n+extra\n' },
+      'package-lock.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': { name: 'root-project', version: '1.0.0', dependencies: { [name]: '^1.0.0', host: '1.0.0' } },
+          [`node_modules/${name}`]: { version: '1.1.0' },
+          'node_modules/host': { version: '1.0.0', dependencies: { [name]: 'npm:bar@3.0.0' } },
+          [`node_modules/host/node_modules/${name}`]: { name: 'bar', version: '3.0.0' },
+        },
+      }),
+    },
+  })
+  await setupVersions(npm, registry, name, { '1.0.0': 'x\n', '1.1.0': 'x\n' })
+  npm.config.set('to', '1.1.0')
+  await npm.exec('patch', ['update', name])
+  t.match(fs.readFileSync(path.join(npm.prefix, 'patches', `${name}@1.1.0.patch`), 'utf8'), /\+extra/,
+    'rebased against the real package')
+})
+
+t.test('update: unlocked base and target versions rebase the package locked at another version', async t => {
+  const real = 'upd-alias-other-version'
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        patchedDependencies: { [`${ALIAS}@1.0.0`]: `patches/${ALIAS}@1.0.0.patch` },
+      }),
+      patches: { [`${ALIAS}@1.0.0.patch`]: '--- /dev/null\t\n+++ b/EXTRA.txt\t\n@@ -0,0 +1 @@\n+extra\n' },
+      'package-lock.json': JSON.stringify({
+        name: 'root-project',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': { name: 'root-project', version: '1.0.0' },
+          [`node_modules/${ALIAS}`]: { name: real, version: '1.5.0' },
+        },
+      }),
+    },
+  })
+  await setupVersions(npm, registry, real, { '1.0.0': 'x\n', '2.0.0': 'x\n' })
+  npm.config.set('to', '2.0.0')
+  await npm.exec('patch', ['update', ALIAS])
+  t.match(fs.readFileSync(path.join(npm.prefix, 'patches', `${ALIAS}@2.0.0.patch`), 'utf8'), /\+extra/,
+    'rebased against the locked alias target')
+})
