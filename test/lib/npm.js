@@ -677,6 +677,27 @@ t.test('exec edge cases', async t => {
   })
 })
 
+t.test('devEngines', async t => {
+  const prefixDir = {
+    'package.json': JSON.stringify({
+      name: 'test-package',
+      version: '1.0.0',
+      devEngines: { packageManager: { name: 'pnpm' } },
+    }),
+  }
+
+  t.test('is not checked by a command that does not opt in', async t => {
+    const { npm, joinedFullOutput } = await loadMockNpm(t, { prefixDir })
+    await npm.exec('prefix', [])
+    t.notMatch(joinedFullOutput(), 'EBADDEVENGINES')
+  })
+
+  t.test('is checked by a command that opts in', async t => {
+    const { npm } = await loadMockNpm(t, { prefixDir })
+    await t.rejects(npm.exec('run', []), { code: 'EBADDEVENGINES' })
+  })
+})
+
 t.test('usage', async t => {
   t.test('with browser', async t => {
     const { npm } = await loadMockNpm(t, { globals: { process: { platform: 'posix' } } })
