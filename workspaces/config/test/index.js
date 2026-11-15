@@ -2468,3 +2468,59 @@ t.test('global-ignore-file follows an explicit override', async t => {
     'cli override wins over computed default'
   )
 })
+
+t.test('save does not make global or project config world-writable', async t => {
+  const path = t.testdir({
+    project: { 'package.json': '{}' },
+  })
+  const writes = {}
+  const chmods = {}
+  const SaveConfig = t.mock('../', {
+    ...fsMocks,
+    'node:fs/promises': {
+      ...mockFsPromises,
+      writeFile: async (file, data, opts) => {
+        writes[file] = opts
+        return fs.promises.writeFile(file, data, opts)
+      },
+      chmod: async (file, mode) => {
+        chmods[file] = mode
+        return fs.promises.chmod(file, mode)
+      },
+    },
+  })
+  const files = {
+    user: resolve(path, 'user-npmrc'),
+    global: resolve(path, 'global-npmrc'),
+    project: resolve(path, 'project/.npmrc'),
+  }
+  const config = new SaveConfig({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [
+      process.execPath, __filename,
+      '--userconfig', files.user,
+      '--globalconfig', files.global,
+      '--prefix', resolve(path, 'project'),
+    ],
+    cwd: resolve(path, 'project'),
+    definitions,
+    shorthands,
+    flatten,
+  })
+  await config.load()
+  for (const where of ['user', 'global', 'project']) {
+    config.set('foo', 'bar', where)
+    await config.save(where)
+  }
+
+  t.equal(writes[files.user].mode, 0o600, 'user config is created 0600')
+  t.equal(chmods[files.user], 0o600, 'user config is forced to 0600')
+  for (const where of ['global', 'project']) {
+    t.equal(writes[files[where]].mode, 0o666, `${where} config is created subject to the umask`)
+    t.notOk(files[where] in chmods, `${where} config is not chmodded past the umask`)
+    if (process.platform !== 'win32') {
+      t.equal(fs.statSync(files[where]).mode & 0o002, 0, `${where} config is not world writable`)
+    }
+  }
+})
