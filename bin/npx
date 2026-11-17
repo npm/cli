@@ -10,17 +10,21 @@ case "$OSTYPE" in
   msys*|cygwin*)
     set -o igncr 2>/dev/null # cygwin encoding fix
     basedir=${0%/*}
-    [ "$basedir" = "$0" ] && basedir=.
-    case "$OSTYPE" in cygwin*) basedir=$(cygpath -w "$basedir");; esac
-    NODE_EXE="$basedir/node.exe"
-    [ -x "$NODE_EXE" ] || NODE_EXE="$basedir/node"
-    [ -x "$NODE_EXE" ] || NODE_EXE=node
-    "$NODE_EXE" "$basedir/node_modules/npm/bin/npm-shim.js" npx "$@"
-    exit $?
+    # $0 has no directory with `bash npx`, and a Cygwin login shell has changed
+    # to $HOME by then, so the code below finds npm through node instead.
+    if [ "$basedir" != "$0" ] && [ -f "$basedir/node_modules/npm/bin/npm-shim.js" ]; then
+      case "$OSTYPE" in cygwin*) basedir=$(cygpath -w "$basedir");; esac
+      NODE_EXE="$basedir/node.exe"
+      [ -x "$NODE_EXE" ] || NODE_EXE="$basedir/node"
+      [ -x "$NODE_EXE" ] || NODE_EXE=node
+      # exec, not exit: exit makes a login shell (bash -l) run ~/.bash_logout
+      exec "$NODE_EXE" "$basedir/node_modules/npm/bin/npm-shim.js" npx "$@"
+    fi
     ;;
 esac
 
-# Everything else, e.g. WSL running the Windows install: find the prefix first.
+# Everything else (WSL running the Windows install, or no directory in $0):
+# find the prefix first.
 
 (set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
 
