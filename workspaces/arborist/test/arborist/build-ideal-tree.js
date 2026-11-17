@@ -4912,6 +4912,44 @@ t.test('add does not leave invalid peerOptional edges when save=false', async t 
   }, 'lockfile-mutating add should reject instead of keeping an invalid peerOptional edge')
 })
 
+t.test('keeps a required dependency when its peer places a replacement version', async t => {
+  const registry = createRegistry(t, false)
+  const consumerManifest = registry.manifest({
+    name: 'consumer',
+    packuments: [{ version: '1.0.0', dependencies: { host: '^1.0.0', plugin: '^1.0.0' } }],
+  })
+  await registry.package({ manifest: consumerManifest })
+
+  const hostManifest = registry.manifest({
+    name: 'host',
+    packuments: [
+      { version: '1.0.0', dependencies: { plugin: '^1.0.0' } },
+      { version: '2.0.0' },
+    ],
+  })
+  await registry.package({ manifest: hostManifest, times: 2 })
+
+  const pluginManifest = registry.manifest({
+    name: 'plugin',
+    packuments: [
+      { version: '1.0.0', peerDependencies: { host: '^1.0.0' } },
+      { version: '1.1.0', peerDependencies: { host: '^2.0.0' } },
+    ],
+  })
+  await registry.package({ manifest: pluginManifest })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({ dependencies: { consumer: '1.0.0' } }),
+  })
+  const tree = await buildIdeal(path)
+  const consumer = tree.children.get('consumer')
+  const plugin = consumer.edgesOut.get('plugin')
+
+  t.match(consumer.edgesOut.get('host'), { valid: true, to: { version: '1.0.0' } }, 'consumer keeps its required host')
+  t.match(plugin, { valid: true, to: { version: '1.1.0' } }, 'consumer keeps its plugin')
+  t.match(plugin.to.edgesOut.get('host'), { valid: true, to: { version: '2.0.0' } }, 'plugin keeps its compatible peer')
+})
+
 t.test('circular peer back-off does not crash when node is detached mid-resolution (#5222)', async t => {
   // host (installed) has optional peer plugin@^1.0.0. Adding plugin resolves plugin@2.0.0,
   // whose peer set replaces it with plugin@1.0.0 to satisfy host, detaching plugin@2 mid-loop.
