@@ -139,6 +139,121 @@ const newArb = (opt) => new Arborist({
 
 const reify = (path, opt) => newArb({ path, ...(opt || {}) }).reify(opt)
 
+t.test('registry aliases retain target scope during extraction', async t => {
+  for (const installStrategy of ['hoisted', 'linked']) {
+    for (const consumerType of ['none', 'dependency', 'peer', 'optional peer']) {
+      await t.test(`${installStrategy}: ${consumerType}`, async t => {
+        const scopedRegistry = 'http://scoped.registry.test/npm/'
+        const defaultRegistry = 'http://default.registry.test/'
+        const targetName = '@private/target'
+        const targetUrl = 'http://scoped.registry.test/tarballs/target-1.1.1.tgz'
+        const widgetUrl = `${defaultRegistry}widget/-/widget-1.1.1.tgz`
+        const pkg = {
+          name: 'project',
+          version: '1.0.0',
+          dependencies: {
+            slot: `npm:${targetName}@1.1.1`,
+            ...(consumerType === 'none' ? {} : { widget: '1.1.1' }),
+          },
+        }
+        const path = t.testdir({
+          'package.json': JSON.stringify(pkg),
+          'package-lock.json': JSON.stringify({
+            name: pkg.name,
+            version: pkg.version,
+            lockfileVersion: 3,
+            packages: {
+              '': pkg,
+              'node_modules/slot': {
+                name: '@untrusted/metadata',
+                version: '1.1.1',
+                resolved: targetUrl,
+              },
+              ...(consumerType === 'none' ? {} : {
+                'node_modules/widget': {
+                  version: '1.1.1',
+                  resolved: widgetUrl,
+                  ...(consumerType === 'dependency'
+                    ? { dependencies: { slot: '^1.0.0' } }
+                    : { peerDependencies: { slot: '^1.0.0' } }),
+                  ...(consumerType === 'optional peer'
+                    ? { peerDependenciesMeta: { slot: { optional: true } } }
+                    : {}),
+                },
+              }),
+            },
+          }),
+        })
+        const tarball = fs.readFileSync(resolve(__dirname,
+          '../fixtures/registry-mocks/content/abbrev/-/abbrev-1.1.1.tgz'))
+        tnock(t, 'http://scoped.registry.test')
+          .get('/tarballs/target-1.1.1.tgz')
+          .matchHeader('authorization', 'Bearer scoped-test-token')
+          .reply(200, tarball)
+        if (consumerType !== 'none') {
+          tnock(t, defaultRegistry)
+            .get('/widget/-/widget-1.1.1.tgz')
+            .reply(200, tarball)
+        }
+        const arb = new Arborist({
+          path,
+          cache: resolve(path, 'cache'),
+          registry: defaultRegistry,
+          '@private:registry': scopedRegistry,
+          '//scoped.registry.test/npm/:_authToken': 'scoped-test-token',
+          audit: false,
+          ignoreScripts: true,
+          installStrategy,
+        })
+        await arb.reify()
+        t.equal(
+          JSON.parse(fs.readFileSync(resolve(path, 'node_modules/slot/package.json'))).name,
+          'abbrev',
+          'installs at the alias slot without trusting the tarball package name'
+        )
+      })
+    }
+  }
+  await t.test('global alias install', async t => {
+    const path = t.testdir()
+    const targetName = '@private/target'
+    const targetUrl = 'http://scoped.registry.test/tarballs/target-1.1.1.tgz'
+    tnock(t, 'http://scoped.registry.test')
+      .get('/npm/@private%2ftarget')
+      .matchHeader('authorization', 'Bearer scoped-test-token')
+      .reply(200, {
+        name: targetName,
+        'dist-tags': { latest: '1.1.1' },
+        versions: {
+          '1.1.1': {
+            name: targetName,
+            version: '1.1.1',
+            dist: { tarball: targetUrl },
+          },
+        },
+      })
+      .get('/tarballs/target-1.1.1.tgz')
+      .matchHeader('authorization', 'Bearer scoped-test-token')
+      .reply(200, fs.readFileSync(resolve(__dirname,
+        '../fixtures/registry-mocks/content/abbrev/-/abbrev-1.1.1.tgz')))
+    await new Arborist({
+      path,
+      cache: resolve(path, 'cache'),
+      global: true,
+      registry: 'http://default.registry.test/',
+      '@private:registry': 'http://scoped.registry.test/npm/',
+      '//scoped.registry.test/npm/:_authToken': 'scoped-test-token',
+      audit: false,
+      ignoreScripts: true,
+    }).reify({ add: [`slot@npm:${targetName}@1.1.1`] })
+    t.equal(
+      JSON.parse(fs.readFileSync(resolve(path, 'node_modules/slot/package.json'))).name,
+      'abbrev',
+      'global extraction also follows the alias target scope'
+    )
+  })
+})
+
 t.test('bundled file dep with same name as other dep', async t => {
   const tree = await printReified(fixture(t, 'conflict-bundle-file-dep'))
   t.matchSnapshot(tree)
