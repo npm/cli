@@ -257,6 +257,30 @@ t.test('eacces path that only shares a string prefix with the cache', async t =>
   })
 })
 
+t.test('eacces/eperm with a filesystem-root cache', t => {
+  const { errorMessage } = tmock(t, '{LIB}/utils/error-message.js')
+  const cache = resolve('/')
+  const npm = {
+    loaded: true,
+    config: { get: () => cache },
+  }
+
+  for (const code of ['EACCES', 'EPERM']) {
+    for (const field of ['path', 'dest']) {
+      const er = Object.assign(new Error('whoopsie'), {
+        code,
+        [field]: resolve(cache, '_cacache', 'content'),
+        stack: 'dummy stack trace',
+      })
+      const { summary, detail } = errorMessage(er, npm)
+      const out = [...summary, ...detail].map(row => row.map(String).join(' ')).join('\n')
+      t.match(out, 'root-owned files', `${code} ${field} is inside the root cache`)
+      t.notMatch(out, 'The operation was rejected by your operating system.')
+    }
+  }
+  t.end()
+})
+
 t.test('json parse', t => {
   mockGlobals(t, { 'process.argv': ['arg', 'v'] })
 
