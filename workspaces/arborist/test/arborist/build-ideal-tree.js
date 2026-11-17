@@ -5506,3 +5506,50 @@ t.test('unresolvable optional dep drops its optional peer dependent instead of E
   t.ok(tree.children.get('react').inert, 'failed react is inert')
   t.ok(tree.children.get('react-dom').inert, 'react-dom is inert with its missing peer')
 })
+
+t.test('optional peer subtree with unsatisfiable transitive peer does not loop forever (#10309)', async t => {
+  const registry = createRegistry(t, false)
+
+  const bManifest = registry.manifest({
+    name: 'b',
+    packuments: [{ version: '1.0.0', optionalDependencies: { o: '1.0.0' } }],
+  })
+  await registry.package({ manifest: bManifest })
+
+  const oManifest = registry.manifest({
+    name: 'o',
+    packuments: [{ version: '1.0.0', peerDependencies: { h: '1.0.0' } }],
+  })
+  await registry.package({ manifest: oManifest })
+
+  const hManifest = registry.manifest({
+    name: 'h',
+    packuments: [{
+      version: '1.0.0',
+      dependencies: { k: '1.0.0' },
+      peerDependencies: { s: '>=1.0.0 <=2.0.0' },
+    }],
+  })
+  await registry.package({ manifest: hManifest })
+
+  const kManifest = registry.manifest({
+    name: 'k',
+    packuments: [{ version: '1.0.0', peerDependencies: { s: '2.0.0' } }],
+  })
+  await registry.package({ manifest: kManifest })
+
+  const sManifest = registry.manifest({ name: 's', versions: ['1.0.0'] })
+  // s is fetched once for h's peer range, once for k's peer, and again
+  // each time the peer set is re-evaluated while the tree resolves
+  await registry.package({ manifest: sManifest, times: 7 })
+
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: { b: '1.0.0' },
+    }),
+  })
+
+  const tree = await buildIdeal(path)
+  t.match(tree.children.get('b'), { version: '1.0.0' }, 'b is installed')
+  t.ok(tree.children.get('b').children.get('o').inert, 'failed optional subtree is inert')
+})
