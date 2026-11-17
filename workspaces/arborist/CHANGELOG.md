@@ -1,5 +1,14 @@
 # Changelog
 
+## [9.9.4](https://github.com/npm/cli/compare/arborist-v9.9.3...arborist-v9.9.4) (2026-11-17)
+### Bug Fixes
+* [`e64a7b7`](https://github.com/npm/cli/commit/e64a7b7eee3463c9be3595e6cc2b49d1ae50be68) [#10284](https://github.com/npm/cli/pull/10284) arborist: skip named-edge refresh work for empty leaves (#10284) (@github-actions[bot], @jeffwidman, @Copilot)
+* [`8c37dd4`](https://github.com/npm/cli/commit/8c37dd4c14c8cd42818ab4fdf2ecd4574cf0276d) [#10283](https://github.com/npm/cli/pull/10283) arborist: skip normalization for canonical ASCII map keys (#10283) (@github-actions[bot], @jeffwidman, @Copilot)
+* [`85bc51e`](https://github.com/npm/cli/commit/85bc51e01817653253c16e372aead143b822797e) [#10253](https://github.com/npm/cli/pull/10253) arborist: use a set for bundled-dependency traversal (#10253) (@github-actions[bot], @jeffwidman, @Copilot)
+* [`05830bc`](https://github.com/npm/cli/commit/05830bcc435fd47bae026f91bc24f1d194c615ad) [#10266](https://github.com/npm/cli/pull/10266) arborist: derive linked bin cleanup paths through bin-links (#10266) (@github-actions[bot], @martinrrm, @Copilot)
+* [`e9393ed`](https://github.com/npm/cli/commit/e9393edc93bea924430c65e8eaec7df1c93077a4) [#10248](https://github.com/npm/cli/pull/10248) arborist: skip bundle checks without an applicable override (v11 backport) (#10248) (@nkolev92, @jeffwidman, @Copilot)
+* [`aa678d1`](https://github.com/npm/cli/commit/aa678d1d231b0b89cd656ce962e9b31b33bef577) [#10245](https://github.com/npm/cli/pull/10245) skip disconnected orphans in install script checks (#10245) (@github-actions[bot], @JamieMagee, @nkolev92, @Copilot)
+
 ## [9.9.3](https://github.com/npm/cli/compare/arborist-v9.9.2...arborist-v9.9.3) (2026-10-14)
 ### Bug Fixes
 * [`1c7b661`](https://github.com/npm/cli/commit/1c7b6618d003eaa272aca7ac7f306ab252564697) [#10059](https://github.com/npm/cli/pull/10059) write registry allowScripts keys under install-strategy=linked (#10059) (@github-actions[bot], @manzoorwanijk)
