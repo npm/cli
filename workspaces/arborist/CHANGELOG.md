@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.0.6](https://github.com/npm/cli/compare/arborist-v8.0.5...arborist-v8.0.6) (2026-11-17)
+### Bug Fixes
+* [`8b380e0`](https://github.com/npm/cli/commit/8b380e08a3619b55438af168e74ba8cadda829d1) [#10218](https://github.com/npm/cli/pull/10218) arborist: preserve alias registry credentials (v10 backport) (#10218) (@martinrrm)
+
 ## [8.0.5](https://github.com/npm/cli/compare/arborist-v8.0.4...arborist-v8.0.5) (2026-03-27)
 ### Bug Fixes
 * [`8aa9c82`](https://github.com/npm/cli/commit/8aa9c822c14f34c674880df2150e3d3d6bb3a901) [#9152](https://github.com/npm/cli/pull/9152) eagerly require promise-retry to survive self-upgrade (@owlstronaut)
