@@ -1122,7 +1122,8 @@ Unless the user has set the [`engine-strict` config](/using-npm/config#engine-st
 
 ### os
 
-You can specify which operating systems your module will run on:
+You can specify which operating systems your module will run on.
+The value may be a string or an array of strings:
 
 ```json
 {
@@ -1130,6 +1131,12 @@ You can specify which operating systems your module will run on:
     "darwin",
     "linux"
   ]
+}
+```
+
+```json
+{
+  "os": "linux"
 }
 ```
 
@@ -1150,6 +1157,7 @@ It is allowed to both block and allow an item, although there isn't any good rea
 ### cpu
 
 If your code only runs on certain cpu architectures, you can specify which ones.
+Like `os`, the value may be a string or an array of strings:
 
 ```json
 {
@@ -1157,6 +1165,12 @@ If your code only runs on certain cpu architectures, you can specify which ones.
     "x64",
     "ia32"
   ]
+}
+```
+
+```json
+{
+  "cpu": "x64"
 }
 ```
 
@@ -1175,8 +1189,20 @@ The host architecture is determined by `process.arch`
 
 ### libc
 
-If your code only runs or builds in certain versions of libc, you can specify which ones.
-This field only applies if `os` is `linux`.
+If your code only runs or builds against certain libc implementations, you can specify which ones.
+Like `os` and `cpu`, the value may be a string or an array of strings.
+This field only applies on Linux hosts.
+
+```json
+{
+  "os": [
+    "linux"
+  ],
+  "libc": [
+    "glibc"
+  ]
+}
+```
 
 ```json
 {
