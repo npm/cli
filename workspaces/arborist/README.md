@@ -164,9 +164,8 @@ to a package folder, which may have children in `node_modules`.
     Setting `node.parent` will automatically update `node.location` and all
     graph edges affected by the move.
 
-* `node.meta` A `Shrinkwrap` object which looks up `resolved` and
-  `integrity` values for all modules in this tree.  Only relevant on `root`
-  nodes.
+* `node.meta` A `Shrinkwrap` object used to read and update lockfile metadata,
+  including `resolved` and `integrity` values.  Only relevant on `root` nodes.
 
 * `node.children` Map of packages located in the node's `node_modules`
   folder.
