@@ -407,7 +407,8 @@ class PlaceDep {
     const invalidDeps = new Set([...node.edgesOut.values()]
       .filter(e => e.to && !e.valid).map(e => e.to))
     for (const dep of oldDeps) {
-      const set = gatherDepSet([dep], e => e.to !== dep && e.valid)
+      // An old dependency may now peer on the replacement itself.
+      const set = gatherDepSet([dep], e => e.to !== dep && e.to !== node && e.valid)
       for (const dep of set) {
         invalidDeps.add(dep)
       }
