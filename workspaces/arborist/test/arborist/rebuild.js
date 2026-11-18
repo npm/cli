@@ -904,6 +904,96 @@ t.test('only rebuild for workspace', async t => {
   t.throws(() => fs.readFileSync(bdepTxt, 'utf8'), { code: 'ENOENT' }, 'bdep not rebuilt')
 })
 
+t.test('workspace bin hoisting collision', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'my-workspaces-powered-project',
+      workspaces: ['packages/*'],
+    }),
+    node_modules: {
+      'dep-1': {
+        'package.json': JSON.stringify({
+          name: 'dep-1',
+          version: '1.0.0',
+          bin: './bin.js',
+        }),
+        'bin.js': '#!/usr/bin/env node\\nconsole.log("dep-1")',
+      },
+      'dep-2': {
+        'package.json': JSON.stringify({
+          name: 'dep-2',
+          version: '1.0.0',
+          bin: { 'my-bin': './bin.js' },
+        }),
+        'bin.js': '#!/usr/bin/env node\\nconsole.log("dep-2")',
+      },
+      'dep-3': {
+        'package.json': JSON.stringify({
+          name: 'dep-3',
+          version: '1.0.0',
+          bin: { 'multi-bin-1': './bin1.js', 'multi-bin-2': './bin2.js' },
+        }),
+        'bin1.js': '#!/usr/bin/env node\\n',
+        'bin2.js': '#!/usr/bin/env node\\n',
+      },
+      'dep-5': {
+        'package.json': JSON.stringify({
+          name: 'dep-5',
+          version: '1.0.0',
+          bin: ['invalid'],
+        }),
+      },
+      workspace_a: t.fixture('symlink', '../packages/workspace_a'),
+      workspace_b: t.fixture('symlink', '../packages/workspace_b'),
+      workspace_c: t.fixture('symlink', '../packages/workspace_c'),
+    },
+    packages: {
+      workspace_a: {
+        'package.json': JSON.stringify({
+          name: 'workspace_a',
+          version: '1.0.0',
+          dependencies: { 'dep-1': '1.0.0', 'dep-5': '1.0.0' },
+        }),
+      },
+      workspace_b: {
+        'package.json': JSON.stringify({
+          name: 'workspace_b',
+          version: '1.0.0',
+          dependencies: { 'dep-2': '1.0.0', 'dep-3': '1.0.0' },
+        }),
+      },
+      workspace_c: {
+        'package.json': JSON.stringify({
+          name: 'workspace_c',
+          version: '1.0.0',
+          dependencies: { 'dep-4': '1.0.0' },
+        }),
+        node_modules: {
+          'dep-4': {
+            'package.json': JSON.stringify({
+              name: 'dep-4',
+              version: '1.0.0',
+              bin: './bin.js',
+            }),
+            'bin.js': '#!/usr/bin/env node\\n',
+          },
+        },
+      },
+    },
+  })
+
+  const arb = newArb({ path, foregroundScripts: true })
+  await arb.rebuild()
+
+  const checkFile = p => fs.statSync(resolve(path, p)).isFile()
+
+  t.ok(checkFile('packages/workspace_a/node_modules/.bin/dep-1'), 'workspace_a local bin created')
+  t.ok(checkFile('packages/workspace_b/node_modules/.bin/my-bin'), 'workspace_b local bin created')
+  t.ok(checkFile('packages/workspace_b/node_modules/.bin/multi-bin-1'), 'workspace_b multi-bin 1 created')
+  t.ok(checkFile('packages/workspace_b/node_modules/.bin/multi-bin-2'), 'workspace_b multi-bin 2 created')
+  t.ok(checkFile('packages/workspace_c/node_modules/.bin/dep-4'), 'workspace_c nested bin created via linkAllBins')
+})
+
 t.test('no workspaces', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
