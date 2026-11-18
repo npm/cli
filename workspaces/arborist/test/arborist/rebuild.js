@@ -20,6 +20,10 @@ new MockRegistry({
 
 const isWindows = process.platform === 'win32'
 
+const binTarget = (path, name) => isWindows
+  ? fs.readFileSync(resolve(path, 'node_modules/.bin', `${name}.cmd`), 'utf8')
+  : fs.readlinkSync(resolve(path, 'node_modules/.bin', name))
+
 // Most rebuild tests pre-date the allowScripts gate and assert that
 // install scripts run. Bypass the default-deny in this suite by
 // default; individual tests that want to assert the gate's behaviour
@@ -58,6 +62,105 @@ t.test('rebuild bin links only for specified node', async t => {
   })
   t.equal(fs.statSync(semver).isFile(), true, 'semver bin linked')
   t.throws(() => fs.statSync(mkdirp), 'mkdirp bin not linked')
+})
+
+t.test('direct dependencies win root bin collisions', async t => {
+  const pkg = (name, bin = 'shared') => ({
+    'package.json': JSON.stringify({
+      name,
+      version: '1.0.0',
+      bin: { shared: bin },
+    }),
+    [bin]: '#!/usr/bin/env node\n',
+  })
+
+  t.test('direct aliases take precedence over hoisted transitive dependencies', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'direct-alias-root',
+        dependencies: {
+          parent: '1.0.0',
+          'z-direct': 'npm:direct-provider@1.0.0',
+        },
+      }),
+      node_modules: {
+        'a-transitive': pkg('a-transitive'),
+        parent: {
+          'package.json': JSON.stringify({
+            name: 'parent',
+            version: '1.0.0',
+            dependencies: { 'a-transitive': '1.0.0' },
+          }),
+        },
+        'z-direct': pkg('direct-provider'),
+      },
+    })
+
+    await newArb({ path }).rebuild()
+    t.match(binTarget(path, 'shared'), /z-direct/, 'links the direct alias bin')
+  })
+
+  t.test('workspace-root direct dependencies take precedence', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'workspace-root',
+        workspaces: ['packages/*'],
+      }),
+      node_modules: {
+        'a-transitive': pkg('a-transitive'),
+        parent: {
+          'package.json': JSON.stringify({
+            name: 'parent',
+            version: '1.0.0',
+            dependencies: { 'a-transitive': '1.0.0' },
+          }),
+        },
+        workspace: t.fixture('symlink', '../packages/workspace'),
+        'z-direct': pkg('z-direct'),
+      },
+      packages: {
+        workspace: {
+          'package.json': JSON.stringify({
+            name: 'workspace',
+            version: '1.0.0',
+            dependencies: {
+              parent: '1.0.0',
+              'z-direct': '1.0.0',
+            },
+          }),
+        },
+      },
+    })
+
+    await newArb({ path }).rebuild()
+    t.match(binTarget(path, 'shared'), /z-direct/, 'links the workspace direct bin')
+  })
+
+  t.test('equally transitive dependencies retain deterministic path ordering', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'transitive-root',
+        dependencies: { parent: '1.0.0' },
+      }),
+      node_modules: {
+        'a-provider': pkg('a-provider'),
+        parent: {
+          'package.json': JSON.stringify({
+            name: 'parent',
+            version: '1.0.0',
+            dependencies: {
+              'a-provider': '1.0.0',
+              'z-provider': '1.0.0',
+            },
+          }),
+        },
+        'z-provider': pkg('z-provider'),
+      },
+    })
+
+    await newArb({ path }).rebuild()
+    t.match(binTarget(path, 'shared'), /a-provider/, 'uses path order as a stable fallback')
+  })
 })
 
 t.test('rebuild no matching nodes', async t => {

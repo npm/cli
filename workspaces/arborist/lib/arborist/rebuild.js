@@ -15,6 +15,8 @@ const { resolve, delimiter } = require('node:path')
 const { isScriptAllowed } = require('../script-allowed.js')
 
 const boolEnv = b => b ? '1' : ''
+const isDirectDependency = node => [...node.edgesIn]
+  .some(edge => edge.from.isProjectRoot || edge.from.isWorkspace)
 const sortNodes = (a, b) => (a.depth - b.depth) || localeCompare(a.path, b.path)
 
 const _checkBins = Symbol.for('checkBins')
@@ -391,9 +393,12 @@ module.exports = cls => class Builder extends cls {
 
     const timeEnd = time.start('build:link')
     const promises = []
-    // sort the queue by node path, so that the module-local collision
-    // detector in bin-links will always resolve the same way.
-    for (const node of queue.sort(sortNodes)) {
+    const directDependencies = new Set(queue.filter(isDirectDependency))
+    // Direct dependencies must claim colliding bins before transitive ones.
+    // Depth and path retain a deterministic fallback within each group.
+    queue.sort((a, b) =>
+      (directDependencies.has(b) - directDependencies.has(a)) || sortNodes(a, b))
+    for (const node of queue) {
       // TODO these run before they're awaited
       promises.push(this.#createBinLinks(node))
     }
