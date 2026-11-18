@@ -178,6 +178,36 @@ t.test('exec commands', async t => {
     t.strictSame(events, [], 'no root lifecycle scripts run when --ignore-scripts is set')
   })
 
+  await t.test('reports blocked install scripts when root prepare fails', async t => {
+    const dependency = { name: 'abbrev', version: '1.0.0', scripts: { postinstall: 'echo dependency' } }
+    const failure = new Error('prepare failed')
+    const { npm, registry, logs } = await loadMockNpm(t, {
+      config: { audit: false },
+      prefixDir: {
+        'package.json': JSON.stringify({ ...packageJson, scripts: { prepare: 'exit 1' } }),
+        abbrev: { 'package.json': JSON.stringify(dependency) },
+      },
+      mocks: {
+        '@npmcli/run-script': async ({ event }) => {
+          if (event === 'prepare') {
+            throw failure
+          }
+        },
+      },
+    })
+    const manifest = registry.manifest({ name: dependency.name, packuments: [dependency] })
+    await registry.package({ manifest })
+    await registry.tarball({
+      manifest: manifest.versions[dependency.version],
+      tarball: path.join(npm.prefix, 'abbrev'),
+    })
+
+    t.equal(await npm.exec('install').catch(error => error), failure)
+    const warnings = logs.warn.byTitle('install-scripts')
+    t.equal(warnings.length, 1)
+    t.match(warnings[0], /abbrev@1\.0\.0 \(postinstall: echo dependency\)/)
+  })
+
   // Regression test: a failing root `preinstall` must short-circuit before reify runs, so dependencies never reach disk on failure. This is the cleaner failure mode the PR was motivated by; future refactors that swallow the rejection and still call reify must fail here.
   await t.test('a failing preinstall prevents reify', async t => {
     const events = []

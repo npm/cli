@@ -323,6 +323,53 @@ t.test('--ignore-scripts skips preinstall entirely for npm ci', async t => {
   t.strictSame(events, [], 'no root lifecycle scripts run when --ignore-scripts is set')
 })
 
+t.test('reports blocked install scripts when root prepare fails', async t => {
+  for (const loglevel of ['warn', 'silent']) {
+    await t.test(loglevel, async t => {
+      const dependency = { name: 'abbrev', version: '1.0.0', scripts: { postinstall: 'echo dependency' } }
+      const failure = new Error('prepare failed')
+      const { npm, registry, logs } = await loadMockNpm(t, {
+        config: { audit: false, loglevel },
+        prefixDir: {
+          abbrev: { 'package.json': JSON.stringify(dependency) },
+          'package.json': JSON.stringify({ ...packageJson, scripts: { prepare: 'exit 1' } }),
+          'package-lock.json': JSON.stringify({
+            ...packageLock,
+            packages: {
+              ...packageLock.packages,
+              'node_modules/abbrev': {
+                ...packageLock.packages['node_modules/abbrev'],
+                hasInstallScript: true,
+              },
+            },
+          }),
+        },
+        mocks: {
+          '@npmcli/run-script': async ({ event }) => {
+            if (event === 'prepare') {
+              throw failure
+            }
+          },
+        },
+      })
+      const manifest = registry.manifest({ name: dependency.name })
+      await registry.tarball({
+        manifest: manifest.versions[dependency.version],
+        tarball: path.join(npm.prefix, 'abbrev'),
+      })
+
+      t.equal(await npm.exec('ci', []).catch(error => error), failure)
+      const warnings = logs.warn.byTitle('install-scripts')
+      if (loglevel === 'silent') {
+        t.strictSame(warnings, [])
+      } else {
+        t.equal(warnings.length, 1)
+        t.match(warnings[0], /abbrev@1\.0\.0 \(postinstall: echo dependency\)/)
+      }
+    })
+  }
+})
+
 // Regression test: symmetric to the install-side guarantee — a failing root `preinstall` must short-circuit before reify runs in `npm ci`, so dependencies never reach disk on failure.
 t.test('a failing preinstall prevents reify for npm ci', async t => {
   const events = []
