@@ -732,6 +732,66 @@ t.test('ignore yarn lock file parse errors', async t => {
   t.equal(s.yarnLock.entries.size, 0, 'did not get any entries out of it')
 })
 
+t.test('ignore a yarn.lock directory', async t => {
+  const packageLock = {
+    name: 'yarn-lock-directory',
+    version: '1.0.0',
+    lockfileVersion: 3,
+    requires: true,
+    packages: {
+      '': {
+        name: 'yarn-lock-directory',
+        version: '1.0.0',
+      },
+    },
+  }
+  const path = t.testdir({
+    'package-lock.json': JSON.stringify(packageLock),
+    'yarn.lock': {},
+  })
+  const s = await Shrinkwrap.load({ path })
+
+  t.equal(
+    s.loadingError,
+    null,
+    'does not treat an optional yarn.lock directory as a load error'
+  )
+  t.equal(s.filename, resolve(path, 'package-lock.json'), 'selects package-lock.json for saving')
+  t.equal(s.loadedFromDisk, true, 'loads the existing package-lock')
+  t.match(s.get(''), { name: packageLock.name }, 'preserves the existing package-lock data')
+
+  await s.save()
+  t.equal(
+    fs.statSync(resolve(path, 'yarn.lock')).isDirectory(),
+    true,
+    'leaves yarn.lock directory intact'
+  )
+  t.strictSame(
+    JSON.parse(fs.readFileSync(s.filename, 'utf8')),
+    packageLock,
+    'saves the existing package-lock'
+  )
+})
+
+t.test('save with a yarn.lock directory and no package-lock', async t => {
+  const path = t.testdir({ 'yarn.lock': {} })
+  const s = await Shrinkwrap.load({ path })
+
+  await s.save()
+  t.equal(s.filename, resolve(path, 'package-lock.json'), 'selects package-lock.json for saving')
+  t.equal(fs.statSync(s.filename).isFile(), true, 'creates package-lock.json')
+  t.strictSame(JSON.parse(fs.readFileSync(s.filename, 'utf8')), {
+    lockfileVersion: 3,
+    requires: true,
+    packages: {},
+  }, 'writes a valid package-lock')
+  t.equal(
+    fs.statSync(resolve(path, 'yarn.lock')).isDirectory(),
+    true,
+    'leaves yarn.lock directory intact'
+  )
+})
+
 t.test('load a resolution from yarn.lock if we do not have our own', async t => {
   const path = t.testdir({
     'yarn.lock': `
