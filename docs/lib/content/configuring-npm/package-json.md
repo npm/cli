@@ -258,9 +258,27 @@ You can specify an object containing a URL that provides up-to-date information 
 }
 ```
 
+Each funding source must follow these rules:
+
+* `url` is required and must be a valid `http:` or `https:` URL with a host.
+  Other protocols, such as `mailto:`, are not valid.
+* `type` is optional and can be any string.
+  npm does not check it against a list of known values.
+  It is only shown in the message printed by `npm fund <pkg>`, for example `patreon funding available at the following URL`.
+* An array must contain only objects and string URLs.
+  Nested arrays are not valid.
+
+When `funding` is an array, every entry must be valid.
+If any entry in the array is invalid, the whole `funding` field of that dependency is ignored when `npm fund` lists funding sources.
+The dependency is also not counted in the "packages are looking for funding" message shown after `npm install`.
+
 Users can use the `npm fund` subcommand to list the `funding` URLs of all dependencies of their project, direct and indirect.
+In this list, only the first valid funding source of each package is shown, so put the most important one first.
+Use `npm fund --json` to see all funding sources.
+
 A shortcut to visit each funding URL is also available when providing the project name such as:
-`npm fund <projectname>` (when there are multiple URLs, the first one will be visited)
+`npm fund <projectname>`.
+When there are multiple valid URLs, npm lists them and asks you to choose one with the [`--which` config](/using-npm/config#which), for example `npm fund <projectname> --which=1`.
 
 ### files
 
