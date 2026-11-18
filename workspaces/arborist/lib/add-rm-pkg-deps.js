@@ -3,6 +3,10 @@
 const { log } = require('proc-log')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 
+// A dependency field has to be an object of name: spec pairs.
+// One that is not (an array, a string) is ignored when the tree is built, so it is never read or written here as if it were one.
+const isDepObject = deps => !!deps && typeof deps === 'object' && !Array.isArray(deps)
+
 const add = ({ pkg, add, saveBundle, saveType }) => {
   for (const { name, rawSpec } of add) {
     let addSaveType = saveType
@@ -34,13 +38,14 @@ const add = ({ pkg, add, saveBundle, saveType }) => {
 
     const depType = saveTypeMap.get(addSaveType)
 
-    pkg[depType] = pkg[depType] || {}
+    // a field that is not an object is replaced, so the new dependency is not set as a property on an array or lost on a string
+    pkg[depType] = isDepObject(pkg[depType]) ? pkg[depType] : {}
     if (rawSpec !== '*' || pkg[depType][name] === undefined) {
       pkg[depType][name] = rawSpec
     }
     if (addSaveType === 'optional') {
       // Affordance for previous npm versions that require this behaviour
-      pkg.dependencies = pkg.dependencies || {}
+      pkg.dependencies = isDepObject(pkg.dependencies) ? pkg.dependencies : {}
       pkg.dependencies[name] = pkg.optionalDependencies[name]
     }
 
@@ -99,7 +104,7 @@ const inferSaveType = (pkg, name) => {
 }
 
 const hasSubKey = (pkg, depType, name) => {
-  return pkg[depType] && Object.prototype.hasOwnProperty.call(pkg[depType], name)
+  return isDepObject(pkg[depType]) && Object.prototype.hasOwnProperty.call(pkg[depType], name)
 }
 
 // Removes a subkey and warns about it if it's being replaced
@@ -140,4 +145,4 @@ const rm = (pkg, rm) => {
   return pkg
 }
 
-module.exports = { add, rm, saveTypeMap, hasSubKey }
+module.exports = { add, rm, saveTypeMap, hasSubKey, isDepObject }

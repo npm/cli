@@ -2264,6 +2264,35 @@ t.test('save-prod, with optional', async t => {
   t.matchSnapshot(fs.readFileSync(path + '/package.json', 'utf8'))
 })
 
+t.test('add to a dependencies field that is not an object', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: [],
+    }),
+  })
+  createRegistry(t, true)
+  const arb = newArb({ path })
+  await arb.reify({ add: ['abbrev@1.0.4'] })
+  const pkg = JSON.parse(fs.readFileSync(path + '/package.json', 'utf8'))
+  t.strictSame(pkg.dependencies, { abbrev: '^1.0.4' }, 'the array is replaced by the added dependency')
+  t.ok(fs.statSync(path + '/node_modules/abbrev').isDirectory(), 'the dependency is installed')
+})
+
+t.test('save leaves a dependencies field that is not an object as it is', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: ['latest', '*'],
+    }),
+  })
+  createRegistry(t, true)
+  const arb = newArb({ path })
+  await arb.reify({ add: ['abbrev@1.0.4'], saveType: 'dev' })
+  const pkg = JSON.parse(fs.readFileSync(path + '/package.json', 'utf8'))
+  t.strictSame(pkg.dependencies, ['latest', '*'], 'the array is not saved as packages named "0" and "1"')
+  t.strictSame(pkg.devDependencies, { abbrev: '^1.0.4' }, 'the added dependency is saved')
+  t.strictSame(fs.readdirSync(path + '/node_modules').filter(f => !f.startsWith('.')), ['abbrev'], 'only the added dependency is installed')
+})
+
 t.test('saveBundle', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({

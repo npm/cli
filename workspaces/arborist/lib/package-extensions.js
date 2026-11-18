@@ -97,6 +97,10 @@ const validateExtensionObject = (key, ext) => {
   }
 }
 
+// A dependency field that is not an object of name: spec pairs (an array, a string) is ignored when the node loads its edges.
+// It must not be spread into an object here, which would turn its indexes into dependencies on packages named "0", "1", ...
+const isPlainObject = val => !!val && typeof val === 'object' && !Array.isArray(val)
+
 // Apply a matched extension to a manifest, returning { pkg, applied } where pkg is a copy with extended fields and applied is minimal provenance.
 // The input manifest is never mutated.
 const applyExtension = (pkg, { key, ext }) => {
@@ -105,7 +109,7 @@ const applyExtension = (pkg, { key, ext }) => {
   // Clone only the fields we may touch; the rest of the manifest is shared by reference since it is never mutated.
   const next = { ...pkg }
   for (const field of EXTENSION_FIELDS) {
-    if (pkg[field] && typeof pkg[field] === 'object') {
+    if (isPlainObject(pkg[field])) {
       next[field] = field === 'peerDependenciesMeta'
         ? Object.fromEntries(Object.entries(pkg[field]).map(([n, m]) => [n, { ...m }]))
         : { ...pkg[field] }
@@ -121,13 +125,14 @@ const applyExtension = (pkg, { key, ext }) => {
     }
     for (const [name, spec] of Object.entries(adds)) {
       for (const existingField of NORMAL_DEP_FIELDS) {
-        if (next[existingField] && name in next[existingField]) {
+        if (isPlainObject(next[existingField]) && name in next[existingField]) {
           throw err(
             `packageExtensions["${key}"].${field}.${name} conflicts with the package's existing ${existingField}.${name}. Use overrides to change a dependency version; packageExtensions only adds missing dependencies.`,
             'EEXTENSIONDUPDEP', { selector: key, field, name, existingField })
         }
       }
-      next[field] = next[field] || {}
+      // a malformed field is replaced rather than extended, so the input manifest is not mutated and the addition is not lost
+      next[field] = isPlainObject(next[field]) ? next[field] : {}
       next[field][name] = spec
       ;(applied[field] = applied[field] || []).push(name)
     }
@@ -135,7 +140,7 @@ const applyExtension = (pkg, { key, ext }) => {
 
   // peerDependencies shallow-merges by peer name, and the extension value replaces an existing range.
   if (ext.peerDependencies) {
-    next.peerDependencies = next.peerDependencies || {}
+    next.peerDependencies = isPlainObject(next.peerDependencies) ? next.peerDependencies : {}
     for (const [name, spec] of Object.entries(ext.peerDependencies)) {
       next.peerDependencies[name] = spec
       ;(applied.peerDependencies = applied.peerDependencies || []).push(name)
@@ -144,12 +149,12 @@ const applyExtension = (pkg, { key, ext }) => {
 
   // peerDependenciesMeta merges by peer name, then shallow-merges each meta object so an extension can add optional without dropping other meta keys.
   if (ext.peerDependenciesMeta) {
-    next.peerDependenciesMeta = next.peerDependenciesMeta || {}
+    next.peerDependenciesMeta = isPlainObject(next.peerDependenciesMeta) ? next.peerDependenciesMeta : {}
     for (const [name, meta] of Object.entries(ext.peerDependenciesMeta)) {
       next.peerDependenciesMeta[name] = { ...next.peerDependenciesMeta[name], ...meta }
       ;(applied.peerDependenciesMeta = applied.peerDependenciesMeta || []).push(name)
       // Every peerDependenciesMeta entry an extension adds must correspond to a peerDependencies entry present after extension application.
-      if (!next.peerDependencies || !(name in next.peerDependencies)) {
+      if (!isPlainObject(next.peerDependencies) || !(name in next.peerDependencies)) {
         throw err(
           `packageExtensions["${key}"].peerDependenciesMeta.${name} has no corresponding peerDependencies.${name} after extension application.`,
           'EEXTENSIONORPHANMETA', { selector: key, name })
