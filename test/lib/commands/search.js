@@ -190,6 +190,34 @@ t.test('search', t => {
     t.matchSnapshot(joinedOutput(), 'should have filtered expected search results')
   })
 
+  t.test('strips control characters from version', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t)
+    const registry = new MockRegistry({
+      tap: t,
+      registry: npm.config.get('registry'),
+    })
+
+    const esc = String.fromCharCode(27)
+    registry.search({ results: [{
+      name: 'foo',
+      scope: 'unscoped',
+      version: `1.0.0${esc}[31mnot-really`,
+      description: '',
+      keywords: [],
+      date: null,
+      author: { name: 'Foo', email: 'foo@npmjs.com' },
+      publisher: { username: 'foo', email: 'foo@npmjs.com' },
+      maintainers: [
+        { username: 'foo', email: 'foo@npmjs.com' },
+      ],
+    }] })
+
+    await npm.exec('search', ['foo'])
+
+    t.notMatch(joinedOutput(), esc, 'no escape sequence reaches the terminal')
+    t.match(joinedOutput(), '1.0.0not-really', 'version text is preserved')
+  })
+
   t.test('empty search results', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t)
     const registry = new MockRegistry({
