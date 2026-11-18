@@ -267,6 +267,30 @@ t.test('respects publishConfig', async t => {
   t.match(logs.warn, [/Unknown publishConfig/])
 })
 
+t.test('reports publishConfig.tag in notices', async t => {
+  const { npm, logs } = await loadMockNpm(t, {
+    config: authConfig,
+    prefixDir: {
+      'package.json': JSON.stringify({
+        ...pkgJson,
+        publishConfig: { tag: 'next' },
+      }),
+    },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: token,
+  })
+  registry.nock.post('/-/stage/package/@npmcli%2ftest-package').reply(201, {})
+  await npm.exec('stage', ['publish'])
+  t.ok(logs.notice.some(n => /Staging to .* with tag next and default access/.test(n)), 'staging notice reports the publishConfig tag')
+  t.ok(
+    logs.notice.includes(`stage package ${pkg}@1.0.0 has been staged with tag next`),
+    'staged notice reports the publishConfig tag'
+  )
+})
+
 t.test('warns about auto-corrected package.json errors', async t => {
   const { npm, logs } = await loadMockNpm(t, {
     config: authConfig,
