@@ -353,6 +353,27 @@ t.test('tarball', async t => {
   t.matchSnapshot(joinedOutput(), 'new package json')
 })
 
+for (const allowFile of ['none', 'root']) {
+  t.test(`tarball with allow-file=${allowFile}`, async t => {
+    const { npm, joinedOutput, home, registry } = await loadNpmWithRegistry(t, {
+      config: {
+        'allow-file': allowFile,
+        'dry-run': true,
+        ...auth,
+      },
+      homeDir: {
+        'package.json': JSON.stringify(pkgJson, null, 2),
+      },
+      authorization: token,
+    })
+    const tarFilename = path.join(home, 'tarball.tgz')
+    fs.writeFileSync(tarFilename, await pacote.tarball(home, { Arborist }))
+    registry.publish(pkg, { noPut: true })
+    await npm.exec('publish', [tarFilename])
+    t.equal(joinedOutput(), `+ ${pkg}@1.0.0`)
+  })
+}
+
 t.test('no auth default registry', async t => {
   const { npm } = await loadNpmWithRegistry(t, {
     prefixDir: {
