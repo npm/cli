@@ -2468,3 +2468,51 @@ t.test('global-ignore-file follows an explicit override', async t => {
     'cli override wins over computed default'
   )
 })
+
+t.test('a lazily computed type is only read for keys that are set', async t => {
+  let reads = 0
+  const lazyDefs = {
+    // not createDef: spreading the object would read the getter
+    lazy: new Definition('lazy', {
+      key: 'lazy',
+      default: null,
+      get type () {
+        reads++
+        return [null, 'a', 'b']
+      },
+      typeDescription: 'a or b',
+      hint: '<lazy>',
+      usage: '--lazy <lazy>',
+      description: 'computed on first use',
+    }),
+    ...createDef('plain', { default: 1, type: Number, description: 'eager' }),
+  }
+
+  const { types } = Config.getTypesFromDefinitions(lazyDefs)
+  t.equal(reads, 0, 'building the types does not read it')
+  t.equal(types.plain, Number)
+  t.same(Object.keys(types), ['lazy', 'plain'])
+  t.same(types.lazy, [null, 'a', 'b'])
+  t.equal(reads, 1)
+
+  const path = t.testdir()
+  const load = async (argv) => {
+    reads = 0
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env: {},
+      argv: [process.execPath, __filename, ...argv],
+      cwd: path,
+      definitions: lazyDefs,
+      shorthands: {},
+      flatten: () => {},
+    })
+    await config.load()
+    return config
+  }
+  await load(['--plain', '2'])
+  t.equal(reads, 0, 'not read when the key is not set')
+  const config = await load(['--lazy', 'b'])
+  t.ok(reads > 0, 'read to validate a value')
+  t.equal(config.get('lazy'), 'b')
+})

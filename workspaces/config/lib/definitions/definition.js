@@ -38,7 +38,8 @@ class Definition {
     this.key = key
     // if it's set falsey, don't export it; otherwise, we do by default
     this.envExport = true
-    Object.assign(this, def)
+    // copy accessors as accessors, so a definition can compute its type lazily
+    Object.defineProperties(this, Object.getOwnPropertyDescriptors(def))
     this.validate()
     if (!this.defaultDescription) {
       this.defaultDescription = describeValue(this.default)

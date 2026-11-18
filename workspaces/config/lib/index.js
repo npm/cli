@@ -1105,7 +1105,17 @@ const getTypesFromDefinitions = (definitions) => {
 
   for (const [key, def] of Object.entries(definitions)) {
     defaults[key] = def.default
-    types[key] = def.type
+    if (Object.getOwnPropertyDescriptor(def, 'type')?.get) {
+      // a lazily computed type stays lazy: nopt only reads the types of the
+      // keys it is given
+      Object.defineProperty(types, key, {
+        enumerable: true,
+        configurable: true,
+        get: () => def.type,
+      })
+    } else {
+      types[key] = def.type
+    }
     if (def.deprecated) {
       deprecated[key] = def.deprecated.trim().replace(/\n +/, '\n')
     }

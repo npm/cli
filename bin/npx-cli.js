@@ -26,6 +26,12 @@ const removed = new Set([
 
 const { definitions, shorthands } = require('@npmcli/config/lib/definitions')
 const npmSwitches = Object.entries(definitions)
+  // a type computed on first use (local-address) is a list of values, never a
+  // switch: skip it rather than compute it
+  .filter(([, def]) => {
+    const desc = Object.getOwnPropertyDescriptor(def, 'type')
+    return !(desc && desc.get)
+  })
   .filter(([, { type }]) => type === Boolean ||
     (Array.isArray(type) && type.includes(Boolean)))
   .map(([key]) => key)
