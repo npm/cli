@@ -18,6 +18,32 @@ Array [
 ]
 `
 
+exports[`test/lib/commands/ls.js TAP ignore missing optional deps --long human output > ls --long result 1`] = `
+test-npm-ls-ignore-missing-optional@1.2.3
+| {CWD}/prefix
+| 
++-- UNMET OPTIONAL DEPENDENCY optional-missing@1
++-- optional-ok@1.2.3
+|   
++-- optional-wrong@3.2.1 invalid: "1" from the root project
+|   
++-- UNMET DEPENDENCY peer-missing@1
++-- peer-ok@1.2.3
+|   
++-- UNMET OPTIONAL DEPENDENCY peer-optional-missing@1
++-- peer-optional-ok@1.2.3 extraneous
+|   
++-- peer-optional-wrong@3.2.1 invalid: "1" from the root project extraneous
+|   
++-- peer-wrong@3.2.1 invalid: "1" from the root project
+|   
++-- UNMET DEPENDENCY prod-missing@1
++-- prod-ok@1.2.3
+|   
+\`-- prod-wrong@3.2.1 invalid: "1" from the root project
+    
+`
+
 exports[`test/lib/commands/ls.js TAP ignore missing optional deps --parseable > ls --parseable result 1`] = `
 {CWD}/prefix
 {CWD}/prefix/node_modules/optional-ok
