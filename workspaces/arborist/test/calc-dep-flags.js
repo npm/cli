@@ -386,3 +386,51 @@ t.test('check null target in link', async t => {
   t.doesNotThrow(() => calcDepFlags(root, false))
   t.end()
 })
+
+t.test('optional peer that shadows a node not satisfying it is kept', async t => {
+  // root
+  // +-- shared@1.0.0 (dep of pinned, does not satisfy holder's peer)
+  // +-- pinned (depends on shared@1.0.0)
+  // +-- outer
+  //     +-- holder (peerOptional shared@^2.0.0)
+  //     +-- shared@2.0.0 (only reachable through the peerOptional edge)
+  const build = rootSharedVersion => {
+    const root = new Node({
+      path: '/x',
+      realpath: '/x',
+      pkg: { dependencies: { outer: '', pinned: '' } },
+    })
+    new Node({
+      pkg: { name: 'shared', version: rootSharedVersion },
+      parent: root,
+    })
+    new Node({
+      pkg: { name: 'pinned', version: '1.0.0', dependencies: { shared: rootSharedVersion } },
+      parent: root,
+    })
+    const outer = new Node({
+      pkg: { name: 'outer', version: '1.0.0', dependencies: { holder: '' } },
+      parent: root,
+    })
+    new Node({
+      pkg: {
+        name: 'holder',
+        version: '1.0.0',
+        peerDependencies: { shared: '^2.0.0' },
+        peerDependenciesMeta: { shared: { optional: true } },
+      },
+      parent: outer,
+    })
+    const nested = new Node({
+      pkg: { name: 'shared', version: '2.0.0' },
+      parent: outer,
+    })
+    calcDepFlags(root)
+    return nested
+  }
+
+  t.equal(build('1.0.0').extraneous, false,
+    'kept, because pruning it would leave the peer edge on shared@1.0.0')
+  t.equal(build('2.1.0').extraneous, true,
+    'still prunable, because the shadowed shared@2.1.0 satisfies the peer edge')
+})
