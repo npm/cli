@@ -1026,6 +1026,14 @@ class Shrinkwrap {
       this.#buildLegacyLockfile(this.tree, this.data)
     }
 
+    // A root without a version must not keep the stale version recorded by the
+    // previous lockfile. The legacy builder above assigns a version only when
+    // the root has one, and version 4 lockfiles skip that builder entirely, so
+    // clear the stale value here for every non-hidden lockfile.
+    if (!this.hiddenLockfile && this.tree && !this.tree.version) {
+      delete this.data.version
+    }
+
     // lf version 1 = dependencies only
     // lf version 2 = dependencies and packages
     // lf version 3 = packages only
