@@ -514,7 +514,12 @@ class Node {
       return false
     }
 
-    // omit node if the dep type matches any omit flags that were set
+    return this.hasOmittedDepType(omitSet)
+  }
+
+  // whether this node's dep flags match any of the omitted dep types,
+  // regardless of which top-level node (root, workspace, link target) it lives under
+  hasOmittedDepType (omitSet) {
     return (
       this.peer && omitSet.has('peer') ||
       this.dev && omitSet.has('dev') ||

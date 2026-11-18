@@ -364,7 +364,16 @@ class AuditReport extends Map {
     if (this.#omit.size === 0) {
       return true
     }
-    return !node.shouldOmit(this.#omit)
+    // nothing in the project depends on this node's top (eg, an undeclared
+    // link target), so its dep flags were never calculated; audit it.
+    const { top } = node
+    if (top.extraneous && !top.isProjectRoot && !top.isWorkspace) {
+      return true
+    }
+    // use the dep flags directly rather than shouldOmit(), so that deps of
+    // linked packages outside the project (eg, their devDependencies) are
+    // still omitted, since dep flags are propagated through links.
+    return !node.hasOmittedDepType(this.#omit)
   }
 
   prepareBulkData () {

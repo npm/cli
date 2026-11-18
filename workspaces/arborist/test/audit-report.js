@@ -440,6 +440,98 @@ t.test('audit when bulk report does not have anything in it', async t => {
   t.strictSame(report, null)
 })
 
+t.test('omit applies to deps of linked packages outside the project', async t => {
+  const fooPkg = {
+    name: 'foo',
+    version: '1.0.0',
+    dependencies: { proddep: '1.0.0' },
+    devDependencies: { devdep: '1.0.0' },
+  }
+  const appPkg = {
+    name: 'app',
+    version: '1.0.0',
+    dependencies: { foo: 'file:../foo' },
+  }
+  const dir = t.testdir({
+    foo: {
+      'package.json': JSON.stringify(fooPkg),
+      node_modules: {
+        devdep: { 'package.json': JSON.stringify({ name: 'devdep', version: '1.0.0' }) },
+        proddep: { 'package.json': JSON.stringify({ name: 'proddep', version: '1.0.0' }) },
+      },
+    },
+    app: {
+      'package.json': JSON.stringify(appPkg),
+      'package-lock.json': JSON.stringify({
+        name: 'app',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': appPkg,
+          '../foo': { version: '1.0.0', dependencies: fooPkg.dependencies, devDependencies: fooPkg.devDependencies },
+          '../foo/node_modules/devdep': { version: '1.0.0', dev: true },
+          '../foo/node_modules/proddep': { version: '1.0.0' },
+          'node_modules/foo': { resolved: '../foo', link: true },
+        },
+      }),
+      node_modules: {
+        foo: t.fixture('symlink', '../../foo'),
+      },
+    },
+  })
+  const path = resolve(dir, 'app')
+
+  for (const load of ['loadVirtual', 'loadActual']) {
+    t.test(load, async t => {
+      const tree = await newArb(path)[load]()
+      const devdep = tree.inventory.get('../foo/node_modules/devdep')
+      t.equal(devdep.dev, true, 'linked package dev dep is flagged dev')
+
+      t.strictSame(
+        new AuditReport(tree).prepareBulkData(),
+        { devdep: ['1.0.0'], proddep: ['1.0.0'] },
+        'audits all deps of the linked package without omit'
+      )
+      t.strictSame(
+        new AuditReport(tree, { omit: ['dev'] }).prepareBulkData(),
+        { proddep: ['1.0.0'] },
+        'omits dev deps of the linked package'
+      )
+    })
+  }
+})
+
+t.test('omit does not apply to deps of undeclared linked packages', async t => {
+  const dir = t.testdir({
+    foo: {
+      'package.json': JSON.stringify({
+        name: 'foo',
+        version: '1.0.0',
+        dependencies: { proddep: '1.0.0' },
+        devDependencies: { devdep: '1.0.0' },
+      }),
+      node_modules: {
+        devdep: { 'package.json': JSON.stringify({ name: 'devdep', version: '1.0.0' }) },
+        proddep: { 'package.json': JSON.stringify({ name: 'proddep', version: '1.0.0' }) },
+      },
+    },
+    app: {
+      'package.json': JSON.stringify({ name: 'app', version: '1.0.0' }),
+      node_modules: {
+        foo: t.fixture('symlink', '../../foo'),
+      },
+    },
+  })
+  const tree = await newArb(resolve(dir, 'app')).loadActual()
+  t.equal(tree.inventory.get('../foo').extraneous, true, 'link target is extraneous')
+  t.strictSame(
+    new AuditReport(tree, { omit: ['dev'] }).prepareBulkData(),
+    { devdep: ['1.0.0'], proddep: ['1.0.0'] },
+    'audits all deps of the linked package, since their dep flags are unknown'
+  )
+})
+
 t.test('audit supports alias deps', async t => {
   const path = resolve(fixtures, 'audit-nyc-mkdirp')
   const registry = createRegistry(t)
