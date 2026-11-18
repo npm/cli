@@ -1,0 +1,52 @@
+name: Request issue triage
+
+on:
+  issues:
+    types: [labeled]
+
+permissions: {}
+
+jobs:
+  dispatch:
+    if: >-
+      github.repository == 'npm/cli' &&
+      github.event.label.name == 'Triage Requested'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Create dispatcher token
+        id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.TRIAGE_APP_CLIENT_ID }}
+          private-key: ${{ secrets.TRIAGE_APP_PRIVATE_KEY }}
+          owner: npm
+          repositories: triage
+          permission-actions: write
+
+      - name: Dispatch private triage workflow
+        shell: bash
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          SOURCE_REPOSITORY: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          REQUEST_ID: ${{ github.repository }}:${{ github.run_id }}:${{ github.run_attempt }}
+        run: |
+          jq -n \
+            --arg repository "$SOURCE_REPOSITORY" \
+            --arg issue "$ISSUE_NUMBER" \
+            --arg request "$REQUEST_ID" \
+            '{
+              ref: "main",
+              inputs: {
+                source_repository: $repository,
+                issue_number: $issue,
+                immediate: true,
+                request_id: $request
+              }
+            }' |
+          gh api \
+            --method POST \
+            repos/npm/triage/actions/workflows/triage.yml/dispatches \
+            --input -
