@@ -91,8 +91,9 @@ module.exports = cls => class Reifier extends cls {
   // public method
   async reify (options = {}) {
     // Global installs are normalized to the shallow strategy in the constructor; honor that here so a per-call installStrategy:'linked' can't re-engage the unsupported linked path.
-    const linked = !this.options.global &&
+    let linked = !this.options.global &&
       (options.installStrategy || this.options.installStrategy) === 'linked'
+    let emptyLinkedFilter = false
 
     if (this.options.packageLockOnly && this.options.global) {
       const er = new Error('cannot generate lockfile for global packages')
@@ -116,6 +117,18 @@ module.exports = cls => class Reifier extends cls {
       await this.#validateNodeModules(resolve(this.path, 'node_modules'))
     }
     await this[_loadTrees](options)
+
+    if (linked && !this.options.workspacesEnabled && !this.options.packageLockOnly &&
+        (this.idealTree.workspaces?.size || this.actualTree.workspaces?.size)) {
+      const hasRootDeps = [this.idealTree, this.actualTree].some(tree =>
+        this.#rootDependencyNodes(tree).length > 0)
+      if (!hasRootDeps) {
+        // Nothing is selected. Preserve the physical actual tree instead of
+        // cleaning the store and saving an uninstalled isolated ideal.
+        linked = false
+        emptyLinkedFilter = true
+      }
+    }
 
     const oldTree = this.idealTree
     // Kept to serialize the hidden lockfile from the on-disk .store/symlink layout.
@@ -183,7 +196,13 @@ module.exports = cls => class Reifier extends cls {
     // was not changed, delete anything in the ideal and not actual.
     // Then we move the entire idealTree over to this.actualTree, and
     // save the hidden lockfile.
-    if (this.diff && this.diff.filterSet.size && !linked) {
+    if (emptyLinkedFilter) {
+      // No installed nodes changed. Preserve the physical store containers and
+      // their linked children after saving the full intended graph above.
+      this.actualTree.target.package = this.idealTree.target.package
+      this.actualTree.package = this.actualTree.target.package
+      this.idealTree = this.actualTree
+    } else if (this.diff && this.diff.filterSet.size && !linked) {
       const reroot = new Set()
 
       const { filterSet } = this.diff
@@ -269,6 +288,12 @@ module.exports = cls => class Reifier extends cls {
     if (!this.options.global && !this.options.dryRun) {
       if (linked) {
         await this.#saveLinkedHiddenLockfile(isolatedTree)
+      } else if (emptyLinkedFilter) {
+        // loadActual synthesizes undeclared workspace links for the logical tree.
+        // Keep those out of the physical linked-layout cache when absent on disk.
+        const nodes = [...this.actualTree.inventory.values()].filter(node =>
+          !node.isProjectRoot && (!node.isLink || !node.isWorkspace || existsSync(node.path)))
+        await this.#saveLinkedHiddenLockfile(this.actualTree, nodes)
       } else {
         await this.actualTree.meta.save()
       }
@@ -431,6 +456,15 @@ module.exports = cls => class Reifier extends cls {
       .then(timeEnd)
   }
 
+  #rootDependencyNodes (tree, includeWorkspaces = false) {
+    // A root Link keeps dependency edges on its target, but workspace names
+    // belong to the root. Exclude those names even if the target edge is prod.
+    const root = includeWorkspaces ? tree : tree.target
+    return [...root.edgesOut.values()]
+      .filter(({ name, type, to }) => type !== 'workspace' && !tree.workspaces?.has(name) && to)
+      .map(({ to }) => to)
+  }
+
   [_diffTrees] () {
     if (this.options.packageLockOnly) {
       return
@@ -486,20 +520,23 @@ module.exports = cls => class Reifier extends cls {
         // The ideal-side targets alone scope the diff.
         const trees = this.#linkedActualForDiff ? [this.idealTree] : [this.idealTree, this.actualTree]
         for (const tree of trees) {
-          for (const { type, to } of tree.edgesOut.values()) {
-            if (type !== 'workspace' && to) {
-              filterNodes.push(to)
-            }
-          }
+          filterNodes.push(...this.#rootDependencyNodes(tree, includeWorkspaces))
         }
       }
     }
 
     // find all the nodes that need to change between the actual
     // and ideal trees.
+    const hasWorkspaces = this.idealTree.workspaces?.size || this.actualTree.workspaces?.size
+    // Linked filtering omits actual-side nodes. A removed root dependency still
+    // makes that logical scope nonempty, even when the ideal-side list is empty.
+    const hasLinkedRootDeps = this.#linkedActualForDiff &&
+      this.#rootDependencyNodes(this.actualTree).length > 0
+    const filtered = filterNodes.length > 0
+      || (!this.options.global && !includeWorkspaces && hasWorkspaces && !hasLinkedRootDeps)
     this.diff = Diff.calculate({
       omit: this.#omit,
-      filterNodes,
+      filterNodes: filtered ? filterNodes : undefined,
       actual: this.#linkedActualForDiff || this.actualTree,
       ideal: this.idealTree,
     })
@@ -874,10 +911,10 @@ module.exports = cls => class Reifier extends cls {
     return join(filePath)
   }
 
-  // Serialize the hidden lockfile from the isolated tree, which mirrors the on-disk .store/symlink layout.
-  // Its children are every materialized node_modules entry: store package dirs and all symlinks.
-  async #saveLinkedHiddenLockfile (isolatedTree) {
-    const path = isolatedTree.realpath
+  // Serialize the physical .store/symlink layout. Isolated children represent all
+  // materialized entries; an empty selection uses the preserved actual inventory.
+  async #saveLinkedHiddenLockfile (tree, entries = tree.children.values()) {
+    const path = tree.realpath
     const meta = new Shrinkwrap({
       path,
       hiddenLockfile: true,
@@ -889,7 +926,7 @@ module.exports = cls => class Reifier extends cls {
     const storeRe = /^(.*\/\.store\/.+?)\/node_modules\//
     const containers = new Set()
     const nodes = new Set()
-    for (const node of isolatedTree.children.values()) {
+    for (const node of entries) {
       // Tree-only undeclared workspace self-links aren't on disk.
       if (node.isUndeclaredWorkspaceLink) {
         continue
@@ -903,7 +940,7 @@ module.exports = cls => class Reifier extends cls {
       }
     }
     // Workspace dirs hold their own dep symlinks; record them so the cache can validate those subtrees.
-    for (const ws of isolatedTree.fsChildren) {
+    for (const ws of tree.fsChildren) {
       nodes.add(ws)
     }
     for (const node of nodes) {

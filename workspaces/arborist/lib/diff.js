@@ -34,7 +34,7 @@ class Diff {
   static calculate ({
     actual,
     ideal,
-    filterNodes = [],
+    filterNodes,
     omit = new Set(),
   }) {
     // if there's a filterNode, then:
@@ -44,9 +44,13 @@ class Diff {
     //   filterSet.
     // - Add set of Nodes depended on by the filterNode to filterSet.
     // - Anything outside of that set should be ignored by getChildren
-    const filterSet = new Set()
+    // An explicit empty filter selects only the roots, not their dependencies.
+    // An omitted filter leaves the diff unrestricted.
+    const filterSet = new Set(filterNodes?.length === 0
+      ? [actual, actual.target, ideal, ideal.target]
+      : [])
     const extraneous = new Set()
-    for (const filterNode of filterNodes) {
+    for (const filterNode of filterNodes || []) {
       const { root } = filterNode
       if (root !== ideal && root !== actual) {
         throw new Error('invalid filterNode: outside idealTree/actualTree')
