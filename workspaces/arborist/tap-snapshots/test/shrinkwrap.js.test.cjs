@@ -7,12 +7,6 @@
 'use strict'
 exports[`test/shrinkwrap.js TAP a yarn.lock entry with file: resolved > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "mkdirp": Object {
-      "integrity": "sha512-N2REVrJ/X/jGPfit2d7zea2J1pf7EAR5chIUcfHffAZ7gmlam5U65sAm76+o4ntQbSRdTjYf7qZz3chuHlwXEA==",
-      "version": "file:mkdirp",
-    },
-  },
   "lockfileVersion": 3,
   "name": "root",
   "packages": Object {
@@ -50,13 +44,6 @@ exports[`test/shrinkwrap.js TAP a yarn.lock entry with file: resolved > yarn.loc
 
 exports[`test/shrinkwrap.js TAP a yarn.lock entry with integrity mismatch > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "mkdirp": Object {
-      "integrity": "sha512-N2REVrJ/X/jGPfit2d7zea2J1pf7EAR5chIUcfHffAZ7gmlam5U65sAm76+o4ntQbSRdTjYf7qZz3chuHlwXEA==",
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.2.tgz",
-      "version": "1.0.2",
-    },
-  },
   "lockfileVersion": 3,
   "name": "root",
   "packages": Object {
@@ -92,12 +79,6 @@ mkdirp@^1.0.2:
 
 exports[`test/shrinkwrap.js TAP a yarn.lock entry with no integrity > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "mkdirp": Object {
-      "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.2.tgz",
-      "version": "1.0.2",
-    },
-  },
   "lockfileVersion": 3,
   "name": "root",
   "packages": Object {
@@ -131,12 +112,6 @@ mkdirp@^1.0.2:
 
 exports[`test/shrinkwrap.js TAP a yarn.lock entry with no resolved > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "mkdirp": Object {
-      "integrity": "sha512-N2REVrJ/X/jGPfit2d7zea2J1pf7EAR5chIUcfHffAZ7gmlam5U65sAm76+o4ntQbSRdTjYf7qZz3chuHlwXEA==",
-      "version": "1.0.2",
-    },
-  },
   "lockfileVersion": 3,
   "name": "root",
   "packages": Object {
@@ -170,11 +145,6 @@ mkdirp@^1.0.2:
 
 exports[`test/shrinkwrap.js TAP a yarn.lock entry with version mismatch > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "mkdirp": Object {
-      "version": "1.0.4",
-    },
-  },
   "lockfileVersion": 3,
   "name": "root",
   "packages": Object {
@@ -206,11 +176,6 @@ mkdirp@^1.0.2:
 
 exports[`test/shrinkwrap.js TAP a yarn.lock with no entries > lockfile 1`] = `
 Object {
-  "dependencies": Object {
-    "mkdirp": Object {
-      "version": "1.0.4",
-    },
-  },
   "lockfileVersion": 3,
   "name": "root",
   "packages": Object {

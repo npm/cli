@@ -1028,8 +1028,12 @@ class Shrinkwrap {
 
     // lf version 1 = dependencies only
     // lf version 2 = dependencies and packages
-    // lf version 3 = packages only
+    // lf version 3+ = packages only
     if (this.lockfileVersion >= 3) {
+      if (this.tree) {
+        // the attached tree is authoritative, so discard stale legacy data
+        delete this.data.dependencies
+      }
       const { dependencies, ...data } = this.data
       return data
     } else if (this.lockfileVersion < 2) {
@@ -1171,6 +1175,11 @@ class Shrinkwrap {
       } else {
         lock.requires = true
       }
+    }
+
+    // v3+ still needs the root metadata above, but not legacy descendants.
+    if (node === this.tree && this.lockfileVersion >= 3) {
+      return lock
     }
 
     // now we walk the children, putting them in the 'dependencies' object
