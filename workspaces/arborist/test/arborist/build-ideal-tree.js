@@ -395,6 +395,37 @@ t.test('bundle deps example 1, complete:true', async t => {
   }), 'no missing deps, because complete: true, add dep, save bundled')
 })
 
+t.test('preserve locked transitive versions from the same dependency bundle', async t => {
+  const project = { name: 'root', version: '1.0.0', dependencies: { bundle: '1.0.0' } }
+  const bundledDep = 'node_modules/bundle/node_modules/dep'
+  const bundledShared = 'node_modules/bundle/node_modules/shared'
+  const packages = {
+    '': project,
+    'node_modules/bundle': {
+      version: '1.0.0',
+      bundleDependencies: ['dep', 'shared'],
+      dependencies: { dep: '1.0.0', shared: '2.0.0' },
+    },
+    [bundledDep]: {
+      version: '1.0.0',
+      inBundle: true,
+      dependencies: { shared: '1.0.0' },
+    },
+    [bundledShared]: {
+      version: '2.0.0',
+      inBundle: true,
+    },
+  }
+  const path = t.testdir({
+    'package.json': JSON.stringify(project),
+    'package-lock.json': JSON.stringify({ lockfileVersion: 3, packages }),
+  })
+
+  const tree = await buildIdeal(path, { save: false, offline: true })
+  t.same([...tree.inventory.keys()].sort(), Object.keys(packages).sort())
+  t.equal(tree.inventory.get(bundledDep).edgesOut.get('shared').to.version, '2.0.0')
+})
+
 t.test('bundle deps example 2', async t => {
   // bundled deps at the root level are NOT ignored when building ideal trees
   const path = resolve(fixtures, 'testing-bundledeps-2')
