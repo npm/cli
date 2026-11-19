@@ -115,6 +115,7 @@ t.test('--prefix', async t => {
   npm.config.globalPrefix = npm.config.localPrefix
 
   await registry.package({
+    times: 2,
     manifest,
     tarballs: {
       '1.0.0': path.join(npm.prefix, 'npm-exec-test'),
@@ -158,7 +159,9 @@ t.test('runs in workspace path', async t => {
     },
   })
 
-  await registry.package({ manifest,
+  await registry.package({
+    times: 2,
+    manifest,
     tarballs: {
       '1.0.0': path.join(npm.prefix, 'npm-exec-test'),
     },
@@ -313,6 +316,8 @@ t.test('npx --no-install @npmcli/npx-test', async t => {
       },
     },
   })
+
+  await registry.package({ manifest })
 
   try {
     await npm.exec('exec', ['@npmcli/npx-test'])

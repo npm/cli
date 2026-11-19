@@ -318,6 +318,7 @@ graph LR;
   libnpmexec-->gar-promise-retry["@gar/promise-retry"];
   libnpmexec-->just-extend;
   libnpmexec-->just-safe-set;
+  libnpmexec-->minimatch;
   libnpmexec-->npm-package-arg;
   libnpmexec-->npmcli-arborist["@npmcli/arborist"];
   libnpmexec-->npmcli-eslint-config["@npmcli/eslint-config"];
