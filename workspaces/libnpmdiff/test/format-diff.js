@@ -467,3 +467,42 @@ t.test('format multiple files patch', async t => {
     'should output expected result for multiple files'
   )
 })
+
+t.test('keeps trailing blank context line', async t => {
+  // Last hunk ends on an unchanged blank line (unified-diff " ").
+  // res.trim() used to delete that space and leave a corrupt patch.
+  const files = new Set([
+    'view.js',
+  ])
+  const refs = new Map(Object.entries({
+    'a/view.js': {
+      content: 'line1\nline2\n\n',
+      mode: '100644',
+    },
+    'b/view.js': {
+      content: 'line1\nline2-changed\n\n',
+      mode: '100644',
+    },
+  }))
+  const versions = {
+    a: '1.0.0',
+    b: '1.0.1',
+  }
+
+  const out = await formatDiff({
+    files,
+    refs,
+    versions,
+  })
+  t.match(out, /\n $/m, 'trailing blank context line is preserved as a single space')
+  t.notMatch(out, /\n$/, 'final newline of the patch body is still stripped')
+  const lastHunk = out.split(/^@@/m).pop()
+  // Header for this fixture is @@ -1,3 +1,3 @@ (3 old / 3 new including blank).
+  t.match(out, /@@ -1,3 \+1,3 @@/, 'hunk header counts include the blank context line')
+  const bodyLines = lastHunk.split('\n').slice(1)
+  // drop possible empty string after final replace(/\n$/, '')
+  while (bodyLines.length && bodyLines[bodyLines.length - 1] === '') {
+    bodyLines.pop()
+  }
+  t.equal(bodyLines[bodyLines.length - 1], ' ', 'last body line is blank context')
+})
