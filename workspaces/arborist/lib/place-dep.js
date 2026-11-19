@@ -379,7 +379,7 @@ class PlaceDep {
         // the root or a workspace, then we have to leave it alone, and in that
         // case, it will have already warned or crashed by getting to this point
         const entryNode = entryEdge.to
-        const deepestTarget = deepestNestingTarget(entryNode)
+        const deepestTarget = deepestNestingTarget(entryEdge.from, entryNode.name)
         if (deepestTarget !== target &&
             !(entryEdge.from.isProjectRoot || entryEdge.from.isWorkspace)) {
           prunePeerSets.push(...gatherDepSet([entryNode], e => {
