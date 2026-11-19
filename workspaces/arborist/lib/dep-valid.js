@@ -106,7 +106,12 @@ const depValid = (child, requested, requestor) => {
       const reqCommit = /^[a-fA-F0-9]{40,64}$/.test(requested.gitCommittish || '')
       const nc = { noCommittish: !reqCommit }
       if (!resHost) {
+        // fetchSpec omits the committish. For a definite commit pin, also
+        // require the resolved commit — hosted repos get that via ssh(nc).
         if (resRepo.fetchSpec !== requested.fetchSpec) {
+          return false
+        }
+        if (reqCommit && resRepo.gitCommittish !== requested.gitCommittish) {
           return false
         }
       } else {
