@@ -135,6 +135,35 @@ t.test('EBUSY during lock acquisition', async (t) => {
   t.equal(mkdirCalls, 2, 'should make two mkdir calls')
 })
 
+t.test('EPERM during lock acquisition', async (t) => {
+  let mkdirCalls = 0
+  mockMkdir = async (...args) => {
+    if (++mkdirCalls === 1) {
+      throw Object.assign(new Error(), { code: 'EPERM' })
+    }
+    return fs.promises.mkdir(...args)
+  }
+  const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
+  t.ok(await withLock(lockPath, async () => true))
+  t.equal(mkdirCalls, 2, 'should make two mkdir calls')
+})
+
+t.test('mkdir keeps failing while no lock exists', async (t) => {
+  // e.g. a sandbox or a read-only directory denies the mkdir, so the lock never appears
+  for (const code of ['EBUSY', 'EPERM']) {
+    t.test(code, async (t) => {
+      let mkdirCalls = 0
+      mockMkdir = async () => {
+        mkdirCalls++
+        throw Object.assign(new Error(), { code })
+      }
+      const lockPath = path.join(fs.mkdtempSync(path.join(getTempDir(), 'test-')), 'concurrency.lock')
+      await t.rejects(withLock(lockPath, async () => {}), { code })
+      t.equal(mkdirCalls, 6, 'should give up after five retries')
+    })
+  }
+})
+
 t.test('EBUSY during stale lock takeover', async (t) => {
   let mkdirCalls = 0
   mockMkdir = async () => {
