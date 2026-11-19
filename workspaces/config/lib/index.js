@@ -891,9 +891,13 @@ class Config {
     }
     const dir = dirname(conf.source)
     await mkdir(dir, { recursive: true })
-    await writeFile(conf.source, iniData, 'utf8')
+    // chmod ignores the umask, so only the user config (which holds credentials) gets a forced mode.
+    // A new file gets its mode at creation so the user config is never briefly readable by others.
     const mode = where === 'user' ? 0o600 : 0o666
-    await chmod(conf.source, mode)
+    await writeFile(conf.source, iniData, { encoding: 'utf8', mode })
+    if (where === 'user') {
+      await chmod(conf.source, mode)
+    }
   }
 
   clearCredentialsByURI (uri, level = 'user') {
