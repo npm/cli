@@ -1747,6 +1747,139 @@ t.test('shrinkwrap where root is a link node', async t => {
   })
 })
 
+t.test('targetless root link metadata during transplant', async t => {
+  const meta = await Shrinkwrap.reset({ path: '/some/link/path' })
+  const root = new Link({
+    path: '/some/link/path',
+    realpath: '/actual/project/path',
+    pkg: {
+      name: 'path',
+      version: '1.2.3',
+    },
+  })
+  const target = root.target
+
+  root.target = null
+  t.doesNotThrow(() => root.meta = meta,
+    'metadata can attach while a transplanted root link has no target')
+  t.equal(meta.tree, root, 'the targetless link remains the metadata tree')
+  t.equal(target.path, resolve('/actual/project/path'),
+    'the detached target remains available for the transplant')
+})
+
+t.test('shrinkwrap coordinates for a filesystem symlink root', async t => {
+  const path = t.testdir({
+    actual: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.2.3',
+        dependencies: {
+          foo: '1.0.0',
+          tarball: 'file:tarballs/tarball.tgz',
+          workspace: 'file:packages/workspace',
+        },
+      }),
+      node_modules: {
+        foo: {
+          'package.json': JSON.stringify({
+            name: 'foo',
+            version: '1.0.0',
+          }),
+        },
+        tarball: {
+          'package.json': JSON.stringify({
+            name: 'tarball',
+            version: '3.0.0',
+          }),
+        },
+        workspace: t.fixture('symlink', '../packages/workspace'),
+      },
+      packages: {
+        workspace: {
+          'package.json': JSON.stringify({
+            name: 'workspace',
+            version: '2.0.0',
+          }),
+        },
+      },
+      tarballs: {
+        'tarball.tgz': '',
+      },
+    },
+    project: t.fixture('symlink', 'actual'),
+  })
+  const logical = resolve(path, 'project')
+  const tree = await new Arborist({ path: logical }).loadActual({
+    forceActual: true,
+  })
+  const actual = tree.target.path
+  const foo = tree.inventory.get('node_modules/foo')
+  const tarball = tree.inventory.get('node_modules/tarball')
+  tarball.resolved = `file:${resolve(actual, 'tarballs/tarball.tgz')}`
+
+  t.equal(tree.path, logical, 'tree retains the configured logical path')
+  t.equal(tree.isLink, true, 'filesystem symlink root is represented as a Link')
+  t.equal(foo.path, resolve(actual, 'node_modules/foo'),
+    'descendants use canonical filesystem paths')
+
+  const committed = tree.meta.commit()
+  t.strictSame(Object.keys(committed.packages).sort(), [
+    '',
+    'node_modules/foo',
+    'node_modules/tarball',
+    'node_modules/workspace',
+    'packages/workspace',
+  ],
+  'lockfile keys remain relative to the logical project path')
+  t.strictSame(committed.packages[''], {
+    name: 'root',
+    version: '1.2.3',
+    dependencies: {
+      foo: '1.0.0',
+      tarball: 'file:tarballs/tarball.tgz',
+      workspace: 'file:packages/workspace',
+    },
+  }, 'root metadata comes from the live target node')
+  t.equal(committed.version, '1.2.3',
+    'legacy root version is not treated as a package-name alias')
+  t.strictSame(committed.packages['node_modules/foo'], {
+    version: '1.0.0',
+  }, 'child metadata is stored at its logical lockfile location')
+  t.strictSame(committed.packages['node_modules/tarball'], {
+    version: '3.0.0',
+    resolved: 'file:tarballs/tarball.tgz',
+  }, 'in-root file resolved paths use stable root-relative coordinates')
+  t.strictSame(committed.packages['node_modules/workspace'], {
+    resolved: 'packages/workspace',
+    link: true,
+  }, 'linked project metadata uses a logical target location')
+  t.match(committed.packages['packages/workspace'], {
+    version: '2.0.0',
+  }, 'linked project target uses its logical lockfile location')
+
+  const rootMeta = tree.meta.get('')
+  const fooMeta = tree.meta.get('node_modules/foo')
+  t.equal(tree.meta.get(logical), rootMeta,
+    'absolute logical root lookup matches the relative root lookup')
+  t.equal(tree.meta.get(actual), rootMeta,
+    'absolute real root lookup matches the relative root lookup')
+  t.equal(tree.meta.get(resolve(logical, 'node_modules/foo')), fooMeta,
+    'absolute logical child lookup matches the relative child lookup')
+  t.equal(tree.meta.get(foo.path), fooMeta,
+    'absolute real child lookup matches the relative child lookup')
+
+  tree.meta.delete(foo.path)
+  t.strictSame(tree.meta.get('node_modules/foo'), {},
+    'delete accepts an absolute real path')
+  tree.meta.add(foo)
+  t.strictSame(tree.meta.get('node_modules/foo'), {
+    version: '1.0.0',
+  }, 'add and get use the same logical location')
+  t.strictSame(tree.meta.get(foo.path), {
+    version: '1.0.0',
+  }, 'added metadata is also available by absolute real path')
+})
+
 t.test('ignore npm-shrinkwrap.json even when package-lock.json is also present', async t => {
   const path = t.testdir({
     'npm-shrinkwrap.json': '{"name":"from-shrinkwrap"}',
