@@ -8,17 +8,28 @@ const mockNpm = async (t, opts = {}) => {
   return _mockNpm(t, opts)
 }
 
+const remoteCypressUrl =
+  'https://cdn.example.test/releases/cypress.tgz'
+const registryShapedRemoteCypressUrl =
+  'https://cdn.example.test/artifact/-/artifact-1.0.0.tgz'
+const topLevelToolUrl =
+  'https://good.example.test/releases/tool.tgz'
+const nestedToolUrl =
+  'https://evil.example.test/decoy/-/decoy-7.0.0.tgz'
+
 const setupProject = ({
   allowScripts,
   withScripts = ['canvas'],
   noScripts = [],
+  remoteUrls = {},
   extraneous = false,
 } = {}) => {
   const pkg = {
     name: 'host',
     version: '1.0.0',
-    dependencies: extraneous ? {}
-    : Object.fromEntries([...withScripts, ...noScripts].map((n) => [n, '*'])),
+    dependencies: extraneous ? {} : Object.fromEntries(
+      [...withScripts, ...noScripts].map((name) => [name, remoteUrls[name] ?? '*'])
+    ),
   }
   if (allowScripts !== undefined) {
     pkg.allowScripts = allowScripts
@@ -37,7 +48,8 @@ const setupProject = ({
     lockPackages[`node_modules/${name}`] = {
       version: '1.0.0',
       hasInstallScript: true,
-      resolved: `https://registry.npmjs.org/${name}/-/${name}-1.0.0.tgz`,
+      resolved: remoteUrls[name] ??
+        `https://registry.npmjs.org/${name}/-/${name}-1.0.0.tgz`,
     }
   }
   for (const name of noScripts) {
@@ -46,7 +58,8 @@ const setupProject = ({
     }
     lockPackages[`node_modules/${name}`] = {
       version: '1.0.0',
-      resolved: `https://registry.npmjs.org/${name}/-/${name}-1.0.0.tgz`,
+      resolved: remoteUrls[name] ??
+        `https://registry.npmjs.org/${name}/-/${name}-1.0.0.tgz`,
     }
   }
 
@@ -60,6 +73,219 @@ const setupProject = ({
       packages: lockPackages,
     }),
     node_modules: nodeModules,
+  }
+}
+
+const setupDistinctRemoteSourcesProject = () => {
+  const pkg = {
+    name: 'host',
+    version: '1.0.0',
+    dependencies: {
+      tool: topLevelToolUrl,
+      parent: '1.0.0',
+    },
+  }
+
+  return {
+    'package.json': JSON.stringify(pkg, null, 2),
+    'package-lock.json': JSON.stringify({
+      name: pkg.name,
+      version: pkg.version,
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': pkg,
+        'node_modules/tool': {
+          version: '1.0.0',
+          hasInstallScript: true,
+          resolved: topLevelToolUrl,
+        },
+        'node_modules/parent': {
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/parent/-/parent-1.0.0.tgz',
+          dependencies: { tool: nestedToolUrl },
+        },
+        'node_modules/parent/node_modules/tool': {
+          version: '1.0.0',
+          hasInstallScript: true,
+          resolved: nestedToolUrl,
+        },
+      },
+    }),
+    node_modules: {
+      tool: {
+        'package.json': JSON.stringify({
+          name: 'tool',
+          version: '1.0.0',
+          scripts: { install: 'echo install' },
+        }),
+      },
+      parent: {
+        'package.json': JSON.stringify({
+          name: 'parent',
+          version: '1.0.0',
+          dependencies: { tool: nestedToolUrl },
+        }),
+        node_modules: {
+          tool: {
+            'package.json': JSON.stringify({
+              name: 'tool',
+              version: '1.0.0',
+              scripts: { install: 'echo install' },
+            }),
+          },
+        },
+      },
+    },
+  }
+}
+
+const setupMixedSourceProject = (t, allowScripts, linked) => {
+  const source = 'https://evil.example/tool/-/tool-1.9.9.tgz'
+  const fixture = setupProject({
+    allowScripts,
+    withScripts: ['tool'],
+    noScripts: ['parent'],
+    remoteUrls: { tool: source },
+  })
+  const pkg = JSON.parse(fixture['package.json'])
+  pkg.dependencies.tool = '^1.0.0'
+  fixture['package.json'] = JSON.stringify(pkg)
+  const lock = JSON.parse(fixture['package-lock.json'])
+  lock.packages[''].dependencies.tool = '^1.0.0'
+  lock.packages['node_modules/parent'].dependencies = { tool: source }
+  fixture['package-lock.json'] = JSON.stringify(lock)
+  const parent = JSON.parse(fixture.node_modules.parent['package.json'])
+  parent.dependencies = { tool: source }
+  fixture.node_modules.parent['package.json'] = JSON.stringify(parent)
+  if (linked) {
+    const storeDir = 'tool@1.0.0-mixed'
+    const storeLoc = `node_modules/.store/${storeDir}/node_modules/tool`
+    const packages = { ...lock.packages }
+    delete packages['']
+    packages[`node_modules/.store/${storeDir}`] = {}
+    packages[storeLoc] = packages['node_modules/tool']
+    packages['node_modules/tool'] = { resolved: storeLoc, link: true }
+    fixture.node_modules['.package-lock.json'] = JSON.stringify({
+      lockfileVersion: 3,
+      requires: true,
+      packages,
+    })
+    fixture.node_modules['.store'] = {
+      [storeDir]: { node_modules: { tool: fixture.node_modules.tool } },
+    }
+    fixture.node_modules.tool = t.fixture('symlink', `.store/${storeDir}/node_modules/tool`)
+  }
+  return { fixture, source }
+}
+
+for (const linked of [false, true]) {
+  t.test(`mixed-source registry denials survive ${linked ? 'linked' : 'hoisted'} commands`, async t => {
+    for (const key of ['tool', 'tool@1.0.0']) {
+      for (const mode of ['approve', 'all', 'ls', 'prune']) {
+        await t.test(`${mode} with ${key}`, async t => {
+          const allowScripts = { [key]: false }
+          const { fixture, source } = setupMixedSourceProject(t, allowScripts, linked)
+          const { npm, prefix, logs, joinedOutput } = await mockNpm(t, {
+            prefixDir: fixture,
+            config: { all: mode === 'all' },
+          })
+          if (linked) {
+            const hidden = resolve(prefix, 'node_modules/.package-lock.json')
+            const future = new Date(Date.now() + 1000)
+            fs.utimesSync(hidden, future, future)
+          }
+          const Arborist = require('@npmcli/arborist')
+          const isScriptAllowed = require('@npmcli/arborist/lib/script-allowed.js')
+          const tree = await new Arborist({ path: prefix }).loadActual()
+          const target = tree.edgesOut.get('tool').to.target
+          t.ok(tree.edgesOut.get('tool').valid)
+          if (!linked) {
+            t.ok(tree.children.get('parent').edgesOut.get('tool').valid)
+          }
+          t.equal(tree.children.get('parent').edgesOut.get('tool').to.target, target)
+          t.equal(isScriptAllowed(target, { ...allowScripts, [source]: true }), false)
+
+          await npm.exec('install-scripts', mode === 'all'
+            ? ['approve']
+            : mode === 'approve' ? ['approve', source] : [mode])
+
+          const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+          t.strictSame(pkg.allowScripts, allowScripts)
+          if (mode === 'approve') {
+            const warning = logs.warn.byTitle('install-scripts').join('\n')
+            t.match(warning, /is denied; remove the entry/)
+            t.notMatch(warning, /widen/)
+          } else if (mode === 'ls') {
+            t.match(joinedOutput(), /No packages with unreviewed install scripts/)
+          }
+        })
+      }
+    }
+  })
+}
+
+const toolSourceNode = (source, overrides = {}) => ({
+  name: 'tool',
+  version: '1.0.0',
+  resolved: source,
+  isRegistryDependency: false,
+  edgesIn: new Set([{ name: 'tool', spec: source }]),
+  ...overrides,
+})
+
+const mockProjectWithInventory = (t, inventory, { unreviewed = [], config = {} } = {}) => {
+  const FakeArborist = function (options) {
+    this.options = options
+    this.actualTree = { inventory: new Map(Object.entries(inventory)) }
+  }
+  FakeArborist.prototype.loadActual = async () => {}
+
+  return mockNpm(t, {
+    config,
+    prefixDir: {
+      'package.json': JSON.stringify({ name: 'host', version: '1.0.0' }),
+    },
+    mocks: {
+      '@npmcli/arborist': FakeArborist,
+      '{LIB}/utils/check-allow-scripts.js': async () => unreviewed,
+    },
+  })
+}
+
+const mixedRegistryRemoteInventory = () => ({
+  registry: toolSourceNode('https://registry.npmjs.org/tool/-/tool-1.0.0.tgz', {
+    isRegistryDependency: true,
+    edgesIn: new Set([{ name: 'tool', spec: '1.0.0' }]),
+  }),
+  remote: toolSourceNode(topLevelToolUrl),
+})
+
+const linkedFileNode = (source, location) => {
+  const rootPath = resolve('project')
+  const linkPath = resolve(rootPath, location)
+  const targetPath = resolve(rootPath, source.slice('file:'.length))
+  const root = {
+    path: rootPath,
+    meta: {
+      get: nodePath => nodePath === linkPath
+        ? { resolved: source, link: true }
+        : {},
+    },
+  }
+  return {
+    name: 'tool',
+    version: '1.0.0',
+    resolved: null,
+    isRegistryDependency: false,
+    path: targetPath,
+    realpath: targetPath,
+    root,
+    linksIn: new Set([{
+      path: linkPath,
+      resolved: 'file:../../tool',
+      root,
+    }]),
   }
 }
 
@@ -87,6 +313,165 @@ t.test('install-scripts approve <pkg> writes a pinned entry', async t => {
   t.strictSame(pkg.allowScripts, { 'canvas@1.0.0': true })
 })
 
+t.test('install-scripts approve <pkg> writes exact URL for a remote tarball', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['cypress'],
+      remoteUrls: { cypress: remoteCypressUrl },
+    }),
+  })
+  await npm.exec('install-scripts', ['approve', 'cypress'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [remoteCypressUrl]: true })
+})
+
+t.test('install-scripts approve <pkg> selects a remote tarball by installed name', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['cypress'],
+      remoteUrls: { cypress: registryShapedRemoteCypressUrl },
+    }),
+  })
+  await npm.exec('install-scripts', ['approve', 'cypress'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [registryShapedRemoteCypressUrl]: true })
+})
+
+t.test('install-scripts approve rejects a name shared by distinct remote sources', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupDistinctRemoteSourcesProject(),
+  })
+
+  await t.rejects(
+    npm.exec('install-scripts', ['approve', 'tool']),
+    {
+      code: 'EINSTALLSCRIPTSAMBIGUOUS',
+      message: /tool.*multiple sources/i,
+    }
+  )
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg)
+})
+
+t.test('install-scripts does not select unnamed untrusted candidates', async t => {
+  const { npm, logs, clearLogs } = await mockProjectWithInventory(t, {
+    located: {
+      location: 'node_modules/located',
+      resolved: null,
+    },
+    anonymous: {
+      resolved: null,
+    },
+  })
+
+  for (const selector of ['node_modules/located', '<untrusted source>']) {
+    clearLogs()
+    await t.rejects(
+      npm.exec('install-scripts', ['approve', selector]),
+      { code: 'ENOMATCH' }
+    )
+    t.strictSame(logs.warn, [], `${selector} was not selected`)
+  }
+})
+
+t.test('install-scripts approve accepts an exact remote source selector', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupDistinctRemoteSourcesProject(),
+  })
+
+  await npm.exec('install-scripts', ['approve', topLevelToolUrl])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [topLevelToolUrl]: true })
+})
+
+t.test('install-scripts approve does not trust remote manifest versions as selectors', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['cypress'],
+      remoteUrls: { cypress: remoteCypressUrl },
+    }),
+  })
+
+  await t.rejects(
+    npm.exec('install-scripts', ['approve', 'cypress@1.0.0']),
+    { code: 'ENOMATCH' }
+  )
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg)
+})
+
+t.test('install-scripts non-bare registry selectors cannot select remote dependencies', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['cypress'],
+      remoteUrls: { cypress: remoteCypressUrl },
+    }),
+  })
+
+  for (const selector of [
+    'cypress@',
+    'cypress@*',
+    'cypress@latest',
+    'cypress@npm:other@1.0.0',
+  ]) {
+    await t.rejects(
+      npm.exec('install-scripts', ['approve', selector]),
+      { code: 'ENOMATCH' },
+      selector
+    )
+  }
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg)
+})
+
+t.test('install-scripts deny blocks every exact source sharing an installed name', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupDistinctRemoteSourcesProject(),
+  })
+
+  await npm.exec('install-scripts', ['deny', 'tool'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, {
+    [nestedToolUrl]: false,
+    [topLevelToolUrl]: false,
+  })
+})
+
+t.test('install-scripts positional selection skips Link wrappers', async t => {
+  const target = toolSourceNode(topLevelToolUrl)
+  const link = {
+    name: 'tool',
+    version: '1.0.0',
+    resolved: 'file:.store/tool',
+    isLink: true,
+    isRegistryDependency: false,
+  }
+  const { npm, prefix } = await mockProjectWithInventory(t, { link, target })
+
+  await npm.exec('install-scripts', ['approve', 'tool'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [topLevelToolUrl]: true })
+})
+
+t.test('install-scripts positional selection skips inert nodes', async t => {
+  const available = toolSourceNode(topLevelToolUrl)
+  const inert = toolSourceNode(nestedToolUrl, { inert: true })
+  const { npm, prefix } = await mockProjectWithInventory(t, { available, inert })
+
+  await npm.exec('install-scripts', ['approve', 'tool'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [topLevelToolUrl]: true })
+})
+
 t.test('install-scripts approve --all approves every unreviewed package', async t => {
   const { npm, prefix } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas', 'sharp'] }),
@@ -101,6 +486,334 @@ t.test('install-scripts approve --all approves every unreviewed package', async 
   })
 })
 
+t.test('install-scripts approve --all writes exact URL for a remote tarball', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['cypress'],
+      remoteUrls: { cypress: remoteCypressUrl },
+    }),
+    config: { all: true },
+  })
+  await npm.exec('install-scripts', ['approve'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [remoteCypressUrl]: true })
+})
+
+t.test('install-scripts approve --all allows distinct same-name remote sources explicitly', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupDistinctRemoteSourcesProject(),
+    config: { all: true },
+  })
+
+  await npm.exec('install-scripts', ['approve'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, {
+    [nestedToolUrl]: true,
+    [topLevelToolUrl]: true,
+  })
+})
+
+t.test('install-scripts approve allows multiple commits from one hosted repository', async t => {
+  const firstCommit = 'github:example/tool#deadbeef'
+  const secondCommit = 'github:example/tool#cafebabe'
+  const { npm, prefix } = await mockProjectWithInventory(t, {
+    firstCommit: toolSourceNode(firstCommit),
+    secondCommit: toolSourceNode(secondCommit),
+  })
+
+  await npm.exec('install-scripts', ['approve', 'tool'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [firstCommit]: true, [secondCommit]: true })
+})
+
+t.test('install-scripts exact git selector approves only the selected commit', async t => {
+  const firstCommit = 'github:example/tool#deadbeef'
+  const secondCommit = 'github:example/tool#cafebabe'
+  const { npm, prefix } = await mockProjectWithInventory(t, {
+    firstCommit: toolSourceNode(firstCommit),
+    secondCommit: toolSourceNode(secondCommit),
+  })
+
+  await npm.exec('install-scripts', ['approve', firstCommit])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [firstCommit]: true })
+})
+
+t.test('install-scripts exact git selector replaces a broad repository approval', async t => {
+  const commit = 'github:example/tool#deadbeef'
+  const repository = 'github:example/tool'
+  const { npm, prefix } = await mockProjectWithInventory(t, {
+    commit: toolSourceNode(commit),
+  })
+  fs.writeFileSync(resolve(prefix, 'package.json'), JSON.stringify({
+    name: 'host',
+    version: '1.0.0',
+    allowScripts: { [repository]: true },
+  }))
+
+  await npm.exec('install-scripts', ['approve', commit])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [commit]: true })
+})
+
+t.test('install-scripts approve rejects same-name dependencies from different git repositories', async t => {
+  const firstRepositoryCommit = 'github:example/tool#deadbeef'
+  const secondRepositoryCommit = 'github:attacker/tool#cafebabe'
+  const { npm, prefix } = await mockProjectWithInventory(t, {
+    firstRepositoryCommit: toolSourceNode(firstRepositoryCommit),
+    secondRepositoryCommit: toolSourceNode(secondRepositoryCommit),
+  })
+
+  await t.rejects(
+    npm.exec('install-scripts', ['approve', 'tool']),
+    { code: 'EINSTALLSCRIPTSAMBIGUOUS' }
+  )
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg)
+})
+
+t.test('install-scripts ambiguity lists an exact selector for registry matches', async t => {
+  const { npm } = await mockProjectWithInventory(t, mixedRegistryRemoteInventory())
+
+  await t.rejects(
+    npm.exec('install-scripts', ['approve', 'tool']),
+    {
+      code: 'EINSTALLSCRIPTSAMBIGUOUS',
+      message: new RegExp(
+        `tool@1\\.0\\.0[\\s\\S]*${topLevelToolUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`
+      ),
+    }
+  )
+})
+
+t.test('install-scripts registry version selector disambiguates a remote name collision', async t => {
+  const { npm, prefix } = await mockProjectWithInventory(t, mixedRegistryRemoteInventory())
+
+  await npm.exec('install-scripts', ['approve', 'tool@1.0.0'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { 'tool@1.0.0': true })
+})
+
+t.test('install-scripts approve rejects distinct linked file sources with one name', async t => {
+  const inventory = {
+    good: linkedFileNode('file:../good-tool', 'node_modules/tool'),
+    attacker: linkedFileNode(
+      'file:../attacker-tool',
+      'node_modules/parent/node_modules/tool'
+    ),
+  }
+  const { npm, prefix } = await mockProjectWithInventory(t, inventory)
+
+  await t.rejects(
+    npm.exec('install-scripts', ['approve', 'tool']),
+    { code: 'EINSTALLSCRIPTSAMBIGUOUS' }
+  )
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg)
+})
+
+t.test('install-scripts exact resolver identity disambiguates linked targets', async t => {
+  const exactSource = 'file:../good-tool'
+  const inventory = {
+    good: linkedFileNode(exactSource, 'node_modules/tool'),
+    attacker: linkedFileNode(
+      'file:../attacker-tool',
+      'node_modules/parent/node_modules/tool'
+    ),
+  }
+  const { npm, prefix } = await mockProjectWithInventory(t, inventory)
+
+  await npm.exec('install-scripts', ['approve', exactSource])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [exactSource]: true })
+})
+
+const multiLinkFileNode = () => {
+  const rootPath = resolve('project')
+  const targetPath = resolve(rootPath, '../shared')
+  const firstLinkPath = resolve(rootPath, 'node_modules/first')
+  const secondLinkPath = resolve(rootPath, 'node_modules/second')
+  const firstSource = 'file:../shared'
+  const secondSource = 'file:vendor/shared'
+  const root = {
+    path: rootPath,
+    meta: {
+      get: nodePath => ({
+        [firstLinkPath]: { resolved: firstSource, link: true },
+        [secondLinkPath]: { resolved: secondSource, link: true },
+      })[nodePath] || {},
+    },
+  }
+  return {
+    name: 'shared',
+    version: '1.0.0',
+    resolved: null,
+    isRegistryDependency: false,
+    path: targetPath,
+    realpath: targetPath,
+    root,
+    linksIn: new Set([
+      { path: firstLinkPath, resolved: firstSource, root },
+      { path: secondLinkPath, resolved: secondSource, root },
+    ]),
+  }
+}
+
+t.test('install-scripts exact resolver identity approves a multi-link target', async t => {
+  const target = multiLinkFileNode()
+  const firstSource = 'file:../shared'
+  const { npm, prefix } = await mockProjectWithInventory(t, { target })
+  await npm.exec('install-scripts', ['approve', firstSource])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [firstSource]: true })
+})
+
+t.test('install-scripts denies every selected identity of a multi-link target', async t => {
+  for (const sources of [
+    ['file:../shared', 'file:vendor/shared'],
+    ['file:vendor/shared', 'file:../shared'],
+  ]) {
+    await t.test(sources.join(' then '), async t => {
+      const { npm, prefix } = await mockProjectWithInventory(t, { target: multiLinkFileNode() })
+      await npm.exec('install-scripts', ['deny', ...sources])
+
+      const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+      t.strictSame(pkg.allowScripts, {
+        'file:../shared': false,
+        'file:vendor/shared': false,
+      })
+    })
+  }
+})
+
+t.test('install-scripts file selectors write the matching lockfile identity', async t => {
+  for (const source of ['file:../shared', 'file:vendor/shared']) {
+    for (const filePrefix of ['', 'file:']) {
+      await t.test(`${filePrefix || 'absolute path: '}${source}`, async t => {
+        const target = multiLinkFileNode()
+        const selector = `${filePrefix}${resolve(target.root.path, source.slice('file:'.length))}`
+        const { npm, prefix } = await mockProjectWithInventory(t, { target })
+        await npm.exec('install-scripts', ['approve', selector])
+
+        const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+        t.strictSame(pkg.allowScripts, { [source]: true })
+      })
+    }
+  }
+})
+
+t.test('install-scripts rejects file selectors without a trusted policy identity', async t => {
+  for (const verb of ['approve', 'deny']) {
+    await t.test(verb, async t => {
+      const target = linkedFileNode('file:../tool', 'node_modules/tool')
+      target.root.meta = { get: () => ({}) }
+      const { npm, prefix, logs } = await mockProjectWithInventory(t, { target })
+
+      await t.rejects(npm.exec('install-scripts', [verb, target.path]), { code: 'ENOMATCH' })
+
+      const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+      t.notOk(pkg.allowScripts)
+      t.match(logs.warn.byTitle('install-scripts').join('\n'), /no trusted identity for policy key/)
+    })
+  }
+})
+
+t.test('install-scripts exposes every identity for a multi-link target', async t => {
+  for (const json of [false, true]) {
+    await t.test(json ? 'json' : 'text', async t => {
+      const target = multiLinkFileNode()
+      const { npm, joinedOutput } = await mockProjectWithInventory(t, { target }, {
+        config: { json },
+        unreviewed: [{ node: target, scripts: { install: 'echo install' } }],
+      })
+      await npm.exec('install-scripts', ['ls'])
+      if (json) {
+        t.strictSame(JSON.parse(joinedOutput()), {
+          allowScripts: [{
+            name: 'shared',
+            changes: [
+              { key: 'file:../shared', change: 'pending' },
+              { key: 'file:vendor/shared', change: 'pending' },
+            ],
+          }],
+        })
+      } else {
+        t.match(joinedOutput(), /file:\.\.\/shared/)
+        t.match(joinedOutput(), /file:vendor\/shared/)
+        t.notMatch(joinedOutput(), /untrusted source/)
+      }
+    })
+  }
+  for (const verb of ['approve', 'deny']) {
+    await t.test(`${verb} requires an exact identity`, async t => {
+      const { npm } = await mockProjectWithInventory(t, { target: multiLinkFileNode() })
+      await t.rejects(npm.exec('install-scripts', [verb, 'shared']), {
+        code: 'EINSTALLSCRIPTSAMBIGUOUS',
+        message: /file:\.\.\/shared[\s\S]*file:vendor\/shared/,
+      })
+    })
+  }
+  const target = multiLinkFileNode()
+  const { npm, prefix, logs } = await mockProjectWithInventory(t, { target }, {
+    config: { all: true },
+    unreviewed: [{ node: target, scripts: { install: 'echo install' } }],
+  })
+  await npm.exec('install-scripts', ['approve'])
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk(pkg.allowScripts)
+  t.match(logs.warn.byTitle('install-scripts').join('\n'),
+    /exact source selector: file:\.\.\/shared, file:vendor\/shared/)
+})
+
+t.test('install-scripts exact file selectors do not cross path anchors', async t => {
+  const outside = linkedFileNode('file:../tool', 'node_modules/outside')
+  const inside = linkedFileNode('file:tool', 'node_modules/inside')
+  for (const link of inside.linksIn) {
+    link.resolved = 'file:../tool'
+  }
+  const { npm, prefix } = await mockProjectWithInventory(t, { outside, inside })
+  await npm.exec('install-scripts', ['approve', 'file:../tool'])
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  const isScriptAllowed = require('../../../workspaces/arborist/lib/script-allowed.js')
+  t.equal(isScriptAllowed(outside, pkg.allowScripts), true)
+  t.equal(isScriptAllowed(inside, pkg.allowScripts), null)
+})
+
+t.test('install-scripts non-bare selectors do not select local links by link name', async t => {
+  const target = {
+    ...linkedFileNode('file:../local-tool', 'node_modules/foo'),
+    name: 'local-tool',
+  }
+  const inventory = {
+    link: {
+      isLink: true,
+      name: 'foo',
+      target,
+    },
+  }
+  const { npm, prefix } = await mockProjectWithInventory(t, inventory)
+
+  for (const selector of ['foo@*', 'foo@latest', 'foo@npm:bar@1.0.0']) {
+    await t.rejects(
+      npm.exec('install-scripts', ['approve', selector]),
+      { code: 'ENOMATCH' }
+    )
+  }
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.notOk('allowScripts' in pkg)
+})
+
 t.test('install-scripts deny <pkg> writes a name-only false entry', async t => {
   const { npm, prefix } = await mockNpm(t, {
     prefixDir: setupProject({ withScripts: ['canvas'] }),
@@ -109,6 +822,19 @@ t.test('install-scripts deny <pkg> writes a name-only false entry', async t => {
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.strictSame(pkg.allowScripts, { canvas: false })
+})
+
+t.test('install-scripts deny <pkg> writes exact URL for a remote tarball', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['cypress'],
+      remoteUrls: { cypress: remoteCypressUrl },
+    }),
+  })
+  await npm.exec('install-scripts', ['deny', 'cypress'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [remoteCypressUrl]: false })
 })
 
 t.test('install-scripts deny --all denies every unreviewed package', async t => {
@@ -120,6 +846,20 @@ t.test('install-scripts deny --all denies every unreviewed package', async t => 
 
   const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
   t.strictSame(pkg.allowScripts, { canvas: false, sharp: false })
+})
+
+t.test('install-scripts deny --all writes exact URL for a remote tarball', async t => {
+  const { npm, prefix } = await mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['cypress'],
+      remoteUrls: { cypress: remoteCypressUrl },
+    }),
+    config: { all: true },
+  })
+  await npm.exec('install-scripts', ['deny'])
+
+  const pkg = JSON.parse(fs.readFileSync(resolve(prefix, 'package.json'), 'utf8'))
+  t.strictSame(pkg.allowScripts, { [remoteCypressUrl]: false })
 })
 
 t.test('install-scripts ignores allow-scripts-pending and still writes', async t => {
@@ -144,6 +884,41 @@ t.test('install-scripts ls lists unreviewed packages', async t => {
   t.match(out, /2 packages have install scripts blocked because they are not covered by allowScripts/)
   t.match(out, /canvas@1\.0\.0/)
   t.match(out, /sharp@1\.0\.0/)
+})
+
+t.test('install-scripts ls shows installed name and exact source for remote tarballs', async t => {
+  const { npm, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['cypress'],
+      remoteUrls: { cypress: registryShapedRemoteCypressUrl },
+    }),
+  })
+
+  await npm.exec('install-scripts', ['ls'])
+
+  const out = joinedOutput()
+  t.match(out, /cypress/)
+  t.match(out, new RegExp(registryShapedRemoteCypressUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')))
+  t.notMatch(out, /artifact@1\.0\.0/)
+})
+
+t.test('install-scripts ls --json exposes exact remote source selectors', async t => {
+  const { npm, joinedOutput } = await mockNpm(t, {
+    prefixDir: setupProject({
+      withScripts: ['cypress'],
+      remoteUrls: { cypress: registryShapedRemoteCypressUrl },
+    }),
+    config: { json: true },
+  })
+
+  await npm.exec('install-scripts', ['ls'])
+
+  t.strictSame(JSON.parse(joinedOutput()), {
+    allowScripts: [{
+      name: 'cypress',
+      changes: [{ key: registryShapedRemoteCypressUrl, change: 'pending' }],
+    }],
+  })
 })
 
 t.test('install-scripts ls lists extraneous packages on disk', async t => {

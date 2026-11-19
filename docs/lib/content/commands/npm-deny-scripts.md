@@ -25,16 +25,50 @@ npm deny-scripts <pkg> [<pkg> ...]
 npm deny-scripts --all
 ```
 
-`<pkg>` matches every installed version of that package. Denies are always
-written name-only (`"pkg": false`), regardless of `--allow-scripts-pin`. Pinning a deny
-to a specific version would silently re-allow scripts for any other version
-of the same package, which defeats the purpose; the command picks the
-safer default for you.
+`<pkg>` selects installed dependencies by their displayed package name.
+Registry-package denials are written name-only (`"pkg": false`), regardless
+of `--allow-scripts-pin`, so a future registry version does not silently
+regain script permission. Direct remote tarballs are denied by their exact
+`resolved` URL (for example, `"https://registry.example/pkg.tgz": false`),
+file dependencies by their resolved file spec (for example,
+`"file:../packages/logger": false`), and hosted git dependencies by the hosted
+repository shortcut without a committish (for example,
+`"github:org/repo": false`). Tarball-reported package names are never used
+as policy identities. Linked directories use the exact resolved file spec
+from `package-lock.json`.
+
+A bare installed name denies every matching non-registry source. To select
+only one source when several share a name, pass its exact selector from
+`npm install-scripts ls`. Remote and file denials stay exact; a selected
+hosted-git dependency is denied at the repository level. Non-registry version
+and range selectors are not supported because those versions come from the
+dependency itself.
+
+Relative file keys are resolved from the project root, not from `node_modules`.
+Legacy link-relative denials remain effective, but legacy approvals do not grant permission.
+If one target has multiple file identities, `ls` shows every selector and
+denial requires an exact selector; `--all` skips it with a warning.
+File denials replace only path-equivalent entries, preserving policies for other
+file identities that currently share the target.
+Repository-level denials remove policy entries for every commit of that
+repository, including commits that are not currently installed.
+
+If one installed package satisfies both registry and non-registry requests,
+denials for any incoming registry identity still block its scripts.
+An approval for its remote URL, git repository, or file source cannot override
+that denial, including under the linked install strategy.
+Names come from the registry requests, including the underlying name of an npm
+alias, rather than the installed package's manifest.
+For mixed-source packages the registry version is unverifiable, so versioned
+registry denials fail closed on the matching name.
+This can block packages reporting a different version from the denied version.
+Pure non-registry dependencies do not acquire a registry identity from their
+manifest or URL.
 
 `--all` denies every package with unreviewed install scripts.
 
 If a `true` (pinned or name-only) entry exists for a package and you then
-deny it, the existing allow entries are removed so the name-only deny is
+deny it, the existing allow entries are removed so the denial entry is
 unambiguous.
 
 ### Examples
@@ -54,5 +88,6 @@ npm deny-scripts --all
 ### See Also
 
 * [npm approve-scripts](/commands/npm-approve-scripts)
+* [npm install-scripts](/commands/npm-install-scripts)
 * [npm install](/commands/npm-install)
 * [package.json](/configuring-npm/package-json)
