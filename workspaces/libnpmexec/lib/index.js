@@ -25,12 +25,27 @@ const manifests = new Map()
 
 const getManifest = async (spec, flatOptions) => {
   if (!manifests.has(spec.raw)) {
-    const manifest = await pacote.manifest(spec, {
+    const opts = {
       ...flatOptions,
       preferOnline: true,
       Arborist,
       _isRoot: true,
-    })
+    }
+    let manifest
+    // Exact versions can use cached metadata without revalidation. A cache
+    // miss or a packument predating the requested version needs a fresh lookup.
+    if (spec.type === 'version' && !opts.preferOffline && !flatOptions.preferOnline) {
+      try {
+        manifest = await pacote.manifest(spec, { ...opts, offline: true })
+      } catch (err) {
+        if (opts.offline || !['ENOTCACHED', 'ETARGET'].includes(err.code)) {
+          throw err
+        }
+      }
+    }
+    if (!manifest) {
+      manifest = await pacote.manifest(spec, opts)
+    }
     manifests.set(spec.raw, manifest)
   }
   return manifests.get(spec.raw)
