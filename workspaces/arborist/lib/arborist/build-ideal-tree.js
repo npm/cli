@@ -1418,6 +1418,17 @@ This is a one-time fix-up, please be patient...
       // problems so the lockfile gets fixed.
       // See npm/cli#8726.
       if (!edge.valid) {
+        // Reifying a bundle uses the dependency tree from its tarball.
+        // Keep locked dependencies from the same bundle when validating a
+        // frozen install, even if their versions don't satisfy each other.
+        if (this.options.save === false && !this.#requestedTreeMutation &&
+            edge.type === 'prod' && !edge.overrides &&
+            node.package.inBundle && edge.to.package.inBundle) {
+          const bundler = node.getBundler()
+          if (bundler && bundler !== this.idealTree && bundler === edge.to.getBundler()) {
+            continue
+          }
+        }
         if (edge.type !== 'peerOptional' ||
           this.options.save !== false ||
           this.#requestedTreeMutation) {
