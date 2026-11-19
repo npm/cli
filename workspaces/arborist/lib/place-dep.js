@@ -292,6 +292,20 @@ class PlaceDep {
       }
     }
 
+    // the new placement may also shadow same-name nodes higher up the tree
+    // (npm/cli#9135): a package hoisted near the root for one edge can be
+    // superseded by a closer placement for a node deeper in the tree, leaving
+    // the hoisted node with no edgesIn.  If left behind, it is written to the
+    // lockfile as extraneous and its dependency versions keep winning dedupe
+    // decisions.  Remove such orphans, and re-evaluate anything outside of
+    // them that still pointed into them.
+    for (let p = this.placed.resolveParent; p; p = p.resolveParent) {
+      const shadowed = p.children.get(this.name)
+      if (shadowed && shadowed !== this.placed && !shadowed.isWorkspace && !shadowed.isLink) {
+        this.pruneOrphan(shadowed)
+      }
+    }
+
     // also place its unmet or invalid peer deps at this location
     // loop through any peer deps from the thing we just placed, and place
     // those ones as well.  it's safe to do this with the virtual nodes,
@@ -458,6 +472,39 @@ class PlaceDep {
         }
       }
     }
+  }
+
+  // Remove a same-name node that lost all of its dependents to a new, closer
+  // placement (see npm/cli#9135).  The node and its exclusive subtree are
+  // detached from the tree.  Detaching (root = null) walks the subtree and
+  // reloads any outside edges that pointed into it, turning them into
+  // missing edges; their sources are added to needEvaluation beforehand so
+  // the build loop re-resolves and re-places them.
+  pruneOrphan (node) {
+    // still referenced - not an orphan, leave it alone
+    if (node.edgesIn.size !== 0) {
+      return
+    }
+
+    const members = new Set([node])
+    for (const member of members) {
+      for (const kid of member.children.values()) {
+        members.add(kid)
+      }
+      for (const kid of member.fsChildren) {
+        members.add(kid)
+      }
+    }
+
+    for (const member of members) {
+      for (const edge of [...member.edgesIn]) {
+        if (!members.has(edge.from)) {
+          this.needEvaluation.add(edge.from)
+        }
+      }
+    }
+
+    node.root = null
   }
 
   get isMine () {

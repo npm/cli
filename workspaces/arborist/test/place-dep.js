@@ -505,6 +505,76 @@ t.test('placement tests', t => {
     },
   })
 
+  // npm/cli#9135: a hoisted copy shadowed by a closer placement is pruned
+  // even though it sits at an ancestor location (the root), and its
+  // fsChildren (file: deps loaded from disk into the ideal tree) are
+  // gathered and removed with it
+  runTest('prune shadowed hoisted dep at an ancestor location, with its fsChildren', {
+    tree: new Node({
+      path,
+      pkg: { dependencies: { a: '2.0.0' } },
+      children: [
+        { pkg: { name: 'a', version: '2.0.0', dependencies: { pc: '1.0.0' } } },
+        {
+          pkg: { name: 'pc', version: '1.0.1' },
+          fsChildren: [
+            {
+              path: `${path}/node_modules/pc/sub`,
+              pkg: { name: 'sub', version: '1.0.0' },
+            },
+          ],
+        },
+      ],
+    }),
+    dep: new Node({ pkg: { name: 'pc', version: '1.0.0' } }),
+    nodeLoc: 'node_modules/a',
+    test: (t, tree) => {
+      t.equal(tree.children.get('pc'), undefined, 'shadowed hoisted pc pruned from the root')
+      t.equal(tree.inventory.get('node_modules/pc'), undefined,
+        'pc is gone from the inventory')
+      t.equal(tree.inventory.get('node_modules/pc/sub'), undefined,
+        'the shadowed dep\'s fsChild was gathered and removed with it')
+    },
+  })
+
+  // npm/cli#9135: an edge from outside the pruned subtree that (stale, e.g.
+  // after a parent move that does not reload dependents' edges) points into
+  // it is reloaded when the subtree is removed, and its source is queued for
+  // re-evaluation
+  runTest('reload outside edges pointing into a pruned subtree', {
+    tree: (() => {
+      const tree = new Node({
+        path,
+        pkg: { dependencies: { a: '2.0.0', x: '1.0.0' } },
+        children: [
+          { pkg: { name: 'a', version: '2.0.0', dependencies: { pc: '1.0.0' } } },
+          { pkg: { name: 'pc', version: '1.0.1', dependencies: { zed: '1.0.0' } } },
+          { pkg: { name: 'x', version: '1.0.0', dependencies: { zed: '1.0.0' } } },
+        ],
+      })
+      // give the root a zed@1.0.0 that x resolves to, then move it under the
+      // hoisted pc without reloading dependents' edges - x's edge now points
+      // into what will become the pruned subtree
+      const zed = new Node({ pkg: { name: 'zed', version: '1.0.0' } })
+      zed.parent = tree
+      if (tree.children.get('x').edgesOut.get('zed').to !== zed) {
+        throw new Error('x should resolve zed at the root before the move')
+      }
+      zed.parent = tree.children.get('pc')
+      return tree
+    })(),
+    dep: new Node({ pkg: { name: 'pc', version: '1.0.0' } }),
+    nodeLoc: 'node_modules/a',
+    test: (t, tree) => {
+      t.equal(tree.children.get('pc'), undefined, 'shadowed hoisted pc pruned from the root')
+      t.equal(tree.inventory.get('node_modules/pc/node_modules/zed'), undefined,
+        'the pruned dep\'s child is gone from the inventory')
+      const zedEdge = tree.children.get('x').edgesOut.get('zed')
+      t.equal(zedEdge.to, null, 'the stale edge into the pruned subtree reloaded to nothing')
+      t.equal(zedEdge.error, 'MISSING', 'the reloaded edge is now missing')
+    },
+  })
+
   // root -> (a@1, b)
   // +-- a@1.0.0
   // +-- b -> (c@link:c, a@1.1)
