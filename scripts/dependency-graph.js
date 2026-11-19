@@ -1,5 +1,4 @@
 const Arborist = require('@npmcli/arborist')
-const os = require('node:os')
 const { readFileSync } = require('node:fs')
 const { join } = require('node:path')
 const { log } = require('proc-log')
@@ -9,7 +8,7 @@ const { run, CWD, pkg, fs, EOL } = require('./util.js')
 
 // To re-create npm-cli-repos.txt run:
 // npx -p @npmcli/stafftools gh repos --json | json -a name | sort > scripts/npm-cli-repos.txt
-const repos = readFileSync(join(CWD, 'scripts', 'npm-cli-repos.txt'), 'utf-8').trim().split(os.EOL)
+const repos = readFileSync(join(CWD, 'scripts', 'npm-cli-repos.txt'), 'utf-8').trim().split(/\r?\n/)
 
 // Packages with known circular dependencies.  This is typically something with arborist as a dependency which is also in arborist's dev dependencies.  Not a problem if they're workspaces so we ignore repeats
 const circular = new Set(['@npmcli/mock-registry'])
