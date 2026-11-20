@@ -374,6 +374,44 @@ t.test('multiple links to one target keep the most permissive flags', async t =>
   t.end()
 })
 
+t.test('optional peer links from reachable dependents to kept targets are not extraneous', async t => {
+  // Linked layout: each dependent gets its own Link to `kept` and `dropped`, reached only by an optional peer edge.
+  const optionalPeers = {
+    peerDependencies: { kept: '*', dropped: '*' },
+    peerDependenciesMeta: { kept: { optional: true }, dropped: { optional: true } },
+  }
+  const root = new Node({
+    path: '/r',
+    realpath: '/r',
+    pkg: { name: 'root', dependencies: { a: '*', kept: '*', nested: '*' } },
+  })
+  const pkgs = { a: optionalPeers, kept: {}, dropped: {}, stray: optionalPeers }
+  const targets = {}
+  for (const [name, pkg] of Object.entries(pkgs)) {
+    const path = `/r/node_modules/.store/${name}/node_modules/${name}`
+    targets[name] = new Node({ path, realpath: path, root, pkg: { name, version: '1.0.0', ...pkg } })
+  }
+  // `stray` is only kept as the parent of `nested`, so it is not a reachable dependent.
+  const nested = new Node({ parent: targets.stray, pkg: { name: 'nested', version: '1.0.0' } })
+  new Link({ name: 'a', parent: root, target: targets.a })
+  new Link({ name: 'kept', parent: root, target: targets.kept })
+  new Link({ name: 'nested', parent: root, target: nested })
+  const keptPeer = new Link({ name: 'kept', parent: targets.a, target: targets.kept })
+  const droppedPeer = new Link({ name: 'dropped', parent: targets.a, target: targets.dropped })
+  const strayPeer = new Link({ name: 'kept', parent: targets.stray, target: targets.kept })
+  for (const node of root.inventory.values()) {
+    node.extraneous = true
+  }
+
+  calcDepFlags(root)
+
+  t.equal(keptPeer.extraneous, false, 'optional peer link to a kept target is not extraneous')
+  t.equal(targets.dropped.extraneous, true, 'target reached only by an optional peer stays extraneous')
+  t.equal(droppedPeer.extraneous, true, 'optional peer link to an extraneous target stays extraneous')
+  t.equal(targets.stray.extraneous, false, 'parent of a kept node is not extraneous')
+  t.equal(strayPeer.extraneous, true, 'optional peer link from an unreachable dependent stays extraneous')
+})
+
 t.test('check null target in link', async t => {
   const root = new Link({
     path: '/some/path',
