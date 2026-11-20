@@ -164,6 +164,22 @@ t.test('get', t => {
     )
   })
 
+  t.test('nested arg below a null value', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: 'foo',
+          config: { optional: null },
+        }),
+      },
+      config: { json: true },
+    })
+
+    await npm.exec('pkg', ['get', 'config.optional.enabled', 'config.optional'])
+
+    t.strictSame(JSON.parse(joinedOutput()), { 'config.optional': null })
+  })
+
   t.test('array field', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: {
@@ -273,6 +289,25 @@ t.test('get', t => {
       joinedOutput(),
       'should print json result containing matching results'
     )
+  })
+
+  t.test('get array nested items with a null entry', async t => {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: 'foo',
+          targets: [{ name: 'first' }, null, { name: 'third' }],
+        }),
+      },
+      config: { json: true },
+    })
+
+    await npm.exec('pkg', ['get', 'targets.name'])
+
+    t.strictSame(JSON.parse(joinedOutput()), {
+      'targets[0].name': 'first',
+      'targets[2].name': 'third',
+    })
   })
   t.end()
 })
