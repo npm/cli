@@ -594,6 +594,26 @@ t.test('workspaces', async t => {
   await t.test('should display ws outdated deps json output', t =>
     mockWorkspaces(t, { json: true }))
 
+  await t.test('skips an unpublished registry name for a linked workspace', async t => {
+    const { outdated, joinedOutput } = await mockNpm(t, {
+      prefixDir: fixtures.workspaces,
+      config: { json: true },
+      mocks: {
+        pacote: {
+          packument: spec => spec.name === 'b'
+            ? { name: 'b', versions: {}, 'dist-tags': {} }
+            : packument(spec),
+        },
+      },
+    })
+
+    await outdated.exec([])
+
+    const result = JSON.parse(joinedOutput())
+    t.notOk(result.b)
+    t.match(result.dog, { current: '1.0.1', wanted: '1.0.1', latest: '2.0.0' })
+  })
+
   await t.test('should display ws outdated deps parseable output', t =>
     mockWorkspaces(t, { parseable: true }))
 
