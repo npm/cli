@@ -113,6 +113,46 @@ t.test('apply: does not mutate the input manifest', async t => {
   t.not(pkg.dependencies, input.dependencies, 'output has a fresh dependencies object')
 })
 
+t.test('apply: dependency fields that are not objects are not spread into objects', async t => {
+  // an extension that does not touch the malformed fields leaves them for the node to warn about and ignore
+  const pePeer = new PackageExtensions({ foo: { peerDependencies: { react: '*' } } })
+  const input = { name: 'foo', version: '1.0.0', dependencies: ['latest', '*'], optionalDependencies: 'latest' }
+  const { pkg } = pePeer.apply(input)
+  t.equal(pkg.dependencies, input.dependencies, 'array dependencies are passed through, not turned into { 0, 1 }')
+  t.equal(pkg.optionalDependencies, 'latest', 'string optionalDependencies are passed through')
+  t.strictSame(pkg.peerDependencies, { react: '*' }, 'the extension is still applied')
+
+  // an extension that adds to a malformed field replaces it instead of setting properties on the input
+  const peAdd = new PackageExtensions({
+    foo: {
+      dependencies: { bar: '^1' },
+      peerDependencies: { react: '*' },
+      peerDependenciesMeta: { react: { optional: true } },
+    },
+  })
+  const malformed = {
+    name: 'foo',
+    version: '1.0.0',
+    dependencies: ['latest'],
+    optionalDependencies: 'bar',
+    peerDependencies: ['latest'],
+    peerDependenciesMeta: ['latest'],
+  }
+  const { pkg: added } = peAdd.apply(malformed)
+  t.strictSame(added.dependencies, { bar: '^1' }, 'dependencies holds only the added name')
+  t.strictSame(added.peerDependencies, { react: '*' }, 'peerDependencies holds only the added name')
+  t.strictSame(added.peerDependenciesMeta, { react: { optional: true } }, 'peerDependenciesMeta holds only the added name')
+  t.equal(added.optionalDependencies, 'bar', 'a string field is not searched for conflicts')
+  t.strictSame(malformed.dependencies, ['latest'], 'input dependencies unchanged')
+  t.strictSame(Object.keys(malformed.dependencies), ['0'], 'nothing was set on the input array')
+  t.strictSame(Object.keys(malformed.peerDependencies), ['0'], 'nothing was set on the input peerDependencies')
+
+  // meta for a peer that only exists in a malformed peerDependencies field is still an orphan
+  const peMeta = new PackageExtensions({ foo: { peerDependenciesMeta: { react: { optional: true } } } })
+  t.throws(() => peMeta.apply({ name: 'foo', version: '1.0.0', peerDependencies: 'react' }),
+    { code: 'EEXTENSIONORPHANMETA' }, 'a string peerDependencies does not satisfy the meta check')
+})
+
 t.test('apply: rejects replacing an existing normal dependency', async t => {
   const pe = new PackageExtensions({ foo: { dependencies: { bar: '^2' } } })
   t.throws(() => pe.apply({ name: 'foo', version: '1.0.0', dependencies: { bar: '^1' } }),

@@ -30,7 +30,7 @@ const retirePath = require('../retire-path.js')
 const treeCheck = require('../tree-check.js')
 const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
-const { saveTypeMap, hasSubKey } = require('../add-rm-pkg-deps.js')
+const { saveTypeMap, hasSubKey, isDepObject } = require('../add-rm-pkg-deps.js')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
 
 // Part of steps (steps need refactoring before we can do anything about these)
@@ -1993,10 +1993,6 @@ module.exports = cls => class Reifier extends cls {
         tree.package = tree.package
         const pkgJson = await PackageJson.load(tree.path, { create: true })
         const {
-          dependencies = {},
-          devDependencies = {},
-          optionalDependencies = {},
-          peerDependencies = {},
           // bundleDependencies is not required by PackageJson like the other
           // fields here PackageJson also doesn't omit an empty array for this
           // field so defaulting this to an empty array would add that field to
@@ -2006,11 +2002,18 @@ module.exports = cls => class Reifier extends cls {
           patchedDependencies,
         } = tree.package
 
+        // A dependency field that is not an object (an array, a string) was ignored when the tree was built.
+        // Leave it as it is on disk: PackageJson would save its indexes as dependencies on packages named "0", "1", ...
+        const depFields = {}
+        for (const field of new Set(saveTypeMap.values())) {
+          const { [field]: deps = {} } = tree.package
+          if (isDepObject(deps)) {
+            depFields[field] = deps
+          }
+        }
+
         pkgJson.update({
-          dependencies,
-          devDependencies,
-          optionalDependencies,
-          peerDependencies,
+          ...depFields,
           bundleDependencies,
           patchedDependencies,
         })

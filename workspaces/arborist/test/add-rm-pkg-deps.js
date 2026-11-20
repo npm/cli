@@ -279,3 +279,53 @@ t.test('rm', t => {
 
   t.end()
 })
+
+t.test('dependency fields that are not objects', t => {
+  const { add, hasSubKey, isDepObject } = addRm
+  const npa = require('npm-package-arg')
+  const abbrev = npa('abbrev@1.0.0')
+
+  t.strictSame(add({
+    pkg: { dependencies: [] },
+    add: [abbrev],
+  }), {
+    dependencies: { abbrev: '1.0.0' },
+  }, 'an array is replaced by an object holding the new dependency')
+
+  t.strictSame(add({
+    pkg: { dependencies: ['latest', '*'] },
+    add: [abbrev],
+    saveType: 'dev',
+  }), {
+    dependencies: ['latest', '*'],
+    devDependencies: { abbrev: '1.0.0' },
+  }, 'a field that is not written to is left as it is')
+
+  t.strictSame(add({
+    pkg: { dependencies: 'latest', optionalDependencies: ['latest'] },
+    add: [abbrev],
+    saveType: 'optional',
+  }), {
+    dependencies: { abbrev: '1.0.0' },
+    optionalDependencies: { abbrev: '1.0.0' },
+  }, 'both fields written for an optional dependency are replaced')
+
+  t.strictSame(add({
+    pkg: { dependencies: { foo: '1' } },
+    add: [abbrev],
+    saveType: 'optional',
+  }), {
+    dependencies: { foo: '1', abbrev: '1.0.0' },
+    optionalDependencies: { abbrev: '1.0.0' },
+  }, 'an object field is kept when an optional dependency is added')
+
+  t.notOk(hasSubKey({ dependencies: ['latest'] }, 'dependencies', '0'), 'an array index is not a dependency name')
+  t.notOk(hasSubKey({ dependencies: 'latest' }, 'dependencies', '0'), 'a string index is not a dependency name')
+
+  t.ok(isDepObject({}), 'an object is a dependency object')
+  t.notOk(isDepObject([]), 'an array is not')
+  t.notOk(isDepObject('latest'), 'a string is not')
+  t.notOk(isDepObject(null), 'null is not')
+  t.notOk(isDepObject(undefined), 'undefined is not')
+  t.end()
+})
