@@ -24,6 +24,7 @@ const removed = new Set([
   ...removedOpts,
 ])
 
+const nopt = require('nopt')
 const { definitions, shorthands } = require('@npmcli/config/lib/definitions')
 const npmSwitches = Object.entries(definitions)
   .filter(([, { type }]) => type === Boolean ||
@@ -42,6 +43,17 @@ const switches = new Set([
   'help',
   'h',
 ])
+
+// a negated switch (--no-color, or --no expanded to --no-yes) only takes the
+// next argument when npm reads it as the value, as in --no-color always
+const readsNegatedValue = (negation, next) => {
+  if (next === undefined) {
+    return false
+  }
+  const key = negation.slice(3)
+  const { argv } = nopt({ [key]: definitions[key].type }, {}, [`--${negation}`, next], 0)
+  return argv.remain.length === 0
+}
 
 // things that do take a value
 const opts = new Set([
@@ -105,8 +117,11 @@ for (i = 3; i < process.argv.length; i++) {
       i--
     }
 
+    const negated = key.startsWith('no-') && npmSwitches.includes(key.slice(3))
+
     if (v.length === 0 && !switches.has(key) &&
-        (opts.has(key) || !/^-/.test(process.argv[i + 1]))) {
+        (opts.has(key) || !/^-/.test(process.argv[i + 1])) &&
+        (!negated || readsNegatedValue(key, process.argv[i + 1]))) {
       // value will be next argument, skip over it.
       if (removed.has(key)) {
         // also remove the value for the cut key.
