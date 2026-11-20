@@ -66,6 +66,7 @@ const _explanation = Symbol('_explanation')
 
 class Node {
   #global
+  #isInPnpmStore
   #meta
   #root
   #workspaces
@@ -86,6 +87,7 @@ class Node {
       installLinks = false,
       integrity,
       isInStore = false,
+      isInPnpmStore = false,
       legacyPeerDeps = false,
       linksIn,
       loadOverrides = false,
@@ -115,6 +117,7 @@ class Node {
 
     this.errors = error ? [error] : []
     this.isInStore = isInStore
+    this.#isInPnpmStore = isInPnpmStore
 
     // this will usually be null, except when modeling a
     // package's dependencies in a virtual root.
@@ -941,8 +944,9 @@ class Node {
       isTop: srcTop,
       path: srcPath,
     } = sourceReference || {}
-    // A package in the linked strategy's .store is a transitive dependency that is structurally a tree top, but its devDependencies are never installed or required, so they must not be loaded.
-    const thisDev = isTop && !globalTop && path && !this.isInStore
+    // Package-manager stores make dependencies structurally look like tree tops.
+    // Their devDependencies are not required by the consuming project.
+    const thisDev = isTop && !globalTop && path && !this.isInStore && !this.#isInPnpmStore
     const srcDev = !sourceReference || srcTop && !srcGlobalTop && srcPath
     if (thisDev && srcDev) {
       this.#loadDepType(this.package.devDependencies, 'dev', ad)
