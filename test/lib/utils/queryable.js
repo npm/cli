@@ -919,6 +919,16 @@ t.test('delete values', async t => {
     },
     'should delete array item'
   )
+
+  const arrays = {
+    keywords: ['alpha', 'beta'],
+    contributors: [{ name: 'alice' }, { name: 'bob' }],
+  }
+  const qq = new Queryable(structuredClone(arrays))
+  for (const key of ['keywords.missing', 'keywords.beta', 'contributors.missing']) {
+    qq.delete(key)
+    t.strictSame(qq.toJSON(), arrays, `should leave arrays unchanged when deleting ${key}`)
+  }
 })
 
 t.test('logger', async t => {
