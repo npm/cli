@@ -20,6 +20,9 @@ The `newversion` argument should be a valid semver string, a valid second argume
 In the second case, the existing version will be incremented by 1 in the specified field.
 `from-git` will try to read the latest git tag, and use that as the new npm version.
 
+When run inside a workspace, only that workspace is versioned.
+Its `package.json` is updated in place and the project `package-lock.json` is left alone unless `--save` is passed, in which case the entry for that workspace is the only lockfile entry that changes.
+
 **Note:** If the current version is a prerelease version, `patch` will simply remove the prerelease suffix without incrementing the patch version number. For example, `1.2.0-5` becomes `1.2.0` with `npm version patch`, not `1.2.1`.
 
 If run in a git repo, it will also create a version commit and tag.
