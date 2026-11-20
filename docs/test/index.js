@@ -721,7 +721,7 @@ t.test('replaceParams with name edge cases', async t => {
     // Tests subcommand code path including line 184 (aliases in subcommand definitions)
     // npm trust has subcommands with definitions that include aliases (repo, env)
     await testCommandDoc(t, 'npm-trust', 'Create a trusted relationship between a package and a OIDC provider', {
-      match: [/--repo/, /--env/],
+      match: [/npm trust buildkite/, /--organization/, /--repo/, /--env/],
     })
   })
 })
