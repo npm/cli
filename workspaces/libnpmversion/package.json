@@ -42,7 +42,8 @@
     "@npmcli/run-script": "^11.0.0",
     "json-parse-even-better-errors": "^6.0.0",
     "proc-log": "^7.0.0",
-    "semver": "^7.3.7"
+    "semver": "^7.3.7",
+    "write-file-atomic": "^8.0.0"
   },
   "engines": {
     "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
