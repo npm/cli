@@ -23,6 +23,16 @@ index v1.0.0..v2.0.0 100644
 +++ b/foo.jpg
 `
 
+exports[`test/format-diff.js TAP binary file using --diff-text option > should output patch for bin file when diffText is set 1`] = `
+diff --git a/foo.jpg b/foo.jpg
+index v1.0.0..v2.0.0 100644
+--- a/foo.jpg
++++ b/foo.jpg
+@@ -1,1 +1,1 @@
+-foo
++bar
+`
+
 exports[`test/format-diff.js TAP changed file mode > should output expected changed file mode diff result 1`] = `
 diff --git a/foo.js b/foo.js
 old mode 100644

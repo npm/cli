@@ -174,6 +174,38 @@ t.test('binary file', async t => {
   )
 })
 
+t.test('binary file using --diff-text option', async t => {
+  const files = new Set([
+    'foo.jpg',
+  ])
+  const refs = new Map(Object.entries({
+    'a/foo.jpg': {
+      content: 'foo\n',
+      mode: '100644',
+    },
+    'b/foo.jpg': {
+      content: 'bar\n',
+      mode: '100644',
+    },
+  }))
+  const versions = {
+    a: '1.0.0',
+    b: '2.0.0',
+  }
+
+  await t.resolveMatchSnapshot(
+    formatDiff({
+      files,
+      refs,
+      versions,
+      opts: {
+        diffText: true,
+      },
+    }),
+    'should output patch for bin file when diffText is set'
+  )
+})
+
 t.test('nothing to compare', async t => {
   const files = new Set([
     'foo.jpg',
