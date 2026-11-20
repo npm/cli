@@ -101,6 +101,69 @@ const hasPkgBin = (path, cmd) =>
   PackageJson.normalize(resolve(path))
     .then(({ content }) => content?.bin?.[cmd]).catch(() => null)
 
+const getNpxCacheDir = (npxCache, packages) => {
+  const hash = crypto.createHash('sha512')
+    .update(packages.map(p => {
+      // Keeps the npx directory unique to the resolved directory, not the
+      // potentially relative one (i.e. "npx .")
+      const spec = npa(p)
+      if (spec.type === 'directory') {
+        return spec.fetchSpec
+      }
+      return p
+    }).sort((a, b) => a.localeCompare(b, 'en')).join('\n'))
+    .digest('hex')
+    .slice(0, 16)
+  return resolve(npxCache, hash)
+}
+
+const readManifest = (path) =>
+  PackageJson.normalize(path).then(({ content }) => content, () => null)
+
+// If every package is a registry spec for an exact version (`foo@1.2.3`) that
+// is already in the npx cache, returns the npx cache dir and the manifest of
+// the first package there. The full lookup below would run the same packages,
+// but only after loading the local tree and revalidating each version with
+// the registry. Returns null whenever the full lookup could decide
+// differently: the package is in the local project, or in the global prefix
+// when looking for a bin, or a config asks for a registry check.
+const findInNpxCache = async ({ packages, path, globalPath, checkGlobal, flatOptions }) => {
+  const { npxCache, preferOnline, before } = flatOptions
+  if (!npxCache || preferOnline || before) {
+    return null
+  }
+  const specs = packages.map(p => npa(p, path))
+  if (!specs.every(spec => spec.registry && spec.type === 'version')) {
+    return null
+  }
+  for (const { name } of specs) {
+    if (await readManifest(resolve(path, 'node_modules', name))) {
+      return null
+    }
+    if (checkGlobal && globalPath &&
+      await readManifest(resolve(globalPath, 'node_modules', name))) {
+      return null
+    }
+  }
+  const installDir = getNpxCacheDir(npxCache, packages)
+  if (!await fileExists(join(installDir, 'package.json'))) {
+    return null
+  }
+  // another npx may be installing into the same directory
+  return withLock(join(installDir, 'concurrency.lock'), async () => {
+    const installed = []
+    for (const { name, fetchSpec } of specs) {
+      const manifest = await readManifest(resolve(installDir, 'node_modules', name))
+      if (manifest?.version !== fetchSpec) {
+        return null
+      }
+      installed.push(manifest)
+    }
+    // the first package provides the command, as in the full lookup
+    return { installDir, manifest: installed[0] }
+  })
+}
+
 const exec = async (opts) => {
   const {
     args = [],
@@ -200,6 +263,21 @@ const exec = async (opts) => {
     return await run()
   }
 
+  const cached = await findInNpxCache({
+    packages,
+    path,
+    globalPath,
+    checkGlobal: needPackageCommandSwap,
+    flatOptions,
+  })
+  if (cached) {
+    if (needPackageCommandSwap) {
+      args[0] = getBinFromManifest(cached.manifest)
+    }
+    binPaths.push(resolve(cached.installDir, 'node_modules/.bin'))
+    return await run()
+  }
+
   const localArb = new (getArborist())({ ...flatOptions, path })
   const localTree = await localArb.loadActual()
 
@@ -259,19 +337,7 @@ const exec = async (opts) => {
     if (!npxCache) {
       throw new Error('Must provide a valid npxCache path')
     }
-    const hash = crypto.createHash('sha512')
-      .update(packages.map(p => {
-        // Keeps the npx directory unique to the resolved directory, not the
-        // potentially relative one (i.e. "npx .")
-        const spec = npa(p)
-        if (spec.type === 'directory') {
-          return spec.fetchSpec
-        }
-        return p
-      }).sort((a, b) => a.localeCompare(b, 'en')).join('\n'))
-      .digest('hex')
-      .slice(0, 16)
-    const installDir = resolve(npxCache, hash)
+    const installDir = getNpxCacheDir(npxCache, packages)
     await mkdir(installDir, { recursive: true })
     const npxArb = new (getArborist())({
       ...flatOptions,
