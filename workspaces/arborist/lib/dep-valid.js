@@ -9,27 +9,6 @@ const npa = require('npm-package-arg')
 const { relative } = require('node:path')
 const fromPath = require('./from-path.js')
 
-// A named ref (tag or branch) resolves to a commit hash, so look up the
-// committish recorded for this edge in the lockfile to detect spec changes.
-const lockedGitCommittish = (child, requestor) => {
-  const lock = requestor.root?.meta?.data?.packages?.[requestor.location]
-  const spec = lock && (
-    lock.dependencies?.[child.name] ||
-    lock.optionalDependencies?.[child.name] ||
-    lock.devDependencies?.[child.name] ||
-    lock.peerDependencies?.[child.name]
-  )
-  if (!spec) {
-    return null
-  }
-  try {
-    const parsed = npa.resolve(child.name, spec, requestor.realpath)
-    return parsed.type === 'git' ? parsed.gitCommittish || '' : null
-  } catch {
-    return null
-  }
-}
-
 const depValid = (child, requested, requestor) => {
   // NB: we don't do much to verify 'tag' type requests.
   // Just verify that we got a remote resolution.  Presumably, it
@@ -114,14 +93,19 @@ const depValid = (child, requested, requestor) => {
           return false
         }
       }
+      if (reqCommit) {
+        const actualCommit = resRepo.gitCommittish || resHost?.committish || ''
+        if (actualCommit && actualCommit !== requested.gitCommittish) {
+          return false
+        }
+        return true
+      }
       if (!requested.gitRange) {
-        // a named ref can't be verified against the resolved commit offline,
-        // so re-resolve if it differs from the committish in the lockfile
-        if (!reqCommit) {
-          const locked = lockedGitCommittish(child, requestor)
-          if (locked !== null && locked !== (requested.gitCommittish || '')) {
-            return false
-          }
+        // Bare git URLs without an explicit ref are stable: if the repo matches,
+        // we can reuse that install. Named refs (branches/tags) can move at any
+        // time, so they must be re-resolved on every install.
+        if (requested.gitCommittish) {
+          return false
         }
         return true
       }
