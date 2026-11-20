@@ -7,6 +7,17 @@ const path = require('node:path')
 const Arborist = require('@npmcli/arborist')
 const { writeFile } = require('node:fs/promises')
 
+// A registry manifest's dist.tarball must be an http(s) url. pacote re-parses
+// manifest._resolved as a spec, so a file: or directory value from the
+// registry would pick the directory fetcher and run that directory's prepare script.
+const isTarballUrl = resolved => {
+  try {
+    return /^https?:$/.test(new URL(resolved).protocol)
+  } catch {
+    return false
+  }
+}
+
 module.exports = pack
 async function pack (spec = 'file:.', opts = {}) {
   // gets spec
@@ -78,6 +89,12 @@ async function pack (spec = 'file:.', opts = {}) {
   // would mis-fire on the tarball URL the registry just handed us. mirror
   // arborist reify's carve-out: trust resolved tarballs for registry-typed specs.
   if (spec.registry) {
+    if (!isTarballUrl(manifest._resolved)) {
+      throw Object.assign(
+        new Error(`Invalid package manifest: dist.tarball is not a url: ${manifest._resolved}`),
+        { code: 'EINVALIDTARBALL', package: spec.toString() }
+      )
+    }
     tarballOpts.allowRemote = 'all'
   }
   const tarball = await pacote.tarball(manifest._resolved, tarballOpts)

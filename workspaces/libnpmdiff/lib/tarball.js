@@ -7,6 +7,17 @@ const pacote = require('pacote')
 const { tarCreateOptions } = pacote.DirFetcher
 const tar = require('tar')
 
+// A registry manifest's dist.tarball must be an http(s) url. pacote re-parses
+// manifest._resolved as a spec, so a file: or directory value from the
+// registry would pick the directory fetcher and run that directory's prepare script.
+const isTarballUrl = resolved => {
+  try {
+    return /^https?:$/.test(new URL(resolved).protocol)
+  } catch {
+    return false
+  }
+}
+
 // returns a simplified tarball when reading files from node_modules folder,
 // thus avoiding running the prepare scripts and the extra logic from packlist
 const nodeModulesTarball = (manifest) =>
@@ -40,6 +51,12 @@ const tarball = (manifest, opts) => {
     fromSpec = null
   }
   if (fromSpec?.registry) {
+    if (!isTarballUrl(resolved)) {
+      return Promise.reject(Object.assign(
+        new Error(`Invalid package manifest: dist.tarball is not a url: ${resolved}`),
+        { code: 'EINVALIDTARBALL', package: fromSpec.toString() }
+      ))
+    }
     tarballOpts.allowRemote = 'all'
   }
 

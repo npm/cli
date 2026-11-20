@@ -171,6 +171,50 @@ t.test('packs from registry spec', async t => {
   t.ok(tarball)
 })
 
+t.test('refuses a registry manifest whose dist.tarball is not a url', async t => {
+  // pacote would re-parse a file: or directory value as a directory spec and
+  // run that directory's prepare script
+  const testDir = t.testdir({
+    node_modules: {
+      evil: {
+        pkg: {
+          'package.json': JSON.stringify({
+            name: 'evil',
+            version: '1.0.0',
+            scripts: {
+              prepare: 'node -e "require(\'fs\').writeFileSync(\'PWNED\', \'\')"',
+            },
+          }),
+        },
+      },
+    },
+  })
+  const cwd = process.cwd()
+  process.chdir(testDir)
+  t.teardown(() => process.chdir(cwd))
+
+  const tarballs = {
+    evil: 'file:node_modules/evil/pkg',
+    'evil-abs': path.join(testDir, 'node_modules/evil/pkg'),
+  }
+  for (const [name, tarball] of Object.entries(tarballs)) {
+    const srv = tnock(t, REG)
+    srv.get(`/${name}`).reply(200, {
+      name,
+      'dist-tags': { latest: '1.0.1' },
+      versions: {
+        '1.0.1': { name, version: '1.0.1', dist: { tarball } },
+      },
+    })
+    await t.rejects(
+      pack(`${name}@1.0.1`, { ...OPTS, cache: path.join(testDir, 'cache') }),
+      { code: 'EINVALIDTARBALL' },
+      `rejects ${tarball}`
+    )
+  }
+  t.notOk(fs.existsSync(path.join(testDir, 'node_modules/evil/pkg/PWNED')), 'prepare script did not run')
+})
+
 t.test('packs from git spec', async t => {
   const spec = 'test/test#111111aaaaaaaabbbbbbbbccccccdddddddeeeee'
   const pkgPath = resolve(__dirname, 'fixtures/git-test.tgz')
