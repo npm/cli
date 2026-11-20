@@ -40,6 +40,15 @@ t.test('ignores project root with allowScripts', async t => {
   t.strictSame(findWorkspaceAllowScripts(t1), [])
 })
 
+t.test('ignores workspace link to project root with allowScripts', async t => {
+  const root = node({ name: 'root', isProjectRoot: true, allowScripts: { x: true } })
+  const t1 = tree([
+    root,
+    { ...node({ name: 'root-link', isWorkspace: true, allowScripts: { x: true } }), target: root },
+  ])
+  t.strictSame(findWorkspaceAllowScripts(t1), [])
+})
+
 t.test('ignores non-workspace dep with allowScripts', async t => {
   const t1 = tree([
     node({ name: 'dep', allowScripts: { x: true } }),
