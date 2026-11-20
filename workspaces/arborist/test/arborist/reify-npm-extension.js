@@ -282,3 +282,27 @@ t.test('removing the extension file reverts the locked graph', async t => {
   t.notOk(lock.packages[''].npmExtensionHash, 'root hash cleared')
   t.notOk(lock.packages['node_modules/foo']?.npmExtensionApplied, 'foo provenance cleared')
 })
+
+t.test('changing the extension file keeps locked versions', async t => {
+  const registry = createRegistry(t)
+  const fooManifest = registry.manifest({ name: 'foo', packuments: ['1.0.0', '1.1.0'] })
+  registry.nock = registry.nock.get('/foo').reply(200, fooManifest).persist()
+  const dependencies = { foo: '^1.0.0' }
+  const dir = t.testdir({
+    'package.json': JSON.stringify({ name: 'root', dependencies }),
+    '.npm-extension.cjs': `module.exports = { transformManifest (pkg) { return { ...pkg, peerDependencies: { x: '*' }, peerDependenciesMeta: { x: { optional: true } } } } }\n`,
+    'package-lock.json': JSON.stringify({
+      name: 'root',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': { name: 'root', dependencies },
+        'node_modules/foo': { version: '1.0.0', resolved: 'https://registry.npmjs.org/foo/-/foo-1.0.0.tgz' },
+      },
+    }),
+  })
+  const tree = await newArb(dir).buildIdealTree()
+  const foo = tree.inventory.get('node_modules/foo')
+  t.equal(foo.version, '1.0.0', 'locked version kept')
+  t.ok(foo.npmExtensionApplied, 'the kept node is transformed')
+})
