@@ -54,7 +54,7 @@ for each verified package.
 
 The npm CLI supports registry signatures and signing keys provided by any registry if the following conventions are followed:
 
-1. Signatures are provided in the package's `packument` in each published version within the `dist` object:
+1. Signatures are provided in the package's [packument](/using-npm/registry#packuments) in each published version within the `dist` object:
 
 ```json
 "dist":{
