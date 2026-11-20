@@ -5506,3 +5506,65 @@ t.test('unresolvable optional dep drops its optional peer dependent instead of E
   t.ok(tree.children.get('react').inert, 'failed react is inert')
   t.ok(tree.children.get('react-dom').inert, 'react-dom is inert with its missing peer')
 })
+
+t.test('transitive peers respect constraints from their peer set (#10054)', async t => {
+  const registry = createRegistry(t, false)
+  registry.nock.persist()
+  const packages = {
+    framework: [{
+      version: '1.0.0',
+      peerDependencies: { animation: '^1.0.0', bridge: '^1.0.0', common: '^1.0.0', core: '^1.0.0' },
+    }],
+    animation: [{ version: '1.0.0', peerDependencies: { core: '1.0.0' } }],
+    bridge: [{
+      version: '1.0.0',
+      peerDependencies: { common: '^1.0.0 || ^2.0.0', core: '^1.0.0 || ^2.0.0' },
+    }],
+    common: [
+      { version: '1.0.0', peerDependencies: { core: '1.0.0' } },
+      { version: '2.0.0', peerDependencies: { core: '2.0.0' } },
+    ],
+    core: [{ version: '1.0.0' }, { version: '2.0.0' }],
+  }
+  for (const [name, packuments] of Object.entries(packages)) {
+    await registry.package({ manifest: registry.manifest({ name, packuments }) })
+  }
+  const path = t.testdir({
+    'package.json': JSON.stringify({ dependencies: { framework: '1.0.0' } }),
+  })
+  const tree = await buildIdeal(path)
+  t.equal(tree.children.get('common').version, '1.0.0', 'selects the compatible common peer')
+  t.equal(tree.children.get('core').version, '1.0.0', 'keeps the compatible core peer')
+  for (const node of tree.inventory.values()) {
+    for (const edge of node.edgesOut.values()) {
+      t.equal(edge.valid, true, `${node.name} -> ${edge.name} is valid`)
+    }
+  }
+})
+
+t.test('shared optional peers do not fetch an absent provider', async t => {
+  const registry = createRegistry(t, false)
+  await registry.package({
+    manifest: registry.manifest({
+      name: 'framework',
+      packuments: [{ version: '1.0.0', peerDependencies: { a: '1.0.0', b: '1.0.0' } }],
+    }),
+  })
+  for (const name of ['a', 'b']) {
+    await registry.package({
+      manifest: registry.manifest({
+        name,
+        packuments: [{
+          version: '1.0.0',
+          peerDependencies: { absent: '^1.0.0' },
+          peerDependenciesMeta: { absent: { optional: true } },
+        }],
+      }),
+    })
+  }
+  const path = t.testdir({
+    'package.json': JSON.stringify({ dependencies: { framework: '1.0.0' } }),
+  })
+  const tree = await buildIdeal(path, { cache: join(path, 'cache') })
+  t.same([...tree.children.keys()].sort(), ['a', 'b', 'framework'], 'does not add optional peers')
+})

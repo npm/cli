@@ -1616,7 +1616,20 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
-      const parentEdge = node.parent.edgesOut.get(edge.name)
+      let parentEdge = node.parent.edgesOut.get(edge.name)
+      if (!parentEdge && !edge.to && edge.type !== 'peerOptional') {
+        // A peer already in this set may constrain the same missing peer.
+        // Honor that edge before loading the new peer's own dependencies;
+        // otherwise a broader transitive range can select an incompatible
+        // version before the original peer's edge is processed (#10054).
+        for (const peer of node.parent.children.values()) {
+          const peerEdge = peer !== node && peer.edgesOut.get(edge.name)
+          if (peerEdge?.peer && !peerEdge.peerConflicted) {
+            parentEdge = peerEdge
+            break
+          }
+        }
+      }
       const { isProjectRoot, isWorkspace } = node.parent.sourceReference
       const isMine = isProjectRoot || isWorkspace
       const conflictOK = this.options.force || !isMine && !this.#strictPeerDeps
