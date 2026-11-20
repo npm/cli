@@ -5,6 +5,7 @@ const nopt = require('nopt')
 const { log, time } = require('proc-log')
 
 const { resolve, dirname, join } = require('node:path')
+const { glob } = require('glob')
 const { homedir } = require('node:os')
 const {
   readFile,
@@ -830,8 +831,7 @@ class Config {
           continue
         }
 
-        const mapWorkspaces = require('@npmcli/map-workspaces')
-        const workspaces = await mapWorkspaces({ cwd: p, pkg })
+        const workspaces = await this.#workspaceDirectories(p, pkg)
         for (const w of workspaces.values()) {
           if (w === this.localPrefix) {
             // see if there's a .npmrc file in the workspace, if so log a warning
@@ -855,6 +855,41 @@ class Config {
     if (!this.localPrefix) {
       this.localPrefix = this.cwd
     }
+  }
+
+  // Workspaces are normally mapped by reading every workspace manifest, which
+  // also gives the map its names. One manifest that cannot be read would fail
+  // that for the whole project, and because this runs while the config loads it
+  // would fail every command, not just the ones that care about workspaces.
+  // This call site only needs the directories, so when the names cannot be read
+  // fall back to the workspace declarations themselves.
+  async #workspaceDirectories (root, pkg) {
+    const mapWorkspaces = require('@npmcli/map-workspaces')
+
+    return mapWorkspaces({ cwd: root, pkg }).catch(async (err) => {
+      log.warn('config', `could not read every workspace manifest: ${err.message}`)
+
+      const declared = Array.isArray(pkg.workspaces)
+        ? pkg.workspaces
+        : pkg.workspaces?.packages
+      if (!Array.isArray(declared)) {
+        return new Map()
+      }
+
+      const patterns = []
+      const ignore = ['**/node_modules/**']
+      for (const declaration of declared) {
+        const pattern = declaration.replace(/^\.?\/+/, '')
+        if (pattern.startsWith('!')) {
+          ignore.push(`${pattern.slice(1)}/package.json`)
+        } else {
+          patterns.push(`${pattern}/package.json`)
+        }
+      }
+
+      const matches = await glob(patterns, { cwd: root, ignore }).catch(() => [])
+      return new Map(matches.map((match) => [match, resolve(root, dirname(match))]))
+    }).catch(() => new Map())
   }
 
   loadUserConfig () {
