@@ -127,6 +127,46 @@ t.test('avoid install when exec from registry an available pkg', async t => {
   })
 })
 
+t.test('cached package and unreachable registry', async t => {
+  const { pkg, fixtures, package } = createPkg({ versions: ['1.0.0'] })
+  const { exec, path, registry, readOutput, rmOutput } = setup(t, { pkg, testdir: fixtures })
+  await package({ registry, path })
+  await exec({ args: [pkg.name] })
+  await rmOutput()
+
+  // a single failed request, even though retries are configured
+  const refused = Object.assign(new Error('refused'), { code: 'ECONNREFUSED' })
+  registry.nock.get('/@npmcli%2fcreate-index').replyWithError(refused)
+  await exec({ args: [pkg.name], retry: { retries: 2, minTimeout: 1 } })
+  t.match(await readOutput(), { value: 'packages-1.0.0' })
+})
+
+t.test('cached package and failing registry falls back to retries', async t => {
+  const { pkg, fixtures, package } = createPkg({ versions: ['1.0.0'] })
+  const { exec, path, registry, readOutput, rmOutput } = setup(t, { pkg, testdir: fixtures })
+  await package({ registry, path })
+  await exec({ args: [pkg.name] })
+  await rmOutput()
+
+  registry.nock.get('/@npmcli%2fcreate-index').times(2).reply(503, {})
+  await package({ registry, path, tarballs: [], times: 1 })
+  await exec({ args: [pkg.name], retry: { retries: 2, minTimeout: 1 } })
+  t.match(await readOutput(), { value: 'packages-1.0.0' })
+})
+
+for (const retries of [0, 2]) {
+  t.test(`cached package and failing registry with ${retries} retries`, async t => {
+    const { pkg, fixtures, package } = createPkg({ versions: ['1.0.0'] })
+    const { exec, path, registry } = setup(t, { pkg, testdir: fixtures })
+    await package({ registry, path })
+    await exec({ args: [pkg.name] })
+
+    // the lookup without retries counts towards the configured retries
+    registry.nock.get('/@npmcli%2fcreate-index').times(retries + 1).reply(503, {})
+    await t.rejects(exec({ args: [pkg.name], retry: { retries, minTimeout: 1 } }), { code: 'E503' })
+  })
+}
+
 const binNames = [
   'two words',
   'bin&echo cli170-injected',
