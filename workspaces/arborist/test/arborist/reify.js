@@ -1617,6 +1617,70 @@ t.test('modules bundled by the root should be installed', async t => {
   t.matchSnapshot(fs.readFileSync(path + '/node_modules/child/package.json', 'utf8'))
 })
 
+t.test('root bundling preserves nested dependency bundles (#9289)', async t => {
+  for (const bundleRoot of [false, true]) {
+    await t.test(`root bundleDependencies: ${bundleRoot}`, async t => {
+      const leaf = marker => ({
+        'package.json': JSON.stringify({ name: 'leaf', version: '1.0.0' }),
+        marker,
+      })
+      const outer = {
+        name: 'outer',
+        version: '1.0.0',
+        dependencies: { '@scope/inner': '1.0.0', leaf: '1.0.0' },
+        bundleDependencies: ['@scope/inner', 'leaf'],
+      }
+      const path = t.testdir({
+        'package.json': JSON.stringify({
+          name: 'root',
+          version: '1.0.0',
+          dependencies: { outer: '1.0.0' },
+          ...(bundleRoot ? { bundleDependencies: ['outer'] } : {}),
+        }),
+        source: {
+          'package.json': JSON.stringify(outer),
+          node_modules: {
+            leaf: leaf('outer leaf'),
+            '@scope': {
+              inner: {
+                'package.json': JSON.stringify({
+                  name: '@scope/inner',
+                  version: '1.0.0',
+                  dependencies: { leaf: '1.0.0' },
+                  bundleDependencies: ['leaf'],
+                }),
+                node_modules: { leaf: leaf('inner leaf') },
+              },
+            },
+          },
+        },
+      })
+      const registry = createRegistry(t, false)
+      const manifest = registry.manifest({ name: 'outer', packuments: [outer] })
+      await registry.package({
+        manifest,
+        tarballs: { '1.0.0': resolve(path, 'source') },
+      })
+
+      for (const install of ['fresh', 'repeat', 'from lockfile']) {
+        if (install === 'from lockfile') {
+          await fsp.rm(resolve(path, 'node_modules'), { recursive: true })
+          await registry.tarball({
+            manifest: manifest.versions['1.0.0'],
+            tarball: resolve(path, 'source'),
+          })
+        }
+        await reify(path)
+        const bundle = resolve(path, 'node_modules/outer/node_modules')
+        t.equal(fs.readFileSync(resolve(bundle, 'leaf/marker'), 'utf8'),
+          'outer leaf', `${install}: keeps the outer bundled copy`)
+        t.equal(fs.readFileSync(resolve(bundle, '@scope/inner/node_modules/leaf/marker'), 'utf8'),
+          'inner leaf', `${install}: keeps the nested bundled copy`)
+      }
+    })
+  }
+})
+
 t.test('add a new pkg to a prefix that needs to be mkdirpd', async t => {
   await t.test('not dry run', async t => {
     const path = resolve(t.testdir(), 'missing/path/to/root')

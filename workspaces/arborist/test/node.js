@@ -864,6 +864,63 @@ t.test('getBundler preserves explicit array traversal state', t => {
   t.end()
 })
 
+t.test('root bundling does not hide dependency bundles (#9289)', t => {
+  const root = new Node({
+    path: '/path/to/root',
+    pkg: {
+      name: 'root',
+      dependencies: { outer: '*', outside: '*' },
+      bundleDependencies: ['outer'],
+    },
+  })
+  const outer = new Node({
+    parent: root,
+    pkg: {
+      name: 'outer',
+      version: '1.0.0',
+      dependencies: { inner: '*', plain: '*' },
+      bundleDependencies: ['inner'],
+    },
+  })
+  const inner = new Node({
+    parent: outer,
+    pkg: {
+      name: 'inner',
+      version: '1.0.0',
+      dependencies: { nested: '*', shared: '*', outside: '*' },
+      bundleDependencies: ['nested'],
+    },
+  })
+  const nested = new Node({
+    parent: inner,
+    pkg: { name: 'nested', version: '1.0.0' },
+  })
+  const shared = new Node({
+    parent: outer,
+    pkg: { name: 'shared', version: '1.0.0', dependencies: { inner: '*' } },
+  })
+  const plain = new Node({
+    parent: outer,
+    pkg: { name: 'plain', version: '1.0.0' },
+  })
+  const outside = new Node({
+    parent: root,
+    pkg: { name: 'outside', version: '1.0.0' },
+  })
+
+  for (const node of [outer, inner, nested, shared, plain]) {
+    t.equal(node.getBundler(), root, `${node.name}: keeps the outermost bundle owner`)
+    t.equal(node.inBundle, true, `${node.name}: remains bundled for packing`)
+  }
+  t.equal(outer.inDepBundle, false, 'the root bundled dependency must be installed')
+  t.equal(inner.inDepBundle, true, 'a dependency bundle is already unpacked')
+  t.equal(nested.inDepBundle, true, 'a nested dependency bundle is already unpacked')
+  t.equal(shared.inDepBundle, true, 'deduped bundled dependencies are already unpacked')
+  t.equal(plain.inDepBundle, false, 'ordinary dependencies still need installation')
+  t.equal(outside.inDepBundle, false, 'dependencies outside the inner bundle need installation')
+  t.end()
+})
+
 t.test('move fsChildren when moving to a new fsParent in same root', t => {
   const root = new Node({
     path: '/path/to/root',

@@ -523,7 +523,7 @@ class Node {
     )
   }
 
-  getBundler (seen = new Set()) {
+  getBundler (seen = new Set(), ignoredBundler) {
     const isArray = Array.isArray(seen)
     // made a cycle, definitely not bundled!
     if (isArray ? seen.includes(this) : seen.has(this)) {
@@ -541,7 +541,7 @@ class Node {
       return null
     }
 
-    const pBundler = parent.getBundler(seen)
+    const pBundler = parent.getBundler(seen, ignoredBundler)
     if (pBundler) {
       return pBundler
     }
@@ -549,7 +549,7 @@ class Node {
     const ppkg = parent.package
     const bd = ppkg && ppkg.bundleDependencies
     // explicit bundling
-    if (Array.isArray(bd) && bd.includes(this.name)) {
+    if (parent !== ignoredBundler && Array.isArray(bd) && bd.includes(this.name)) {
       return parent
     }
 
@@ -558,7 +558,7 @@ class Node {
     // then they are not bundled.  Ie, installing a package with
     // unmet bundled deps will not cause your deps to be bundled.
     for (const edge of this.edgesIn) {
-      const eBundler = edge.from.getBundler(seen)
+      const eBundler = edge.from.getBundler(seen, ignoredBundler)
       if (!eBundler) {
         continue
       }
@@ -579,8 +579,8 @@ class Node {
   // but that list is the root project, we still have to install it.  This
   // getter returns true if it's in a dependency's bundle list, not the root's.
   get inDepBundle () {
-    const bundler = this.getBundler()
-    return !!bundler && bundler !== this.root
+    // Ignore the root's declaration so it cannot hide an inner dependency bundle.
+    return !!this.getBundler(new Set(), this.root)
   }
 
   get isWorkspace () {
