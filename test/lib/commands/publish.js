@@ -60,6 +60,50 @@ t.test('respects publishConfig.registry, runs appropriate scripts', async t => {
   t.same(logs.warn, ['Unknown publishConfig config "other". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.'])
 })
 
+for (const event of ['prepublishOnly', 'prepack', 'prepare']) {
+  for (const json of [false, true]) {
+    for (const dryRun of [false, true]) {
+      t.test('reports version changed by ' + event + ' ' + JSON.stringify({ json, dryRun }),
+        async t => {
+          const initialPackageJson = {
+            ...pkgJson,
+            scripts: { [event]: 'node update.cjs' },
+          }
+          const packageJson = { ...initialPackageJson, version: '2.0.0' }
+          const { npm, joinedOutput, logs, registry } = await loadNpmWithRegistry(t, {
+            config: { ...auth, json, 'dry-run': dryRun, 'foreground-scripts': false },
+            prefixDir: {
+              'package.json': JSON.stringify(initialPackageJson),
+              'update.cjs': [
+                "const fs = require('node:fs')",
+                "const pkg = JSON.parse(fs.readFileSync('package.json'))",
+                "pkg.version = '2.0.0'",
+                "fs.writeFileSync('package.json', JSON.stringify(pkg))",
+              ].join('\n'),
+            },
+            authorization: token,
+          })
+          registry.publish(pkg, { packageJson, noPut: dryRun })
+          await npm.exec('publish', [])
+          if (json) {
+            t.match(JSON.parse(joinedOutput()), {
+              [pkg]: {
+                id: pkg + '@2.0.0',
+                name: pkg,
+                version: '2.0.0',
+                filename: 'npmcli-test-package-2.0.0.tgz',
+              },
+            })
+          } else {
+            t.equal(joinedOutput(), '+ ' + pkg + '@2.0.0')
+            t.match(logs.notice.join('\n'), 'version: 2.0.0')
+            t.match(logs.notice.join('\n'), 'filename: npmcli-test-package-2.0.0.tgz')
+          }
+        })
+    }
+  }
+}
+
 t.test('re-loads publishConfig.registry if added during script process', async t => {
   const initPackageJson = {
     ...pkgJson,
