@@ -518,8 +518,8 @@ module.exports = cls => class Reifier extends cls {
   // removed later on in the process.  optionally, also mark them
   // as a retired paths, so that we move them out of the way and
   // replace them when rolling back on failure.
-  [_addNodeToTrashList] (node, retire = false) {
-    const paths = [node.path, ...node.binPaths]
+  [_addNodeToTrashList] (node, retire = false, binPaths = node.binPaths) {
+    const paths = [node.path, ...binPaths]
     const moves = this.#retiredPaths
     log.silly('reify', 'mark', retire ? 'retired' : 'deleted', paths)
     for (const path of paths) {
@@ -533,15 +533,36 @@ module.exports = cls => class Reifier extends cls {
     }
   }
 
+  async #ownedGlobalBinPaths (node) {
+    const prefix = node.path + sep
+    const paths = await Promise.all(node.binPaths.map(async path => {
+      try {
+        const target = await readlink(path)
+        return resolve(dirname(path), target).startsWith(prefix) ? path : null
+      } catch (er) {
+        if (er.code === 'ENOENT' || er.code === 'EINVAL') {
+          return null
+        }
+        throw er
+      }
+    }))
+    return paths.filter(Boolean)
+  }
+
   // move aside the shallowest nodes in the tree that have to be
   // changed or removed, so that we can rollback if necessary.
-  [_retireShallowNodes] () {
+  async [_retireShallowNodes] () {
     const timeEnd = time.start('reify:retireShallow')
     const moves = this.#retiredPaths = {}
     for (const diff of this.diff.children) {
       if (diff.action === 'CHANGE' || diff.action === 'REMOVE') {
         // we'll have to clean these up at the end, so add them to the list
-        this[_addNodeToTrashList](diff.actual, true)
+        const node = diff.actual
+        // A POSIX global bin name can be reused by another package.
+        const binPaths = diff.action === 'REMOVE' && node.globalTop && process.platform !== 'win32'
+          ? await this.#ownedGlobalBinPaths(node)
+          : node.binPaths
+        this[_addNodeToTrashList](node, true, binPaths)
       }
     }
     log.silly('reify', 'moves', moves)
