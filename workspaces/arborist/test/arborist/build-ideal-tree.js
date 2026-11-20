@@ -5506,3 +5506,255 @@ t.test('unresolvable optional dep drops its optional peer dependent instead of E
   t.ok(tree.children.get('react').inert, 'failed react is inert')
   t.ok(tree.children.get('react-dom').inert, 'react-dom is inert with its missing peer')
 })
+
+// https://github.com/npm/cli/issues/8252
+t.test('workspace registry tags retain their selected versions', async t => {
+  for (const { name, requests, tags, expected, copies, dependency = 'tagged' } of [
+    {
+      name: 'experimental then latest',
+      requests: ['experimental', 'latest'],
+      tags: { latest: '1.0.0', experimental: '2.0.0' },
+      expected: ['2.0.0', '1.0.0'],
+      copies: 2,
+    },
+    {
+      name: 'latest then experimental',
+      requests: ['latest', 'experimental'],
+      tags: { latest: '1.0.0', experimental: '2.0.0' },
+      expected: ['1.0.0', '2.0.0'],
+      copies: 2,
+    },
+    {
+      name: 'aliased tags',
+      dependency: 'alias',
+      requests: ['npm:tagged@experimental', 'npm:tagged@latest'],
+      tags: { latest: '1.0.0', experimental: '2.0.0' },
+      expected: ['2.0.0', '1.0.0'],
+      copies: 2,
+    },
+    {
+      name: 'different tags with the same version',
+      requests: ['experimental', 'latest'],
+      tags: { latest: '1.0.0', experimental: '1.0.0' },
+      expected: ['1.0.0', '1.0.0'],
+      copies: 1,
+    },
+  ]) {
+    await t.test(name, async t => {
+      const registry = createRegistry(t)
+      const manifest = registry.manifest({ name: 'tagged', versions: ['1.0.0', '2.0.0'] })
+      manifest['dist-tags'] = tags
+      let fetches = 0
+      registry.nock.get('/tagged').optionally().times(10).reply(() => {
+        fetches++
+        return [200, manifest, { 'content-length': String(Buffer.byteLength(JSON.stringify(manifest))) }]
+      })
+      const path = t.testdir({
+        'package.json': JSON.stringify({ name: 'project', workspaces: ['packages/*'] }),
+        packages: Object.fromEntries(['a', 'b'].map((name, index) => [name, {
+          'package.json': JSON.stringify({
+            name, version: '1.0.0', dependencies: { [dependency]: requests[index] },
+          }),
+        }])),
+      })
+      const tree = await buildIdeal(path)
+      const edges = ['a', 'b'].map(name => tree.inventory.get(`packages/${name}`).edgesOut.get(dependency))
+      t.same(edges.map(edge => edge.to.version), expected, 'each workspace receives its requested tag')
+      t.equal(tree.inventory.query('name', dependency).size, copies, 'deduplicates only compatible selections')
+      t.same(edges.map(edge => edge.spec), requests, 'preserves tag requests')
+      t.equal(fetches, 1, 'shares the packument response across tag selections')
+    })
+  }
+})
+
+t.test('unchanged locked registry tags remain pinned offline', async t => {
+  createRegistry(t)
+  const pkg = { name: 'project', version: '1.0.0', dependencies: { tagged: 'latest' } }
+  const path = t.testdir({
+    'package.json': JSON.stringify(pkg),
+    'package-lock.json': JSON.stringify({
+      name: 'project',
+      lockfileVersion: 3,
+      packages: {
+        '': pkg,
+        'node_modules/tagged': {
+          version: '1.0.0', resolved: 'https://registry.npmjs.org/tagged/-/tagged-1.0.0.tgz',
+        },
+      },
+    }),
+  })
+  const tree = await buildIdeal(path, { offline: true })
+  t.equal(tree.children.get('tagged').version, '1.0.0', 'retains the historical locked selection')
+  t.equal(tree.edgesOut.get('tagged').spec, 'latest', 'does not rewrite the requested tag')
+})
+
+t.test('registry tag selections preserve existing lockfile requests', async t => {
+  for (const mode of ['new workspace', 'changed tag', 'unrelated add', 'named update', 'explicit tag add']) {
+    await t.test(mode, async t => {
+      const registry = createRegistry(t)
+      const manifest = registry.manifest({ name: 'tagged', versions: ['1.0.0', '2.0.0'] })
+      manifest['dist-tags'] = { latest: '2.0.0', experimental: '2.0.0' }
+      registry.nock.get('/tagged').optionally().times(10).reply(200, manifest)
+      const other = registry.manifest({ name: 'other',
+        packuments: [
+          { version: '1.0.0', dependencies: { tagged: 'latest' } },
+        ] })
+      registry.nock.get('/other').optionally().reply(200, other)
+      const root = { name: 'project', version: '1.0.0', workspaces: ['packages/*'] }
+      const a = { name: 'a', version: '1.0.0', dependencies: { tagged: 'latest' } }
+      const b = { name: 'b', version: '1.0.0', dependencies: { tagged: 'experimental' } }
+      const path = t.testdir({
+        'package.json': JSON.stringify(root),
+        packages: {
+          a: { 'package.json': JSON.stringify(mode === 'changed tag'
+            ? { ...a, dependencies: { tagged: 'experimental' } } : a) },
+          ...mode === 'new workspace' ? { b: { 'package.json': JSON.stringify(b) } } : {},
+        },
+        'package-lock.json': JSON.stringify({
+          name: 'project',
+          lockfileVersion: 3,
+          packages: {
+            '': root,
+            'packages/a': a,
+            'node_modules/a': { resolved: 'packages/a', link: true },
+            'node_modules/tagged': {
+              version: '1.0.0', resolved: 'https://registry.npmjs.org/tagged/-/tagged-1.0.0.tgz',
+            },
+          },
+        }),
+      })
+      const opts = mode === 'unrelated add' ? { add: ['other@1.0.0'] }
+        : mode === 'named update' ? { update: { names: ['tagged'] } }
+        : mode === 'explicit tag add' ? { add: ['tagged@experimental'] } : {}
+      const tree = await buildIdeal(path, opts)
+      const edge = tree.inventory.get('packages/a').edgesOut.get('tagged')
+      const expected = mode === 'changed tag' || mode === 'named update' ? '2.0.0' : '1.0.0'
+      t.equal(edge.to.version, expected, 'refreshes only the requested selection')
+      if (mode === 'new workspace') {
+        t.equal(tree.inventory.get('packages/b').edgesOut.get('tagged').to.version, '2.0.0',
+          'resolves a new workspace request independently of the existing lock')
+      }
+      if (mode === 'unrelated add') {
+        t.equal(tree.children.get('other').edgesOut.get('tagged').to.version, '2.0.0',
+          'a fresh transitive request can select the moved tag without changing the locked edge')
+      }
+      if (mode === 'explicit tag add') {
+        t.equal(tree.edgesOut.get('tagged').to.version, '2.0.0', 'honors an explicit root tag request')
+      }
+    })
+  }
+})
+
+t.test('registry tag selection honors a Yarn lock pin', async t => {
+  const registry = createRegistry(t)
+  const manifest = registry.manifest({ name: 'tagged', versions: ['1.0.0', '2.0.0'] })
+  manifest['dist-tags'] = { latest: '2.0.0' }
+  registry.nock.get('/tagged').optionally().times(5).reply(200, manifest)
+  const path = t.testdir({
+    'package.json': JSON.stringify({ name: 'project', dependencies: { tagged: 'latest' } }),
+    'yarn.lock': '# yarn lockfile v1\n\ntagged@latest:\n  version "1.0.0"\n  resolved "https://registry.npmjs.org/tagged/-/tagged-1.0.0.tgz"\n',
+  })
+  const tree = await buildIdeal(path)
+  t.equal(tree.children.get('tagged').version, '1.0.0', 'uses the selected Yarn version instead of the moved tag')
+  t.equal(tree.edgesOut.get('tagged').spec, 'latest', 'retains the declared request')
+})
+
+t.test('a missing optional tag peer does not trigger a registry lookup', async t => {
+  const registry = createRegistry(t)
+  const manifest = registry.manifest({ name: 'wrapper',
+    packuments: [{
+      version: '1.0.0',
+      peerDependencies: { tagged: 'latest' },
+      peerDependenciesMeta: { tagged: { optional: true } },
+    }] })
+  registry.nock.get('/wrapper').reply(200, manifest)
+  const path = t.testdir({
+    'package.json': JSON.stringify({ dependencies: { wrapper: '1.0.0' } }),
+  })
+  const tree = await buildIdeal(path)
+  t.notOk(tree.children.has('tagged'), 'keeps the absent optional provider absent')
+})
+
+t.test('registry tag selection uses the effective override', async t => {
+  const registry = createRegistry(t)
+  const tagged = registry.manifest({ name: 'tagged', versions: ['1.0.0', '2.0.0'] })
+  tagged['dist-tags'] = { latest: '1.0.0', experimental: '2.0.0' }
+  registry.nock.get('/tagged').optionally().times(10).reply(200, tagged)
+  for (const name of ['a', 'b']) {
+    const manifest = registry.manifest({ name,
+      packuments: [{ version: '1.0.0', dependencies: { tagged: 'latest' } }] })
+    registry.nock.get(`/${name}`).reply(200, manifest)
+  }
+  const path = t.testdir({
+    'package.json': JSON.stringify({ dependencies: { a: '1.0.0', b: '1.0.0' },
+      overrides: { a: { tagged: 'experimental' } } }),
+  })
+  const tree = await buildIdeal(path)
+  const a = tree.children.get('a').edgesOut.get('tagged')
+  const b = tree.children.get('b').edgesOut.get('tagged')
+  t.equal(a.to.version, '2.0.0', 'selects the overridden tag')
+  t.equal(b.to.version, '1.0.0', 'keeps the other request independent')
+  t.equal(a.rawSpec, 'latest', 'does not rewrite the published dependency')
+  t.equal(a.spec, 'experimental', 'honors the effective override')
+})
+
+t.test('locked root tags survive unrelated manifest changes', async t => {
+  for (const mode of ['add', 'remove', 'explicit refresh', 'update all', 'update to older channel']) {
+    await t.test(mode, async t => {
+      const registry = createRegistry(t)
+      const manifest = registry.manifest({ name: 'tagged', versions: ['1.0.0', '2.0.0', '3.0.0'] })
+      manifest['dist-tags'] = { latest: '2.0.0' }
+      registry.nock.get('/tagged').optionally().times(10).reply(200, manifest)
+      const other = registry.manifest({ name: 'other', versions: ['1.0.0'] })
+      registry.nock.get('/other').optionally().times(5).reply(200, other)
+      const pkg = { name: 'project', dependencies: { tagged: 'latest', other: '1.0.0' } }
+      const version = mode === 'update to older channel' ? '3.0.0' : '1.0.0'
+      const path = t.testdir({
+        'package.json': JSON.stringify(pkg),
+        'package-lock.json': JSON.stringify({ lockfileVersion: 3,
+          packages: {
+            '': pkg,
+            'node_modules/tagged': { version,
+              resolved: `https://registry.npmjs.org/tagged/-/tagged-${version}.tgz` },
+            'node_modules/other': { version: '1.0.0',
+              resolved: 'https://registry.npmjs.org/other/-/other-1.0.0.tgz' },
+          } }),
+      })
+      const opts = mode === 'add' ? { add: ['other@1.0.0'] }
+        : mode === 'remove' ? { rm: ['other'] }
+        : mode === 'explicit refresh' ? { add: ['tagged@latest'] }
+        : mode === 'update all' ? { update: true } : { update: { names: ['tagged'] } }
+      const tree = await buildIdeal(path, opts)
+      t.equal(tree.edgesOut.get('tagged').to.version,
+        mode === 'add' || mode === 'remove' ? '1.0.0' : '2.0.0',
+        'retains an unchanged root pin and honors explicit refreshes in either direction')
+    })
+  }
+})
+
+t.test('a relocated locked alias keeps its selected tag version', async t => {
+  const registry = createRegistry(t)
+  const manifest = registry.manifest({ name: 'tagged', versions: ['1.0.0', '2.0.0'] })
+  manifest['dist-tags'] = { latest: '2.0.0', experimental: '2.0.0' }
+  registry.nock.get('/tagged').optionally().times(10).reply(200, manifest)
+  const root = { name: 'project', workspaces: ['packages/*'] }
+  const workspace = { name: 'a', version: '1.0.0', dependencies: { alias: 'npm:tagged@latest' } }
+  const path = t.testdir({
+    'package.json': JSON.stringify(root),
+    packages: { a: { 'package.json': JSON.stringify(workspace) } },
+    'package-lock.json': JSON.stringify({ lockfileVersion: 3,
+      packages: {
+        '': root,
+        'packages/a': workspace,
+        'node_modules/a': { resolved: 'packages/a', link: true },
+        'node_modules/alias': { name: 'tagged',
+          version: '1.0.0',
+          resolved: 'https://registry.npmjs.org/tagged/-/tagged-1.0.0.tgz' },
+      } }),
+  })
+  const tree = await buildIdeal(path, { add: ['alias@npm:tagged@experimental'] })
+  t.equal(tree.edgesOut.get('alias').to.version, '2.0.0', 'installs the requested root alias')
+  const edge = tree.inventory.get('packages/a').edgesOut.get('alias')
+  t.equal(edge.to.version, '1.0.0', 'relocates the historical alias without refreshing its tag')
+  t.equal(edge.to.packageName, 'tagged', 'retains the alias target identity')
+})

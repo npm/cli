@@ -31,6 +31,7 @@ const NpmExtension = require('../npm-extension.js')
 const { hasExtensionFile } = require('../npm-extension.js')
 const Shrinkwrap = require('../shrinkwrap.js')
 const { defaultLockfileVersion } = Shrinkwrap
+const isTag = spec => (spec.type === 'alias' ? spec.subSpec : spec).type === 'tag'
 const Node = require('../node.js')
 const Link = require('../link.js')
 
@@ -100,6 +101,8 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   #linkNodes = new Set()
   #loadFailures = new Set()
   #manifests = new Map()
+  #lockedRequests = null
+  #tagSelections = new WeakMap()
   #mutateTree = false
   #packageExtensions = null
   #npmExtension = null
@@ -184,6 +187,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       await this.#loadNpmExtension()
       this.#loadPackageExtensions()
       await this.#inflateAncientLockfile()
+      this.#preserveTagSelections()
       await this.#applyUserRequests(options)
       await this.#buildDeps()
       await this.#fixDepFlags()
@@ -462,6 +466,19 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         } else {
           return this.loadVirtual({ root })
         }
+      })
+
+      // Keep immutable request provenance before actual-tree loading or mutation
+      // can refresh the shrinkwrap's pending package metadata.
+      .then(root => {
+        if (root.meta?.loadedFromDisk && root.meta.originalLockfileVersion >= 2) {
+          this.#lockedRequests = new Map(Object.entries(root.meta.data.packages).map(([loc, pkg]) => [
+            loc,
+            Object.fromEntries(['dependencies', 'devDependencies', 'optionalDependencies']
+              .map(field => [field, { ...pkg[field] }])),
+          ]))
+        }
+        return root
       })
 
       // if we don't have a lockfile to go from, then start with the
@@ -1298,22 +1315,32 @@ This is a one-time fix-up, please be patient...
   }
 
   // loads a node from an edge, and then loads its peer deps (and their peer deps, on down the line) into a virtual root parent.
+  #edgeSpec (edge) {
+    const spec = npa.resolve(edge.name, edge.spec, edge.from.path)
+    // Relocating an existing tag dependency must retain its selected version.
+    // Explicit refresh requests still resolve the tag through the registry.
+    if (!isTag(spec) || !edge.resolvedVersion ||
+        this[_updateNames].includes(edge.name) || this.#explicitRequests.has(edge) ||
+        (edge.to && this.auditReport?.isVulnerable(edge.to))) {
+      return spec
+    }
+    return npa.resolve(edge.name, spec.type === 'alias'
+      ? `npm:${spec.subSpec.name}@${edge.resolvedVersion}`
+      : edge.resolvedVersion, edge.from.path)
+  }
+
   async #nodeFromEdge (edge, parent_, secondEdge, required) {
     // create a virtual root node with the same deps as the node that is requesting this one, so that we can get all the peer deps in a context where they're likely to be resolvable.
     // Note that the virtual root will also have virtual copies of the targets of any child Links, so that they resolve appropriately.
     const parent = parent_ || this.#virtualRoot(edge.from)
 
-    const spec = npa.resolve(edge.name, edge.spec, edge.from.path)
+    const spec = this.#edgeSpec(edge)
     const first = await this.#nodeFromSpec(edge.name, spec, parent, edge)
 
     // we might have a case where the parent has a peer dependency on `foo@*` which resolves to v2, but another dep in the set has a peerDependency on `foo@1`.
     // In that case, if we force it to be v2, we're unnecessarily triggering an ERESOLVE.
     // If we have a second edge to worry about, and it's not satisfied by the first node, try a second and see if that satisfies the original edge here.
-    const spec2 = secondEdge && npa.resolve(
-      edge.name,
-      secondEdge.spec,
-      secondEdge.from.path
-    )
+    const spec2 = secondEdge && this.#edgeSpec(secondEdge)
     const second = secondEdge && !secondEdge.valid
       ? await this.#nodeFromSpec(edge.name, spec2, parent, secondEdge)
       : null
@@ -1374,6 +1401,26 @@ This is a one-time fix-up, please be patient...
     return vr
   }
 
+  #preserveTagSelections () {
+    const fields = { prod: 'dependencies', dev: 'devDependencies', optional: 'optionalDependencies' }
+    for (const node of this.idealTree.inventory.values()) {
+      const selections = new Map()
+      for (const edge of node.edgesOut.values()) {
+        if (edge.peer || !edge.to?.version || !edge.valid ||
+            !isTag(npa.resolve(edge.name, edge.spec, node.path))) {
+          continue
+        }
+        const locked = this.#lockedRequests?.get(node.location)?.[fields[edge.type]]?.[edge.name]
+        if (this.#lockedRequests && locked !== edge.rawSpec) {
+          continue
+        }
+        edge.resolvedVersion = edge.to.version
+        selections.set(edge.name, { type: edge.type, spec: edge.spec, version: edge.to.version })
+      }
+      this.#tagSelections.set(node, selections)
+    }
+  }
+
   #problemEdges (node) {
     // skip over any bundled deps, they're not our problem.
     // Note that this WILL fetch bundled meta-deps which are also dependencies
@@ -1401,6 +1448,13 @@ This is a one-time fix-up, please be patient...
         continue
       }
 
+      // Reuse historical selections after an unrelated package setter recreated
+      // the edges. A fresh or changed tag must resolve even if it can see some
+      // other tag's hoisted remote tarball.
+      const selection = this.#tagSelections.get(node)?.get(edge.name)
+      if (!edge.resolvedVersion && selection?.type === edge.type && selection.spec === edge.spec) {
+        edge.resolvedVersion = selection.version
+      }
       // If the edge has no destination, that's a problem, unless
       // if it's peerOptional and not explicitly requested.
       if (!edge.to) {
@@ -1428,6 +1482,12 @@ This is a one-time fix-up, please be patient...
 
       // If the edge is a workspace, and it's valid, leave it alone
       if (edge.to.isWorkspace) {
+        continue
+      }
+
+      if (!edge.peer && !edge.resolvedVersion &&
+          isTag(npa.resolve(edge.name, edge.spec, node.path))) {
+        problems.push(edge)
         continue
       }
 
@@ -1572,6 +1632,9 @@ This is a one-time fix-up, please be patient...
           const transformed = this.#applyNpmExtension(pkg)
           const { pkg: extended, applied } = this.#applyPackageExtension(transformed.pkg)
           const node = new Node({ name, pkg: extended, parent, installLinks, legacyPeerDeps })
+          if (edge && isTag(spec)) {
+            edge.resolvedVersion = node.version
+          }
           if (transformed.applied) {
             node.npmExtensionApplied = transformed.applied
           }

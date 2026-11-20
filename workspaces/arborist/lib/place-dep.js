@@ -258,6 +258,13 @@ class PlaceDep {
       ...(this.dep.isLink ? { target: this.dep.target, realpath: this.dep.realpath } : {}),
     })
 
+    for (const [name, source] of this.dep.edgesOut) {
+      const edge = this.placed.edgesOut.get(name)
+      if (source.resolvedVersion && edge?.type === source.type && edge.spec === source.spec) {
+        edge.resolvedVersion = source.resolvedVersion
+      }
+    }
+
     this.oldDep = target.children.get(this.name)
     if (this.oldDep) {
       this.replaceOldDep()

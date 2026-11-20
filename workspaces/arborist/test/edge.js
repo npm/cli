@@ -1303,3 +1303,64 @@ t.test('overrides and bundled deps in satisfiedBy', t => {
   delete a.overrides
   t.end()
 })
+
+t.test('a selected registry tag invalidates a different remote version', t => {
+  const Node = require('../lib/node.js')
+  const root = new Node({ path: '/tag-root', pkg: { dependencies: { tagged: 'experimental' } } })
+  const old = new Node({ parent: root,
+    pkg: { name: 'tagged', version: '1.0.0' },
+    resolved: 'https://registry.npmjs.org/tagged/-/tagged-1.0.0.tgz' })
+  const selected = new Node({ path: '/selected/tagged',
+    pkg: { name: 'tagged', version: '2.0.0' },
+    resolved: 'https://registry.npmjs.org/tagged/-/tagged-2.0.0.tgz' })
+  const edge = root.edgesOut.get('tagged')
+  t.ok(edge.valid, 'an unselected tag still accepts a historical remote resolution')
+  edge.explain()
+  edge.resolvedVersion = '2.0.0'
+  t.equal(edge.error, 'INVALID', 'changing the selection refreshes cached validity')
+  t.equal(edge.explain().error, 'INVALID', 'changing the selection refreshes the explanation')
+  t.notOk(edge.satisfiedBy(old), 'rejects a different tagged version')
+  t.ok(edge.satisfiedBy(selected), 'accepts the selected version')
+  edge.resolvedVersion = null
+  t.ok(edge.valid, 'clearing the selection restores weak tag validation')
+  t.throws(() => {
+    edge.resolvedVersion = 2
+  }, TypeError, 'rejects a non-string selection')
+  t.end()
+})
+
+t.test('tag selections preserve accept and override behavior', t => {
+  const Node = require('../lib/node.js')
+  const root = new Node({ path: '/tag-root',
+    loadOverrides: true,
+    pkg: {
+      dependencies: { wrapper: '1.0.0', accepted: 'experimental' },
+      acceptDependencies: { accepted: '1.x' },
+      overrides: { 'tagged@1.0.0': 'experimental' },
+    } })
+  const accepted = new Node({ parent: root,
+    pkg: { name: 'accepted', version: '1.0.0' },
+    resolved: 'https://registry.npmjs.org/accepted/-/accepted-1.0.0.tgz' })
+  const acceptedEdge = root.edgesOut.get('accepted')
+  acceptedEdge.resolvedVersion = '2.0.0'
+  t.ok(acceptedEdge.satisfiedBy(accepted), 'retains acceptDependencies fallback')
+  const wrapper = new Node({ parent: root,
+    pkg: { name: 'wrapper',
+      version: '1.0.0',
+      dependencies: { tagged: '^1.0.0' } } })
+  const edge = wrapper.edgesOut.get('tagged')
+  edge.resolvedVersion = '2.0.0'
+  const candidate = version => new Node({ path: `/candidate/${version}/tagged`,
+    pkg: { name: 'tagged', version },
+    resolved: `https://registry.npmjs.org/tagged/-/tagged-${version}.tgz` })
+  t.equal(edge.spec, 'experimental', 'selection belongs to the effective override')
+  t.ok(edge.satisfiedBy(candidate('2.0.0')), 'accepts the selected override version')
+  t.notOk(edge.satisfiedBy(candidate('3.0.0')), 'rejects a different remote override version')
+  t.ok(edge.satisfiedBy(candidate('1.1.0')), 'retains the original range outside the override key')
+  t.notOk(edge.satisfiedBy(candidate('1.0.0')), 'still rejects the overridden key')
+  root.overrides = new OverrideSet({ overrides: { tagged: 'latest' } })
+  wrapper.overrides = root.overrides
+  edge.reload(true)
+  t.equal(edge.resolvedVersion, null, 'a different effective override invalidates the old selection')
+  t.end()
+})

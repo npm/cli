@@ -43,6 +43,8 @@ class Edge {
   #spec
   #to
   #type
+  #resolvedSpec
+  #resolvedVersion = null
 
   static types = Object.freeze([
     'prod',
@@ -110,7 +112,7 @@ class Edge {
 
     // If there's no override we just use the spec.
     if (!this.overrides?.keySpec) {
-      return depValid(node, this.spec, this.#accept, this.#from)
+      return this.#satisfiesSpec(node)
     }
 
     // NOTE: this condition means we explicitly do not support overriding
@@ -120,7 +122,7 @@ class Edge {
     }
     // There's some override. If the target node satisfies the overriding spec
     // then it's okay.
-    if (depValid(node, this.spec, this.#accept, this.#from)) {
+    if (this.#satisfiesSpec(node)) {
       return true
     }
     // If it doesn't, then it should at least satisfy the original spec.
@@ -138,6 +140,25 @@ class Edge {
     //   with the rawSpec, it's also consistent with the keySpec.
     //   So we're looking for ^8.0.0 or 9.0.0 and not 8.23.0.
     return !depValid(node, this.overrides.keySpec, this.#accept, this.#from)
+  }
+
+  #satisfiesSpec (node) {
+    return depValid(node, this.spec, this.#accept, this.#from) &&
+      (!this.resolvedVersion || depValid(node, this.resolvedVersion, this.#accept, this.#from))
+  }
+
+  // A registry tag selection is local to this build, not a manifest or lockfile edit.
+  get resolvedVersion () {
+    return this.#resolvedSpec === this.spec ? this.#resolvedVersion : null
+  }
+
+  set resolvedVersion (version) {
+    if (version !== null && typeof version !== 'string') {
+      throw new TypeError('resolvedVersion must be a string or null')
+    }
+    this.#resolvedSpec = this.spec
+    this.#resolvedVersion = version
+    this.reload(true)
   }
 
   // return the edge data, and an explanation of how that edge came to be here
