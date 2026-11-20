@@ -8,8 +8,8 @@ const Config = require('@npmcli/config')
 const { definitions, flatten, shorthands } = require('@npmcli/config/lib/definitions')
 const config = new Config({
   npmPath: path.dirname(__dirname),
-  // argv is explicitly not looked at since prefix is not something that can be changed via argv
-  argv: [],
+  // Ignore caller arguments and project config when selecting the global CLI.
+  argv: [process.execPath, __filename, '--global'],
   definitions,
   flatten,
   shorthands,
