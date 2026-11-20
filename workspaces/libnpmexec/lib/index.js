@@ -191,16 +191,35 @@ const exec = async (opts) => {
   const localArb = new Arborist({ ...flatOptions, path })
   const localTree = await localArb.loadActual()
 
+  const { npxCache, retry } = flatOptions
+  const hash = crypto.createHash('sha512')
+    .update(packages.map(p => {
+      // Keeps the npx directory unique to the resolved directory, not the
+      // potentially relative one (i.e. "npx .")
+      const spec = npa(p)
+      if (spec.type === 'directory') {
+        return spec.fetchSpec
+      }
+      return p
+    }).sort((a, b) => a.localeCompare(b, 'en')).join('\n'))
+    .digest('hex')
+    .slice(0, 16)
+  const installDir = npxCache && resolve(npxCache, hash)
+  // Packages already in the npx cache can run from cached metadata, so try
+  // one registry lookup without retries before using the remaining ones.
+  const cached = installDir && await fileExists(join(installDir, 'package.json'))
+
   // Find anything that isn't installed locally
   const needInstall = []
   let commandManifest
   await Promise.all(packages.map(async (pkg, i) => {
     const spec = npa(pkg, path)
-    const { manifest, node } = await missingFromTree({
-      spec,
-      tree: localTree,
-      flatOptions,
-    })
+    const lookup = overrides =>
+      missingFromTree({ spec, tree: localTree, flatOptions: { ...flatOptions, ...overrides } })
+    const { manifest, node } = cached && spec.registry && retry?.retries > 0
+      ? await lookup({ retry: { retries: 0 } })
+        .catch(() => lookup({ retry: { ...retry, retries: retry.retries - 1 } }))
+      : await lookup()
     if (manifest) {
       // Package does not exist in the local tree
       needInstall.push({ spec, manifest })
@@ -243,23 +262,9 @@ const exec = async (opts) => {
   const add = []
   if (needInstall.length > 0) {
     // Install things to the npx cache, if needed
-    const { npxCache } = flatOptions
     if (!npxCache) {
       throw new Error('Must provide a valid npxCache path')
     }
-    const hash = crypto.createHash('sha512')
-      .update(packages.map(p => {
-        // Keeps the npx directory unique to the resolved directory, not the
-        // potentially relative one (i.e. "npx .")
-        const spec = npa(p)
-        if (spec.type === 'directory') {
-          return spec.fetchSpec
-        }
-        return p
-      }).sort((a, b) => a.localeCompare(b, 'en')).join('\n'))
-      .digest('hex')
-      .slice(0, 16)
-    const installDir = resolve(npxCache, hash)
     await mkdir(installDir, { recursive: true })
     const npxArb = new Arborist({
       ...flatOptions,
