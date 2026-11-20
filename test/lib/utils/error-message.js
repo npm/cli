@@ -357,6 +357,38 @@ t.test('404', async t => {
   })
 })
 
+t.test('404 preserves the exact user-requested package spec', async t => {
+  const registry = 'https://custom-registry.example.test/'
+  const { errorMessage, npm } = await loadMockNpm(t, {
+    config: { registry },
+  })
+
+  for (const requested of ['@anular/cli', '@anular/cli@*', '@anular/cli@1.2.3']) {
+    npm.argv = [requested]
+    const er = Object.assign(
+      new Error('404 Not Found - GET https://internal-mirror.test/@anular%2fcli'),
+      { code: 'E404', pkgid: '@anular/cli@*' }
+    )
+    const result = errorMessage(er)
+
+    t.same(result.summary, [['404', `Package '${requested}' not found.`]])
+    t.same(result.detail, [['404', `Registry: ${registry}`]])
+    t.notMatch(JSON.stringify(result), /internal-mirror|%2fcli/,
+      'internal request details must not appear in user-facing messages')
+  }
+})
+
+t.test('404 does not attribute a dependency failure to a different CLI argument', async t => {
+  const { errorMessage, npm } = await loadMockNpm(t)
+  npm.argv = ['different-package']
+  const er = Object.assign(new Error('404 not found'), {
+    code: 'E404',
+    pkgid: '@anular/cli@*',
+  })
+  const result = errorMessage(er)
+  t.notMatch(JSON.stringify(result.summary), /different-package/)
+})
+
 t.test('bad platform', async t => {
   const { errorMessage } = await loadMockNpm(t)
 
