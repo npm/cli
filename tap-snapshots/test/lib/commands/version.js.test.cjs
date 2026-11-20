@@ -76,3 +76,29 @@ exports[`test/lib/commands/version.js TAP empty versions workspaces with one arg
 }
 
 `
+
+exports[`test/lib/commands/version.js TAP empty versions workspaces with one arg, implicit workspace, saves package-lock.json > must match snapshot 1`] = `
+{
+  "name": "workspaces-test",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "workspaces-test",
+      "version": "1.0.0",
+      "workspaces": [
+        "workspace-a",
+        "workspace-b"
+      ]
+    },
+    "workspace-a": {
+      "version": "2.0.0"
+    },
+    "workspace-b": {
+      "version": "1.0.0"
+    }
+  }
+}
+
+`
