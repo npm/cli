@@ -1358,6 +1358,137 @@ t.test('bin links adding and removing', t => {
     .then(() => t.throws(() => fs.statSync(rbin))) // should be gone
 })
 
+t.test('omitting a bin collision preserves the unchanged provider', async t => {
+  const cases = [
+    { owner: 'dev' },
+    { owner: 'prod' },
+    { owner: 'dev', multiple: true },
+    { owner: 'dev', binLinks: false },
+  ]
+  for (const { owner, multiple = false, binLinks: enabled = true } of cases) {
+    await t.test(`initial ${owner} bin, multiple=${multiple}, binLinks=${enabled}`, async t => {
+      createRegistry(t)
+      const prod = owner === 'prod' ? 'a-prod' : 'z-prod'
+      const dev = owner === 'dev' ? 'a-dev' : 'z-dev'
+      const pkg = name => ({
+        'package.json': JSON.stringify({
+          name,
+          version: '1.0.0',
+          bin: name === '0-other' ? { untouched: 'bin.js' }
+          : name === prod ? { shared: 'bin.js', untouched: 'bin.js' }
+          : { shared: 'bin.js' },
+          scripts: { install: 'node install.js' },
+        }),
+        'bin.js': `#!/usr/bin/env node\nconsole.log('${name}')\n`,
+        'install.js': "require('node:fs').appendFileSync('installed', 'x')\n",
+      })
+      const manifest = {
+        dependencies: { [prod]: `file:../${prod}`, '0-other': 'file:../0-other' },
+        devDependencies: { [dev]: `file:../${dev}` },
+      }
+      if (multiple) {
+        manifest.dependencies['zz-prod'] = 'file:../zz-prod'
+        manifest.devDependencies['zz-dev'] = 'file:../zz-dev'
+      }
+      const dir = t.testdir({
+        project: { 'package.json': JSON.stringify(manifest) },
+        fresh: { 'package.json': JSON.stringify(manifest) },
+        [prod]: pkg(prod),
+        [dev]: pkg(dev),
+        '0-other': pkg('0-other'),
+        'zz-prod': pkg('zz-prod'),
+        'zz-dev': pkg('zz-dev'),
+      })
+      const path = resolve(dir, 'project')
+      const opts = { installLinks: true, dangerouslyAllowAllScripts: true }
+      const assertBin = (name, command = 'shared', project = path) => {
+        const bin = resolve(project, `node_modules/.bin/${command}`)
+        if (process.platform === 'win32') {
+          for (const ext of ['', '.cmd', '.ps1']) {
+            t.match(fs.readFileSync(bin + ext, 'utf8').replace(/\\/g, '/'),
+              `/${name}/bin.js`, `${ext || 'shell'} shim points to ${name}`)
+          }
+        } else {
+          t.equal(fs.realpathSync(bin), resolve(project, `node_modules/${name}/bin.js`),
+            `bin points to ${name}`)
+        }
+      }
+      // Each reify represents a separate CLI invocation.
+      const binLinks = require('bin-links')
+      t.teardown(() => binLinks.resetSeen())
+      binLinks.resetSeen()
+      await reify(path, opts)
+      assertBin(owner === 'prod' ? prod : dev)
+      assertBin('0-other', 'untouched')
+      t.equal(fs.readFileSync(resolve(path, `node_modules/${prod}/installed`), 'utf8'),
+        'x', 'production install script ran once')
+
+      // A failure after rebuilding must restore the original command owner.
+      const failing = newArb({ path, ...opts })
+      const build = failing[Symbol.for('build')]
+      const error = new Error('fail after linking bins')
+      failing[Symbol.for('build')] = async function () {
+        await build.call(this)
+        throw error
+      }
+      binLinks.resetSeen()
+      await t.rejects(failing.reify({ omit: ['dev'] }), error)
+      assertBin(owner === 'prod' ? prod : dev)
+      assertBin('0-other', 'untouched')
+      t.ok(fs.existsSync(resolve(path, `node_modules/${dev}/bin.js`)),
+        'rollback restored development package')
+
+      binLinks.resetSeen()
+      await reify(path, { ...opts, omit: ['dev'], binLinks: enabled })
+      t.notOk(fs.existsSync(resolve(path, `node_modules/${dev}`)), 'dev package removed')
+      t.notOk(fs.existsSync(resolve(path, 'node_modules/zz-dev')), 'other dev package absent')
+      t.ok(fs.existsSync(resolve(path, `node_modules/${prod}/bin.js`)),
+        'unchanged production executable remains')
+      t.equal(fs.readFileSync(resolve(path, `node_modules/${prod}/installed`), 'utf8'),
+        'x', 'unchanged production install script did not run again')
+      assertBin('0-other', 'untouched')
+      if (!enabled) {
+        for (const ext of ['', '.cmd', '.ps1']) {
+          t.notOk(fs.existsSync(resolve(path, `node_modules/.bin/shared${ext}`)),
+            'binLinks=false does not restore a command')
+        }
+        return
+      }
+      assertBin(prod)
+
+      binLinks.resetSeen()
+      const repeated = newArb({ path, ...opts })
+      await repeated.reify({ omit: ['dev'] })
+      t.equal(repeated.diff.children.length, 0, 'repeat has nothing to repair')
+      assertBin(prod)
+      assertBin('0-other', 'untouched')
+      t.equal(fs.readFileSync(resolve(path, `node_modules/${prod}/installed`), 'utf8'),
+        'x', 'repeat did not rerun the production install script')
+
+      binLinks.resetSeen()
+      const fresh = resolve(dir, 'fresh')
+      await reify(fresh, { ...opts, omit: ['dev'] })
+      assertBin(prod, 'shared', fresh)
+      assertBin('0-other', 'untouched', fresh)
+      t.notOk(fs.existsSync(resolve(fresh, `node_modules/${dev}`)),
+        'fresh production install excludes development dependency')
+
+      binLinks.resetSeen()
+      await reify(path, { ...opts, omit: ['dev'], rm: [prod] })
+      if (multiple) {
+        assertBin('zz-prod')
+        binLinks.resetSeen()
+        await reify(path, { ...opts, omit: ['dev'], rm: ['zz-prod'] })
+      }
+      for (const ext of ['', '.cmd', '.ps1']) {
+        t.notOk(fs.existsSync(resolve(path, `node_modules/.bin/shared${ext}`)),
+          'removing the last provider removes the command')
+      }
+      assertBin('0-other', 'untouched')
+    })
+  }
+})
+
 t.test('global style', t => {
   const path = t.testdir()
   createRegistry(t, true)
@@ -1419,6 +1550,20 @@ t.test('global', async t => {
       .then(() => t.throws(() => fs.statSync(semverBin)))
       .then(() => t.strictSame(fs.readdirSync(nm), ['rimraf']))
   })
+})
+
+t.test('unchanged global bin is preserved on repeat reification', async t => {
+  createRegistry(t, true)
+  const path = t.testdir({ lib: {} })
+  const lib = resolve(path, 'lib')
+  const arb = newArb({ path: lib, global: true })
+  await arb.reify({ add: ['rimraf@2.7.1'] })
+  await arb.reify({ add: ['rimraf@2.7.1'] })
+  t.ok(arb.diff.unchanged.some(node => node.globalTop), 'global provider is unchanged')
+  t.equal(arb.diff.children.length, 0, 'repeat has nothing to rebuild')
+  const bin = process.platform === 'win32'
+    ? resolve(lib, 'rimraf.cmd') : resolve(path, 'bin/rimraf')
+  t.ok(fs.statSync(bin).isFile(), 'existing global command remains')
 })
 
 t.test('workspaces', async t => {
