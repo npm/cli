@@ -29,8 +29,7 @@ t.test('getCollaborators', t => {
       'npm:thirdteam': 'special-case',
     }
     registry.getCollaborators({ spec: pkg, collaborators })
-    await t.resolves(
-      access.getCollaborators(pkg, opts),
+    t.strictSame(await access.getCollaborators(pkg, opts),
       collaborators
     )
   })
@@ -50,18 +49,18 @@ t.test('getPackages', t => {
   t.test('team', async t => {
     const registry = mockRegistry(t)
     registry.getPackages({ team, packages })
-    await t.resolves(access.getPackages(team, opts), packages)
+    t.strictSame(await access.getPackages(team, opts), packages)
   })
   t.test('org', async t => {
     const registry = mockRegistry(t)
     registry.getPackages({ team: 'npm', packages })
-    await t.resolves(access.getPackages('npm', opts), packages)
+    t.strictSame(await access.getPackages('npm', opts), packages)
   })
   t.test('user', async t => {
     const registry = mockRegistry(t)
     registry.getPackages({ team: orgUser, responseCode: 404 })
     registry.getPackages({ user: orgUser, packages })
-    await t.resolves(access.getPackages(orgUser, opts), packages)
+    t.strictSame(await access.getPackages(orgUser, opts), packages)
   })
   t.test('registry error', async t => {
     const registry = mockRegistry(t)
@@ -76,7 +75,7 @@ t.test('getVisibility', t => {
     const registry = mockRegistry(t)
     const visibility = { public: true }
     registry.getVisibility({ spec: pkg, visibility })
-    await t.resolves(access.getVisibility(pkg, opts), visibility)
+    t.strictSame(await access.getVisibility(pkg, opts), visibility)
   })
   t.test('non registry package', async t => {
     await t.rejects(access.getVisibility('./local', opts), /package name only/)
