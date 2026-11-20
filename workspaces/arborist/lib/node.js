@@ -509,8 +509,8 @@ class Node {
 
     const { top } = this
 
-    // if the top is not the root or workspace then we do not want to omit it
-    if (!top.isProjectRoot && !top.isWorkspace) {
+    // Only omit dependencies managed by a project, workspace, or global package.
+    if (!top.isProjectRoot && !top.isWorkspace && !top.globalTop) {
       return false
     }
 

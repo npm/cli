@@ -3639,3 +3639,34 @@ t.test('shouldOmit method', t => {
 
   t.end()
 })
+
+t.test('global package dependencies honor omit flags', t => {
+  const root = new Node({ path: '/global',
+    global: true,
+    pkg: { dependencies: { app: '1.0.0' } } })
+  const app = new Node({ parent: root,
+    pkg: { name: 'app',
+      version: '1.0.0',
+      dependencies: { dep: '1.0.0' } } })
+  const dep = new Node({ parent: app, pkg: { name: 'dep', version: '1.0.0' } })
+  require('../lib/calc-dep-flags.js')(root)
+  t.ok(app.globalTop, 'models a package installed directly in the global root')
+  t.equal(dep.top, app, 'the dependency top is the global package')
+  for (const flag of ['dev', 'optional', 'peer']) {
+    dep[flag] = true
+    t.ok(dep.shouldOmit(new Set([flag])), `omits global ${flag} dependencies`)
+    dep[flag] = false
+  }
+  dep.devOptional = true
+  t.notOk(dep.shouldOmit(new Set(['dev'])), 'retains shared dev/optional dependencies with dev alone')
+  t.notOk(dep.shouldOmit(new Set(['optional'])), 'retains shared dev/optional dependencies with optional alone')
+  t.ok(dep.shouldOmit(new Set(['dev', 'optional'])), 'omits shared dev/optional dependencies with both flags')
+  t.notOk(app.shouldOmit(new Set(['dev', 'optional', 'peer'])), 'keeps the explicitly installed global package')
+
+  const target = new Node({ path: '/external', pkg: { name: 'external', version: '1.0.0' } })
+  const externalDep = new Node({ parent: target, pkg: { name: 'external-dep', version: '1.0.0' } })
+  new Link({ parent: root, name: 'external', target })
+  externalDep.optional = true
+  t.notOk(externalDep.shouldOmit(new Set(['optional'])), 'keeps dependencies in an external link target')
+  t.end()
+})

@@ -5066,3 +5066,66 @@ t.test('externalOptionalDependencies excludes inert optional node with installSt
 
   t.end()
 })
+
+// https://github.com/npm/cli/issues/8284
+t.test('global installs honor optional omission', async t => {
+  for (const freshOmit of [true, false]) {
+    await t.test(freshOmit ? 'fresh omission' : 'remove previously installed optional dependencies', async t => {
+      const packages = {
+        app: { name: 'app',
+          version: '1.0.0',
+          dependencies: { required: '1.0.0' },
+          optionalDependencies: { optional: '1.0.0' } },
+        required: { name: 'required', version: '1.0.0', dependencies: { shared: '1.0.0' } },
+        optional: { name: 'optional',
+          version: '1.0.0',
+          dependencies: { shared: '1.0.0', leaf: '1.0.0' },
+          bin: { 'optional-cli': 'cli.js' } },
+        shared: { name: 'shared', version: '1.0.0' },
+        leaf: { name: 'leaf', version: '1.0.0' },
+      }
+      const path = t.testdir({
+        sources: Object.fromEntries(Object.entries(packages).map(([name, pkg]) => [name, {
+          'package.json': JSON.stringify(pkg),
+          'cli.js': '#!/usr/bin/env node\n',
+        }])),
+        lib: { node_modules: { unrelated: {
+          'package.json': JSON.stringify({ name: 'unrelated',
+            version: '1.0.0',
+            optionalDependencies: { retained: '1.0.0' } }),
+          node_modules: { retained: {
+            'package.json': JSON.stringify({ name: 'retained', version: '1.0.0' }),
+            marker: 'keep this unrelated global dependency',
+          } },
+        } } },
+      })
+      const registry = createRegistry(t)
+      for (const [name, pkg] of Object.entries(packages)) {
+        const manifest = registry.manifest({ name, packuments: [pkg] })
+        const tarball = await require('pacote').tarball(resolve(path, 'sources', name), { Arborist })
+        registry.nock.get(`/${name}`).optionally().times(10).reply(200, manifest)
+        registry.nock.get(new URL(manifest.versions['1.0.0'].dist.tarball).pathname)
+          .optionally().times(10).reply(200, tarball)
+      }
+      const lib = resolve(path, 'lib')
+      const nm = resolve(lib, 'node_modules/app/node_modules')
+      const bin = resolve(nm, '.bin/optional-cli' + (process.platform === 'win32' ? '.cmd' : ''))
+      const opts = { global: true, add: ['app@1.0.0'], ignoreScripts: true }
+      if (!freshOmit) {
+        await reify(lib, opts)
+        t.ok(fs.existsSync(resolve(nm, 'optional/package.json')), 'control installs the optional package')
+        t.ok(fs.existsSync(resolve(nm, 'leaf/package.json')), 'control installs its exclusive dependency')
+        t.ok(fs.existsSync(bin), 'control links the optional binary')
+      }
+      await reify(lib, { ...opts, omit: ['optional'] })
+      t.notOk(fs.existsSync(resolve(nm, 'optional')), 'omits the optional package')
+      t.notOk(fs.existsSync(resolve(nm, 'leaf')), 'omits its exclusive transitive dependency')
+      t.notOk(fs.existsSync(bin), 'omits the optional binary')
+      t.ok(fs.existsSync(resolve(nm, 'required/package.json')), 'retains the required package')
+      t.ok(fs.existsSync(resolve(nm, 'shared/package.json')), 'retains a dependency also reached through a required edge')
+      t.ok(fs.existsSync(resolve(lib, 'node_modules/app/package.json')), 'retains the global package')
+      t.equal(fs.readFileSync(resolve(lib, 'node_modules/unrelated/node_modules/retained/marker'), 'utf8'),
+        'keep this unrelated global dependency', 'does not prune unrelated global packages')
+    })
+  }
+})
