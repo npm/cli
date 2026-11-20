@@ -42,6 +42,8 @@ const mockOpenUrlPrompt = async (t, {
   openUrlPromptInterrupted = false,
   openerResult = null,
   isTTY = true,
+  stdoutTTY = isTTY,
+  stderrTTY = isTTY,
   abort = false,
   url: openUrl = 'https://www.npmjs.com',
   ...config
@@ -49,13 +51,15 @@ const mockOpenUrlPrompt = async (t, {
   const mock = await mockNpm(t, {
     globals: {
       'process.stdin.isTTY': isTTY,
-      'process.stdout.isTTY': isTTY,
+      'process.stdout.isTTY': stdoutTTY,
+      'process.stderr.isTTY': stderrTTY,
     },
     config,
   })
 
   let openerUrl = null
   let openerOpts = null
+  let readlineOutput = null
 
   const { openUrlPrompt } = tmock(t, '{LIB}/utils/open-url.js', {
     '@npmcli/promise-spawn': {
@@ -68,7 +72,8 @@ const mockOpenUrlPrompt = async (t, {
       },
     },
     'node:readline/promises': {
-      createInterface: () => {
+      createInterface: ({ output }) => {
+        readlineOutput = output
         return Object.assign(new EventEmitter(), {
           question: async (p, { signal } = {}) => {
             if (questionShouldResolve !== true) {
@@ -112,6 +117,7 @@ const mockOpenUrlPrompt = async (t, {
     OUTPUT: mock.joinedOutput(),
     error,
     abortController,
+    readlineOutput,
   }
 }
 
@@ -129,6 +135,44 @@ t.test('open url prompt', async t => {
     t.equal(openerUrl, 'https://www.npmjs.com', 'opened the given url')
     t.same(openerOpts, { command: null }, 'passed command as null (the default)')
     t.matchSnapshot(OUTPUT)
+  })
+
+  t.test('prompts on stderr when stdout is piped', async t => {
+    const { OUTPUT, outputErrors, openerUrl, openerOpts, readlineOutput } =
+      await mockOpenUrlPrompt(t, { browser: true, stdoutTTY: false })
+    t.equal(readlineOutput, process.stderr, 'prompt is written to stderr')
+    t.equal(openerUrl, 'https://www.npmjs.com', 'opened the given url')
+    t.same(openerOpts, { command: null }, 'passed command as null (the default)')
+    t.match(OUTPUT, 'npm home:\nhttps://www.npmjs.com', 'url still printed to stdout')
+    t.match(outputErrors.join('\n'), 'npm home:\nhttps://www.npmjs.com', 'url repeated on stderr')
+  })
+
+  t.test('does not repeat the url on stderr when stdout is a TTY', async t => {
+    const { outputErrors, readlineOutput } = await mockOpenUrlPrompt(t, { browser: true })
+    t.equal(readlineOutput, process.stderr, 'prompt is written to stderr')
+    t.strictSame(outputErrors, [], 'nothing written to stderr')
+  })
+
+  t.test('repeats the url on stderr in json mode when stdout is piped', async t => {
+    const { OUTPUT, outputErrors, openerUrl, readlineOutput } = await mockOpenUrlPrompt(t, {
+      browser: false,
+      json: true,
+      stdoutTTY: false,
+    })
+    t.equal(readlineOutput, null, 'browser disabled so no prompt')
+    t.equal(openerUrl, null, 'did not open')
+    t.match(OUTPUT, 'https://www.npmjs.com', 'url still buffered as json on stdout')
+    t.match(outputErrors.join('\n'), 'npm home:\nhttps://www.npmjs.com', 'url visible on stderr in json mode')
+  })
+
+  t.test('does not prompt when stderr is not a TTY', async t => {
+    const { openerUrl, openerOpts, readlineOutput } = await mockOpenUrlPrompt(t, {
+      browser: true,
+      stderrTTY: false,
+    })
+    t.equal(readlineOutput, null, 'did not create a prompt')
+    t.equal(openerUrl, null, 'did not open')
+    t.same(openerOpts, null, 'did not open')
   })
 
   t.test('opens a url with browser string', async t => {
