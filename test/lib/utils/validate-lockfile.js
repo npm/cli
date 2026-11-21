@@ -131,6 +131,27 @@ t.test('extra inventory items on idealTree', async t => {
   )
 })
 
+t.test('missing bundled inventory items do not invalidate lockfile', async t => {
+  const errors = validateLockfile(
+    new Map([
+      ['node_modules/bundle', { name: 'bundle', version: '1.0.0' }],
+    ]),
+    new Map([
+      ['node_modules/bundle', { name: 'bundle', version: '1.0.0' }],
+      ['node_modules/bundle/node_modules/embedded', {
+        name: 'embedded',
+        version: '1.0.0',
+        inBundle: true,
+      }],
+      ['node_modules/missing', { name: 'missing', version: '2.0.0' }],
+    ])
+  )
+
+  t.strictSame(errors, [
+    'Missing: missing@2.0.0 from lock file',
+  ], 'bundled nodes are supplied by their parent tarball, while ordinary nodes remain required')
+})
+
 t.test('extra inventory items on virtualTree', async t => {
   t.matchSnapshot(
     validateLockfile(
