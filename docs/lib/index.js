@@ -75,17 +75,14 @@ const getCommandByDoc = (docFile, docExt, commandLoader = defaultCommandLoader) 
   const { usage = [''], workspaces } = command
   const usagePrefix = name === 'npx' ? 'npx' : `npm ${name}`
 
-  // Resolve definitions - handles exclusive params expansion
   const commandDefs = resolveDefinitions(command)
   const resolvedDefs = {}
   for (const [key, def] of Object.entries(commandDefs)) {
     resolvedDefs[key] = def
-    // Handle exclusive params
-    if (def.exclusive) {
-      for (const e of def.exclusive) {
-        if (!resolvedDefs[e] && definitions[e]) {
-          resolvedDefs[e] = definitions[e]
-        }
+    // Document options grouped with this one in the command's usage.
+    for (const option of [...(def.exclusive ?? []), ...(def.related ?? [])]) {
+      if (!resolvedDefs[option] && definitions[option]) {
+        resolvedDefs[option] = definitions[option]
       }
     }
   }

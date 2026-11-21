@@ -130,6 +130,8 @@ const flatten = (key, obj, flatOptions) => {
 // we took for `--save-peer --save-optional` being `--save-type=peerOptional`
 // makes this tricky, and likely a breaking change.
 
+const relatedSaveOptions = ['save-prod', 'save-dev', 'save-optional', 'save-peer', 'save-bundle']
+
 // Define all config keys we know about.  They are indexed by their own key for
 // ease of lookup later.  This duplication is an optimization so that we don't
 // have to do an extra function call just to "reuse" the key in both places.
@@ -2090,7 +2092,8 @@ const definitions = {
     default: true,
     defaultDescription: `\`true\` unless when using \`npm update\` where it
     defaults to \`false\``,
-    usage: '-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle',
+    usage: ['-S', '--save', '--no-save', ...relatedSaveOptions.map(option => `--${option}`)].join('|'),
+    related: relatedSaveOptions,
     type: Boolean,
     short: 'S',
     description: `

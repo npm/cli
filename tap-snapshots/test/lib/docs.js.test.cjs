@@ -4580,6 +4580,11 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 \`\`\`
 
 #### \`save\`
+#### \`save-prod\`
+#### \`save-dev\`
+#### \`save-optional\`
+#### \`save-peer\`
+#### \`save-bundle\`
 #### \`save-exact\`
 #### \`global\`
 #### \`install-strategy\`
@@ -4928,6 +4933,11 @@ alias: it
 \`\`\`
 
 #### \`save\`
+#### \`save-prod\`
+#### \`save-dev\`
+#### \`save-optional\`
+#### \`save-peer\`
+#### \`save-bundle\`
 #### \`save-exact\`
 #### \`global\`
 #### \`install-strategy\`
@@ -5065,6 +5075,11 @@ alias: ln
 \`\`\`
 
 #### \`save\`
+#### \`save-prod\`
+#### \`save-dev\`
+#### \`save-optional\`
+#### \`save-peer\`
+#### \`save-bundle\`
 #### \`save-exact\`
 #### \`global\`
 #### \`install-strategy\`
@@ -6658,6 +6673,11 @@ aliases: unlink, remove, rm, r, un
 \`\`\`
 
 #### \`save\`
+#### \`save-prod\`
+#### \`save-dev\`
+#### \`save-optional\`
+#### \`save-peer\`
+#### \`save-bundle\`
 #### \`global\`
 #### \`workspace\`
 #### \`workspaces\`
@@ -6810,6 +6830,11 @@ aliases: u, up, upgrade, udpate
 \`\`\`
 
 #### \`save\`
+#### \`save-prod\`
+#### \`save-dev\`
+#### \`save-optional\`
+#### \`save-peer\`
+#### \`save-bundle\`
 #### \`global\`
 #### \`install-strategy\`
 #### \`legacy-bundling\`
@@ -6904,6 +6929,11 @@ alias: verison
 #### \`preid\`
 #### \`sign-git-tag\`
 #### \`save\`
+#### \`save-prod\`
+#### \`save-dev\`
+#### \`save-optional\`
+#### \`save-peer\`
+#### \`save-bundle\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`workspaces-update\`
