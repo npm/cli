@@ -24,6 +24,7 @@ const PlaceDep = require('../place-dep.js')
 const debug = require('../debug.js')
 const fromPath = require('../from-path.js')
 const calcDepFlags = require('../calc-dep-flags.js')
+const explicitRequestSet = require('../explicit-request-set.js')
 const { isReleaseAgeExcluded, trustedSpecName } = require('../release-age-exclude.js')
 const { resolvePatchedDependencies } = require('../patched-dependencies.js')
 const PackageExtensions = require('../package-extensions.js')
@@ -207,9 +208,10 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   async #checkEngineAndPlatform () {
     const { engineStrict, npmVersion, nodeVersion, omit = [], cpu, os, libc } = this.options
     const omitSet = new Set(omit)
+    const included = explicitRequestSet(this.#explicitRequests, omitSet)
 
     for (const node of this.idealTree.inventory.values()) {
-      if (!node.optional && !node.shouldOmit(omitSet)) {
+      if (!node.optional && (!node.shouldOmit(omitSet) || included.has(node))) {
         try {
           // if devEngines is present in the root node we ignore the engines check
           if (!(node.isRoot && node.package.devEngines)) {

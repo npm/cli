@@ -19,6 +19,7 @@ const { walkUp } = require('walk-up-path')
 
 const AuditReport = require('../audit-report.js')
 const Diff = require('../diff.js')
+const explicitRequestSet = require('../explicit-request-set.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const debug = require('../debug.js')
 const onExit = require('../signal-handling.js')
@@ -499,6 +500,7 @@ module.exports = cls => class Reifier extends cls {
     // and ideal trees.
     this.diff = Diff.calculate({
       omit: this.#omit,
+      include: explicitRequestSet(this.explicitRequests, this.#omit),
       filterNodes,
       actual: this.#linkedActualForDiff || this.actualTree,
       ideal: this.idealTree,

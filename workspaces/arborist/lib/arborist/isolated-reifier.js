@@ -4,6 +4,7 @@ const { getPaths: getBinPaths } = require('bin-links')
 const crypto = require('node:crypto')
 const { IsolatedNode, IsolatedLink } = require('../isolated-classes.js')
 const nameFromFolder = require('@npmcli/name-from-folder')
+const explicitRequestSet = require('../explicit-request-set.js')
 
 // generate short hash key based on the dependency tree starting at this node
 const getKey = (startNode) => {
@@ -40,6 +41,8 @@ const getKey = (startNode) => {
 module.exports = cls => class IsolatedReifier extends cls {
   #externalProxies = new Map()
   #omit = new Set()
+  #explicitRequests = new Set()
+  #explicitNodes = new Set()
   #rootDeclaredDeps = new Set()
   #processedEdges = new Set()
   #workspaceProxies = new Map()
@@ -84,6 +87,8 @@ module.exports = cls => class IsolatedReifier extends cls {
     const idealTree = this.idealTree
     this.#omit = new Set(this.options.omit)
     const omit = this.#omit
+    this.#explicitRequests = this.explicitRequests
+    this.#explicitNodes = explicitRequestSet(this.#explicitRequests, omit)
 
     // npm auto-creates 'workspace' edges from root to all workspaces.
     // For isolated/linked mode, only include workspaces that root explicitly declares as dependencies.
@@ -95,6 +100,11 @@ module.exports = cls => class IsolatedReifier extends cls {
       (!omit.has('optional') && rootPkg.optionalDependencies),
       (!omit.has('peer') && rootPkg.peerDependencies)
     )))
+    for (const edge of this.#explicitRequests) {
+      if (edge?.from === idealTree && edge.to) {
+        this.#rootDeclaredDeps.add(edge.name)
+      }
+    }
 
     // XXX this sometimes acts like a node too
     this.idealGraph = {
@@ -118,7 +128,7 @@ module.exports = cls => class IsolatedReifier extends cls {
       }
       processed.add(next.location)
       next.edgesOut.forEach(edge => {
-        if (edge.to && !(next.package.bundleDependencies || next.package.bundledDependencies || []).includes(edge.to.name) && !edge.to.shouldOmit?.(omit)) {
+        if (edge.to && !(next.package.bundleDependencies || next.package.bundledDependencies || []).includes(edge.to.name) && (!edge.to.shouldOmit?.(omit) || this.#explicitNodes.has(edge.to))) {
           queue.push(edge.to)
         }
       })
@@ -192,6 +202,9 @@ module.exports = cls => class IsolatedReifier extends cls {
     // Only omit edge types for root and workspace nodes (matching shouldOmit scope)
     if ((node.isProjectRoot || node.isWorkspace) && this.#omit.size) {
       edges = edges.filter(edge => {
+        if (this.#explicitRequests.has(edge)) {
+          return true
+        }
         if (edge.dev && this.#omit.has('dev')) {
           return false
         }
