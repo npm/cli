@@ -117,6 +117,19 @@ t.test('allowRemote carve-out for registry-mediated tarballs', async t => {
     t.equal(captured.opts.allowRemote, 'all')
   })
 
+  t.test('registry-typed _from refuses a non-url _resolved', async t => {
+    // pacote would re-parse a file: or directory value as a directory spec and
+    // run that directory's prepare script
+    for (const _resolved of ['file:node_modules/evil/pkg', resolve('node_modules/evil/pkg')]) {
+      await t.rejects(
+        tarball({ _from: 'evil@1.0.1', _resolved }, {}),
+        { code: 'EINVALIDTARBALL' },
+        `rejects ${_resolved}`
+      )
+      t.notOk(captured, 'pacote.tarball was not called')
+    }
+  })
+
   t.test('non-registry _from leaves allowRemote untouched', async t => {
     await tarball({
       _from: 'https://example.com/foo.tgz',
