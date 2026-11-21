@@ -58,9 +58,11 @@ npm error Options:
 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
-npm error [--allow-directory <all|none|root>] [--allow-file <all|none|root>]
-npm error [--allow-git <all|none|root>] [--allow-remote <all|none|root>]
+npm error [--strict-peer-deps]
+npm error [--loglevel <silent|error|warn|notice|http|info|verbose|silly>]
+npm error [--foreground-scripts] [--ignore-scripts] [--allow-directory <all|none|root>]
+npm error [--allow-file <all|none|root>] [--allow-git <all|none|root>]
+npm error [--allow-remote <all|none|root>]
 npm error [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 npm error [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 npm error [--no-bin-links] [--no-fund] [--dry-run]
@@ -84,6 +86,9 @@ npm error     Option that allows for defining which types of dependencies to ins
 npm error
 npm error   --strict-peer-deps
 npm error     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+npm error
+npm error   --loglevel
+npm error     What level of logs to report.  All logs are written to a debug log,
 npm error
 npm error   --foreground-scripts
 npm error     Run all build scripts (ie, \`preinstall\`, \`install\`, and
