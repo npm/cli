@@ -182,6 +182,9 @@ The npm cli utilizes its internal package cache when using the package name spec
 You can use the following to change how and when the cli uses this cache.
 See [`npm cache`](/commands/npm-cache) for more on how the cache works.
 
+When every requested package is an exact version, such as `foo@1.2.3`, that is already installed in the npx cache, and none of them is in the local project or installed globally, npm runs it from there without contacting the registry.
+Set `prefer-online` to check the registry anyway.
+
 #### prefer-online
 
 Forces staleness checks for packages, making the cli look for updates immediately even if the package is already in the cache.
