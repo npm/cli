@@ -22,13 +22,17 @@ module.exports = async (newversion, opts) => {
     pkg,
   } = opts
 
-  const { valid, clean, inc } = semver
+  const { parse, clean, inc } = semver
   const current = pkg.version || '0.0.0'
   const currentClean = clean(current)
+  const parsed = parse(newversion, { loose: true })
 
   let newV
-  if (valid(newversion, { loose: true })) {
-    newV = clean(newversion, { loose: true })
+  if (parsed) {
+    newV = parsed.version
+    if (parsed.build.length) {
+      newV += `+${parsed.build.join('.')}`
+    }
   } else if (newversion === 'from-git') {
     newV = await retrieveTag(opts)
   } else {
@@ -42,7 +46,8 @@ module.exports = async (newversion, opts) => {
     })
   }
 
-  if (newV === currentClean && !allowSameVersion) {
+  // Build metadata does not make this a different version for allowSameVersion.
+  if (clean(newV, { loose: true }) === currentClean && !allowSameVersion) {
     throw Object.assign(new Error('Version not changed'), {
       current,
       requested: newversion,
