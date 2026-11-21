@@ -3460,9 +3460,11 @@ Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
-[--allow-directory <all|none|root>] [--allow-file <all|none|root>]
-[--allow-git <all|none|root>] [--allow-remote <all|none|root>]
+[--strict-peer-deps]
+[--loglevel <silent|error|warn|notice|http|info|verbose|silly>]
+[--foreground-scripts] [--ignore-scripts] [--allow-directory <all|none|root>]
+[--allow-file <all|none|root>] [--allow-git <all|none|root>]
+[--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
@@ -3486,6 +3488,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --loglevel
+    What level of logs to report.  All logs are written to a debug log,
 
   --foreground-scripts
     Run all build scripts (ie, \`preinstall\`, \`install\`, and
@@ -3555,6 +3560,7 @@ aliases: clean-install, ic, install-clean, isntall-clean
 #### \`omit\`
 #### \`include\`
 #### \`strict-peer-deps\`
+#### \`loglevel\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`allow-directory\`
@@ -4451,6 +4457,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
+[--loglevel <silent|error|warn|notice|http|info|verbose|silly>]
 [--foreground-scripts] [--ignore-scripts] [--allow-directory <all|none|root>]
 [--allow-file <all|none|root>] [--allow-git <all|none|root>]
 [--allow-remote <all|none|root>]
@@ -4498,6 +4505,9 @@ Options:
 
   --package-lock-only
     If set to true, the current operation will only use the \`package-lock.json\`,
+
+  --loglevel
+    What level of logs to report.  All logs are written to a debug log,
 
   --foreground-scripts
     Run all build scripts (ie, \`preinstall\`, \`install\`, and
@@ -4591,6 +4601,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`prefer-dedupe\`
 #### \`package-lock\`
 #### \`package-lock-only\`
+#### \`loglevel\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`allow-directory\`
@@ -4626,9 +4637,11 @@ Options:
 [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--foreground-scripts] [--ignore-scripts]
-[--allow-directory <all|none|root>] [--allow-file <all|none|root>]
-[--allow-git <all|none|root>] [--allow-remote <all|none|root>]
+[--strict-peer-deps]
+[--loglevel <silent|error|warn|notice|http|info|verbose|silly>]
+[--foreground-scripts] [--ignore-scripts] [--allow-directory <all|none|root>]
+[--allow-file <all|none|root>] [--allow-git <all|none|root>]
+[--allow-remote <all|none|root>]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
@@ -4652,6 +4665,9 @@ Options:
 
   --strict-peer-deps
     If set to \`true\`, and \`--legacy-peer-deps\` is not set, then _any_
+
+  --loglevel
+    What level of logs to report.  All logs are written to a debug log,
 
   --foreground-scripts
     Run all build scripts (ie, \`preinstall\`, \`install\`, and
@@ -4721,6 +4737,7 @@ aliases: cit, clean-install-test, sit
 #### \`omit\`
 #### \`include\`
 #### \`strict-peer-deps\`
+#### \`loglevel\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`allow-directory\`
@@ -4799,6 +4816,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
+[--loglevel <silent|error|warn|notice|http|info|verbose|silly>]
 [--foreground-scripts] [--ignore-scripts] [--allow-directory <all|none|root>]
 [--allow-file <all|none|root>] [--allow-git <all|none|root>]
 [--allow-remote <all|none|root>]
@@ -4846,6 +4864,9 @@ Options:
 
   --package-lock-only
     If set to true, the current operation will only use the \`package-lock.json\`,
+
+  --loglevel
+    What level of logs to report.  All logs are written to a debug log,
 
   --foreground-scripts
     Run all build scripts (ie, \`preinstall\`, \`install\`, and
@@ -4939,6 +4960,7 @@ alias: it
 #### \`prefer-dedupe\`
 #### \`package-lock\`
 #### \`package-lock-only\`
+#### \`loglevel\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`allow-directory\`
@@ -6713,8 +6735,9 @@ Options:
 [--legacy-bundling] [--global-style]
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
-[--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
-[--ignore-scripts]
+[--strict-peer-deps] [--no-package-lock]
+[--loglevel <silent|error|warn|notice|http|info|verbose|silly>]
+[--foreground-scripts] [--ignore-scripts]
 [--allow-scripts <package-list> [--allow-scripts <package-list> ...]]
 [--strict-allow-scripts] [--dangerously-allow-all-scripts] [--no-audit]
 [--before <date>] [--min-release-age <days>]
@@ -6749,6 +6772,9 @@ Options:
 
   --package-lock
     If set to false, then ignore \`package-lock.json\` files when installing.
+
+  --loglevel
+    What level of logs to report.  All logs are written to a debug log,
 
   --foreground-scripts
     Run all build scripts (ie, \`preinstall\`, \`install\`, and
@@ -6818,6 +6844,7 @@ aliases: u, up, upgrade, udpate
 #### \`include\`
 #### \`strict-peer-deps\`
 #### \`package-lock\`
+#### \`loglevel\`
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`allow-scripts\`
