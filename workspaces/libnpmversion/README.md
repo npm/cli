@@ -48,6 +48,9 @@ of `patch`, `minor`, `major`, `prepatch`, `preminor`, `premajor`,
 be incremented by 1 in the specified field.  `from-git` will try to read
 the latest git tag, and use that as the new npm version.
 
+Build metadata in an explicit version string, such as `1.2.3+build.1`, is preserved in the package files, lifecycle environment variables, and Git commit and tag.
+Changing only the build metadata requires `allowSameVersion: true`.
+
 If run in a git repo, it will also create a version commit and tag.  This
 behavior is controlled by `gitTagVersion` (see below), and can be
 disabled by setting `gitTagVersion: false` in the options.

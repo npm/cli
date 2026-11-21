@@ -387,3 +387,66 @@ t.test('covers lockfile with packages[""] and git dir missing a lockfile', async
   await versionWithFailingLockAdd('patch', { path: `${dir}/git-with-packages-lock`, pkg: { ...pkg }, gitTagVersion: true })
   await version('patch', { path: `${dir}/git-without-lock`, pkg: { ...pkg }, gitTagVersion: true })
 })
+
+t.test('explicit versions retain build metadata', async t => {
+  t.beforeEach(() => {
+    actionLog.length = 0
+  })
+  t.afterEach(() => {
+    actionLog.length = 0
+  })
+
+  for (const [input, expected] of [
+    ['1.2.3+build.001', '1.2.3+build.001'],
+    ['=v2.3.4-beta.2+linux-x64.001', '2.3.4-beta.2+linux-x64.001'],
+    ['3.4.5+0', '3.4.5+0'],
+  ]) {
+    await t.test(input, async t => {
+      const pkg = { name: 'foo', version: '1.0.0' }
+      const path = t.testdir({
+        'package-lock.json': JSON.stringify({
+          ...pkg,
+          lockfileVersion: 3,
+          packages: { '': { ...pkg } },
+        }),
+      })
+
+      t.equal(await version(input, { path, pkg, gitTagVersion: true }), expected)
+      t.equal(pkg.version, expected)
+      t.match(actionLog, [
+        ['run-script', 'preversion', { npm_old_version: '1.0.0', npm_new_version: expected }],
+        ['write-json', `${path}/package.json`, { version: expected }],
+        ['write-json', `${path}/package-lock.json`, {
+          version: expected,
+          packages: { '': { version: expected } },
+        }],
+        ['run-script', 'version', { npm_old_version: '1.0.0', npm_new_version: expected }],
+        ['spawn', ['add', `${path}/package.json`]],
+        ['spawn', ['add', `${path}/package-lock.json`]],
+        ['commit', expected],
+        ['tag', expected],
+        ['run-script', 'postversion', { npm_old_version: '1.0.0', npm_new_version: expected }],
+      ])
+    })
+  }
+})
+
+t.test('build metadata does not bypass allowSameVersion', async t => {
+  actionLog.length = 0
+  t.teardown(() => {
+    actionLog.length = 0
+  })
+  const pkg = { name: 'foo', version: '1.2.3+build.1' }
+  const path = t.testdir()
+  for (const input of ['1.2.3', '1.2.3+build.1', '=v1.2.3+build.2']) {
+    await t.rejects(version(input, { path, pkg }), { message: 'Version not changed' })
+    t.same(actionLog, [], 'rejects before writing files or running scripts')
+  }
+  t.equal(await version('1.2.3+build.2', {
+    path,
+    pkg,
+    allowSameVersion: true,
+    ignoreScripts: true,
+  }), '1.2.3+build.2')
+  t.equal(pkg.version, '1.2.3+build.2')
+})
