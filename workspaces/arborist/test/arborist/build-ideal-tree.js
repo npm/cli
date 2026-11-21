@@ -1070,6 +1070,22 @@ t.test('global updates preserve registry aliases', async t => {
       t.equal(alias.version, '1.0.2')
     })
   }
+
+  await t.test('falls back to the installed name when package metadata is unusable', async t => {
+    createRegistry(t, true)
+    const path = t.testdir({
+      node_modules: {
+        abbrev: {},
+        wrappy: {
+          'package.json': JSON.stringify({ name: 'not a registry name', version: '1.0.1' }),
+        },
+      },
+    })
+    const tree = await buildIdeal(path, { global: true, update: true })
+    t.equal(tree.children.get('abbrev').packageName, 'abbrev')
+    t.equal(tree.children.get('wrappy').packageName, 'wrappy')
+    t.equal(tree.children.get('wrappy').version, '1.0.2')
+  })
 })
 
 // if we get this wrong, it'll spin forever and use up all the memory
