@@ -23,6 +23,7 @@ const PlaceDep = require('../place-dep.js')
 
 const debug = require('../debug.js')
 const fromPath = require('../from-path.js')
+const globalAliasTarget = require('../global-alias-target.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const { isReleaseAgeExcluded, trustedSpecName } = require('../release-age-exclude.js')
 const { resolvePatchedDependencies } = require('../patched-dependencies.js')
@@ -634,7 +635,9 @@ module.exports = cls => class IdealTreeBuilder extends cls {
             const real = resolve(dirname(dir), target)
             tree.package.dependencies[name] = `file:${real}`
           } else {
-            tree.package.dependencies[name] = '*'
+            const { content } = await PackageJson.load(dir).catch(() => ({ content: {} }))
+            const alias = globalAliasTarget(name, content.name)
+            tree.package.dependencies[name] = alias ? `npm:${alias}@*` : '*'
           }
         }
       }

@@ -1053,6 +1053,41 @@ t.test('update global space single dep', async t => {
   )
 })
 
+t.test('global updates preserve registry aliases', async t => {
+  for (const update of [true, ['once']]) {
+    await t.test(update === true ? 'all packages' : 'named package', async t => {
+      createRegistry(t, true)
+      const path = t.testdir({
+        node_modules: {
+          once: {
+            'package.json': JSON.stringify({ name: 'wrappy', version: '1.0.1' }),
+          },
+        },
+      })
+      const tree = await buildIdeal(path, { global: true, update })
+      const alias = tree.children.get('once')
+      t.equal(alias.packageName, 'wrappy')
+      t.equal(alias.version, '1.0.2')
+    })
+  }
+
+  await t.test('falls back to the installed name when package metadata is unusable', async t => {
+    createRegistry(t, true)
+    const path = t.testdir({
+      node_modules: {
+        abbrev: {},
+        wrappy: {
+          'package.json': JSON.stringify({ name: 'not a registry name', version: '1.0.1' }),
+        },
+      },
+    })
+    const tree = await buildIdeal(path, { global: true, update: true })
+    t.equal(tree.children.get('abbrev').packageName, 'abbrev')
+    t.equal(tree.children.get('wrappy').packageName, 'wrappy')
+    t.equal(tree.children.get('wrappy').version, '1.0.2')
+  })
+})
+
 // if we get this wrong, it'll spin forever and use up all the memory
 t.test('pathologically nested dependency cycle', async t => {
   createRegistry(t, true)

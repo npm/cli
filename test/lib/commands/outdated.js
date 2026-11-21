@@ -101,6 +101,13 @@ const fixtures = {
       },
     },
   },
+  globalAlias: {
+    node_modules: {
+      cat: {
+        'package.json': JSON.stringify({ name: 'dog', version: '1.0.1' }),
+      },
+    },
+  },
   local: {
     'package.json': JSON.stringify({
       name: 'delta',
@@ -306,6 +313,38 @@ t.test('should display outdated deps', async t => {
     await outdated.exec([])
     t.equal(process.exitCode, 1)
     t.matchSnapshot(joinedOutput())
+  })
+
+  await t.test('outdated global alias', async t => {
+    const { outdated, joinedOutput } = await mockNpm(t, {
+      globalPrefixDir: fixtures.globalAlias,
+      config: { global: true },
+    })
+    await outdated.exec([])
+    t.equal(process.exitCode, 1)
+    t.match(joinedOutput(), /cat +dog@1\.0\.1 +dog@2\.0\.0 +dog@2\.0\.0/)
+  })
+
+  await t.test('outdated named global alias as JSON', async t => {
+    const { outdated, joinedOutput } = await mockNpm(t, {
+      globalPrefixDir: fixtures.globalAlias,
+      config: { global: true, json: true },
+    })
+    await outdated.exec(['cat'])
+    t.equal(process.exitCode, 1)
+    t.match(JSON.parse(joinedOutput()), {
+      cat: { current: 'dog@1.0.1', wanted: 'dog@2.0.0', latest: 'dog@2.0.0' },
+    })
+  })
+
+  await t.test('outdated global alias parseable', async t => {
+    const { outdated, joinedOutput } = await mockNpm(t, {
+      globalPrefixDir: fixtures.globalAlias,
+      config: { global: true, parseable: true },
+    })
+    await outdated.exec([])
+    t.equal(process.exitCode, 1)
+    t.match(joinedOutput(), /[\\/]cat:dog@2\.0\.0:dog@1\.0\.1:dog@2\.0\.0:global$/)
   })
 
   await t.test('outdated', async t => {
