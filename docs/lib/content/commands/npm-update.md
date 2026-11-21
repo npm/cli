@@ -10,7 +10,8 @@ description: Update packages
 
 ### Description
 
-This command will update all the packages listed to the latest version (specified by the [`tag` config](/using-npm/config#tag)), respecting the semver constraints of both your package and its dependencies (if they also require the same package).
+This command will update all the packages listed to the latest version (specified by the [`tag` config](/using-npm/config#tag)), respecting the version ranges of both your package and its dependencies (if they also require the same package).
+npm interprets these ranges using [node-semver](https://github.com/npm/node-semver#ranges).
 
 It will also install missing packages.
 
@@ -83,7 +84,7 @@ Suppose `app` has a caret dependency on a version below `1.0.0`, for example:
 
 `npm update` will install `dep1@0.2.0`.
 
-If the dependence were on `^0.4.0`:
+If the dependency were on `^0.4.0`:
 
 ```json
 "dependencies": {
@@ -91,8 +92,9 @@ If the dependence were on `^0.4.0`:
 }
 ```
 
-Then `npm update` will install `dep1@0.4.1`, because that is the highest-sorting version that satisfies `^0.4.0` (`>= 0.4.0 <0.5.0`)
-
+Then `npm update` will install `dep1@0.4.1`, the highest available release in the range `>=0.4.0 <0.5.0`.
+For a fully specified version, a [caret range](https://github.com/npm/node-semver#caret-ranges-123-025-004) preserves the leftmost nonzero component.
+For example, `^0.4.0` allows patch updates within `0.4.x`, while `^0.0.3` allows only the `0.0.3` release.
 
 #### Subdependencies
 
