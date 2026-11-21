@@ -350,6 +350,7 @@ module.exports = cls => class Builder extends cls {
         pkg,
         stdio,
         env,
+        nodeGyp: this.options.nodeGyp,
         scriptShell: this.options.scriptShell,
       }
       const p = runScript(runOpts).catch(er => {
