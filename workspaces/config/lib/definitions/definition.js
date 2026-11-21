@@ -17,6 +17,7 @@ const allowed = [
   'flatten',
   'hint',
   'key',
+  'related',
   'short',
   'type',
   'typeDescription',

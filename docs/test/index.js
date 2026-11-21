@@ -232,13 +232,12 @@ t.test('command-specific definitions and exclusive parameters', async t => {
     await testCommandDoc(t, 'npm-config', 'Manage the npm configuration files')
   })
 
-  t.test('install command includes exclusive save parameters', async t => {
-    const { htmlContent } = await testCommandDoc(t, 'npm-install', 'Install a package', {
-      match: [/save/],
-    })
+  t.test('install command documents the options grouped with save', async t => {
+    const { htmlContent } = await testCommandDoc(t, 'npm-install', 'Install a package')
 
-    // The install command should have save-related params due to exclusive expansion
-    t.match(htmlContent, /save/, 'includes save-related configuration')
+    for (const option of ['save', 'save-prod', 'save-dev', 'save-optional', 'save-peer', 'save-bundle']) {
+      t.equal(htmlContent.split(`id="${option}"`).length - 1, 1, `documents ${option} once`)
+    }
   })
 })
 
