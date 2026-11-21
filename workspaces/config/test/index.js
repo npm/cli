@@ -1744,6 +1744,118 @@ t.test('workspaces with an unreadable manifest', async (t) => {
     'warned about the unreadable manifest')
 })
 
+t.test('workspaces keep ordered re-inclusion when a manifest is unreadable', async (t) => {
+  const path = resolve(t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      workspaces: ['packages/*', '!packages/app', 'packages/app'],
+    }),
+    packages: {
+      app: {
+        'package.json': JSON.stringify({
+          name: 'app',
+          version: '1.0.0',
+        }),
+      },
+      broken: {
+        'package.json': '',
+      },
+    },
+  }))
+
+  const cwd = process.cwd()
+  t.teardown(() => process.chdir(cwd))
+  process.chdir(`${path}/packages/app`)
+
+  const config = new Config({
+    npmPath: cwd,
+    env: {},
+    argv: [process.execPath, __filename],
+    cwd: join(path, 'packages', 'app'),
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  await config.load()
+  t.equal(config.localPrefix, path, 'a later positive pattern re-includes the workspace')
+  t.same(config.get('workspace'), [join(path, 'packages', 'app')], 'set the re-included workspace')
+})
+
+t.test('workspaces declaration that is not a list leaves the cwd alone', async (t) => {
+  const path = resolve(t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      workspaces: 'packages/*',
+    }),
+    packages: {
+      one: {
+        'package.json': JSON.stringify({
+          name: 'one',
+          version: '1.0.0',
+        }),
+      },
+    },
+  }))
+
+  const cwd = process.cwd()
+  t.teardown(() => process.chdir(cwd))
+  process.chdir(`${path}/packages/one`)
+
+  const config = new Config({
+    npmPath: cwd,
+    env: {},
+    argv: [process.execPath, __filename],
+    cwd: join(path, 'packages', 'one'),
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  await config.load()
+  t.equal(config.localPrefix, join(path, 'packages', 'one'), 'does not guess a workspace root')
+})
+
+t.test('an unusable workspace declaration falls back to no workspaces', async (t) => {
+  const path = resolve(t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+      workspaces: ['./packages/*', 123],
+    }),
+    packages: {
+      one: {
+        'package.json': JSON.stringify({
+          name: 'one',
+          version: '1.0.0',
+        }),
+      },
+      broken: {
+        'package.json': '',
+      },
+    },
+  }))
+
+  const cwd = process.cwd()
+  t.teardown(() => process.chdir(cwd))
+  process.chdir(`${path}/packages/one`)
+
+  const config = new Config({
+    npmPath: cwd,
+    env: {},
+    argv: [process.execPath, __filename],
+    cwd: join(path, 'packages', 'one'),
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+
+  await config.load()
+  t.equal(config.localPrefix, join(path, 'packages', 'one'), 'survives a malformed declaration')
+})
+
 t.test('exclusive options conflict', async t => {
   const path = t.testdir()
   const config = new Config({

@@ -876,19 +876,28 @@ class Config {
         return new Map()
       }
 
-      const patterns = []
-      const ignore = ['**/node_modules/**']
+      // Walk the declarations in order so a later positive pattern can re-include
+      // a directory that an earlier negative pattern excluded, the same way
+      // map-workspaces resolves them.
+      const matched = new Set()
       for (const declaration of declared) {
-        const pattern = declaration.replace(/^\.?\/+/, '')
-        if (pattern.startsWith('!')) {
-          ignore.push(`${pattern.slice(1)}/package.json`)
-        } else {
-          patterns.push(`${pattern}/package.json`)
+        const excluded = declaration.startsWith('!')
+        const pattern = (excluded ? declaration.slice(1) : declaration).replace(/^\.?\/+/, '')
+        const found = await glob(`${pattern}/package.json`, {
+          cwd: root,
+          ignore: ['**/node_modules/**'],
+        })
+
+        for (const match of found) {
+          if (excluded) {
+            matched.delete(match)
+          } else {
+            matched.add(match)
+          }
         }
       }
 
-      const matches = await glob(patterns, { cwd: root, ignore }).catch(() => [])
-      return new Map(matches.map((match) => [match, resolve(root, dirname(match))]))
+      return new Map([...matched].map((match) => [match, resolve(root, dirname(match))]))
     }).catch(() => new Map())
   }
 
