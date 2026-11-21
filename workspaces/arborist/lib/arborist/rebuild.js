@@ -15,8 +15,23 @@ const { resolve, delimiter } = require('node:path')
 const { isScriptAllowed } = require('../script-allowed.js')
 
 const boolEnv = b => b ? '1' : ''
-const isDirectDependency = node => [...node.edgesIn]
-  .some(edge => edge.from.isProjectRoot || edge.from.isWorkspace)
+const isProject = node => node.isProjectRoot || node.isWorkspace
+// Bins are linked into the .bin folder of the node_modules that contains the
+// node, which belongs to node.parent. A direct dependency of that folder's
+// owner ranks first, then a direct dependency of any other project, then
+// transitive dependencies.
+const binPriority = node => {
+  let priority = 0
+  for (const edge of node.edgesIn) {
+    if (edge.from === node.parent && isProject(edge.from)) {
+      return 2
+    }
+    if (isProject(edge.from)) {
+      priority = 1
+    }
+  }
+  return priority
+}
 const sortNodes = (a, b) => (a.depth - b.depth) || localeCompare(a.path, b.path)
 
 const _checkBins = Symbol.for('checkBins')
@@ -393,11 +408,12 @@ module.exports = cls => class Builder extends cls {
 
     const timeEnd = time.start('build:link')
     const promises = []
-    const directDependencies = new Set(queue.filter(isDirectDependency))
-    // Direct dependencies must claim colliding bins before transitive ones.
-    // Depth and path retain a deterministic fallback within each group.
+    const priorities = new Map(queue.map(node => [node, binPriority(node)]))
+    // Higher priority nodes claim colliding bins first, so a project's own
+    // direct dependency wins its .bin folder. Depth and path retain a
+    // deterministic fallback within each priority.
     queue.sort((a, b) =>
-      (directDependencies.has(b) - directDependencies.has(a)) || sortNodes(a, b))
+      (priorities.get(b) - priorities.get(a)) || sortNodes(a, b))
     for (const node of queue) {
       // TODO these run before they're awaited
       promises.push(this.#createBinLinks(node))

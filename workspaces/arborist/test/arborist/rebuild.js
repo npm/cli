@@ -136,6 +136,75 @@ t.test('direct dependencies win root bin collisions', async t => {
     t.match(binTarget(path, 'shared'), /z-direct/, 'links the workspace direct bin')
   })
 
+  t.test('root direct dependencies take precedence over workspace direct dependencies', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'workspace-root',
+        workspaces: ['packages/*'],
+        dependencies: { 'z-root-direct': '1.0.0' },
+      }),
+      node_modules: {
+        'a-workspace-direct': pkg('a-workspace-direct'),
+        workspace: t.fixture('symlink', '../packages/workspace'),
+        'z-root-direct': pkg('z-root-direct'),
+      },
+      packages: {
+        workspace: {
+          'package.json': JSON.stringify({
+            name: 'workspace',
+            version: '1.0.0',
+            dependencies: { 'a-workspace-direct': '1.0.0' },
+          }),
+        },
+      },
+    })
+
+    await newArb({ path }).rebuild()
+    t.match(binTarget(path, 'shared'), /z-root-direct/, 'links the root direct bin')
+  })
+
+  t.test('workspace bins keep the workspace direct dependency', async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'workspace-root',
+        workspaces: ['packages/*'],
+        dependencies: { 'z-root-direct': '1.0.0' },
+      }),
+      node_modules: {
+        workspace: t.fixture('symlink', '../packages/workspace'),
+        'z-root-direct': pkg('z-root-direct'),
+      },
+      packages: {
+        workspace: {
+          'package.json': JSON.stringify({
+            name: 'workspace',
+            version: '1.0.0',
+            dependencies: {
+              parent: '1.0.0',
+              'z-workspace-direct': '1.0.0',
+            },
+          }),
+          node_modules: {
+            'a-transitive': pkg('a-transitive'),
+            parent: {
+              'package.json': JSON.stringify({
+                name: 'parent',
+                version: '1.0.0',
+                dependencies: { 'a-transitive': '1.0.0' },
+              }),
+            },
+            'z-workspace-direct': pkg('z-workspace-direct'),
+          },
+        },
+      },
+    })
+
+    await newArb({ path }).rebuild()
+    t.match(binTarget(path, 'shared'), /z-root-direct/, 'links the root direct bin')
+    t.match(binTarget(resolve(path, 'packages/workspace'), 'shared'), /z-workspace-direct/,
+      'links the workspace direct bin in the workspace')
+  })
+
   t.test('equally transitive dependencies retain deterministic path ordering', async t => {
     const path = t.testdir({
       'package.json': JSON.stringify({
