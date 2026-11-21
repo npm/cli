@@ -11,8 +11,9 @@ const { existsSync } = require('node:fs')
 const ssri = require('ssri')
 
 class Diff {
-  constructor ({ actual, ideal, filterSet, omit }) {
+  constructor ({ actual, ideal, filterSet, omit, include }) {
     this.omit = omit
+    this.include = include
     this.filterSet = filterSet
     this.children = []
     this.actual = actual
@@ -36,6 +37,7 @@ class Diff {
     ideal,
     filterNodes = [],
     omit = new Set(),
+    include = new Set(),
   }) {
     // if there's a filterNode, then:
     // - get the path from the root to the filterNode.  The root or
@@ -100,7 +102,7 @@ class Diff {
     }
 
     return depth({
-      tree: new Diff({ actual, ideal, filterSet, omit }),
+      tree: new Diff({ actual, ideal, filterSet, omit, include }),
       getChildren,
       leave,
     })
@@ -200,6 +202,7 @@ const getChildren = diff => {
     removed,
     filterSet,
     omit,
+    include,
   } = diff
 
   // Note: we DON'T diff fsChildren themselves, because they are either
@@ -221,6 +224,7 @@ const getChildren = diff => {
       removed,
       filterSet,
       omit,
+      include,
     })
   }
 
@@ -239,12 +243,13 @@ const diffNode = ({
   removed,
   filterSet,
   omit,
+  include,
 }) => {
   if (filterSet.size && !(filterSet.has(ideal) || filterSet.has(actual))) {
     return
   }
 
-  if (ideal?.shouldOmit?.(omit)) {
+  if (ideal?.shouldOmit?.(omit) && !include.has(ideal)) {
     ideal.inert = true
   }
 
@@ -264,7 +269,7 @@ const diffNode = ({
     if (action === 'REMOVE') {
       removed.push(actual)
     }
-    children.push(new Diff({ actual, ideal, filterSet, omit }))
+    children.push(new Diff({ actual, ideal, filterSet, omit, include }))
   } else {
     unchanged.push(ideal)
     // !*! Weird dirty hack warning !*!
@@ -304,6 +309,7 @@ const diffNode = ({
       removed,
       filterSet,
       omit,
+      include,
     }))
   }
 }
