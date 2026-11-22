@@ -4,6 +4,7 @@ const { dirname, join, normalize, relative, resolve, sep } = require('node:path'
 
 const PackageJson = require('@npmcli/package-json')
 const { readdirScoped } = require('@npmcli/fs')
+const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { walkUp } = require('walk-up-path')
 const { commonAncestorPath } = require('common-ancestor-path')
 const treeCheck = require('../tree-check.js')
@@ -21,6 +22,10 @@ const _changePath = Symbol.for('_changePath')
 const _setWorkspaces = Symbol.for('setWorkspaces')
 const _rpcache = Symbol.for('realpathCache')
 const _stcache = Symbol.for('statCache')
+
+// fs/promises.readFile holds a descriptor open until the read completes, so
+// reading a whole node_modules folder at once can exceed the fd limit (EMFILE)
+const packageJsonReadLimit = 32
 
 module.exports = cls => class ActualLoader extends cls {
   #actualTree
@@ -394,14 +399,15 @@ module.exports = cls => class ActualLoader extends cls {
     const nm = resolve(node.realpath, 'node_modules')
     try {
       const kids = await readdirScoped(nm).then(paths => paths.map(p => p.replace(/\\/g, '/')))
-      return Promise.all(
+      return promiseCallLimit(
         // ignore . dirs and retired scoped package folders
         kids.filter(kid => !/^(@[^/]+\/)?\./.test(kid))
           .filter(kid => this.#filter(node, kid))
-          .map(kid => this.#loadFSNode({
+          .map(kid => () => this.#loadFSNode({
             parent: node,
             path: resolve(nm, kid),
-          })))
+          })),
+        { limit: packageJsonReadLimit })
     } catch {
       // error in the readdir is not fatal, just means no kids
     }
