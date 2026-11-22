@@ -78,6 +78,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "https-proxy": null,
   "if-present": false,
   "ignore-extension": false,
+  "ignore-proxy": false,
   "ignore-scripts": false,
   "include": [],
   "include-staged": false,
@@ -279,6 +280,7 @@ if-present = false
 ignore-existing = false
 ignore-extension = false
 ignore-patch-failures = false
+ignore-proxy = false
 ignore-scripts = false
 include = []
 include-attestations = false
