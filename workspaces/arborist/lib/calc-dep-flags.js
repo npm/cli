@@ -10,6 +10,15 @@
 // Examples:
 // - a node still flagged optional must only be reachable via optional edges
 // - a node still flagged peer must only be reachable via peer edges
+// An optional peer that is only reachable through its peerOptional edge
+// can be pruned, unless it shadows a node of the same name further up the
+// tree that does not satisfy the edge: pruning it would then make the edge
+// resolve to that node and become invalid.
+const shadowsInvalidNode = (edge, to) => {
+  const shadowed = to.resolveParent.resolveParent?.resolve(to.name)
+  return !!shadowed && !edge.satisfiedBy(shadowed)
+}
+
 const calcDepFlags = (tree, resetRoot = true) => {
   if (resetRoot) {
     tree.unsetDepFlags()
@@ -64,7 +73,8 @@ const calcDepFlags = (tree, resetRoot = true) => {
       continue
     }
 
-    for (const { peer, optional, dev, to } of node.edgesOut.values()) {
+    for (const edge of node.edgesOut.values()) {
+      const { peer, optional, dev, to } = edge
       // if the dep is missing, then its flags are already maximally unset
       if (!to) {
         continue
@@ -72,8 +82,11 @@ const calcDepFlags = (tree, resetRoot = true) => {
 
       let changed = false
 
-      // only optional peer dependencies should stay extraneous
-      if (to.extraneous && !node.extraneous && !(peer && optional)) {
+      // only optional peer dependencies should stay extraneous, unless
+      // pruning them would leave the edge pointing at a node that does
+      // not satisfy it
+      if (to.extraneous && !node.extraneous &&
+        !(peer && optional && !shadowsInvalidNode(edge, to))) {
         to.extraneous = false
         changed = true
       }
