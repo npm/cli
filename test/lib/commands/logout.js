@@ -114,6 +114,34 @@ t.test('ignore invalid scoped registry config', async t => {
   t.equal(userRc.trim(), 'fund=true')
 })
 
+t.test('token logout - registry configured without a trailing slash', async t => {
+  // The registry is configured WITHOUT a trailing slash and the token lives at
+  // the normalized //host/npm/ key. Without normalizing the slash before
+  // getAuth, logout backtracks //host/npm -> //host and never reaches
+  // //host/npm/, throwing ENEEDAUTH and leaving the token in .npmrc.
+  const registryUrl = 'https://registry.example.com/npm'
+  const { npm, home, logs } = await loadMockNpm(t, {
+    config: { registry: registryUrl },
+    homeDir: {
+      '.npmrc': [
+        '//registry.example.com/npm/:_authToken=@foo/',
+        'fund=true',
+      ].join('\n'),
+    },
+  })
+
+  const mockRegistry = new MockRegistry({ tap: t, registry: registryUrl })
+  mockRegistry.logout('@foo/')
+  await npm.exec('logout', [])
+  t.equal(
+    logs.verbose.byTitle('logout')[0],
+    'logout clearing token for https://registry.example.com/npm/',
+    'should log the normalized registry url'
+  )
+  const userRc = await fs.readFile(join(home, '.npmrc'), 'utf-8')
+  t.equal(userRc.trim(), 'fund=true', 'removes the token from .npmrc')
+})
+
 t.test('token logout - project config', async t => {
   const { npm, home, logs, prefix } = await loadMockNpm(t, {
     homeDir: {
