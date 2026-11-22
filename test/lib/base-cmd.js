@@ -685,6 +685,159 @@ t.test('flags() does not throw when positionals is null (unlimited)', async t =>
   t.equal(flags.id, null, 'id flag uses default')
 })
 
+t.test('flags() does not leave values of global options in remains', async t => {
+  // Config parses argv with every global definition, flags() parses it again for the command:
+  // the value of a global option given after a space must not come back as a positional
+  const { npm } = await loadMockNpm(t, {
+    argv: ['pkg1', '--otp', '123456', '--loglevel', 'warn', '-w', 'a'],
+  })
+
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command'
+    static positionals = 1
+    static params = ['id']
+
+    static definitions = [
+      new Definition('id', {
+        type: String,
+        default: null,
+        description: 'An identifier',
+        usage: '--id=<id>',
+      }),
+    ]
+
+    async exec () {
+      return this.flags()
+    }
+  }
+
+  npm.config.argv = ['node', 'npm', 'test-command', 'pkg1', '--otp', '123456', '--loglevel', 'warn', '-w', 'a', '--id', 'x']
+
+  const command = new TestCommand(npm)
+  const [flags, remains] = await command.exec()
+
+  t.same(remains, ['pkg1'], 'only the real positional is left')
+  t.same(flags, { id: 'x' }, 'global options are not returned as command flags')
+})
+
+t.test('flags() does not turn the value of a global option into the only positional', async t => {
+  // with no positional given, "123456" must not take its place (npm trust would use it as the package name)
+  const { npm } = await loadMockNpm(t, {
+    argv: ['--otp', '123456'],
+  })
+
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command'
+    static positionals = 1
+    static params = ['id']
+
+    static definitions = [
+      new Definition('id', {
+        type: String,
+        default: null,
+        description: 'An identifier',
+        usage: '--id=<id>',
+      }),
+    ]
+
+    async exec () {
+      return this.flags()
+    }
+  }
+
+  npm.config.argv = ['node', 'npm', 'test-command', '--otp', '123456']
+
+  const command = new TestCommand(npm)
+  const [flags, remains] = await command.exec()
+
+  t.same(remains, [], 'no positional is left')
+  t.same(flags, { id: null }, 'id flag uses default')
+})
+
+t.test('flags() expands global shorthands instead of reading them as abbreviations', async t => {
+  // "-d" is the global shorthand for "--loglevel info" and "--reg" the one for "--registry":
+  // they must not be read as abbreviations of the command's own --delay and --region
+  const { npm } = await loadMockNpm(t, {
+    argv: ['-d', '--reg', 'https://registry.example.com/'],
+  })
+
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command'
+    static positionals = 1
+    static params = ['delay', 'region']
+
+    static definitions = [
+      new Definition('delay', {
+        type: String,
+        default: null,
+        description: 'A delay',
+        usage: '--delay=<delay>',
+      }),
+      new Definition('region', {
+        type: String,
+        default: null,
+        description: 'A region',
+        usage: '--region=<region>',
+      }),
+    ]
+
+    async exec () {
+      return this.flags()
+    }
+  }
+
+  npm.config.argv = ['node', 'npm', 'test-command', '-d', '--reg', 'https://registry.example.com/']
+
+  const command = new TestCommand(npm)
+  const [flags, remains] = await command.exec()
+
+  t.same(remains, [], 'the registry url is not left as a positional')
+  t.same(flags, { delay: null, region: null }, 'command flags keep their defaults')
+})
+
+t.test('flags() prefers command definitions over global ones with the same name', async t => {
+  const { npm } = await loadMockNpm(t)
+
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command'
+    static params = ['json', 'dir']
+
+    static definitions = [
+      // a string here, a boolean globally
+      new Definition('json', {
+        type: String,
+        default: null,
+        description: 'A json style',
+        usage: '--json=<style>',
+      }),
+      // "-d" is also a global shorthand
+      new Definition('dir', {
+        type: String,
+        default: null,
+        description: 'A directory',
+        usage: '--dir=<dir>',
+        short: 'd',
+      }),
+    ]
+
+    async exec () {
+      return this.flags()
+    }
+  }
+
+  npm.config.argv = ['node', 'npm', 'test-command', '--json', 'pretty', '-d', 'here']
+
+  const command = new TestCommand(npm)
+  const [flags, remains] = await command.exec()
+
+  t.same(flags, { json: 'pretty', dir: 'here' }, 'the command types and short flag are used')
+  t.same(remains, [], 'no positional is left')
+})
+
 t.test('validateCli warns (does not throw) for unknown file configs', async t => {
   const { npm, logs } = await loadMockNpm(t, {
     homeDir: {
