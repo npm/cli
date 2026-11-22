@@ -205,6 +205,40 @@ t.test('direct dependencies win root bin collisions', async t => {
       'links the workspace direct bin in the workspace')
   })
 
+  // Hoisted packages only link into the root .bin, so a workspace inherits the
+  // root's bin. Linking into the workspace's own .bin needs a bin-links option
+  // and removal bookkeeping in reify.
+  t.test('hoisted workspace direct dependencies link into the workspace', {
+    todo: 'hoisted dependencies only link into the root .bin',
+  }, async t => {
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'workspace-root',
+        workspaces: ['packages/*'],
+        dependencies: { 'a-root-direct': '1.0.0' },
+      }),
+      node_modules: {
+        'a-root-direct': pkg('a-root-direct'),
+        workspace: t.fixture('symlink', '../packages/workspace'),
+        'z-workspace-direct': pkg('z-workspace-direct'),
+      },
+      packages: {
+        workspace: {
+          'package.json': JSON.stringify({
+            name: 'workspace',
+            version: '1.0.0',
+            dependencies: { 'z-workspace-direct': '1.0.0' },
+          }),
+        },
+      },
+    })
+
+    await newArb({ path }).rebuild()
+    t.match(binTarget(path, 'shared'), /a-root-direct/, 'links the root direct bin')
+    t.match(binTarget(resolve(path, 'packages/workspace'), 'shared'), /z-workspace-direct/,
+      'links the hoisted workspace direct bin in the workspace')
+  })
+
   t.test('equally transitive dependencies retain deterministic path ordering', async t => {
     const path = t.testdir({
       'package.json': JSON.stringify({
