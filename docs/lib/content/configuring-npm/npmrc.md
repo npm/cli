@@ -68,6 +68,10 @@ For example, you can't publish a module that forces itself to install globally, 
 
 Additionally, this file is not read in global mode, such as when running `npm install -g`.
 
+In a project that uses [workspaces](/using-npm/workspaces), npm reads the `.npmrc` file at the workspace root only.
+A `.npmrc` file inside a workspace folder is ignored, including for commands run from that folder, and npm logs `ignoring workspace config at <path>/.npmrc` when you run a command there.
+Put project settings for all workspaces in the root `.npmrc`.
+
 #### Per-user config file
 
 `$HOME/.npmrc` (or the `userconfig` param, if set in the environment or on the command line)
