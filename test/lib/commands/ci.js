@@ -415,6 +415,66 @@ t.test('should throw error when ideal inventory mismatches virtual', async t => 
   t.equal(fs.existsSync(nmTestFile), true, 'does not remove node_modules')
 })
 
+for (const omit of [[], ['optional']]) {
+  t.test(`accepts a lock file with an unavailable optional dependency, omit=${omit}`, async t => {
+    const missingOptional = 'missing-optional'
+    const { npm, registry, assert } = await loadMockNpm(t, {
+      config: {
+        audit: false,
+        'ignore-scripts': true,
+        omit,
+      },
+      prefixDir: {
+        'optional-parent': {
+          'index.js': 'module.exports = {}',
+          'package.json': JSON.stringify({
+            name: 'optional-parent',
+            version: '1.0.0',
+            optionalDependencies: { [missingOptional]: '1.0.0' },
+          }),
+        },
+        'package.json': JSON.stringify({
+          name: 'test-package',
+          version: '1.0.0',
+          dependencies: { 'optional-parent': '1.0.0' },
+        }),
+        'package-lock.json': JSON.stringify({
+          name: 'test-package',
+          version: '1.0.0',
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            '': {
+              name: 'test-package',
+              version: '1.0.0',
+              dependencies: { 'optional-parent': '1.0.0' },
+            },
+            'node_modules/optional-parent': {
+              version: '1.0.0',
+              resolved: 'https://registry.npmjs.org/optional-parent/-/optional-parent-1.0.0.tgz',
+              optionalDependencies: { [missingOptional]: '1.0.0' },
+            },
+          },
+        }),
+      },
+    })
+    registry.nock.get(`/${missingOptional}`).reply(404, { error: 'Not found' })
+    const manifest = registry.manifest({ name: 'optional-parent' })
+    await registry.tarball({
+      manifest: manifest.versions['1.0.0'],
+      tarball: path.join(npm.prefix, 'optional-parent'),
+    })
+    const lockPath = path.join(npm.prefix, 'package-lock.json')
+    const lockBefore = fs.readFileSync(lockPath, 'utf8')
+
+    await npm.exec('ci', [])
+
+    assert.packageInstalled('node_modules/optional-parent@1.0.0')
+    assert.fileShouldNotExist(`node_modules/${missingOptional}`)
+    t.equal(fs.readFileSync(lockPath, 'utf8'), lockBefore, 'does not change the lockfile')
+  })
+}
+
 t.test('ci with lockfile-only orphans', async t => {
   tspawk(t)
   const testOrphan = async (t, {
