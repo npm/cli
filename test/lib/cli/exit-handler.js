@@ -678,6 +678,36 @@ t.test('exits uncleanly when only emitting exit event', async (t) => {
   t.equal(process.exitCode, 1, 'exitCode coerced to 1')
 })
 
+t.test('re-entrant calls to exit handler are ignored (concurrent unhandledRejections)', async (t) => {
+  // Defers stderr.write via setImmediate to open the same race window that
+  // concurrent ETIMEDOUT rejections create in production: without the guard,
+  // each rejection queues its own process.exit() and the second one fires
+  // after #exited has been reset, producing "Exit handler never called!".
+  const { logs } = await mockExitHandler(t, {
+    globals: {
+      'process.stderr': Object.assign(Object.create(process.stderr), {
+        write (chunk, cb) {
+          setImmediate(cb)
+          return true
+        },
+      }),
+    },
+  })
+
+  let exitCount = 0
+  process.on('exit', () => exitCount++)
+
+  process.emit('unhandledRejection', err('ETIMEDOUT first', 'ETIMEDOUT'))
+  process.emit('unhandledRejection', err('ETIMEDOUT second', 'ETIMEDOUT'))
+
+  await new Promise(res => process.once('exit', res))
+  await new Promise(res => setImmediate(res))
+
+  t.equal(exitCount, 1, 'process.exit() should only be called once')
+  t.notMatch(logs.error, ['Exit handler never called!'],
+    'should not emit "Exit handler never called!" on re-entrant call')
+})
+
 t.test('do no fancy handling for shellouts', async t => {
   const mockShelloutExit = (t, opts) => mockExitHandler(t, {
     command: 'exec',
