@@ -1,6 +1,6 @@
 const t = require('tap')
 const { resolve } = require('node:path')
-const { readFileSync, existsSync, symlinkSync } = require('node:fs')
+const { readFileSync, existsSync, symlinkSync, writeFileSync } = require('node:fs')
 const { diffDirs } = require('../../../lib/utils/patch-diff.js')
 const { applyPatchToDir } = require('@npmcli/arborist/lib/patch.js')
 
@@ -146,4 +146,18 @@ t.test('round-trip: applying the diff reproduces the edited tree', async t => {
   t.equal(read(orig, 'add.js'), 'fresh content\n', 'added file was created')
   t.equal(read(orig, 'lib', 'deep', 'x.js'), 'after\n', 'nested file matches edit')
   t.notOk(existsSync(resolve(orig, 'del.js')), 'deleted file was removed')
+})
+
+// windows will not create a file with a control char in its name
+t.test('control chars in a filename cannot forge diff headers', {
+  skip: process.platform === 'win32' ? 'posix only' : false,
+}, async t => {
+  const dir = t.testdir({ orig: {}, edit: {} })
+  // an extracted package can carry a filename with an embedded newline
+  const name = 'a.js\n--- x\n+++ y\n@@ -1 +1 @@\n-real\n+forged'
+  writeFileSync(resolve(dir, 'orig', name), 'one\n')
+  writeFileSync(resolve(dir, 'edit', name), 'two\n')
+  const { diff } = await diffDirs(resolve(dir, 'orig'), resolve(dir, 'edit'))
+  t.notMatch(diff, /^\+forged$/m, 'newline in name does not inject a diff line')
+  t.notMatch(diff, /^--- x$/m, 'newline in name does not forge a --- header')
 })
