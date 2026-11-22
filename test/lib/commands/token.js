@@ -73,6 +73,117 @@ t.test('token list', async t => {
   ])
 })
 
+t.test('token list follows pagination links on the registry origin', async t => {
+  const { npm, outputs } = await loadMockNpm(t, {
+    config: { ...auth },
+  })
+  const registryOrigin = 'https://registry.npmjs.org'
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: authToken,
+  })
+  registry.nock.get('/-/npm/v1/tokens')
+    .reply(200, {
+      objects: [tokens[0]],
+      urls: {
+        next: `${registryOrigin}/-/npm/v1/tokens?next=abcd1234abcd1234`,
+      },
+      total: tokens.length,
+      userHasOldFormatToken: false,
+    })
+  registry.nock.get('/-/npm/v1/tokens')
+    .query({ next: 'abcd1234abcd1234' })
+    .reply(200, {
+      objects: [tokens[1]],
+      urls: {},
+      total: tokens.length,
+      userHasOldFormatToken: false,
+    })
+  await npm.exec('token', [])
+  t.strictSame(outputs, [
+    `Token efgh5678efgh5678… with id abcd123 name abcd001 created ${now.slice(0, 10)}`,
+    '',
+    `Token hgfe8765… with id abcd125 name abcd002 created ${now.slice(0, 10)}`,
+    'with IP whitelist: 192.168.1.1/32',
+    '',
+  ])
+})
+
+t.test('token list does not follow a pagination link off the registry origin', async t => {
+  const { npm, outputs, logs } = await loadMockNpm(t, {
+    config: { ...auth },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: authToken,
+  })
+  // a scheme downgrade to http leaves the registry origin even though the
+  // host is unchanged, and would carry the bearer token in cleartext
+  registry.nock.get('/-/npm/v1/tokens')
+    .reply(200, {
+      objects: [tokens[0]],
+      urls: {
+        next: 'http://registry.npmjs.org/-/npm/v1/tokens?next=abcd1234abcd1234',
+      },
+      total: tokens.length,
+      userHasOldFormatToken: false,
+    })
+  await npm.exec('token', [])
+  t.strictSame(outputs, [
+    `Token efgh5678efgh5678… with id abcd12 name abcd001 created ${now.slice(0, 10)}`,
+    '',
+  ])
+  t.match(logs.warn, /ignoring pagination link that leaves the registry origin/)
+})
+
+t.test('token list does not follow a pagination link to another host', async t => {
+  const { npm, outputs, logs } = await loadMockNpm(t, {
+    config: { ...auth },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: authToken,
+  })
+  registry.nock.get('/-/npm/v1/tokens')
+    .reply(200, {
+      objects: [tokens[0]],
+      urls: {
+        next: 'https://tokens.example.com/-/npm/v1/tokens?next=abcd1234abcd1234',
+      },
+      total: tokens.length,
+      userHasOldFormatToken: false,
+    })
+  await npm.exec('token', [])
+  t.strictSame(outputs, [
+    `Token efgh5678efgh5678… with id abcd12 name abcd001 created ${now.slice(0, 10)}`,
+    '',
+  ])
+  t.match(logs.warn, /ignoring pagination link that leaves the registry origin/)
+})
+
+t.test('token list ignores a missing pagination url object', async t => {
+  const { npm, outputs } = await loadMockNpm(t, {
+    config: { ...auth },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: npm.config.get('registry'),
+    authorization: authToken,
+  })
+  // a registry that omits urls entirely used to crash the command
+  registry.nock.get('/-/npm/v1/tokens')
+    .reply(200, {
+      objects: tokens,
+      total: tokens.length,
+      userHasOldFormatToken: false,
+    })
+  await npm.exec('token', [])
+  t.equal(outputs.length, 5)
+})
+
 t.test('token list json output', async t => {
   const { npm, joinedOutput } = await loadMockNpm(t, {
     config: {
