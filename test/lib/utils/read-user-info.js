@@ -95,6 +95,32 @@ t.test('username - invalid warns and retries', async (t) => {
   t.equal(logMsg, 'invalid username')
 })
 
+t.test('username - skips validation when validate is false', async (t) => {
+  readResult = 'invalid'
+  t.teardown(() => {
+    readResult = null
+    readOpts = null
+  })
+
+  const result = await readUserInfo.username(null, null, false, { validate: false })
+  t.equal(result, 'invalid', 'received the username')
+  t.equal(logMsg, null, 'did not warn')
+})
+
+t.test('username - blank retries when validate is false', async (t) => {
+  readResult = '  '
+  t.teardown(() => {
+    readResult = null
+    readOpts = null
+  })
+
+  const pResult = readUserInfo.username(null, null, false, { validate: false })
+  readResult = ' a.b@org.com '
+  const result = await pResult
+  t.equal(result, 'a.b@org.com', 'received the trimmed username')
+  t.equal(logMsg, null, 'did not warn')
+})
+
 t.test('email', async (t) => {
   readResult = 'foo@bar.baz'
   t.teardown(() => {
