@@ -36,6 +36,20 @@ t.test('packs from local directory', async t => {
   })
 })
 
+for (const allowDirectory of ['none', 'root']) {
+  t.test(`packs an explicit local directory with allow-directory=${allowDirectory}`, async t => {
+    const testDir = t.testdir({
+      'package.json': JSON.stringify({
+        name: 'my-cool-pkg',
+        version: '1.0.0',
+      }, null, 2),
+    })
+
+    const tarball = await pack(testDir, { allowDirectory })
+    t.ok(tarball)
+  })
+}
+
 t.test('flattens path separators in name so tarball stays in packDestination', async t => {
   const testDir = t.testdir({
     src: {

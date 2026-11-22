@@ -1,5 +1,22 @@
 # Changelog
 
+## [11.2.1](https://github.com/npm/cli/compare/config-v11.2.0...config-v11.2.1) (2026-11-11)
+### Bug Fixes
+* [`a41b85a`](https://github.com/npm/cli/commit/a41b85aae6f044ef4fe582ce42e2755bbeed252f) [#10068](https://github.com/npm/cli/pull/10068) skip disconnected orphans in install script checks (#10068) (@JamieMagee)
+
+## [11.2.0](https://github.com/npm/cli/compare/config-v11.1.0...config-v11.2.0) (2026-09-30)
+### Features
+* [`9741b64`](https://github.com/npm/cli/commit/9741b645b011ae83c9dda66c9b0d5fe0dce9c766) [#10038](https://github.com/npm/cli/pull/10038) dist-tag: support OIDC authentication (#10038) (@reggi, @Copilot)
+### Chores
+* [`e1581be`](https://github.com/npm/cli/commit/e1581be90119391cc1093db8a301439bf0e7808f) [#10015](https://github.com/npm/cli/pull/10015) config: isolate tests from host npmrc files (#10015) (@reggi)
+
+## [11.1.0](https://github.com/npm/cli/compare/config-v11.0.1...config-v11.1.0) (2026-09-21)
+### Features
+* [`6400533`](https://github.com/npm/cli/commit/6400533ab3d830716964bcf0def42b6c47f3fd70) [#9948](https://github.com/npm/cli/pull/9948) token: support read-write-stage-only granular access tokens (#9948) (@Tayvon, @Copilot)
+### Bug Fixes
+* [`c9876d7`](https://github.com/npm/cli/commit/c9876d7ea7150b0702e4151210b9fa1a8dbc7fbf) [#9882](https://github.com/npm/cli/pull/9882) provenance-file takes precedence over OIDC auto-generated provenance (#9882) (@yunseo-kim)
+* [`b016aa2`](https://github.com/npm/cli/commit/b016aa287d01fcd688d6704222f193ce5c04bfb7) [#9913](https://github.com/npm/cli/pull/9913) config: avoid exporting persistent allow-scripts (#9913) (@Fnine59)
+
 ## [11.0.1](https://github.com/npm/cli/compare/config-v11.0.0...config-v11.0.1) (2026-07-27)
 ### Documentation
 * [`9e17dc0`](https://github.com/npm/cli/commit/9e17dc064782ca1a1fd7f549e5a2fc7903f7fe51) [#9805](https://github.com/npm/cli/pull/9805) clarify npm 12 unknown-config breaking change in changelogs (#9805) (@Hashim1999164)

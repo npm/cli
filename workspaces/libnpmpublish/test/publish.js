@@ -862,6 +862,48 @@ t.test('user-supplied provenance - success', async t => {
   t.ok(ret, 'publish succeeded')
 })
 
+t.test('provenance and provenanceFile together throws', async t => {
+  mockGlobals(t, {
+    'process.env': {
+      CI: true,
+      GITHUB_ACTIONS: true,
+      ACTIONS_ID_TOKEN_REQUEST_URL: 'https://mock.oidc',
+      ACTIONS_ID_TOKEN_REQUEST_TOKEN: 'decafbad',
+    },
+  })
+
+  const { publish } = t.mock('..', {
+    'ci-info': { GITHUB_ACTIONS: true, name: 'GitHub Actions' },
+    '../lib/provenance': {
+      generateProvenance: () => {
+        throw new Error('generateProvenance should not be called')
+      },
+      verifyProvenance: () => {
+        throw new Error('verifyProvenance should not be called')
+      },
+    },
+  })
+
+  const manifest = {
+    name: '@npmcli/libnpmpublish-test',
+    version: '1.0.0',
+    description: 'test libnpmpublish package',
+  }
+
+  await t.rejects(
+    publish(manifest, tarData, {
+      ...opts,
+      access: 'public',
+      provenance: true,
+      provenanceFile: './test/fixtures/valid-bundle.json',
+    }),
+    {
+      code: 'EUSAGE',
+      message: /cannot be used together/,
+    }
+  )
+})
+
 t.test('user-supplied provenance - failure', async t => {
   const { publish } = t.mock('..')
   const manifest = {

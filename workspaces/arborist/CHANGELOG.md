@@ -1,5 +1,24 @@
 # Changelog
 
+## [10.0.5](https://github.com/npm/cli/compare/arborist-v10.0.4...arborist-v10.0.5) (2026-11-11)
+### Bug Fixes
+* [`dc95d49`](https://github.com/npm/cli/commit/dc95d49a8c15a67ce2c33ffbd6ce9a6fad44a727) [#10132](https://github.com/npm/cli/pull/10132) arborist: skip normalization for canonical ASCII map keys (#10132) (@jeffwidman, @Copilot)
+* [`d1994aa`](https://github.com/npm/cli/commit/d1994aa0472ab2645e7f2225877143fc930ffe30) [#10131](https://github.com/npm/cli/pull/10131) arborist: skip named-edge refresh work for empty leaves (#10131) (@jeffwidman, @Copilot)
+* [`be1b7bc`](https://github.com/npm/cli/commit/be1b7bc870d822437c5ae5a2b9b6356cf0ff069c) [#10057](https://github.com/npm/cli/pull/10057) arborist: derive linked bin cleanup paths through bin-links (#10057) (@martinrrm, @Copilot)
+* [`a41b85a`](https://github.com/npm/cli/commit/a41b85aae6f044ef4fe582ce42e2755bbeed252f) [#10068](https://github.com/npm/cli/pull/10068) skip disconnected orphans in install script checks (#10068) (@JamieMagee)
+* [`f2dea93`](https://github.com/npm/cli/commit/f2dea936ca5cbedc53a7d4ae2bf09a9da5eb67a5) [#10128](https://github.com/npm/cli/pull/10128) arborist: skip bundle checks without an applicable override (#10128) (@jeffwidman, @Copilot)
+
+## [10.0.4](https://github.com/npm/cli/compare/arborist-v10.0.3...arborist-v10.0.4) (2026-10-14)
+### Bug Fixes
+* [`83ea1a1`](https://github.com/npm/cli/commit/83ea1a1c19648a6b4f5e52a498d8a6aaaf60e52b) [#9987](https://github.com/npm/cli/pull/9987) arborist: report ETARGET instead of ERESOLVE for unresolvable peer targets (#9987) (@manzoorwanijk)
+* [`b317f16`](https://github.com/npm/cli/commit/b317f16c80df02ea3628cfa77170d5ae9b59720c) [#9941](https://github.com/npm/cli/pull/9941) write registry allowScripts keys under install-strategy=linked (#9941) (@manzoorwanijk)
+
+## [10.0.3](https://github.com/npm/cli/compare/arborist-v10.0.2...arborist-v10.0.3) (2026-09-21)
+### Bug Fixes
+* [`d6c6122`](https://github.com/npm/cli/commit/d6c612258c571c71a00f496c1f8980ed13b8a4d9) [#9914](https://github.com/npm/cli/pull/9914) arborist: match allowScripts keys for local paths (#9914) (@martinrrm, @Copilot)
+* [`da50c34`](https://github.com/npm/cli/commit/da50c3479b556da74f88ff0b579d5191a7db0a24) [#9881](https://github.com/npm/cli/pull/9881) arborist: reject uninstall args that carry a version (#9881) (@lazerg)
+* [`dc43591`](https://github.com/npm/cli/commit/dc43591e6e08e9857c787116b1ed12f074e68c3c) [#9877](https://github.com/npm/cli/pull/9877) arborist: don't fetch packuments for uninstallable optional peer dependencies (#9877) (@danielroe)
+
 ## [10.0.2](https://github.com/npm/cli/compare/arborist-v10.0.1...arborist-v10.0.2) (2026-07-27)
 ### Bug Fixes
 * [`74eff59`](https://github.com/npm/cli/commit/74eff59db40b4aff9665f4083b475a000bb46e50) [#9770](https://github.com/npm/cli/pull/9770) arborist: avoid crash when peer back-off detaches a node (#9770) (@manzoorwanijk)

@@ -172,6 +172,8 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
 
   const nodeRemote = 'origin'
   const nodeBranch = /^\d+$/.test(branch) ? `v${branch}.x-staging` : branch
+  const stagingVersion = nodeBranch.match(/^(v\d+\.x)-staging$/)?.[1]
+  const nodePrTitle = `${stagingVersion ? `[${stagingVersion}] ` : ''}${npmMessage()}`
   const nodeHost = hgi.fromUrl(await gitNode('remote', 'get-url', nodeRemote, { out: true }))
   const nodePrArgs = ['pr', '-R', nodeHost.path()]
 
@@ -238,9 +240,13 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
 
   let existingPr = null
   const closePrs = []
+  const npmMessagePrefix = npmMessage('')
 
   for (const pr of npmPrs) {
-    const prVersion = pr.title.replace(npmMessage(''), '').trim()
+    const npmMessageIndex = pr.title.indexOf(npmMessagePrefix)
+    const prVersion = npmMessageIndex === -1
+      ? null
+      : pr.title.slice(npmMessageIndex + npmMessagePrefix.length).trim()
     log.silly('checking existing PR', prVersion, pr)
 
     if (!existingPr && prVersion === npmVersion.toString()) {
@@ -259,7 +265,7 @@ const main = async (spec, branch = 'main', opts) => withTempDir(CWD, async (tmpD
     nodePrArgs,
     (existingPr ? ['edit', existingPr.number] : ['create', '-H', `${npmHost.user}:${npmBranch}`]),
     '-B', nodeBranch,
-    '-t', npmMessage(),
+    '-t', nodePrTitle,
   ].flat()
 
   if (dryRun) {
