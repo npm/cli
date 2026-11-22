@@ -9,7 +9,7 @@ const promiseAllRejectLate = require('promise-all-reject-late')
 const runScript = require('@npmcli/run-script')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { depth: dfwalk } = require('treeverse')
-const { dirname, resolve, relative, join, sep } = require('node:path')
+const { dirname, resolve, relative, join, isAbsolute, sep } = require('node:path')
 const { log, time } = require('proc-log')
 const { existsSync, realpathSync } = require('node:fs')
 const { lstat, mkdir, readdir, readlink, rm, symlink } = require('node:fs/promises')
@@ -792,9 +792,18 @@ module.exports = cls => class Reifier extends cls {
     const { path: patchPath, integrity } = node.patched
 
     // validate the patch file here too, since reify can run on an ideal tree that skipped resolvePatchedDependencies
+    // the path comes from the lockfile in that case, so re-apply the same containment check readPatch does
+    const patchAbs = resolve(this.path, patchPath)
+    const patchRel = relative(this.path, patchAbs)
+    if (!patchRel || patchRel.startsWith('..') || isAbsolute(patchRel)) {
+      throw Object.assign(
+        new Error(`patch path escapes the project: ${patchPath}`),
+        { code: 'EPATCHUNSAFE', path: patchPath, node: node.name }
+      )
+    }
     let contents
     try {
-      contents = await readFile(resolve(this.path, patchPath))
+      contents = await readFile(patchAbs)
     } catch {
       throw Object.assign(
         new Error(`patch file not found: ${patchPath}`),
