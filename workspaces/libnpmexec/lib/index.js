@@ -10,6 +10,7 @@ const { read } = require('read')
 const semver = require('semver')
 const PackageJson = require('@npmcli/package-json')
 const { fileExists, localFileExists } = require('./file-exists.js')
+const { walkUp } = require('walk-up-path')
 const getBinFromManifest = require('./get-bin-from-manifest.js')
 const noTTY = require('./no-tty.js')
 const runScript = require('./run-script.js')
@@ -120,14 +121,32 @@ const getNpxCacheDir = (npxCache, packages) => {
 const readManifest = (path) =>
   PackageJson.normalize(path).then(({ content }) => content, () => null)
 
+// The directories whose node_modules could hold a copy that the full lookup
+// finds in the local tree and then runs from the PATH: runPath and its parents
+// up to the project root, such as a workspace and the root it belongs to.
+const localDirs = (path, runPath) => {
+  const root = resolve(path)
+  const dirs = []
+  for (const dir of walkUp(resolve(runPath))) {
+    dirs.push(dir)
+    if (dir.toLowerCase() === root.toLowerCase()) {
+      return dirs
+    }
+  }
+  return [...dirs, root]
+}
+
 // If every package is a registry spec for an exact version (`foo@1.2.3`) that
 // is already in the npx cache, returns the npx cache dir and the manifest of
 // the first package there. The full lookup below would run the same packages,
 // but only after loading the local tree and revalidating each version with
 // the registry. Returns null whenever the full lookup could decide
-// differently: the package is in the local project, or in the global prefix
-// when looking for a bin, or a config asks for a registry check.
-const findInNpxCache = async ({ packages, path, globalPath, checkGlobal, flatOptions }) => {
+// differently: the package is in the local project (at its root, or in the
+// workspace or directory it runs in), or in the global prefix when looking
+// for a bin, or a config asks for a registry check.
+const findInNpxCache = async ({
+  packages, path, runPath, globalPath, checkGlobal, flatOptions,
+}) => {
   const { npxCache, preferOnline, before } = flatOptions
   if (!npxCache || preferOnline || before) {
     return null
@@ -136,9 +155,12 @@ const findInNpxCache = async ({ packages, path, globalPath, checkGlobal, flatOpt
   if (!specs.every(spec => spec.registry && spec.type === 'version')) {
     return null
   }
+  const dirs = localDirs(path, runPath)
   for (const { name } of specs) {
-    if (await readManifest(resolve(path, 'node_modules', name))) {
-      return null
+    for (const dir of dirs) {
+      if (await readManifest(resolve(dir, 'node_modules', name))) {
+        return null
+      }
     }
     if (checkGlobal && globalPath &&
       await readManifest(resolve(globalPath, 'node_modules', name))) {
@@ -266,6 +288,7 @@ const exec = async (opts) => {
   const cached = await findInNpxCache({
     packages,
     path,
+    runPath,
     globalPath,
     checkGlobal: needPackageCommandSwap,
     flatOptions,
