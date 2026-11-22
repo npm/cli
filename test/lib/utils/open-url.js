@@ -1,7 +1,6 @@
 const t = require('tap')
 const tmock = require('../../fixtures/tmock')
 const mockNpm = require('../../fixtures/mock-npm')
-const EventEmitter = require('node:events')
 
 const mockOpenUrl = async (t, args, { openerResult, ...config } = {}) => {
   let openerUrl = null
@@ -38,11 +37,8 @@ const mockOpenUrl = async (t, args, { openerResult, ...config } = {}) => {
 }
 
 const mockOpenUrlPrompt = async (t, {
-  questionShouldResolve = true,
-  openUrlPromptInterrupted = false,
   openerResult = null,
   isTTY = true,
-  abort = false,
   url: openUrl = 'https://www.npmjs.com',
   ...config
 }) => {
@@ -67,41 +63,10 @@ const mockOpenUrlPrompt = async (t, {
         }
       },
     },
-    'node:readline/promises': {
-      createInterface: () => {
-        return Object.assign(new EventEmitter(), {
-          question: async (p, { signal } = {}) => {
-            if (questionShouldResolve !== true) {
-              await new Promise((res, rej) => {
-                if (signal) {
-                  signal.addEventListener('abort', () => {
-                    const err = new Error('abort')
-                    err.name = 'AbortError'
-                    rej(err)
-                  })
-                }
-              })
-            }
-          },
-          close: () => {},
-          once: function (event, cb) {
-            if (openUrlPromptInterrupted && event === 'SIGINT') {
-              cb()
-            }
-          },
-        })
-      },
-    },
   })
 
   let error
-  const abortController = new AbortController()
-  const args = [mock.npm, openUrl, 'npm home', 'prompt', { signal: abortController.signal }]
-  if (abort) {
-    mock.open = openUrlPrompt(...args)
-  } else {
-    await openUrlPrompt(...args).catch((er) => error = er)
-  }
+  await openUrlPrompt(mock.npm, openUrl, 'npm home').catch((er) => error = er)
 
   mock.npm.finish()
 
@@ -111,7 +76,6 @@ const mockOpenUrlPrompt = async (t, {
     openerOpts,
     OUTPUT: mock.joinedOutput(),
     error,
-    abortController,
   }
 }
 
@@ -157,20 +121,6 @@ t.test('open url prompt', async t => {
     t.same(OUTPUT, '', 'printed no output')
   })
 
-  t.test('does not open url if canceled', async t => {
-    const { openerUrl, openerOpts, open, abortController } = await mockOpenUrlPrompt(t, {
-      questionShouldResolve: false,
-      abort: true,
-    })
-
-    abortController.abort()
-
-    await open
-
-    t.equal(openerUrl, null, 'did not open')
-    t.same(openerOpts, null, 'did not open')
-  })
-
   t.test('returns error when opener errors', async t => {
     const { error, openerUrl } = await mockOpenUrlPrompt(t, {
       openerResult: Object.assign(new Error('Opener failed'), { code: 1 }),
@@ -188,16 +138,6 @@ t.test('open url prompt', async t => {
     t.notOk(error, 'Did not error')
     t.equal(openerUrl, 'https://www.npmjs.com', 'did not open')
     t.matchSnapshot(OUTPUT, 'Outputs extra Browser unavailable message and url')
-  })
-
-  t.test('throws "canceled" error on SIGINT', async t => {
-    const { open } = await mockOpenUrlPrompt(t, {
-      questionShouldResolve: false,
-      openUrlPromptInterrupted: true,
-      abort: true,
-    })
-
-    await t.rejects(open, /canceled/, 'message is canceled')
   })
 })
 
