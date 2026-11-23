@@ -25,6 +25,7 @@ const debug = require('../debug.js')
 const fromPath = require('../from-path.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const { isReleaseAgeExcluded, trustedSpecName } = require('../release-age-exclude.js')
+const { rememberRegistryTarball } = require('../registry-tarball.js')
 const { resolvePatchedDependencies } = require('../patched-dependencies.js')
 const PackageExtensions = require('../package-extensions.js')
 const NpmExtension = require('../npm-extension.js')
@@ -699,6 +700,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           _isRoot,
           before: this.#releaseAgeBefore(spec),
         })
+        rememberRegistryTarball(this, spec, mani)
         if (isTag) {
           // translate tag to a version
           spec = npa(`${mani.name}@${mani.version}`)
@@ -955,6 +957,7 @@ This is a one-time fix-up, please be patient...
             fullMetadata: false,
             before: this.#releaseAgeBefore(spec),
           })
+          rememberRegistryTarball(this, spec, mani)
           node.package = { ...mani, _id: `${mani.name}@${mani.version}` }
         } catch (er) {
           const warning = `Could not fetch metadata for ${name}@${id}`
@@ -1484,6 +1487,7 @@ This is a one-time fix-up, please be patient...
     } else {
       log.silly('fetch manifest', spec.raw.replace(spec.rawSpec, redact(spec.rawSpec)))
       const mani = await pacote.manifest(spec, options)
+      rememberRegistryTarball(this, spec, mani)
       this.#manifests.set(spec.raw, mani)
       return mani
     }
