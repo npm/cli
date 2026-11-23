@@ -5719,6 +5719,13 @@ t.test('install strategy linked', async (t) => {
     await new TestArborist(options).reify()
     t.equal(extractions, 0, 'unchanged store contents are not extracted again')
     t.same(scripts, [], 'unchanged dependency lifecycle scripts do not run again')
+
+    const manifest = resolve(options.path, 'node_modules/linked-proof/package.json')
+    fs.unlinkSync(manifest)
+    await new TestArborist(options).reify()
+    t.equal(extractions, 1, 'incomplete store contents are extracted again')
+    t.same(scripts, ['install'], 'repaired dependency lifecycle scripts run')
+    t.same(JSON.parse(fs.readFileSync(manifest)), pkg, 'missing manifest is restored')
   })
 
   t.test('hidden lockfile records the linked .store layout and round-trips', async t => {
