@@ -862,6 +862,31 @@ t.test('user-supplied provenance - success', async t => {
   t.ok(ret, 'publish succeeded')
 })
 
+t.test('provenance generation fetches the existing Rekor entry on conflict', async t => {
+  const calls = []
+  const { generateProvenance } = t.mock('../lib/provenance', {
+    'ci-info': { GITHUB_ACTIONS: true },
+    sigstore: {
+      attest: async (...args) => {
+        calls.push(args)
+        return {}
+      },
+    },
+  })
+
+  await generateProvenance([{ name: 'pkg:npm/test@1.0.0' }], {
+    ...opts,
+    rekorURL: 'https://rekor.mock',
+  })
+
+  t.equal(calls.length, 1, 'attests once')
+  t.match(calls[0][2], {
+    ...opts,
+    rekorURL: 'https://rekor.mock',
+    fetchOnConflict: true,
+  }, 'passes the caller options through and enables fetchOnConflict')
+})
+
 t.test('provenance and provenanceFile together throws', async t => {
   mockGlobals(t, {
     'process.env': {
