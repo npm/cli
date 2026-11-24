@@ -1346,6 +1346,52 @@ t.test('scoped registries', async t => {
   t.equal(sawPacoteExtract, true, 'saw pacote extraction')
 })
 
+t.test('git deps are extracted with scripts off unless allowScripts allows them', async t => {
+  const sha = 'a'.repeat(40)
+  const gitResolved = `git+ssh://git@github.com/foo/bar.git#${sha}`
+
+  const extractOptions = async (resolved, opts = {}) => {
+    const path = t.testdir()
+    let seen
+    const pacote = {
+      extract: (res, dest, o) => {
+        seen = o
+        return true
+      },
+    }
+    const ArboristMock = t.mock('../../lib/arborist', { ...mocks, pacote })
+    const a = new ArboristMock({ audit: false, path, cache: path, ...opts })
+    a.addTracker('reify')
+    a.idealTree = new Node({ path })
+    const node = new Node({
+      name: 'bar',
+      resolved,
+      pkg: { name: 'bar', version: '1.0.0' },
+      parent: a.idealTree,
+    })
+    await a[Symbol.for('reifyNode')](node)
+    return seen
+  }
+
+  t.equal((await extractOptions(gitResolved)).ignoreScripts, true,
+    'unreviewed git dep is extracted with scripts off')
+  t.equal((await extractOptions(gitResolved, {
+    allowScripts: { [gitResolved]: false },
+  })).ignoreScripts, true, 'denied git dep is extracted with scripts off')
+  t.not((await extractOptions(gitResolved, {
+    allowScripts: { [gitResolved]: true },
+  })).ignoreScripts, true, 'allowed git dep keeps scripts on')
+  t.not((await extractOptions(gitResolved, {
+    dangerouslyAllowAllScripts: true,
+  })).ignoreScripts, true, 'dangerouslyAllowAllScripts keeps scripts on')
+  t.equal((await extractOptions(gitResolved, {
+    ignoreScripts: true,
+  })).ignoreScripts, true, '--ignore-scripts is still honored')
+  t.not((await extractOptions(
+    'https://registry.npmjs.org/bar/-/bar-1.0.0.tgz'
+  )).ignoreScripts, true, 'registry deps are unaffected')
+})
+
 t.test('bin links adding and removing', t => {
   const path = t.testdir({
     'package.json': JSON.stringify({}),

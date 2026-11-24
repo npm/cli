@@ -2,6 +2,7 @@
 const PackageJson = require('@npmcli/package-json')
 const hgi = require('hosted-git-info')
 const npa = require('npm-package-arg')
+const { isScriptAllowed } = require('../script-allowed.js')
 const packageContents = require('@npmcli/installed-package-contents')
 const pacote = require('pacote')
 const { pickRegistry } = require('npm-registry-fetch')
@@ -737,8 +738,14 @@ module.exports = cls => class Reifier extends cls {
           })
         }
       })
+      // A git dependency's `prepare` runs inside pacote while it packs the clone,
+      // before rebuild's allowScripts gate is consulted, so apply the gate here too.
+      const gitScriptsBlocked = npa(res).type === 'git' &&
+        !this.options.dangerouslyAllowAllScripts &&
+        isScriptAllowed(node.target, this.options.allowScripts) !== true
       await pacote.extract(res, node.path, {
         ...this.options,
+        ...(gitScriptsBlocked ? { ignoreScripts: true } : {}),
         resolved: node.resolved,
         integrity: node.integrity,
         // A node counts as "root" for allow-* enforcement if it satisfies at least one valid dependency edge declared by the project root or a workspace.
