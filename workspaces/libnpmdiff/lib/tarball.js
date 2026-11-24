@@ -39,11 +39,18 @@ const tarball = (manifest, opts) => {
   } catch {
     fromSpec = null
   }
+  let spec = manifest._resolved
   if (fromSpec?.registry) {
     tarballOpts.allowRemote = 'all'
+    // fetch as name@url like arborist reify does, so the package scope selects
+    // the scoped registry and its credentials when the tarball URL is not
+    // under the registry path (e.g. GitLab project-level tarball URLs).
+    if (manifest.name) {
+      spec = `${manifest.name}@${manifest._resolved}`
+    }
   }
 
-  return pacote.tarball(manifest._resolved, tarballOpts)
+  return pacote.tarball(spec, tarballOpts)
 }
 
 module.exports = tarball

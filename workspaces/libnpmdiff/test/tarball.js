@@ -117,6 +117,26 @@ t.test('allowRemote carve-out for registry-mediated tarballs', async t => {
     t.equal(captured.opts.allowRemote, 'all')
   })
 
+  t.test('registry-typed _from fetches name@resolved so scoped auth applies', async t => {
+    const resolved = 'https://gitlab.example.com/api/v4/projects/339/packages/npm/@myscope/pkg/-/@myscope/pkg-1.0.0.tgz'
+    await tarball({
+      name: '@myscope/pkg',
+      _from: '@myscope/pkg@1.0.0',
+      _resolved: resolved,
+    }, {})
+    t.equal(captured.resolved, `@myscope/pkg@${resolved}`)
+    t.equal(captured.opts.allowRemote, 'all')
+  })
+
+  t.test('non-registry _from fetches the bare resolved url', async t => {
+    await tarball({
+      name: 'foo',
+      _from: 'https://example.com/foo.tgz',
+      _resolved: 'https://example.com/foo.tgz',
+    }, {})
+    t.equal(captured.resolved, 'https://example.com/foo.tgz')
+  })
+
   t.test('non-registry _from leaves allowRemote untouched', async t => {
     await tarball({
       _from: 'https://example.com/foo.tgz',
