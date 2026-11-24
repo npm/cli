@@ -193,7 +193,13 @@ const generateProvenance = async (subject, opts) => {
       },
     }
   }
-  return sigstore.attest(Buffer.from(JSON.stringify(payload)), INTOTO_PAYLOAD_TYPE, opts)
+  return sigstore.attest(Buffer.from(JSON.stringify(payload)), INTOTO_PAYLOAD_TYPE, {
+    ...opts,
+    // A Rekor upload whose response is lost is retried, and Rekor answers the
+    // retry with a 409 for the entry the first attempt already created.
+    // Fetching that entry lets the publish complete instead of failing.
+    fetchOnConflict: true,
+  })
 }
 
 const verifyProvenance = async (subject, provenancePath) => {
