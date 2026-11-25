@@ -37,6 +37,35 @@ t.test('format simple diff', async t => {
   )
 })
 
+t.test('preserve final blank context line', async t => {
+  const files = new Set([
+    'foo.js',
+  ])
+  const refs = new Map(Object.entries({
+    'a/foo.js': {
+      content: '"use strict"\nmodule.exports = "foo"\n\n',
+      mode: '100644',
+    },
+    'b/foo.js': {
+      content: '"use strict"\nmodule.exports = "foobar"\n\n',
+      mode: '100644',
+    },
+  }))
+  const versions = {
+    a: '1.0.0',
+    b: '2.0.0',
+  }
+
+  const result = await formatDiff({
+    files,
+    refs,
+    versions,
+  })
+
+  t.ok(result.endsWith('\n '), 'should preserve the final blank context line')
+  t.notOk(result.endsWith('\n'), 'should not end with a newline')
+})
+
 t.test('nothing to diff', async t => {
   const files = new Set([
     'foo.js',
