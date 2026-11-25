@@ -130,6 +130,22 @@ t.test('patchIntegrity is stable and content-addressed', t => {
   t.end()
 })
 
+t.test('patchIntegrity ignores CRLF line endings from a git checkout', async t => {
+  const lf = filePatch('index.js', 'a\nb\nc\n', 'a\nB\nc\n')
+  const crlf = lf.replace(/\n/g, '\r\n')
+  t.equal(patchIntegrity(Buffer.from(crlf)), patchIntegrity(lf), 'CRLF and LF copies hash the same')
+  t.not(patchIntegrity('a\r'), patchIntegrity('a'), 'a lone CR is still content')
+  t.equal(patchIntegrity(Buffer.from([0xff, 0x0d, 0x0a])), patchIntegrity(Buffer.from([0xff, 0x0a])),
+    'CRLF is normalized next to non-UTF-8 bytes')
+  t.not(patchIntegrity(Buffer.from([0xfe])), patchIntegrity(Buffer.from([0xff])),
+    'distinct non-UTF-8 bytes do not collide')
+
+  // the CRLF checkout must still apply cleanly to the LF file in the tarball
+  const dir = t.testdir({ 'index.js': 'a\nb\nc\n' })
+  await applyPatchToDir({ patch: Buffer.from(crlf), cwd: dir })
+  t.equal(readFileSync(resolve(dir, 'index.js'), 'utf8'), 'a\nB\nc\n')
+})
+
 t.test('round-trips a multi-file diff', async t => {
   const dir = t.testdir({ 'a.js': 'aaa\n', 'del.js': 'd\n' })
   const patch =
