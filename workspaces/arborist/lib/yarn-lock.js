@@ -152,8 +152,9 @@ class YarnLock {
       if (METADATA.test(line) && this.current) {
         const metadata = this.splitQuoted(line.trimLeft(), ' ')
         if (metadata.length === 2) {
-          // strip off the legacy shasum hashes
-          if (metadata[0] === 'resolved') {
+          // strip off the legacy shasum hashes on registry tarballs.
+          // a git resolved URL uses # for the commit, so leave that in place.
+          if (metadata[0] === 'resolved' && !/^(?:git\+|git:)/.test(metadata[1])) {
             metadata[1] = metadata[1].replace(/#.*/, '')
           }
           this.current[metadata[0]] = metadata[1]
