@@ -37,6 +37,9 @@ class IsolatedNode {
     if (options.resolved) {
       this.resolved = options.resolved
     }
+    if (options.integrity) {
+      this.integrity = options.integrity
+    }
     if (options.root) {
       this.root = options.root
     }
