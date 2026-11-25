@@ -1,4 +1,4 @@
-const { join } = require('node:path')
+const { join, resolve: resolvePath } = require('node:path')
 const fs = require('node:fs/promises')
 const ini = require('ini')
 const tspawk = require('../../fixtures/tspawk')
@@ -557,6 +557,138 @@ t.test('config redacted values', async t => {
 
   t.match(joinedOutput(), 'proxy = "https://u:***@proxy.npmjs.org/"')
   clearOutput()
+})
+
+t.test('config get plain path', async t => {
+  const plain = resolvePath('/tmp/plain-dir')
+  const plainUserconfig = resolvePath('/tmp/plain-dir/.npmrc')
+  const plainGlobalconfig = resolvePath('/tmp/plain-dir/global.npmrc')
+  const plainPrefix = plain
+  const plainCache = resolvePath('/tmp/plain-dir/cache')
+  const { npm, joinedOutput, clearOutput } = await loadMockNpm(t, {
+    config: {
+      userconfig: plainUserconfig,
+      globalconfig: plainGlobalconfig,
+      prefix: plainPrefix,
+      cache: plainCache,
+    },
+  })
+
+  await npm.exec('config', ['get', 'userconfig'])
+  t.equal(joinedOutput(), plainUserconfig, 'returns a userconfig path')
+  clearOutput()
+
+  await npm.exec('config', ['get', 'globalconfig'])
+  t.equal(joinedOutput(), plainGlobalconfig, 'returns a globalconfig path')
+  clearOutput()
+
+  await npm.exec('config', ['get', 'prefix'])
+  t.equal(joinedOutput(), plainPrefix, 'returns a prefix path')
+  clearOutput()
+
+  await npm.exec('config', ['get', 'cache'])
+  t.equal(joinedOutput(), plainCache, 'returns a cache path')
+  clearOutput()
+
+  await npm.exec('config', ['list'])
+  t.match(joinedOutput(), `userconfig = ${JSON.stringify(plainUserconfig)}`, 'list shows the path')
+  clearOutput()
+})
+
+t.test('config list --json plain path', async t => {
+  const plainUserconfig = resolvePath('/tmp/plain-dir/.npmrc')
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: {
+      json: true,
+      userconfig: plainUserconfig,
+    },
+  })
+
+  await npm.exec('config', ['list'])
+
+  t.equal(JSON.parse(joinedOutput()).userconfig, plainUserconfig, 'json list keeps the path')
+})
+
+t.test('config get uuid path', async t => {
+  const uuid = '550e8400-e29b-41d4-a716-446655440000'
+  const uuidUserconfig = resolvePath(`/tmp/${uuid}/.npmrc`)
+  const uuidGlobalconfig = resolvePath(`/tmp/${uuid}/global.npmrc`)
+  const uuidPrefix = resolvePath(`/tmp/${uuid}`)
+  const uuidCache = resolvePath(`/tmp/${uuid}/cache`)
+  const { npm, joinedOutput, clearOutput } = await loadMockNpm(t, {
+    config: {
+      userconfig: uuidUserconfig,
+      globalconfig: uuidGlobalconfig,
+      prefix: uuidPrefix,
+      cache: uuidCache,
+    },
+  })
+
+  await npm.exec('config', ['get', 'userconfig'])
+  t.equal(joinedOutput(), uuidUserconfig, 'returns a userconfig path with a uuid directory')
+  clearOutput()
+
+  await npm.exec('config', ['get', 'globalconfig'])
+  t.equal(joinedOutput(), uuidGlobalconfig, 'returns a globalconfig path with a uuid directory')
+  clearOutput()
+
+  await npm.exec('config', ['get', 'prefix'])
+  t.equal(joinedOutput(), uuidPrefix, 'returns a prefix path with a uuid directory')
+  clearOutput()
+
+  await npm.exec('config', ['get', 'cache'])
+  t.equal(joinedOutput(), uuidCache, 'returns a cache path with a uuid directory')
+  clearOutput()
+
+  await npm.exec('config', ['list'])
+  t.match(joinedOutput(), `userconfig = ${JSON.stringify(uuidUserconfig)}`, 'list shows the uuid path')
+  clearOutput()
+})
+
+t.test('config list --json uuid path', async t => {
+  const uuid = '550e8400-e29b-41d4-a716-446655440000'
+  const uuidUserconfig = resolvePath(`/tmp/${uuid}/.npmrc`)
+  const { npm, joinedOutput } = await loadMockNpm(t, {
+    config: {
+      json: true,
+      userconfig: uuidUserconfig,
+    },
+  })
+
+  await npm.exec('config', ['list'])
+
+  t.equal(JSON.parse(joinedOutput()).userconfig, uuidUserconfig, 'json list keeps the uuid path')
+})
+
+t.test('config uuid values that are still private', async t => {
+  const { npm, joinedOutput, clearOutput } = await loadMockNpm(t)
+  const uuid = '550e8400-e29b-41d4-a716-446655440000'
+
+  await npm.exec('config', ['set', `tag=${uuid}`])
+
+  await t.rejects(npm.exec('config', ['get', 'tag']), /tag option is protected/,
+    'a bare uuid is still private')
+
+  await npm.exec('config', ['ls'])
+
+  t.match(joinedOutput(), 'tag = "***"', 'a bare uuid is redacted in list output')
+  clearOutput()
+
+  await npm.exec('config', ['set', 'proxy', `https://u:${uuid}@proxy.npmjs.org/`])
+
+  await t.rejects(npm.exec('config', ['get', 'proxy']), /proxy option is protected/,
+    'a url password that is a uuid is still private')
+
+  await npm.exec('config', ['ls'])
+
+  t.match(joinedOutput(), 'proxy = "https://u:***@proxy.npmjs.org/"',
+    'a url password that is a uuid is redacted in list output')
+  clearOutput()
+
+  await npm.exec('config', ['set', 'tag', `npm_${'a'.repeat(36)}`])
+
+  await t.rejects(npm.exec('config', ['get', 'tag']), /tag option is protected/,
+    'an npm token is still private')
 })
 
 t.test('config edit', async t => {
