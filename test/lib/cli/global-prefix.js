@@ -5,6 +5,7 @@ const tmock = require('../../fixtures/tmock')
 
 // The tests that load real config get their own project, user and global
 // npmrc, so the developer's npmrc files and cwd don't change the result.
+// npm_config_prefix is cleared too, since `npm test` exports it.
 const isolate = (t, userNpmrc = '') => {
   const dir = t.testdir({
     project: { 'package.json': '{}' },
@@ -15,6 +16,7 @@ const isolate = (t, userNpmrc = '') => {
     'process.cwd': () => join(dir, 'project'),
     'process.env.npm_config_userconfig': join(dir, 'user', 'npmrc'),
     'process.env.npm_config_globalconfig': join(dir, 'global', 'npmrc'),
+    'process.env.npm_config_prefix': undefined,
   })
   return dir
 }
