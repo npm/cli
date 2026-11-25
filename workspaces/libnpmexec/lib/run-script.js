@@ -4,6 +4,7 @@ const pkgJson = require('@npmcli/package-json')
 const { log, output } = require('proc-log')
 const noTTY = require('./no-tty.js')
 const isWindows = require('./is-windows.js')
+const { findCmdExecutable, unsafeForCmd } = require('./find-cmd-executable.js')
 
 const isCmd = shell => /(?:^|[\\/])cmd(?:\.exe)?$/i.test(shell)
 const isPowerShell = shell => /(?:^|[\\/])(?:powershell|pwsh)(?:\.exe)?$/i.test(shell)
@@ -23,11 +24,14 @@ const run = async ({
     if (isCmd(shell)) {
       // Variable expansion (including delayed expansion) and embedded quotes
       // cannot be safely escaped here. Control characters are invalid filenames.
-      if (/["%!]/.test(args[0]) || [...args[0]].some(c => c.charCodeAt(0) < 32)) {
+      if (unsafeForCmd(args[0])) {
         throw Object.assign(
           new Error(`Invalid executable name for cmd.exe: ${JSON.stringify(args[0])}`),
           { code: 'EINVALIDCOMMAND' }
         )
+      }
+      if (isWindows) {
+        args[0] = await findCmdExecutable(args[0], { binPaths, runPath, env: process.env })
       }
       // Protect both cmd.exe's metacharacter parsing and executable-name parsing.
       args[0] = `"${args[0]}"`.replace(/[ ^&()<>|";,*?=@]/g, '^$&')
