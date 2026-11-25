@@ -34,65 +34,35 @@ const mockShim = async (t, { argv, prefix, prefixError }) => {
   return { seen, errors, exits }
 }
 
-t.test('runs the npm in the global prefix if there is one', async t => {
-  const prefix = t.testdir({
-    node_modules: { npm: { bin: { 'npm-cli.js': cli('global npm'), 'npx-cli.js': cli('global npx') } } },
-  })
-  const npmCli = join(prefix, 'node_modules', 'npm', 'bin', 'npm-cli.js')
-  const { seen, errors, exits } = await mockShim(t, {
-    argv: ['node', join(BIN, 'npm-shim.js'), 'npm', 'install', '--save-dev', 'a b', ''],
-    prefix,
-  })
-  t.strictSame(seen, [{ cli: 'global npm', argv: ['node', npmCli, 'install', '--save-dev', 'a b', ''] }])
-  t.strictSame(errors, [])
-  t.strictSame(exits, [])
-})
+for (const bin of ['npm', 'npx']) {
+  const cliName = `${bin}-cli.js`
+  const args = ['install', '--save-dev', 'a b', '']
 
-t.test('runs the npx in the global prefix if there is one', async t => {
-  const prefix = t.testdir({
-    node_modules: { npm: { bin: { 'npm-cli.js': cli('global npm'), 'npx-cli.js': cli('global npx') } } },
+  t.test(`runs the ${bin} in the global prefix if there is one`, async t => {
+    const prefix = t.testdir({
+      node_modules: { npm: { bin: { 'npm-cli.js': cli('global npm'), 'npx-cli.js': cli('global npx') } } },
+    })
+    const { seen, errors, exits } = await mockShim(t, {
+      argv: ['node', join(BIN, 'npm-shim.js'), bin, ...args],
+      prefix,
+    })
+    const globalCli = join(prefix, 'node_modules', 'npm', 'bin', cliName)
+    t.strictSame(seen, [{ cli: `global ${bin}`, argv: ['node', globalCli, ...args] }])
+    t.strictSame(errors, [])
+    t.strictSame(exits, [])
   })
-  const npxCli = join(prefix, 'node_modules', 'npm', 'bin', 'npx-cli.js')
-  const { seen } = await mockShim(t, {
-    argv: ['node', join(BIN, 'npm-shim.js'), 'npx', '--no-install', 'tsc', '--version'],
-    prefix,
-  })
-  t.strictSame(seen, [{ cli: 'global npx', argv: ['node', npxCli, '--no-install', 'tsc', '--version'] }])
-})
 
-t.test('runs its own npm if the global prefix has none', async t => {
-  const prefix = t.testdir({})
-  const { seen, errors, exits } = await mockShim(t, {
-    argv: ['node', join(BIN, 'npm-shim.js'), 'npm', '--version'],
-    prefix,
+  t.test(`runs its own ${bin} if the global prefix has none`, async t => {
+    const { seen, errors, exits } = await mockShim(t, {
+      argv: ['node', join(BIN, 'npm-shim.js'), bin, ...args],
+      prefix: t.testdir({}),
+    })
+    t.strictSame(seen, [], 'the global prefix cli is not loaded')
+    t.strictSame(process.argv, ['node', join(BIN, cliName), ...args], `argv as seen by ${cliName}`)
+    t.strictSame(errors, [])
+    t.strictSame(exits, [])
   })
-  t.strictSame(seen, [], 'the global prefix npm is not loaded')
-  t.strictSame(process.argv, ['node', join(BIN, 'npm-cli.js'), '--version'], 'argv as seen by npm-cli.js')
-  t.strictSame(errors, [])
-  t.strictSame(exits, [])
-})
-
-t.test('runs its own npx if the global prefix has none', async t => {
-  const prefix = t.testdir({})
-  const { seen } = await mockShim(t, {
-    argv: ['node', join(BIN, 'npm-shim.js'), 'npx', 'cowsay', 'hi'],
-    prefix,
-  })
-  t.strictSame(seen, [], 'the global prefix npx is not loaded')
-  t.strictSame(process.argv, ['node', join(BIN, 'npx-cli.js'), 'cowsay', 'hi'], 'argv as seen by npx-cli.js')
-})
-
-t.test('a global prefix with only npx does not count for npm', async t => {
-  const prefix = t.testdir({
-    node_modules: { npm: { bin: { 'npx-cli.js': cli('global npx') } } },
-  })
-  const { seen } = await mockShim(t, {
-    argv: ['node', join(BIN, 'npm-shim.js'), 'npm', 'ls'],
-    prefix,
-  })
-  t.strictSame(seen, [])
-  t.strictSame(process.argv, ['node', join(BIN, 'npm-cli.js'), 'ls'])
-})
+}
 
 t.test('exits 1 if the global prefix cannot be determined', async t => {
   const prefixError = new Error('bad config')
