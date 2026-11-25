@@ -131,7 +131,8 @@ class OverrideSet {
         continue
       }
 
-      if (semver.satisfies(node.version, rule.keySpec) ||
+      if (rule.keySpec === '*' ||
+        semver.satisfies(node.version, rule.keySpec) ||
         semver.satisfies(node.version, rule.value)) {
         return rule
       }
@@ -146,7 +147,8 @@ class OverrideSet {
         continue
       }
 
-      if (semver.satisfies(node.version, rule.keySpec) ||
+      if (rule.keySpec === '*' ||
+        semver.satisfies(node.version, rule.keySpec) ||
         semver.satisfies(node.version, rule.value)) {
         return rule
       }

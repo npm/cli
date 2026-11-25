@@ -163,6 +163,21 @@ t.test('constructor', async (t) => {
     t.equal(barEdgeRule.value, '*', 'when rule is omitted entirely value is *')
   })
 
+  t.test('unversioned keys match prerelease nodes', async (t) => {
+    const overrides = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: '1.0.0',
+        },
+      },
+    })
+
+    const fooRule = overrides.children.get('foo')
+    const node = { name: 'foo', version: '1.0.0-rc.1' }
+    t.equal(overrides.getNodeRule(node), fooRule, 'getNodeRule matches prerelease')
+    t.equal(overrides.getMatchingRule(node), fooRule, 'getMatchingRule matches prerelease')
+  })
+
   t.test('version specs work', async (t) => {
     const overrides = new OverrideSet({
       overrides: {
