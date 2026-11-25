@@ -8,10 +8,13 @@ const { resolve, relative, dirname, isAbsolute } = require('node:path')
 
 // Compute the SSRI integrity of a patch file's contents.
 // Accepts a string or Buffer and returns a sha512 SSRI string.
-const patchIntegrity = data =>
-  ssri.fromData(Buffer.isBuffer(data) ? data : Buffer.from(data, 'utf8'), {
-    algorithms: ['sha512'],
-  }).toString()
+// CRLF is hashed as LF: git checkouts (core.autocrlf, the Git for Windows default) rewrite a committed patch's line endings, which must not invalidate the lockfile.
+// latin1 maps every byte to one char and back, so non-UTF-8 bytes survive the replace.
+const patchIntegrity = data => {
+  const bytes = Buffer.isBuffer(data) ? data : Buffer.from(data, 'utf8')
+  const normalized = Buffer.from(bytes.toString('latin1').replace(/\r\n/g, '\n'), 'latin1')
+  return ssri.fromData(normalized, { algorithms: ['sha512'] }).toString()
+}
 
 // Strip a leading git-style "a/" or "b/" prefix from a diff path.
 const stripPrefix = file => file.replace(/^[ab]\//, '')

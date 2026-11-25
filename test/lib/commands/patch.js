@@ -243,6 +243,34 @@ t.test('npm ci rejects patch path drift from the lockfile', async t => {
   )
 })
 
+t.test('npm ci accepts a patch file checked out with CRLF line endings', async t => {
+  const { npm, registry } = await loadMockNpm(t, {
+    config: { 'ignore-scripts': true, audit: false },
+    strictRegistryNock: false,
+    prefixDir: basePrefix(),
+  })
+  await setupDep(npm, registry)
+  await npm.exec('install', [])
+
+  const editDir = path.join(npm.prefix, 'edit')
+  await pacote.extract(`${DEP_NAME}@${DEP_VERSION}`, editDir, npm.flatOptions)
+  const edited = 'module.exports = () => "patched"\n'
+  fs.writeFileSync(path.join(editDir, 'index.js'), edited)
+  await npm.exec('patch', ['commit', editDir])
+
+  // a git checkout with core.autocrlf=true (the Git for Windows default) rewrites LF as CRLF
+  const patchFile = path.join(npm.prefix, 'patches', `${DEP_NAME}@${DEP_VERSION}.patch`)
+  const lf = fs.readFileSync(patchFile, 'utf8')
+  fs.writeFileSync(patchFile, lf.replace(/\n/g, '\r\n'))
+
+  await npm.exec('ci', [])
+  t.equal(
+    fs.readFileSync(path.join(npm.prefix, 'node_modules', DEP_NAME, 'index.js'), 'utf8'),
+    edited,
+    'the CRLF checkout of the patch is applied'
+  )
+})
+
 t.test('rm with no registered patch rejects with EPATCHNOTFOUND', async t => {
   const { npm } = await loadMockNpm(t, {
     config: { 'ignore-scripts': true, audit: false },
