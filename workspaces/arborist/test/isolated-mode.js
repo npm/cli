@@ -1941,6 +1941,65 @@ tap.test('orphaned store entries are cleaned up on dependency update', async t =
     'old which@1.0.0 store entry is removed after update')
 })
 
+tap.test('removed packages are reported in the diff, and a dry run only reports them', async t => {
+  // The linked diff is built from the ideal tree, so it never sees packages being removed.
+  // The orphan sweep removes them instead, and must report them so the summary, --dry-run, --json and the root `dependencies` script see the change.
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+      { name: '@scope/pkg', version: '1.0.0' },
+    ],
+    root: {
+      name: 'myproject',
+      version: '1.0.0',
+      dependencies: { which: '1.0.0', '@scope/pkg': '1.0.0' },
+    },
+  }
+  const { dir, registry } = await getRepo(graph)
+  const cache = fs.mkdtempSync(`${getTempDir()}/test-`)
+  const nm = path.join(dir, 'node_modules')
+  const storeDir = path.join(nm, '.store')
+  const newArb = opts => new Arborist({ path: dir, registry, packumentCache: new Map(), cache, ...opts })
+  const removedOf = arb => arb.diff.children
+    .filter(d => d.action === 'REMOVE')
+    .map(d => `${d.actual.name}@${d.actual.package.version}`)
+    .sort()
+
+  const first = newArb()
+  await first.reify({ installStrategy: 'linked' })
+  t.same(removedOf(first), [], 'a fresh install removes nothing')
+
+  // Entries the sweep removes besides the store packages: a stray real package, and a non-package link and store directory, which are never reported.
+  fs.mkdirSync(path.join(nm, 'stray'))
+  fs.writeFileSync(path.join(nm, 'stray', 'package.json'), JSON.stringify({ name: 'stray', version: '3.0.0' }))
+  fs.mkdirSync(path.join(dir, 'not-a-package'))
+  fs.symlinkSync(path.join(dir, 'not-a-package'), path.join(nm, 'not-a-package'), 'junction')
+  fs.mkdirSync(path.join(storeDir, 'junk@1.0.0-abc'))
+
+  const pkgPath = path.join(dir, 'package.json')
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+  pkg.dependencies = {}
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg))
+
+  const expected = ['@scope/pkg@1.0.0', 'isexe@1.0.0', 'stray@3.0.0', 'which@1.0.0']
+  const whichInStore = () => fs.readdirSync(storeDir).some(e => e.startsWith('which@1.0.0-'))
+
+  const dry = newArb({ dryRun: true })
+  await dry.reify({ installStrategy: 'linked' })
+  t.same(removedOf(dry), expected, 'a dry run reports the packages it would remove')
+  t.ok(whichInStore(), 'a dry run leaves the store alone')
+  t.ok(fs.existsSync(path.join(nm, 'stray')), 'a dry run leaves top-level entries alone')
+
+  const real = newArb()
+  await real.reify({ installStrategy: 'linked' })
+  t.same(removedOf(real), expected, 'removed packages are reported')
+  t.equal(real.diff.removed.length, expected.length, 'diff.removed lists them too')
+  t.notOk(whichInStore(), 'which is removed from the store')
+  t.notOk(fs.existsSync(path.join(nm, 'stray')), 'the stray package is removed')
+  t.notOk(fs.existsSync(path.join(nm, 'not-a-package')), 'the non-package link is removed')
+})
+
 tap.test('orphaned scoped store entries are cleaned up on dependency update', async t => {
   // https://github.com/npm/cli/issues/9440 — a scoped store key spans two path segments (.store/@scope/pkg@version-hash), so the single-segment orphan cleanup never swept the stale entry.
   const graph = {
