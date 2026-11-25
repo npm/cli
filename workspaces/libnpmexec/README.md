@@ -46,7 +46,10 @@ await libexec({
   PowerShell used on Windows. For inferred PowerShell invocations, arguments are
   also escaped as literal strings. With `cmd.exe`, executable names containing double
   quotes, percent signs, exclamation marks, or control characters are rejected
-  with `EINVALIDCOMMAND`. Use a bin name without these characters. On a matching
+  with `EINVALIDCOMMAND`. Use a bin name without these characters. On Windows,
+  a bare executable name run with `cmd.exe` is first resolved to an absolute path
+  the way `cmd.exe` would find it, so that batch-file shims relying on `%~dp0`
+  locate their own folder. On a matching
   npx-cache hit, command selection uses the installed package's `bin` rather than
   the registry's bin metadata.
 

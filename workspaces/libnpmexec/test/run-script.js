@@ -218,6 +218,61 @@ t.test('cmd.exe quoting preserves paths and literal metacharacters', async t => 
   }
 })
 
+t.test('runs cmd.exe executables found on the bin path by absolute path on Windows', async t => {
+  const pathExt = process.env.PATHEXT
+  process.env.PATHEXT = '.CMD'
+  t.teardown(() => {
+    if (pathExt === undefined) {
+      delete process.env.PATHEXT
+    } else {
+      process.env.PATHEXT = pathExt
+    }
+  })
+
+  const path = t.testdir({ node_modules: { '.bin': { 'tool.CMD': '' } } })
+  let script
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': async ({ pkg }) => {
+      script = pkg.scripts.npx
+    },
+    '../lib/is-windows.js': true,
+  })
+  await runScript({ args: ['tool', '--version'], path, runPath: path, scriptShell: 'cmd.exe' })
+  t.equal(
+    script,
+    `"${resolve(path, 'node_modules', '.bin', 'tool.CMD')}"`.replace(/[ ^&()<>|";,*?=@]/g, '^$&')
+  )
+})
+
+t.test('cmd.exe shims that use %~dp0 resolve their own folder', {
+  skip: process.platform !== 'win32' && 'Windows only',
+}, async t => {
+  // pnpm writes shims like this, which read %~dp0 directly instead of through
+  // cmd-shim's `CALL :find_dp0` (https://github.com/npm/cli/issues/10344)
+  const path = t.testdir({
+    node_modules: {
+      '.bin': {
+        'tool.cmd': '@node "%~dp0\\..\\tool\\bin\\tool.js" %*\r\n',
+      },
+      tool: {
+        bin: { 'tool.js': 'console.log(JSON.stringify(process.argv.slice(2)))' },
+      },
+    },
+  })
+  const { runScript } = await mockRunScript(t, {
+    '@npmcli/run-script': opts => realRunScript({ ...opts, stdio: 'pipe' }),
+  })
+  for (const args of [[], ['--version'], ['two words', 'literal&argument']]) {
+    const result = await runScript({
+      args: ['tool', ...args],
+      path,
+      runPath: path,
+      scriptShell: 'cmd.exe',
+    })
+    t.same(JSON.parse(result.stdout), args)
+  }
+})
+
 t.test('rejects cmd.exe executable tokens that cannot be quoted safely', async t => {
   const { runScript } = await mockRunScript(t, {
     '@npmcli/run-script': async () => t.fail('must not spawn'),
