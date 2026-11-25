@@ -47,6 +47,36 @@ asdf@foo:
   t.end()
 })
 
+t.test('keeps a git commit and still drops a tarball shasum', t => {
+  const y = new YarnLock()
+  y.parse(`
+git@git+https://github.com/isaacs/abbrev-js.git:
+  version "1.1.1"
+  resolved "git+https://github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c"
+
+ssh@git+ssh://git@github.com/foo/bar.git:
+  version "1.0.0"
+  resolved "git+ssh://git@github.com/foo/bar.git#0000000000000000000000000000000000000000"
+
+plain@git://github.com/foo/bar.git:
+  version "1.0.0"
+  resolved "git://github.com/foo/bar.git#1111111111111111111111111111111111111111"
+
+reg@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
+`)
+  const git = y.entries.get('git@git+https://github.com/isaacs/abbrev-js.git')
+  const ssh = y.entries.get('ssh@git+ssh://git@github.com/foo/bar.git')
+  const plain = y.entries.get('plain@git://github.com/foo/bar.git')
+  const reg = y.entries.get('reg@^1.1.1')
+  t.equal(git.resolved, 'git+https://github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c')
+  t.equal(ssh.resolved, 'git+ssh://git@github.com/foo/bar.git#0000000000000000000000000000000000000000')
+  t.equal(plain.resolved, 'git://github.com/foo/bar.git#1111111111111111111111111111111111111111')
+  t.equal(reg.resolved, 'https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz')
+  t.end()
+})
+
 t.test('omits empty dependency list on toString output', t => {
   const y = new YarnLock()
   y.parse(`

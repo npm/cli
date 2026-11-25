@@ -3032,7 +3032,7 @@ abbrev@^1.1.1, "pinned@npm:abbrev@1.1.1", "reg@npm:abbrev@^1.1.1":
 
 "full-git-url@git+https://github.com/isaacs/abbrev-js.git":
   version "1.1.1"
-  resolved "git+https://github.com/isaacs/abbrev-js.git"
+  resolved "git+https://github.com/isaacs/abbrev-js.git#b8f3a2fc0c3bb8ffd8b0d0072cc6b5a3667e963c"
 
 "ghshort@github:isaacs/abbrev-js":
   version "1.1.1"
