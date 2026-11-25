@@ -257,6 +257,40 @@ tap.test('most simple happy scenario', async t => {
   rule7.apply(t, dir, resolved, asserted)
 })
 
+tap.test('store packages are extracted with the lockfile integrity', async t => {
+  const graph = {
+    registry: [
+      { name: 'which', version: '1.0.0', dependencies: { isexe: '^1.0.0' } },
+      { name: 'isexe', version: '1.0.0' },
+    ],
+    root: {
+      name: 'foo', version: '1.2.3', dependencies: { which: '1.0.0' },
+    },
+  }
+
+  const { dir, registry } = await getRepo(graph)
+  const install = () => new Arborist({
+    path: dir,
+    registry,
+    packumentCache: new Map(),
+    cache: fs.mkdtempSync(`${getTempDir()}/test-`),
+    fetchRetries: 0,
+  }).reify({ installStrategy: 'linked' })
+
+  await install()
+  const lockPath = path.join(dir, 'package-lock.json')
+  const lock = JSON.parse(fs.readFileSync(lockPath, 'utf8'))
+  t.ok(lock.packages['node_modules/which'], 'lockfile records which')
+
+  // pin an integrity the served tarball does not match, then reinstall from a fresh cache
+  lock.packages['node_modules/which'].integrity = `sha512-${Buffer.alloc(64).toString('base64')}`
+  fs.writeFileSync(lockPath, JSON.stringify(lock, null, 2))
+  fs.rmSync(path.join(dir, 'node_modules'), { recursive: true, force: true })
+
+  await t.rejects(install(), { code: 'EINTEGRITY' },
+    'a tarball that does not match the lockfile integrity is rejected')
+})
+
 tap.test('simple peer dependencies scenarios', async t => {
   /*
    * Dependencies:

@@ -48,6 +48,8 @@ module.exports = cls => class IsolatedReifier extends cls {
     const newChild = new IsolatedNode({
       isInStore,
       inBundle,
+      // reify passes this to pacote.extract, which verifies the tarball against it
+      integrity: node.integrity,
       isRegistryDependency: node.isRegistryDependency,
       isRootDependency: node.isRootDependency,
       location,
@@ -161,6 +163,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     await this.#assignCommonProperties(node, result)
     result.optional = node.optional
     result.resolved = node.resolved
+    result.integrity = node.integrity
     result.version = node.version
     // Carry the source node's registry-dependency flag so the store node retains it.
     // IsolatedNode has no edges to recompute it from, and reify's registry-tarball allow-remote exemption depends on it.
