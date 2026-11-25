@@ -700,6 +700,97 @@ t.test('optional dependency failures', t => {
   return p
 })
 
+for (const installStrategy of ['hoisted', 'linked']) {
+  t.test(`${installStrategy} optional extraction failure keeps traversal bin paths inside the project`, async t => {
+    const sentinelName = `arborist-bin-path-sentinel-${installStrategy}`
+    const path = t.testdir({
+      'package.json': JSON.stringify({
+        optionalDependencies: {
+          '@isaacs/testing-missing-tgz': '*',
+        },
+      }),
+      'package-lock.json': JSON.stringify({
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            optionalDependencies: {
+              '@isaacs/testing-missing-tgz': '*',
+            },
+          },
+          'node_modules/@isaacs/testing-missing-tgz': {
+            version: '1.0.0',
+            resolved: `${registry}@isaacs/testing-missing-tgz/-/testing-missing-tgz-1.0.0.tgz`,
+            optional: true,
+            bin: {
+              [`../../../${sentinelName}`]: 'bin/abbrev.js',
+            },
+          },
+        },
+      }),
+    })
+    const sentinel = resolve(path, '..', sentinelName)
+    fs.mkdirSync(sentinel)
+    fs.writeFileSync(resolve(sentinel, 'keep'), 'keep')
+    t.teardown(() => fsp.rm(sentinel, { recursive: true, force: true }))
+    await reify(path, {
+      ignoreScripts: true,
+      installStrategy,
+    })
+
+    t.throws(() => fs.lstatSync(resolve(path, 'node_modules/@isaacs/testing-missing-tgz')),
+      { code: 'ENOENT' }, 'failed optional dependency is not installed')
+    t.equal(fs.readFileSync(resolve(sentinel, 'keep'), 'utf8'), 'keep',
+      'optional dependency cleanup does not remove the external sentinel')
+  })
+}
+
+t.test('linked ideal tree normalizes traversal bin paths', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: {
+        '@isaacs/this-does-not-exist-at-all': '1.0.0',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          dependencies: {
+            '@isaacs/this-does-not-exist-at-all': '1.0.0',
+          },
+        },
+        'node_modules/@isaacs/this-does-not-exist-at-all': {
+          version: '1.0.0',
+          resolved: `${registry}@isaacs/this-does-not-exist-at-all/-/this-does-not-exist-at-all-1.0.0.tgz`,
+          bin: {
+            '../../../sentinel': 'bin/abbrev.js',
+          },
+        },
+      },
+    }),
+  })
+  const arb = newArb({
+    path,
+    installStrategy: 'linked',
+    packageLockOnly: true,
+  })
+
+  await arb.buildIdealTree()
+  const isolatedTree = await arb.createIsolatedTree()
+  const target = isolatedTree.children.get(join('node_modules', '@isaacs/this-does-not-exist-at-all')).target
+  const binPath = resolve(path, 'node_modules/.bin/sentinel')
+
+  t.strictSame(target.binPaths, [
+    binPath,
+    ...(process.platform !== 'win32' ? [] : [
+      `${binPath}.cmd`,
+      `${binPath}.ps1`,
+    ]),
+  ])
+})
+
 t.test('failure to fetch prod dep is failure', t =>
   t.rejects(printReified(fixture(t, 'prod-dep-tgz-missing'))))
 
