@@ -129,6 +129,7 @@ module.exports = cls => class ActualLoader extends cls {
         // missing.
         const meta = await Shrinkwrap.load({
           path: this.#actualTree.path,
+          realpath: this.#actualTree.realpath,
           hiddenLockfile: true,
           resolveOptions: this.options,
         })
@@ -153,6 +154,7 @@ module.exports = cls => class ActualLoader extends cls {
 
       const meta = await Shrinkwrap.load({
         path: this.#actualTree.path,
+        realpath: this.#actualTree.realpath,
         lockfileVersion: this.options.lockfileVersion,
         resolveOptions: this.options,
       })

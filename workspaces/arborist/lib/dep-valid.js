@@ -8,6 +8,7 @@ const semver = require('semver')
 const npa = require('npm-package-arg')
 const { relative } = require('node:path')
 const fromPath = require('./from-path.js')
+const PathCoordinates = require('./path-coordinates.js')
 
 // A named ref (tag or branch) resolves to a commit hash, so look up the
 // committish recorded for this edge in the lockfile to detect spec changes.
@@ -150,16 +151,39 @@ const linkValid = (child, requested, requestor) => {
   }
 
   // directory must be a link to the specified folder
-  return isLink && relative(child.realpath, requested.fetchSpec) === ''
+  const root = requestor.root
+  const coordinates = root && PathCoordinates.fromRoot(root)
+  const requestedPath = root
+    ? coordinates.toFilesystem(requested.fetchSpec)
+    : requested.fetchSpec
+  return isLink && relative(child.realpath, requestedPath) === ''
 }
 
-const tarballValid = (child, requested) => {
+const tarballValid = (child, requested, requestor) => {
   if (child.isLink) {
     return false
   }
 
   if (child.resolved) {
-    return child.resolved.replace(/\\/g, '/') === `file:${requested.fetchSpec.replace(/\\/g, '/')}`
+    const root = requestor.root
+    const coordinates = root && PathCoordinates.fromRoot(root)
+    const requestedPath = root
+      ? coordinates.toFilesystem(requested.fetchSpec)
+      : requested.fetchSpec
+    let childSpec
+    try {
+      childSpec = npa(child.resolved, child.path)
+    } catch {
+      return false
+    }
+    if (childSpec.type !== 'file') {
+      return false
+    }
+    let childPath = childSpec.fetchSpec
+    if (root) {
+      childPath = coordinates.toFilesystem(childPath)
+    }
+    return childPath.replace(/\\/g, '/') === requestedPath.replace(/\\/g, '/')
   }
 
   // if we have a legacy mutated package.json file.  we can't be 100%

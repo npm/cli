@@ -1288,6 +1288,7 @@ Object {
       "devDependencies": Object {
         "foo": "*",
       },
+      "name": "root",
       "optionalDependencies": Object {
         "notinstalledhere": "",
       },
@@ -1296,7 +1297,7 @@ Object {
       },
       "version": "1.2.3",
     },
-    "../../root/node_modules/@scope/x": Object {
+    "node_modules/@scope/x": Object {
       "dependencies": Object {
         "glob": "4",
       },
@@ -1309,7 +1310,7 @@ Object {
       },
       "version": "1.2.3",
     },
-    "../../root/node_modules/@scope/x/node_modules/glob": Object {
+    "node_modules/@scope/x/node_modules/glob": Object {
       "dependencies": Object {
         "graceful-fs": "",
         "inherits": "",
@@ -1318,13 +1319,13 @@ Object {
       },
       "version": "4.0.5",
     },
-    "../../root/node_modules/@scope/x/node_modules/glob/node_modules/graceful-fs": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/graceful-fs": Object {
       "version": "3.0.2",
     },
-    "../../root/node_modules/@scope/x/node_modules/glob/node_modules/inherits": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/inherits": Object {
       "version": "2.0.1",
     },
-    "../../root/node_modules/@scope/x/node_modules/glob/node_modules/minimatch": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/minimatch": Object {
       "dependencies": Object {
         "lru-cache": "",
         "once": "",
@@ -1332,22 +1333,22 @@ Object {
       },
       "version": "1.0.0",
     },
-    "../../root/node_modules/@scope/x/node_modules/glob/node_modules/minimatch/node_modules/lru-cache": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/minimatch/node_modules/lru-cache": Object {
       "version": "2.5.0",
     },
-    "../../root/node_modules/@scope/x/node_modules/glob/node_modules/minimatch/node_modules/sigmund": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/minimatch/node_modules/sigmund": Object {
       "version": "1.0.0",
     },
-    "../../root/node_modules/@scope/x/node_modules/glob/node_modules/once": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/once": Object {
       "version": "1.3.0",
     },
-    "../../root/node_modules/@scope/y": Object {
+    "node_modules/@scope/y": Object {
       "dependencies": Object {
         "foo": "99.x",
       },
       "version": "1.2.3",
     },
-    "../../root/node_modules/foo": Object {
+    "node_modules/foo": Object {
       "dependencies": Object {
         "express": "npm:abbrev@*",
       },
@@ -1356,14 +1357,14 @@ Object {
       },
       "version": "1.2.3",
     },
-    "../../root/node_modules/foo/node_modules/express": Object {
+    "node_modules/foo/node_modules/express": Object {
       "license": "ISC",
       "name": "abbrev",
       "version": "1.1.1",
     },
   },
   "requires": true,
-  "version": "file:../../root",
+  "version": "1.2.3",
 }
 `
 
@@ -1992,6 +1993,7 @@ Object {
       "devDependencies": Object {
         "foo": "*",
       },
+      "name": "root",
       "optionalDependencies": Object {
         "notinstalledhere": "",
       },
@@ -2000,7 +2002,7 @@ Object {
       },
       "version": "1.2.3",
     },
-    "../root/node_modules/@scope/x": Object {
+    "node_modules/@scope/x": Object {
       "dependencies": Object {
         "glob": "4",
       },
@@ -2013,7 +2015,7 @@ Object {
       },
       "version": "1.2.3",
     },
-    "../root/node_modules/@scope/x/node_modules/glob": Object {
+    "node_modules/@scope/x/node_modules/glob": Object {
       "dependencies": Object {
         "graceful-fs": "",
         "inherits": "",
@@ -2022,13 +2024,13 @@ Object {
       },
       "version": "4.0.5",
     },
-    "../root/node_modules/@scope/x/node_modules/glob/node_modules/graceful-fs": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/graceful-fs": Object {
       "version": "3.0.2",
     },
-    "../root/node_modules/@scope/x/node_modules/glob/node_modules/inherits": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/inherits": Object {
       "version": "2.0.1",
     },
-    "../root/node_modules/@scope/x/node_modules/glob/node_modules/minimatch": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/minimatch": Object {
       "dependencies": Object {
         "lru-cache": "",
         "once": "",
@@ -2036,22 +2038,22 @@ Object {
       },
       "version": "1.0.0",
     },
-    "../root/node_modules/@scope/x/node_modules/glob/node_modules/minimatch/node_modules/lru-cache": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/minimatch/node_modules/lru-cache": Object {
       "version": "2.5.0",
     },
-    "../root/node_modules/@scope/x/node_modules/glob/node_modules/minimatch/node_modules/sigmund": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/minimatch/node_modules/sigmund": Object {
       "version": "1.0.0",
     },
-    "../root/node_modules/@scope/x/node_modules/glob/node_modules/once": Object {
+    "node_modules/@scope/x/node_modules/glob/node_modules/once": Object {
       "version": "1.3.0",
     },
-    "../root/node_modules/@scope/y": Object {
+    "node_modules/@scope/y": Object {
       "dependencies": Object {
         "foo": "99.x",
       },
       "version": "1.2.3",
     },
-    "../root/node_modules/foo": Object {
+    "node_modules/foo": Object {
       "dependencies": Object {
         "express": "npm:abbrev@*",
       },
@@ -2060,14 +2062,14 @@ Object {
       },
       "version": "1.2.3",
     },
-    "../root/node_modules/foo/node_modules/express": Object {
+    "node_modules/foo/node_modules/express": Object {
       "license": "ISC",
       "name": "abbrev",
       "version": "1.1.1",
     },
   },
   "requires": true,
-  "version": "file:../root",
+  "version": "1.2.3",
 }
 `
 

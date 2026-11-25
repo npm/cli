@@ -92,12 +92,13 @@ class YarnLock {
     return new YarnLock().parse(data)
   }
 
-  static fromTree (tree) {
-    return new YarnLock().fromTree(tree)
+  static fromTree (tree, coordinates) {
+    return new YarnLock().fromTree(tree, coordinates)
   }
 
   constructor () {
     this.entries = null
+    this.coordinates = null
     this.endCurrent()
   }
 
@@ -207,8 +208,9 @@ class YarnLock {
       .sort((a, b) => localeCompare(a.replace(/"/g, ''), b.replace(/"/g, ''))).join('\n\n') + '\n'
   }
 
-  fromTree (tree) {
+  fromTree (tree, coordinates) {
     this.entries = new Map()
+    this.coordinates = coordinates
     // walk the tree in a deterministic order, breadth-first, alphabetical
     breadth({
       tree,
@@ -328,6 +330,13 @@ class YarnLock {
         node.root.path,
         true
       )
+      if (this.coordinates) {
+        n.resolved = this.coordinates.toLockfileSpec(
+          node.resolved,
+          node.isLink ? dirname(node.path) : node.path,
+          n.resolved
+        )
+      }
     }
     if (node.integrity) {
       n.integrity = node.integrity

@@ -63,6 +63,9 @@ t.test('break some stuff', t => {
   // oops...
   Map.prototype.set.call(tree.inventory, 'xyz', disowned)
   t.equal(treeCheck(tree, false), tree, 'unreachable allowed')
+  tree[Symbol.for('Arborist.Node.allowUnreachable')] = true
+  t.equal(treeCheck(tree), tree, 'unreachable allowed during atomic adoption')
+  delete tree[Symbol.for('Arborist.Node.allowUnreachable')]
   t.throws(() => treeCheck(tree), {
     message: 'unreachable in inventory',
     node: resolve('/some/path/node_modules/disowned'),

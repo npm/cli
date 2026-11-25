@@ -47,6 +47,63 @@ t.formatSnapshot = tree => format(defixture(printTree(tree)), { sort: true })
 const loadActual = (path, opts) =>
   new Arborist({ path, ...opts }).loadActual(opts)
 
+t.test('v1 migration uses the canonical root for loadActual', async t => {
+  const path = t.testdir({
+    repo: {
+      packages: {
+        project: {
+          node_modules: {
+            dep: {
+              'package.json': JSON.stringify({
+                name: 'dep',
+                version: '1.0.0',
+              }),
+            },
+          },
+        },
+      },
+    },
+    shortcuts: {},
+  })
+  const actual = resolve(path, 'repo/packages/project')
+  const logical = resolve(path, 'shortcuts/project')
+  const tarball = resolve(actual, 'dep.tgz')
+  fs.symlinkSync(actual, logical)
+  fs.writeFileSync(tarball, '')
+  fs.writeFileSync(resolve(actual, 'package.json'), JSON.stringify({
+    name: 'root',
+    version: '1.0.0',
+    dependencies: {
+      dep: `file:${tarball}`,
+    },
+  }))
+  fs.writeFileSync(resolve(actual, 'package-lock.json'), JSON.stringify({
+    name: 'root',
+    version: '1.0.0',
+    lockfileVersion: 1,
+    requires: true,
+    dependencies: {
+      dep: {
+        version: `file:${tarball}`,
+      },
+    },
+  }))
+  fs.writeFileSync(resolve(actual, 'node_modules/dep/package.json'),
+    JSON.stringify({
+      name: 'dep',
+      version: '1.0.0',
+      _resolved: `file:${tarball}`,
+    }))
+
+  const tree = await loadActual(logical, { forceActual: true })
+
+  t.equal(tree.meta.data.packages['node_modules/dep'].resolved, 'file:dep.tgz',
+    'v1 metadata is serialized from the canonical root')
+  await new Arborist({ path: logical }).loadVirtual({ root: tree })
+  t.equal(tree.target.edgesOut.get('dep').valid, true,
+    'the migrated tarball edge hydrates from the canonical root')
+})
+
 roots.forEach(path => {
   const dir = resolve(fixtures, path)
   t.test(path, t => loadActual(dir).then(tree =>

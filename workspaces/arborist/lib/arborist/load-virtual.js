@@ -1,19 +1,20 @@
-const { resolve } = require('node:path')
 // mixin providing the loadVirtual method
 const mapWorkspaces = require('@npmcli/map-workspaces')
 const PackageJson = require('@npmcli/package-json')
 const nameFromFolder = require('@npmcli/name-from-folder')
-
 const consistentResolve = require('../consistent-resolve.js')
 const Shrinkwrap = require('../shrinkwrap.js')
 const Node = require('../node.js')
 const Link = require('../link.js')
-const relpath = require('../relpath.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const treeCheck = require('../tree-check.js')
+const realpath = require('../realpath.js')
 
 const flagsSuspect = Symbol.for('flagsSuspect')
 const setWorkspaces = Symbol.for('setWorkspaces')
+const realpathCache = Symbol.for('realpathCache')
+const statCache = Symbol.for('statCache')
+const allowUnreachable = Symbol.for('Arborist.Node.allowUnreachable')
 
 module.exports = cls => class VirtualLoader extends cls {
   #rootOptionProvided
@@ -33,8 +34,10 @@ module.exports = cls => class VirtualLoader extends cls {
       return treeCheck(this.virtualTree)
     }
 
+    const rootRealpath = await realpath(this.path, this[realpathCache], this[statCache])
     const s = await Shrinkwrap.load({
       path: this.path,
+      realpath: rootRealpath,
       lockfileVersion: this.options.lockfileVersion,
       resolveOptions: this.options,
     })
@@ -47,9 +50,8 @@ module.exports = cls => class VirtualLoader extends cls {
     // otherwise, load it from the root package json or the lockfile
     const pkg = await PackageJson.normalize(this.path).then(p => p.content).catch(() => s.data.packages[''] || {})
     // TODO clean this up
-    const {
-      root = await this[setWorkspaces](this.#loadNode('', pkg, true)),
-    } = options
+    const root = options.root ||
+      await this[setWorkspaces](this.#loadNode('', pkg, true, s))
     this.#rootOptionProvided = options.root
 
     await this.#loadFromShrinkwrap(s, root)
@@ -58,6 +60,7 @@ module.exports = cls => class VirtualLoader extends cls {
   }
 
   async #loadFromShrinkwrap (s, root) {
+    s.setRoot(root)
     if (!this.#rootOptionProvided) {
       // root is never any of these things, but might be a brand new
       // baby Node object that never had its dep flags calculated.
@@ -81,10 +84,11 @@ module.exports = cls => class VirtualLoader extends cls {
       if (meta.link) {
         links.set(location, meta)
       } else {
-        nodes.set(location, this.#loadNode(location, meta))
+        nodes.set(location, this.#loadNode(location, meta, false, s))
       }
     }
-    await this.#resolveLinks(links, nodes)
+    const externalNodes = this.#externalNodes(nodes, s)
+    await this.#resolveLinks(links, nodes, externalNodes, s)
     if (!(s.originalLockfileVersion >= 2)) {
       this.#assignBundles(nodes)
     }
@@ -136,7 +140,7 @@ module.exports = cls => class VirtualLoader extends cls {
 
     const lockWS = {}
     const workspaces = mapWorkspaces.virtual({
-      cwd: this.path,
+      cwd: root.path,
       lockfile: s.data,
     })
 
@@ -169,11 +173,12 @@ module.exports = cls => class VirtualLoader extends cls {
   // links is the set of metadata, and nodes is the map of non-Link nodes
   // Set the targets to nodes in the set, if we have them (we might not)
   // XXX build-ideal-tree also has a #resolveLinks, is there overlap?
-  async #resolveLinks (links, nodes) {
+  async #resolveLinks (links, nodes, externalNodes, s) {
+    const entries = []
     for (const [location, meta] of links.entries()) {
-      const targetPath = resolve(this.path, meta.resolved)
-      const targetLoc = relpath(this.path, targetPath)
-      const target = nodes.get(targetLoc)
+      const targetLoc = s.coordinates.toLockfile(
+        s.coordinates.toFilesystem(meta.resolved))
+      const target = nodes.get(targetLoc)?.target
 
       if (!target) {
         const err = new Error(
@@ -186,16 +191,44 @@ To fix:
         throw err
       }
 
-      const link = this.#loadLink(location, targetLoc, target, meta)
-      nodes.set(location, link)
-      nodes.set(targetLoc, link.target)
-
-      // we always need to read the package.json for link targets
-      // outside node_modules because they can be changed by the local user
-      if (!link.target.parent) {
-        await PackageJson.normalize(link.realpath).then(p => link.target.package = p.content).catch(() => null)
-      }
+      entries.push({ location, targetLoc, target })
     }
+
+    this.virtualTree[allowUnreachable] = true
+    try {
+      for (const node of externalNodes) {
+        node.root = this.virtualTree
+      }
+      for (const entry of entries) {
+        await this.#resolveLink(entry, nodes, s)
+      }
+    } finally {
+      delete this.virtualTree[allowUnreachable]
+    }
+    treeCheck(this.virtualTree)
+  }
+
+  async #resolveLink ({ location, targetLoc, target }, nodes, s) {
+    const link = this.#loadLink(location, targetLoc, target, s)
+    nodes.set(location, link)
+    nodes.set(targetLoc, link.target)
+
+    // we always need to read the package.json for link targets
+    // outside node_modules because they can be changed by the local user
+    if (!link.target.parent) {
+      await PackageJson.normalize(link.realpath).then(p => link.target.package = p.content).catch(() => null)
+    }
+  }
+
+  #externalNodes (nodes, s) {
+    const external = []
+    for (const [location, node] of nodes.entries()) {
+      if (!location || s.coordinates.isInternal(location)) {
+        continue
+      }
+      external.push(node)
+    }
+    return external.sort((a, b) => a.path.length - b.path.length)
   }
 
   #assignBundles (nodes) {
@@ -227,9 +260,9 @@ To fix:
     }
   }
 
-  #loadNode (location, sw, loadOverrides) {
-    const p = this.virtualTree ? this.virtualTree.realpath : this.path
-    const path = resolve(p, location)
+  #loadNode (location, sw, loadOverrides, s) {
+    const path = s.coordinates.toFilesystem(location)
+    const external = location && !s.coordinates.isInternal(location)
     // shrinkwrap doesn't include package name unless necessary
     if (!sw.name) {
       sw.name = nameFromFolder(path)
@@ -238,14 +271,14 @@ To fix:
     const node = new Node({
       installLinks: this.installLinks,
       legacyPeerDeps: this.legacyPeerDeps,
-      root: this.virtualTree,
+      root: external ? undefined : this.virtualTree?.target,
       path,
       realpath: path,
       integrity: sw.integrity,
       patched: sw.patched,
       packageExtensionsApplied: sw.packageExtensionsApplied,
       npmExtensionApplied: sw.npmExtensionApplied,
-      resolved: consistentResolve(sw.resolved, this.path, path),
+      resolved: this.#resolvePath(sw.resolved, path, s),
       pkg: sw,
       loadOverrides,
       // cast to boolean because they're undefined in the lock file when false
@@ -259,13 +292,23 @@ To fix:
     return node
   }
 
-  #loadLink (location, targetLoc, target) {
-    const path = resolve(this.path, location)
+  #resolvePath (resolved, path, s) {
+    const normalized = consistentResolve(
+      resolved,
+      s.coordinates.canonicalRoot,
+      path
+    )
+    return s.coordinates.toFilesystemSpec(normalized)
+  }
+
+  #loadLink (location, targetLoc, target, s) {
+    const path = s.coordinates.toFilesystem(location)
     const link = new Link({
       installLinks: this.installLinks,
       legacyPeerDeps: this.legacyPeerDeps,
+      root: this.virtualTree,
       path,
-      realpath: resolve(this.path, targetLoc),
+      realpath: s.coordinates.toFilesystem(targetLoc),
       target,
       pkg: target && target.package,
     })

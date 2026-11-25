@@ -1730,6 +1730,7 @@ t.test('shrinkwrap where root is a link node', async t => {
     requires: true,
     packages: {
       '': {
+        name: 'path',
         version: '1.2.3',
         dependencies: {
           kid: '',
@@ -1745,6 +1746,762 @@ t.test('shrinkwrap where root is a link node', async t => {
     version: '1.2.3',
     extraneous: true,
   })
+})
+
+t.test('targetless root link metadata during transplant', async t => {
+  const meta = await Shrinkwrap.reset({ path: '/some/link/path' })
+  const root = new Link({
+    path: '/some/link/path',
+    realpath: '/actual/project/path',
+    pkg: {
+      name: 'path',
+      version: '1.2.3',
+    },
+  })
+  const target = root.target
+
+  root.target = null
+  t.doesNotThrow(() => root.meta = meta,
+    'metadata can attach while a transplanted root link has no target')
+  t.equal(meta.tree, root, 'the targetless link remains the metadata tree')
+  t.equal(target.path, resolve('/actual/project/path'),
+    'the detached target remains available for the transplant')
+
+  root.target = target
+  t.equal(meta.tree, target,
+    'restoring the target makes it the metadata tree')
+
+  const replacement = new Node({
+    path: '/replacement/project/path',
+    pkg: {
+      name: 'replacement',
+      version: '2.0.0',
+    },
+  })
+  root.target = replacement
+  t.equal(meta.tree, replacement,
+    'replacing the target updates the metadata tree')
+  t.match(meta.commit().packages[''], {
+    name: 'replacement',
+    version: '2.0.0',
+  }, 'commit serializes the replacement target')
+})
+
+t.test('shrinkwrap coordinates for a filesystem symlink root', async t => {
+  const path = t.testdir({
+    actual: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.2.3',
+        dependencies: {
+          foo: '1.0.0',
+          tarball: 'file:tarballs/tarball.tgz',
+          workspace: 'file:packages/workspace',
+        },
+      }),
+      node_modules: {
+        foo: {
+          'package.json': JSON.stringify({
+            name: 'foo',
+            version: '1.0.0',
+          }),
+        },
+        tarball: {
+          'package.json': JSON.stringify({
+            name: 'tarball',
+            version: '3.0.0',
+          }),
+        },
+        workspace: t.fixture('symlink', '../packages/workspace'),
+      },
+      packages: {
+        workspace: {
+          'package.json': JSON.stringify({
+            name: 'workspace',
+            version: '2.0.0',
+          }),
+        },
+      },
+      tarballs: {
+        'tarball.tgz': '',
+      },
+    },
+    project: t.fixture('symlink', 'actual'),
+  })
+  const logical = resolve(path, 'project')
+  const tree = await new Arborist({ path: logical }).loadActual({
+    forceActual: true,
+  })
+  const actual = tree.target.path
+  const foo = tree.inventory.get('node_modules/foo')
+  const tarball = tree.inventory.get('node_modules/tarball')
+  tarball.package._requested = {
+    saveSpec: 'file:tarballs/tarball.tgz',
+  }
+  tree.meta.yarnLock = YarnLock.parse(
+    'tarball@file:tarballs/tarball.tgz:\n' +
+    '  version "3.0.0"\n' +
+    '  resolved "file:tarballs/tarball.tgz"\n' +
+    '  integrity sha512-tarball\n'
+  )
+  tree.meta.addEdge(tree.target.edgesOut.get('tarball'))
+  t.equal(tarball.resolved,
+    `file:${resolve(actual, 'tarballs/tarball.tgz')}`,
+    'Yarn file resolution restores to the canonical path')
+  t.equal(tarball.integrity, 'sha512-tarball',
+    'Yarn metadata matches canonical file coordinates')
+
+  t.equal(tree.path, logical, 'tree retains the configured logical path')
+  t.equal(tree.isLink, true, 'filesystem symlink root is represented as a Link')
+  t.equal(foo.path, resolve(actual, 'node_modules/foo'),
+    'descendants use canonical filesystem paths')
+
+  const committed = tree.meta.commit()
+  t.strictSame(Object.keys(committed.packages).sort(), [
+    '',
+    'node_modules/foo',
+    'node_modules/tarball',
+    'node_modules/workspace',
+    'packages/workspace',
+  ],
+  'lockfile keys remain relative to the logical project path')
+  t.strictSame(committed.packages[''], {
+    name: 'root',
+    version: '1.2.3',
+    dependencies: {
+      foo: '1.0.0',
+      tarball: 'file:tarballs/tarball.tgz',
+      workspace: 'file:packages/workspace',
+    },
+  }, 'root metadata comes from the live target node')
+  t.equal(committed.version, '1.2.3',
+    'legacy root version is not treated as a package-name alias')
+  t.strictSame(committed.packages['node_modules/foo'], {
+    version: '1.0.0',
+  }, 'child metadata is stored at its logical lockfile location')
+  t.strictSame(committed.packages['node_modules/tarball'], {
+    version: '3.0.0',
+    resolved: 'file:tarballs/tarball.tgz',
+    integrity: 'sha512-tarball',
+  }, 'in-root file resolved paths use stable root-relative coordinates')
+  t.match(tree.meta.yarnLock.toString(),
+    'resolved "file:tarballs/tarball.tgz"',
+    'Yarn serialization uses logical root coordinates')
+  t.strictSame(committed.packages['node_modules/workspace'], {
+    resolved: 'packages/workspace',
+    link: true,
+  }, 'linked project metadata uses a logical target location')
+  t.match(committed.packages['packages/workspace'], {
+    version: '2.0.0',
+  }, 'linked project target uses its logical lockfile location')
+
+  const rootMeta = tree.meta.get('')
+  const fooMeta = tree.meta.get('node_modules/foo')
+  t.equal(tree.meta.get(logical), rootMeta,
+    'absolute logical root lookup matches the relative root lookup')
+  t.equal(tree.meta.get(actual), rootMeta,
+    'absolute real root lookup matches the relative root lookup')
+  t.equal(tree.meta.get(resolve(logical, 'node_modules/foo')), fooMeta,
+    'absolute logical child lookup matches the relative child lookup')
+  t.equal(tree.meta.get(foo.path), fooMeta,
+    'absolute real child lookup matches the relative child lookup')
+
+  tree.meta.delete(foo.path)
+  t.strictSame(tree.meta.get('node_modules/foo'), {},
+    'delete accepts an absolute real path')
+  tree.meta.add(foo)
+  t.strictSame(tree.meta.get('node_modules/foo'), {
+    version: '1.0.0',
+  }, 'add and get use the same logical location')
+  t.strictSame(tree.meta.get(foo.path), {
+    version: '1.0.0',
+  }, 'added metadata is also available by absolute real path')
+
+  const root = new Link({
+    path: logical,
+    realpath: actual,
+    pkg: tree.package,
+  })
+  root.meta = tree.meta
+  const virtual = await new Arborist({ path: logical }).loadVirtual({ root })
+  t.equal(virtual.target.edgesOut.get('tarball').valid, true,
+    'local tarball edge remains valid after virtual reload')
+  t.equal(virtual.target.edgesOut.get('workspace').valid, true,
+    'linked dependency remains valid after virtual reload')
+  t.equal(virtual.target.children.get('workspace').path,
+    resolve(actual, 'node_modules/workspace'),
+    'linked dependency hydrates under the canonical root target')
+})
+
+t.test('virtual coordinates for external and root backlink links', async t => {
+  const path = t.testdir({
+    repo: {
+      project: {
+        'package.json': JSON.stringify({
+          name: 'root',
+          version: '1.0.0',
+          dependencies: {
+            external: 'file:../shared',
+            tarball: 'file:../shared/dep.tgz',
+          },
+        }),
+        'package-lock.json': JSON.stringify({
+          name: 'root',
+          version: '1.0.0',
+          lockfileVersion: 3,
+          requires: true,
+          packages: {
+            '': {
+              name: 'root',
+              version: '1.0.0',
+              dependencies: {
+                external: 'file:../shared',
+                tarball: 'file:../shared/dep.tgz',
+              },
+            },
+            'node_modules/external': {
+              resolved: '../shared',
+              link: true,
+            },
+            '../shared': {
+              name: 'external',
+              version: '1.0.0',
+              dependencies: {
+                dep: '1.0.0',
+              },
+            },
+            '../shared/node_modules/dep': {
+              name: 'dep',
+              version: '1.0.0',
+            },
+            'node_modules/tarball': {
+              name: 'tarball',
+              version: '1.0.0',
+              resolved: 'file:../shared/dep.tgz',
+            },
+          },
+        }),
+      },
+      shared: {
+        'dep.tgz': '',
+        'package.json': JSON.stringify({
+          name: 'external',
+          version: '1.0.0',
+          dependencies: {
+            dep: '1.0.0',
+          },
+        }),
+        node_modules: {
+          dep: {
+            'package.json': JSON.stringify({
+              name: 'dep',
+              version: '1.0.0',
+            }),
+          },
+        },
+      },
+    },
+    shortcuts: {},
+  })
+  const actual = resolve(path, 'repo/project')
+  const logical = resolve(path, 'shortcuts/project')
+  fs.symlinkSync(actual, logical)
+
+  const virtual = await new Arborist({ path: logical }).loadVirtual()
+  t.equal(virtual.isLink, false,
+    'standalone virtual load preserves its Node root shape')
+  t.equal(virtual.path, actual,
+    'standalone virtual load uses the canonical root path')
+  t.equal(virtual.realpath, actual,
+    'standalone virtual load discovers the canonical root before hydration')
+  t.equal(virtual.meta.path, logical,
+    'lockfile metadata retains the configured logical root')
+  t.equal(virtual.edgesOut.get('external').valid, true,
+    'external directory dependency remains valid')
+  t.equal(virtual.edgesOut.get('external').to.realpath,
+    resolve(path, 'repo/shared'),
+    'external directory resolves from the canonical root')
+  t.equal(
+    virtual.edgesOut.get('external').to.target.edgesOut.get('dep').to.path,
+    resolve(path, 'repo/shared/node_modules/dep'),
+    'external subtree parentage survives shared inventory attachment'
+  )
+  t.equal(virtual.edgesOut.get('tarball').valid, true,
+    'external tarball dependency remains valid')
+  t.equal(virtual.edgesOut.get('tarball').to.resolved,
+    `file:${resolve(path, 'repo/shared/dep.tgz')}`,
+    'external tarball resolves from the canonical root')
+  t.ok(virtual.inventory.get('../shared/node_modules/dep'),
+    'nested external dependency joins the shared inventory')
+  t.ok(virtual.meta.commit().packages['../shared/node_modules/dep'],
+    'committing preserves nested external lockfile entries')
+})
+
+t.test('virtual loading attaches complete external groups', async t => {
+  const path = t.testdir({
+    project: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        dependencies: {
+          external: 'file:../i/j',
+        },
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        packages: {
+          '': {
+            name: 'root',
+            version: '1.0.0',
+            dependencies: {
+              external: 'file:../i/j',
+            },
+          },
+          'node_modules/external': {
+            resolved: '../i/j',
+            link: true,
+          },
+          '../i': {},
+          '../i/j': {
+            name: 'external',
+            version: '1.0.0',
+            dependencies: {
+              hoisted: '1.0.0',
+            },
+          },
+          '../i/node_modules/hoisted': {
+            name: 'hoisted',
+            version: '1.0.0',
+          },
+        },
+      }),
+    },
+    i: {
+      j: {
+        'package.json': JSON.stringify({
+          name: 'external',
+          version: '1.0.0',
+          dependencies: {
+            hoisted: '1.0.0',
+          },
+        }),
+      },
+      node_modules: {
+        hoisted: {
+          'package.json': JSON.stringify({
+            name: 'hoisted',
+            version: '1.0.0',
+          }),
+        },
+      },
+    },
+  })
+  const virtual = await new Arborist({
+    path: resolve(path, 'project'),
+  }).loadVirtual()
+  const external = virtual.edgesOut.get('external').to.target
+
+  t.equal(external.edgesOut.get('hoisted').to.location,
+    '../i/node_modules/hoisted',
+    'linked external package retains its hoisted dependency')
+  t.ok(virtual.meta.commit().packages['../i/node_modules/hoisted'],
+    'commit preserves the complete referenced external group')
+})
+
+t.test('virtual loading adopts all external nodes before links', async t => {
+  const path = t.testdir({
+    parent: {
+      'package.json': JSON.stringify({
+        name: 'external',
+        version: '1.0.0',
+        dependencies: {
+          dep: '1.0.0',
+        },
+      }),
+      node_modules: {
+        dep: {
+          'package.json': JSON.stringify({
+            name: 'dep',
+            version: '1.0.0',
+          }),
+        },
+      },
+      project: {
+        'package.json': JSON.stringify({
+          name: 'root',
+          version: '1.0.0',
+          dependencies: {
+            external: 'file:..',
+          },
+        }),
+        'package-lock.json': JSON.stringify({
+          name: 'root',
+          version: '1.0.0',
+          lockfileVersion: 3,
+          packages: {
+            '': {
+              name: 'root',
+              version: '1.0.0',
+              dependencies: {
+                external: 'file:..',
+              },
+            },
+            'node_modules/external': {
+              resolved: '..',
+              link: true,
+            },
+            '..': {
+              name: 'external',
+              version: '1.0.0',
+              dependencies: {
+                dep: '1.0.0',
+              },
+            },
+            '../node_modules/dep': {
+              name: 'dep',
+              version: '1.0.0',
+            },
+            '../orphan': {
+              name: 'orphan',
+              version: '1.0.0',
+            },
+          },
+        }),
+      },
+    },
+  })
+  const virtual = await new Arborist({
+    path: resolve(path, 'parent/project'),
+  }).loadVirtual()
+  const external = virtual.edgesOut.get('external').to.target
+  const committed = virtual.meta.commit().packages
+
+  t.equal(external.edgesOut.get('dep').to.location, '../node_modules/dep',
+    'file:.. target retains its hoisted dependency')
+  t.ok(virtual.inventory.get('../orphan'),
+    'unlinked external entries join the shared inventory')
+  t.ok(committed['../node_modules/dep'],
+    'commit preserves the hoisted dependency')
+  t.ok(committed['../orphan'],
+    'commit preserves unlinked external entries')
+})
+
+t.test('v1 absolute file coordinates under a symlink root', async t => {
+  const path = t.testdir({
+    repo: {
+      project: {
+        'package.json': JSON.stringify({
+          name: 'root',
+          version: '1.0.0',
+        }),
+      },
+      shared: {
+        'package.json': JSON.stringify({
+          name: 'shared',
+          version: '1.0.0',
+        }),
+        'shared.tgz': '',
+      },
+    },
+    shortcuts: {},
+  })
+  const actual = resolve(path, 'repo/project')
+  const logical = resolve(path, 'shortcuts/project')
+  const shared = resolve(path, 'repo/shared')
+  fs.symlinkSync(actual, logical)
+  fs.writeFileSync(resolve(actual, 'package.json'), JSON.stringify({
+    name: 'root',
+    version: '1.0.0',
+    dependencies: {
+      directory: `file:${shared}`,
+      tarball: `file:${resolve(shared, 'shared.tgz')}`,
+    },
+  }))
+  fs.writeFileSync(resolve(actual, 'package-lock.json'), JSON.stringify({
+    name: 'root',
+    version: '1.0.0',
+    lockfileVersion: 1,
+    requires: true,
+    dependencies: {
+      directory: {
+        version: `file:${shared}`,
+      },
+      tarball: {
+        version: `file:${resolve(shared, 'shared.tgz')}`,
+      },
+    },
+  }))
+
+  const virtual = await new Arborist({ path: logical }).loadVirtual()
+  t.equal(virtual.edgesOut.get('directory').to.realpath, shared,
+    'absolute directory dependency hydrates at its canonical path')
+  t.equal(virtual.edgesOut.get('tarball').to.resolved,
+    `file:${resolve(shared, 'shared.tgz')}`,
+    'absolute tarball dependency hydrates at its canonical path')
+})
+
+t.test('standalone workspace comparison uses the canonical root', async t => {
+  const path = t.testdir({
+    actual: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        workspaces: ['packages/*'],
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        packages: {
+          '': {
+            name: 'root',
+            version: '1.0.0',
+            workspaces: ['packages/*'],
+          },
+          'node_modules/workspace': {
+            resolved: 'packages/workspace',
+            link: true,
+          },
+          'packages/workspace': {
+            name: 'workspace',
+            version: '1.0.0',
+          },
+        },
+      }),
+      packages: {
+        workspace: {
+          'package.json': JSON.stringify({
+            name: 'workspace',
+            version: '1.0.0',
+          }),
+        },
+      },
+    },
+    project: t.fixture('symlink', 'actual'),
+  })
+  const arb = new Arborist({ path: resolve(path, 'project') })
+  await arb.loadVirtual()
+
+  t.notOk(arb[Symbol.for('flagsSuspect')],
+    'unchanged workspace edges do not trigger dependency flag recalculation')
+})
+
+t.test('standalone symlink root preserves the root package name', async t => {
+  const path = t.testdir({
+    root: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        packages: {
+          '': {
+            name: 'root',
+            version: '1.0.0',
+          },
+        },
+      }),
+    },
+    project: t.fixture('symlink', 'root'),
+  })
+  const virtual = await new Arborist({
+    path: resolve(path, 'project'),
+  }).loadVirtual()
+
+  t.equal(virtual.meta.commit().packages[''].name, 'root',
+    'root metadata includes the package name when it matches the canonical directory')
+})
+
+t.test('virtual root backlink uses the canonical target', async t => {
+  const path = t.testdir({
+    actual: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        dependencies: {
+          self: 'file:.',
+        },
+      }),
+      'package-lock.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            name: 'root',
+            version: '1.0.0',
+            dependencies: {
+              self: 'file:.',
+            },
+          },
+          'node_modules/self': {
+            resolved: '',
+            link: true,
+          },
+        },
+      }),
+    },
+    project: t.fixture('symlink', 'actual'),
+  })
+  const actual = resolve(path, 'actual')
+  const logical = resolve(path, 'project')
+  const meta = await Shrinkwrap.load({ path: logical })
+  const root = new Link({
+    path: logical,
+    realpath: actual,
+    pkg: JSON.parse(fs.readFileSync(resolve(actual, 'package.json'))),
+  })
+  root.meta = meta
+  const virtual = await new Arborist({ path: logical }).loadVirtual({ root })
+
+  const self = virtual.target.edgesOut.get('self')
+  t.equal(self.valid, true, 'root backlink remains valid')
+  t.equal(self.to.target, virtual.target,
+    'root backlink resolves to the canonical target')
+})
+
+t.test('hidden lockfile coordinates for a symlink root', async t => {
+  const path = t.testdir({
+    actual: {
+      'package.json': JSON.stringify({
+        name: 'root',
+        version: '1.0.0',
+        dependencies: {
+          absolute: 'file:packages/absolute',
+          external: 'file:../shared',
+          relative: 'file:packages/relative',
+        },
+      }),
+      node_modules: {
+        external: t.fixture('symlink', '../../shared'),
+        relative: t.fixture('symlink', '../packages/relative'),
+      },
+      packages: {
+        absolute: {
+          'package.json': JSON.stringify({
+            name: 'absolute',
+            version: '1.0.0',
+          }),
+        },
+        relative: {
+          'package.json': JSON.stringify({
+            name: 'relative',
+            version: '1.0.0',
+          }),
+        },
+      },
+    },
+    shared: {
+      'package.json': JSON.stringify({
+        name: 'external',
+        version: '1.0.0',
+      }),
+    },
+    project: t.fixture('symlink', 'actual'),
+  })
+  fs.symlinkSync(
+    resolve(path, 'actual/packages/absolute'),
+    resolve(path, 'actual/node_modules/absolute')
+  )
+  const logical = resolve(path, 'project')
+  const tree = await new Arborist({ path: logical }).loadActual({
+    forceActual: true,
+  })
+  const meta = await Shrinkwrap.reset({
+    path: logical,
+    hiddenLockfile: true,
+  })
+  tree.meta = meta
+  await meta.save()
+
+  const loaded = await Shrinkwrap.load({
+    path: logical,
+    hiddenLockfile: true,
+  })
+  t.equal(loaded.loadedFromDisk, true,
+    'fresh hidden lockfile is accepted through the symlink root')
+})
+
+t.test('Yarn restoration only translates file specs', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      version: '1.0.0',
+    }),
+  })
+  const sw = await Shrinkwrap.load({ path })
+  sw.yarnLock = YarnLock.parse(
+    'dep@git+file:/repo/pkg:\n' +
+    '  version "1.0.0"\n' +
+    '  resolved "git+file:/repo/pkg"\n' +
+    '  integrity sha512-git\n'
+  )
+  const node = {
+    name: 'dep',
+    version: '1.0.0',
+    resolved: 'git+file:/repo/pkg',
+    integrity: null,
+    path: resolve(path, 'node_modules/dep'),
+  }
+  sw.addEdge({
+    valid: true,
+    to: node,
+    spec: 'git+file:/repo/pkg',
+  })
+  t.equal(node.integrity, 'sha512-git',
+    'git+file resolution remains eligible for matching Yarn metadata')
+  t.equal(node.resolved, 'git+file:/repo/pkg',
+    'git+file resolution is not treated as a local file path')
+})
+
+t.test('Yarn file restoration resolves from the canonical root', async t => {
+  const path = t.testdir({
+    repo: {
+      project: {
+        'package.json': JSON.stringify({
+          name: 'root',
+          version: '1.0.0',
+        }),
+      },
+      shared: {
+        'dep.tgz': '',
+      },
+    },
+    shortcuts: {},
+  })
+  const actual = resolve(path, 'repo/project')
+  const logical = resolve(path, 'shortcuts/project')
+  fs.symlinkSync(actual, logical)
+  const sw = await Shrinkwrap.load({
+    path: logical,
+    realpath: actual,
+  })
+  sw.yarnLock = YarnLock.parse(
+    'dep@file:../shared/dep.tgz:\n' +
+    '  version "1.0.0"\n' +
+    '  resolved "file:../shared/dep.tgz"\n'
+  )
+  const node = {
+    name: 'dep',
+    version: '1.0.0',
+    resolved: null,
+    integrity: null,
+    path: resolve(actual, 'node_modules/dep'),
+  }
+  sw.addEdge({
+    valid: true,
+    to: node,
+    spec: 'file:../shared/dep.tgz',
+  })
+
+  t.equal(node.resolved, `file:${resolve(path, 'repo/shared/dep.tgz')}`,
+    'relative Yarn file entries use the canonical project as their base')
 })
 
 t.test('ignore npm-shrinkwrap.json even when package-lock.json is also present', async t => {

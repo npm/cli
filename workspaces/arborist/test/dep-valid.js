@@ -101,9 +101,57 @@ t.test('basic', t => {
     resolved: `file:${resolve('/path/to/tarball.tgz')}`,
   }, resolve('/path/to/tarball.tgz'), null, emptyRequestor), 'same tarball')
 
+  const logical = resolve('/logical/project')
+  const actual = resolve('/actual/project')
+  t.ok(depValid({
+    resolved: `file:${resolve(actual, 'tarball.tgz')}`,
+  }, `file:${resolve(logical, 'tarball.tgz')}`, null, {
+    edgesOut: new Map(),
+    root: {
+      path: logical,
+      realpath: actual,
+    },
+  }), 'absolute logical tarball path matches canonical resolution')
+
+  t.ok(depValid({
+    resolved: `file:${resolve(logical, 'tarball.tgz')}`,
+  }, `file:${resolve(actual, 'tarball.tgz')}`, null, {
+    edgesOut: new Map(),
+    root: {
+      path: logical,
+      realpath: actual,
+    },
+  }), 'logical fetched tarball resolution matches canonical request')
+
+  t.ok(depValid({
+    isLink: true,
+    realpath: resolve(actual, 'packages/workspace'),
+  }, `file:${resolve(logical, 'packages/workspace')}`, null, {
+    edgesOut: new Map(),
+    root: {
+      path: logical,
+      realpath: actual,
+    },
+  }), 'absolute logical directory request matches canonical link target')
+
   t.notOk(depValid({
     resolved: 'file:/path/to/other/tarball.tgz',
   }, '/path/to/tarball.tgz', null, emptyRequestor), 'different tarball')
+
+  t.notOk(depValid({
+    resolved: 'github:npm/cli',
+  }, '/path/to/tarball.tgz', null, emptyRequestor),
+  'non-file resolution does not match a tarball request')
+
+  t.notOk(depValid({
+    resolved: 'file:\u0000',
+  }, '/path/to/tarball.tgz', null, emptyRequestor),
+  'malformed resolution does not match a tarball request')
+
+  t.notOk(depValid({
+    resolved: {},
+  }, '/path/to/tarball.tgz', null, emptyRequestor),
+  'non-string resolution does not match a tarball request')
 
   t.notOk(depValid({
     isLink: true,

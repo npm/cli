@@ -44,6 +44,7 @@ const {
   readFile,
   readdir,
   readlink,
+  realpath: fsRealpath,
   rm,
   stat,
   writeFile,
@@ -58,6 +59,7 @@ const parseJSON = require('parse-conflict-json')
 const nameFromFolder = require('@npmcli/name-from-folder')
 
 const stringify = require('json-stringify-nice')
+const PathCoordinates = require('./path-coordinates.js')
 const swKeyOrder = [
   'name',
   'version',
@@ -134,17 +136,18 @@ const metaFieldFromPkg = (pkg, key) => {
 }
 
 // check to make sure that there are no packages newer than or missing from the hidden lockfile
-const assertNoNewer = async (path, data, lockTime, dir, seen) => {
+const assertNoNewer = async (coordinates, data, lockTime, dir, seen) => {
+  const { canonicalRoot } = coordinates
   const base = basename(dir)
-  const isNM = dir !== path && base === 'node_modules'
-  const isScope = dir !== path && base.startsWith('@')
-  const isParent = (dir === path) || isNM || isScope
+  const isNM = dir !== canonicalRoot && base === 'node_modules'
+  const isScope = dir !== canonicalRoot && base.startsWith('@')
+  const isParent = (dir === canonicalRoot) || isNM || isScope
 
   const parent = isParent ? dir : resolve(dir, 'node_modules')
-  const rel = relpath(path, dir)
+  const rel = coordinates.toLockfile(dir)
   seen.add(rel)
   let entries
-  if (dir === path) {
+  if (dir === canonicalRoot) {
     entries = [{ name: 'node_modules', isDirectory: () => true }]
   } else {
     const { mtime: dirTime } = await stat(dir)
@@ -161,20 +164,20 @@ const assertNoNewer = async (path, data, lockTime, dir, seen) => {
   await Promise.all(entries.map(async dirent => {
     const child = resolve(parent, dirent.name)
     if (dirent.isDirectory() && !dirent.name.startsWith('.')) {
-      await assertNoNewer(path, data, lockTime, child, seen)
+      await assertNoNewer(coordinates, data, lockTime, child, seen)
     } else if (dirent.isSymbolicLink()) {
       const target = resolve(parent, await readlink(child))
       const tstat = await stat(target).catch(
         /* istanbul ignore next - windows */ () => null)
-      seen.add(relpath(path, child))
+      seen.add(coordinates.toLockfile(child))
       /* istanbul ignore next - windows cannot do this */
-      if (tstat?.isDirectory() && !seen.has(relpath(path, target))) {
-        await assertNoNewer(path, data, lockTime, target, seen)
+      if (tstat?.isDirectory() && !seen.has(coordinates.toLockfile(target))) {
+        await assertNoNewer(coordinates, data, lockTime, target, seen)
       }
     }
   }))
 
-  if (dir !== path) {
+  if (dir !== canonicalRoot) {
     return
   }
 
@@ -204,7 +207,8 @@ const assertNoNewer = async (path, data, lockTime, dir, seen) => {
     }
   }
   for (const rel of extraDirs) {
-    await assertNoNewer(path, data, lockTime, resolve(path, rel), seen)
+    await assertNoNewer(coordinates, data, lockTime,
+      coordinates.toFilesystem(rel), seen)
   }
 
   // assert that all the entries in the lockfile were seen
@@ -248,10 +252,11 @@ class Shrinkwrap {
     return s
   }
 
-  static metaFromNode (node, path, options = {}) {
+  static metaFromNode (node, path, options = {}, realpath = path) {
+    const coordinates = new PathCoordinates(path, realpath)
     if (node.isLink) {
       return {
-        resolved: relpath(path, node.realpath),
+        resolved: coordinates.toLockfile(node.realpath),
         link: true,
       }
     }
@@ -268,7 +273,12 @@ class Shrinkwrap {
     // project is in
     const pname = node.packageName
     // when Target package name and Target node share the same name, we include the name, target node should have name as per realpath.
-    if (pname && (node === node.root || pname !== node.name || nameFromFolder(node.realpath) !== pname)) {
+    if (pname && (
+      node === node.root ||
+      coordinates.toLockfile(node.path) === '' ||
+      pname !== node.name ||
+      nameFromFolder(node.realpath) !== pname
+    )) {
       meta.name = pname
     }
 
@@ -282,7 +292,8 @@ class Shrinkwrap {
       }
     }
 
-    const resolved = consistentResolve(node.resolved, node.path, path, true)
+    let resolved = consistentResolve(node.resolved, node.path, path, true)
+    resolved = coordinates.toLockfileSpec(node.resolved, node.path, resolved)
     // hide resolved from registry dependencies.
     if (!resolved) {
       // no-op
@@ -312,6 +323,7 @@ class Shrinkwrap {
   }
 
   #awaitingUpdate = new Map()
+  #coordinates
 
   constructor (options = {}) {
     const {
@@ -320,6 +332,7 @@ class Shrinkwrap {
       newline = '\n',
       hiddenLockfile = false,
       lockfileVersion,
+      realpath = path,
       resolveOptions = {},
     } = options
 
@@ -333,6 +346,7 @@ class Shrinkwrap {
 
     this.tree = null
     this.path = resolve(path || '.')
+    this.#coordinates = new PathCoordinates(this.path, realpath || this.path)
     this.filename = null
     this.data = null
     this.indent = indent
@@ -481,7 +495,15 @@ class Shrinkwrap {
       if (this.hiddenLockfile && data.packages) {
         // add a few ms just to account for jitter
         const lockTime = +(await stat(this.filename)).mtime + 10
-        await assertNoNewer(this.path, data, lockTime, this.path, new Set())
+        const realpath = await fsRealpath(this.path)
+        this.#coordinates = new PathCoordinates(this.path, realpath)
+        await assertNoNewer(
+          this.#coordinates,
+          data,
+          lockTime,
+          this.#coordinates.canonicalRoot,
+          new Set()
+        )
       }
 
       // all good!  hidden lockfile is the newest thing in here.
@@ -653,17 +675,19 @@ class Shrinkwrap {
     return this.#lockFromLoc(lock.dependencies[path[i]], path, i + 1)
   }
 
-  // pass in a path relative to the root path, or an absolute path,
-  // get back a /-normalized location based on root path.
-  #pathToLoc (path) {
-    return relpath(this.path, resolve(this.path, path))
+  get coordinates () {
+    return this.#coordinates
+  }
+
+  setRoot (root) {
+    this.#coordinates = new PathCoordinates(this.path, root.realpath)
   }
 
   delete (nodePath) {
     if (!this.data) {
       throw new Error('run load() before getting or setting data')
     }
-    const location = this.#pathToLoc(nodePath)
+    const location = this.#coordinates.toLockfile(nodePath)
     this.#awaitingUpdate.delete(location)
 
     delete this.data.packages[location]
@@ -680,7 +704,7 @@ class Shrinkwrap {
       throw new Error('run load() before getting or setting data')
     }
 
-    const location = this.#pathToLoc(nodePath)
+    const location = this.#coordinates.toLockfile(nodePath)
     if (this.#awaitingUpdate.has(location)) {
       this.#updateWaitingNode(location)
     }
@@ -711,13 +735,13 @@ class Shrinkwrap {
 
     // try to figure out a npm-package-arg spec from the lockfile entry
     // This will return null if we could not get anything valid out of it.
-    const spec = specFromLock(name, lock, this.path)
+    const spec = specFromLock(name, lock, this.#coordinates.canonicalRoot)
 
     if (spec.type === 'directory') {
       // the "version" was a file: url to a non-tarball path
       // this is a symlink dep.  We don't store much metadata
       // about symlinks, just the target.
-      const target = relpath(this.path, spec.fetchSpec)
+      const target = this.#coordinates.toLockfile(spec.fetchSpec)
       this.data.packages[location] = {
         link: true,
         resolved: target,
@@ -788,7 +812,10 @@ class Shrinkwrap {
       if (spec.registry) {
         meta.resolved = lock.resolved
       } else if (spec.type === 'file') {
-        meta.resolved = consistentResolve(spec, this.path, this.path, true)
+        meta.resolved = this.#coordinates.toLockfileSpec(
+          spec.fetchSpec,
+          this.#coordinates.canonicalRoot
+        )
       } else if (spec.fetchSpec) {
         meta.resolved = spec.fetchSpec
       }
@@ -829,55 +856,67 @@ class Shrinkwrap {
       throw new Error('run load() before getting or setting data')
     }
 
-    // will be actually updated on read
-    const loc = relpath(this.path, node.path)
-    if (node.path === this.path) {
-      this.tree = node
+    let metadataNode = node
+    const root = node.root
+    const isMetadataRoot = node.path === this.path ||
+      (root?.path === this.path && (
+        node === root ||
+        node === root.target ||
+        node.path === root.realpath
+      )) ||
+      (node === root && this.#coordinates.toLockfile(node.path) === '')
+    if (isMetadataRoot) {
+      metadataNode = node.target || node
+      this.tree = metadataNode
+      this.setRoot(root)
     }
+
+    // will be actually updated on read
+    const loc = this.#coordinates.toLockfile(metadataNode.path)
 
     // if we have metadata about this node, and it's a match, then
     // try to decorate it.
-    if (node.resolved === null || node.integrity === null) {
+    if (metadataNode.resolved === null || metadataNode.integrity === null) {
       const {
         resolved,
         integrity,
         version,
-      } = this.get(node.path)
+      } = this.get(metadataNode.path)
 
       let pathFixed = null
       if (resolved) {
-        if (!/^file:/.test(resolved)) {
-          pathFixed = resolved
-        } else {
-          pathFixed = `file:${resolve(this.path, resolved.slice(5))}`
-        }
+        pathFixed = this.#coordinates.toFilesystemSpec(resolved)
       }
 
       // if we have one, only set the other if it matches
       // otherwise it could be for a completely different thing.
-      const resolvedOk = !resolved || !node.resolved ||
-        node.resolved === pathFixed
-      const integrityOk = !integrity || !node.integrity ||
-        node.integrity === integrity
-      const versionOk = !version || !node.version || version === node.version
+      const resolvedOk = !resolved || !metadataNode.resolved ||
+        metadataNode.resolved === pathFixed
+      const integrityOk = !integrity || !metadataNode.integrity ||
+        metadataNode.integrity === integrity
+      const versionOk = !version || !metadataNode.version || version === metadataNode.version
 
       const allOk = (resolved || integrity || version) &&
         resolvedOk && integrityOk && versionOk
 
       if (allOk) {
-        node.resolved = node.resolved || pathFixed || null
-        node.integrity = node.integrity || integrity || null
+        metadataNode.resolved = metadataNode.resolved || pathFixed || null
+        metadataNode.integrity = metadataNode.integrity || integrity || null
       } else {
         // try to read off the package or node itself
         const {
           resolved,
           integrity,
-        } = Shrinkwrap.metaFromNode(node, this.path, this.resolveOptions)
-        node.resolved = node.resolved || resolved || null
-        node.integrity = node.integrity || integrity || null
+        } = Shrinkwrap.metaFromNode(
+          metadataNode,
+          this.path,
+          this.resolveOptions,
+          this.#coordinates.canonicalRoot)
+        metadataNode.resolved = metadataNode.resolved || resolved || null
+        metadataNode.integrity = metadataNode.integrity || integrity || null
       }
     }
-    this.#awaitingUpdate.set(loc, node)
+    this.#awaitingUpdate.set(loc, metadataNode)
   }
 
   addEdge (edge) {
@@ -901,11 +940,11 @@ class Shrinkwrap {
     // XXX why is this different from pathFixed in this.add??
     let pathFixed = null
     if (node.resolved) {
-      if (!/file:/.test(node.resolved)) {
-        pathFixed = node.resolved
-      } else {
-        pathFixed = consistentResolve(node.resolved, node.path, this.path, true)
-      }
+      pathFixed = this.#coordinates.toLockfileSpec(
+        node.resolved,
+        node.path,
+        node.resolved
+      )
     }
 
     const spec = npa(`${node.name}@${edge.spec}`)
@@ -923,10 +962,15 @@ class Shrinkwrap {
     }
 
     node.integrity = node.integrity || entry.integrity || null
-    node.resolved = node.resolved ||
-      consistentResolve(entry.resolved, this.path, node.path) || null
+    let resolved = consistentResolve(
+      entry.resolved,
+      this.#coordinates.canonicalRoot,
+      node.path
+    )
+    resolved = this.#coordinates.toFilesystemSpec(resolved)
+    node.resolved = node.resolved || resolved || null
 
-    this.#awaitingUpdate.set(relpath(this.path, node.path), node)
+    this.#awaitingUpdate.set(this.#coordinates.toLockfile(node.path), node)
   }
 
   #updateWaitingNode (loc) {
@@ -935,18 +979,20 @@ class Shrinkwrap {
     this.data.packages[loc] = Shrinkwrap.metaFromNode(
       node,
       this.path,
-      this.resolveOptions)
+      this.resolveOptions,
+      this.#coordinates.canonicalRoot)
   }
 
   commit () {
     if (this.tree) {
       if (this.yarnLock) {
-        this.yarnLock.fromTree(this.tree)
+        this.yarnLock.fromTree(this.tree, this.#coordinates)
       }
       const root = Shrinkwrap.metaFromNode(
         this.tree.target,
         this.path,
-        this.resolveOptions)
+        this.resolveOptions,
+        this.#coordinates.canonicalRoot)
       // record the canonical packageExtensions hash on the root entry so npm ci can detect stale extension state
       if (this.packageExtensionsHash) {
         root.packageExtensionsHash = this.packageExtensionsHash
@@ -964,7 +1010,7 @@ class Shrinkwrap {
         if (node === this.tree || node.isRoot || node.location === '') {
           continue
         }
-        const loc = relpath(this.path, node.path)
+        const loc = this.#coordinates.toLockfile(node.path)
         // Drop lockfile entries for extraneous nodes outside node_modules that
         // are direct fsChildren of the root (or detached link targets). These
         // are stale top-level entries: a workspace or file: dep removed from
@@ -978,7 +1024,8 @@ class Shrinkwrap {
         const meta = Shrinkwrap.metaFromNode(
           node,
           this.path,
-          this.resolveOptions)
+          this.resolveOptions,
+          this.#coordinates.canonicalRoot)
         // Skip inert nodes — these are optional deps that failed to load
         // (e.g. 404 from a proxy registry that hasn't cached the package,
         // or incomplete manifest missing version field).
@@ -1084,7 +1131,7 @@ class Shrinkwrap {
     }
 
     if (node.isLink) {
-      lock.version = `file:${relpath(this.path, node.realpath)}`
+      lock.version = `file:${this.#coordinates.toLockfile(node.realpath)}`
     } else if (spec && (spec.type === 'file' || spec.type === 'remote')) {
       lock.version = spec.saveSpec
     } else if (spec && spec.type === 'git' || rSpec.type === 'git') {
@@ -1094,7 +1141,7 @@ class Shrinkwrap {
       if (spec.raw) {
         lock.from = spec.raw
       }
-    } else if (!node.isRoot &&
+    } else if (node !== this.tree &&
         node.package &&
         node.packageName &&
         node.packageName !== node.name) {

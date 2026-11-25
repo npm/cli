@@ -1,6 +1,8 @@
 const YarnLock = require('../lib/yarn-lock.js')
 const Arborist = require('../lib/arborist')
 const Node = require('../lib/node.js')
+const Link = require('../lib/link.js')
+const PathCoordinates = require('../lib/path-coordinates.js')
 
 const t = require('tap')
 const { resolve, basename } = require('node:path')
@@ -93,6 +95,38 @@ t.test('load a yarn lock from an actual tree', t => {
       t.matchSnapshot(y.toString(), 'yarn.lock from a package tree')
     })
   }
+  t.end()
+})
+
+t.test('serialize file resolutions through a symlink root', t => {
+  const logical = resolve('/logical/project')
+  const actual = resolve('/actual/project')
+  const root = new Link({
+    path: logical,
+    realpath: actual,
+    pkg: {
+      name: 'root',
+      version: '1.0.0',
+      dependencies: {
+        tarball: 'file:tarballs/tarball.tgz',
+      },
+    },
+  })
+  new Node({
+    parent: root.target,
+    pkg: {
+      name: 'tarball',
+      version: '1.0.0',
+    },
+    resolved: `file:${resolve(actual, 'tarballs/tarball.tgz')}`,
+  })
+
+  const yarn = YarnLock.fromTree(
+    root.target,
+    new PathCoordinates(logical, actual)
+  )
+  t.match(yarn.toString(), 'resolved "file:tarballs/tarball.tgz"',
+    'local tarball remains relative to the logical root')
   t.end()
 })
 

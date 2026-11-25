@@ -1,4 +1,5 @@
 const debug = require('./debug.js')
+const allowUnreachable = Symbol.for('Arborist.Node.allowUnreachable')
 
 const checkTree = (tree, checkUnreachable = true) => {
   const log = [['START TREE CHECK', tree.path]]
@@ -133,7 +134,7 @@ const checkTree = (tree, checkUnreachable = true) => {
     log.push(['DONE', node.location])
   }
   check(tree)
-  if (checkUnreachable) {
+  if (checkUnreachable && !tree.root[allowUnreachable]) {
     for (const node of inventory.values()) {
       if (!seen.has(node) && node !== tree.root) {
         throw Object.assign(new Error('unreachable in inventory'), {
