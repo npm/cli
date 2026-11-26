@@ -514,6 +514,42 @@ t.test('flags() removes unknown positional warning when value is consumed by com
   t.equal(positionalWarnings.length, 0, 'no warning about abc123 being a positional')
 })
 
+t.test('flags() parses space-separated global options alongside command definitions', async t => {
+  // A command with its own `static definitions` must still parse global options.
+  // Otherwise nopt reads `--otp` as a boolean, `123456` stays in remains and the
+  // positional check rejects it, while `--otp=123456` passes. See npm/cli#10334.
+  const { npm } = await loadMockNpm(t, {
+    argv: ['pkg', '--file', 'a.yml', '--otp', '123456'],
+  })
+
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command'
+    static positionals = 1
+
+    static definitions = [
+      new Definition('file', {
+        type: String,
+        default: null,
+        description: 'A file',
+        usage: '--file=<file>',
+      }),
+    ]
+
+    async exec () {
+      return this.flags()
+    }
+  }
+
+  npm.config.argv = ['node', 'npm', 'test-command', 'pkg', '--file', 'a.yml', '--otp', '123456']
+
+  const command = new TestCommand(npm)
+  const [flags, remains] = await command.exec()
+
+  t.same(remains, ['pkg'], 'only the real positional remains')
+  t.equal(npm.config.get('otp'), '123456', 'the global option value reaches config')
+})
+
 t.test('flags() keeps unknown positional warning when multiple values follow unknown flag', async t => {
   // Pass raw argv to loadMockNpm so warnings are generated during config.load()
   // Both "abc123" and "def456" are seen as positionals by global config because --id is unknown
