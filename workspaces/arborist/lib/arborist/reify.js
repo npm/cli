@@ -138,10 +138,12 @@ module.exports = cls => class Reifier extends cls {
       await this[_diffTrees]()
       await this.#reifyPackages()
       if (linked) {
-        // The sweep mutates node_modules on disk, so skip it for dry runs and lockfile-only installs (those modes also short-circuit #reifyPackages).
+        // Lockfile-only installs never touch node_modules, so there is nothing to sweep.
+        // Dry runs plan the sweep without deleting anything, so they can still report what would be removed.
         // The sweep itself scopes to in-filter workspaces when a filter is active, so it's safe to run for filtered installs too.
-        if (!this.options.dryRun && !this.options.packageLockOnly) {
-          await this.#cleanOrphanedStoreEntries()
+        if (!this.options.packageLockOnly) {
+          const removed = await this.#cleanOrphanedStoreEntries()
+          this.#addLinkedRemovalsToDiff(removed)
         }
       } else if (!this.options.dryRun && !this.options.packageLockOnly) {
         // The .store directory is exclusively a linked-strategy artifact, and load-actual ignores dot-directories, so the diff never sees it.
@@ -1607,9 +1609,19 @@ module.exports = cls => class Reifier extends cls {
       }
     }
 
+    const removed = []
     if (entries) {
       const orphaned = entries.filter(e => !validKeys.has(e))
-      if (orphaned.length) {
+      // Record each orphaned store package before it is deleted, so the diff can report it.
+      // A store key is <name>@<version>-<hash>, and the package itself lives at .store/<key>/node_modules/<name>.
+      for (const key of orphaned) {
+        const name = key.slice(0, key.lastIndexOf('@'))
+        const record = await this.#removedPackageRecord(resolve(storeDir, key, 'node_modules', name))
+        if (record) {
+          removed.push(record)
+        }
+      }
+      if (orphaned.length && !this.options.dryRun) {
         log.silly('reify', 'cleaning orphaned store entries', orphaned)
         await promiseAllRejectLate(
           orphaned.map(e =>
@@ -1639,8 +1651,33 @@ module.exports = cls => class Reifier extends cls {
     }
 
     for (const [dir, valid] of nmDirs) {
-      await this.#cleanOrphanedTopLevelLinks(dir, valid)
-      await this.#cleanStaleBinLinks(dir, binsByDir.get(dir))
+      removed.push(...await this.#cleanOrphanedTopLevelLinks(dir, valid, storeDir))
+      if (!this.options.dryRun) {
+        await this.#cleanStaleBinLinks(dir, binsByDir.get(dir))
+      }
+    }
+    return removed
+  }
+
+  // Read what an about-to-be-removed package is, for reporting.
+  // Returns null when there is no readable package.json, so a non-package entry is never reported as a package.
+  async #removedPackageRecord (path) {
+    try {
+      const pkg = JSON.parse(await readFile(resolve(path, 'package.json'), 'utf8'))
+      return { name: pkg.name, path, location: relpath(this.path, path), package: { name: pkg.name, version: pkg.version } }
+    } catch {
+      return null
+    }
+  }
+
+  // The linked diff never sees removed packages (see #buildLinkedActualForDiff), so add the ones the orphan sweep removed as REMOVE entries.
+  // This makes the install summary, --dry-run, --json and the root `dependencies` lifecycle script reflect removals as they do under the hoisted strategy.
+  #addLinkedRemovalsToDiff (removed) {
+    for (const actual of removed) {
+      const diff = new Diff({ actual, ideal: null, filterSet: this.diff.filterSet, omit: this.diff.omit })
+      diff.parent = this.diff
+      this.diff.children.push(diff)
+      this.diff.removed.push(actual)
     }
   }
 
@@ -1681,13 +1718,15 @@ module.exports = cls => class Reifier extends cls {
   //   - symlinks whose target resolves inside the project root — store links (node_modules/.store/...) and workspace self-links (e.g. node_modules/<ws> -> ../packages/<ws>) that npm itself created.
   //   - real package directories — hoisted-layout deps left behind when switching from the hoisted strategy to linked, where every valid top-level entry is a symlink.
   // Symlinks pointing outside the project (e.g. `npm link foo` without --save targeting the global prefix, or hand-made `ln -s` to an external path) and non-package real directories are preserved.
-  async #cleanOrphanedTopLevelLinks (nmDir, validTopLevel) {
+  // Returns records for the removed entries that are packages in their own right, for the diff to report.
+  // A link into the store is not one: its package is reported through its store entry, or is still installed when that entry is still in use.
+  async #cleanOrphanedTopLevelLinks (nmDir, validTopLevel, storeDir) {
     const projectPrefix = resolve(this.path) + sep
     let dirents
     try {
       dirents = await readdir(nmDir, { withFileTypes: true })
     } catch {
-      return
+      return []
     }
 
     const isOurOrphan = async (linkPath) => {
@@ -1735,8 +1774,28 @@ module.exports = cls => class Reifier extends cls {
       }
     }
 
-    if (!orphaned.length) {
-      return
+    const intoStore = async (entPath) => {
+      try {
+        return resolve(dirname(entPath), await readlink(entPath)).startsWith(storeDir + sep)
+      } catch {
+        // a real directory is not a link
+        return false
+      }
+    }
+    const removed = []
+    for (const name of orphaned) {
+      const entPath = resolve(nmDir, name)
+      if (await intoStore(entPath)) {
+        continue
+      }
+      const record = await this.#removedPackageRecord(entPath)
+      if (record) {
+        removed.push(record)
+      }
+    }
+
+    if (!orphaned.length || this.options.dryRun) {
+      return removed
     }
 
     log.silly('reify', 'cleaning orphaned top-level entries', orphaned)
@@ -1762,6 +1821,7 @@ module.exports = cls => class Reifier extends cls {
         }
       })
     )
+    return removed
   }
 
   // last but not least, we save the ideal tree metadata to the package-lock
