@@ -44,6 +44,7 @@ const run = async ({
 
   // turn list of args into command string
   const script = call || args.shift() || scriptShell
+  const replaceProcess = !!flatOptions.replaceProcess && script !== scriptShell
 
   // do the fakey runScript dance
   // still should work if no package.json in cwd
@@ -55,7 +56,7 @@ const run = async ({
     ...realPkg,
     scripts: {
       ...(realPkg.scripts || {}),
-      npx: script,
+      npx: replaceProcess && !call && scriptShell === 'sh' ? `exec ${script}` : script,
     },
   }
 
@@ -86,6 +87,7 @@ const run = async ({
     args,
     stdio: 'inherit',
     scriptShell,
+    replaceProcess,
   })
 }
 
