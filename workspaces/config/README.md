@@ -115,6 +115,9 @@ Used to infer the
 Source of the environment variables for configuration.
 - `argv` Optional, defaults to `process.argv`.
 Source of the CLI options used for configuration.
+- `setEnvs` Optional, defaults to `true`.
+If `false`, `config.load()` does not export the loaded config to `env`.
+Call `config.setEnvs()` to do it later.
 
 Returns a `config` object, which is not yet loaded.
 

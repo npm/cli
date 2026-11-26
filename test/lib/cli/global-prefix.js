@@ -41,24 +41,17 @@ t.test('rejects if config cannot be loaded', async t => {
   await t.rejects(globalPrefix(), /bad config/)
 })
 
-t.test('puts back the environment that loading config changed', async t => {
-  mockGlobals(t, {
-    'process.env.npm_test_global_prefix_kept': 'before',
-    'process.env.npm_test_global_prefix_removed': 'before',
+t.test('leaves process.env alone, but keeps what others set during load', async t => {
+  isolate(t, 'fund=false\n')
+  mockGlobals(t, { 'process.env.npm_test_global_prefix_added': undefined })
+  const before = { ...process.env }
+  const globalPrefix = require('../../../lib/cli/global-prefix.js')
+  const loading = globalPrefix()
+  setImmediate(() => {
+    process.env.npm_test_global_prefix_added = 'added'
   })
-  class Config {
-    async load () {
-      process.env.npm_test_global_prefix_kept = 'changed'
-      delete process.env.npm_test_global_prefix_removed
-      process.env.npm_test_global_prefix_added = 'added'
-      throw new Error('bad config')
-    }
-  }
-  const globalPrefix = tmock(t, '{LIB}/cli/global-prefix.js', { '@npmcli/config': Config })
-  await t.rejects(globalPrefix(), /bad config/)
-  t.equal(process.env.npm_test_global_prefix_kept, 'before')
-  t.equal(process.env.npm_test_global_prefix_removed, 'before')
-  t.notOk('npm_test_global_prefix_added' in process.env)
+  await loading
+  t.strictSame({ ...process.env }, { ...before, npm_test_global_prefix_added: 'added' })
 })
 
 t.test('honors the prefix config, as npm does', async t => {
