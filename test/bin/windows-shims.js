@@ -88,17 +88,27 @@ t.test('run shims', t => {
         npm: t.fixture('symlink', ROOT),
       },
     },
-    // put in a shim that ONLY prints the intended global prefix,
-    // and should not be used for anything else.
+    // the real entry point of the shims, and a fake of the helper it uses to
+    // find the global prefix: it ONLY returns the intended global prefix.
+    // npm-prefix.js is the same, for the WSL path of the bash shims.
     node_modules: {
       npm: {
         bin: {
+          'npm-shim.js': readFileSync(join(BIN, 'npm-shim.js'), 'utf-8'),
           'npm-prefix.js': `
             const { resolve } = require('path')
             console.log(resolve(__dirname, '../../../global-prefix'))
           `,
           'npx-cli.js': `throw new Error('local npx should not be called')`,
           'npm-cli.js': `throw new Error('local npm should not be called')`,
+        },
+        lib: {
+          cli: {
+            'global-prefix.js': `
+              const { resolve } = require('path')
+              module.exports = async () => resolve(__dirname, '../../../../global-prefix')
+            `,
+          },
         },
       },
     },
@@ -244,7 +254,7 @@ t.test('run shims', t => {
     }
   })
 
-  const matchCmd = (t, cmd, bin, match, params, expected) => {
+  const matchCmd = (t, cmd, bin, match, params, expected, fullPath) => {
     const args = []
     const opts = {}
 
@@ -253,7 +263,9 @@ t.test('run shims', t => {
         cmd = `${bin}.cmd`
         break
       case 'bash.exe':
-        args.push(bin)
+        // with a directory in $0 the shim starts node only once; without one
+        // it finds npm through node, as a Cygwin login shell changes directory
+        args.push(fullPath ? `"${join(path, bin).replaceAll('\\', '/')}"` : bin)
         break
       case 'powershell.exe':
       case 'pwsh.exe':
@@ -293,6 +305,8 @@ t.test('run shims', t => {
     { bin: 'npm', params: [`test -- hello -p1 world -p2 "hello world" --q1=hello world --q2="hello world"`], expected: `hello\n-p1\nworld\n-p2\nhello world\n--q1=hello\nworld\n--q2=hello world` },
     { bin: 'npm', params: ['test -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
     { bin: 'npx', params: ['. -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
+    { bin: 'npm', params: ['help'], expected: `npm@${version} ${ROOT}`, fullPath: true },
+    { bin: 'npx', params: ['--version'], expected: version, fullPath: true },
   ]
 
   // ensure that all tests are either run or skipped
@@ -309,14 +323,16 @@ t.test('run shims', t => {
         return t.end()
       }
       t.plan(tests.length)
-      for (const { bin, params, expected } of tests) {
+      for (const { bin, params, expected, fullPath } of tests) {
         if (name === 'cygwin bash' && (
           (bin === 'npm' && params[0].startsWith('test')) ||
           (bin === 'npx' && params[0].startsWith('.'))
         )) {
           t.skip("`cygwin bash` doesn't respect option `{ cwd: path }` when calling `spawnSync`")
+        } else if (fullPath && !['git bash', 'user git bash', 'cygwin bash'].includes(name)) {
+          t.skip(`${name} runs the shim by name only`)
         } else {
-          matchCmd(t, cmd, bin, match, params, expected)
+          matchCmd(t, cmd, bin, match, params, expected, fullPath)
         }
       }
     })

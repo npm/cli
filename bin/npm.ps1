@@ -10,24 +10,13 @@ if (-not (Test-Path $NODE_EXE)) {
   $NODE_EXE="node"
 }
 
-$NPM_PREFIX_JS="$PSScriptRoot/node_modules/npm/bin/npm-prefix.js"
-$NPM_CLI_JS="$PSScriptRoot/node_modules/npm/bin/npm-cli.js"
-$NPM_PREFIX=(& $NODE_EXE $NPM_PREFIX_JS)
-
-if ($LASTEXITCODE -ne 0) {
-  Write-Host "Could not determine Node.js install directory"
-  exit 1
-}
-
-$NPM_PREFIX_NPM_CLI_JS="$NPM_PREFIX/node_modules/npm/bin/npm-cli.js"
-if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
-  $NPM_CLI_JS=$NPM_PREFIX_NPM_CLI_JS
-}
+# npm-shim.js picks this npm or the one in the global prefix, in the same node process.
+$NPM_SHIM_JS="$PSScriptRoot/node_modules/npm/bin/npm-shim.js"
 
 if ($MyInvocation.ExpectingInput) { # takes pipeline input
-  $input | & $NODE_EXE $NPM_CLI_JS $args
+  $input | & $NODE_EXE $NPM_SHIM_JS npm $args
 } elseif (-not $MyInvocation.Line) { # used "-File" argument
-  & $NODE_EXE $NPM_CLI_JS $args
+  & $NODE_EXE $NPM_SHIM_JS npm $args
 } else { # used "-Command" argument
   if (($MyInvocation | Get-Member -Name 'Statement') -and $MyInvocation.Statement) {
     $NPM_ORIGINAL_COMMAND = $MyInvocation.Statement
@@ -38,13 +27,13 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
   }
 
   $NODE_EXE = $NODE_EXE.Replace("``", "````")
-  $NPM_CLI_JS = $NPM_CLI_JS.Replace("``", "````")
+  $NPM_SHIM_JS = $NPM_SHIM_JS.Replace("``", "````")
 
   $NPM_COMMAND_ARRAY = [Management.Automation.Language.Parser]::ParseInput($NPM_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
     EndBlock.Statements.PipelineElements.CommandElements.Extent.Text
   $NPM_ARGS = ($NPM_COMMAND_ARRAY | Select-Object -Skip 1) -join ' '
 
-  Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
+  Invoke-Expression "& `"$NODE_EXE`" `"$NPM_SHIM_JS`" npm $NPM_ARGS"
 }
 
 exit $LASTEXITCODE

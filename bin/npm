@@ -3,6 +3,32 @@
 # This is used by the Node.js installer, which expects the cygwin/mingw
 # shell script to already be present in the npm dependency folder.
 
+# Git Bash (msys) and Cygwin: start node once. npm-shim.js picks this npm or
+# the one in the global prefix in the same node process, and msys converts the
+# script path for node.exe, so this needs no subshells (one cygpath on Cygwin,
+# or when msys path conversion is turned off).
+case "$OSTYPE" in
+  msys*|cygwin*)
+    set -o igncr 2>/dev/null # cygwin encoding fix
+    basedir=${0%/*}
+    # $0 has no directory with `bash npm`, and a Cygwin login shell has changed
+    # to $HOME by then, so the code below finds npm through node instead.
+    if [ "$basedir" != "$0" ] && [ -f "$basedir/node_modules/npm/bin/npm-shim.js" ]; then
+      if [[ $OSTYPE == cygwin* || -v MSYS_NO_PATHCONV || -v MSYS2_ARG_CONV_EXCL ]]; then
+        basedir=$(cygpath -w "$basedir") || exit 1
+      fi
+      NODE_EXE="$basedir/node.exe"
+      [ -x "$NODE_EXE" ] || NODE_EXE="$basedir/node"
+      [ -x "$NODE_EXE" ] || NODE_EXE=node
+      # exec, not exit: exit makes a login shell (bash -l) run ~/.bash_logout
+      exec "$NODE_EXE" "$basedir/node_modules/npm/bin/npm-shim.js" npm "$@"
+    fi
+    ;;
+esac
+
+# Everything else (WSL running the Windows install, or no directory in $0):
+# find the prefix first.
+
 (set -o igncr) 2>/dev/null && set -o igncr; # cygwin encoding fix
 
 basedir=`dirname "$0"`

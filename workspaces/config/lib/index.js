@@ -57,6 +57,7 @@ const confTypes = new Set([
 class Config {
   #loaded = false
   #flatten
+  #setEnvsOnLoad
   // populated the first time we flatten the object
   #flatOptions = null
   #warnings = []
@@ -84,6 +85,7 @@ class Config {
     cwd = process.cwd(),
     excludeNpmCwd = false,
     warn = true,
+    setEnvs: setEnvsOnLoad = true,
   }) {
     this.nerfDarts = nerfDarts
     this.definitions = definitions
@@ -92,6 +94,7 @@ class Config {
     this.deprecated = deprecated
 
     this.#flatten = flatten
+    this.#setEnvsOnLoad = setEnvsOnLoad
     this.types = types
     this.shorthands = shorthands
     this.defaults = defaults
@@ -275,7 +278,9 @@ class Config {
     // set proper globalPrefix now that everything is loaded
     this.globalPrefix = this.get('prefix')
 
-    this.setEnvs()
+    if (this.#setEnvsOnLoad) {
+      this.setEnvs()
+    }
   }
 
   loadDefaults () {

@@ -2468,3 +2468,28 @@ t.test('global-ignore-file follows an explicit override', async t => {
     'cli override wins over computed default'
   )
 })
+
+t.test('setEnvs: false skips exporting config to env on load', async t => {
+  const path = t.testdir()
+  const load = async (opts) => {
+    const env = {}
+    const config = new Config({
+      npmPath: `${path}/npm`,
+      env,
+      argv: [process.execPath, __filename, '--fund=false'],
+      cwd: path,
+      definitions,
+      shorthands,
+      flatten,
+      ...opts,
+    })
+    await config.load()
+    return { config, env }
+  }
+  const { env: exported } = await load({})
+  t.equal(exported.npm_config_fund, '', 'exports by default')
+  const { config, env } = await load({ setEnvs: false })
+  t.strictSame(env, {}, 'env untouched')
+  config.setEnvs()
+  t.equal(env.npm_config_fund, '', 'can still export later')
+})
