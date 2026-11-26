@@ -83,7 +83,6 @@ exports[`test/vuln.js TAP basic vulnerability object tests > json formatted meta
   "severity": "critical",
   "isDirect": false,
   "via": [
-    "name",
     "name"
   ],
   "effects": [],

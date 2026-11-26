@@ -636,3 +636,215 @@ t.test('determinism: multiple metavulns with identical range but different depen
   t.ok(BEffects.includes('A'), 'B effects includes A')
   t.ok(CEffects.includes('A'), 'C effects includes A')
 })
+
+// Delay the metavuln calculation for `later` until the one for `sooner` has
+// settled, to control the order in which async calculations settle.
+const settleInOrder = (report, sooner, later) => {
+  const calculate = report.calculator.calculate.bind(report.calculator)
+  let requested = false
+  let settled
+  const soonerSettled = new Promise(resolve => {
+    settled = resolve
+  })
+  report.calculator.calculate = async (name, source) => {
+    if (name === sooner) {
+      requested = true
+      try {
+        return await calculate(name, source)
+      } finally {
+        settled()
+      }
+    }
+    const advisory = await calculate(name, source)
+    if (name === later) {
+      // fail instead of waiting forever if the tree never asks for `sooner`
+      if (!requested) {
+        throw new Error(`${sooner} was not requested before ${later} settled`)
+      }
+      await soonerSettled
+      await new Promise(resolve => setImmediate(resolve))
+    }
+    return advisory
+  }
+}
+
+t.test('metavulns do not depend on which advisory reaches a shared dependent first', async t => {
+  // root -> top@1.0.0 -> mid@1.1.0 -> { a@1.0.0, b@1.0.0 } -> vuln@1.0.0
+  // mid@1.1.0 is vulnerable through both a and b, but only the metavuln
+  // through a leaves top@1.0.0 without a safe mid in `^1.0.0` (mid@1.0.0
+  // does not depend on b). top must be reported whichever of the a/b
+  // metavulns settles first.
+  const registry = createRegistry(t)
+  const packuments = {
+    vuln: ['1.0.0', '2.0.0'],
+    a: [{ version: '1.0.0', dependencies: { vuln: '^1.0.0' } }],
+    b: [{ version: '1.0.0', dependencies: { vuln: '^1.0.0' } }],
+    mid: [
+      { version: '1.0.0', dependencies: { a: '^1.0.0' } },
+      { version: '1.1.0', dependencies: { a: '^1.0.0', b: '^1.0.0' } },
+    ],
+    top: [{ version: '1.0.0', dependencies: { mid: '^1.0.0' } }],
+  }
+  const orders = [['a', 'b'], ['b', 'a']]
+  for (const [name, versions] of Object.entries(packuments)) {
+    await registry.package({
+      manifest: registry.manifest({ name, packuments: versions }),
+      times: orders.length,
+    })
+  }
+  registry.audit({
+    times: orders.length,
+    results: {
+      vuln: [{ id: 1, url: 'https://vuln', title: 'vuln', severity: 'high', vulnerable_versions: '<2.0.0' }],
+    },
+  })
+
+  const path = t.testdir()
+  const tree = new Node({
+    path,
+    pkg: { name: 'root', dependencies: { top: '1.0.0' } },
+    children: [
+      { pkg: { name: 'top', version: '1.0.0', dependencies: { mid: '^1.0.0' } } },
+      { pkg: { name: 'mid', version: '1.1.0', dependencies: { a: '^1.0.0', b: '^1.0.0' } } },
+      // b before a, so b also comes first when settle order is ignored
+      { pkg: { name: 'b', version: '1.0.0', dependencies: { vuln: '^1.0.0' } } },
+      { pkg: { name: 'a', version: '1.0.0', dependencies: { vuln: '^1.0.0' } } },
+      { pkg: { name: 'vuln', version: '1.0.0' } },
+    ],
+  })
+
+  const results = []
+  for (const [sooner, later] of orders) {
+    const report = new AuditReport(tree, {
+      registry: 'https://registry.npmjs.org',
+      cache: t.testdir(),
+    })
+    settleInOrder(report, sooner, later)
+    await report.run()
+    t.ok(report.has('top'), `top is vulnerable when ${sooner} settles first`)
+    results.push(JSON.stringify(report.toJSON()))
+  }
+  t.equal(results[0], results[1], 'same report for both orders')
+})
+
+t.test('fixAvailable does not depend on which metavuln reaches a top node first', async t => {
+  // root -> top@1.0.0 -> mid@1.0.0 -> { a@1.0.0, b@1.0.0 } -> vuln@1.0.0
+  // Through a, top@1.1.0 is vulnerable too, so the fix is top@2.0.0.
+  // Through b, only top@1.0.0 is, so top@1.1.0 alone would look like a fix.
+  // Every release is newer than `before`, so a fix that looks in-range is
+  // also flagged as blocked by release age until the wider range lands.
+  const registry = createRegistry(t)
+  const packuments = {
+    vuln: ['1.0.0', '2.0.0'],
+    a: [{ version: '1.0.0', dependencies: { vuln: '^1.0.0' } }],
+    b: [{ version: '1.0.0', dependencies: { vuln: '^1.0.0' } }],
+    mid: [
+      { version: '1.0.0', dependencies: { a: '^1.0.0', b: '^1.0.0' } },
+      { version: '1.1.0', dependencies: { a: '^1.0.0' } },
+      { version: '2.0.0' },
+    ],
+    top: [
+      { version: '1.0.0', dependencies: { mid: '1.0.0' } },
+      { version: '1.1.0', dependencies: { mid: '^1.1.0' } },
+      { version: '2.0.0', dependencies: { mid: '^2.0.0' } },
+    ],
+  }
+  const deps = {
+    a: { pkg: { name: 'a', version: '1.0.0', dependencies: { vuln: '^1.0.0' } } },
+    b: { pkg: { name: 'b', version: '1.0.0', dependencies: { vuln: '^1.0.0' } } },
+  }
+  const runs = []
+  for (const children of [['a', 'b'], ['b', 'a']]) {
+    for (const settle of [['a', 'b'], ['b', 'a']]) {
+      runs.push({ children, settle })
+    }
+  }
+  for (const [name, versions] of Object.entries(packuments)) {
+    await registry.package({
+      manifest: registry.manifest({ name, packuments: versions }),
+      times: runs.length,
+    })
+  }
+  registry.audit({
+    times: runs.length,
+    results: {
+      vuln: [{ id: 1, url: 'https://vuln', title: 'vuln', severity: 'high', vulnerable_versions: '<2.0.0' }],
+    },
+  })
+
+  for (const { children, settle: [sooner, later] } of runs) {
+    const tree = new Node({
+      path: t.testdir(),
+      pkg: { name: 'root', dependencies: { top: '^1.0.0' } },
+      children: [
+        { pkg: { name: 'top', version: '1.0.0', dependencies: { mid: '1.0.0' } } },
+        { pkg: { name: 'mid', version: '1.0.0', dependencies: { a: '^1.0.0', b: '^1.0.0' } } },
+        ...children.map(name => deps[name]),
+        { pkg: { name: 'vuln', version: '1.0.0' } },
+      ],
+    })
+    const report = new AuditReport(tree, {
+      registry: 'https://registry.npmjs.org',
+      cache: t.testdir(),
+      before: new Date('2000-01-01'),
+    })
+    settleInOrder(report, sooner, later)
+    await report.run()
+    const top = report.get('top')
+    const desc = `children ${children}, ${sooner} settles first`
+    t.strictSame(top.fixAvailable,
+      { name: 'top', version: '2.0.0', isSemVerMajor: true }, `fix is top@2.0.0: ${desc}`)
+    t.equal(top.fixBlockedByReleaseAge, false, `no in-range fix to block: ${desc}`)
+    t.ok(report.topVulns.has('top'), `top is a top vuln: ${desc}`)
+  }
+})
+
+t.test('an advisory inside a range already passed on is not passed on again', async t => {
+  // root -> dep@1.0.0 -> vuln@1.0.0, with advisories on vuln: the narrower
+  // high one adds nothing to dep, the narrower critical one does, and one
+  // with an unparseable range does not break the comparison.
+  const registry = createRegistry(t)
+  await registry.package({ manifest: registry.manifest({ name: 'vuln', packuments: ['1.0.0', '2.0.0'] }) })
+  await registry.package({
+    manifest: registry.manifest({
+      name: 'dep',
+      packuments: [{ version: '1.0.0', dependencies: { vuln: '^1.0.0' } }],
+    }),
+  })
+  registry.audit({
+    results: {
+      vuln: [
+        { id: 1, url: 'https://wide', title: 'wide', severity: 'high', vulnerable_versions: '<2.0.0' },
+        { id: 2, url: 'https://narrow', title: 'narrow', severity: 'high', vulnerable_versions: '<1.5.0' },
+        { id: 3, url: 'https://worse', title: 'worse', severity: 'critical', vulnerable_versions: '<1.2.0' },
+        { id: 4, url: 'https://bad', title: 'bad', severity: 'high', vulnerable_versions: 'not a range' },
+      ],
+    },
+  })
+
+  const tree = new Node({
+    path: t.testdir(),
+    pkg: { name: 'root', dependencies: { dep: '1.0.0' } },
+    children: [
+      { pkg: { name: 'dep', version: '1.0.0', dependencies: { vuln: '^1.0.0' } } },
+      { pkg: { name: 'vuln', version: '1.0.0' } },
+    ],
+  })
+  const report = new AuditReport(tree, {
+    registry: 'https://registry.npmjs.org',
+    cache: t.testdir(),
+  })
+  const calculate = report.calculator.calculate.bind(report.calculator)
+  const passedOn = []
+  report.calculator.calculate = (name, source) => {
+    if (name === 'dep') {
+      passedOn.push(source.title)
+    }
+    return calculate(name, source)
+  }
+  await report.run()
+
+  t.strictSame(passedOn.sort(), ['wide', 'worse'], 'narrow high advisory is not passed on')
+  t.equal(report.get('dep').severity, 'critical', 'critical advisory still reaches dep')
+  t.equal(report.get('vuln').advisories.size, 3, 'vuln keeps the three advisories that apply')
+})
