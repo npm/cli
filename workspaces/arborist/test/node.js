@@ -838,6 +838,32 @@ t.test('bundled dependencies logic', t => {
   t.end()
 })
 
+t.test('getBundler preserves explicit array traversal state', t => {
+  const root = new Node({
+    path: '/path/to/root',
+    pkg: {
+      name: 'root',
+      dependencies: { a: '*' },
+      bundleDependencies: ['a'],
+    },
+  })
+  const a = new Node({
+    parent: root,
+    pkg: { name: 'a', version: '1.0.0' },
+  })
+  const visited = []
+  t.equal(a.getBundler(visited), root)
+  t.same(visited, [a, root], 'populates the caller-provided array')
+  t.equal(a.getBundler(visited), null, 'honors nodes already visited')
+  t.same(visited, [a, root], 'does not append already visited nodes')
+  t.equal(a.getBundler(), root, 'default calls have independent traversal state')
+
+  const duplicates = [root, root]
+  t.equal(a.getBundler(duplicates), root)
+  t.same(duplicates, [root, root, a], 'preserves existing array contents and order')
+  t.end()
+})
+
 t.test('move fsChildren when moving to a new fsParent in same root', t => {
   const root = new Node({
     path: '/path/to/root',
@@ -1072,6 +1098,54 @@ t.test('bin paths', t => {
   ])
   const nobin = root.children.get('nobin')
   t.strictSame(nobin.binPaths, [])
+  t.end()
+})
+
+t.test('bin paths normalize traversal-bearing names', t => {
+  const bin = {
+    '../../../sentinel': 'bin/traversal.js',
+    '/tmp/absolute': 'bin/absolute.js',
+    '..\\..\\windows': 'bin/windows.js',
+    'C:\\outside\\drive': 'bin/drive.js',
+    invalid: 123,
+  }
+  const root = new Node({
+    path: '/a/b/c',
+    children: [
+      { pkg: { name: 'evil', bin } },
+    ],
+  })
+  const { resolve: r } = require('node:path')
+
+  t.strictSame(root.children.get('evil').binPaths, [
+    r('/a/b/c/node_modules/.bin/sentinel'),
+    ...(process.platform !== 'win32' ? [] : [
+      r('/a/b/c/node_modules/.bin/sentinel.cmd'),
+      r('/a/b/c/node_modules/.bin/sentinel.ps1'),
+    ]),
+    r('/a/b/c/node_modules/.bin/absolute'),
+    ...(process.platform !== 'win32' ? [] : [
+      r('/a/b/c/node_modules/.bin/absolute.cmd'),
+      r('/a/b/c/node_modules/.bin/absolute.ps1'),
+    ]),
+    r('/a/b/c/node_modules/.bin/windows'),
+    ...(process.platform !== 'win32' ? [] : [
+      r('/a/b/c/node_modules/.bin/windows.cmd'),
+      r('/a/b/c/node_modules/.bin/windows.ps1'),
+    ]),
+    r('/a/b/c/node_modules/.bin/drive'),
+    ...(process.platform !== 'win32' ? [] : [
+      r('/a/b/c/node_modules/.bin/drive.cmd'),
+      r('/a/b/c/node_modules/.bin/drive.ps1'),
+    ]),
+  ])
+  t.strictSame(bin, {
+    '../../../sentinel': 'bin/traversal.js',
+    '/tmp/absolute': 'bin/absolute.js',
+    '..\\..\\windows': 'bin/windows.js',
+    'C:\\outside\\drive': 'bin/drive.js',
+    invalid: 123,
+  }, 'does not mutate package metadata')
   t.end()
 })
 
@@ -1330,6 +1404,48 @@ t.test('reparenting keeps children in root inventory', async t => {
 
   t.equal(root.inventory.has(kid), true)
   t.equal(root.inventory.has(fsNested), true)
+})
+
+t.test('reloading named edges skips empty leaves without caching their state', t => {
+  const root = new Node({ path: '/some/path' })
+  const leaf = new Node({ parent: root, pkg: { name: 'leaf' } })
+  const lookups = []
+  const get = leaf.edgesOut.get
+  leaf.edgesOut.get = function (name) {
+    lookups.push(name)
+    return get.call(this, name)
+  }
+
+  const foo = new Node({ parent: root, pkg: { name: 'foo', version: '1.0.0' } })
+  t.same(lookups, [], 'no lookup in an empty leaf during the refresh')
+  delete leaf.edgesOut.get
+
+  leaf.package = { name: 'leaf', dependencies: { foo: '1' } }
+  t.equal(leaf.edgesOut.get('foo').to, foo)
+  foo.parent = null
+  t.equal(leaf.edgesOut.get('foo').to, null, 'the newly added edge still refreshes')
+  const replacement = new Node({ parent: root, pkg: { name: 'foo', version: '2.0.0' } })
+  t.equal(leaf.edgesOut.get('foo').to, replacement, 'the formerly empty leaf is revisited')
+  t.end()
+})
+
+t.test('reloading traverses dependency-free parents with children', t => {
+  for (const kind of ['parent', 'fsParent']) {
+    const root = new Node({ path: '/some/path' })
+    const parent = new Node({ parent: root, pkg: { name: 'parent' } })
+    const child = new Node({
+      [kind]: parent,
+      path: kind === 'fsParent' ? `${parent.path}/child` : undefined,
+      pkg: { name: 'child', dependencies: { foo: '1' } },
+    })
+    t.equal(parent.edgesOut.size, 0)
+    t.equal(child.edgesOut.get('foo').to, null)
+    const foo = new Node({ parent: root, pkg: { name: 'foo', version: '1.0.0' } })
+    t.equal(child.edgesOut.get('foo').to, foo, `${kind} descendants are refreshed`)
+    foo.parent = null
+    t.equal(child.edgesOut.get('foo').to, null, `${kind} descendants track removals`)
+  }
+  t.end()
 })
 
 t.test('reloading named edges should refresh edgesIn', t => {
