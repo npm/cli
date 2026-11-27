@@ -1975,6 +1975,7 @@ t.test('audit signatures', async t => {
       {
         code: 'FETCH_ERROR',
         message: /Could not verify sigstore@1\.0\.0: the registry returned an invalid response/,
+        cause: { type: 'invalid-json' },
       }
     )
   })
