@@ -920,3 +920,33 @@ t.test('flags() throws singular "argument" for a single extra positional', async
     'singular phrasing when only one extra positional'
   )
 })
+
+t.test('flags() consumes values of global config flags the command does not define', async t => {
+  const { npm } = await loadMockNpm(t, {
+    argv: ['--otp', '123456', '--loglevel', 'warn'],
+  })
+
+  class TestCommand extends BaseCommand {
+    static name = 'test-command'
+    static description = 'Test command'
+
+    static definitions = [
+      new Definition('mountain', {
+        type: String,
+        default: 'everest',
+        description: 'Your favorite mountain',
+      }),
+    ]
+
+    async exec () {
+      return this.flags()
+    }
+  }
+
+  npm.config.argv = ['node', 'npm', 'test-command', 'kilimanjaro', '--otp', '123456', '--loglevel', 'warn']
+  const command = new TestCommand(npm)
+  const [flags, remains] = await command.exec()
+
+  t.same(remains, ['kilimanjaro'], 'values of global config flags are not left as positionals')
+  t.equal(flags.mountain, 'everest', 'only command definitions are returned as flags')
+})
