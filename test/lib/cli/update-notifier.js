@@ -139,6 +139,17 @@ t.test('situations in which we do not notify', t => {
     t.equal(result, null)
   })
 
+  t.test('do not check for updates in offline mode', async t => {
+    const { wroteFile, result } = await runUpdateNotifier(t, {
+      PACOTE_MOCK_REQ_COUNT: 0,
+      command: 'install',
+      prefixDir: { 'package.json': '{"name":"offline-project"}' },
+      offline: true,
+    })
+    t.equal(wroteFile, false)
+    t.equal(result, null)
+  })
+
   t.test('do not suggest update if already updating', async t => {
     const { wroteFile, result } = await runUpdateNotifier(t, {
       PACOTE_MOCK_REQ_COUNT: 0,
