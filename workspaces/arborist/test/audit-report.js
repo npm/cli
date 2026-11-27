@@ -636,3 +636,89 @@ t.test('determinism: multiple metavulns with identical range but different depen
   t.ok(BEffects.includes('A'), 'B effects includes A')
   t.ok(CEffects.includes('A'), 'C effects includes A')
 })
+
+t.test('fixAvailable accounts for every top-level edge', async t => {
+  // the root pins foo to a vulnerable version. the result must be the same
+  // whichever top edge into foo is checked first.
+  const cases = [{
+    name: 'workspace allows a safe version',
+    wsSpec: '^1.0.0',
+    fixAvailable: { name: 'foo', version: '1.0.1', isSemVerMajor: false },
+    topNodes: ['root'],
+  }, {
+    name: 'workspace has no registry fix',
+    wsSpec: 'github:foo/foo',
+    fixAvailable: false,
+    topNodes: ['root', 'ws'],
+  }]
+  for (const c of cases) {
+    for (const order of ['root first', 'workspace first']) {
+      await t.test(`${c.name}, ${order}`, async t => {
+        const registry = createRegistry(t)
+        registry.audit({
+          results: {
+            foo: [{ id: 1, url: 'https://foo', title: 'foo vuln', severity: 'high', vulnerable_versions: '1.0.0' }],
+          },
+        })
+        registry.package({
+          manifest: registry.manifest({ name: 'foo', versions: ['1.0.0', '1.0.1'] }),
+        })
+
+        const path = t.testdir()
+        const tree = new Node({
+          path,
+          pkg: { name: 'root', dependencies: { foo: '1.0.0' } },
+          children: [{ pkg: { name: 'foo', version: '1.0.0' } }],
+          fsChildren: [{
+            path: resolve(path, 'packages/ws'),
+            pkg: { name: 'ws', version: '1.0.0', dependencies: { foo: c.wsSpec } },
+          }],
+        })
+        // set the order in which the two edges into foo are checked
+        const foo = tree.children.get('foo')
+        const rootEdge = tree.edgesOut.get('foo')
+        const wsEdge = [...tree.fsChildren][0].edgesOut.get('foo')
+        foo.edgesIn.clear()
+        for (const edge of order === 'root first' ? [rootEdge, wsEdge] : [wsEdge, rootEdge]) {
+          foo.edgesIn.add(edge)
+        }
+
+        const report = await AuditReport.load(tree, { registry: 'https://registry.npmjs.org' })
+        const vuln = report.topVulns.get('foo')
+        t.ok(vuln, 'foo is a top vuln')
+        t.strictSame(vuln.fixAvailable, c.fixAvailable)
+        t.strictSame([...vuln.topNodes].map(n => n.packageName).sort(localeCompare), c.topNodes)
+      })
+    }
+  }
+})
+
+t.test('fixAvailable does not depend on advisory order', async t => {
+  // every version allowed by <1.2.0 is vulnerable to one of the two advisories
+  const advisories = [
+    { id: 1, url: 'https://foo/1', title: 'foo vuln 1', severity: 'high', vulnerable_versions: '<1.1.0' },
+    { id: 2, url: 'https://foo/2', title: 'foo vuln 2', severity: 'high', vulnerable_versions: '<1.2.0' },
+  ]
+  for (const order of ['narrow first', 'wide first']) {
+    await t.test(order, async t => {
+      const registry = createRegistry(t)
+      registry.audit({
+        results: { foo: order === 'narrow first' ? advisories : [...advisories].reverse() },
+      })
+      registry.package({
+        manifest: registry.manifest({ name: 'foo', versions: ['1.0.0', '1.1.0', '1.2.0'] }),
+      })
+
+      const tree = new Node({
+        path: t.testdir(),
+        pkg: { name: 'root', dependencies: { foo: '<1.2.0' } },
+        children: [{ pkg: { name: 'foo', version: '1.0.0' } }],
+      })
+
+      const report = await AuditReport.load(tree, { registry: 'https://registry.npmjs.org' })
+      const vuln = report.topVulns.get('foo')
+      t.ok(vuln, 'foo is a top vuln')
+      t.strictSame(vuln.fixAvailable, { name: 'foo', version: '1.2.0', isSemVerMajor: false })
+    })
+  }
+})

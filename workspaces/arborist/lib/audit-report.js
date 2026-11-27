@@ -12,6 +12,10 @@ const { log, time } = require('proc-log')
 
 const npmFetch = require('npm-registry-fetch')
 
+// how strict a fixAvailable value is, lowest first: no fix at all, a semver
+// major forced fix, any other forced fix, and a fix within the stated range.
+const fixRank = f => f === false ? 0 : f === true ? 3 : f.isSemVerMajor ? 1 : 2
+
 class AuditReport extends Map {
   #omit
   error = null
@@ -127,6 +131,10 @@ class AuditReport extends Map {
     // for all the metavulns that we find from dependents.
     const advisories = new Set(await Promise.all(promises))
     const seen = new Set()
+    // edges from top nodes into each vuln. fixAvailable is decided from
+    // these once every advisory is in, so the vulnerable range is complete
+    // and no edge overwrites the result of another.
+    const topEdges = new Map()
     for (const advisory of advisories) {
       const { name, range } = advisory
       const k = `${name}@${range}`
@@ -159,22 +167,13 @@ class AuditReport extends Map {
 
           // haven't marked this one yet.  get its dependents.
           vuln.nodes.add(node)
-          for (const { from: dep, spec } of node.edgesIn) {
-            if (dep.isTop && !vuln.topNodes.has(dep)) {
-              vuln.fixAvailable = this.#fixAvailable(vuln, spec)
-              if (vuln.fixAvailable !== true) {
-                // now we know the top node is vulnerable, and cannot be
-                // upgraded out of the bad place without --force.  But, there's
-                // no need to add it to the actual vulns list, because nothing
-                // depends on root.
-                this.topVulns.set(vuln.name, vuln)
-                vuln.topNodes.add(dep)
-              } else {
-                // An in-range fix exists, but a `min-release-age`/`before`
-                // window may put the patched version out of reach, leaving the
-                // vulnerable version installed.
-                vuln.fixBlockedByReleaseAge = this.#fixBlockedByReleaseAge(vuln, spec)
+          for (const edge of node.edgesIn) {
+            const { from: dep, spec } = edge
+            if (dep.isTop) {
+              if (!topEdges.has(vuln)) {
+                topEdges.set(vuln, new Set())
               }
+              topEdges.get(vuln).add(edge)
             } else {
             // calculate a metavuln, if necessary
               const calc = this.calculator.calculate(dep.packageName, advisory)
@@ -212,6 +211,34 @@ class AuditReport extends Map {
           vuln.deleteAdvisory(advisory)
         }
       }
+    }
+
+    // now that the vulnerable ranges are final, check every top edge
+    for (const [vuln, edges] of topEdges) {
+      let fixAvailable = true
+      let fixBlockedByReleaseAge = false
+      for (const { from: dep, spec } of edges) {
+        const fix = this.#fixAvailable(vuln, spec)
+        if (fix === true) {
+          // An in-range fix exists, but a `min-release-age`/`before`
+          // window may put the patched version out of reach, leaving the
+          // vulnerable version installed.
+          fixBlockedByReleaseAge = this.#fixBlockedByReleaseAge(vuln, spec) || fixBlockedByReleaseAge
+          continue
+        }
+        // now we know the top node is vulnerable, and cannot be
+        // upgraded out of the bad place without --force.  But, there's
+        // no need to add it to the actual vulns list, because nothing
+        // depends on root.
+        this.topVulns.set(vuln.name, vuln)
+        vuln.topNodes.add(dep)
+        // keep the strictest result across all top edges
+        if (fixRank(fix) < fixRank(fixAvailable)) {
+          fixAvailable = fix
+        }
+      }
+      vuln.fixAvailable = fixAvailable
+      vuln.fixBlockedByReleaseAge = fixAvailable === true && fixBlockedByReleaseAge
     }
 
     // post-loop reconciliation: establish all via links
