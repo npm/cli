@@ -13,6 +13,7 @@ const { promiseRetry } = require('@gar/promise-retry')
 const { log, time } = require('proc-log')
 const { resolve, delimiter } = require('node:path')
 const { isScriptAllowed } = require('../script-allowed.js')
+const { hasGypfileOptOut } = require('../gypfile.js')
 
 const boolEnv = b => b ? '1' : ''
 const sortNodes = (a, b) => (a.depth - b.depth) || localeCompare(a.path, b.path)
@@ -251,7 +252,7 @@ module.exports = cls => class Builder extends cls {
     }
 
     const { package: pkg, hasInstallScript } = node.target
-    const { gypfile, bin, scripts = {} } = pkg
+    const { bin, scripts = {} } = pkg
 
     const { preinstall, install, postinstall, prepare } = scripts
     const anyScript = preinstall || install || postinstall || prepare
@@ -277,10 +278,10 @@ module.exports = cls => class Builder extends cls {
     // Rebuild node-gyp dependencies lacking an install or preinstall script
     // note that 'scripts' might be missing entirely, and the package may
     // set gypfile:false to avoid this automatic detection.
-    const isGyp = gypfile !== false &&
-      !install &&
+    const isGyp = !install &&
       !preinstall &&
-      await isNodeGypPackage(node.path)
+      await isNodeGypPackage(node.path) &&
+      !await hasGypfileOptOut(node.path, pkg, node.target.name)
 
     if (bin || preinstall || install || postinstall || prepare || isGyp) {
       if (bin) {

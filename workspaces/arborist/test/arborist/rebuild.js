@@ -603,6 +603,111 @@ t.test('do not rebuild node-gyp dependencies with gypfile:false', async t => {
   await arb.rebuild()
 })
 
+// ref: https://github.com/npm/cli/issues/9837
+t.test('do not rebuild node-gyp dependencies with gypfile:false from a lockfile', async t => {
+  const Arborist = t.mock('../../lib/arborist/index.js', {
+    '@npmcli/run-script': async () => {
+      throw new Error('should not run any scripts')
+    },
+  })
+  const path = t.testdir({
+    node_modules: {
+      dep: {
+        'package.json': JSON.stringify({
+          name: 'dep',
+          version: '1.0.0',
+          gypfile: false,
+        }),
+        'binding.gyp': '',
+      },
+    },
+    'package-lock.json': JSON.stringify({
+      name: 'project',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'project',
+          dependencies: {
+            dep: '1',
+          },
+        },
+        'node_modules/dep': {
+          version: '1.0.0',
+        },
+      },
+    }),
+    'package.json': JSON.stringify({
+      name: 'project',
+      dependencies: {
+        dep: '1',
+      },
+    }),
+  })
+  const arb = new Arborist({ path, dangerouslyAllowAllScripts: true })
+  const tree = await arb.loadVirtual()
+  await arb.rebuild({ nodes: [...tree.inventory.values()] })
+})
+
+// ref: https://github.com/npm/cli/issues/9837
+// reify rebuilds with handleOptionalFailure, which swallows a failing script
+// on an optional dependency and trashes the package, so a synthesized
+// `node-gyp rebuild` that fails (no python, no compiler) would drop the
+// dependency without failing the install.
+t.test('do not rebuild optional node-gyp dependencies with gypfile:false from a lockfile', async t => {
+  const runs = []
+  const Arborist = t.mock('../../lib/arborist/index.js', {
+    '@npmcli/run-script': async opts => {
+      runs.push(opts)
+      throw Object.assign(new Error('gyp ERR! find Python'), { code: 1 })
+    },
+  })
+  const path = t.testdir({
+    node_modules: {
+      dep: {
+        'package.json': JSON.stringify({
+          name: 'dep',
+          version: '1.0.0',
+          gypfile: false,
+        }),
+        'binding.gyp': '',
+      },
+    },
+    'package-lock.json': JSON.stringify({
+      name: 'project',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'project',
+          optionalDependencies: {
+            dep: '1',
+          },
+        },
+        'node_modules/dep': {
+          version: '1.0.0',
+          optional: true,
+        },
+      },
+    }),
+    'package.json': JSON.stringify({
+      name: 'project',
+      optionalDependencies: {
+        dep: '1',
+      },
+    }),
+  })
+  const arb = new Arborist({ path, dangerouslyAllowAllScripts: true })
+  const tree = await arb.loadVirtual()
+  const dep = tree.children.get('dep')
+  t.equal(dep.optional, true, 'dep is optional in the lockfile tree')
+  t.equal(dep.package.gypfile, undefined, 'lockfile node carries no gypfile')
+  await arb.rebuild({ nodes: [...tree.inventory.values()], handleOptionalFailure: true })
+  t.strictSame(runs, [], 'no install script was synthesized or run')
+  t.notOk(dep.inert, 'optional dependency is not marked as failed')
+  t.notOk(arb[_trashList].has(dep.path), 'optional dependency is not trashed')
+})
+
 // ref: https://github.com/npm/cli/issues/2905
 t.test('do not run lifecycle scripts of linked deps twice', async t => {
   const testdir = t.testdir({

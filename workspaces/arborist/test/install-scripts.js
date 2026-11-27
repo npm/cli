@@ -12,16 +12,56 @@ const mockGetInstallScripts = (t, isNodeGypResult = () => false) =>
     },
   })
 
+const RESOLVED = 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz'
+const INTEGRITY = 'sha512-aaaaaaaaaaaaaaaaaaaaaa=='
+
 const node = ({
   scripts = {},
   gypfile,
-  resolved = 'https://registry.npmjs.org/pkg/-/pkg-1.0.0.tgz',
+  resolved = RESOLVED,
+  integrity = INTEGRITY,
   path = '/fake',
+  root = { realpath: '/fake' },
+  location = 'node_modules/dep',
+  name = 'dep',
+  version = '1.0.0',
 } = {}) => ({
   resolved,
+  integrity,
+  location,
+  root,
   path,
-  package: { scripts, ...(gypfile !== undefined ? { gypfile } : {}) },
+  name,
+  package: {
+    name,
+    version,
+    scripts,
+    ...(gypfile !== undefined ? { gypfile } : {}),
+  },
 })
+
+// A project root holding one installed dependency, plus the hidden lockfile
+// npm writes to record what is actually in `node_modules` right now.
+const installed = (t, {
+  pkg = { name: 'dep', version: '1.0.0', gypfile: false },
+  entry = { resolved: RESOLVED, integrity: INTEGRITY },
+  lock = { packages: {} },
+} = {}) => {
+  if (lock && lock.packages && entry) {
+    lock.packages['node_modules/dep'] = entry
+  }
+  return t.testdir({
+    node_modules: {
+      dep: { 'package.json': typeof pkg === 'string' ? pkg : JSON.stringify(pkg) },
+      ...(lock ? { '.package-lock.json': JSON.stringify(lock) } : {}),
+    },
+  })
+}
+
+const installedNode = (t, dirOpts = {}, nodeOpts = {}) => {
+  const dir = installed(t, dirOpts)
+  return node({ path: `${dir}/node_modules/dep`, root: { realpath: dir }, ...nodeOpts })
+}
 
 t.test('collects preinstall, install, postinstall', async t => {
   const getInstallScripts = mockGetInstallScripts(t)
@@ -92,6 +132,124 @@ t.test('synthetic node-gyp suppressed when gypfile: false', async t => {
   t.strictSame(
     await getInstallScripts(node({ gypfile: false })),
     {}
+  )
+})
+
+t.test('synthetic node-gyp suppressed by gypfile: false on disk', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  t.strictSame(await getInstallScripts(installedNode(t)), {})
+})
+
+t.test('synthetic node-gyp still detected when disk has no gypfile', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  const n = installedNode(t, { pkg: { name: 'dep', version: '1.0.0' } })
+  t.strictSame(
+    await getInstallScripts(n),
+    { install: 'node-gyp rebuild' }
+  )
+  // Same for a package.json that cannot be read back.
+  t.strictSame(
+    await getInstallScripts(installedNode(t, { pkg: 'not json' })),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
+t.test('gypfile: false on disk ignored when the version does not match', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  // The strict allow-scripts preflight runs before reify swaps node_modules,
+  // so the opt-out on disk belongs to the version that is already installed,
+  // not to the one the node describes.
+  const n = installedNode(t, {}, { version: '2.0.0' })
+  t.strictSame(
+    await getInstallScripts(n),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
+t.test('gypfile: false on disk ignored when the name does not match', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  const n = installedNode(t, {
+    pkg: { name: 'other', version: '1.0.0', gypfile: false },
+  })
+  t.strictSame(
+    await getInstallScripts(n),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
+t.test('gypfile: false on disk ignored when the node has no identity', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  // No version to compare against, so the disk read cannot be trusted.
+  t.strictSame(
+    await getInstallScripts(installedNode(t, {}, { version: '' })),
+    { install: 'node-gyp rebuild' }
+  )
+  // No name either.
+  t.strictSame(
+    await getInstallScripts(installedNode(t, {}, { name: '' })),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
+t.test('gypfile: false on disk ignored when the installed tarball differs', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  // Same name and version, different tarball. The copy on disk opted out,
+  // its replacement does not, and reify is about to install the replacement.
+  const otherIntegrity = installedNode(t, {
+    entry: { resolved: RESOLVED, integrity: 'sha512-bbbbbbbbbbbbbbbbbbbbbb==' },
+  })
+  t.strictSame(
+    await getInstallScripts(otherIntegrity),
+    { install: 'node-gyp rebuild' }
+  )
+
+  const otherResolved = installedNode(t, {
+    entry: {
+      resolved: 'https://other.example.com/pkg/-/pkg-1.0.0.tgz',
+      integrity: INTEGRITY,
+    },
+  })
+  t.strictSame(
+    await getInstallScripts(otherResolved),
+    { install: 'node-gyp rebuild' }
+  )
+})
+
+t.test('gypfile: false on disk ignored when the installed source is unknown', async t => {
+  const getInstallScripts = mockGetInstallScripts(t, () => true)
+  const expected = { install: 'node-gyp rebuild' }
+
+  // Nothing recorded the current contents of node_modules.
+  t.strictSame(
+    await getInstallScripts(installedNode(t, { lock: null })),
+    expected
+  )
+  // A hidden lockfile that says nothing about this location.
+  t.strictSame(
+    await getInstallScripts(installedNode(t, { lock: {} })),
+    expected
+  )
+  t.strictSame(
+    await getInstallScripts(installedNode(t, { entry: null })),
+    expected
+  )
+  // The node itself carries no source to compare against, as with a link
+  // or a dependency the lockfile has no integrity for.
+  t.strictSame(
+    await getInstallScripts(installedNode(t, {}, { resolved: '' })),
+    expected
+  )
+  t.strictSame(
+    await getInstallScripts(installedNode(t, {}, { integrity: '' })),
+    expected
+  )
+  t.strictSame(
+    await getInstallScripts(installedNode(t, {}, { location: '' })),
+    expected
+  )
+  t.strictSame(
+    await getInstallScripts(installedNode(t, {}, { root: null })),
+    expected
   )
 })
 
