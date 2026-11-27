@@ -115,13 +115,14 @@ class Vuln {
       severity: this.severity,
       isDirect: this.isDirect,
       // just loop over the advisories, since via is only Vuln objects,
-      // and calculated advisories have all the info we need
-      via: [...this.advisories].map(v => v.type === 'metavuln' ? v.dependency : {
+      // and calculated advisories have all the info we need.
+      // several metavulns can come from one dependency: list it once.
+      via: [...new Set([...this.advisories].map(v => v.type === 'metavuln' ? v.dependency : {
         ...v,
         versions: undefined,
         vulnerableVersions: undefined,
         id: undefined,
-      }).sort((a, b) =>
+      }))].sort((a, b) =>
         localeCompare(String(a.source || a), String(b.source || b))),
       effects: [...this.effects].map(v => v.name).sort(localeCompare),
       range: this.simpleRange,

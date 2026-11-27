@@ -3,6 +3,7 @@
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const npa = require('npm-package-arg')
 const pickManifest = require('npm-pick-manifest')
+const { subset } = require('semver')
 
 const Vuln = require('./vuln.js')
 const Calculator = require('@npmcli/metavuln-calculator')
@@ -11,6 +12,15 @@ const { isReleaseAgeExcluded } = require('./release-age-exclude.js')
 const { log, time } = require('proc-log')
 
 const npmFetch = require('npm-registry-fetch')
+
+// an advisory with a range semver can't parse is never treated as covered
+const isSubset = (sub, dom) => {
+  try {
+    return subset(sub, dom, { loose: true, includePrerelease: true })
+  } catch {
+    return false
+  }
+}
 
 class AuditReport extends Map {
   #omit
@@ -127,9 +137,12 @@ class AuditReport extends Map {
     // for all the metavulns that we find from dependents.
     const advisories = new Set(await Promise.all(promises))
     const seen = new Set()
+    // advisories already passed on to dependents, by package name
+    const spread = new Map()
     for (const advisory of advisories) {
       const { name, range } = advisory
       const k = `${name}@${range}`
+      const spreadForName = spread.get(name) || []
 
       const vuln = this.get(name) || new Vuln({ name, advisory })
       if (this.has(name)) {
@@ -140,7 +153,12 @@ class AuditReport extends Map {
       // don't flag the exact same name/range more than once
       // adding multiple advisories with the same range is fine, but no
       // need to search for nodes we already would have added.
-      if (!seen.has(k)) {
+      // inside the range of one already passed on, with the same severity,
+      // it could only pass on narrower copies of the same metavulns
+      const covered = spreadForName.some(a => a.severity === advisory.severity &&
+        isSubset(range, a.range))
+      if (!seen.has(k) && !covered) {
+        spread.set(name, [...spreadForName, advisory])
         const p = []
         for (const node of this.tree.inventory.query('packageName', name)) {
           if (!this.shouldAudit(node)) {
@@ -152,15 +170,14 @@ class AuditReport extends Map {
             continue
           }
 
-          // already marked this one, no need to do it again
-          if (vuln.nodes.has(node)) {
-            continue
-          }
-
-          // haven't marked this one yet.  get its dependents.
+          // a node already marked by an advisory with another range still
+          // passes this one on to its dependents, since it can make a
+          // dependent vulnerable where the first one did not, and has its top
+          // edges checked again against the now wider range.
+          const marked = vuln.nodes.has(node)
           vuln.nodes.add(node)
           for (const { from: dep, spec } of node.edgesIn) {
-            if (dep.isTop && !vuln.topNodes.has(dep)) {
+            if (dep.isTop && (marked || !vuln.topNodes.has(dep))) {
               vuln.fixAvailable = this.#fixAvailable(vuln, spec)
               if (vuln.fixAvailable !== true) {
                 // now we know the top node is vulnerable, and cannot be
@@ -169,6 +186,8 @@ class AuditReport extends Map {
                 // depends on root.
                 this.topVulns.set(vuln.name, vuln)
                 vuln.topNodes.add(dep)
+                // a narrower range may have flagged an in-range fix as blocked
+                vuln.fixBlockedByReleaseAge = false
               } else {
                 // An in-range fix exists, but a `min-release-age`/`before`
                 // window may put the patched version out of reach, leaving the
@@ -178,17 +197,17 @@ class AuditReport extends Map {
             } else {
             // calculate a metavuln, if necessary
               const calc = this.calculator.calculate(dep.packageName, advisory)
-              // eslint-disable-next-line promise/always-return
-              p.push(calc.then(meta => {
-                // eslint-disable-next-line promise/always-return
-                if (meta.testVersion(dep.version, spec)) {
-                  advisories.add(meta)
-                }
-              }))
+              p.push(calc.then(meta => meta.testVersion(dep.version, spec) && meta))
             }
           }
         }
-        await Promise.all(p)
+        // add them in the order they were requested, not the order they
+        // settled in, so the report does not depend on fetch timing
+        for (const meta of await Promise.all(p)) {
+          if (meta) {
+            advisories.add(meta)
+          }
+        }
         seen.add(k)
       }
 
