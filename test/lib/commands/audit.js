@@ -1961,6 +1961,25 @@ t.test('audit signatures', async t => {
     t.matchSnapshot(joinedOutput())
   })
 
+  t.test('with an attestations response that is not JSON', async t => {
+    const { npm } = await loadMockNpm(t, {
+      prefixDir: installWithValidAttestations,
+    })
+    const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
+    await manifestWithValidAttestations({ registry })
+    registry.nock.get('/-/npm/v1/attestations/sigstore@1.0.0').reply(200, 'OK')
+    mockTUF({ npm, target: TUF_VALID_KEYS_TARGET })
+
+    await t.rejects(
+      npm.exec('audit', ['signatures']),
+      {
+        code: 'FETCH_ERROR',
+        message: /Could not verify sigstore@1\.0\.0: the registry returned an invalid response/,
+        cause: { type: 'invalid-json' },
+      }
+    )
+  })
+
   t.test('with valid attestations and --include-attestations (human-readable)', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: installWithValidAttestations,
