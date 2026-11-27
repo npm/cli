@@ -127,6 +127,27 @@ t.test('github without environment', async t => {
   await npm.exec('trust', ['github', packageName, '--yes', '--file', 'workflow.yml', '--repository', 'owner/repo', '--allow-publish'])
 })
 
+t.test('github accepts global config flags with a separate value', async t => {
+  const { npm } = await loadMockNpm(t, {
+    argv: ['--dry-run', '--yes', '--otp', '123456'],
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: packageName,
+        version: '1.0.0',
+      }),
+    },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'test-auth-token',
+    },
+  })
+
+  // --otp is a global config flag, not one of the subcommand definitions. Its
+  // value must still be consumed by the flag parser instead of being reported
+  // as an unknown positional argument. --dry-run keeps this offline.
+  await npm.exec('trust', ['github', packageName, '--file', 'workflow.yml', '--repo', 'owner/repo',
+    '--allow-publish', '--dry-run', '--yes', '--otp', '123456'])
+})
+
 t.test('bodyToOptions with all fields', t => {
   const TrustGitHub = require('../../../../lib/commands/trust/github.js')
 
