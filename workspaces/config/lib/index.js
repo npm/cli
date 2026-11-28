@@ -151,7 +151,20 @@ class Config {
   }
 
   get prefix () {
-    return this.#get('global') ? this.globalPrefix : this.localPrefix
+    return this.global ? this.globalPrefix : this.localPrefix
+  }
+
+  get global () {
+    // Both options can select global mode. The highest layer that sets either
+    // option wins, and either option can select global within that layer.
+    for (const data of this.list) {
+      const global = hasOwnProperty(data, 'global') ? data.global : undefined
+      const location = hasOwnProperty(data, 'location') ? data.location : undefined
+      if (global !== undefined || location !== undefined) {
+        return global === true || location === 'global'
+      }
+    }
+    return false
   }
 
   // return the location where key is found.
@@ -221,6 +234,10 @@ class Config {
     for (const { data } of this.data.values()) {
       this.#flatten(data, this.#flatOptions)
     }
+    const location = this.#get('location')
+    const localLocation = location === 'global' ? this.#get('location', 'default') : location
+    this.#flatOptions.global = this.global
+    this.#flatOptions.location = this.#flatOptions.global ? 'global' : localLocation
     this.#flatOptions.nodeBin = this.execPath
     this.#flatOptions.npmBin = this.npmBin
     timeEnd()
@@ -768,7 +785,7 @@ class Config {
       this.localPackage = await fileExists(this.localPrefix, 'package.json')
     }
 
-    if (this.#get('global') === true || this.#get('location') === 'global') {
+    if (this.global) {
       this.data.get('project').source = '(global mode enabled, ignored)'
       this.sources.set(this.data.get('project').source, 'project')
       return
@@ -796,7 +813,7 @@ class Config {
     }
 
     const cliWorkspaces = this.#get('workspaces', 'cli')
-    const isGlobal = this.#get('global') || this.#get('location') === 'global'
+    const isGlobal = this.global
 
     for (const p of walkUp(this.cwd)) {
       // HACK: this is an option set in tests to stop the local prefix from being set
